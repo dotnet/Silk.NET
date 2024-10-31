@@ -26,13 +26,5 @@ namespace Silk.NET.OpenCL
         PrintfBuffersizeArm = 0x40B1,
         [NativeName("Name", "CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
         ShowDiagnosticsIntel = 0x4106,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
-        DiagnosticsLevelAllIntel = 0xFF,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
-        DiagnosticsLevelGoodIntel = 0x1,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL")]
-        DiagnosticsLevelBadIntel = 0x2,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
-        DiagnosticsLevelNeutralIntel = 0x4,
     }
 }

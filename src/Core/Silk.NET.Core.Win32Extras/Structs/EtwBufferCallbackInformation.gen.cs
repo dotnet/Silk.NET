@@ -43,8 +43,8 @@ namespace Silk.NET.Core.Win32Extras
         }
 
 
-        [NativeName("Type", "TRACEHANDLE")]
-        [NativeName("Type.Name", "TRACEHANDLE")]
+        [NativeName("Type", "PROCESSTRACE_HANDLE")]
+        [NativeName("Type.Name", "PROCESSTRACE_HANDLE")]
         [NativeName("Name", "TraceHandle")]
         public ulong TraceHandle;
 

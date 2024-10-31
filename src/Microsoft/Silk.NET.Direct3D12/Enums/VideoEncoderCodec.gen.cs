@@ -18,9 +18,14 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"Hevc\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_HEVC")]
         VideoEncoderCodecHevc = 0x1,
+        [Obsolete("Deprecated in favour of \"AV1\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_AV1")]
+        VideoEncoderCodecAV1 = 0x2,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_H264")]
         H264 = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_HEVC")]
         Hevc = 0x1,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_AV1")]
+        AV1 = 0x2,
     }
 }

@@ -47,8 +47,14 @@ namespace Silk.NET.Direct3D.Compilers
         [NativeName("Name", "DXC_CP_UTF16")]
         public const int CPUtf16 = unchecked((int) 0x4B0);
         [NativeName("Type", "int")]
+        [NativeName("Name", "DXC_CP_UTF32")]
+        public const int CPUtf32 = unchecked((int) 0x2EE0);
+        [NativeName("Type", "int")]
         [NativeName("Name", "DXC_CP_ACP")]
         public const int CPAcp = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXC_CP_WIDE")]
+        public const int CPWide = unchecked((int) 0x4B0);
         [NativeName("Type", "int")]
         [NativeName("Name", "DXC_HASHFLAG_INCLUDES_SOURCE")]
         public const int HashflagIncludesSource = unchecked((int) 0x1);
@@ -117,127 +123,127 @@ namespace Silk.NET.Direct3D.Compilers
         public const string ExtraOutputNameStderr = unchecked((string) "*stderr*");
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(Guid* rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(Guid* rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(Guid* rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(Guid* rclsid, ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(ref Guid rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(ref Guid rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(ref Guid rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(ref Guid rclsid, ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, Guid* rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, Guid* rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, Guid* rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, Guid* rclsid, ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, ref Guid rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, ref Guid rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, ref Guid rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, ref Guid rclsid, ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, Guid* rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, Guid* rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, Guid* rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, Guid* rclsid, ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, ref Guid rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, ref Guid rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, ref Guid rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, ref Guid rclsid, ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance<TI0>(Guid* rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -246,7 +252,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance<TI0>(ref Guid rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -255,7 +261,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance2<TI0, TI1>(ComPtr<TI0> pMalloc, Guid* rclsid, out ComPtr<TI1> ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -264,7 +270,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, Guid* rclsid, Guid* riid, ref void* ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -272,7 +278,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, Guid* rclsid, ref Guid riid, void** ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -280,7 +286,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, Guid* rclsid, ref Guid riid, ref void* ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -288,7 +294,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance2<TI0, TI1>(ComPtr<TI0> pMalloc, ref Guid rclsid, out ComPtr<TI1> ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -297,7 +303,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, ref Guid rclsid, Guid* riid, ref void* ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -305,7 +311,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, ref Guid rclsid, ref Guid riid, void** ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -313,7 +319,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, ref Guid rclsid, ref Guid riid, ref void* ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -321,7 +327,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance2<TI0>(ref IMalloc pMalloc, Guid* rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -330,7 +336,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe int CreateInstance2<TI0>(ref IMalloc pMalloc, ref Guid rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -339,7 +345,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         public unsafe ComPtr<TI0> CreateInstance<TI0>(Guid* rclsid) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // NonKhrReturnTypeOverloader
@@ -348,7 +354,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         public unsafe ComPtr<TI0> CreateInstance<TI0>(ref Guid rclsid) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // NonKhrReturnTypeOverloader
@@ -357,7 +363,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe ComPtr<TI1> CreateInstance2<TI0, TI1>(ComPtr<TI0> pMalloc, Guid* rclsid) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             // NonKhrReturnTypeOverloader
@@ -366,7 +372,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe ComPtr<TI1> CreateInstance2<TI0, TI1>(ComPtr<TI0> pMalloc, ref Guid rclsid) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             // NonKhrReturnTypeOverloader
@@ -375,7 +381,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe ComPtr<TI0> CreateInstance2<TI0>(ref IMalloc pMalloc, Guid* rclsid) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // NonKhrReturnTypeOverloader
@@ -384,7 +390,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public unsafe ComPtr<TI0> CreateInstance2<TI0>(ref IMalloc pMalloc, ref Guid rclsid) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // NonKhrReturnTypeOverloader

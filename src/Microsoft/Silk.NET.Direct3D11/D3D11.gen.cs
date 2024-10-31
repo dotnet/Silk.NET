@@ -36,7 +36,7 @@ namespace Silk.NET.Direct3D11
         public const int WindowsFoundationFoundationcontractVersion = unchecked((int) 0x40000);
         [NativeName("Type", "int")]
         [NativeName("Name", "WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION")]
-        public const int WindowsFoundationUniversalapicontractVersion = unchecked((int) 0xF0000);
+        public const int WindowsFoundationUniversalapicontractVersion = unchecked((int) 0x130000);
         [NativeName("Type", "int")]
         [NativeName("Name", "D3D11_SDK_LAYERS_VERSION")]
         public const int SdkLayersVersion = unchecked((int) 0x1);
@@ -1277,802 +1277,802 @@ namespace Silk.NET.Direct3D11
         public unsafe partial int D3DDisassemble11Trace<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, nuint SrcDataSize, ref ID3D11ShaderTrace pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDevice", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDevice(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
 
@@ -2157,7 +2157,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2165,7 +2165,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2173,7 +2173,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2181,7 +2181,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2189,7 +2189,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2197,7 +2197,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2205,7 +2205,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2213,7 +2213,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2221,7 +2221,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2229,7 +2229,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2237,7 +2237,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2245,7 +2245,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2253,7 +2253,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2261,7 +2261,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2269,7 +2269,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2277,7 +2277,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2285,7 +2285,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2293,7 +2293,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2301,7 +2301,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2309,7 +2309,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2317,7 +2317,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2325,7 +2325,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2333,7 +2333,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2341,7 +2341,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2349,7 +2349,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2357,7 +2357,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2365,7 +2365,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2373,7 +2373,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public unsafe int CreateDevice<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2381,7 +2381,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2, TI3>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI3> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2> where TI3 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI3>
         {
             // ComPtrOverloader
@@ -2389,7 +2389,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2397,7 +2397,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2, TI3>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI3> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2> where TI3 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI3>
         {
             // ComPtrOverloader
@@ -2405,7 +2405,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2413,7 +2413,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2421,7 +2421,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2429,7 +2429,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2437,7 +2437,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2445,7 +2445,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2453,7 +2453,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2461,7 +2461,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2469,7 +2469,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2477,7 +2477,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2485,7 +2485,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2493,7 +2493,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2501,7 +2501,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2509,7 +2509,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2, TI3>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI3> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2> where TI3 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI3>
         {
             // ComPtrOverloader
@@ -2517,7 +2517,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2525,7 +2525,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2, TI3>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI3> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2> where TI3 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI3>
         {
             // ComPtrOverloader
@@ -2533,7 +2533,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2541,7 +2541,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2549,7 +2549,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2557,7 +2557,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2565,7 +2565,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2573,7 +2573,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2581,7 +2581,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2589,7 +2589,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2597,7 +2597,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2605,7 +2605,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2613,7 +2613,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2621,7 +2621,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2629,7 +2629,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2637,7 +2637,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2, TI3>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI3> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2> where TI3 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI3>
         {
             // ComPtrOverloader
@@ -2645,7 +2645,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2653,7 +2653,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2, TI3>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI3> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2> where TI3 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI3>
         {
             // ComPtrOverloader
@@ -2661,7 +2661,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2669,7 +2669,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2677,7 +2677,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2685,7 +2685,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2693,7 +2693,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2701,7 +2701,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2709,7 +2709,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2717,7 +2717,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2725,7 +2725,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2733,7 +2733,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2741,7 +2741,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2749,7 +2749,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2757,7 +2757,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2765,7 +2765,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2, TI3>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI3> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2> where TI3 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI3>
         {
             // ComPtrOverloader
@@ -2773,7 +2773,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2781,7 +2781,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2, TI3>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI3> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2> where TI3 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI3>
         {
             // ComPtrOverloader
@@ -2789,7 +2789,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ComPtr<TI2> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2797,7 +2797,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2805,7 +2805,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2813,7 +2813,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2821,7 +2821,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI1> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2829,7 +2829,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2837,7 +2837,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2845,7 +2845,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2853,7 +2853,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2861,7 +2861,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2869,7 +2869,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2877,7 +2877,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2885,7 +2885,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2893,7 +2893,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2901,7 +2901,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2909,7 +2909,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -2917,7 +2917,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2925,7 +2925,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2933,7 +2933,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2941,7 +2941,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2949,7 +2949,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2957,7 +2957,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2965,7 +2965,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2973,7 +2973,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -2981,7 +2981,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2989,7 +2989,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -2997,7 +2997,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3005,7 +3005,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -3013,7 +3013,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3021,7 +3021,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -3029,7 +3029,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3037,7 +3037,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3045,7 +3045,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3053,7 +3053,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3061,7 +3061,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3069,7 +3069,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3077,7 +3077,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3085,7 +3085,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3093,7 +3093,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3101,7 +3101,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3109,7 +3109,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3117,7 +3117,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -3125,7 +3125,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3133,7 +3133,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -3141,7 +3141,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3149,7 +3149,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3157,7 +3157,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3165,7 +3165,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3173,7 +3173,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3181,7 +3181,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3189,7 +3189,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3197,7 +3197,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3205,7 +3205,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3213,7 +3213,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3221,7 +3221,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3229,7 +3229,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -3237,7 +3237,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3245,7 +3245,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1, TI2>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI2> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI2>
         {
             // ComPtrOverloader
@@ -3253,7 +3253,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ComPtr<TI1> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3261,7 +3261,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3269,7 +3269,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3277,7 +3277,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3285,7 +3285,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref ComPtr<TI0> ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3293,7 +3293,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3301,7 +3301,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3309,7 +3309,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0, TI1>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI1> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI1>
         {
             // ComPtrOverloader
@@ -3317,7 +3317,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ComPtr<TI0> ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3325,7 +3325,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -3333,7 +3333,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public unsafe int CreateDeviceAndSwapChain<TI0>(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ComPtr<TI0> ppImmediateContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
         {
             // ComPtrOverloader

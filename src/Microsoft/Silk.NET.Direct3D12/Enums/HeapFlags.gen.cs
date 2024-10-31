@@ -49,6 +49,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"CreateNotZeroed\"")]
         [NativeName("Name", "D3D12_HEAP_FLAG_CREATE_NOT_ZEROED")]
         HeapFlagCreateNotZeroed = 0x1000,
+        [Obsolete("Deprecated in favour of \"ToolsUseManualWriteTracking\"")]
+        [NativeName("Name", "D3D12_HEAP_FLAG_TOOLS_USE_MANUAL_WRITE_TRACKING")]
+        HeapFlagToolsUseManualWriteTracking = 0x2000,
         [Obsolete("Deprecated in favour of \"AllowAllBuffersAndTextures\"")]
         [NativeName("Name", "D3D12_HEAP_FLAG_ALLOW_ALL_BUFFERS_AND_TEXTURES")]
         HeapFlagAllowAllBuffersAndTextures = 0x0,
@@ -85,6 +88,8 @@ namespace Silk.NET.Direct3D12
         CreateNotResident = 0x800,
         [NativeName("Name", "D3D12_HEAP_FLAG_CREATE_NOT_ZEROED")]
         CreateNotZeroed = 0x1000,
+        [NativeName("Name", "D3D12_HEAP_FLAG_TOOLS_USE_MANUAL_WRITE_TRACKING")]
+        ToolsUseManualWriteTracking = 0x2000,
         [NativeName("Name", "D3D12_HEAP_FLAG_ALLOW_ALL_BUFFERS_AND_TEXTURES")]
         AllowAllBuffersAndTextures = 0x0,
         [NativeName("Name", "D3D12_HEAP_FLAG_ALLOW_ONLY_BUFFERS")]

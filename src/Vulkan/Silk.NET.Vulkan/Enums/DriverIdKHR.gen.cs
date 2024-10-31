@@ -87,9 +87,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ImaginationOpenSourceMesa\"")]
         [NativeName("Name", "VK_DRIVER_ID_IMAGINATION_OPEN_SOURCE_MESA")]
         DriverIDImaginationOpenSourceMesa = 25,
-        [Obsolete("Deprecated in favour of \"MesaAgxv\"")]
-        [NativeName("Name", "VK_DRIVER_ID_MESA_AGXV")]
-        DriverIDMesaAgxv = 26,
+        [Obsolete("Deprecated in favour of \"MesaHoneykrisp\"")]
+        [NativeName("Name", "VK_DRIVER_ID_MESA_HONEYKRISP")]
+        DriverIDMesaHoneykrisp = 26,
+        [Obsolete("Deprecated in favour of \"Reserved27\"")]
+        [NativeName("Name", "VK_DRIVER_ID_RESERVED_27")]
+        DriverIDReserved27 = 27,
         [NativeName("Name", "VK_DRIVER_ID_AMD_PROPRIETARY")]
         AmdProprietary = 1,
         [NativeName("Name", "VK_DRIVER_ID_AMD_OPEN_SOURCE")]
@@ -140,7 +143,9 @@ namespace Silk.NET.Vulkan
         MesaNvk = 24,
         [NativeName("Name", "VK_DRIVER_ID_IMAGINATION_OPEN_SOURCE_MESA")]
         ImaginationOpenSourceMesa = 25,
-        [NativeName("Name", "VK_DRIVER_ID_MESA_AGXV")]
-        MesaAgxv = 26,
+        [NativeName("Name", "VK_DRIVER_ID_MESA_HONEYKRISP")]
+        MesaHoneykrisp = 26,
+        [NativeName("Name", "VK_DRIVER_ID_RESERVED_27")]
+        Reserved27 = 27,
     }
 }

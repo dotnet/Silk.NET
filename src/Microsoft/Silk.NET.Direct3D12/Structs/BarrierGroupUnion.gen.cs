@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L20184_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L22050_C5")]
     public unsafe partial struct BarrierGroupUnion
     {
         public BarrierGroupUnion

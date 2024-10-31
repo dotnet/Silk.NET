@@ -27,7 +27,8 @@ namespace Silk.NET.Direct3D12
             IndirectArgumentDescUnionConstant? constant = null,
             IndirectArgumentDescUnionConstantBufferView? constantBufferView = null,
             IndirectArgumentDescUnionShaderResourceView? shaderResourceView = null,
-            IndirectArgumentDescUnionUnorderedAccessView? unorderedAccessView = null
+            IndirectArgumentDescUnionUnorderedAccessView? unorderedAccessView = null,
+            IndirectArgumentDescUnionIncrementingConstant? incrementingConstant = null
         ) : this()
         {
             if (type is not null)
@@ -64,6 +65,11 @@ namespace Silk.NET.Direct3D12
             {
                 UnorderedAccessView = unorderedAccessView.Value;
             }
+
+            if (incrementingConstant is not null)
+            {
+                IncrementingConstant = incrementingConstant.Value;
+            }
         }
 
 
@@ -73,7 +79,7 @@ namespace Silk.NET.Direct3D12
         public IndirectArgumentType Type;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L4148_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L4527_C5")]
         [NativeName("Name", "anonymous1")]
         public IndirectArgumentDescUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
@@ -143,6 +149,20 @@ namespace Silk.NET.Direct3D12
         {
             get => Anonymous.UnorderedAccessView;
             set => Anonymous.UnorderedAccessView = value;
+        }
+#endif
+
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref IndirectArgumentDescUnionIncrementingConstant IncrementingConstant
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].IncrementingConstant;
+        }
+#else
+        public IndirectArgumentDescUnionIncrementingConstant IncrementingConstant
+        {
+            get => Anonymous.IncrementingConstant;
+            set => Anonymous.IncrementingConstant = value;
         }
 #endif
 

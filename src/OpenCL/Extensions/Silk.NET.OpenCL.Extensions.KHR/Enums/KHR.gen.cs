@@ -69,14 +69,18 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Pending = 0x2,
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_PENDING_KHR")]
         CommandBufferStatePendingKhr = 0x2,
-        [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_BASE_CONFIG_KHR")]
-        BaseConfig = 0x0,
-        [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_BASE_CONFIG_KHR")]
-        StructureTypeMutableBaseConfigKhr = 0x0,
         [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_DISPATCH_CONFIG_KHR")]
-        DispatchConfig = 0x1,
+        StructureTypeMutableDispatchConfig = 0x0,
         [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_DISPATCH_CONFIG_KHR")]
-        StructureTypeMutableDispatchConfigKhr = 0x1,
+        StructureTypeMutableDispatchConfigKhr = 0x0,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_UPDATABLE_FIELDS_KHR")]
+        UpdatableFields = 0x12B1,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_UPDATABLE_FIELDS_KHR")]
+        MutableDispatchUpdatableFieldsKhr = 0x12B1,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_ASSERTS_KHR")]
+        Asserts = 0x12B8,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_ASSERTS_KHR")]
+        MutableDispatchAssertsKhr = 0x12B8,
         [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_LOCAL_KHR")]
         Local = 0x1,
         [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_LOCAL_KHR")]
@@ -171,6 +175,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         OpaqueWin32Kmt = 0x2062,
         [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_KMT_KHR")]
         ExternalMemoryHandleOpaqueWin32KmtKhr = 0x2062,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_NAME_KHR")]
+        OpaqueWin32Name = 0x2069,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_NAME_KHR")]
+        ExternalMemoryHandleOpaqueWin32NameKhr = 0x2069,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_FD_KHR")]
         SemaphoreHandleOpaqueFDKhr = 0x2055,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_SYNC_FD_KHR")]
@@ -181,6 +189,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         SemaphoreHandleOpaqueWin32Khr = 0x2056,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_KMT_KHR")]
         SemaphoreHandleOpaqueWin32KmtKhr = 0x2057,
+        [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_NAME_KHR")]
+        SemaphoreHandleOpaqueWin32NameKhr = 0x2068,
         [NativeName("Name", "CL_CURRENT_DEVICE_FOR_GL_CONTEXT_KHR")]
         CurrentDeviceForGLContext = 0x2006,
         [NativeName("Name", "CL_CURRENT_DEVICE_FOR_GL_CONTEXT_KHR")]
@@ -265,10 +275,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         CommandCommandType = 0x12AD,
         [NativeName("Name", "CL_MUTABLE_COMMAND_COMMAND_TYPE_KHR")]
         MutableCommandCommandTypeKhr = 0x12AD,
-        [NativeName("Name", "CL_MUTABLE_DISPATCH_PROPERTIES_ARRAY_KHR")]
-        DispatchPropertiesArray = 0x12A2,
-        [NativeName("Name", "CL_MUTABLE_DISPATCH_PROPERTIES_ARRAY_KHR")]
-        MutableDispatchPropertiesArrayKhr = 0x12A2,
+        [NativeName("Name", "CL_MUTABLE_COMMAND_PROPERTIES_ARRAY_KHR")]
+        CommandPropertiesArray = 0x12A2,
+        [NativeName("Name", "CL_MUTABLE_COMMAND_PROPERTIES_ARRAY_KHR")]
+        MutableCommandPropertiesArrayKhr = 0x12A2,
         [NativeName("Name", "CL_MUTABLE_DISPATCH_KERNEL_KHR")]
         DispatchKernel = 0x12A3,
         [NativeName("Name", "CL_MUTABLE_DISPATCH_KERNEL_KHR")]
@@ -313,14 +323,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         ExecInfo = 0x10,
         [NativeName("Name", "CL_MUTABLE_DISPATCH_EXEC_INFO_KHR")]
         MutableDispatchExecInfoKhr = 0x10,
-        [NativeName("Name", "CL_MUTABLE_DISPATCH_UPDATABLE_FIELDS_KHR")]
-        UpdatableFields = 0x12B1,
-        [NativeName("Name", "CL_MUTABLE_DISPATCH_UPDATABLE_FIELDS_KHR")]
-        MutableDispatchUpdatableFieldsKhr = 0x12B1,
-        [NativeName("Name", "CL_MUTABLE_DISPATCH_ASSERTS_KHR")]
-        Asserts = 0x12B8,
-        [NativeName("Name", "CL_MUTABLE_DISPATCH_ASSERTS_KHR")]
-        MutableDispatchAssertsKhr = 0x12B8,
         [NativeName("Name", "CL_COMMAND_BUFFER_PLATFORM_UNIVERSAL_SYNC_KHR")]
         UniversalSync = 0x1,
         [NativeName("Name", "CL_COMMAND_BUFFER_PLATFORM_UNIVERSAL_SYNC_KHR")]

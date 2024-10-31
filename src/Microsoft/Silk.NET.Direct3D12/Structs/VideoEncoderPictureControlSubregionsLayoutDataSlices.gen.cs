@@ -56,7 +56,7 @@ namespace Silk.NET.Direct3D12
 
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12video_L7645_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12video_L7550_C5")]
         [NativeName("Name", "anonymous1")]
         public VideoEncoderPictureControlSubregionsLayoutDataSlicesUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

@@ -71,6 +71,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_MAX_PHYSICAL_DEVICE_NAME_SIZE")]
         public const uint MaxPhysicalDeviceNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_PIPELINE_BINARY_KEY_SIZE_KHR")]
+        public const uint MaxPipelineBinaryKeySizeKhr = unchecked((uint) 32);
+        [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_SHADER_MODULE_IDENTIFIER_SIZE_EXT")]
         public const uint MaxShaderModuleIdentifierSizeExt = unchecked((uint) 32);
         [NativeName("Type", "")]

@@ -12,6 +12,9 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "D3D_FEATURE_LEVEL")]
     public enum D3DFeatureLevel : int
     {
+        [Obsolete("Deprecated in favour of \"Level10Generic\"")]
+        [NativeName("Name", "D3D_FEATURE_LEVEL_1_0_GENERIC")]
+        D3DFeatureLevel10Generic = 0x100,
         [Obsolete("Deprecated in favour of \"Level10Core\"")]
         [NativeName("Name", "D3D_FEATURE_LEVEL_1_0_CORE")]
         D3DFeatureLevel10Core = 0x1000,
@@ -45,6 +48,8 @@ namespace Silk.NET.Core.Native
         [Obsolete("Deprecated in favour of \"Level122\"")]
         [NativeName("Name", "D3D_FEATURE_LEVEL_12_2")]
         D3DFeatureLevel122 = 0xC200,
+        [NativeName("Name", "D3D_FEATURE_LEVEL_1_0_GENERIC")]
+        Level10Generic = 0x100,
         [NativeName("Name", "D3D_FEATURE_LEVEL_1_0_CORE")]
         Level10Core = 0x1000,
         [NativeName("Name", "D3D_FEATURE_LEVEL_9_1")]

@@ -30,6 +30,12 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"Texture2Darray\"")]
         [NativeName("Name", "D3D12_UAV_DIMENSION_TEXTURE2DARRAY")]
         UavDimensionTexture2Darray = 0x5,
+        [Obsolete("Deprecated in favour of \"Texture2Dms\"")]
+        [NativeName("Name", "D3D12_UAV_DIMENSION_TEXTURE2DMS")]
+        UavDimensionTexture2Dms = 0x6,
+        [Obsolete("Deprecated in favour of \"Texture2Dmsarray\"")]
+        [NativeName("Name", "D3D12_UAV_DIMENSION_TEXTURE2DMSARRAY")]
+        UavDimensionTexture2Dmsarray = 0x7,
         [Obsolete("Deprecated in favour of \"Texture3D\"")]
         [NativeName("Name", "D3D12_UAV_DIMENSION_TEXTURE3D")]
         UavDimensionTexture3D = 0x8,
@@ -45,6 +51,10 @@ namespace Silk.NET.Direct3D12
         Texture2D = 0x4,
         [NativeName("Name", "D3D12_UAV_DIMENSION_TEXTURE2DARRAY")]
         Texture2Darray = 0x5,
+        [NativeName("Name", "D3D12_UAV_DIMENSION_TEXTURE2DMS")]
+        Texture2Dms = 0x6,
+        [NativeName("Name", "D3D12_UAV_DIMENSION_TEXTURE2DMSARRAY")]
+        Texture2Dmsarray = 0x7,
         [NativeName("Name", "D3D12_UAV_DIMENSION_TEXTURE3D")]
         Texture3D = 0x8,
     }

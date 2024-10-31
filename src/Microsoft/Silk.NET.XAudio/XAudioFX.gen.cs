@@ -132,27 +132,27 @@ namespace Silk.NET.XAudio
         public const int FXReverbDefaultDisableLateField = unchecked((int) 0x0);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 68, Column 18 in xaudio2fx.h")]
+        [NativeName("Src", "Line 65, Column 18 in xaudio2fx.h")]
         [NativeApi(EntryPoint = "CreateAudioVolumeMeter", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateAudioVolumeMeter(Silk.NET.Core.Native.IUnknown** ppApo);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 68, Column 18 in xaudio2fx.h")]
+        [NativeName("Src", "Line 65, Column 18 in xaudio2fx.h")]
         [NativeApi(EntryPoint = "CreateAudioVolumeMeter", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateAudioVolumeMeter(ref Silk.NET.Core.Native.IUnknown* ppApo);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 69, Column 18 in xaudio2fx.h")]
+        [NativeName("Src", "Line 66, Column 18 in xaudio2fx.h")]
         [NativeApi(EntryPoint = "CreateAudioReverb", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateAudioReverb(Silk.NET.Core.Native.IUnknown** ppApo);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 69, Column 18 in xaudio2fx.h")]
+        [NativeName("Src", "Line 66, Column 18 in xaudio2fx.h")]
         [NativeApi(EntryPoint = "CreateAudioReverb", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateAudioReverb(ref Silk.NET.Core.Native.IUnknown* ppApo);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 68, Column 18 in xaudio2fx.h")]
+        [NativeName("Src", "Line 65, Column 18 in xaudio2fx.h")]
         public unsafe int CreateAudioVolumeMeter<TI0>(ref ComPtr<TI0> ppApo) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -160,7 +160,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 69, Column 18 in xaudio2fx.h")]
+        [NativeName("Src", "Line 66, Column 18 in xaudio2fx.h")]
         public unsafe int CreateAudioReverb<TI0>(ref ComPtr<TI0> ppApo) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             // ComPtrOverloader
