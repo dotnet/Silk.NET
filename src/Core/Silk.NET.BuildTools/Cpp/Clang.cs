@@ -679,7 +679,7 @@ namespace Silk.NET.BuildTools.Cpp
                 if (type is ArrayType arrayType)
                 {
                     ret = GetType(arrayType.ElementType, out var currentCount, ref flow, out _);
-                    ret.IndirectionLevels++;
+                    ret.IndirectionLevels++; // TODO this is wrong for >2 dims!
                     var asize = arrayType.Handle.ArraySize;
                     if (asize != -1)
                     {
@@ -812,7 +812,13 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else
                     {
-                        ret = new Type { Name = elaboratedType.NamedType.AsString };
+                        var name = elaboratedType.NamedType.AsString;
+                        if (name.LastIndexOf("::", StringComparison.Ordinal) is not -1 and var v)
+                        {
+                            name = name[(v + 2)..];
+                        }
+
+                        ret = new Type { Name = name };
                     }
                 }
                 else if (type is FunctionType functionType)
