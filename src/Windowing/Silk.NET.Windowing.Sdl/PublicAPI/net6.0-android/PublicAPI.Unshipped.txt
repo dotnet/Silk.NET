@@ -15,6 +15,7 @@ Org.Libsdl.App.SDLSurface.SDLSurface(System.IntPtr javaReference, Android.Runtim
 override Org.Libsdl.App.SDLSurface.JniPeerMembers.get -> Java.Interop.JniPeerMembers!
 override Org.Libsdl.App.SDLSurface.ThresholdClass.get -> System.IntPtr
 override Org.Libsdl.App.SDLSurface.ThresholdType.get -> System.Type!
+static Org.Libsdl.App.SDL.LoadLibrary(string? libraryName, Android.Content.Context? context) -> void
 static Org.Libsdl.App.SDLActivity.DestroyCustomCursor(int cursorID) -> void
 static Org.Libsdl.App.SDLActivity.HandleKeyEvent(Android.Views.View? v, int keyCode, Android.Views.KeyEvent? e, Android.Views.InputMethods.IInputConnection? ic) -> bool
 static Org.Libsdl.App.SDLActivity.NativeGetHintBoolean(string? p0, bool p1) -> bool
