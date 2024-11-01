@@ -160,6 +160,8 @@ namespace Silk.NET.SPIRV
         TileImageDepthReadAccessExt = 0x1047,
         [NativeName("Name", "SpvCapabilityTileImageStencilReadAccessEXT")]
         TileImageStencilReadAccessExt = 0x1048,
+        [NativeName("Name", "SpvCapabilityCooperativeMatrixLayoutsARM")]
+        CooperativeMatrixLayoutsArm = 0x1069,
         [NativeName("Name", "SpvCapabilityFragmentShadingRateKHR")]
         FragmentShadingRateKhr = 0x1146,
         [NativeName("Name", "SpvCapabilitySubgroupBallotKHR")]
@@ -218,6 +220,8 @@ namespace Silk.NET.SPIRV
         RayQueryProvisionalKhr = 0x1177,
         [NativeName("Name", "SpvCapabilityRayQueryKHR")]
         RayQueryKhr = 0x1178,
+        [NativeName("Name", "SpvCapabilityUntypedPointersKHR")]
+        UntypedPointersKhr = 0x1179,
         [NativeName("Name", "SpvCapabilityRayTraversalPrimitiveCullingKHR")]
         RayTraversalPrimitiveCullingKhr = 0x117E,
         [NativeName("Name", "SpvCapabilityRayTracingKHR")]
@@ -274,6 +278,8 @@ namespace Silk.NET.SPIRV
         FragmentBarycentricKhr = 0x14A4,
         [NativeName("Name", "SpvCapabilityFragmentBarycentricNV")]
         FragmentBarycentricNV = 0x14A4,
+        [NativeName("Name", "SpvCapabilityComputeDerivativeGroupQuadsKHR")]
+        ComputeDerivativeGroupQuadsKhr = 0x14A8,
         [NativeName("Name", "SpvCapabilityComputeDerivativeGroupQuadsNV")]
         ComputeDerivativeGroupQuadsNV = 0x14A8,
         [NativeName("Name", "SpvCapabilityFragmentDensityEXT")]
@@ -348,6 +354,8 @@ namespace Silk.NET.SPIRV
         PhysicalStorageBufferAddresses = 0x14E3,
         [NativeName("Name", "SpvCapabilityPhysicalStorageBufferAddressesEXT")]
         PhysicalStorageBufferAddressesExt = 0x14E3,
+        [NativeName("Name", "SpvCapabilityComputeDerivativeGroupLinearKHR")]
+        ComputeDerivativeGroupLinearKhr = 0x14E6,
         [NativeName("Name", "SpvCapabilityComputeDerivativeGroupLinearNV")]
         ComputeDerivativeGroupLinearNV = 0x14E6,
         [NativeName("Name", "SpvCapabilityRayTracingProvisionalKHR")]
@@ -486,6 +494,8 @@ namespace Silk.NET.SPIRV
         RayCullMaskKhr = 0x1784,
         [NativeName("Name", "SpvCapabilityCooperativeMatrixKHR")]
         CooperativeMatrixKhr = 0x1786,
+        [NativeName("Name", "SpvCapabilityReplicatedCompositesEXT")]
+        ReplicatedCompositesExt = 0x1788,
         [NativeName("Name", "SpvCapabilityBitInstructions")]
         BitInstructions = 0x1789,
         [NativeName("Name", "SpvCapabilityGroupNonUniformRotateKHR")]
@@ -522,6 +532,8 @@ namespace Silk.NET.SPIRV
         GlobalVariableHostAccessIntel = 0x182B,
         [NativeName("Name", "SpvCapabilityGlobalVariableFPGADecorationsINTEL")]
         GlobalVariableFpgaDecorationsIntel = 0x182D,
+        [NativeName("Name", "SpvCapabilitySubgroupBufferPrefetchINTEL")]
+        SubgroupBufferPrefetchIntel = 0x184C,
         [NativeName("Name", "SpvCapabilityGroupUniformArithmeticKHR")]
         GroupUniformArithmeticKhr = 0x1900,
         [NativeName("Name", "SpvCapabilityMaskedGatherScatterINTEL")]
