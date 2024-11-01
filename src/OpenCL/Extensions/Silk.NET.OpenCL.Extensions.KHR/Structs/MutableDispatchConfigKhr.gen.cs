@@ -21,8 +21,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         public MutableDispatchConfigKhr
         (
-            CommandBufferStructureType? type = null,
-            void* next = null,
             nint? command = null,
             uint? numArgs = null,
             uint? numSvmArgs = null,
@@ -36,16 +34,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             nuint* localWorkSize = null
         ) : this()
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
             if (command is not null)
             {
                 Command = command.Value;
@@ -102,16 +90,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             }
         }
 
-/// <summary></summary>
-        [NativeName("Type", "cl_command_buffer_structure_type_khr")]
-        [NativeName("Type.Name", "cl_command_buffer_structure_type_khr")]
-        [NativeName("Name", "type")]
-        public CommandBufferStructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
 /// <summary></summary>
         [NativeName("Type", "cl_mutable_command_khr")]
         [NativeName("Type.Name", "cl_mutable_command_khr")]

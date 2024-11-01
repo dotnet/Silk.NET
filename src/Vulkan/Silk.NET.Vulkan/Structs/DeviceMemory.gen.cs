@@ -35,5 +35,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "")]
         [NativeName("Name", "")]
         public ulong Handle;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return sizeof(nint) == 8 ? $"0x{Handle:x16}" : $"0x{Handle:x8}";
+        }
+
     }
 }

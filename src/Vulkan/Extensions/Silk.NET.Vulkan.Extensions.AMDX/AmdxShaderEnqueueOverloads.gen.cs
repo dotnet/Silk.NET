@@ -17,17 +17,17 @@ namespace Silk.NET.Vulkan.Extensions.AMDX
     public static class AmdxShaderEnqueueOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdDispatchGraph(this AmdxShaderEnqueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DispatchGraphCountInfoAMDX> pCountInfo)
+        public static unsafe void CmdDispatchGraph(this AmdxShaderEnqueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DispatchGraphCountInfoAMDX> pCountInfo)
         {
             // SpanOverloader
-            thisApi.CmdDispatchGraph(commandBuffer, scratch, in pCountInfo.GetPinnableReference());
+            thisApi.CmdDispatchGraph(commandBuffer, scratch, scratchSize, in pCountInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdDispatchGraphIndirect(this AmdxShaderEnqueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DispatchGraphCountInfoAMDX> pCountInfo)
+        public static unsafe void CmdDispatchGraphIndirect(this AmdxShaderEnqueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DispatchGraphCountInfoAMDX> pCountInfo)
         {
             // SpanOverloader
-            thisApi.CmdDispatchGraphIndirect(commandBuffer, scratch, in pCountInfo.GetPinnableReference());
+            thisApi.CmdDispatchGraphIndirect(commandBuffer, scratch, scratchSize, in pCountInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

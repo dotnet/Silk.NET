@@ -202,6 +202,16 @@ namespace Silk.NET.OpenXR
         ErrorLocalizationMapAlreadyExistsML = unchecked((int) -1000139005),
         [NativeName("Name", "XR_ERROR_LOCALIZATION_MAP_CANNOT_EXPORT_CLOUD_MAP_ML")]
         ErrorLocalizationMapCannotExportCloudMapML = unchecked((int) -1000139006),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHORS_PERMISSION_DENIED_ML")]
+        ErrorSpatialAnchorsPermissionDeniedML = unchecked((int) -1000140000),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHORS_NOT_LOCALIZED_ML")]
+        ErrorSpatialAnchorsNotLocalizedML = unchecked((int) -1000140001),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHORS_OUT_OF_MAP_BOUNDS_ML")]
+        ErrorSpatialAnchorsOutOfMapBoundsML = unchecked((int) -1000140002),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHORS_SPACE_NOT_LOCATABLE_ML")]
+        ErrorSpatialAnchorsSpaceNotLocatableML = unchecked((int) -1000140003),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHORS_ANCHOR_NOT_FOUND_ML")]
+        ErrorSpatialAnchorsAnchorNotFoundML = unchecked((int) -1000141000),
         [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_NAME_NOT_FOUND_MSFT")]
         ErrorSpatialAnchorNameNotFoundMsft = unchecked((int) -1000142001),
         [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_NAME_INVALID_MSFT")]
@@ -234,6 +244,14 @@ namespace Silk.NET.OpenXR
         ErrorFuturePendingExt = unchecked((int) -1000469001),
         [NativeName("Name", "XR_ERROR_FUTURE_INVALID_EXT")]
         ErrorFutureInvalidExt = unchecked((int) -1000469002),
+        [NativeName("Name", "XR_ERROR_SYSTEM_NOTIFICATION_PERMISSION_DENIED_ML")]
+        ErrorSystemNotificationPermissionDeniedML = unchecked((int) -1000473000),
+        [NativeName("Name", "XR_ERROR_SYSTEM_NOTIFICATION_INCOMPATIBLE_SKU_ML")]
+        ErrorSystemNotificationIncompatibleSkuML = unchecked((int) -1000473001),
+        [NativeName("Name", "XR_ERROR_WORLD_MESH_DETECTOR_PERMISSION_DENIED_ML")]
+        ErrorWorldMeshDetectorPermissionDeniedML = unchecked((int) -1000474000),
+        [NativeName("Name", "XR_ERROR_WORLD_MESH_DETECTOR_SPACE_NOT_LOCATABLE_ML")]
+        ErrorWorldMeshDetectorSpaceNotLocatableML = unchecked((int) -1000474001),
         [NativeName("Name", "XR_ERROR_EXTENSION_DEPENDENCY_NOT_ENABLED_KHR")]
         ErrorExtensionDependencyNotEnabledKhr = unchecked((int) -1000710001),
         [NativeName("Name", "XR_ERROR_PERMISSION_INSUFFICIENT_KHR")]

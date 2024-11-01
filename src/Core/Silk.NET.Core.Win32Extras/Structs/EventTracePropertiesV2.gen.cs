@@ -258,7 +258,7 @@ namespace Silk.NET.Core.Win32Extras
         public uint EnableFlags;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1235_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1269_C5")]
         [NativeName("Name", "anonymous1")]
         public EventTracePropertiesV2Union1 Anonymous1;
 
@@ -308,7 +308,7 @@ namespace Silk.NET.Core.Win32Extras
         public uint LoggerNameOffset;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1252_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1286_C5")]
         [NativeName("Name", "anonymous2")]
         public EventTracePropertiesV2Union2 Anonymous2;
 
@@ -323,7 +323,7 @@ namespace Silk.NET.Core.Win32Extras
         public EventFilterDescriptor* FilterDesc;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1260_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1294_C5")]
         [NativeName("Name", "anonymous3")]
         public EventTracePropertiesV2Union3 Anonymous3;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

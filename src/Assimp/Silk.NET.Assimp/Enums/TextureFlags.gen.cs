@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Assimp
 {
+    [Flags]
     [NativeName("Name", "aiTextureFlags")]
     public enum TextureFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"Invert\"")]
         [NativeName("Name", "aiTextureFlags_Invert")]
         TextureFlagsInvert = 0x1,

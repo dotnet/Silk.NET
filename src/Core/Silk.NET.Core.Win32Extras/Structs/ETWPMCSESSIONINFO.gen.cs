@@ -16,7 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [NativeName("AnonymousName", "__AnonymousRecord_evntrace_L1393_C9")]
+    [NativeName("AnonymousName", "__AnonymousRecord_evntrace_L1427_C9")]
     [NativeName("Name", "ETW_PMC_SESSION_INFO")]
     public unsafe partial struct ETWPMCSESSIONINFO
     {

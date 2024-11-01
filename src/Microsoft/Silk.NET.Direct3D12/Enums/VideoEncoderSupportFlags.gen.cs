@@ -55,6 +55,12 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"MotionEstimationPrecisionModeLimitAvailable\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_MOTION_ESTIMATION_PRECISION_MODE_LIMIT_AVAILABLE")]
         VideoEncoderSupportFlagMotionEstimationPrecisionModeLimitAvailable = 0x1000,
+        [Obsolete("Deprecated in favour of \"RateControlExtension1Support\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_EXTENSION1_SUPPORT")]
+        VideoEncoderSupportFlagRateControlExtension1Support = 0x2000,
+        [Obsolete("Deprecated in favour of \"RateControlQualityVSSpeedAvailable\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_QUALITY_VS_SPEED_AVAILABLE")]
+        VideoEncoderSupportFlagRateControlQualityVSSpeedAvailable = 0x4000,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_GENERAL_SUPPORT_OK")]
@@ -83,5 +89,9 @@ namespace Silk.NET.Direct3D12
         SequenceGopReconfigurationAvailable = 0x800,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_MOTION_ESTIMATION_PRECISION_MODE_LIMIT_AVAILABLE")]
         MotionEstimationPrecisionModeLimitAvailable = 0x1000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_EXTENSION1_SUPPORT")]
+        RateControlExtension1Support = 0x2000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_QUALITY_VS_SPEED_AVAILABLE")]
+        RateControlQualityVSSpeedAvailable = 0x4000,
     }
 }

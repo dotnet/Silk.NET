@@ -249,6 +249,15 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"GraphicsRequirementsD3D12Khr\"")]
         [NativeName("Name", "XR_TYPE_GRAPHICS_REQUIREMENTS_D3D12_KHR")]
         TypeGraphicsRequirementsD3D12Khr = 1000028002,
+        [Obsolete("Deprecated in favour of \"GraphicsBindingMetalKhr\"")]
+        [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_METAL_KHR")]
+        TypeGraphicsBindingMetalKhr = 1000029000,
+        [Obsolete("Deprecated in favour of \"SwapchainImageMetalKhr\"")]
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_IMAGE_METAL_KHR")]
+        TypeSwapchainImageMetalKhr = 1000029001,
+        [Obsolete("Deprecated in favour of \"GraphicsRequirementsMetalKhr\"")]
+        [NativeName("Name", "XR_TYPE_GRAPHICS_REQUIREMENTS_METAL_KHR")]
+        TypeGraphicsRequirementsMetalKhr = 1000029002,
         [Obsolete("Deprecated in favour of \"SystemEyeGazeInteractionPropertiesExt\"")]
         [NativeName("Name", "XR_TYPE_SYSTEM_EYE_GAZE_INTERACTION_PROPERTIES_EXT")]
         TypeSystemEyeGazeInteractionPropertiesExt = 1000030000,
@@ -696,6 +705,54 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"LocalizationEnableEventsInfoML\"")]
         [NativeName("Name", "XR_TYPE_LOCALIZATION_ENABLE_EVENTS_INFO_ML")]
         TypeLocalizationEnableEventsInfoML = 1000139004,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsCreateInfoFromPoseML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_CREATE_INFO_FROM_POSE_ML")]
+        TypeSpatialAnchorsCreateInfoFromPoseML = 1000140000,
+        [Obsolete("Deprecated in favour of \"CreateSpatialAnchorsCompletionML\"")]
+        [NativeName("Name", "XR_TYPE_CREATE_SPATIAL_ANCHORS_COMPLETION_ML")]
+        TypeCreateSpatialAnchorsCompletionML = 1000140001,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorStateML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_STATE_ML")]
+        TypeSpatialAnchorStateML = 1000140002,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsCreateStorageInfoML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_CREATE_STORAGE_INFO_ML")]
+        TypeSpatialAnchorsCreateStorageInfoML = 1000141000,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsQueryInfoRadiusML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_QUERY_INFO_RADIUS_ML")]
+        TypeSpatialAnchorsQueryInfoRadiusML = 1000141001,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsQueryCompletionML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_QUERY_COMPLETION_ML")]
+        TypeSpatialAnchorsQueryCompletionML = 1000141002,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsCreateInfoFromUuidsML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_CREATE_INFO_FROM_UUIDS_ML")]
+        TypeSpatialAnchorsCreateInfoFromUuidsML = 1000141003,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsPublishInfoML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_PUBLISH_INFO_ML")]
+        TypeSpatialAnchorsPublishInfoML = 1000141004,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsPublishCompletionML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_PUBLISH_COMPLETION_ML")]
+        TypeSpatialAnchorsPublishCompletionML = 1000141005,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsDeleteInfoML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_DELETE_INFO_ML")]
+        TypeSpatialAnchorsDeleteInfoML = 1000141006,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsDeleteCompletionML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_DELETE_COMPLETION_ML")]
+        TypeSpatialAnchorsDeleteCompletionML = 1000141007,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsUpdateExpirationInfoML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_UPDATE_EXPIRATION_INFO_ML")]
+        TypeSpatialAnchorsUpdateExpirationInfoML = 1000141008,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsUpdateExpirationCompletionML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_UPDATE_EXPIRATION_COMPLETION_ML")]
+        TypeSpatialAnchorsUpdateExpirationCompletionML = 1000141009,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsPublishCompletionDetailsML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_PUBLISH_COMPLETION_DETAILS_ML")]
+        TypeSpatialAnchorsPublishCompletionDetailsML = 1000141010,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsDeleteCompletionDetailsML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_DELETE_COMPLETION_DETAILS_ML")]
+        TypeSpatialAnchorsDeleteCompletionDetailsML = 1000141011,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorsUpdateExpirationCompletionDetailsML\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_UPDATE_EXPIRATION_COMPLETION_DETAILS_ML")]
+        TypeSpatialAnchorsUpdateExpirationCompletionDetailsML = 1000141012,
         [Obsolete("Deprecated in favour of \"EventDataHeadsetFitChangedML\"")]
         [NativeName("Name", "XR_TYPE_EVENT_DATA_HEADSET_FIT_CHANGED_ML")]
         TypeEventDataHeadsetFitChangedML = 1000472000,
@@ -1020,6 +1077,21 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"SpatialAnchorCreateInfoHtc\"")]
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_CREATE_INFO_HTC")]
         TypeSpatialAnchorCreateInfoHtc = 1000319001,
+        [Obsolete("Deprecated in favour of \"SystemBodyTrackingPropertiesHtc\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_BODY_TRACKING_PROPERTIES_HTC")]
+        TypeSystemBodyTrackingPropertiesHtc = 1000320000,
+        [Obsolete("Deprecated in favour of \"BodyTrackerCreateInfoHtc\"")]
+        [NativeName("Name", "XR_TYPE_BODY_TRACKER_CREATE_INFO_HTC")]
+        TypeBodyTrackerCreateInfoHtc = 1000320001,
+        [Obsolete("Deprecated in favour of \"BodyJointsLocateInfoHtc\"")]
+        [NativeName("Name", "XR_TYPE_BODY_JOINTS_LOCATE_INFO_HTC")]
+        TypeBodyJointsLocateInfoHtc = 1000320002,
+        [Obsolete("Deprecated in favour of \"BodyJointLocationsHtc\"")]
+        [NativeName("Name", "XR_TYPE_BODY_JOINT_LOCATIONS_HTC")]
+        TypeBodyJointLocationsHtc = 1000320003,
+        [Obsolete("Deprecated in favour of \"BodySkeletonHtc\"")]
+        [NativeName("Name", "XR_TYPE_BODY_SKELETON_HTC")]
+        TypeBodySkeletonHtc = 1000320004,
         [Obsolete("Deprecated in favour of \"ActiveActionSetPrioritiesExt\"")]
         [NativeName("Name", "XR_TYPE_ACTIVE_ACTION_SET_PRIORITIES_EXT")]
         TypeActiveActionSetPrioritiesExt = 1000373000,
@@ -1083,6 +1155,45 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"SpaceVelocitiesKhr\"")]
         [NativeName("Name", "XR_TYPE_SPACE_VELOCITIES_KHR")]
         TypeSpaceVelocitiesKhr = 1000471002,
+        [Obsolete("Deprecated in favour of \"SystemNotificationsSetInfoML\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_NOTIFICATIONS_SET_INFO_ML")]
+        TypeSystemNotificationsSetInfoML = 1000473000,
+        [Obsolete("Deprecated in favour of \"WorldMeshDetectorCreateInfoML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_DETECTOR_CREATE_INFO_ML")]
+        TypeWorldMeshDetectorCreateInfoML = 1000474001,
+        [Obsolete("Deprecated in favour of \"WorldMeshStateRequestInfoML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_STATE_REQUEST_INFO_ML")]
+        TypeWorldMeshStateRequestInfoML = 1000474002,
+        [Obsolete("Deprecated in favour of \"WorldMeshBlockStateML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BLOCK_STATE_ML")]
+        TypeWorldMeshBlockStateML = 1000474003,
+        [Obsolete("Deprecated in favour of \"WorldMeshStateRequestCompletionML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_STATE_REQUEST_COMPLETION_ML")]
+        TypeWorldMeshStateRequestCompletionML = 1000474004,
+        [Obsolete("Deprecated in favour of \"WorldMeshBufferRecommendedSizeInfoML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BUFFER_RECOMMENDED_SIZE_INFO_ML")]
+        TypeWorldMeshBufferRecommendedSizeInfoML = 1000474005,
+        [Obsolete("Deprecated in favour of \"WorldMeshBufferSizeML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BUFFER_SIZE_ML")]
+        TypeWorldMeshBufferSizeML = 1000474006,
+        [Obsolete("Deprecated in favour of \"WorldMeshBufferML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BUFFER_ML")]
+        TypeWorldMeshBufferML = 1000474007,
+        [Obsolete("Deprecated in favour of \"WorldMeshBlockRequestML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BLOCK_REQUEST_ML")]
+        TypeWorldMeshBlockRequestML = 1000474008,
+        [Obsolete("Deprecated in favour of \"WorldMeshGetInfoML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_GET_INFO_ML")]
+        TypeWorldMeshGetInfoML = 1000474009,
+        [Obsolete("Deprecated in favour of \"WorldMeshBlockML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BLOCK_ML")]
+        TypeWorldMeshBlockML = 1000474010,
+        [Obsolete("Deprecated in favour of \"WorldMeshRequestCompletionML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_REQUEST_COMPLETION_ML")]
+        TypeWorldMeshRequestCompletionML = 1000474011,
+        [Obsolete("Deprecated in favour of \"WorldMeshRequestCompletionInfoML\"")]
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_REQUEST_COMPLETION_INFO_ML")]
+        TypeWorldMeshRequestCompletionInfoML = 1000474012,
         [Obsolete("Deprecated in favour of \"SpacesLocateInfo\"")]
         [NativeName("Name", "XR_TYPE_SPACES_LOCATE_INFO")]
         TypeSpacesLocateInfo = 1000471000,
@@ -1250,6 +1361,12 @@ namespace Silk.NET.OpenXR
         SwapchainImageD3D12Khr = 1000028001,
         [NativeName("Name", "XR_TYPE_GRAPHICS_REQUIREMENTS_D3D12_KHR")]
         GraphicsRequirementsD3D12Khr = 1000028002,
+        [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_METAL_KHR")]
+        GraphicsBindingMetalKhr = 1000029000,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_IMAGE_METAL_KHR")]
+        SwapchainImageMetalKhr = 1000029001,
+        [NativeName("Name", "XR_TYPE_GRAPHICS_REQUIREMENTS_METAL_KHR")]
+        GraphicsRequirementsMetalKhr = 1000029002,
         [NativeName("Name", "XR_TYPE_SYSTEM_EYE_GAZE_INTERACTION_PROPERTIES_EXT")]
         SystemEyeGazeInteractionPropertiesExt = 1000030000,
         [NativeName("Name", "XR_TYPE_EYE_GAZE_SAMPLE_TIME_EXT")]
@@ -1548,6 +1665,38 @@ namespace Silk.NET.OpenXR
         LocalizationMapImportInfoML = 1000139003,
         [NativeName("Name", "XR_TYPE_LOCALIZATION_ENABLE_EVENTS_INFO_ML")]
         LocalizationEnableEventsInfoML = 1000139004,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_CREATE_INFO_FROM_POSE_ML")]
+        SpatialAnchorsCreateInfoFromPoseML = 1000140000,
+        [NativeName("Name", "XR_TYPE_CREATE_SPATIAL_ANCHORS_COMPLETION_ML")]
+        CreateSpatialAnchorsCompletionML = 1000140001,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_STATE_ML")]
+        SpatialAnchorStateML = 1000140002,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_CREATE_STORAGE_INFO_ML")]
+        SpatialAnchorsCreateStorageInfoML = 1000141000,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_QUERY_INFO_RADIUS_ML")]
+        SpatialAnchorsQueryInfoRadiusML = 1000141001,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_QUERY_COMPLETION_ML")]
+        SpatialAnchorsQueryCompletionML = 1000141002,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_CREATE_INFO_FROM_UUIDS_ML")]
+        SpatialAnchorsCreateInfoFromUuidsML = 1000141003,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_PUBLISH_INFO_ML")]
+        SpatialAnchorsPublishInfoML = 1000141004,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_PUBLISH_COMPLETION_ML")]
+        SpatialAnchorsPublishCompletionML = 1000141005,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_DELETE_INFO_ML")]
+        SpatialAnchorsDeleteInfoML = 1000141006,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_DELETE_COMPLETION_ML")]
+        SpatialAnchorsDeleteCompletionML = 1000141007,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_UPDATE_EXPIRATION_INFO_ML")]
+        SpatialAnchorsUpdateExpirationInfoML = 1000141008,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_UPDATE_EXPIRATION_COMPLETION_ML")]
+        SpatialAnchorsUpdateExpirationCompletionML = 1000141009,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_PUBLISH_COMPLETION_DETAILS_ML")]
+        SpatialAnchorsPublishCompletionDetailsML = 1000141010,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_DELETE_COMPLETION_DETAILS_ML")]
+        SpatialAnchorsDeleteCompletionDetailsML = 1000141011,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHORS_UPDATE_EXPIRATION_COMPLETION_DETAILS_ML")]
+        SpatialAnchorsUpdateExpirationCompletionDetailsML = 1000141012,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_HEADSET_FIT_CHANGED_ML")]
         EventDataHeadsetFitChangedML = 1000472000,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_EYE_CALIBRATION_CHANGED_ML")]
@@ -1764,6 +1913,16 @@ namespace Silk.NET.OpenXR
         SystemAnchorPropertiesHtc = 1000319000,
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_CREATE_INFO_HTC")]
         SpatialAnchorCreateInfoHtc = 1000319001,
+        [NativeName("Name", "XR_TYPE_SYSTEM_BODY_TRACKING_PROPERTIES_HTC")]
+        SystemBodyTrackingPropertiesHtc = 1000320000,
+        [NativeName("Name", "XR_TYPE_BODY_TRACKER_CREATE_INFO_HTC")]
+        BodyTrackerCreateInfoHtc = 1000320001,
+        [NativeName("Name", "XR_TYPE_BODY_JOINTS_LOCATE_INFO_HTC")]
+        BodyJointsLocateInfoHtc = 1000320002,
+        [NativeName("Name", "XR_TYPE_BODY_JOINT_LOCATIONS_HTC")]
+        BodyJointLocationsHtc = 1000320003,
+        [NativeName("Name", "XR_TYPE_BODY_SKELETON_HTC")]
+        BodySkeletonHtc = 1000320004,
         [NativeName("Name", "XR_TYPE_ACTIVE_ACTION_SET_PRIORITIES_EXT")]
         ActiveActionSetPrioritiesExt = 1000373000,
         [NativeName("Name", "XR_TYPE_SYSTEM_FORCE_FEEDBACK_CURL_PROPERTIES_MNDX")]
@@ -1806,6 +1965,32 @@ namespace Silk.NET.OpenXR
         SpaceLocationsKhr = 1000471001,
         [NativeName("Name", "XR_TYPE_SPACE_VELOCITIES_KHR")]
         SpaceVelocitiesKhr = 1000471002,
+        [NativeName("Name", "XR_TYPE_SYSTEM_NOTIFICATIONS_SET_INFO_ML")]
+        SystemNotificationsSetInfoML = 1000473000,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_DETECTOR_CREATE_INFO_ML")]
+        WorldMeshDetectorCreateInfoML = 1000474001,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_STATE_REQUEST_INFO_ML")]
+        WorldMeshStateRequestInfoML = 1000474002,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BLOCK_STATE_ML")]
+        WorldMeshBlockStateML = 1000474003,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_STATE_REQUEST_COMPLETION_ML")]
+        WorldMeshStateRequestCompletionML = 1000474004,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BUFFER_RECOMMENDED_SIZE_INFO_ML")]
+        WorldMeshBufferRecommendedSizeInfoML = 1000474005,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BUFFER_SIZE_ML")]
+        WorldMeshBufferSizeML = 1000474006,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BUFFER_ML")]
+        WorldMeshBufferML = 1000474007,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BLOCK_REQUEST_ML")]
+        WorldMeshBlockRequestML = 1000474008,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_GET_INFO_ML")]
+        WorldMeshGetInfoML = 1000474009,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_BLOCK_ML")]
+        WorldMeshBlockML = 1000474010,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_REQUEST_COMPLETION_ML")]
+        WorldMeshRequestCompletionML = 1000474011,
+        [NativeName("Name", "XR_TYPE_WORLD_MESH_REQUEST_COMPLETION_INFO_ML")]
+        WorldMeshRequestCompletionInfoML = 1000474012,
         [NativeName("Name", "XR_TYPE_SPACES_LOCATE_INFO")]
         SpacesLocateInfo = 1000471000,
         [NativeName("Name", "XR_TYPE_SPACE_LOCATIONS")]

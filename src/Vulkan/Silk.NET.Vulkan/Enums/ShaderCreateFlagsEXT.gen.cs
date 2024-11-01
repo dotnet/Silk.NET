@@ -36,6 +36,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"FragmentDensityMapAttachmentBitExt\"")]
         [NativeName("Name", "VK_SHADER_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
         ShaderCreateFragmentDensityMapAttachmentBitExt = 64,
+        [Obsolete("Deprecated in favour of \"IndirectBindableBitExt\"")]
+        [NativeName("Name", "VK_SHADER_CREATE_INDIRECT_BINDABLE_BIT_EXT")]
+        ShaderCreateIndirectBindableBitExt = 128,
         [NativeName("Name", "VK_SHADER_CREATE_LINK_STAGE_BIT_EXT")]
         LinkStageBitExt = 1,
         [NativeName("Name", "VK_SHADER_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
@@ -50,5 +53,7 @@ namespace Silk.NET.Vulkan
         FragmentShadingRateAttachmentBitExt = 32,
         [NativeName("Name", "VK_SHADER_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
         FragmentDensityMapAttachmentBitExt = 64,
+        [NativeName("Name", "VK_SHADER_CREATE_INDIRECT_BINDABLE_BIT_EXT")]
+        IndirectBindableBitExt = 128,
     }
 }

@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_SHADER_CACHE_CONTROL_FLAGS")]
     public enum ShaderCacheControlFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"Disable\"")]
         [NativeName("Name", "D3D12_SHADER_CACHE_CONTROL_FLAG_DISABLE")]
         ShaderCacheControlFlagDisable = 0x1,

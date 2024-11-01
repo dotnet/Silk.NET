@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D11
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d11_L12003_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d11_L12022_C5")]
     public unsafe partial struct VideoProcessorOutputViewDescUnion
     {
         public VideoProcessorOutputViewDescUnion

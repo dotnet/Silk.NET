@@ -24,7 +24,8 @@ namespace Silk.NET.Direct3D12
             uint? dataSize = null,
             VideoEncoderPictureControlSubregionsLayoutDataUnion? anonymous = null,
             VideoEncoderPictureControlSubregionsLayoutDataSlices* pSlicesPartitionH264 = null,
-            VideoEncoderPictureControlSubregionsLayoutDataSlices* pSlicesPartitionHEVC = null
+            VideoEncoderPictureControlSubregionsLayoutDataSlices* pSlicesPartitionHEVC = null,
+            VideoEncoderAV1PictureControlSubregionsLayoutDataTiles* pTilesPartitionAV1 = null
         ) : this()
         {
             if (dataSize is not null)
@@ -46,6 +47,11 @@ namespace Silk.NET.Direct3D12
             {
                 PSlicesPartitionHEVC = pSlicesPartitionHEVC;
             }
+
+            if (pTilesPartitionAV1 is not null)
+            {
+                PTilesPartitionAV1 = pTilesPartitionAV1;
+            }
         }
 
 
@@ -55,7 +61,7 @@ namespace Silk.NET.Direct3D12
         public uint DataSize;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12video_L7657_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12video_L7562_C5")]
         [NativeName("Name", "anonymous1")]
         public VideoEncoderPictureControlSubregionsLayoutDataUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
@@ -83,6 +89,20 @@ namespace Silk.NET.Direct3D12
         {
             get => Anonymous.PSlicesPartitionHEVC;
             set => Anonymous.PSlicesPartitionHEVC = value;
+        }
+#endif
+
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref VideoEncoderAV1PictureControlSubregionsLayoutDataTiles* PTilesPartitionAV1
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].PTilesPartitionAV1;
+        }
+#else
+        public VideoEncoderAV1PictureControlSubregionsLayoutDataTiles* PTilesPartitionAV1
+        {
+            get => Anonymous.PTilesPartitionAV1;
+            set => Anonymous.PTilesPartitionAV1 = value;
         }
 #endif
 

@@ -4020,9 +4020,12 @@ namespace Silk.NET.Direct3D11
         [Obsolete("Deprecated in favour of \"TrackedWorkloadDisjointFailure\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_TRACKED_WORKLOAD_DISJOINT_FAILURE")]
         MessageIDTrackedWorkloadDisjointFailure = 0x30022B,
+        [Obsolete("Deprecated in favour of \"DeviceDrawResourceFormatAndWriteMaskMismatch\"")]
+        [NativeName("Name", "D3D11_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_AND_WRITE_MASK_MISMATCH")]
+        MessageIDDeviceDrawResourceFormatAndWriteMaskMismatch = 0x30022C,
         [Obsolete("Deprecated in favour of \"D3D115MessagesEnd\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_5_MESSAGES_END")]
-        MessageIDD3D115MessagesEnd = 0x30022C,
+        MessageIDD3D115MessagesEnd = 0x30022D,
         [NativeName("Name", "D3D11_MESSAGE_ID_UNKNOWN")]
         Unknown = 0x0,
         [NativeName("Name", "D3D11_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_HAZARD")]
@@ -6695,7 +6698,9 @@ namespace Silk.NET.Direct3D11
         EndTrackedWorkloadInvalidArg = 0x30022A,
         [NativeName("Name", "D3D11_MESSAGE_ID_TRACKED_WORKLOAD_DISJOINT_FAILURE")]
         TrackedWorkloadDisjointFailure = 0x30022B,
+        [NativeName("Name", "D3D11_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_AND_WRITE_MASK_MISMATCH")]
+        DeviceDrawResourceFormatAndWriteMaskMismatch = 0x30022C,
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_5_MESSAGES_END")]
-        D3D115MessagesEnd = 0x30022C,
+        D3D115MessagesEnd = 0x30022D,
     }
 }

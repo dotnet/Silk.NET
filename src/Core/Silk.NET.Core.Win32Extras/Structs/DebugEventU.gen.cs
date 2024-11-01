@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_minwinbase_L370_C5")]
+    [NativeName("Name", "__AnonymousRecord_minwinbase_L373_C5")]
     public unsafe partial struct DebugEventU
     {
         public DebugEventU

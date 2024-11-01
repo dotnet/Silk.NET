@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
+    [Flags]
     [NativeName("Name", "D3D11_TILE_RANGE_FLAG")]
     public enum TileRangeFlag : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"Null\"")]
         [NativeName("Name", "D3D11_TILE_RANGE_NULL")]
         TileRangeNull = 0x1,

@@ -169,6 +169,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CommandPreprocessWriteBitNV\"")]
         [NativeName("Name", "VK_ACCESS_2_COMMAND_PREPROCESS_WRITE_BIT_NV")]
         Access2CommandPreprocessWriteBitNV = 262144,
+        [Obsolete("Deprecated in favour of \"CommandPreprocessReadBitExt\"")]
+        [NativeName("Name", "VK_ACCESS_2_COMMAND_PREPROCESS_READ_BIT_EXT")]
+        Access2CommandPreprocessReadBitExt = 131072,
+        [Obsolete("Deprecated in favour of \"CommandPreprocessWriteBitExt\"")]
+        [NativeName("Name", "VK_ACCESS_2_COMMAND_PREPROCESS_WRITE_BIT_EXT")]
+        Access2CommandPreprocessWriteBitExt = 262144,
         [Obsolete("Deprecated in favour of \"FragmentShadingRateAttachmentReadBitKhr\"")]
         [NativeName("Name", "VK_ACCESS_2_FRAGMENT_SHADING_RATE_ATTACHMENT_READ_BIT_KHR")]
         Access2FragmentShadingRateAttachmentReadBitKhr = 8388608,
@@ -318,6 +324,10 @@ namespace Silk.NET.Vulkan
         CommandPreprocessReadBitNV = 131072,
         [NativeName("Name", "VK_ACCESS_2_COMMAND_PREPROCESS_WRITE_BIT_NV")]
         CommandPreprocessWriteBitNV = 262144,
+        [NativeName("Name", "VK_ACCESS_2_COMMAND_PREPROCESS_READ_BIT_EXT")]
+        CommandPreprocessReadBitExt = 131072,
+        [NativeName("Name", "VK_ACCESS_2_COMMAND_PREPROCESS_WRITE_BIT_EXT")]
+        CommandPreprocessWriteBitExt = 262144,
         [NativeName("Name", "VK_ACCESS_2_FRAGMENT_SHADING_RATE_ATTACHMENT_READ_BIT_KHR")]
         FragmentShadingRateAttachmentReadBitKhr = 8388608,
         [NativeName("Name", "VK_ACCESS_2_SHADING_RATE_IMAGE_READ_BIT_NV")]

@@ -149,6 +149,18 @@ namespace Silk.NET.Core.Native
         [NativeName("Name", "D3D_SHADER_FEATURE_ATOMIC_INT64_ON_DESCRIPTOR_HEAP_RESOURCE")]
         public const int D3DShaderFeatureAtomicInt64OnDescriptorHeapResource = unchecked((int) 0x10000000);
         [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_FEATURE_ADVANCED_TEXTURE_OPS")]
+        public const int D3DShaderFeatureAdvancedTextureOps = unchecked((int) 0x20000000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_FEATURE_WRITEABLE_MSAA_TEXTURES")]
+        public const int D3DShaderFeatureWriteableMsaaTextures = unchecked((int) 0x40000000);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "D3D_SHADER_FEATURE_SAMPLE_CMP_GRADIENT_OR_BIAS")]
+        public const uint D3DShaderFeatureSampleCmpGradientOrBias = unchecked((uint) 0xFFFFFFFF80000000);
+        [NativeName("Type", "unsigned long long")]
+        [NativeName("Name", "D3D_SHADER_FEATURE_EXTENDED_COMMAND_INFO")]
+        public const ulong D3DShaderFeatureExtendedCommandInfo = unchecked((ulong) 0x100000000);
+        [NativeName("Type", "int")]
         [NativeName("Name", "D3D_COMPONENT_MASK_X")]
         public const int D3DComponentMaskX = unchecked((int) 0x1);
         [NativeName("Type", "int")]

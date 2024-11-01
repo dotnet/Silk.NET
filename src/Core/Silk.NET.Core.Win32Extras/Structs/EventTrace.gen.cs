@@ -110,7 +110,7 @@ namespace Silk.NET.Core.Win32Extras
         public uint MofLength;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1423_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1464_C5")]
         [NativeName("Name", "anonymous1")]
         public EventTraceUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
