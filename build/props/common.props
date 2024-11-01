@@ -27,10 +27,11 @@
             - Updated to OpenAL Soft 1.23.1.
             - Updated to shaderc 2024.3.
             - Updated to Assimp 5.4.1.
-            - Updated WebGPU/wgpu/dawn bindings.
             - Updated to latest OpenGL specifications.
             - Updated to latest OpenCL specifications.
             - Updated to ImGui.NET 1.90.8.1. (thanks @matt-edmondson)
+            - Updated DirectX/Windows bindings to 10.0.26100.0.
+            - Updated WebGPU/wgpu/dawn bindings.
             - Updated SPIR-V Reflect, Cross, Headers, and Tools to their latest Vulkan 1.3.296 version.
             - Updated ANGLE binaries for macOS. (thanks @ramezgerges/Uno Platform)
             - Improved native binary packaging. (thanks @joskuijpers, @alexrp)

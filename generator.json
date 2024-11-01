@@ -1870,7 +1870,8 @@
                 "D2D1_ALPHA_MODE",
                 "D2D1_PIXEL_FORMAT",
                 "ID2D1SimplifiedGeometrySink",
-                "_D3DCOLORVALUE"
+                "_D3DCOLORVALUE",
+                "D2D1_GRADIENT_STOP"
             ],
             "rename": {},
             "bakery": {
@@ -1918,6 +1919,7 @@
                     "IDXGISurface": "Silk.NET.DXGI.IDXGISurface",
                     "D2D1_ALPHA_MODE": "Silk.NET.Direct2D.AlphaMode",
                     "D2D1PixelFormat": "Silk.NET.Direct2D.PixelFormat",
+                    "D2D1_GRADIENT_STOP": "Silk.NET.Direct2D.GradientStop",
                     "ID2D1SimplifiedGeometrySink": "Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink",
                     "_FILETIME": "Silk.NET.Core.Win32Extras.Filetime",
                     "tagLOGFONTW": "void",
