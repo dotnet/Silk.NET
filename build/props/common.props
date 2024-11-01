@@ -26,6 +26,7 @@
             - Updated to DXVK 2.4.1.
             - Updated to OpenAL Soft 1.23.1.
             - Updated to shaderc 2024.3.
+            - Updated to Assimp 5.4.1.
             - Updated WebGPU/wgpu/dawn bindings.
             - Updated to latest OpenGL specifications.
             - Updated to latest OpenCL specifications.
