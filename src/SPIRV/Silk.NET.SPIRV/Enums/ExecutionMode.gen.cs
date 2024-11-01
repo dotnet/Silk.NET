@@ -146,8 +146,12 @@ namespace Silk.NET.SPIRV
         OutputPrimitivesExt = 0x1496,
         [NativeName("Name", "SpvExecutionModeOutputPrimitivesNV")]
         OutputPrimitivesNV = 0x1496,
+        [NativeName("Name", "SpvExecutionModeDerivativeGroupQuadsKHR")]
+        DerivativeGroupQuadsKhr = 0x14A9,
         [NativeName("Name", "SpvExecutionModeDerivativeGroupQuadsNV")]
         DerivativeGroupQuadsNV = 0x14A9,
+        [NativeName("Name", "SpvExecutionModeDerivativeGroupLinearKHR")]
+        DerivativeGroupLinearKhr = 0x14AA,
         [NativeName("Name", "SpvExecutionModeDerivativeGroupLinearNV")]
         DerivativeGroupLinearNV = 0x14AA,
         [NativeName("Name", "SpvExecutionModeOutputTrianglesEXT")]
