@@ -19,34 +19,17 @@ jobs:
       matrix:
         env:
           - os: ubuntu-22.04
-            name: Linux
+            name: Linux x64
             nuke_invoke: ./build.sh
-            extras: |
-              # We need to adjust APT sources for multiarch. Use the ones corresponding to
-              # Ubuntu 22.04 with appropriate `arch` values. ports.ubuntu.com is required
-              # for armhf and arm64.
-              sudo tee /etc/apt/sources.list << EOF
-              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy main multiverse restricted universe
-              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
-              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
-              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
-              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy main multiverse restricted universe
-              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-backports main multiverse restricted universe
-              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-security main multiverse restricted universe
-              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-updates main multiverse restricted universe
-              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy main multiverse restricted universe
-              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
-              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
-              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
-              EOF
-              sudo dpkg --add-architecture arm64
-              sudo dpkg --add-architecture armhf
-              sudo apt update
-              sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
-              sudo apt install -y g++-aarch64-linux-gnu g++-arm-linux-gnueabihf
-              for arch in amd64 arm64 armhf; do
-                sudo apt install -y libx11-xcb-dev:$arch
-              done
+            nuke_extra: --matrix-arg linux-x64
+          - os: ubuntu-22.04
+            name: Linux ARM32
+            nuke_invoke: ./build.sh
+            nuke_extra: --matrix-arg linux-arm
+          - os: ubuntu-22.04
+            name: Linux ARM64
+            nuke_invoke: ./build.sh
+            nuke_extra: --matrix-arg linux-arm64
           - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd
@@ -83,7 +66,10 @@ jobs:
           dotnet-version: |
             6.0.201
             7.0.*
+      - name: Install Zig
+        if: ${{ matrix.env.os == 'ubuntu-22.04' }}
+        uses: goto-bus-stop/setup-zig@v2
       - name: Build SwiftShader
-        run: ${{ matrix.env.nuke_invoke }} SwiftShader
+        run: ${{ matrix.env.nuke_invoke }} SwiftShader ${{ matrix.env.nuke_extra }}
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}

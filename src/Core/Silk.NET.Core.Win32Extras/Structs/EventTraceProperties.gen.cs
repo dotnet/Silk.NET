@@ -186,7 +186,7 @@ namespace Silk.NET.Core.Win32Extras
         public uint EnableFlags;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1207_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1241_C5")]
         [NativeName("Name", "anonymous1")]
         public EventTracePropertiesUnion Anonymous;
 

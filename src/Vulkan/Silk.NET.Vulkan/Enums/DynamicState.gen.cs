@@ -158,6 +158,8 @@ namespace Silk.NET.Vulkan
         AttachmentFeedbackLoopEnableExt = 1000524000,
         [NativeName("Name", "VK_DYNAMIC_STATE_LINE_STIPPLE_KHR")]
         LineStippleKhr = 1000259000,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_CLAMP_RANGE_EXT")]
+        DepthClampRangeExt = 1000582000,
         [NativeName("Name", "VK_DYNAMIC_STATE_CULL_MODE")]
         CullMode = 1000267000,
         [NativeName("Name", "VK_DYNAMIC_STATE_FRONT_FACE")]

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_minwinbase_L249_C5")]
+    [NativeName("Name", "__AnonymousRecord_minwinbase_L252_C5")]
     public unsafe partial struct ProcessHeapEntryUnion
     {
         public ProcessHeapEntryUnion
@@ -39,14 +39,14 @@ namespace Silk.NET.Core.Win32Extras
 
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (unnamed struct at C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\minwinbase.h:250:9)")]
-        [NativeName("Type.Name", "struct (unnamed struct at C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\minwinbase.h:250:9)")]
+        [NativeName("Type", "struct (unnamed struct at C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\minwinbase.h:253:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\minwinbase.h:253:9)")]
         [NativeName("Name", "Block")]
         public ProcessHeapEntryUnionBlock Block;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (unnamed struct at C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\minwinbase.h:254:9)")]
-        [NativeName("Type.Name", "struct (unnamed struct at C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\minwinbase.h:254:9)")]
+        [NativeName("Type", "struct (unnamed struct at C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\minwinbase.h:257:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\um\\minwinbase.h:257:9)")]
         [NativeName("Name", "Region")]
         public ProcessHeapEntryUnionRegion Region;
     }

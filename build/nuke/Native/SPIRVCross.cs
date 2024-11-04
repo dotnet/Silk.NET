@@ -123,15 +123,15 @@ pub fn build(b: *std.Build) void {
                     { //Windows
                         //Build for Windows x86_64
                         InheritedShell($"zig build {releaseMode} -Dtarget=x86_64-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
-                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-x64" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
+                        CopyFile(SPIRVCrossPath / "zig-out" / "bin" / "spirv-cross.dll", runtimes / "win-x64" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
 
                         //Build for Windows x86
                         InheritedShell($"zig build {releaseMode} -Dtarget=x86-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
-                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-x86" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
+                        CopyFile(SPIRVCrossPath / "zig-out" / "bin" / "spirv-cross.dll", runtimes / "win-x86" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
 
                         //Build for Windows arm64
                         InheritedShell($"zig build {releaseMode} -Dtarget=aarch64-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
-                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-arm64" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
+                        CopyFile(SPIRVCrossPath / "zig-out" / "bin" / "spirv-cross.dll", runtimes / "win-arm64" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
                     }
 
                     { //MacOS

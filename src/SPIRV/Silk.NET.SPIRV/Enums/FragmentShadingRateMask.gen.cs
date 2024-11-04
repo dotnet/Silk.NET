@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SPIRV
 {
+    [Flags]
     [NativeName("Name", "SpvFragmentShadingRateMask_")]
     public enum FragmentShadingRateMask : int
     {

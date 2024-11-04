@@ -87,9 +87,18 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"MS\"")]
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MS")]
         PipelineStateSubobjectTypeMS = 0x19,
+        [Obsolete("Deprecated in favour of \"DepthStencil2\"")]
+        [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL2")]
+        PipelineStateSubobjectTypeDepthStencil2 = 0x1A,
+        [Obsolete("Deprecated in favour of \"Rasterizer1\"")]
+        [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RASTERIZER1")]
+        PipelineStateSubobjectTypeRasterizer1 = 0x1B,
+        [Obsolete("Deprecated in favour of \"Rasterizer2\"")]
+        [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RASTERIZER2")]
+        PipelineStateSubobjectTypeRasterizer2 = 0x1C,
         [Obsolete("Deprecated in favour of \"MaxValid\"")]
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID")]
-        PipelineStateSubobjectTypeMaxValid = 0x1A,
+        PipelineStateSubobjectTypeMaxValid = 0x1D,
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_ROOT_SIGNATURE")]
         RootSignature = 0x0,
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_VS")]
@@ -140,7 +149,13 @@ namespace Silk.NET.Direct3D12
         As = 0x18,
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MS")]
         MS = 0x19,
+        [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL2")]
+        DepthStencil2 = 0x1A,
+        [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RASTERIZER1")]
+        Rasterizer1 = 0x1B,
+        [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RASTERIZER2")]
+        Rasterizer2 = 0x1C,
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID")]
-        MaxValid = 0x1A,
+        MaxValid = 0x1D,
     }
 }

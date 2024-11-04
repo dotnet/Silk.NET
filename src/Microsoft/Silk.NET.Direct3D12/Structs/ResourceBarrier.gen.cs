@@ -72,7 +72,7 @@ namespace Silk.NET.Direct3D12
         public ResourceBarrierFlags Flags;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L2920_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3215_C5")]
         [NativeName("Name", "anonymous1")]
         public ResourceBarrierUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

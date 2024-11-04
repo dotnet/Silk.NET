@@ -330,6 +330,15 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"CreateblendstateInvalidrendertargetwritemask\"")]
         [NativeName("Name", "D3D12_MESSAGE_ID_CREATEBLENDSTATE_INVALIDRENDERTARGETWRITEMASK")]
         MessageIDCreateblendstateInvalidrendertargetwritemask = 0x75,
+        [Obsolete("Deprecated in favour of \"GetProgramIdentifierError\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_GET_PROGRAM_IDENTIFIER_ERROR")]
+        MessageIDGetProgramIdentifierError = 0x76,
+        [Obsolete("Deprecated in favour of \"GetWorkGraphPropertiesError\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_GET_WORK_GRAPH_PROPERTIES_ERROR")]
+        MessageIDGetWorkGraphPropertiesError = 0x77,
+        [Obsolete("Deprecated in favour of \"SetProgramError\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_SET_PROGRAM_ERROR")]
+        MessageIDSetProgramError = 0x78,
         [Obsolete("Deprecated in favour of \"CleardepthstencilviewInvalid\"")]
         [NativeName("Name", "D3D12_MESSAGE_ID_CLEARDEPTHSTENCILVIEW_INVALID")]
         MessageIDCleardepthstencilviewInvalid = 0x87,
@@ -2733,12 +2742,6 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"EnhancedBarriersNotSupported\"")]
         [NativeName("Name", "D3D12_MESSAGE_ID_ENHANCED_BARRIERS_NOT_SUPPORTED")]
         MessageIDEnhancedBarriersNotSupported = 0x53F,
-        [Obsolete("Deprecated in favour of \"CastTargetTexelSizeMismatch\"")]
-        [NativeName("Name", "D3D12_MESSAGE_ID_CAST_TARGET_TEXEL_SIZE_MISMATCH")]
-        MessageIDCastTargetTexelSizeMismatch = 0x540,
-        [Obsolete("Deprecated in favour of \"CastToPlanarNotSuported\"")]
-        [NativeName("Name", "D3D12_MESSAGE_ID_CAST_TO_PLANAR_NOT_SUPORTED")]
-        MessageIDCastToPlanarNotSuported = 0x541,
         [Obsolete("Deprecated in favour of \"LegacyBarrierValidationForcedOn\"")]
         [NativeName("Name", "D3D12_MESSAGE_ID_LEGACY_BARRIER_VALIDATION_FORCED_ON")]
         MessageIDLegacyBarrierValidationForcedOn = 0x542,
@@ -2751,9 +2754,123 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"AlphaBlendFactorNotSupported\"")]
         [NativeName("Name", "D3D12_MESSAGE_ID_ALPHA_BLEND_FACTOR_NOT_SUPPORTED")]
         MessageIDAlphaBlendFactorNotSupported = 0x545,
+        [Obsolete("Deprecated in favour of \"BarrierInteropInvalidLayout\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_BARRIER_INTEROP_INVALID_LAYOUT")]
+        MessageIDBarrierInteropInvalidLayout = 0x546,
+        [Obsolete("Deprecated in favour of \"BarrierInteropInvalidState\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_BARRIER_INTEROP_INVALID_STATE")]
+        MessageIDBarrierInteropInvalidState = 0x547,
+        [Obsolete("Deprecated in favour of \"GraphicsPipelineStateDescZeroSampleMask\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_GRAPHICS_PIPELINE_STATE_DESC_ZERO_SAMPLE_MASK")]
+        MessageIDGraphicsPipelineStateDescZeroSampleMask = 0x548,
+        [Obsolete("Deprecated in favour of \"IndependentStencilRefNotSupported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_INDEPENDENT_STENCIL_REF_NOT_SUPPORTED")]
+        MessageIDIndependentStencilRefNotSupported = 0x549,
+        [Obsolete("Deprecated in favour of \"CreatedepthstencilstateIndependentMasksUnsupported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INDEPENDENT_MASKS_UNSUPPORTED")]
+        MessageIDCreatedepthstencilstateIndependentMasksUnsupported = 0x54A,
+        [Obsolete("Deprecated in favour of \"TextureBarrierSubresourcesOutOfBounds\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_TEXTURE_BARRIER_SUBRESOURCES_OUT_OF_BOUNDS")]
+        MessageIDTextureBarrierSubresourcesOutOfBounds = 0x54B,
+        [Obsolete("Deprecated in favour of \"NonOptimalBarrierOnlyExecuteCommandLists\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_NON_OPTIMAL_BARRIER_ONLY_EXECUTE_COMMAND_LISTS")]
+        MessageIDNonOptimalBarrierOnlyExecuteCommandLists = 0x54C,
+        [Obsolete("Deprecated in favour of \"ExecuteIndirectZeroCommandCount\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_EXECUTE_INDIRECT_ZERO_COMMAND_COUNT")]
+        MessageIDExecuteIndirectZeroCommandCount = 0x54D,
+        [Obsolete("Deprecated in favour of \"GpuBasedValidationIncompatibleTextureLayout\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_GPU_BASED_VALIDATION_INCOMPATIBLE_TEXTURE_LAYOUT")]
+        MessageIDGpuBasedValidationIncompatibleTextureLayout = 0x54E,
+        [Obsolete("Deprecated in favour of \"DynamicIndexBufferStripCutNotSupported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_INDEX_BUFFER_STRIP_CUT_NOT_SUPPORTED")]
+        MessageIDDynamicIndexBufferStripCutNotSupported = 0x54F,
+        [Obsolete("Deprecated in favour of \"PrimitiveTopologyTriangleFansNotSupported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_PRIMITIVE_TOPOLOGY_TRIANGLE_FANS_NOT_SUPPORTED")]
+        MessageIDPrimitiveTopologyTriangleFansNotSupported = 0x550,
+        [Obsolete("Deprecated in favour of \"CreateSamplerComparisonFuncIgnored\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATE_SAMPLER_COMPARISON_FUNC_IGNORED")]
+        MessageIDCreateSamplerComparisonFuncIgnored = 0x551,
+        [Obsolete("Deprecated in favour of \"CreateheapInvalidheaptype\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATEHEAP_INVALIDHEAPTYPE")]
+        MessageIDCreateheapInvalidheaptype = 0x552,
+        [Obsolete("Deprecated in favour of \"CreateresourceandheapInvalidheaptype\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERESOURCEANDHEAP_INVALIDHEAPTYPE")]
+        MessageIDCreateresourceandheapInvalidheaptype = 0x553,
+        [Obsolete("Deprecated in favour of \"DynamicDepthBiasNotSupported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_DEPTH_BIAS_NOT_SUPPORTED")]
+        MessageIDDynamicDepthBiasNotSupported = 0x554,
+        [Obsolete("Deprecated in favour of \"CreaterasterizerstateNonWholeDynamicDepthBias\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERASTERIZERSTATE_NON_WHOLE_DYNAMIC_DEPTH_BIAS")]
+        MessageIDCreaterasterizerstateNonWholeDynamicDepthBias = 0x555,
+        [Obsolete("Deprecated in favour of \"DynamicDepthBiasFlagMissing\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_DEPTH_BIAS_FLAG_MISSING")]
+        MessageIDDynamicDepthBiasFlagMissing = 0x556,
+        [Obsolete("Deprecated in favour of \"DynamicDepthBiasNoPipeline\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_DEPTH_BIAS_NO_PIPELINE")]
+        MessageIDDynamicDepthBiasNoPipeline = 0x557,
+        [Obsolete("Deprecated in favour of \"DynamicIndexBufferStripCutFlagMissing\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_INDEX_BUFFER_STRIP_CUT_FLAG_MISSING")]
+        MessageIDDynamicIndexBufferStripCutFlagMissing = 0x558,
+        [Obsolete("Deprecated in favour of \"DynamicIndexBufferStripCutNoPipeline\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_INDEX_BUFFER_STRIP_CUT_NO_PIPELINE")]
+        MessageIDDynamicIndexBufferStripCutNoPipeline = 0x559,
+        [Obsolete("Deprecated in favour of \"NonnormalizedCoordinateSamplingNotSupported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_NONNORMALIZED_COORDINATE_SAMPLING_NOT_SUPPORTED")]
+        MessageIDNonnormalizedCoordinateSamplingNotSupported = 0x55A,
+        [Obsolete("Deprecated in favour of \"InvalidCastTarget\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_INVALID_CAST_TARGET")]
+        MessageIDInvalidCastTarget = 0x55B,
+        [Obsolete("Deprecated in favour of \"RenderPassCommandlistInvalidEndState\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_COMMANDLIST_INVALID_END_STATE")]
+        MessageIDRenderPassCommandlistInvalidEndState = 0x55C,
+        [Obsolete("Deprecated in favour of \"RenderPassCommandlistInvalidStartState\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_COMMANDLIST_INVALID_START_STATE")]
+        MessageIDRenderPassCommandlistInvalidStartState = 0x55D,
+        [Obsolete("Deprecated in favour of \"RenderPassMismatchingAccess\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_MISMATCHING_ACCESS")]
+        MessageIDRenderPassMismatchingAccess = 0x55E,
+        [Obsolete("Deprecated in favour of \"RenderPassMismatchingLocalPreserveParameters\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_MISMATCHING_LOCAL_PRESERVE_PARAMETERS")]
+        MessageIDRenderPassMismatchingLocalPreserveParameters = 0x55F,
+        [Obsolete("Deprecated in favour of \"RenderPassLocalPreserveRenderParametersError\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_LOCAL_PRESERVE_RENDER_PARAMETERS_ERROR")]
+        MessageIDRenderPassLocalPreserveRenderParametersError = 0x560,
+        [Obsolete("Deprecated in favour of \"RenderPassLocalDepthStencilError\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_LOCAL_DEPTH_STENCIL_ERROR")]
+        MessageIDRenderPassLocalDepthStencilError = 0x561,
+        [Obsolete("Deprecated in favour of \"DrawPotentiallyOutsideOfValidRenderArea\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DRAW_POTENTIALLY_OUTSIDE_OF_VALID_RENDER_AREA")]
+        MessageIDDrawPotentiallyOutsideOfValidRenderArea = 0x562,
+        [Obsolete("Deprecated in favour of \"CreaterasterizerstateInvalidLinerasterizationmode\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERASTERIZERSTATE_INVALID_LINERASTERIZATIONMODE")]
+        MessageIDCreaterasterizerstateInvalidLinerasterizationmode = 0x563,
+        [Obsolete("Deprecated in favour of \"CreateresourceInvalidalignmentSmallresource\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERESOURCE_INVALIDALIGNMENT_SMALLRESOURCE")]
+        MessageIDCreateresourceInvalidalignmentSmallresource = 0x564,
+        [Obsolete("Deprecated in favour of \"GenericDeviceOperationUnsupported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_GENERIC_DEVICE_OPERATION_UNSUPPORTED")]
+        MessageIDGenericDeviceOperationUnsupported = 0x565,
+        [Obsolete("Deprecated in favour of \"CreategraphicspipelinestateRenderTargetWrongWriteMask\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATEGRAPHICSPIPELINESTATE_RENDER_TARGET_WRONG_WRITE_MASK")]
+        MessageIDCreategraphicspipelinestateRenderTargetWrongWriteMask = 0x566,
+        [Obsolete("Deprecated in favour of \"ProbablePixEventLeak\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_PROBABLE_PIX_EVENT_LEAK")]
+        MessageIDProbablePixEventLeak = 0x567,
+        [Obsolete("Deprecated in favour of \"PixEventUnderflow\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_PIX_EVENT_UNDERFLOW")]
+        MessageIDPixEventUnderflow = 0x568,
+        [Obsolete("Deprecated in favour of \"RecreateatInvalidTarget\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_RECREATEAT_INVALID_TARGET")]
+        MessageIDRecreateatInvalidTarget = 0x569,
+        [Obsolete("Deprecated in favour of \"RecreateatInsufficientSupport\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_RECREATEAT_INSUFFICIENT_SUPPORT")]
+        MessageIDRecreateatInsufficientSupport = 0x56A,
+        [Obsolete("Deprecated in favour of \"GpuBasedValidationStructuredBufferStrideMismatch\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_GPU_BASED_VALIDATION_STRUCTURED_BUFFER_STRIDE_MISMATCH")]
+        MessageIDGpuBasedValidationStructuredBufferStrideMismatch = 0x56B,
         [Obsolete("Deprecated in favour of \"D3D12MessagesEnd\"")]
         [NativeName("Name", "D3D12_MESSAGE_ID_D3D12_MESSAGES_END")]
-        MessageIDD3D12MessagesEnd = 0x546,
+        MessageIDD3D12MessagesEnd = 0x56C,
         [NativeName("Name", "D3D12_MESSAGE_ID_UNKNOWN")]
         Unknown = 0x0,
         [NativeName("Name", "D3D12_MESSAGE_ID_STRING_FROM_APPLICATION")]
@@ -2966,6 +3083,12 @@ namespace Silk.NET.Direct3D12
         CreateblendstateInvalidblendopalpha = 0x74,
         [NativeName("Name", "D3D12_MESSAGE_ID_CREATEBLENDSTATE_INVALIDRENDERTARGETWRITEMASK")]
         CreateblendstateInvalidrendertargetwritemask = 0x75,
+        [NativeName("Name", "D3D12_MESSAGE_ID_GET_PROGRAM_IDENTIFIER_ERROR")]
+        GetProgramIdentifierError = 0x76,
+        [NativeName("Name", "D3D12_MESSAGE_ID_GET_WORK_GRAPH_PROPERTIES_ERROR")]
+        GetWorkGraphPropertiesError = 0x77,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SET_PROGRAM_ERROR")]
+        SetProgramError = 0x78,
         [NativeName("Name", "D3D12_MESSAGE_ID_CLEARDEPTHSTENCILVIEW_INVALID")]
         CleardepthstencilviewInvalid = 0x87,
         [NativeName("Name", "D3D12_MESSAGE_ID_COMMAND_LIST_DRAW_ROOT_SIGNATURE_NOT_SET")]
@@ -4568,10 +4691,6 @@ namespace Silk.NET.Direct3D12
         CreateresourceandheapInvalidParameters = 0x53E,
         [NativeName("Name", "D3D12_MESSAGE_ID_ENHANCED_BARRIERS_NOT_SUPPORTED")]
         EnhancedBarriersNotSupported = 0x53F,
-        [NativeName("Name", "D3D12_MESSAGE_ID_CAST_TARGET_TEXEL_SIZE_MISMATCH")]
-        CastTargetTexelSizeMismatch = 0x540,
-        [NativeName("Name", "D3D12_MESSAGE_ID_CAST_TO_PLANAR_NOT_SUPORTED")]
-        CastToPlanarNotSuported = 0x541,
         [NativeName("Name", "D3D12_MESSAGE_ID_LEGACY_BARRIER_VALIDATION_FORCED_ON")]
         LegacyBarrierValidationForcedOn = 0x542,
         [NativeName("Name", "D3D12_MESSAGE_ID_EMPTY_ROOT_DESCRIPTOR_TABLE")]
@@ -4580,7 +4699,83 @@ namespace Silk.NET.Direct3D12
         CommandListDrawElementOffsetUnaligned = 0x544,
         [NativeName("Name", "D3D12_MESSAGE_ID_ALPHA_BLEND_FACTOR_NOT_SUPPORTED")]
         AlphaBlendFactorNotSupported = 0x545,
+        [NativeName("Name", "D3D12_MESSAGE_ID_BARRIER_INTEROP_INVALID_LAYOUT")]
+        BarrierInteropInvalidLayout = 0x546,
+        [NativeName("Name", "D3D12_MESSAGE_ID_BARRIER_INTEROP_INVALID_STATE")]
+        BarrierInteropInvalidState = 0x547,
+        [NativeName("Name", "D3D12_MESSAGE_ID_GRAPHICS_PIPELINE_STATE_DESC_ZERO_SAMPLE_MASK")]
+        GraphicsPipelineStateDescZeroSampleMask = 0x548,
+        [NativeName("Name", "D3D12_MESSAGE_ID_INDEPENDENT_STENCIL_REF_NOT_SUPPORTED")]
+        IndependentStencilRefNotSupported = 0x549,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INDEPENDENT_MASKS_UNSUPPORTED")]
+        CreatedepthstencilstateIndependentMasksUnsupported = 0x54A,
+        [NativeName("Name", "D3D12_MESSAGE_ID_TEXTURE_BARRIER_SUBRESOURCES_OUT_OF_BOUNDS")]
+        TextureBarrierSubresourcesOutOfBounds = 0x54B,
+        [NativeName("Name", "D3D12_MESSAGE_ID_NON_OPTIMAL_BARRIER_ONLY_EXECUTE_COMMAND_LISTS")]
+        NonOptimalBarrierOnlyExecuteCommandLists = 0x54C,
+        [NativeName("Name", "D3D12_MESSAGE_ID_EXECUTE_INDIRECT_ZERO_COMMAND_COUNT")]
+        ExecuteIndirectZeroCommandCount = 0x54D,
+        [NativeName("Name", "D3D12_MESSAGE_ID_GPU_BASED_VALIDATION_INCOMPATIBLE_TEXTURE_LAYOUT")]
+        GpuBasedValidationIncompatibleTextureLayout = 0x54E,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_INDEX_BUFFER_STRIP_CUT_NOT_SUPPORTED")]
+        DynamicIndexBufferStripCutNotSupported = 0x54F,
+        [NativeName("Name", "D3D12_MESSAGE_ID_PRIMITIVE_TOPOLOGY_TRIANGLE_FANS_NOT_SUPPORTED")]
+        PrimitiveTopologyTriangleFansNotSupported = 0x550,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATE_SAMPLER_COMPARISON_FUNC_IGNORED")]
+        CreateSamplerComparisonFuncIgnored = 0x551,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATEHEAP_INVALIDHEAPTYPE")]
+        CreateheapInvalidheaptype = 0x552,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERESOURCEANDHEAP_INVALIDHEAPTYPE")]
+        CreateresourceandheapInvalidheaptype = 0x553,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_DEPTH_BIAS_NOT_SUPPORTED")]
+        DynamicDepthBiasNotSupported = 0x554,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERASTERIZERSTATE_NON_WHOLE_DYNAMIC_DEPTH_BIAS")]
+        CreaterasterizerstateNonWholeDynamicDepthBias = 0x555,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_DEPTH_BIAS_FLAG_MISSING")]
+        DynamicDepthBiasFlagMissing = 0x556,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_DEPTH_BIAS_NO_PIPELINE")]
+        DynamicDepthBiasNoPipeline = 0x557,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_INDEX_BUFFER_STRIP_CUT_FLAG_MISSING")]
+        DynamicIndexBufferStripCutFlagMissing = 0x558,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DYNAMIC_INDEX_BUFFER_STRIP_CUT_NO_PIPELINE")]
+        DynamicIndexBufferStripCutNoPipeline = 0x559,
+        [NativeName("Name", "D3D12_MESSAGE_ID_NONNORMALIZED_COORDINATE_SAMPLING_NOT_SUPPORTED")]
+        NonnormalizedCoordinateSamplingNotSupported = 0x55A,
+        [NativeName("Name", "D3D12_MESSAGE_ID_INVALID_CAST_TARGET")]
+        InvalidCastTarget = 0x55B,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_COMMANDLIST_INVALID_END_STATE")]
+        RenderPassCommandlistInvalidEndState = 0x55C,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_COMMANDLIST_INVALID_START_STATE")]
+        RenderPassCommandlistInvalidStartState = 0x55D,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_MISMATCHING_ACCESS")]
+        RenderPassMismatchingAccess = 0x55E,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_MISMATCHING_LOCAL_PRESERVE_PARAMETERS")]
+        RenderPassMismatchingLocalPreserveParameters = 0x55F,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_LOCAL_PRESERVE_RENDER_PARAMETERS_ERROR")]
+        RenderPassLocalPreserveRenderParametersError = 0x560,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_PASS_LOCAL_DEPTH_STENCIL_ERROR")]
+        RenderPassLocalDepthStencilError = 0x561,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DRAW_POTENTIALLY_OUTSIDE_OF_VALID_RENDER_AREA")]
+        DrawPotentiallyOutsideOfValidRenderArea = 0x562,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERASTERIZERSTATE_INVALID_LINERASTERIZATIONMODE")]
+        CreaterasterizerstateInvalidLinerasterizationmode = 0x563,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERESOURCE_INVALIDALIGNMENT_SMALLRESOURCE")]
+        CreateresourceInvalidalignmentSmallresource = 0x564,
+        [NativeName("Name", "D3D12_MESSAGE_ID_GENERIC_DEVICE_OPERATION_UNSUPPORTED")]
+        GenericDeviceOperationUnsupported = 0x565,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATEGRAPHICSPIPELINESTATE_RENDER_TARGET_WRONG_WRITE_MASK")]
+        CreategraphicspipelinestateRenderTargetWrongWriteMask = 0x566,
+        [NativeName("Name", "D3D12_MESSAGE_ID_PROBABLE_PIX_EVENT_LEAK")]
+        ProbablePixEventLeak = 0x567,
+        [NativeName("Name", "D3D12_MESSAGE_ID_PIX_EVENT_UNDERFLOW")]
+        PixEventUnderflow = 0x568,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RECREATEAT_INVALID_TARGET")]
+        RecreateatInvalidTarget = 0x569,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RECREATEAT_INSUFFICIENT_SUPPORT")]
+        RecreateatInsufficientSupport = 0x56A,
+        [NativeName("Name", "D3D12_MESSAGE_ID_GPU_BASED_VALIDATION_STRUCTURED_BUFFER_STRIDE_MISMATCH")]
+        GpuBasedValidationStructuredBufferStrideMismatch = 0x56B,
         [NativeName("Name", "D3D12_MESSAGE_ID_D3D12_MESSAGES_END")]
-        D3D12MessagesEnd = 0x546,
+        D3D12MessagesEnd = 0x56C,
     }
 }

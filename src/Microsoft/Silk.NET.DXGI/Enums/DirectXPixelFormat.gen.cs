@@ -375,6 +375,9 @@ namespace Silk.NET.DXGI
         [Obsolete("Deprecated in favour of \"SamplerFeedbackMipRegionUsedOpaque\"")]
         [NativeName("Name", "DirectXPixelFormat_SamplerFeedbackMipRegionUsedOpaque")]
         DirectXPixelFormatSamplerFeedbackMipRegionUsedOpaque = 0xBE,
+        [Obsolete("Deprecated in favour of \"A4B4G4R4\"")]
+        [NativeName("Name", "DirectXPixelFormat_A4B4G4R4")]
+        DirectXPixelFormatA4B4G4R4 = 0xBF,
         [NativeName("Name", "DirectXPixelFormat_R32G32B32A32UInt")]
         R32G32B32A32UInt = 0x3,
         [NativeName("Name", "DirectXPixelFormat_R32G32B32UInt")]
@@ -758,5 +761,7 @@ namespace Silk.NET.DXGI
         SamplerFeedbackMinMipOpaque = 0xBD,
         [NativeName("Name", "DirectXPixelFormat_SamplerFeedbackMipRegionUsedOpaque")]
         SamplerFeedbackMipRegionUsedOpaque = 0xBE,
+        [NativeName("Name", "DirectXPixelFormat_A4B4G4R4")]
+        A4B4G4R4 = 0xBF,
     }
 }

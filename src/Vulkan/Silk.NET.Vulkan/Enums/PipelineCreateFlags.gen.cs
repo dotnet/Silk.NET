@@ -24,18 +24,6 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateDerivativeBit\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_DERIVATIVE_BIT")]
         PipelineCreateDerivativeBit = 4,
-        [Obsolete("Deprecated in favour of \"CreateRenderingFragmentShadingRateAttachmentBitKhr\"")]
-        [NativeName("Name", "VK_PIPELINE_CREATE_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
-        PipelineCreateRenderingFragmentShadingRateAttachmentBitKhr = 2097152,
-        [Obsolete("Deprecated in favour of \"RasterizationStateCreateFragmentShadingRateAttachmentBitKhr\"")]
-        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
-        PipelineRasterizationStateCreateFragmentShadingRateAttachmentBitKhr = 2097152,
-        [Obsolete("Deprecated in favour of \"CreateRenderingFragmentDensityMapAttachmentBitExt\"")]
-        [NativeName("Name", "VK_PIPELINE_CREATE_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
-        PipelineCreateRenderingFragmentDensityMapAttachmentBitExt = 4194304,
-        [Obsolete("Deprecated in favour of \"RasterizationStateCreateFragmentDensityMapAttachmentBitExt\"")]
-        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
-        PipelineRasterizationStateCreateFragmentDensityMapAttachmentBitExt = 4194304,
         [Obsolete("Deprecated in favour of \"CreateViewIndexFromDeviceIndexBitKhr\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
         PipelineCreateViewIndexFromDeviceIndexBitKhr = 8,
@@ -66,6 +54,18 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateDeferCompileBitNV\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_DEFER_COMPILE_BIT_NV")]
         PipelineCreateDeferCompileBitNV = 32,
+        [Obsolete("Deprecated in favour of \"CreateRenderingFragmentDensityMapAttachmentBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
+        PipelineCreateRenderingFragmentDensityMapAttachmentBitExt = 4194304,
+        [Obsolete("Deprecated in favour of \"RasterizationStateCreateFragmentDensityMapAttachmentBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
+        PipelineRasterizationStateCreateFragmentDensityMapAttachmentBitExt = 4194304,
+        [Obsolete("Deprecated in favour of \"CreateRenderingFragmentShadingRateAttachmentBitKhr\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
+        PipelineCreateRenderingFragmentShadingRateAttachmentBitKhr = 2097152,
+        [Obsolete("Deprecated in favour of \"RasterizationStateCreateFragmentShadingRateAttachmentBitKhr\"")]
+        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
+        PipelineRasterizationStateCreateFragmentShadingRateAttachmentBitKhr = 2097152,
         [Obsolete("Deprecated in favour of \"CreateCaptureStatisticsBitKhr\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_CAPTURE_STATISTICS_BIT_KHR")]
         PipelineCreateCaptureStatisticsBitKhr = 64,
@@ -135,14 +135,6 @@ namespace Silk.NET.Vulkan
         CreateAllowDerivativesBit = 2,
         [NativeName("Name", "VK_PIPELINE_CREATE_DERIVATIVE_BIT")]
         CreateDerivativeBit = 4,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
-        CreateRenderingFragmentShadingRateAttachmentBitKhr = 2097152,
-        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
-        RasterizationStateCreateFragmentShadingRateAttachmentBitKhr = 2097152,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
-        CreateRenderingFragmentDensityMapAttachmentBitExt = 4194304,
-        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
-        RasterizationStateCreateFragmentDensityMapAttachmentBitExt = 4194304,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
         CreateViewIndexFromDeviceIndexBitKhr = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_KHR")]
@@ -163,6 +155,14 @@ namespace Silk.NET.Vulkan
         CreateRayTracingShaderGroupHandleCaptureReplayBitKhr = 524288,
         [NativeName("Name", "VK_PIPELINE_CREATE_DEFER_COMPILE_BIT_NV")]
         CreateDeferCompileBitNV = 32,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
+        CreateRenderingFragmentDensityMapAttachmentBitExt = 4194304,
+        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
+        RasterizationStateCreateFragmentDensityMapAttachmentBitExt = 4194304,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
+        CreateRenderingFragmentShadingRateAttachmentBitKhr = 2097152,
+        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
+        RasterizationStateCreateFragmentShadingRateAttachmentBitKhr = 2097152,
         [NativeName("Name", "VK_PIPELINE_CREATE_CAPTURE_STATISTICS_BIT_KHR")]
         CreateCaptureStatisticsBitKhr = 64,
         [NativeName("Name", "VK_PIPELINE_CREATE_CAPTURE_INTERNAL_REPRESENTATIONS_BIT_KHR")]

@@ -16,7 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [NativeName("Name", "__AnonymousRecord_evntrace_L1308_C9")]
+    [NativeName("Name", "__AnonymousRecord_evntrace_L1342_C9")]
     public unsafe partial struct EtwBufferContextUnionUnion
     {
         public EtwBufferContextUnionUnion

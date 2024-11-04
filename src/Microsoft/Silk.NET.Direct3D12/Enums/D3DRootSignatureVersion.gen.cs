@@ -21,11 +21,16 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"Version11\"")]
         [NativeName("Name", "D3D_ROOT_SIGNATURE_VERSION_1_1")]
         D3DRootSignatureVersion11 = 0x2,
+        [Obsolete("Deprecated in favour of \"Version12\"")]
+        [NativeName("Name", "D3D_ROOT_SIGNATURE_VERSION_1_2")]
+        D3DRootSignatureVersion12 = 0x3,
         [NativeName("Name", "D3D_ROOT_SIGNATURE_VERSION_1")]
         Version1 = 0x1,
         [NativeName("Name", "D3D_ROOT_SIGNATURE_VERSION_1_0")]
         Version10 = 0x1,
         [NativeName("Name", "D3D_ROOT_SIGNATURE_VERSION_1_1")]
         Version11 = 0x2,
+        [NativeName("Name", "D3D_ROOT_SIGNATURE_VERSION_1_2")]
+        Version12 = 0x3,
     }
 }

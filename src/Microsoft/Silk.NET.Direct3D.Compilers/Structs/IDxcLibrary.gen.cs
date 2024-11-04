@@ -665,7 +665,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBlobAsUtf16(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int GetBlobAsWide(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -674,7 +674,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBlobAsUtf16(IDxcBlob* pBlob, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int GetBlobAsWide(IDxcBlob* pBlob, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -686,7 +686,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBlobAsUtf16(ref IDxcBlob pBlob, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int GetBlobAsWide(ref IDxcBlob pBlob, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -698,7 +698,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBlobAsUtf16(ref IDxcBlob pBlob, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int GetBlobAsWide(ref IDxcBlob pBlob, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -930,27 +930,27 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBlobAsUtf16<TI0, TI1>(ComPtr<TI0> pBlob, ref ComPtr<TI1> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        public readonly int GetBlobAsWide<TI0, TI1>(ComPtr<TI0> pBlob, ref ComPtr<TI1> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->GetBlobAsUtf16((IDxcBlob*) pBlob.Handle, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+            return @this->GetBlobAsWide((IDxcBlob*) pBlob.Handle, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBlobAsUtf16<TI0>(ComPtr<TI0> pBlob, ref IDxcBlobEncoding* pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        public readonly unsafe int GetBlobAsWide<TI0>(ComPtr<TI0> pBlob, ref IDxcBlobEncoding* pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->GetBlobAsUtf16((IDxcBlob*) pBlob.Handle, ref pBlobEncoding);
+            return @this->GetBlobAsWide((IDxcBlob*) pBlob.Handle, ref pBlobEncoding);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBlobAsUtf16<TI0>(ref IDxcBlob pBlob, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly int GetBlobAsWide<TI0>(ref IDxcBlob pBlob, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->GetBlobAsUtf16(ref pBlob, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+            return @this->GetBlobAsWide(ref pBlob, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

@@ -75,7 +75,7 @@ partial class Build {
                     $"git commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\""
                 )
                 .AssertWaitForExit();
-            if (!commitCmd.Output.Any(x => x.Text.Contains("no changes added to commit", StringComparison.OrdinalIgnoreCase) || x.Text.Contains("nothing to commit", StringComparison.OrdinalIgnoreCase)))
+            if (!commitCmd.Output.Any(x => x.Text.Contains("no changes added to commit", StringComparison.OrdinalIgnoreCase) || x.Text.Contains("nothing", StringComparison.OrdinalIgnoreCase)))
             {
                 commitCmd.AssertZeroExitCode();
             }

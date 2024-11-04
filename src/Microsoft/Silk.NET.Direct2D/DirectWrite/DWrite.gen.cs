@@ -26,31 +26,34 @@ namespace Silk.NET.DirectWrite
         [NativeName("Name", "DWRITE_ERR_BASE")]
         public const int ErrBase = unchecked((int) 0x5000);
         [NativeName("Type", "int")]
+        [NativeName("Name", "DWRITE_NO_PALETTE_INDEX")]
+        public const int NoPaletteIndex = unchecked((int) 0xFFFF);
+        [NativeName("Type", "int")]
         [NativeName("Name", "DWRITE_STANDARD_FONT_AXIS_COUNT")]
         public const int StandardFontAxisCount = unchecked((int) 0x5);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
+        [NativeName("Src", "Line 5123, Column 32 in DWrite.h")]
         [NativeApi(EntryPoint = "DWriteCreateFactory", Convention = CallingConvention.StdCall)]
         public unsafe partial int DWriteCreateFactory(FactoryType factoryType, Guid* iid, Silk.NET.Core.Native.IUnknown** factory);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
+        [NativeName("Src", "Line 5123, Column 32 in DWrite.h")]
         [NativeApi(EntryPoint = "DWriteCreateFactory", Convention = CallingConvention.StdCall)]
         public unsafe partial int DWriteCreateFactory(FactoryType factoryType, Guid* iid, ref Silk.NET.Core.Native.IUnknown* factory);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
+        [NativeName("Src", "Line 5123, Column 32 in DWrite.h")]
         [NativeApi(EntryPoint = "DWriteCreateFactory", Convention = CallingConvention.StdCall)]
         public unsafe partial int DWriteCreateFactory(FactoryType factoryType, ref Guid iid, Silk.NET.Core.Native.IUnknown** factory);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
+        [NativeName("Src", "Line 5123, Column 32 in DWrite.h")]
         [NativeApi(EntryPoint = "DWriteCreateFactory", Convention = CallingConvention.StdCall)]
         public unsafe partial int DWriteCreateFactory(FactoryType factoryType, ref Guid iid, ref Silk.NET.Core.Native.IUnknown* factory);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
+        [NativeName("Src", "Line 5123, Column 32 in DWrite.h")]
         public unsafe int DWriteCreateFactory<TI0>(FactoryType factoryType, out ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -59,7 +62,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
+        [NativeName("Src", "Line 5123, Column 32 in DWrite.h")]
         public unsafe int DWriteCreateFactory<TI0>(FactoryType factoryType, ref Guid iid, ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -67,7 +70,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
+        [NativeName("Src", "Line 5123, Column 32 in DWrite.h")]
         public unsafe ComPtr<TI0> DWriteCreateFactory<TI0>(FactoryType factoryType) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             // NonKhrReturnTypeOverloader

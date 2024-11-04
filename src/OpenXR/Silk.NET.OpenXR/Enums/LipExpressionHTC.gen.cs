@@ -48,18 +48,18 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"MouthPoutHtc\"")]
         [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_POUT_HTC")]
         LipExpressionMouthPoutHtc = 11,
-        [Obsolete("Deprecated in favour of \"MouthSmileRightHtc\"")]
-        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_SMILE_RIGHT_HTC")]
-        LipExpressionMouthSmileRightHtc = 12,
-        [Obsolete("Deprecated in favour of \"MouthSmileLeftHtc\"")]
-        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_SMILE_LEFT_HTC")]
-        LipExpressionMouthSmileLeftHtc = 13,
-        [Obsolete("Deprecated in favour of \"MouthSadRightHtc\"")]
-        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_SAD_RIGHT_HTC")]
-        LipExpressionMouthSadRightHtc = 14,
-        [Obsolete("Deprecated in favour of \"MouthSadLeftHtc\"")]
-        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_SAD_LEFT_HTC")]
-        LipExpressionMouthSadLeftHtc = 15,
+        [Obsolete("Deprecated in favour of \"MouthRaiserRightHtc\"")]
+        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_RAISER_RIGHT_HTC")]
+        LipExpressionMouthRaiserRightHtc = 12,
+        [Obsolete("Deprecated in favour of \"MouthRaiserLeftHtc\"")]
+        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_RAISER_LEFT_HTC")]
+        LipExpressionMouthRaiserLeftHtc = 13,
+        [Obsolete("Deprecated in favour of \"MouthStretcherRightHtc\"")]
+        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_STRETCHER_RIGHT_HTC")]
+        LipExpressionMouthStretcherRightHtc = 14,
+        [Obsolete("Deprecated in favour of \"MouthStretcherLeftHtc\"")]
+        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_STRETCHER_LEFT_HTC")]
+        LipExpressionMouthStretcherLeftHtc = 15,
         [Obsolete("Deprecated in favour of \"CheekPuffRightHtc\"")]
         [NativeName("Name", "XR_LIP_EXPRESSION_CHEEK_PUFF_RIGHT_HTC")]
         LipExpressionCheekPuffRightHtc = 16,
@@ -147,14 +147,14 @@ namespace Silk.NET.OpenXR
         MouthLowerOverturnHtc = 10,
         [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_POUT_HTC")]
         MouthPoutHtc = 11,
-        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_SMILE_RIGHT_HTC")]
-        MouthSmileRightHtc = 12,
-        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_SMILE_LEFT_HTC")]
-        MouthSmileLeftHtc = 13,
-        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_SAD_RIGHT_HTC")]
-        MouthSadRightHtc = 14,
-        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_SAD_LEFT_HTC")]
-        MouthSadLeftHtc = 15,
+        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_RAISER_RIGHT_HTC")]
+        MouthRaiserRightHtc = 12,
+        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_RAISER_LEFT_HTC")]
+        MouthRaiserLeftHtc = 13,
+        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_STRETCHER_RIGHT_HTC")]
+        MouthStretcherRightHtc = 14,
+        [NativeName("Name", "XR_LIP_EXPRESSION_MOUTH_STRETCHER_LEFT_HTC")]
+        MouthStretcherLeftHtc = 15,
         [NativeName("Name", "XR_LIP_EXPRESSION_CHEEK_PUFF_RIGHT_HTC")]
         CheekPuffRightHtc = 16,
         [NativeName("Name", "XR_LIP_EXPRESSION_CHEEK_PUFF_LEFT_HTC")]

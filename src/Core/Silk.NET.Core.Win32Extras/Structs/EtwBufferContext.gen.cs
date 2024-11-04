@@ -56,7 +56,7 @@ namespace Silk.NET.Core.Win32Extras
 
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1307_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1341_C5")]
         [NativeName("Name", "anonymous1")]
         public EtwBufferContextUnion Anonymous;
 
