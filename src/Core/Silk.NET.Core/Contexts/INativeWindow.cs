@@ -72,7 +72,7 @@ namespace Silk.NET.Core.Contexts
         /// </summary>
         nint? Sdl { get; }
 
-        /// <summaray>
+        /// <summary>
         /// The handle to use for DirectX applications. This will be the Win32 Hwnd on Windows, and it will be the GLFW
         /// or SDL handle on non-windows platforms for use with native builds of DXVK. May not be null.
         /// </summary>
