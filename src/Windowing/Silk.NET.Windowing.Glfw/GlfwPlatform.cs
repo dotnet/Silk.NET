@@ -23,9 +23,10 @@ namespace Silk.NET.Windowing.Glfw
         (
             () =>
             {
+                GLFW.Glfw? api = null;
                 try
                 {
-                    GLFW.Glfw.GetApi(); // activate the class so we can determine if we can activate the class
+                    api = GLFW.Glfw.GetApi(); // activate the class so we can determine if we can activate the class
                 }
                 catch (Exception ex)
                 {
@@ -33,6 +34,10 @@ namespace Silk.NET.Windowing.Glfw
                     Console.WriteLine($"Can't load GLFW: {ex}");
 #endif
                     return false;
+                }
+                finally
+                {
+                    api?.Dispose();
                 }
 
                 return true;
