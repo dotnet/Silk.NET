@@ -33,7 +33,7 @@ Cases where the **user** word is used without the **end** prefix can be assumed 
 
 # Usage Examples
 ```cs
-IWindowHandlesSource someWindow = null!;
+INativeWindow someWindow = null!;
 var inputContext = someWindow.CreateInput();
 inputContext.Update();
 inputContext.Gamepads.ThumbstickMove += @event =>
@@ -43,7 +43,7 @@ inputContext.Gamepads.ThumbstickMove += @event =>
 var isButtonDown = inputContext.Gamepads.Any(gamepadState => gamepadState.Buttons[JoystickButton.A]);
 ```
 ```cs
-IWindowHandlesSource someWindow = null!;
+INativeWindow someWindow = null!;
 var inputContext = new InputContext();
 inputContext.Update();
 inputContext.Backends.Add(someWindow.CreateInputBackend());
@@ -51,10 +51,9 @@ inputContext.Backends.Add(someWindow.CreateInputBackend());
 // inputContext.Backends.Add(new OpenXRInputBackend(...));
 ```
 ```cs
-class MyThing
+class Program : ISurfaceApplication
 {
-    [SilkEntryPoint]
-    public static void Run(ISurface surface)
+    public static void Initialize<TSurface>(TSurface surface) where TSurface : Surface
     {
         var inputContext = surface.CreateInput();
         surface.Update += _ => inputContext.Update();
@@ -62,8 +61,9 @@ class MyThing
         {
             Console.WriteLine($"Thumbstick {@event.Index} moved from {@event.OldValue} to {@event.NewValue}");
         };
-        surface.Run();
     }
+
+    public static void Main() => ISurfaceApplication.Run<Program>();
 }
 ```
 
@@ -74,18 +74,16 @@ Similar to Windowing 3.0, a reference implementation will be included in the mai
 ```cs
 public static class InputWindowExtensions
 {
-    public static IInputBackend CreateInputBackend(this WindowHandles window);
-    public static IInputBackend CreateInputBackend(this IWindowHandlesSource window);
-    public static InputContext CreateInput(this WindowHandles window);
-    public static InputContext CreateInput(this IWindowHandlesSource window);
+    public static IInputBackend CreateInputBackend(this INativeWindow window);
+    public static InputContext CreateInput(this INativeWindow window);
 }
 ```
 
-The `CreateInputBackend` will create an instance of the reference implementation for the given `WindowHandles`. The `IWindowHandlesSource` overloads just forward to the `WindowHandles` overload. This is because `ISurface` will implement `IWindowHandlesSource`, so the extension methods will be usable on an `ISurface` without having a hard reference between Windowing and Input.
+The `CreateInputBackend` will create an instance of the reference implementation for the given `INativeWindow`. `Surface` will implement `INativeWindow`, so the extension methods will be usable on a `Surface` without having a hard reference between Windowing and Input.
 
 The `CreateInput` methods simply return an `InputContext` preconfigured with the backend created by `CreateInputBackend` for ease of use.
 
-Please see the Windowing 3.0 proposal for `IWindowHandlesSource` and `WindowHandles`.
+Please see the Windowing 3.0 proposal for `INativeWindow`.
 
 # Devices
 
