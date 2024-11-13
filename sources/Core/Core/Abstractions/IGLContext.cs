@@ -18,6 +18,15 @@ public interface IGLContext : INativeContext
     int SwapInterval { get; set; }
 
     /// <summary>
+    /// Gets or sets a value indicating whether <see cref="SwapInterval" /> is non-zero.
+    /// </summary>
+    bool VSync
+    {
+        get => SwapInterval > 0;
+        set => SwapInterval = value ? 1 : 0;
+    }
+
+    /// <summary>
     /// Swaps the backbuffer to present the contents to the window.
     /// </summary>
     void SwapBuffers();

@@ -1,6 +1,7 @@
 // See https://aka.ms/new-console-template for more information
 
 using System.Runtime.InteropServices;
+using Silk.NET.Core;
 using Silk.NET.OpenGL;
 using Silk.NET.SDL;
 
@@ -12,11 +13,30 @@ if (ec is not 0)
     );
 }
 
-var window = Sdl.CreateWindow("Hello Window!", 1000, 800, Sdl.WindowOpengl);
+var window = Sdl.CreateWindow(
+    "Hello Window!",
+    1000,
+    800,
+    Sdl.WindowOpengl | Sdl.WindowHighPixelDensity
+);
 if (window == nullptr)
 {
     throw new Exception($"failed to create window: {(string)Sdl.GetError()}");
 }
+
+Console.WriteLine(
+    $"SDL_GetDisplayContentScale {Sdl.GetDisplayContentScale(Sdl.GetDisplayForWindow(window))}"
+);
+Console.WriteLine($"SDL_GetWindowDisplayScale {Sdl.GetWindowDisplayScale(window)}");
+Console.WriteLine($"SDL_GetWindowPixelDensity {Sdl.GetWindowPixelDensity(window)}");
+int sx = 0,
+    sy = 0,
+    px = 0,
+    py = 0;
+Sdl.GetWindowSize(window, sx.AsRef(), sy.AsRef());
+Sdl.GetWindowSizeInPixels(window, px.AsRef(), py.AsRef());
+Console.WriteLine($"SDL_GetWindowSize {sx} {sy}");
+Console.WriteLine($"SDL_GetWindowSizeInPixels {px} {py}");
 
 var context = new SdlContext(
     window,
@@ -84,6 +104,23 @@ while (true)
     if (Sdl.PollEvent(@event.AsRef()) && @event.Type == (int)EventType.Quit)
     {
         break;
+    }
+
+    if (@event.Window.Type == EventType.WindowDisplayScaleChanged)
+    {
+        Console.WriteLine(
+            $"SDL_GetDisplayContentScale {Sdl.GetDisplayContentScale(Sdl.GetDisplayForWindow(window))}"
+        );
+        Console.WriteLine($"SDL_GetWindowDisplayScale {Sdl.GetWindowDisplayScale(window)}");
+        Console.WriteLine($"SDL_GetWindowPixelDensity {Sdl.GetWindowPixelDensity(window)}");
+    }
+
+    if (@event.Window.Type == EventType.WindowResized)
+    {
+        Sdl.GetWindowSize(window, sx.AsRef(), sy.AsRef());
+        Sdl.GetWindowSizeInPixels(window, px.AsRef(), py.AsRef());
+        Console.WriteLine($"SDL_GetWindowSize {sx} {sy}");
+        Console.WriteLine($"SDL_GetWindowSizeInPixels {px} {py}");
     }
 
     GL.Clear(ClearBufferMask.ColorBufferBit);
