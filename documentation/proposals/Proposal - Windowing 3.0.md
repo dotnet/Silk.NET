@@ -298,12 +298,12 @@ public abstract partial class Surface
     /// <summary>
     /// Gets or sets additional configuration/constraints for the <see cref="Render" /> event.
     /// </summary>
-    public SurfaceTimingOptions RenderOptions { get; set; }
+    public virtual SurfaceTimingOptions RenderOptions { get; set; }
 
     /// <summary>
     /// Gets or sets additional configuration/constraints for the <see cref="Update" /> event.
     /// </summary>
-    public SurfaceTimingOptions UpdateOptions { get; set; }
+    public virtual SurfaceTimingOptions UpdateOptions { get; set; }
 
     /// <summary>
     /// Gets or sets a value representing <see cref="RenderOptions" />.<see cref="SurfaceTimingOptions.TargetDelta" />
@@ -349,12 +349,12 @@ public abstract partial class Surface
     /// <summary>
     /// Gets the size <b>in pixels</b> of the area drawable within the surface.
     /// </summary>
-    public Vector2 DrawableSize { get; }
+    public abstract Vector2 DrawableSize { get; }
 
     /// <summary>
     /// Raised when <see cref="DrawableSize" /> changes.
     /// </summary>
-    public event Action<SurfaceResizeEvent> DrawableSizeChanged { add; remove; }
+    public abstract event Action<SurfaceResizeEvent> DrawableSizeChanged { add; remove; }
 
     /// <summary>
     /// Centers this window to the given monitor or, if null, the current monitor the window's on.
@@ -503,6 +503,74 @@ public interface IGLContextSource
     IGLContext? GLContext { get; }
 }
 
+/// <summary>
+/// A 32-bit version structure.
+/// </summary>
+public readonly struct Version32
+{
+    /// <summary>
+    /// The underlying Vulkan-compatible 32-bit version integer.
+    /// </summary>
+    public uint Value { get; }
+    
+    /// <summary>
+    /// Creates a Vulkan version structure from the given major, minor, and patch values.
+    /// </summary>
+    /// <param name="major">The major value.</param>
+    /// <param name="minor">The minor value.</param>
+    /// <param name="patch">The patch value.</param>
+    public Version32(uint major, uint minor, uint patch);
+    
+    /// <summary>
+    /// Creates a Vulkan version structure from the given Vulkan-compatible value.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    private Version32(uint value);
+    
+    /// <summary>
+    /// Gets the major component of this version structure.
+    /// </summary>
+    public uint Major { get; }
+    
+    /// <summary>
+    /// Gets the minor component of this version structure.
+    /// </summary>
+    public uint Minor { get; }
+    
+    /// <summary>
+    /// Gets the patch component of this version structure.
+    /// </summary>
+    public uint Patch { get; }
+    
+    /// <summary>
+    /// Creates a 32-bit version structure from the given 32-bit unsigned integer.
+    /// </summary>
+    /// <param name="val">The uint value.</param>
+    /// <returns>The 32-bit version structure.</returns>
+    public static explicit operator Version32(uint val);
+
+    /// <summary>
+    /// Creates a 32-bit version structure from the given managed version class.
+    /// </summary>
+    /// <param name="version">The version instance.</param>
+    /// <returns>The 32-bit version structure.</returns>
+    public static implicit operator Version32(Version version);
+
+    /// <summary>
+    /// Gets the 32-bit unsigned integer representation for this 32-bit version structure.
+    /// </summary>
+    /// <param name="version">The 32-bit version structure.</param>
+    /// <returns>The 32-bit unsigned integer.</returns>
+    public static implicit operator uint(Version32 version);
+
+    /// <summary>
+    /// Converts this 32-bit version structure to a managed version class.
+    /// </summary>
+    /// <param name="version">The 32-bit version structure.</param>
+    /// <returns>The managed representation.</returns>
+    public static implicit operator Version(Version32 version);
+}
+
 namespace Silk.NET.OpenGL;
 
 /// <summary>
@@ -582,74 +650,6 @@ public enum OpenGLContextProfile
     /// Uses an OpenGLES 2+ profile.
     /// </summary>
     ES2
-}
-
-/// <summary>
-/// A 32-bit version structure.
-/// </summary>
-public readonly struct Version32
-{
-    /// <summary>
-    /// The underlying Vulkan-compatible 32-bit version integer.
-    /// </summary>
-    public uint Value { get; }
-    
-    /// <summary>
-    /// Creates a Vulkan version structure from the given major, minor, and patch values.
-    /// </summary>
-    /// <param name="major">The major value.</param>
-    /// <param name="minor">The minor value.</param>
-    /// <param name="patch">The patch value.</param>
-    public Version32(uint major, uint minor, uint patch);
-    
-    /// <summary>
-    /// Creates a Vulkan version structure from the given Vulkan-compatible value.
-    /// </summary>
-    /// <param name="value">The value.</param>
-    private Version32(uint value);
-    
-    /// <summary>
-    /// Gets the major component of this version structure.
-    /// </summary>
-    public uint Major { get; }
-    
-    /// <summary>
-    /// Gets the minor component of this version structure.
-    /// </summary>
-    public uint Minor { get; }
-    
-    /// <summary>
-    /// Gets the patch component of this version structure.
-    /// </summary>
-    public uint Patch { get; }
-    
-    /// <summary>
-    /// Creates a 32-bit version structure from the given 32-bit unsigned integer.
-    /// </summary>
-    /// <param name="val">The uint value.</param>
-    /// <returns>The 32-bit version structure.</returns>
-    public static explicit operator Version32(uint val);
-
-    /// <summary>
-    /// Creates a 32-bit version structure from the given managed version class.
-    /// </summary>
-    /// <param name="version">The version instance.</param>
-    /// <returns>The 32-bit version structure.</returns>
-    public static implicit operator Version32(Version version);
-
-    /// <summary>
-    /// Gets the 32-bit unsigned integer representation for this 32-bit version structure.
-    /// </summary>
-    /// <param name="version">The 32-bit version structure.</param>
-    /// <returns>The 32-bit unsigned integer.</returns>
-    public static implicit operator uint(Version32 version);
-
-    /// <summary>
-    /// Converts this 32-bit version structure to a managed version class.
-    /// </summary>
-    /// <param name="version">The 32-bit version structure.</param>
-    /// <returns>The managed representation.</returns>
-    public static implicit operator Version(Version32 version);
 }
 
 /// <summary>
@@ -950,7 +950,7 @@ public ref struct WindowIcon
 }
 
 /// <summary>
-/// One or more <see cref="WindowIcon">s representing multiple variants (e.g. for size/DPI differences) of the same
+/// One or more <see cref="WindowIcon" />s representing multiple variants (e.g. for size/DPI differences) of the same
 /// window icon.
 /// </summary> 
 public ref struct WindowIconVariants
@@ -1102,7 +1102,7 @@ public interface ISurfaceWindow
     event Action<WindowCoordinatesEvent> CoordinatesChanged { add; remove; }
 
     /// <summary>
-    /// Gets or sets a value indicating whether, unless set to <c>false</c> before the next <see cref="Surface.Tick">,
+    /// Gets or sets a value indicating whether, unless set to <c>false</c> before the next <see cref="Surface.Tick" />,
     /// the window will close resulting in the irrevocable termination of the surface.
     /// </summary>
     bool IsCloseRequested { get; set; }
@@ -1168,6 +1168,14 @@ public interface ISurfaceWindow
     /// <param name="icon">The window icon variants to set.</param>
     /// <returns>A value indicating whether the operation was successful.</returns>
     bool TrySetIcon(WindowIconVariants icon);
+}
+
+public abstract partial class Surface
+{
+    /// <summary>
+    /// Gets the window in which the surface is rendering.
+    /// </summary>
+    public virtual ISurfaceWindow? Window { get; }
 }
 ```
 
@@ -1497,6 +1505,14 @@ public interface ISurfaceScale
     /// </summary>
     /// <seealso cref="DrawScale" />
     float PixelDensity { get; }
+}
+
+public abstract partial class Surface
+{
+    /// <summary>
+    /// Gets the content scale configuration within the surface.
+    /// </summary> 
+    public virtual ISurfaceScale? Scale { get; }
 }
 ```
 
