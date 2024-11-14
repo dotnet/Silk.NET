@@ -112,7 +112,7 @@ of the target platforms. It is expected that platform differentiation is done by
 `net8.0-ios`, etc) but this could include runtime identifier based differentiation in the future. The Silk.NET team
 reserves all rights to determine implementation details such as this.
 
-Silk.NET 3.0 aims to support Windows, Linux (X/11 and Wayland), macOS, iOS, and macOS. The goal of this proposal is to
+Silk.NET 3.0 aims to support Windows, Linux (X/11 and Wayland), macOS, iOS, and Android. The goal of this proposal is to
 do so in a way that requires no _modification_ of user code. It is highly likely that _additional_ boilerplate code will
 be needed on some platforms (e.g. `MainActivity`) but this should not be variant based on the user's specific
 application i.e. it should work as is when copied and pasted into the user's application.
@@ -1547,6 +1547,87 @@ public abstract partial class Surface
 
 Implementations are expected to be aware of the resource sharing/validity requirements set forth at numerous points
 throughout this document - search for occurrences of ISurfaceChildren.
+
+# Detached Surfaces
+
+When reviewing this proposal, we noticed that we hadn't accounted for the use case wherein users may want to take
+advantage of desktop features (e.g. the ability to run one's own timing/game loop logic) if they are available. Up until
+now, `ISurfaceApplication.Run` (or an alternative implementation's equivalent) is the only way to obtain a `Surface`
+which involves taking control of the entire application and only giving the user control through the exposed callbacks.
+For most use cases, this is fine as we've exposed fundamentals like calling into user code as fast as possible (`Tick`)
+or on regular intervals (`Render`/`Update`). However, there will be some power users that will want to retain the
+ability to control their own timing if possible, for which we propose the concept of "detached surfaces".
+
+"Detached surfaces" have a lifetime that is detached from that of the `ISurfaceApplication` they're associated with.
+That is, the implementation's usual handling of an `ISurfaceApplication` and its lifecycle is instead user controlled.
+This is notable as creation and destruction of a `Surface` is usually controlled by the implementation, whereas with
+this API the destruction shall be delegated to the user. This is exposed as follows:
+
+```cs
+namespace Silk.NET.Windowing;
+
+/// <summary>
+/// Represents a surface with a user-controlled lifecycle.
+/// </summary>
+/// <remarks>
+/// This API is <b>not guaranteed to be supported</b> on all platforms and you should only use it if you know what
+/// you're doing and know you need the granular control this API provides! Please use
+/// <see cref="ISurfaceApplication.Run{T}" /> instead where possible. If you insist on using this API, please fall back
+/// to <see cref="ISurfaceApplication.Run{T}" /> if <see cref="TryCreate{T}" /> returns <c>false</c> indicating a lack
+/// of support.
+/// </remarks>
+public interface IDetachedSurfaceLifecycle : IDisposable
+{
+    /// <summary>
+    /// Gets the surface with which this lifecycle is associated. The destruction of this surface is handled by
+    /// the <see cref="IDisposable.Dispose" /> method of this <see cref="IDetachedSurfaceLifecycle" /> implementation.
+    /// </summary>
+    Surface Surface { get; }
+
+    /// <summary>
+    /// Gets a value indicating whether the surface is indicating that its lifecycle should conclude as a result of
+    /// its current configuration e.g. an entire tick passing with <see cref="ISurfaceWindow.IsCloseRequested" /> being
+    /// <c>true</c>.
+    /// </summary>
+    /// <remarks>
+    /// It is expected that <see cref="Tick" /> shall not be called if this property is <c>true</c>.
+    /// <remarks>
+    bool ShouldTerminate { get; }
+
+    /// <summary>
+    /// Steps the underlying implementation's surface lifecycle (i.e. event loop), running a single tick on the
+    /// <see cref="Surface" />.
+    /// </summary>
+    /// <remarks>
+    /// It is expected that implementations shall return after doing as little work as possible. For instance, if the
+    /// underlying implementation exposes one-by-one event retrieval or otherwise allows customisation of the extent to
+    /// which the event pump is run, it is expected that a single event shall be pumped in this case. Note that this is
+    /// just an example and the exact details of this is implementation-defined.
+    /// </remarks> 
+    void Tick();
+
+    /// <summary>
+    /// Attempts to create a <see cref="IDetachedSurfaceLifecycle" /> using the reference implementation.
+    /// </summary>
+    /// <param name="lifecycle">The created surface lifecycle on success, <c>null</c> otherwise.</param>
+    /// <typeparam name="T">
+    /// The application that shall be associated with the surface. Note that even with this API,
+    /// <see cref="ISurfaceApplication.Initialize{T}"> shall still be called for consistency and portability. However,
+    /// unlike <see cref="ISurfaceApplication.Run{T}" />, this method shall not block and will instead return an
+    /// <see cref="IDetachedSurfaceLifecycle" /> on which <see cref="Tick" /> is expected to be continuously called to
+    /// enact the same behaviour on the surface. The associated application is also used for any additional global
+    /// configuration, such as <see cref="ISurfaceApplication.WindowClass" />.
+    /// </typeparam>
+    /// <returns>
+    /// <c>true</c> if <paramref name="lifecycle" /> has been populated with an <see cref="IDetachedSurfaceLifecycle" />
+    /// object containing a valid <see cref="Surface" />, <c>false</c> otherwise.
+    /// </returns>
+    /// <remarks>
+    /// This is the same reference implementation that <see cref="ISurfaceApplication.Run{T}" /> would otherwise use.
+    /// </remarks>
+    sealed static bool TryCreate<T>([NotNullWhen(true)] out IDetachedSurfaceLifecycle? lifecycle) where T : ISurfaceApplication;
+}
+```
 
 # Meeting Notes
 
