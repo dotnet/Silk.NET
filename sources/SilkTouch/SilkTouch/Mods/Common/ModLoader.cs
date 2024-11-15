@@ -26,7 +26,8 @@ public class ModLoader
             nameof(MixKhronosData) => typeof(MixKhronosData),
             nameof(TransformHandles) => typeof(TransformHandles),
             nameof(ExtractNestedTyping) => typeof(ExtractNestedTyping),
+            nameof(TransformProperties) => typeof(TransformProperties),
             nameof(ClangScraper) => typeof(ClangScraper),
-            _ => null
+            _ => null,
         };
 }

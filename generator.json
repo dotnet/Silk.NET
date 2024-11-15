@@ -43,6 +43,7 @@
         "ExtractNestedTyping",
         "TransformHandles",
         "TransformFunctions",
+        "TransformProperties",
         "PrettifyNames",
         "AddVTables"
       ],

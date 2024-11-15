@@ -37005,7 +37005,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public const int AssertLevel = 2;
 
     [NativeTypeName("#define SDL_FILE __FILE__")]
-    public static ReadOnlySpan<byte> File =>
+    public static Utf8String File =>
         "/Users/dylan/Documents/Silk.NET3/eng/silktouch/sdl/SDL3/sdl-SDL.h"u8;
 
     [NativeTypeName("#define SDL_LINE __LINE__")]
@@ -37023,28 +37023,25 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeTypeName(
         "#define SDL_PROP_IOSTREAM_WINDOWS_HANDLE_POINTER \"SDL.iostream.windows.handle\""
     )]
-    public static ReadOnlySpan<byte> PropIostreamWindowsHandlePointer =>
-        "SDL.iostream.windows.handle"u8;
+    public static Utf8String PropIostreamWindowsHandlePointer => "SDL.iostream.windows.handle"u8;
 
     [NativeTypeName("#define SDL_PROP_IOSTREAM_STDIO_FILE_POINTER \"SDL.iostream.stdio.file\"")]
-    public static ReadOnlySpan<byte> PropIostreamStdioFilePointer => "SDL.iostream.stdio.file"u8;
+    public static Utf8String PropIostreamStdioFilePointer => "SDL.iostream.stdio.file"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_IOSTREAM_ANDROID_AASSET_POINTER \"SDL.iostream.android.aasset\""
     )]
-    public static ReadOnlySpan<byte> PropIostreamAndroidAassetPointer =>
-        "SDL.iostream.android.aasset"u8;
+    public static Utf8String PropIostreamAndroidAassetPointer => "SDL.iostream.android.aasset"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_IOSTREAM_DYNAMIC_MEMORY_POINTER \"SDL.iostream.dynamic.memory\""
     )]
-    public static ReadOnlySpan<byte> PropIostreamDynamicMemoryPointer =>
-        "SDL.iostream.dynamic.memory"u8;
+    public static Utf8String PropIostreamDynamicMemoryPointer => "SDL.iostream.dynamic.memory"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_IOSTREAM_DYNAMIC_CHUNKSIZE_NUMBER \"SDL.iostream.dynamic.chunksize\""
     )]
-    public static ReadOnlySpan<byte> PropIostreamDynamicChunksizeNumber =>
+    public static Utf8String PropIostreamDynamicChunksizeNumber =>
         "SDL.iostream.dynamic.chunksize"u8;
 
     [NativeTypeName("#define SDL_IO_SEEK_SET 0")]
@@ -37135,24 +37132,23 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public const int SurfaceUsesProperties = 0x00000010;
 
     [NativeTypeName("#define SDL_PROP_SURFACE_COLORSPACE_NUMBER \"SDL.surface.colorspace\"")]
-    public static ReadOnlySpan<byte> PropSurfaceColorspaceNumber => "SDL.surface.colorspace"u8;
+    public static Utf8String PropSurfaceColorspaceNumber => "SDL.surface.colorspace"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_SURFACE_SDR_WHITE_POINT_FLOAT \"SDL.surface.SDR_white_point\""
     )]
-    public static ReadOnlySpan<byte> PropSurfaceSdrWhitePointFloat =>
-        "SDL.surface.SDR_white_point"u8;
+    public static Utf8String PropSurfaceSdrWhitePointFloat => "SDL.surface.SDR_white_point"u8;
 
     [NativeTypeName("#define SDL_PROP_SURFACE_HDR_HEADROOM_FLOAT \"SDL.surface.HDR_headroom\"")]
-    public static ReadOnlySpan<byte> PropSurfaceHdrHeadroomFloat => "SDL.surface.HDR_headroom"u8;
+    public static Utf8String PropSurfaceHdrHeadroomFloat => "SDL.surface.HDR_headroom"u8;
 
     [NativeTypeName("#define SDL_PROP_SURFACE_TONEMAP_OPERATOR_STRING \"SDL.surface.tonemap\"")]
-    public static ReadOnlySpan<byte> PropSurfaceTonemapOperatorString => "SDL.surface.tonemap"u8;
+    public static Utf8String PropSurfaceTonemapOperatorString => "SDL.surface.tonemap"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER \"SDL.video.wayland.wl_display\""
     )]
-    public static ReadOnlySpan<byte> PropGlobalVideoWaylandWlDisplayPointer =>
+    public static Utf8String PropGlobalVideoWaylandWlDisplayPointer =>
         "SDL.video.wayland.wl_display"u8;
 
     [NativeTypeName("#define SDL_WINDOW_FULLSCREEN 0x00000001U")]
@@ -37240,271 +37236,256 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public const uint WindowposCentered = (0x2FFF0000U | (0));
 
     [NativeTypeName("#define SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN \"SDL.display.HDR_enabled\"")]
-    public static ReadOnlySpan<byte> PropDisplayHdrEnabledBoolean => "SDL.display.HDR_enabled"u8;
+    public static Utf8String PropDisplayHdrEnabledBoolean => "SDL.display.HDR_enabled"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_DISPLAY_SDR_WHITE_POINT_FLOAT \"SDL.display.SDR_white_point\""
     )]
-    public static ReadOnlySpan<byte> PropDisplaySdrWhitePointFloat =>
-        "SDL.display.SDR_white_point"u8;
+    public static Utf8String PropDisplaySdrWhitePointFloat => "SDL.display.SDR_white_point"u8;
 
     [NativeTypeName("#define SDL_PROP_DISPLAY_HDR_HEADROOM_FLOAT \"SDL.display.HDR_headroom\"")]
-    public static ReadOnlySpan<byte> PropDisplayHdrHeadroomFloat => "SDL.display.HDR_headroom"u8;
+    public static Utf8String PropDisplayHdrHeadroomFloat => "SDL.display.HDR_headroom"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_ALWAYS_ON_TOP_BOOLEAN \"always_on_top\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateAlwaysOnTopBoolean => "always_on_top"u8;
+    public static Utf8String PropWindowCreateAlwaysOnTopBoolean => "always_on_top"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_BORDERLESS_BOOLEAN \"borderless\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateBorderlessBoolean => "borderless"u8;
+    public static Utf8String PropWindowCreateBorderlessBoolean => "borderless"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_FOCUSABLE_BOOLEAN \"focusable\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateFocusableBoolean => "focusable"u8;
+    public static Utf8String PropWindowCreateFocusableBoolean => "focusable"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_CREATE_EXTERNAL_GRAPHICS_CONTEXT_BOOLEAN \"external_graphics_context\""
     )]
-    public static ReadOnlySpan<byte> PropWindowCreateExternalGraphicsContextBoolean =>
+    public static Utf8String PropWindowCreateExternalGraphicsContextBoolean =>
         "external_graphics_context"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_FULLSCREEN_BOOLEAN \"fullscreen\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateFullscreenBoolean => "fullscreen"u8;
+    public static Utf8String PropWindowCreateFullscreenBoolean => "fullscreen"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_HEIGHT_NUMBER \"height\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateHeightNumber => "height"u8;
+    public static Utf8String PropWindowCreateHeightNumber => "height"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_HIDDEN_BOOLEAN \"hidden\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateHiddenBoolean => "hidden"u8;
+    public static Utf8String PropWindowCreateHiddenBoolean => "hidden"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_CREATE_HIGH_PIXEL_DENSITY_BOOLEAN \"high_pixel_density\""
     )]
-    public static ReadOnlySpan<byte> PropWindowCreateHighPixelDensityBoolean =>
-        "high_pixel_density"u8;
+    public static Utf8String PropWindowCreateHighPixelDensityBoolean => "high_pixel_density"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MAXIMIZED_BOOLEAN \"maximized\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateMaximizedBoolean => "maximized"u8;
+    public static Utf8String PropWindowCreateMaximizedBoolean => "maximized"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MENU_BOOLEAN \"menu\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateMenuBoolean => "menu"u8;
+    public static Utf8String PropWindowCreateMenuBoolean => "menu"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_METAL_BOOLEAN \"metal\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateMetalBoolean => "metal"u8;
+    public static Utf8String PropWindowCreateMetalBoolean => "metal"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MINIMIZED_BOOLEAN \"minimized\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateMinimizedBoolean => "minimized"u8;
+    public static Utf8String PropWindowCreateMinimizedBoolean => "minimized"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MODAL_BOOLEAN \"modal\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateModalBoolean => "modal"u8;
+    public static Utf8String PropWindowCreateModalBoolean => "modal"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MOUSE_GRABBED_BOOLEAN \"mouse_grabbed\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateMouseGrabbedBoolean => "mouse_grabbed"u8;
+    public static Utf8String PropWindowCreateMouseGrabbedBoolean => "mouse_grabbed"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_OPENGL_BOOLEAN \"opengl\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateOpenglBoolean => "opengl"u8;
+    public static Utf8String PropWindowCreateOpenglBoolean => "opengl"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_PARENT_POINTER \"parent\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateParentPointer => "parent"u8;
+    public static Utf8String PropWindowCreateParentPointer => "parent"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_RESIZABLE_BOOLEAN \"resizable\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateResizableBoolean => "resizable"u8;
+    public static Utf8String PropWindowCreateResizableBoolean => "resizable"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_TITLE_STRING \"title\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateTitleString => "title"u8;
+    public static Utf8String PropWindowCreateTitleString => "title"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_TRANSPARENT_BOOLEAN \"transparent\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateTransparentBoolean => "transparent"u8;
+    public static Utf8String PropWindowCreateTransparentBoolean => "transparent"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_TOOLTIP_BOOLEAN \"tooltip\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateTooltipBoolean => "tooltip"u8;
+    public static Utf8String PropWindowCreateTooltipBoolean => "tooltip"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_UTILITY_BOOLEAN \"utility\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateUtilityBoolean => "utility"u8;
+    public static Utf8String PropWindowCreateUtilityBoolean => "utility"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_VULKAN_BOOLEAN \"vulkan\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateVulkanBoolean => "vulkan"u8;
+    public static Utf8String PropWindowCreateVulkanBoolean => "vulkan"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_WIDTH_NUMBER \"width\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateWidthNumber => "width"u8;
+    public static Utf8String PropWindowCreateWidthNumber => "width"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_X_NUMBER \"x\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateXNumber => "x"u8;
+    public static Utf8String PropWindowCreateXNumber => "x"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_Y_NUMBER \"y\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateYNumber => "y"u8;
+    public static Utf8String PropWindowCreateYNumber => "y"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_COCOA_WINDOW_POINTER \"cocoa.window\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateCocoaWindowPointer => "cocoa.window"u8;
+    public static Utf8String PropWindowCreateCocoaWindowPointer => "cocoa.window"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_COCOA_VIEW_POINTER \"cocoa.view\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateCocoaViewPointer => "cocoa.view"u8;
+    public static Utf8String PropWindowCreateCocoaViewPointer => "cocoa.view"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_CREATE_WAYLAND_SCALE_TO_DISPLAY_BOOLEAN \"wayland.scale_to_display\""
     )]
-    public static ReadOnlySpan<byte> PropWindowCreateWaylandScaleToDisplayBoolean =>
+    public static Utf8String PropWindowCreateWaylandScaleToDisplayBoolean =>
         "wayland.scale_to_display"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN \"wayland.surface_role_custom\""
     )]
-    public static ReadOnlySpan<byte> PropWindowCreateWaylandSurfaceRoleCustomBoolean =>
+    public static Utf8String PropWindowCreateWaylandSurfaceRoleCustomBoolean =>
         "wayland.surface_role_custom"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_CREATE_WAYLAND_CREATE_EGL_WINDOW_BOOLEAN \"wayland.create_egl_window\""
     )]
-    public static ReadOnlySpan<byte> PropWindowCreateWaylandCreateEglWindowBoolean =>
+    public static Utf8String PropWindowCreateWaylandCreateEglWindowBoolean =>
         "wayland.create_egl_window"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_CREATE_WAYLAND_WL_SURFACE_POINTER \"wayland.wl_surface\""
     )]
-    public static ReadOnlySpan<byte> PropWindowCreateWaylandWlSurfacePointer =>
-        "wayland.wl_surface"u8;
+    public static Utf8String PropWindowCreateWaylandWlSurfacePointer => "wayland.wl_surface"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_WIN32_HWND_POINTER \"win32.hwnd\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateWin32HwndPointer => "win32.hwnd"u8;
+    public static Utf8String PropWindowCreateWin32HwndPointer => "win32.hwnd"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_CREATE_WIN32_PIXEL_FORMAT_HWND_POINTER \"win32.pixel_format_hwnd\""
     )]
-    public static ReadOnlySpan<byte> PropWindowCreateWin32PixelFormatHwndPointer =>
+    public static Utf8String PropWindowCreateWin32PixelFormatHwndPointer =>
         "win32.pixel_format_hwnd"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER \"x11.window\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateX11WindowNumber => "x11.window"u8;
+    public static Utf8String PropWindowCreateX11WindowNumber => "x11.window"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_SHAPE_POINTER \"SDL.window.shape\"")]
-    public static ReadOnlySpan<byte> PropWindowShapePointer => "SDL.window.shape"u8;
+    public static Utf8String PropWindowShapePointer => "SDL.window.shape"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_ANDROID_WINDOW_POINTER \"SDL.window.android.window\"")]
-    public static ReadOnlySpan<byte> PropWindowAndroidWindowPointer =>
-        "SDL.window.android.window"u8;
+    public static Utf8String PropWindowAndroidWindowPointer => "SDL.window.android.window"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_ANDROID_SURFACE_POINTER \"SDL.window.android.surface\""
     )]
-    public static ReadOnlySpan<byte> PropWindowAndroidSurfacePointer =>
-        "SDL.window.android.surface"u8;
+    public static Utf8String PropWindowAndroidSurfacePointer => "SDL.window.android.surface"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_UIKIT_WINDOW_POINTER \"SDL.window.uikit.window\"")]
-    public static ReadOnlySpan<byte> PropWindowUikitWindowPointer => "SDL.window.uikit.window"u8;
+    public static Utf8String PropWindowUikitWindowPointer => "SDL.window.uikit.window"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_UIKIT_METAL_VIEW_TAG_NUMBER \"SDL.window.uikit.metal_view_tag\""
     )]
-    public static ReadOnlySpan<byte> PropWindowUikitMetalViewTagNumber =>
+    public static Utf8String PropWindowUikitMetalViewTagNumber =>
         "SDL.window.uikit.metal_view_tag"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_KMSDRM_DEVICE_INDEX_NUMBER \"SDL.window.kmsdrm.dev_index\""
     )]
-    public static ReadOnlySpan<byte> PropWindowKmsdrmDeviceIndexNumber =>
-        "SDL.window.kmsdrm.dev_index"u8;
+    public static Utf8String PropWindowKmsdrmDeviceIndexNumber => "SDL.window.kmsdrm.dev_index"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_KMSDRM_DRM_FD_NUMBER \"SDL.window.kmsdrm.drm_fd\"")]
-    public static ReadOnlySpan<byte> PropWindowKmsdrmDrmFdNumber => "SDL.window.kmsdrm.drm_fd"u8;
+    public static Utf8String PropWindowKmsdrmDrmFdNumber => "SDL.window.kmsdrm.drm_fd"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_KMSDRM_GBM_DEVICE_POINTER \"SDL.window.kmsdrm.gbm_dev\""
     )]
-    public static ReadOnlySpan<byte> PropWindowKmsdrmGbmDevicePointer =>
-        "SDL.window.kmsdrm.gbm_dev"u8;
+    public static Utf8String PropWindowKmsdrmGbmDevicePointer => "SDL.window.kmsdrm.gbm_dev"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_COCOA_WINDOW_POINTER \"SDL.window.cocoa.window\"")]
-    public static ReadOnlySpan<byte> PropWindowCocoaWindowPointer => "SDL.window.cocoa.window"u8;
+    public static Utf8String PropWindowCocoaWindowPointer => "SDL.window.cocoa.window"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_COCOA_METAL_VIEW_TAG_NUMBER \"SDL.window.cocoa.metal_view_tag\""
     )]
-    public static ReadOnlySpan<byte> PropWindowCocoaMetalViewTagNumber =>
+    public static Utf8String PropWindowCocoaMetalViewTagNumber =>
         "SDL.window.cocoa.metal_view_tag"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_VIVANTE_DISPLAY_POINTER \"SDL.window.vivante.display\""
     )]
-    public static ReadOnlySpan<byte> PropWindowVivanteDisplayPointer =>
-        "SDL.window.vivante.display"u8;
+    public static Utf8String PropWindowVivanteDisplayPointer => "SDL.window.vivante.display"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_VIVANTE_WINDOW_POINTER \"SDL.window.vivante.window\"")]
-    public static ReadOnlySpan<byte> PropWindowVivanteWindowPointer =>
-        "SDL.window.vivante.window"u8;
+    public static Utf8String PropWindowVivanteWindowPointer => "SDL.window.vivante.window"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_VIVANTE_SURFACE_POINTER \"SDL.window.vivante.surface\""
     )]
-    public static ReadOnlySpan<byte> PropWindowVivanteSurfacePointer =>
-        "SDL.window.vivante.surface"u8;
+    public static Utf8String PropWindowVivanteSurfacePointer => "SDL.window.vivante.surface"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_WINRT_WINDOW_POINTER \"SDL.window.winrt.window\"")]
-    public static ReadOnlySpan<byte> PropWindowWinrtWindowPointer => "SDL.window.winrt.window"u8;
+    public static Utf8String PropWindowWinrtWindowPointer => "SDL.window.winrt.window"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_WIN32_HWND_POINTER \"SDL.window.win32.hwnd\"")]
-    public static ReadOnlySpan<byte> PropWindowWin32HwndPointer => "SDL.window.win32.hwnd"u8;
+    public static Utf8String PropWindowWin32HwndPointer => "SDL.window.win32.hwnd"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_WIN32_HDC_POINTER \"SDL.window.win32.hdc\"")]
-    public static ReadOnlySpan<byte> PropWindowWin32HdcPointer => "SDL.window.win32.hdc"u8;
+    public static Utf8String PropWindowWin32HdcPointer => "SDL.window.win32.hdc"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_WIN32_INSTANCE_POINTER \"SDL.window.win32.instance\"")]
-    public static ReadOnlySpan<byte> PropWindowWin32InstancePointer =>
-        "SDL.window.win32.instance"u8;
+    public static Utf8String PropWindowWin32InstancePointer => "SDL.window.win32.instance"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_WAYLAND_DISPLAY_POINTER \"SDL.window.wayland.display\""
     )]
-    public static ReadOnlySpan<byte> PropWindowWaylandDisplayPointer =>
-        "SDL.window.wayland.display"u8;
+    public static Utf8String PropWindowWaylandDisplayPointer => "SDL.window.wayland.display"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_WAYLAND_SURFACE_POINTER \"SDL.window.wayland.surface\""
     )]
-    public static ReadOnlySpan<byte> PropWindowWaylandSurfacePointer =>
-        "SDL.window.wayland.surface"u8;
+    public static Utf8String PropWindowWaylandSurfacePointer => "SDL.window.wayland.surface"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_WAYLAND_EGL_WINDOW_POINTER \"SDL.window.wayland.egl_window\""
     )]
-    public static ReadOnlySpan<byte> PropWindowWaylandEglWindowPointer =>
-        "SDL.window.wayland.egl_window"u8;
+    public static Utf8String PropWindowWaylandEglWindowPointer => "SDL.window.wayland.egl_window"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_WAYLAND_XDG_SURFACE_POINTER \"SDL.window.wayland.xdg_surface\""
     )]
-    public static ReadOnlySpan<byte> PropWindowWaylandXdgSurfacePointer =>
+    public static Utf8String PropWindowWaylandXdgSurfacePointer =>
         "SDL.window.wayland.xdg_surface"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_POINTER \"SDL.window.wayland.xdg_toplevel\""
     )]
-    public static ReadOnlySpan<byte> PropWindowWaylandXdgToplevelPointer =>
+    public static Utf8String PropWindowWaylandXdgToplevelPointer =>
         "SDL.window.wayland.xdg_toplevel"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_EXPORT_HANDLE_STRING \"SDL.window.wayland.xdg_toplevel_export_handle\""
     )]
-    public static ReadOnlySpan<byte> PropWindowWaylandXdgToplevelExportHandleString =>
+    public static Utf8String PropWindowWaylandXdgToplevelExportHandleString =>
         "SDL.window.wayland.xdg_toplevel_export_handle"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_WAYLAND_XDG_POPUP_POINTER \"SDL.window.wayland.xdg_popup\""
     )]
-    public static ReadOnlySpan<byte> PropWindowWaylandXdgPopupPointer =>
-        "SDL.window.wayland.xdg_popup"u8;
+    public static Utf8String PropWindowWaylandXdgPopupPointer => "SDL.window.wayland.xdg_popup"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_WINDOW_WAYLAND_XDG_POSITIONER_POINTER \"SDL.window.wayland.xdg_positioner\""
     )]
-    public static ReadOnlySpan<byte> PropWindowWaylandXdgPositionerPointer =>
+    public static Utf8String PropWindowWaylandXdgPositionerPointer =>
         "SDL.window.wayland.xdg_positioner"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_X11_DISPLAY_POINTER \"SDL.window.x11.display\"")]
-    public static ReadOnlySpan<byte> PropWindowX11DisplayPointer => "SDL.window.x11.display"u8;
+    public static Utf8String PropWindowX11DisplayPointer => "SDL.window.x11.display"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_X11_SCREEN_NUMBER \"SDL.window.x11.screen\"")]
-    public static ReadOnlySpan<byte> PropWindowX11ScreenNumber => "SDL.window.x11.screen"u8;
+    public static Utf8String PropWindowX11ScreenNumber => "SDL.window.x11.screen"u8;
 
     [NativeTypeName("#define SDL_PROP_WINDOW_X11_WINDOW_NUMBER \"SDL.window.x11.window\"")]
-    public static ReadOnlySpan<byte> PropWindowX11WindowNumber => "SDL.window.x11.window"u8;
+    public static Utf8String PropWindowX11WindowNumber => "SDL.window.x11.window"u8;
 
     [NativeTypeName("#define SDL_CACHELINE_SIZE 128")]
     public const int CachelineSize = 128;
@@ -37519,24 +37500,23 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public const double IphoneMaxGforce = 5.0;
 
     [NativeTypeName("#define SDL_PROP_JOYSTICK_CAP_MONO_LED_BOOLEAN \"SDL.joystick.cap.mono_led\"")]
-    public static ReadOnlySpan<byte> PropJoystickCapMonoLedBoolean => "SDL.joystick.cap.mono_led"u8;
+    public static Utf8String PropJoystickCapMonoLedBoolean => "SDL.joystick.cap.mono_led"u8;
 
     [NativeTypeName("#define SDL_PROP_JOYSTICK_CAP_RGB_LED_BOOLEAN \"SDL.joystick.cap.rgb_led\"")]
-    public static ReadOnlySpan<byte> PropJoystickCapRgbLedBoolean => "SDL.joystick.cap.rgb_led"u8;
+    public static Utf8String PropJoystickCapRgbLedBoolean => "SDL.joystick.cap.rgb_led"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_JOYSTICK_CAP_PLAYER_LED_BOOLEAN \"SDL.joystick.cap.player_led\""
     )]
-    public static ReadOnlySpan<byte> PropJoystickCapPlayerLedBoolean =>
-        "SDL.joystick.cap.player_led"u8;
+    public static Utf8String PropJoystickCapPlayerLedBoolean => "SDL.joystick.cap.player_led"u8;
 
     [NativeTypeName("#define SDL_PROP_JOYSTICK_CAP_RUMBLE_BOOLEAN \"SDL.joystick.cap.rumble\"")]
-    public static ReadOnlySpan<byte> PropJoystickCapRumbleBoolean => "SDL.joystick.cap.rumble"u8;
+    public static Utf8String PropJoystickCapRumbleBoolean => "SDL.joystick.cap.rumble"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_JOYSTICK_CAP_TRIGGER_RUMBLE_BOOLEAN \"SDL.joystick.cap.trigger_rumble\""
     )]
-    public static ReadOnlySpan<byte> PropJoystickCapTriggerRumbleBoolean =>
+    public static Utf8String PropJoystickCapTriggerRumbleBoolean =>
         "SDL.joystick.cap.trigger_rumble"u8;
 
     [NativeTypeName("#define SDL_HAT_CENTERED 0x00")]
@@ -37572,28 +37552,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeTypeName(
         "#define SDL_PROP_GAMEPAD_CAP_MONO_LED_BOOLEAN SDL_PROP_JOYSTICK_CAP_MONO_LED_BOOLEAN"
     )]
-    public static ReadOnlySpan<byte> PropGamepadCapMonoLedBoolean => "SDL.joystick.cap.mono_led"u8;
+    public static Utf8String PropGamepadCapMonoLedBoolean => "SDL.joystick.cap.mono_led"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_GAMEPAD_CAP_RGB_LED_BOOLEAN SDL_PROP_JOYSTICK_CAP_RGB_LED_BOOLEAN"
     )]
-    public static ReadOnlySpan<byte> PropGamepadCapRgbLedBoolean => "SDL.joystick.cap.rgb_led"u8;
+    public static Utf8String PropGamepadCapRgbLedBoolean => "SDL.joystick.cap.rgb_led"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_GAMEPAD_CAP_PLAYER_LED_BOOLEAN SDL_PROP_JOYSTICK_CAP_PLAYER_LED_BOOLEAN"
     )]
-    public static ReadOnlySpan<byte> PropGamepadCapPlayerLedBoolean =>
-        "SDL.joystick.cap.player_led"u8;
+    public static Utf8String PropGamepadCapPlayerLedBoolean => "SDL.joystick.cap.player_led"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_GAMEPAD_CAP_RUMBLE_BOOLEAN SDL_PROP_JOYSTICK_CAP_RUMBLE_BOOLEAN"
     )]
-    public static ReadOnlySpan<byte> PropGamepadCapRumbleBoolean => "SDL.joystick.cap.rumble"u8;
+    public static Utf8String PropGamepadCapRumbleBoolean => "SDL.joystick.cap.rumble"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_GAMEPAD_CAP_TRIGGER_RUMBLE_BOOLEAN SDL_PROP_JOYSTICK_CAP_TRIGGER_RUMBLE_BOOLEAN"
     )]
-    public static ReadOnlySpan<byte> PropGamepadCapTriggerRumbleBoolean =>
+    public static Utf8String PropGamepadCapTriggerRumbleBoolean =>
         "SDL.joystick.cap.trigger_rumble"u8;
 
     [NativeTypeName("#define SDLK_SCANCODE_MASK (1<<30)")]
@@ -38565,1157 +38544,1089 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeTypeName(
         "#define SDL_HINT_ALLOW_ALT_TAB_WHILE_GRABBED \"SDL_ALLOW_ALT_TAB_WHILE_GRABBED\""
     )]
-    public static ReadOnlySpan<byte> HintAllowAltTabWhileGrabbed =>
-        "SDL_ALLOW_ALT_TAB_WHILE_GRABBED"u8;
+    public static Utf8String HintAllowAltTabWhileGrabbed => "SDL_ALLOW_ALT_TAB_WHILE_GRABBED"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_ANDROID_ALLOW_RECREATE_ACTIVITY \"SDL_ANDROID_ALLOW_RECREATE_ACTIVITY\""
     )]
-    public static ReadOnlySpan<byte> HintAndroidAllowRecreateActivity =>
+    public static Utf8String HintAndroidAllowRecreateActivity =>
         "SDL_ANDROID_ALLOW_RECREATE_ACTIVITY"u8;
 
     [NativeTypeName("#define SDL_HINT_ANDROID_BLOCK_ON_PAUSE \"SDL_ANDROID_BLOCK_ON_PAUSE\"")]
-    public static ReadOnlySpan<byte> HintAndroidBlockOnPause => "SDL_ANDROID_BLOCK_ON_PAUSE"u8;
+    public static Utf8String HintAndroidBlockOnPause => "SDL_ANDROID_BLOCK_ON_PAUSE"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO \"SDL_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO\""
     )]
-    public static ReadOnlySpan<byte> HintAndroidBlockOnPausePauseaudio =>
+    public static Utf8String HintAndroidBlockOnPausePauseaudio =>
         "SDL_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO"u8;
 
     [NativeTypeName("#define SDL_HINT_ANDROID_TRAP_BACK_BUTTON \"SDL_ANDROID_TRAP_BACK_BUTTON\"")]
-    public static ReadOnlySpan<byte> HintAndroidTrapBackButton => "SDL_ANDROID_TRAP_BACK_BUTTON"u8;
+    public static Utf8String HintAndroidTrapBackButton => "SDL_ANDROID_TRAP_BACK_BUTTON"u8;
 
     [NativeTypeName("#define SDL_HINT_APP_ID \"SDL_APP_ID\"")]
-    public static ReadOnlySpan<byte> HintAppId => "SDL_APP_ID"u8;
+    public static Utf8String HintAppId => "SDL_APP_ID"u8;
 
     [NativeTypeName("#define SDL_HINT_APP_NAME \"SDL_APP_NAME\"")]
-    public static ReadOnlySpan<byte> HintAppName => "SDL_APP_NAME"u8;
+    public static Utf8String HintAppName => "SDL_APP_NAME"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_APPLE_TV_CONTROLLER_UI_EVENTS \"SDL_APPLE_TV_CONTROLLER_UI_EVENTS\""
     )]
-    public static ReadOnlySpan<byte> HintAppleTvControllerUiEvents =>
-        "SDL_APPLE_TV_CONTROLLER_UI_EVENTS"u8;
+    public static Utf8String HintAppleTvControllerUiEvents => "SDL_APPLE_TV_CONTROLLER_UI_EVENTS"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_APPLE_TV_REMOTE_ALLOW_ROTATION \"SDL_APPLE_TV_REMOTE_ALLOW_ROTATION\""
     )]
-    public static ReadOnlySpan<byte> HintAppleTvRemoteAllowRotation =>
+    public static Utf8String HintAppleTvRemoteAllowRotation =>
         "SDL_APPLE_TV_REMOTE_ALLOW_ROTATION"u8;
 
     [NativeTypeName("#define SDL_HINT_AUDIO_CATEGORY \"SDL_AUDIO_CATEGORY\"")]
-    public static ReadOnlySpan<byte> HintAudioCategory => "SDL_AUDIO_CATEGORY"u8;
+    public static Utf8String HintAudioCategory => "SDL_AUDIO_CATEGORY"u8;
 
     [NativeTypeName("#define SDL_HINT_AUDIO_DEVICE_APP_NAME \"SDL_AUDIO_DEVICE_APP_NAME\"")]
-    public static ReadOnlySpan<byte> HintAudioDeviceAppName => "SDL_AUDIO_DEVICE_APP_NAME"u8;
+    public static Utf8String HintAudioDeviceAppName => "SDL_AUDIO_DEVICE_APP_NAME"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES \"SDL_AUDIO_DEVICE_SAMPLE_FRAMES\""
     )]
-    public static ReadOnlySpan<byte> HintAudioDeviceSampleFrames =>
-        "SDL_AUDIO_DEVICE_SAMPLE_FRAMES"u8;
+    public static Utf8String HintAudioDeviceSampleFrames => "SDL_AUDIO_DEVICE_SAMPLE_FRAMES"u8;
 
     [NativeTypeName("#define SDL_HINT_AUDIO_DEVICE_STREAM_NAME \"SDL_AUDIO_DEVICE_STREAM_NAME\"")]
-    public static ReadOnlySpan<byte> HintAudioDeviceStreamName => "SDL_AUDIO_DEVICE_STREAM_NAME"u8;
+    public static Utf8String HintAudioDeviceStreamName => "SDL_AUDIO_DEVICE_STREAM_NAME"u8;
 
     [NativeTypeName("#define SDL_HINT_AUDIO_DEVICE_STREAM_ROLE \"SDL_AUDIO_DEVICE_STREAM_ROLE\"")]
-    public static ReadOnlySpan<byte> HintAudioDeviceStreamRole => "SDL_AUDIO_DEVICE_STREAM_ROLE"u8;
+    public static Utf8String HintAudioDeviceStreamRole => "SDL_AUDIO_DEVICE_STREAM_ROLE"u8;
 
     [NativeTypeName("#define SDL_HINT_AUDIO_DRIVER \"SDL_AUDIO_DRIVER\"")]
-    public static ReadOnlySpan<byte> HintAudioDriver => "SDL_AUDIO_DRIVER"u8;
+    public static Utf8String HintAudioDriver => "SDL_AUDIO_DRIVER"u8;
 
     [NativeTypeName("#define SDL_HINT_AUDIO_INCLUDE_MONITORS \"SDL_AUDIO_INCLUDE_MONITORS\"")]
-    public static ReadOnlySpan<byte> HintAudioIncludeMonitors => "SDL_AUDIO_INCLUDE_MONITORS"u8;
+    public static Utf8String HintAudioIncludeMonitors => "SDL_AUDIO_INCLUDE_MONITORS"u8;
 
     [NativeTypeName("#define SDL_HINT_AUTO_UPDATE_JOYSTICKS \"SDL_AUTO_UPDATE_JOYSTICKS\"")]
-    public static ReadOnlySpan<byte> HintAutoUpdateJoysticks => "SDL_AUTO_UPDATE_JOYSTICKS"u8;
+    public static Utf8String HintAutoUpdateJoysticks => "SDL_AUTO_UPDATE_JOYSTICKS"u8;
 
     [NativeTypeName("#define SDL_HINT_AUTO_UPDATE_SENSORS \"SDL_AUTO_UPDATE_SENSORS\"")]
-    public static ReadOnlySpan<byte> HintAutoUpdateSensors => "SDL_AUTO_UPDATE_SENSORS"u8;
+    public static Utf8String HintAutoUpdateSensors => "SDL_AUTO_UPDATE_SENSORS"u8;
 
     [NativeTypeName("#define SDL_HINT_BMP_SAVE_LEGACY_FORMAT \"SDL_BMP_SAVE_LEGACY_FORMAT\"")]
-    public static ReadOnlySpan<byte> HintBmpSaveLegacyFormat => "SDL_BMP_SAVE_LEGACY_FORMAT"u8;
+    public static Utf8String HintBmpSaveLegacyFormat => "SDL_BMP_SAVE_LEGACY_FORMAT"u8;
 
     [NativeTypeName("#define SDL_HINT_CAMERA_DRIVER \"SDL_CAMERA_DRIVER\"")]
-    public static ReadOnlySpan<byte> HintCameraDriver => "SDL_CAMERA_DRIVER"u8;
+    public static Utf8String HintCameraDriver => "SDL_CAMERA_DRIVER"u8;
 
     [NativeTypeName("#define SDL_HINT_CPU_FEATURE_MASK \"SDL_CPU_FEATURE_MASK\"")]
-    public static ReadOnlySpan<byte> HintCpuFeatureMask => "SDL_CPU_FEATURE_MASK"u8;
+    public static Utf8String HintCpuFeatureMask => "SDL_CPU_FEATURE_MASK"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_DIRECTINPUT \"SDL_JOYSTICK_DIRECTINPUT\"")]
-    public static ReadOnlySpan<byte> HintJoystickDirectinput => "SDL_JOYSTICK_DIRECTINPUT"u8;
+    public static Utf8String HintJoystickDirectinput => "SDL_JOYSTICK_DIRECTINPUT"u8;
 
     [NativeTypeName("#define SDL_HINT_FILE_DIALOG_DRIVER \"SDL_FILE_DIALOG_DRIVER\"")]
-    public static ReadOnlySpan<byte> HintFileDialogDriver => "SDL_FILE_DIALOG_DRIVER"u8;
+    public static Utf8String HintFileDialogDriver => "SDL_FILE_DIALOG_DRIVER"u8;
 
     [NativeTypeName("#define SDL_HINT_DISPLAY_USABLE_BOUNDS \"SDL_DISPLAY_USABLE_BOUNDS\"")]
-    public static ReadOnlySpan<byte> HintDisplayUsableBounds => "SDL_DISPLAY_USABLE_BOUNDS"u8;
+    public static Utf8String HintDisplayUsableBounds => "SDL_DISPLAY_USABLE_BOUNDS"u8;
 
     [NativeTypeName("#define SDL_HINT_EMSCRIPTEN_ASYNCIFY \"SDL_EMSCRIPTEN_ASYNCIFY\"")]
-    public static ReadOnlySpan<byte> HintEmscriptenAsyncify => "SDL_EMSCRIPTEN_ASYNCIFY"u8;
+    public static Utf8String HintEmscriptenAsyncify => "SDL_EMSCRIPTEN_ASYNCIFY"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_EMSCRIPTEN_CANVAS_SELECTOR \"SDL_EMSCRIPTEN_CANVAS_SELECTOR\""
     )]
-    public static ReadOnlySpan<byte> HintEmscriptenCanvasSelector =>
-        "SDL_EMSCRIPTEN_CANVAS_SELECTOR"u8;
+    public static Utf8String HintEmscriptenCanvasSelector => "SDL_EMSCRIPTEN_CANVAS_SELECTOR"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_EMSCRIPTEN_KEYBOARD_ELEMENT \"SDL_EMSCRIPTEN_KEYBOARD_ELEMENT\""
     )]
-    public static ReadOnlySpan<byte> HintEmscriptenKeyboardElement =>
-        "SDL_EMSCRIPTEN_KEYBOARD_ELEMENT"u8;
+    public static Utf8String HintEmscriptenKeyboardElement => "SDL_EMSCRIPTEN_KEYBOARD_ELEMENT"u8;
 
     [NativeTypeName("#define SDL_HINT_ENABLE_SCREEN_KEYBOARD \"SDL_ENABLE_SCREEN_KEYBOARD\"")]
-    public static ReadOnlySpan<byte> HintEnableScreenKeyboard => "SDL_ENABLE_SCREEN_KEYBOARD"u8;
+    public static Utf8String HintEnableScreenKeyboard => "SDL_ENABLE_SCREEN_KEYBOARD"u8;
 
     [NativeTypeName("#define SDL_HINT_EVENT_LOGGING \"SDL_EVENT_LOGGING\"")]
-    public static ReadOnlySpan<byte> HintEventLogging => "SDL_EVENT_LOGGING"u8;
+    public static Utf8String HintEventLogging => "SDL_EVENT_LOGGING"u8;
 
     [NativeTypeName("#define SDL_HINT_FORCE_RAISEWINDOW \"SDL_FORCE_RAISEWINDOW\"")]
-    public static ReadOnlySpan<byte> HintForceRaisewindow => "SDL_FORCE_RAISEWINDOW"u8;
+    public static Utf8String HintForceRaisewindow => "SDL_FORCE_RAISEWINDOW"u8;
 
     [NativeTypeName("#define SDL_HINT_FRAMEBUFFER_ACCELERATION \"SDL_FRAMEBUFFER_ACCELERATION\"")]
-    public static ReadOnlySpan<byte> HintFramebufferAcceleration =>
-        "SDL_FRAMEBUFFER_ACCELERATION"u8;
+    public static Utf8String HintFramebufferAcceleration => "SDL_FRAMEBUFFER_ACCELERATION"u8;
 
     [NativeTypeName("#define SDL_HINT_GAMECONTROLLERCONFIG \"SDL_GAMECONTROLLERCONFIG\"")]
-    public static ReadOnlySpan<byte> HintGamecontrollerconfig => "SDL_GAMECONTROLLERCONFIG"u8;
+    public static Utf8String HintGamecontrollerconfig => "SDL_GAMECONTROLLERCONFIG"u8;
 
     [NativeTypeName("#define SDL_HINT_GAMECONTROLLERCONFIG_FILE \"SDL_GAMECONTROLLERCONFIG_FILE\"")]
-    public static ReadOnlySpan<byte> HintGamecontrollerconfigFile =>
-        "SDL_GAMECONTROLLERCONFIG_FILE"u8;
+    public static Utf8String HintGamecontrollerconfigFile => "SDL_GAMECONTROLLERCONFIG_FILE"u8;
 
     [NativeTypeName("#define SDL_HINT_GAMECONTROLLERTYPE \"SDL_GAMECONTROLLERTYPE\"")]
-    public static ReadOnlySpan<byte> HintGamecontrollertype => "SDL_GAMECONTROLLERTYPE"u8;
+    public static Utf8String HintGamecontrollertype => "SDL_GAMECONTROLLERTYPE"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES \"SDL_GAMECONTROLLER_IGNORE_DEVICES\""
     )]
-    public static ReadOnlySpan<byte> HintGamecontrollerIgnoreDevices =>
+    public static Utf8String HintGamecontrollerIgnoreDevices =>
         "SDL_GAMECONTROLLER_IGNORE_DEVICES"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT \"SDL_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT\""
     )]
-    public static ReadOnlySpan<byte> HintGamecontrollerIgnoreDevicesExcept =>
+    public static Utf8String HintGamecontrollerIgnoreDevicesExcept =>
         "SDL_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_GAMECONTROLLER_SENSOR_FUSION \"SDL_GAMECONTROLLER_SENSOR_FUSION\""
     )]
-    public static ReadOnlySpan<byte> HintGamecontrollerSensorFusion =>
-        "SDL_GAMECONTROLLER_SENSOR_FUSION"u8;
+    public static Utf8String HintGamecontrollerSensorFusion => "SDL_GAMECONTROLLER_SENSOR_FUSION"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_GDK_TEXTINPUT_DEFAULT_TEXT \"SDL_GDK_TEXTINPUT_DEFAULT_TEXT\""
     )]
-    public static ReadOnlySpan<byte> HintGdkTextinputDefaultText =>
-        "SDL_GDK_TEXTINPUT_DEFAULT_TEXT"u8;
+    public static Utf8String HintGdkTextinputDefaultText => "SDL_GDK_TEXTINPUT_DEFAULT_TEXT"u8;
 
     [NativeTypeName("#define SDL_HINT_GDK_TEXTINPUT_DESCRIPTION \"SDL_GDK_TEXTINPUT_DESCRIPTION\"")]
-    public static ReadOnlySpan<byte> HintGdkTextinputDescription =>
-        "SDL_GDK_TEXTINPUT_DESCRIPTION"u8;
+    public static Utf8String HintGdkTextinputDescription => "SDL_GDK_TEXTINPUT_DESCRIPTION"u8;
 
     [NativeTypeName("#define SDL_HINT_GDK_TEXTINPUT_MAX_LENGTH \"SDL_GDK_TEXTINPUT_MAX_LENGTH\"")]
-    public static ReadOnlySpan<byte> HintGdkTextinputMaxLength => "SDL_GDK_TEXTINPUT_MAX_LENGTH"u8;
+    public static Utf8String HintGdkTextinputMaxLength => "SDL_GDK_TEXTINPUT_MAX_LENGTH"u8;
 
     [NativeTypeName("#define SDL_HINT_GDK_TEXTINPUT_SCOPE \"SDL_GDK_TEXTINPUT_SCOPE\"")]
-    public static ReadOnlySpan<byte> HintGdkTextinputScope => "SDL_GDK_TEXTINPUT_SCOPE"u8;
+    public static Utf8String HintGdkTextinputScope => "SDL_GDK_TEXTINPUT_SCOPE"u8;
 
     [NativeTypeName("#define SDL_HINT_GDK_TEXTINPUT_TITLE \"SDL_GDK_TEXTINPUT_TITLE\"")]
-    public static ReadOnlySpan<byte> HintGdkTextinputTitle => "SDL_GDK_TEXTINPUT_TITLE"u8;
+    public static Utf8String HintGdkTextinputTitle => "SDL_GDK_TEXTINPUT_TITLE"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_HIDAPI_ENUMERATE_ONLY_CONTROLLERS \"SDL_HIDAPI_ENUMERATE_ONLY_CONTROLLERS\""
     )]
-    public static ReadOnlySpan<byte> HintHidapiEnumerateOnlyControllers =>
+    public static Utf8String HintHidapiEnumerateOnlyControllers =>
         "SDL_HIDAPI_ENUMERATE_ONLY_CONTROLLERS"u8;
 
     [NativeTypeName("#define SDL_HINT_HIDAPI_IGNORE_DEVICES \"SDL_HIDAPI_IGNORE_DEVICES\"")]
-    public static ReadOnlySpan<byte> HintHidapiIgnoreDevices => "SDL_HIDAPI_IGNORE_DEVICES"u8;
+    public static Utf8String HintHidapiIgnoreDevices => "SDL_HIDAPI_IGNORE_DEVICES"u8;
 
     [NativeTypeName("#define SDL_HINT_IME_INTERNAL_EDITING \"SDL_IME_INTERNAL_EDITING\"")]
-    public static ReadOnlySpan<byte> HintImeInternalEditing => "SDL_IME_INTERNAL_EDITING"u8;
+    public static Utf8String HintImeInternalEditing => "SDL_IME_INTERNAL_EDITING"u8;
 
     [NativeTypeName("#define SDL_HINT_IME_SHOW_UI \"SDL_IME_SHOW_UI\"")]
-    public static ReadOnlySpan<byte> HintImeShowUi => "SDL_IME_SHOW_UI"u8;
+    public static Utf8String HintImeShowUi => "SDL_IME_SHOW_UI"u8;
 
     [NativeTypeName("#define SDL_HINT_IOS_HIDE_HOME_INDICATOR \"SDL_IOS_HIDE_HOME_INDICATOR\"")]
-    public static ReadOnlySpan<byte> HintIosHideHomeIndicator => "SDL_IOS_HIDE_HOME_INDICATOR"u8;
+    public static Utf8String HintIosHideHomeIndicator => "SDL_IOS_HIDE_HOME_INDICATOR"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS \"SDL_JOYSTICK_ALLOW_BACKGROUND_EVENTS\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickAllowBackgroundEvents =>
+    public static Utf8String HintJoystickAllowBackgroundEvents =>
         "SDL_JOYSTICK_ALLOW_BACKGROUND_EVENTS"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES \"SDL_JOYSTICK_ARCADESTICK_DEVICES\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickArcadestickDevices =>
-        "SDL_JOYSTICK_ARCADESTICK_DEVICES"u8;
+    public static Utf8String HintJoystickArcadestickDevices => "SDL_JOYSTICK_ARCADESTICK_DEVICES"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES_EXCLUDED \"SDL_JOYSTICK_ARCADESTICK_DEVICES_EXCLUDED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickArcadestickDevicesExcluded =>
+    public static Utf8String HintJoystickArcadestickDevicesExcluded =>
         "SDL_JOYSTICK_ARCADESTICK_DEVICES_EXCLUDED"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_BLACKLIST_DEVICES \"SDL_JOYSTICK_BLACKLIST_DEVICES\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickBlacklistDevices =>
-        "SDL_JOYSTICK_BLACKLIST_DEVICES"u8;
+    public static Utf8String HintJoystickBlacklistDevices => "SDL_JOYSTICK_BLACKLIST_DEVICES"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_BLACKLIST_DEVICES_EXCLUDED \"SDL_JOYSTICK_BLACKLIST_DEVICES_EXCLUDED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickBlacklistDevicesExcluded =>
+    public static Utf8String HintJoystickBlacklistDevicesExcluded =>
         "SDL_JOYSTICK_BLACKLIST_DEVICES_EXCLUDED"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_DEVICE \"SDL_JOYSTICK_DEVICE\"")]
-    public static ReadOnlySpan<byte> HintJoystickDevice => "SDL_JOYSTICK_DEVICE"u8;
+    public static Utf8String HintJoystickDevice => "SDL_JOYSTICK_DEVICE"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES \"SDL_JOYSTICK_FLIGHTSTICK_DEVICES\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickFlightstickDevices =>
-        "SDL_JOYSTICK_FLIGHTSTICK_DEVICES"u8;
+    public static Utf8String HintJoystickFlightstickDevices => "SDL_JOYSTICK_FLIGHTSTICK_DEVICES"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES_EXCLUDED \"SDL_JOYSTICK_FLIGHTSTICK_DEVICES_EXCLUDED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickFlightstickDevicesExcluded =>
+    public static Utf8String HintJoystickFlightstickDevicesExcluded =>
         "SDL_JOYSTICK_FLIGHTSTICK_DEVICES_EXCLUDED"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_GAMECUBE_DEVICES \"SDL_JOYSTICK_GAMECUBE_DEVICES\"")]
-    public static ReadOnlySpan<byte> HintJoystickGamecubeDevices =>
-        "SDL_JOYSTICK_GAMECUBE_DEVICES"u8;
+    public static Utf8String HintJoystickGamecubeDevices => "SDL_JOYSTICK_GAMECUBE_DEVICES"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_GAMECUBE_DEVICES_EXCLUDED \"SDL_JOYSTICK_GAMECUBE_DEVICES_EXCLUDED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickGamecubeDevicesExcluded =>
+    public static Utf8String HintJoystickGamecubeDevicesExcluded =>
         "SDL_JOYSTICK_GAMECUBE_DEVICES_EXCLUDED"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI \"SDL_JOYSTICK_HIDAPI\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapi => "SDL_JOYSTICK_HIDAPI"u8;
+    public static Utf8String HintJoystickHidapi => "SDL_JOYSTICK_HIDAPI"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_COMBINE_JOY_CONS \"SDL_JOYSTICK_HIDAPI_COMBINE_JOY_CONS\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiCombineJoyCons =>
+    public static Utf8String HintJoystickHidapiCombineJoyCons =>
         "SDL_JOYSTICK_HIDAPI_COMBINE_JOY_CONS"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE \"SDL_JOYSTICK_HIDAPI_GAMECUBE\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiGamecube => "SDL_JOYSTICK_HIDAPI_GAMECUBE"u8;
+    public static Utf8String HintJoystickHidapiGamecube => "SDL_JOYSTICK_HIDAPI_GAMECUBE"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE_RUMBLE_BRAKE \"SDL_JOYSTICK_HIDAPI_GAMECUBE_RUMBLE_BRAKE\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiGamecubeRumbleBrake =>
+    public static Utf8String HintJoystickHidapiGamecubeRumbleBrake =>
         "SDL_JOYSTICK_HIDAPI_GAMECUBE_RUMBLE_BRAKE"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_JOY_CONS \"SDL_JOYSTICK_HIDAPI_JOY_CONS\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiJoyCons => "SDL_JOYSTICK_HIDAPI_JOY_CONS"u8;
+    public static Utf8String HintJoystickHidapiJoyCons => "SDL_JOYSTICK_HIDAPI_JOY_CONS"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_JOYCON_HOME_LED \"SDL_JOYSTICK_HIDAPI_JOYCON_HOME_LED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiJoyconHomeLed =>
+    public static Utf8String HintJoystickHidapiJoyconHomeLed =>
         "SDL_JOYSTICK_HIDAPI_JOYCON_HOME_LED"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_LUNA \"SDL_JOYSTICK_HIDAPI_LUNA\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiLuna => "SDL_JOYSTICK_HIDAPI_LUNA"u8;
+    public static Utf8String HintJoystickHidapiLuna => "SDL_JOYSTICK_HIDAPI_LUNA"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_NINTENDO_CLASSIC \"SDL_JOYSTICK_HIDAPI_NINTENDO_CLASSIC\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiNintendoClassic =>
+    public static Utf8String HintJoystickHidapiNintendoClassic =>
         "SDL_JOYSTICK_HIDAPI_NINTENDO_CLASSIC"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_PS3 \"SDL_JOYSTICK_HIDAPI_PS3\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiPs3 => "SDL_JOYSTICK_HIDAPI_PS3"u8;
+    public static Utf8String HintJoystickHidapiPs3 => "SDL_JOYSTICK_HIDAPI_PS3"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_PS3_SIXAXIS_DRIVER \"SDL_JOYSTICK_HIDAPI_PS3_SIXAXIS_DRIVER\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiPs3SixaxisDriver =>
+    public static Utf8String HintJoystickHidapiPs3SixaxisDriver =>
         "SDL_JOYSTICK_HIDAPI_PS3_SIXAXIS_DRIVER"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_PS4 \"SDL_JOYSTICK_HIDAPI_PS4\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiPs4 => "SDL_JOYSTICK_HIDAPI_PS4"u8;
+    public static Utf8String HintJoystickHidapiPs4 => "SDL_JOYSTICK_HIDAPI_PS4"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE \"SDL_JOYSTICK_HIDAPI_PS4_RUMBLE\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiPs4Rumble =>
-        "SDL_JOYSTICK_HIDAPI_PS4_RUMBLE"u8;
+    public static Utf8String HintJoystickHidapiPs4Rumble => "SDL_JOYSTICK_HIDAPI_PS4_RUMBLE"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_PS5 \"SDL_JOYSTICK_HIDAPI_PS5\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiPs5 => "SDL_JOYSTICK_HIDAPI_PS5"u8;
+    public static Utf8String HintJoystickHidapiPs5 => "SDL_JOYSTICK_HIDAPI_PS5"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_PS5_PLAYER_LED \"SDL_JOYSTICK_HIDAPI_PS5_PLAYER_LED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiPs5PlayerLed =>
+    public static Utf8String HintJoystickHidapiPs5PlayerLed =>
         "SDL_JOYSTICK_HIDAPI_PS5_PLAYER_LED"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE \"SDL_JOYSTICK_HIDAPI_PS5_RUMBLE\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiPs5Rumble =>
-        "SDL_JOYSTICK_HIDAPI_PS5_RUMBLE"u8;
+    public static Utf8String HintJoystickHidapiPs5Rumble => "SDL_JOYSTICK_HIDAPI_PS5_RUMBLE"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_SHIELD \"SDL_JOYSTICK_HIDAPI_SHIELD\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiShield => "SDL_JOYSTICK_HIDAPI_SHIELD"u8;
+    public static Utf8String HintJoystickHidapiShield => "SDL_JOYSTICK_HIDAPI_SHIELD"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_STADIA \"SDL_JOYSTICK_HIDAPI_STADIA\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiStadia => "SDL_JOYSTICK_HIDAPI_STADIA"u8;
+    public static Utf8String HintJoystickHidapiStadia => "SDL_JOYSTICK_HIDAPI_STADIA"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_STEAM \"SDL_JOYSTICK_HIDAPI_STEAM\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiSteam => "SDL_JOYSTICK_HIDAPI_STEAM"u8;
+    public static Utf8String HintJoystickHidapiSteam => "SDL_JOYSTICK_HIDAPI_STEAM"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_STEAMDECK \"SDL_JOYSTICK_HIDAPI_STEAMDECK\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiSteamdeck =>
-        "SDL_JOYSTICK_HIDAPI_STEAMDECK"u8;
+    public static Utf8String HintJoystickHidapiSteamdeck => "SDL_JOYSTICK_HIDAPI_STEAMDECK"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_SWITCH \"SDL_JOYSTICK_HIDAPI_SWITCH\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiSwitch => "SDL_JOYSTICK_HIDAPI_SWITCH"u8;
+    public static Utf8String HintJoystickHidapiSwitch => "SDL_JOYSTICK_HIDAPI_SWITCH"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_SWITCH_HOME_LED \"SDL_JOYSTICK_HIDAPI_SWITCH_HOME_LED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiSwitchHomeLed =>
+    public static Utf8String HintJoystickHidapiSwitchHomeLed =>
         "SDL_JOYSTICK_HIDAPI_SWITCH_HOME_LED"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED \"SDL_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiSwitchPlayerLed =>
+    public static Utf8String HintJoystickHidapiSwitchPlayerLed =>
         "SDL_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_VERTICAL_JOY_CONS \"SDL_JOYSTICK_HIDAPI_VERTICAL_JOY_CONS\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiVerticalJoyCons =>
+    public static Utf8String HintJoystickHidapiVerticalJoyCons =>
         "SDL_JOYSTICK_HIDAPI_VERTICAL_JOY_CONS"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_WII \"SDL_JOYSTICK_HIDAPI_WII\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiWii => "SDL_JOYSTICK_HIDAPI_WII"u8;
+    public static Utf8String HintJoystickHidapiWii => "SDL_JOYSTICK_HIDAPI_WII"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_WII_PLAYER_LED \"SDL_JOYSTICK_HIDAPI_WII_PLAYER_LED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiWiiPlayerLed =>
+    public static Utf8String HintJoystickHidapiWiiPlayerLed =>
         "SDL_JOYSTICK_HIDAPI_WII_PLAYER_LED"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_XBOX \"SDL_JOYSTICK_HIDAPI_XBOX\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiXbox => "SDL_JOYSTICK_HIDAPI_XBOX"u8;
+    public static Utf8String HintJoystickHidapiXbox => "SDL_JOYSTICK_HIDAPI_XBOX"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_XBOX_360 \"SDL_JOYSTICK_HIDAPI_XBOX_360\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiXbox360 => "SDL_JOYSTICK_HIDAPI_XBOX_360"u8;
+    public static Utf8String HintJoystickHidapiXbox360 => "SDL_JOYSTICK_HIDAPI_XBOX_360"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_XBOX_360_PLAYER_LED \"SDL_JOYSTICK_HIDAPI_XBOX_360_PLAYER_LED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiXbox360PlayerLed =>
+    public static Utf8String HintJoystickHidapiXbox360PlayerLed =>
         "SDL_JOYSTICK_HIDAPI_XBOX_360_PLAYER_LED"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_XBOX_360_WIRELESS \"SDL_JOYSTICK_HIDAPI_XBOX_360_WIRELESS\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiXbox360Wireless =>
+    public static Utf8String HintJoystickHidapiXbox360Wireless =>
         "SDL_JOYSTICK_HIDAPI_XBOX_360_WIRELESS"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE \"SDL_JOYSTICK_HIDAPI_XBOX_ONE\"")]
-    public static ReadOnlySpan<byte> HintJoystickHidapiXboxOne => "SDL_JOYSTICK_HIDAPI_XBOX_ONE"u8;
+    public static Utf8String HintJoystickHidapiXboxOne => "SDL_JOYSTICK_HIDAPI_XBOX_ONE"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED \"SDL_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickHidapiXboxOneHomeLed =>
+    public static Utf8String HintJoystickHidapiXboxOneHomeLed =>
         "SDL_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_IOKIT \"SDL_JOYSTICK_IOKIT\"")]
-    public static ReadOnlySpan<byte> HintJoystickIokit => "SDL_JOYSTICK_IOKIT"u8;
+    public static Utf8String HintJoystickIokit => "SDL_JOYSTICK_IOKIT"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_LINUX_CLASSIC \"SDL_JOYSTICK_LINUX_CLASSIC\"")]
-    public static ReadOnlySpan<byte> HintJoystickLinuxClassic => "SDL_JOYSTICK_LINUX_CLASSIC"u8;
+    public static Utf8String HintJoystickLinuxClassic => "SDL_JOYSTICK_LINUX_CLASSIC"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_LINUX_DEADZONES \"SDL_JOYSTICK_LINUX_DEADZONES\"")]
-    public static ReadOnlySpan<byte> HintJoystickLinuxDeadzones => "SDL_JOYSTICK_LINUX_DEADZONES"u8;
+    public static Utf8String HintJoystickLinuxDeadzones => "SDL_JOYSTICK_LINUX_DEADZONES"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_LINUX_DIGITAL_HATS \"SDL_JOYSTICK_LINUX_DIGITAL_HATS\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickLinuxDigitalHats =>
-        "SDL_JOYSTICK_LINUX_DIGITAL_HATS"u8;
+    public static Utf8String HintJoystickLinuxDigitalHats => "SDL_JOYSTICK_LINUX_DIGITAL_HATS"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_LINUX_HAT_DEADZONES \"SDL_JOYSTICK_LINUX_HAT_DEADZONES\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickLinuxHatDeadzones =>
-        "SDL_JOYSTICK_LINUX_HAT_DEADZONES"u8;
+    public static Utf8String HintJoystickLinuxHatDeadzones => "SDL_JOYSTICK_LINUX_HAT_DEADZONES"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_MFI \"SDL_JOYSTICK_MFI\"")]
-    public static ReadOnlySpan<byte> HintJoystickMfi => "SDL_JOYSTICK_MFI"u8;
+    public static Utf8String HintJoystickMfi => "SDL_JOYSTICK_MFI"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_RAWINPUT \"SDL_JOYSTICK_RAWINPUT\"")]
-    public static ReadOnlySpan<byte> HintJoystickRawinput => "SDL_JOYSTICK_RAWINPUT"u8;
+    public static Utf8String HintJoystickRawinput => "SDL_JOYSTICK_RAWINPUT"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_RAWINPUT_CORRELATE_XINPUT \"SDL_JOYSTICK_RAWINPUT_CORRELATE_XINPUT\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickRawinputCorrelateXinput =>
+    public static Utf8String HintJoystickRawinputCorrelateXinput =>
         "SDL_JOYSTICK_RAWINPUT_CORRELATE_XINPUT"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_ROG_CHAKRAM \"SDL_JOYSTICK_ROG_CHAKRAM\"")]
-    public static ReadOnlySpan<byte> HintJoystickRogChakram => "SDL_JOYSTICK_ROG_CHAKRAM"u8;
+    public static Utf8String HintJoystickRogChakram => "SDL_JOYSTICK_ROG_CHAKRAM"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_THREAD \"SDL_JOYSTICK_THREAD\"")]
-    public static ReadOnlySpan<byte> HintJoystickThread => "SDL_JOYSTICK_THREAD"u8;
+    public static Utf8String HintJoystickThread => "SDL_JOYSTICK_THREAD"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_THROTTLE_DEVICES \"SDL_JOYSTICK_THROTTLE_DEVICES\"")]
-    public static ReadOnlySpan<byte> HintJoystickThrottleDevices =>
-        "SDL_JOYSTICK_THROTTLE_DEVICES"u8;
+    public static Utf8String HintJoystickThrottleDevices => "SDL_JOYSTICK_THROTTLE_DEVICES"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_THROTTLE_DEVICES_EXCLUDED \"SDL_JOYSTICK_THROTTLE_DEVICES_EXCLUDED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickThrottleDevicesExcluded =>
+    public static Utf8String HintJoystickThrottleDevicesExcluded =>
         "SDL_JOYSTICK_THROTTLE_DEVICES_EXCLUDED"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_WGI \"SDL_JOYSTICK_WGI\"")]
-    public static ReadOnlySpan<byte> HintJoystickWgi => "SDL_JOYSTICK_WGI"u8;
+    public static Utf8String HintJoystickWgi => "SDL_JOYSTICK_WGI"u8;
 
     [NativeTypeName("#define SDL_HINT_JOYSTICK_WHEEL_DEVICES \"SDL_JOYSTICK_WHEEL_DEVICES\"")]
-    public static ReadOnlySpan<byte> HintJoystickWheelDevices => "SDL_JOYSTICK_WHEEL_DEVICES"u8;
+    public static Utf8String HintJoystickWheelDevices => "SDL_JOYSTICK_WHEEL_DEVICES"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_WHEEL_DEVICES_EXCLUDED \"SDL_JOYSTICK_WHEEL_DEVICES_EXCLUDED\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickWheelDevicesExcluded =>
+    public static Utf8String HintJoystickWheelDevicesExcluded =>
         "SDL_JOYSTICK_WHEEL_DEVICES_EXCLUDED"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_JOYSTICK_ZERO_CENTERED_DEVICES \"SDL_JOYSTICK_ZERO_CENTERED_DEVICES\""
     )]
-    public static ReadOnlySpan<byte> HintJoystickZeroCenteredDevices =>
+    public static Utf8String HintJoystickZeroCenteredDevices =>
         "SDL_JOYSTICK_ZERO_CENTERED_DEVICES"u8;
 
     [NativeTypeName("#define SDL_HINT_KMSDRM_DEVICE_INDEX \"SDL_KMSDRM_DEVICE_INDEX\"")]
-    public static ReadOnlySpan<byte> HintKmsdrmDeviceIndex => "SDL_KMSDRM_DEVICE_INDEX"u8;
+    public static Utf8String HintKmsdrmDeviceIndex => "SDL_KMSDRM_DEVICE_INDEX"u8;
 
     [NativeTypeName("#define SDL_HINT_KMSDRM_REQUIRE_DRM_MASTER \"SDL_KMSDRM_REQUIRE_DRM_MASTER\"")]
-    public static ReadOnlySpan<byte> HintKmsdrmRequireDrmMaster =>
-        "SDL_KMSDRM_REQUIRE_DRM_MASTER"u8;
+    public static Utf8String HintKmsdrmRequireDrmMaster => "SDL_KMSDRM_REQUIRE_DRM_MASTER"u8;
 
     [NativeTypeName("#define SDL_HINT_LOGGING \"SDL_LOGGING\"")]
-    public static ReadOnlySpan<byte> HintLogging => "SDL_LOGGING"u8;
+    public static Utf8String HintLogging => "SDL_LOGGING"u8;
 
     [NativeTypeName("#define SDL_HINT_MAC_BACKGROUND_APP \"SDL_MAC_BACKGROUND_APP\"")]
-    public static ReadOnlySpan<byte> HintMacBackgroundApp => "SDL_MAC_BACKGROUND_APP"u8;
+    public static Utf8String HintMacBackgroundApp => "SDL_MAC_BACKGROUND_APP"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK \"SDL_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK\""
     )]
-    public static ReadOnlySpan<byte> HintMacCtrlClickEmulateRightClick =>
+    public static Utf8String HintMacCtrlClickEmulateRightClick =>
         "SDL_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK"u8;
 
     [NativeTypeName("#define SDL_HINT_MAC_OPENGL_ASYNC_DISPATCH \"SDL_MAC_OPENGL_ASYNC_DISPATCH\"")]
-    public static ReadOnlySpan<byte> HintMacOpenglAsyncDispatch =>
-        "SDL_MAC_OPENGL_ASYNC_DISPATCH"u8;
+    public static Utf8String HintMacOpenglAsyncDispatch => "SDL_MAC_OPENGL_ASYNC_DISPATCH"u8;
 
     [NativeTypeName("#define SDL_HINT_MAIN_CALLBACK_RATE \"SDL_MAIN_CALLBACK_RATE\"")]
-    public static ReadOnlySpan<byte> HintMainCallbackRate => "SDL_MAIN_CALLBACK_RATE"u8;
+    public static Utf8String HintMainCallbackRate => "SDL_MAIN_CALLBACK_RATE"u8;
 
     [NativeTypeName("#define SDL_HINT_MOUSE_AUTO_CAPTURE \"SDL_MOUSE_AUTO_CAPTURE\"")]
-    public static ReadOnlySpan<byte> HintMouseAutoCapture => "SDL_MOUSE_AUTO_CAPTURE"u8;
+    public static Utf8String HintMouseAutoCapture => "SDL_MOUSE_AUTO_CAPTURE"u8;
 
     [NativeTypeName("#define SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS \"SDL_MOUSE_DOUBLE_CLICK_RADIUS\"")]
-    public static ReadOnlySpan<byte> HintMouseDoubleClickRadius =>
-        "SDL_MOUSE_DOUBLE_CLICK_RADIUS"u8;
+    public static Utf8String HintMouseDoubleClickRadius => "SDL_MOUSE_DOUBLE_CLICK_RADIUS"u8;
 
     [NativeTypeName("#define SDL_HINT_MOUSE_DOUBLE_CLICK_TIME \"SDL_MOUSE_DOUBLE_CLICK_TIME\"")]
-    public static ReadOnlySpan<byte> HintMouseDoubleClickTime => "SDL_MOUSE_DOUBLE_CLICK_TIME"u8;
+    public static Utf8String HintMouseDoubleClickTime => "SDL_MOUSE_DOUBLE_CLICK_TIME"u8;
 
     [NativeTypeName("#define SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH \"SDL_MOUSE_FOCUS_CLICKTHROUGH\"")]
-    public static ReadOnlySpan<byte> HintMouseFocusClickthrough => "SDL_MOUSE_FOCUS_CLICKTHROUGH"u8;
+    public static Utf8String HintMouseFocusClickthrough => "SDL_MOUSE_FOCUS_CLICKTHROUGH"u8;
 
     [NativeTypeName("#define SDL_HINT_MOUSE_NORMAL_SPEED_SCALE \"SDL_MOUSE_NORMAL_SPEED_SCALE\"")]
-    public static ReadOnlySpan<byte> HintMouseNormalSpeedScale => "SDL_MOUSE_NORMAL_SPEED_SCALE"u8;
+    public static Utf8String HintMouseNormalSpeedScale => "SDL_MOUSE_NORMAL_SPEED_SCALE"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_MOUSE_RELATIVE_MODE_CENTER \"SDL_MOUSE_RELATIVE_MODE_CENTER\""
     )]
-    public static ReadOnlySpan<byte> HintMouseRelativeModeCenter =>
-        "SDL_MOUSE_RELATIVE_MODE_CENTER"u8;
+    public static Utf8String HintMouseRelativeModeCenter => "SDL_MOUSE_RELATIVE_MODE_CENTER"u8;
 
     [NativeTypeName("#define SDL_HINT_MOUSE_RELATIVE_MODE_WARP \"SDL_MOUSE_RELATIVE_MODE_WARP\"")]
-    public static ReadOnlySpan<byte> HintMouseRelativeModeWarp => "SDL_MOUSE_RELATIVE_MODE_WARP"u8;
+    public static Utf8String HintMouseRelativeModeWarp => "SDL_MOUSE_RELATIVE_MODE_WARP"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_MOUSE_RELATIVE_SPEED_SCALE \"SDL_MOUSE_RELATIVE_SPEED_SCALE\""
     )]
-    public static ReadOnlySpan<byte> HintMouseRelativeSpeedScale =>
-        "SDL_MOUSE_RELATIVE_SPEED_SCALE"u8;
+    public static Utf8String HintMouseRelativeSpeedScale => "SDL_MOUSE_RELATIVE_SPEED_SCALE"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_MOUSE_RELATIVE_SYSTEM_SCALE \"SDL_MOUSE_RELATIVE_SYSTEM_SCALE\""
     )]
-    public static ReadOnlySpan<byte> HintMouseRelativeSystemScale =>
-        "SDL_MOUSE_RELATIVE_SYSTEM_SCALE"u8;
+    public static Utf8String HintMouseRelativeSystemScale => "SDL_MOUSE_RELATIVE_SYSTEM_SCALE"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_MOUSE_RELATIVE_WARP_MOTION \"SDL_MOUSE_RELATIVE_WARP_MOTION\""
     )]
-    public static ReadOnlySpan<byte> HintMouseRelativeWarpMotion =>
-        "SDL_MOUSE_RELATIVE_WARP_MOTION"u8;
+    public static Utf8String HintMouseRelativeWarpMotion => "SDL_MOUSE_RELATIVE_WARP_MOTION"u8;
 
     [NativeTypeName("#define SDL_HINT_MOUSE_TOUCH_EVENTS \"SDL_MOUSE_TOUCH_EVENTS\"")]
-    public static ReadOnlySpan<byte> HintMouseTouchEvents => "SDL_MOUSE_TOUCH_EVENTS"u8;
+    public static Utf8String HintMouseTouchEvents => "SDL_MOUSE_TOUCH_EVENTS"u8;
 
     [NativeTypeName("#define SDL_HINT_NO_SIGNAL_HANDLERS \"SDL_NO_SIGNAL_HANDLERS\"")]
-    public static ReadOnlySpan<byte> HintNoSignalHandlers => "SDL_NO_SIGNAL_HANDLERS"u8;
+    public static Utf8String HintNoSignalHandlers => "SDL_NO_SIGNAL_HANDLERS"u8;
 
     [NativeTypeName("#define SDL_HINT_OPENGL_ES_DRIVER \"SDL_OPENGL_ES_DRIVER\"")]
-    public static ReadOnlySpan<byte> HintOpenglEsDriver => "SDL_OPENGL_ES_DRIVER"u8;
+    public static Utf8String HintOpenglEsDriver => "SDL_OPENGL_ES_DRIVER"u8;
 
     [NativeTypeName("#define SDL_HINT_ORIENTATIONS \"SDL_IOS_ORIENTATIONS\"")]
-    public static ReadOnlySpan<byte> HintOrientations => "SDL_IOS_ORIENTATIONS"u8;
+    public static Utf8String HintOrientations => "SDL_IOS_ORIENTATIONS"u8;
 
     [NativeTypeName("#define SDL_HINT_PEN_DELAY_MOUSE_BUTTON \"SDL_PEN_DELAY_MOUSE_BUTTON\"")]
-    public static ReadOnlySpan<byte> HintPenDelayMouseButton => "SDL_PEN_DELAY_MOUSE_BUTTON"u8;
+    public static Utf8String HintPenDelayMouseButton => "SDL_PEN_DELAY_MOUSE_BUTTON"u8;
 
     [NativeTypeName("#define SDL_HINT_PEN_NOT_MOUSE \"SDL_PEN_NOT_MOUSE\"")]
-    public static ReadOnlySpan<byte> HintPenNotMouse => "SDL_PEN_NOT_MOUSE"u8;
+    public static Utf8String HintPenNotMouse => "SDL_PEN_NOT_MOUSE"u8;
 
     [NativeTypeName("#define SDL_HINT_POLL_SENTINEL \"SDL_POLL_SENTINEL\"")]
-    public static ReadOnlySpan<byte> HintPollSentinel => "SDL_POLL_SENTINEL"u8;
+    public static Utf8String HintPollSentinel => "SDL_POLL_SENTINEL"u8;
 
     [NativeTypeName("#define SDL_HINT_PREFERRED_LOCALES \"SDL_PREFERRED_LOCALES\"")]
-    public static ReadOnlySpan<byte> HintPreferredLocales => "SDL_PREFERRED_LOCALES"u8;
+    public static Utf8String HintPreferredLocales => "SDL_PREFERRED_LOCALES"u8;
 
     [NativeTypeName("#define SDL_HINT_QUIT_ON_LAST_WINDOW_CLOSE \"SDL_QUIT_ON_LAST_WINDOW_CLOSE\"")]
-    public static ReadOnlySpan<byte> HintQuitOnLastWindowClose => "SDL_QUIT_ON_LAST_WINDOW_CLOSE"u8;
+    public static Utf8String HintQuitOnLastWindowClose => "SDL_QUIT_ON_LAST_WINDOW_CLOSE"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_RENDER_DIRECT3D_THREADSAFE \"SDL_RENDER_DIRECT3D_THREADSAFE\""
     )]
-    public static ReadOnlySpan<byte> HintRenderDirect3DThreadsafe =>
-        "SDL_RENDER_DIRECT3D_THREADSAFE"u8;
+    public static Utf8String HintRenderDirect3DThreadsafe => "SDL_RENDER_DIRECT3D_THREADSAFE"u8;
 
     [NativeTypeName("#define SDL_HINT_RENDER_DIRECT3D11_DEBUG \"SDL_RENDER_DIRECT3D11_DEBUG\"")]
-    public static ReadOnlySpan<byte> HintRenderDirect3D11Debug => "SDL_RENDER_DIRECT3D11_DEBUG"u8;
+    public static Utf8String HintRenderDirect3D11Debug => "SDL_RENDER_DIRECT3D11_DEBUG"u8;
 
     [NativeTypeName("#define SDL_HINT_RENDER_VULKAN_DEBUG \"SDL_RENDER_VULKAN_DEBUG\"")]
-    public static ReadOnlySpan<byte> HintRenderVulkanDebug => "SDL_RENDER_VULKAN_DEBUG"u8;
+    public static Utf8String HintRenderVulkanDebug => "SDL_RENDER_VULKAN_DEBUG"u8;
 
     [NativeTypeName("#define SDL_HINT_RENDER_DRIVER \"SDL_RENDER_DRIVER\"")]
-    public static ReadOnlySpan<byte> HintRenderDriver => "SDL_RENDER_DRIVER"u8;
+    public static Utf8String HintRenderDriver => "SDL_RENDER_DRIVER"u8;
 
     [NativeTypeName("#define SDL_HINT_RENDER_LINE_METHOD \"SDL_RENDER_LINE_METHOD\"")]
-    public static ReadOnlySpan<byte> HintRenderLineMethod => "SDL_RENDER_LINE_METHOD"u8;
+    public static Utf8String HintRenderLineMethod => "SDL_RENDER_LINE_METHOD"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_RENDER_METAL_PREFER_LOW_POWER_DEVICE \"SDL_RENDER_METAL_PREFER_LOW_POWER_DEVICE\""
     )]
-    public static ReadOnlySpan<byte> HintRenderMetalPreferLowPowerDevice =>
+    public static Utf8String HintRenderMetalPreferLowPowerDevice =>
         "SDL_RENDER_METAL_PREFER_LOW_POWER_DEVICE"u8;
 
     [NativeTypeName("#define SDL_HINT_RENDER_PS2_DYNAMIC_VSYNC \"SDL_RENDER_PS2_DYNAMIC_VSYNC\"")]
-    public static ReadOnlySpan<byte> HintRenderPs2DynamicVsync => "SDL_RENDER_PS2_DYNAMIC_VSYNC"u8;
+    public static Utf8String HintRenderPs2DynamicVsync => "SDL_RENDER_PS2_DYNAMIC_VSYNC"u8;
 
     [NativeTypeName("#define SDL_HINT_RENDER_VSYNC \"SDL_RENDER_VSYNC\"")]
-    public static ReadOnlySpan<byte> HintRenderVsync => "SDL_RENDER_VSYNC"u8;
+    public static Utf8String HintRenderVsync => "SDL_RENDER_VSYNC"u8;
 
     [NativeTypeName("#define SDL_HINT_RETURN_KEY_HIDES_IME \"SDL_RETURN_KEY_HIDES_IME\"")]
-    public static ReadOnlySpan<byte> HintReturnKeyHidesIme => "SDL_RETURN_KEY_HIDES_IME"u8;
+    public static Utf8String HintReturnKeyHidesIme => "SDL_RETURN_KEY_HIDES_IME"u8;
 
     [NativeTypeName("#define SDL_HINT_ROG_GAMEPAD_MICE \"SDL_ROG_GAMEPAD_MICE\"")]
-    public static ReadOnlySpan<byte> HintRogGamepadMice => "SDL_ROG_GAMEPAD_MICE"u8;
+    public static Utf8String HintRogGamepadMice => "SDL_ROG_GAMEPAD_MICE"u8;
 
     [NativeTypeName("#define SDL_HINT_ROG_GAMEPAD_MICE_EXCLUDED \"SDL_ROG_GAMEPAD_MICE_EXCLUDED\"")]
-    public static ReadOnlySpan<byte> HintRogGamepadMiceExcluded =>
-        "SDL_ROG_GAMEPAD_MICE_EXCLUDED"u8;
+    public static Utf8String HintRogGamepadMiceExcluded => "SDL_ROG_GAMEPAD_MICE_EXCLUDED"u8;
 
     [NativeTypeName("#define SDL_HINT_RPI_VIDEO_LAYER \"SDL_RPI_VIDEO_LAYER\"")]
-    public static ReadOnlySpan<byte> HintRpiVideoLayer => "SDL_RPI_VIDEO_LAYER"u8;
+    public static Utf8String HintRpiVideoLayer => "SDL_RPI_VIDEO_LAYER"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_SCREENSAVER_INHIBIT_ACTIVITY_NAME \"SDL_SCREENSAVER_INHIBIT_ACTIVITY_NAME\""
     )]
-    public static ReadOnlySpan<byte> HintScreensaverInhibitActivityName =>
+    public static Utf8String HintScreensaverInhibitActivityName =>
         "SDL_SCREENSAVER_INHIBIT_ACTIVITY_NAME"u8;
 
     [NativeTypeName("#define SDL_HINT_SHUTDOWN_DBUS_ON_QUIT \"SDL_SHUTDOWN_DBUS_ON_QUIT\"")]
-    public static ReadOnlySpan<byte> HintShutdownDbusOnQuit => "SDL_SHUTDOWN_DBUS_ON_QUIT"u8;
+    public static Utf8String HintShutdownDbusOnQuit => "SDL_SHUTDOWN_DBUS_ON_QUIT"u8;
 
     [NativeTypeName("#define SDL_HINT_STORAGE_TITLE_DRIVER \"SDL_STORAGE_TITLE_DRIVER\"")]
-    public static ReadOnlySpan<byte> HintStorageTitleDriver => "SDL_STORAGE_TITLE_DRIVER"u8;
+    public static Utf8String HintStorageTitleDriver => "SDL_STORAGE_TITLE_DRIVER"u8;
 
     [NativeTypeName("#define SDL_HINT_STORAGE_USER_DRIVER \"SDL_STORAGE_USER_DRIVER\"")]
-    public static ReadOnlySpan<byte> HintStorageUserDriver => "SDL_STORAGE_USER_DRIVER"u8;
+    public static Utf8String HintStorageUserDriver => "SDL_STORAGE_USER_DRIVER"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_THREAD_FORCE_REALTIME_TIME_CRITICAL \"SDL_THREAD_FORCE_REALTIME_TIME_CRITICAL\""
     )]
-    public static ReadOnlySpan<byte> HintThreadForceRealtimeTimeCritical =>
+    public static Utf8String HintThreadForceRealtimeTimeCritical =>
         "SDL_THREAD_FORCE_REALTIME_TIME_CRITICAL"u8;
 
     [NativeTypeName("#define SDL_HINT_THREAD_PRIORITY_POLICY \"SDL_THREAD_PRIORITY_POLICY\"")]
-    public static ReadOnlySpan<byte> HintThreadPriorityPolicy => "SDL_THREAD_PRIORITY_POLICY"u8;
+    public static Utf8String HintThreadPriorityPolicy => "SDL_THREAD_PRIORITY_POLICY"u8;
 
     [NativeTypeName("#define SDL_HINT_TIMER_RESOLUTION \"SDL_TIMER_RESOLUTION\"")]
-    public static ReadOnlySpan<byte> HintTimerResolution => "SDL_TIMER_RESOLUTION"u8;
+    public static Utf8String HintTimerResolution => "SDL_TIMER_RESOLUTION"u8;
 
     [NativeTypeName("#define SDL_HINT_TOUCH_MOUSE_EVENTS \"SDL_TOUCH_MOUSE_EVENTS\"")]
-    public static ReadOnlySpan<byte> HintTouchMouseEvents => "SDL_TOUCH_MOUSE_EVENTS"u8;
+    public static Utf8String HintTouchMouseEvents => "SDL_TOUCH_MOUSE_EVENTS"u8;
 
     [NativeTypeName("#define SDL_HINT_TRACKPAD_IS_TOUCH_ONLY \"SDL_TRACKPAD_IS_TOUCH_ONLY\"")]
-    public static ReadOnlySpan<byte> HintTrackpadIsTouchOnly => "SDL_TRACKPAD_IS_TOUCH_ONLY"u8;
+    public static Utf8String HintTrackpadIsTouchOnly => "SDL_TRACKPAD_IS_TOUCH_ONLY"u8;
 
     [NativeTypeName("#define SDL_HINT_TV_REMOTE_AS_JOYSTICK \"SDL_TV_REMOTE_AS_JOYSTICK\"")]
-    public static ReadOnlySpan<byte> HintTvRemoteAsJoystick => "SDL_TV_REMOTE_AS_JOYSTICK"u8;
+    public static Utf8String HintTvRemoteAsJoystick => "SDL_TV_REMOTE_AS_JOYSTICK"u8;
 
     [NativeTypeName("#define SDL_HINT_VIDEO_ALLOW_SCREENSAVER \"SDL_VIDEO_ALLOW_SCREENSAVER\"")]
-    public static ReadOnlySpan<byte> HintVideoAllowScreensaver => "SDL_VIDEO_ALLOW_SCREENSAVER"u8;
+    public static Utf8String HintVideoAllowScreensaver => "SDL_VIDEO_ALLOW_SCREENSAVER"u8;
 
     [NativeTypeName("#define SDL_HINT_VIDEO_DOUBLE_BUFFER \"SDL_VIDEO_DOUBLE_BUFFER\"")]
-    public static ReadOnlySpan<byte> HintVideoDoubleBuffer => "SDL_VIDEO_DOUBLE_BUFFER"u8;
+    public static Utf8String HintVideoDoubleBuffer => "SDL_VIDEO_DOUBLE_BUFFER"u8;
 
     [NativeTypeName("#define SDL_HINT_VIDEO_DRIVER \"SDL_VIDEO_DRIVER\"")]
-    public static ReadOnlySpan<byte> HintVideoDriver => "SDL_VIDEO_DRIVER"u8;
+    public static Utf8String HintVideoDriver => "SDL_VIDEO_DRIVER"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_VIDEO_EGL_ALLOW_GETDISPLAY_FALLBACK \"SDL_VIDEO_EGL_GETDISPLAY_FALLBACK\""
     )]
-    public static ReadOnlySpan<byte> HintVideoEglAllowGetdisplayFallback =>
+    public static Utf8String HintVideoEglAllowGetdisplayFallback =>
         "SDL_VIDEO_EGL_GETDISPLAY_FALLBACK"u8;
 
     [NativeTypeName("#define SDL_HINT_VIDEO_FORCE_EGL \"SDL_VIDEO_FORCE_EGL\"")]
-    public static ReadOnlySpan<byte> HintVideoForceEgl => "SDL_VIDEO_FORCE_EGL"u8;
+    public static Utf8String HintVideoForceEgl => "SDL_VIDEO_FORCE_EGL"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_VIDEO_MAC_FULLSCREEN_SPACES \"SDL_VIDEO_MAC_FULLSCREEN_SPACES\""
     )]
-    public static ReadOnlySpan<byte> HintVideoMacFullscreenSpaces =>
-        "SDL_VIDEO_MAC_FULLSCREEN_SPACES"u8;
+    public static Utf8String HintVideoMacFullscreenSpaces => "SDL_VIDEO_MAC_FULLSCREEN_SPACES"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_VIDEO_MINIMIZE_ON_FOCUS_LOSS \"SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS\""
     )]
-    public static ReadOnlySpan<byte> HintVideoMinimizeOnFocusLoss =>
-        "SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS"u8;
+    public static Utf8String HintVideoMinimizeOnFocusLoss => "SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS \"SDL_VIDEO_SYNC_WINDOW_OPERATIONS\""
     )]
-    public static ReadOnlySpan<byte> HintVideoSyncWindowOperations =>
-        "SDL_VIDEO_SYNC_WINDOW_OPERATIONS"u8;
+    public static Utf8String HintVideoSyncWindowOperations => "SDL_VIDEO_SYNC_WINDOW_OPERATIONS"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_VIDEO_WAYLAND_ALLOW_LIBDECOR \"SDL_VIDEO_WAYLAND_ALLOW_LIBDECOR\""
     )]
-    public static ReadOnlySpan<byte> HintVideoWaylandAllowLibdecor =>
-        "SDL_VIDEO_WAYLAND_ALLOW_LIBDECOR"u8;
+    public static Utf8String HintVideoWaylandAllowLibdecor => "SDL_VIDEO_WAYLAND_ALLOW_LIBDECOR"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_VIDEO_WAYLAND_EMULATE_MOUSE_WARP \"SDL_VIDEO_WAYLAND_EMULATE_MOUSE_WARP\""
     )]
-    public static ReadOnlySpan<byte> HintVideoWaylandEmulateMouseWarp =>
+    public static Utf8String HintVideoWaylandEmulateMouseWarp =>
         "SDL_VIDEO_WAYLAND_EMULATE_MOUSE_WARP"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_VIDEO_WAYLAND_MODE_EMULATION \"SDL_VIDEO_WAYLAND_MODE_EMULATION\""
     )]
-    public static ReadOnlySpan<byte> HintVideoWaylandModeEmulation =>
-        "SDL_VIDEO_WAYLAND_MODE_EMULATION"u8;
+    public static Utf8String HintVideoWaylandModeEmulation => "SDL_VIDEO_WAYLAND_MODE_EMULATION"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_VIDEO_WAYLAND_MODE_SCALING \"SDL_VIDEO_WAYLAND_MODE_SCALING\""
     )]
-    public static ReadOnlySpan<byte> HintVideoWaylandModeScaling =>
-        "SDL_VIDEO_WAYLAND_MODE_SCALING"u8;
+    public static Utf8String HintVideoWaylandModeScaling => "SDL_VIDEO_WAYLAND_MODE_SCALING"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_VIDEO_WAYLAND_PREFER_LIBDECOR \"SDL_VIDEO_WAYLAND_PREFER_LIBDECOR\""
     )]
-    public static ReadOnlySpan<byte> HintVideoWaylandPreferLibdecor =>
+    public static Utf8String HintVideoWaylandPreferLibdecor =>
         "SDL_VIDEO_WAYLAND_PREFER_LIBDECOR"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_VIDEO_WAYLAND_SCALE_TO_DISPLAY \"SDL_VIDEO_WAYLAND_SCALE_TO_DISPLAY\""
     )]
-    public static ReadOnlySpan<byte> HintVideoWaylandScaleToDisplay =>
+    public static Utf8String HintVideoWaylandScaleToDisplay =>
         "SDL_VIDEO_WAYLAND_SCALE_TO_DISPLAY"u8;
 
     [NativeTypeName("#define SDL_HINT_VIDEO_WIN_D3DCOMPILER \"SDL_VIDEO_WIN_D3DCOMPILER\"")]
-    public static ReadOnlySpan<byte> HintVideoWinD3Dcompiler => "SDL_VIDEO_WIN_D3DCOMPILER"u8;
+    public static Utf8String HintVideoWinD3Dcompiler => "SDL_VIDEO_WIN_D3DCOMPILER"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR \"SDL_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR\""
     )]
-    public static ReadOnlySpan<byte> HintVideoX11NetWmBypassCompositor =>
+    public static Utf8String HintVideoX11NetWmBypassCompositor =>
         "SDL_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR"u8;
 
     [NativeTypeName("#define SDL_HINT_VIDEO_X11_NET_WM_PING \"SDL_VIDEO_X11_NET_WM_PING\"")]
-    public static ReadOnlySpan<byte> HintVideoX11NetWmPing => "SDL_VIDEO_X11_NET_WM_PING"u8;
+    public static Utf8String HintVideoX11NetWmPing => "SDL_VIDEO_X11_NET_WM_PING"u8;
 
     [NativeTypeName("#define SDL_HINT_VIDEO_X11_SCALING_FACTOR \"SDL_VIDEO_X11_SCALING_FACTOR\"")]
-    public static ReadOnlySpan<byte> HintVideoX11ScalingFactor => "SDL_VIDEO_X11_SCALING_FACTOR"u8;
+    public static Utf8String HintVideoX11ScalingFactor => "SDL_VIDEO_X11_SCALING_FACTOR"u8;
 
     [NativeTypeName("#define SDL_HINT_VIDEO_X11_WINDOW_VISUALID \"SDL_VIDEO_X11_WINDOW_VISUALID\"")]
-    public static ReadOnlySpan<byte> HintVideoX11WindowVisualid =>
-        "SDL_VIDEO_X11_WINDOW_VISUALID"u8;
+    public static Utf8String HintVideoX11WindowVisualid => "SDL_VIDEO_X11_WINDOW_VISUALID"u8;
 
     [NativeTypeName("#define SDL_HINT_VIDEO_X11_XRANDR \"SDL_VIDEO_X11_XRANDR\"")]
-    public static ReadOnlySpan<byte> HintVideoX11Xrandr => "SDL_VIDEO_X11_XRANDR"u8;
+    public static Utf8String HintVideoX11Xrandr => "SDL_VIDEO_X11_XRANDR"u8;
 
     [NativeTypeName("#define SDL_HINT_VITA_TOUCH_MOUSE_DEVICE \"SDL_VITA_TOUCH_MOUSE_DEVICE\"")]
-    public static ReadOnlySpan<byte> HintVitaTouchMouseDevice => "SDL_VITA_TOUCH_MOUSE_DEVICE"u8;
+    public static Utf8String HintVitaTouchMouseDevice => "SDL_VITA_TOUCH_MOUSE_DEVICE"u8;
 
     [NativeTypeName("#define SDL_HINT_WAVE_FACT_CHUNK \"SDL_WAVE_FACT_CHUNK\"")]
-    public static ReadOnlySpan<byte> HintWaveFactChunk => "SDL_WAVE_FACT_CHUNK"u8;
+    public static Utf8String HintWaveFactChunk => "SDL_WAVE_FACT_CHUNK"u8;
 
     [NativeTypeName("#define SDL_HINT_WAVE_RIFF_CHUNK_SIZE \"SDL_WAVE_RIFF_CHUNK_SIZE\"")]
-    public static ReadOnlySpan<byte> HintWaveRiffChunkSize => "SDL_WAVE_RIFF_CHUNK_SIZE"u8;
+    public static Utf8String HintWaveRiffChunkSize => "SDL_WAVE_RIFF_CHUNK_SIZE"u8;
 
     [NativeTypeName("#define SDL_HINT_WAVE_TRUNCATION \"SDL_WAVE_TRUNCATION\"")]
-    public static ReadOnlySpan<byte> HintWaveTruncation => "SDL_WAVE_TRUNCATION"u8;
+    public static Utf8String HintWaveTruncation => "SDL_WAVE_TRUNCATION"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_WINDOW_ACTIVATE_WHEN_RAISED \"SDL_WINDOW_ACTIVATE_WHEN_RAISED\""
     )]
-    public static ReadOnlySpan<byte> HintWindowActivateWhenRaised =>
-        "SDL_WINDOW_ACTIVATE_WHEN_RAISED"u8;
+    public static Utf8String HintWindowActivateWhenRaised => "SDL_WINDOW_ACTIVATE_WHEN_RAISED"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_WINDOW_ACTIVATE_WHEN_SHOWN \"SDL_WINDOW_ACTIVATE_WHEN_SHOWN\""
     )]
-    public static ReadOnlySpan<byte> HintWindowActivateWhenShown =>
-        "SDL_WINDOW_ACTIVATE_WHEN_SHOWN"u8;
+    public static Utf8String HintWindowActivateWhenShown => "SDL_WINDOW_ACTIVATE_WHEN_SHOWN"u8;
 
     [NativeTypeName("#define SDL_HINT_WINDOW_ALLOW_TOPMOST \"SDL_WINDOW_ALLOW_TOPMOST\"")]
-    public static ReadOnlySpan<byte> HintWindowAllowTopmost => "SDL_WINDOW_ALLOW_TOPMOST"u8;
+    public static Utf8String HintWindowAllowTopmost => "SDL_WINDOW_ALLOW_TOPMOST"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN \"SDL_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN\""
     )]
-    public static ReadOnlySpan<byte> HintWindowFrameUsableWhileCursorHidden =>
+    public static Utf8String HintWindowFrameUsableWhileCursorHidden =>
         "SDL_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN"u8;
 
     [NativeTypeName("#define SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4 \"SDL_WINDOWS_CLOSE_ON_ALT_F4\"")]
-    public static ReadOnlySpan<byte> HintWindowsCloseOnAltF4 => "SDL_WINDOWS_CLOSE_ON_ALT_F4"u8;
+    public static Utf8String HintWindowsCloseOnAltF4 => "SDL_WINDOWS_CLOSE_ON_ALT_F4"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_WINDOWS_ENABLE_MENU_MNEMONICS \"SDL_WINDOWS_ENABLE_MENU_MNEMONICS\""
     )]
-    public static ReadOnlySpan<byte> HintWindowsEnableMenuMnemonics =>
+    public static Utf8String HintWindowsEnableMenuMnemonics =>
         "SDL_WINDOWS_ENABLE_MENU_MNEMONICS"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP \"SDL_WINDOWS_ENABLE_MESSAGELOOP\""
     )]
-    public static ReadOnlySpan<byte> HintWindowsEnableMessageloop =>
-        "SDL_WINDOWS_ENABLE_MESSAGELOOP"u8;
+    public static Utf8String HintWindowsEnableMessageloop => "SDL_WINDOWS_ENABLE_MESSAGELOOP"u8;
 
     [NativeTypeName("#define SDL_HINT_WINDOWS_RAW_KEYBOARD \"SDL_WINDOWS_RAW_KEYBOARD\"")]
-    public static ReadOnlySpan<byte> HintWindowsRawKeyboard => "SDL_WINDOWS_RAW_KEYBOARD"u8;
+    public static Utf8String HintWindowsRawKeyboard => "SDL_WINDOWS_RAW_KEYBOARD"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_WINDOWS_FORCE_MUTEX_CRITICAL_SECTIONS \"SDL_WINDOWS_FORCE_MUTEX_CRITICAL_SECTIONS\""
     )]
-    public static ReadOnlySpan<byte> HintWindowsForceMutexCriticalSections =>
+    public static Utf8String HintWindowsForceMutexCriticalSections =>
         "SDL_WINDOWS_FORCE_MUTEX_CRITICAL_SECTIONS"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_WINDOWS_FORCE_SEMAPHORE_KERNEL \"SDL_WINDOWS_FORCE_SEMAPHORE_KERNEL\""
     )]
-    public static ReadOnlySpan<byte> HintWindowsForceSemaphoreKernel =>
+    public static Utf8String HintWindowsForceSemaphoreKernel =>
         "SDL_WINDOWS_FORCE_SEMAPHORE_KERNEL"u8;
 
     [NativeTypeName("#define SDL_HINT_WINDOWS_INTRESOURCE_ICON \"SDL_WINDOWS_INTRESOURCE_ICON\"")]
-    public static ReadOnlySpan<byte> HintWindowsIntresourceIcon => "SDL_WINDOWS_INTRESOURCE_ICON"u8;
+    public static Utf8String HintWindowsIntresourceIcon => "SDL_WINDOWS_INTRESOURCE_ICON"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_WINDOWS_INTRESOURCE_ICON_SMALL \"SDL_WINDOWS_INTRESOURCE_ICON_SMALL\""
     )]
-    public static ReadOnlySpan<byte> HintWindowsIntresourceIconSmall =>
+    public static Utf8String HintWindowsIntresourceIconSmall =>
         "SDL_WINDOWS_INTRESOURCE_ICON_SMALL"u8;
 
     [NativeTypeName("#define SDL_HINT_WINDOWS_USE_D3D9EX \"SDL_WINDOWS_USE_D3D9EX\"")]
-    public static ReadOnlySpan<byte> HintWindowsUseD3D9Ex => "SDL_WINDOWS_USE_D3D9EX"u8;
+    public static Utf8String HintWindowsUseD3D9Ex => "SDL_WINDOWS_USE_D3D9EX"u8;
 
     [NativeTypeName("#define SDL_HINT_WINRT_HANDLE_BACK_BUTTON \"SDL_WINRT_HANDLE_BACK_BUTTON\"")]
-    public static ReadOnlySpan<byte> HintWinrtHandleBackButton => "SDL_WINRT_HANDLE_BACK_BUTTON"u8;
+    public static Utf8String HintWinrtHandleBackButton => "SDL_WINRT_HANDLE_BACK_BUTTON"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_WINRT_PRIVACY_POLICY_LABEL \"SDL_WINRT_PRIVACY_POLICY_LABEL\""
     )]
-    public static ReadOnlySpan<byte> HintWinrtPrivacyPolicyLabel =>
-        "SDL_WINRT_PRIVACY_POLICY_LABEL"u8;
+    public static Utf8String HintWinrtPrivacyPolicyLabel => "SDL_WINRT_PRIVACY_POLICY_LABEL"u8;
 
     [NativeTypeName("#define SDL_HINT_WINRT_PRIVACY_POLICY_URL \"SDL_WINRT_PRIVACY_POLICY_URL\"")]
-    public static ReadOnlySpan<byte> HintWinrtPrivacyPolicyUrl => "SDL_WINRT_PRIVACY_POLICY_URL"u8;
+    public static Utf8String HintWinrtPrivacyPolicyUrl => "SDL_WINRT_PRIVACY_POLICY_URL"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_X11_FORCE_OVERRIDE_REDIRECT \"SDL_X11_FORCE_OVERRIDE_REDIRECT\""
     )]
-    public static ReadOnlySpan<byte> HintX11ForceOverrideRedirect =>
-        "SDL_X11_FORCE_OVERRIDE_REDIRECT"u8;
+    public static Utf8String HintX11ForceOverrideRedirect => "SDL_X11_FORCE_OVERRIDE_REDIRECT"u8;
 
     [NativeTypeName("#define SDL_HINT_X11_WINDOW_TYPE \"SDL_X11_WINDOW_TYPE\"")]
-    public static ReadOnlySpan<byte> HintX11WindowType => "SDL_X11_WINDOW_TYPE"u8;
+    public static Utf8String HintX11WindowType => "SDL_X11_WINDOW_TYPE"u8;
 
     [NativeTypeName("#define SDL_HINT_XINPUT_ENABLED \"SDL_XINPUT_ENABLED\"")]
-    public static ReadOnlySpan<byte> HintXinputEnabled => "SDL_XINPUT_ENABLED"u8;
+    public static Utf8String HintXinputEnabled => "SDL_XINPUT_ENABLED"u8;
 
     [NativeTypeName("#define SDL_SOFTWARE_RENDERER \"software\"")]
-    public static ReadOnlySpan<byte> SoftwareRenderer => "software"u8;
+    public static Utf8String SoftwareRenderer => "software"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_CREATE_NAME_STRING \"name\"")]
-    public static ReadOnlySpan<byte> PropRendererCreateNameString => "name"u8;
+    public static Utf8String PropRendererCreateNameString => "name"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_CREATE_WINDOW_POINTER \"window\"")]
-    public static ReadOnlySpan<byte> PropRendererCreateWindowPointer => "window"u8;
+    public static Utf8String PropRendererCreateWindowPointer => "window"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_CREATE_SURFACE_POINTER \"surface\"")]
-    public static ReadOnlySpan<byte> PropRendererCreateSurfacePointer => "surface"u8;
+    public static Utf8String PropRendererCreateSurfacePointer => "surface"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_CREATE_OUTPUT_COLORSPACE_NUMBER \"output_colorspace\""
     )]
-    public static ReadOnlySpan<byte> PropRendererCreateOutputColorspaceNumber =>
-        "output_colorspace"u8;
+    public static Utf8String PropRendererCreateOutputColorspaceNumber => "output_colorspace"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_CREATE_PRESENT_VSYNC_BOOLEAN \"present_vsync\"")]
-    public static ReadOnlySpan<byte> PropRendererCreatePresentVsyncBoolean => "present_vsync"u8;
+    public static Utf8String PropRendererCreatePresentVsyncBoolean => "present_vsync"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_CREATE_VULKAN_INSTANCE_POINTER \"vulkan.instance\"")]
-    public static ReadOnlySpan<byte> PropRendererCreateVulkanInstancePointer => "vulkan.instance"u8;
+    public static Utf8String PropRendererCreateVulkanInstancePointer => "vulkan.instance"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_CREATE_VULKAN_SURFACE_NUMBER \"vulkan.surface\"")]
-    public static ReadOnlySpan<byte> PropRendererCreateVulkanSurfaceNumber => "vulkan.surface"u8;
+    public static Utf8String PropRendererCreateVulkanSurfaceNumber => "vulkan.surface"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_CREATE_VULKAN_PHYSICAL_DEVICE_POINTER \"vulkan.physical_device\""
     )]
-    public static ReadOnlySpan<byte> PropRendererCreateVulkanPhysicalDevicePointer =>
+    public static Utf8String PropRendererCreateVulkanPhysicalDevicePointer =>
         "vulkan.physical_device"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_CREATE_VULKAN_DEVICE_POINTER \"vulkan.device\"")]
-    public static ReadOnlySpan<byte> PropRendererCreateVulkanDevicePointer => "vulkan.device"u8;
+    public static Utf8String PropRendererCreateVulkanDevicePointer => "vulkan.device"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_CREATE_VULKAN_GRAPHICS_QUEUE_FAMILY_INDEX_NUMBER \"vulkan.graphics_queue_family_index\""
     )]
-    public static ReadOnlySpan<byte> PropRendererCreateVulkanGraphicsQueueFamilyIndexNumber =>
+    public static Utf8String PropRendererCreateVulkanGraphicsQueueFamilyIndexNumber =>
         "vulkan.graphics_queue_family_index"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_CREATE_VULKAN_PRESENT_QUEUE_FAMILY_INDEX_NUMBER \"vulkan.present_queue_family_index\""
     )]
-    public static ReadOnlySpan<byte> PropRendererCreateVulkanPresentQueueFamilyIndexNumber =>
+    public static Utf8String PropRendererCreateVulkanPresentQueueFamilyIndexNumber =>
         "vulkan.present_queue_family_index"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_NAME_STRING \"SDL.renderer.name\"")]
-    public static ReadOnlySpan<byte> PropRendererNameString => "SDL.renderer.name"u8;
+    public static Utf8String PropRendererNameString => "SDL.renderer.name"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_WINDOW_POINTER \"SDL.renderer.window\"")]
-    public static ReadOnlySpan<byte> PropRendererWindowPointer => "SDL.renderer.window"u8;
+    public static Utf8String PropRendererWindowPointer => "SDL.renderer.window"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_SURFACE_POINTER \"SDL.renderer.surface\"")]
-    public static ReadOnlySpan<byte> PropRendererSurfacePointer => "SDL.renderer.surface"u8;
+    public static Utf8String PropRendererSurfacePointer => "SDL.renderer.surface"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_OUTPUT_COLORSPACE_NUMBER \"SDL.renderer.output_colorspace\""
     )]
-    public static ReadOnlySpan<byte> PropRendererOutputColorspaceNumber =>
+    public static Utf8String PropRendererOutputColorspaceNumber =>
         "SDL.renderer.output_colorspace"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_HDR_ENABLED_BOOLEAN \"SDL.renderer.HDR_enabled\"")]
-    public static ReadOnlySpan<byte> PropRendererHdrEnabledBoolean => "SDL.renderer.HDR_enabled"u8;
+    public static Utf8String PropRendererHdrEnabledBoolean => "SDL.renderer.HDR_enabled"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_SDR_WHITE_POINT_FLOAT \"SDL.renderer.SDR_white_point\""
     )]
-    public static ReadOnlySpan<byte> PropRendererSdrWhitePointFloat =>
-        "SDL.renderer.SDR_white_point"u8;
+    public static Utf8String PropRendererSdrWhitePointFloat => "SDL.renderer.SDR_white_point"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_HDR_HEADROOM_FLOAT \"SDL.renderer.HDR_headroom\"")]
-    public static ReadOnlySpan<byte> PropRendererHdrHeadroomFloat => "SDL.renderer.HDR_headroom"u8;
+    public static Utf8String PropRendererHdrHeadroomFloat => "SDL.renderer.HDR_headroom"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_D3D9_DEVICE_POINTER \"SDL.renderer.d3d9.device\"")]
-    public static ReadOnlySpan<byte> PropRendererD3D9DevicePointer => "SDL.renderer.d3d9.device"u8;
+    public static Utf8String PropRendererD3D9DevicePointer => "SDL.renderer.d3d9.device"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_D3D11_DEVICE_POINTER \"SDL.renderer.d3d11.device\"")]
-    public static ReadOnlySpan<byte> PropRendererD3D11DevicePointer =>
-        "SDL.renderer.d3d11.device"u8;
+    public static Utf8String PropRendererD3D11DevicePointer => "SDL.renderer.d3d11.device"u8;
 
     [NativeTypeName("#define SDL_PROP_RENDERER_D3D12_DEVICE_POINTER \"SDL.renderer.d3d12.device\"")]
-    public static ReadOnlySpan<byte> PropRendererD3D12DevicePointer =>
-        "SDL.renderer.d3d12.device"u8;
+    public static Utf8String PropRendererD3D12DevicePointer => "SDL.renderer.d3d12.device"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_D3D12_COMMAND_QUEUE_POINTER \"SDL.renderer.d3d12.command_queue\""
     )]
-    public static ReadOnlySpan<byte> PropRendererD3D12CommandQueuePointer =>
+    public static Utf8String PropRendererD3D12CommandQueuePointer =>
         "SDL.renderer.d3d12.command_queue"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_VULKAN_INSTANCE_POINTER \"SDL.renderer.vulkan.instance\""
     )]
-    public static ReadOnlySpan<byte> PropRendererVulkanInstancePointer =>
-        "SDL.renderer.vulkan.instance"u8;
+    public static Utf8String PropRendererVulkanInstancePointer => "SDL.renderer.vulkan.instance"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_VULKAN_SURFACE_NUMBER \"SDL.renderer.vulkan.surface\""
     )]
-    public static ReadOnlySpan<byte> PropRendererVulkanSurfaceNumber =>
-        "SDL.renderer.vulkan.surface"u8;
+    public static Utf8String PropRendererVulkanSurfaceNumber => "SDL.renderer.vulkan.surface"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_VULKAN_PHYSICAL_DEVICE_POINTER \"SDL.renderer.vulkan.physical_device\""
     )]
-    public static ReadOnlySpan<byte> PropRendererVulkanPhysicalDevicePointer =>
+    public static Utf8String PropRendererVulkanPhysicalDevicePointer =>
         "SDL.renderer.vulkan.physical_device"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_VULKAN_DEVICE_POINTER \"SDL.renderer.vulkan.device\""
     )]
-    public static ReadOnlySpan<byte> PropRendererVulkanDevicePointer =>
-        "SDL.renderer.vulkan.device"u8;
+    public static Utf8String PropRendererVulkanDevicePointer => "SDL.renderer.vulkan.device"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_VULKAN_GRAPHICS_QUEUE_FAMILY_INDEX_NUMBER \"SDL.renderer.vulkan.graphics_queue_family_index\""
     )]
-    public static ReadOnlySpan<byte> PropRendererVulkanGraphicsQueueFamilyIndexNumber =>
+    public static Utf8String PropRendererVulkanGraphicsQueueFamilyIndexNumber =>
         "SDL.renderer.vulkan.graphics_queue_family_index"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_VULKAN_PRESENT_QUEUE_FAMILY_INDEX_NUMBER \"SDL.renderer.vulkan.present_queue_family_index\""
     )]
-    public static ReadOnlySpan<byte> PropRendererVulkanPresentQueueFamilyIndexNumber =>
+    public static Utf8String PropRendererVulkanPresentQueueFamilyIndexNumber =>
         "SDL.renderer.vulkan.present_queue_family_index"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_RENDERER_VULKAN_SWAPCHAIN_IMAGE_COUNT_NUMBER \"SDL.renderer.vulkan.swapchain_image_count\""
     )]
-    public static ReadOnlySpan<byte> PropRendererVulkanSwapchainImageCountNumber =>
+    public static Utf8String PropRendererVulkanSwapchainImageCountNumber =>
         "SDL.renderer.vulkan.swapchain_image_count"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_COLORSPACE_NUMBER \"colorspace\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateColorspaceNumber => "colorspace"u8;
+    public static Utf8String PropTextureCreateColorspaceNumber => "colorspace"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_FORMAT_NUMBER \"format\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateFormatNumber => "format"u8;
+    public static Utf8String PropTextureCreateFormatNumber => "format"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_ACCESS_NUMBER \"access\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateAccessNumber => "access"u8;
+    public static Utf8String PropTextureCreateAccessNumber => "access"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_WIDTH_NUMBER \"width\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateWidthNumber => "width"u8;
+    public static Utf8String PropTextureCreateWidthNumber => "width"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_HEIGHT_NUMBER \"height\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateHeightNumber => "height"u8;
+    public static Utf8String PropTextureCreateHeightNumber => "height"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_SDR_WHITE_POINT_FLOAT \"SDR_white_point\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateSdrWhitePointFloat => "SDR_white_point"u8;
+    public static Utf8String PropTextureCreateSdrWhitePointFloat => "SDR_white_point"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_HDR_HEADROOM_FLOAT \"HDR_headroom\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateHdrHeadroomFloat => "HDR_headroom"u8;
+    public static Utf8String PropTextureCreateHdrHeadroomFloat => "HDR_headroom"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_D3D11_TEXTURE_POINTER \"d3d11.texture\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateD3D11TexturePointer => "d3d11.texture"u8;
+    public static Utf8String PropTextureCreateD3D11TexturePointer => "d3d11.texture"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_D3D11_TEXTURE_U_POINTER \"d3d11.texture_u\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateD3D11TextureUPointer => "d3d11.texture_u"u8;
+    public static Utf8String PropTextureCreateD3D11TextureUPointer => "d3d11.texture_u"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_D3D11_TEXTURE_V_POINTER \"d3d11.texture_v\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateD3D11TextureVPointer => "d3d11.texture_v"u8;
+    public static Utf8String PropTextureCreateD3D11TextureVPointer => "d3d11.texture_v"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_D3D12_TEXTURE_POINTER \"d3d12.texture\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateD3D12TexturePointer => "d3d12.texture"u8;
+    public static Utf8String PropTextureCreateD3D12TexturePointer => "d3d12.texture"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_D3D12_TEXTURE_U_POINTER \"d3d12.texture_u\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateD3D12TextureUPointer => "d3d12.texture_u"u8;
+    public static Utf8String PropTextureCreateD3D12TextureUPointer => "d3d12.texture_u"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_D3D12_TEXTURE_V_POINTER \"d3d12.texture_v\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateD3D12TextureVPointer => "d3d12.texture_v"u8;
+    public static Utf8String PropTextureCreateD3D12TextureVPointer => "d3d12.texture_v"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_CREATE_METAL_PIXELBUFFER_POINTER \"metal.pixelbuffer\""
     )]
-    public static ReadOnlySpan<byte> PropTextureCreateMetalPixelbufferPointer =>
-        "metal.pixelbuffer"u8;
+    public static Utf8String PropTextureCreateMetalPixelbufferPointer => "metal.pixelbuffer"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_OPENGL_TEXTURE_NUMBER \"opengl.texture\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateOpenglTextureNumber => "opengl.texture"u8;
+    public static Utf8String PropTextureCreateOpenglTextureNumber => "opengl.texture"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_CREATE_OPENGL_TEXTURE_UV_NUMBER \"opengl.texture_uv\""
     )]
-    public static ReadOnlySpan<byte> PropTextureCreateOpenglTextureUvNumber =>
-        "opengl.texture_uv"u8;
+    public static Utf8String PropTextureCreateOpenglTextureUvNumber => "opengl.texture_uv"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_OPENGL_TEXTURE_U_NUMBER \"opengl.texture_u\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateOpenglTextureUNumber => "opengl.texture_u"u8;
+    public static Utf8String PropTextureCreateOpenglTextureUNumber => "opengl.texture_u"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_OPENGL_TEXTURE_V_NUMBER \"opengl.texture_v\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateOpenglTextureVNumber => "opengl.texture_v"u8;
+    public static Utf8String PropTextureCreateOpenglTextureVNumber => "opengl.texture_v"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_NUMBER \"opengles2.texture\""
     )]
-    public static ReadOnlySpan<byte> PropTextureCreateOpengles2TextureNumber =>
-        "opengles2.texture"u8;
+    public static Utf8String PropTextureCreateOpengles2TextureNumber => "opengles2.texture"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_UV_NUMBER \"opengles2.texture_uv\""
     )]
-    public static ReadOnlySpan<byte> PropTextureCreateOpengles2TextureUvNumber =>
-        "opengles2.texture_uv"u8;
+    public static Utf8String PropTextureCreateOpengles2TextureUvNumber => "opengles2.texture_uv"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_U_NUMBER \"opengles2.texture_u\""
     )]
-    public static ReadOnlySpan<byte> PropTextureCreateOpengles2TextureUNumber =>
-        "opengles2.texture_u"u8;
+    public static Utf8String PropTextureCreateOpengles2TextureUNumber => "opengles2.texture_u"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_V_NUMBER \"opengles2.texture_v\""
     )]
-    public static ReadOnlySpan<byte> PropTextureCreateOpengles2TextureVNumber =>
-        "opengles2.texture_v"u8;
+    public static Utf8String PropTextureCreateOpengles2TextureVNumber => "opengles2.texture_v"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_CREATE_VULKAN_TEXTURE_NUMBER \"vulkan.texture\"")]
-    public static ReadOnlySpan<byte> PropTextureCreateVulkanTextureNumber => "vulkan.texture"u8;
+    public static Utf8String PropTextureCreateVulkanTextureNumber => "vulkan.texture"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_COLORSPACE_NUMBER \"SDL.texture.colorspace\"")]
-    public static ReadOnlySpan<byte> PropTextureColorspaceNumber => "SDL.texture.colorspace"u8;
+    public static Utf8String PropTextureColorspaceNumber => "SDL.texture.colorspace"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_SDR_WHITE_POINT_FLOAT \"SDL.texture.SDR_white_point\""
     )]
-    public static ReadOnlySpan<byte> PropTextureSdrWhitePointFloat =>
-        "SDL.texture.SDR_white_point"u8;
+    public static Utf8String PropTextureSdrWhitePointFloat => "SDL.texture.SDR_white_point"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_HDR_HEADROOM_FLOAT \"SDL.texture.HDR_headroom\"")]
-    public static ReadOnlySpan<byte> PropTextureHdrHeadroomFloat => "SDL.texture.HDR_headroom"u8;
+    public static Utf8String PropTextureHdrHeadroomFloat => "SDL.texture.HDR_headroom"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_D3D11_TEXTURE_POINTER \"SDL.texture.d3d11.texture\"")]
-    public static ReadOnlySpan<byte> PropTextureD3D11TexturePointer =>
-        "SDL.texture.d3d11.texture"u8;
+    public static Utf8String PropTextureD3D11TexturePointer => "SDL.texture.d3d11.texture"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_D3D11_TEXTURE_U_POINTER \"SDL.texture.d3d11.texture_u\""
     )]
-    public static ReadOnlySpan<byte> PropTextureD3D11TextureUPointer =>
-        "SDL.texture.d3d11.texture_u"u8;
+    public static Utf8String PropTextureD3D11TextureUPointer => "SDL.texture.d3d11.texture_u"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_D3D11_TEXTURE_V_POINTER \"SDL.texture.d3d11.texture_v\""
     )]
-    public static ReadOnlySpan<byte> PropTextureD3D11TextureVPointer =>
-        "SDL.texture.d3d11.texture_v"u8;
+    public static Utf8String PropTextureD3D11TextureVPointer => "SDL.texture.d3d11.texture_v"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_D3D12_TEXTURE_POINTER \"SDL.texture.d3d12.texture\"")]
-    public static ReadOnlySpan<byte> PropTextureD3D12TexturePointer =>
-        "SDL.texture.d3d12.texture"u8;
+    public static Utf8String PropTextureD3D12TexturePointer => "SDL.texture.d3d12.texture"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_D3D12_TEXTURE_U_POINTER \"SDL.texture.d3d12.texture_u\""
     )]
-    public static ReadOnlySpan<byte> PropTextureD3D12TextureUPointer =>
-        "SDL.texture.d3d12.texture_u"u8;
+    public static Utf8String PropTextureD3D12TextureUPointer => "SDL.texture.d3d12.texture_u"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_D3D12_TEXTURE_V_POINTER \"SDL.texture.d3d12.texture_v\""
     )]
-    public static ReadOnlySpan<byte> PropTextureD3D12TextureVPointer =>
-        "SDL.texture.d3d12.texture_v"u8;
+    public static Utf8String PropTextureD3D12TextureVPointer => "SDL.texture.d3d12.texture_v"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_OPENGL_TEXTURE_NUMBER \"SDL.texture.opengl.texture\""
     )]
-    public static ReadOnlySpan<byte> PropTextureOpenglTextureNumber =>
-        "SDL.texture.opengl.texture"u8;
+    public static Utf8String PropTextureOpenglTextureNumber => "SDL.texture.opengl.texture"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_OPENGL_TEXTURE_UV_NUMBER \"SDL.texture.opengl.texture_uv\""
     )]
-    public static ReadOnlySpan<byte> PropTextureOpenglTextureUvNumber =>
-        "SDL.texture.opengl.texture_uv"u8;
+    public static Utf8String PropTextureOpenglTextureUvNumber => "SDL.texture.opengl.texture_uv"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_OPENGL_TEXTURE_U_NUMBER \"SDL.texture.opengl.texture_u\""
     )]
-    public static ReadOnlySpan<byte> PropTextureOpenglTextureUNumber =>
-        "SDL.texture.opengl.texture_u"u8;
+    public static Utf8String PropTextureOpenglTextureUNumber => "SDL.texture.opengl.texture_u"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_OPENGL_TEXTURE_V_NUMBER \"SDL.texture.opengl.texture_v\""
     )]
-    public static ReadOnlySpan<byte> PropTextureOpenglTextureVNumber =>
-        "SDL.texture.opengl.texture_v"u8;
+    public static Utf8String PropTextureOpenglTextureVNumber => "SDL.texture.opengl.texture_v"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_OPENGL_TEXTURE_TARGET_NUMBER \"SDL.texture.opengl.target\""
     )]
-    public static ReadOnlySpan<byte> PropTextureOpenglTextureTargetNumber =>
-        "SDL.texture.opengl.target"u8;
+    public static Utf8String PropTextureOpenglTextureTargetNumber => "SDL.texture.opengl.target"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_OPENGL_TEX_W_FLOAT \"SDL.texture.opengl.tex_w\"")]
-    public static ReadOnlySpan<byte> PropTextureOpenglTexWFloat => "SDL.texture.opengl.tex_w"u8;
+    public static Utf8String PropTextureOpenglTexWFloat => "SDL.texture.opengl.tex_w"u8;
 
     [NativeTypeName("#define SDL_PROP_TEXTURE_OPENGL_TEX_H_FLOAT \"SDL.texture.opengl.tex_h\"")]
-    public static ReadOnlySpan<byte> PropTextureOpenglTexHFloat => "SDL.texture.opengl.tex_h"u8;
+    public static Utf8String PropTextureOpenglTexHFloat => "SDL.texture.opengl.tex_h"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_OPENGLES2_TEXTURE_NUMBER \"SDL.texture.opengles2.texture\""
     )]
-    public static ReadOnlySpan<byte> PropTextureOpengles2TextureNumber =>
-        "SDL.texture.opengles2.texture"u8;
+    public static Utf8String PropTextureOpengles2TextureNumber => "SDL.texture.opengles2.texture"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_OPENGLES2_TEXTURE_UV_NUMBER \"SDL.texture.opengles2.texture_uv\""
     )]
-    public static ReadOnlySpan<byte> PropTextureOpengles2TextureUvNumber =>
+    public static Utf8String PropTextureOpengles2TextureUvNumber =>
         "SDL.texture.opengles2.texture_uv"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_OPENGLES2_TEXTURE_U_NUMBER \"SDL.texture.opengles2.texture_u\""
     )]
-    public static ReadOnlySpan<byte> PropTextureOpengles2TextureUNumber =>
+    public static Utf8String PropTextureOpengles2TextureUNumber =>
         "SDL.texture.opengles2.texture_u"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_OPENGLES2_TEXTURE_V_NUMBER \"SDL.texture.opengles2.texture_v\""
     )]
-    public static ReadOnlySpan<byte> PropTextureOpengles2TextureVNumber =>
+    public static Utf8String PropTextureOpengles2TextureVNumber =>
         "SDL.texture.opengles2.texture_v"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_OPENGLES2_TEXTURE_TARGET_NUMBER \"SDL.texture.opengles2.target\""
     )]
-    public static ReadOnlySpan<byte> PropTextureOpengles2TextureTargetNumber =>
+    public static Utf8String PropTextureOpengles2TextureTargetNumber =>
         "SDL.texture.opengles2.target"u8;
 
     [NativeTypeName(
         "#define SDL_PROP_TEXTURE_VULKAN_TEXTURE_NUMBER \"SDL.texture.vulkan.texture\""
     )]
-    public static ReadOnlySpan<byte> PropTextureVulkanTextureNumber =>
-        "SDL.texture.vulkan.texture"u8;
+    public static Utf8String PropTextureVulkanTextureNumber => "SDL.texture.vulkan.texture"u8;
 
     [NativeTypeName("#define SDL_PROP_GLOBAL_SYSTEM_DATE_FORMAT_NUMBER \"SDL.time.date_format\"")]
-    public static ReadOnlySpan<byte> PropGlobalSystemDateFormatNumber => "SDL.time.date_format"u8;
+    public static Utf8String PropGlobalSystemDateFormatNumber => "SDL.time.date_format"u8;
 
     [NativeTypeName("#define SDL_PROP_GLOBAL_SYSTEM_TIME_FORMAT_NUMBER \"SDL.time.time_format\"")]
-    public static ReadOnlySpan<byte> PropGlobalSystemTimeFormatNumber => "SDL.time.time_format"u8;
+    public static Utf8String PropGlobalSystemTimeFormatNumber => "SDL.time.time_format"u8;
 
     [NativeTypeName("#define SDL_MS_PER_SECOND 1000")]
     public const int MsPerSecond = 1000;
