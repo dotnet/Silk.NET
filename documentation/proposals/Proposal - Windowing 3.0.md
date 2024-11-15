@@ -900,10 +900,18 @@ public enum WindowState
     Maximized,
 
     /// <summary>
-    /// The window has been fullscreened, covering the entire surface of the monitor. Note that changing to/from this
-    /// state may enact an implicit change to <see cref="ISurfaceDisplay" />'s state if supported.
+    /// The window has been fullscreened, covering the entire surface of the monitor without a border, with exclusive
+    /// control over the display. Note that changing to/from this state may enact an implicit change to
+    /// <see cref="ISurfaceDisplay" />'s state if supported.
     /// </summary>
-    Fullscreen
+    ExclusiveFullscreen,
+
+    /// <summary>
+    /// The window has been fullscreened, covering the entire surface of the monitor, but still uses window management
+    /// to allow the user to interoperate with other applications easily. This setting leads the
+    /// <see cref="ISurfaceWindow.Border" /> setting to be ignored, as this setting is functionally equivalent to
+    /// <see cref="Maximized" /> and a <see cref="WindowBorder.Hidden" /> border.
+    WindowedFullscreen
 }
 
 /// <summary>
@@ -1271,12 +1279,12 @@ public readonly record struct DisplayCoordinatesEvent(
 
 /// <summary>
 /// Represents the properties of a surface whose rendering is intrinsically linked to the composition of a specific
-/// display. In most cases, this translates to "the surface is rendering in fullscreen mode".
+/// display. In most cases, this translates to "the surface is rendering in exclusive fullscreen mode".
 /// </summary>
 /// <param name="Resolution">
 /// The resolution the surface is rendering on its display at, if known. If <c>null</c>, it is highly likely that the
-/// surface is not rendering in fullscreen mode or otherwise has its rendering intrinsically linked to the composition
-/// of a specific display.
+/// surface is not rendering in exclusive fullscreen mode or otherwise has its rendering intrinsically linked to the
+/// composition of a specific display.
 /// </param>
 /// <param name="RefreshRate">
 /// The rate (per second) at which the physical display will receive new renders from the surface, if known. If
@@ -1285,8 +1293,9 @@ public readonly record struct DisplayCoordinatesEvent(
 /// of a specific display.
 /// </param>
 /// <remarks>
-/// If a <c>default</c> video mode is encountered, it is highly likely the surface is not rendering in fullscreen mode.
-/// If an individual property is <c>null</c>, it is highly likely that property is not controllable programmatically.
+/// If a <c>default</c> video mode is encountered, it is highly likely the surface is not rendering in exclusive
+/// fullscreen mode. If an individual property is <c>null</c>, it is highly likely that property is not controllable
+/// programmatically.
 /// </remarks>
 public readonly record struct VideoMode(Vector2? Resolution, int? RefreshRate);
 
@@ -1591,7 +1600,7 @@ public interface IDetachedSurfaceLifecycle : IDisposable
     /// </summary>
     /// <remarks>
     /// It is expected that <see cref="Tick" /> shall not be called if this property is <c>true</c>.
-    /// <remarks>
+    /// </remarks>
     bool ShouldTerminate { get; }
 
     /// <summary>
@@ -1612,7 +1621,7 @@ public interface IDetachedSurfaceLifecycle : IDisposable
     /// <param name="lifecycle">The created surface lifecycle on success, <c>null</c> otherwise.</param>
     /// <typeparam name="T">
     /// The application that shall be associated with the surface. Note that even with this API,
-    /// <see cref="ISurfaceApplication.Initialize{T}"> shall still be called for consistency and portability. However,
+    /// <see cref="ISurfaceApplication.Initialize{T}" /> shall still be called for consistency and portability. However,
     /// unlike <see cref="ISurfaceApplication.Run{T}" />, this method shall not block and will instead return an
     /// <see cref="IDetachedSurfaceLifecycle" /> on which <see cref="Tick" /> is expected to be continuously called to
     /// enact the same behaviour on the surface. The associated application is also used for any additional global
