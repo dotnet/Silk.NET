@@ -22,6 +22,7 @@ public class ModLoader
             nameof(PrettifyNames) => typeof(PrettifyNames),
             nameof(AddOpaqueStructs) => typeof(AddOpaqueStructs),
             nameof(AddVTables) => typeof(AddVTables),
+            nameof(BakeSourceSets) => typeof(BakeSourceSets),
             nameof(AddApiProfiles) => typeof(AddApiProfiles),
             nameof(MixKhronosData) => typeof(MixKhronosData),
             nameof(TransformHandles) => typeof(TransformHandles),

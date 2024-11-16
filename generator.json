@@ -72,6 +72,7 @@
         "AddIncludes",
         "ClangScraper",
         "AddApiProfiles",
+        "BakeSourceSets",
         "MixKhronosData",
         "AddOpaqueStructs",
         "TransformFunctions",
@@ -89,28 +90,32 @@
         "Profiles": [
           {
             "Profile": "gl",
-            "SourceSubdirectory": "glcompat",
-            "BakedOutputSubdirectory": "gl"
+            "SourceSubdirectory": "glcompat"
           },
           {
             "Profile": "glcore",
             "SourceSubdirectory": "glcore",
-            "BakedOutputSubdirectory": "gl",
             "MinVersion": "3.2"
           },
           {
             "Profile": "gles1",
             "SourceSubdirectory": "gles1",
-            "BakedOutputSubdirectory": "gl",
             "MaxVersion": "2.0"
           },
           {
             "Profile": "gles2",
             "SourceSubdirectory": "gles2",
-            "BakedOutputSubdirectory": "gl",
             "MinVersion": "2.0"
           }
         ]
+      },
+      "BakeSourceSets": {
+        "SourceSets": {
+          "glcompat": "gl",
+          "glcore": "gl",
+          "gles1": "gl",
+          "gles2": "gl"
+        }
       },
       "AddOpaqueStructs": {
         "Names": [
