@@ -229,7 +229,7 @@ public class BakeSourceSets(
             // Update the bake set. This adds if we haven't seen the member before, otherwise we just update the
             // existing declaration by adding our attribute list.
             parent.Children[discrim] = new BakedMember(
-                strategy.GetTypeDeclaration(
+                strategy.BakeMember(
                     nodeToAdd,
                     discrim,
                     parent.Children.TryGetValue(discrim, out var baked) ? baked : null
@@ -273,7 +273,7 @@ public class BakeSourceSets(
                 nsPre = string.Empty; // only the top-level type shall be prefixed with the namespace
                 bakeSet = (
                     bakeSet!.Children[discrim] = new BakedMember(
-                        strategy.GetTypeDeclaration(
+                        strategy.BakeMember(
                             decl,
                             discrim,
                             bakeSet.Children.TryGetValue(discrim, out var baked) ? baked : null

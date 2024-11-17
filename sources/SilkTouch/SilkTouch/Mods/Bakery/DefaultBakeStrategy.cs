@@ -25,7 +25,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
         GetType() == typeof(DefaultBakeStrategy) ? "Default" : GetType().FullName ?? GetType().Name;
 
     /// <inheritdoc />
-    public virtual MemberDeclarationSyntax GetTypeDeclaration(
+    public virtual MemberDeclarationSyntax BakeMember(
         MemberDeclarationSyntax node,
         string? discrim,
         BakedMember? existing

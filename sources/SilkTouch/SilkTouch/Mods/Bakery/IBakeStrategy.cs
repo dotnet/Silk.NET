@@ -17,14 +17,14 @@ public interface IBakeStrategy // the temptation to call this IRecipe was sooooo
     string Name { get; }
 
     /// <summary>
-    /// Gets a type declaration to store in a <see cref="BakeSet" /> element, merging the encountered declaration with
-    /// the existing one in that <see cref="BakeSet" /> element if provided.
+    /// Gets a declaration to store in a <see cref="BakeSet" /> element, merging the encountered declaration with the
+    /// existing one in that <see cref="BakeSet" /> element if provided.
     /// </summary>
     /// <param name="node">The encountered syntax node.</param>
     /// <param name="discrim">The discriminator for this member.</param>
     /// <param name="existing">The current member stored in the <see cref="BakeSet" />.</param>
     /// <returns>The merged type declaration.</returns>
-    MemberDeclarationSyntax GetTypeDeclaration(
+    MemberDeclarationSyntax BakeMember(
         MemberDeclarationSyntax node,
         string? discrim,
         BakedMember? existing
