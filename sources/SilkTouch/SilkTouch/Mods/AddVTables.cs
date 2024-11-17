@@ -255,7 +255,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                                     )
                                                     .WithSemicolonToken(
                                                         Token(SyntaxKind.SemicolonToken)
-                                                    )
+                                                    ),
                                             }
                                         )
                                     )
@@ -264,11 +264,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     EqualsValueClause(
                                         ImplicitObjectCreationExpression(
                                             GenerateFactoryPartial
-                                                ? ArgumentList(
-                                                    SingletonSeparatedList(
-                                                        Argument(IdentifierName("ContextFactory"))
+                                                    ? ArgumentList(
+                                                        SingletonSeparatedList(
+                                                            Argument(
+                                                                IdentifierName("ContextFactory")
+                                                            )
+                                                        )
                                                     )
-                                                )
                                                 : !string.IsNullOrWhiteSpace(ctx.StaticDefault)
                                                 && ctx.StaticDefaultWrapper is not null
                                                 && ctx.StaticDefault != Name
@@ -293,7 +295,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                                             )
                                                         )
                                                     )
-                                                    : ArgumentList(),
+                                                : ArgumentList(),
                                             null
                                         )
                                     )
@@ -352,7 +354,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                         )
                                     )
                                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                                : null
+                                : null,
                         }.OfType<MemberDeclarationSyntax>()
                     )
                 );
@@ -524,7 +526,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         private List<MethodDeclarationSyntax> _methods = new();
         private bool _multiClass;
-        private string? _className;
+        private string? _className,
+            _fullClassName;
 
         /// <summary>
         /// The current class name, if a single class is being handled from the current file. Not fully qualified.
@@ -548,6 +551,14 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         /// with the same name but different namespace has been encountered, the value is always fully-qualified.
         /// </summary>
         public Dictionary<string, string?> FullClassNames { get; set; } = [];
+
+        /// <summary>
+        /// The entry points encountered for each full class name.
+        /// </summary>
+        public Dictionary<
+            string,
+            List<(string EntryPoint, string Library)>
+        > EntryPoints { get; set; } = [];
 
         public override SyntaxNode? Visit(SyntaxNode? node)
         {
@@ -576,7 +587,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             var ns = node.NamespaceFromSyntaxNode();
             var key = $"I{node.Identifier}";
             var className = node.Identifier.ToString();
-            var fullClassName = $"{ns}.{node.Identifier}";
+            _fullClassName = $"{ns}.{node.Identifier}";
             if (!_multiClass && _className is null)
             {
                 _className = className;
@@ -589,18 +600,18 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             // The contents of the ClassNames hash set determines the output file name for the VTable boilerplate.
             // These are output to the source root, so if there's multiple classes with the same name but different
             // namespaces, then we need to ensure we're tracking that.
-            if (FullClassNames.TryGetValue(fullClassName, out _))
+            if (FullClassNames.TryGetValue(_fullClassName, out _))
             {
                 // already using the full class name.
             }
             else if (
                 FullClassNames.TryGetValue(className, out var theirFullClassName)
-                && theirFullClassName != fullClassName
+                && theirFullClassName != _fullClassName
             )
             {
                 // separate these two and use their full class names as the file name.
                 FullClassNames[className] = null; // <-- keep it in case a third class comes along
-                FullClassNames[fullClassName] = fullClassName;
+                FullClassNames[_fullClassName] = _fullClassName;
                 if (theirFullClassName is not null)
                 {
                     FullClassNames[theirFullClassName] = theirFullClassName;
@@ -609,7 +620,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             else
             {
                 // either it's new or we're not using the full class name and the namespace matches ours
-                FullClassNames[className] = fullClassName;
+                FullClassNames[className] = _fullClassName;
             }
 
             _currentInterface = NewInterface(key, node);
@@ -644,7 +655,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             new BaseTypeSyntax[]
                             {
                                 SimpleBaseType(IdentifierName(key)),
-                                SimpleBaseType(IdentifierName($"{key}.Static"))
+                                SimpleBaseType(IdentifierName($"{key}.Static")),
                             }
                         )
                     )
@@ -707,6 +718,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             {
                 return base.VisitMethodDeclaration(node);
             }
+
+            entryPoint ??= node.Identifier.ToString();
 
             // Get the static interface within this interface
             var staticInterface = _currentInterface
@@ -798,12 +811,25 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             _currentVTableOutputs[i],
                             node,
                             lib,
-                            entryPoint ?? node.Identifier.ToString(),
+                            entryPoint,
                             staticDecl,
                             instanceDecl,
                             parent.Identifier.ToString()
                         )
                     );
+            }
+
+            Debug.Assert(_fullClassName is not null);
+            if (!EntryPoints.TryGetValue(_fullClassName, out var entryPoints))
+            {
+                EntryPoints[_fullClassName] = entryPoints = [];
+            }
+
+            var slot = entryPoints.IndexOf((entryPoint, lib));
+            if (slot == -1)
+            {
+                slot = entryPoints.Count;
+                entryPoints.Add((entryPoint, lib));
             }
 
             // For the instance implementation of the vtable interface, the class contains an INativeContext from which
@@ -821,15 +847,14 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     node.Body is null && node.ExpressionBody is null
                         ? GenerateNativeContextTrampoline(
                             lib,
-                            entryPoint ?? node.Identifier.ToString(),
+                            entryPoint,
                             callConv,
                             node.ParameterList,
-                            node.ReturnType
+                            node.ReturnType,
+                            slot
                         )
-                        : node.ExpressionBody is null
-                            ? null
-                            : VisitArrowExpressionClause(node.ExpressionBody)
-                                as ArrowExpressionClauseSyntax
+                    : node.ExpressionBody is null ? null
+                    : VisitArrowExpressionClause(node.ExpressionBody) as ArrowExpressionClauseSyntax
                 )
                 .WithBody(node.Body is null ? null : VisitBlock(node.Body) as BlockSyntax)
                 .WithSemicolonToken(node.Body is null ? Token(SyntaxKind.SemicolonToken) : default)
@@ -934,7 +959,12 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     )
                                 )
                                 .Where(x => x is not null)
-                                .Concat(GenerateTopLevelBoilerplate(nonInterfaceIden))!
+                                .Concat(
+                                    GenerateTopLevelBoilerplate(
+                                        nonInterfaceIden,
+                                        EntryPoints[nonInterface]
+                                    )
+                                )!
                         )
                     )
                     .WithParameterList(
@@ -977,9 +1007,54 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         }
 
         private IEnumerable<MemberDeclarationSyntax> GenerateTopLevelBoilerplate(
-            string nonInterfaceName
+            string nonInterfaceName,
+            List<(string EntryPoint, string Library)> slots
         )
         {
+            yield return FieldDeclaration(
+                    VariableDeclaration(
+                        ArrayType(
+                            PointerType(PredefinedType(Token(SyntaxKind.VoidKeyword))),
+                            SingletonList(ArrayRankSpecifier())
+                        ),
+                        SingletonSeparatedList(
+                            VariableDeclarator("_slots")
+                                .WithInitializer(
+                                    EqualsValueClause(
+                                        ArrayCreationExpression(
+                                            ArrayType(
+                                                    PointerType(
+                                                        PredefinedType(
+                                                            Token(SyntaxKind.VoidKeyword)
+                                                        )
+                                                    )
+                                                )
+                                                .WithRankSpecifiers(
+                                                    SingletonList(
+                                                        ArrayRankSpecifier(
+                                                            SingletonSeparatedList<ExpressionSyntax>(
+                                                                LiteralExpression(
+                                                                    SyntaxKind.NumericLiteralExpression,
+                                                                    Literal(slots.Count)
+                                                                )
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                        )
+                                    )
+                                )
+                        )
+                    )
+                )
+                .WithModifiers(
+                    TokenList(
+                        Token(SyntaxKind.PrivateKeyword),
+                        Token(SyntaxKind.UnsafeKeyword),
+                        Token(SyntaxKind.ReadOnlyKeyword)
+                    )
+                );
+
             if (
                 _staticDefaultWrapper is not null
                 && !_vTables.Any(x => x is ThisThread && x.Name == _staticDefault)
@@ -1072,7 +1147,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                                     )
                                                 )
                                             ),
-                                        XmlEmptyElement("inheritdoc")
+                                        XmlEmptyElement("inheritdoc"),
                                     }
                                 )
                             )
@@ -1087,7 +1162,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             string ep,
             string? callConv,
             ParameterListSyntax parameterList,
-            TypeSyntax returnType
+            TypeSyntax returnType,
+            int slot
         ) =>
             ArrowExpressionClause(
                 InvocationExpression(
@@ -1131,35 +1207,87 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                             )
                                         )
                                     ),
-                                InvocationExpression(
-                                        MemberAccessExpression(
-                                            SyntaxKind.SimpleMemberAccessExpression,
-                                            IdentifierName("nativeContext"),
-                                            IdentifierName("LoadFunction")
-                                        )
-                                    )
-                                    .WithArgumentList(
-                                        ArgumentList(
-                                            SeparatedList<ArgumentSyntax>(
-                                                new SyntaxNodeOrToken[]
-                                                {
-                                                    Argument(
-                                                        LiteralExpression(
-                                                            SyntaxKind.StringLiteralExpression,
-                                                            Literal(ep)
-                                                        )
-                                                    ),
-                                                    Token(SyntaxKind.CommaToken),
-                                                    Argument(
-                                                        LiteralExpression(
-                                                            SyntaxKind.StringLiteralExpression,
-                                                            Literal(lib)
+                                ParenthesizedExpression(
+                                    ConditionalExpression(
+                                        IsPatternExpression(
+                                            ElementAccessExpression(
+                                                IdentifierName("_slots"),
+                                                BracketedArgumentList(
+                                                    SingletonSeparatedList(
+                                                        Argument(
+                                                            LiteralExpression(
+                                                                SyntaxKind.NumericLiteralExpression,
+                                                                Literal(slot)
+                                                            )
                                                         )
                                                     )
-                                                }
+                                                )
+                                            ),
+                                            BinaryPattern(
+                                                SyntaxKind.AndPattern,
+                                                UnaryPattern(
+                                                    Token(SyntaxKind.NotKeyword),
+                                                    ConstantPattern(
+                                                        LiteralExpression(
+                                                            SyntaxKind.NullLiteralExpression
+                                                        )
+                                                    )
+                                                ),
+                                                VarPattern(
+                                                    SingleVariableDesignation(
+                                                        Identifier("loadedFnPtr")
+                                                    )
+                                                )
                                             )
+                                        ),
+                                        IdentifierName("loadedFnPtr"),
+                                        AssignmentExpression(
+                                            SyntaxKind.SimpleAssignmentExpression,
+                                            ElementAccessExpression(
+                                                IdentifierName("_slots"),
+                                                BracketedArgumentList(
+                                                    SingletonSeparatedList(
+                                                        Argument(
+                                                            LiteralExpression(
+                                                                SyntaxKind.NumericLiteralExpression,
+                                                                Literal(slot)
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            InvocationExpression(
+                                                    MemberAccessExpression(
+                                                        SyntaxKind.SimpleMemberAccessExpression,
+                                                        IdentifierName("nativeContext"),
+                                                        IdentifierName("LoadFunction")
+                                                    )
+                                                )
+                                                .WithArgumentList(
+                                                    ArgumentList(
+                                                        SeparatedList<ArgumentSyntax>(
+                                                            new SyntaxNodeOrToken[]
+                                                            {
+                                                                Argument(
+                                                                    LiteralExpression(
+                                                                        SyntaxKind.StringLiteralExpression,
+                                                                        Literal(ep)
+                                                                    )
+                                                                ),
+                                                                Token(SyntaxKind.CommaToken),
+                                                                Argument(
+                                                                    LiteralExpression(
+                                                                        SyntaxKind.StringLiteralExpression,
+                                                                        Literal(lib)
+                                                                    )
+                                                                ),
+                                                            }
+                                                        )
+                                                    )
+                                                )
                                         )
                                     )
+                                )
                             )
                         )
                     )
@@ -1193,10 +1321,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 nameof(DllImport) => typeof(DllImport),
                                 nameof(StaticWrapper) => typeof(StaticWrapper),
                                 nameof(ThisThread) => typeof(ThisThread),
-                                _
-                                    => throw new InvalidOperationException(
-                                        "VTable must have valid \"Kind\" property"
-                                    )
+                                _ => throw new InvalidOperationException(
+                                    "VTable must have valid \"Kind\" property"
+                                ),
                             }
                         )
                     ?? throw new InvalidOperationException(
@@ -1211,7 +1338,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 {
                     new DllImport { IsDefault = true },
                     new StaticWrapper(),
-                    new ThisThread()
+                    new ThisThread(),
                 }
         );
         var newFiles = new List<(string, CSharpSyntaxNode)>(rw.FullClassNames.Count);

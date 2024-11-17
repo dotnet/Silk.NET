@@ -25,6 +25,7 @@ partial class Sdl(INativeContext nativeContext) : IDisposable
         public static void MakeCurrent(ISdl ctx) => Underlying.Value = ctx;
     }
 
+    private readonly unsafe void*[] _slots = new void*[816];
     public static ISdl Instance { get; } = new StaticWrapper<DllImport>();
 
     public static ISdl Create() => Instance;
