@@ -24,6 +24,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" Version="3.11.2177" />
     <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
     <PackageReference Include="System.IO.Hashing" Version="8.0.0" />
+
+    <!-- This is not used but it is used transitively and the version pulled in has a vulnerability -->
+    <PackageReference Include="System.Formats.Asn1" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
