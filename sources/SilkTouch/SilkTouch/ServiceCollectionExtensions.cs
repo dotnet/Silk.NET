@@ -9,6 +9,7 @@ using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Mods.Bakery;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using Silk.NET.SilkTouch.Sources;
@@ -103,7 +104,9 @@ public static class ServiceCollectionExtensions
             s.GetRequiredService<MSBuildModContextProvider>()
         );
         services.AddSingleton<NameTrimmer>();
+        services.AddSingleton<DefaultBakeStrategy>();
         services.AddSingleton<INameTrimmer>(s => s.GetRequiredService<NameTrimmer>());
+        services.AddSingleton<IBakeStrategy>(s => s.GetRequiredService<DefaultBakeStrategy>());
         services.AddSingleton(typeof(IJobDependency<>), typeof(JobDependencies.Global<>));
         services.TryAddSingleton<ICacheProvider, FileSystemCacheProvider>();
         services.AddSingleton<IInputSource, GitInputSource>();

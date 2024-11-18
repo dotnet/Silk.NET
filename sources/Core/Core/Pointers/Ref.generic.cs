@@ -132,18 +132,18 @@ public readonly ref struct Ref<T>
     public static bool operator !=(NullPtr lh, Ref<T> rh) => (Ref<T>)lh != rh;
 
     /// <summary>
-    /// Creates a <see cref="Ref{T}"/> from a span
+    /// Creates a <see cref="Ref{T}"/> from a span.
     /// </summary>
-    /// <param name="span"></param>
+    /// <param name="span">The span to create the ref from.</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static implicit operator Ref<T>(Span<T> span) => new(ref span.GetPinnableReference());
 
     /// <summary>
-    /// Creates a <see cref="Ref{T}"/> from a span
+    /// Creates a <see cref="Ref{T}"/> from a readonly span.
     /// </summary>
-    /// <param name="span"></param>
-    // TODO annotate requires readonly dest - const correctness etc
+    /// <param name="span">The span to create the ref from.</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    // TODO annotate requires readonly dest - const correctness etc
     public static implicit operator Ref<T>(ReadOnlySpan<T> span) =>
         new(ref Unsafe.AsRef(in span.GetPinnableReference()));
 
