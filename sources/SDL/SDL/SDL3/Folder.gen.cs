@@ -21,4 +21,5 @@ public enum Folder : uint
     Screenshots,
     Templates,
     Videos,
+    Count,
 }

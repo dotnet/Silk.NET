@@ -17,6 +17,6 @@ public partial struct CameraDeviceEvent
     [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeTypeName("SDL_CameraDeviceID")]
+    [NativeTypeName("SDL_CameraID")]
     public uint Which;
 }

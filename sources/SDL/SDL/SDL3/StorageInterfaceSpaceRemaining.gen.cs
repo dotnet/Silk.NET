@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[Transformed]
 public readonly unsafe struct StorageInterfaceSpaceRemaining : IDisposable
 {
     private readonly void* Pointer;

@@ -33,6 +33,9 @@ public partial struct Event
     public TextEditingEvent Edit;
 
     [FieldOffset(0)]
+    public TextEditingCandidatesEvent EditCandidates;
+
+    [FieldOffset(0)]
     public TextInputEvent Text;
 
     [FieldOffset(0)]
@@ -99,13 +102,19 @@ public partial struct Event
     public TouchFingerEvent Tfinger;
 
     [FieldOffset(0)]
-    public PenTipEvent Ptip;
+    public PenProximityEvent Pproximity;
+
+    [FieldOffset(0)]
+    public PenTouchEvent Ptouch;
 
     [FieldOffset(0)]
     public PenMotionEvent Pmotion;
 
     [FieldOffset(0)]
     public PenButtonEvent Pbutton;
+
+    [FieldOffset(0)]
+    public PenAxisEvent Paxis;
 
     [FieldOffset(0)]
     public DropEvent Drop;

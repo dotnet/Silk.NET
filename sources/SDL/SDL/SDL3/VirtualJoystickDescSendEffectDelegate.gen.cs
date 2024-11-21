@@ -6,6 +6,5 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace Silk.NET.SDL;
-
-public unsafe delegate int VirtualJoystickDescSendEffectDelegate(void* arg0, void* arg1, int arg2);
+[Transformed]
+public unsafe delegate byte VirtualJoystickDescSendEffectDelegate(void* arg0, void* arg1, int arg2);

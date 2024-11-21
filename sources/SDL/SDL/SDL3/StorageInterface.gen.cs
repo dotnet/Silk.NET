@@ -9,32 +9,38 @@ namespace Silk.NET.SDL;
 
 public unsafe partial struct StorageInterface
 {
-    [NativeTypeName("int (*)(void *)")]
-    public ThreadFunction Close;
+    [NativeTypeName("Uint32")]
+    public uint Version;
 
-    [NativeTypeName("SDL_bool (*)(void *)")]
-    public ThreadFunction Ready;
+    [NativeTypeName("bool (*)(void *)")]
+    public StorageInterfaceClose Close;
 
-    [NativeTypeName("int (*)(void *, const char *, SDL_EnumerateDirectoryCallback, void *)")]
+    [NativeTypeName("bool (*)(void *)")]
+    public StorageInterfaceReady Ready;
+
+    [NativeTypeName("bool (*)(void *, const char *, SDL_EnumerateDirectoryCallback, void *)")]
     public StorageInterfaceEnumerate Enumerate;
 
-    [NativeTypeName("int (*)(void *, const char *, SDL_PathInfo *)")]
+    [NativeTypeName("bool (*)(void *, const char *, SDL_PathInfo *)")]
     public StorageInterfaceInfo Info;
 
-    [NativeTypeName("int (*)(void *, const char *, void *, Uint64)")]
-    public StorageInterfaceFunction1 ReadFile;
+    [NativeTypeName("bool (*)(void *, const char *, void *, Uint64)")]
+    public StorageInterfaceReadFile ReadFile;
 
-    [NativeTypeName("int (*)(void *, const char *, const void *, Uint64)")]
-    public StorageInterfaceFunction1 WriteFile;
+    [NativeTypeName("bool (*)(void *, const char *, const void *, Uint64)")]
+    public StorageInterfaceWriteFile WriteFile;
 
-    [NativeTypeName("int (*)(void *, const char *)")]
-    public StorageInterfaceFunction2 Mkdir;
+    [NativeTypeName("bool (*)(void *, const char *)")]
+    public StorageInterfaceMkdir Mkdir;
 
-    [NativeTypeName("int (*)(void *, const char *)")]
-    public StorageInterfaceFunction2 Remove;
+    [NativeTypeName("bool (*)(void *, const char *)")]
+    public StorageInterfaceRemove Remove;
 
-    [NativeTypeName("int (*)(void *, const char *, const char *)")]
-    public EnumerateDirectoryCallback Rename;
+    [NativeTypeName("bool (*)(void *, const char *, const char *)")]
+    public StorageInterfaceRename Rename;
+
+    [NativeTypeName("bool (*)(void *, const char *, const char *)")]
+    public StorageInterfaceCopy Copy;
 
     [NativeTypeName("Uint64 (*)(void *)")]
     public StorageInterfaceSpaceRemaining SpaceRemaining;

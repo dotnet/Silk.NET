@@ -15,6 +15,6 @@ public partial struct GamepadBindingOutput
     public GamepadButton Button;
 
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L220_C9")]
+    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L271_C9")]
     public GamepadBindingOutputAxis Axis;
 }

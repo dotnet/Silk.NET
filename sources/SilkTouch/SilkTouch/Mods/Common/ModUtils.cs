@@ -10,6 +10,7 @@ using ClangSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -302,7 +303,7 @@ public static class ModUtils
             IAssemblySymbol assemblySymbol => assemblySymbol.Modules,
             IModuleSymbol moduleSymbol => [moduleSymbol.GlobalNamespace],
             INamespaceOrTypeSymbol namespaceOrTypeSymbol => namespaceOrTypeSymbol.GetMembers(),
-            _ => []
+            _ => [],
         };
 
     private static IEnumerable<ISymbol> Descendants(this ISymbol sym) =>
@@ -629,7 +630,7 @@ public static class ModUtils
                                                         )
                                                     )
                                                 )
-                                                .WithNameEquals(NameEquals("EntryPoint"))
+                                                .WithNameEquals(NameEquals("EntryPoint")),
                                         }
                                     )
                                 )
@@ -667,6 +668,44 @@ public static class ModUtils
             )
             .OfType<string>()
             .FirstOrDefault();
+
+    /// <summary>
+    /// Gets the native element type name indicated by the given attributes.
+    /// </summary>
+    /// <param name="attrs">The attributes.</param>
+    /// <param name="indirectionLevels">The expected number of indirection levels, for validation.</param>
+    /// <returns>The value if a valid type name was found, null otherwise.</returns>
+    public static string? GetNativeElementTypeName(
+        this IEnumerable<AttributeListSyntax> attrs,
+        out int indirectionLevels
+    )
+    {
+        var nativeTypeName = attrs.GetNativeTypeName().AsSpan();
+        if (nativeTypeName.Length == 0)
+        {
+            indirectionLevels = -1;
+            return null;
+        }
+
+        // Trim off the const.
+        if (nativeTypeName.StartsWith("const "))
+        {
+            nativeTypeName = nativeTypeName["const ".Length..];
+        }
+
+        // Isolate the type name to just the type name.
+        indirectionLevels = nativeTypeName.Count('*');
+        if (nativeTypeName.IndexOf('*') is not -1 and var idx)
+        {
+            nativeTypeName = nativeTypeName[..idx];
+        }
+
+        // Hopefully given the above, after we've removed any whitespace there may be we *should* just have the enum.
+        nativeTypeName = nativeTypeName.Trim();
+        return nativeTypeName.ContainsAnyExcept(NameUtils.IdentifierChars)
+            ? null
+            : nativeTypeName.ToString();
+    }
 
     /// <summary>
     /// Gets a native type name for a parameter.
@@ -708,8 +747,9 @@ public static class ModUtils
     public static IEnumerable<string> MemberIdentifiers(this MemberDeclarationSyntax syn) =>
         syn switch
         {
-            BaseFieldDeclarationSyntax fld
-                => fld.Declaration.Variables.Select(x => x.Identifier.ToString()),
+            BaseFieldDeclarationSyntax fld => fld.Declaration.Variables.Select(x =>
+                x.Identifier.ToString()
+            ),
             MethodDeclarationSyntax meth => [meth.Identifier.ToString()],
             BaseNamespaceDeclarationSyntax nsd => [nsd.Name.ToString()],
             EventDeclarationSyntax ev => [ev.Identifier.ToString()],
@@ -717,7 +757,7 @@ public static class ModUtils
             BaseTypeDeclarationSyntax typ => [typ.Identifier.ToString()],
             DelegateDeclarationSyntax del => [del.Identifier.ToString()],
             EnumMemberDeclarationSyntax em => [em.Identifier.ToString()],
-            _ => []
+            _ => [],
         };
 
     /// <summary>
