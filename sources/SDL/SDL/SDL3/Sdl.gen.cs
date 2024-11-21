@@ -34,6 +34,48 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_AcquireGPUCommandBuffer")]
+        public static extern GPUCommandBufferHandle AcquireGPUCommandBuffer(GPUDeviceHandle device);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
+        [return: NativeTypeName("bool")]
+        public static extern byte AcquireGPUSwapchainTexture(
+            GPUCommandBufferHandle command_buffer,
+            WindowHandle window,
+            GPUTextureHandle* swapchain_texture,
+            [NativeTypeName("Uint32 *")] uint* swapchain_texture_width,
+            [NativeTypeName("Uint32 *")] uint* swapchain_texture_height
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> AcquireGPUSwapchainTexture(
+            GPUCommandBufferHandle command_buffer,
+            WindowHandle window,
+            Ref<GPUTextureHandle> swapchain_texture,
+            [NativeTypeName("Uint32 *")] Ref<uint> swapchain_texture_width,
+            [NativeTypeName("Uint32 *")] Ref<uint> swapchain_texture_height
+        )
+        {
+            fixed (uint* __dsl_swapchain_texture_height = swapchain_texture_height)
+            fixed (uint* __dsl_swapchain_texture_width = swapchain_texture_width)
+            fixed (GPUTextureHandle* __dsl_swapchain_texture = swapchain_texture)
+            {
+                return (MaybeBool<byte>)
+                    (byte)AcquireGPUSwapchainTexture(
+                        command_buffer,
+                        window,
+                        __dsl_swapchain_texture,
+                        __dsl_swapchain_texture_width,
+                        __dsl_swapchain_texture_height
+                    );
+            }
+        }
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_AddAtomicInt")]
         public static extern int AddAtomicInt(AtomicInt* a, int v);
 
@@ -285,6 +327,95 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("SDL_AudioDeviceID")] uint dev
         );
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BeginGPUComputePass")]
+        public static extern GPUComputePassHandle BeginGPUComputePass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUStorageTextureReadWriteBinding *")]
+                GPUStorageTextureReadWriteBinding* storage_texture_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_texture_bindings,
+            [NativeTypeName("const SDL_GPUStorageBufferReadWriteBinding *")]
+                GPUStorageBufferReadWriteBinding* storage_buffer_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_buffer_bindings
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUComputePass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUComputePassHandle BeginGPUComputePass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUStorageTextureReadWriteBinding *")]
+                Ref<GPUStorageTextureReadWriteBinding> storage_texture_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_texture_bindings,
+            [NativeTypeName("const SDL_GPUStorageBufferReadWriteBinding *")]
+                Ref<GPUStorageBufferReadWriteBinding> storage_buffer_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_buffer_bindings
+        )
+        {
+            fixed (
+                GPUStorageBufferReadWriteBinding* __dsl_storage_buffer_bindings =
+                    storage_buffer_bindings
+            )
+            fixed (
+                GPUStorageTextureReadWriteBinding* __dsl_storage_texture_bindings =
+                    storage_texture_bindings
+            )
+            {
+                return (GPUComputePassHandle)BeginGPUComputePass(
+                    command_buffer,
+                    __dsl_storage_texture_bindings,
+                    num_storage_texture_bindings,
+                    __dsl_storage_buffer_bindings,
+                    num_storage_buffer_bindings
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BeginGPUCopyPass")]
+        public static extern GPUCopyPassHandle BeginGPUCopyPass(
+            GPUCommandBufferHandle command_buffer
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BeginGPURenderPass")]
+        public static extern GPURenderPassHandle BeginGPURenderPass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUColorTargetInfo *")]
+                GPUColorTargetInfo* color_target_infos,
+            [NativeTypeName("Uint32")] uint num_color_targets,
+            [NativeTypeName("const SDL_GPUDepthStencilTargetInfo *")]
+                GPUDepthStencilTargetInfo* depth_stencil_target_info
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPURenderPass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPURenderPassHandle BeginGPURenderPass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUColorTargetInfo *")]
+                Ref<GPUColorTargetInfo> color_target_infos,
+            [NativeTypeName("Uint32")] uint num_color_targets,
+            [NativeTypeName("const SDL_GPUDepthStencilTargetInfo *")]
+                Ref<GPUDepthStencilTargetInfo> depth_stencil_target_info
+        )
+        {
+            fixed (
+                GPUDepthStencilTargetInfo* __dsl_depth_stencil_target_info =
+                    depth_stencil_target_info
+            )
+            fixed (GPUColorTargetInfo* __dsl_color_target_infos = color_target_infos)
+            {
+                return (GPURenderPassHandle)BeginGPURenderPass(
+                    command_buffer,
+                    __dsl_color_target_infos,
+                    num_color_targets,
+                    __dsl_depth_stencil_target_info
+                );
+            }
+        }
+
         [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindAudioStream")]
@@ -323,6 +454,381 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             fixed (AudioStreamHandle* __dsl_streams = streams)
             {
                 return (MaybeBool<byte>)(byte)BindAudioStreams(devid, __dsl_streams, num_streams);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUComputePipeline")]
+        public static extern void BindGPUComputePipeline(
+            GPUComputePassHandle compute_pass,
+            GPUComputePipelineHandle compute_pipeline
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUComputeSamplers")]
+        public static extern void BindGPUComputeSamplers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                GPUTextureSamplerBinding* texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUComputeSamplers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (
+                GPUTextureSamplerBinding* __dsl_texture_sampler_bindings = texture_sampler_bindings
+            )
+            {
+                BindGPUComputeSamplers(
+                    compute_pass,
+                    first_slot,
+                    __dsl_texture_sampler_bindings,
+                    num_bindings
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
+        public static extern void BindGPUComputeStorageBuffers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUComputeStorageBuffers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUBufferHandle* __dsl_storage_buffers = storage_buffers)
+            {
+                BindGPUComputeStorageBuffers(
+                    compute_pass,
+                    first_slot,
+                    __dsl_storage_buffers,
+                    num_bindings
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUComputeStorageTextures")]
+        public static extern void BindGPUComputeStorageTextures(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUComputeStorageTextures(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUTextureHandle* __dsl_storage_textures = storage_textures)
+            {
+                BindGPUComputeStorageTextures(
+                    compute_pass,
+                    first_slot,
+                    __dsl_storage_textures,
+                    num_bindings
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUFragmentSamplers")]
+        public static extern void BindGPUFragmentSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                GPUTextureSamplerBinding* texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUFragmentSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (
+                GPUTextureSamplerBinding* __dsl_texture_sampler_bindings = texture_sampler_bindings
+            )
+            {
+                BindGPUFragmentSamplers(
+                    render_pass,
+                    first_slot,
+                    __dsl_texture_sampler_bindings,
+                    num_bindings
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
+        public static extern void BindGPUFragmentStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUFragmentStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUBufferHandle* __dsl_storage_buffers = storage_buffers)
+            {
+                BindGPUFragmentStorageBuffers(
+                    render_pass,
+                    first_slot,
+                    __dsl_storage_buffers,
+                    num_bindings
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
+        public static extern void BindGPUFragmentStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUFragmentStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUTextureHandle* __dsl_storage_textures = storage_textures)
+            {
+                BindGPUFragmentStorageTextures(
+                    render_pass,
+                    first_slot,
+                    __dsl_storage_textures,
+                    num_bindings
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUGraphicsPipeline")]
+        public static extern void BindGPUGraphicsPipeline(
+            GPURenderPassHandle render_pass,
+            GPUGraphicsPipelineHandle graphics_pipeline
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUIndexBuffer")]
+        public static extern void BindGPUIndexBuffer(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] GPUBufferBinding* binding,
+            GPUIndexElementSize index_element_size
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUIndexBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUIndexBuffer(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] Ref<GPUBufferBinding> binding,
+            GPUIndexElementSize index_element_size
+        )
+        {
+            fixed (GPUBufferBinding* __dsl_binding = binding)
+            {
+                BindGPUIndexBuffer(render_pass, __dsl_binding, index_element_size);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUVertexBuffers")]
+        public static extern void BindGPUVertexBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] GPUBufferBinding* bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] Ref<GPUBufferBinding> bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUBufferBinding* __dsl_bindings = bindings)
+            {
+                BindGPUVertexBuffers(render_pass, first_slot, __dsl_bindings, num_bindings);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUVertexSamplers")]
+        public static extern void BindGPUVertexSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                GPUTextureSamplerBinding* texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (
+                GPUTextureSamplerBinding* __dsl_texture_sampler_bindings = texture_sampler_bindings
+            )
+            {
+                BindGPUVertexSamplers(
+                    render_pass,
+                    first_slot,
+                    __dsl_texture_sampler_bindings,
+                    num_bindings
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
+        public static extern void BindGPUVertexStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUBufferHandle* __dsl_storage_buffers = storage_buffers)
+            {
+                BindGPUVertexStorageBuffers(
+                    render_pass,
+                    first_slot,
+                    __dsl_storage_buffers,
+                    num_bindings
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BindGPUVertexStorageTextures")]
+        public static extern void BindGPUVertexStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUTextureHandle* __dsl_storage_textures = storage_textures)
+            {
+                BindGPUVertexStorageTextures(
+                    render_pass,
+                    first_slot,
+                    __dsl_storage_textures,
+                    num_bindings
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BlitGPUTexture")]
+        public static extern void BlitGPUTexture(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUBlitInfo *")] GPUBlitInfo* info
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BlitGPUTexture(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUBlitInfo *")] Ref<GPUBlitInfo> info
+        )
+        {
+            fixed (GPUBlitInfo* __dsl_info = info)
+            {
+                BlitGPUTexture(command_buffer, __dsl_info);
             }
         }
 
@@ -603,6 +1109,26 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_BroadcastCondition")]
         public static extern void BroadcastCondition(ConditionHandle cond);
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CalculateGPUTextureFormatSize")]
+        [return: NativeTypeName("Uint32")]
+        public static extern uint CalculateGPUTextureFormatSize(
+            GPUTextureFormat format,
+            [NativeTypeName("Uint32")] uint width,
+            [NativeTypeName("Uint32")] uint height,
+            [NativeTypeName("Uint32")] uint depth_or_layer_count
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CancelGPUCommandBuffer")]
+        public static MaybeBool<byte> CancelGPUCommandBuffer(
+            GPUCommandBufferHandle command_buffer
+        ) => (MaybeBool<byte>)(byte)CancelGPUCommandBufferRaw(command_buffer);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CancelGPUCommandBuffer")]
+        [return: NativeTypeName("bool")]
+        public static extern byte CancelGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer);
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CaptureMouse")]
         [return: NativeTypeName("bool")]
         public static extern byte CaptureMouse([NativeTypeName("bool")] byte enabled);
@@ -613,6 +1139,21 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static MaybeBool<byte> CaptureMouse(
             [NativeTypeName("bool")] MaybeBool<byte> enabled
         ) => (MaybeBool<byte>)(byte)CaptureMouse((byte)enabled);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ClaimWindowForGPUDevice")]
+        public static MaybeBool<byte> ClaimWindowForGPUDevice(
+            GPUDeviceHandle device,
+            WindowHandle window
+        ) => (MaybeBool<byte>)(byte)ClaimWindowForGPUDeviceRaw(device, window);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ClaimWindowForGPUDevice")]
+        [return: NativeTypeName("bool")]
+        public static extern byte ClaimWindowForGPUDeviceRaw(
+            GPUDeviceHandle device,
+            WindowHandle window
+        );
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CleanupTLS")]
         public static extern void CleanupTLS();
@@ -1085,6 +1626,82 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CopyGPUBufferToBuffer")]
+        public static extern void CopyGPUBufferToBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] GPUBufferLocation* source,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] GPUBufferLocation* destination,
+            [NativeTypeName("Uint32")] uint size,
+            [NativeTypeName("bool")] byte cycle
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUBufferToBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void CopyGPUBufferToBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] Ref<GPUBufferLocation> source,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] Ref<GPUBufferLocation> destination,
+            [NativeTypeName("Uint32")] uint size,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        )
+        {
+            fixed (GPUBufferLocation* __dsl_destination = destination)
+            fixed (GPUBufferLocation* __dsl_source = source)
+            {
+                CopyGPUBufferToBuffer(
+                    copy_pass,
+                    __dsl_source,
+                    __dsl_destination,
+                    size,
+                    (byte)cycle
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CopyGPUTextureToTexture")]
+        public static extern void CopyGPUTextureToTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] GPUTextureLocation* source,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] GPUTextureLocation* destination,
+            [NativeTypeName("Uint32")] uint w,
+            [NativeTypeName("Uint32")] uint h,
+            [NativeTypeName("Uint32")] uint d,
+            [NativeTypeName("bool")] byte cycle
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUTextureToTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void CopyGPUTextureToTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] Ref<GPUTextureLocation> source,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] Ref<GPUTextureLocation> destination,
+            [NativeTypeName("Uint32")] uint w,
+            [NativeTypeName("Uint32")] uint h,
+            [NativeTypeName("Uint32")] uint d,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        )
+        {
+            fixed (GPUTextureLocation* __dsl_destination = destination)
+            fixed (GPUTextureLocation* __dsl_source = source)
+            {
+                CopyGPUTextureToTexture(
+                    copy_pass,
+                    __dsl_source,
+                    __dsl_destination,
+                    w,
+                    h,
+                    d,
+                    (byte)cycle
+                );
+            }
+        }
+
         [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CopyProperties")]
@@ -1221,6 +1838,200 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateGPUBuffer")]
+        public static extern GPUBufferHandle CreateGPUBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUBufferCreateInfo *")] GPUBufferCreateInfo* createinfo
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUBufferHandle CreateGPUBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUBufferCreateInfo *")] Ref<GPUBufferCreateInfo> createinfo
+        )
+        {
+            fixed (GPUBufferCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUBufferHandle)CreateGPUBuffer(device, __dsl_createinfo);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateGPUComputePipeline")]
+        public static extern GPUComputePipelineHandle CreateGPUComputePipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUComputePipelineCreateInfo *")]
+                GPUComputePipelineCreateInfo* createinfo
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUComputePipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUComputePipelineHandle CreateGPUComputePipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUComputePipelineCreateInfo *")]
+                Ref<GPUComputePipelineCreateInfo> createinfo
+        )
+        {
+            fixed (GPUComputePipelineCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUComputePipelineHandle)CreateGPUComputePipeline(device, __dsl_createinfo);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateGPUDevice")]
+        public static extern GPUDeviceHandle CreateGPUDevice(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("bool")] byte debug_mode,
+            [NativeTypeName("const char *")] sbyte* name
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUDeviceHandle CreateGPUDevice(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("bool")] MaybeBool<byte> debug_mode,
+            [NativeTypeName("const char *")] Ref<sbyte> name
+        )
+        {
+            fixed (sbyte* __dsl_name = name)
+            {
+                return (GPUDeviceHandle)CreateGPUDevice(format_flags, (byte)debug_mode, __dsl_name);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateGPUDeviceWithProperties")]
+        public static extern GPUDeviceHandle CreateGPUDeviceWithProperties(
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
+        public static extern GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUGraphicsPipelineCreateInfo *")]
+                GPUGraphicsPipelineCreateInfo* createinfo
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUGraphicsPipelineCreateInfo *")]
+                Ref<GPUGraphicsPipelineCreateInfo> createinfo
+        )
+        {
+            fixed (GPUGraphicsPipelineCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUGraphicsPipelineHandle)CreateGPUGraphicsPipeline(
+                    device,
+                    __dsl_createinfo
+                );
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateGPUSampler")]
+        public static extern GPUSamplerHandle CreateGPUSampler(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUSamplerCreateInfo *")] GPUSamplerCreateInfo* createinfo
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUSampler")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUSamplerHandle CreateGPUSampler(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUSamplerCreateInfo *")]
+                Ref<GPUSamplerCreateInfo> createinfo
+        )
+        {
+            fixed (GPUSamplerCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUSamplerHandle)CreateGPUSampler(device, __dsl_createinfo);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateGPUShader")]
+        public static extern GPUShaderHandle CreateGPUShader(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUShaderCreateInfo *")] GPUShaderCreateInfo* createinfo
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUShader")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUShaderHandle CreateGPUShader(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUShaderCreateInfo *")] Ref<GPUShaderCreateInfo> createinfo
+        )
+        {
+            fixed (GPUShaderCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUShaderHandle)CreateGPUShader(device, __dsl_createinfo);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateGPUTexture")]
+        public static extern GPUTextureHandle CreateGPUTexture(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTextureCreateInfo *")] GPUTextureCreateInfo* createinfo
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUTextureHandle CreateGPUTexture(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTextureCreateInfo *")]
+                Ref<GPUTextureCreateInfo> createinfo
+        )
+        {
+            fixed (GPUTextureCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUTextureHandle)CreateGPUTexture(device, __dsl_createinfo);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateGPUTransferBuffer")]
+        public static extern GPUTransferBufferHandle CreateGPUTransferBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTransferBufferCreateInfo *")]
+                GPUTransferBufferCreateInfo* createinfo
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUTransferBufferHandle CreateGPUTransferBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTransferBufferCreateInfo *")]
+                Ref<GPUTransferBufferCreateInfo> createinfo
+        )
+        {
+            fixed (GPUTransferBufferCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUTransferBufferHandle)CreateGPUTransferBuffer(device, __dsl_createinfo);
+            }
+        }
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateHapticEffect")]
         public static extern int CreateHapticEffect(
             HapticHandle haptic,
@@ -1265,6 +2076,33 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             int w,
             int h,
             [NativeTypeName("SDL_WindowFlags")] ulong flags
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateProcess")]
+        public static extern ProcessHandle CreateProcess(
+            [NativeTypeName("const char *const *")] sbyte** args,
+            [NativeTypeName("bool")] byte pipe_stdio
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static ProcessHandle CreateProcess(
+            [NativeTypeName("const char *const *")] Ref2D<sbyte> args,
+            [NativeTypeName("bool")] MaybeBool<byte> pipe_stdio
+        )
+        {
+            fixed (sbyte** __dsl_args = args)
+            {
+                return (ProcessHandle)CreateProcess(__dsl_args, (byte)pipe_stdio);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateProcessWithProperties")]
+        public static extern ProcessHandle CreateProcessWithProperties(
+            [NativeTypeName("SDL_PropertiesID")] uint props
         );
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateProperties")]
@@ -1635,6 +2473,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DestroyCursor")]
         public static extern void DestroyCursor(CursorHandle cursor);
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DestroyGPUDevice")]
+        public static extern void DestroyGPUDevice(GPUDeviceHandle device);
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DestroyHapticEffect")]
         public static extern void DestroyHapticEffect(HapticHandle haptic, int effect);
 
@@ -1656,6 +2497,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 DestroyPalette(__dsl_palette);
             }
         }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DestroyProcess")]
+        public static extern void DestroyProcess(ProcessHandle process);
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DestroyProperties")]
         public static extern void DestroyProperties(
@@ -1741,6 +2585,114 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DisableScreenSaver")]
         [return: NativeTypeName("bool")]
         public static extern byte DisableScreenSaverRaw();
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DispatchGPUCompute")]
+        public static extern void DispatchGPUCompute(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint groupcount_x,
+            [NativeTypeName("Uint32")] uint groupcount_y,
+            [NativeTypeName("Uint32")] uint groupcount_z
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DispatchGPUComputeIndirect")]
+        public static extern void DispatchGPUComputeIndirect(
+            GPUComputePassHandle compute_pass,
+            GPUBufferHandle buffer,
+            [NativeTypeName("Uint32")] uint offset
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DownloadFromGPUBuffer")]
+        public static extern void DownloadFromGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] GPUBufferRegion* source,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                GPUTransferBufferLocation* destination
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DownloadFromGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] Ref<GPUBufferRegion> source,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                Ref<GPUTransferBufferLocation> destination
+        )
+        {
+            fixed (GPUTransferBufferLocation* __dsl_destination = destination)
+            fixed (GPUBufferRegion* __dsl_source = source)
+            {
+                DownloadFromGPUBuffer(copy_pass, __dsl_source, __dsl_destination);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DownloadFromGPUTexture")]
+        public static extern void DownloadFromGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] GPUTextureRegion* source,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")]
+                GPUTextureTransferInfo* destination
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DownloadFromGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> source,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")]
+                Ref<GPUTextureTransferInfo> destination
+        )
+        {
+            fixed (GPUTextureTransferInfo* __dsl_destination = destination)
+            fixed (GPUTextureRegion* __dsl_source = source)
+            {
+                DownloadFromGPUTexture(copy_pass, __dsl_source, __dsl_destination);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DrawGPUIndexedPrimitives")]
+        public static extern void DrawGPUIndexedPrimitives(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint num_indices,
+            [NativeTypeName("Uint32")] uint num_instances,
+            [NativeTypeName("Uint32")] uint first_index,
+            [NativeTypeName("Sint32")] int vertex_offset,
+            [NativeTypeName("Uint32")] uint first_instance
+        );
+
+        [DllImport(
+            "SDL3",
+            ExactSpelling = true,
+            EntryPoint = "SDL_DrawGPUIndexedPrimitivesIndirect"
+        )]
+        public static extern void DrawGPUIndexedPrimitivesIndirect(
+            GPURenderPassHandle render_pass,
+            GPUBufferHandle buffer,
+            [NativeTypeName("Uint32")] uint offset,
+            [NativeTypeName("Uint32")] uint draw_count
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DrawGPUPrimitives")]
+        public static extern void DrawGPUPrimitives(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint num_vertices,
+            [NativeTypeName("Uint32")] uint num_instances,
+            [NativeTypeName("Uint32")] uint first_vertex,
+            [NativeTypeName("Uint32")] uint first_instance
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DrawGPUPrimitivesIndirect")]
+        public static extern void DrawGPUPrimitivesIndirect(
+            GPURenderPassHandle render_pass,
+            GPUBufferHandle buffer,
+            [NativeTypeName("Uint32")] uint offset,
+            [NativeTypeName("Uint32")] uint draw_count
+        );
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DuplicateSurface")]
         public static extern Surface* DuplicateSurface(Surface* surface);
@@ -1859,6 +2811,15 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_EnableScreenSaver")]
         [return: NativeTypeName("bool")]
         public static extern byte EnableScreenSaverRaw();
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_EndGPUComputePass")]
+        public static extern void EndGPUComputePass(GPUComputePassHandle compute_pass);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_EndGPUCopyPass")]
+        public static extern void EndGPUCopyPass(GPUCopyPassHandle copy_pass);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_EndGPURenderPass")]
+        public static extern void EndGPURenderPass(GPURenderPassHandle render_pass);
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_EnumerateDirectory")]
         [return: NativeTypeName("bool")]
@@ -2165,6 +3126,12 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GamepadSensorEnabled")]
         [return: NativeTypeName("bool")]
         public static extern byte GamepadSensorEnabledRaw(GamepadHandle gamepad, SensorType type);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GenerateMipmapsForGPUTexture")]
+        public static extern void GenerateMipmapsForGPUTexture(
+            GPUCommandBufferHandle command_buffer,
+            GPUTextureHandle texture
+        );
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetAppMetadataProperty")]
         [return: NativeTypeName("const char *")]
@@ -3684,6 +4651,41 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [return: NativeTypeName("SDL_PropertiesID")]
         public static extern uint GetGlobalProperties();
 
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<sbyte> GetGPUDeviceDriver(GPUDeviceHandle device) =>
+            (sbyte*)GetGPUDeviceDriverRaw(device);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetGPUDeviceDriver")]
+        [return: NativeTypeName("const char *")]
+        public static extern sbyte* GetGPUDeviceDriverRaw(GPUDeviceHandle device);
+
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<sbyte> GetGPUDriver(int index) => (sbyte*)GetGPUDriverRaw(index);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetGPUDriver")]
+        [return: NativeTypeName("const char *")]
+        public static extern sbyte* GetGPUDriverRaw(int index);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetGPUShaderFormats")]
+        [return: NativeTypeName("SDL_GPUShaderFormat")]
+        public static extern uint GetGPUShaderFormats(GPUDeviceHandle device);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetGPUSwapchainTextureFormat")]
+        public static extern GPUTextureFormat GetGPUSwapchainTextureFormat(
+            GPUDeviceHandle device,
+            WindowHandle window
+        );
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetGrabbedWindow")]
         public static extern WindowHandle GetGrabbedWindow();
 
@@ -4381,6 +5383,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetNumGamepadTouchpads")]
         public static extern int GetNumGamepadTouchpads(GamepadHandle gamepad);
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetNumGPUDrivers")]
+        public static extern int GetNumGPUDrivers();
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetNumHapticAxes")]
         public static extern int GetNumHapticAxes(HapticHandle haptic);
 
@@ -4583,6 +5588,16 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetPrimarySelectionText")]
         [return: NativeTypeName("char *")]
         public static extern sbyte* GetPrimarySelectionTextRaw();
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetProcessInput")]
+        public static extern IOStreamHandle GetProcessInput(ProcessHandle process);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetProcessOutput")]
+        public static extern IOStreamHandle GetProcessOutput(ProcessHandle process);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetProcessProperties")]
+        [return: NativeTypeName("SDL_PropertiesID")]
+        public static extern uint GetProcessProperties(ProcessHandle process);
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetPropertyType")]
         public static extern PropertyType GetPropertyType(
@@ -6781,6 +7796,83 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsProperties")]
+        public static MaybeBool<byte> GPUSupportsProperties(
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        ) => (MaybeBool<byte>)(byte)GPUSupportsPropertiesRaw(props);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GPUSupportsProperties")]
+        [return: NativeTypeName("bool")]
+        public static extern byte GPUSupportsPropertiesRaw(
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GPUSupportsShaderFormats")]
+        [return: NativeTypeName("bool")]
+        public static extern byte GPUSupportsShaderFormats(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("const char *")] sbyte* name
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsShaderFormats")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> GPUSupportsShaderFormats(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("const char *")] Ref<sbyte> name
+        )
+        {
+            fixed (sbyte* __dsl_name = name)
+            {
+                return (MaybeBool<byte>)(byte)GPUSupportsShaderFormats(format_flags, __dsl_name);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GPUTextureFormatTexelBlockSize")]
+        [return: NativeTypeName("Uint32")]
+        public static extern uint GPUTextureFormatTexelBlockSize(GPUTextureFormat format);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsFormat")]
+        public static MaybeBool<byte> GPUTextureSupportsFormat(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUTextureType type,
+            [NativeTypeName("SDL_GPUTextureUsageFlags")] uint usage
+        ) => (MaybeBool<byte>)(byte)GPUTextureSupportsFormatRaw(device, format, type, usage);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GPUTextureSupportsFormat")]
+        [return: NativeTypeName("bool")]
+        public static extern byte GPUTextureSupportsFormatRaw(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUTextureType type,
+            [NativeTypeName("SDL_GPUTextureUsageFlags")] uint usage
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
+        public static MaybeBool<byte> GPUTextureSupportsSampleCount(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUSampleCount sample_count
+        ) => (MaybeBool<byte>)(byte)GPUTextureSupportsSampleCountRaw(device, format, sample_count);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
+        [return: NativeTypeName("bool")]
+        public static extern byte GPUTextureSupportsSampleCountRaw(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUSampleCount sample_count
+        );
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GUIDToString")]
         public static extern void GuidToString(
             Guid guid,
@@ -7578,6 +8670,28 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [return: NativeTypeName("bool")]
         public static extern byte InitSubSystemRaw([NativeTypeName("SDL_InitFlags")] uint flags);
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_InsertGPUDebugLabel")]
+        public static extern void InsertGPUDebugLabel(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] sbyte* text
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_InsertGPUDebugLabel")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void InsertGPUDebugLabel(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] Ref<sbyte> text
+        )
+        {
+            fixed (sbyte* __dsl_text = text)
+            {
+                InsertGPUDebugLabel(command_buffer, __dsl_text);
+            }
+        }
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_IOFromConstMem")]
         public static extern IOStreamHandle IOFromConstMem(
             [NativeTypeName("const void *")] void* mem,
@@ -7752,6 +8866,21 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_JoystickEventsEnabled")]
         [return: NativeTypeName("bool")]
         public static extern byte JoystickEventsEnabledRaw();
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_KillProcess")]
+        [return: NativeTypeName("bool")]
+        public static extern byte KillProcess(
+            ProcessHandle process,
+            [NativeTypeName("bool")] byte force
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_KillProcess")]
+        public static MaybeBool<byte> KillProcess(
+            ProcessHandle process,
+            [NativeTypeName("bool")] MaybeBool<byte> force
+        ) => (MaybeBool<byte>)(byte)KillProcess(process, (byte)force);
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_LoadBMP")]
         public static extern Surface* LoadBMP([NativeTypeName("const char *")] sbyte* file);
@@ -8103,6 +9232,24 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 LogMessageV(category, priority, __dsl_fmt, __dsl_ap);
             }
         }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_MapGPUTransferBuffer")]
+        public static extern void* MapGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer,
+            [NativeTypeName("bool")] byte cycle
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr MapGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        ) => (void*)MapGPUTransferBuffer(device, transfer_buffer, (byte)cycle);
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_MapRGB")]
         [return: NativeTypeName("Uint32")]
@@ -8705,6 +9852,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_PopGPUDebugGroup")]
+        public static extern void PopGPUDebugGroup(GPUCommandBufferHandle command_buffer);
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_PremultiplyAlpha")]
         [return: NativeTypeName("bool")]
         public static extern byte PremultiplyAlpha(
@@ -8800,6 +9950,106 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_PushGPUComputeUniformData")]
+        public static extern void PushGPUComputeUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] void* data,
+            [NativeTypeName("Uint32")] uint length
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUComputeUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUComputeUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] Ref data,
+            [NativeTypeName("Uint32")] uint length
+        )
+        {
+            fixed (void* __dsl_data = data)
+            {
+                PushGPUComputeUniformData(command_buffer, slot_index, __dsl_data, length);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_PushGPUDebugGroup")]
+        public static extern void PushGPUDebugGroup(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] sbyte* name
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUDebugGroup")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUDebugGroup(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] Ref<sbyte> name
+        )
+        {
+            fixed (sbyte* __dsl_name = name)
+            {
+                PushGPUDebugGroup(command_buffer, __dsl_name);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_PushGPUFragmentUniformData")]
+        public static extern void PushGPUFragmentUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] void* data,
+            [NativeTypeName("Uint32")] uint length
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUFragmentUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUFragmentUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] Ref data,
+            [NativeTypeName("Uint32")] uint length
+        )
+        {
+            fixed (void* __dsl_data = data)
+            {
+                PushGPUFragmentUniformData(command_buffer, slot_index, __dsl_data, length);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_PushGPUVertexUniformData")]
+        public static extern void PushGPUVertexUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] void* data,
+            [NativeTypeName("Uint32")] uint length
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUVertexUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUVertexUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] Ref data,
+            [NativeTypeName("Uint32")] uint length
+        )
+        {
+            fixed (void* __dsl_data = data)
+            {
+                PushGPUVertexUniformData(command_buffer, slot_index, __dsl_data, length);
+            }
+        }
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_PutAudioStreamData")]
         [return: NativeTypeName("bool")]
         public static extern byte PutAudioStreamData(
@@ -8825,6 +10075,16 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 return (MaybeBool<byte>)(byte)PutAudioStreamData(stream, __dsl_buf, len);
             }
         }
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_QueryGPUFence")]
+        public static MaybeBool<byte> QueryGPUFence(GPUDeviceHandle device, GPUFenceHandle fence) =>
+            (MaybeBool<byte>)(byte)QueryGPUFenceRaw(device, fence);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_QueryGPUFence")]
+        [return: NativeTypeName("bool")]
+        public static extern byte QueryGPUFenceRaw(GPUDeviceHandle device, GPUFenceHandle fence);
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_Quit")]
         public static extern void Quit();
@@ -8865,6 +10125,31 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             fixed (void* __dsl_ptr = ptr)
             {
                 return (nuint)ReadIO(context, __dsl_ptr, size);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ReadProcess")]
+        public static extern void* ReadProcess(
+            ProcessHandle process,
+            [NativeTypeName("size_t *")] nuint* datasize,
+            int* exitcode
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReadProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr ReadProcess(
+            ProcessHandle process,
+            [NativeTypeName("size_t *")] Ref<nuint> datasize,
+            Ref<int> exitcode
+        )
+        {
+            fixed (int* __dsl_exitcode = exitcode)
+            fixed (nuint* __dsl_datasize = datasize)
+            {
+                return (void*)ReadProcess(process, __dsl_datasize, __dsl_exitcode);
             }
         }
 
@@ -9339,6 +10624,51 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 ReleaseCameraFrame(camera, __dsl_frame);
             }
         }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ReleaseGPUBuffer")]
+        public static extern void ReleaseGPUBuffer(GPUDeviceHandle device, GPUBufferHandle buffer);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ReleaseGPUComputePipeline")]
+        public static extern void ReleaseGPUComputePipeline(
+            GPUDeviceHandle device,
+            GPUComputePipelineHandle compute_pipeline
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ReleaseGPUFence")]
+        public static extern void ReleaseGPUFence(GPUDeviceHandle device, GPUFenceHandle fence);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ReleaseGPUGraphicsPipeline")]
+        public static extern void ReleaseGPUGraphicsPipeline(
+            GPUDeviceHandle device,
+            GPUGraphicsPipelineHandle graphics_pipeline
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ReleaseGPUSampler")]
+        public static extern void ReleaseGPUSampler(
+            GPUDeviceHandle device,
+            GPUSamplerHandle sampler
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ReleaseGPUShader")]
+        public static extern void ReleaseGPUShader(GPUDeviceHandle device, GPUShaderHandle shader);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ReleaseGPUTexture")]
+        public static extern void ReleaseGPUTexture(
+            GPUDeviceHandle device,
+            GPUTextureHandle texture
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ReleaseGPUTransferBuffer")]
+        public static extern void ReleaseGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ReleaseWindowFromGPUDevice")]
+        public static extern void ReleaseWindowFromGPUDevice(
+            GPUDeviceHandle device,
+            WindowHandle window
+        );
 
         [return: NativeTypeName("bool")]
         [Transformed]
@@ -11139,6 +12469,136 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("bool")] MaybeBool<byte> enabled
         ) => (MaybeBool<byte>)(byte)SetGamepadSensorEnabled(gamepad, type, (byte)enabled);
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetGPUBlendConstants")]
+        public static extern void SetGPUBlendConstants(
+            GPURenderPassHandle render_pass,
+            FColor blend_constants
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetGPUBufferName")]
+        public static extern void SetGPUBufferName(
+            GPUDeviceHandle device,
+            GPUBufferHandle buffer,
+            [NativeTypeName("const char *")] sbyte* text
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUBufferName(
+            GPUDeviceHandle device,
+            GPUBufferHandle buffer,
+            [NativeTypeName("const char *")] Ref<sbyte> text
+        )
+        {
+            fixed (sbyte* __dsl_text = text)
+            {
+                SetGPUBufferName(device, buffer, __dsl_text);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetGPUScissor")]
+        public static extern void SetGPUScissor(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_Rect *")] Rect* scissor
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUScissor(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> scissor
+        )
+        {
+            fixed (Rect* __dsl_scissor = scissor)
+            {
+                SetGPUScissor(render_pass, __dsl_scissor);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetGPUStencilReference")]
+        public static extern void SetGPUStencilReference(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint8")] byte reference
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUSwapchainParameters")]
+        public static MaybeBool<byte> SetGPUSwapchainParameters(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition,
+            GPUPresentMode present_mode
+        ) =>
+            (MaybeBool<byte>)
+                (byte)SetGPUSwapchainParametersRaw(
+                    device,
+                    window,
+                    swapchain_composition,
+                    present_mode
+                );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetGPUSwapchainParameters")]
+        [return: NativeTypeName("bool")]
+        public static extern byte SetGPUSwapchainParametersRaw(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition,
+            GPUPresentMode present_mode
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetGPUTextureName")]
+        public static extern void SetGPUTextureName(
+            GPUDeviceHandle device,
+            GPUTextureHandle texture,
+            [NativeTypeName("const char *")] sbyte* text
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUTextureName")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUTextureName(
+            GPUDeviceHandle device,
+            GPUTextureHandle texture,
+            [NativeTypeName("const char *")] Ref<sbyte> text
+        )
+        {
+            fixed (sbyte* __dsl_text = text)
+            {
+                SetGPUTextureName(device, texture, __dsl_text);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetGPUViewport")]
+        public static extern void SetGPUViewport(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUViewport *")] GPUViewport* viewport
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUViewport")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUViewport(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUViewport *")] Ref<GPUViewport> viewport
+        )
+        {
+            fixed (GPUViewport* __dsl_viewport = viewport)
+            {
+                SetGPUViewport(render_pass, __dsl_viewport);
+            }
+        }
+
         [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetHapticAutocenter")]
@@ -12899,6 +14359,26 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBuffer")]
+        public static MaybeBool<byte> SubmitGPUCommandBuffer(
+            GPUCommandBufferHandle command_buffer
+        ) => (MaybeBool<byte>)(byte)SubmitGPUCommandBufferRaw(command_buffer);
+
+        [DllImport(
+            "SDL3",
+            ExactSpelling = true,
+            EntryPoint = "SDL_SubmitGPUCommandBufferAndAcquireFence"
+        )]
+        public static extern GPUFenceHandle SubmitGPUCommandBufferAndAcquireFence(
+            GPUCommandBufferHandle command_buffer
+        );
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SubmitGPUCommandBuffer")]
+        [return: NativeTypeName("bool")]
+        public static extern byte SubmitGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer);
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SurfaceHasAlternateImages")]
         [return: NativeTypeName("bool")]
         public static extern byte SurfaceHasAlternateImages(Surface* surface);
@@ -13187,6 +14667,12 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_UnmapGPUTransferBuffer")]
+        public static extern void UnmapGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer
+        );
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_UpdateGamepads")]
         public static extern void UpdateGamepads();
 
@@ -13383,6 +14869,63 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_UploadToGPUBuffer")]
+        public static extern void UploadToGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                GPUTransferBufferLocation* source,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] GPUBufferRegion* destination,
+            [NativeTypeName("bool")] byte cycle
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void UploadToGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                Ref<GPUTransferBufferLocation> source,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] Ref<GPUBufferRegion> destination,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        )
+        {
+            fixed (GPUBufferRegion* __dsl_destination = destination)
+            fixed (GPUTransferBufferLocation* __dsl_source = source)
+            {
+                UploadToGPUBuffer(copy_pass, __dsl_source, __dsl_destination, (byte)cycle);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_UploadToGPUTexture")]
+        public static extern void UploadToGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")] GPUTextureTransferInfo* source,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] GPUTextureRegion* destination,
+            [NativeTypeName("bool")] byte cycle
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void UploadToGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")]
+                Ref<GPUTextureTransferInfo> source,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> destination,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        )
+        {
+            fixed (GPUTextureRegion* __dsl_destination = destination)
+            fixed (GPUTextureTransferInfo* __dsl_source = source)
+            {
+                UploadToGPUTexture(copy_pass, __dsl_source, __dsl_destination, (byte)cycle);
+            }
+        }
+
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_WaitCondition")]
         public static extern void WaitCondition(ConditionHandle cond, MutexHandle mutex);
 
@@ -13442,6 +14985,71 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             fixed (Event* __dsl_event = @event)
             {
                 return (MaybeBool<byte>)(byte)WaitEventTimeout(__dsl_event, timeoutMS);
+            }
+        }
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_WaitForGPUFences")]
+        [return: NativeTypeName("bool")]
+        public static extern byte WaitForGPUFences(
+            GPUDeviceHandle device,
+            [NativeTypeName("bool")] byte wait_all,
+            [NativeTypeName("SDL_GPUFence *const *")] GPUFenceHandle* fences,
+            [NativeTypeName("Uint32")] uint num_fences
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUFences")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> WaitForGPUFences(
+            GPUDeviceHandle device,
+            [NativeTypeName("bool")] MaybeBool<byte> wait_all,
+            [NativeTypeName("SDL_GPUFence *const *")] Ref<GPUFenceHandle> fences,
+            [NativeTypeName("Uint32")] uint num_fences
+        )
+        {
+            fixed (GPUFenceHandle* __dsl_fences = fences)
+            {
+                return (MaybeBool<byte>)
+                    (byte)WaitForGPUFences(device, (byte)wait_all, __dsl_fences, num_fences);
+            }
+        }
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUIdle")]
+        public static MaybeBool<byte> WaitForGPUIdle(GPUDeviceHandle device) =>
+            (MaybeBool<byte>)(byte)WaitForGPUIdleRaw(device);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_WaitForGPUIdle")]
+        [return: NativeTypeName("bool")]
+        public static extern byte WaitForGPUIdleRaw(GPUDeviceHandle device);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_WaitProcess")]
+        [return: NativeTypeName("bool")]
+        public static extern byte WaitProcess(
+            ProcessHandle process,
+            [NativeTypeName("bool")] byte block,
+            int* exitcode
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> WaitProcess(
+            ProcessHandle process,
+            [NativeTypeName("bool")] MaybeBool<byte> block,
+            Ref<int> exitcode
+        )
+        {
+            fixed (int* __dsl_exitcode = exitcode)
+            {
+                return (MaybeBool<byte>)(byte)WaitProcess(process, (byte)block, __dsl_exitcode);
             }
         }
 
@@ -13505,6 +15113,50 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_WindowHasSurface")]
         [return: NativeTypeName("bool")]
         public static extern byte WindowHasSurfaceRaw(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
+        public static MaybeBool<byte> WindowSupportsGPUPresentMode(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUPresentMode present_mode
+        ) => (MaybeBool<byte>)(byte)WindowSupportsGPUPresentModeRaw(device, window, present_mode);
+
+        [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
+        [return: NativeTypeName("bool")]
+        public static extern byte WindowSupportsGPUPresentModeRaw(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUPresentMode present_mode
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition")]
+        public static MaybeBool<byte> WindowSupportsGPUSwapchainComposition(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition
+        ) =>
+            (MaybeBool<byte>)
+                (byte)WindowSupportsGPUSwapchainCompositionRaw(
+                    device,
+                    window,
+                    swapchain_composition
+                );
+
+        [DllImport(
+            "SDL3",
+            ExactSpelling = true,
+            EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition"
+        )]
+        [return: NativeTypeName("bool")]
+        public static extern byte WindowSupportsGPUSwapchainCompositionRaw(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition
+        );
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_WriteIO")]
         [return: NativeTypeName("size_t")]
@@ -13864,6 +15516,54 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("Uint64 *")] Ref<ulong> timestampNS
         ) => T.AcquireCameraFrame(camera, timestampNS);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUCommandBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUCommandBufferHandle AcquireGPUCommandBuffer(GPUDeviceHandle device) =>
+            T.AcquireGPUCommandBuffer(device);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte AcquireGPUSwapchainTexture(
+            GPUCommandBufferHandle command_buffer,
+            WindowHandle window,
+            GPUTextureHandle* swapchain_texture,
+            [NativeTypeName("Uint32 *")] uint* swapchain_texture_width,
+            [NativeTypeName("Uint32 *")] uint* swapchain_texture_height
+        ) =>
+            T.AcquireGPUSwapchainTexture(
+                command_buffer,
+                window,
+                swapchain_texture,
+                swapchain_texture_width,
+                swapchain_texture_height
+            );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> AcquireGPUSwapchainTexture(
+            GPUCommandBufferHandle command_buffer,
+            WindowHandle window,
+            Ref<GPUTextureHandle> swapchain_texture,
+            [NativeTypeName("Uint32 *")] Ref<uint> swapchain_texture_width,
+            [NativeTypeName("Uint32 *")] Ref<uint> swapchain_texture_height
+        ) =>
+            T.AcquireGPUSwapchainTexture(
+                command_buffer,
+                window,
+                swapchain_texture,
+                swapchain_texture_width,
+                swapchain_texture_height
+            );
+
         [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicInt")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -14106,6 +15806,95 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public byte AudioDevicePausedRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev) =>
             T.AudioDevicePausedRaw(dev);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUComputePass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUComputePassHandle BeginGPUComputePass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUStorageTextureReadWriteBinding *")]
+                GPUStorageTextureReadWriteBinding* storage_texture_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_texture_bindings,
+            [NativeTypeName("const SDL_GPUStorageBufferReadWriteBinding *")]
+                GPUStorageBufferReadWriteBinding* storage_buffer_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_buffer_bindings
+        ) =>
+            T.BeginGPUComputePass(
+                command_buffer,
+                storage_texture_bindings,
+                num_storage_texture_bindings,
+                storage_buffer_bindings,
+                num_storage_buffer_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUComputePass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUComputePassHandle BeginGPUComputePass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUStorageTextureReadWriteBinding *")]
+                Ref<GPUStorageTextureReadWriteBinding> storage_texture_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_texture_bindings,
+            [NativeTypeName("const SDL_GPUStorageBufferReadWriteBinding *")]
+                Ref<GPUStorageBufferReadWriteBinding> storage_buffer_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_buffer_bindings
+        ) =>
+            T.BeginGPUComputePass(
+                command_buffer,
+                storage_texture_bindings,
+                num_storage_texture_bindings,
+                storage_buffer_bindings,
+                num_storage_buffer_bindings
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUCopyPass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUCopyPassHandle BeginGPUCopyPass(GPUCommandBufferHandle command_buffer) =>
+            T.BeginGPUCopyPass(command_buffer);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPURenderPass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPURenderPassHandle BeginGPURenderPass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUColorTargetInfo *")]
+                GPUColorTargetInfo* color_target_infos,
+            [NativeTypeName("Uint32")] uint num_color_targets,
+            [NativeTypeName("const SDL_GPUDepthStencilTargetInfo *")]
+                GPUDepthStencilTargetInfo* depth_stencil_target_info
+        ) =>
+            T.BeginGPURenderPass(
+                command_buffer,
+                color_target_infos,
+                num_color_targets,
+                depth_stencil_target_info
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPURenderPass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPURenderPassHandle BeginGPURenderPass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUColorTargetInfo *")]
+                Ref<GPUColorTargetInfo> color_target_infos,
+            [NativeTypeName("Uint32")] uint num_color_targets,
+            [NativeTypeName("const SDL_GPUDepthStencilTargetInfo *")]
+                Ref<GPUDepthStencilTargetInfo> depth_stencil_target_info
+        ) =>
+            T.BeginGPURenderPass(
+                command_buffer,
+                color_target_infos,
+                num_color_targets,
+                depth_stencil_target_info
+            );
+
         [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindAudioStream")]
@@ -14149,6 +15938,366 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             Ref<AudioStreamHandle> streams,
             int num_streams
         ) => T.BindAudioStreams(devid, streams, num_streams);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputePipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUComputePipeline(
+            GPUComputePassHandle compute_pass,
+            GPUComputePipelineHandle compute_pipeline
+        ) => T.BindGPUComputePipeline(compute_pass, compute_pipeline);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUComputeSamplers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                GPUTextureSamplerBinding* texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUComputeSamplers(
+                compute_pass,
+                first_slot,
+                texture_sampler_bindings,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUComputeSamplers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUComputeSamplers(
+                compute_pass,
+                first_slot,
+                texture_sampler_bindings,
+                num_bindings
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUComputeStorageBuffers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUComputeStorageBuffers(compute_pass, first_slot, storage_buffers, num_bindings);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUComputeStorageBuffers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUComputeStorageBuffers(compute_pass, first_slot, storage_buffers, num_bindings);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUComputeStorageTextures(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUComputeStorageTextures(
+                compute_pass,
+                first_slot,
+                storage_textures,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUComputeStorageTextures(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUComputeStorageTextures(
+                compute_pass,
+                first_slot,
+                storage_textures,
+                num_bindings
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUFragmentSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                GPUTextureSamplerBinding* texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUFragmentSamplers(
+                render_pass,
+                first_slot,
+                texture_sampler_bindings,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUFragmentSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUFragmentSamplers(
+                render_pass,
+                first_slot,
+                texture_sampler_bindings,
+                num_bindings
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUFragmentStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUFragmentStorageBuffers(render_pass, first_slot, storage_buffers, num_bindings);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUFragmentStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUFragmentStorageBuffers(render_pass, first_slot, storage_buffers, num_bindings);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUFragmentStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUFragmentStorageTextures(
+                render_pass,
+                first_slot,
+                storage_textures,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUFragmentStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUFragmentStorageTextures(
+                render_pass,
+                first_slot,
+                storage_textures,
+                num_bindings
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUGraphicsPipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUGraphicsPipeline(
+            GPURenderPassHandle render_pass,
+            GPUGraphicsPipelineHandle graphics_pipeline
+        ) => T.BindGPUGraphicsPipeline(render_pass, graphics_pipeline);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUIndexBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUIndexBuffer(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] GPUBufferBinding* binding,
+            GPUIndexElementSize index_element_size
+        ) => T.BindGPUIndexBuffer(render_pass, binding, index_element_size);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUIndexBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUIndexBuffer(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] Ref<GPUBufferBinding> binding,
+            GPUIndexElementSize index_element_size
+        ) => T.BindGPUIndexBuffer(render_pass, binding, index_element_size);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUVertexBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] GPUBufferBinding* bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) => T.BindGPUVertexBuffers(render_pass, first_slot, bindings, num_bindings);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUVertexBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] Ref<GPUBufferBinding> bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) => T.BindGPUVertexBuffers(render_pass, first_slot, bindings, num_bindings);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUVertexSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                GPUTextureSamplerBinding* texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUVertexSamplers(
+                render_pass,
+                first_slot,
+                texture_sampler_bindings,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUVertexSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUVertexSamplers(
+                render_pass,
+                first_slot,
+                texture_sampler_bindings,
+                num_bindings
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUVertexStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) => T.BindGPUVertexStorageBuffers(render_pass, first_slot, storage_buffers, num_bindings);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUVertexStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) => T.BindGPUVertexStorageBuffers(render_pass, first_slot, storage_buffers, num_bindings);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUVertexStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUVertexStorageTextures(render_pass, first_slot, storage_textures, num_bindings);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BindGPUVertexStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            T.BindGPUVertexStorageTextures(render_pass, first_slot, storage_textures, num_bindings);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BlitGPUTexture(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUBlitInfo *")] GPUBlitInfo* info
+        ) => T.BlitGPUTexture(command_buffer, info);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void BlitGPUTexture(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUBlitInfo *")] Ref<GPUBlitInfo> info
+        ) => T.BlitGPUTexture(command_buffer, info);
 
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface")]
@@ -14375,6 +16524,35 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public void BroadcastCondition(ConditionHandle cond) => T.BroadcastCondition(cond);
 
+        [return: NativeTypeName("Uint32")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CalculateGPUTextureFormatSize")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint CalculateGPUTextureFormatSize(
+            GPUTextureFormat format,
+            [NativeTypeName("Uint32")] uint width,
+            [NativeTypeName("Uint32")] uint height,
+            [NativeTypeName("Uint32")] uint depth_or_layer_count
+        ) => T.CalculateGPUTextureFormatSize(format, width, height, depth_or_layer_count);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CancelGPUCommandBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> CancelGPUCommandBuffer(GPUCommandBufferHandle command_buffer) =>
+            T.CancelGPUCommandBuffer(command_buffer);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CancelGPUCommandBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte CancelGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer) =>
+            T.CancelGPUCommandBufferRaw(command_buffer);
+
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CaptureMouse")]
         [MethodImpl(
@@ -14390,6 +16568,25 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public MaybeBool<byte> CaptureMouse([NativeTypeName("bool")] MaybeBool<byte> enabled) =>
             T.CaptureMouse(enabled);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ClaimWindowForGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> ClaimWindowForGPUDevice(
+            GPUDeviceHandle device,
+            WindowHandle window
+        ) => T.ClaimWindowForGPUDevice(device, window);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ClaimWindowForGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte ClaimWindowForGPUDeviceRaw(GPUDeviceHandle device, WindowHandle window) =>
+            T.ClaimWindowForGPUDeviceRaw(device, window);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CleanupTLS")]
         [MethodImpl(
@@ -14858,6 +17055,60 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("const char *")] Ref<sbyte> newpath
         ) => T.CopyFile(oldpath, newpath);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUBufferToBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void CopyGPUBufferToBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] GPUBufferLocation* source,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] GPUBufferLocation* destination,
+            [NativeTypeName("Uint32")] uint size,
+            [NativeTypeName("bool")] byte cycle
+        ) => T.CopyGPUBufferToBuffer(copy_pass, source, destination, size, cycle);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUBufferToBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void CopyGPUBufferToBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] Ref<GPUBufferLocation> source,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] Ref<GPUBufferLocation> destination,
+            [NativeTypeName("Uint32")] uint size,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        ) => T.CopyGPUBufferToBuffer(copy_pass, source, destination, size, cycle);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUTextureToTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void CopyGPUTextureToTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] GPUTextureLocation* source,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] GPUTextureLocation* destination,
+            [NativeTypeName("Uint32")] uint w,
+            [NativeTypeName("Uint32")] uint h,
+            [NativeTypeName("Uint32")] uint d,
+            [NativeTypeName("bool")] byte cycle
+        ) => T.CopyGPUTextureToTexture(copy_pass, source, destination, w, h, d, cycle);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUTextureToTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void CopyGPUTextureToTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] Ref<GPUTextureLocation> source,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] Ref<GPUTextureLocation> destination,
+            [NativeTypeName("Uint32")] uint w,
+            [NativeTypeName("Uint32")] uint h,
+            [NativeTypeName("Uint32")] uint d,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        ) => T.CopyGPUTextureToTexture(copy_pass, source, destination, w, h, d, cycle);
+
         [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CopyProperties")]
@@ -14986,6 +17237,176 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public MaybeBool<byte> CreateDirectory([NativeTypeName("const char *")] Ref<sbyte> path) =>
             T.CreateDirectory(path);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUBufferHandle CreateGPUBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUBufferCreateInfo *")] GPUBufferCreateInfo* createinfo
+        ) => T.CreateGPUBuffer(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUBufferHandle CreateGPUBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUBufferCreateInfo *")] Ref<GPUBufferCreateInfo> createinfo
+        ) => T.CreateGPUBuffer(device, createinfo);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUComputePipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUComputePipelineHandle CreateGPUComputePipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUComputePipelineCreateInfo *")]
+                GPUComputePipelineCreateInfo* createinfo
+        ) => T.CreateGPUComputePipeline(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUComputePipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUComputePipelineHandle CreateGPUComputePipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUComputePipelineCreateInfo *")]
+                Ref<GPUComputePipelineCreateInfo> createinfo
+        ) => T.CreateGPUComputePipeline(device, createinfo);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUDeviceHandle CreateGPUDevice(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("bool")] byte debug_mode,
+            [NativeTypeName("const char *")] sbyte* name
+        ) => T.CreateGPUDevice(format_flags, debug_mode, name);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUDeviceHandle CreateGPUDevice(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("bool")] MaybeBool<byte> debug_mode,
+            [NativeTypeName("const char *")] Ref<sbyte> name
+        ) => T.CreateGPUDevice(format_flags, debug_mode, name);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDeviceWithProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUDeviceHandle CreateGPUDeviceWithProperties(
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        ) => T.CreateGPUDeviceWithProperties(props);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUGraphicsPipelineCreateInfo *")]
+                GPUGraphicsPipelineCreateInfo* createinfo
+        ) => T.CreateGPUGraphicsPipeline(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUGraphicsPipelineCreateInfo *")]
+                Ref<GPUGraphicsPipelineCreateInfo> createinfo
+        ) => T.CreateGPUGraphicsPipeline(device, createinfo);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUSampler")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUSamplerHandle CreateGPUSampler(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUSamplerCreateInfo *")] GPUSamplerCreateInfo* createinfo
+        ) => T.CreateGPUSampler(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUSampler")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUSamplerHandle CreateGPUSampler(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUSamplerCreateInfo *")]
+                Ref<GPUSamplerCreateInfo> createinfo
+        ) => T.CreateGPUSampler(device, createinfo);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUShader")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUShaderHandle CreateGPUShader(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUShaderCreateInfo *")] GPUShaderCreateInfo* createinfo
+        ) => T.CreateGPUShader(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUShader")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUShaderHandle CreateGPUShader(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUShaderCreateInfo *")] Ref<GPUShaderCreateInfo> createinfo
+        ) => T.CreateGPUShader(device, createinfo);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUTextureHandle CreateGPUTexture(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTextureCreateInfo *")] GPUTextureCreateInfo* createinfo
+        ) => T.CreateGPUTexture(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUTextureHandle CreateGPUTexture(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTextureCreateInfo *")]
+                Ref<GPUTextureCreateInfo> createinfo
+        ) => T.CreateGPUTexture(device, createinfo);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUTransferBufferHandle CreateGPUTransferBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTransferBufferCreateInfo *")]
+                GPUTransferBufferCreateInfo* createinfo
+        ) => T.CreateGPUTransferBuffer(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUTransferBufferHandle CreateGPUTransferBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTransferBufferCreateInfo *")]
+                Ref<GPUTransferBufferCreateInfo> createinfo
+        ) => T.CreateGPUTransferBuffer(device, createinfo);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateHapticEffect")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -15036,6 +17457,33 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             int h,
             [NativeTypeName("SDL_WindowFlags")] ulong flags
         ) => T.CreatePopupWindow(parent, offset_x, offset_y, w, h, flags);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public ProcessHandle CreateProcess(
+            [NativeTypeName("const char *const *")] sbyte** args,
+            [NativeTypeName("bool")] byte pipe_stdio
+        ) => T.CreateProcess(args, pipe_stdio);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public ProcessHandle CreateProcess(
+            [NativeTypeName("const char *const *")] Ref2D<sbyte> args,
+            [NativeTypeName("bool")] MaybeBool<byte> pipe_stdio
+        ) => T.CreateProcess(args, pipe_stdio);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcessWithProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public ProcessHandle CreateProcessWithProperties(
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        ) => T.CreateProcessWithProperties(props);
 
         [return: NativeTypeName("SDL_PropertiesID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateProperties")]
@@ -15408,6 +17856,12 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public void DestroyCursor(CursorHandle cursor) => T.DestroyCursor(cursor);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_DestroyGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DestroyGPUDevice(GPUDeviceHandle device) => T.DestroyGPUDevice(device);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyHapticEffect")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -15433,6 +17887,12 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void DestroyPalette(Ref<Palette> palette) => T.DestroyPalette(palette);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DestroyProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DestroyProcess(ProcessHandle process) => T.DestroyProcess(process);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyProperties")]
         [MethodImpl(
@@ -15546,6 +18006,135 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public byte DisableScreenSaverRaw() => T.DisableScreenSaverRaw();
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DispatchGPUCompute")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DispatchGPUCompute(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint groupcount_x,
+            [NativeTypeName("Uint32")] uint groupcount_y,
+            [NativeTypeName("Uint32")] uint groupcount_z
+        ) => T.DispatchGPUCompute(compute_pass, groupcount_x, groupcount_y, groupcount_z);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DispatchGPUComputeIndirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DispatchGPUComputeIndirect(
+            GPUComputePassHandle compute_pass,
+            GPUBufferHandle buffer,
+            [NativeTypeName("Uint32")] uint offset
+        ) => T.DispatchGPUComputeIndirect(compute_pass, buffer, offset);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DownloadFromGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] GPUBufferRegion* source,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                GPUTransferBufferLocation* destination
+        ) => T.DownloadFromGPUBuffer(copy_pass, source, destination);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DownloadFromGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] Ref<GPUBufferRegion> source,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                Ref<GPUTransferBufferLocation> destination
+        ) => T.DownloadFromGPUBuffer(copy_pass, source, destination);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DownloadFromGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] GPUTextureRegion* source,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")]
+                GPUTextureTransferInfo* destination
+        ) => T.DownloadFromGPUTexture(copy_pass, source, destination);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DownloadFromGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> source,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")]
+                Ref<GPUTextureTransferInfo> destination
+        ) => T.DownloadFromGPUTexture(copy_pass, source, destination);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUIndexedPrimitives")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DrawGPUIndexedPrimitives(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint num_indices,
+            [NativeTypeName("Uint32")] uint num_instances,
+            [NativeTypeName("Uint32")] uint first_index,
+            [NativeTypeName("Sint32")] int vertex_offset,
+            [NativeTypeName("Uint32")] uint first_instance
+        ) =>
+            T.DrawGPUIndexedPrimitives(
+                render_pass,
+                num_indices,
+                num_instances,
+                first_index,
+                vertex_offset,
+                first_instance
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUIndexedPrimitivesIndirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DrawGPUIndexedPrimitivesIndirect(
+            GPURenderPassHandle render_pass,
+            GPUBufferHandle buffer,
+            [NativeTypeName("Uint32")] uint offset,
+            [NativeTypeName("Uint32")] uint draw_count
+        ) => T.DrawGPUIndexedPrimitivesIndirect(render_pass, buffer, offset, draw_count);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUPrimitives")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DrawGPUPrimitives(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint num_vertices,
+            [NativeTypeName("Uint32")] uint num_instances,
+            [NativeTypeName("Uint32")] uint first_vertex,
+            [NativeTypeName("Uint32")] uint first_instance
+        ) =>
+            T.DrawGPUPrimitives(
+                render_pass,
+                num_vertices,
+                num_instances,
+                first_vertex,
+                first_instance
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUPrimitivesIndirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DrawGPUPrimitivesIndirect(
+            GPURenderPassHandle render_pass,
+            GPUBufferHandle buffer,
+            [NativeTypeName("Uint32")] uint offset,
+            [NativeTypeName("Uint32")] uint draw_count
+        ) => T.DrawGPUPrimitivesIndirect(render_pass, buffer, offset, draw_count);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DuplicateSurface")]
         [MethodImpl(
@@ -15675,6 +18264,26 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public byte EnableScreenSaverRaw() => T.EnableScreenSaverRaw();
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_EndGPUComputePass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void EndGPUComputePass(GPUComputePassHandle compute_pass) =>
+            T.EndGPUComputePass(compute_pass);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_EndGPUCopyPass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void EndGPUCopyPass(GPUCopyPassHandle copy_pass) => T.EndGPUCopyPass(copy_pass);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_EndGPURenderPass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void EndGPURenderPass(GPURenderPassHandle render_pass) =>
+            T.EndGPURenderPass(render_pass);
 
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
@@ -16025,6 +18634,15 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public byte GamepadSensorEnabledRaw(GamepadHandle gamepad, SensorType type) =>
             T.GamepadSensorEnabledRaw(gamepad, type);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GenerateMipmapsForGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GenerateMipmapsForGPUTexture(
+            GPUCommandBufferHandle command_buffer,
+            GPUTextureHandle texture
+        ) => T.GenerateMipmapsForGPUTexture(command_buffer, texture);
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAppMetadataProperty")]
@@ -17614,6 +20232,54 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public uint GetGlobalProperties() => T.GetGlobalProperties();
 
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr<sbyte> GetGPUDeviceDriver(GPUDeviceHandle device) =>
+            T.GetGPUDeviceDriver(device);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public sbyte* GetGPUDeviceDriverRaw(GPUDeviceHandle device) =>
+            T.GetGPUDeviceDriverRaw(device);
+
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr<sbyte> GetGPUDriver(int index) => T.GetGPUDriver(index);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public sbyte* GetGPUDriverRaw(int index) => T.GetGPUDriverRaw(index);
+
+        [return: NativeTypeName("SDL_GPUShaderFormat")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUShaderFormats")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint GetGPUShaderFormats(GPUDeviceHandle device) => T.GetGPUShaderFormats(device);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUSwapchainTextureFormat")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUTextureFormat GetGPUSwapchainTextureFormat(
+            GPUDeviceHandle device,
+            WindowHandle window
+        ) => T.GetGPUSwapchainTextureFormat(device, window);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGrabbedWindow")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -18409,6 +21075,12 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public int GetNumGamepadTouchpads(GamepadHandle gamepad) =>
             T.GetNumGamepadTouchpads(gamepad);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetNumGPUDrivers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetNumGPUDrivers() => T.GetNumGPUDrivers();
+
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumHapticAxes")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -18641,6 +21313,26 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public sbyte* GetPrimarySelectionTextRaw() => T.GetPrimarySelectionTextRaw();
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetProcessInput")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public IOStreamHandle GetProcessInput(ProcessHandle process) => T.GetProcessInput(process);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetProcessOutput")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public IOStreamHandle GetProcessOutput(ProcessHandle process) =>
+            T.GetProcessOutput(process);
+
+        [return: NativeTypeName("SDL_PropertiesID")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetProcessProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint GetProcessProperties(ProcessHandle process) => T.GetProcessProperties(process);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPropertyType")]
         [MethodImpl(
@@ -20709,6 +23401,101 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             Ref<int> count
         ) => T.GlobStorageDirectory(storage, path, pattern, flags, count);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> GPUSupportsProperties(
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        ) => T.GPUSupportsProperties(props);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte GPUSupportsPropertiesRaw([NativeTypeName("SDL_PropertiesID")] uint props) =>
+            T.GPUSupportsPropertiesRaw(props);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsShaderFormats")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte GPUSupportsShaderFormats(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("const char *")] sbyte* name
+        ) => T.GPUSupportsShaderFormats(format_flags, name);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsShaderFormats")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> GPUSupportsShaderFormats(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("const char *")] Ref<sbyte> name
+        ) => T.GPUSupportsShaderFormats(format_flags, name);
+
+        [return: NativeTypeName("Uint32")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureFormatTexelBlockSize")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint GPUTextureFormatTexelBlockSize(GPUTextureFormat format) =>
+            T.GPUTextureFormatTexelBlockSize(format);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsFormat")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> GPUTextureSupportsFormat(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUTextureType type,
+            [NativeTypeName("SDL_GPUTextureUsageFlags")] uint usage
+        ) => T.GPUTextureSupportsFormat(device, format, type, usage);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsFormat")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte GPUTextureSupportsFormatRaw(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUTextureType type,
+            [NativeTypeName("SDL_GPUTextureUsageFlags")] uint usage
+        ) => T.GPUTextureSupportsFormatRaw(device, format, type, usage);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> GPUTextureSupportsSampleCount(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUSampleCount sample_count
+        ) => T.GPUTextureSupportsSampleCount(device, format, sample_count);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte GPUTextureSupportsSampleCountRaw(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUSampleCount sample_count
+        ) => T.GPUTextureSupportsSampleCountRaw(device, format, sample_count);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_GUIDToString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -21640,6 +24427,25 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public byte InitSubSystemRaw([NativeTypeName("SDL_InitFlags")] uint flags) =>
             T.InitSubSystemRaw(flags);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_InsertGPUDebugLabel")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void InsertGPUDebugLabel(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] sbyte* text
+        ) => T.InsertGPUDebugLabel(command_buffer, text);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_InsertGPUDebugLabel")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void InsertGPUDebugLabel(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] Ref<sbyte> text
+        ) => T.InsertGPUDebugLabel(command_buffer, text);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_IOFromConstMem")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -21849,6 +24655,25 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public byte JoystickEventsEnabledRaw() => T.JoystickEventsEnabledRaw();
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_KillProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte KillProcess(ProcessHandle process, [NativeTypeName("bool")] byte force) =>
+            T.KillProcess(process, force);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_KillProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> KillProcess(
+            ProcessHandle process,
+            [NativeTypeName("bool")] MaybeBool<byte> force
+        ) => T.KillProcess(process, force);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP")]
         [MethodImpl(
@@ -22166,6 +24991,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("const char *")] Ref<sbyte> fmt,
             [NativeTypeName("va_list")] Ref<sbyte> ap
         ) => T.LogMessageV(category, priority, fmt, ap);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void* MapGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer,
+            [NativeTypeName("bool")] byte cycle
+        ) => T.MapGPUTransferBuffer(device, transfer_buffer, cycle);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr MapGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        ) => T.MapGPUTransferBuffer(device, transfer_buffer, cycle);
 
         [return: NativeTypeName("Uint32")]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapRGB")]
@@ -22766,6 +25612,13 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public MaybeBool<byte> PollEvent(Ref<Event> @event) => T.PollEvent(@event);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_PopGPUDebugGroup")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void PopGPUDebugGroup(GPUCommandBufferHandle command_buffer) =>
+            T.PopGPUDebugGroup(command_buffer);
+
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplyAlpha")]
         [MethodImpl(
@@ -22865,6 +25718,94 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public MaybeBool<byte> PushEvent(Ref<Event> @event) => T.PushEvent(@event);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUComputeUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void PushGPUComputeUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] void* data,
+            [NativeTypeName("Uint32")] uint length
+        ) => T.PushGPUComputeUniformData(command_buffer, slot_index, data, length);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUComputeUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void PushGPUComputeUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] Ref data,
+            [NativeTypeName("Uint32")] uint length
+        ) => T.PushGPUComputeUniformData(command_buffer, slot_index, data, length);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUDebugGroup")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void PushGPUDebugGroup(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] sbyte* name
+        ) => T.PushGPUDebugGroup(command_buffer, name);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUDebugGroup")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void PushGPUDebugGroup(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] Ref<sbyte> name
+        ) => T.PushGPUDebugGroup(command_buffer, name);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUFragmentUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void PushGPUFragmentUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] void* data,
+            [NativeTypeName("Uint32")] uint length
+        ) => T.PushGPUFragmentUniformData(command_buffer, slot_index, data, length);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUFragmentUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void PushGPUFragmentUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] Ref data,
+            [NativeTypeName("Uint32")] uint length
+        ) => T.PushGPUFragmentUniformData(command_buffer, slot_index, data, length);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUVertexUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void PushGPUVertexUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] void* data,
+            [NativeTypeName("Uint32")] uint length
+        ) => T.PushGPUVertexUniformData(command_buffer, slot_index, data, length);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUVertexUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void PushGPUVertexUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] Ref data,
+            [NativeTypeName("Uint32")] uint length
+        ) => T.PushGPUVertexUniformData(command_buffer, slot_index, data, length);
+
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamData")]
         [MethodImpl(
@@ -22887,6 +25828,23 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("const void *")] Ref buf,
             int len
         ) => T.PutAudioStreamData(stream, buf, len);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_QueryGPUFence")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> QueryGPUFence(GPUDeviceHandle device, GPUFenceHandle fence) =>
+            T.QueryGPUFence(device, fence);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_QueryGPUFence")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte QueryGPUFenceRaw(GPUDeviceHandle device, GPUFenceHandle fence) =>
+            T.QueryGPUFenceRaw(device, fence);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_Quit")]
         [MethodImpl(
@@ -22938,6 +25896,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             Ref ptr,
             [NativeTypeName("size_t")] nuint size
         ) => T.ReadIO(context, ptr, size);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReadProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void* ReadProcess(
+            ProcessHandle process,
+            [NativeTypeName("size_t *")] nuint* datasize,
+            int* exitcode
+        ) => T.ReadProcess(process, datasize, exitcode);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReadProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr ReadProcess(
+            ProcessHandle process,
+            [NativeTypeName("size_t *")] Ref<nuint> datasize,
+            Ref<int> exitcode
+        ) => T.ReadProcess(process, datasize, exitcode);
 
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS16BE")]
@@ -23313,6 +26292,75 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public void ReleaseCameraFrame(CameraHandle camera, Ref<Surface> frame) =>
             T.ReleaseCameraFrame(camera, frame);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void ReleaseGPUBuffer(GPUDeviceHandle device, GPUBufferHandle buffer) =>
+            T.ReleaseGPUBuffer(device, buffer);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUComputePipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void ReleaseGPUComputePipeline(
+            GPUDeviceHandle device,
+            GPUComputePipelineHandle compute_pipeline
+        ) => T.ReleaseGPUComputePipeline(device, compute_pipeline);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUFence")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void ReleaseGPUFence(GPUDeviceHandle device, GPUFenceHandle fence) =>
+            T.ReleaseGPUFence(device, fence);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUGraphicsPipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void ReleaseGPUGraphicsPipeline(
+            GPUDeviceHandle device,
+            GPUGraphicsPipelineHandle graphics_pipeline
+        ) => T.ReleaseGPUGraphicsPipeline(device, graphics_pipeline);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUSampler")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void ReleaseGPUSampler(GPUDeviceHandle device, GPUSamplerHandle sampler) =>
+            T.ReleaseGPUSampler(device, sampler);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUShader")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void ReleaseGPUShader(GPUDeviceHandle device, GPUShaderHandle shader) =>
+            T.ReleaseGPUShader(device, shader);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void ReleaseGPUTexture(GPUDeviceHandle device, GPUTextureHandle texture) =>
+            T.ReleaseGPUTexture(device, texture);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void ReleaseGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer
+        ) => T.ReleaseGPUTransferBuffer(device, transfer_buffer);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseWindowFromGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void ReleaseWindowFromGPUDevice(GPUDeviceHandle device, WindowHandle window) =>
+            T.ReleaseWindowFromGPUDevice(device, window);
 
         [return: NativeTypeName("bool")]
         [Transformed]
@@ -25072,6 +28120,127 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             SensorType type,
             [NativeTypeName("bool")] MaybeBool<byte> enabled
         ) => T.SetGamepadSensorEnabled(gamepad, type, enabled);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBlendConstants")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SetGPUBlendConstants(GPURenderPassHandle render_pass, FColor blend_constants) =>
+            T.SetGPUBlendConstants(render_pass, blend_constants);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SetGPUBufferName(
+            GPUDeviceHandle device,
+            GPUBufferHandle buffer,
+            [NativeTypeName("const char *")] sbyte* text
+        ) => T.SetGPUBufferName(device, buffer, text);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SetGPUBufferName(
+            GPUDeviceHandle device,
+            GPUBufferHandle buffer,
+            [NativeTypeName("const char *")] Ref<sbyte> text
+        ) => T.SetGPUBufferName(device, buffer, text);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SetGPUScissor(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_Rect *")] Rect* scissor
+        ) => T.SetGPUScissor(render_pass, scissor);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SetGPUScissor(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> scissor
+        ) => T.SetGPUScissor(render_pass, scissor);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUStencilReference")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SetGPUStencilReference(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint8")] byte reference
+        ) => T.SetGPUStencilReference(render_pass, reference);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUSwapchainParameters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> SetGPUSwapchainParameters(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition,
+            GPUPresentMode present_mode
+        ) => T.SetGPUSwapchainParameters(device, window, swapchain_composition, present_mode);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUSwapchainParameters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte SetGPUSwapchainParametersRaw(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition,
+            GPUPresentMode present_mode
+        ) => T.SetGPUSwapchainParametersRaw(device, window, swapchain_composition, present_mode);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUTextureName")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SetGPUTextureName(
+            GPUDeviceHandle device,
+            GPUTextureHandle texture,
+            [NativeTypeName("const char *")] sbyte* text
+        ) => T.SetGPUTextureName(device, texture, text);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUTextureName")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SetGPUTextureName(
+            GPUDeviceHandle device,
+            GPUTextureHandle texture,
+            [NativeTypeName("const char *")] Ref<sbyte> text
+        ) => T.SetGPUTextureName(device, texture, text);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUViewport")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SetGPUViewport(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUViewport *")] GPUViewport* viewport
+        ) => T.SetGPUViewport(render_pass, viewport);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUViewport")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SetGPUViewport(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUViewport *")] Ref<GPUViewport> viewport
+        ) => T.SetGPUViewport(render_pass, viewport);
 
         [return: NativeTypeName("bool")]
         [Transformed]
@@ -26924,6 +30093,31 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             T.StringToGuid(pchGUID);
 
         [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> SubmitGPUCommandBuffer(GPUCommandBufferHandle command_buffer) =>
+            T.SubmitGPUCommandBuffer(command_buffer);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBufferAndAcquireFence")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public GPUFenceHandle SubmitGPUCommandBufferAndAcquireFence(
+            GPUCommandBufferHandle command_buffer
+        ) => T.SubmitGPUCommandBufferAndAcquireFence(command_buffer);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte SubmitGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer) =>
+            T.SubmitGPUCommandBufferRaw(command_buffer);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasAlternateImages")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -27253,6 +30447,15 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public void UnlockTexture(Ref<Texture> texture) => T.UnlockTexture(texture);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_UnmapGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void UnmapGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer
+        ) => T.UnmapGPUTransferBuffer(device, transfer_buffer);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateGamepads")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -27420,6 +30623,55 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             int Vpitch
         ) => T.UpdateYUVTexture(texture, rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void UploadToGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                GPUTransferBufferLocation* source,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] GPUBufferRegion* destination,
+            [NativeTypeName("bool")] byte cycle
+        ) => T.UploadToGPUBuffer(copy_pass, source, destination, cycle);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void UploadToGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                Ref<GPUTransferBufferLocation> source,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] Ref<GPUBufferRegion> destination,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        ) => T.UploadToGPUBuffer(copy_pass, source, destination, cycle);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void UploadToGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")] GPUTextureTransferInfo* source,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] GPUTextureRegion* destination,
+            [NativeTypeName("bool")] byte cycle
+        ) => T.UploadToGPUTexture(copy_pass, source, destination, cycle);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void UploadToGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")]
+                Ref<GPUTextureTransferInfo> source,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> destination,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        ) => T.UploadToGPUTexture(copy_pass, source, destination, cycle);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitCondition")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -27483,6 +30735,69 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             Ref<Event> @event,
             [NativeTypeName("Sint32")] int timeoutMS
         ) => T.WaitEventTimeout(@event, timeoutMS);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUFences")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte WaitForGPUFences(
+            GPUDeviceHandle device,
+            [NativeTypeName("bool")] byte wait_all,
+            [NativeTypeName("SDL_GPUFence *const *")] GPUFenceHandle* fences,
+            [NativeTypeName("Uint32")] uint num_fences
+        ) => T.WaitForGPUFences(device, wait_all, fences, num_fences);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUFences")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> WaitForGPUFences(
+            GPUDeviceHandle device,
+            [NativeTypeName("bool")] MaybeBool<byte> wait_all,
+            [NativeTypeName("SDL_GPUFence *const *")] Ref<GPUFenceHandle> fences,
+            [NativeTypeName("Uint32")] uint num_fences
+        ) => T.WaitForGPUFences(device, wait_all, fences, num_fences);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUIdle")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> WaitForGPUIdle(GPUDeviceHandle device) => T.WaitForGPUIdle(device);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUIdle")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte WaitForGPUIdleRaw(GPUDeviceHandle device) => T.WaitForGPUIdleRaw(device);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte WaitProcess(
+            ProcessHandle process,
+            [NativeTypeName("bool")] byte block,
+            int* exitcode
+        ) => T.WaitProcess(process, block, exitcode);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> WaitProcess(
+            ProcessHandle process,
+            [NativeTypeName("bool")] MaybeBool<byte> block,
+            Ref<int> exitcode
+        ) => T.WaitProcess(process, block, exitcode);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitSemaphore")]
         [MethodImpl(
@@ -27568,6 +30883,52 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public byte WindowHasSurfaceRaw(WindowHandle window) => T.WindowHasSurfaceRaw(window);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> WindowSupportsGPUPresentMode(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUPresentMode present_mode
+        ) => T.WindowSupportsGPUPresentMode(device, window, present_mode);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte WindowSupportsGPUPresentModeRaw(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUPresentMode present_mode
+        ) => T.WindowSupportsGPUPresentModeRaw(device, window, present_mode);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<byte> WindowSupportsGPUSwapchainComposition(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition
+        ) => T.WindowSupportsGPUSwapchainComposition(device, window, swapchain_composition);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public byte WindowSupportsGPUSwapchainCompositionRaw(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition
+        ) => T.WindowSupportsGPUSwapchainCompositionRaw(device, window, swapchain_composition);
 
         [return: NativeTypeName("size_t")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteIO")]
@@ -27969,6 +31330,62 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUCommandBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUCommandBufferHandle AcquireGPUCommandBuffer(GPUDeviceHandle device) =>
+            Underlying.Value!.AcquireGPUCommandBuffer(device);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte AcquireGPUSwapchainTexture(
+            GPUCommandBufferHandle command_buffer,
+            WindowHandle window,
+            GPUTextureHandle* swapchain_texture,
+            [NativeTypeName("Uint32 *")] uint* swapchain_texture_width,
+            [NativeTypeName("Uint32 *")] uint* swapchain_texture_height
+        ) =>
+            Underlying.Value!.AcquireGPUSwapchainTexture(
+                command_buffer,
+                window,
+                swapchain_texture,
+                swapchain_texture_width,
+                swapchain_texture_height
+            );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> AcquireGPUSwapchainTexture(
+            GPUCommandBufferHandle command_buffer,
+            WindowHandle window,
+            Ref<GPUTextureHandle> swapchain_texture,
+            [NativeTypeName("Uint32 *")] Ref<uint> swapchain_texture_width,
+            [NativeTypeName("Uint32 *")] Ref<uint> swapchain_texture_height
+        )
+        {
+            fixed (uint* __dsl_swapchain_texture_height = swapchain_texture_height)
+            fixed (uint* __dsl_swapchain_texture_width = swapchain_texture_width)
+            fixed (GPUTextureHandle* __dsl_swapchain_texture = swapchain_texture)
+            {
+                return (MaybeBool<byte>)
+                    (byte)AcquireGPUSwapchainTexture(
+                        command_buffer,
+                        window,
+                        __dsl_swapchain_texture,
+                        __dsl_swapchain_texture_width,
+                        __dsl_swapchain_texture_height
+                    );
+            }
+        }
+
         [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicInt")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -28271,6 +31688,116 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static byte AudioDevicePausedRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev) =>
             Underlying.Value!.AudioDevicePausedRaw(dev);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUComputePass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUComputePassHandle BeginGPUComputePass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUStorageTextureReadWriteBinding *")]
+                GPUStorageTextureReadWriteBinding* storage_texture_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_texture_bindings,
+            [NativeTypeName("const SDL_GPUStorageBufferReadWriteBinding *")]
+                GPUStorageBufferReadWriteBinding* storage_buffer_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_buffer_bindings
+        ) =>
+            Underlying.Value!.BeginGPUComputePass(
+                command_buffer,
+                storage_texture_bindings,
+                num_storage_texture_bindings,
+                storage_buffer_bindings,
+                num_storage_buffer_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUComputePass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUComputePassHandle BeginGPUComputePass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUStorageTextureReadWriteBinding *")]
+                Ref<GPUStorageTextureReadWriteBinding> storage_texture_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_texture_bindings,
+            [NativeTypeName("const SDL_GPUStorageBufferReadWriteBinding *")]
+                Ref<GPUStorageBufferReadWriteBinding> storage_buffer_bindings,
+            [NativeTypeName("Uint32")] uint num_storage_buffer_bindings
+        )
+        {
+            fixed (
+                GPUStorageBufferReadWriteBinding* __dsl_storage_buffer_bindings =
+                    storage_buffer_bindings
+            )
+            fixed (
+                GPUStorageTextureReadWriteBinding* __dsl_storage_texture_bindings =
+                    storage_texture_bindings
+            )
+            {
+                return (GPUComputePassHandle)BeginGPUComputePass(
+                    command_buffer,
+                    __dsl_storage_texture_bindings,
+                    num_storage_texture_bindings,
+                    __dsl_storage_buffer_bindings,
+                    num_storage_buffer_bindings
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUCopyPass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUCopyPassHandle BeginGPUCopyPass(GPUCommandBufferHandle command_buffer) =>
+            Underlying.Value!.BeginGPUCopyPass(command_buffer);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPURenderPass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPURenderPassHandle BeginGPURenderPass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUColorTargetInfo *")]
+                GPUColorTargetInfo* color_target_infos,
+            [NativeTypeName("Uint32")] uint num_color_targets,
+            [NativeTypeName("const SDL_GPUDepthStencilTargetInfo *")]
+                GPUDepthStencilTargetInfo* depth_stencil_target_info
+        ) =>
+            Underlying.Value!.BeginGPURenderPass(
+                command_buffer,
+                color_target_infos,
+                num_color_targets,
+                depth_stencil_target_info
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPURenderPass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPURenderPassHandle BeginGPURenderPass(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUColorTargetInfo *")]
+                Ref<GPUColorTargetInfo> color_target_infos,
+            [NativeTypeName("Uint32")] uint num_color_targets,
+            [NativeTypeName("const SDL_GPUDepthStencilTargetInfo *")]
+                Ref<GPUDepthStencilTargetInfo> depth_stencil_target_info
+        )
+        {
+            fixed (
+                GPUDepthStencilTargetInfo* __dsl_depth_stencil_target_info =
+                    depth_stencil_target_info
+            )
+            fixed (GPUColorTargetInfo* __dsl_color_target_infos = color_target_infos)
+            {
+                return (GPURenderPassHandle)BeginGPURenderPass(
+                    command_buffer,
+                    __dsl_color_target_infos,
+                    num_color_targets,
+                    __dsl_depth_stencil_target_info
+                );
+            }
+        }
+
         [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindAudioStream")]
@@ -28318,6 +31845,478 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             fixed (AudioStreamHandle* __dsl_streams = streams)
             {
                 return (MaybeBool<byte>)(byte)BindAudioStreams(devid, __dsl_streams, num_streams);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputePipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUComputePipeline(
+            GPUComputePassHandle compute_pass,
+            GPUComputePipelineHandle compute_pipeline
+        ) => Underlying.Value!.BindGPUComputePipeline(compute_pass, compute_pipeline);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUComputeSamplers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                GPUTextureSamplerBinding* texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            Underlying.Value!.BindGPUComputeSamplers(
+                compute_pass,
+                first_slot,
+                texture_sampler_bindings,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUComputeSamplers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (
+                GPUTextureSamplerBinding* __dsl_texture_sampler_bindings = texture_sampler_bindings
+            )
+            {
+                BindGPUComputeSamplers(
+                    compute_pass,
+                    first_slot,
+                    __dsl_texture_sampler_bindings,
+                    num_bindings
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUComputeStorageBuffers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            Underlying.Value!.BindGPUComputeStorageBuffers(
+                compute_pass,
+                first_slot,
+                storage_buffers,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUComputeStorageBuffers(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUBufferHandle* __dsl_storage_buffers = storage_buffers)
+            {
+                BindGPUComputeStorageBuffers(
+                    compute_pass,
+                    first_slot,
+                    __dsl_storage_buffers,
+                    num_bindings
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUComputeStorageTextures(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            Underlying.Value!.BindGPUComputeStorageTextures(
+                compute_pass,
+                first_slot,
+                storage_textures,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUComputeStorageTextures(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUTextureHandle* __dsl_storage_textures = storage_textures)
+            {
+                BindGPUComputeStorageTextures(
+                    compute_pass,
+                    first_slot,
+                    __dsl_storage_textures,
+                    num_bindings
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUFragmentSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                GPUTextureSamplerBinding* texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            Underlying.Value!.BindGPUFragmentSamplers(
+                render_pass,
+                first_slot,
+                texture_sampler_bindings,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUFragmentSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (
+                GPUTextureSamplerBinding* __dsl_texture_sampler_bindings = texture_sampler_bindings
+            )
+            {
+                BindGPUFragmentSamplers(
+                    render_pass,
+                    first_slot,
+                    __dsl_texture_sampler_bindings,
+                    num_bindings
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUFragmentStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            Underlying.Value!.BindGPUFragmentStorageBuffers(
+                render_pass,
+                first_slot,
+                storage_buffers,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUFragmentStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUBufferHandle* __dsl_storage_buffers = storage_buffers)
+            {
+                BindGPUFragmentStorageBuffers(
+                    render_pass,
+                    first_slot,
+                    __dsl_storage_buffers,
+                    num_bindings
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUFragmentStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            Underlying.Value!.BindGPUFragmentStorageTextures(
+                render_pass,
+                first_slot,
+                storage_textures,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUFragmentStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUTextureHandle* __dsl_storage_textures = storage_textures)
+            {
+                BindGPUFragmentStorageTextures(
+                    render_pass,
+                    first_slot,
+                    __dsl_storage_textures,
+                    num_bindings
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUGraphicsPipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUGraphicsPipeline(
+            GPURenderPassHandle render_pass,
+            GPUGraphicsPipelineHandle graphics_pipeline
+        ) => Underlying.Value!.BindGPUGraphicsPipeline(render_pass, graphics_pipeline);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUIndexBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUIndexBuffer(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] GPUBufferBinding* binding,
+            GPUIndexElementSize index_element_size
+        ) => Underlying.Value!.BindGPUIndexBuffer(render_pass, binding, index_element_size);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUIndexBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUIndexBuffer(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] Ref<GPUBufferBinding> binding,
+            GPUIndexElementSize index_element_size
+        )
+        {
+            fixed (GPUBufferBinding* __dsl_binding = binding)
+            {
+                BindGPUIndexBuffer(render_pass, __dsl_binding, index_element_size);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] GPUBufferBinding* bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            Underlying.Value!.BindGPUVertexBuffers(render_pass, first_slot, bindings, num_bindings);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUBufferBinding *")] Ref<GPUBufferBinding> bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUBufferBinding* __dsl_bindings = bindings)
+            {
+                BindGPUVertexBuffers(render_pass, first_slot, __dsl_bindings, num_bindings);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                GPUTextureSamplerBinding* texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            Underlying.Value!.BindGPUVertexSamplers(
+                render_pass,
+                first_slot,
+                texture_sampler_bindings,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexSamplers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexSamplers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+                Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (
+                GPUTextureSamplerBinding* __dsl_texture_sampler_bindings = texture_sampler_bindings
+            )
+            {
+                BindGPUVertexSamplers(
+                    render_pass,
+                    first_slot,
+                    __dsl_texture_sampler_bindings,
+                    num_bindings
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            Underlying.Value!.BindGPUVertexStorageBuffers(
+                render_pass,
+                first_slot,
+                storage_buffers,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexStorageBuffers(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUBufferHandle* __dsl_storage_buffers = storage_buffers)
+            {
+                BindGPUVertexStorageBuffers(
+                    render_pass,
+                    first_slot,
+                    __dsl_storage_buffers,
+                    num_bindings
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        ) =>
+            Underlying.Value!.BindGPUVertexStorageTextures(
+                render_pass,
+                first_slot,
+                storage_textures,
+                num_bindings
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageTextures")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BindGPUVertexStorageTextures(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint first_slot,
+            [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+            [NativeTypeName("Uint32")] uint num_bindings
+        )
+        {
+            fixed (GPUTextureHandle* __dsl_storage_textures = storage_textures)
+            {
+                BindGPUVertexStorageTextures(
+                    render_pass,
+                    first_slot,
+                    __dsl_storage_textures,
+                    num_bindings
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BlitGPUTexture(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUBlitInfo *")] GPUBlitInfo* info
+        ) => Underlying.Value!.BlitGPUTexture(command_buffer, info);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void BlitGPUTexture(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const SDL_GPUBlitInfo *")] Ref<GPUBlitInfo> info
+        )
+        {
+            fixed (GPUBlitInfo* __dsl_info = info)
+            {
+                BlitGPUTexture(command_buffer, __dsl_info);
             }
         }
 
@@ -28643,6 +32642,42 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static void BroadcastCondition(ConditionHandle cond) =>
             Underlying.Value!.BroadcastCondition(cond);
 
+        [return: NativeTypeName("Uint32")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CalculateGPUTextureFormatSize")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint CalculateGPUTextureFormatSize(
+            GPUTextureFormat format,
+            [NativeTypeName("Uint32")] uint width,
+            [NativeTypeName("Uint32")] uint height,
+            [NativeTypeName("Uint32")] uint depth_or_layer_count
+        ) =>
+            Underlying.Value!.CalculateGPUTextureFormatSize(
+                format,
+                width,
+                height,
+                depth_or_layer_count
+            );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CancelGPUCommandBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> CancelGPUCommandBuffer(
+            GPUCommandBufferHandle command_buffer
+        ) => Underlying.Value!.CancelGPUCommandBuffer(command_buffer);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CancelGPUCommandBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte CancelGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer) =>
+            Underlying.Value!.CancelGPUCommandBufferRaw(command_buffer);
+
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CaptureMouse")]
         [MethodImpl(
@@ -28660,6 +32695,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static MaybeBool<byte> CaptureMouse(
             [NativeTypeName("bool")] MaybeBool<byte> enabled
         ) => Underlying.Value!.CaptureMouse(enabled);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ClaimWindowForGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> ClaimWindowForGPUDevice(
+            GPUDeviceHandle device,
+            WindowHandle window
+        ) => Underlying.Value!.ClaimWindowForGPUDevice(device, window);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ClaimWindowForGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte ClaimWindowForGPUDeviceRaw(
+            GPUDeviceHandle device,
+            WindowHandle window
+        ) => Underlying.Value!.ClaimWindowForGPUDeviceRaw(device, window);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CleanupTLS")]
         [MethodImpl(
@@ -29277,6 +33333,97 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUBufferToBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void CopyGPUBufferToBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] GPUBufferLocation* source,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] GPUBufferLocation* destination,
+            [NativeTypeName("Uint32")] uint size,
+            [NativeTypeName("bool")] byte cycle
+        ) => Underlying.Value!.CopyGPUBufferToBuffer(copy_pass, source, destination, size, cycle);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUBufferToBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void CopyGPUBufferToBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] Ref<GPUBufferLocation> source,
+            [NativeTypeName("const SDL_GPUBufferLocation *")] Ref<GPUBufferLocation> destination,
+            [NativeTypeName("Uint32")] uint size,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        )
+        {
+            fixed (GPUBufferLocation* __dsl_destination = destination)
+            fixed (GPUBufferLocation* __dsl_source = source)
+            {
+                CopyGPUBufferToBuffer(
+                    copy_pass,
+                    __dsl_source,
+                    __dsl_destination,
+                    size,
+                    (byte)cycle
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUTextureToTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void CopyGPUTextureToTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] GPUTextureLocation* source,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] GPUTextureLocation* destination,
+            [NativeTypeName("Uint32")] uint w,
+            [NativeTypeName("Uint32")] uint h,
+            [NativeTypeName("Uint32")] uint d,
+            [NativeTypeName("bool")] byte cycle
+        ) =>
+            Underlying.Value!.CopyGPUTextureToTexture(
+                copy_pass,
+                source,
+                destination,
+                w,
+                h,
+                d,
+                cycle
+            );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUTextureToTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void CopyGPUTextureToTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] Ref<GPUTextureLocation> source,
+            [NativeTypeName("const SDL_GPUTextureLocation *")] Ref<GPUTextureLocation> destination,
+            [NativeTypeName("Uint32")] uint w,
+            [NativeTypeName("Uint32")] uint h,
+            [NativeTypeName("Uint32")] uint d,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        )
+        {
+            fixed (GPUTextureLocation* __dsl_destination = destination)
+            fixed (GPUTextureLocation* __dsl_source = source)
+            {
+                CopyGPUTextureToTexture(
+                    copy_pass,
+                    __dsl_source,
+                    __dsl_destination,
+                    w,
+                    h,
+                    d,
+                    (byte)cycle
+                );
+            }
+        }
+
         [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CopyProperties")]
@@ -29439,6 +33586,227 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUBufferHandle CreateGPUBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUBufferCreateInfo *")] GPUBufferCreateInfo* createinfo
+        ) => Underlying.Value!.CreateGPUBuffer(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUBufferHandle CreateGPUBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUBufferCreateInfo *")] Ref<GPUBufferCreateInfo> createinfo
+        )
+        {
+            fixed (GPUBufferCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUBufferHandle)CreateGPUBuffer(device, __dsl_createinfo);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUComputePipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUComputePipelineHandle CreateGPUComputePipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUComputePipelineCreateInfo *")]
+                GPUComputePipelineCreateInfo* createinfo
+        ) => Underlying.Value!.CreateGPUComputePipeline(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUComputePipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUComputePipelineHandle CreateGPUComputePipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUComputePipelineCreateInfo *")]
+                Ref<GPUComputePipelineCreateInfo> createinfo
+        )
+        {
+            fixed (GPUComputePipelineCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUComputePipelineHandle)CreateGPUComputePipeline(device, __dsl_createinfo);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUDeviceHandle CreateGPUDevice(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("bool")] byte debug_mode,
+            [NativeTypeName("const char *")] sbyte* name
+        ) => Underlying.Value!.CreateGPUDevice(format_flags, debug_mode, name);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUDeviceHandle CreateGPUDevice(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("bool")] MaybeBool<byte> debug_mode,
+            [NativeTypeName("const char *")] Ref<sbyte> name
+        )
+        {
+            fixed (sbyte* __dsl_name = name)
+            {
+                return (GPUDeviceHandle)CreateGPUDevice(format_flags, (byte)debug_mode, __dsl_name);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDeviceWithProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUDeviceHandle CreateGPUDeviceWithProperties(
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        ) => Underlying.Value!.CreateGPUDeviceWithProperties(props);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUGraphicsPipelineCreateInfo *")]
+                GPUGraphicsPipelineCreateInfo* createinfo
+        ) => Underlying.Value!.CreateGPUGraphicsPipeline(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUGraphicsPipelineCreateInfo *")]
+                Ref<GPUGraphicsPipelineCreateInfo> createinfo
+        )
+        {
+            fixed (GPUGraphicsPipelineCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUGraphicsPipelineHandle)CreateGPUGraphicsPipeline(
+                    device,
+                    __dsl_createinfo
+                );
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUSampler")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUSamplerHandle CreateGPUSampler(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUSamplerCreateInfo *")] GPUSamplerCreateInfo* createinfo
+        ) => Underlying.Value!.CreateGPUSampler(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUSampler")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUSamplerHandle CreateGPUSampler(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUSamplerCreateInfo *")]
+                Ref<GPUSamplerCreateInfo> createinfo
+        )
+        {
+            fixed (GPUSamplerCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUSamplerHandle)CreateGPUSampler(device, __dsl_createinfo);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUShader")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUShaderHandle CreateGPUShader(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUShaderCreateInfo *")] GPUShaderCreateInfo* createinfo
+        ) => Underlying.Value!.CreateGPUShader(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUShader")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUShaderHandle CreateGPUShader(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUShaderCreateInfo *")] Ref<GPUShaderCreateInfo> createinfo
+        )
+        {
+            fixed (GPUShaderCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUShaderHandle)CreateGPUShader(device, __dsl_createinfo);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUTextureHandle CreateGPUTexture(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTextureCreateInfo *")] GPUTextureCreateInfo* createinfo
+        ) => Underlying.Value!.CreateGPUTexture(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUTextureHandle CreateGPUTexture(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTextureCreateInfo *")]
+                Ref<GPUTextureCreateInfo> createinfo
+        )
+        {
+            fixed (GPUTextureCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUTextureHandle)CreateGPUTexture(device, __dsl_createinfo);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUTransferBufferHandle CreateGPUTransferBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTransferBufferCreateInfo *")]
+                GPUTransferBufferCreateInfo* createinfo
+        ) => Underlying.Value!.CreateGPUTransferBuffer(device, createinfo);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUTransferBufferHandle CreateGPUTransferBuffer(
+            GPUDeviceHandle device,
+            [NativeTypeName("const SDL_GPUTransferBufferCreateInfo *")]
+                Ref<GPUTransferBufferCreateInfo> createinfo
+        )
+        {
+            fixed (GPUTransferBufferCreateInfo* __dsl_createinfo = createinfo)
+            {
+                return (GPUTransferBufferHandle)CreateGPUTransferBuffer(device, __dsl_createinfo);
+            }
+        }
+
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateHapticEffect")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -29497,6 +33865,39 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             int h,
             [NativeTypeName("SDL_WindowFlags")] ulong flags
         ) => Underlying.Value!.CreatePopupWindow(parent, offset_x, offset_y, w, h, flags);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static ProcessHandle CreateProcess(
+            [NativeTypeName("const char *const *")] sbyte** args,
+            [NativeTypeName("bool")] byte pipe_stdio
+        ) => Underlying.Value!.CreateProcess(args, pipe_stdio);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static ProcessHandle CreateProcess(
+            [NativeTypeName("const char *const *")] Ref2D<sbyte> args,
+            [NativeTypeName("bool")] MaybeBool<byte> pipe_stdio
+        )
+        {
+            fixed (sbyte** __dsl_args = args)
+            {
+                return (ProcessHandle)CreateProcess(__dsl_args, (byte)pipe_stdio);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcessWithProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static ProcessHandle CreateProcessWithProperties(
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        ) => Underlying.Value!.CreateProcessWithProperties(props);
 
         [return: NativeTypeName("SDL_PropertiesID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateProperties")]
@@ -29968,6 +34369,13 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static void DestroyCursor(CursorHandle cursor) =>
             Underlying.Value!.DestroyCursor(cursor);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_DestroyGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DestroyGPUDevice(GPUDeviceHandle device) =>
+            Underlying.Value!.DestroyGPUDevice(device);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyHapticEffect")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -30000,6 +34408,13 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 DestroyPalette(__dsl_palette);
             }
         }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DestroyProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DestroyProcess(ProcessHandle process) =>
+            Underlying.Value!.DestroyProcess(process);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyProperties")]
         [MethodImpl(
@@ -30134,6 +34549,161 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static byte DisableScreenSaverRaw() => Underlying.Value!.DisableScreenSaverRaw();
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DispatchGPUCompute")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DispatchGPUCompute(
+            GPUComputePassHandle compute_pass,
+            [NativeTypeName("Uint32")] uint groupcount_x,
+            [NativeTypeName("Uint32")] uint groupcount_y,
+            [NativeTypeName("Uint32")] uint groupcount_z
+        ) =>
+            Underlying.Value!.DispatchGPUCompute(
+                compute_pass,
+                groupcount_x,
+                groupcount_y,
+                groupcount_z
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DispatchGPUComputeIndirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DispatchGPUComputeIndirect(
+            GPUComputePassHandle compute_pass,
+            GPUBufferHandle buffer,
+            [NativeTypeName("Uint32")] uint offset
+        ) => Underlying.Value!.DispatchGPUComputeIndirect(compute_pass, buffer, offset);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DownloadFromGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] GPUBufferRegion* source,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                GPUTransferBufferLocation* destination
+        ) => Underlying.Value!.DownloadFromGPUBuffer(copy_pass, source, destination);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DownloadFromGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] Ref<GPUBufferRegion> source,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                Ref<GPUTransferBufferLocation> destination
+        )
+        {
+            fixed (GPUTransferBufferLocation* __dsl_destination = destination)
+            fixed (GPUBufferRegion* __dsl_source = source)
+            {
+                DownloadFromGPUBuffer(copy_pass, __dsl_source, __dsl_destination);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DownloadFromGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] GPUTextureRegion* source,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")]
+                GPUTextureTransferInfo* destination
+        ) => Underlying.Value!.DownloadFromGPUTexture(copy_pass, source, destination);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DownloadFromGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> source,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")]
+                Ref<GPUTextureTransferInfo> destination
+        )
+        {
+            fixed (GPUTextureTransferInfo* __dsl_destination = destination)
+            fixed (GPUTextureRegion* __dsl_source = source)
+            {
+                DownloadFromGPUTexture(copy_pass, __dsl_source, __dsl_destination);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUIndexedPrimitives")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DrawGPUIndexedPrimitives(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint num_indices,
+            [NativeTypeName("Uint32")] uint num_instances,
+            [NativeTypeName("Uint32")] uint first_index,
+            [NativeTypeName("Sint32")] int vertex_offset,
+            [NativeTypeName("Uint32")] uint first_instance
+        ) =>
+            Underlying.Value!.DrawGPUIndexedPrimitives(
+                render_pass,
+                num_indices,
+                num_instances,
+                first_index,
+                vertex_offset,
+                first_instance
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUIndexedPrimitivesIndirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DrawGPUIndexedPrimitivesIndirect(
+            GPURenderPassHandle render_pass,
+            GPUBufferHandle buffer,
+            [NativeTypeName("Uint32")] uint offset,
+            [NativeTypeName("Uint32")] uint draw_count
+        ) =>
+            Underlying.Value!.DrawGPUIndexedPrimitivesIndirect(
+                render_pass,
+                buffer,
+                offset,
+                draw_count
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUPrimitives")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DrawGPUPrimitives(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint32")] uint num_vertices,
+            [NativeTypeName("Uint32")] uint num_instances,
+            [NativeTypeName("Uint32")] uint first_vertex,
+            [NativeTypeName("Uint32")] uint first_instance
+        ) =>
+            Underlying.Value!.DrawGPUPrimitives(
+                render_pass,
+                num_vertices,
+                num_instances,
+                first_vertex,
+                first_instance
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUPrimitivesIndirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DrawGPUPrimitivesIndirect(
+            GPURenderPassHandle render_pass,
+            GPUBufferHandle buffer,
+            [NativeTypeName("Uint32")] uint offset,
+            [NativeTypeName("Uint32")] uint draw_count
+        ) => Underlying.Value!.DrawGPUPrimitivesIndirect(render_pass, buffer, offset, draw_count);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DuplicateSurface")]
         [MethodImpl(
@@ -30284,6 +34854,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static byte EnableScreenSaverRaw() => Underlying.Value!.EnableScreenSaverRaw();
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_EndGPUComputePass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void EndGPUComputePass(GPUComputePassHandle compute_pass) =>
+            Underlying.Value!.EndGPUComputePass(compute_pass);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_EndGPUCopyPass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void EndGPUCopyPass(GPUCopyPassHandle copy_pass) =>
+            Underlying.Value!.EndGPUCopyPass(copy_pass);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_EndGPURenderPass")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void EndGPURenderPass(GPURenderPassHandle render_pass) =>
+            Underlying.Value!.EndGPURenderPass(render_pass);
 
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
@@ -30695,6 +35286,15 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static byte GamepadSensorEnabledRaw(GamepadHandle gamepad, SensorType type) =>
             Underlying.Value!.GamepadSensorEnabledRaw(gamepad, type);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GenerateMipmapsForGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GenerateMipmapsForGPUTexture(
+            GPUCommandBufferHandle command_buffer,
+            GPUTextureHandle texture
+        ) => Underlying.Value!.GenerateMipmapsForGPUTexture(command_buffer, texture);
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAppMetadataProperty")]
@@ -32621,6 +37221,55 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static uint GetGlobalProperties() => Underlying.Value!.GetGlobalProperties();
 
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<sbyte> GetGPUDeviceDriver(GPUDeviceHandle device) =>
+            Underlying.Value!.GetGPUDeviceDriver(device);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static sbyte* GetGPUDeviceDriverRaw(GPUDeviceHandle device) =>
+            Underlying.Value!.GetGPUDeviceDriverRaw(device);
+
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<sbyte> GetGPUDriver(int index) => Underlying.Value!.GetGPUDriver(index);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static sbyte* GetGPUDriverRaw(int index) => Underlying.Value!.GetGPUDriverRaw(index);
+
+        [return: NativeTypeName("SDL_GPUShaderFormat")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUShaderFormats")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint GetGPUShaderFormats(GPUDeviceHandle device) =>
+            Underlying.Value!.GetGPUShaderFormats(device);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUSwapchainTextureFormat")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUTextureFormat GetGPUSwapchainTextureFormat(
+            GPUDeviceHandle device,
+            WindowHandle window
+        ) => Underlying.Value!.GetGPUSwapchainTextureFormat(device, window);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGrabbedWindow")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -33557,6 +38206,12 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static int GetNumGamepadTouchpads(GamepadHandle gamepad) =>
             Underlying.Value!.GetNumGamepadTouchpads(gamepad);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetNumGPUDrivers")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetNumGPUDrivers() => Underlying.Value!.GetNumGPUDrivers();
+
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumHapticAxes")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -33834,6 +38489,28 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static sbyte* GetPrimarySelectionTextRaw() =>
             Underlying.Value!.GetPrimarySelectionTextRaw();
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetProcessInput")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static IOStreamHandle GetProcessInput(ProcessHandle process) =>
+            Underlying.Value!.GetProcessInput(process);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetProcessOutput")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static IOStreamHandle GetProcessOutput(ProcessHandle process) =>
+            Underlying.Value!.GetProcessOutput(process);
+
+        [return: NativeTypeName("SDL_PropertiesID")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetProcessProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint GetProcessProperties(ProcessHandle process) =>
+            Underlying.Value!.GetProcessProperties(process);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPropertyType")]
         [MethodImpl(
@@ -36523,6 +41200,108 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> GPUSupportsProperties(
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        ) => Underlying.Value!.GPUSupportsProperties(props);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte GPUSupportsPropertiesRaw(
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        ) => Underlying.Value!.GPUSupportsPropertiesRaw(props);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsShaderFormats")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte GPUSupportsShaderFormats(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("const char *")] sbyte* name
+        ) => Underlying.Value!.GPUSupportsShaderFormats(format_flags, name);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsShaderFormats")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> GPUSupportsShaderFormats(
+            [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+            [NativeTypeName("const char *")] Ref<sbyte> name
+        )
+        {
+            fixed (sbyte* __dsl_name = name)
+            {
+                return (MaybeBool<byte>)(byte)GPUSupportsShaderFormats(format_flags, __dsl_name);
+            }
+        }
+
+        [return: NativeTypeName("Uint32")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureFormatTexelBlockSize")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint GPUTextureFormatTexelBlockSize(GPUTextureFormat format) =>
+            Underlying.Value!.GPUTextureFormatTexelBlockSize(format);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsFormat")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> GPUTextureSupportsFormat(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUTextureType type,
+            [NativeTypeName("SDL_GPUTextureUsageFlags")] uint usage
+        ) => Underlying.Value!.GPUTextureSupportsFormat(device, format, type, usage);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsFormat")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte GPUTextureSupportsFormatRaw(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUTextureType type,
+            [NativeTypeName("SDL_GPUTextureUsageFlags")] uint usage
+        ) => Underlying.Value!.GPUTextureSupportsFormatRaw(device, format, type, usage);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> GPUTextureSupportsSampleCount(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUSampleCount sample_count
+        ) => Underlying.Value!.GPUTextureSupportsSampleCount(device, format, sample_count);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte GPUTextureSupportsSampleCountRaw(
+            GPUDeviceHandle device,
+            GPUTextureFormat format,
+            GPUSampleCount sample_count
+        ) => Underlying.Value!.GPUTextureSupportsSampleCountRaw(device, format, sample_count);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_GUIDToString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -37590,6 +42369,31 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static byte InitSubSystemRaw([NativeTypeName("SDL_InitFlags")] uint flags) =>
             Underlying.Value!.InitSubSystemRaw(flags);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_InsertGPUDebugLabel")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void InsertGPUDebugLabel(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] sbyte* text
+        ) => Underlying.Value!.InsertGPUDebugLabel(command_buffer, text);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_InsertGPUDebugLabel")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void InsertGPUDebugLabel(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] Ref<sbyte> text
+        )
+        {
+            fixed (sbyte* __dsl_text = text)
+            {
+                InsertGPUDebugLabel(command_buffer, __dsl_text);
+            }
+        }
+
         [NativeFunction("SDL3", EntryPoint = "SDL_IOFromConstMem")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -37829,6 +42633,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static byte JoystickEventsEnabledRaw() =>
             Underlying.Value!.JoystickEventsEnabledRaw();
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_KillProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte KillProcess(
+            ProcessHandle process,
+            [NativeTypeName("bool")] byte force
+        ) => Underlying.Value!.KillProcess(process, force);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_KillProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> KillProcess(
+            ProcessHandle process,
+            [NativeTypeName("bool")] MaybeBool<byte> force
+        ) => Underlying.Value!.KillProcess(process, force);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP")]
         [MethodImpl(
@@ -38247,6 +43072,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 LogMessageV(category, priority, __dsl_fmt, __dsl_ap);
             }
         }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void* MapGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer,
+            [NativeTypeName("bool")] byte cycle
+        ) => Underlying.Value!.MapGPUTransferBuffer(device, transfer_buffer, cycle);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr MapGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        ) => Underlying.Value!.MapGPUTransferBuffer(device, transfer_buffer, cycle);
 
         [return: NativeTypeName("Uint32")]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapRGB")]
@@ -38984,6 +43830,13 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_PopGPUDebugGroup")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PopGPUDebugGroup(GPUCommandBufferHandle command_buffer) =>
+            Underlying.Value!.PopGPUDebugGroup(command_buffer);
+
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplyAlpha")]
         [MethodImpl(
@@ -39102,6 +43955,118 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUComputeUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUComputeUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] void* data,
+            [NativeTypeName("Uint32")] uint length
+        ) => Underlying.Value!.PushGPUComputeUniformData(command_buffer, slot_index, data, length);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUComputeUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUComputeUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] Ref data,
+            [NativeTypeName("Uint32")] uint length
+        )
+        {
+            fixed (void* __dsl_data = data)
+            {
+                PushGPUComputeUniformData(command_buffer, slot_index, __dsl_data, length);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUDebugGroup")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUDebugGroup(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] sbyte* name
+        ) => Underlying.Value!.PushGPUDebugGroup(command_buffer, name);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUDebugGroup")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUDebugGroup(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("const char *")] Ref<sbyte> name
+        )
+        {
+            fixed (sbyte* __dsl_name = name)
+            {
+                PushGPUDebugGroup(command_buffer, __dsl_name);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUFragmentUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUFragmentUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] void* data,
+            [NativeTypeName("Uint32")] uint length
+        ) => Underlying.Value!.PushGPUFragmentUniformData(command_buffer, slot_index, data, length);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUFragmentUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUFragmentUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] Ref data,
+            [NativeTypeName("Uint32")] uint length
+        )
+        {
+            fixed (void* __dsl_data = data)
+            {
+                PushGPUFragmentUniformData(command_buffer, slot_index, __dsl_data, length);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUVertexUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUVertexUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] void* data,
+            [NativeTypeName("Uint32")] uint length
+        ) => Underlying.Value!.PushGPUVertexUniformData(command_buffer, slot_index, data, length);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUVertexUniformData")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void PushGPUVertexUniformData(
+            GPUCommandBufferHandle command_buffer,
+            [NativeTypeName("Uint32")] uint slot_index,
+            [NativeTypeName("const void *")] Ref data,
+            [NativeTypeName("Uint32")] uint length
+        )
+        {
+            fixed (void* __dsl_data = data)
+            {
+                PushGPUVertexUniformData(command_buffer, slot_index, __dsl_data, length);
+            }
+        }
+
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamData")]
         [MethodImpl(
@@ -39130,6 +44095,23 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 return (MaybeBool<byte>)(byte)PutAudioStreamData(stream, __dsl_buf, len);
             }
         }
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_QueryGPUFence")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> QueryGPUFence(GPUDeviceHandle device, GPUFenceHandle fence) =>
+            Underlying.Value!.QueryGPUFence(device, fence);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_QueryGPUFence")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte QueryGPUFenceRaw(GPUDeviceHandle device, GPUFenceHandle fence) =>
+            Underlying.Value!.QueryGPUFenceRaw(device, fence);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_Quit")]
         [MethodImpl(
@@ -39187,6 +44169,34 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             fixed (void* __dsl_ptr = ptr)
             {
                 return (nuint)ReadIO(context, __dsl_ptr, size);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReadProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void* ReadProcess(
+            ProcessHandle process,
+            [NativeTypeName("size_t *")] nuint* datasize,
+            int* exitcode
+        ) => Underlying.Value!.ReadProcess(process, datasize, exitcode);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReadProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr ReadProcess(
+            ProcessHandle process,
+            [NativeTypeName("size_t *")] Ref<nuint> datasize,
+            Ref<int> exitcode
+        )
+        {
+            fixed (int* __dsl_exitcode = exitcode)
+            fixed (nuint* __dsl_datasize = datasize)
+            {
+                return (void*)ReadProcess(process, __dsl_datasize, __dsl_exitcode);
             }
         }
 
@@ -39712,6 +44722,77 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 ReleaseCameraFrame(camera, __dsl_frame);
             }
         }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ReleaseGPUBuffer(GPUDeviceHandle device, GPUBufferHandle buffer) =>
+            Underlying.Value!.ReleaseGPUBuffer(device, buffer);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUComputePipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ReleaseGPUComputePipeline(
+            GPUDeviceHandle device,
+            GPUComputePipelineHandle compute_pipeline
+        ) => Underlying.Value!.ReleaseGPUComputePipeline(device, compute_pipeline);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUFence")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ReleaseGPUFence(GPUDeviceHandle device, GPUFenceHandle fence) =>
+            Underlying.Value!.ReleaseGPUFence(device, fence);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUGraphicsPipeline")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ReleaseGPUGraphicsPipeline(
+            GPUDeviceHandle device,
+            GPUGraphicsPipelineHandle graphics_pipeline
+        ) => Underlying.Value!.ReleaseGPUGraphicsPipeline(device, graphics_pipeline);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUSampler")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ReleaseGPUSampler(GPUDeviceHandle device, GPUSamplerHandle sampler) =>
+            Underlying.Value!.ReleaseGPUSampler(device, sampler);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUShader")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ReleaseGPUShader(GPUDeviceHandle device, GPUShaderHandle shader) =>
+            Underlying.Value!.ReleaseGPUShader(device, shader);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ReleaseGPUTexture(GPUDeviceHandle device, GPUTextureHandle texture) =>
+            Underlying.Value!.ReleaseGPUTexture(device, texture);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ReleaseGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer
+        ) => Underlying.Value!.ReleaseGPUTransferBuffer(device, transfer_buffer);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseWindowFromGPUDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void ReleaseWindowFromGPUDevice(
+            GPUDeviceHandle device,
+            WindowHandle window
+        ) => Underlying.Value!.ReleaseWindowFromGPUDevice(device, window);
 
         [return: NativeTypeName("bool")]
         [Transformed]
@@ -41956,6 +47037,165 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("bool")] MaybeBool<byte> enabled
         ) => Underlying.Value!.SetGamepadSensorEnabled(gamepad, type, enabled);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBlendConstants")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUBlendConstants(
+            GPURenderPassHandle render_pass,
+            FColor blend_constants
+        ) => Underlying.Value!.SetGPUBlendConstants(render_pass, blend_constants);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUBufferName(
+            GPUDeviceHandle device,
+            GPUBufferHandle buffer,
+            [NativeTypeName("const char *")] sbyte* text
+        ) => Underlying.Value!.SetGPUBufferName(device, buffer, text);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUBufferName(
+            GPUDeviceHandle device,
+            GPUBufferHandle buffer,
+            [NativeTypeName("const char *")] Ref<sbyte> text
+        )
+        {
+            fixed (sbyte* __dsl_text = text)
+            {
+                SetGPUBufferName(device, buffer, __dsl_text);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUScissor(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_Rect *")] Rect* scissor
+        ) => Underlying.Value!.SetGPUScissor(render_pass, scissor);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUScissor(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> scissor
+        )
+        {
+            fixed (Rect* __dsl_scissor = scissor)
+            {
+                SetGPUScissor(render_pass, __dsl_scissor);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUStencilReference")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUStencilReference(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("Uint8")] byte reference
+        ) => Underlying.Value!.SetGPUStencilReference(render_pass, reference);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUSwapchainParameters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> SetGPUSwapchainParameters(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition,
+            GPUPresentMode present_mode
+        ) =>
+            Underlying.Value!.SetGPUSwapchainParameters(
+                device,
+                window,
+                swapchain_composition,
+                present_mode
+            );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUSwapchainParameters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte SetGPUSwapchainParametersRaw(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition,
+            GPUPresentMode present_mode
+        ) =>
+            Underlying.Value!.SetGPUSwapchainParametersRaw(
+                device,
+                window,
+                swapchain_composition,
+                present_mode
+            );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUTextureName")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUTextureName(
+            GPUDeviceHandle device,
+            GPUTextureHandle texture,
+            [NativeTypeName("const char *")] sbyte* text
+        ) => Underlying.Value!.SetGPUTextureName(device, texture, text);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUTextureName")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUTextureName(
+            GPUDeviceHandle device,
+            GPUTextureHandle texture,
+            [NativeTypeName("const char *")] Ref<sbyte> text
+        )
+        {
+            fixed (sbyte* __dsl_text = text)
+            {
+                SetGPUTextureName(device, texture, __dsl_text);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUViewport")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUViewport(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUViewport *")] GPUViewport* viewport
+        ) => Underlying.Value!.SetGPUViewport(render_pass, viewport);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUViewport")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SetGPUViewport(
+            GPURenderPassHandle render_pass,
+            [NativeTypeName("const SDL_GPUViewport *")] Ref<GPUViewport> viewport
+        )
+        {
+            fixed (GPUViewport* __dsl_viewport = viewport)
+            {
+                SetGPUViewport(render_pass, __dsl_viewport);
+            }
+        }
+
         [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetHapticAutocenter")]
@@ -44176,6 +49416,32 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         }
 
         [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> SubmitGPUCommandBuffer(
+            GPUCommandBufferHandle command_buffer
+        ) => Underlying.Value!.SubmitGPUCommandBuffer(command_buffer);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBufferAndAcquireFence")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static GPUFenceHandle SubmitGPUCommandBufferAndAcquireFence(
+            GPUCommandBufferHandle command_buffer
+        ) => Underlying.Value!.SubmitGPUCommandBufferAndAcquireFence(command_buffer);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte SubmitGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer) =>
+            Underlying.Value!.SubmitGPUCommandBufferRaw(command_buffer);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasAlternateImages")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -44578,6 +49844,15 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_UnmapGPUTransferBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void UnmapGPUTransferBuffer(
+            GPUDeviceHandle device,
+            GPUTransferBufferHandle transfer_buffer
+        ) => Underlying.Value!.UnmapGPUTransferBuffer(device, transfer_buffer);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateGamepads")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -44815,6 +50090,69 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             }
         }
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void UploadToGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                GPUTransferBufferLocation* source,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] GPUBufferRegion* destination,
+            [NativeTypeName("bool")] byte cycle
+        ) => Underlying.Value!.UploadToGPUBuffer(copy_pass, source, destination, cycle);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUBuffer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void UploadToGPUBuffer(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+                Ref<GPUTransferBufferLocation> source,
+            [NativeTypeName("const SDL_GPUBufferRegion *")] Ref<GPUBufferRegion> destination,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        )
+        {
+            fixed (GPUBufferRegion* __dsl_destination = destination)
+            fixed (GPUTransferBufferLocation* __dsl_source = source)
+            {
+                UploadToGPUBuffer(copy_pass, __dsl_source, __dsl_destination, (byte)cycle);
+            }
+        }
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void UploadToGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")] GPUTextureTransferInfo* source,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] GPUTextureRegion* destination,
+            [NativeTypeName("bool")] byte cycle
+        ) => Underlying.Value!.UploadToGPUTexture(copy_pass, source, destination, cycle);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUTexture")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void UploadToGPUTexture(
+            GPUCopyPassHandle copy_pass,
+            [NativeTypeName("const SDL_GPUTextureTransferInfo *")]
+                Ref<GPUTextureTransferInfo> source,
+            [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> destination,
+            [NativeTypeName("bool")] MaybeBool<byte> cycle
+        )
+        {
+            fixed (GPUTextureRegion* __dsl_destination = destination)
+            fixed (GPUTextureTransferInfo* __dsl_source = source)
+            {
+                UploadToGPUTexture(copy_pass, __dsl_source, __dsl_destination, (byte)cycle);
+            }
+        }
+
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitCondition")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -44890,6 +50228,84 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             fixed (Event* __dsl_event = @event)
             {
                 return (MaybeBool<byte>)(byte)WaitEventTimeout(__dsl_event, timeoutMS);
+            }
+        }
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUFences")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte WaitForGPUFences(
+            GPUDeviceHandle device,
+            [NativeTypeName("bool")] byte wait_all,
+            [NativeTypeName("SDL_GPUFence *const *")] GPUFenceHandle* fences,
+            [NativeTypeName("Uint32")] uint num_fences
+        ) => Underlying.Value!.WaitForGPUFences(device, wait_all, fences, num_fences);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUFences")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> WaitForGPUFences(
+            GPUDeviceHandle device,
+            [NativeTypeName("bool")] MaybeBool<byte> wait_all,
+            [NativeTypeName("SDL_GPUFence *const *")] Ref<GPUFenceHandle> fences,
+            [NativeTypeName("Uint32")] uint num_fences
+        )
+        {
+            fixed (GPUFenceHandle* __dsl_fences = fences)
+            {
+                return (MaybeBool<byte>)
+                    (byte)WaitForGPUFences(device, (byte)wait_all, __dsl_fences, num_fences);
+            }
+        }
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUIdle")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> WaitForGPUIdle(GPUDeviceHandle device) =>
+            Underlying.Value!.WaitForGPUIdle(device);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUIdle")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte WaitForGPUIdleRaw(GPUDeviceHandle device) =>
+            Underlying.Value!.WaitForGPUIdleRaw(device);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte WaitProcess(
+            ProcessHandle process,
+            [NativeTypeName("bool")] byte block,
+            int* exitcode
+        ) => Underlying.Value!.WaitProcess(process, block, exitcode);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitProcess")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> WaitProcess(
+            ProcessHandle process,
+            [NativeTypeName("bool")] MaybeBool<byte> block,
+            Ref<int> exitcode
+        )
+        {
+            fixed (int* __dsl_exitcode = exitcode)
+            {
+                return (MaybeBool<byte>)(byte)WaitProcess(process, (byte)block, __dsl_exitcode);
             }
         }
 
@@ -44989,6 +50405,62 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static byte WindowHasSurfaceRaw(WindowHandle window) =>
             Underlying.Value!.WindowHasSurfaceRaw(window);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> WindowSupportsGPUPresentMode(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUPresentMode present_mode
+        ) => Underlying.Value!.WindowSupportsGPUPresentMode(device, window, present_mode);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte WindowSupportsGPUPresentModeRaw(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUPresentMode present_mode
+        ) => Underlying.Value!.WindowSupportsGPUPresentModeRaw(device, window, present_mode);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<byte> WindowSupportsGPUSwapchainComposition(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition
+        ) =>
+            Underlying.Value!.WindowSupportsGPUSwapchainComposition(
+                device,
+                window,
+                swapchain_composition
+            );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static byte WindowSupportsGPUSwapchainCompositionRaw(
+            GPUDeviceHandle device,
+            WindowHandle window,
+            GPUSwapchainComposition swapchain_composition
+        ) =>
+            Underlying.Value!.WindowSupportsGPUSwapchainCompositionRaw(
+                device,
+                window,
+                swapchain_composition
+            );
 
         [return: NativeTypeName("size_t")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteIO")]
@@ -46942,6 +52414,175 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeTypeName("#define SDL_GLOB_CASEINSENSITIVE (1u << 0)")]
     public const uint GlobCaseinsensitive = (1U << 0);
 
+    [NativeTypeName("#define SDL_GPU_TEXTUREUSAGE_SAMPLER (1u << 0)")]
+    public const uint GpuTextureusageSampler = (1U << 0);
+
+    [NativeTypeName("#define SDL_GPU_TEXTUREUSAGE_COLOR_TARGET (1u << 1)")]
+    public const uint GpuTextureusageColorTarget = (1U << 1);
+
+    [NativeTypeName("#define SDL_GPU_TEXTUREUSAGE_DEPTH_STENCIL_TARGET (1u << 2)")]
+    public const uint GpuTextureusageDepthStencilTarget = (1U << 2);
+
+    [NativeTypeName("#define SDL_GPU_TEXTUREUSAGE_GRAPHICS_STORAGE_READ (1u << 3)")]
+    public const uint GpuTextureusageGraphicsStorageRead = (1U << 3);
+
+    [NativeTypeName("#define SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_READ (1u << 4)")]
+    public const uint GpuTextureusageComputeStorageRead = (1U << 4);
+
+    [NativeTypeName("#define SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_WRITE (1u << 5)")]
+    public const uint GpuTextureusageComputeStorageWrite = (1U << 5);
+
+    [NativeTypeName(
+        "#define SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE (1u << 6)"
+    )]
+    public const uint GpuTextureusageComputeStorageSimultaneousReadWrite = (1U << 6);
+
+    [NativeTypeName("#define SDL_GPU_BUFFERUSAGE_VERTEX (1u << 0)")]
+    public const uint GpuBufferusageVertex = (1U << 0);
+
+    [NativeTypeName("#define SDL_GPU_BUFFERUSAGE_INDEX (1u << 1)")]
+    public const uint GpuBufferusageIndex = (1U << 1);
+
+    [NativeTypeName("#define SDL_GPU_BUFFERUSAGE_INDIRECT (1u << 2)")]
+    public const uint GpuBufferusageIndirect = (1U << 2);
+
+    [NativeTypeName("#define SDL_GPU_BUFFERUSAGE_GRAPHICS_STORAGE_READ (1u << 3)")]
+    public const uint GpuBufferusageGraphicsStorageRead = (1U << 3);
+
+    [NativeTypeName("#define SDL_GPU_BUFFERUSAGE_COMPUTE_STORAGE_READ (1u << 4)")]
+    public const uint GpuBufferusageComputeStorageRead = (1U << 4);
+
+    [NativeTypeName("#define SDL_GPU_BUFFERUSAGE_COMPUTE_STORAGE_WRITE (1u << 5)")]
+    public const uint GpuBufferusageComputeStorageWrite = (1U << 5);
+
+    [NativeTypeName("#define SDL_GPU_SHADERFORMAT_INVALID 0")]
+    public const int GpuShaderformatInvalid = 0;
+
+    [NativeTypeName("#define SDL_GPU_SHADERFORMAT_PRIVATE (1u << 0)")]
+    public const uint GpuShaderformatPrivate = (1U << 0);
+
+    [NativeTypeName("#define SDL_GPU_SHADERFORMAT_SPIRV (1u << 1)")]
+    public const uint GpuShaderformatSpirv = (1U << 1);
+
+    [NativeTypeName("#define SDL_GPU_SHADERFORMAT_DXBC (1u << 2)")]
+    public const uint GpuShaderformatDxbc = (1U << 2);
+
+    [NativeTypeName("#define SDL_GPU_SHADERFORMAT_DXIL (1u << 3)")]
+    public const uint GpuShaderformatDxil = (1U << 3);
+
+    [NativeTypeName("#define SDL_GPU_SHADERFORMAT_MSL (1u << 4)")]
+    public const uint GpuShaderformatMsl = (1U << 4);
+
+    [NativeTypeName("#define SDL_GPU_SHADERFORMAT_METALLIB (1u << 5)")]
+    public const uint GpuShaderformatMetallib = (1U << 5);
+
+    [NativeTypeName("#define SDL_GPU_COLORCOMPONENT_R (1u << 0)")]
+    public const uint GpuColorcomponentR = (1U << 0);
+
+    [NativeTypeName("#define SDL_GPU_COLORCOMPONENT_G (1u << 1)")]
+    public const uint GpuColorcomponentG = (1U << 1);
+
+    [NativeTypeName("#define SDL_GPU_COLORCOMPONENT_B (1u << 2)")]
+    public const uint GpuColorcomponentB = (1U << 2);
+
+    [NativeTypeName("#define SDL_GPU_COLORCOMPONENT_A (1u << 3)")]
+    public const uint GpuColorcomponentA = (1U << 3);
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_CREATETEXTURE_D3D12_CLEAR_R_FLOAT \"SDL.gpu.createtexture.d3d12.clear.r\""
+    )]
+    public static Utf8String PropGpuCreatetextureD3D12ClearRFloat =>
+        "SDL.gpu.createtexture.d3d12.clear.r"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_CREATETEXTURE_D3D12_CLEAR_G_FLOAT \"SDL.gpu.createtexture.d3d12.clear.g\""
+    )]
+    public static Utf8String PropGpuCreatetextureD3D12ClearGFloat =>
+        "SDL.gpu.createtexture.d3d12.clear.g"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_CREATETEXTURE_D3D12_CLEAR_B_FLOAT \"SDL.gpu.createtexture.d3d12.clear.b\""
+    )]
+    public static Utf8String PropGpuCreatetextureD3D12ClearBFloat =>
+        "SDL.gpu.createtexture.d3d12.clear.b"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_CREATETEXTURE_D3D12_CLEAR_A_FLOAT \"SDL.gpu.createtexture.d3d12.clear.a\""
+    )]
+    public static Utf8String PropGpuCreatetextureD3D12ClearAFloat =>
+        "SDL.gpu.createtexture.d3d12.clear.a"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_CREATETEXTURE_D3D12_CLEAR_DEPTH_FLOAT \"SDL.gpu.createtexture.d3d12.clear.depth\""
+    )]
+    public static Utf8String PropGpuCreatetextureD3D12ClearDepthFloat =>
+        "SDL.gpu.createtexture.d3d12.clear.depth"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_CREATETEXTURE_D3D12_CLEAR_STENCIL_UINT8 \"SDL.gpu.createtexture.d3d12.clear.stencil\""
+    )]
+    public static Utf8String PropGpuCreatetextureD3D12ClearStencilUint8 =>
+        "SDL.gpu.createtexture.d3d12.clear.stencil"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_DEVICE_CREATE_DEBUGMODE_BOOLEAN \"SDL.gpu.device.create.debugmode\""
+    )]
+    public static Utf8String PropGpuDeviceCreateDebugmodeBoolean =>
+        "SDL.gpu.device.create.debugmode"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_DEVICE_CREATE_PREFERLOWPOWER_BOOLEAN \"SDL.gpu.device.create.preferlowpower\""
+    )]
+    public static Utf8String PropGpuDeviceCreatePreferlowpowerBoolean =>
+        "SDL.gpu.device.create.preferlowpower"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_DEVICE_CREATE_NAME_STRING \"SDL.gpu.device.create.name\""
+    )]
+    public static Utf8String PropGpuDeviceCreateNameString => "SDL.gpu.device.create.name"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_DEVICE_CREATE_SHADERS_PRIVATE_BOOLEAN \"SDL.gpu.device.create.shaders.private\""
+    )]
+    public static Utf8String PropGpuDeviceCreateShadersPrivateBoolean =>
+        "SDL.gpu.device.create.shaders.private"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_DEVICE_CREATE_SHADERS_SPIRV_BOOLEAN \"SDL.gpu.device.create.shaders.spirv\""
+    )]
+    public static Utf8String PropGpuDeviceCreateShadersSpirvBoolean =>
+        "SDL.gpu.device.create.shaders.spirv"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_DEVICE_CREATE_SHADERS_DXBC_BOOLEAN \"SDL.gpu.device.create.shaders.dxbc\""
+    )]
+    public static Utf8String PropGpuDeviceCreateShadersDxbcBoolean =>
+        "SDL.gpu.device.create.shaders.dxbc"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_DEVICE_CREATE_SHADERS_DXIL_BOOLEAN \"SDL.gpu.device.create.shaders.dxil\""
+    )]
+    public static Utf8String PropGpuDeviceCreateShadersDxilBoolean =>
+        "SDL.gpu.device.create.shaders.dxil"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_DEVICE_CREATE_SHADERS_MSL_BOOLEAN \"SDL.gpu.device.create.shaders.msl\""
+    )]
+    public static Utf8String PropGpuDeviceCreateShadersMslBoolean =>
+        "SDL.gpu.device.create.shaders.msl"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_DEVICE_CREATE_SHADERS_METALLIB_BOOLEAN \"SDL.gpu.device.create.shaders.metallib\""
+    )]
+    public static Utf8String PropGpuDeviceCreateShadersMetallibBoolean =>
+        "SDL.gpu.device.create.shaders.metallib"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GPU_DEVICE_CREATE_D3D12_SEMANTIC_NAME_STRING \"SDL.gpu.device.create.d3d12.semantic\""
+    )]
+    public static Utf8String PropGpuDeviceCreateD3D12SemanticNameString =>
+        "SDL.gpu.device.create.d3d12.semantic"u8;
+
     [NativeTypeName("#define SDL_HAPTIC_CONSTANT (1u<<0)")]
     public const uint HapticConstant = (1U << 0);
 
@@ -47969,6 +53610,72 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeTypeName("#define SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT 0x00000002u")]
     public const uint MessageboxButtonEscapekeyDefault = 0x00000002U;
 
+    [NativeTypeName("#define SDL_PROP_PROCESS_CREATE_ARGS_POINTER \"SDL.process.create.args\"")]
+    public static Utf8String PropProcessCreateArgsPointer => "SDL.process.create.args"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_PROCESS_CREATE_ENVIRONMENT_POINTER \"SDL.process.create.environment\""
+    )]
+    public static Utf8String PropProcessCreateEnvironmentPointer =>
+        "SDL.process.create.environment"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_PROCESS_CREATE_STDIN_NUMBER \"SDL.process.create.stdin_option\""
+    )]
+    public static Utf8String PropProcessCreateStdinNumber => "SDL.process.create.stdin_option"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_PROCESS_CREATE_STDIN_POINTER \"SDL.process.create.stdin_source\""
+    )]
+    public static Utf8String PropProcessCreateStdinPointer => "SDL.process.create.stdin_source"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_PROCESS_CREATE_STDOUT_NUMBER \"SDL.process.create.stdout_option\""
+    )]
+    public static Utf8String PropProcessCreateStdoutNumber => "SDL.process.create.stdout_option"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_PROCESS_CREATE_STDOUT_POINTER \"SDL.process.create.stdout_source\""
+    )]
+    public static Utf8String PropProcessCreateStdoutPointer => "SDL.process.create.stdout_source"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_PROCESS_CREATE_STDERR_NUMBER \"SDL.process.create.stderr_option\""
+    )]
+    public static Utf8String PropProcessCreateStderrNumber => "SDL.process.create.stderr_option"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_PROCESS_CREATE_STDERR_POINTER \"SDL.process.create.stderr_source\""
+    )]
+    public static Utf8String PropProcessCreateStderrPointer => "SDL.process.create.stderr_source"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_PROCESS_CREATE_STDERR_TO_STDOUT_BOOLEAN \"SDL.process.create.stderr_to_stdout\""
+    )]
+    public static Utf8String PropProcessCreateStderrToStdoutBoolean =>
+        "SDL.process.create.stderr_to_stdout"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_PROCESS_CREATE_BACKGROUND_BOOLEAN \"SDL.process.create.background\""
+    )]
+    public static Utf8String PropProcessCreateBackgroundBoolean =>
+        "SDL.process.create.background"u8;
+
+    [NativeTypeName("#define SDL_PROP_PROCESS_PID_NUMBER \"SDL.process.pid\"")]
+    public static Utf8String PropProcessPidNumber => "SDL.process.pid"u8;
+
+    [NativeTypeName("#define SDL_PROP_PROCESS_STDIN_POINTER \"SDL.process.stdin\"")]
+    public static Utf8String PropProcessStdinPointer => "SDL.process.stdin"u8;
+
+    [NativeTypeName("#define SDL_PROP_PROCESS_STDOUT_POINTER \"SDL.process.stdout\"")]
+    public static Utf8String PropProcessStdoutPointer => "SDL.process.stdout"u8;
+
+    [NativeTypeName("#define SDL_PROP_PROCESS_STDERR_POINTER \"SDL.process.stderr\"")]
+    public static Utf8String PropProcessStderrPointer => "SDL.process.stderr"u8;
+
+    [NativeTypeName("#define SDL_PROP_PROCESS_BACKGROUND_BOOLEAN \"SDL.process.background\"")]
+    public static Utf8String PropProcessBackgroundBoolean => "SDL.process.background"u8;
+
     [NativeTypeName("#define SDL_SOFTWARE_RENDERER \"software\"")]
     public static Utf8String SoftwareRenderer => "software"u8;
 
@@ -48659,12 +54366,120 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.AcquireCameraFrame(camera, timestampNS);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUCommandBufferHandle ISdl.AcquireGPUCommandBuffer(GPUDeviceHandle device) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUCommandBufferHandle>)(
+                _slots[1] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[1] = nativeContext.LoadFunction("SDL_AcquireGPUCommandBuffer", "SDL3")
+            )
+        )(device);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUCommandBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUCommandBufferHandle AcquireGPUCommandBuffer(GPUDeviceHandle device) =>
+        DllImport.AcquireGPUCommandBuffer(device);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.AcquireGPUSwapchainTexture(
+        GPUCommandBufferHandle command_buffer,
+        WindowHandle window,
+        GPUTextureHandle* swapchain_texture,
+        [NativeTypeName("Uint32 *")] uint* swapchain_texture_width,
+        [NativeTypeName("Uint32 *")] uint* swapchain_texture_height
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUCommandBufferHandle,
+                WindowHandle,
+                GPUTextureHandle*,
+                uint*,
+                uint*,
+                byte>)(
+                _slots[2] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[2] = nativeContext.LoadFunction(
+                        "SDL_AcquireGPUSwapchainTexture",
+                        "SDL3"
+                    )
+            )
+        )(
+            command_buffer,
+            window,
+            swapchain_texture,
+            swapchain_texture_width,
+            swapchain_texture_height
+        );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte AcquireGPUSwapchainTexture(
+        GPUCommandBufferHandle command_buffer,
+        WindowHandle window,
+        GPUTextureHandle* swapchain_texture,
+        [NativeTypeName("Uint32 *")] uint* swapchain_texture_width,
+        [NativeTypeName("Uint32 *")] uint* swapchain_texture_height
+    ) =>
+        DllImport.AcquireGPUSwapchainTexture(
+            command_buffer,
+            window,
+            swapchain_texture,
+            swapchain_texture_width,
+            swapchain_texture_height
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.AcquireGPUSwapchainTexture(
+        GPUCommandBufferHandle command_buffer,
+        WindowHandle window,
+        Ref<GPUTextureHandle> swapchain_texture,
+        [NativeTypeName("Uint32 *")] Ref<uint> swapchain_texture_width,
+        [NativeTypeName("Uint32 *")] Ref<uint> swapchain_texture_height
+    )
+    {
+        fixed (uint* __dsl_swapchain_texture_height = swapchain_texture_height)
+        fixed (uint* __dsl_swapchain_texture_width = swapchain_texture_width)
+        fixed (GPUTextureHandle* __dsl_swapchain_texture = swapchain_texture)
+        {
+            return (MaybeBool<byte>)
+                (byte)
+                    ((ISdl)this).AcquireGPUSwapchainTexture(
+                        command_buffer,
+                        window,
+                        __dsl_swapchain_texture,
+                        __dsl_swapchain_texture_width,
+                        __dsl_swapchain_texture_height
+                    );
+        }
+    }
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> AcquireGPUSwapchainTexture(
+        GPUCommandBufferHandle command_buffer,
+        WindowHandle window,
+        Ref<GPUTextureHandle> swapchain_texture,
+        [NativeTypeName("Uint32 *")] Ref<uint> swapchain_texture_width,
+        [NativeTypeName("Uint32 *")] Ref<uint> swapchain_texture_height
+    ) =>
+        DllImport.AcquireGPUSwapchainTexture(
+            command_buffer,
+            window,
+            swapchain_texture,
+            swapchain_texture_width,
+            swapchain_texture_height
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.AddAtomicInt(AtomicInt* a, int v) =>
         (
             (delegate* unmanaged<AtomicInt*, int, int>)(
-                _slots[1] is not null and var loadedFnPtr
+                _slots[3] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[1] = nativeContext.LoadFunction("SDL_AddAtomicInt", "SDL3")
+                    : _slots[3] = nativeContext.LoadFunction("SDL_AddAtomicInt", "SDL3")
             )
         )(a, v);
 
@@ -48693,9 +54508,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<EventFilter, void*, byte>)(
-                _slots[2] is not null and var loadedFnPtr
+                _slots[4] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[2] = nativeContext.LoadFunction("SDL_AddEventWatch", "SDL3")
+                    : _slots[4] = nativeContext.LoadFunction("SDL_AddEventWatch", "SDL3")
             )
         )(filter, userdata);
 
@@ -48732,9 +54547,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.AddGamepadMapping([NativeTypeName("const char *")] sbyte* mapping) =>
         (
             (delegate* unmanaged<sbyte*, int>)(
-                _slots[3] is not null and var loadedFnPtr
+                _slots[5] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[3] = nativeContext.LoadFunction("SDL_AddGamepadMapping", "SDL3")
+                    : _slots[5] = nativeContext.LoadFunction("SDL_AddGamepadMapping", "SDL3")
             )
         )(mapping);
 
@@ -48762,9 +54577,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.AddGamepadMappingsFromFile([NativeTypeName("const char *")] sbyte* file) =>
         (
             (delegate* unmanaged<sbyte*, int>)(
-                _slots[4] is not null and var loadedFnPtr
+                _slots[6] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[4] = nativeContext.LoadFunction(
+                    : _slots[6] = nativeContext.LoadFunction(
                         "SDL_AddGamepadMappingsFromFile",
                         "SDL3"
                     )
@@ -48796,9 +54611,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.AddGamepadMappingsFromIO(IOStreamHandle src, [NativeTypeName("bool")] byte closeio) =>
         (
             (delegate* unmanaged<IOStreamHandle, byte, int>)(
-                _slots[5] is not null and var loadedFnPtr
+                _slots[7] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[5] = nativeContext.LoadFunction("SDL_AddGamepadMappingsFromIO", "SDL3")
+                    : _slots[7] = nativeContext.LoadFunction("SDL_AddGamepadMappingsFromIO", "SDL3")
             )
         )(src, closeio);
 
@@ -48831,9 +54646,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, HintCallback, void*, byte>)(
-                _slots[6] is not null and var loadedFnPtr
+                _slots[8] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[6] = nativeContext.LoadFunction("SDL_AddHintCallback", "SDL3")
+                    : _slots[8] = nativeContext.LoadFunction("SDL_AddHintCallback", "SDL3")
             )
         )(name, callback, userdata);
 
@@ -48875,9 +54690,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.AddSurfaceAlternateImage(Surface* surface, Surface* image) =>
         (
             (delegate* unmanaged<Surface*, Surface*, byte>)(
-                _slots[7] is not null and var loadedFnPtr
+                _slots[9] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[7] = nativeContext.LoadFunction("SDL_AddSurfaceAlternateImage", "SDL3")
+                    : _slots[9] = nativeContext.LoadFunction("SDL_AddSurfaceAlternateImage", "SDL3")
             )
         )(surface, image);
 
@@ -48915,9 +54730,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, TimerCallback, void*, uint>)(
-                _slots[8] is not null and var loadedFnPtr
+                _slots[10] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[8] = nativeContext.LoadFunction("SDL_AddTimer", "SDL3")
+                    : _slots[10] = nativeContext.LoadFunction("SDL_AddTimer", "SDL3")
             )
         )(interval, callback, userdata);
 
@@ -48961,9 +54776,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<ulong, NSTimerCallback, void*, uint>)(
-                _slots[9] is not null and var loadedFnPtr
+                _slots[11] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[9] = nativeContext.LoadFunction("SDL_AddTimerNS", "SDL3")
+                    : _slots[11] = nativeContext.LoadFunction("SDL_AddTimerNS", "SDL3")
             )
         )(interval, callback, userdata);
 
@@ -49041,9 +54856,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, uint, long, long, byte>)(
-                _slots[10] is not null and var loadedFnPtr
+                _slots[12] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[10] = nativeContext.LoadFunction(
+                    : _slots[12] = nativeContext.LoadFunction(
                         "SDL_AddVulkanRenderSemaphores",
                         "SDL3"
                     )
@@ -49072,9 +54887,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<VirtualJoystickDesc*, uint>)(
-                _slots[11] is not null and var loadedFnPtr
+                _slots[13] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[11] = nativeContext.LoadFunction("SDL_AttachVirtualJoystick", "SDL3")
+                    : _slots[13] = nativeContext.LoadFunction("SDL_AttachVirtualJoystick", "SDL3")
             )
         )(desc);
 
@@ -49120,9 +54935,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.AudioDevicePausedRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[12] is not null and var loadedFnPtr
+                _slots[14] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[12] = nativeContext.LoadFunction("SDL_AudioDevicePaused", "SDL3")
+                    : _slots[14] = nativeContext.LoadFunction("SDL_AudioDevicePaused", "SDL3")
             )
         )(dev);
 
@@ -49131,6 +54946,201 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static byte AudioDevicePausedRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev) =>
         DllImport.AudioDevicePausedRaw(dev);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUComputePassHandle ISdl.BeginGPUComputePass(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUStorageTextureReadWriteBinding *")]
+            GPUStorageTextureReadWriteBinding* storage_texture_bindings,
+        [NativeTypeName("Uint32")] uint num_storage_texture_bindings,
+        [NativeTypeName("const SDL_GPUStorageBufferReadWriteBinding *")]
+            GPUStorageBufferReadWriteBinding* storage_buffer_bindings,
+        [NativeTypeName("Uint32")] uint num_storage_buffer_bindings
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUCommandBufferHandle,
+                GPUStorageTextureReadWriteBinding*,
+                uint,
+                GPUStorageBufferReadWriteBinding*,
+                uint,
+                GPUComputePassHandle>)(
+                _slots[15] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[15] = nativeContext.LoadFunction("SDL_BeginGPUComputePass", "SDL3")
+            )
+        )(
+            command_buffer,
+            storage_texture_bindings,
+            num_storage_texture_bindings,
+            storage_buffer_bindings,
+            num_storage_buffer_bindings
+        );
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUComputePass")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUComputePassHandle BeginGPUComputePass(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUStorageTextureReadWriteBinding *")]
+            GPUStorageTextureReadWriteBinding* storage_texture_bindings,
+        [NativeTypeName("Uint32")] uint num_storage_texture_bindings,
+        [NativeTypeName("const SDL_GPUStorageBufferReadWriteBinding *")]
+            GPUStorageBufferReadWriteBinding* storage_buffer_bindings,
+        [NativeTypeName("Uint32")] uint num_storage_buffer_bindings
+    ) =>
+        DllImport.BeginGPUComputePass(
+            command_buffer,
+            storage_texture_bindings,
+            num_storage_texture_bindings,
+            storage_buffer_bindings,
+            num_storage_buffer_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUComputePassHandle ISdl.BeginGPUComputePass(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUStorageTextureReadWriteBinding *")]
+            Ref<GPUStorageTextureReadWriteBinding> storage_texture_bindings,
+        [NativeTypeName("Uint32")] uint num_storage_texture_bindings,
+        [NativeTypeName("const SDL_GPUStorageBufferReadWriteBinding *")]
+            Ref<GPUStorageBufferReadWriteBinding> storage_buffer_bindings,
+        [NativeTypeName("Uint32")] uint num_storage_buffer_bindings
+    )
+    {
+        fixed (
+            GPUStorageBufferReadWriteBinding* __dsl_storage_buffer_bindings =
+                storage_buffer_bindings
+        )
+        fixed (
+            GPUStorageTextureReadWriteBinding* __dsl_storage_texture_bindings =
+                storage_texture_bindings
+        )
+        {
+            return (GPUComputePassHandle)
+                ((ISdl)this).BeginGPUComputePass(
+                    command_buffer,
+                    __dsl_storage_texture_bindings,
+                    num_storage_texture_bindings,
+                    __dsl_storage_buffer_bindings,
+                    num_storage_buffer_bindings
+                );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUComputePass")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUComputePassHandle BeginGPUComputePass(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUStorageTextureReadWriteBinding *")]
+            Ref<GPUStorageTextureReadWriteBinding> storage_texture_bindings,
+        [NativeTypeName("Uint32")] uint num_storage_texture_bindings,
+        [NativeTypeName("const SDL_GPUStorageBufferReadWriteBinding *")]
+            Ref<GPUStorageBufferReadWriteBinding> storage_buffer_bindings,
+        [NativeTypeName("Uint32")] uint num_storage_buffer_bindings
+    ) =>
+        DllImport.BeginGPUComputePass(
+            command_buffer,
+            storage_texture_bindings,
+            num_storage_texture_bindings,
+            storage_buffer_bindings,
+            num_storage_buffer_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUCopyPassHandle ISdl.BeginGPUCopyPass(GPUCommandBufferHandle command_buffer) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, GPUCopyPassHandle>)(
+                _slots[16] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[16] = nativeContext.LoadFunction("SDL_BeginGPUCopyPass", "SDL3")
+            )
+        )(command_buffer);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUCopyPass")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUCopyPassHandle BeginGPUCopyPass(GPUCommandBufferHandle command_buffer) =>
+        DllImport.BeginGPUCopyPass(command_buffer);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPURenderPassHandle ISdl.BeginGPURenderPass(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUColorTargetInfo *")] GPUColorTargetInfo* color_target_infos,
+        [NativeTypeName("Uint32")] uint num_color_targets,
+        [NativeTypeName("const SDL_GPUDepthStencilTargetInfo *")]
+            GPUDepthStencilTargetInfo* depth_stencil_target_info
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUCommandBufferHandle,
+                GPUColorTargetInfo*,
+                uint,
+                GPUDepthStencilTargetInfo*,
+                GPURenderPassHandle>)(
+                _slots[17] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[17] = nativeContext.LoadFunction("SDL_BeginGPURenderPass", "SDL3")
+            )
+        )(command_buffer, color_target_infos, num_color_targets, depth_stencil_target_info);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPURenderPass")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPURenderPassHandle BeginGPURenderPass(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUColorTargetInfo *")] GPUColorTargetInfo* color_target_infos,
+        [NativeTypeName("Uint32")] uint num_color_targets,
+        [NativeTypeName("const SDL_GPUDepthStencilTargetInfo *")]
+            GPUDepthStencilTargetInfo* depth_stencil_target_info
+    ) =>
+        DllImport.BeginGPURenderPass(
+            command_buffer,
+            color_target_infos,
+            num_color_targets,
+            depth_stencil_target_info
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPURenderPassHandle ISdl.BeginGPURenderPass(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUColorTargetInfo *")]
+            Ref<GPUColorTargetInfo> color_target_infos,
+        [NativeTypeName("Uint32")] uint num_color_targets,
+        [NativeTypeName("const SDL_GPUDepthStencilTargetInfo *")]
+            Ref<GPUDepthStencilTargetInfo> depth_stencil_target_info
+    )
+    {
+        fixed (
+            GPUDepthStencilTargetInfo* __dsl_depth_stencil_target_info = depth_stencil_target_info
+        )
+        fixed (GPUColorTargetInfo* __dsl_color_target_infos = color_target_infos)
+        {
+            return (GPURenderPassHandle)
+                ((ISdl)this).BeginGPURenderPass(
+                    command_buffer,
+                    __dsl_color_target_infos,
+                    num_color_targets,
+                    __dsl_depth_stencil_target_info
+                );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPURenderPass")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPURenderPassHandle BeginGPURenderPass(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUColorTargetInfo *")]
+            Ref<GPUColorTargetInfo> color_target_infos,
+        [NativeTypeName("Uint32")] uint num_color_targets,
+        [NativeTypeName("const SDL_GPUDepthStencilTargetInfo *")]
+            Ref<GPUDepthStencilTargetInfo> depth_stencil_target_info
+    ) =>
+        DllImport.BeginGPURenderPass(
+            command_buffer,
+            color_target_infos,
+            num_color_targets,
+            depth_stencil_target_info
+        );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<byte> ISdl.BindAudioStream(
@@ -49154,9 +55164,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, AudioStreamHandle, byte>)(
-                _slots[13] is not null and var loadedFnPtr
+                _slots[18] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[13] = nativeContext.LoadFunction("SDL_BindAudioStream", "SDL3")
+                    : _slots[18] = nativeContext.LoadFunction("SDL_BindAudioStream", "SDL3")
             )
         )(devid, stream);
 
@@ -49176,9 +55186,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, AudioStreamHandle*, int, byte>)(
-                _slots[14] is not null and var loadedFnPtr
+                _slots[19] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[14] = nativeContext.LoadFunction("SDL_BindAudioStreams", "SDL3")
+                    : _slots[19] = nativeContext.LoadFunction("SDL_BindAudioStreams", "SDL3")
             )
         )(devid, streams, num_streams);
 
@@ -49216,6 +55226,807 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.BindAudioStreams(devid, streams, num_streams);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUComputePipeline(
+        GPUComputePassHandle compute_pass,
+        GPUComputePipelineHandle compute_pipeline
+    ) =>
+        (
+            (delegate* unmanaged<GPUComputePassHandle, GPUComputePipelineHandle, void>)(
+                _slots[20] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[20] = nativeContext.LoadFunction("SDL_BindGPUComputePipeline", "SDL3")
+            )
+        )(compute_pass, compute_pipeline);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputePipeline")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUComputePipeline(
+        GPUComputePassHandle compute_pass,
+        GPUComputePipelineHandle compute_pipeline
+    ) => DllImport.BindGPUComputePipeline(compute_pass, compute_pipeline);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUComputeSamplers(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            GPUTextureSamplerBinding* texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUComputePassHandle,
+                uint,
+                GPUTextureSamplerBinding*,
+                uint,
+                void>)(
+                _slots[21] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[21] = nativeContext.LoadFunction("SDL_BindGPUComputeSamplers", "SDL3")
+            )
+        )(compute_pass, first_slot, texture_sampler_bindings, num_bindings);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeSamplers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUComputeSamplers(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            GPUTextureSamplerBinding* texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUComputeSamplers(
+            compute_pass,
+            first_slot,
+            texture_sampler_bindings,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUComputeSamplers(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    )
+    {
+        fixed (GPUTextureSamplerBinding* __dsl_texture_sampler_bindings = texture_sampler_bindings)
+        {
+            ((ISdl)this).BindGPUComputeSamplers(
+                compute_pass,
+                first_slot,
+                __dsl_texture_sampler_bindings,
+                num_bindings
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeSamplers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUComputeSamplers(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUComputeSamplers(
+            compute_pass,
+            first_slot,
+            texture_sampler_bindings,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUComputeStorageBuffers(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        (
+            (delegate* unmanaged<GPUComputePassHandle, uint, GPUBufferHandle*, uint, void>)(
+                _slots[22] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[22] = nativeContext.LoadFunction(
+                        "SDL_BindGPUComputeStorageBuffers",
+                        "SDL3"
+                    )
+            )
+        )(compute_pass, first_slot, storage_buffers, num_bindings);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUComputeStorageBuffers(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUComputeStorageBuffers(
+            compute_pass,
+            first_slot,
+            storage_buffers,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUComputeStorageBuffers(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    )
+    {
+        fixed (GPUBufferHandle* __dsl_storage_buffers = storage_buffers)
+        {
+            ((ISdl)this).BindGPUComputeStorageBuffers(
+                compute_pass,
+                first_slot,
+                __dsl_storage_buffers,
+                num_bindings
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUComputeStorageBuffers(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUComputeStorageBuffers(
+            compute_pass,
+            first_slot,
+            storage_buffers,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUComputeStorageTextures(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        (
+            (delegate* unmanaged<GPUComputePassHandle, uint, GPUTextureHandle*, uint, void>)(
+                _slots[23] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[23] = nativeContext.LoadFunction(
+                        "SDL_BindGPUComputeStorageTextures",
+                        "SDL3"
+                    )
+            )
+        )(compute_pass, first_slot, storage_textures, num_bindings);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageTextures")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUComputeStorageTextures(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUComputeStorageTextures(
+            compute_pass,
+            first_slot,
+            storage_textures,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUComputeStorageTextures(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    )
+    {
+        fixed (GPUTextureHandle* __dsl_storage_textures = storage_textures)
+        {
+            ((ISdl)this).BindGPUComputeStorageTextures(
+                compute_pass,
+                first_slot,
+                __dsl_storage_textures,
+                num_bindings
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageTextures")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUComputeStorageTextures(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUComputeStorageTextures(
+            compute_pass,
+            first_slot,
+            storage_textures,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUFragmentSamplers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            GPUTextureSamplerBinding* texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, uint, GPUTextureSamplerBinding*, uint, void>)(
+                _slots[24] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[24] = nativeContext.LoadFunction("SDL_BindGPUFragmentSamplers", "SDL3")
+            )
+        )(render_pass, first_slot, texture_sampler_bindings, num_bindings);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentSamplers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUFragmentSamplers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            GPUTextureSamplerBinding* texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUFragmentSamplers(
+            render_pass,
+            first_slot,
+            texture_sampler_bindings,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUFragmentSamplers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    )
+    {
+        fixed (GPUTextureSamplerBinding* __dsl_texture_sampler_bindings = texture_sampler_bindings)
+        {
+            ((ISdl)this).BindGPUFragmentSamplers(
+                render_pass,
+                first_slot,
+                __dsl_texture_sampler_bindings,
+                num_bindings
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentSamplers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUFragmentSamplers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUFragmentSamplers(
+            render_pass,
+            first_slot,
+            texture_sampler_bindings,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUFragmentStorageBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, uint, GPUBufferHandle*, uint, void>)(
+                _slots[25] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[25] = nativeContext.LoadFunction(
+                        "SDL_BindGPUFragmentStorageBuffers",
+                        "SDL3"
+                    )
+            )
+        )(render_pass, first_slot, storage_buffers, num_bindings);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUFragmentStorageBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUFragmentStorageBuffers(
+            render_pass,
+            first_slot,
+            storage_buffers,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUFragmentStorageBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    )
+    {
+        fixed (GPUBufferHandle* __dsl_storage_buffers = storage_buffers)
+        {
+            ((ISdl)this).BindGPUFragmentStorageBuffers(
+                render_pass,
+                first_slot,
+                __dsl_storage_buffers,
+                num_bindings
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUFragmentStorageBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUFragmentStorageBuffers(
+            render_pass,
+            first_slot,
+            storage_buffers,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUFragmentStorageTextures(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, uint, GPUTextureHandle*, uint, void>)(
+                _slots[26] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[26] = nativeContext.LoadFunction(
+                        "SDL_BindGPUFragmentStorageTextures",
+                        "SDL3"
+                    )
+            )
+        )(render_pass, first_slot, storage_textures, num_bindings);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUFragmentStorageTextures(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUFragmentStorageTextures(
+            render_pass,
+            first_slot,
+            storage_textures,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUFragmentStorageTextures(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    )
+    {
+        fixed (GPUTextureHandle* __dsl_storage_textures = storage_textures)
+        {
+            ((ISdl)this).BindGPUFragmentStorageTextures(
+                render_pass,
+                first_slot,
+                __dsl_storage_textures,
+                num_bindings
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUFragmentStorageTextures(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUFragmentStorageTextures(
+            render_pass,
+            first_slot,
+            storage_textures,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUGraphicsPipeline(
+        GPURenderPassHandle render_pass,
+        GPUGraphicsPipelineHandle graphics_pipeline
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, GPUGraphicsPipelineHandle, void>)(
+                _slots[27] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[27] = nativeContext.LoadFunction("SDL_BindGPUGraphicsPipeline", "SDL3")
+            )
+        )(render_pass, graphics_pipeline);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUGraphicsPipeline")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUGraphicsPipeline(
+        GPURenderPassHandle render_pass,
+        GPUGraphicsPipelineHandle graphics_pipeline
+    ) => DllImport.BindGPUGraphicsPipeline(render_pass, graphics_pipeline);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUIndexBuffer(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_GPUBufferBinding *")] GPUBufferBinding* binding,
+        GPUIndexElementSize index_element_size
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPURenderPassHandle,
+                GPUBufferBinding*,
+                GPUIndexElementSize,
+                void>)(
+                _slots[28] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[28] = nativeContext.LoadFunction("SDL_BindGPUIndexBuffer", "SDL3")
+            )
+        )(render_pass, binding, index_element_size);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUIndexBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUIndexBuffer(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_GPUBufferBinding *")] GPUBufferBinding* binding,
+        GPUIndexElementSize index_element_size
+    ) => DllImport.BindGPUIndexBuffer(render_pass, binding, index_element_size);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUIndexBuffer(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_GPUBufferBinding *")] Ref<GPUBufferBinding> binding,
+        GPUIndexElementSize index_element_size
+    )
+    {
+        fixed (GPUBufferBinding* __dsl_binding = binding)
+        {
+            ((ISdl)this).BindGPUIndexBuffer(render_pass, __dsl_binding, index_element_size);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUIndexBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUIndexBuffer(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_GPUBufferBinding *")] Ref<GPUBufferBinding> binding,
+        GPUIndexElementSize index_element_size
+    ) => DllImport.BindGPUIndexBuffer(render_pass, binding, index_element_size);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUVertexBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUBufferBinding *")] GPUBufferBinding* bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, uint, GPUBufferBinding*, uint, void>)(
+                _slots[29] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[29] = nativeContext.LoadFunction("SDL_BindGPUVertexBuffers", "SDL3")
+            )
+        )(render_pass, first_slot, bindings, num_bindings);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexBuffers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUVertexBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUBufferBinding *")] GPUBufferBinding* bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) => DllImport.BindGPUVertexBuffers(render_pass, first_slot, bindings, num_bindings);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUVertexBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUBufferBinding *")] Ref<GPUBufferBinding> bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    )
+    {
+        fixed (GPUBufferBinding* __dsl_bindings = bindings)
+        {
+            ((ISdl)this).BindGPUVertexBuffers(
+                render_pass,
+                first_slot,
+                __dsl_bindings,
+                num_bindings
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexBuffers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUVertexBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUBufferBinding *")] Ref<GPUBufferBinding> bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) => DllImport.BindGPUVertexBuffers(render_pass, first_slot, bindings, num_bindings);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUVertexSamplers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            GPUTextureSamplerBinding* texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, uint, GPUTextureSamplerBinding*, uint, void>)(
+                _slots[30] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[30] = nativeContext.LoadFunction("SDL_BindGPUVertexSamplers", "SDL3")
+            )
+        )(render_pass, first_slot, texture_sampler_bindings, num_bindings);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexSamplers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUVertexSamplers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            GPUTextureSamplerBinding* texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUVertexSamplers(
+            render_pass,
+            first_slot,
+            texture_sampler_bindings,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUVertexSamplers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    )
+    {
+        fixed (GPUTextureSamplerBinding* __dsl_texture_sampler_bindings = texture_sampler_bindings)
+        {
+            ((ISdl)this).BindGPUVertexSamplers(
+                render_pass,
+                first_slot,
+                __dsl_texture_sampler_bindings,
+                num_bindings
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexSamplers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUVertexSamplers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("const SDL_GPUTextureSamplerBinding *")]
+            Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUVertexSamplers(
+            render_pass,
+            first_slot,
+            texture_sampler_bindings,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUVertexStorageBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, uint, GPUBufferHandle*, uint, void>)(
+                _slots[31] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[31] = nativeContext.LoadFunction(
+                        "SDL_BindGPUVertexStorageBuffers",
+                        "SDL3"
+                    )
+            )
+        )(render_pass, first_slot, storage_buffers, num_bindings);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUVertexStorageBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] GPUBufferHandle* storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUVertexStorageBuffers(
+            render_pass,
+            first_slot,
+            storage_buffers,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUVertexStorageBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    )
+    {
+        fixed (GPUBufferHandle* __dsl_storage_buffers = storage_buffers)
+        {
+            ((ISdl)this).BindGPUVertexStorageBuffers(
+                render_pass,
+                first_slot,
+                __dsl_storage_buffers,
+                num_bindings
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUVertexStorageBuffers(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUBuffer *const *")] Ref<GPUBufferHandle> storage_buffers,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUVertexStorageBuffers(
+            render_pass,
+            first_slot,
+            storage_buffers,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUVertexStorageTextures(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, uint, GPUTextureHandle*, uint, void>)(
+                _slots[32] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[32] = nativeContext.LoadFunction(
+                        "SDL_BindGPUVertexStorageTextures",
+                        "SDL3"
+                    )
+            )
+        )(render_pass, first_slot, storage_textures, num_bindings);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageTextures")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUVertexStorageTextures(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] GPUTextureHandle* storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUVertexStorageTextures(
+            render_pass,
+            first_slot,
+            storage_textures,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BindGPUVertexStorageTextures(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    )
+    {
+        fixed (GPUTextureHandle* __dsl_storage_textures = storage_textures)
+        {
+            ((ISdl)this).BindGPUVertexStorageTextures(
+                render_pass,
+                first_slot,
+                __dsl_storage_textures,
+                num_bindings
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageTextures")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BindGPUVertexStorageTextures(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint first_slot,
+        [NativeTypeName("SDL_GPUTexture *const *")] Ref<GPUTextureHandle> storage_textures,
+        [NativeTypeName("Uint32")] uint num_bindings
+    ) =>
+        DllImport.BindGPUVertexStorageTextures(
+            render_pass,
+            first_slot,
+            storage_textures,
+            num_bindings
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BlitGPUTexture(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUBlitInfo *")] GPUBlitInfo* info
+    ) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, GPUBlitInfo*, void>)(
+                _slots[33] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[33] = nativeContext.LoadFunction("SDL_BlitGPUTexture", "SDL3")
+            )
+        )(command_buffer, info);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitGPUTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BlitGPUTexture(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUBlitInfo *")] GPUBlitInfo* info
+    ) => DllImport.BlitGPUTexture(command_buffer, info);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.BlitGPUTexture(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUBlitInfo *")] Ref<GPUBlitInfo> info
+    )
+    {
+        fixed (GPUBlitInfo* __dsl_info = info)
+        {
+            ((ISdl)this).BlitGPUTexture(command_buffer, __dsl_info);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitGPUTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void BlitGPUTexture(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const SDL_GPUBlitInfo *")] Ref<GPUBlitInfo> info
+    ) => DllImport.BlitGPUTexture(command_buffer, info);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     byte ISdl.BlitSurface(
         Surface* src,
         [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
@@ -49224,9 +56035,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, Rect*, Surface*, Rect*, byte>)(
-                _slots[15] is not null and var loadedFnPtr
+                _slots[34] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[15] = nativeContext.LoadFunction("SDL_BlitSurface", "SDL3")
+                    : _slots[34] = nativeContext.LoadFunction("SDL_BlitSurface", "SDL3")
             )
         )(src, srcrect, dst, dstrect);
 
@@ -49295,9 +56106,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 Surface*,
                 Rect*,
                 byte>)(
-                _slots[16] is not null and var loadedFnPtr
+                _slots[35] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[16] = nativeContext.LoadFunction("SDL_BlitSurface9Grid", "SDL3")
+                    : _slots[35] = nativeContext.LoadFunction("SDL_BlitSurface9Grid", "SDL3")
             )
         )(
             src,
@@ -49415,9 +56226,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, Rect*, Surface*, Rect*, ScaleMode, byte>)(
-                _slots[17] is not null and var loadedFnPtr
+                _slots[36] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[17] = nativeContext.LoadFunction("SDL_BlitSurfaceScaled", "SDL3")
+                    : _slots[36] = nativeContext.LoadFunction("SDL_BlitSurfaceScaled", "SDL3")
             )
         )(src, srcrect, dst, dstrect, scaleMode);
 
@@ -49479,9 +56290,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, Rect*, Surface*, Rect*, byte>)(
-                _slots[18] is not null and var loadedFnPtr
+                _slots[37] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[18] = nativeContext.LoadFunction("SDL_BlitSurfaceTiled", "SDL3")
+                    : _slots[37] = nativeContext.LoadFunction("SDL_BlitSurfaceTiled", "SDL3")
             )
         )(src, srcrect, dst, dstrect);
 
@@ -49541,9 +56352,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, Rect*, float, ScaleMode, Surface*, Rect*, byte>)(
-                _slots[19] is not null and var loadedFnPtr
+                _slots[38] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[19] = nativeContext.LoadFunction(
+                    : _slots[38] = nativeContext.LoadFunction(
                         "SDL_BlitSurfaceTiledWithScale",
                         "SDL3"
                     )
@@ -49612,9 +56423,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, Rect*, Surface*, Rect*, byte>)(
-                _slots[20] is not null and var loadedFnPtr
+                _slots[39] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[20] = nativeContext.LoadFunction("SDL_BlitSurfaceUnchecked", "SDL3")
+                    : _slots[39] = nativeContext.LoadFunction("SDL_BlitSurfaceUnchecked", "SDL3")
             )
         )(src, srcrect, dst, dstrect);
 
@@ -49673,9 +56484,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, Rect*, Surface*, Rect*, ScaleMode, byte>)(
-                _slots[21] is not null and var loadedFnPtr
+                _slots[40] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[21] = nativeContext.LoadFunction(
+                    : _slots[40] = nativeContext.LoadFunction(
                         "SDL_BlitSurfaceUncheckedScaled",
                         "SDL3"
                     )
@@ -49735,9 +56546,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.BroadcastCondition(ConditionHandle cond) =>
         (
             (delegate* unmanaged<ConditionHandle, void>)(
-                _slots[22] is not null and var loadedFnPtr
+                _slots[41] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[22] = nativeContext.LoadFunction("SDL_BroadcastCondition", "SDL3")
+                    : _slots[41] = nativeContext.LoadFunction("SDL_BroadcastCondition", "SDL3")
             )
         )(cond);
 
@@ -49747,12 +56558,67 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         DllImport.BroadcastCondition(cond);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint ISdl.CalculateGPUTextureFormatSize(
+        GPUTextureFormat format,
+        [NativeTypeName("Uint32")] uint width,
+        [NativeTypeName("Uint32")] uint height,
+        [NativeTypeName("Uint32")] uint depth_or_layer_count
+    ) =>
+        (
+            (delegate* unmanaged<GPUTextureFormat, uint, uint, uint, uint>)(
+                _slots[42] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[42] = nativeContext.LoadFunction(
+                        "SDL_CalculateGPUTextureFormatSize",
+                        "SDL3"
+                    )
+            )
+        )(format, width, height, depth_or_layer_count);
+
+    [return: NativeTypeName("Uint32")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CalculateGPUTextureFormatSize")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint CalculateGPUTextureFormatSize(
+        GPUTextureFormat format,
+        [NativeTypeName("Uint32")] uint width,
+        [NativeTypeName("Uint32")] uint height,
+        [NativeTypeName("Uint32")] uint depth_or_layer_count
+    ) => DllImport.CalculateGPUTextureFormatSize(format, width, height, depth_or_layer_count);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.CancelGPUCommandBuffer(GPUCommandBufferHandle command_buffer) =>
+        (MaybeBool<byte>)(byte)((ISdl)this).CancelGPUCommandBufferRaw(command_buffer);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CancelGPUCommandBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> CancelGPUCommandBuffer(GPUCommandBufferHandle command_buffer) =>
+        DllImport.CancelGPUCommandBuffer(command_buffer);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.CancelGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, byte>)(
+                _slots[43] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[43] = nativeContext.LoadFunction("SDL_CancelGPUCommandBuffer", "SDL3")
+            )
+        )(command_buffer);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CancelGPUCommandBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte CancelGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer) =>
+        DllImport.CancelGPUCommandBufferRaw(command_buffer);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     byte ISdl.CaptureMouse([NativeTypeName("bool")] byte enabled) =>
         (
             (delegate* unmanaged<byte, byte>)(
-                _slots[23] is not null and var loadedFnPtr
+                _slots[44] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[23] = nativeContext.LoadFunction("SDL_CaptureMouse", "SDL3")
+                    : _slots[44] = nativeContext.LoadFunction("SDL_CaptureMouse", "SDL3")
             )
         )(enabled);
 
@@ -49774,12 +56640,41 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         DllImport.CaptureMouse(enabled);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.ClaimWindowForGPUDevice(GPUDeviceHandle device, WindowHandle window) =>
+        (MaybeBool<byte>)(byte)((ISdl)this).ClaimWindowForGPUDeviceRaw(device, window);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ClaimWindowForGPUDevice")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> ClaimWindowForGPUDevice(
+        GPUDeviceHandle device,
+        WindowHandle window
+    ) => DllImport.ClaimWindowForGPUDevice(device, window);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.ClaimWindowForGPUDeviceRaw(GPUDeviceHandle device, WindowHandle window) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, WindowHandle, byte>)(
+                _slots[45] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[45] = nativeContext.LoadFunction("SDL_ClaimWindowForGPUDevice", "SDL3")
+            )
+        )(device, window);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ClaimWindowForGPUDevice")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte ClaimWindowForGPUDeviceRaw(GPUDeviceHandle device, WindowHandle window) =>
+        DllImport.ClaimWindowForGPUDeviceRaw(device, window);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.CleanupTLS() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[24] is not null and var loadedFnPtr
+                _slots[46] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[24] = nativeContext.LoadFunction("SDL_CleanupTLS", "SDL3")
+                    : _slots[46] = nativeContext.LoadFunction("SDL_CleanupTLS", "SDL3")
             )
         )();
 
@@ -49802,9 +56697,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ClearAudioStreamRaw(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, byte>)(
-                _slots[25] is not null and var loadedFnPtr
+                _slots[47] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[25] = nativeContext.LoadFunction("SDL_ClearAudioStream", "SDL3")
+                    : _slots[47] = nativeContext.LoadFunction("SDL_ClearAudioStream", "SDL3")
             )
         )(stream);
 
@@ -49828,9 +56723,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ClearClipboardDataRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[26] is not null and var loadedFnPtr
+                _slots[48] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[26] = nativeContext.LoadFunction("SDL_ClearClipboardData", "SDL3")
+                    : _slots[48] = nativeContext.LoadFunction("SDL_ClearClipboardData", "SDL3")
             )
         )();
 
@@ -49854,9 +56749,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ClearCompositionRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[27] is not null and var loadedFnPtr
+                _slots[49] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[27] = nativeContext.LoadFunction("SDL_ClearComposition", "SDL3")
+                    : _slots[49] = nativeContext.LoadFunction("SDL_ClearComposition", "SDL3")
             )
         )(window);
 
@@ -49879,9 +56774,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ClearErrorRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[28] is not null and var loadedFnPtr
+                _slots[50] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[28] = nativeContext.LoadFunction("SDL_ClearError", "SDL3")
+                    : _slots[50] = nativeContext.LoadFunction("SDL_ClearError", "SDL3")
             )
         )();
 
@@ -49897,9 +56792,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, byte>)(
-                _slots[29] is not null and var loadedFnPtr
+                _slots[51] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[29] = nativeContext.LoadFunction("SDL_ClearProperty", "SDL3")
+                    : _slots[51] = nativeContext.LoadFunction("SDL_ClearProperty", "SDL3")
             )
         )(props, name);
 
@@ -49936,9 +56831,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ClearSurface(Surface* surface, float r, float g, float b, float a) =>
         (
             (delegate* unmanaged<Surface*, float, float, float, float, byte>)(
-                _slots[30] is not null and var loadedFnPtr
+                _slots[52] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[30] = nativeContext.LoadFunction("SDL_ClearSurface", "SDL3")
+                    : _slots[52] = nativeContext.LoadFunction("SDL_ClearSurface", "SDL3")
             )
         )(surface, r, g, b, a);
 
@@ -49973,9 +56868,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.CloseAudioDevice([NativeTypeName("SDL_AudioDeviceID")] uint devid) =>
         (
             (delegate* unmanaged<uint, void>)(
-                _slots[31] is not null and var loadedFnPtr
+                _slots[53] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[31] = nativeContext.LoadFunction("SDL_CloseAudioDevice", "SDL3")
+                    : _slots[53] = nativeContext.LoadFunction("SDL_CloseAudioDevice", "SDL3")
             )
         )(devid);
 
@@ -49988,9 +56883,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.CloseCamera(CameraHandle camera) =>
         (
             (delegate* unmanaged<CameraHandle, void>)(
-                _slots[32] is not null and var loadedFnPtr
+                _slots[54] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[32] = nativeContext.LoadFunction("SDL_CloseCamera", "SDL3")
+                    : _slots[54] = nativeContext.LoadFunction("SDL_CloseCamera", "SDL3")
             )
         )(camera);
 
@@ -50002,9 +56897,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.CloseGamepad(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, void>)(
-                _slots[33] is not null and var loadedFnPtr
+                _slots[55] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[33] = nativeContext.LoadFunction("SDL_CloseGamepad", "SDL3")
+                    : _slots[55] = nativeContext.LoadFunction("SDL_CloseGamepad", "SDL3")
             )
         )(gamepad);
 
@@ -50016,9 +56911,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.CloseHaptic(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, void>)(
-                _slots[34] is not null and var loadedFnPtr
+                _slots[56] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[34] = nativeContext.LoadFunction("SDL_CloseHaptic", "SDL3")
+                    : _slots[56] = nativeContext.LoadFunction("SDL_CloseHaptic", "SDL3")
             )
         )(haptic);
 
@@ -50040,9 +56935,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.CloseIORaw(IOStreamHandle context) =>
         (
             (delegate* unmanaged<IOStreamHandle, byte>)(
-                _slots[35] is not null and var loadedFnPtr
+                _slots[57] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[35] = nativeContext.LoadFunction("SDL_CloseIO", "SDL3")
+                    : _slots[57] = nativeContext.LoadFunction("SDL_CloseIO", "SDL3")
             )
         )(context);
 
@@ -50055,9 +56950,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.CloseJoystick(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, void>)(
-                _slots[36] is not null and var loadedFnPtr
+                _slots[58] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[36] = nativeContext.LoadFunction("SDL_CloseJoystick", "SDL3")
+                    : _slots[58] = nativeContext.LoadFunction("SDL_CloseJoystick", "SDL3")
             )
         )(joystick);
 
@@ -50069,9 +56964,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.CloseSensor(SensorHandle sensor) =>
         (
             (delegate* unmanaged<SensorHandle, void>)(
-                _slots[37] is not null and var loadedFnPtr
+                _slots[59] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[37] = nativeContext.LoadFunction("SDL_CloseSensor", "SDL3")
+                    : _slots[59] = nativeContext.LoadFunction("SDL_CloseSensor", "SDL3")
             )
         )(sensor);
 
@@ -50094,9 +56989,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.CloseStorageRaw(StorageHandle storage) =>
         (
             (delegate* unmanaged<StorageHandle, byte>)(
-                _slots[38] is not null and var loadedFnPtr
+                _slots[60] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[38] = nativeContext.LoadFunction("SDL_CloseStorage", "SDL3")
+                    : _slots[60] = nativeContext.LoadFunction("SDL_CloseStorage", "SDL3")
             )
         )(storage);
 
@@ -50109,9 +57004,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.CompareAndSwapAtomicInt(AtomicInt* a, int oldval, int newval) =>
         (
             (delegate* unmanaged<AtomicInt*, int, int, byte>)(
-                _slots[39] is not null and var loadedFnPtr
+                _slots[61] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[39] = nativeContext.LoadFunction("SDL_CompareAndSwapAtomicInt", "SDL3")
+                    : _slots[61] = nativeContext.LoadFunction("SDL_CompareAndSwapAtomicInt", "SDL3")
             )
         )(a, oldval, newval);
 
@@ -50145,9 +57040,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.CompareAndSwapAtomicPointer(void** a, void* oldval, void* newval) =>
         (
             (delegate* unmanaged<void**, void*, void*, byte>)(
-                _slots[40] is not null and var loadedFnPtr
+                _slots[62] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[40] = nativeContext.LoadFunction(
+                    : _slots[62] = nativeContext.LoadFunction(
                         "SDL_CompareAndSwapAtomicPointer",
                         "SDL3"
                     )
@@ -50187,9 +57082,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AtomicU32*, uint, uint, byte>)(
-                _slots[41] is not null and var loadedFnPtr
+                _slots[63] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[41] = nativeContext.LoadFunction("SDL_CompareAndSwapAtomicU32", "SDL3")
+                    : _slots[63] = nativeContext.LoadFunction("SDL_CompareAndSwapAtomicU32", "SDL3")
             )
         )(a, oldval, newval);
 
@@ -50244,9 +57139,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 BlendFactor,
                 BlendOperation,
                 uint>)(
-                _slots[42] is not null and var loadedFnPtr
+                _slots[64] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[42] = nativeContext.LoadFunction("SDL_ComposeCustomBlendMode", "SDL3")
+                    : _slots[64] = nativeContext.LoadFunction("SDL_ComposeCustomBlendMode", "SDL3")
             )
         )(
             srcColorFactor,
@@ -50288,9 +57183,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AudioSpec*, byte*, int, AudioSpec*, byte**, int*, byte>)(
-                _slots[43] is not null and var loadedFnPtr
+                _slots[65] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[43] = nativeContext.LoadFunction("SDL_ConvertAudioSamples", "SDL3")
+                    : _slots[65] = nativeContext.LoadFunction("SDL_ConvertAudioSamples", "SDL3")
             )
         )(src_spec, src_data, src_len, dst_spec, dst_data, dst_len);
 
@@ -50352,9 +57247,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ConvertEventToRenderCoordinates(RendererHandle renderer, Event* @event) =>
         (
             (delegate* unmanaged<RendererHandle, Event*, byte>)(
-                _slots[44] is not null and var loadedFnPtr
+                _slots[66] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[44] = nativeContext.LoadFunction(
+                    : _slots[66] = nativeContext.LoadFunction(
                         "SDL_ConvertEventToRenderCoordinates",
                         "SDL3"
                     )
@@ -50399,9 +57294,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<int, int, PixelFormat, void*, int, PixelFormat, void*, int, byte>)(
-                _slots[45] is not null and var loadedFnPtr
+                _slots[67] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[45] = nativeContext.LoadFunction("SDL_ConvertPixels", "SDL3")
+                    : _slots[67] = nativeContext.LoadFunction("SDL_ConvertPixels", "SDL3")
             )
         )(width, height, src_format, src, src_pitch, dst_format, dst, dst_pitch);
 
@@ -50514,9 +57409,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 void*,
                 int,
                 byte>)(
-                _slots[46] is not null and var loadedFnPtr
+                _slots[68] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[46] = nativeContext.LoadFunction(
+                    : _slots[68] = nativeContext.LoadFunction(
                         "SDL_ConvertPixelsAndColorspace",
                         "SDL3"
                     )
@@ -50643,9 +57538,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Surface* ISdl.ConvertSurface(Surface* surface, PixelFormat format) =>
         (
             (delegate* unmanaged<Surface*, PixelFormat, Surface*>)(
-                _slots[47] is not null and var loadedFnPtr
+                _slots[69] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[47] = nativeContext.LoadFunction("SDL_ConvertSurface", "SDL3")
+                    : _slots[69] = nativeContext.LoadFunction("SDL_ConvertSurface", "SDL3")
             )
         )(surface, format);
 
@@ -50679,9 +57574,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, PixelFormat, Palette*, Colorspace, uint, Surface*>)(
-                _slots[48] is not null and var loadedFnPtr
+                _slots[70] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[48] = nativeContext.LoadFunction(
+                    : _slots[70] = nativeContext.LoadFunction(
                         "SDL_ConvertSurfaceAndColorspace",
                         "SDL3"
                     )
@@ -50739,9 +57634,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*, byte>)(
-                _slots[49] is not null and var loadedFnPtr
+                _slots[71] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[49] = nativeContext.LoadFunction("SDL_CopyFile", "SDL3")
+                    : _slots[71] = nativeContext.LoadFunction("SDL_CopyFile", "SDL3")
             )
         )(oldpath, newpath);
 
@@ -50776,6 +57671,148 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.CopyFile(oldpath, newpath);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.CopyGPUBufferToBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUBufferLocation *")] GPUBufferLocation* source,
+        [NativeTypeName("const SDL_GPUBufferLocation *")] GPUBufferLocation* destination,
+        [NativeTypeName("Uint32")] uint size,
+        [NativeTypeName("bool")] byte cycle
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUCopyPassHandle,
+                GPUBufferLocation*,
+                GPUBufferLocation*,
+                uint,
+                byte,
+                void>)(
+                _slots[72] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[72] = nativeContext.LoadFunction("SDL_CopyGPUBufferToBuffer", "SDL3")
+            )
+        )(copy_pass, source, destination, size, cycle);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUBufferToBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void CopyGPUBufferToBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUBufferLocation *")] GPUBufferLocation* source,
+        [NativeTypeName("const SDL_GPUBufferLocation *")] GPUBufferLocation* destination,
+        [NativeTypeName("Uint32")] uint size,
+        [NativeTypeName("bool")] byte cycle
+    ) => DllImport.CopyGPUBufferToBuffer(copy_pass, source, destination, size, cycle);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.CopyGPUBufferToBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUBufferLocation *")] Ref<GPUBufferLocation> source,
+        [NativeTypeName("const SDL_GPUBufferLocation *")] Ref<GPUBufferLocation> destination,
+        [NativeTypeName("Uint32")] uint size,
+        [NativeTypeName("bool")] MaybeBool<byte> cycle
+    )
+    {
+        fixed (GPUBufferLocation* __dsl_destination = destination)
+        fixed (GPUBufferLocation* __dsl_source = source)
+        {
+            ((ISdl)this).CopyGPUBufferToBuffer(
+                copy_pass,
+                __dsl_source,
+                __dsl_destination,
+                size,
+                (byte)cycle
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUBufferToBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void CopyGPUBufferToBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUBufferLocation *")] Ref<GPUBufferLocation> source,
+        [NativeTypeName("const SDL_GPUBufferLocation *")] Ref<GPUBufferLocation> destination,
+        [NativeTypeName("Uint32")] uint size,
+        [NativeTypeName("bool")] MaybeBool<byte> cycle
+    ) => DllImport.CopyGPUBufferToBuffer(copy_pass, source, destination, size, cycle);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.CopyGPUTextureToTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureLocation *")] GPUTextureLocation* source,
+        [NativeTypeName("const SDL_GPUTextureLocation *")] GPUTextureLocation* destination,
+        [NativeTypeName("Uint32")] uint w,
+        [NativeTypeName("Uint32")] uint h,
+        [NativeTypeName("Uint32")] uint d,
+        [NativeTypeName("bool")] byte cycle
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUCopyPassHandle,
+                GPUTextureLocation*,
+                GPUTextureLocation*,
+                uint,
+                uint,
+                uint,
+                byte,
+                void>)(
+                _slots[73] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[73] = nativeContext.LoadFunction("SDL_CopyGPUTextureToTexture", "SDL3")
+            )
+        )(copy_pass, source, destination, w, h, d, cycle);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUTextureToTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void CopyGPUTextureToTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureLocation *")] GPUTextureLocation* source,
+        [NativeTypeName("const SDL_GPUTextureLocation *")] GPUTextureLocation* destination,
+        [NativeTypeName("Uint32")] uint w,
+        [NativeTypeName("Uint32")] uint h,
+        [NativeTypeName("Uint32")] uint d,
+        [NativeTypeName("bool")] byte cycle
+    ) => DllImport.CopyGPUTextureToTexture(copy_pass, source, destination, w, h, d, cycle);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.CopyGPUTextureToTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureLocation *")] Ref<GPUTextureLocation> source,
+        [NativeTypeName("const SDL_GPUTextureLocation *")] Ref<GPUTextureLocation> destination,
+        [NativeTypeName("Uint32")] uint w,
+        [NativeTypeName("Uint32")] uint h,
+        [NativeTypeName("Uint32")] uint d,
+        [NativeTypeName("bool")] MaybeBool<byte> cycle
+    )
+    {
+        fixed (GPUTextureLocation* __dsl_destination = destination)
+        fixed (GPUTextureLocation* __dsl_source = source)
+        {
+            ((ISdl)this).CopyGPUTextureToTexture(
+                copy_pass,
+                __dsl_source,
+                __dsl_destination,
+                w,
+                h,
+                d,
+                (byte)cycle
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUTextureToTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void CopyGPUTextureToTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureLocation *")] Ref<GPUTextureLocation> source,
+        [NativeTypeName("const SDL_GPUTextureLocation *")] Ref<GPUTextureLocation> destination,
+        [NativeTypeName("Uint32")] uint w,
+        [NativeTypeName("Uint32")] uint h,
+        [NativeTypeName("Uint32")] uint d,
+        [NativeTypeName("bool")] MaybeBool<byte> cycle
+    ) => DllImport.CopyGPUTextureToTexture(copy_pass, source, destination, w, h, d, cycle);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<byte> ISdl.CopyProperties(
         [NativeTypeName("SDL_PropertiesID")] uint src,
         [NativeTypeName("SDL_PropertiesID")] uint dst
@@ -50797,9 +57834,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, uint, byte>)(
-                _slots[50] is not null and var loadedFnPtr
+                _slots[74] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[50] = nativeContext.LoadFunction("SDL_CopyProperties", "SDL3")
+                    : _slots[74] = nativeContext.LoadFunction("SDL_CopyProperties", "SDL3")
             )
         )(src, dst);
 
@@ -50819,9 +57856,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<StorageHandle, sbyte*, sbyte*, byte>)(
-                _slots[51] is not null and var loadedFnPtr
+                _slots[75] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[51] = nativeContext.LoadFunction("SDL_CopyStorageFile", "SDL3")
+                    : _slots[75] = nativeContext.LoadFunction("SDL_CopyStorageFile", "SDL3")
             )
         )(storage, oldpath, newpath);
 
@@ -50866,9 +57903,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AudioSpec*, AudioSpec*, AudioStreamHandle>)(
-                _slots[52] is not null and var loadedFnPtr
+                _slots[76] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[52] = nativeContext.LoadFunction("SDL_CreateAudioStream", "SDL3")
+                    : _slots[76] = nativeContext.LoadFunction("SDL_CreateAudioStream", "SDL3")
             )
         )(src_spec, dst_spec);
 
@@ -50905,9 +57942,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     CursorHandle ISdl.CreateColorCursor(Surface* surface, int hot_x, int hot_y) =>
         (
             (delegate* unmanaged<Surface*, int, int, CursorHandle>)(
-                _slots[53] is not null and var loadedFnPtr
+                _slots[77] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[53] = nativeContext.LoadFunction("SDL_CreateColorCursor", "SDL3")
+                    : _slots[77] = nativeContext.LoadFunction("SDL_CreateColorCursor", "SDL3")
             )
         )(surface, hot_x, hot_y);
 
@@ -50935,9 +57972,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ConditionHandle ISdl.CreateCondition() =>
         (
             (delegate* unmanaged<ConditionHandle>)(
-                _slots[54] is not null and var loadedFnPtr
+                _slots[78] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[54] = nativeContext.LoadFunction("SDL_CreateCondition", "SDL3")
+                    : _slots[78] = nativeContext.LoadFunction("SDL_CreateCondition", "SDL3")
             )
         )();
 
@@ -50956,9 +57993,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<byte*, byte*, int, int, int, int, CursorHandle>)(
-                _slots[55] is not null and var loadedFnPtr
+                _slots[79] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[55] = nativeContext.LoadFunction("SDL_CreateCursor", "SDL3")
+                    : _slots[79] = nativeContext.LoadFunction("SDL_CreateCursor", "SDL3")
             )
         )(data, mask, w, h, hot_x, hot_y);
 
@@ -51007,9 +58044,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.CreateDirectory([NativeTypeName("const char *")] sbyte* path) =>
         (
             (delegate* unmanaged<sbyte*, byte>)(
-                _slots[56] is not null and var loadedFnPtr
+                _slots[80] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[56] = nativeContext.LoadFunction("SDL_CreateDirectory", "SDL3")
+                    : _slots[80] = nativeContext.LoadFunction("SDL_CreateDirectory", "SDL3")
             )
         )(path);
 
@@ -51037,15 +58074,391 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.CreateDirectory(path);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUBufferHandle ISdl.CreateGPUBuffer(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUBufferCreateInfo *")] GPUBufferCreateInfo* createinfo
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUBufferCreateInfo*, GPUBufferHandle>)(
+                _slots[81] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[81] = nativeContext.LoadFunction("SDL_CreateGPUBuffer", "SDL3")
+            )
+        )(device, createinfo);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUBufferHandle CreateGPUBuffer(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUBufferCreateInfo *")] GPUBufferCreateInfo* createinfo
+    ) => DllImport.CreateGPUBuffer(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUBufferHandle ISdl.CreateGPUBuffer(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUBufferCreateInfo *")] Ref<GPUBufferCreateInfo> createinfo
+    )
+    {
+        fixed (GPUBufferCreateInfo* __dsl_createinfo = createinfo)
+        {
+            return (GPUBufferHandle)((ISdl)this).CreateGPUBuffer(device, __dsl_createinfo);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUBufferHandle CreateGPUBuffer(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUBufferCreateInfo *")] Ref<GPUBufferCreateInfo> createinfo
+    ) => DllImport.CreateGPUBuffer(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUComputePipelineHandle ISdl.CreateGPUComputePipeline(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUComputePipelineCreateInfo *")]
+            GPUComputePipelineCreateInfo* createinfo
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUDeviceHandle,
+                GPUComputePipelineCreateInfo*,
+                GPUComputePipelineHandle>)(
+                _slots[82] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[82] = nativeContext.LoadFunction(
+                        "SDL_CreateGPUComputePipeline",
+                        "SDL3"
+                    )
+            )
+        )(device, createinfo);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUComputePipeline")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUComputePipelineHandle CreateGPUComputePipeline(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUComputePipelineCreateInfo *")]
+            GPUComputePipelineCreateInfo* createinfo
+    ) => DllImport.CreateGPUComputePipeline(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUComputePipelineHandle ISdl.CreateGPUComputePipeline(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUComputePipelineCreateInfo *")]
+            Ref<GPUComputePipelineCreateInfo> createinfo
+    )
+    {
+        fixed (GPUComputePipelineCreateInfo* __dsl_createinfo = createinfo)
+        {
+            return (GPUComputePipelineHandle)
+                ((ISdl)this).CreateGPUComputePipeline(device, __dsl_createinfo);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUComputePipeline")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUComputePipelineHandle CreateGPUComputePipeline(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUComputePipelineCreateInfo *")]
+            Ref<GPUComputePipelineCreateInfo> createinfo
+    ) => DllImport.CreateGPUComputePipeline(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUDeviceHandle ISdl.CreateGPUDevice(
+        [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+        [NativeTypeName("bool")] byte debug_mode,
+        [NativeTypeName("const char *")] sbyte* name
+    ) =>
+        (
+            (delegate* unmanaged<uint, byte, sbyte*, GPUDeviceHandle>)(
+                _slots[83] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[83] = nativeContext.LoadFunction("SDL_CreateGPUDevice", "SDL3")
+            )
+        )(format_flags, debug_mode, name);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDevice")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUDeviceHandle CreateGPUDevice(
+        [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+        [NativeTypeName("bool")] byte debug_mode,
+        [NativeTypeName("const char *")] sbyte* name
+    ) => DllImport.CreateGPUDevice(format_flags, debug_mode, name);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUDeviceHandle ISdl.CreateGPUDevice(
+        [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+        [NativeTypeName("bool")] MaybeBool<byte> debug_mode,
+        [NativeTypeName("const char *")] Ref<sbyte> name
+    )
+    {
+        fixed (sbyte* __dsl_name = name)
+        {
+            return (GPUDeviceHandle)
+                ((ISdl)this).CreateGPUDevice(format_flags, (byte)debug_mode, __dsl_name);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDevice")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUDeviceHandle CreateGPUDevice(
+        [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+        [NativeTypeName("bool")] MaybeBool<byte> debug_mode,
+        [NativeTypeName("const char *")] Ref<sbyte> name
+    ) => DllImport.CreateGPUDevice(format_flags, debug_mode, name);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUDeviceHandle ISdl.CreateGPUDeviceWithProperties(
+        [NativeTypeName("SDL_PropertiesID")] uint props
+    ) =>
+        (
+            (delegate* unmanaged<uint, GPUDeviceHandle>)(
+                _slots[84] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[84] = nativeContext.LoadFunction(
+                        "SDL_CreateGPUDeviceWithProperties",
+                        "SDL3"
+                    )
+            )
+        )(props);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDeviceWithProperties")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUDeviceHandle CreateGPUDeviceWithProperties(
+        [NativeTypeName("SDL_PropertiesID")] uint props
+    ) => DllImport.CreateGPUDeviceWithProperties(props);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUGraphicsPipelineHandle ISdl.CreateGPUGraphicsPipeline(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUGraphicsPipelineCreateInfo *")]
+            GPUGraphicsPipelineCreateInfo* createinfo
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUDeviceHandle,
+                GPUGraphicsPipelineCreateInfo*,
+                GPUGraphicsPipelineHandle>)(
+                _slots[85] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[85] = nativeContext.LoadFunction(
+                        "SDL_CreateGPUGraphicsPipeline",
+                        "SDL3"
+                    )
+            )
+        )(device, createinfo);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUGraphicsPipelineCreateInfo *")]
+            GPUGraphicsPipelineCreateInfo* createinfo
+    ) => DllImport.CreateGPUGraphicsPipeline(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUGraphicsPipelineHandle ISdl.CreateGPUGraphicsPipeline(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUGraphicsPipelineCreateInfo *")]
+            Ref<GPUGraphicsPipelineCreateInfo> createinfo
+    )
+    {
+        fixed (GPUGraphicsPipelineCreateInfo* __dsl_createinfo = createinfo)
+        {
+            return (GPUGraphicsPipelineHandle)
+                ((ISdl)this).CreateGPUGraphicsPipeline(device, __dsl_createinfo);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUGraphicsPipelineCreateInfo *")]
+            Ref<GPUGraphicsPipelineCreateInfo> createinfo
+    ) => DllImport.CreateGPUGraphicsPipeline(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUSamplerHandle ISdl.CreateGPUSampler(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUSamplerCreateInfo *")] GPUSamplerCreateInfo* createinfo
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUSamplerCreateInfo*, GPUSamplerHandle>)(
+                _slots[86] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[86] = nativeContext.LoadFunction("SDL_CreateGPUSampler", "SDL3")
+            )
+        )(device, createinfo);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUSampler")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUSamplerHandle CreateGPUSampler(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUSamplerCreateInfo *")] GPUSamplerCreateInfo* createinfo
+    ) => DllImport.CreateGPUSampler(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUSamplerHandle ISdl.CreateGPUSampler(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUSamplerCreateInfo *")] Ref<GPUSamplerCreateInfo> createinfo
+    )
+    {
+        fixed (GPUSamplerCreateInfo* __dsl_createinfo = createinfo)
+        {
+            return (GPUSamplerHandle)((ISdl)this).CreateGPUSampler(device, __dsl_createinfo);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUSampler")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUSamplerHandle CreateGPUSampler(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUSamplerCreateInfo *")] Ref<GPUSamplerCreateInfo> createinfo
+    ) => DllImport.CreateGPUSampler(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUShaderHandle ISdl.CreateGPUShader(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUShaderCreateInfo *")] GPUShaderCreateInfo* createinfo
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUShaderCreateInfo*, GPUShaderHandle>)(
+                _slots[87] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[87] = nativeContext.LoadFunction("SDL_CreateGPUShader", "SDL3")
+            )
+        )(device, createinfo);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUShader")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUShaderHandle CreateGPUShader(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUShaderCreateInfo *")] GPUShaderCreateInfo* createinfo
+    ) => DllImport.CreateGPUShader(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUShaderHandle ISdl.CreateGPUShader(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUShaderCreateInfo *")] Ref<GPUShaderCreateInfo> createinfo
+    )
+    {
+        fixed (GPUShaderCreateInfo* __dsl_createinfo = createinfo)
+        {
+            return (GPUShaderHandle)((ISdl)this).CreateGPUShader(device, __dsl_createinfo);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUShader")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUShaderHandle CreateGPUShader(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUShaderCreateInfo *")] Ref<GPUShaderCreateInfo> createinfo
+    ) => DllImport.CreateGPUShader(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUTextureHandle ISdl.CreateGPUTexture(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUTextureCreateInfo *")] GPUTextureCreateInfo* createinfo
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUTextureCreateInfo*, GPUTextureHandle>)(
+                _slots[88] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[88] = nativeContext.LoadFunction("SDL_CreateGPUTexture", "SDL3")
+            )
+        )(device, createinfo);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUTextureHandle CreateGPUTexture(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUTextureCreateInfo *")] GPUTextureCreateInfo* createinfo
+    ) => DllImport.CreateGPUTexture(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUTextureHandle ISdl.CreateGPUTexture(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUTextureCreateInfo *")] Ref<GPUTextureCreateInfo> createinfo
+    )
+    {
+        fixed (GPUTextureCreateInfo* __dsl_createinfo = createinfo)
+        {
+            return (GPUTextureHandle)((ISdl)this).CreateGPUTexture(device, __dsl_createinfo);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUTextureHandle CreateGPUTexture(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUTextureCreateInfo *")] Ref<GPUTextureCreateInfo> createinfo
+    ) => DllImport.CreateGPUTexture(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUTransferBufferHandle ISdl.CreateGPUTransferBuffer(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUTransferBufferCreateInfo *")]
+            GPUTransferBufferCreateInfo* createinfo
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUDeviceHandle,
+                GPUTransferBufferCreateInfo*,
+                GPUTransferBufferHandle>)(
+                _slots[89] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[89] = nativeContext.LoadFunction("SDL_CreateGPUTransferBuffer", "SDL3")
+            )
+        )(device, createinfo);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTransferBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUTransferBufferHandle CreateGPUTransferBuffer(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUTransferBufferCreateInfo *")]
+            GPUTransferBufferCreateInfo* createinfo
+    ) => DllImport.CreateGPUTransferBuffer(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUTransferBufferHandle ISdl.CreateGPUTransferBuffer(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUTransferBufferCreateInfo *")]
+            Ref<GPUTransferBufferCreateInfo> createinfo
+    )
+    {
+        fixed (GPUTransferBufferCreateInfo* __dsl_createinfo = createinfo)
+        {
+            return (GPUTransferBufferHandle)
+                ((ISdl)this).CreateGPUTransferBuffer(device, __dsl_createinfo);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTransferBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUTransferBufferHandle CreateGPUTransferBuffer(
+        GPUDeviceHandle device,
+        [NativeTypeName("const SDL_GPUTransferBufferCreateInfo *")]
+            Ref<GPUTransferBufferCreateInfo> createinfo
+    ) => DllImport.CreateGPUTransferBuffer(device, createinfo);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.CreateHapticEffect(
         HapticHandle haptic,
         [NativeTypeName("const SDL_HapticEffect *")] HapticEffect* effect
     ) =>
         (
             (delegate* unmanaged<HapticHandle, HapticEffect*, int>)(
-                _slots[57] is not null and var loadedFnPtr
+                _slots[90] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[57] = nativeContext.LoadFunction("SDL_CreateHapticEffect", "SDL3")
+                    : _slots[90] = nativeContext.LoadFunction("SDL_CreateHapticEffect", "SDL3")
             )
         )(haptic, effect);
 
@@ -51080,9 +58493,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     MutexHandle ISdl.CreateMutex() =>
         (
             (delegate* unmanaged<MutexHandle>)(
-                _slots[58] is not null and var loadedFnPtr
+                _slots[91] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[58] = nativeContext.LoadFunction("SDL_CreateMutex", "SDL3")
+                    : _slots[91] = nativeContext.LoadFunction("SDL_CreateMutex", "SDL3")
             )
         )();
 
@@ -51103,9 +58516,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Palette* ISdl.CreatePaletteRaw(int ncolors) =>
         (
             (delegate* unmanaged<int, Palette*>)(
-                _slots[59] is not null and var loadedFnPtr
+                _slots[92] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[59] = nativeContext.LoadFunction("SDL_CreatePalette", "SDL3")
+                    : _slots[92] = nativeContext.LoadFunction("SDL_CreatePalette", "SDL3")
             )
         )(ncolors);
 
@@ -51124,9 +58537,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<WindowHandle, int, int, int, int, ulong, WindowHandle>)(
-                _slots[60] is not null and var loadedFnPtr
+                _slots[93] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[60] = nativeContext.LoadFunction("SDL_CreatePopupWindow", "SDL3")
+                    : _slots[93] = nativeContext.LoadFunction("SDL_CreatePopupWindow", "SDL3")
             )
         )(parent, offset_x, offset_y, w, h, flags);
 
@@ -51142,12 +58555,73 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.CreatePopupWindow(parent, offset_x, offset_y, w, h, flags);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    ProcessHandle ISdl.CreateProcess(
+        [NativeTypeName("const char *const *")] sbyte** args,
+        [NativeTypeName("bool")] byte pipe_stdio
+    ) =>
+        (
+            (delegate* unmanaged<sbyte**, byte, ProcessHandle>)(
+                _slots[94] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[94] = nativeContext.LoadFunction("SDL_CreateProcess", "SDL3")
+            )
+        )(args, pipe_stdio);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcess")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static ProcessHandle CreateProcess(
+        [NativeTypeName("const char *const *")] sbyte** args,
+        [NativeTypeName("bool")] byte pipe_stdio
+    ) => DllImport.CreateProcess(args, pipe_stdio);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    ProcessHandle ISdl.CreateProcess(
+        [NativeTypeName("const char *const *")] Ref2D<sbyte> args,
+        [NativeTypeName("bool")] MaybeBool<byte> pipe_stdio
+    )
+    {
+        fixed (sbyte** __dsl_args = args)
+        {
+            return (ProcessHandle)((ISdl)this).CreateProcess(__dsl_args, (byte)pipe_stdio);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcess")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static ProcessHandle CreateProcess(
+        [NativeTypeName("const char *const *")] Ref2D<sbyte> args,
+        [NativeTypeName("bool")] MaybeBool<byte> pipe_stdio
+    ) => DllImport.CreateProcess(args, pipe_stdio);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    ProcessHandle ISdl.CreateProcessWithProperties(
+        [NativeTypeName("SDL_PropertiesID")] uint props
+    ) =>
+        (
+            (delegate* unmanaged<uint, ProcessHandle>)(
+                _slots[95] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[95] = nativeContext.LoadFunction(
+                        "SDL_CreateProcessWithProperties",
+                        "SDL3"
+                    )
+            )
+        )(props);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcessWithProperties")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static ProcessHandle CreateProcessWithProperties(
+        [NativeTypeName("SDL_PropertiesID")] uint props
+    ) => DllImport.CreateProcessWithProperties(props);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint ISdl.CreateProperties() =>
         (
             (delegate* unmanaged<uint>)(
-                _slots[61] is not null and var loadedFnPtr
+                _slots[96] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[61] = nativeContext.LoadFunction("SDL_CreateProperties", "SDL3")
+                    : _slots[96] = nativeContext.LoadFunction("SDL_CreateProperties", "SDL3")
             )
         )();
 
@@ -51163,9 +58637,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<WindowHandle, sbyte*, RendererHandle>)(
-                _slots[62] is not null and var loadedFnPtr
+                _slots[97] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[62] = nativeContext.LoadFunction("SDL_CreateRenderer", "SDL3")
+                    : _slots[97] = nativeContext.LoadFunction("SDL_CreateRenderer", "SDL3")
             )
         )(window, name);
 
@@ -51202,9 +58676,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, RendererHandle>)(
-                _slots[63] is not null and var loadedFnPtr
+                _slots[98] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[63] = nativeContext.LoadFunction(
+                    : _slots[98] = nativeContext.LoadFunction(
                         "SDL_CreateRendererWithProperties",
                         "SDL3"
                     )
@@ -51221,9 +58695,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     RWLockHandle ISdl.CreateRWLock() =>
         (
             (delegate* unmanaged<RWLockHandle>)(
-                _slots[64] is not null and var loadedFnPtr
+                _slots[99] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[64] = nativeContext.LoadFunction("SDL_CreateRWLock", "SDL3")
+                    : _slots[99] = nativeContext.LoadFunction("SDL_CreateRWLock", "SDL3")
             )
         )();
 
@@ -51235,9 +58709,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     SemaphoreHandle ISdl.CreateSemaphore([NativeTypeName("Uint32")] uint initial_value) =>
         (
             (delegate* unmanaged<uint, SemaphoreHandle>)(
-                _slots[65] is not null and var loadedFnPtr
+                _slots[100] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[65] = nativeContext.LoadFunction("SDL_CreateSemaphore", "SDL3")
+                    : _slots[100] = nativeContext.LoadFunction("SDL_CreateSemaphore", "SDL3")
             )
         )(initial_value);
 
@@ -51250,9 +58724,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     RendererHandle ISdl.CreateSoftwareRenderer(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, RendererHandle>)(
-                _slots[66] is not null and var loadedFnPtr
+                _slots[101] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[66] = nativeContext.LoadFunction("SDL_CreateSoftwareRenderer", "SDL3")
+                    : _slots[101] = nativeContext.LoadFunction("SDL_CreateSoftwareRenderer", "SDL3")
             )
         )(surface);
 
@@ -51283,9 +58757,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<StorageHandle, sbyte*, byte>)(
-                _slots[67] is not null and var loadedFnPtr
+                _slots[102] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[67] = nativeContext.LoadFunction("SDL_CreateStorageDirectory", "SDL3")
+                    : _slots[102] = nativeContext.LoadFunction("SDL_CreateStorageDirectory", "SDL3")
             )
         )(storage, path);
 
@@ -51338,9 +58812,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<int, int, PixelFormat, void*, int, Surface*>)(
-                _slots[69] is not null and var loadedFnPtr
+                _slots[104] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[69] = nativeContext.LoadFunction("SDL_CreateSurfaceFrom", "SDL3")
+                    : _slots[104] = nativeContext.LoadFunction("SDL_CreateSurfaceFrom", "SDL3")
             )
         )(width, height, format, pixels, pitch);
 
@@ -51385,9 +58859,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Palette* ISdl.CreateSurfacePalette(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, Palette*>)(
-                _slots[70] is not null and var loadedFnPtr
+                _slots[105] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[70] = nativeContext.LoadFunction("SDL_CreateSurfacePalette", "SDL3")
+                    : _slots[105] = nativeContext.LoadFunction("SDL_CreateSurfacePalette", "SDL3")
             )
         )(surface);
 
@@ -51415,9 +58889,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Surface* ISdl.CreateSurfaceRaw(int width, int height, PixelFormat format) =>
         (
             (delegate* unmanaged<int, int, PixelFormat, Surface*>)(
-                _slots[68] is not null and var loadedFnPtr
+                _slots[103] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[68] = nativeContext.LoadFunction("SDL_CreateSurface", "SDL3")
+                    : _slots[103] = nativeContext.LoadFunction("SDL_CreateSurface", "SDL3")
             )
         )(width, height, format);
 
@@ -51430,9 +58904,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     CursorHandle ISdl.CreateSystemCursor(SystemCursor id) =>
         (
             (delegate* unmanaged<SystemCursor, CursorHandle>)(
-                _slots[71] is not null and var loadedFnPtr
+                _slots[106] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[71] = nativeContext.LoadFunction("SDL_CreateSystemCursor", "SDL3")
+                    : _slots[106] = nativeContext.LoadFunction("SDL_CreateSystemCursor", "SDL3")
             )
         )(id);
 
@@ -51465,9 +58939,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Texture* ISdl.CreateTextureFromSurface(RendererHandle renderer, Surface* surface) =>
         (
             (delegate* unmanaged<RendererHandle, Surface*, Texture*>)(
-                _slots[73] is not null and var loadedFnPtr
+                _slots[108] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[73] = nativeContext.LoadFunction(
+                    : _slots[108] = nativeContext.LoadFunction(
                         "SDL_CreateTextureFromSurface",
                         "SDL3"
                     )
@@ -51506,9 +58980,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, PixelFormat, TextureAccess, int, int, Texture*>)(
-                _slots[72] is not null and var loadedFnPtr
+                _slots[107] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[72] = nativeContext.LoadFunction("SDL_CreateTexture", "SDL3")
+                    : _slots[107] = nativeContext.LoadFunction("SDL_CreateTexture", "SDL3")
             )
         )(renderer, format, access, w, h);
 
@@ -51543,9 +59017,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, uint, Texture*>)(
-                _slots[74] is not null and var loadedFnPtr
+                _slots[109] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[74] = nativeContext.LoadFunction(
+                    : _slots[109] = nativeContext.LoadFunction(
                         "SDL_CreateTextureWithProperties",
                         "SDL3"
                     )
@@ -51575,9 +59049,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 FunctionPointer,
                 FunctionPointer,
                 ThreadHandle>)(
-                _slots[75] is not null and var loadedFnPtr
+                _slots[110] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[75] = nativeContext.LoadFunction("SDL_CreateThreadRuntime", "SDL3")
+                    : _slots[110] = nativeContext.LoadFunction("SDL_CreateThreadRuntime", "SDL3")
             )
         )(fn, name, data, pfnBeginThread, pfnEndThread);
 
@@ -51633,9 +59107,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, FunctionPointer, FunctionPointer, ThreadHandle>)(
-                _slots[76] is not null and var loadedFnPtr
+                _slots[111] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[76] = nativeContext.LoadFunction(
+                    : _slots[111] = nativeContext.LoadFunction(
                         "SDL_CreateThreadWithPropertiesRuntime",
                         "SDL3"
                     )
@@ -51659,9 +59133,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, int, int, ulong, WindowHandle>)(
-                _slots[77] is not null and var loadedFnPtr
+                _slots[112] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[77] = nativeContext.LoadFunction("SDL_CreateWindow", "SDL3")
+                    : _slots[112] = nativeContext.LoadFunction("SDL_CreateWindow", "SDL3")
             )
         )(title, w, h, flags);
 
@@ -51709,9 +59183,12 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, int, int, ulong, WindowHandle*, RendererHandle*, byte>)(
-                _slots[78] is not null and var loadedFnPtr
+                _slots[113] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[78] = nativeContext.LoadFunction("SDL_CreateWindowAndRenderer", "SDL3")
+                    : _slots[113] = nativeContext.LoadFunction(
+                        "SDL_CreateWindowAndRenderer",
+                        "SDL3"
+                    )
             )
         )(title, width, height, window_flags, window, renderer);
 
@@ -51771,9 +59248,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     WindowHandle ISdl.CreateWindowWithProperties([NativeTypeName("SDL_PropertiesID")] uint props) =>
         (
             (delegate* unmanaged<uint, WindowHandle>)(
-                _slots[79] is not null and var loadedFnPtr
+                _slots[114] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[79] = nativeContext.LoadFunction(
+                    : _slots[114] = nativeContext.LoadFunction(
                         "SDL_CreateWindowWithProperties",
                         "SDL3"
                     )
@@ -51799,9 +59276,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.CursorVisibleRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[80] is not null and var loadedFnPtr
+                _slots[115] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[80] = nativeContext.LoadFunction("SDL_CursorVisible", "SDL3")
+                    : _slots[115] = nativeContext.LoadFunction("SDL_CursorVisible", "SDL3")
             )
         )();
 
@@ -51817,9 +59294,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<DateTime*, long*, byte>)(
-                _slots[81] is not null and var loadedFnPtr
+                _slots[116] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[81] = nativeContext.LoadFunction("SDL_DateTimeToTime", "SDL3")
+                    : _slots[116] = nativeContext.LoadFunction("SDL_DateTimeToTime", "SDL3")
             )
         )(dt, ticks);
 
@@ -51857,9 +59334,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.Delay([NativeTypeName("Uint32")] uint ms) =>
         (
             (delegate* unmanaged<uint, void>)(
-                _slots[82] is not null and var loadedFnPtr
+                _slots[117] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[82] = nativeContext.LoadFunction("SDL_Delay", "SDL3")
+                    : _slots[117] = nativeContext.LoadFunction("SDL_Delay", "SDL3")
             )
         )(ms);
 
@@ -51871,9 +59348,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DelayNS([NativeTypeName("Uint64")] ulong ns) =>
         (
             (delegate* unmanaged<ulong, void>)(
-                _slots[83] is not null and var loadedFnPtr
+                _slots[118] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[83] = nativeContext.LoadFunction("SDL_DelayNS", "SDL3")
+                    : _slots[118] = nativeContext.LoadFunction("SDL_DelayNS", "SDL3")
             )
         )(ns);
 
@@ -51885,9 +59362,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DelayPrecise([NativeTypeName("Uint64")] ulong ns) =>
         (
             (delegate* unmanaged<ulong, void>)(
-                _slots[84] is not null and var loadedFnPtr
+                _slots[119] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[84] = nativeContext.LoadFunction("SDL_DelayPrecise", "SDL3")
+                    : _slots[119] = nativeContext.LoadFunction("SDL_DelayPrecise", "SDL3")
             )
         )(ns);
 
@@ -51900,9 +59377,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DestroyAudioStream(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, void>)(
-                _slots[85] is not null and var loadedFnPtr
+                _slots[120] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[85] = nativeContext.LoadFunction("SDL_DestroyAudioStream", "SDL3")
+                    : _slots[120] = nativeContext.LoadFunction("SDL_DestroyAudioStream", "SDL3")
             )
         )(stream);
 
@@ -51915,9 +59392,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DestroyCondition(ConditionHandle cond) =>
         (
             (delegate* unmanaged<ConditionHandle, void>)(
-                _slots[86] is not null and var loadedFnPtr
+                _slots[121] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[86] = nativeContext.LoadFunction("SDL_DestroyCondition", "SDL3")
+                    : _slots[121] = nativeContext.LoadFunction("SDL_DestroyCondition", "SDL3")
             )
         )(cond);
 
@@ -51929,9 +59406,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DestroyCursor(CursorHandle cursor) =>
         (
             (delegate* unmanaged<CursorHandle, void>)(
-                _slots[87] is not null and var loadedFnPtr
+                _slots[122] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[87] = nativeContext.LoadFunction("SDL_DestroyCursor", "SDL3")
+                    : _slots[122] = nativeContext.LoadFunction("SDL_DestroyCursor", "SDL3")
             )
         )(cursor);
 
@@ -51940,12 +59417,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static void DestroyCursor(CursorHandle cursor) => DllImport.DestroyCursor(cursor);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DestroyGPUDevice(GPUDeviceHandle device) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, void>)(
+                _slots[123] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[123] = nativeContext.LoadFunction("SDL_DestroyGPUDevice", "SDL3")
+            )
+        )(device);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_DestroyGPUDevice")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DestroyGPUDevice(GPUDeviceHandle device) =>
+        DllImport.DestroyGPUDevice(device);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.DestroyHapticEffect(HapticHandle haptic, int effect) =>
         (
             (delegate* unmanaged<HapticHandle, int, void>)(
-                _slots[88] is not null and var loadedFnPtr
+                _slots[124] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[88] = nativeContext.LoadFunction("SDL_DestroyHapticEffect", "SDL3")
+                    : _slots[124] = nativeContext.LoadFunction("SDL_DestroyHapticEffect", "SDL3")
             )
         )(haptic, effect);
 
@@ -51958,9 +59450,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DestroyMutex(MutexHandle mutex) =>
         (
             (delegate* unmanaged<MutexHandle, void>)(
-                _slots[89] is not null and var loadedFnPtr
+                _slots[125] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[89] = nativeContext.LoadFunction("SDL_DestroyMutex", "SDL3")
+                    : _slots[125] = nativeContext.LoadFunction("SDL_DestroyMutex", "SDL3")
             )
         )(mutex);
 
@@ -51972,9 +59464,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DestroyPalette(Palette* palette) =>
         (
             (delegate* unmanaged<Palette*, void>)(
-                _slots[90] is not null and var loadedFnPtr
+                _slots[126] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[90] = nativeContext.LoadFunction("SDL_DestroyPalette", "SDL3")
+                    : _slots[126] = nativeContext.LoadFunction("SDL_DestroyPalette", "SDL3")
             )
         )(palette);
 
@@ -51997,12 +59489,26 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static void DestroyPalette(Ref<Palette> palette) => DllImport.DestroyPalette(palette);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DestroyProcess(ProcessHandle process) =>
+        (
+            (delegate* unmanaged<ProcessHandle, void>)(
+                _slots[127] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[127] = nativeContext.LoadFunction("SDL_DestroyProcess", "SDL3")
+            )
+        )(process);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_DestroyProcess")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DestroyProcess(ProcessHandle process) => DllImport.DestroyProcess(process);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.DestroyProperties([NativeTypeName("SDL_PropertiesID")] uint props) =>
         (
             (delegate* unmanaged<uint, void>)(
-                _slots[91] is not null and var loadedFnPtr
+                _slots[128] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[91] = nativeContext.LoadFunction("SDL_DestroyProperties", "SDL3")
+                    : _slots[128] = nativeContext.LoadFunction("SDL_DestroyProperties", "SDL3")
             )
         )(props);
 
@@ -52015,9 +59521,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DestroyRenderer(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, void>)(
-                _slots[92] is not null and var loadedFnPtr
+                _slots[129] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[92] = nativeContext.LoadFunction("SDL_DestroyRenderer", "SDL3")
+                    : _slots[129] = nativeContext.LoadFunction("SDL_DestroyRenderer", "SDL3")
             )
         )(renderer);
 
@@ -52030,9 +59536,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DestroyRWLock(RWLockHandle rwlock) =>
         (
             (delegate* unmanaged<RWLockHandle, void>)(
-                _slots[93] is not null and var loadedFnPtr
+                _slots[130] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[93] = nativeContext.LoadFunction("SDL_DestroyRWLock", "SDL3")
+                    : _slots[130] = nativeContext.LoadFunction("SDL_DestroyRWLock", "SDL3")
             )
         )(rwlock);
 
@@ -52044,9 +59550,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DestroySemaphore(SemaphoreHandle sem) =>
         (
             (delegate* unmanaged<SemaphoreHandle, void>)(
-                _slots[94] is not null and var loadedFnPtr
+                _slots[131] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[94] = nativeContext.LoadFunction("SDL_DestroySemaphore", "SDL3")
+                    : _slots[131] = nativeContext.LoadFunction("SDL_DestroySemaphore", "SDL3")
             )
         )(sem);
 
@@ -52058,9 +59564,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DestroySurface(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, void>)(
-                _slots[95] is not null and var loadedFnPtr
+                _slots[132] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[95] = nativeContext.LoadFunction("SDL_DestroySurface", "SDL3")
+                    : _slots[132] = nativeContext.LoadFunction("SDL_DestroySurface", "SDL3")
             )
         )(surface);
 
@@ -52086,9 +59592,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DestroyTexture(Texture* texture) =>
         (
             (delegate* unmanaged<Texture*, void>)(
-                _slots[96] is not null and var loadedFnPtr
+                _slots[133] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[96] = nativeContext.LoadFunction("SDL_DestroyTexture", "SDL3")
+                    : _slots[133] = nativeContext.LoadFunction("SDL_DestroyTexture", "SDL3")
             )
         )(texture);
 
@@ -52114,9 +59620,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DestroyWindow(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, void>)(
-                _slots[97] is not null and var loadedFnPtr
+                _slots[134] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[97] = nativeContext.LoadFunction("SDL_DestroyWindow", "SDL3")
+                    : _slots[134] = nativeContext.LoadFunction("SDL_DestroyWindow", "SDL3")
             )
         )(window);
 
@@ -52139,9 +59645,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.DestroyWindowSurfaceRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[98] is not null and var loadedFnPtr
+                _slots[135] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[98] = nativeContext.LoadFunction("SDL_DestroyWindowSurface", "SDL3")
+                    : _slots[135] = nativeContext.LoadFunction("SDL_DestroyWindowSurface", "SDL3")
             )
         )(window);
 
@@ -52155,9 +59661,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.DetachThread(ThreadHandle thread) =>
         (
             (delegate* unmanaged<ThreadHandle, void>)(
-                _slots[99] is not null and var loadedFnPtr
+                _slots[136] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[99] = nativeContext.LoadFunction("SDL_DetachThread", "SDL3")
+                    : _slots[136] = nativeContext.LoadFunction("SDL_DetachThread", "SDL3")
             )
         )(thread);
 
@@ -52182,9 +59688,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.DetachVirtualJoystickRaw([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[100] is not null and var loadedFnPtr
+                _slots[137] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[100] = nativeContext.LoadFunction("SDL_DetachVirtualJoystick", "SDL3")
+                    : _slots[137] = nativeContext.LoadFunction("SDL_DetachVirtualJoystick", "SDL3")
             )
         )(instance_id);
 
@@ -52209,9 +59715,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.DisableScreenSaverRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[101] is not null and var loadedFnPtr
+                _slots[138] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[101] = nativeContext.LoadFunction("SDL_DisableScreenSaver", "SDL3")
+                    : _slots[138] = nativeContext.LoadFunction("SDL_DisableScreenSaver", "SDL3")
             )
         )();
 
@@ -52221,12 +59727,291 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static byte DisableScreenSaverRaw() => DllImport.DisableScreenSaverRaw();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DispatchGPUCompute(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint groupcount_x,
+        [NativeTypeName("Uint32")] uint groupcount_y,
+        [NativeTypeName("Uint32")] uint groupcount_z
+    ) =>
+        (
+            (delegate* unmanaged<GPUComputePassHandle, uint, uint, uint, void>)(
+                _slots[139] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[139] = nativeContext.LoadFunction("SDL_DispatchGPUCompute", "SDL3")
+            )
+        )(compute_pass, groupcount_x, groupcount_y, groupcount_z);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_DispatchGPUCompute")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DispatchGPUCompute(
+        GPUComputePassHandle compute_pass,
+        [NativeTypeName("Uint32")] uint groupcount_x,
+        [NativeTypeName("Uint32")] uint groupcount_y,
+        [NativeTypeName("Uint32")] uint groupcount_z
+    ) => DllImport.DispatchGPUCompute(compute_pass, groupcount_x, groupcount_y, groupcount_z);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DispatchGPUComputeIndirect(
+        GPUComputePassHandle compute_pass,
+        GPUBufferHandle buffer,
+        [NativeTypeName("Uint32")] uint offset
+    ) =>
+        (
+            (delegate* unmanaged<GPUComputePassHandle, GPUBufferHandle, uint, void>)(
+                _slots[140] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[140] = nativeContext.LoadFunction(
+                        "SDL_DispatchGPUComputeIndirect",
+                        "SDL3"
+                    )
+            )
+        )(compute_pass, buffer, offset);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_DispatchGPUComputeIndirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DispatchGPUComputeIndirect(
+        GPUComputePassHandle compute_pass,
+        GPUBufferHandle buffer,
+        [NativeTypeName("Uint32")] uint offset
+    ) => DllImport.DispatchGPUComputeIndirect(compute_pass, buffer, offset);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DownloadFromGPUBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUBufferRegion *")] GPUBufferRegion* source,
+        [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+            GPUTransferBufferLocation* destination
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUCopyPassHandle,
+                GPUBufferRegion*,
+                GPUTransferBufferLocation*,
+                void>)(
+                _slots[141] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[141] = nativeContext.LoadFunction("SDL_DownloadFromGPUBuffer", "SDL3")
+            )
+        )(copy_pass, source, destination);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DownloadFromGPUBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUBufferRegion *")] GPUBufferRegion* source,
+        [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+            GPUTransferBufferLocation* destination
+    ) => DllImport.DownloadFromGPUBuffer(copy_pass, source, destination);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DownloadFromGPUBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUBufferRegion *")] Ref<GPUBufferRegion> source,
+        [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+            Ref<GPUTransferBufferLocation> destination
+    )
+    {
+        fixed (GPUTransferBufferLocation* __dsl_destination = destination)
+        fixed (GPUBufferRegion* __dsl_source = source)
+        {
+            ((ISdl)this).DownloadFromGPUBuffer(copy_pass, __dsl_source, __dsl_destination);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DownloadFromGPUBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUBufferRegion *")] Ref<GPUBufferRegion> source,
+        [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+            Ref<GPUTransferBufferLocation> destination
+    ) => DllImport.DownloadFromGPUBuffer(copy_pass, source, destination);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DownloadFromGPUTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureRegion *")] GPUTextureRegion* source,
+        [NativeTypeName("const SDL_GPUTextureTransferInfo *")] GPUTextureTransferInfo* destination
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUCopyPassHandle,
+                GPUTextureRegion*,
+                GPUTextureTransferInfo*,
+                void>)(
+                _slots[142] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[142] = nativeContext.LoadFunction("SDL_DownloadFromGPUTexture", "SDL3")
+            )
+        )(copy_pass, source, destination);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DownloadFromGPUTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureRegion *")] GPUTextureRegion* source,
+        [NativeTypeName("const SDL_GPUTextureTransferInfo *")] GPUTextureTransferInfo* destination
+    ) => DllImport.DownloadFromGPUTexture(copy_pass, source, destination);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DownloadFromGPUTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> source,
+        [NativeTypeName("const SDL_GPUTextureTransferInfo *")]
+            Ref<GPUTextureTransferInfo> destination
+    )
+    {
+        fixed (GPUTextureTransferInfo* __dsl_destination = destination)
+        fixed (GPUTextureRegion* __dsl_source = source)
+        {
+            ((ISdl)this).DownloadFromGPUTexture(copy_pass, __dsl_source, __dsl_destination);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DownloadFromGPUTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> source,
+        [NativeTypeName("const SDL_GPUTextureTransferInfo *")]
+            Ref<GPUTextureTransferInfo> destination
+    ) => DllImport.DownloadFromGPUTexture(copy_pass, source, destination);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DrawGPUIndexedPrimitives(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint num_indices,
+        [NativeTypeName("Uint32")] uint num_instances,
+        [NativeTypeName("Uint32")] uint first_index,
+        [NativeTypeName("Sint32")] int vertex_offset,
+        [NativeTypeName("Uint32")] uint first_instance
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, uint, uint, uint, int, uint, void>)(
+                _slots[143] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[143] = nativeContext.LoadFunction(
+                        "SDL_DrawGPUIndexedPrimitives",
+                        "SDL3"
+                    )
+            )
+        )(render_pass, num_indices, num_instances, first_index, vertex_offset, first_instance);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUIndexedPrimitives")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DrawGPUIndexedPrimitives(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint num_indices,
+        [NativeTypeName("Uint32")] uint num_instances,
+        [NativeTypeName("Uint32")] uint first_index,
+        [NativeTypeName("Sint32")] int vertex_offset,
+        [NativeTypeName("Uint32")] uint first_instance
+    ) =>
+        DllImport.DrawGPUIndexedPrimitives(
+            render_pass,
+            num_indices,
+            num_instances,
+            first_index,
+            vertex_offset,
+            first_instance
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DrawGPUIndexedPrimitivesIndirect(
+        GPURenderPassHandle render_pass,
+        GPUBufferHandle buffer,
+        [NativeTypeName("Uint32")] uint offset,
+        [NativeTypeName("Uint32")] uint draw_count
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, GPUBufferHandle, uint, uint, void>)(
+                _slots[144] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[144] = nativeContext.LoadFunction(
+                        "SDL_DrawGPUIndexedPrimitivesIndirect",
+                        "SDL3"
+                    )
+            )
+        )(render_pass, buffer, offset, draw_count);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUIndexedPrimitivesIndirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DrawGPUIndexedPrimitivesIndirect(
+        GPURenderPassHandle render_pass,
+        GPUBufferHandle buffer,
+        [NativeTypeName("Uint32")] uint offset,
+        [NativeTypeName("Uint32")] uint draw_count
+    ) => DllImport.DrawGPUIndexedPrimitivesIndirect(render_pass, buffer, offset, draw_count);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DrawGPUPrimitives(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint num_vertices,
+        [NativeTypeName("Uint32")] uint num_instances,
+        [NativeTypeName("Uint32")] uint first_vertex,
+        [NativeTypeName("Uint32")] uint first_instance
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, uint, uint, uint, uint, void>)(
+                _slots[145] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[145] = nativeContext.LoadFunction("SDL_DrawGPUPrimitives", "SDL3")
+            )
+        )(render_pass, num_vertices, num_instances, first_vertex, first_instance);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUPrimitives")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DrawGPUPrimitives(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint32")] uint num_vertices,
+        [NativeTypeName("Uint32")] uint num_instances,
+        [NativeTypeName("Uint32")] uint first_vertex,
+        [NativeTypeName("Uint32")] uint first_instance
+    ) =>
+        DllImport.DrawGPUPrimitives(
+            render_pass,
+            num_vertices,
+            num_instances,
+            first_vertex,
+            first_instance
+        );
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.DrawGPUPrimitivesIndirect(
+        GPURenderPassHandle render_pass,
+        GPUBufferHandle buffer,
+        [NativeTypeName("Uint32")] uint offset,
+        [NativeTypeName("Uint32")] uint draw_count
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, GPUBufferHandle, uint, uint, void>)(
+                _slots[146] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[146] = nativeContext.LoadFunction(
+                        "SDL_DrawGPUPrimitivesIndirect",
+                        "SDL3"
+                    )
+            )
+        )(render_pass, buffer, offset, draw_count);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUPrimitivesIndirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DrawGPUPrimitivesIndirect(
+        GPURenderPassHandle render_pass,
+        GPUBufferHandle buffer,
+        [NativeTypeName("Uint32")] uint offset,
+        [NativeTypeName("Uint32")] uint draw_count
+    ) => DllImport.DrawGPUPrimitivesIndirect(render_pass, buffer, offset, draw_count);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Surface* ISdl.DuplicateSurface(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, Surface*>)(
-                _slots[102] is not null and var loadedFnPtr
+                _slots[147] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[102] = nativeContext.LoadFunction("SDL_DuplicateSurface", "SDL3")
+                    : _slots[147] = nativeContext.LoadFunction("SDL_DuplicateSurface", "SDL3")
             )
         )(surface);
 
@@ -52263,9 +60048,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void* ISdl.EGLGetCurrentConfigRaw() =>
         (
             (delegate* unmanaged<void*>)(
-                _slots[103] is not null and var loadedFnPtr
+                _slots[148] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[103] = nativeContext.LoadFunction("SDL_EGL_GetCurrentConfig", "SDL3")
+                    : _slots[148] = nativeContext.LoadFunction("SDL_EGL_GetCurrentConfig", "SDL3")
             )
         )();
 
@@ -52287,9 +60072,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void* ISdl.EGLGetCurrentDisplayRaw() =>
         (
             (delegate* unmanaged<void*>)(
-                _slots[104] is not null and var loadedFnPtr
+                _slots[149] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[104] = nativeContext.LoadFunction("SDL_EGL_GetCurrentDisplay", "SDL3")
+                    : _slots[149] = nativeContext.LoadFunction("SDL_EGL_GetCurrentDisplay", "SDL3")
             )
         )();
 
@@ -52302,9 +60087,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     FunctionPointer ISdl.EGLGetProcAddress([NativeTypeName("const char *")] sbyte* proc) =>
         (
             (delegate* unmanaged<sbyte*, FunctionPointer>)(
-                _slots[105] is not null and var loadedFnPtr
+                _slots[150] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[105] = nativeContext.LoadFunction("SDL_EGL_GetProcAddress", "SDL3")
+                    : _slots[150] = nativeContext.LoadFunction("SDL_EGL_GetProcAddress", "SDL3")
             )
         )(proc);
 
@@ -52346,9 +60131,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void* ISdl.EGLGetWindowSurfaceRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, void*>)(
-                _slots[106] is not null and var loadedFnPtr
+                _slots[151] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[106] = nativeContext.LoadFunction("SDL_EGL_GetWindowSurface", "SDL3")
+                    : _slots[151] = nativeContext.LoadFunction("SDL_EGL_GetWindowSurface", "SDL3")
             )
         )(window);
 
@@ -52373,9 +60158,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 EGLIntArrayCallback,
                 void*,
                 void>)(
-                _slots[107] is not null and var loadedFnPtr
+                _slots[152] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[107] = nativeContext.LoadFunction(
+                    : _slots[152] = nativeContext.LoadFunction(
                         "SDL_EGL_SetAttributeCallbacks",
                         "SDL3"
                     )
@@ -52449,9 +60234,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.EnableScreenSaverRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[108] is not null and var loadedFnPtr
+                _slots[153] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[108] = nativeContext.LoadFunction("SDL_EnableScreenSaver", "SDL3")
+                    : _slots[153] = nativeContext.LoadFunction("SDL_EnableScreenSaver", "SDL3")
             )
         )();
 
@@ -52461,6 +60246,51 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static byte EnableScreenSaverRaw() => DllImport.EnableScreenSaverRaw();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.EndGPUComputePass(GPUComputePassHandle compute_pass) =>
+        (
+            (delegate* unmanaged<GPUComputePassHandle, void>)(
+                _slots[154] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[154] = nativeContext.LoadFunction("SDL_EndGPUComputePass", "SDL3")
+            )
+        )(compute_pass);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_EndGPUComputePass")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void EndGPUComputePass(GPUComputePassHandle compute_pass) =>
+        DllImport.EndGPUComputePass(compute_pass);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.EndGPUCopyPass(GPUCopyPassHandle copy_pass) =>
+        (
+            (delegate* unmanaged<GPUCopyPassHandle, void>)(
+                _slots[155] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[155] = nativeContext.LoadFunction("SDL_EndGPUCopyPass", "SDL3")
+            )
+        )(copy_pass);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_EndGPUCopyPass")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void EndGPUCopyPass(GPUCopyPassHandle copy_pass) =>
+        DllImport.EndGPUCopyPass(copy_pass);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.EndGPURenderPass(GPURenderPassHandle render_pass) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, void>)(
+                _slots[156] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[156] = nativeContext.LoadFunction("SDL_EndGPURenderPass", "SDL3")
+            )
+        )(render_pass);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_EndGPURenderPass")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void EndGPURenderPass(GPURenderPassHandle render_pass) =>
+        DllImport.EndGPURenderPass(render_pass);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     byte ISdl.EnumerateDirectory(
         [NativeTypeName("const char *")] sbyte* path,
         [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
@@ -52468,9 +60298,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, EnumerateDirectoryCallback, void*, byte>)(
-                _slots[109] is not null and var loadedFnPtr
+                _slots[157] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[109] = nativeContext.LoadFunction("SDL_EnumerateDirectory", "SDL3")
+                    : _slots[157] = nativeContext.LoadFunction("SDL_EnumerateDirectory", "SDL3")
             )
         )(path, callback, userdata);
 
@@ -52516,9 +60346,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, EnumeratePropertiesCallback, void*, byte>)(
-                _slots[110] is not null and var loadedFnPtr
+                _slots[158] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[110] = nativeContext.LoadFunction("SDL_EnumerateProperties", "SDL3")
+                    : _slots[158] = nativeContext.LoadFunction("SDL_EnumerateProperties", "SDL3")
             )
         )(props, callback, userdata);
 
@@ -52564,9 +60394,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<StorageHandle, sbyte*, EnumerateDirectoryCallback, void*, byte>)(
-                _slots[111] is not null and var loadedFnPtr
+                _slots[159] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[111] = nativeContext.LoadFunction(
+                    : _slots[159] = nativeContext.LoadFunction(
                         "SDL_EnumerateStorageDirectory",
                         "SDL3"
                     )
@@ -52631,9 +60461,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.EventEnabledRaw([NativeTypeName("Uint32")] uint type) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[112] is not null and var loadedFnPtr
+                _slots[160] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[112] = nativeContext.LoadFunction("SDL_EventEnabled", "SDL3")
+                    : _slots[160] = nativeContext.LoadFunction("SDL_EventEnabled", "SDL3")
             )
         )(type);
 
@@ -52651,9 +60481,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, Rect*, uint, byte>)(
-                _slots[113] is not null and var loadedFnPtr
+                _slots[161] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[113] = nativeContext.LoadFunction("SDL_FillSurfaceRect", "SDL3")
+                    : _slots[161] = nativeContext.LoadFunction("SDL_FillSurfaceRect", "SDL3")
             )
         )(dst, rect, color);
 
@@ -52700,9 +60530,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, Rect*, int, uint, byte>)(
-                _slots[114] is not null and var loadedFnPtr
+                _slots[162] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[114] = nativeContext.LoadFunction("SDL_FillSurfaceRects", "SDL3")
+                    : _slots[162] = nativeContext.LoadFunction("SDL_FillSurfaceRects", "SDL3")
             )
         )(dst, rects, count, color);
 
@@ -52750,9 +60580,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<EventFilter, void*, void>)(
-                _slots[115] is not null and var loadedFnPtr
+                _slots[163] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[115] = nativeContext.LoadFunction("SDL_FilterEvents", "SDL3")
+                    : _slots[163] = nativeContext.LoadFunction("SDL_FilterEvents", "SDL3")
             )
         )(filter, userdata);
 
@@ -52795,9 +60625,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.FlashWindowRaw(WindowHandle window, FlashOperation operation) =>
         (
             (delegate* unmanaged<WindowHandle, FlashOperation, byte>)(
-                _slots[116] is not null and var loadedFnPtr
+                _slots[164] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[116] = nativeContext.LoadFunction("SDL_FlashWindow", "SDL3")
+                    : _slots[164] = nativeContext.LoadFunction("SDL_FlashWindow", "SDL3")
             )
         )(window, operation);
 
@@ -52811,9 +60641,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.FlipSurface(Surface* surface, FlipMode flip) =>
         (
             (delegate* unmanaged<Surface*, FlipMode, byte>)(
-                _slots[117] is not null and var loadedFnPtr
+                _slots[165] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[117] = nativeContext.LoadFunction("SDL_FlipSurface", "SDL3")
+                    : _slots[165] = nativeContext.LoadFunction("SDL_FlipSurface", "SDL3")
             )
         )(surface, flip);
 
@@ -52854,9 +60684,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.FlushAudioStreamRaw(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, byte>)(
-                _slots[118] is not null and var loadedFnPtr
+                _slots[166] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[118] = nativeContext.LoadFunction("SDL_FlushAudioStream", "SDL3")
+                    : _slots[166] = nativeContext.LoadFunction("SDL_FlushAudioStream", "SDL3")
             )
         )(stream);
 
@@ -52870,9 +60700,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.FlushEvent([NativeTypeName("Uint32")] uint type) =>
         (
             (delegate* unmanaged<uint, void>)(
-                _slots[119] is not null and var loadedFnPtr
+                _slots[167] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[119] = nativeContext.LoadFunction("SDL_FlushEvent", "SDL3")
+                    : _slots[167] = nativeContext.LoadFunction("SDL_FlushEvent", "SDL3")
             )
         )(type);
 
@@ -52888,9 +60718,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, uint, void>)(
-                _slots[120] is not null and var loadedFnPtr
+                _slots[168] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[120] = nativeContext.LoadFunction("SDL_FlushEvents", "SDL3")
+                    : _slots[168] = nativeContext.LoadFunction("SDL_FlushEvents", "SDL3")
             )
         )(minType, maxType);
 
@@ -52915,9 +60745,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.FlushIORaw(IOStreamHandle context) =>
         (
             (delegate* unmanaged<IOStreamHandle, byte>)(
-                _slots[121] is not null and var loadedFnPtr
+                _slots[169] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[121] = nativeContext.LoadFunction("SDL_FlushIO", "SDL3")
+                    : _slots[169] = nativeContext.LoadFunction("SDL_FlushIO", "SDL3")
             )
         )(context);
 
@@ -52941,9 +60771,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.FlushRendererRaw(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, byte>)(
-                _slots[122] is not null and var loadedFnPtr
+                _slots[170] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[122] = nativeContext.LoadFunction("SDL_FlushRenderer", "SDL3")
+                    : _slots[170] = nativeContext.LoadFunction("SDL_FlushRenderer", "SDL3")
             )
         )(renderer);
 
@@ -52968,9 +60798,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GamepadConnectedRaw(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, byte>)(
-                _slots[123] is not null and var loadedFnPtr
+                _slots[171] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[123] = nativeContext.LoadFunction("SDL_GamepadConnected", "SDL3")
+                    : _slots[171] = nativeContext.LoadFunction("SDL_GamepadConnected", "SDL3")
             )
         )(gamepad);
 
@@ -52994,9 +60824,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GamepadEventsEnabledRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[124] is not null and var loadedFnPtr
+                _slots[172] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[124] = nativeContext.LoadFunction("SDL_GamepadEventsEnabled", "SDL3")
+                    : _slots[172] = nativeContext.LoadFunction("SDL_GamepadEventsEnabled", "SDL3")
             )
         )();
 
@@ -53020,9 +60850,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GamepadHasAxisRaw(GamepadHandle gamepad, GamepadAxis axis) =>
         (
             (delegate* unmanaged<GamepadHandle, GamepadAxis, byte>)(
-                _slots[125] is not null and var loadedFnPtr
+                _slots[173] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[125] = nativeContext.LoadFunction("SDL_GamepadHasAxis", "SDL3")
+                    : _slots[173] = nativeContext.LoadFunction("SDL_GamepadHasAxis", "SDL3")
             )
         )(gamepad, axis);
 
@@ -53047,9 +60877,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GamepadHasButtonRaw(GamepadHandle gamepad, GamepadButton button) =>
         (
             (delegate* unmanaged<GamepadHandle, GamepadButton, byte>)(
-                _slots[126] is not null and var loadedFnPtr
+                _slots[174] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[126] = nativeContext.LoadFunction("SDL_GamepadHasButton", "SDL3")
+                    : _slots[174] = nativeContext.LoadFunction("SDL_GamepadHasButton", "SDL3")
             )
         )(gamepad, button);
 
@@ -53074,9 +60904,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GamepadHasSensorRaw(GamepadHandle gamepad, SensorType type) =>
         (
             (delegate* unmanaged<GamepadHandle, SensorType, byte>)(
-                _slots[127] is not null and var loadedFnPtr
+                _slots[175] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[127] = nativeContext.LoadFunction("SDL_GamepadHasSensor", "SDL3")
+                    : _slots[175] = nativeContext.LoadFunction("SDL_GamepadHasSensor", "SDL3")
             )
         )(gamepad, type);
 
@@ -53101,9 +60931,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GamepadSensorEnabledRaw(GamepadHandle gamepad, SensorType type) =>
         (
             (delegate* unmanaged<GamepadHandle, SensorType, byte>)(
-                _slots[128] is not null and var loadedFnPtr
+                _slots[176] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[128] = nativeContext.LoadFunction("SDL_GamepadSensorEnabled", "SDL3")
+                    : _slots[176] = nativeContext.LoadFunction("SDL_GamepadSensorEnabled", "SDL3")
             )
         )(gamepad, type);
 
@@ -53114,12 +60944,35 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         DllImport.GamepadSensorEnabledRaw(gamepad, type);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.GenerateMipmapsForGPUTexture(
+        GPUCommandBufferHandle command_buffer,
+        GPUTextureHandle texture
+    ) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, GPUTextureHandle, void>)(
+                _slots[177] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[177] = nativeContext.LoadFunction(
+                        "SDL_GenerateMipmapsForGPUTexture",
+                        "SDL3"
+                    )
+            )
+        )(command_buffer, texture);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GenerateMipmapsForGPUTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GenerateMipmapsForGPUTexture(
+        GPUCommandBufferHandle command_buffer,
+        GPUTextureHandle texture
+    ) => DllImport.GenerateMipmapsForGPUTexture(command_buffer, texture);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     sbyte* ISdl.GetAppMetadataProperty([NativeTypeName("const char *")] sbyte* name) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*>)(
-                _slots[129] is not null and var loadedFnPtr
+                _slots[178] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[129] = nativeContext.LoadFunction("SDL_GetAppMetadataProperty", "SDL3")
+                    : _slots[178] = nativeContext.LoadFunction("SDL_GetAppMetadataProperty", "SDL3")
             )
         )(name);
 
@@ -53150,9 +61003,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     AssertionHandler ISdl.GetAssertionHandler(void** puserdata) =>
         (
             (delegate* unmanaged<void**, AssertionHandler>)(
-                _slots[130] is not null and var loadedFnPtr
+                _slots[179] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[130] = nativeContext.LoadFunction("SDL_GetAssertionHandler", "SDL3")
+                    : _slots[179] = nativeContext.LoadFunction("SDL_GetAssertionHandler", "SDL3")
             )
         )(puserdata);
 
@@ -53191,9 +61044,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     AssertData* ISdl.GetAssertionReportRaw() =>
         (
             (delegate* unmanaged<AssertData*>)(
-                _slots[131] is not null and var loadedFnPtr
+                _slots[180] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[131] = nativeContext.LoadFunction("SDL_GetAssertionReport", "SDL3")
+                    : _slots[180] = nativeContext.LoadFunction("SDL_GetAssertionReport", "SDL3")
             )
         )();
 
@@ -53206,9 +61059,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetAtomicInt(AtomicInt* a) =>
         (
             (delegate* unmanaged<AtomicInt*, int>)(
-                _slots[132] is not null and var loadedFnPtr
+                _slots[181] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[132] = nativeContext.LoadFunction("SDL_GetAtomicInt", "SDL3")
+                    : _slots[181] = nativeContext.LoadFunction("SDL_GetAtomicInt", "SDL3")
             )
         )(a);
 
@@ -53234,9 +61087,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void* ISdl.GetAtomicPointer(void** a) =>
         (
             (delegate* unmanaged<void**, void*>)(
-                _slots[133] is not null and var loadedFnPtr
+                _slots[182] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[133] = nativeContext.LoadFunction("SDL_GetAtomicPointer", "SDL3")
+                    : _slots[182] = nativeContext.LoadFunction("SDL_GetAtomicPointer", "SDL3")
             )
         )(a);
 
@@ -53262,9 +61115,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetAtomicU32(AtomicU32* a) =>
         (
             (delegate* unmanaged<AtomicU32*, uint>)(
-                _slots[134] is not null and var loadedFnPtr
+                _slots[183] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[134] = nativeContext.LoadFunction("SDL_GetAtomicU32", "SDL3")
+                    : _slots[183] = nativeContext.LoadFunction("SDL_GetAtomicU32", "SDL3")
             )
         )(a);
 
@@ -53295,9 +61148,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, int*, int*>)(
-                _slots[135] is not null and var loadedFnPtr
+                _slots[184] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[135] = nativeContext.LoadFunction(
+                    : _slots[184] = nativeContext.LoadFunction(
                         "SDL_GetAudioDeviceChannelMap",
                         "SDL3"
                     )
@@ -53339,9 +61192,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, AudioSpec*, int*, byte>)(
-                _slots[136] is not null and var loadedFnPtr
+                _slots[185] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[136] = nativeContext.LoadFunction("SDL_GetAudioDeviceFormat", "SDL3")
+                    : _slots[185] = nativeContext.LoadFunction("SDL_GetAudioDeviceFormat", "SDL3")
             )
         )(devid, spec, sample_frames);
 
@@ -53383,9 +61236,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     float ISdl.GetAudioDeviceGain([NativeTypeName("SDL_AudioDeviceID")] uint devid) =>
         (
             (delegate* unmanaged<uint, float>)(
-                _slots[137] is not null and var loadedFnPtr
+                _slots[186] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[137] = nativeContext.LoadFunction("SDL_GetAudioDeviceGain", "SDL3")
+                    : _slots[186] = nativeContext.LoadFunction("SDL_GetAudioDeviceGain", "SDL3")
             )
         )(devid);
 
@@ -53409,9 +61262,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetAudioDeviceNameRaw([NativeTypeName("SDL_AudioDeviceID")] uint devid) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[138] is not null and var loadedFnPtr
+                _slots[187] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[138] = nativeContext.LoadFunction("SDL_GetAudioDeviceName", "SDL3")
+                    : _slots[187] = nativeContext.LoadFunction("SDL_GetAudioDeviceName", "SDL3")
             )
         )(devid);
 
@@ -53434,9 +61287,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetAudioDriverRaw(int index) =>
         (
             (delegate* unmanaged<int, sbyte*>)(
-                _slots[139] is not null and var loadedFnPtr
+                _slots[188] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[139] = nativeContext.LoadFunction("SDL_GetAudioDriver", "SDL3")
+                    : _slots[188] = nativeContext.LoadFunction("SDL_GetAudioDriver", "SDL3")
             )
         )(index);
 
@@ -53460,9 +61313,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetAudioFormatNameRaw(AudioFormat format) =>
         (
             (delegate* unmanaged<AudioFormat, sbyte*>)(
-                _slots[140] is not null and var loadedFnPtr
+                _slots[189] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[140] = nativeContext.LoadFunction("SDL_GetAudioFormatName", "SDL3")
+                    : _slots[189] = nativeContext.LoadFunction("SDL_GetAudioFormatName", "SDL3")
             )
         )(format);
 
@@ -53476,9 +61329,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint* ISdl.GetAudioPlaybackDevices(int* count) =>
         (
             (delegate* unmanaged<int*, uint*>)(
-                _slots[141] is not null and var loadedFnPtr
+                _slots[190] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[141] = nativeContext.LoadFunction(
+                    : _slots[190] = nativeContext.LoadFunction(
                         "SDL_GetAudioPlaybackDevices",
                         "SDL3"
                     )
@@ -53511,9 +61364,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint* ISdl.GetAudioRecordingDevices(int* count) =>
         (
             (delegate* unmanaged<int*, uint*>)(
-                _slots[142] is not null and var loadedFnPtr
+                _slots[191] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[142] = nativeContext.LoadFunction(
+                    : _slots[191] = nativeContext.LoadFunction(
                         "SDL_GetAudioRecordingDevices",
                         "SDL3"
                     )
@@ -53546,9 +61399,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetAudioStreamAvailable(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, int>)(
-                _slots[143] is not null and var loadedFnPtr
+                _slots[192] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[143] = nativeContext.LoadFunction(
+                    : _slots[192] = nativeContext.LoadFunction(
                         "SDL_GetAudioStreamAvailable",
                         "SDL3"
                     )
@@ -53564,9 +61417,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetAudioStreamData(AudioStreamHandle stream, void* buf, int len) =>
         (
             (delegate* unmanaged<AudioStreamHandle, void*, int, int>)(
-                _slots[144] is not null and var loadedFnPtr
+                _slots[193] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[144] = nativeContext.LoadFunction("SDL_GetAudioStreamData", "SDL3")
+                    : _slots[193] = nativeContext.LoadFunction("SDL_GetAudioStreamData", "SDL3")
             )
         )(stream, buf, len);
 
@@ -53594,9 +61447,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetAudioStreamDevice(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, uint>)(
-                _slots[145] is not null and var loadedFnPtr
+                _slots[194] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[145] = nativeContext.LoadFunction("SDL_GetAudioStreamDevice", "SDL3")
+                    : _slots[194] = nativeContext.LoadFunction("SDL_GetAudioStreamDevice", "SDL3")
             )
         )(stream);
 
@@ -53614,9 +61467,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AudioStreamHandle, AudioSpec*, AudioSpec*, byte>)(
-                _slots[146] is not null and var loadedFnPtr
+                _slots[195] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[146] = nativeContext.LoadFunction("SDL_GetAudioStreamFormat", "SDL3")
+                    : _slots[195] = nativeContext.LoadFunction("SDL_GetAudioStreamFormat", "SDL3")
             )
         )(stream, src_spec, dst_spec);
 
@@ -53658,9 +61511,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     float ISdl.GetAudioStreamFrequencyRatio(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, float>)(
-                _slots[147] is not null and var loadedFnPtr
+                _slots[196] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[147] = nativeContext.LoadFunction(
+                    : _slots[196] = nativeContext.LoadFunction(
                         "SDL_GetAudioStreamFrequencyRatio",
                         "SDL3"
                     )
@@ -53676,9 +61529,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     float ISdl.GetAudioStreamGain(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, float>)(
-                _slots[148] is not null and var loadedFnPtr
+                _slots[197] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[148] = nativeContext.LoadFunction("SDL_GetAudioStreamGain", "SDL3")
+                    : _slots[197] = nativeContext.LoadFunction("SDL_GetAudioStreamGain", "SDL3")
             )
         )(stream);
 
@@ -53691,9 +61544,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int* ISdl.GetAudioStreamInputChannelMap(AudioStreamHandle stream, int* count) =>
         (
             (delegate* unmanaged<AudioStreamHandle, int*, int*>)(
-                _slots[149] is not null and var loadedFnPtr
+                _slots[198] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[149] = nativeContext.LoadFunction(
+                    : _slots[198] = nativeContext.LoadFunction(
                         "SDL_GetAudioStreamInputChannelMap",
                         "SDL3"
                     )
@@ -53726,9 +61579,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int* ISdl.GetAudioStreamOutputChannelMap(AudioStreamHandle stream, int* count) =>
         (
             (delegate* unmanaged<AudioStreamHandle, int*, int*>)(
-                _slots[150] is not null and var loadedFnPtr
+                _slots[199] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[150] = nativeContext.LoadFunction(
+                    : _slots[199] = nativeContext.LoadFunction(
                         "SDL_GetAudioStreamOutputChannelMap",
                         "SDL3"
                     )
@@ -53761,9 +61614,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetAudioStreamProperties(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, uint>)(
-                _slots[151] is not null and var loadedFnPtr
+                _slots[200] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[151] = nativeContext.LoadFunction(
+                    : _slots[200] = nativeContext.LoadFunction(
                         "SDL_GetAudioStreamProperties",
                         "SDL3"
                     )
@@ -53780,9 +61633,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetAudioStreamQueued(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, int>)(
-                _slots[152] is not null and var loadedFnPtr
+                _slots[201] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[152] = nativeContext.LoadFunction("SDL_GetAudioStreamQueued", "SDL3")
+                    : _slots[201] = nativeContext.LoadFunction("SDL_GetAudioStreamQueued", "SDL3")
             )
         )(stream);
 
@@ -53804,9 +61657,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetBasePathRaw() =>
         (
             (delegate* unmanaged<sbyte*>)(
-                _slots[153] is not null and var loadedFnPtr
+                _slots[202] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[153] = nativeContext.LoadFunction("SDL_GetBasePath", "SDL3")
+                    : _slots[202] = nativeContext.LoadFunction("SDL_GetBasePath", "SDL3")
             )
         )();
 
@@ -53823,9 +61676,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, byte, byte>)(
-                _slots[154] is not null and var loadedFnPtr
+                _slots[203] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[154] = nativeContext.LoadFunction("SDL_GetBooleanProperty", "SDL3")
+                    : _slots[203] = nativeContext.LoadFunction("SDL_GetBooleanProperty", "SDL3")
             )
         )(props, name, default_value);
 
@@ -53875,9 +61728,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetCameraDriverRaw(int index) =>
         (
             (delegate* unmanaged<int, sbyte*>)(
-                _slots[155] is not null and var loadedFnPtr
+                _slots[204] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[155] = nativeContext.LoadFunction("SDL_GetCameraDriver", "SDL3")
+                    : _slots[204] = nativeContext.LoadFunction("SDL_GetCameraDriver", "SDL3")
             )
         )(index);
 
@@ -53890,9 +61743,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetCameraFormat(CameraHandle camera, CameraSpec* spec) =>
         (
             (delegate* unmanaged<CameraHandle, CameraSpec*, byte>)(
-                _slots[156] is not null and var loadedFnPtr
+                _slots[205] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[156] = nativeContext.LoadFunction("SDL_GetCameraFormat", "SDL3")
+                    : _slots[205] = nativeContext.LoadFunction("SDL_GetCameraFormat", "SDL3")
             )
         )(camera, spec);
 
@@ -53922,9 +61775,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetCameraID(CameraHandle camera) =>
         (
             (delegate* unmanaged<CameraHandle, uint>)(
-                _slots[157] is not null and var loadedFnPtr
+                _slots[206] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[157] = nativeContext.LoadFunction("SDL_GetCameraID", "SDL3")
+                    : _slots[206] = nativeContext.LoadFunction("SDL_GetCameraID", "SDL3")
             )
         )(camera);
 
@@ -53948,9 +61801,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetCameraNameRaw([NativeTypeName("SDL_CameraID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[158] is not null and var loadedFnPtr
+                _slots[207] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[158] = nativeContext.LoadFunction("SDL_GetCameraName", "SDL3")
+                    : _slots[207] = nativeContext.LoadFunction("SDL_GetCameraName", "SDL3")
             )
         )(instance_id);
 
@@ -53964,9 +61817,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetCameraPermissionState(CameraHandle camera) =>
         (
             (delegate* unmanaged<CameraHandle, int>)(
-                _slots[159] is not null and var loadedFnPtr
+                _slots[208] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[159] = nativeContext.LoadFunction(
+                    : _slots[208] = nativeContext.LoadFunction(
                         "SDL_GetCameraPermissionState",
                         "SDL3"
                     )
@@ -53982,9 +61835,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     CameraPosition ISdl.GetCameraPosition([NativeTypeName("SDL_CameraID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, CameraPosition>)(
-                _slots[160] is not null and var loadedFnPtr
+                _slots[209] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[160] = nativeContext.LoadFunction("SDL_GetCameraPosition", "SDL3")
+                    : _slots[209] = nativeContext.LoadFunction("SDL_GetCameraPosition", "SDL3")
             )
         )(instance_id);
 
@@ -53998,9 +61851,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetCameraProperties(CameraHandle camera) =>
         (
             (delegate* unmanaged<CameraHandle, uint>)(
-                _slots[161] is not null and var loadedFnPtr
+                _slots[210] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[161] = nativeContext.LoadFunction("SDL_GetCameraProperties", "SDL3")
+                    : _slots[210] = nativeContext.LoadFunction("SDL_GetCameraProperties", "SDL3")
             )
         )(camera);
 
@@ -54014,9 +61867,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint* ISdl.GetCameras(int* count) =>
         (
             (delegate* unmanaged<int*, uint*>)(
-                _slots[162] is not null and var loadedFnPtr
+                _slots[211] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[162] = nativeContext.LoadFunction("SDL_GetCameras", "SDL3")
+                    : _slots[211] = nativeContext.LoadFunction("SDL_GetCameras", "SDL3")
             )
         )(count);
 
@@ -54047,9 +61900,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, int*, CameraSpec**>)(
-                _slots[163] is not null and var loadedFnPtr
+                _slots[212] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[163] = nativeContext.LoadFunction(
+                    : _slots[212] = nativeContext.LoadFunction(
                         "SDL_GetCameraSupportedFormats",
                         "SDL3"
                     )
@@ -54090,9 +61943,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, nuint*, void*>)(
-                _slots[164] is not null and var loadedFnPtr
+                _slots[213] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[164] = nativeContext.LoadFunction("SDL_GetClipboardData", "SDL3")
+                    : _slots[213] = nativeContext.LoadFunction("SDL_GetClipboardData", "SDL3")
             )
         )(mime_type, size);
 
@@ -54128,9 +61981,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte** ISdl.GetClipboardMimeTypes([NativeTypeName("size_t *")] nuint* num_mime_types) =>
         (
             (delegate* unmanaged<nuint*, sbyte**>)(
-                _slots[165] is not null and var loadedFnPtr
+                _slots[214] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[165] = nativeContext.LoadFunction("SDL_GetClipboardMimeTypes", "SDL3")
+                    : _slots[214] = nativeContext.LoadFunction("SDL_GetClipboardMimeTypes", "SDL3")
             )
         )(num_mime_types);
 
@@ -54171,9 +62024,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetClipboardTextRaw() =>
         (
             (delegate* unmanaged<sbyte*>)(
-                _slots[166] is not null and var loadedFnPtr
+                _slots[215] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[166] = nativeContext.LoadFunction("SDL_GetClipboardText", "SDL3")
+                    : _slots[215] = nativeContext.LoadFunction("SDL_GetClipboardText", "SDL3")
             )
         )();
 
@@ -54193,9 +62046,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int, float, byte, DisplayMode*, byte>)(
-                _slots[167] is not null and var loadedFnPtr
+                _slots[216] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[167] = nativeContext.LoadFunction(
+                    : _slots[216] = nativeContext.LoadFunction(
                         "SDL_GetClosestFullscreenDisplayMode",
                         "SDL3"
                     )
@@ -54272,9 +62125,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetCPUCacheLineSize() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[168] is not null and var loadedFnPtr
+                _slots[217] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[168] = nativeContext.LoadFunction("SDL_GetCPUCacheLineSize", "SDL3")
+                    : _slots[217] = nativeContext.LoadFunction("SDL_GetCPUCacheLineSize", "SDL3")
             )
         )();
 
@@ -54295,9 +62148,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetCurrentAudioDriverRaw() =>
         (
             (delegate* unmanaged<sbyte*>)(
-                _slots[169] is not null and var loadedFnPtr
+                _slots[218] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[169] = nativeContext.LoadFunction("SDL_GetCurrentAudioDriver", "SDL3")
+                    : _slots[218] = nativeContext.LoadFunction("SDL_GetCurrentAudioDriver", "SDL3")
             )
         )();
 
@@ -54319,9 +62172,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetCurrentCameraDriverRaw() =>
         (
             (delegate* unmanaged<sbyte*>)(
-                _slots[170] is not null and var loadedFnPtr
+                _slots[219] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[170] = nativeContext.LoadFunction("SDL_GetCurrentCameraDriver", "SDL3")
+                    : _slots[219] = nativeContext.LoadFunction("SDL_GetCurrentCameraDriver", "SDL3")
             )
         )();
 
@@ -54346,9 +62199,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     DisplayMode* ISdl.GetCurrentDisplayModeRaw([NativeTypeName("SDL_DisplayID")] uint displayID) =>
         (
             (delegate* unmanaged<uint, DisplayMode*>)(
-                _slots[171] is not null and var loadedFnPtr
+                _slots[220] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[171] = nativeContext.LoadFunction("SDL_GetCurrentDisplayMode", "SDL3")
+                    : _slots[220] = nativeContext.LoadFunction("SDL_GetCurrentDisplayMode", "SDL3")
             )
         )(displayID);
 
@@ -54365,9 +62218,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, DisplayOrientation>)(
-                _slots[172] is not null and var loadedFnPtr
+                _slots[221] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[172] = nativeContext.LoadFunction(
+                    : _slots[221] = nativeContext.LoadFunction(
                         "SDL_GetCurrentDisplayOrientation",
                         "SDL3"
                     )
@@ -54384,9 +62237,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetCurrentRenderOutputSize(RendererHandle renderer, int* w, int* h) =>
         (
             (delegate* unmanaged<RendererHandle, int*, int*, byte>)(
-                _slots[173] is not null and var loadedFnPtr
+                _slots[222] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[173] = nativeContext.LoadFunction(
+                    : _slots[222] = nativeContext.LoadFunction(
                         "SDL_GetCurrentRenderOutputSize",
                         "SDL3"
                     )
@@ -54424,9 +62277,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ulong ISdl.GetCurrentThreadID() =>
         (
             (delegate* unmanaged<ulong>)(
-                _slots[174] is not null and var loadedFnPtr
+                _slots[223] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[174] = nativeContext.LoadFunction("SDL_GetCurrentThreadID", "SDL3")
+                    : _slots[223] = nativeContext.LoadFunction("SDL_GetCurrentThreadID", "SDL3")
             )
         )();
 
@@ -54439,9 +62292,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetCurrentTime([NativeTypeName("SDL_Time *")] long* ticks) =>
         (
             (delegate* unmanaged<long*, byte>)(
-                _slots[175] is not null and var loadedFnPtr
+                _slots[224] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[175] = nativeContext.LoadFunction("SDL_GetCurrentTime", "SDL3")
+                    : _slots[224] = nativeContext.LoadFunction("SDL_GetCurrentTime", "SDL3")
             )
         )(ticks);
 
@@ -54480,9 +62333,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetCurrentVideoDriverRaw() =>
         (
             (delegate* unmanaged<sbyte*>)(
-                _slots[176] is not null and var loadedFnPtr
+                _slots[225] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[176] = nativeContext.LoadFunction("SDL_GetCurrentVideoDriver", "SDL3")
+                    : _slots[225] = nativeContext.LoadFunction("SDL_GetCurrentVideoDriver", "SDL3")
             )
         )();
 
@@ -54495,9 +62348,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     CursorHandle ISdl.GetCursor() =>
         (
             (delegate* unmanaged<CursorHandle>)(
-                _slots[177] is not null and var loadedFnPtr
+                _slots[226] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[177] = nativeContext.LoadFunction("SDL_GetCursor", "SDL3")
+                    : _slots[226] = nativeContext.LoadFunction("SDL_GetCursor", "SDL3")
             )
         )();
 
@@ -54509,9 +62362,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetDateTimeLocalePreferences(DateFormat* dateFormat, TimeFormat* timeFormat) =>
         (
             (delegate* unmanaged<DateFormat*, TimeFormat*, byte>)(
-                _slots[178] is not null and var loadedFnPtr
+                _slots[227] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[178] = nativeContext.LoadFunction(
+                    : _slots[227] = nativeContext.LoadFunction(
                         "SDL_GetDateTimeLocalePreferences",
                         "SDL3"
                     )
@@ -54553,9 +62406,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetDayOfWeek(int year, int month, int day) =>
         (
             (delegate* unmanaged<int, int, int, int>)(
-                _slots[179] is not null and var loadedFnPtr
+                _slots[228] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[179] = nativeContext.LoadFunction("SDL_GetDayOfWeek", "SDL3")
+                    : _slots[228] = nativeContext.LoadFunction("SDL_GetDayOfWeek", "SDL3")
             )
         )(year, month, day);
 
@@ -54568,9 +62421,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetDayOfYear(int year, int month, int day) =>
         (
             (delegate* unmanaged<int, int, int, int>)(
-                _slots[180] is not null and var loadedFnPtr
+                _slots[229] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[180] = nativeContext.LoadFunction("SDL_GetDayOfYear", "SDL3")
+                    : _slots[229] = nativeContext.LoadFunction("SDL_GetDayOfYear", "SDL3")
             )
         )(year, month, day);
 
@@ -54583,9 +62436,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetDaysInMonth(int year, int month) =>
         (
             (delegate* unmanaged<int, int, int>)(
-                _slots[181] is not null and var loadedFnPtr
+                _slots[230] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[181] = nativeContext.LoadFunction("SDL_GetDaysInMonth", "SDL3")
+                    : _slots[230] = nativeContext.LoadFunction("SDL_GetDaysInMonth", "SDL3")
             )
         )(year, month);
 
@@ -54597,9 +62450,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     AssertionHandler ISdl.GetDefaultAssertionHandler() =>
         (
             (delegate* unmanaged<AssertionHandler>)(
-                _slots[182] is not null and var loadedFnPtr
+                _slots[231] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[182] = nativeContext.LoadFunction(
+                    : _slots[231] = nativeContext.LoadFunction(
                         "SDL_GetDefaultAssertionHandler",
                         "SDL3"
                     )
@@ -54616,9 +62469,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     CursorHandle ISdl.GetDefaultCursor() =>
         (
             (delegate* unmanaged<CursorHandle>)(
-                _slots[183] is not null and var loadedFnPtr
+                _slots[232] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[183] = nativeContext.LoadFunction("SDL_GetDefaultCursor", "SDL3")
+                    : _slots[232] = nativeContext.LoadFunction("SDL_GetDefaultCursor", "SDL3")
             )
         )();
 
@@ -54630,9 +62483,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     LogOutputFunction ISdl.GetDefaultLogOutputFunction() =>
         (
             (delegate* unmanaged<LogOutputFunction>)(
-                _slots[184] is not null and var loadedFnPtr
+                _slots[233] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[184] = nativeContext.LoadFunction(
+                    : _slots[233] = nativeContext.LoadFunction(
                         "SDL_GetDefaultLogOutputFunction",
                         "SDL3"
                     )
@@ -54661,9 +62514,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     DisplayMode* ISdl.GetDesktopDisplayModeRaw([NativeTypeName("SDL_DisplayID")] uint displayID) =>
         (
             (delegate* unmanaged<uint, DisplayMode*>)(
-                _slots[185] is not null and var loadedFnPtr
+                _slots[234] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[185] = nativeContext.LoadFunction("SDL_GetDesktopDisplayMode", "SDL3")
+                    : _slots[234] = nativeContext.LoadFunction("SDL_GetDesktopDisplayMode", "SDL3")
             )
         )(displayID);
 
@@ -54678,9 +62531,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetDisplayBounds([NativeTypeName("SDL_DisplayID")] uint displayID, Rect* rect) =>
         (
             (delegate* unmanaged<uint, Rect*, byte>)(
-                _slots[186] is not null and var loadedFnPtr
+                _slots[235] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[186] = nativeContext.LoadFunction("SDL_GetDisplayBounds", "SDL3")
+                    : _slots[235] = nativeContext.LoadFunction("SDL_GetDisplayBounds", "SDL3")
             )
         )(displayID, rect);
 
@@ -54717,9 +62570,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     float ISdl.GetDisplayContentScale([NativeTypeName("SDL_DisplayID")] uint displayID) =>
         (
             (delegate* unmanaged<uint, float>)(
-                _slots[187] is not null and var loadedFnPtr
+                _slots[236] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[187] = nativeContext.LoadFunction("SDL_GetDisplayContentScale", "SDL3")
+                    : _slots[236] = nativeContext.LoadFunction("SDL_GetDisplayContentScale", "SDL3")
             )
         )(displayID);
 
@@ -54732,9 +62585,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetDisplayForPoint([NativeTypeName("const SDL_Point *")] Point* point) =>
         (
             (delegate* unmanaged<Point*, uint>)(
-                _slots[188] is not null and var loadedFnPtr
+                _slots[237] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[188] = nativeContext.LoadFunction("SDL_GetDisplayForPoint", "SDL3")
+                    : _slots[237] = nativeContext.LoadFunction("SDL_GetDisplayForPoint", "SDL3")
             )
         )(point);
 
@@ -54764,9 +62617,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetDisplayForRect([NativeTypeName("const SDL_Rect *")] Rect* rect) =>
         (
             (delegate* unmanaged<Rect*, uint>)(
-                _slots[189] is not null and var loadedFnPtr
+                _slots[238] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[189] = nativeContext.LoadFunction("SDL_GetDisplayForRect", "SDL3")
+                    : _slots[238] = nativeContext.LoadFunction("SDL_GetDisplayForRect", "SDL3")
             )
         )(rect);
 
@@ -54796,9 +62649,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetDisplayForWindow(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, uint>)(
-                _slots[190] is not null and var loadedFnPtr
+                _slots[239] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[190] = nativeContext.LoadFunction("SDL_GetDisplayForWindow", "SDL3")
+                    : _slots[239] = nativeContext.LoadFunction("SDL_GetDisplayForWindow", "SDL3")
             )
         )(window);
 
@@ -54823,9 +62676,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetDisplayNameRaw([NativeTypeName("SDL_DisplayID")] uint displayID) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[191] is not null and var loadedFnPtr
+                _slots[240] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[191] = nativeContext.LoadFunction("SDL_GetDisplayName", "SDL3")
+                    : _slots[240] = nativeContext.LoadFunction("SDL_GetDisplayName", "SDL3")
             )
         )(displayID);
 
@@ -54839,9 +62692,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetDisplayProperties([NativeTypeName("SDL_DisplayID")] uint displayID) =>
         (
             (delegate* unmanaged<uint, uint>)(
-                _slots[192] is not null and var loadedFnPtr
+                _slots[241] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[192] = nativeContext.LoadFunction("SDL_GetDisplayProperties", "SDL3")
+                    : _slots[241] = nativeContext.LoadFunction("SDL_GetDisplayProperties", "SDL3")
             )
         )(displayID);
 
@@ -54855,9 +62708,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint* ISdl.GetDisplays(int* count) =>
         (
             (delegate* unmanaged<int*, uint*>)(
-                _slots[193] is not null and var loadedFnPtr
+                _slots[242] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[193] = nativeContext.LoadFunction("SDL_GetDisplays", "SDL3")
+                    : _slots[242] = nativeContext.LoadFunction("SDL_GetDisplays", "SDL3")
             )
         )(count);
 
@@ -54888,9 +62741,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, Rect*, byte>)(
-                _slots[194] is not null and var loadedFnPtr
+                _slots[243] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[194] = nativeContext.LoadFunction("SDL_GetDisplayUsableBounds", "SDL3")
+                    : _slots[243] = nativeContext.LoadFunction("SDL_GetDisplayUsableBounds", "SDL3")
             )
         )(displayID, rect);
 
@@ -54937,9 +62790,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetErrorRaw() =>
         (
             (delegate* unmanaged<sbyte*>)(
-                _slots[195] is not null and var loadedFnPtr
+                _slots[244] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[195] = nativeContext.LoadFunction("SDL_GetError", "SDL3")
+                    : _slots[244] = nativeContext.LoadFunction("SDL_GetError", "SDL3")
             )
         )();
 
@@ -54955,9 +62808,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<EventFilter*, void**, byte>)(
-                _slots[196] is not null and var loadedFnPtr
+                _slots[245] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[196] = nativeContext.LoadFunction("SDL_GetEventFilter", "SDL3")
+                    : _slots[245] = nativeContext.LoadFunction("SDL_GetEventFilter", "SDL3")
             )
         )(filter, userdata);
 
@@ -54999,9 +62852,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, float, float>)(
-                _slots[197] is not null and var loadedFnPtr
+                _slots[246] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[197] = nativeContext.LoadFunction("SDL_GetFloatProperty", "SDL3")
+                    : _slots[246] = nativeContext.LoadFunction("SDL_GetFloatProperty", "SDL3")
             )
         )(props, name, default_value);
 
@@ -55042,9 +62895,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, int*, DisplayMode**>)(
-                _slots[198] is not null and var loadedFnPtr
+                _slots[247] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[198] = nativeContext.LoadFunction(
+                    : _slots[247] = nativeContext.LoadFunction(
                         "SDL_GetFullscreenDisplayModes",
                         "SDL3"
                     )
@@ -55095,9 +62948,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadAppleSFSymbolsNameForAxisRaw(GamepadHandle gamepad, GamepadAxis axis) =>
         (
             (delegate* unmanaged<GamepadHandle, GamepadAxis, sbyte*>)(
-                _slots[199] is not null and var loadedFnPtr
+                _slots[248] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[199] = nativeContext.LoadFunction(
+                    : _slots[248] = nativeContext.LoadFunction(
                         "SDL_GetGamepadAppleSFSymbolsNameForAxis",
                         "SDL3"
                     )
@@ -55134,9 +62987,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<GamepadHandle, GamepadButton, sbyte*>)(
-                _slots[200] is not null and var loadedFnPtr
+                _slots[249] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[200] = nativeContext.LoadFunction(
+                    : _slots[249] = nativeContext.LoadFunction(
                         "SDL_GetGamepadAppleSFSymbolsNameForButton",
                         "SDL3"
                     )
@@ -55155,9 +63008,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     short ISdl.GetGamepadAxis(GamepadHandle gamepad, GamepadAxis axis) =>
         (
             (delegate* unmanaged<GamepadHandle, GamepadAxis, short>)(
-                _slots[201] is not null and var loadedFnPtr
+                _slots[250] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[201] = nativeContext.LoadFunction("SDL_GetGamepadAxis", "SDL3")
+                    : _slots[250] = nativeContext.LoadFunction("SDL_GetGamepadAxis", "SDL3")
             )
         )(gamepad, axis);
 
@@ -55171,9 +63024,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadAxis ISdl.GetGamepadAxisFromString([NativeTypeName("const char *")] sbyte* str) =>
         (
             (delegate* unmanaged<sbyte*, GamepadAxis>)(
-                _slots[202] is not null and var loadedFnPtr
+                _slots[251] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[202] = nativeContext.LoadFunction(
+                    : _slots[251] = nativeContext.LoadFunction(
                         "SDL_GetGamepadAxisFromString",
                         "SDL3"
                     )
@@ -55206,9 +63059,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadBinding** ISdl.GetGamepadBindings(GamepadHandle gamepad, int* count) =>
         (
             (delegate* unmanaged<GamepadHandle, int*, GamepadBinding**>)(
-                _slots[203] is not null and var loadedFnPtr
+                _slots[252] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[203] = nativeContext.LoadFunction("SDL_GetGamepadBindings", "SDL3")
+                    : _slots[252] = nativeContext.LoadFunction("SDL_GetGamepadBindings", "SDL3")
             )
         )(gamepad, count);
 
@@ -55247,9 +63100,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadButton ISdl.GetGamepadButtonFromString([NativeTypeName("const char *")] sbyte* str) =>
         (
             (delegate* unmanaged<sbyte*, GamepadButton>)(
-                _slots[205] is not null and var loadedFnPtr
+                _slots[254] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[205] = nativeContext.LoadFunction(
+                    : _slots[254] = nativeContext.LoadFunction(
                         "SDL_GetGamepadButtonFromString",
                         "SDL3"
                     )
@@ -55282,9 +63135,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadButtonLabel ISdl.GetGamepadButtonLabel(GamepadHandle gamepad, GamepadButton button) =>
         (
             (delegate* unmanaged<GamepadHandle, GamepadButton, GamepadButtonLabel>)(
-                _slots[206] is not null and var loadedFnPtr
+                _slots[255] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[206] = nativeContext.LoadFunction("SDL_GetGamepadButtonLabel", "SDL3")
+                    : _slots[255] = nativeContext.LoadFunction("SDL_GetGamepadButtonLabel", "SDL3")
             )
         )(gamepad, button);
 
@@ -55299,9 +63152,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadButtonLabel ISdl.GetGamepadButtonLabelForType(GamepadType type, GamepadButton button) =>
         (
             (delegate* unmanaged<GamepadType, GamepadButton, GamepadButtonLabel>)(
-                _slots[207] is not null and var loadedFnPtr
+                _slots[256] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[207] = nativeContext.LoadFunction(
+                    : _slots[256] = nativeContext.LoadFunction(
                         "SDL_GetGamepadButtonLabelForType",
                         "SDL3"
                     )
@@ -55319,9 +63172,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetGamepadButtonRaw(GamepadHandle gamepad, GamepadButton button) =>
         (
             (delegate* unmanaged<GamepadHandle, GamepadButton, byte>)(
-                _slots[204] is not null and var loadedFnPtr
+                _slots[253] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[204] = nativeContext.LoadFunction("SDL_GetGamepadButton", "SDL3")
+                    : _slots[253] = nativeContext.LoadFunction("SDL_GetGamepadButton", "SDL3")
             )
         )(gamepad, button);
 
@@ -55335,9 +63188,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     JoystickConnectionState ISdl.GetGamepadConnectionState(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, JoystickConnectionState>)(
-                _slots[208] is not null and var loadedFnPtr
+                _slots[257] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[208] = nativeContext.LoadFunction(
+                    : _slots[257] = nativeContext.LoadFunction(
                         "SDL_GetGamepadConnectionState",
                         "SDL3"
                     )
@@ -55353,9 +63206,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetGamepadFirmwareVersion(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, ushort>)(
-                _slots[209] is not null and var loadedFnPtr
+                _slots[258] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[209] = nativeContext.LoadFunction(
+                    : _slots[258] = nativeContext.LoadFunction(
                         "SDL_GetGamepadFirmwareVersion",
                         "SDL3"
                     )
@@ -55372,9 +63225,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadHandle ISdl.GetGamepadFromID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, GamepadHandle>)(
-                _slots[210] is not null and var loadedFnPtr
+                _slots[259] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[210] = nativeContext.LoadFunction("SDL_GetGamepadFromID", "SDL3")
+                    : _slots[259] = nativeContext.LoadFunction("SDL_GetGamepadFromID", "SDL3")
             )
         )(instance_id);
 
@@ -55388,9 +63241,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadHandle ISdl.GetGamepadFromPlayerIndex(int player_index) =>
         (
             (delegate* unmanaged<int, GamepadHandle>)(
-                _slots[211] is not null and var loadedFnPtr
+                _slots[260] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[211] = nativeContext.LoadFunction(
+                    : _slots[260] = nativeContext.LoadFunction(
                         "SDL_GetGamepadFromPlayerIndex",
                         "SDL3"
                     )
@@ -55406,9 +63259,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Guid ISdl.GetGamepadGuidForID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, Guid>)(
-                _slots[212] is not null and var loadedFnPtr
+                _slots[261] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[212] = nativeContext.LoadFunction("SDL_GetGamepadGUIDForID", "SDL3")
+                    : _slots[261] = nativeContext.LoadFunction("SDL_GetGamepadGUIDForID", "SDL3")
             )
         )(instance_id);
 
@@ -55421,9 +63274,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetGamepadID(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, uint>)(
-                _slots[213] is not null and var loadedFnPtr
+                _slots[262] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[213] = nativeContext.LoadFunction("SDL_GetGamepadID", "SDL3")
+                    : _slots[262] = nativeContext.LoadFunction("SDL_GetGamepadID", "SDL3")
             )
         )(gamepad);
 
@@ -55436,9 +63289,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     JoystickHandle ISdl.GetGamepadJoystick(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, JoystickHandle>)(
-                _slots[214] is not null and var loadedFnPtr
+                _slots[263] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[214] = nativeContext.LoadFunction("SDL_GetGamepadJoystick", "SDL3")
+                    : _slots[263] = nativeContext.LoadFunction("SDL_GetGamepadJoystick", "SDL3")
             )
         )(gamepad);
 
@@ -55473,9 +63326,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadMappingForGuidRaw(Guid guid) =>
         (
             (delegate* unmanaged<Guid, sbyte*>)(
-                _slots[216] is not null and var loadedFnPtr
+                _slots[265] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[216] = nativeContext.LoadFunction(
+                    : _slots[265] = nativeContext.LoadFunction(
                         "SDL_GetGamepadMappingForGUID",
                         "SDL3"
                     )
@@ -55504,9 +63357,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadMappingForIDRaw([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[217] is not null and var loadedFnPtr
+                _slots[266] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[217] = nativeContext.LoadFunction("SDL_GetGamepadMappingForID", "SDL3")
+                    : _slots[266] = nativeContext.LoadFunction("SDL_GetGamepadMappingForID", "SDL3")
             )
         )(instance_id);
 
@@ -55521,9 +63374,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadMappingRaw(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, sbyte*>)(
-                _slots[215] is not null and var loadedFnPtr
+                _slots[264] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[215] = nativeContext.LoadFunction("SDL_GetGamepadMapping", "SDL3")
+                    : _slots[264] = nativeContext.LoadFunction("SDL_GetGamepadMapping", "SDL3")
             )
         )(gamepad);
 
@@ -55537,9 +63390,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte** ISdl.GetGamepadMappings(int* count) =>
         (
             (delegate* unmanaged<int*, sbyte**>)(
-                _slots[218] is not null and var loadedFnPtr
+                _slots[267] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[218] = nativeContext.LoadFunction("SDL_GetGamepadMappings", "SDL3")
+                    : _slots[267] = nativeContext.LoadFunction("SDL_GetGamepadMappings", "SDL3")
             )
         )(count);
 
@@ -55591,9 +63444,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadNameForIDRaw([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[220] is not null and var loadedFnPtr
+                _slots[269] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[220] = nativeContext.LoadFunction("SDL_GetGamepadNameForID", "SDL3")
+                    : _slots[269] = nativeContext.LoadFunction("SDL_GetGamepadNameForID", "SDL3")
             )
         )(instance_id);
 
@@ -55608,9 +63461,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadNameRaw(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, sbyte*>)(
-                _slots[219] is not null and var loadedFnPtr
+                _slots[268] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[219] = nativeContext.LoadFunction("SDL_GetGamepadName", "SDL3")
+                    : _slots[268] = nativeContext.LoadFunction("SDL_GetGamepadName", "SDL3")
             )
         )(gamepad);
 
@@ -55647,9 +63500,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadPathForIDRaw([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[222] is not null and var loadedFnPtr
+                _slots[271] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[222] = nativeContext.LoadFunction("SDL_GetGamepadPathForID", "SDL3")
+                    : _slots[271] = nativeContext.LoadFunction("SDL_GetGamepadPathForID", "SDL3")
             )
         )(instance_id);
 
@@ -55664,9 +63517,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadPathRaw(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, sbyte*>)(
-                _slots[221] is not null and var loadedFnPtr
+                _slots[270] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[221] = nativeContext.LoadFunction("SDL_GetGamepadPath", "SDL3")
+                    : _slots[270] = nativeContext.LoadFunction("SDL_GetGamepadPath", "SDL3")
             )
         )(gamepad);
 
@@ -55680,9 +63533,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetGamepadPlayerIndex(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, int>)(
-                _slots[223] is not null and var loadedFnPtr
+                _slots[272] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[223] = nativeContext.LoadFunction("SDL_GetGamepadPlayerIndex", "SDL3")
+                    : _slots[272] = nativeContext.LoadFunction("SDL_GetGamepadPlayerIndex", "SDL3")
             )
         )(gamepad);
 
@@ -55695,9 +63548,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetGamepadPlayerIndexForID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, int>)(
-                _slots[224] is not null and var loadedFnPtr
+                _slots[273] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[224] = nativeContext.LoadFunction(
+                    : _slots[273] = nativeContext.LoadFunction(
                         "SDL_GetGamepadPlayerIndexForID",
                         "SDL3"
                     )
@@ -55714,9 +63567,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     PowerState ISdl.GetGamepadPowerInfo(GamepadHandle gamepad, int* percent) =>
         (
             (delegate* unmanaged<GamepadHandle, int*, PowerState>)(
-                _slots[225] is not null and var loadedFnPtr
+                _slots[274] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[225] = nativeContext.LoadFunction("SDL_GetGamepadPowerInfo", "SDL3")
+                    : _slots[274] = nativeContext.LoadFunction("SDL_GetGamepadPowerInfo", "SDL3")
             )
         )(gamepad, percent);
 
@@ -55744,9 +63597,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetGamepadProduct(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, ushort>)(
-                _slots[226] is not null and var loadedFnPtr
+                _slots[275] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[226] = nativeContext.LoadFunction("SDL_GetGamepadProduct", "SDL3")
+                    : _slots[275] = nativeContext.LoadFunction("SDL_GetGamepadProduct", "SDL3")
             )
         )(gamepad);
 
@@ -55760,9 +63613,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetGamepadProductForID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, ushort>)(
-                _slots[227] is not null and var loadedFnPtr
+                _slots[276] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[227] = nativeContext.LoadFunction("SDL_GetGamepadProductForID", "SDL3")
+                    : _slots[276] = nativeContext.LoadFunction("SDL_GetGamepadProductForID", "SDL3")
             )
         )(instance_id);
 
@@ -55777,9 +63630,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetGamepadProductVersion(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, ushort>)(
-                _slots[228] is not null and var loadedFnPtr
+                _slots[277] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[228] = nativeContext.LoadFunction(
+                    : _slots[277] = nativeContext.LoadFunction(
                         "SDL_GetGamepadProductVersion",
                         "SDL3"
                     )
@@ -55798,9 +63651,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, ushort>)(
-                _slots[229] is not null and var loadedFnPtr
+                _slots[278] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[229] = nativeContext.LoadFunction(
+                    : _slots[278] = nativeContext.LoadFunction(
                         "SDL_GetGamepadProductVersionForID",
                         "SDL3"
                     )
@@ -55818,9 +63671,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetGamepadProperties(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, uint>)(
-                _slots[230] is not null and var loadedFnPtr
+                _slots[279] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[230] = nativeContext.LoadFunction("SDL_GetGamepadProperties", "SDL3")
+                    : _slots[279] = nativeContext.LoadFunction("SDL_GetGamepadProperties", "SDL3")
             )
         )(gamepad);
 
@@ -55834,9 +63687,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint* ISdl.GetGamepads(int* count) =>
         (
             (delegate* unmanaged<int*, uint*>)(
-                _slots[231] is not null and var loadedFnPtr
+                _slots[280] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[231] = nativeContext.LoadFunction("SDL_GetGamepads", "SDL3")
+                    : _slots[280] = nativeContext.LoadFunction("SDL_GetGamepads", "SDL3")
             )
         )(count);
 
@@ -55869,9 +63722,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<GamepadHandle, SensorType, float*, int, byte>)(
-                _slots[232] is not null and var loadedFnPtr
+                _slots[281] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[232] = nativeContext.LoadFunction("SDL_GetGamepadSensorData", "SDL3")
+                    : _slots[281] = nativeContext.LoadFunction("SDL_GetGamepadSensorData", "SDL3")
             )
         )(gamepad, type, data, num_values);
 
@@ -55915,9 +63768,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     float ISdl.GetGamepadSensorDataRate(GamepadHandle gamepad, SensorType type) =>
         (
             (delegate* unmanaged<GamepadHandle, SensorType, float>)(
-                _slots[233] is not null and var loadedFnPtr
+                _slots[282] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[233] = nativeContext.LoadFunction(
+                    : _slots[282] = nativeContext.LoadFunction(
                         "SDL_GetGamepadSensorDataRate",
                         "SDL3"
                     )
@@ -55944,9 +63797,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadSerialRaw(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, sbyte*>)(
-                _slots[234] is not null and var loadedFnPtr
+                _slots[283] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[234] = nativeContext.LoadFunction("SDL_GetGamepadSerial", "SDL3")
+                    : _slots[283] = nativeContext.LoadFunction("SDL_GetGamepadSerial", "SDL3")
             )
         )(gamepad);
 
@@ -55960,9 +63813,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ulong ISdl.GetGamepadSteamHandle(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, ulong>)(
-                _slots[235] is not null and var loadedFnPtr
+                _slots[284] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[235] = nativeContext.LoadFunction("SDL_GetGamepadSteamHandle", "SDL3")
+                    : _slots[284] = nativeContext.LoadFunction("SDL_GetGamepadSteamHandle", "SDL3")
             )
         )(gamepad);
 
@@ -55987,9 +63840,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadStringForAxisRaw(GamepadAxis axis) =>
         (
             (delegate* unmanaged<GamepadAxis, sbyte*>)(
-                _slots[236] is not null and var loadedFnPtr
+                _slots[285] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[236] = nativeContext.LoadFunction(
+                    : _slots[285] = nativeContext.LoadFunction(
                         "SDL_GetGamepadStringForAxis",
                         "SDL3"
                     )
@@ -56017,9 +63870,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadStringForButtonRaw(GamepadButton button) =>
         (
             (delegate* unmanaged<GamepadButton, sbyte*>)(
-                _slots[237] is not null and var loadedFnPtr
+                _slots[286] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[237] = nativeContext.LoadFunction(
+                    : _slots[286] = nativeContext.LoadFunction(
                         "SDL_GetGamepadStringForButton",
                         "SDL3"
                     )
@@ -56047,9 +63900,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetGamepadStringForTypeRaw(GamepadType type) =>
         (
             (delegate* unmanaged<GamepadType, sbyte*>)(
-                _slots[238] is not null and var loadedFnPtr
+                _slots[287] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[238] = nativeContext.LoadFunction(
+                    : _slots[287] = nativeContext.LoadFunction(
                         "SDL_GetGamepadStringForType",
                         "SDL3"
                     )
@@ -56074,9 +63927,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<GamepadHandle, int, int, bool*, float*, float*, float*, byte>)(
-                _slots[239] is not null and var loadedFnPtr
+                _slots[288] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[239] = nativeContext.LoadFunction(
+                    : _slots[288] = nativeContext.LoadFunction(
                         "SDL_GetGamepadTouchpadFinger",
                         "SDL3"
                     )
@@ -56144,9 +63997,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadType ISdl.GetGamepadType(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, GamepadType>)(
-                _slots[240] is not null and var loadedFnPtr
+                _slots[289] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[240] = nativeContext.LoadFunction("SDL_GetGamepadType", "SDL3")
+                    : _slots[289] = nativeContext.LoadFunction("SDL_GetGamepadType", "SDL3")
             )
         )(gamepad);
 
@@ -56159,9 +64012,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadType ISdl.GetGamepadTypeForID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, GamepadType>)(
-                _slots[241] is not null and var loadedFnPtr
+                _slots[290] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[241] = nativeContext.LoadFunction("SDL_GetGamepadTypeForID", "SDL3")
+                    : _slots[290] = nativeContext.LoadFunction("SDL_GetGamepadTypeForID", "SDL3")
             )
         )(instance_id);
 
@@ -56175,9 +64028,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadType ISdl.GetGamepadTypeFromString([NativeTypeName("const char *")] sbyte* str) =>
         (
             (delegate* unmanaged<sbyte*, GamepadType>)(
-                _slots[242] is not null and var loadedFnPtr
+                _slots[291] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[242] = nativeContext.LoadFunction(
+                    : _slots[291] = nativeContext.LoadFunction(
                         "SDL_GetGamepadTypeFromString",
                         "SDL3"
                     )
@@ -56210,9 +64063,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetGamepadVendor(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, ushort>)(
-                _slots[243] is not null and var loadedFnPtr
+                _slots[292] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[243] = nativeContext.LoadFunction("SDL_GetGamepadVendor", "SDL3")
+                    : _slots[292] = nativeContext.LoadFunction("SDL_GetGamepadVendor", "SDL3")
             )
         )(gamepad);
 
@@ -56226,9 +64079,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetGamepadVendorForID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, ushort>)(
-                _slots[244] is not null and var loadedFnPtr
+                _slots[293] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[244] = nativeContext.LoadFunction("SDL_GetGamepadVendorForID", "SDL3")
+                    : _slots[293] = nativeContext.LoadFunction("SDL_GetGamepadVendorForID", "SDL3")
             )
         )(instance_id);
 
@@ -56243,9 +64096,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetGlobalMouseState(float* x, float* y) =>
         (
             (delegate* unmanaged<float*, float*, uint>)(
-                _slots[245] is not null and var loadedFnPtr
+                _slots[294] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[245] = nativeContext.LoadFunction("SDL_GetGlobalMouseState", "SDL3")
+                    : _slots[294] = nativeContext.LoadFunction("SDL_GetGlobalMouseState", "SDL3")
             )
         )(x, y);
 
@@ -56276,9 +64129,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetGlobalProperties() =>
         (
             (delegate* unmanaged<uint>)(
-                _slots[246] is not null and var loadedFnPtr
+                _slots[295] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[246] = nativeContext.LoadFunction("SDL_GetGlobalProperties", "SDL3")
+                    : _slots[295] = nativeContext.LoadFunction("SDL_GetGlobalProperties", "SDL3")
             )
         )();
 
@@ -56288,12 +64141,102 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static uint GetGlobalProperties() => DllImport.GetGlobalProperties();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr<sbyte> ISdl.GetGPUDeviceDriver(GPUDeviceHandle device) =>
+        (sbyte*)((ISdl)this).GetGPUDeviceDriverRaw(device);
+
+    [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr<sbyte> GetGPUDeviceDriver(GPUDeviceHandle device) =>
+        DllImport.GetGPUDeviceDriver(device);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    sbyte* ISdl.GetGPUDeviceDriverRaw(GPUDeviceHandle device) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, sbyte*>)(
+                _slots[296] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[296] = nativeContext.LoadFunction("SDL_GetGPUDeviceDriver", "SDL3")
+            )
+        )(device);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static sbyte* GetGPUDeviceDriverRaw(GPUDeviceHandle device) =>
+        DllImport.GetGPUDeviceDriverRaw(device);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr<sbyte> ISdl.GetGPUDriver(int index) => (sbyte*)((ISdl)this).GetGPUDriverRaw(index);
+
+    [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr<sbyte> GetGPUDriver(int index) => DllImport.GetGPUDriver(index);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    sbyte* ISdl.GetGPUDriverRaw(int index) =>
+        (
+            (delegate* unmanaged<int, sbyte*>)(
+                _slots[297] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[297] = nativeContext.LoadFunction("SDL_GetGPUDriver", "SDL3")
+            )
+        )(index);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static sbyte* GetGPUDriverRaw(int index) => DllImport.GetGPUDriverRaw(index);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint ISdl.GetGPUShaderFormats(GPUDeviceHandle device) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, uint>)(
+                _slots[298] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[298] = nativeContext.LoadFunction("SDL_GetGPUShaderFormats", "SDL3")
+            )
+        )(device);
+
+    [return: NativeTypeName("SDL_GPUShaderFormat")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUShaderFormats")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint GetGPUShaderFormats(GPUDeviceHandle device) =>
+        DllImport.GetGPUShaderFormats(device);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUTextureFormat ISdl.GetGPUSwapchainTextureFormat(
+        GPUDeviceHandle device,
+        WindowHandle window
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, WindowHandle, GPUTextureFormat>)(
+                _slots[299] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[299] = nativeContext.LoadFunction(
+                        "SDL_GetGPUSwapchainTextureFormat",
+                        "SDL3"
+                    )
+            )
+        )(device, window);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUSwapchainTextureFormat")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUTextureFormat GetGPUSwapchainTextureFormat(
+        GPUDeviceHandle device,
+        WindowHandle window
+    ) => DllImport.GetGPUSwapchainTextureFormat(device, window);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     WindowHandle ISdl.GetGrabbedWindow() =>
         (
             (delegate* unmanaged<WindowHandle>)(
-                _slots[247] is not null and var loadedFnPtr
+                _slots[300] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[247] = nativeContext.LoadFunction("SDL_GetGrabbedWindow", "SDL3")
+                    : _slots[300] = nativeContext.LoadFunction("SDL_GetGrabbedWindow", "SDL3")
             )
         )();
 
@@ -56316,9 +64259,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetHapticEffectStatusRaw(HapticHandle haptic, int effect) =>
         (
             (delegate* unmanaged<HapticHandle, int, byte>)(
-                _slots[248] is not null and var loadedFnPtr
+                _slots[301] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[248] = nativeContext.LoadFunction("SDL_GetHapticEffectStatus", "SDL3")
+                    : _slots[301] = nativeContext.LoadFunction("SDL_GetHapticEffectStatus", "SDL3")
             )
         )(haptic, effect);
 
@@ -56332,9 +64275,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetHapticFeatures(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, uint>)(
-                _slots[249] is not null and var loadedFnPtr
+                _slots[302] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[249] = nativeContext.LoadFunction("SDL_GetHapticFeatures", "SDL3")
+                    : _slots[302] = nativeContext.LoadFunction("SDL_GetHapticFeatures", "SDL3")
             )
         )(haptic);
 
@@ -56348,9 +64291,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     HapticHandle ISdl.GetHapticFromID([NativeTypeName("SDL_HapticID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, HapticHandle>)(
-                _slots[250] is not null and var loadedFnPtr
+                _slots[303] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[250] = nativeContext.LoadFunction("SDL_GetHapticFromID", "SDL3")
+                    : _slots[303] = nativeContext.LoadFunction("SDL_GetHapticFromID", "SDL3")
             )
         )(instance_id);
 
@@ -56363,9 +64306,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetHapticID(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, uint>)(
-                _slots[251] is not null and var loadedFnPtr
+                _slots[304] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[251] = nativeContext.LoadFunction("SDL_GetHapticID", "SDL3")
+                    : _slots[304] = nativeContext.LoadFunction("SDL_GetHapticID", "SDL3")
             )
         )(haptic);
 
@@ -56400,9 +64343,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetHapticNameForIDRaw([NativeTypeName("SDL_HapticID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[253] is not null and var loadedFnPtr
+                _slots[306] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[253] = nativeContext.LoadFunction("SDL_GetHapticNameForID", "SDL3")
+                    : _slots[306] = nativeContext.LoadFunction("SDL_GetHapticNameForID", "SDL3")
             )
         )(instance_id);
 
@@ -56416,9 +64359,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetHapticNameRaw(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, sbyte*>)(
-                _slots[252] is not null and var loadedFnPtr
+                _slots[305] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[252] = nativeContext.LoadFunction("SDL_GetHapticName", "SDL3")
+                    : _slots[305] = nativeContext.LoadFunction("SDL_GetHapticName", "SDL3")
             )
         )(haptic);
 
@@ -56432,9 +64375,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint* ISdl.GetHaptics(int* count) =>
         (
             (delegate* unmanaged<int*, uint*>)(
-                _slots[254] is not null and var loadedFnPtr
+                _slots[307] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[254] = nativeContext.LoadFunction("SDL_GetHaptics", "SDL3")
+                    : _slots[307] = nativeContext.LoadFunction("SDL_GetHaptics", "SDL3")
             )
         )(count);
 
@@ -56462,9 +64405,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetHint([NativeTypeName("const char *")] sbyte* name) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*>)(
-                _slots[255] is not null and var loadedFnPtr
+                _slots[308] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[255] = nativeContext.LoadFunction("SDL_GetHint", "SDL3")
+                    : _slots[308] = nativeContext.LoadFunction("SDL_GetHint", "SDL3")
             )
         )(name);
 
@@ -56497,9 +64440,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, byte, byte>)(
-                _slots[256] is not null and var loadedFnPtr
+                _slots[309] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[256] = nativeContext.LoadFunction("SDL_GetHintBoolean", "SDL3")
+                    : _slots[309] = nativeContext.LoadFunction("SDL_GetHintBoolean", "SDL3")
             )
         )(name, default_value);
 
@@ -56537,9 +64480,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetIOProperties(IOStreamHandle context) =>
         (
             (delegate* unmanaged<IOStreamHandle, uint>)(
-                _slots[257] is not null and var loadedFnPtr
+                _slots[310] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[257] = nativeContext.LoadFunction("SDL_GetIOProperties", "SDL3")
+                    : _slots[310] = nativeContext.LoadFunction("SDL_GetIOProperties", "SDL3")
             )
         )(context);
 
@@ -56553,9 +64496,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     long ISdl.GetIOSize(IOStreamHandle context) =>
         (
             (delegate* unmanaged<IOStreamHandle, long>)(
-                _slots[258] is not null and var loadedFnPtr
+                _slots[311] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[258] = nativeContext.LoadFunction("SDL_GetIOSize", "SDL3")
+                    : _slots[311] = nativeContext.LoadFunction("SDL_GetIOSize", "SDL3")
             )
         )(context);
 
@@ -56568,9 +64511,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     IOStatus ISdl.GetIOStatus(IOStreamHandle context) =>
         (
             (delegate* unmanaged<IOStreamHandle, IOStatus>)(
-                _slots[259] is not null and var loadedFnPtr
+                _slots[312] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[259] = nativeContext.LoadFunction("SDL_GetIOStatus", "SDL3")
+                    : _slots[312] = nativeContext.LoadFunction("SDL_GetIOStatus", "SDL3")
             )
         )(context);
 
@@ -56582,9 +64525,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     short ISdl.GetJoystickAxis(JoystickHandle joystick, int axis) =>
         (
             (delegate* unmanaged<JoystickHandle, int, short>)(
-                _slots[260] is not null and var loadedFnPtr
+                _slots[313] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[260] = nativeContext.LoadFunction("SDL_GetJoystickAxis", "SDL3")
+                    : _slots[313] = nativeContext.LoadFunction("SDL_GetJoystickAxis", "SDL3")
             )
         )(joystick, axis);
 
@@ -56602,9 +64545,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<JoystickHandle, int, short*, byte>)(
-                _slots[261] is not null and var loadedFnPtr
+                _slots[314] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[261] = nativeContext.LoadFunction(
+                    : _slots[314] = nativeContext.LoadFunction(
                         "SDL_GetJoystickAxisInitialState",
                         "SDL3"
                     )
@@ -56648,9 +64591,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetJoystickBall(JoystickHandle joystick, int ball, int* dx, int* dy) =>
         (
             (delegate* unmanaged<JoystickHandle, int, int*, int*, byte>)(
-                _slots[262] is not null and var loadedFnPtr
+                _slots[315] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[262] = nativeContext.LoadFunction("SDL_GetJoystickBall", "SDL3")
+                    : _slots[315] = nativeContext.LoadFunction("SDL_GetJoystickBall", "SDL3")
             )
         )(joystick, ball, dx, dy);
 
@@ -56702,9 +64645,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetJoystickButtonRaw(JoystickHandle joystick, int button) =>
         (
             (delegate* unmanaged<JoystickHandle, int, byte>)(
-                _slots[263] is not null and var loadedFnPtr
+                _slots[316] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[263] = nativeContext.LoadFunction("SDL_GetJoystickButton", "SDL3")
+                    : _slots[316] = nativeContext.LoadFunction("SDL_GetJoystickButton", "SDL3")
             )
         )(joystick, button);
 
@@ -56718,9 +64661,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     JoystickConnectionState ISdl.GetJoystickConnectionState(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, JoystickConnectionState>)(
-                _slots[264] is not null and var loadedFnPtr
+                _slots[317] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[264] = nativeContext.LoadFunction(
+                    : _slots[317] = nativeContext.LoadFunction(
                         "SDL_GetJoystickConnectionState",
                         "SDL3"
                     )
@@ -56736,9 +64679,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetJoystickFirmwareVersion(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, ushort>)(
-                _slots[265] is not null and var loadedFnPtr
+                _slots[318] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[265] = nativeContext.LoadFunction(
+                    : _slots[318] = nativeContext.LoadFunction(
                         "SDL_GetJoystickFirmwareVersion",
                         "SDL3"
                     )
@@ -56755,9 +64698,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     JoystickHandle ISdl.GetJoystickFromID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, JoystickHandle>)(
-                _slots[266] is not null and var loadedFnPtr
+                _slots[319] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[266] = nativeContext.LoadFunction("SDL_GetJoystickFromID", "SDL3")
+                    : _slots[319] = nativeContext.LoadFunction("SDL_GetJoystickFromID", "SDL3")
             )
         )(instance_id);
 
@@ -56771,9 +64714,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     JoystickHandle ISdl.GetJoystickFromPlayerIndex(int player_index) =>
         (
             (delegate* unmanaged<int, JoystickHandle>)(
-                _slots[267] is not null and var loadedFnPtr
+                _slots[320] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[267] = nativeContext.LoadFunction(
+                    : _slots[320] = nativeContext.LoadFunction(
                         "SDL_GetJoystickFromPlayerIndex",
                         "SDL3"
                     )
@@ -56789,9 +64732,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Guid ISdl.GetJoystickGuid(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, Guid>)(
-                _slots[268] is not null and var loadedFnPtr
+                _slots[321] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[268] = nativeContext.LoadFunction("SDL_GetJoystickGUID", "SDL3")
+                    : _slots[321] = nativeContext.LoadFunction("SDL_GetJoystickGUID", "SDL3")
             )
         )(joystick);
 
@@ -56804,9 +64747,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Guid ISdl.GetJoystickGuidForID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, Guid>)(
-                _slots[269] is not null and var loadedFnPtr
+                _slots[322] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[269] = nativeContext.LoadFunction("SDL_GetJoystickGUIDForID", "SDL3")
+                    : _slots[322] = nativeContext.LoadFunction("SDL_GetJoystickGUIDForID", "SDL3")
             )
         )(instance_id);
 
@@ -56825,9 +64768,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Guid, ushort*, ushort*, ushort*, ushort*, void>)(
-                _slots[270] is not null and var loadedFnPtr
+                _slots[323] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[270] = nativeContext.LoadFunction("SDL_GetJoystickGUIDInfo", "SDL3")
+                    : _slots[323] = nativeContext.LoadFunction("SDL_GetJoystickGUIDInfo", "SDL3")
             )
         )(guid, vendor, product, version, crc16);
 
@@ -56880,9 +64823,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetJoystickHat(JoystickHandle joystick, int hat) =>
         (
             (delegate* unmanaged<JoystickHandle, int, byte>)(
-                _slots[271] is not null and var loadedFnPtr
+                _slots[324] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[271] = nativeContext.LoadFunction("SDL_GetJoystickHat", "SDL3")
+                    : _slots[324] = nativeContext.LoadFunction("SDL_GetJoystickHat", "SDL3")
             )
         )(joystick, hat);
 
@@ -56896,9 +64839,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetJoystickID(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, uint>)(
-                _slots[272] is not null and var loadedFnPtr
+                _slots[325] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[272] = nativeContext.LoadFunction("SDL_GetJoystickID", "SDL3")
+                    : _slots[325] = nativeContext.LoadFunction("SDL_GetJoystickID", "SDL3")
             )
         )(joystick);
 
@@ -56934,9 +64877,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetJoystickNameForIDRaw([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[274] is not null and var loadedFnPtr
+                _slots[327] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[274] = nativeContext.LoadFunction("SDL_GetJoystickNameForID", "SDL3")
+                    : _slots[327] = nativeContext.LoadFunction("SDL_GetJoystickNameForID", "SDL3")
             )
         )(instance_id);
 
@@ -56951,9 +64894,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetJoystickNameRaw(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, sbyte*>)(
-                _slots[273] is not null and var loadedFnPtr
+                _slots[326] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[273] = nativeContext.LoadFunction("SDL_GetJoystickName", "SDL3")
+                    : _slots[326] = nativeContext.LoadFunction("SDL_GetJoystickName", "SDL3")
             )
         )(joystick);
 
@@ -56990,9 +64933,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetJoystickPathForIDRaw([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[276] is not null and var loadedFnPtr
+                _slots[329] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[276] = nativeContext.LoadFunction("SDL_GetJoystickPathForID", "SDL3")
+                    : _slots[329] = nativeContext.LoadFunction("SDL_GetJoystickPathForID", "SDL3")
             )
         )(instance_id);
 
@@ -57007,9 +64950,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetJoystickPathRaw(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, sbyte*>)(
-                _slots[275] is not null and var loadedFnPtr
+                _slots[328] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[275] = nativeContext.LoadFunction("SDL_GetJoystickPath", "SDL3")
+                    : _slots[328] = nativeContext.LoadFunction("SDL_GetJoystickPath", "SDL3")
             )
         )(joystick);
 
@@ -57023,9 +64966,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetJoystickPlayerIndex(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, int>)(
-                _slots[277] is not null and var loadedFnPtr
+                _slots[330] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[277] = nativeContext.LoadFunction("SDL_GetJoystickPlayerIndex", "SDL3")
+                    : _slots[330] = nativeContext.LoadFunction("SDL_GetJoystickPlayerIndex", "SDL3")
             )
         )(joystick);
 
@@ -57038,9 +64981,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetJoystickPlayerIndexForID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, int>)(
-                _slots[278] is not null and var loadedFnPtr
+                _slots[331] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[278] = nativeContext.LoadFunction(
+                    : _slots[331] = nativeContext.LoadFunction(
                         "SDL_GetJoystickPlayerIndexForID",
                         "SDL3"
                     )
@@ -57057,9 +65000,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     PowerState ISdl.GetJoystickPowerInfo(JoystickHandle joystick, int* percent) =>
         (
             (delegate* unmanaged<JoystickHandle, int*, PowerState>)(
-                _slots[279] is not null and var loadedFnPtr
+                _slots[332] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[279] = nativeContext.LoadFunction("SDL_GetJoystickPowerInfo", "SDL3")
+                    : _slots[332] = nativeContext.LoadFunction("SDL_GetJoystickPowerInfo", "SDL3")
             )
         )(joystick, percent);
 
@@ -57087,9 +65030,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetJoystickProduct(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, ushort>)(
-                _slots[280] is not null and var loadedFnPtr
+                _slots[333] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[280] = nativeContext.LoadFunction("SDL_GetJoystickProduct", "SDL3")
+                    : _slots[333] = nativeContext.LoadFunction("SDL_GetJoystickProduct", "SDL3")
             )
         )(joystick);
 
@@ -57103,9 +65046,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetJoystickProductForID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, ushort>)(
-                _slots[281] is not null and var loadedFnPtr
+                _slots[334] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[281] = nativeContext.LoadFunction(
+                    : _slots[334] = nativeContext.LoadFunction(
                         "SDL_GetJoystickProductForID",
                         "SDL3"
                     )
@@ -57123,9 +65066,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetJoystickProductVersion(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, ushort>)(
-                _slots[282] is not null and var loadedFnPtr
+                _slots[335] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[282] = nativeContext.LoadFunction(
+                    : _slots[335] = nativeContext.LoadFunction(
                         "SDL_GetJoystickProductVersion",
                         "SDL3"
                     )
@@ -57144,9 +65087,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, ushort>)(
-                _slots[283] is not null and var loadedFnPtr
+                _slots[336] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[283] = nativeContext.LoadFunction(
+                    : _slots[336] = nativeContext.LoadFunction(
                         "SDL_GetJoystickProductVersionForID",
                         "SDL3"
                     )
@@ -57164,9 +65107,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetJoystickProperties(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, uint>)(
-                _slots[284] is not null and var loadedFnPtr
+                _slots[337] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[284] = nativeContext.LoadFunction("SDL_GetJoystickProperties", "SDL3")
+                    : _slots[337] = nativeContext.LoadFunction("SDL_GetJoystickProperties", "SDL3")
             )
         )(joystick);
 
@@ -57180,9 +65123,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint* ISdl.GetJoysticks(int* count) =>
         (
             (delegate* unmanaged<int*, uint*>)(
-                _slots[285] is not null and var loadedFnPtr
+                _slots[338] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[285] = nativeContext.LoadFunction("SDL_GetJoysticks", "SDL3")
+                    : _slots[338] = nativeContext.LoadFunction("SDL_GetJoysticks", "SDL3")
             )
         )(count);
 
@@ -57221,9 +65164,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetJoystickSerialRaw(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, sbyte*>)(
-                _slots[286] is not null and var loadedFnPtr
+                _slots[339] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[286] = nativeContext.LoadFunction("SDL_GetJoystickSerial", "SDL3")
+                    : _slots[339] = nativeContext.LoadFunction("SDL_GetJoystickSerial", "SDL3")
             )
         )(joystick);
 
@@ -57237,9 +65180,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     JoystickType ISdl.GetJoystickType(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, JoystickType>)(
-                _slots[287] is not null and var loadedFnPtr
+                _slots[340] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[287] = nativeContext.LoadFunction("SDL_GetJoystickType", "SDL3")
+                    : _slots[340] = nativeContext.LoadFunction("SDL_GetJoystickType", "SDL3")
             )
         )(joystick);
 
@@ -57252,9 +65195,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     JoystickType ISdl.GetJoystickTypeForID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, JoystickType>)(
-                _slots[288] is not null and var loadedFnPtr
+                _slots[341] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[288] = nativeContext.LoadFunction("SDL_GetJoystickTypeForID", "SDL3")
+                    : _slots[341] = nativeContext.LoadFunction("SDL_GetJoystickTypeForID", "SDL3")
             )
         )(instance_id);
 
@@ -57268,9 +65211,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetJoystickVendor(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, ushort>)(
-                _slots[289] is not null and var loadedFnPtr
+                _slots[342] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[289] = nativeContext.LoadFunction("SDL_GetJoystickVendor", "SDL3")
+                    : _slots[342] = nativeContext.LoadFunction("SDL_GetJoystickVendor", "SDL3")
             )
         )(joystick);
 
@@ -57284,9 +65227,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetJoystickVendorForID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, ushort>)(
-                _slots[290] is not null and var loadedFnPtr
+                _slots[343] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[290] = nativeContext.LoadFunction("SDL_GetJoystickVendorForID", "SDL3")
+                    : _slots[343] = nativeContext.LoadFunction("SDL_GetJoystickVendorForID", "SDL3")
             )
         )(instance_id);
 
@@ -57301,9 +65244,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     WindowHandle ISdl.GetKeyboardFocus() =>
         (
             (delegate* unmanaged<WindowHandle>)(
-                _slots[291] is not null and var loadedFnPtr
+                _slots[344] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[291] = nativeContext.LoadFunction("SDL_GetKeyboardFocus", "SDL3")
+                    : _slots[344] = nativeContext.LoadFunction("SDL_GetKeyboardFocus", "SDL3")
             )
         )();
 
@@ -57327,9 +65270,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetKeyboardNameForIDRaw([NativeTypeName("SDL_KeyboardID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[292] is not null and var loadedFnPtr
+                _slots[345] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[292] = nativeContext.LoadFunction("SDL_GetKeyboardNameForID", "SDL3")
+                    : _slots[345] = nativeContext.LoadFunction("SDL_GetKeyboardNameForID", "SDL3")
             )
         )(instance_id);
 
@@ -57344,9 +65287,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint* ISdl.GetKeyboards(int* count) =>
         (
             (delegate* unmanaged<int*, uint*>)(
-                _slots[293] is not null and var loadedFnPtr
+                _slots[346] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[293] = nativeContext.LoadFunction("SDL_GetKeyboards", "SDL3")
+                    : _slots[346] = nativeContext.LoadFunction("SDL_GetKeyboards", "SDL3")
             )
         )(count);
 
@@ -57374,9 +65317,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     bool* ISdl.GetKeyboardState(int* numkeys) =>
         (
             (delegate* unmanaged<int*, bool*>)(
-                _slots[294] is not null and var loadedFnPtr
+                _slots[347] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[294] = nativeContext.LoadFunction("SDL_GetKeyboardState", "SDL3")
+                    : _slots[347] = nativeContext.LoadFunction("SDL_GetKeyboardState", "SDL3")
             )
         )(numkeys);
 
@@ -57405,9 +65348,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetKeyFromName([NativeTypeName("const char *")] sbyte* name) =>
         (
             (delegate* unmanaged<sbyte*, uint>)(
-                _slots[295] is not null and var loadedFnPtr
+                _slots[348] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[295] = nativeContext.LoadFunction("SDL_GetKeyFromName", "SDL3")
+                    : _slots[348] = nativeContext.LoadFunction("SDL_GetKeyFromName", "SDL3")
             )
         )(name);
 
@@ -57441,9 +65384,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Scancode, ushort, byte, uint>)(
-                _slots[296] is not null and var loadedFnPtr
+                _slots[349] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[296] = nativeContext.LoadFunction("SDL_GetKeyFromScancode", "SDL3")
+                    : _slots[349] = nativeContext.LoadFunction("SDL_GetKeyFromScancode", "SDL3")
             )
         )(scancode, modstate, key_event);
 
@@ -57488,9 +65431,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetKeyNameRaw([NativeTypeName("SDL_Keycode")] uint key) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[297] is not null and var loadedFnPtr
+                _slots[350] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[297] = nativeContext.LoadFunction("SDL_GetKeyName", "SDL3")
+                    : _slots[350] = nativeContext.LoadFunction("SDL_GetKeyName", "SDL3")
             )
         )(key);
 
@@ -57507,9 +65450,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<LogOutputFunction*, void**, void>)(
-                _slots[298] is not null and var loadedFnPtr
+                _slots[351] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[298] = nativeContext.LoadFunction("SDL_GetLogOutputFunction", "SDL3")
+                    : _slots[351] = nativeContext.LoadFunction("SDL_GetLogOutputFunction", "SDL3")
             )
         )(callback, userdata);
 
@@ -57545,9 +65488,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     LogPriority ISdl.GetLogPriority(int category) =>
         (
             (delegate* unmanaged<int, LogPriority>)(
-                _slots[299] is not null and var loadedFnPtr
+                _slots[352] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[299] = nativeContext.LoadFunction("SDL_GetLogPriority", "SDL3")
+                    : _slots[352] = nativeContext.LoadFunction("SDL_GetLogPriority", "SDL3")
             )
         )(category);
 
@@ -57566,9 +65509,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<PixelFormat, int*, uint*, uint*, uint*, uint*, byte>)(
-                _slots[300] is not null and var loadedFnPtr
+                _slots[353] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[300] = nativeContext.LoadFunction("SDL_GetMasksForPixelFormat", "SDL3")
+                    : _slots[353] = nativeContext.LoadFunction("SDL_GetMasksForPixelFormat", "SDL3")
             )
         )(format, bpp, Rmask, Gmask, Bmask, Amask);
 
@@ -57630,9 +65573,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetMaxHapticEffects(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, int>)(
-                _slots[301] is not null and var loadedFnPtr
+                _slots[354] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[301] = nativeContext.LoadFunction("SDL_GetMaxHapticEffects", "SDL3")
+                    : _slots[354] = nativeContext.LoadFunction("SDL_GetMaxHapticEffects", "SDL3")
             )
         )(haptic);
 
@@ -57645,9 +65588,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetMaxHapticEffectsPlaying(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, int>)(
-                _slots[302] is not null and var loadedFnPtr
+                _slots[355] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[302] = nativeContext.LoadFunction(
+                    : _slots[355] = nativeContext.LoadFunction(
                         "SDL_GetMaxHapticEffectsPlaying",
                         "SDL3"
                     )
@@ -57663,9 +65606,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint* ISdl.GetMice(int* count) =>
         (
             (delegate* unmanaged<int*, uint*>)(
-                _slots[303] is not null and var loadedFnPtr
+                _slots[356] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[303] = nativeContext.LoadFunction("SDL_GetMice", "SDL3")
+                    : _slots[356] = nativeContext.LoadFunction("SDL_GetMice", "SDL3")
             )
         )(count);
 
@@ -57693,9 +65636,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ushort ISdl.GetModState() =>
         (
             (delegate* unmanaged<ushort>)(
-                _slots[304] is not null and var loadedFnPtr
+                _slots[357] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[304] = nativeContext.LoadFunction("SDL_GetModState", "SDL3")
+                    : _slots[357] = nativeContext.LoadFunction("SDL_GetModState", "SDL3")
             )
         )();
 
@@ -57708,9 +65651,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     WindowHandle ISdl.GetMouseFocus() =>
         (
             (delegate* unmanaged<WindowHandle>)(
-                _slots[305] is not null and var loadedFnPtr
+                _slots[358] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[305] = nativeContext.LoadFunction("SDL_GetMouseFocus", "SDL3")
+                    : _slots[358] = nativeContext.LoadFunction("SDL_GetMouseFocus", "SDL3")
             )
         )();
 
@@ -57733,9 +65676,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetMouseNameForIDRaw([NativeTypeName("SDL_MouseID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[306] is not null and var loadedFnPtr
+                _slots[359] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[306] = nativeContext.LoadFunction("SDL_GetMouseNameForID", "SDL3")
+                    : _slots[359] = nativeContext.LoadFunction("SDL_GetMouseNameForID", "SDL3")
             )
         )(instance_id);
 
@@ -57749,9 +65692,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetMouseState(float* x, float* y) =>
         (
             (delegate* unmanaged<float*, float*, uint>)(
-                _slots[307] is not null and var loadedFnPtr
+                _slots[360] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[307] = nativeContext.LoadFunction("SDL_GetMouseState", "SDL3")
+                    : _slots[360] = nativeContext.LoadFunction("SDL_GetMouseState", "SDL3")
             )
         )(x, y);
 
@@ -57782,9 +65725,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, DisplayOrientation>)(
-                _slots[308] is not null and var loadedFnPtr
+                _slots[361] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[308] = nativeContext.LoadFunction(
+                    : _slots[361] = nativeContext.LoadFunction(
                         "SDL_GetNaturalDisplayOrientation",
                         "SDL3"
                     )
@@ -57801,9 +65744,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetNumAudioDrivers() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[309] is not null and var loadedFnPtr
+                _slots[362] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[309] = nativeContext.LoadFunction("SDL_GetNumAudioDrivers", "SDL3")
+                    : _slots[362] = nativeContext.LoadFunction("SDL_GetNumAudioDrivers", "SDL3")
             )
         )();
 
@@ -57819,9 +65762,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, long, long>)(
-                _slots[310] is not null and var loadedFnPtr
+                _slots[363] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[310] = nativeContext.LoadFunction("SDL_GetNumberProperty", "SDL3")
+                    : _slots[363] = nativeContext.LoadFunction("SDL_GetNumberProperty", "SDL3")
             )
         )(props, name, default_value);
 
@@ -57861,9 +65804,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetNumCameraDrivers() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[311] is not null and var loadedFnPtr
+                _slots[364] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[311] = nativeContext.LoadFunction("SDL_GetNumCameraDrivers", "SDL3")
+                    : _slots[364] = nativeContext.LoadFunction("SDL_GetNumCameraDrivers", "SDL3")
             )
         )();
 
@@ -57875,9 +65818,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetNumGamepadTouchpadFingers(GamepadHandle gamepad, int touchpad) =>
         (
             (delegate* unmanaged<GamepadHandle, int, int>)(
-                _slots[312] is not null and var loadedFnPtr
+                _slots[365] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[312] = nativeContext.LoadFunction(
+                    : _slots[365] = nativeContext.LoadFunction(
                         "SDL_GetNumGamepadTouchpadFingers",
                         "SDL3"
                     )
@@ -57893,9 +65836,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetNumGamepadTouchpads(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, int>)(
-                _slots[313] is not null and var loadedFnPtr
+                _slots[366] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[313] = nativeContext.LoadFunction("SDL_GetNumGamepadTouchpads", "SDL3")
+                    : _slots[366] = nativeContext.LoadFunction("SDL_GetNumGamepadTouchpads", "SDL3")
             )
         )(gamepad);
 
@@ -57905,12 +65848,26 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         DllImport.GetNumGamepadTouchpads(gamepad);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ISdl.GetNumGPUDrivers() =>
+        (
+            (delegate* unmanaged<int>)(
+                _slots[367] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[367] = nativeContext.LoadFunction("SDL_GetNumGPUDrivers", "SDL3")
+            )
+        )();
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetNumGPUDrivers")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetNumGPUDrivers() => DllImport.GetNumGPUDrivers();
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.GetNumHapticAxes(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, int>)(
-                _slots[314] is not null and var loadedFnPtr
+                _slots[368] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[314] = nativeContext.LoadFunction("SDL_GetNumHapticAxes", "SDL3")
+                    : _slots[368] = nativeContext.LoadFunction("SDL_GetNumHapticAxes", "SDL3")
             )
         )(haptic);
 
@@ -57922,9 +65879,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetNumJoystickAxes(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, int>)(
-                _slots[315] is not null and var loadedFnPtr
+                _slots[369] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[315] = nativeContext.LoadFunction("SDL_GetNumJoystickAxes", "SDL3")
+                    : _slots[369] = nativeContext.LoadFunction("SDL_GetNumJoystickAxes", "SDL3")
             )
         )(joystick);
 
@@ -57937,9 +65894,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetNumJoystickBalls(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, int>)(
-                _slots[316] is not null and var loadedFnPtr
+                _slots[370] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[316] = nativeContext.LoadFunction("SDL_GetNumJoystickBalls", "SDL3")
+                    : _slots[370] = nativeContext.LoadFunction("SDL_GetNumJoystickBalls", "SDL3")
             )
         )(joystick);
 
@@ -57952,9 +65909,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetNumJoystickButtons(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, int>)(
-                _slots[317] is not null and var loadedFnPtr
+                _slots[371] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[317] = nativeContext.LoadFunction("SDL_GetNumJoystickButtons", "SDL3")
+                    : _slots[371] = nativeContext.LoadFunction("SDL_GetNumJoystickButtons", "SDL3")
             )
         )(joystick);
 
@@ -57967,9 +65924,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetNumJoystickHats(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, int>)(
-                _slots[318] is not null and var loadedFnPtr
+                _slots[372] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[318] = nativeContext.LoadFunction("SDL_GetNumJoystickHats", "SDL3")
+                    : _slots[372] = nativeContext.LoadFunction("SDL_GetNumJoystickHats", "SDL3")
             )
         )(joystick);
 
@@ -57982,9 +65939,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetNumLogicalCPUCores() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[319] is not null and var loadedFnPtr
+                _slots[373] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[319] = nativeContext.LoadFunction("SDL_GetNumLogicalCPUCores", "SDL3")
+                    : _slots[373] = nativeContext.LoadFunction("SDL_GetNumLogicalCPUCores", "SDL3")
             )
         )();
 
@@ -57996,9 +65953,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetNumRenderDrivers() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[320] is not null and var loadedFnPtr
+                _slots[374] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[320] = nativeContext.LoadFunction("SDL_GetNumRenderDrivers", "SDL3")
+                    : _slots[374] = nativeContext.LoadFunction("SDL_GetNumRenderDrivers", "SDL3")
             )
         )();
 
@@ -58010,9 +65967,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetNumVideoDrivers() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[321] is not null and var loadedFnPtr
+                _slots[375] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[321] = nativeContext.LoadFunction("SDL_GetNumVideoDrivers", "SDL3")
+                    : _slots[375] = nativeContext.LoadFunction("SDL_GetNumVideoDrivers", "SDL3")
             )
         )();
 
@@ -58024,9 +65981,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetPathInfo([NativeTypeName("const char *")] sbyte* path, PathInfo* info) =>
         (
             (delegate* unmanaged<sbyte*, PathInfo*, byte>)(
-                _slots[322] is not null and var loadedFnPtr
+                _slots[376] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[322] = nativeContext.LoadFunction("SDL_GetPathInfo", "SDL3")
+                    : _slots[376] = nativeContext.LoadFunction("SDL_GetPathInfo", "SDL3")
             )
         )(path, info);
 
@@ -58062,9 +66019,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ulong ISdl.GetPerformanceCounter() =>
         (
             (delegate* unmanaged<ulong>)(
-                _slots[323] is not null and var loadedFnPtr
+                _slots[377] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[323] = nativeContext.LoadFunction("SDL_GetPerformanceCounter", "SDL3")
+                    : _slots[377] = nativeContext.LoadFunction("SDL_GetPerformanceCounter", "SDL3")
             )
         )();
 
@@ -58077,9 +66034,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ulong ISdl.GetPerformanceFrequency() =>
         (
             (delegate* unmanaged<ulong>)(
-                _slots[324] is not null and var loadedFnPtr
+                _slots[378] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[324] = nativeContext.LoadFunction(
+                    : _slots[378] = nativeContext.LoadFunction(
                         "SDL_GetPerformanceFrequency",
                         "SDL3"
                     )
@@ -58106,9 +66063,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     PixelFormatDetails* ISdl.GetPixelFormatDetailsRaw(PixelFormat format) =>
         (
             (delegate* unmanaged<PixelFormat, PixelFormatDetails*>)(
-                _slots[325] is not null and var loadedFnPtr
+                _slots[379] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[325] = nativeContext.LoadFunction("SDL_GetPixelFormatDetails", "SDL3")
+                    : _slots[379] = nativeContext.LoadFunction("SDL_GetPixelFormatDetails", "SDL3")
             )
         )(format);
 
@@ -58128,9 +66085,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<int, uint, uint, uint, uint, PixelFormat>)(
-                _slots[326] is not null and var loadedFnPtr
+                _slots[380] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[326] = nativeContext.LoadFunction("SDL_GetPixelFormatForMasks", "SDL3")
+                    : _slots[380] = nativeContext.LoadFunction("SDL_GetPixelFormatForMasks", "SDL3")
             )
         )(bpp, Rmask, Gmask, Bmask, Amask);
 
@@ -58159,9 +66116,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetPixelFormatNameRaw(PixelFormat format) =>
         (
             (delegate* unmanaged<PixelFormat, sbyte*>)(
-                _slots[327] is not null and var loadedFnPtr
+                _slots[381] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[327] = nativeContext.LoadFunction("SDL_GetPixelFormatName", "SDL3")
+                    : _slots[381] = nativeContext.LoadFunction("SDL_GetPixelFormatName", "SDL3")
             )
         )(format);
 
@@ -58184,9 +66141,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetPlatformRaw() =>
         (
             (delegate* unmanaged<sbyte*>)(
-                _slots[328] is not null and var loadedFnPtr
+                _slots[382] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[328] = nativeContext.LoadFunction("SDL_GetPlatform", "SDL3")
+                    : _slots[382] = nativeContext.LoadFunction("SDL_GetPlatform", "SDL3")
             )
         )();
 
@@ -58203,9 +66160,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, void*, void*>)(
-                _slots[329] is not null and var loadedFnPtr
+                _slots[383] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[329] = nativeContext.LoadFunction("SDL_GetPointerProperty", "SDL3")
+                    : _slots[383] = nativeContext.LoadFunction("SDL_GetPointerProperty", "SDL3")
             )
         )(props, name, default_value);
 
@@ -58244,9 +66201,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     PowerState ISdl.GetPowerInfo(int* seconds, int* percent) =>
         (
             (delegate* unmanaged<int*, int*, PowerState>)(
-                _slots[330] is not null and var loadedFnPtr
+                _slots[384] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[330] = nativeContext.LoadFunction("SDL_GetPowerInfo", "SDL3")
+                    : _slots[384] = nativeContext.LoadFunction("SDL_GetPowerInfo", "SDL3")
             )
         )(seconds, percent);
 
@@ -58275,9 +66232,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Locale** ISdl.GetPreferredLocales(int* count) =>
         (
             (delegate* unmanaged<int*, Locale**>)(
-                _slots[331] is not null and var loadedFnPtr
+                _slots[385] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[331] = nativeContext.LoadFunction("SDL_GetPreferredLocales", "SDL3")
+                    : _slots[385] = nativeContext.LoadFunction("SDL_GetPreferredLocales", "SDL3")
             )
         )(count);
 
@@ -58307,9 +66264,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*, sbyte*>)(
-                _slots[332] is not null and var loadedFnPtr
+                _slots[386] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[332] = nativeContext.LoadFunction("SDL_GetPrefPath", "SDL3")
+                    : _slots[386] = nativeContext.LoadFunction("SDL_GetPrefPath", "SDL3")
             )
         )(org, app);
 
@@ -58347,9 +66304,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetPrimaryDisplay() =>
         (
             (delegate* unmanaged<uint>)(
-                _slots[333] is not null and var loadedFnPtr
+                _slots[387] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[333] = nativeContext.LoadFunction("SDL_GetPrimaryDisplay", "SDL3")
+                    : _slots[387] = nativeContext.LoadFunction("SDL_GetPrimaryDisplay", "SDL3")
             )
         )();
 
@@ -58371,9 +66328,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetPrimarySelectionTextRaw() =>
         (
             (delegate* unmanaged<sbyte*>)(
-                _slots[334] is not null and var loadedFnPtr
+                _slots[388] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[334] = nativeContext.LoadFunction(
+                    : _slots[388] = nativeContext.LoadFunction(
                         "SDL_GetPrimarySelectionText",
                         "SDL3"
                     )
@@ -58386,15 +66343,61 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static sbyte* GetPrimarySelectionTextRaw() => DllImport.GetPrimarySelectionTextRaw();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    IOStreamHandle ISdl.GetProcessInput(ProcessHandle process) =>
+        (
+            (delegate* unmanaged<ProcessHandle, IOStreamHandle>)(
+                _slots[389] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[389] = nativeContext.LoadFunction("SDL_GetProcessInput", "SDL3")
+            )
+        )(process);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetProcessInput")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static IOStreamHandle GetProcessInput(ProcessHandle process) =>
+        DllImport.GetProcessInput(process);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    IOStreamHandle ISdl.GetProcessOutput(ProcessHandle process) =>
+        (
+            (delegate* unmanaged<ProcessHandle, IOStreamHandle>)(
+                _slots[390] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[390] = nativeContext.LoadFunction("SDL_GetProcessOutput", "SDL3")
+            )
+        )(process);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetProcessOutput")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static IOStreamHandle GetProcessOutput(ProcessHandle process) =>
+        DllImport.GetProcessOutput(process);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint ISdl.GetProcessProperties(ProcessHandle process) =>
+        (
+            (delegate* unmanaged<ProcessHandle, uint>)(
+                _slots[391] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[391] = nativeContext.LoadFunction("SDL_GetProcessProperties", "SDL3")
+            )
+        )(process);
+
+    [return: NativeTypeName("SDL_PropertiesID")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetProcessProperties")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint GetProcessProperties(ProcessHandle process) =>
+        DllImport.GetProcessProperties(process);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     PropertyType ISdl.GetPropertyType(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, PropertyType>)(
-                _slots[335] is not null and var loadedFnPtr
+                _slots[392] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[335] = nativeContext.LoadFunction("SDL_GetPropertyType", "SDL3")
+                    : _slots[392] = nativeContext.LoadFunction("SDL_GetPropertyType", "SDL3")
             )
         )(props, name);
 
@@ -58429,9 +66432,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadType ISdl.GetRealGamepadType(GamepadHandle gamepad) =>
         (
             (delegate* unmanaged<GamepadHandle, GamepadType>)(
-                _slots[336] is not null and var loadedFnPtr
+                _slots[393] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[336] = nativeContext.LoadFunction("SDL_GetRealGamepadType", "SDL3")
+                    : _slots[393] = nativeContext.LoadFunction("SDL_GetRealGamepadType", "SDL3")
             )
         )(gamepad);
 
@@ -58444,9 +66447,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadType ISdl.GetRealGamepadTypeForID([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, GamepadType>)(
-                _slots[337] is not null and var loadedFnPtr
+                _slots[394] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[337] = nativeContext.LoadFunction(
+                    : _slots[394] = nativeContext.LoadFunction(
                         "SDL_GetRealGamepadTypeForID",
                         "SDL3"
                     )
@@ -58469,9 +66472,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Rect*, int*, int*, int*, int*, byte>)(
-                _slots[338] is not null and var loadedFnPtr
+                _slots[395] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[338] = nativeContext.LoadFunction(
+                    : _slots[395] = nativeContext.LoadFunction(
                         "SDL_GetRectAndLineIntersection",
                         "SDL3"
                     )
@@ -58538,9 +66541,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<FRect*, float*, float*, float*, float*, byte>)(
-                _slots[339] is not null and var loadedFnPtr
+                _slots[396] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[339] = nativeContext.LoadFunction(
+                    : _slots[396] = nativeContext.LoadFunction(
                         "SDL_GetRectAndLineIntersectionFloat",
                         "SDL3"
                     )
@@ -58606,9 +66609,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Point*, int, Rect*, Rect*, byte>)(
-                _slots[340] is not null and var loadedFnPtr
+                _slots[397] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[340] = nativeContext.LoadFunction("SDL_GetRectEnclosingPoints", "SDL3")
+                    : _slots[397] = nativeContext.LoadFunction("SDL_GetRectEnclosingPoints", "SDL3")
             )
         )(points, count, clip, result);
 
@@ -58665,9 +66668,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<FPoint*, int, FRect*, FRect*, byte>)(
-                _slots[341] is not null and var loadedFnPtr
+                _slots[398] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[341] = nativeContext.LoadFunction(
+                    : _slots[398] = nativeContext.LoadFunction(
                         "SDL_GetRectEnclosingPointsFloat",
                         "SDL3"
                     )
@@ -58726,9 +66729,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Rect*, Rect*, Rect*, byte>)(
-                _slots[342] is not null and var loadedFnPtr
+                _slots[399] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[342] = nativeContext.LoadFunction("SDL_GetRectIntersection", "SDL3")
+                    : _slots[399] = nativeContext.LoadFunction("SDL_GetRectIntersection", "SDL3")
             )
         )(A, B, result);
 
@@ -58775,9 +66778,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<FRect*, FRect*, FRect*, byte>)(
-                _slots[343] is not null and var loadedFnPtr
+                _slots[400] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[343] = nativeContext.LoadFunction(
+                    : _slots[400] = nativeContext.LoadFunction(
                         "SDL_GetRectIntersectionFloat",
                         "SDL3"
                     )
@@ -58827,9 +66830,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Rect*, Rect*, Rect*, byte>)(
-                _slots[344] is not null and var loadedFnPtr
+                _slots[401] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[344] = nativeContext.LoadFunction("SDL_GetRectUnion", "SDL3")
+                    : _slots[401] = nativeContext.LoadFunction("SDL_GetRectUnion", "SDL3")
             )
         )(A, B, result);
 
@@ -58875,9 +66878,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<FRect*, FRect*, FRect*, byte>)(
-                _slots[345] is not null and var loadedFnPtr
+                _slots[402] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[345] = nativeContext.LoadFunction("SDL_GetRectUnionFloat", "SDL3")
+                    : _slots[402] = nativeContext.LoadFunction("SDL_GetRectUnionFloat", "SDL3")
             )
         )(A, B, result);
 
@@ -58920,9 +66923,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetRelativeMouseState(float* x, float* y) =>
         (
             (delegate* unmanaged<float*, float*, uint>)(
-                _slots[346] is not null and var loadedFnPtr
+                _slots[403] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[346] = nativeContext.LoadFunction("SDL_GetRelativeMouseState", "SDL3")
+                    : _slots[403] = nativeContext.LoadFunction("SDL_GetRelativeMouseState", "SDL3")
             )
         )(x, y);
 
@@ -58953,9 +66956,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetRenderClipRect(RendererHandle renderer, Rect* rect) =>
         (
             (delegate* unmanaged<RendererHandle, Rect*, byte>)(
-                _slots[347] is not null and var loadedFnPtr
+                _slots[404] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[347] = nativeContext.LoadFunction("SDL_GetRenderClipRect", "SDL3")
+                    : _slots[404] = nativeContext.LoadFunction("SDL_GetRenderClipRect", "SDL3")
             )
         )(renderer, rect);
 
@@ -58985,9 +66988,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetRenderColorScale(RendererHandle renderer, float* scale) =>
         (
             (delegate* unmanaged<RendererHandle, float*, byte>)(
-                _slots[348] is not null and var loadedFnPtr
+                _slots[405] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[348] = nativeContext.LoadFunction("SDL_GetRenderColorScale", "SDL3")
+                    : _slots[405] = nativeContext.LoadFunction("SDL_GetRenderColorScale", "SDL3")
             )
         )(renderer, scale);
 
@@ -59020,9 +67023,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, BlendMode*, byte>)(
-                _slots[349] is not null and var loadedFnPtr
+                _slots[406] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[349] = nativeContext.LoadFunction("SDL_GetRenderDrawBlendMode", "SDL3")
+                    : _slots[406] = nativeContext.LoadFunction("SDL_GetRenderDrawBlendMode", "SDL3")
             )
         )(renderer, blendMode);
 
@@ -59066,9 +67069,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, byte*, byte*, byte*, byte*, byte>)(
-                _slots[350] is not null and var loadedFnPtr
+                _slots[407] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[350] = nativeContext.LoadFunction("SDL_GetRenderDrawColor", "SDL3")
+                    : _slots[407] = nativeContext.LoadFunction("SDL_GetRenderDrawColor", "SDL3")
             )
         )(renderer, r, g, b, a);
 
@@ -59124,9 +67127,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, float*, float*, float*, float*, byte>)(
-                _slots[351] is not null and var loadedFnPtr
+                _slots[408] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[351] = nativeContext.LoadFunction(
+                    : _slots[408] = nativeContext.LoadFunction(
                         "SDL_GetRenderDrawColorFloat",
                         "SDL3"
                     )
@@ -59195,9 +67198,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetRenderDriverRaw(int index) =>
         (
             (delegate* unmanaged<int, sbyte*>)(
-                _slots[352] is not null and var loadedFnPtr
+                _slots[409] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[352] = nativeContext.LoadFunction("SDL_GetRenderDriver", "SDL3")
+                    : _slots[409] = nativeContext.LoadFunction("SDL_GetRenderDriver", "SDL3")
             )
         )(index);
 
@@ -59210,9 +67213,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     RendererHandle ISdl.GetRenderer(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, RendererHandle>)(
-                _slots[353] is not null and var loadedFnPtr
+                _slots[410] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[353] = nativeContext.LoadFunction("SDL_GetRenderer", "SDL3")
+                    : _slots[410] = nativeContext.LoadFunction("SDL_GetRenderer", "SDL3")
             )
         )(window);
 
@@ -59224,9 +67227,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     RendererHandle ISdl.GetRendererFromTexture(Texture* texture) =>
         (
             (delegate* unmanaged<Texture*, RendererHandle>)(
-                _slots[354] is not null and var loadedFnPtr
+                _slots[411] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[354] = nativeContext.LoadFunction("SDL_GetRendererFromTexture", "SDL3")
+                    : _slots[411] = nativeContext.LoadFunction("SDL_GetRendererFromTexture", "SDL3")
             )
         )(texture);
 
@@ -59265,9 +67268,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetRendererNameRaw(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, sbyte*>)(
-                _slots[355] is not null and var loadedFnPtr
+                _slots[412] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[355] = nativeContext.LoadFunction("SDL_GetRendererName", "SDL3")
+                    : _slots[412] = nativeContext.LoadFunction("SDL_GetRendererName", "SDL3")
             )
         )(renderer);
 
@@ -59281,9 +67284,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetRendererProperties(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, uint>)(
-                _slots[356] is not null and var loadedFnPtr
+                _slots[413] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[356] = nativeContext.LoadFunction("SDL_GetRendererProperties", "SDL3")
+                    : _slots[413] = nativeContext.LoadFunction("SDL_GetRendererProperties", "SDL3")
             )
         )(renderer);
 
@@ -59302,9 +67305,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, int*, int*, RendererLogicalPresentation*, byte>)(
-                _slots[357] is not null and var loadedFnPtr
+                _slots[414] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[357] = nativeContext.LoadFunction(
+                    : _slots[414] = nativeContext.LoadFunction(
                         "SDL_GetRenderLogicalPresentation",
                         "SDL3"
                     )
@@ -59359,9 +67362,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetRenderLogicalPresentationRect(RendererHandle renderer, FRect* rect) =>
         (
             (delegate* unmanaged<RendererHandle, FRect*, byte>)(
-                _slots[358] is not null and var loadedFnPtr
+                _slots[415] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[358] = nativeContext.LoadFunction(
+                    : _slots[415] = nativeContext.LoadFunction(
                         "SDL_GetRenderLogicalPresentationRect",
                         "SDL3"
                     )
@@ -59407,9 +67410,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void* ISdl.GetRenderMetalCommandEncoderRaw(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, void*>)(
-                _slots[359] is not null and var loadedFnPtr
+                _slots[416] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[359] = nativeContext.LoadFunction(
+                    : _slots[416] = nativeContext.LoadFunction(
                         "SDL_GetRenderMetalCommandEncoder",
                         "SDL3"
                     )
@@ -59435,9 +67438,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void* ISdl.GetRenderMetalLayerRaw(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, void*>)(
-                _slots[360] is not null and var loadedFnPtr
+                _slots[417] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[360] = nativeContext.LoadFunction("SDL_GetRenderMetalLayer", "SDL3")
+                    : _slots[417] = nativeContext.LoadFunction("SDL_GetRenderMetalLayer", "SDL3")
             )
         )(renderer);
 
@@ -59450,9 +67453,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetRenderOutputSize(RendererHandle renderer, int* w, int* h) =>
         (
             (delegate* unmanaged<RendererHandle, int*, int*, byte>)(
-                _slots[361] is not null and var loadedFnPtr
+                _slots[418] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[361] = nativeContext.LoadFunction("SDL_GetRenderOutputSize", "SDL3")
+                    : _slots[418] = nativeContext.LoadFunction("SDL_GetRenderOutputSize", "SDL3")
             )
         )(renderer, w, h);
 
@@ -59487,9 +67490,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetRenderSafeArea(RendererHandle renderer, Rect* rect) =>
         (
             (delegate* unmanaged<RendererHandle, Rect*, byte>)(
-                _slots[362] is not null and var loadedFnPtr
+                _slots[419] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[362] = nativeContext.LoadFunction("SDL_GetRenderSafeArea", "SDL3")
+                    : _slots[419] = nativeContext.LoadFunction("SDL_GetRenderSafeArea", "SDL3")
             )
         )(renderer, rect);
 
@@ -59519,9 +67522,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetRenderScale(RendererHandle renderer, float* scaleX, float* scaleY) =>
         (
             (delegate* unmanaged<RendererHandle, float*, float*, byte>)(
-                _slots[363] is not null and var loadedFnPtr
+                _slots[420] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[363] = nativeContext.LoadFunction("SDL_GetRenderScale", "SDL3")
+                    : _slots[420] = nativeContext.LoadFunction("SDL_GetRenderScale", "SDL3")
             )
         )(renderer, scaleX, scaleY);
 
@@ -59570,9 +67573,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Texture* ISdl.GetRenderTargetRaw(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, Texture*>)(
-                _slots[364] is not null and var loadedFnPtr
+                _slots[421] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[364] = nativeContext.LoadFunction("SDL_GetRenderTarget", "SDL3")
+                    : _slots[421] = nativeContext.LoadFunction("SDL_GetRenderTarget", "SDL3")
             )
         )(renderer);
 
@@ -59585,9 +67588,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetRenderViewport(RendererHandle renderer, Rect* rect) =>
         (
             (delegate* unmanaged<RendererHandle, Rect*, byte>)(
-                _slots[365] is not null and var loadedFnPtr
+                _slots[422] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[365] = nativeContext.LoadFunction("SDL_GetRenderViewport", "SDL3")
+                    : _slots[422] = nativeContext.LoadFunction("SDL_GetRenderViewport", "SDL3")
             )
         )(renderer, rect);
 
@@ -59617,9 +67620,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetRenderVSync(RendererHandle renderer, int* vsync) =>
         (
             (delegate* unmanaged<RendererHandle, int*, byte>)(
-                _slots[366] is not null and var loadedFnPtr
+                _slots[423] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[366] = nativeContext.LoadFunction("SDL_GetRenderVSync", "SDL3")
+                    : _slots[423] = nativeContext.LoadFunction("SDL_GetRenderVSync", "SDL3")
             )
         )(renderer, vsync);
 
@@ -59649,9 +67652,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     WindowHandle ISdl.GetRenderWindow(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, WindowHandle>)(
-                _slots[367] is not null and var loadedFnPtr
+                _slots[424] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[367] = nativeContext.LoadFunction("SDL_GetRenderWindow", "SDL3")
+                    : _slots[424] = nativeContext.LoadFunction("SDL_GetRenderWindow", "SDL3")
             )
         )(renderer);
 
@@ -59673,9 +67676,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetRevisionRaw() =>
         (
             (delegate* unmanaged<sbyte*>)(
-                _slots[368] is not null and var loadedFnPtr
+                _slots[425] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[368] = nativeContext.LoadFunction("SDL_GetRevision", "SDL3")
+                    : _slots[425] = nativeContext.LoadFunction("SDL_GetRevision", "SDL3")
             )
         )();
 
@@ -59695,9 +67698,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, PixelFormatDetails*, Palette*, byte*, byte*, byte*, void>)(
-                _slots[369] is not null and var loadedFnPtr
+                _slots[426] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[369] = nativeContext.LoadFunction("SDL_GetRGB", "SDL3")
+                    : _slots[426] = nativeContext.LoadFunction("SDL_GetRGB", "SDL3")
             )
         )(pixel, format, palette, r, g, b);
 
@@ -59764,9 +67767,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 byte*,
                 byte*,
                 void>)(
-                _slots[370] is not null and var loadedFnPtr
+                _slots[427] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[370] = nativeContext.LoadFunction("SDL_GetRGBA", "SDL3")
+                    : _slots[427] = nativeContext.LoadFunction("SDL_GetRGBA", "SDL3")
             )
         )(pixel, format, palette, r, g, b, a);
 
@@ -59829,9 +67832,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Sandbox ISdl.GetSandbox() =>
         (
             (delegate* unmanaged<Sandbox>)(
-                _slots[371] is not null and var loadedFnPtr
+                _slots[428] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[371] = nativeContext.LoadFunction("SDL_GetSandbox", "SDL3")
+                    : _slots[428] = nativeContext.LoadFunction("SDL_GetSandbox", "SDL3")
             )
         )();
 
@@ -59846,9 +67849,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, ushort*, Scancode>)(
-                _slots[372] is not null and var loadedFnPtr
+                _slots[429] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[372] = nativeContext.LoadFunction("SDL_GetScancodeFromKey", "SDL3")
+                    : _slots[429] = nativeContext.LoadFunction("SDL_GetScancodeFromKey", "SDL3")
             )
         )(key, modstate);
 
@@ -59883,9 +67886,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Scancode ISdl.GetScancodeFromName([NativeTypeName("const char *")] sbyte* name) =>
         (
             (delegate* unmanaged<sbyte*, Scancode>)(
-                _slots[373] is not null and var loadedFnPtr
+                _slots[430] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[373] = nativeContext.LoadFunction("SDL_GetScancodeFromName", "SDL3")
+                    : _slots[430] = nativeContext.LoadFunction("SDL_GetScancodeFromName", "SDL3")
             )
         )(name);
 
@@ -59924,9 +67927,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetScancodeNameRaw(Scancode scancode) =>
         (
             (delegate* unmanaged<Scancode, sbyte*>)(
-                _slots[374] is not null and var loadedFnPtr
+                _slots[431] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[374] = nativeContext.LoadFunction("SDL_GetScancodeName", "SDL3")
+                    : _slots[431] = nativeContext.LoadFunction("SDL_GetScancodeName", "SDL3")
             )
         )(scancode);
 
@@ -59940,9 +67943,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetSemaphoreValue(SemaphoreHandle sem) =>
         (
             (delegate* unmanaged<SemaphoreHandle, uint>)(
-                _slots[375] is not null and var loadedFnPtr
+                _slots[432] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[375] = nativeContext.LoadFunction("SDL_GetSemaphoreValue", "SDL3")
+                    : _slots[432] = nativeContext.LoadFunction("SDL_GetSemaphoreValue", "SDL3")
             )
         )(sem);
 
@@ -59955,9 +67958,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetSensorData(SensorHandle sensor, float* data, int num_values) =>
         (
             (delegate* unmanaged<SensorHandle, float*, int, byte>)(
-                _slots[376] is not null and var loadedFnPtr
+                _slots[433] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[376] = nativeContext.LoadFunction("SDL_GetSensorData", "SDL3")
+                    : _slots[433] = nativeContext.LoadFunction("SDL_GetSensorData", "SDL3")
             )
         )(sensor, data, num_values);
 
@@ -59991,9 +67994,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     SensorHandle ISdl.GetSensorFromID([NativeTypeName("SDL_SensorID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, SensorHandle>)(
-                _slots[377] is not null and var loadedFnPtr
+                _slots[434] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[377] = nativeContext.LoadFunction("SDL_GetSensorFromID", "SDL3")
+                    : _slots[434] = nativeContext.LoadFunction("SDL_GetSensorFromID", "SDL3")
             )
         )(instance_id);
 
@@ -60006,9 +68009,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetSensorID(SensorHandle sensor) =>
         (
             (delegate* unmanaged<SensorHandle, uint>)(
-                _slots[378] is not null and var loadedFnPtr
+                _slots[435] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[378] = nativeContext.LoadFunction("SDL_GetSensorID", "SDL3")
+                    : _slots[435] = nativeContext.LoadFunction("SDL_GetSensorID", "SDL3")
             )
         )(sensor);
 
@@ -60043,9 +68046,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetSensorNameForIDRaw([NativeTypeName("SDL_SensorID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, sbyte*>)(
-                _slots[380] is not null and var loadedFnPtr
+                _slots[437] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[380] = nativeContext.LoadFunction("SDL_GetSensorNameForID", "SDL3")
+                    : _slots[437] = nativeContext.LoadFunction("SDL_GetSensorNameForID", "SDL3")
             )
         )(instance_id);
 
@@ -60059,9 +68062,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetSensorNameRaw(SensorHandle sensor) =>
         (
             (delegate* unmanaged<SensorHandle, sbyte*>)(
-                _slots[379] is not null and var loadedFnPtr
+                _slots[436] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[379] = nativeContext.LoadFunction("SDL_GetSensorName", "SDL3")
+                    : _slots[436] = nativeContext.LoadFunction("SDL_GetSensorName", "SDL3")
             )
         )(sensor);
 
@@ -60075,9 +68078,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetSensorNonPortableType(SensorHandle sensor) =>
         (
             (delegate* unmanaged<SensorHandle, int>)(
-                _slots[381] is not null and var loadedFnPtr
+                _slots[438] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[381] = nativeContext.LoadFunction(
+                    : _slots[438] = nativeContext.LoadFunction(
                         "SDL_GetSensorNonPortableType",
                         "SDL3"
                     )
@@ -60093,9 +68096,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetSensorNonPortableTypeForID([NativeTypeName("SDL_SensorID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, int>)(
-                _slots[382] is not null and var loadedFnPtr
+                _slots[439] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[382] = nativeContext.LoadFunction(
+                    : _slots[439] = nativeContext.LoadFunction(
                         "SDL_GetSensorNonPortableTypeForID",
                         "SDL3"
                     )
@@ -60112,9 +68115,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetSensorProperties(SensorHandle sensor) =>
         (
             (delegate* unmanaged<SensorHandle, uint>)(
-                _slots[383] is not null and var loadedFnPtr
+                _slots[440] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[383] = nativeContext.LoadFunction("SDL_GetSensorProperties", "SDL3")
+                    : _slots[440] = nativeContext.LoadFunction("SDL_GetSensorProperties", "SDL3")
             )
         )(sensor);
 
@@ -60128,9 +68131,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint* ISdl.GetSensors(int* count) =>
         (
             (delegate* unmanaged<int*, uint*>)(
-                _slots[384] is not null and var loadedFnPtr
+                _slots[441] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[384] = nativeContext.LoadFunction("SDL_GetSensors", "SDL3")
+                    : _slots[441] = nativeContext.LoadFunction("SDL_GetSensors", "SDL3")
             )
         )(count);
 
@@ -60158,9 +68161,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     SensorType ISdl.GetSensorType(SensorHandle sensor) =>
         (
             (delegate* unmanaged<SensorHandle, SensorType>)(
-                _slots[385] is not null and var loadedFnPtr
+                _slots[442] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[385] = nativeContext.LoadFunction("SDL_GetSensorType", "SDL3")
+                    : _slots[442] = nativeContext.LoadFunction("SDL_GetSensorType", "SDL3")
             )
         )(sensor);
 
@@ -60172,9 +68175,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     SensorType ISdl.GetSensorTypeForID([NativeTypeName("SDL_SensorID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, SensorType>)(
-                _slots[386] is not null and var loadedFnPtr
+                _slots[443] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[386] = nativeContext.LoadFunction("SDL_GetSensorTypeForID", "SDL3")
+                    : _slots[443] = nativeContext.LoadFunction("SDL_GetSensorTypeForID", "SDL3")
             )
         )(instance_id);
 
@@ -60188,9 +68191,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetSilenceValueForFormat(AudioFormat format) =>
         (
             (delegate* unmanaged<AudioFormat, int>)(
-                _slots[387] is not null and var loadedFnPtr
+                _slots[444] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[387] = nativeContext.LoadFunction(
+                    : _slots[444] = nativeContext.LoadFunction(
                         "SDL_GetSilenceValueForFormat",
                         "SDL3"
                     )
@@ -60206,9 +68209,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     nuint ISdl.GetSimdAlignment() =>
         (
             (delegate* unmanaged<nuint>)(
-                _slots[388] is not null and var loadedFnPtr
+                _slots[445] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[388] = nativeContext.LoadFunction("SDL_GetSIMDAlignment", "SDL3")
+                    : _slots[445] = nativeContext.LoadFunction("SDL_GetSIMDAlignment", "SDL3")
             )
         )();
 
@@ -60225,9 +68228,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<StorageHandle, sbyte*, ulong*, byte>)(
-                _slots[389] is not null and var loadedFnPtr
+                _slots[446] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[389] = nativeContext.LoadFunction("SDL_GetStorageFileSize", "SDL3")
+                    : _slots[446] = nativeContext.LoadFunction("SDL_GetStorageFileSize", "SDL3")
             )
         )(storage, path, length);
 
@@ -60273,9 +68276,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<StorageHandle, sbyte*, PathInfo*, byte>)(
-                _slots[390] is not null and var loadedFnPtr
+                _slots[447] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[390] = nativeContext.LoadFunction("SDL_GetStoragePathInfo", "SDL3")
+                    : _slots[447] = nativeContext.LoadFunction("SDL_GetStoragePathInfo", "SDL3")
             )
         )(storage, path, info);
 
@@ -60317,9 +68320,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ulong ISdl.GetStorageSpaceRemaining(StorageHandle storage) =>
         (
             (delegate* unmanaged<StorageHandle, ulong>)(
-                _slots[391] is not null and var loadedFnPtr
+                _slots[448] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[391] = nativeContext.LoadFunction(
+                    : _slots[448] = nativeContext.LoadFunction(
                         "SDL_GetStorageSpaceRemaining",
                         "SDL3"
                     )
@@ -60340,9 +68343,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, sbyte*, sbyte*>)(
-                _slots[392] is not null and var loadedFnPtr
+                _slots[449] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[392] = nativeContext.LoadFunction("SDL_GetStringProperty", "SDL3")
+                    : _slots[449] = nativeContext.LoadFunction("SDL_GetStringProperty", "SDL3")
             )
         )(props, name, default_value);
 
@@ -60383,9 +68386,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetSurfaceAlphaMod(Surface* surface, [NativeTypeName("Uint8 *")] byte* alpha) =>
         (
             (delegate* unmanaged<Surface*, byte*, byte>)(
-                _slots[393] is not null and var loadedFnPtr
+                _slots[450] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[393] = nativeContext.LoadFunction("SDL_GetSurfaceAlphaMod", "SDL3")
+                    : _slots[450] = nativeContext.LoadFunction("SDL_GetSurfaceAlphaMod", "SDL3")
             )
         )(surface, alpha);
 
@@ -60427,9 +68430,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, BlendMode*, byte>)(
-                _slots[394] is not null and var loadedFnPtr
+                _slots[451] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[394] = nativeContext.LoadFunction("SDL_GetSurfaceBlendMode", "SDL3")
+                    : _slots[451] = nativeContext.LoadFunction("SDL_GetSurfaceBlendMode", "SDL3")
             )
         )(surface, blendMode);
 
@@ -60468,9 +68471,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetSurfaceClipRect(Surface* surface, Rect* rect) =>
         (
             (delegate* unmanaged<Surface*, Rect*, byte>)(
-                _slots[395] is not null and var loadedFnPtr
+                _slots[452] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[395] = nativeContext.LoadFunction("SDL_GetSurfaceClipRect", "SDL3")
+                    : _slots[452] = nativeContext.LoadFunction("SDL_GetSurfaceClipRect", "SDL3")
             )
         )(surface, rect);
 
@@ -60502,9 +68505,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetSurfaceColorKey(Surface* surface, [NativeTypeName("Uint32 *")] uint* key) =>
         (
             (delegate* unmanaged<Surface*, uint*, byte>)(
-                _slots[396] is not null and var loadedFnPtr
+                _slots[453] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[396] = nativeContext.LoadFunction("SDL_GetSurfaceColorKey", "SDL3")
+                    : _slots[453] = nativeContext.LoadFunction("SDL_GetSurfaceColorKey", "SDL3")
             )
         )(surface, key);
 
@@ -60547,9 +68550,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, byte*, byte*, byte*, byte>)(
-                _slots[397] is not null and var loadedFnPtr
+                _slots[454] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[397] = nativeContext.LoadFunction("SDL_GetSurfaceColorMod", "SDL3")
+                    : _slots[454] = nativeContext.LoadFunction("SDL_GetSurfaceColorMod", "SDL3")
             )
         )(surface, r, g, b);
 
@@ -60596,9 +68599,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Colorspace ISdl.GetSurfaceColorspace(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, Colorspace>)(
-                _slots[398] is not null and var loadedFnPtr
+                _slots[455] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[398] = nativeContext.LoadFunction("SDL_GetSurfaceColorspace", "SDL3")
+                    : _slots[455] = nativeContext.LoadFunction("SDL_GetSurfaceColorspace", "SDL3")
             )
         )(surface);
 
@@ -60626,9 +68629,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Surface** ISdl.GetSurfaceImages(Surface* surface, int* count) =>
         (
             (delegate* unmanaged<Surface*, int*, Surface**>)(
-                _slots[399] is not null and var loadedFnPtr
+                _slots[456] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[399] = nativeContext.LoadFunction("SDL_GetSurfaceImages", "SDL3")
+                    : _slots[456] = nativeContext.LoadFunction("SDL_GetSurfaceImages", "SDL3")
             )
         )(surface, count);
 
@@ -60657,9 +68660,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Palette* ISdl.GetSurfacePalette(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, Palette*>)(
-                _slots[400] is not null and var loadedFnPtr
+                _slots[457] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[400] = nativeContext.LoadFunction("SDL_GetSurfacePalette", "SDL3")
+                    : _slots[457] = nativeContext.LoadFunction("SDL_GetSurfacePalette", "SDL3")
             )
         )(surface);
 
@@ -60687,9 +68690,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetSurfaceProperties(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, uint>)(
-                _slots[401] is not null and var loadedFnPtr
+                _slots[458] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[401] = nativeContext.LoadFunction("SDL_GetSurfaceProperties", "SDL3")
+                    : _slots[458] = nativeContext.LoadFunction("SDL_GetSurfaceProperties", "SDL3")
             )
         )(surface);
 
@@ -60719,9 +68722,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetSystemRAM() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[402] is not null and var loadedFnPtr
+                _slots[459] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[402] = nativeContext.LoadFunction("SDL_GetSystemRAM", "SDL3")
+                    : _slots[459] = nativeContext.LoadFunction("SDL_GetSystemRAM", "SDL3")
             )
         )();
 
@@ -60733,9 +68736,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     SystemTheme ISdl.GetSystemTheme() =>
         (
             (delegate* unmanaged<SystemTheme>)(
-                _slots[403] is not null and var loadedFnPtr
+                _slots[460] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[403] = nativeContext.LoadFunction("SDL_GetSystemTheme", "SDL3")
+                    : _slots[460] = nativeContext.LoadFunction("SDL_GetSystemTheme", "SDL3")
             )
         )();
 
@@ -60747,9 +68750,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetTextInputArea(WindowHandle window, Rect* rect, int* cursor) =>
         (
             (delegate* unmanaged<WindowHandle, Rect*, int*, byte>)(
-                _slots[404] is not null and var loadedFnPtr
+                _slots[461] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[404] = nativeContext.LoadFunction("SDL_GetTextInputArea", "SDL3")
+                    : _slots[461] = nativeContext.LoadFunction("SDL_GetTextInputArea", "SDL3")
             )
         )(window, rect, cursor);
 
@@ -60784,9 +68787,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetTextureAlphaMod(Texture* texture, [NativeTypeName("Uint8 *")] byte* alpha) =>
         (
             (delegate* unmanaged<Texture*, byte*, byte>)(
-                _slots[405] is not null and var loadedFnPtr
+                _slots[462] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[405] = nativeContext.LoadFunction("SDL_GetTextureAlphaMod", "SDL3")
+                    : _slots[462] = nativeContext.LoadFunction("SDL_GetTextureAlphaMod", "SDL3")
             )
         )(texture, alpha);
 
@@ -60825,9 +68828,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetTextureAlphaModFloat(Texture* texture, float* alpha) =>
         (
             (delegate* unmanaged<Texture*, float*, byte>)(
-                _slots[406] is not null and var loadedFnPtr
+                _slots[463] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[406] = nativeContext.LoadFunction(
+                    : _slots[463] = nativeContext.LoadFunction(
                         "SDL_GetTextureAlphaModFloat",
                         "SDL3"
                     )
@@ -60865,9 +68868,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Texture*, BlendMode*, byte>)(
-                _slots[407] is not null and var loadedFnPtr
+                _slots[464] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[407] = nativeContext.LoadFunction("SDL_GetTextureBlendMode", "SDL3")
+                    : _slots[464] = nativeContext.LoadFunction("SDL_GetTextureBlendMode", "SDL3")
             )
         )(texture, blendMode);
 
@@ -60911,9 +68914,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Texture*, byte*, byte*, byte*, byte>)(
-                _slots[408] is not null and var loadedFnPtr
+                _slots[465] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[408] = nativeContext.LoadFunction("SDL_GetTextureColorMod", "SDL3")
+                    : _slots[465] = nativeContext.LoadFunction("SDL_GetTextureColorMod", "SDL3")
             )
         )(texture, r, g, b);
 
@@ -60960,9 +68963,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetTextureColorModFloat(Texture* texture, float* r, float* g, float* b) =>
         (
             (delegate* unmanaged<Texture*, float*, float*, float*, byte>)(
-                _slots[409] is not null and var loadedFnPtr
+                _slots[466] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[409] = nativeContext.LoadFunction(
+                    : _slots[466] = nativeContext.LoadFunction(
                         "SDL_GetTextureColorModFloat",
                         "SDL3"
                     )
@@ -61009,9 +69012,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetTextureProperties(Texture* texture) =>
         (
             (delegate* unmanaged<Texture*, uint>)(
-                _slots[410] is not null and var loadedFnPtr
+                _slots[467] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[410] = nativeContext.LoadFunction("SDL_GetTextureProperties", "SDL3")
+                    : _slots[467] = nativeContext.LoadFunction("SDL_GetTextureProperties", "SDL3")
             )
         )(texture);
 
@@ -61041,9 +69044,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetTextureScaleMode(Texture* texture, ScaleMode* scaleMode) =>
         (
             (delegate* unmanaged<Texture*, ScaleMode*, byte>)(
-                _slots[411] is not null and var loadedFnPtr
+                _slots[468] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[411] = nativeContext.LoadFunction("SDL_GetTextureScaleMode", "SDL3")
+                    : _slots[468] = nativeContext.LoadFunction("SDL_GetTextureScaleMode", "SDL3")
             )
         )(texture, scaleMode);
 
@@ -61077,9 +69080,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetTextureSize(Texture* texture, float* w, float* h) =>
         (
             (delegate* unmanaged<Texture*, float*, float*, byte>)(
-                _slots[412] is not null and var loadedFnPtr
+                _slots[469] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[412] = nativeContext.LoadFunction("SDL_GetTextureSize", "SDL3")
+                    : _slots[469] = nativeContext.LoadFunction("SDL_GetTextureSize", "SDL3")
             )
         )(texture, w, h);
 
@@ -61115,9 +69118,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ulong ISdl.GetThreadID(ThreadHandle thread) =>
         (
             (delegate* unmanaged<ThreadHandle, ulong>)(
-                _slots[413] is not null and var loadedFnPtr
+                _slots[470] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[413] = nativeContext.LoadFunction("SDL_GetThreadID", "SDL3")
+                    : _slots[470] = nativeContext.LoadFunction("SDL_GetThreadID", "SDL3")
             )
         )(thread);
 
@@ -61140,9 +69143,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetThreadNameRaw(ThreadHandle thread) =>
         (
             (delegate* unmanaged<ThreadHandle, sbyte*>)(
-                _slots[414] is not null and var loadedFnPtr
+                _slots[471] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[414] = nativeContext.LoadFunction("SDL_GetThreadName", "SDL3")
+                    : _slots[471] = nativeContext.LoadFunction("SDL_GetThreadName", "SDL3")
             )
         )(thread);
 
@@ -61156,9 +69159,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ulong ISdl.GetTicks() =>
         (
             (delegate* unmanaged<ulong>)(
-                _slots[415] is not null and var loadedFnPtr
+                _slots[472] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[415] = nativeContext.LoadFunction("SDL_GetTicks", "SDL3")
+                    : _slots[472] = nativeContext.LoadFunction("SDL_GetTicks", "SDL3")
             )
         )();
 
@@ -61171,9 +69174,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ulong ISdl.GetTicksNS() =>
         (
             (delegate* unmanaged<ulong>)(
-                _slots[416] is not null and var loadedFnPtr
+                _slots[473] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[416] = nativeContext.LoadFunction("SDL_GetTicksNS", "SDL3")
+                    : _slots[473] = nativeContext.LoadFunction("SDL_GetTicksNS", "SDL3")
             )
         )();
 
@@ -61186,9 +69189,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void* ISdl.GetTLS([NativeTypeName("SDL_TLSID *")] AtomicInt* id) =>
         (
             (delegate* unmanaged<AtomicInt*, void*>)(
-                _slots[417] is not null and var loadedFnPtr
+                _slots[474] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[417] = nativeContext.LoadFunction("SDL_GetTLS", "SDL3")
+                    : _slots[474] = nativeContext.LoadFunction("SDL_GetTLS", "SDL3")
             )
         )(id);
 
@@ -61227,9 +69230,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetTouchDeviceNameRaw([NativeTypeName("SDL_TouchID")] ulong touchID) =>
         (
             (delegate* unmanaged<ulong, sbyte*>)(
-                _slots[418] is not null and var loadedFnPtr
+                _slots[475] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[418] = nativeContext.LoadFunction("SDL_GetTouchDeviceName", "SDL3")
+                    : _slots[475] = nativeContext.LoadFunction("SDL_GetTouchDeviceName", "SDL3")
             )
         )(touchID);
 
@@ -61243,9 +69246,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ulong* ISdl.GetTouchDevices(int* count) =>
         (
             (delegate* unmanaged<int*, ulong*>)(
-                _slots[419] is not null and var loadedFnPtr
+                _slots[476] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[419] = nativeContext.LoadFunction("SDL_GetTouchDevices", "SDL3")
+                    : _slots[476] = nativeContext.LoadFunction("SDL_GetTouchDevices", "SDL3")
             )
         )(count);
 
@@ -61273,9 +69276,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     TouchDeviceType ISdl.GetTouchDeviceType([NativeTypeName("SDL_TouchID")] ulong touchID) =>
         (
             (delegate* unmanaged<ulong, TouchDeviceType>)(
-                _slots[420] is not null and var loadedFnPtr
+                _slots[477] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[420] = nativeContext.LoadFunction("SDL_GetTouchDeviceType", "SDL3")
+                    : _slots[477] = nativeContext.LoadFunction("SDL_GetTouchDeviceType", "SDL3")
             )
         )(touchID);
 
@@ -61289,9 +69292,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Finger** ISdl.GetTouchFingers([NativeTypeName("SDL_TouchID")] ulong touchID, int* count) =>
         (
             (delegate* unmanaged<ulong, int*, Finger**>)(
-                _slots[421] is not null and var loadedFnPtr
+                _slots[478] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[421] = nativeContext.LoadFunction("SDL_GetTouchFingers", "SDL3")
+                    : _slots[478] = nativeContext.LoadFunction("SDL_GetTouchFingers", "SDL3")
             )
         )(touchID, count);
 
@@ -61335,9 +69338,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetUserFolderRaw(Folder folder) =>
         (
             (delegate* unmanaged<Folder, sbyte*>)(
-                _slots[422] is not null and var loadedFnPtr
+                _slots[479] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[422] = nativeContext.LoadFunction("SDL_GetUserFolder", "SDL3")
+                    : _slots[479] = nativeContext.LoadFunction("SDL_GetUserFolder", "SDL3")
             )
         )(folder);
 
@@ -61350,9 +69353,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.GetVersion() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[423] is not null and var loadedFnPtr
+                _slots[480] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[423] = nativeContext.LoadFunction("SDL_GetVersion", "SDL3")
+                    : _slots[480] = nativeContext.LoadFunction("SDL_GetVersion", "SDL3")
             )
         )();
 
@@ -61373,9 +69376,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetVideoDriverRaw(int index) =>
         (
             (delegate* unmanaged<int, sbyte*>)(
-                _slots[424] is not null and var loadedFnPtr
+                _slots[481] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[424] = nativeContext.LoadFunction("SDL_GetVideoDriver", "SDL3")
+                    : _slots[481] = nativeContext.LoadFunction("SDL_GetVideoDriver", "SDL3")
             )
         )(index);
 
@@ -61388,9 +69391,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetWindowAspectRatio(WindowHandle window, float* min_aspect, float* max_aspect) =>
         (
             (delegate* unmanaged<WindowHandle, float*, float*, byte>)(
-                _slots[425] is not null and var loadedFnPtr
+                _slots[482] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[425] = nativeContext.LoadFunction("SDL_GetWindowAspectRatio", "SDL3")
+                    : _slots[482] = nativeContext.LoadFunction("SDL_GetWindowAspectRatio", "SDL3")
             )
         )(window, min_aspect, max_aspect);
 
@@ -61438,9 +69441,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<WindowHandle, int*, int*, int*, int*, byte>)(
-                _slots[426] is not null and var loadedFnPtr
+                _slots[483] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[426] = nativeContext.LoadFunction("SDL_GetWindowBordersSize", "SDL3")
+                    : _slots[483] = nativeContext.LoadFunction("SDL_GetWindowBordersSize", "SDL3")
             )
         )(window, top, left, bottom, right);
 
@@ -61497,9 +69500,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     float ISdl.GetWindowDisplayScale(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, float>)(
-                _slots[427] is not null and var loadedFnPtr
+                _slots[484] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[427] = nativeContext.LoadFunction("SDL_GetWindowDisplayScale", "SDL3")
+                    : _slots[484] = nativeContext.LoadFunction("SDL_GetWindowDisplayScale", "SDL3")
             )
         )(window);
 
@@ -61512,9 +69515,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ulong ISdl.GetWindowFlags(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, ulong>)(
-                _slots[428] is not null and var loadedFnPtr
+                _slots[485] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[428] = nativeContext.LoadFunction("SDL_GetWindowFlags", "SDL3")
+                    : _slots[485] = nativeContext.LoadFunction("SDL_GetWindowFlags", "SDL3")
             )
         )(window);
 
@@ -61527,9 +69530,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     WindowHandle ISdl.GetWindowFromEvent([NativeTypeName("const SDL_Event *")] Event* @event) =>
         (
             (delegate* unmanaged<Event*, WindowHandle>)(
-                _slots[429] is not null and var loadedFnPtr
+                _slots[486] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[429] = nativeContext.LoadFunction("SDL_GetWindowFromEvent", "SDL3")
+                    : _slots[486] = nativeContext.LoadFunction("SDL_GetWindowFromEvent", "SDL3")
             )
         )(@event);
 
@@ -61559,9 +69562,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     WindowHandle ISdl.GetWindowFromID([NativeTypeName("SDL_WindowID")] uint id) =>
         (
             (delegate* unmanaged<uint, WindowHandle>)(
-                _slots[430] is not null and var loadedFnPtr
+                _slots[487] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[430] = nativeContext.LoadFunction("SDL_GetWindowFromID", "SDL3")
+                    : _slots[487] = nativeContext.LoadFunction("SDL_GetWindowFromID", "SDL3")
             )
         )(id);
 
@@ -61585,9 +69588,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     DisplayMode* ISdl.GetWindowFullscreenModeRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, DisplayMode*>)(
-                _slots[431] is not null and var loadedFnPtr
+                _slots[488] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[431] = nativeContext.LoadFunction(
+                    : _slots[488] = nativeContext.LoadFunction(
                         "SDL_GetWindowFullscreenMode",
                         "SDL3"
                     )
@@ -61604,9 +69607,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void* ISdl.GetWindowICCProfile(WindowHandle window, [NativeTypeName("size_t *")] nuint* size) =>
         (
             (delegate* unmanaged<WindowHandle, nuint*, void*>)(
-                _slots[432] is not null and var loadedFnPtr
+                _slots[489] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[432] = nativeContext.LoadFunction("SDL_GetWindowICCProfile", "SDL3")
+                    : _slots[489] = nativeContext.LoadFunction("SDL_GetWindowICCProfile", "SDL3")
             )
         )(window, size);
 
@@ -61638,9 +69641,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetWindowID(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, uint>)(
-                _slots[433] is not null and var loadedFnPtr
+                _slots[490] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[433] = nativeContext.LoadFunction("SDL_GetWindowID", "SDL3")
+                    : _slots[490] = nativeContext.LoadFunction("SDL_GetWindowID", "SDL3")
             )
         )(window);
 
@@ -61664,9 +69667,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetWindowKeyboardGrabRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[434] is not null and var loadedFnPtr
+                _slots[491] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[434] = nativeContext.LoadFunction("SDL_GetWindowKeyboardGrab", "SDL3")
+                    : _slots[491] = nativeContext.LoadFunction("SDL_GetWindowKeyboardGrab", "SDL3")
             )
         )(window);
 
@@ -61680,9 +69683,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetWindowMaximumSize(WindowHandle window, int* w, int* h) =>
         (
             (delegate* unmanaged<WindowHandle, int*, int*, byte>)(
-                _slots[435] is not null and var loadedFnPtr
+                _slots[492] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[435] = nativeContext.LoadFunction("SDL_GetWindowMaximumSize", "SDL3")
+                    : _slots[492] = nativeContext.LoadFunction("SDL_GetWindowMaximumSize", "SDL3")
             )
         )(window, w, h);
 
@@ -61717,9 +69720,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetWindowMinimumSize(WindowHandle window, int* w, int* h) =>
         (
             (delegate* unmanaged<WindowHandle, int*, int*, byte>)(
-                _slots[436] is not null and var loadedFnPtr
+                _slots[493] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[436] = nativeContext.LoadFunction("SDL_GetWindowMinimumSize", "SDL3")
+                    : _slots[493] = nativeContext.LoadFunction("SDL_GetWindowMinimumSize", "SDL3")
             )
         )(window, w, h);
 
@@ -61765,9 +69768,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetWindowMouseGrabRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[437] is not null and var loadedFnPtr
+                _slots[494] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[437] = nativeContext.LoadFunction("SDL_GetWindowMouseGrab", "SDL3")
+                    : _slots[494] = nativeContext.LoadFunction("SDL_GetWindowMouseGrab", "SDL3")
             )
         )(window);
 
@@ -61792,9 +69795,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Rect* ISdl.GetWindowMouseRectRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, Rect*>)(
-                _slots[438] is not null and var loadedFnPtr
+                _slots[495] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[438] = nativeContext.LoadFunction("SDL_GetWindowMouseRect", "SDL3")
+                    : _slots[495] = nativeContext.LoadFunction("SDL_GetWindowMouseRect", "SDL3")
             )
         )(window);
 
@@ -61808,9 +69811,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     float ISdl.GetWindowOpacity(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, float>)(
-                _slots[439] is not null and var loadedFnPtr
+                _slots[496] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[439] = nativeContext.LoadFunction("SDL_GetWindowOpacity", "SDL3")
+                    : _slots[496] = nativeContext.LoadFunction("SDL_GetWindowOpacity", "SDL3")
             )
         )(window);
 
@@ -61822,9 +69825,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     WindowHandle ISdl.GetWindowParent(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, WindowHandle>)(
-                _slots[440] is not null and var loadedFnPtr
+                _slots[497] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[440] = nativeContext.LoadFunction("SDL_GetWindowParent", "SDL3")
+                    : _slots[497] = nativeContext.LoadFunction("SDL_GetWindowParent", "SDL3")
             )
         )(window);
 
@@ -61837,9 +69840,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     float ISdl.GetWindowPixelDensity(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, float>)(
-                _slots[441] is not null and var loadedFnPtr
+                _slots[498] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[441] = nativeContext.LoadFunction("SDL_GetWindowPixelDensity", "SDL3")
+                    : _slots[498] = nativeContext.LoadFunction("SDL_GetWindowPixelDensity", "SDL3")
             )
         )(window);
 
@@ -61852,9 +69855,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     PixelFormat ISdl.GetWindowPixelFormat(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, PixelFormat>)(
-                _slots[442] is not null and var loadedFnPtr
+                _slots[499] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[442] = nativeContext.LoadFunction("SDL_GetWindowPixelFormat", "SDL3")
+                    : _slots[499] = nativeContext.LoadFunction("SDL_GetWindowPixelFormat", "SDL3")
             )
         )(window);
 
@@ -61867,9 +69870,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetWindowPosition(WindowHandle window, int* x, int* y) =>
         (
             (delegate* unmanaged<WindowHandle, int*, int*, byte>)(
-                _slots[443] is not null and var loadedFnPtr
+                _slots[500] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[443] = nativeContext.LoadFunction("SDL_GetWindowPosition", "SDL3")
+                    : _slots[500] = nativeContext.LoadFunction("SDL_GetWindowPosition", "SDL3")
             )
         )(window, x, y);
 
@@ -61900,9 +69903,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.GetWindowProperties(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, uint>)(
-                _slots[444] is not null and var loadedFnPtr
+                _slots[501] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[444] = nativeContext.LoadFunction("SDL_GetWindowProperties", "SDL3")
+                    : _slots[501] = nativeContext.LoadFunction("SDL_GetWindowProperties", "SDL3")
             )
         )(window);
 
@@ -61927,9 +69930,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetWindowRelativeMouseModeRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[445] is not null and var loadedFnPtr
+                _slots[502] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[445] = nativeContext.LoadFunction(
+                    : _slots[502] = nativeContext.LoadFunction(
                         "SDL_GetWindowRelativeMouseMode",
                         "SDL3"
                     )
@@ -61946,9 +69949,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     WindowHandle* ISdl.GetWindows(int* count) =>
         (
             (delegate* unmanaged<int*, WindowHandle*>)(
-                _slots[446] is not null and var loadedFnPtr
+                _slots[503] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[446] = nativeContext.LoadFunction("SDL_GetWindows", "SDL3")
+                    : _slots[503] = nativeContext.LoadFunction("SDL_GetWindows", "SDL3")
             )
         )(count);
 
@@ -61974,9 +69977,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetWindowSafeArea(WindowHandle window, Rect* rect) =>
         (
             (delegate* unmanaged<WindowHandle, Rect*, byte>)(
-                _slots[447] is not null and var loadedFnPtr
+                _slots[504] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[447] = nativeContext.LoadFunction("SDL_GetWindowSafeArea", "SDL3")
+                    : _slots[504] = nativeContext.LoadFunction("SDL_GetWindowSafeArea", "SDL3")
             )
         )(window, rect);
 
@@ -62006,9 +70009,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetWindowSize(WindowHandle window, int* w, int* h) =>
         (
             (delegate* unmanaged<WindowHandle, int*, int*, byte>)(
-                _slots[448] is not null and var loadedFnPtr
+                _slots[505] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[448] = nativeContext.LoadFunction("SDL_GetWindowSize", "SDL3")
+                    : _slots[505] = nativeContext.LoadFunction("SDL_GetWindowSize", "SDL3")
             )
         )(window, w, h);
 
@@ -62039,9 +70042,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetWindowSizeInPixels(WindowHandle window, int* w, int* h) =>
         (
             (delegate* unmanaged<WindowHandle, int*, int*, byte>)(
-                _slots[449] is not null and var loadedFnPtr
+                _slots[506] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[449] = nativeContext.LoadFunction("SDL_GetWindowSizeInPixels", "SDL3")
+                    : _slots[506] = nativeContext.LoadFunction("SDL_GetWindowSizeInPixels", "SDL3")
             )
         )(window, w, h);
 
@@ -62086,9 +70089,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Surface* ISdl.GetWindowSurfaceRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, Surface*>)(
-                _slots[450] is not null and var loadedFnPtr
+                _slots[507] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[450] = nativeContext.LoadFunction("SDL_GetWindowSurface", "SDL3")
+                    : _slots[507] = nativeContext.LoadFunction("SDL_GetWindowSurface", "SDL3")
             )
         )(window);
 
@@ -62101,9 +70104,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GetWindowSurfaceVSync(WindowHandle window, int* vsync) =>
         (
             (delegate* unmanaged<WindowHandle, int*, byte>)(
-                _slots[451] is not null and var loadedFnPtr
+                _slots[508] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[451] = nativeContext.LoadFunction("SDL_GetWindowSurfaceVSync", "SDL3")
+                    : _slots[508] = nativeContext.LoadFunction("SDL_GetWindowSurfaceVSync", "SDL3")
             )
         )(window, vsync);
 
@@ -62144,9 +70147,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     sbyte* ISdl.GetWindowTitleRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, sbyte*>)(
-                _slots[452] is not null and var loadedFnPtr
+                _slots[509] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[452] = nativeContext.LoadFunction("SDL_GetWindowTitle", "SDL3")
+                    : _slots[509] = nativeContext.LoadFunction("SDL_GetWindowTitle", "SDL3")
             )
         )(window);
 
@@ -62160,9 +70163,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GLContextStateHandle ISdl.GLCreateContext(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, GLContextStateHandle>)(
-                _slots[453] is not null and var loadedFnPtr
+                _slots[510] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[453] = nativeContext.LoadFunction("SDL_GL_CreateContext", "SDL3")
+                    : _slots[510] = nativeContext.LoadFunction("SDL_GL_CreateContext", "SDL3")
             )
         )(window);
 
@@ -62189,9 +70192,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GLDestroyContextRaw([NativeTypeName("SDL_GLContext")] GLContextStateHandle context) =>
         (
             (delegate* unmanaged<GLContextStateHandle, byte>)(
-                _slots[454] is not null and var loadedFnPtr
+                _slots[511] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[454] = nativeContext.LoadFunction("SDL_GL_DestroyContext", "SDL3")
+                    : _slots[511] = nativeContext.LoadFunction("SDL_GL_DestroyContext", "SDL3")
             )
         )(context);
 
@@ -62206,9 +70209,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GLExtensionSupported([NativeTypeName("const char *")] sbyte* extension) =>
         (
             (delegate* unmanaged<sbyte*, byte>)(
-                _slots[455] is not null and var loadedFnPtr
+                _slots[512] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[455] = nativeContext.LoadFunction("SDL_GL_ExtensionSupported", "SDL3")
+                    : _slots[512] = nativeContext.LoadFunction("SDL_GL_ExtensionSupported", "SDL3")
             )
         )(extension);
 
@@ -62239,9 +70242,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GLGetAttribute(GLAttr attr, int* value) =>
         (
             (delegate* unmanaged<GLAttr, int*, byte>)(
-                _slots[456] is not null and var loadedFnPtr
+                _slots[513] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[456] = nativeContext.LoadFunction("SDL_GL_GetAttribute", "SDL3")
+                    : _slots[513] = nativeContext.LoadFunction("SDL_GL_GetAttribute", "SDL3")
             )
         )(attr, value);
 
@@ -62271,9 +70274,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GLContextStateHandle ISdl.GLGetCurrentContext() =>
         (
             (delegate* unmanaged<GLContextStateHandle>)(
-                _slots[457] is not null and var loadedFnPtr
+                _slots[514] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[457] = nativeContext.LoadFunction("SDL_GL_GetCurrentContext", "SDL3")
+                    : _slots[514] = nativeContext.LoadFunction("SDL_GL_GetCurrentContext", "SDL3")
             )
         )();
 
@@ -62286,9 +70289,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     WindowHandle ISdl.GLGetCurrentWindow() =>
         (
             (delegate* unmanaged<WindowHandle>)(
-                _slots[458] is not null and var loadedFnPtr
+                _slots[515] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[458] = nativeContext.LoadFunction("SDL_GL_GetCurrentWindow", "SDL3")
+                    : _slots[515] = nativeContext.LoadFunction("SDL_GL_GetCurrentWindow", "SDL3")
             )
         )();
 
@@ -62300,9 +70303,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     FunctionPointer ISdl.GLGetProcAddress([NativeTypeName("const char *")] sbyte* proc) =>
         (
             (delegate* unmanaged<sbyte*, FunctionPointer>)(
-                _slots[459] is not null and var loadedFnPtr
+                _slots[516] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[459] = nativeContext.LoadFunction("SDL_GL_GetProcAddress", "SDL3")
+                    : _slots[516] = nativeContext.LoadFunction("SDL_GL_GetProcAddress", "SDL3")
             )
         )(proc);
 
@@ -62333,9 +70336,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GLGetSwapInterval(int* interval) =>
         (
             (delegate* unmanaged<int*, byte>)(
-                _slots[460] is not null and var loadedFnPtr
+                _slots[517] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[460] = nativeContext.LoadFunction("SDL_GL_GetSwapInterval", "SDL3")
+                    : _slots[517] = nativeContext.LoadFunction("SDL_GL_GetSwapInterval", "SDL3")
             )
         )(interval);
 
@@ -62364,9 +70367,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GLLoadLibrary([NativeTypeName("const char *")] sbyte* path) =>
         (
             (delegate* unmanaged<sbyte*, byte>)(
-                _slots[461] is not null and var loadedFnPtr
+                _slots[518] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[461] = nativeContext.LoadFunction("SDL_GL_LoadLibrary", "SDL3")
+                    : _slots[518] = nativeContext.LoadFunction("SDL_GL_LoadLibrary", "SDL3")
             )
         )(path);
 
@@ -62414,9 +70417,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<WindowHandle, GLContextStateHandle, byte>)(
-                _slots[462] is not null and var loadedFnPtr
+                _slots[519] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[462] = nativeContext.LoadFunction("SDL_GL_MakeCurrent", "SDL3")
+                    : _slots[519] = nativeContext.LoadFunction("SDL_GL_MakeCurrent", "SDL3")
             )
         )(window, context);
 
@@ -62432,9 +70435,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.GLResetAttributes() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[463] is not null and var loadedFnPtr
+                _slots[520] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[463] = nativeContext.LoadFunction("SDL_GL_ResetAttributes", "SDL3")
+                    : _slots[520] = nativeContext.LoadFunction("SDL_GL_ResetAttributes", "SDL3")
             )
         )();
 
@@ -62457,9 +70460,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GLSetAttributeRaw(GLAttr attr, int value) =>
         (
             (delegate* unmanaged<GLAttr, int, byte>)(
-                _slots[464] is not null and var loadedFnPtr
+                _slots[521] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[464] = nativeContext.LoadFunction("SDL_GL_SetAttribute", "SDL3")
+                    : _slots[521] = nativeContext.LoadFunction("SDL_GL_SetAttribute", "SDL3")
             )
         )(attr, value);
 
@@ -62484,9 +70487,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GLSetSwapIntervalRaw(int interval) =>
         (
             (delegate* unmanaged<int, byte>)(
-                _slots[465] is not null and var loadedFnPtr
+                _slots[522] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[465] = nativeContext.LoadFunction("SDL_GL_SetSwapInterval", "SDL3")
+                    : _slots[522] = nativeContext.LoadFunction("SDL_GL_SetSwapInterval", "SDL3")
             )
         )(interval);
 
@@ -62511,9 +70514,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.GLSwapWindowRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[466] is not null and var loadedFnPtr
+                _slots[523] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[466] = nativeContext.LoadFunction("SDL_GL_SwapWindow", "SDL3")
+                    : _slots[523] = nativeContext.LoadFunction("SDL_GL_SwapWindow", "SDL3")
             )
         )(window);
 
@@ -62526,9 +70529,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.GLUnloadLibrary() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[467] is not null and var loadedFnPtr
+                _slots[524] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[467] = nativeContext.LoadFunction("SDL_GL_UnloadLibrary", "SDL3")
+                    : _slots[524] = nativeContext.LoadFunction("SDL_GL_UnloadLibrary", "SDL3")
             )
         )();
 
@@ -62545,9 +70548,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*, uint, int*, sbyte**>)(
-                _slots[468] is not null and var loadedFnPtr
+                _slots[525] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[468] = nativeContext.LoadFunction("SDL_GlobDirectory", "SDL3")
+                    : _slots[525] = nativeContext.LoadFunction("SDL_GlobDirectory", "SDL3")
             )
         )(path, pattern, flags, count);
 
@@ -62599,9 +70602,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<StorageHandle, sbyte*, sbyte*, uint, int*, sbyte**>)(
-                _slots[469] is not null and var loadedFnPtr
+                _slots[526] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[469] = nativeContext.LoadFunction("SDL_GlobStorageDirectory", "SDL3")
+                    : _slots[526] = nativeContext.LoadFunction("SDL_GlobStorageDirectory", "SDL3")
             )
         )(storage, path, pattern, flags, count);
 
@@ -62653,12 +70656,199 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.GlobStorageDirectory(storage, path, pattern, flags, count);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.GPUSupportsProperties([NativeTypeName("SDL_PropertiesID")] uint props) =>
+        (MaybeBool<byte>)(byte)((ISdl)this).GPUSupportsPropertiesRaw(props);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsProperties")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> GPUSupportsProperties(
+        [NativeTypeName("SDL_PropertiesID")] uint props
+    ) => DllImport.GPUSupportsProperties(props);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.GPUSupportsPropertiesRaw([NativeTypeName("SDL_PropertiesID")] uint props) =>
+        (
+            (delegate* unmanaged<uint, byte>)(
+                _slots[527] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[527] = nativeContext.LoadFunction("SDL_GPUSupportsProperties", "SDL3")
+            )
+        )(props);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsProperties")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte GPUSupportsPropertiesRaw([NativeTypeName("SDL_PropertiesID")] uint props) =>
+        DllImport.GPUSupportsPropertiesRaw(props);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.GPUSupportsShaderFormats(
+        [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+        [NativeTypeName("const char *")] sbyte* name
+    ) =>
+        (
+            (delegate* unmanaged<uint, sbyte*, byte>)(
+                _slots[528] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[528] = nativeContext.LoadFunction(
+                        "SDL_GPUSupportsShaderFormats",
+                        "SDL3"
+                    )
+            )
+        )(format_flags, name);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsShaderFormats")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte GPUSupportsShaderFormats(
+        [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+        [NativeTypeName("const char *")] sbyte* name
+    ) => DllImport.GPUSupportsShaderFormats(format_flags, name);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.GPUSupportsShaderFormats(
+        [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+        [NativeTypeName("const char *")] Ref<sbyte> name
+    )
+    {
+        fixed (sbyte* __dsl_name = name)
+        {
+            return (MaybeBool<byte>)
+                (byte)((ISdl)this).GPUSupportsShaderFormats(format_flags, __dsl_name);
+        }
+    }
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsShaderFormats")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> GPUSupportsShaderFormats(
+        [NativeTypeName("SDL_GPUShaderFormat")] uint format_flags,
+        [NativeTypeName("const char *")] Ref<sbyte> name
+    ) => DllImport.GPUSupportsShaderFormats(format_flags, name);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint ISdl.GPUTextureFormatTexelBlockSize(GPUTextureFormat format) =>
+        (
+            (delegate* unmanaged<GPUTextureFormat, uint>)(
+                _slots[529] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[529] = nativeContext.LoadFunction(
+                        "SDL_GPUTextureFormatTexelBlockSize",
+                        "SDL3"
+                    )
+            )
+        )(format);
+
+    [return: NativeTypeName("Uint32")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureFormatTexelBlockSize")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint GPUTextureFormatTexelBlockSize(GPUTextureFormat format) =>
+        DllImport.GPUTextureFormatTexelBlockSize(format);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.GPUTextureSupportsFormat(
+        GPUDeviceHandle device,
+        GPUTextureFormat format,
+        GPUTextureType type,
+        [NativeTypeName("SDL_GPUTextureUsageFlags")] uint usage
+    ) =>
+        (MaybeBool<byte>)
+            (byte)((ISdl)this).GPUTextureSupportsFormatRaw(device, format, type, usage);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsFormat")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> GPUTextureSupportsFormat(
+        GPUDeviceHandle device,
+        GPUTextureFormat format,
+        GPUTextureType type,
+        [NativeTypeName("SDL_GPUTextureUsageFlags")] uint usage
+    ) => DllImport.GPUTextureSupportsFormat(device, format, type, usage);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.GPUTextureSupportsFormatRaw(
+        GPUDeviceHandle device,
+        GPUTextureFormat format,
+        GPUTextureType type,
+        [NativeTypeName("SDL_GPUTextureUsageFlags")] uint usage
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUTextureFormat, GPUTextureType, uint, byte>)(
+                _slots[530] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[530] = nativeContext.LoadFunction(
+                        "SDL_GPUTextureSupportsFormat",
+                        "SDL3"
+                    )
+            )
+        )(device, format, type, usage);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsFormat")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte GPUTextureSupportsFormatRaw(
+        GPUDeviceHandle device,
+        GPUTextureFormat format,
+        GPUTextureType type,
+        [NativeTypeName("SDL_GPUTextureUsageFlags")] uint usage
+    ) => DllImport.GPUTextureSupportsFormatRaw(device, format, type, usage);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.GPUTextureSupportsSampleCount(
+        GPUDeviceHandle device,
+        GPUTextureFormat format,
+        GPUSampleCount sample_count
+    ) =>
+        (MaybeBool<byte>)
+            (byte)((ISdl)this).GPUTextureSupportsSampleCountRaw(device, format, sample_count);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> GPUTextureSupportsSampleCount(
+        GPUDeviceHandle device,
+        GPUTextureFormat format,
+        GPUSampleCount sample_count
+    ) => DllImport.GPUTextureSupportsSampleCount(device, format, sample_count);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.GPUTextureSupportsSampleCountRaw(
+        GPUDeviceHandle device,
+        GPUTextureFormat format,
+        GPUSampleCount sample_count
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUTextureFormat, GPUSampleCount, byte>)(
+                _slots[531] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[531] = nativeContext.LoadFunction(
+                        "SDL_GPUTextureSupportsSampleCount",
+                        "SDL3"
+                    )
+            )
+        )(device, format, sample_count);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte GPUTextureSupportsSampleCountRaw(
+        GPUDeviceHandle device,
+        GPUTextureFormat format,
+        GPUSampleCount sample_count
+    ) => DllImport.GPUTextureSupportsSampleCountRaw(device, format, sample_count);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.GuidToString(Guid guid, [NativeTypeName("char *")] sbyte* pszGUID, int cbGUID) =>
         (
             (delegate* unmanaged<Guid, sbyte*, int, void>)(
-                _slots[470] is not null and var loadedFnPtr
+                _slots[532] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[470] = nativeContext.LoadFunction("SDL_GUIDToString", "SDL3")
+                    : _slots[532] = nativeContext.LoadFunction("SDL_GUIDToString", "SDL3")
             )
         )(guid, pszGUID, cbGUID);
 
@@ -62695,9 +70885,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HapticHandle, HapticEffect*, byte>)(
-                _slots[471] is not null and var loadedFnPtr
+                _slots[533] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[471] = nativeContext.LoadFunction("SDL_HapticEffectSupported", "SDL3")
+                    : _slots[533] = nativeContext.LoadFunction("SDL_HapticEffectSupported", "SDL3")
             )
         )(haptic, effect);
 
@@ -62745,9 +70935,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HapticRumbleSupportedRaw(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, byte>)(
-                _slots[472] is not null and var loadedFnPtr
+                _slots[534] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[472] = nativeContext.LoadFunction("SDL_HapticRumbleSupported", "SDL3")
+                    : _slots[534] = nativeContext.LoadFunction("SDL_HapticRumbleSupported", "SDL3")
             )
         )(haptic);
 
@@ -62770,9 +70960,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasAltiVecRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[473] is not null and var loadedFnPtr
+                _slots[535] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[473] = nativeContext.LoadFunction("SDL_HasAltiVec", "SDL3")
+                    : _slots[535] = nativeContext.LoadFunction("SDL_HasAltiVec", "SDL3")
             )
         )();
 
@@ -62794,9 +70984,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasArmsimdRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[474] is not null and var loadedFnPtr
+                _slots[536] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[474] = nativeContext.LoadFunction("SDL_HasARMSIMD", "SDL3")
+                    : _slots[536] = nativeContext.LoadFunction("SDL_HasARMSIMD", "SDL3")
             )
         )();
 
@@ -62827,9 +71017,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasAVX2Raw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[476] is not null and var loadedFnPtr
+                _slots[538] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[476] = nativeContext.LoadFunction("SDL_HasAVX2", "SDL3")
+                    : _slots[538] = nativeContext.LoadFunction("SDL_HasAVX2", "SDL3")
             )
         )();
 
@@ -62851,9 +71041,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasAVX512FRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[477] is not null and var loadedFnPtr
+                _slots[539] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[477] = nativeContext.LoadFunction("SDL_HasAVX512F", "SDL3")
+                    : _slots[539] = nativeContext.LoadFunction("SDL_HasAVX512F", "SDL3")
             )
         )();
 
@@ -62866,9 +71056,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasAVXRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[475] is not null and var loadedFnPtr
+                _slots[537] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[475] = nativeContext.LoadFunction("SDL_HasAVX", "SDL3")
+                    : _slots[537] = nativeContext.LoadFunction("SDL_HasAVX", "SDL3")
             )
         )();
 
@@ -62881,9 +71071,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasClipboardData([NativeTypeName("const char *")] sbyte* mime_type) =>
         (
             (delegate* unmanaged<sbyte*, byte>)(
-                _slots[478] is not null and var loadedFnPtr
+                _slots[540] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[478] = nativeContext.LoadFunction("SDL_HasClipboardData", "SDL3")
+                    : _slots[540] = nativeContext.LoadFunction("SDL_HasClipboardData", "SDL3")
             )
         )(mime_type);
 
@@ -62924,9 +71114,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasClipboardTextRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[479] is not null and var loadedFnPtr
+                _slots[541] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[479] = nativeContext.LoadFunction("SDL_HasClipboardText", "SDL3")
+                    : _slots[541] = nativeContext.LoadFunction("SDL_HasClipboardText", "SDL3")
             )
         )();
 
@@ -62950,9 +71140,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasEventRaw([NativeTypeName("Uint32")] uint type) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[480] is not null and var loadedFnPtr
+                _slots[542] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[480] = nativeContext.LoadFunction("SDL_HasEvent", "SDL3")
+                    : _slots[542] = nativeContext.LoadFunction("SDL_HasEvent", "SDL3")
             )
         )(type);
 
@@ -62984,9 +71174,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, uint, byte>)(
-                _slots[481] is not null and var loadedFnPtr
+                _slots[543] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[481] = nativeContext.LoadFunction("SDL_HasEvents", "SDL3")
+                    : _slots[543] = nativeContext.LoadFunction("SDL_HasEvents", "SDL3")
             )
         )(minType, maxType);
 
@@ -63011,9 +71201,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasGamepadRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[482] is not null and var loadedFnPtr
+                _slots[544] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[482] = nativeContext.LoadFunction("SDL_HasGamepad", "SDL3")
+                    : _slots[544] = nativeContext.LoadFunction("SDL_HasGamepad", "SDL3")
             )
         )();
 
@@ -63035,9 +71225,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasJoystickRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[483] is not null and var loadedFnPtr
+                _slots[545] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[483] = nativeContext.LoadFunction("SDL_HasJoystick", "SDL3")
+                    : _slots[545] = nativeContext.LoadFunction("SDL_HasJoystick", "SDL3")
             )
         )();
 
@@ -63059,9 +71249,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasKeyboardRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[484] is not null and var loadedFnPtr
+                _slots[546] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[484] = nativeContext.LoadFunction("SDL_HasKeyboard", "SDL3")
+                    : _slots[546] = nativeContext.LoadFunction("SDL_HasKeyboard", "SDL3")
             )
         )();
 
@@ -63083,9 +71273,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasLasxRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[485] is not null and var loadedFnPtr
+                _slots[547] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[485] = nativeContext.LoadFunction("SDL_HasLASX", "SDL3")
+                    : _slots[547] = nativeContext.LoadFunction("SDL_HasLASX", "SDL3")
             )
         )();
 
@@ -63107,9 +71297,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasLSXRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[486] is not null and var loadedFnPtr
+                _slots[548] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[486] = nativeContext.LoadFunction("SDL_HasLSX", "SDL3")
+                    : _slots[548] = nativeContext.LoadFunction("SDL_HasLSX", "SDL3")
             )
         )();
 
@@ -63131,9 +71321,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasMMXRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[487] is not null and var loadedFnPtr
+                _slots[549] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[487] = nativeContext.LoadFunction("SDL_HasMMX", "SDL3")
+                    : _slots[549] = nativeContext.LoadFunction("SDL_HasMMX", "SDL3")
             )
         )();
 
@@ -63155,9 +71345,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasMouseRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[488] is not null and var loadedFnPtr
+                _slots[550] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[488] = nativeContext.LoadFunction("SDL_HasMouse", "SDL3")
+                    : _slots[550] = nativeContext.LoadFunction("SDL_HasMouse", "SDL3")
             )
         )();
 
@@ -63179,9 +71369,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasNeonRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[489] is not null and var loadedFnPtr
+                _slots[551] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[489] = nativeContext.LoadFunction("SDL_HasNEON", "SDL3")
+                    : _slots[551] = nativeContext.LoadFunction("SDL_HasNEON", "SDL3")
             )
         )();
 
@@ -63204,9 +71394,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasPrimarySelectionTextRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[490] is not null and var loadedFnPtr
+                _slots[552] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[490] = nativeContext.LoadFunction(
+                    : _slots[552] = nativeContext.LoadFunction(
                         "SDL_HasPrimarySelectionText",
                         "SDL3"
                     )
@@ -63225,9 +71415,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, byte>)(
-                _slots[491] is not null and var loadedFnPtr
+                _slots[553] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[491] = nativeContext.LoadFunction("SDL_HasProperty", "SDL3")
+                    : _slots[553] = nativeContext.LoadFunction("SDL_HasProperty", "SDL3")
             )
         )(props, name);
 
@@ -63267,9 +71457,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Rect*, Rect*, byte>)(
-                _slots[492] is not null and var loadedFnPtr
+                _slots[554] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[492] = nativeContext.LoadFunction("SDL_HasRectIntersection", "SDL3")
+                    : _slots[554] = nativeContext.LoadFunction("SDL_HasRectIntersection", "SDL3")
             )
         )(A, B);
 
@@ -63310,9 +71500,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<FRect*, FRect*, byte>)(
-                _slots[493] is not null and var loadedFnPtr
+                _slots[555] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[493] = nativeContext.LoadFunction(
+                    : _slots[555] = nativeContext.LoadFunction(
                         "SDL_HasRectIntersectionFloat",
                         "SDL3"
                     )
@@ -63364,9 +71554,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasScreenKeyboardSupportRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[494] is not null and var loadedFnPtr
+                _slots[556] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[494] = nativeContext.LoadFunction(
+                    : _slots[556] = nativeContext.LoadFunction(
                         "SDL_HasScreenKeyboardSupport",
                         "SDL3"
                     )
@@ -63400,9 +71590,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasSSE2Raw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[496] is not null and var loadedFnPtr
+                _slots[558] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[496] = nativeContext.LoadFunction("SDL_HasSSE2", "SDL3")
+                    : _slots[558] = nativeContext.LoadFunction("SDL_HasSSE2", "SDL3")
             )
         )();
 
@@ -63424,9 +71614,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasSSE3Raw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[497] is not null and var loadedFnPtr
+                _slots[559] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[497] = nativeContext.LoadFunction("SDL_HasSSE3", "SDL3")
+                    : _slots[559] = nativeContext.LoadFunction("SDL_HasSSE3", "SDL3")
             )
         )();
 
@@ -63448,9 +71638,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasSSE41Raw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[498] is not null and var loadedFnPtr
+                _slots[560] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[498] = nativeContext.LoadFunction("SDL_HasSSE41", "SDL3")
+                    : _slots[560] = nativeContext.LoadFunction("SDL_HasSSE41", "SDL3")
             )
         )();
 
@@ -63472,9 +71662,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasSSE42Raw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[499] is not null and var loadedFnPtr
+                _slots[561] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[499] = nativeContext.LoadFunction("SDL_HasSSE42", "SDL3")
+                    : _slots[561] = nativeContext.LoadFunction("SDL_HasSSE42", "SDL3")
             )
         )();
 
@@ -63487,9 +71677,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HasSSERaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[495] is not null and var loadedFnPtr
+                _slots[557] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[495] = nativeContext.LoadFunction("SDL_HasSSE", "SDL3")
+                    : _slots[557] = nativeContext.LoadFunction("SDL_HasSSE", "SDL3")
             )
         )();
 
@@ -63502,9 +71692,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.HidBleScan([NativeTypeName("bool")] byte active) =>
         (
             (delegate* unmanaged<byte, void>)(
-                _slots[500] is not null and var loadedFnPtr
+                _slots[562] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[500] = nativeContext.LoadFunction("SDL_hid_ble_scan", "SDL3")
+                    : _slots[562] = nativeContext.LoadFunction("SDL_hid_ble_scan", "SDL3")
             )
         )(active);
 
@@ -63527,9 +71717,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.HidClose(HidDeviceHandle dev) =>
         (
             (delegate* unmanaged<HidDeviceHandle, int>)(
-                _slots[501] is not null and var loadedFnPtr
+                _slots[563] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[501] = nativeContext.LoadFunction("SDL_hid_close", "SDL3")
+                    : _slots[563] = nativeContext.LoadFunction("SDL_hid_close", "SDL3")
             )
         )(dev);
 
@@ -63541,9 +71731,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.HidDeviceChangeCount() =>
         (
             (delegate* unmanaged<uint>)(
-                _slots[502] is not null and var loadedFnPtr
+                _slots[564] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[502] = nativeContext.LoadFunction(
+                    : _slots[564] = nativeContext.LoadFunction(
                         "SDL_hid_device_change_count",
                         "SDL3"
                     )
@@ -63576,9 +71766,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<ushort, ushort, HidDeviceInfo*>)(
-                _slots[503] is not null and var loadedFnPtr
+                _slots[565] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[503] = nativeContext.LoadFunction("SDL_hid_enumerate", "SDL3")
+                    : _slots[565] = nativeContext.LoadFunction("SDL_hid_enumerate", "SDL3")
             )
         )(vendor_id, product_id);
 
@@ -63593,9 +71783,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.HidExit() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[504] is not null and var loadedFnPtr
+                _slots[566] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[504] = nativeContext.LoadFunction("SDL_hid_exit", "SDL3")
+                    : _slots[566] = nativeContext.LoadFunction("SDL_hid_exit", "SDL3")
             )
         )();
 
@@ -63607,9 +71797,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.HidFreeEnumeration(HidDeviceInfo* devs) =>
         (
             (delegate* unmanaged<HidDeviceInfo*, void>)(
-                _slots[505] is not null and var loadedFnPtr
+                _slots[567] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[505] = nativeContext.LoadFunction("SDL_hid_free_enumeration", "SDL3")
+                    : _slots[567] = nativeContext.LoadFunction("SDL_hid_free_enumeration", "SDL3")
             )
         )(devs);
 
@@ -63647,9 +71837,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     HidDeviceInfo* ISdl.HidGetDeviceInfoRaw(HidDeviceHandle dev) =>
         (
             (delegate* unmanaged<HidDeviceHandle, HidDeviceInfo*>)(
-                _slots[506] is not null and var loadedFnPtr
+                _slots[568] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[506] = nativeContext.LoadFunction("SDL_hid_get_device_info", "SDL3")
+                    : _slots[568] = nativeContext.LoadFunction("SDL_hid_get_device_info", "SDL3")
             )
         )(dev);
 
@@ -63666,9 +71856,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HidDeviceHandle, byte*, nuint, int>)(
-                _slots[507] is not null and var loadedFnPtr
+                _slots[569] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[507] = nativeContext.LoadFunction("SDL_hid_get_feature_report", "SDL3")
+                    : _slots[569] = nativeContext.LoadFunction("SDL_hid_get_feature_report", "SDL3")
             )
         )(dev, data, length);
 
@@ -63711,9 +71901,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HidDeviceHandle, int, uint*, nuint, int>)(
-                _slots[508] is not null and var loadedFnPtr
+                _slots[570] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[508] = nativeContext.LoadFunction("SDL_hid_get_indexed_string", "SDL3")
+                    : _slots[570] = nativeContext.LoadFunction("SDL_hid_get_indexed_string", "SDL3")
             )
         )(dev, string_index, @string, maxlen);
 
@@ -63758,9 +71948,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HidDeviceHandle, byte*, nuint, int>)(
-                _slots[509] is not null and var loadedFnPtr
+                _slots[571] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[509] = nativeContext.LoadFunction("SDL_hid_get_input_report", "SDL3")
+                    : _slots[571] = nativeContext.LoadFunction("SDL_hid_get_input_report", "SDL3")
             )
         )(dev, data, length);
 
@@ -63802,9 +71992,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HidDeviceHandle, uint*, nuint, int>)(
-                _slots[510] is not null and var loadedFnPtr
+                _slots[572] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[510] = nativeContext.LoadFunction(
+                    : _slots[572] = nativeContext.LoadFunction(
                         "SDL_hid_get_manufacturer_string",
                         "SDL3"
                     )
@@ -63849,9 +72039,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HidDeviceHandle, uint*, nuint, int>)(
-                _slots[511] is not null and var loadedFnPtr
+                _slots[573] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[511] = nativeContext.LoadFunction("SDL_hid_get_product_string", "SDL3")
+                    : _slots[573] = nativeContext.LoadFunction("SDL_hid_get_product_string", "SDL3")
             )
         )(dev, @string, maxlen);
 
@@ -63893,9 +72083,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HidDeviceHandle, byte*, nuint, int>)(
-                _slots[512] is not null and var loadedFnPtr
+                _slots[574] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[512] = nativeContext.LoadFunction(
+                    : _slots[574] = nativeContext.LoadFunction(
                         "SDL_hid_get_report_descriptor",
                         "SDL3"
                     )
@@ -63940,9 +72130,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HidDeviceHandle, uint*, nuint, int>)(
-                _slots[513] is not null and var loadedFnPtr
+                _slots[575] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[513] = nativeContext.LoadFunction(
+                    : _slots[575] = nativeContext.LoadFunction(
                         "SDL_hid_get_serial_number_string",
                         "SDL3"
                     )
@@ -63983,9 +72173,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.HidInit() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[514] is not null and var loadedFnPtr
+                _slots[576] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[514] = nativeContext.LoadFunction("SDL_hid_init", "SDL3")
+                    : _slots[576] = nativeContext.LoadFunction("SDL_hid_init", "SDL3")
             )
         )();
 
@@ -64001,9 +72191,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<ushort, ushort, uint*, HidDeviceHandle>)(
-                _slots[515] is not null and var loadedFnPtr
+                _slots[577] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[515] = nativeContext.LoadFunction("SDL_hid_open", "SDL3")
+                    : _slots[577] = nativeContext.LoadFunction("SDL_hid_open", "SDL3")
             )
         )(vendor_id, product_id, serial_number);
 
@@ -64042,9 +72232,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     HidDeviceHandle ISdl.HidOpenPath([NativeTypeName("const char *")] sbyte* path) =>
         (
             (delegate* unmanaged<sbyte*, HidDeviceHandle>)(
-                _slots[516] is not null and var loadedFnPtr
+                _slots[578] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[516] = nativeContext.LoadFunction("SDL_hid_open_path", "SDL3")
+                    : _slots[578] = nativeContext.LoadFunction("SDL_hid_open_path", "SDL3")
             )
         )(path);
 
@@ -64076,9 +72266,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HidDeviceHandle, byte*, nuint, int>)(
-                _slots[517] is not null and var loadedFnPtr
+                _slots[579] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[517] = nativeContext.LoadFunction("SDL_hid_read", "SDL3")
+                    : _slots[579] = nativeContext.LoadFunction("SDL_hid_read", "SDL3")
             )
         )(dev, data, length);
 
@@ -64121,9 +72311,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HidDeviceHandle, byte*, nuint, int, int>)(
-                _slots[518] is not null and var loadedFnPtr
+                _slots[580] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[518] = nativeContext.LoadFunction("SDL_hid_read_timeout", "SDL3")
+                    : _slots[580] = nativeContext.LoadFunction("SDL_hid_read_timeout", "SDL3")
             )
         )(dev, data, length, milliseconds);
 
@@ -64168,9 +72358,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HidDeviceHandle, byte*, nuint, int>)(
-                _slots[519] is not null and var loadedFnPtr
+                _slots[581] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[519] = nativeContext.LoadFunction(
+                    : _slots[581] = nativeContext.LoadFunction(
                         "SDL_hid_send_feature_report",
                         "SDL3"
                     )
@@ -64211,9 +72401,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.HidSetNonblocking(HidDeviceHandle dev, int nonblock) =>
         (
             (delegate* unmanaged<HidDeviceHandle, int, int>)(
-                _slots[520] is not null and var loadedFnPtr
+                _slots[582] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[520] = nativeContext.LoadFunction("SDL_hid_set_nonblocking", "SDL3")
+                    : _slots[582] = nativeContext.LoadFunction("SDL_hid_set_nonblocking", "SDL3")
             )
         )(dev, nonblock);
 
@@ -64230,9 +72420,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HidDeviceHandle, byte*, nuint, int>)(
-                _slots[521] is not null and var loadedFnPtr
+                _slots[583] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[521] = nativeContext.LoadFunction("SDL_hid_write", "SDL3")
+                    : _slots[583] = nativeContext.LoadFunction("SDL_hid_write", "SDL3")
             )
         )(dev, data, length);
 
@@ -64279,9 +72469,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HideCursorRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[522] is not null and var loadedFnPtr
+                _slots[584] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[522] = nativeContext.LoadFunction("SDL_HideCursor", "SDL3")
+                    : _slots[584] = nativeContext.LoadFunction("SDL_HideCursor", "SDL3")
             )
         )();
 
@@ -64304,9 +72494,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.HideWindowRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[523] is not null and var loadedFnPtr
+                _slots[585] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[523] = nativeContext.LoadFunction("SDL_HideWindow", "SDL3")
+                    : _slots[585] = nativeContext.LoadFunction("SDL_HideWindow", "SDL3")
             )
         )(window);
 
@@ -64341,9 +72531,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.InitHapticRumbleRaw(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, byte>)(
-                _slots[525] is not null and var loadedFnPtr
+                _slots[587] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[525] = nativeContext.LoadFunction("SDL_InitHapticRumble", "SDL3")
+                    : _slots[587] = nativeContext.LoadFunction("SDL_InitHapticRumble", "SDL3")
             )
         )(haptic);
 
@@ -64357,9 +72547,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.InitRaw([NativeTypeName("SDL_InitFlags")] uint flags) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[524] is not null and var loadedFnPtr
+                _slots[586] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[524] = nativeContext.LoadFunction("SDL_Init", "SDL3")
+                    : _slots[586] = nativeContext.LoadFunction("SDL_Init", "SDL3")
             )
         )(flags);
 
@@ -64384,9 +72574,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.InitSubSystemRaw([NativeTypeName("SDL_InitFlags")] uint flags) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[526] is not null and var loadedFnPtr
+                _slots[588] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[526] = nativeContext.LoadFunction("SDL_InitSubSystem", "SDL3")
+                    : _slots[588] = nativeContext.LoadFunction("SDL_InitSubSystem", "SDL3")
             )
         )(flags);
 
@@ -64397,15 +72587,55 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         DllImport.InitSubSystemRaw(flags);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.InsertGPUDebugLabel(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const char *")] sbyte* text
+    ) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, sbyte*, void>)(
+                _slots[589] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[589] = nativeContext.LoadFunction("SDL_InsertGPUDebugLabel", "SDL3")
+            )
+        )(command_buffer, text);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_InsertGPUDebugLabel")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void InsertGPUDebugLabel(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const char *")] sbyte* text
+    ) => DllImport.InsertGPUDebugLabel(command_buffer, text);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.InsertGPUDebugLabel(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const char *")] Ref<sbyte> text
+    )
+    {
+        fixed (sbyte* __dsl_text = text)
+        {
+            ((ISdl)this).InsertGPUDebugLabel(command_buffer, __dsl_text);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_InsertGPUDebugLabel")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void InsertGPUDebugLabel(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const char *")] Ref<sbyte> text
+    ) => DllImport.InsertGPUDebugLabel(command_buffer, text);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     IOStreamHandle ISdl.IOFromConstMem(
         [NativeTypeName("const void *")] void* mem,
         [NativeTypeName("size_t")] nuint size
     ) =>
         (
             (delegate* unmanaged<void*, nuint, IOStreamHandle>)(
-                _slots[527] is not null and var loadedFnPtr
+                _slots[590] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[527] = nativeContext.LoadFunction("SDL_IOFromConstMem", "SDL3")
+                    : _slots[590] = nativeContext.LoadFunction("SDL_IOFromConstMem", "SDL3")
             )
         )(mem, size);
 
@@ -64440,9 +72670,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     IOStreamHandle ISdl.IOFromDynamicMem() =>
         (
             (delegate* unmanaged<IOStreamHandle>)(
-                _slots[528] is not null and var loadedFnPtr
+                _slots[591] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[528] = nativeContext.LoadFunction("SDL_IOFromDynamicMem", "SDL3")
+                    : _slots[591] = nativeContext.LoadFunction("SDL_IOFromDynamicMem", "SDL3")
             )
         )();
 
@@ -64457,9 +72687,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*, IOStreamHandle>)(
-                _slots[529] is not null and var loadedFnPtr
+                _slots[592] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[529] = nativeContext.LoadFunction("SDL_IOFromFile", "SDL3")
+                    : _slots[592] = nativeContext.LoadFunction("SDL_IOFromFile", "SDL3")
             )
         )(file, mode);
 
@@ -64495,9 +72725,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     IOStreamHandle ISdl.IOFromMem(void* mem, [NativeTypeName("size_t")] nuint size) =>
         (
             (delegate* unmanaged<void*, nuint, IOStreamHandle>)(
-                _slots[530] is not null and var loadedFnPtr
+                _slots[593] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[530] = nativeContext.LoadFunction("SDL_IOFromMem", "SDL3")
+                    : _slots[593] = nativeContext.LoadFunction("SDL_IOFromMem", "SDL3")
             )
         )(mem, size);
 
@@ -64529,9 +72759,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<IOStreamHandle, sbyte*, sbyte*, nuint>)(
-                _slots[531] is not null and var loadedFnPtr
+                _slots[594] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[531] = nativeContext.LoadFunction("SDL_IOvprintf", "SDL3")
+                    : _slots[594] = nativeContext.LoadFunction("SDL_IOvprintf", "SDL3")
             )
         )(context, fmt, ap);
 
@@ -64583,9 +72813,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.IsGamepadRaw([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[532] is not null and var loadedFnPtr
+                _slots[595] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[532] = nativeContext.LoadFunction("SDL_IsGamepad", "SDL3")
+                    : _slots[595] = nativeContext.LoadFunction("SDL_IsGamepad", "SDL3")
             )
         )(instance_id);
 
@@ -64610,9 +72840,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.IsJoystickHapticRaw(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, byte>)(
-                _slots[533] is not null and var loadedFnPtr
+                _slots[596] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[533] = nativeContext.LoadFunction("SDL_IsJoystickHaptic", "SDL3")
+                    : _slots[596] = nativeContext.LoadFunction("SDL_IsJoystickHaptic", "SDL3")
             )
         )(joystick);
 
@@ -64638,9 +72868,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.IsJoystickVirtualRaw([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[534] is not null and var loadedFnPtr
+                _slots[597] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[534] = nativeContext.LoadFunction("SDL_IsJoystickVirtual", "SDL3")
+                    : _slots[597] = nativeContext.LoadFunction("SDL_IsJoystickVirtual", "SDL3")
             )
         )(instance_id);
 
@@ -64663,9 +72893,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.IsMouseHapticRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[535] is not null and var loadedFnPtr
+                _slots[598] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[535] = nativeContext.LoadFunction("SDL_IsMouseHaptic", "SDL3")
+                    : _slots[598] = nativeContext.LoadFunction("SDL_IsMouseHaptic", "SDL3")
             )
         )();
 
@@ -64687,9 +72917,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.IsTabletRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[536] is not null and var loadedFnPtr
+                _slots[599] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[536] = nativeContext.LoadFunction("SDL_IsTablet", "SDL3")
+                    : _slots[599] = nativeContext.LoadFunction("SDL_IsTablet", "SDL3")
             )
         )();
 
@@ -64711,9 +72941,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.IsTVRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[537] is not null and var loadedFnPtr
+                _slots[600] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[537] = nativeContext.LoadFunction("SDL_IsTV", "SDL3")
+                    : _slots[600] = nativeContext.LoadFunction("SDL_IsTV", "SDL3")
             )
         )();
 
@@ -64737,9 +72967,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.JoystickConnectedRaw(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, byte>)(
-                _slots[538] is not null and var loadedFnPtr
+                _slots[601] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[538] = nativeContext.LoadFunction("SDL_JoystickConnected", "SDL3")
+                    : _slots[601] = nativeContext.LoadFunction("SDL_JoystickConnected", "SDL3")
             )
         )(joystick);
 
@@ -64763,9 +72993,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.JoystickEventsEnabledRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[539] is not null and var loadedFnPtr
+                _slots[602] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[539] = nativeContext.LoadFunction("SDL_JoystickEventsEnabled", "SDL3")
+                    : _slots[602] = nativeContext.LoadFunction("SDL_JoystickEventsEnabled", "SDL3")
             )
         )();
 
@@ -64775,12 +73005,43 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static byte JoystickEventsEnabledRaw() => DllImport.JoystickEventsEnabledRaw();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.KillProcess(ProcessHandle process, [NativeTypeName("bool")] byte force) =>
+        (
+            (delegate* unmanaged<ProcessHandle, byte, byte>)(
+                _slots[603] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[603] = nativeContext.LoadFunction("SDL_KillProcess", "SDL3")
+            )
+        )(process, force);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_KillProcess")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte KillProcess(ProcessHandle process, [NativeTypeName("bool")] byte force) =>
+        DllImport.KillProcess(process, force);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.KillProcess(
+        ProcessHandle process,
+        [NativeTypeName("bool")] MaybeBool<byte> force
+    ) => (MaybeBool<byte>)(byte)((ISdl)this).KillProcess(process, (byte)force);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_KillProcess")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> KillProcess(
+        ProcessHandle process,
+        [NativeTypeName("bool")] MaybeBool<byte> force
+    ) => DllImport.KillProcess(process, force);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Surface* ISdl.LoadBMP([NativeTypeName("const char *")] sbyte* file) =>
         (
             (delegate* unmanaged<sbyte*, Surface*>)(
-                _slots[540] is not null and var loadedFnPtr
+                _slots[604] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[540] = nativeContext.LoadFunction("SDL_LoadBMP", "SDL3")
+                    : _slots[604] = nativeContext.LoadFunction("SDL_LoadBMP", "SDL3")
             )
         )(file);
 
@@ -64808,9 +73069,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Surface* ISdl.LoadBMPIO(IOStreamHandle src, [NativeTypeName("bool")] byte closeio) =>
         (
             (delegate* unmanaged<IOStreamHandle, byte, Surface*>)(
-                _slots[541] is not null and var loadedFnPtr
+                _slots[605] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[541] = nativeContext.LoadFunction("SDL_LoadBMP_IO", "SDL3")
+                    : _slots[605] = nativeContext.LoadFunction("SDL_LoadBMP_IO", "SDL3")
             )
         )(src, closeio);
 
@@ -64840,9 +73101,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, nuint*, void*>)(
-                _slots[542] is not null and var loadedFnPtr
+                _slots[606] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[542] = nativeContext.LoadFunction("SDL_LoadFile", "SDL3")
+                    : _slots[606] = nativeContext.LoadFunction("SDL_LoadFile", "SDL3")
             )
         )(file, datasize);
 
@@ -64882,9 +73143,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<IOStreamHandle, nuint*, byte, void*>)(
-                _slots[543] is not null and var loadedFnPtr
+                _slots[607] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[543] = nativeContext.LoadFunction("SDL_LoadFile_IO", "SDL3")
+                    : _slots[607] = nativeContext.LoadFunction("SDL_LoadFile_IO", "SDL3")
             )
         )(src, datasize, closeio);
 
@@ -64925,9 +73186,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<SharedObjectHandle, sbyte*, FunctionPointer>)(
-                _slots[544] is not null and var loadedFnPtr
+                _slots[608] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[544] = nativeContext.LoadFunction("SDL_LoadFunction", "SDL3")
+                    : _slots[608] = nativeContext.LoadFunction("SDL_LoadFunction", "SDL3")
             )
         )(handle, name);
 
@@ -64964,9 +73225,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     SharedObjectHandle ISdl.LoadObject([NativeTypeName("const char *")] sbyte* sofile) =>
         (
             (delegate* unmanaged<sbyte*, SharedObjectHandle>)(
-                _slots[545] is not null and var loadedFnPtr
+                _slots[609] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[545] = nativeContext.LoadFunction("SDL_LoadObject", "SDL3")
+                    : _slots[609] = nativeContext.LoadFunction("SDL_LoadObject", "SDL3")
             )
         )(sofile);
 
@@ -65000,9 +73261,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, AudioSpec*, byte**, uint*, byte>)(
-                _slots[546] is not null and var loadedFnPtr
+                _slots[610] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[546] = nativeContext.LoadFunction("SDL_LoadWAV", "SDL3")
+                    : _slots[610] = nativeContext.LoadFunction("SDL_LoadWAV", "SDL3")
             )
         )(path, spec, audio_buf, audio_len);
 
@@ -65056,9 +73317,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<IOStreamHandle, byte, AudioSpec*, byte**, uint*, byte>)(
-                _slots[547] is not null and var loadedFnPtr
+                _slots[611] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[547] = nativeContext.LoadFunction("SDL_LoadWAV_IO", "SDL3")
+                    : _slots[611] = nativeContext.LoadFunction("SDL_LoadWAV_IO", "SDL3")
             )
         )(src, closeio, spec, audio_buf, audio_len);
 
@@ -65125,9 +73386,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.LockAudioStreamRaw(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, byte>)(
-                _slots[548] is not null and var loadedFnPtr
+                _slots[612] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[548] = nativeContext.LoadFunction("SDL_LockAudioStream", "SDL3")
+                    : _slots[612] = nativeContext.LoadFunction("SDL_LockAudioStream", "SDL3")
             )
         )(stream);
 
@@ -65141,9 +73402,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.LockJoysticks() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[549] is not null and var loadedFnPtr
+                _slots[613] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[549] = nativeContext.LoadFunction("SDL_LockJoysticks", "SDL3")
+                    : _slots[613] = nativeContext.LoadFunction("SDL_LockJoysticks", "SDL3")
             )
         )();
 
@@ -65155,9 +73416,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.LockMutex(MutexHandle mutex) =>
         (
             (delegate* unmanaged<MutexHandle, void>)(
-                _slots[550] is not null and var loadedFnPtr
+                _slots[614] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[550] = nativeContext.LoadFunction("SDL_LockMutex", "SDL3")
+                    : _slots[614] = nativeContext.LoadFunction("SDL_LockMutex", "SDL3")
             )
         )(mutex);
 
@@ -65180,9 +73441,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.LockPropertiesRaw([NativeTypeName("SDL_PropertiesID")] uint props) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[551] is not null and var loadedFnPtr
+                _slots[615] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[551] = nativeContext.LoadFunction("SDL_LockProperties", "SDL3")
+                    : _slots[615] = nativeContext.LoadFunction("SDL_LockProperties", "SDL3")
             )
         )(props);
 
@@ -65196,9 +73457,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.LockRWLockForReading(RWLockHandle rwlock) =>
         (
             (delegate* unmanaged<RWLockHandle, void>)(
-                _slots[552] is not null and var loadedFnPtr
+                _slots[616] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[552] = nativeContext.LoadFunction("SDL_LockRWLockForReading", "SDL3")
+                    : _slots[616] = nativeContext.LoadFunction("SDL_LockRWLockForReading", "SDL3")
             )
         )(rwlock);
 
@@ -65211,9 +73472,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.LockRWLockForWriting(RWLockHandle rwlock) =>
         (
             (delegate* unmanaged<RWLockHandle, void>)(
-                _slots[553] is not null and var loadedFnPtr
+                _slots[617] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[553] = nativeContext.LoadFunction("SDL_LockRWLockForWriting", "SDL3")
+                    : _slots[617] = nativeContext.LoadFunction("SDL_LockRWLockForWriting", "SDL3")
             )
         )(rwlock);
 
@@ -65226,9 +73487,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.LockSpinlock([NativeTypeName("SDL_SpinLock *")] int* @lock) =>
         (
             (delegate* unmanaged<int*, void>)(
-                _slots[554] is not null and var loadedFnPtr
+                _slots[618] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[554] = nativeContext.LoadFunction("SDL_LockSpinlock", "SDL3")
+                    : _slots[618] = nativeContext.LoadFunction("SDL_LockSpinlock", "SDL3")
             )
         )(@lock);
 
@@ -65256,9 +73517,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.LockSurface(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, byte>)(
-                _slots[555] is not null and var loadedFnPtr
+                _slots[619] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[555] = nativeContext.LoadFunction("SDL_LockSurface", "SDL3")
+                    : _slots[619] = nativeContext.LoadFunction("SDL_LockSurface", "SDL3")
             )
         )(surface);
 
@@ -65292,9 +73553,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Texture*, Rect*, void**, int*, byte>)(
-                _slots[556] is not null and var loadedFnPtr
+                _slots[620] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[556] = nativeContext.LoadFunction("SDL_LockTexture", "SDL3")
+                    : _slots[620] = nativeContext.LoadFunction("SDL_LockTexture", "SDL3")
             )
         )(texture, rect, pixels, pitch);
 
@@ -65346,9 +73607,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Texture*, Rect*, Surface**, byte>)(
-                _slots[557] is not null and var loadedFnPtr
+                _slots[621] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[557] = nativeContext.LoadFunction("SDL_LockTextureToSurface", "SDL3")
+                    : _slots[621] = nativeContext.LoadFunction("SDL_LockTextureToSurface", "SDL3")
             )
         )(texture, rect, surface);
 
@@ -65396,9 +73657,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<int, LogPriority, sbyte*, sbyte*, void>)(
-                _slots[558] is not null and var loadedFnPtr
+                _slots[622] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[558] = nativeContext.LoadFunction("SDL_LogMessageV", "SDL3")
+                    : _slots[622] = nativeContext.LoadFunction("SDL_LogMessageV", "SDL3")
             )
         )(category, priority, fmt, ap);
 
@@ -65437,6 +73698,44 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.LogMessageV(category, priority, fmt, ap);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void* ISdl.MapGPUTransferBuffer(
+        GPUDeviceHandle device,
+        GPUTransferBufferHandle transfer_buffer,
+        [NativeTypeName("bool")] byte cycle
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUTransferBufferHandle, byte, void*>)(
+                _slots[623] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[623] = nativeContext.LoadFunction("SDL_MapGPUTransferBuffer", "SDL3")
+            )
+        )(device, transfer_buffer, cycle);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void* MapGPUTransferBuffer(
+        GPUDeviceHandle device,
+        GPUTransferBufferHandle transfer_buffer,
+        [NativeTypeName("bool")] byte cycle
+    ) => DllImport.MapGPUTransferBuffer(device, transfer_buffer, cycle);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr ISdl.MapGPUTransferBuffer(
+        GPUDeviceHandle device,
+        GPUTransferBufferHandle transfer_buffer,
+        [NativeTypeName("bool")] MaybeBool<byte> cycle
+    ) => (void*)((ISdl)this).MapGPUTransferBuffer(device, transfer_buffer, (byte)cycle);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr MapGPUTransferBuffer(
+        GPUDeviceHandle device,
+        GPUTransferBufferHandle transfer_buffer,
+        [NativeTypeName("bool")] MaybeBool<byte> cycle
+    ) => DllImport.MapGPUTransferBuffer(device, transfer_buffer, cycle);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint ISdl.MapRGB(
         [NativeTypeName("const SDL_PixelFormatDetails *")] PixelFormatDetails* format,
         [NativeTypeName("const SDL_Palette *")] Palette* palette,
@@ -65446,9 +73745,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<PixelFormatDetails*, Palette*, byte, byte, byte, uint>)(
-                _slots[559] is not null and var loadedFnPtr
+                _slots[624] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[559] = nativeContext.LoadFunction("SDL_MapRGB", "SDL3")
+                    : _slots[624] = nativeContext.LoadFunction("SDL_MapRGB", "SDL3")
             )
         )(format, palette, r, g, b);
 
@@ -65502,9 +73801,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<PixelFormatDetails*, Palette*, byte, byte, byte, byte, uint>)(
-                _slots[560] is not null and var loadedFnPtr
+                _slots[625] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[560] = nativeContext.LoadFunction("SDL_MapRGBA", "SDL3")
+                    : _slots[625] = nativeContext.LoadFunction("SDL_MapRGBA", "SDL3")
             )
         )(format, palette, r, g, b, a);
 
@@ -65559,9 +73858,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, byte, byte, byte, uint>)(
-                _slots[561] is not null and var loadedFnPtr
+                _slots[626] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[561] = nativeContext.LoadFunction("SDL_MapSurfaceRGB", "SDL3")
+                    : _slots[626] = nativeContext.LoadFunction("SDL_MapSurfaceRGB", "SDL3")
             )
         )(surface, r, g, b);
 
@@ -65610,9 +73909,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, byte, byte, byte, byte, uint>)(
-                _slots[562] is not null and var loadedFnPtr
+                _slots[627] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[562] = nativeContext.LoadFunction("SDL_MapSurfaceRGBA", "SDL3")
+                    : _slots[627] = nativeContext.LoadFunction("SDL_MapSurfaceRGBA", "SDL3")
             )
         )(surface, r, g, b, a);
 
@@ -65669,9 +73968,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.MaximizeWindowRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[563] is not null and var loadedFnPtr
+                _slots[628] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[563] = nativeContext.LoadFunction("SDL_MaximizeWindow", "SDL3")
+                    : _slots[628] = nativeContext.LoadFunction("SDL_MaximizeWindow", "SDL3")
             )
         )(window);
 
@@ -65685,9 +73984,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.MemoryBarrierAcquireFunction() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[564] is not null and var loadedFnPtr
+                _slots[629] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[564] = nativeContext.LoadFunction(
+                    : _slots[629] = nativeContext.LoadFunction(
                         "SDL_MemoryBarrierAcquireFunction",
                         "SDL3"
                     )
@@ -65702,9 +74001,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.MemoryBarrierReleaseFunction() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[565] is not null and var loadedFnPtr
+                _slots[630] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[565] = nativeContext.LoadFunction(
+                    : _slots[630] = nativeContext.LoadFunction(
                         "SDL_MemoryBarrierReleaseFunction",
                         "SDL3"
                     )
@@ -65728,9 +74027,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void* ISdl.MetalCreateViewRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, void*>)(
-                _slots[566] is not null and var loadedFnPtr
+                _slots[631] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[566] = nativeContext.LoadFunction("SDL_Metal_CreateView", "SDL3")
+                    : _slots[631] = nativeContext.LoadFunction("SDL_Metal_CreateView", "SDL3")
             )
         )(window);
 
@@ -65744,9 +74043,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.MetalDestroyView([NativeTypeName("SDL_MetalView")] void* view) =>
         (
             (delegate* unmanaged<void*, void>)(
-                _slots[567] is not null and var loadedFnPtr
+                _slots[632] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[567] = nativeContext.LoadFunction("SDL_Metal_DestroyView", "SDL3")
+                    : _slots[632] = nativeContext.LoadFunction("SDL_Metal_DestroyView", "SDL3")
             )
         )(view);
 
@@ -65774,9 +74073,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void* ISdl.MetalGetLayer([NativeTypeName("SDL_MetalView")] void* view) =>
         (
             (delegate* unmanaged<void*, void*>)(
-                _slots[568] is not null and var loadedFnPtr
+                _slots[633] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[568] = nativeContext.LoadFunction("SDL_Metal_GetLayer", "SDL3")
+                    : _slots[633] = nativeContext.LoadFunction("SDL_Metal_GetLayer", "SDL3")
             )
         )(view);
 
@@ -65815,9 +74114,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.MinimizeWindowRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[569] is not null and var loadedFnPtr
+                _slots[634] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[569] = nativeContext.LoadFunction("SDL_MinimizeWindow", "SDL3")
+                    : _slots[634] = nativeContext.LoadFunction("SDL_MinimizeWindow", "SDL3")
             )
         )(window);
 
@@ -65837,9 +74136,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<byte*, byte*, AudioFormat, uint, float, byte>)(
-                _slots[570] is not null and var loadedFnPtr
+                _slots[635] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[570] = nativeContext.LoadFunction("SDL_MixAudio", "SDL3")
+                    : _slots[635] = nativeContext.LoadFunction("SDL_MixAudio", "SDL3")
             )
         )(dst, src, format, len, volume);
 
@@ -65887,9 +74186,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.OnApplicationDidEnterBackground() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[571] is not null and var loadedFnPtr
+                _slots[636] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[571] = nativeContext.LoadFunction(
+                    : _slots[636] = nativeContext.LoadFunction(
                         "SDL_OnApplicationDidEnterBackground",
                         "SDL3"
                     )
@@ -65905,9 +74204,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.OnApplicationDidEnterForeground() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[572] is not null and var loadedFnPtr
+                _slots[637] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[572] = nativeContext.LoadFunction(
+                    : _slots[637] = nativeContext.LoadFunction(
                         "SDL_OnApplicationDidEnterForeground",
                         "SDL3"
                     )
@@ -65923,9 +74222,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.OnApplicationDidReceiveMemoryWarning() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[573] is not null and var loadedFnPtr
+                _slots[638] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[573] = nativeContext.LoadFunction(
+                    : _slots[638] = nativeContext.LoadFunction(
                         "SDL_OnApplicationDidReceiveMemoryWarning",
                         "SDL3"
                     )
@@ -65941,9 +74240,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.OnApplicationWillEnterBackground() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[574] is not null and var loadedFnPtr
+                _slots[639] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[574] = nativeContext.LoadFunction(
+                    : _slots[639] = nativeContext.LoadFunction(
                         "SDL_OnApplicationWillEnterBackground",
                         "SDL3"
                     )
@@ -65959,9 +74258,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.OnApplicationWillEnterForeground() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[575] is not null and var loadedFnPtr
+                _slots[640] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[575] = nativeContext.LoadFunction(
+                    : _slots[640] = nativeContext.LoadFunction(
                         "SDL_OnApplicationWillEnterForeground",
                         "SDL3"
                     )
@@ -65977,9 +74276,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.OnApplicationWillTerminate() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[576] is not null and var loadedFnPtr
+                _slots[641] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[576] = nativeContext.LoadFunction(
+                    : _slots[641] = nativeContext.LoadFunction(
                         "SDL_OnApplicationWillTerminate",
                         "SDL3"
                     )
@@ -65997,9 +74296,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, AudioSpec*, uint>)(
-                _slots[577] is not null and var loadedFnPtr
+                _slots[642] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[577] = nativeContext.LoadFunction("SDL_OpenAudioDevice", "SDL3")
+                    : _slots[642] = nativeContext.LoadFunction("SDL_OpenAudioDevice", "SDL3")
             )
         )(devid, spec);
 
@@ -66041,9 +74340,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, AudioSpec*, AudioStreamCallback, void*, AudioStreamHandle>)(
-                _slots[578] is not null and var loadedFnPtr
+                _slots[643] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[578] = nativeContext.LoadFunction("SDL_OpenAudioDeviceStream", "SDL3")
+                    : _slots[643] = nativeContext.LoadFunction("SDL_OpenAudioDeviceStream", "SDL3")
             )
         )(devid, spec, callback, userdata);
 
@@ -66089,9 +74388,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, CameraSpec*, CameraHandle>)(
-                _slots[579] is not null and var loadedFnPtr
+                _slots[644] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[579] = nativeContext.LoadFunction("SDL_OpenCamera", "SDL3")
+                    : _slots[644] = nativeContext.LoadFunction("SDL_OpenCamera", "SDL3")
             )
         )(instance_id, spec);
 
@@ -66126,9 +74425,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     StorageHandle ISdl.OpenFileStorage([NativeTypeName("const char *")] sbyte* path) =>
         (
             (delegate* unmanaged<sbyte*, StorageHandle>)(
-                _slots[580] is not null and var loadedFnPtr
+                _slots[645] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[580] = nativeContext.LoadFunction("SDL_OpenFileStorage", "SDL3")
+                    : _slots[645] = nativeContext.LoadFunction("SDL_OpenFileStorage", "SDL3")
             )
         )(path);
 
@@ -66156,9 +74455,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     GamepadHandle ISdl.OpenGamepad([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, GamepadHandle>)(
-                _slots[581] is not null and var loadedFnPtr
+                _slots[646] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[581] = nativeContext.LoadFunction("SDL_OpenGamepad", "SDL3")
+                    : _slots[646] = nativeContext.LoadFunction("SDL_OpenGamepad", "SDL3")
             )
         )(instance_id);
 
@@ -66171,9 +74470,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     HapticHandle ISdl.OpenHaptic([NativeTypeName("SDL_HapticID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, HapticHandle>)(
-                _slots[582] is not null and var loadedFnPtr
+                _slots[647] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[582] = nativeContext.LoadFunction("SDL_OpenHaptic", "SDL3")
+                    : _slots[647] = nativeContext.LoadFunction("SDL_OpenHaptic", "SDL3")
             )
         )(instance_id);
 
@@ -66186,9 +74485,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     HapticHandle ISdl.OpenHapticFromJoystick(JoystickHandle joystick) =>
         (
             (delegate* unmanaged<JoystickHandle, HapticHandle>)(
-                _slots[583] is not null and var loadedFnPtr
+                _slots[648] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[583] = nativeContext.LoadFunction("SDL_OpenHapticFromJoystick", "SDL3")
+                    : _slots[648] = nativeContext.LoadFunction("SDL_OpenHapticFromJoystick", "SDL3")
             )
         )(joystick);
 
@@ -66201,9 +74500,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     HapticHandle ISdl.OpenHapticFromMouse() =>
         (
             (delegate* unmanaged<HapticHandle>)(
-                _slots[584] is not null and var loadedFnPtr
+                _slots[649] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[584] = nativeContext.LoadFunction("SDL_OpenHapticFromMouse", "SDL3")
+                    : _slots[649] = nativeContext.LoadFunction("SDL_OpenHapticFromMouse", "SDL3")
             )
         )();
 
@@ -66218,9 +74517,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<IOStreamInterface*, void*, IOStreamHandle>)(
-                _slots[585] is not null and var loadedFnPtr
+                _slots[650] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[585] = nativeContext.LoadFunction("SDL_OpenIO", "SDL3")
+                    : _slots[650] = nativeContext.LoadFunction("SDL_OpenIO", "SDL3")
             )
         )(iface, userdata);
 
@@ -66256,9 +74555,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     JoystickHandle ISdl.OpenJoystick([NativeTypeName("SDL_JoystickID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, JoystickHandle>)(
-                _slots[586] is not null and var loadedFnPtr
+                _slots[651] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[586] = nativeContext.LoadFunction("SDL_OpenJoystick", "SDL3")
+                    : _slots[651] = nativeContext.LoadFunction("SDL_OpenJoystick", "SDL3")
             )
         )(instance_id);
 
@@ -66272,9 +74571,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     SensorHandle ISdl.OpenSensor([NativeTypeName("SDL_SensorID")] uint instance_id) =>
         (
             (delegate* unmanaged<uint, SensorHandle>)(
-                _slots[587] is not null and var loadedFnPtr
+                _slots[652] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[587] = nativeContext.LoadFunction("SDL_OpenSensor", "SDL3")
+                    : _slots[652] = nativeContext.LoadFunction("SDL_OpenSensor", "SDL3")
             )
         )(instance_id);
 
@@ -66290,9 +74589,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<StorageInterface*, void*, StorageHandle>)(
-                _slots[588] is not null and var loadedFnPtr
+                _slots[653] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[588] = nativeContext.LoadFunction("SDL_OpenStorage", "SDL3")
+                    : _slots[653] = nativeContext.LoadFunction("SDL_OpenStorage", "SDL3")
             )
         )(iface, userdata);
 
@@ -66331,9 +74630,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, uint, StorageHandle>)(
-                _slots[589] is not null and var loadedFnPtr
+                _slots[654] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[589] = nativeContext.LoadFunction("SDL_OpenTitleStorage", "SDL3")
+                    : _slots[654] = nativeContext.LoadFunction("SDL_OpenTitleStorage", "SDL3")
             )
         )(@override, props);
 
@@ -66368,9 +74667,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.OpenURL([NativeTypeName("const char *")] sbyte* url) =>
         (
             (delegate* unmanaged<sbyte*, byte>)(
-                _slots[590] is not null and var loadedFnPtr
+                _slots[655] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[590] = nativeContext.LoadFunction("SDL_OpenURL", "SDL3")
+                    : _slots[655] = nativeContext.LoadFunction("SDL_OpenURL", "SDL3")
             )
         )(url);
 
@@ -66404,9 +74703,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*, uint, StorageHandle>)(
-                _slots[591] is not null and var loadedFnPtr
+                _slots[656] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[591] = nativeContext.LoadFunction("SDL_OpenUserStorage", "SDL3")
+                    : _slots[656] = nativeContext.LoadFunction("SDL_OpenUserStorage", "SDL3")
             )
         )(org, app, props);
 
@@ -66454,9 +74753,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.OutOfMemoryRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[592] is not null and var loadedFnPtr
+                _slots[657] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[592] = nativeContext.LoadFunction("SDL_OutOfMemory", "SDL3")
+                    : _slots[657] = nativeContext.LoadFunction("SDL_OutOfMemory", "SDL3")
             )
         )();
 
@@ -66481,9 +74780,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.PauseAudioDeviceRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[593] is not null and var loadedFnPtr
+                _slots[658] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[593] = nativeContext.LoadFunction("SDL_PauseAudioDevice", "SDL3")
+                    : _slots[658] = nativeContext.LoadFunction("SDL_PauseAudioDevice", "SDL3")
             )
         )(dev);
 
@@ -66508,9 +74807,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.PauseAudioStreamDeviceRaw(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, byte>)(
-                _slots[594] is not null and var loadedFnPtr
+                _slots[659] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[594] = nativeContext.LoadFunction("SDL_PauseAudioStreamDevice", "SDL3")
+                    : _slots[659] = nativeContext.LoadFunction("SDL_PauseAudioStreamDevice", "SDL3")
             )
         )(stream);
 
@@ -66534,9 +74833,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.PauseHapticRaw(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, byte>)(
-                _slots[595] is not null and var loadedFnPtr
+                _slots[660] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[595] = nativeContext.LoadFunction("SDL_PauseHaptic", "SDL3")
+                    : _slots[660] = nativeContext.LoadFunction("SDL_PauseHaptic", "SDL3")
             )
         )(haptic);
 
@@ -66555,9 +74854,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Event*, int, EventAction, uint, uint, int>)(
-                _slots[596] is not null and var loadedFnPtr
+                _slots[661] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[596] = nativeContext.LoadFunction("SDL_PeepEvents", "SDL3")
+                    : _slots[661] = nativeContext.LoadFunction("SDL_PeepEvents", "SDL3")
             )
         )(events, numevents, action, minType, maxType);
 
@@ -66622,9 +74921,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HapticHandle, float, uint, byte>)(
-                _slots[597] is not null and var loadedFnPtr
+                _slots[662] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[597] = nativeContext.LoadFunction("SDL_PlayHapticRumble", "SDL3")
+                    : _slots[662] = nativeContext.LoadFunction("SDL_PlayHapticRumble", "SDL3")
             )
         )(haptic, strength, length);
 
@@ -66641,9 +74940,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.PollEvent(Event* @event) =>
         (
             (delegate* unmanaged<Event*, byte>)(
-                _slots[598] is not null and var loadedFnPtr
+                _slots[663] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[598] = nativeContext.LoadFunction("SDL_PollEvent", "SDL3")
+                    : _slots[663] = nativeContext.LoadFunction("SDL_PollEvent", "SDL3")
             )
         )(@event);
 
@@ -66666,6 +74965,21 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_PollEvent")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<byte> PollEvent(Ref<Event> @event) => DllImport.PollEvent(@event);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.PopGPUDebugGroup(GPUCommandBufferHandle command_buffer) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, void>)(
+                _slots[664] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[664] = nativeContext.LoadFunction("SDL_PopGPUDebugGroup", "SDL3")
+            )
+        )(command_buffer);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_PopGPUDebugGroup")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void PopGPUDebugGroup(GPUCommandBufferHandle command_buffer) =>
+        DllImport.PopGPUDebugGroup(command_buffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     byte ISdl.PremultiplyAlpha(
@@ -66691,9 +75005,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 int,
                 byte,
                 byte>)(
-                _slots[599] is not null and var loadedFnPtr
+                _slots[665] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[599] = nativeContext.LoadFunction("SDL_PremultiplyAlpha", "SDL3")
+                    : _slots[665] = nativeContext.LoadFunction("SDL_PremultiplyAlpha", "SDL3")
             )
         )(width, height, src_format, src, src_pitch, dst_format, dst, dst_pitch, linear);
 
@@ -66786,9 +75100,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.PremultiplySurfaceAlpha(Surface* surface, [NativeTypeName("bool")] byte linear) =>
         (
             (delegate* unmanaged<Surface*, byte, byte>)(
-                _slots[600] is not null and var loadedFnPtr
+                _slots[666] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[600] = nativeContext.LoadFunction(
+                    : _slots[666] = nativeContext.LoadFunction(
                         "SDL_PremultiplySurfaceAlpha",
                         "SDL3"
                     )
@@ -66829,9 +75143,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.PumpEvents() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[601] is not null and var loadedFnPtr
+                _slots[667] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[601] = nativeContext.LoadFunction("SDL_PumpEvents", "SDL3")
+                    : _slots[667] = nativeContext.LoadFunction("SDL_PumpEvents", "SDL3")
             )
         )();
 
@@ -66843,9 +75157,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.PushEvent(Event* @event) =>
         (
             (delegate* unmanaged<Event*, byte>)(
-                _slots[602] is not null and var loadedFnPtr
+                _slots[668] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[602] = nativeContext.LoadFunction("SDL_PushEvent", "SDL3")
+                    : _slots[668] = nativeContext.LoadFunction("SDL_PushEvent", "SDL3")
             )
         )(@event);
 
@@ -66870,6 +75184,199 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static MaybeBool<byte> PushEvent(Ref<Event> @event) => DllImport.PushEvent(@event);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.PushGPUComputeUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] void* data,
+        [NativeTypeName("Uint32")] uint length
+    ) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, uint, void*, uint, void>)(
+                _slots[669] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[669] = nativeContext.LoadFunction(
+                        "SDL_PushGPUComputeUniformData",
+                        "SDL3"
+                    )
+            )
+        )(command_buffer, slot_index, data, length);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUComputeUniformData")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void PushGPUComputeUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] void* data,
+        [NativeTypeName("Uint32")] uint length
+    ) => DllImport.PushGPUComputeUniformData(command_buffer, slot_index, data, length);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.PushGPUComputeUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] Ref data,
+        [NativeTypeName("Uint32")] uint length
+    )
+    {
+        fixed (void* __dsl_data = data)
+        {
+            ((ISdl)this).PushGPUComputeUniformData(command_buffer, slot_index, __dsl_data, length);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUComputeUniformData")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void PushGPUComputeUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] Ref data,
+        [NativeTypeName("Uint32")] uint length
+    ) => DllImport.PushGPUComputeUniformData(command_buffer, slot_index, data, length);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.PushGPUDebugGroup(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const char *")] sbyte* name
+    ) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, sbyte*, void>)(
+                _slots[670] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[670] = nativeContext.LoadFunction("SDL_PushGPUDebugGroup", "SDL3")
+            )
+        )(command_buffer, name);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUDebugGroup")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void PushGPUDebugGroup(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const char *")] sbyte* name
+    ) => DllImport.PushGPUDebugGroup(command_buffer, name);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.PushGPUDebugGroup(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const char *")] Ref<sbyte> name
+    )
+    {
+        fixed (sbyte* __dsl_name = name)
+        {
+            ((ISdl)this).PushGPUDebugGroup(command_buffer, __dsl_name);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUDebugGroup")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void PushGPUDebugGroup(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("const char *")] Ref<sbyte> name
+    ) => DllImport.PushGPUDebugGroup(command_buffer, name);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.PushGPUFragmentUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] void* data,
+        [NativeTypeName("Uint32")] uint length
+    ) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, uint, void*, uint, void>)(
+                _slots[671] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[671] = nativeContext.LoadFunction(
+                        "SDL_PushGPUFragmentUniformData",
+                        "SDL3"
+                    )
+            )
+        )(command_buffer, slot_index, data, length);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUFragmentUniformData")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void PushGPUFragmentUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] void* data,
+        [NativeTypeName("Uint32")] uint length
+    ) => DllImport.PushGPUFragmentUniformData(command_buffer, slot_index, data, length);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.PushGPUFragmentUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] Ref data,
+        [NativeTypeName("Uint32")] uint length
+    )
+    {
+        fixed (void* __dsl_data = data)
+        {
+            ((ISdl)this).PushGPUFragmentUniformData(command_buffer, slot_index, __dsl_data, length);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUFragmentUniformData")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void PushGPUFragmentUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] Ref data,
+        [NativeTypeName("Uint32")] uint length
+    ) => DllImport.PushGPUFragmentUniformData(command_buffer, slot_index, data, length);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.PushGPUVertexUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] void* data,
+        [NativeTypeName("Uint32")] uint length
+    ) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, uint, void*, uint, void>)(
+                _slots[672] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[672] = nativeContext.LoadFunction(
+                        "SDL_PushGPUVertexUniformData",
+                        "SDL3"
+                    )
+            )
+        )(command_buffer, slot_index, data, length);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUVertexUniformData")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void PushGPUVertexUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] void* data,
+        [NativeTypeName("Uint32")] uint length
+    ) => DllImport.PushGPUVertexUniformData(command_buffer, slot_index, data, length);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.PushGPUVertexUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] Ref data,
+        [NativeTypeName("Uint32")] uint length
+    )
+    {
+        fixed (void* __dsl_data = data)
+        {
+            ((ISdl)this).PushGPUVertexUniformData(command_buffer, slot_index, __dsl_data, length);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUVertexUniformData")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void PushGPUVertexUniformData(
+        GPUCommandBufferHandle command_buffer,
+        [NativeTypeName("Uint32")] uint slot_index,
+        [NativeTypeName("const void *")] Ref data,
+        [NativeTypeName("Uint32")] uint length
+    ) => DllImport.PushGPUVertexUniformData(command_buffer, slot_index, data, length);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     byte ISdl.PutAudioStreamData(
         AudioStreamHandle stream,
         [NativeTypeName("const void *")] void* buf,
@@ -66877,9 +75384,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AudioStreamHandle, void*, int, byte>)(
-                _slots[603] is not null and var loadedFnPtr
+                _slots[673] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[603] = nativeContext.LoadFunction("SDL_PutAudioStreamData", "SDL3")
+                    : _slots[673] = nativeContext.LoadFunction("SDL_PutAudioStreamData", "SDL3")
             )
         )(stream, buf, len);
 
@@ -66916,12 +75423,39 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.PutAudioStreamData(stream, buf, len);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.QueryGPUFence(GPUDeviceHandle device, GPUFenceHandle fence) =>
+        (MaybeBool<byte>)(byte)((ISdl)this).QueryGPUFenceRaw(device, fence);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_QueryGPUFence")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> QueryGPUFence(GPUDeviceHandle device, GPUFenceHandle fence) =>
+        DllImport.QueryGPUFence(device, fence);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.QueryGPUFenceRaw(GPUDeviceHandle device, GPUFenceHandle fence) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUFenceHandle, byte>)(
+                _slots[674] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[674] = nativeContext.LoadFunction("SDL_QueryGPUFence", "SDL3")
+            )
+        )(device, fence);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_QueryGPUFence")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte QueryGPUFenceRaw(GPUDeviceHandle device, GPUFenceHandle fence) =>
+        DllImport.QueryGPUFenceRaw(device, fence);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.Quit() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[604] is not null and var loadedFnPtr
+                _slots[675] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[604] = nativeContext.LoadFunction("SDL_Quit", "SDL3")
+                    : _slots[675] = nativeContext.LoadFunction("SDL_Quit", "SDL3")
             )
         )();
 
@@ -66933,9 +75467,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.QuitSubSystem([NativeTypeName("SDL_InitFlags")] uint flags) =>
         (
             (delegate* unmanaged<uint, void>)(
-                _slots[605] is not null and var loadedFnPtr
+                _slots[676] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[605] = nativeContext.LoadFunction("SDL_QuitSubSystem", "SDL3")
+                    : _slots[676] = nativeContext.LoadFunction("SDL_QuitSubSystem", "SDL3")
             )
         )(flags);
 
@@ -66958,9 +75492,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.RaiseWindowRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[606] is not null and var loadedFnPtr
+                _slots[677] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[606] = nativeContext.LoadFunction("SDL_RaiseWindow", "SDL3")
+                    : _slots[677] = nativeContext.LoadFunction("SDL_RaiseWindow", "SDL3")
             )
         )(window);
 
@@ -66973,9 +75507,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     nuint ISdl.ReadIO(IOStreamHandle context, void* ptr, [NativeTypeName("size_t")] nuint size) =>
         (
             (delegate* unmanaged<IOStreamHandle, void*, nuint, nuint>)(
-                _slots[607] is not null and var loadedFnPtr
+                _slots[678] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[607] = nativeContext.LoadFunction("SDL_ReadIO", "SDL3")
+                    : _slots[678] = nativeContext.LoadFunction("SDL_ReadIO", "SDL3")
             )
         )(context, ptr, size);
 
@@ -67008,12 +75542,57 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.ReadIO(context, ptr, size);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void* ISdl.ReadProcess(
+        ProcessHandle process,
+        [NativeTypeName("size_t *")] nuint* datasize,
+        int* exitcode
+    ) =>
+        (
+            (delegate* unmanaged<ProcessHandle, nuint*, int*, void*>)(
+                _slots[679] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[679] = nativeContext.LoadFunction("SDL_ReadProcess", "SDL3")
+            )
+        )(process, datasize, exitcode);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReadProcess")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void* ReadProcess(
+        ProcessHandle process,
+        [NativeTypeName("size_t *")] nuint* datasize,
+        int* exitcode
+    ) => DllImport.ReadProcess(process, datasize, exitcode);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr ISdl.ReadProcess(
+        ProcessHandle process,
+        [NativeTypeName("size_t *")] Ref<nuint> datasize,
+        Ref<int> exitcode
+    )
+    {
+        fixed (int* __dsl_exitcode = exitcode)
+        fixed (nuint* __dsl_datasize = datasize)
+        {
+            return (void*)((ISdl)this).ReadProcess(process, __dsl_datasize, __dsl_exitcode);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReadProcess")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr ReadProcess(
+        ProcessHandle process,
+        [NativeTypeName("size_t *")] Ref<nuint> datasize,
+        Ref<int> exitcode
+    ) => DllImport.ReadProcess(process, datasize, exitcode);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     byte ISdl.ReadS16BE(IOStreamHandle src, [NativeTypeName("Sint16 *")] short* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, short*, byte>)(
-                _slots[608] is not null and var loadedFnPtr
+                _slots[680] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[608] = nativeContext.LoadFunction("SDL_ReadS16BE", "SDL3")
+                    : _slots[680] = nativeContext.LoadFunction("SDL_ReadS16BE", "SDL3")
             )
         )(src, value);
 
@@ -67048,9 +75627,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadS16LE(IOStreamHandle src, [NativeTypeName("Sint16 *")] short* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, short*, byte>)(
-                _slots[609] is not null and var loadedFnPtr
+                _slots[681] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[609] = nativeContext.LoadFunction("SDL_ReadS16LE", "SDL3")
+                    : _slots[681] = nativeContext.LoadFunction("SDL_ReadS16LE", "SDL3")
             )
         )(src, value);
 
@@ -67085,9 +75664,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadS32BE(IOStreamHandle src, [NativeTypeName("Sint32 *")] int* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, int*, byte>)(
-                _slots[610] is not null and var loadedFnPtr
+                _slots[682] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[610] = nativeContext.LoadFunction("SDL_ReadS32BE", "SDL3")
+                    : _slots[682] = nativeContext.LoadFunction("SDL_ReadS32BE", "SDL3")
             )
         )(src, value);
 
@@ -67119,9 +75698,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadS32LE(IOStreamHandle src, [NativeTypeName("Sint32 *")] int* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, int*, byte>)(
-                _slots[611] is not null and var loadedFnPtr
+                _slots[683] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[611] = nativeContext.LoadFunction("SDL_ReadS32LE", "SDL3")
+                    : _slots[683] = nativeContext.LoadFunction("SDL_ReadS32LE", "SDL3")
             )
         )(src, value);
 
@@ -67153,9 +75732,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadS64BE(IOStreamHandle src, [NativeTypeName("Sint64 *")] long* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, long*, byte>)(
-                _slots[612] is not null and var loadedFnPtr
+                _slots[684] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[612] = nativeContext.LoadFunction("SDL_ReadS64BE", "SDL3")
+                    : _slots[684] = nativeContext.LoadFunction("SDL_ReadS64BE", "SDL3")
             )
         )(src, value);
 
@@ -67187,9 +75766,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadS64LE(IOStreamHandle src, [NativeTypeName("Sint64 *")] long* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, long*, byte>)(
-                _slots[613] is not null and var loadedFnPtr
+                _slots[685] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[613] = nativeContext.LoadFunction("SDL_ReadS64LE", "SDL3")
+                    : _slots[685] = nativeContext.LoadFunction("SDL_ReadS64LE", "SDL3")
             )
         )(src, value);
 
@@ -67221,9 +75800,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadS8(IOStreamHandle src, [NativeTypeName("Sint8 *")] sbyte* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, sbyte*, byte>)(
-                _slots[614] is not null and var loadedFnPtr
+                _slots[686] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[614] = nativeContext.LoadFunction("SDL_ReadS8", "SDL3")
+                    : _slots[686] = nativeContext.LoadFunction("SDL_ReadS8", "SDL3")
             )
         )(src, value);
 
@@ -67260,9 +75839,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<StorageHandle, sbyte*, void*, ulong, byte>)(
-                _slots[615] is not null and var loadedFnPtr
+                _slots[687] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[615] = nativeContext.LoadFunction("SDL_ReadStorageFile", "SDL3")
+                    : _slots[687] = nativeContext.LoadFunction("SDL_ReadStorageFile", "SDL3")
             )
         )(storage, path, destination, length);
 
@@ -67315,9 +75894,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, int, int, byte*, byte*, byte*, byte*, byte>)(
-                _slots[616] is not null and var loadedFnPtr
+                _slots[688] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[616] = nativeContext.LoadFunction("SDL_ReadSurfacePixel", "SDL3")
+                    : _slots[688] = nativeContext.LoadFunction("SDL_ReadSurfacePixel", "SDL3")
             )
         )(surface, x, y, r, g, b, a);
 
@@ -67391,9 +75970,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, int, int, float*, float*, float*, float*, byte>)(
-                _slots[617] is not null and var loadedFnPtr
+                _slots[689] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[617] = nativeContext.LoadFunction("SDL_ReadSurfacePixelFloat", "SDL3")
+                    : _slots[689] = nativeContext.LoadFunction("SDL_ReadSurfacePixelFloat", "SDL3")
             )
         )(surface, x, y, r, g, b, a);
 
@@ -67459,9 +76038,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadU16BE(IOStreamHandle src, [NativeTypeName("Uint16 *")] ushort* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, ushort*, byte>)(
-                _slots[618] is not null and var loadedFnPtr
+                _slots[690] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[618] = nativeContext.LoadFunction("SDL_ReadU16BE", "SDL3")
+                    : _slots[690] = nativeContext.LoadFunction("SDL_ReadU16BE", "SDL3")
             )
         )(src, value);
 
@@ -67496,9 +76075,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadU16LE(IOStreamHandle src, [NativeTypeName("Uint16 *")] ushort* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, ushort*, byte>)(
-                _slots[619] is not null and var loadedFnPtr
+                _slots[691] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[619] = nativeContext.LoadFunction("SDL_ReadU16LE", "SDL3")
+                    : _slots[691] = nativeContext.LoadFunction("SDL_ReadU16LE", "SDL3")
             )
         )(src, value);
 
@@ -67533,9 +76112,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadU32BE(IOStreamHandle src, [NativeTypeName("Uint32 *")] uint* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, uint*, byte>)(
-                _slots[620] is not null and var loadedFnPtr
+                _slots[692] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[620] = nativeContext.LoadFunction("SDL_ReadU32BE", "SDL3")
+                    : _slots[692] = nativeContext.LoadFunction("SDL_ReadU32BE", "SDL3")
             )
         )(src, value);
 
@@ -67567,9 +76146,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadU32LE(IOStreamHandle src, [NativeTypeName("Uint32 *")] uint* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, uint*, byte>)(
-                _slots[621] is not null and var loadedFnPtr
+                _slots[693] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[621] = nativeContext.LoadFunction("SDL_ReadU32LE", "SDL3")
+                    : _slots[693] = nativeContext.LoadFunction("SDL_ReadU32LE", "SDL3")
             )
         )(src, value);
 
@@ -67601,9 +76180,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadU64BE(IOStreamHandle src, [NativeTypeName("Uint64 *")] ulong* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, ulong*, byte>)(
-                _slots[622] is not null and var loadedFnPtr
+                _slots[694] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[622] = nativeContext.LoadFunction("SDL_ReadU64BE", "SDL3")
+                    : _slots[694] = nativeContext.LoadFunction("SDL_ReadU64BE", "SDL3")
             )
         )(src, value);
 
@@ -67638,9 +76217,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadU64LE(IOStreamHandle src, [NativeTypeName("Uint64 *")] ulong* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, ulong*, byte>)(
-                _slots[623] is not null and var loadedFnPtr
+                _slots[695] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[623] = nativeContext.LoadFunction("SDL_ReadU64LE", "SDL3")
+                    : _slots[695] = nativeContext.LoadFunction("SDL_ReadU64LE", "SDL3")
             )
         )(src, value);
 
@@ -67675,9 +76254,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReadU8(IOStreamHandle src, [NativeTypeName("Uint8 *")] byte* value) =>
         (
             (delegate* unmanaged<IOStreamHandle, byte*, byte>)(
-                _slots[624] is not null and var loadedFnPtr
+                _slots[696] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[624] = nativeContext.LoadFunction("SDL_ReadU8", "SDL3")
+                    : _slots[696] = nativeContext.LoadFunction("SDL_ReadU8", "SDL3")
             )
         )(src, value);
 
@@ -67709,9 +76288,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.RegisterEvents(int numevents) =>
         (
             (delegate* unmanaged<int, uint>)(
-                _slots[625] is not null and var loadedFnPtr
+                _slots[697] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[625] = nativeContext.LoadFunction("SDL_RegisterEvents", "SDL3")
+                    : _slots[697] = nativeContext.LoadFunction("SDL_RegisterEvents", "SDL3")
             )
         )(numevents);
 
@@ -67724,9 +76303,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.ReleaseCameraFrame(CameraHandle camera, Surface* frame) =>
         (
             (delegate* unmanaged<CameraHandle, Surface*, void>)(
-                _slots[626] is not null and var loadedFnPtr
+                _slots[698] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[626] = nativeContext.LoadFunction("SDL_ReleaseCameraFrame", "SDL3")
+                    : _slots[698] = nativeContext.LoadFunction("SDL_ReleaseCameraFrame", "SDL3")
             )
         )(camera, frame);
 
@@ -67751,6 +76330,168 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         DllImport.ReleaseCameraFrame(camera, frame);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.ReleaseGPUBuffer(GPUDeviceHandle device, GPUBufferHandle buffer) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUBufferHandle, void>)(
+                _slots[699] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[699] = nativeContext.LoadFunction("SDL_ReleaseGPUBuffer", "SDL3")
+            )
+        )(device, buffer);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void ReleaseGPUBuffer(GPUDeviceHandle device, GPUBufferHandle buffer) =>
+        DllImport.ReleaseGPUBuffer(device, buffer);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.ReleaseGPUComputePipeline(
+        GPUDeviceHandle device,
+        GPUComputePipelineHandle compute_pipeline
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUComputePipelineHandle, void>)(
+                _slots[700] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[700] = nativeContext.LoadFunction(
+                        "SDL_ReleaseGPUComputePipeline",
+                        "SDL3"
+                    )
+            )
+        )(device, compute_pipeline);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUComputePipeline")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void ReleaseGPUComputePipeline(
+        GPUDeviceHandle device,
+        GPUComputePipelineHandle compute_pipeline
+    ) => DllImport.ReleaseGPUComputePipeline(device, compute_pipeline);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.ReleaseGPUFence(GPUDeviceHandle device, GPUFenceHandle fence) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUFenceHandle, void>)(
+                _slots[701] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[701] = nativeContext.LoadFunction("SDL_ReleaseGPUFence", "SDL3")
+            )
+        )(device, fence);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUFence")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void ReleaseGPUFence(GPUDeviceHandle device, GPUFenceHandle fence) =>
+        DllImport.ReleaseGPUFence(device, fence);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.ReleaseGPUGraphicsPipeline(
+        GPUDeviceHandle device,
+        GPUGraphicsPipelineHandle graphics_pipeline
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUGraphicsPipelineHandle, void>)(
+                _slots[702] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[702] = nativeContext.LoadFunction(
+                        "SDL_ReleaseGPUGraphicsPipeline",
+                        "SDL3"
+                    )
+            )
+        )(device, graphics_pipeline);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUGraphicsPipeline")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void ReleaseGPUGraphicsPipeline(
+        GPUDeviceHandle device,
+        GPUGraphicsPipelineHandle graphics_pipeline
+    ) => DllImport.ReleaseGPUGraphicsPipeline(device, graphics_pipeline);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.ReleaseGPUSampler(GPUDeviceHandle device, GPUSamplerHandle sampler) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUSamplerHandle, void>)(
+                _slots[703] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[703] = nativeContext.LoadFunction("SDL_ReleaseGPUSampler", "SDL3")
+            )
+        )(device, sampler);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUSampler")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void ReleaseGPUSampler(GPUDeviceHandle device, GPUSamplerHandle sampler) =>
+        DllImport.ReleaseGPUSampler(device, sampler);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.ReleaseGPUShader(GPUDeviceHandle device, GPUShaderHandle shader) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUShaderHandle, void>)(
+                _slots[704] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[704] = nativeContext.LoadFunction("SDL_ReleaseGPUShader", "SDL3")
+            )
+        )(device, shader);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUShader")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void ReleaseGPUShader(GPUDeviceHandle device, GPUShaderHandle shader) =>
+        DllImport.ReleaseGPUShader(device, shader);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.ReleaseGPUTexture(GPUDeviceHandle device, GPUTextureHandle texture) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUTextureHandle, void>)(
+                _slots[705] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[705] = nativeContext.LoadFunction("SDL_ReleaseGPUTexture", "SDL3")
+            )
+        )(device, texture);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void ReleaseGPUTexture(GPUDeviceHandle device, GPUTextureHandle texture) =>
+        DllImport.ReleaseGPUTexture(device, texture);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.ReleaseGPUTransferBuffer(
+        GPUDeviceHandle device,
+        GPUTransferBufferHandle transfer_buffer
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUTransferBufferHandle, void>)(
+                _slots[706] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[706] = nativeContext.LoadFunction(
+                        "SDL_ReleaseGPUTransferBuffer",
+                        "SDL3"
+                    )
+            )
+        )(device, transfer_buffer);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUTransferBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void ReleaseGPUTransferBuffer(
+        GPUDeviceHandle device,
+        GPUTransferBufferHandle transfer_buffer
+    ) => DllImport.ReleaseGPUTransferBuffer(device, transfer_buffer);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.ReleaseWindowFromGPUDevice(GPUDeviceHandle device, WindowHandle window) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, WindowHandle, void>)(
+                _slots[707] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[707] = nativeContext.LoadFunction(
+                        "SDL_ReleaseWindowFromGPUDevice",
+                        "SDL3"
+                    )
+            )
+        )(device, window);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseWindowFromGPUDevice")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void ReleaseWindowFromGPUDevice(GPUDeviceHandle device, WindowHandle window) =>
+        DllImport.ReleaseWindowFromGPUDevice(device, window);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<byte> ISdl.ReloadGamepadMappings() =>
         (MaybeBool<byte>)(byte)((ISdl)this).ReloadGamepadMappingsRaw();
 
@@ -67764,9 +76505,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ReloadGamepadMappingsRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[627] is not null and var loadedFnPtr
+                _slots[708] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[627] = nativeContext.LoadFunction("SDL_ReloadGamepadMappings", "SDL3")
+                    : _slots[708] = nativeContext.LoadFunction("SDL_ReloadGamepadMappings", "SDL3")
             )
         )();
 
@@ -67782,9 +76523,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<EventFilter, void*, void>)(
-                _slots[628] is not null and var loadedFnPtr
+                _slots[709] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[628] = nativeContext.LoadFunction("SDL_RemoveEventWatch", "SDL3")
+                    : _slots[709] = nativeContext.LoadFunction("SDL_RemoveEventWatch", "SDL3")
             )
         )(filter, userdata);
 
@@ -67820,9 +76561,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, HintCallback, void*, void>)(
-                _slots[629] is not null and var loadedFnPtr
+                _slots[710] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[629] = nativeContext.LoadFunction("SDL_RemoveHintCallback", "SDL3")
+                    : _slots[710] = nativeContext.LoadFunction("SDL_RemoveHintCallback", "SDL3")
             )
         )(name, callback, userdata);
 
@@ -67861,9 +76602,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.RemovePath([NativeTypeName("const char *")] sbyte* path) =>
         (
             (delegate* unmanaged<sbyte*, byte>)(
-                _slots[630] is not null and var loadedFnPtr
+                _slots[711] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[630] = nativeContext.LoadFunction("SDL_RemovePath", "SDL3")
+                    : _slots[711] = nativeContext.LoadFunction("SDL_RemovePath", "SDL3")
             )
         )(path);
 
@@ -67896,9 +76637,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<StorageHandle, sbyte*, byte>)(
-                _slots[631] is not null and var loadedFnPtr
+                _slots[712] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[631] = nativeContext.LoadFunction("SDL_RemoveStoragePath", "SDL3")
+                    : _slots[712] = nativeContext.LoadFunction("SDL_RemoveStoragePath", "SDL3")
             )
         )(storage, path);
 
@@ -67935,9 +76676,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.RemoveSurfaceAlternateImages(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, void>)(
-                _slots[632] is not null and var loadedFnPtr
+                _slots[713] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[632] = nativeContext.LoadFunction(
+                    : _slots[713] = nativeContext.LoadFunction(
                         "SDL_RemoveSurfaceAlternateImages",
                         "SDL3"
                     )
@@ -67979,9 +76720,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.RemoveTimerRaw([NativeTypeName("SDL_TimerID")] uint id) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[633] is not null and var loadedFnPtr
+                _slots[714] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[633] = nativeContext.LoadFunction("SDL_RemoveTimer", "SDL3")
+                    : _slots[714] = nativeContext.LoadFunction("SDL_RemoveTimer", "SDL3")
             )
         )(id);
 
@@ -67998,9 +76739,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*, byte>)(
-                _slots[634] is not null and var loadedFnPtr
+                _slots[715] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[634] = nativeContext.LoadFunction("SDL_RenamePath", "SDL3")
+                    : _slots[715] = nativeContext.LoadFunction("SDL_RenamePath", "SDL3")
             )
         )(oldpath, newpath);
 
@@ -68042,9 +76783,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<StorageHandle, sbyte*, sbyte*, byte>)(
-                _slots[635] is not null and var loadedFnPtr
+                _slots[716] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[635] = nativeContext.LoadFunction("SDL_RenameStoragePath", "SDL3")
+                    : _slots[716] = nativeContext.LoadFunction("SDL_RenameStoragePath", "SDL3")
             )
         )(storage, oldpath, newpath);
 
@@ -68097,9 +76838,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.RenderClearRaw(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, byte>)(
-                _slots[636] is not null and var loadedFnPtr
+                _slots[717] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[636] = nativeContext.LoadFunction("SDL_RenderClear", "SDL3")
+                    : _slots[717] = nativeContext.LoadFunction("SDL_RenderClear", "SDL3")
             )
         )(renderer);
 
@@ -68124,9 +76865,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.RenderClipEnabledRaw(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, byte>)(
-                _slots[637] is not null and var loadedFnPtr
+                _slots[718] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[637] = nativeContext.LoadFunction("SDL_RenderClipEnabled", "SDL3")
+                    : _slots[718] = nativeContext.LoadFunction("SDL_RenderClipEnabled", "SDL3")
             )
         )(renderer);
 
@@ -68146,9 +76887,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, float, float, float*, float*, byte>)(
-                _slots[638] is not null and var loadedFnPtr
+                _slots[719] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[638] = nativeContext.LoadFunction(
+                    : _slots[719] = nativeContext.LoadFunction(
                         "SDL_RenderCoordinatesFromWindow",
                         "SDL3"
                     )
@@ -68212,9 +76953,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, float, float, float*, float*, byte>)(
-                _slots[639] is not null and var loadedFnPtr
+                _slots[720] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[639] = nativeContext.LoadFunction(
+                    : _slots[720] = nativeContext.LoadFunction(
                         "SDL_RenderCoordinatesToWindow",
                         "SDL3"
                     )
@@ -68277,9 +77018,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, float, float, sbyte*, byte>)(
-                _slots[640] is not null and var loadedFnPtr
+                _slots[721] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[640] = nativeContext.LoadFunction("SDL_RenderDebugText", "SDL3")
+                    : _slots[721] = nativeContext.LoadFunction("SDL_RenderDebugText", "SDL3")
             )
         )(renderer, x, y, str);
 
@@ -68325,9 +77066,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, FRect*, byte>)(
-                _slots[641] is not null and var loadedFnPtr
+                _slots[722] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[641] = nativeContext.LoadFunction("SDL_RenderFillRect", "SDL3")
+                    : _slots[722] = nativeContext.LoadFunction("SDL_RenderFillRect", "SDL3")
             )
         )(renderer, rect);
 
@@ -68368,9 +77109,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, FRect*, int, byte>)(
-                _slots[642] is not null and var loadedFnPtr
+                _slots[723] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[642] = nativeContext.LoadFunction("SDL_RenderFillRects", "SDL3")
+                    : _slots[723] = nativeContext.LoadFunction("SDL_RenderFillRects", "SDL3")
             )
         )(renderer, rects, count);
 
@@ -68418,9 +77159,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, Texture*, Vertex*, int, int*, int, byte>)(
-                _slots[643] is not null and var loadedFnPtr
+                _slots[724] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[643] = nativeContext.LoadFunction("SDL_RenderGeometry", "SDL3")
+                    : _slots[724] = nativeContext.LoadFunction("SDL_RenderGeometry", "SDL3")
             )
         )(renderer, texture, vertices, num_vertices, indices, num_indices);
 
@@ -68506,9 +77247,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 int,
                 int,
                 byte>)(
-                _slots[644] is not null and var loadedFnPtr
+                _slots[725] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[644] = nativeContext.LoadFunction("SDL_RenderGeometryRaw", "SDL3")
+                    : _slots[725] = nativeContext.LoadFunction("SDL_RenderGeometryRaw", "SDL3")
             )
         )(
             renderer,
@@ -68656,9 +77397,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.RenderLineRaw(RendererHandle renderer, float x1, float y1, float x2, float y2) =>
         (
             (delegate* unmanaged<RendererHandle, float, float, float, float, byte>)(
-                _slots[645] is not null and var loadedFnPtr
+                _slots[726] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[645] = nativeContext.LoadFunction("SDL_RenderLine", "SDL3")
+                    : _slots[726] = nativeContext.LoadFunction("SDL_RenderLine", "SDL3")
             )
         )(renderer, x1, y1, x2, y2);
 
@@ -68681,9 +77422,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, FPoint*, int, byte>)(
-                _slots[646] is not null and var loadedFnPtr
+                _slots[727] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[646] = nativeContext.LoadFunction("SDL_RenderLines", "SDL3")
+                    : _slots[727] = nativeContext.LoadFunction("SDL_RenderLines", "SDL3")
             )
         )(renderer, points, count);
 
@@ -68734,9 +77475,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.RenderPointRaw(RendererHandle renderer, float x, float y) =>
         (
             (delegate* unmanaged<RendererHandle, float, float, byte>)(
-                _slots[647] is not null and var loadedFnPtr
+                _slots[728] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[647] = nativeContext.LoadFunction("SDL_RenderPoint", "SDL3")
+                    : _slots[728] = nativeContext.LoadFunction("SDL_RenderPoint", "SDL3")
             )
         )(renderer, x, y);
 
@@ -68754,9 +77495,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, FPoint*, int, byte>)(
-                _slots[648] is not null and var loadedFnPtr
+                _slots[729] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[648] = nativeContext.LoadFunction("SDL_RenderPoints", "SDL3")
+                    : _slots[729] = nativeContext.LoadFunction("SDL_RenderPoints", "SDL3")
             )
         )(renderer, points, count);
 
@@ -68807,9 +77548,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.RenderPresentRaw(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, byte>)(
-                _slots[649] is not null and var loadedFnPtr
+                _slots[730] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[649] = nativeContext.LoadFunction("SDL_RenderPresent", "SDL3")
+                    : _slots[730] = nativeContext.LoadFunction("SDL_RenderPresent", "SDL3")
             )
         )(renderer);
 
@@ -68826,9 +77567,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, Rect*, Surface*>)(
-                _slots[650] is not null and var loadedFnPtr
+                _slots[731] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[650] = nativeContext.LoadFunction("SDL_RenderReadPixels", "SDL3")
+                    : _slots[731] = nativeContext.LoadFunction("SDL_RenderReadPixels", "SDL3")
             )
         )(renderer, rect);
 
@@ -68866,9 +77607,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, FRect*, byte>)(
-                _slots[651] is not null and var loadedFnPtr
+                _slots[732] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[651] = nativeContext.LoadFunction("SDL_RenderRect", "SDL3")
+                    : _slots[732] = nativeContext.LoadFunction("SDL_RenderRect", "SDL3")
             )
         )(renderer, rect);
 
@@ -68909,9 +77650,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, FRect*, int, byte>)(
-                _slots[652] is not null and var loadedFnPtr
+                _slots[733] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[652] = nativeContext.LoadFunction("SDL_RenderRects", "SDL3")
+                    : _slots[733] = nativeContext.LoadFunction("SDL_RenderRects", "SDL3")
             )
         )(renderer, rects, count);
 
@@ -68956,9 +77697,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, Texture*, FRect*, FRect*, byte>)(
-                _slots[653] is not null and var loadedFnPtr
+                _slots[734] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[653] = nativeContext.LoadFunction("SDL_RenderTexture", "SDL3")
+                    : _slots[734] = nativeContext.LoadFunction("SDL_RenderTexture", "SDL3")
             )
         )(renderer, texture, srcrect, dstrect);
 
@@ -69030,9 +77771,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 float,
                 FRect*,
                 byte>)(
-                _slots[654] is not null and var loadedFnPtr
+                _slots[735] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[654] = nativeContext.LoadFunction("SDL_RenderTexture9Grid", "SDL3")
+                    : _slots[735] = nativeContext.LoadFunction("SDL_RenderTexture9Grid", "SDL3")
             )
         )(
             renderer,
@@ -69152,9 +77893,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 FPoint*,
                 FlipMode,
                 byte>)(
-                _slots[655] is not null and var loadedFnPtr
+                _slots[736] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[655] = nativeContext.LoadFunction("SDL_RenderTextureRotated", "SDL3")
+                    : _slots[736] = nativeContext.LoadFunction("SDL_RenderTextureRotated", "SDL3")
             )
         )(renderer, texture, srcrect, dstrect, angle, center, flip);
 
@@ -69225,9 +77966,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, Texture*, FRect*, float, FRect*, byte>)(
-                _slots[656] is not null and var loadedFnPtr
+                _slots[737] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[656] = nativeContext.LoadFunction("SDL_RenderTextureTiled", "SDL3")
+                    : _slots[737] = nativeContext.LoadFunction("SDL_RenderTextureTiled", "SDL3")
             )
         )(renderer, texture, srcrect, scale, dstrect);
 
@@ -69294,9 +78035,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.RenderViewportSetRaw(RendererHandle renderer) =>
         (
             (delegate* unmanaged<RendererHandle, byte>)(
-                _slots[657] is not null and var loadedFnPtr
+                _slots[738] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[657] = nativeContext.LoadFunction("SDL_RenderViewportSet", "SDL3")
+                    : _slots[738] = nativeContext.LoadFunction("SDL_RenderViewportSet", "SDL3")
             )
         )(renderer);
 
@@ -69315,9 +78056,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AssertData*, sbyte*, sbyte*, int, AssertState>)(
-                _slots[658] is not null and var loadedFnPtr
+                _slots[739] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[658] = nativeContext.LoadFunction("SDL_ReportAssertion", "SDL3")
+                    : _slots[739] = nativeContext.LoadFunction("SDL_ReportAssertion", "SDL3")
             )
         )(data, func, file, line);
 
@@ -69361,9 +78102,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.ResetAssertionReport() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[659] is not null and var loadedFnPtr
+                _slots[740] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[659] = nativeContext.LoadFunction("SDL_ResetAssertionReport", "SDL3")
+                    : _slots[740] = nativeContext.LoadFunction("SDL_ResetAssertionReport", "SDL3")
             )
         )();
 
@@ -69375,9 +78116,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ResetHint([NativeTypeName("const char *")] sbyte* name) =>
         (
             (delegate* unmanaged<sbyte*, byte>)(
-                _slots[660] is not null and var loadedFnPtr
+                _slots[741] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[660] = nativeContext.LoadFunction("SDL_ResetHint", "SDL3")
+                    : _slots[741] = nativeContext.LoadFunction("SDL_ResetHint", "SDL3")
             )
         )(name);
 
@@ -69407,9 +78148,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.ResetHints() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[661] is not null and var loadedFnPtr
+                _slots[742] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[661] = nativeContext.LoadFunction("SDL_ResetHints", "SDL3")
+                    : _slots[742] = nativeContext.LoadFunction("SDL_ResetHints", "SDL3")
             )
         )();
 
@@ -69421,9 +78162,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.ResetKeyboard() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[662] is not null and var loadedFnPtr
+                _slots[743] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[662] = nativeContext.LoadFunction("SDL_ResetKeyboard", "SDL3")
+                    : _slots[743] = nativeContext.LoadFunction("SDL_ResetKeyboard", "SDL3")
             )
         )();
 
@@ -69435,9 +78176,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.ResetLogPriorities() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[663] is not null and var loadedFnPtr
+                _slots[744] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[663] = nativeContext.LoadFunction("SDL_ResetLogPriorities", "SDL3")
+                    : _slots[744] = nativeContext.LoadFunction("SDL_ResetLogPriorities", "SDL3")
             )
         )();
 
@@ -69460,9 +78201,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.RestoreWindowRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[664] is not null and var loadedFnPtr
+                _slots[745] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[664] = nativeContext.LoadFunction("SDL_RestoreWindow", "SDL3")
+                    : _slots[745] = nativeContext.LoadFunction("SDL_RestoreWindow", "SDL3")
             )
         )(window);
 
@@ -69487,9 +78228,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ResumeAudioDeviceRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev) =>
         (
             (delegate* unmanaged<uint, byte>)(
-                _slots[665] is not null and var loadedFnPtr
+                _slots[746] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[665] = nativeContext.LoadFunction("SDL_ResumeAudioDevice", "SDL3")
+                    : _slots[746] = nativeContext.LoadFunction("SDL_ResumeAudioDevice", "SDL3")
             )
         )(dev);
 
@@ -69514,9 +78255,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ResumeAudioStreamDeviceRaw(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, byte>)(
-                _slots[666] is not null and var loadedFnPtr
+                _slots[747] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[666] = nativeContext.LoadFunction(
+                    : _slots[747] = nativeContext.LoadFunction(
                         "SDL_ResumeAudioStreamDevice",
                         "SDL3"
                     )
@@ -69544,9 +78285,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ResumeHapticRaw(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, byte>)(
-                _slots[667] is not null and var loadedFnPtr
+                _slots[748] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[667] = nativeContext.LoadFunction("SDL_ResumeHaptic", "SDL3")
+                    : _slots[748] = nativeContext.LoadFunction("SDL_ResumeHaptic", "SDL3")
             )
         )(haptic);
 
@@ -69591,9 +78332,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<GamepadHandle, ushort, ushort, uint, byte>)(
-                _slots[668] is not null and var loadedFnPtr
+                _slots[749] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[668] = nativeContext.LoadFunction("SDL_RumbleGamepad", "SDL3")
+                    : _slots[749] = nativeContext.LoadFunction("SDL_RumbleGamepad", "SDL3")
             )
         )(gamepad, low_frequency_rumble, high_frequency_rumble, duration_ms);
 
@@ -69649,9 +78390,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<GamepadHandle, ushort, ushort, uint, byte>)(
-                _slots[669] is not null and var loadedFnPtr
+                _slots[750] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[669] = nativeContext.LoadFunction("SDL_RumbleGamepadTriggers", "SDL3")
+                    : _slots[750] = nativeContext.LoadFunction("SDL_RumbleGamepadTriggers", "SDL3")
             )
         )(gamepad, left_rumble, right_rumble, duration_ms);
 
@@ -69707,9 +78448,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<JoystickHandle, ushort, ushort, uint, byte>)(
-                _slots[670] is not null and var loadedFnPtr
+                _slots[751] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[670] = nativeContext.LoadFunction("SDL_RumbleJoystick", "SDL3")
+                    : _slots[751] = nativeContext.LoadFunction("SDL_RumbleJoystick", "SDL3")
             )
         )(joystick, low_frequency_rumble, high_frequency_rumble, duration_ms);
 
@@ -69765,9 +78506,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<JoystickHandle, ushort, ushort, uint, byte>)(
-                _slots[671] is not null and var loadedFnPtr
+                _slots[752] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[671] = nativeContext.LoadFunction("SDL_RumbleJoystickTriggers", "SDL3")
+                    : _slots[752] = nativeContext.LoadFunction("SDL_RumbleJoystickTriggers", "SDL3")
             )
         )(joystick, left_rumble, right_rumble, duration_ms);
 
@@ -69806,9 +78547,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HapticHandle, int, uint, byte>)(
-                _slots[672] is not null and var loadedFnPtr
+                _slots[753] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[672] = nativeContext.LoadFunction("SDL_RunHapticEffect", "SDL3")
+                    : _slots[753] = nativeContext.LoadFunction("SDL_RunHapticEffect", "SDL3")
             )
         )(haptic, effect, iterations);
 
@@ -69825,9 +78566,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SaveBMP(Surface* surface, [NativeTypeName("const char *")] sbyte* file) =>
         (
             (delegate* unmanaged<Surface*, sbyte*, byte>)(
-                _slots[673] is not null and var loadedFnPtr
+                _slots[754] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[673] = nativeContext.LoadFunction("SDL_SaveBMP", "SDL3")
+                    : _slots[754] = nativeContext.LoadFunction("SDL_SaveBMP", "SDL3")
             )
         )(surface, file);
 
@@ -69867,9 +78608,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, IOStreamHandle, byte, byte>)(
-                _slots[674] is not null and var loadedFnPtr
+                _slots[755] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[674] = nativeContext.LoadFunction("SDL_SaveBMP_IO", "SDL3")
+                    : _slots[755] = nativeContext.LoadFunction("SDL_SaveBMP_IO", "SDL3")
             )
         )(surface, dst, closeio);
 
@@ -69909,9 +78650,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Surface* ISdl.ScaleSurface(Surface* surface, int width, int height, ScaleMode scaleMode) =>
         (
             (delegate* unmanaged<Surface*, int, int, ScaleMode, Surface*>)(
-                _slots[675] is not null and var loadedFnPtr
+                _slots[756] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[675] = nativeContext.LoadFunction("SDL_ScaleSurface", "SDL3")
+                    : _slots[756] = nativeContext.LoadFunction("SDL_ScaleSurface", "SDL3")
             )
         )(surface, width, height, scaleMode);
 
@@ -69958,9 +78699,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ScreenKeyboardShownRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[676] is not null and var loadedFnPtr
+                _slots[757] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[676] = nativeContext.LoadFunction("SDL_ScreenKeyboardShown", "SDL3")
+                    : _slots[757] = nativeContext.LoadFunction("SDL_ScreenKeyboardShown", "SDL3")
             )
         )(window);
 
@@ -69984,9 +78725,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ScreenSaverEnabledRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[677] is not null and var loadedFnPtr
+                _slots[758] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[677] = nativeContext.LoadFunction("SDL_ScreenSaverEnabled", "SDL3")
+                    : _slots[758] = nativeContext.LoadFunction("SDL_ScreenSaverEnabled", "SDL3")
             )
         )();
 
@@ -70003,9 +78744,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<IOStreamHandle, long, IOWhence, long>)(
-                _slots[678] is not null and var loadedFnPtr
+                _slots[759] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[678] = nativeContext.LoadFunction("SDL_SeekIO", "SDL3")
+                    : _slots[759] = nativeContext.LoadFunction("SDL_SeekIO", "SDL3")
             )
         )(context, offset, whence);
 
@@ -70026,9 +78767,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<GamepadHandle, void*, int, byte>)(
-                _slots[679] is not null and var loadedFnPtr
+                _slots[760] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[679] = nativeContext.LoadFunction("SDL_SendGamepadEffect", "SDL3")
+                    : _slots[760] = nativeContext.LoadFunction("SDL_SendGamepadEffect", "SDL3")
             )
         )(gamepad, data, size);
 
@@ -70072,9 +78813,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<JoystickHandle, void*, int, byte>)(
-                _slots[680] is not null and var loadedFnPtr
+                _slots[761] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[680] = nativeContext.LoadFunction("SDL_SendJoystickEffect", "SDL3")
+                    : _slots[761] = nativeContext.LoadFunction("SDL_SendJoystickEffect", "SDL3")
             )
         )(joystick, data, size);
 
@@ -70121,9 +78862,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<JoystickHandle, SensorType, ulong, float*, int, byte>)(
-                _slots[681] is not null and var loadedFnPtr
+                _slots[762] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[681] = nativeContext.LoadFunction(
+                    : _slots[762] = nativeContext.LoadFunction(
                         "SDL_SendJoystickVirtualSensorData",
                         "SDL3"
                     )
@@ -70186,9 +78927,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*, sbyte*, byte>)(
-                _slots[682] is not null and var loadedFnPtr
+                _slots[763] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[682] = nativeContext.LoadFunction("SDL_SetAppMetadata", "SDL3")
+                    : _slots[763] = nativeContext.LoadFunction("SDL_SetAppMetadata", "SDL3")
             )
         )(appname, appversion, appidentifier);
 
@@ -70239,9 +78980,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*, byte>)(
-                _slots[683] is not null and var loadedFnPtr
+                _slots[764] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[683] = nativeContext.LoadFunction("SDL_SetAppMetadataProperty", "SDL3")
+                    : _slots[764] = nativeContext.LoadFunction("SDL_SetAppMetadataProperty", "SDL3")
             )
         )(name, value);
 
@@ -70283,9 +79024,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AssertionHandler, void*, void>)(
-                _slots[684] is not null and var loadedFnPtr
+                _slots[765] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[684] = nativeContext.LoadFunction("SDL_SetAssertionHandler", "SDL3")
+                    : _slots[765] = nativeContext.LoadFunction("SDL_SetAssertionHandler", "SDL3")
             )
         )(handler, userdata);
 
@@ -70320,9 +79061,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.SetAtomicInt(AtomicInt* a, int v) =>
         (
             (delegate* unmanaged<AtomicInt*, int, int>)(
-                _slots[685] is not null and var loadedFnPtr
+                _slots[766] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[685] = nativeContext.LoadFunction("SDL_SetAtomicInt", "SDL3")
+                    : _slots[766] = nativeContext.LoadFunction("SDL_SetAtomicInt", "SDL3")
             )
         )(a, v);
 
@@ -70348,9 +79089,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void* ISdl.SetAtomicPointer(void** a, void* v) =>
         (
             (delegate* unmanaged<void**, void*, void*>)(
-                _slots[686] is not null and var loadedFnPtr
+                _slots[767] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[686] = nativeContext.LoadFunction("SDL_SetAtomicPointer", "SDL3")
+                    : _slots[767] = nativeContext.LoadFunction("SDL_SetAtomicPointer", "SDL3")
             )
         )(a, v);
 
@@ -70377,9 +79118,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.SetAtomicU32(AtomicU32* a, [NativeTypeName("Uint32")] uint v) =>
         (
             (delegate* unmanaged<AtomicU32*, uint, uint>)(
-                _slots[687] is not null and var loadedFnPtr
+                _slots[768] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[687] = nativeContext.LoadFunction("SDL_SetAtomicU32", "SDL3")
+                    : _slots[768] = nativeContext.LoadFunction("SDL_SetAtomicU32", "SDL3")
             )
         )(a, v);
 
@@ -70424,9 +79165,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetAudioDeviceGainRaw([NativeTypeName("SDL_AudioDeviceID")] uint devid, float gain) =>
         (
             (delegate* unmanaged<uint, float, byte>)(
-                _slots[688] is not null and var loadedFnPtr
+                _slots[769] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[688] = nativeContext.LoadFunction("SDL_SetAudioDeviceGain", "SDL3")
+                    : _slots[769] = nativeContext.LoadFunction("SDL_SetAudioDeviceGain", "SDL3")
             )
         )(devid, gain);
 
@@ -70446,9 +79187,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, AudioPostmixCallback, void*, byte>)(
-                _slots[689] is not null and var loadedFnPtr
+                _slots[770] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[689] = nativeContext.LoadFunction(
+                    : _slots[770] = nativeContext.LoadFunction(
                         "SDL_SetAudioPostmixCallback",
                         "SDL3"
                     )
@@ -70496,9 +79237,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AudioStreamHandle, AudioSpec*, AudioSpec*, byte>)(
-                _slots[690] is not null and var loadedFnPtr
+                _slots[771] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[690] = nativeContext.LoadFunction("SDL_SetAudioStreamFormat", "SDL3")
+                    : _slots[771] = nativeContext.LoadFunction("SDL_SetAudioStreamFormat", "SDL3")
             )
         )(stream, src_spec, dst_spec);
 
@@ -70553,9 +79294,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetAudioStreamFrequencyRatioRaw(AudioStreamHandle stream, float ratio) =>
         (
             (delegate* unmanaged<AudioStreamHandle, float, byte>)(
-                _slots[691] is not null and var loadedFnPtr
+                _slots[772] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[691] = nativeContext.LoadFunction(
+                    : _slots[772] = nativeContext.LoadFunction(
                         "SDL_SetAudioStreamFrequencyRatio",
                         "SDL3"
                     )
@@ -70583,9 +79324,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetAudioStreamGainRaw(AudioStreamHandle stream, float gain) =>
         (
             (delegate* unmanaged<AudioStreamHandle, float, byte>)(
-                _slots[692] is not null and var loadedFnPtr
+                _slots[773] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[692] = nativeContext.LoadFunction("SDL_SetAudioStreamGain", "SDL3")
+                    : _slots[773] = nativeContext.LoadFunction("SDL_SetAudioStreamGain", "SDL3")
             )
         )(stream, gain);
 
@@ -70603,9 +79344,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AudioStreamHandle, AudioStreamCallback, void*, byte>)(
-                _slots[693] is not null and var loadedFnPtr
+                _slots[774] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[693] = nativeContext.LoadFunction(
+                    : _slots[774] = nativeContext.LoadFunction(
                         "SDL_SetAudioStreamGetCallback",
                         "SDL3"
                     )
@@ -70653,9 +79394,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AudioStreamHandle, int*, int, byte>)(
-                _slots[694] is not null and var loadedFnPtr
+                _slots[775] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[694] = nativeContext.LoadFunction(
+                    : _slots[775] = nativeContext.LoadFunction(
                         "SDL_SetAudioStreamInputChannelMap",
                         "SDL3"
                     )
@@ -70703,9 +79444,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AudioStreamHandle, int*, int, byte>)(
-                _slots[695] is not null and var loadedFnPtr
+                _slots[776] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[695] = nativeContext.LoadFunction(
+                    : _slots[776] = nativeContext.LoadFunction(
                         "SDL_SetAudioStreamOutputChannelMap",
                         "SDL3"
                     )
@@ -70753,9 +79494,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AudioStreamHandle, AudioStreamCallback, void*, byte>)(
-                _slots[696] is not null and var loadedFnPtr
+                _slots[777] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[696] = nativeContext.LoadFunction(
+                    : _slots[777] = nativeContext.LoadFunction(
                         "SDL_SetAudioStreamPutCallback",
                         "SDL3"
                     )
@@ -70803,9 +79544,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, byte, byte>)(
-                _slots[697] is not null and var loadedFnPtr
+                _slots[778] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[697] = nativeContext.LoadFunction("SDL_SetBooleanProperty", "SDL3")
+                    : _slots[778] = nativeContext.LoadFunction("SDL_SetBooleanProperty", "SDL3")
             )
         )(props, name, value);
 
@@ -70858,9 +79599,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 sbyte**,
                 nuint,
                 byte>)(
-                _slots[698] is not null and var loadedFnPtr
+                _slots[779] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[698] = nativeContext.LoadFunction("SDL_SetClipboardData", "SDL3")
+                    : _slots[779] = nativeContext.LoadFunction("SDL_SetClipboardData", "SDL3")
             )
         )(callback, cleanup, userdata, mime_types, num_mime_types);
 
@@ -70915,9 +79656,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetClipboardText([NativeTypeName("const char *")] sbyte* text) =>
         (
             (delegate* unmanaged<sbyte*, byte>)(
-                _slots[699] is not null and var loadedFnPtr
+                _slots[780] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[699] = nativeContext.LoadFunction("SDL_SetClipboardText", "SDL3")
+                    : _slots[780] = nativeContext.LoadFunction("SDL_SetClipboardText", "SDL3")
             )
         )(text);
 
@@ -70959,9 +79700,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetCurrentThreadPriorityRaw(ThreadPriority priority) =>
         (
             (delegate* unmanaged<ThreadPriority, byte>)(
-                _slots[700] is not null and var loadedFnPtr
+                _slots[781] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[700] = nativeContext.LoadFunction(
+                    : _slots[781] = nativeContext.LoadFunction(
                         "SDL_SetCurrentThreadPriority",
                         "SDL3"
                     )
@@ -70988,9 +79729,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetCursorRaw(CursorHandle cursor) =>
         (
             (delegate* unmanaged<CursorHandle, byte>)(
-                _slots[701] is not null and var loadedFnPtr
+                _slots[782] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[701] = nativeContext.LoadFunction("SDL_SetCursor", "SDL3")
+                    : _slots[782] = nativeContext.LoadFunction("SDL_SetCursor", "SDL3")
             )
         )(cursor);
 
@@ -71006,9 +79747,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*, byte>)(
-                _slots[702] is not null and var loadedFnPtr
+                _slots[783] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[702] = nativeContext.LoadFunction("SDL_SetErrorV", "SDL3")
+                    : _slots[783] = nativeContext.LoadFunction("SDL_SetErrorV", "SDL3")
             )
         )(fmt, ap);
 
@@ -71049,9 +79790,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, byte, void>)(
-                _slots[703] is not null and var loadedFnPtr
+                _slots[784] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[703] = nativeContext.LoadFunction("SDL_SetEventEnabled", "SDL3")
+                    : _slots[784] = nativeContext.LoadFunction("SDL_SetEventEnabled", "SDL3")
             )
         )(type, enabled);
 
@@ -71083,9 +79824,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<EventFilter, void*, void>)(
-                _slots[704] is not null and var loadedFnPtr
+                _slots[785] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[704] = nativeContext.LoadFunction("SDL_SetEventFilter", "SDL3")
+                    : _slots[785] = nativeContext.LoadFunction("SDL_SetEventFilter", "SDL3")
             )
         )(filter, userdata);
 
@@ -71121,9 +79862,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, float, byte>)(
-                _slots[705] is not null and var loadedFnPtr
+                _slots[786] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[705] = nativeContext.LoadFunction("SDL_SetFloatProperty", "SDL3")
+                    : _slots[786] = nativeContext.LoadFunction("SDL_SetFloatProperty", "SDL3")
             )
         )(props, name, value);
 
@@ -71163,9 +79904,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.SetGamepadEventsEnabled([NativeTypeName("bool")] byte enabled) =>
         (
             (delegate* unmanaged<byte, void>)(
-                _slots[706] is not null and var loadedFnPtr
+                _slots[787] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[706] = nativeContext.LoadFunction(
+                    : _slots[787] = nativeContext.LoadFunction(
                         "SDL_SetGamepadEventsEnabled",
                         "SDL3"
                     )
@@ -71215,9 +79956,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<GamepadHandle, byte, byte, byte, byte>)(
-                _slots[707] is not null and var loadedFnPtr
+                _slots[788] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[707] = nativeContext.LoadFunction("SDL_SetGamepadLED", "SDL3")
+                    : _slots[788] = nativeContext.LoadFunction("SDL_SetGamepadLED", "SDL3")
             )
         )(gamepad, red, green, blue);
 
@@ -71238,9 +79979,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, byte>)(
-                _slots[708] is not null and var loadedFnPtr
+                _slots[789] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[708] = nativeContext.LoadFunction("SDL_SetGamepadMapping", "SDL3")
+                    : _slots[789] = nativeContext.LoadFunction("SDL_SetGamepadMapping", "SDL3")
             )
         )(instance_id, mapping);
 
@@ -71289,9 +80030,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetGamepadPlayerIndexRaw(GamepadHandle gamepad, int player_index) =>
         (
             (delegate* unmanaged<GamepadHandle, int, byte>)(
-                _slots[709] is not null and var loadedFnPtr
+                _slots[790] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[709] = nativeContext.LoadFunction("SDL_SetGamepadPlayerIndex", "SDL3")
+                    : _slots[790] = nativeContext.LoadFunction("SDL_SetGamepadPlayerIndex", "SDL3")
             )
         )(gamepad, player_index);
 
@@ -71309,9 +80050,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<GamepadHandle, SensorType, byte, byte>)(
-                _slots[710] is not null and var loadedFnPtr
+                _slots[791] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[710] = nativeContext.LoadFunction(
+                    : _slots[791] = nativeContext.LoadFunction(
                         "SDL_SetGamepadSensorEnabled",
                         "SDL3"
                     )
@@ -71345,6 +80086,272 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.SetGamepadSensorEnabled(gamepad, type, enabled);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.SetGPUBlendConstants(GPURenderPassHandle render_pass, FColor blend_constants) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, FColor, void>)(
+                _slots[792] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[792] = nativeContext.LoadFunction("SDL_SetGPUBlendConstants", "SDL3")
+            )
+        )(render_pass, blend_constants);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBlendConstants")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SetGPUBlendConstants(
+        GPURenderPassHandle render_pass,
+        FColor blend_constants
+    ) => DllImport.SetGPUBlendConstants(render_pass, blend_constants);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.SetGPUBufferName(
+        GPUDeviceHandle device,
+        GPUBufferHandle buffer,
+        [NativeTypeName("const char *")] sbyte* text
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUBufferHandle, sbyte*, void>)(
+                _slots[793] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[793] = nativeContext.LoadFunction("SDL_SetGPUBufferName", "SDL3")
+            )
+        )(device, buffer, text);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SetGPUBufferName(
+        GPUDeviceHandle device,
+        GPUBufferHandle buffer,
+        [NativeTypeName("const char *")] sbyte* text
+    ) => DllImport.SetGPUBufferName(device, buffer, text);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.SetGPUBufferName(
+        GPUDeviceHandle device,
+        GPUBufferHandle buffer,
+        [NativeTypeName("const char *")] Ref<sbyte> text
+    )
+    {
+        fixed (sbyte* __dsl_text = text)
+        {
+            ((ISdl)this).SetGPUBufferName(device, buffer, __dsl_text);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SetGPUBufferName(
+        GPUDeviceHandle device,
+        GPUBufferHandle buffer,
+        [NativeTypeName("const char *")] Ref<sbyte> text
+    ) => DllImport.SetGPUBufferName(device, buffer, text);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.SetGPUScissor(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_Rect *")] Rect* scissor
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, Rect*, void>)(
+                _slots[794] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[794] = nativeContext.LoadFunction("SDL_SetGPUScissor", "SDL3")
+            )
+        )(render_pass, scissor);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SetGPUScissor(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_Rect *")] Rect* scissor
+    ) => DllImport.SetGPUScissor(render_pass, scissor);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.SetGPUScissor(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> scissor
+    )
+    {
+        fixed (Rect* __dsl_scissor = scissor)
+        {
+            ((ISdl)this).SetGPUScissor(render_pass, __dsl_scissor);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SetGPUScissor(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> scissor
+    ) => DllImport.SetGPUScissor(render_pass, scissor);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.SetGPUStencilReference(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint8")] byte reference
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, byte, void>)(
+                _slots[795] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[795] = nativeContext.LoadFunction("SDL_SetGPUStencilReference", "SDL3")
+            )
+        )(render_pass, reference);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUStencilReference")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SetGPUStencilReference(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("Uint8")] byte reference
+    ) => DllImport.SetGPUStencilReference(render_pass, reference);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.SetGPUSwapchainParameters(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUSwapchainComposition swapchain_composition,
+        GPUPresentMode present_mode
+    ) =>
+        (MaybeBool<byte>)
+            (byte)
+                ((ISdl)this).SetGPUSwapchainParametersRaw(
+                    device,
+                    window,
+                    swapchain_composition,
+                    present_mode
+                );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUSwapchainParameters")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> SetGPUSwapchainParameters(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUSwapchainComposition swapchain_composition,
+        GPUPresentMode present_mode
+    ) => DllImport.SetGPUSwapchainParameters(device, window, swapchain_composition, present_mode);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.SetGPUSwapchainParametersRaw(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUSwapchainComposition swapchain_composition,
+        GPUPresentMode present_mode
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUDeviceHandle,
+                WindowHandle,
+                GPUSwapchainComposition,
+                GPUPresentMode,
+                byte>)(
+                _slots[796] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[796] = nativeContext.LoadFunction(
+                        "SDL_SetGPUSwapchainParameters",
+                        "SDL3"
+                    )
+            )
+        )(device, window, swapchain_composition, present_mode);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUSwapchainParameters")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte SetGPUSwapchainParametersRaw(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUSwapchainComposition swapchain_composition,
+        GPUPresentMode present_mode
+    ) =>
+        DllImport.SetGPUSwapchainParametersRaw(device, window, swapchain_composition, present_mode);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.SetGPUTextureName(
+        GPUDeviceHandle device,
+        GPUTextureHandle texture,
+        [NativeTypeName("const char *")] sbyte* text
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUTextureHandle, sbyte*, void>)(
+                _slots[797] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[797] = nativeContext.LoadFunction("SDL_SetGPUTextureName", "SDL3")
+            )
+        )(device, texture, text);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUTextureName")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SetGPUTextureName(
+        GPUDeviceHandle device,
+        GPUTextureHandle texture,
+        [NativeTypeName("const char *")] sbyte* text
+    ) => DllImport.SetGPUTextureName(device, texture, text);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.SetGPUTextureName(
+        GPUDeviceHandle device,
+        GPUTextureHandle texture,
+        [NativeTypeName("const char *")] Ref<sbyte> text
+    )
+    {
+        fixed (sbyte* __dsl_text = text)
+        {
+            ((ISdl)this).SetGPUTextureName(device, texture, __dsl_text);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUTextureName")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SetGPUTextureName(
+        GPUDeviceHandle device,
+        GPUTextureHandle texture,
+        [NativeTypeName("const char *")] Ref<sbyte> text
+    ) => DllImport.SetGPUTextureName(device, texture, text);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.SetGPUViewport(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_GPUViewport *")] GPUViewport* viewport
+    ) =>
+        (
+            (delegate* unmanaged<GPURenderPassHandle, GPUViewport*, void>)(
+                _slots[798] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[798] = nativeContext.LoadFunction("SDL_SetGPUViewport", "SDL3")
+            )
+        )(render_pass, viewport);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUViewport")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SetGPUViewport(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_GPUViewport *")] GPUViewport* viewport
+    ) => DllImport.SetGPUViewport(render_pass, viewport);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.SetGPUViewport(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_GPUViewport *")] Ref<GPUViewport> viewport
+    )
+    {
+        fixed (GPUViewport* __dsl_viewport = viewport)
+        {
+            ((ISdl)this).SetGPUViewport(render_pass, __dsl_viewport);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUViewport")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SetGPUViewport(
+        GPURenderPassHandle render_pass,
+        [NativeTypeName("const SDL_GPUViewport *")] Ref<GPUViewport> viewport
+    ) => DllImport.SetGPUViewport(render_pass, viewport);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<byte> ISdl.SetHapticAutocenter(HapticHandle haptic, int autocenter) =>
         (MaybeBool<byte>)(byte)((ISdl)this).SetHapticAutocenterRaw(haptic, autocenter);
 
@@ -71359,9 +80366,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetHapticAutocenterRaw(HapticHandle haptic, int autocenter) =>
         (
             (delegate* unmanaged<HapticHandle, int, byte>)(
-                _slots[711] is not null and var loadedFnPtr
+                _slots[799] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[711] = nativeContext.LoadFunction("SDL_SetHapticAutocenter", "SDL3")
+                    : _slots[799] = nativeContext.LoadFunction("SDL_SetHapticAutocenter", "SDL3")
             )
         )(haptic, autocenter);
 
@@ -71386,9 +80393,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetHapticGainRaw(HapticHandle haptic, int gain) =>
         (
             (delegate* unmanaged<HapticHandle, int, byte>)(
-                _slots[712] is not null and var loadedFnPtr
+                _slots[800] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[712] = nativeContext.LoadFunction("SDL_SetHapticGain", "SDL3")
+                    : _slots[800] = nativeContext.LoadFunction("SDL_SetHapticGain", "SDL3")
             )
         )(haptic, gain);
 
@@ -71405,9 +80412,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*, byte>)(
-                _slots[713] is not null and var loadedFnPtr
+                _slots[801] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[713] = nativeContext.LoadFunction("SDL_SetHint", "SDL3")
+                    : _slots[801] = nativeContext.LoadFunction("SDL_SetHint", "SDL3")
             )
         )(name, value);
 
@@ -71449,9 +80456,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, sbyte*, HintPriority, byte>)(
-                _slots[714] is not null and var loadedFnPtr
+                _slots[802] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[714] = nativeContext.LoadFunction("SDL_SetHintWithPriority", "SDL3")
+                    : _slots[802] = nativeContext.LoadFunction("SDL_SetHintWithPriority", "SDL3")
             )
         )(name, value, priority);
 
@@ -71493,9 +80500,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.SetInitialized(InitState* state, [NativeTypeName("bool")] byte initialized) =>
         (
             (delegate* unmanaged<InitState*, byte, void>)(
-                _slots[715] is not null and var loadedFnPtr
+                _slots[803] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[715] = nativeContext.LoadFunction("SDL_SetInitialized", "SDL3")
+                    : _slots[803] = nativeContext.LoadFunction("SDL_SetInitialized", "SDL3")
             )
         )(state, initialized);
 
@@ -71530,9 +80537,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.SetJoystickEventsEnabled([NativeTypeName("bool")] byte enabled) =>
         (
             (delegate* unmanaged<byte, void>)(
-                _slots[716] is not null and var loadedFnPtr
+                _slots[804] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[716] = nativeContext.LoadFunction(
+                    : _slots[804] = nativeContext.LoadFunction(
                         "SDL_SetJoystickEventsEnabled",
                         "SDL3"
                     )
@@ -71582,9 +80589,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<JoystickHandle, byte, byte, byte, byte>)(
-                _slots[717] is not null and var loadedFnPtr
+                _slots[805] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[717] = nativeContext.LoadFunction("SDL_SetJoystickLED", "SDL3")
+                    : _slots[805] = nativeContext.LoadFunction("SDL_SetJoystickLED", "SDL3")
             )
         )(joystick, red, green, blue);
 
@@ -71615,9 +80622,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetJoystickPlayerIndexRaw(JoystickHandle joystick, int player_index) =>
         (
             (delegate* unmanaged<JoystickHandle, int, byte>)(
-                _slots[718] is not null and var loadedFnPtr
+                _slots[806] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[718] = nativeContext.LoadFunction("SDL_SetJoystickPlayerIndex", "SDL3")
+                    : _slots[806] = nativeContext.LoadFunction("SDL_SetJoystickPlayerIndex", "SDL3")
             )
         )(joystick, player_index);
 
@@ -71652,9 +80659,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<JoystickHandle, int, short, byte>)(
-                _slots[719] is not null and var loadedFnPtr
+                _slots[807] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[719] = nativeContext.LoadFunction("SDL_SetJoystickVirtualAxis", "SDL3")
+                    : _slots[807] = nativeContext.LoadFunction("SDL_SetJoystickVirtualAxis", "SDL3")
             )
         )(joystick, axis, value);
 
@@ -71695,9 +80702,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<JoystickHandle, int, short, short, byte>)(
-                _slots[720] is not null and var loadedFnPtr
+                _slots[808] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[720] = nativeContext.LoadFunction("SDL_SetJoystickVirtualBall", "SDL3")
+                    : _slots[808] = nativeContext.LoadFunction("SDL_SetJoystickVirtualBall", "SDL3")
             )
         )(joystick, ball, xrel, yrel);
 
@@ -71719,9 +80726,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<JoystickHandle, int, byte, byte>)(
-                _slots[721] is not null and var loadedFnPtr
+                _slots[809] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[721] = nativeContext.LoadFunction(
+                    : _slots[809] = nativeContext.LoadFunction(
                         "SDL_SetJoystickVirtualButton",
                         "SDL3"
                     )
@@ -71779,9 +80786,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<JoystickHandle, int, byte, byte>)(
-                _slots[722] is not null and var loadedFnPtr
+                _slots[810] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[722] = nativeContext.LoadFunction("SDL_SetJoystickVirtualHat", "SDL3")
+                    : _slots[810] = nativeContext.LoadFunction("SDL_SetJoystickVirtualHat", "SDL3")
             )
         )(joystick, hat, value);
 
@@ -71806,9 +80813,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<JoystickHandle, int, int, byte, float, float, float, byte>)(
-                _slots[723] is not null and var loadedFnPtr
+                _slots[811] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[723] = nativeContext.LoadFunction(
+                    : _slots[811] = nativeContext.LoadFunction(
                         "SDL_SetJoystickVirtualTouchpad",
                         "SDL3"
                     )
@@ -71871,9 +80878,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<LogOutputFunction, void*, void>)(
-                _slots[724] is not null and var loadedFnPtr
+                _slots[812] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[724] = nativeContext.LoadFunction("SDL_SetLogOutputFunction", "SDL3")
+                    : _slots[812] = nativeContext.LoadFunction("SDL_SetLogOutputFunction", "SDL3")
             )
         )(callback, userdata);
 
@@ -71908,9 +80915,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.SetLogPriorities(LogPriority priority) =>
         (
             (delegate* unmanaged<LogPriority, void>)(
-                _slots[725] is not null and var loadedFnPtr
+                _slots[813] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[725] = nativeContext.LoadFunction("SDL_SetLogPriorities", "SDL3")
+                    : _slots[813] = nativeContext.LoadFunction("SDL_SetLogPriorities", "SDL3")
             )
         )(priority);
 
@@ -71923,9 +80930,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.SetLogPriority(int category, LogPriority priority) =>
         (
             (delegate* unmanaged<int, LogPriority, void>)(
-                _slots[726] is not null and var loadedFnPtr
+                _slots[814] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[726] = nativeContext.LoadFunction("SDL_SetLogPriority", "SDL3")
+                    : _slots[814] = nativeContext.LoadFunction("SDL_SetLogPriority", "SDL3")
             )
         )(category, priority);
 
@@ -71941,9 +80948,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<LogPriority, sbyte*, byte>)(
-                _slots[727] is not null and var loadedFnPtr
+                _slots[815] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[727] = nativeContext.LoadFunction("SDL_SetLogPriorityPrefix", "SDL3")
+                    : _slots[815] = nativeContext.LoadFunction("SDL_SetLogPriorityPrefix", "SDL3")
             )
         )(priority, prefix);
 
@@ -71980,9 +80987,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.SetModState([NativeTypeName("SDL_Keymod")] ushort modstate) =>
         (
             (delegate* unmanaged<ushort, void>)(
-                _slots[728] is not null and var loadedFnPtr
+                _slots[816] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[728] = nativeContext.LoadFunction("SDL_SetModState", "SDL3")
+                    : _slots[816] = nativeContext.LoadFunction("SDL_SetModState", "SDL3")
             )
         )(modstate);
 
@@ -71999,9 +81006,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, long, byte>)(
-                _slots[729] is not null and var loadedFnPtr
+                _slots[817] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[729] = nativeContext.LoadFunction("SDL_SetNumberProperty", "SDL3")
+                    : _slots[817] = nativeContext.LoadFunction("SDL_SetNumberProperty", "SDL3")
             )
         )(props, name, value);
 
@@ -72046,9 +81053,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Palette*, Color*, int, int, byte>)(
-                _slots[730] is not null and var loadedFnPtr
+                _slots[818] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[730] = nativeContext.LoadFunction("SDL_SetPaletteColors", "SDL3")
+                    : _slots[818] = nativeContext.LoadFunction("SDL_SetPaletteColors", "SDL3")
             )
         )(palette, colors, firstcolor, ncolors);
 
@@ -72098,9 +81105,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, void*, byte>)(
-                _slots[731] is not null and var loadedFnPtr
+                _slots[819] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[731] = nativeContext.LoadFunction("SDL_SetPointerProperty", "SDL3")
+                    : _slots[819] = nativeContext.LoadFunction("SDL_SetPointerProperty", "SDL3")
             )
         )(props, name, value);
 
@@ -72148,9 +81155,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, void*, CleanupPropertyCallback, void*, byte>)(
-                _slots[732] is not null and var loadedFnPtr
+                _slots[820] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[732] = nativeContext.LoadFunction(
+                    : _slots[820] = nativeContext.LoadFunction(
                         "SDL_SetPointerPropertyWithCleanup",
                         "SDL3"
                     )
@@ -72209,9 +81216,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetPrimarySelectionText([NativeTypeName("const char *")] sbyte* text) =>
         (
             (delegate* unmanaged<sbyte*, byte>)(
-                _slots[733] is not null and var loadedFnPtr
+                _slots[821] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[733] = nativeContext.LoadFunction(
+                    : _slots[821] = nativeContext.LoadFunction(
                         "SDL_SetPrimarySelectionText",
                         "SDL3"
                     )
@@ -72248,9 +81255,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, Rect*, byte>)(
-                _slots[734] is not null and var loadedFnPtr
+                _slots[822] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[734] = nativeContext.LoadFunction("SDL_SetRenderClipRect", "SDL3")
+                    : _slots[822] = nativeContext.LoadFunction("SDL_SetRenderClipRect", "SDL3")
             )
         )(renderer, rect);
 
@@ -72298,9 +81305,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetRenderColorScaleRaw(RendererHandle renderer, float scale) =>
         (
             (delegate* unmanaged<RendererHandle, float, byte>)(
-                _slots[735] is not null and var loadedFnPtr
+                _slots[823] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[735] = nativeContext.LoadFunction("SDL_SetRenderColorScale", "SDL3")
+                    : _slots[823] = nativeContext.LoadFunction("SDL_SetRenderColorScale", "SDL3")
             )
         )(renderer, scale);
 
@@ -72332,9 +81339,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, BlendMode, byte>)(
-                _slots[736] is not null and var loadedFnPtr
+                _slots[824] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[736] = nativeContext.LoadFunction("SDL_SetRenderDrawBlendMode", "SDL3")
+                    : _slots[824] = nativeContext.LoadFunction("SDL_SetRenderDrawBlendMode", "SDL3")
             )
         )(renderer, blendMode);
 
@@ -72398,9 +81405,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, float, float, float, float, byte>)(
-                _slots[738] is not null and var loadedFnPtr
+                _slots[826] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[738] = nativeContext.LoadFunction(
+                    : _slots[826] = nativeContext.LoadFunction(
                         "SDL_SetRenderDrawColorFloat",
                         "SDL3"
                     )
@@ -72428,9 +81435,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, byte, byte, byte, byte, byte>)(
-                _slots[737] is not null and var loadedFnPtr
+                _slots[825] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[737] = nativeContext.LoadFunction("SDL_SetRenderDrawColor", "SDL3")
+                    : _slots[825] = nativeContext.LoadFunction("SDL_SetRenderDrawColor", "SDL3")
             )
         )(renderer, r, g, b, a);
 
@@ -72473,9 +81480,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, int, int, RendererLogicalPresentation, byte>)(
-                _slots[739] is not null and var loadedFnPtr
+                _slots[827] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[739] = nativeContext.LoadFunction(
+                    : _slots[827] = nativeContext.LoadFunction(
                         "SDL_SetRenderLogicalPresentation",
                         "SDL3"
                     )
@@ -72510,9 +81517,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetRenderScaleRaw(RendererHandle renderer, float scaleX, float scaleY) =>
         (
             (delegate* unmanaged<RendererHandle, float, float, byte>)(
-                _slots[740] is not null and var loadedFnPtr
+                _slots[828] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[740] = nativeContext.LoadFunction("SDL_SetRenderScale", "SDL3")
+                    : _slots[828] = nativeContext.LoadFunction("SDL_SetRenderScale", "SDL3")
             )
         )(renderer, scaleX, scaleY);
 
@@ -72526,9 +81533,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetRenderTarget(RendererHandle renderer, Texture* texture) =>
         (
             (delegate* unmanaged<RendererHandle, Texture*, byte>)(
-                _slots[741] is not null and var loadedFnPtr
+                _slots[829] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[741] = nativeContext.LoadFunction("SDL_SetRenderTarget", "SDL3")
+                    : _slots[829] = nativeContext.LoadFunction("SDL_SetRenderTarget", "SDL3")
             )
         )(renderer, texture);
 
@@ -72561,9 +81568,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<RendererHandle, Rect*, byte>)(
-                _slots[742] is not null and var loadedFnPtr
+                _slots[830] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[742] = nativeContext.LoadFunction("SDL_SetRenderViewport", "SDL3")
+                    : _slots[830] = nativeContext.LoadFunction("SDL_SetRenderViewport", "SDL3")
             )
         )(renderer, rect);
 
@@ -72611,9 +81618,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetRenderVSyncRaw(RendererHandle renderer, int vsync) =>
         (
             (delegate* unmanaged<RendererHandle, int, byte>)(
-                _slots[743] is not null and var loadedFnPtr
+                _slots[831] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[743] = nativeContext.LoadFunction("SDL_SetRenderVSync", "SDL3")
+                    : _slots[831] = nativeContext.LoadFunction("SDL_SetRenderVSync", "SDL3")
             )
         )(renderer, vsync);
 
@@ -72627,9 +81634,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetScancodeName(Scancode scancode, [NativeTypeName("const char *")] sbyte* name) =>
         (
             (delegate* unmanaged<Scancode, sbyte*, byte>)(
-                _slots[744] is not null and var loadedFnPtr
+                _slots[832] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[744] = nativeContext.LoadFunction("SDL_SetScancodeName", "SDL3")
+                    : _slots[832] = nativeContext.LoadFunction("SDL_SetScancodeName", "SDL3")
             )
         )(scancode, name);
 
@@ -72670,9 +81677,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, sbyte*, byte>)(
-                _slots[745] is not null and var loadedFnPtr
+                _slots[833] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[745] = nativeContext.LoadFunction("SDL_SetStringProperty", "SDL3")
+                    : _slots[833] = nativeContext.LoadFunction("SDL_SetStringProperty", "SDL3")
             )
         )(props, name, value);
 
@@ -72714,9 +81721,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetSurfaceAlphaMod(Surface* surface, [NativeTypeName("Uint8")] byte alpha) =>
         (
             (delegate* unmanaged<Surface*, byte, byte>)(
-                _slots[746] is not null and var loadedFnPtr
+                _slots[834] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[746] = nativeContext.LoadFunction("SDL_SetSurfaceAlphaMod", "SDL3")
+                    : _slots[834] = nativeContext.LoadFunction("SDL_SetSurfaceAlphaMod", "SDL3")
             )
         )(surface, alpha);
 
@@ -72754,9 +81761,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, BlendMode, byte>)(
-                _slots[747] is not null and var loadedFnPtr
+                _slots[835] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[747] = nativeContext.LoadFunction("SDL_SetSurfaceBlendMode", "SDL3")
+                    : _slots[835] = nativeContext.LoadFunction("SDL_SetSurfaceBlendMode", "SDL3")
             )
         )(surface, blendMode);
 
@@ -72797,9 +81804,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, Rect*, byte>)(
-                _slots[748] is not null and var loadedFnPtr
+                _slots[836] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[748] = nativeContext.LoadFunction("SDL_SetSurfaceClipRect", "SDL3")
+                    : _slots[836] = nativeContext.LoadFunction("SDL_SetSurfaceClipRect", "SDL3")
             )
         )(surface, rect);
 
@@ -72842,9 +81849,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, byte, uint, byte>)(
-                _slots[749] is not null and var loadedFnPtr
+                _slots[837] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[749] = nativeContext.LoadFunction("SDL_SetSurfaceColorKey", "SDL3")
+                    : _slots[837] = nativeContext.LoadFunction("SDL_SetSurfaceColorKey", "SDL3")
             )
         )(surface, enabled, key);
 
@@ -72890,9 +81897,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, byte, byte, byte, byte>)(
-                _slots[750] is not null and var loadedFnPtr
+                _slots[838] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[750] = nativeContext.LoadFunction("SDL_SetSurfaceColorMod", "SDL3")
+                    : _slots[838] = nativeContext.LoadFunction("SDL_SetSurfaceColorMod", "SDL3")
             )
         )(surface, r, g, b);
 
@@ -72935,9 +81942,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetSurfaceColorspace(Surface* surface, Colorspace colorspace) =>
         (
             (delegate* unmanaged<Surface*, Colorspace, byte>)(
-                _slots[751] is not null and var loadedFnPtr
+                _slots[839] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[751] = nativeContext.LoadFunction("SDL_SetSurfaceColorspace", "SDL3")
+                    : _slots[839] = nativeContext.LoadFunction("SDL_SetSurfaceColorspace", "SDL3")
             )
         )(surface, colorspace);
 
@@ -72970,9 +81977,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetSurfacePalette(Surface* surface, Palette* palette) =>
         (
             (delegate* unmanaged<Surface*, Palette*, byte>)(
-                _slots[752] is not null and var loadedFnPtr
+                _slots[840] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[752] = nativeContext.LoadFunction("SDL_SetSurfacePalette", "SDL3")
+                    : _slots[840] = nativeContext.LoadFunction("SDL_SetSurfacePalette", "SDL3")
             )
         )(surface, palette);
 
@@ -73004,9 +82011,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetSurfaceRLE(Surface* surface, [NativeTypeName("bool")] byte enabled) =>
         (
             (delegate* unmanaged<Surface*, byte, byte>)(
-                _slots[753] is not null and var loadedFnPtr
+                _slots[841] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[753] = nativeContext.LoadFunction("SDL_SetSurfaceRLE", "SDL3")
+                    : _slots[841] = nativeContext.LoadFunction("SDL_SetSurfaceRLE", "SDL3")
             )
         )(surface, enabled);
 
@@ -73045,9 +82052,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<WindowHandle, Rect*, int, byte>)(
-                _slots[754] is not null and var loadedFnPtr
+                _slots[842] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[754] = nativeContext.LoadFunction("SDL_SetTextInputArea", "SDL3")
+                    : _slots[842] = nativeContext.LoadFunction("SDL_SetTextInputArea", "SDL3")
             )
         )(window, rect, cursor);
 
@@ -73087,9 +82094,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetTextureAlphaMod(Texture* texture, [NativeTypeName("Uint8")] byte alpha) =>
         (
             (delegate* unmanaged<Texture*, byte, byte>)(
-                _slots[755] is not null and var loadedFnPtr
+                _slots[843] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[755] = nativeContext.LoadFunction("SDL_SetTextureAlphaMod", "SDL3")
+                    : _slots[843] = nativeContext.LoadFunction("SDL_SetTextureAlphaMod", "SDL3")
             )
         )(texture, alpha);
 
@@ -73124,9 +82131,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetTextureAlphaModFloat(Texture* texture, float alpha) =>
         (
             (delegate* unmanaged<Texture*, float, byte>)(
-                _slots[756] is not null and var loadedFnPtr
+                _slots[844] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[756] = nativeContext.LoadFunction(
+                    : _slots[844] = nativeContext.LoadFunction(
                         "SDL_SetTextureAlphaModFloat",
                         "SDL3"
                     )
@@ -73163,9 +82170,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Texture*, BlendMode, byte>)(
-                _slots[757] is not null and var loadedFnPtr
+                _slots[845] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[757] = nativeContext.LoadFunction("SDL_SetTextureBlendMode", "SDL3")
+                    : _slots[845] = nativeContext.LoadFunction("SDL_SetTextureBlendMode", "SDL3")
             )
         )(texture, blendMode);
 
@@ -73208,9 +82215,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Texture*, byte, byte, byte, byte>)(
-                _slots[758] is not null and var loadedFnPtr
+                _slots[846] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[758] = nativeContext.LoadFunction("SDL_SetTextureColorMod", "SDL3")
+                    : _slots[846] = nativeContext.LoadFunction("SDL_SetTextureColorMod", "SDL3")
             )
         )(texture, r, g, b);
 
@@ -73253,9 +82260,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetTextureColorModFloat(Texture* texture, float r, float g, float b) =>
         (
             (delegate* unmanaged<Texture*, float, float, float, byte>)(
-                _slots[759] is not null and var loadedFnPtr
+                _slots[847] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[759] = nativeContext.LoadFunction(
+                    : _slots[847] = nativeContext.LoadFunction(
                         "SDL_SetTextureColorModFloat",
                         "SDL3"
                     )
@@ -73293,9 +82300,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetTextureScaleMode(Texture* texture, ScaleMode scaleMode) =>
         (
             (delegate* unmanaged<Texture*, ScaleMode, byte>)(
-                _slots[760] is not null and var loadedFnPtr
+                _slots[848] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[760] = nativeContext.LoadFunction("SDL_SetTextureScaleMode", "SDL3")
+                    : _slots[848] = nativeContext.LoadFunction("SDL_SetTextureScaleMode", "SDL3")
             )
         )(texture, scaleMode);
 
@@ -73330,9 +82337,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<AtomicInt*, void*, TLSDestructorCallback, byte>)(
-                _slots[761] is not null and var loadedFnPtr
+                _slots[849] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[761] = nativeContext.LoadFunction("SDL_SetTLS", "SDL3")
+                    : _slots[849] = nativeContext.LoadFunction("SDL_SetTLS", "SDL3")
             )
         )(id, value, destructor);
 
@@ -73373,9 +82380,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowAlwaysOnTop(WindowHandle window, [NativeTypeName("bool")] byte on_top) =>
         (
             (delegate* unmanaged<WindowHandle, byte, byte>)(
-                _slots[762] is not null and var loadedFnPtr
+                _slots[850] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[762] = nativeContext.LoadFunction("SDL_SetWindowAlwaysOnTop", "SDL3")
+                    : _slots[850] = nativeContext.LoadFunction("SDL_SetWindowAlwaysOnTop", "SDL3")
             )
         )(window, on_top);
 
@@ -73424,9 +82431,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowAspectRatioRaw(WindowHandle window, float min_aspect, float max_aspect) =>
         (
             (delegate* unmanaged<WindowHandle, float, float, byte>)(
-                _slots[763] is not null and var loadedFnPtr
+                _slots[851] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[763] = nativeContext.LoadFunction("SDL_SetWindowAspectRatio", "SDL3")
+                    : _slots[851] = nativeContext.LoadFunction("SDL_SetWindowAspectRatio", "SDL3")
             )
         )(window, min_aspect, max_aspect);
 
@@ -73443,9 +82450,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowBordered(WindowHandle window, [NativeTypeName("bool")] byte bordered) =>
         (
             (delegate* unmanaged<WindowHandle, byte, byte>)(
-                _slots[764] is not null and var loadedFnPtr
+                _slots[852] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[764] = nativeContext.LoadFunction("SDL_SetWindowBordered", "SDL3")
+                    : _slots[852] = nativeContext.LoadFunction("SDL_SetWindowBordered", "SDL3")
             )
         )(window, bordered);
 
@@ -73476,9 +82483,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowFocusable(WindowHandle window, [NativeTypeName("bool")] byte focusable) =>
         (
             (delegate* unmanaged<WindowHandle, byte, byte>)(
-                _slots[765] is not null and var loadedFnPtr
+                _slots[853] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[765] = nativeContext.LoadFunction("SDL_SetWindowFocusable", "SDL3")
+                    : _slots[853] = nativeContext.LoadFunction("SDL_SetWindowFocusable", "SDL3")
             )
         )(window, focusable);
 
@@ -73509,9 +82516,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowFullscreen(WindowHandle window, [NativeTypeName("bool")] byte fullscreen) =>
         (
             (delegate* unmanaged<WindowHandle, byte, byte>)(
-                _slots[766] is not null and var loadedFnPtr
+                _slots[854] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[766] = nativeContext.LoadFunction("SDL_SetWindowFullscreen", "SDL3")
+                    : _slots[854] = nativeContext.LoadFunction("SDL_SetWindowFullscreen", "SDL3")
             )
         )(window, fullscreen);
 
@@ -73545,9 +82552,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<WindowHandle, DisplayMode*, byte>)(
-                _slots[767] is not null and var loadedFnPtr
+                _slots[855] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[767] = nativeContext.LoadFunction(
+                    : _slots[855] = nativeContext.LoadFunction(
                         "SDL_SetWindowFullscreenMode",
                         "SDL3"
                     )
@@ -73591,9 +82598,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<WindowHandle, HitTest, void*, byte>)(
-                _slots[768] is not null and var loadedFnPtr
+                _slots[856] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[768] = nativeContext.LoadFunction("SDL_SetWindowHitTest", "SDL3")
+                    : _slots[856] = nativeContext.LoadFunction("SDL_SetWindowHitTest", "SDL3")
             )
         )(window, callback, callback_data);
 
@@ -73634,9 +82641,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowIcon(WindowHandle window, Surface* icon) =>
         (
             (delegate* unmanaged<WindowHandle, Surface*, byte>)(
-                _slots[769] is not null and var loadedFnPtr
+                _slots[857] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[769] = nativeContext.LoadFunction("SDL_SetWindowIcon", "SDL3")
+                    : _slots[857] = nativeContext.LoadFunction("SDL_SetWindowIcon", "SDL3")
             )
         )(window, icon);
 
@@ -73666,9 +82673,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowKeyboardGrab(WindowHandle window, [NativeTypeName("bool")] byte grabbed) =>
         (
             (delegate* unmanaged<WindowHandle, byte, byte>)(
-                _slots[770] is not null and var loadedFnPtr
+                _slots[858] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[770] = nativeContext.LoadFunction("SDL_SetWindowKeyboardGrab", "SDL3")
+                    : _slots[858] = nativeContext.LoadFunction("SDL_SetWindowKeyboardGrab", "SDL3")
             )
         )(window, grabbed);
 
@@ -73710,9 +82717,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowMaximumSizeRaw(WindowHandle window, int max_w, int max_h) =>
         (
             (delegate* unmanaged<WindowHandle, int, int, byte>)(
-                _slots[771] is not null and var loadedFnPtr
+                _slots[859] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[771] = nativeContext.LoadFunction("SDL_SetWindowMaximumSize", "SDL3")
+                    : _slots[859] = nativeContext.LoadFunction("SDL_SetWindowMaximumSize", "SDL3")
             )
         )(window, max_w, max_h);
 
@@ -73737,9 +82744,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowMinimumSizeRaw(WindowHandle window, int min_w, int min_h) =>
         (
             (delegate* unmanaged<WindowHandle, int, int, byte>)(
-                _slots[772] is not null and var loadedFnPtr
+                _slots[860] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[772] = nativeContext.LoadFunction("SDL_SetWindowMinimumSize", "SDL3")
+                    : _slots[860] = nativeContext.LoadFunction("SDL_SetWindowMinimumSize", "SDL3")
             )
         )(window, min_w, min_h);
 
@@ -73753,9 +82760,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowModal(WindowHandle window, [NativeTypeName("bool")] byte modal) =>
         (
             (delegate* unmanaged<WindowHandle, byte, byte>)(
-                _slots[773] is not null and var loadedFnPtr
+                _slots[861] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[773] = nativeContext.LoadFunction("SDL_SetWindowModal", "SDL3")
+                    : _slots[861] = nativeContext.LoadFunction("SDL_SetWindowModal", "SDL3")
             )
         )(window, modal);
 
@@ -73784,9 +82791,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowMouseGrab(WindowHandle window, [NativeTypeName("bool")] byte grabbed) =>
         (
             (delegate* unmanaged<WindowHandle, byte, byte>)(
-                _slots[774] is not null and var loadedFnPtr
+                _slots[862] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[774] = nativeContext.LoadFunction("SDL_SetWindowMouseGrab", "SDL3")
+                    : _slots[862] = nativeContext.LoadFunction("SDL_SetWindowMouseGrab", "SDL3")
             )
         )(window, grabbed);
 
@@ -73820,9 +82827,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<WindowHandle, Rect*, byte>)(
-                _slots[775] is not null and var loadedFnPtr
+                _slots[863] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[775] = nativeContext.LoadFunction("SDL_SetWindowMouseRect", "SDL3")
+                    : _slots[863] = nativeContext.LoadFunction("SDL_SetWindowMouseRect", "SDL3")
             )
         )(window, rect);
 
@@ -73870,9 +82877,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowOpacityRaw(WindowHandle window, float opacity) =>
         (
             (delegate* unmanaged<WindowHandle, float, byte>)(
-                _slots[776] is not null and var loadedFnPtr
+                _slots[864] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[776] = nativeContext.LoadFunction("SDL_SetWindowOpacity", "SDL3")
+                    : _slots[864] = nativeContext.LoadFunction("SDL_SetWindowOpacity", "SDL3")
             )
         )(window, opacity);
 
@@ -73897,9 +82904,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowParentRaw(WindowHandle window, WindowHandle parent) =>
         (
             (delegate* unmanaged<WindowHandle, WindowHandle, byte>)(
-                _slots[777] is not null and var loadedFnPtr
+                _slots[865] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[777] = nativeContext.LoadFunction("SDL_SetWindowParent", "SDL3")
+                    : _slots[865] = nativeContext.LoadFunction("SDL_SetWindowParent", "SDL3")
             )
         )(window, parent);
 
@@ -73924,9 +82931,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowPositionRaw(WindowHandle window, int x, int y) =>
         (
             (delegate* unmanaged<WindowHandle, int, int, byte>)(
-                _slots[778] is not null and var loadedFnPtr
+                _slots[866] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[778] = nativeContext.LoadFunction("SDL_SetWindowPosition", "SDL3")
+                    : _slots[866] = nativeContext.LoadFunction("SDL_SetWindowPosition", "SDL3")
             )
         )(window, x, y);
 
@@ -73943,9 +82950,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<WindowHandle, byte, byte>)(
-                _slots[779] is not null and var loadedFnPtr
+                _slots[867] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[779] = nativeContext.LoadFunction(
+                    : _slots[867] = nativeContext.LoadFunction(
                         "SDL_SetWindowRelativeMouseMode",
                         "SDL3"
                     )
@@ -73979,9 +82986,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowResizable(WindowHandle window, [NativeTypeName("bool")] byte resizable) =>
         (
             (delegate* unmanaged<WindowHandle, byte, byte>)(
-                _slots[780] is not null and var loadedFnPtr
+                _slots[868] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[780] = nativeContext.LoadFunction("SDL_SetWindowResizable", "SDL3")
+                    : _slots[868] = nativeContext.LoadFunction("SDL_SetWindowResizable", "SDL3")
             )
         )(window, resizable);
 
@@ -74012,9 +83019,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowShape(WindowHandle window, Surface* shape) =>
         (
             (delegate* unmanaged<WindowHandle, Surface*, byte>)(
-                _slots[781] is not null and var loadedFnPtr
+                _slots[869] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[781] = nativeContext.LoadFunction("SDL_SetWindowShape", "SDL3")
+                    : _slots[869] = nativeContext.LoadFunction("SDL_SetWindowShape", "SDL3")
             )
         )(window, shape);
 
@@ -74055,9 +83062,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowSizeRaw(WindowHandle window, int w, int h) =>
         (
             (delegate* unmanaged<WindowHandle, int, int, byte>)(
-                _slots[782] is not null and var loadedFnPtr
+                _slots[870] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[782] = nativeContext.LoadFunction("SDL_SetWindowSize", "SDL3")
+                    : _slots[870] = nativeContext.LoadFunction("SDL_SetWindowSize", "SDL3")
             )
         )(window, w, h);
 
@@ -74082,9 +83089,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowSurfaceVSyncRaw(WindowHandle window, int vsync) =>
         (
             (delegate* unmanaged<WindowHandle, int, byte>)(
-                _slots[783] is not null and var loadedFnPtr
+                _slots[871] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[783] = nativeContext.LoadFunction("SDL_SetWindowSurfaceVSync", "SDL3")
+                    : _slots[871] = nativeContext.LoadFunction("SDL_SetWindowSurfaceVSync", "SDL3")
             )
         )(window, vsync);
 
@@ -74098,9 +83105,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SetWindowTitle(WindowHandle window, [NativeTypeName("const char *")] sbyte* title) =>
         (
             (delegate* unmanaged<WindowHandle, sbyte*, byte>)(
-                _slots[784] is not null and var loadedFnPtr
+                _slots[872] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[784] = nativeContext.LoadFunction("SDL_SetWindowTitle", "SDL3")
+                    : _slots[872] = nativeContext.LoadFunction("SDL_SetWindowTitle", "SDL3")
             )
         )(window, title);
 
@@ -74137,9 +83144,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ShouldInit(InitState* state) =>
         (
             (delegate* unmanaged<InitState*, byte>)(
-                _slots[785] is not null and var loadedFnPtr
+                _slots[873] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[785] = nativeContext.LoadFunction("SDL_ShouldInit", "SDL3")
+                    : _slots[873] = nativeContext.LoadFunction("SDL_ShouldInit", "SDL3")
             )
         )(state);
 
@@ -74167,9 +83174,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ShouldQuit(InitState* state) =>
         (
             (delegate* unmanaged<InitState*, byte>)(
-                _slots[786] is not null and var loadedFnPtr
+                _slots[874] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[786] = nativeContext.LoadFunction("SDL_ShouldQuit", "SDL3")
+                    : _slots[874] = nativeContext.LoadFunction("SDL_ShouldQuit", "SDL3")
             )
         )(state);
 
@@ -74206,9 +83213,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ShowCursorRaw() =>
         (
             (delegate* unmanaged<byte>)(
-                _slots[787] is not null and var loadedFnPtr
+                _slots[875] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[787] = nativeContext.LoadFunction("SDL_ShowCursor", "SDL3")
+                    : _slots[875] = nativeContext.LoadFunction("SDL_ShowCursor", "SDL3")
             )
         )();
 
@@ -74224,9 +83231,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<MessageBoxData*, int*, byte>)(
-                _slots[788] is not null and var loadedFnPtr
+                _slots[876] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[788] = nativeContext.LoadFunction("SDL_ShowMessageBox", "SDL3")
+                    : _slots[876] = nativeContext.LoadFunction("SDL_ShowMessageBox", "SDL3")
             )
         )(messageboxdata, buttonid);
 
@@ -74281,9 +83288,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 sbyte*,
                 byte,
                 void>)(
-                _slots[789] is not null and var loadedFnPtr
+                _slots[877] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[789] = nativeContext.LoadFunction("SDL_ShowOpenFileDialog", "SDL3")
+                    : _slots[877] = nativeContext.LoadFunction("SDL_ShowOpenFileDialog", "SDL3")
             )
         )(callback, userdata, window, filters, nfilters, default_location, allow_many);
 
@@ -74367,9 +83374,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<DialogFileCallback, void*, WindowHandle, sbyte*, byte, void>)(
-                _slots[790] is not null and var loadedFnPtr
+                _slots[878] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[790] = nativeContext.LoadFunction("SDL_ShowOpenFolderDialog", "SDL3")
+                    : _slots[878] = nativeContext.LoadFunction("SDL_ShowOpenFolderDialog", "SDL3")
             )
         )(callback, userdata, window, default_location, allow_many);
 
@@ -74434,9 +83441,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
                 int,
                 sbyte*,
                 void>)(
-                _slots[791] is not null and var loadedFnPtr
+                _slots[879] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[791] = nativeContext.LoadFunction("SDL_ShowSaveFileDialog", "SDL3")
+                    : _slots[879] = nativeContext.LoadFunction("SDL_ShowSaveFileDialog", "SDL3")
             )
         )(callback, userdata, window, filters, nfilters, default_location);
 
@@ -74513,9 +83520,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, sbyte*, sbyte*, WindowHandle, byte>)(
-                _slots[792] is not null and var loadedFnPtr
+                _slots[880] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[792] = nativeContext.LoadFunction("SDL_ShowSimpleMessageBox", "SDL3")
+                    : _slots[880] = nativeContext.LoadFunction("SDL_ShowSimpleMessageBox", "SDL3")
             )
         )(flags, title, message, window);
 
@@ -74570,9 +83577,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ShowWindowRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[793] is not null and var loadedFnPtr
+                _slots[881] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[793] = nativeContext.LoadFunction("SDL_ShowWindow", "SDL3")
+                    : _slots[881] = nativeContext.LoadFunction("SDL_ShowWindow", "SDL3")
             )
         )(window);
 
@@ -74596,9 +83603,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.ShowWindowSystemMenuRaw(WindowHandle window, int x, int y) =>
         (
             (delegate* unmanaged<WindowHandle, int, int, byte>)(
-                _slots[794] is not null and var loadedFnPtr
+                _slots[882] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[794] = nativeContext.LoadFunction("SDL_ShowWindowSystemMenu", "SDL3")
+                    : _slots[882] = nativeContext.LoadFunction("SDL_ShowWindowSystemMenu", "SDL3")
             )
         )(window, x, y);
 
@@ -74612,9 +83619,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.SignalCondition(ConditionHandle cond) =>
         (
             (delegate* unmanaged<ConditionHandle, void>)(
-                _slots[795] is not null and var loadedFnPtr
+                _slots[883] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[795] = nativeContext.LoadFunction("SDL_SignalCondition", "SDL3")
+                    : _slots[883] = nativeContext.LoadFunction("SDL_SignalCondition", "SDL3")
             )
         )(cond);
 
@@ -74626,9 +83633,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.SignalSemaphore(SemaphoreHandle sem) =>
         (
             (delegate* unmanaged<SemaphoreHandle, void>)(
-                _slots[796] is not null and var loadedFnPtr
+                _slots[884] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[796] = nativeContext.LoadFunction("SDL_SignalSemaphore", "SDL3")
+                    : _slots[884] = nativeContext.LoadFunction("SDL_SignalSemaphore", "SDL3")
             )
         )(sem);
 
@@ -74651,9 +83658,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.StartTextInputRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[797] is not null and var loadedFnPtr
+                _slots[885] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[797] = nativeContext.LoadFunction("SDL_StartTextInput", "SDL3")
+                    : _slots[885] = nativeContext.LoadFunction("SDL_StartTextInput", "SDL3")
             )
         )(window);
 
@@ -74685,9 +83692,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<WindowHandle, uint, byte>)(
-                _slots[798] is not null and var loadedFnPtr
+                _slots[886] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[798] = nativeContext.LoadFunction(
+                    : _slots[886] = nativeContext.LoadFunction(
                         "SDL_StartTextInputWithProperties",
                         "SDL3"
                     )
@@ -74717,9 +83724,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.StopHapticEffectRaw(HapticHandle haptic, int effect) =>
         (
             (delegate* unmanaged<HapticHandle, int, byte>)(
-                _slots[799] is not null and var loadedFnPtr
+                _slots[887] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[799] = nativeContext.LoadFunction("SDL_StopHapticEffect", "SDL3")
+                    : _slots[887] = nativeContext.LoadFunction("SDL_StopHapticEffect", "SDL3")
             )
         )(haptic, effect);
 
@@ -74744,9 +83751,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.StopHapticEffectsRaw(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, byte>)(
-                _slots[800] is not null and var loadedFnPtr
+                _slots[888] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[800] = nativeContext.LoadFunction("SDL_StopHapticEffects", "SDL3")
+                    : _slots[888] = nativeContext.LoadFunction("SDL_StopHapticEffects", "SDL3")
             )
         )(haptic);
 
@@ -74771,9 +83778,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.StopHapticRumbleRaw(HapticHandle haptic) =>
         (
             (delegate* unmanaged<HapticHandle, byte>)(
-                _slots[801] is not null and var loadedFnPtr
+                _slots[889] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[801] = nativeContext.LoadFunction("SDL_StopHapticRumble", "SDL3")
+                    : _slots[889] = nativeContext.LoadFunction("SDL_StopHapticRumble", "SDL3")
             )
         )(haptic);
 
@@ -74798,9 +83805,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.StopTextInputRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[802] is not null and var loadedFnPtr
+                _slots[890] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[802] = nativeContext.LoadFunction("SDL_StopTextInput", "SDL3")
+                    : _slots[890] = nativeContext.LoadFunction("SDL_StopTextInput", "SDL3")
             )
         )(window);
 
@@ -74824,9 +83831,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.StorageReadyRaw(StorageHandle storage) =>
         (
             (delegate* unmanaged<StorageHandle, byte>)(
-                _slots[803] is not null and var loadedFnPtr
+                _slots[891] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[803] = nativeContext.LoadFunction("SDL_StorageReady", "SDL3")
+                    : _slots[891] = nativeContext.LoadFunction("SDL_StorageReady", "SDL3")
             )
         )(storage);
 
@@ -74839,9 +83846,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     Guid ISdl.StringToGuid([NativeTypeName("const char *")] sbyte* pchGUID) =>
         (
             (delegate* unmanaged<sbyte*, Guid>)(
-                _slots[804] is not null and var loadedFnPtr
+                _slots[892] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[804] = nativeContext.LoadFunction("SDL_StringToGUID", "SDL3")
+                    : _slots[892] = nativeContext.LoadFunction("SDL_StringToGUID", "SDL3")
             )
         )(pchGUID);
 
@@ -74866,12 +83873,60 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         DllImport.StringToGuid(pchGUID);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.SubmitGPUCommandBuffer(GPUCommandBufferHandle command_buffer) =>
+        (MaybeBool<byte>)(byte)((ISdl)this).SubmitGPUCommandBufferRaw(command_buffer);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> SubmitGPUCommandBuffer(GPUCommandBufferHandle command_buffer) =>
+        DllImport.SubmitGPUCommandBuffer(command_buffer);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    GPUFenceHandle ISdl.SubmitGPUCommandBufferAndAcquireFence(
+        GPUCommandBufferHandle command_buffer
+    ) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, GPUFenceHandle>)(
+                _slots[894] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[894] = nativeContext.LoadFunction(
+                        "SDL_SubmitGPUCommandBufferAndAcquireFence",
+                        "SDL3"
+                    )
+            )
+        )(command_buffer);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBufferAndAcquireFence")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static GPUFenceHandle SubmitGPUCommandBufferAndAcquireFence(
+        GPUCommandBufferHandle command_buffer
+    ) => DllImport.SubmitGPUCommandBufferAndAcquireFence(command_buffer);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.SubmitGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer) =>
+        (
+            (delegate* unmanaged<GPUCommandBufferHandle, byte>)(
+                _slots[893] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[893] = nativeContext.LoadFunction("SDL_SubmitGPUCommandBuffer", "SDL3")
+            )
+        )(command_buffer);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte SubmitGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer) =>
+        DllImport.SubmitGPUCommandBufferRaw(command_buffer);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     byte ISdl.SurfaceHasAlternateImages(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, byte>)(
-                _slots[805] is not null and var loadedFnPtr
+                _slots[895] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[805] = nativeContext.LoadFunction(
+                    : _slots[895] = nativeContext.LoadFunction(
                         "SDL_SurfaceHasAlternateImages",
                         "SDL3"
                     )
@@ -74904,9 +83959,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SurfaceHasColorKey(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, byte>)(
-                _slots[806] is not null and var loadedFnPtr
+                _slots[896] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[806] = nativeContext.LoadFunction("SDL_SurfaceHasColorKey", "SDL3")
+                    : _slots[896] = nativeContext.LoadFunction("SDL_SurfaceHasColorKey", "SDL3")
             )
         )(surface);
 
@@ -74936,9 +83991,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SurfaceHasRLE(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, byte>)(
-                _slots[807] is not null and var loadedFnPtr
+                _slots[897] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[807] = nativeContext.LoadFunction("SDL_SurfaceHasRLE", "SDL3")
+                    : _slots[897] = nativeContext.LoadFunction("SDL_SurfaceHasRLE", "SDL3")
             )
         )(surface);
 
@@ -74977,9 +84032,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.SyncWindowRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[808] is not null and var loadedFnPtr
+                _slots[898] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[808] = nativeContext.LoadFunction("SDL_SyncWindow", "SDL3")
+                    : _slots[898] = nativeContext.LoadFunction("SDL_SyncWindow", "SDL3")
             )
         )(window);
 
@@ -74992,9 +84047,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     long ISdl.TellIO(IOStreamHandle context) =>
         (
             (delegate* unmanaged<IOStreamHandle, long>)(
-                _slots[809] is not null and var loadedFnPtr
+                _slots[899] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[809] = nativeContext.LoadFunction("SDL_TellIO", "SDL3")
+                    : _slots[899] = nativeContext.LoadFunction("SDL_TellIO", "SDL3")
             )
         )(context);
 
@@ -75018,9 +84073,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.TextInputActiveRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[810] is not null and var loadedFnPtr
+                _slots[900] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[810] = nativeContext.LoadFunction("SDL_TextInputActive", "SDL3")
+                    : _slots[900] = nativeContext.LoadFunction("SDL_TextInputActive", "SDL3")
             )
         )(window);
 
@@ -75037,9 +84092,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<uint, uint, long>)(
-                _slots[811] is not null and var loadedFnPtr
+                _slots[901] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[811] = nativeContext.LoadFunction("SDL_TimeFromWindows", "SDL3")
+                    : _slots[901] = nativeContext.LoadFunction("SDL_TimeFromWindows", "SDL3")
             )
         )(dwLowDateTime, dwHighDateTime);
 
@@ -75059,9 +84114,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<long, DateTime*, byte, byte>)(
-                _slots[812] is not null and var loadedFnPtr
+                _slots[902] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[812] = nativeContext.LoadFunction("SDL_TimeToDateTime", "SDL3")
+                    : _slots[902] = nativeContext.LoadFunction("SDL_TimeToDateTime", "SDL3")
             )
         )(ticks, dt, localTime);
 
@@ -75106,9 +84161,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<long, uint*, uint*, void>)(
-                _slots[813] is not null and var loadedFnPtr
+                _slots[903] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[813] = nativeContext.LoadFunction("SDL_TimeToWindows", "SDL3")
+                    : _slots[903] = nativeContext.LoadFunction("SDL_TimeToWindows", "SDL3")
             )
         )(ticks, dwLowDateTime, dwHighDateTime);
 
@@ -75157,9 +84212,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.TryLockMutexRaw(MutexHandle mutex) =>
         (
             (delegate* unmanaged<MutexHandle, byte>)(
-                _slots[814] is not null and var loadedFnPtr
+                _slots[904] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[814] = nativeContext.LoadFunction("SDL_TryLockMutex", "SDL3")
+                    : _slots[904] = nativeContext.LoadFunction("SDL_TryLockMutex", "SDL3")
             )
         )(mutex);
 
@@ -75183,9 +84238,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.TryLockRWLockForReadingRaw(RWLockHandle rwlock) =>
         (
             (delegate* unmanaged<RWLockHandle, byte>)(
-                _slots[815] is not null and var loadedFnPtr
+                _slots[905] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[815] = nativeContext.LoadFunction(
+                    : _slots[905] = nativeContext.LoadFunction(
                         "SDL_TryLockRWLockForReading",
                         "SDL3"
                     )
@@ -75213,9 +84268,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.TryLockRWLockForWritingRaw(RWLockHandle rwlock) =>
         (
             (delegate* unmanaged<RWLockHandle, byte>)(
-                _slots[816] is not null and var loadedFnPtr
+                _slots[906] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[816] = nativeContext.LoadFunction(
+                    : _slots[906] = nativeContext.LoadFunction(
                         "SDL_TryLockRWLockForWriting",
                         "SDL3"
                     )
@@ -75232,9 +84287,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.TryLockSpinlock([NativeTypeName("SDL_SpinLock *")] int* @lock) =>
         (
             (delegate* unmanaged<int*, byte>)(
-                _slots[817] is not null and var loadedFnPtr
+                _slots[907] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[817] = nativeContext.LoadFunction("SDL_TryLockSpinlock", "SDL3")
+                    : _slots[907] = nativeContext.LoadFunction("SDL_TryLockSpinlock", "SDL3")
             )
         )(@lock);
 
@@ -75276,9 +84331,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.TryWaitSemaphoreRaw(SemaphoreHandle sem) =>
         (
             (delegate* unmanaged<SemaphoreHandle, byte>)(
-                _slots[818] is not null and var loadedFnPtr
+                _slots[908] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[818] = nativeContext.LoadFunction("SDL_TryWaitSemaphore", "SDL3")
+                    : _slots[908] = nativeContext.LoadFunction("SDL_TryWaitSemaphore", "SDL3")
             )
         )(sem);
 
@@ -75292,9 +84347,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UnbindAudioStream(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, void>)(
-                _slots[819] is not null and var loadedFnPtr
+                _slots[909] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[819] = nativeContext.LoadFunction("SDL_UnbindAudioStream", "SDL3")
+                    : _slots[909] = nativeContext.LoadFunction("SDL_UnbindAudioStream", "SDL3")
             )
         )(stream);
 
@@ -75307,9 +84362,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UnbindAudioStreams(AudioStreamHandle* streams, int num_streams) =>
         (
             (delegate* unmanaged<AudioStreamHandle*, int, void>)(
-                _slots[820] is not null and var loadedFnPtr
+                _slots[910] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[820] = nativeContext.LoadFunction("SDL_UnbindAudioStreams", "SDL3")
+                    : _slots[910] = nativeContext.LoadFunction("SDL_UnbindAudioStreams", "SDL3")
             )
         )(streams, num_streams);
 
@@ -75337,9 +84392,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UnloadObject(SharedObjectHandle handle) =>
         (
             (delegate* unmanaged<SharedObjectHandle, void>)(
-                _slots[821] is not null and var loadedFnPtr
+                _slots[911] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[821] = nativeContext.LoadFunction("SDL_UnloadObject", "SDL3")
+                    : _slots[911] = nativeContext.LoadFunction("SDL_UnloadObject", "SDL3")
             )
         )(handle);
 
@@ -75362,9 +84417,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.UnlockAudioStreamRaw(AudioStreamHandle stream) =>
         (
             (delegate* unmanaged<AudioStreamHandle, byte>)(
-                _slots[822] is not null and var loadedFnPtr
+                _slots[912] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[822] = nativeContext.LoadFunction("SDL_UnlockAudioStream", "SDL3")
+                    : _slots[912] = nativeContext.LoadFunction("SDL_UnlockAudioStream", "SDL3")
             )
         )(stream);
 
@@ -75378,9 +84433,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UnlockJoysticks() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[823] is not null and var loadedFnPtr
+                _slots[913] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[823] = nativeContext.LoadFunction("SDL_UnlockJoysticks", "SDL3")
+                    : _slots[913] = nativeContext.LoadFunction("SDL_UnlockJoysticks", "SDL3")
             )
         )();
 
@@ -75392,9 +84447,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UnlockMutex(MutexHandle mutex) =>
         (
             (delegate* unmanaged<MutexHandle, void>)(
-                _slots[824] is not null and var loadedFnPtr
+                _slots[914] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[824] = nativeContext.LoadFunction("SDL_UnlockMutex", "SDL3")
+                    : _slots[914] = nativeContext.LoadFunction("SDL_UnlockMutex", "SDL3")
             )
         )(mutex);
 
@@ -75406,9 +84461,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UnlockProperties([NativeTypeName("SDL_PropertiesID")] uint props) =>
         (
             (delegate* unmanaged<uint, void>)(
-                _slots[825] is not null and var loadedFnPtr
+                _slots[915] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[825] = nativeContext.LoadFunction("SDL_UnlockProperties", "SDL3")
+                    : _slots[915] = nativeContext.LoadFunction("SDL_UnlockProperties", "SDL3")
             )
         )(props);
 
@@ -75421,9 +84476,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UnlockRWLock(RWLockHandle rwlock) =>
         (
             (delegate* unmanaged<RWLockHandle, void>)(
-                _slots[826] is not null and var loadedFnPtr
+                _slots[916] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[826] = nativeContext.LoadFunction("SDL_UnlockRWLock", "SDL3")
+                    : _slots[916] = nativeContext.LoadFunction("SDL_UnlockRWLock", "SDL3")
             )
         )(rwlock);
 
@@ -75435,9 +84490,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UnlockSpinlock([NativeTypeName("SDL_SpinLock *")] int* @lock) =>
         (
             (delegate* unmanaged<int*, void>)(
-                _slots[827] is not null and var loadedFnPtr
+                _slots[917] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[827] = nativeContext.LoadFunction("SDL_UnlockSpinlock", "SDL3")
+                    : _slots[917] = nativeContext.LoadFunction("SDL_UnlockSpinlock", "SDL3")
             )
         )(@lock);
 
@@ -75465,9 +84520,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UnlockSurface(Surface* surface) =>
         (
             (delegate* unmanaged<Surface*, void>)(
-                _slots[828] is not null and var loadedFnPtr
+                _slots[918] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[828] = nativeContext.LoadFunction("SDL_UnlockSurface", "SDL3")
+                    : _slots[918] = nativeContext.LoadFunction("SDL_UnlockSurface", "SDL3")
             )
         )(surface);
 
@@ -75493,9 +84548,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UnlockTexture(Texture* texture) =>
         (
             (delegate* unmanaged<Texture*, void>)(
-                _slots[829] is not null and var loadedFnPtr
+                _slots[919] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[829] = nativeContext.LoadFunction("SDL_UnlockTexture", "SDL3")
+                    : _slots[919] = nativeContext.LoadFunction("SDL_UnlockTexture", "SDL3")
             )
         )(texture);
 
@@ -75518,12 +84573,32 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static void UnlockTexture(Ref<Texture> texture) => DllImport.UnlockTexture(texture);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.UnmapGPUTransferBuffer(
+        GPUDeviceHandle device,
+        GPUTransferBufferHandle transfer_buffer
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, GPUTransferBufferHandle, void>)(
+                _slots[920] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[920] = nativeContext.LoadFunction("SDL_UnmapGPUTransferBuffer", "SDL3")
+            )
+        )(device, transfer_buffer);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_UnmapGPUTransferBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void UnmapGPUTransferBuffer(
+        GPUDeviceHandle device,
+        GPUTransferBufferHandle transfer_buffer
+    ) => DllImport.UnmapGPUTransferBuffer(device, transfer_buffer);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.UpdateGamepads() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[830] is not null and var loadedFnPtr
+                _slots[921] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[830] = nativeContext.LoadFunction("SDL_UpdateGamepads", "SDL3")
+                    : _slots[921] = nativeContext.LoadFunction("SDL_UpdateGamepads", "SDL3")
             )
         )();
 
@@ -75539,9 +84614,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<HapticHandle, int, HapticEffect*, byte>)(
-                _slots[831] is not null and var loadedFnPtr
+                _slots[922] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[831] = nativeContext.LoadFunction("SDL_UpdateHapticEffect", "SDL3")
+                    : _slots[922] = nativeContext.LoadFunction("SDL_UpdateHapticEffect", "SDL3")
             )
         )(haptic, effect, data);
 
@@ -75582,9 +84657,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UpdateJoysticks() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[832] is not null and var loadedFnPtr
+                _slots[923] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[832] = nativeContext.LoadFunction("SDL_UpdateJoysticks", "SDL3")
+                    : _slots[923] = nativeContext.LoadFunction("SDL_UpdateJoysticks", "SDL3")
             )
         )();
 
@@ -75603,9 +84678,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Texture*, Rect*, byte*, int, byte*, int, byte>)(
-                _slots[833] is not null and var loadedFnPtr
+                _slots[924] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[833] = nativeContext.LoadFunction("SDL_UpdateNVTexture", "SDL3")
+                    : _slots[924] = nativeContext.LoadFunction("SDL_UpdateNVTexture", "SDL3")
             )
         )(texture, rect, Yplane, Ypitch, UVplane, UVpitch);
 
@@ -75666,9 +84741,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.UpdateSensors() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[834] is not null and var loadedFnPtr
+                _slots[925] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[834] = nativeContext.LoadFunction("SDL_UpdateSensors", "SDL3")
+                    : _slots[925] = nativeContext.LoadFunction("SDL_UpdateSensors", "SDL3")
             )
         )();
 
@@ -75685,9 +84760,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Texture*, Rect*, void*, int, byte>)(
-                _slots[835] is not null and var loadedFnPtr
+                _slots[926] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[835] = nativeContext.LoadFunction("SDL_UpdateTexture", "SDL3")
+                    : _slots[926] = nativeContext.LoadFunction("SDL_UpdateTexture", "SDL3")
             )
         )(texture, rect, pixels, pitch);
 
@@ -75744,9 +84819,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.UpdateWindowSurfaceRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[836] is not null and var loadedFnPtr
+                _slots[927] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[836] = nativeContext.LoadFunction("SDL_UpdateWindowSurface", "SDL3")
+                    : _slots[927] = nativeContext.LoadFunction("SDL_UpdateWindowSurface", "SDL3")
             )
         )(window);
 
@@ -75764,9 +84839,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<WindowHandle, Rect*, int, byte>)(
-                _slots[837] is not null and var loadedFnPtr
+                _slots[928] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[837] = nativeContext.LoadFunction(
+                    : _slots[928] = nativeContext.LoadFunction(
                         "SDL_UpdateWindowSurfaceRects",
                         "SDL3"
                     )
@@ -75819,9 +84894,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Texture*, Rect*, byte*, int, byte*, int, byte*, int, byte>)(
-                _slots[838] is not null and var loadedFnPtr
+                _slots[929] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[838] = nativeContext.LoadFunction("SDL_UpdateYUVTexture", "SDL3")
+                    : _slots[929] = nativeContext.LoadFunction("SDL_UpdateYUVTexture", "SDL3")
             )
         )(texture, rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
 
@@ -75888,12 +84963,127 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.UpdateYUVTexture(texture, rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.UploadToGPUBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTransferBufferLocation *")] GPUTransferBufferLocation* source,
+        [NativeTypeName("const SDL_GPUBufferRegion *")] GPUBufferRegion* destination,
+        [NativeTypeName("bool")] byte cycle
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUCopyPassHandle,
+                GPUTransferBufferLocation*,
+                GPUBufferRegion*,
+                byte,
+                void>)(
+                _slots[930] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[930] = nativeContext.LoadFunction("SDL_UploadToGPUBuffer", "SDL3")
+            )
+        )(copy_pass, source, destination, cycle);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void UploadToGPUBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTransferBufferLocation *")] GPUTransferBufferLocation* source,
+        [NativeTypeName("const SDL_GPUBufferRegion *")] GPUBufferRegion* destination,
+        [NativeTypeName("bool")] byte cycle
+    ) => DllImport.UploadToGPUBuffer(copy_pass, source, destination, cycle);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.UploadToGPUBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+            Ref<GPUTransferBufferLocation> source,
+        [NativeTypeName("const SDL_GPUBufferRegion *")] Ref<GPUBufferRegion> destination,
+        [NativeTypeName("bool")] MaybeBool<byte> cycle
+    )
+    {
+        fixed (GPUBufferRegion* __dsl_destination = destination)
+        fixed (GPUTransferBufferLocation* __dsl_source = source)
+        {
+            ((ISdl)this).UploadToGPUBuffer(copy_pass, __dsl_source, __dsl_destination, (byte)cycle);
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUBuffer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void UploadToGPUBuffer(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTransferBufferLocation *")]
+            Ref<GPUTransferBufferLocation> source,
+        [NativeTypeName("const SDL_GPUBufferRegion *")] Ref<GPUBufferRegion> destination,
+        [NativeTypeName("bool")] MaybeBool<byte> cycle
+    ) => DllImport.UploadToGPUBuffer(copy_pass, source, destination, cycle);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.UploadToGPUTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureTransferInfo *")] GPUTextureTransferInfo* source,
+        [NativeTypeName("const SDL_GPUTextureRegion *")] GPUTextureRegion* destination,
+        [NativeTypeName("bool")] byte cycle
+    ) =>
+        (
+            (delegate* unmanaged<
+                GPUCopyPassHandle,
+                GPUTextureTransferInfo*,
+                GPUTextureRegion*,
+                byte,
+                void>)(
+                _slots[931] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[931] = nativeContext.LoadFunction("SDL_UploadToGPUTexture", "SDL3")
+            )
+        )(copy_pass, source, destination, cycle);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void UploadToGPUTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureTransferInfo *")] GPUTextureTransferInfo* source,
+        [NativeTypeName("const SDL_GPUTextureRegion *")] GPUTextureRegion* destination,
+        [NativeTypeName("bool")] byte cycle
+    ) => DllImport.UploadToGPUTexture(copy_pass, source, destination, cycle);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ISdl.UploadToGPUTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureTransferInfo *")] Ref<GPUTextureTransferInfo> source,
+        [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> destination,
+        [NativeTypeName("bool")] MaybeBool<byte> cycle
+    )
+    {
+        fixed (GPUTextureRegion* __dsl_destination = destination)
+        fixed (GPUTextureTransferInfo* __dsl_source = source)
+        {
+            ((ISdl)this).UploadToGPUTexture(
+                copy_pass,
+                __dsl_source,
+                __dsl_destination,
+                (byte)cycle
+            );
+        }
+    }
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUTexture")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void UploadToGPUTexture(
+        GPUCopyPassHandle copy_pass,
+        [NativeTypeName("const SDL_GPUTextureTransferInfo *")] Ref<GPUTextureTransferInfo> source,
+        [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> destination,
+        [NativeTypeName("bool")] MaybeBool<byte> cycle
+    ) => DllImport.UploadToGPUTexture(copy_pass, source, destination, cycle);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.WaitCondition(ConditionHandle cond, MutexHandle mutex) =>
         (
             (delegate* unmanaged<ConditionHandle, MutexHandle, void>)(
-                _slots[839] is not null and var loadedFnPtr
+                _slots[932] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[839] = nativeContext.LoadFunction("SDL_WaitCondition", "SDL3")
+                    : _slots[932] = nativeContext.LoadFunction("SDL_WaitCondition", "SDL3")
             )
         )(cond, mutex);
 
@@ -75927,9 +85117,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<ConditionHandle, MutexHandle, int, byte>)(
-                _slots[840] is not null and var loadedFnPtr
+                _slots[933] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[840] = nativeContext.LoadFunction("SDL_WaitConditionTimeout", "SDL3")
+                    : _slots[933] = nativeContext.LoadFunction("SDL_WaitConditionTimeout", "SDL3")
             )
         )(cond, mutex, timeoutMS);
 
@@ -75946,9 +85136,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WaitEvent(Event* @event) =>
         (
             (delegate* unmanaged<Event*, byte>)(
-                _slots[841] is not null and var loadedFnPtr
+                _slots[934] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[841] = nativeContext.LoadFunction("SDL_WaitEvent", "SDL3")
+                    : _slots[934] = nativeContext.LoadFunction("SDL_WaitEvent", "SDL3")
             )
         )(@event);
 
@@ -75976,9 +85166,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WaitEventTimeout(Event* @event, [NativeTypeName("Sint32")] int timeoutMS) =>
         (
             (delegate* unmanaged<Event*, int, byte>)(
-                _slots[842] is not null and var loadedFnPtr
+                _slots[935] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[842] = nativeContext.LoadFunction("SDL_WaitEventTimeout", "SDL3")
+                    : _slots[935] = nativeContext.LoadFunction("SDL_WaitEventTimeout", "SDL3")
             )
         )(@event, timeoutMS);
 
@@ -76010,12 +85200,138 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.WaitEventTimeout(@event, timeoutMS);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.WaitForGPUFences(
+        GPUDeviceHandle device,
+        [NativeTypeName("bool")] byte wait_all,
+        [NativeTypeName("SDL_GPUFence *const *")] GPUFenceHandle* fences,
+        [NativeTypeName("Uint32")] uint num_fences
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, byte, GPUFenceHandle*, uint, byte>)(
+                _slots[936] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[936] = nativeContext.LoadFunction("SDL_WaitForGPUFences", "SDL3")
+            )
+        )(device, wait_all, fences, num_fences);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUFences")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte WaitForGPUFences(
+        GPUDeviceHandle device,
+        [NativeTypeName("bool")] byte wait_all,
+        [NativeTypeName("SDL_GPUFence *const *")] GPUFenceHandle* fences,
+        [NativeTypeName("Uint32")] uint num_fences
+    ) => DllImport.WaitForGPUFences(device, wait_all, fences, num_fences);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.WaitForGPUFences(
+        GPUDeviceHandle device,
+        [NativeTypeName("bool")] MaybeBool<byte> wait_all,
+        [NativeTypeName("SDL_GPUFence *const *")] Ref<GPUFenceHandle> fences,
+        [NativeTypeName("Uint32")] uint num_fences
+    )
+    {
+        fixed (GPUFenceHandle* __dsl_fences = fences)
+        {
+            return (MaybeBool<byte>)
+                (byte)
+                    ((ISdl)this).WaitForGPUFences(device, (byte)wait_all, __dsl_fences, num_fences);
+        }
+    }
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUFences")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> WaitForGPUFences(
+        GPUDeviceHandle device,
+        [NativeTypeName("bool")] MaybeBool<byte> wait_all,
+        [NativeTypeName("SDL_GPUFence *const *")] Ref<GPUFenceHandle> fences,
+        [NativeTypeName("Uint32")] uint num_fences
+    ) => DllImport.WaitForGPUFences(device, wait_all, fences, num_fences);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.WaitForGPUIdle(GPUDeviceHandle device) =>
+        (MaybeBool<byte>)(byte)((ISdl)this).WaitForGPUIdleRaw(device);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUIdle")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> WaitForGPUIdle(GPUDeviceHandle device) =>
+        DllImport.WaitForGPUIdle(device);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.WaitForGPUIdleRaw(GPUDeviceHandle device) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, byte>)(
+                _slots[937] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[937] = nativeContext.LoadFunction("SDL_WaitForGPUIdle", "SDL3")
+            )
+        )(device);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUIdle")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte WaitForGPUIdleRaw(GPUDeviceHandle device) =>
+        DllImport.WaitForGPUIdleRaw(device);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.WaitProcess(
+        ProcessHandle process,
+        [NativeTypeName("bool")] byte block,
+        int* exitcode
+    ) =>
+        (
+            (delegate* unmanaged<ProcessHandle, byte, int*, byte>)(
+                _slots[938] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[938] = nativeContext.LoadFunction("SDL_WaitProcess", "SDL3")
+            )
+        )(process, block, exitcode);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WaitProcess")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte WaitProcess(
+        ProcessHandle process,
+        [NativeTypeName("bool")] byte block,
+        int* exitcode
+    ) => DllImport.WaitProcess(process, block, exitcode);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.WaitProcess(
+        ProcessHandle process,
+        [NativeTypeName("bool")] MaybeBool<byte> block,
+        Ref<int> exitcode
+    )
+    {
+        fixed (int* __dsl_exitcode = exitcode)
+        {
+            return (MaybeBool<byte>)
+                (byte)((ISdl)this).WaitProcess(process, (byte)block, __dsl_exitcode);
+        }
+    }
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WaitProcess")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> WaitProcess(
+        ProcessHandle process,
+        [NativeTypeName("bool")] MaybeBool<byte> block,
+        Ref<int> exitcode
+    ) => DllImport.WaitProcess(process, block, exitcode);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.WaitSemaphore(SemaphoreHandle sem) =>
         (
             (delegate* unmanaged<SemaphoreHandle, void>)(
-                _slots[843] is not null and var loadedFnPtr
+                _slots[939] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[843] = nativeContext.LoadFunction("SDL_WaitSemaphore", "SDL3")
+                    : _slots[939] = nativeContext.LoadFunction("SDL_WaitSemaphore", "SDL3")
             )
         )(sem);
 
@@ -76045,9 +85361,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<SemaphoreHandle, int, byte>)(
-                _slots[844] is not null and var loadedFnPtr
+                _slots[940] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[844] = nativeContext.LoadFunction("SDL_WaitSemaphoreTimeout", "SDL3")
+                    : _slots[940] = nativeContext.LoadFunction("SDL_WaitSemaphoreTimeout", "SDL3")
             )
         )(sem, timeoutMS);
 
@@ -76063,9 +85379,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.WaitThread(ThreadHandle thread, int* status) =>
         (
             (delegate* unmanaged<ThreadHandle, int*, void>)(
-                _slots[845] is not null and var loadedFnPtr
+                _slots[941] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[845] = nativeContext.LoadFunction("SDL_WaitThread", "SDL3")
+                    : _slots[941] = nativeContext.LoadFunction("SDL_WaitThread", "SDL3")
             )
         )(thread, status);
 
@@ -76104,9 +85420,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WarpMouseGlobalRaw(float x, float y) =>
         (
             (delegate* unmanaged<float, float, byte>)(
-                _slots[846] is not null and var loadedFnPtr
+                _slots[942] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[846] = nativeContext.LoadFunction("SDL_WarpMouseGlobal", "SDL3")
+                    : _slots[942] = nativeContext.LoadFunction("SDL_WarpMouseGlobal", "SDL3")
             )
         )(x, y);
 
@@ -76119,9 +85435,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     void ISdl.WarpMouseInWindow(WindowHandle window, float x, float y) =>
         (
             (delegate* unmanaged<WindowHandle, float, float, void>)(
-                _slots[847] is not null and var loadedFnPtr
+                _slots[943] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[847] = nativeContext.LoadFunction("SDL_WarpMouseInWindow", "SDL3")
+                    : _slots[943] = nativeContext.LoadFunction("SDL_WarpMouseInWindow", "SDL3")
             )
         )(window, x, y);
 
@@ -76134,9 +85450,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     uint ISdl.WasInit([NativeTypeName("SDL_InitFlags")] uint flags) =>
         (
             (delegate* unmanaged<uint, uint>)(
-                _slots[848] is not null and var loadedFnPtr
+                _slots[944] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[848] = nativeContext.LoadFunction("SDL_WasInit", "SDL3")
+                    : _slots[944] = nativeContext.LoadFunction("SDL_WasInit", "SDL3")
             )
         )(flags);
 
@@ -76161,9 +85477,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WindowHasSurfaceRaw(WindowHandle window) =>
         (
             (delegate* unmanaged<WindowHandle, byte>)(
-                _slots[849] is not null and var loadedFnPtr
+                _slots[945] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[849] = nativeContext.LoadFunction("SDL_WindowHasSurface", "SDL3")
+                    : _slots[945] = nativeContext.LoadFunction("SDL_WindowHasSurface", "SDL3")
             )
         )(window);
 
@@ -76174,6 +85490,101 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         DllImport.WindowHasSurfaceRaw(window);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.WindowSupportsGPUPresentMode(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUPresentMode present_mode
+    ) =>
+        (MaybeBool<byte>)
+            (byte)((ISdl)this).WindowSupportsGPUPresentModeRaw(device, window, present_mode);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> WindowSupportsGPUPresentMode(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUPresentMode present_mode
+    ) => DllImport.WindowSupportsGPUPresentMode(device, window, present_mode);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.WindowSupportsGPUPresentModeRaw(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUPresentMode present_mode
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, WindowHandle, GPUPresentMode, byte>)(
+                _slots[946] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[946] = nativeContext.LoadFunction(
+                        "SDL_WindowSupportsGPUPresentMode",
+                        "SDL3"
+                    )
+            )
+        )(device, window, present_mode);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte WindowSupportsGPUPresentModeRaw(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUPresentMode present_mode
+    ) => DllImport.WindowSupportsGPUPresentModeRaw(device, window, present_mode);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<byte> ISdl.WindowSupportsGPUSwapchainComposition(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUSwapchainComposition swapchain_composition
+    ) =>
+        (MaybeBool<byte>)
+            (byte)
+                ((ISdl)this).WindowSupportsGPUSwapchainCompositionRaw(
+                    device,
+                    window,
+                    swapchain_composition
+                );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<byte> WindowSupportsGPUSwapchainComposition(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUSwapchainComposition swapchain_composition
+    ) => DllImport.WindowSupportsGPUSwapchainComposition(device, window, swapchain_composition);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    byte ISdl.WindowSupportsGPUSwapchainCompositionRaw(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUSwapchainComposition swapchain_composition
+    ) =>
+        (
+            (delegate* unmanaged<GPUDeviceHandle, WindowHandle, GPUSwapchainComposition, byte>)(
+                _slots[947] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[947] = nativeContext.LoadFunction(
+                        "SDL_WindowSupportsGPUSwapchainComposition",
+                        "SDL3"
+                    )
+            )
+        )(device, window, swapchain_composition);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static byte WindowSupportsGPUSwapchainCompositionRaw(
+        GPUDeviceHandle device,
+        WindowHandle window,
+        GPUSwapchainComposition swapchain_composition
+    ) => DllImport.WindowSupportsGPUSwapchainCompositionRaw(device, window, swapchain_composition);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     nuint ISdl.WriteIO(
         IOStreamHandle context,
         [NativeTypeName("const void *")] void* ptr,
@@ -76181,9 +85592,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<IOStreamHandle, void*, nuint, nuint>)(
-                _slots[850] is not null and var loadedFnPtr
+                _slots[948] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[850] = nativeContext.LoadFunction("SDL_WriteIO", "SDL3")
+                    : _slots[948] = nativeContext.LoadFunction("SDL_WriteIO", "SDL3")
             )
         )(context, ptr, size);
 
@@ -76236,9 +85647,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteS16BERaw(IOStreamHandle dst, [NativeTypeName("Sint16")] short value) =>
         (
             (delegate* unmanaged<IOStreamHandle, short, byte>)(
-                _slots[851] is not null and var loadedFnPtr
+                _slots[949] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[851] = nativeContext.LoadFunction("SDL_WriteS16BE", "SDL3")
+                    : _slots[949] = nativeContext.LoadFunction("SDL_WriteS16BE", "SDL3")
             )
         )(dst, value);
 
@@ -76265,9 +85676,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteS16LERaw(IOStreamHandle dst, [NativeTypeName("Sint16")] short value) =>
         (
             (delegate* unmanaged<IOStreamHandle, short, byte>)(
-                _slots[852] is not null and var loadedFnPtr
+                _slots[950] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[852] = nativeContext.LoadFunction("SDL_WriteS16LE", "SDL3")
+                    : _slots[950] = nativeContext.LoadFunction("SDL_WriteS16LE", "SDL3")
             )
         )(dst, value);
 
@@ -76294,9 +85705,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteS32BERaw(IOStreamHandle dst, [NativeTypeName("Sint32")] int value) =>
         (
             (delegate* unmanaged<IOStreamHandle, int, byte>)(
-                _slots[853] is not null and var loadedFnPtr
+                _slots[951] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[853] = nativeContext.LoadFunction("SDL_WriteS32BE", "SDL3")
+                    : _slots[951] = nativeContext.LoadFunction("SDL_WriteS32BE", "SDL3")
             )
         )(dst, value);
 
@@ -76323,9 +85734,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteS32LERaw(IOStreamHandle dst, [NativeTypeName("Sint32")] int value) =>
         (
             (delegate* unmanaged<IOStreamHandle, int, byte>)(
-                _slots[854] is not null and var loadedFnPtr
+                _slots[952] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[854] = nativeContext.LoadFunction("SDL_WriteS32LE", "SDL3")
+                    : _slots[952] = nativeContext.LoadFunction("SDL_WriteS32LE", "SDL3")
             )
         )(dst, value);
 
@@ -76352,9 +85763,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteS64BERaw(IOStreamHandle dst, [NativeTypeName("Sint64")] long value) =>
         (
             (delegate* unmanaged<IOStreamHandle, long, byte>)(
-                _slots[855] is not null and var loadedFnPtr
+                _slots[953] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[855] = nativeContext.LoadFunction("SDL_WriteS64BE", "SDL3")
+                    : _slots[953] = nativeContext.LoadFunction("SDL_WriteS64BE", "SDL3")
             )
         )(dst, value);
 
@@ -76381,9 +85792,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteS64LERaw(IOStreamHandle dst, [NativeTypeName("Sint64")] long value) =>
         (
             (delegate* unmanaged<IOStreamHandle, long, byte>)(
-                _slots[856] is not null and var loadedFnPtr
+                _slots[954] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[856] = nativeContext.LoadFunction("SDL_WriteS64LE", "SDL3")
+                    : _slots[954] = nativeContext.LoadFunction("SDL_WriteS64LE", "SDL3")
             )
         )(dst, value);
 
@@ -76410,9 +85821,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteS8Raw(IOStreamHandle dst, [NativeTypeName("Sint8")] sbyte value) =>
         (
             (delegate* unmanaged<IOStreamHandle, sbyte, byte>)(
-                _slots[857] is not null and var loadedFnPtr
+                _slots[955] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[857] = nativeContext.LoadFunction("SDL_WriteS8", "SDL3")
+                    : _slots[955] = nativeContext.LoadFunction("SDL_WriteS8", "SDL3")
             )
         )(dst, value);
 
@@ -76431,9 +85842,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<StorageHandle, sbyte*, void*, ulong, byte>)(
-                _slots[858] is not null and var loadedFnPtr
+                _slots[956] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[858] = nativeContext.LoadFunction("SDL_WriteStorageFile", "SDL3")
+                    : _slots[956] = nativeContext.LoadFunction("SDL_WriteStorageFile", "SDL3")
             )
         )(storage, path, source, length);
 
@@ -76486,9 +85897,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, int, int, byte, byte, byte, byte, byte>)(
-                _slots[859] is not null and var loadedFnPtr
+                _slots[957] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[859] = nativeContext.LoadFunction("SDL_WriteSurfacePixel", "SDL3")
+                    : _slots[957] = nativeContext.LoadFunction("SDL_WriteSurfacePixel", "SDL3")
             )
         )(surface, x, y, r, g, b, a);
 
@@ -76549,9 +85960,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<Surface*, int, int, float, float, float, float, byte>)(
-                _slots[860] is not null and var loadedFnPtr
+                _slots[958] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[860] = nativeContext.LoadFunction("SDL_WriteSurfacePixelFloat", "SDL3")
+                    : _slots[958] = nativeContext.LoadFunction("SDL_WriteSurfacePixelFloat", "SDL3")
             )
         )(surface, x, y, r, g, b, a);
 
@@ -76617,9 +86028,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteU16BERaw(IOStreamHandle dst, [NativeTypeName("Uint16")] ushort value) =>
         (
             (delegate* unmanaged<IOStreamHandle, ushort, byte>)(
-                _slots[861] is not null and var loadedFnPtr
+                _slots[959] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[861] = nativeContext.LoadFunction("SDL_WriteU16BE", "SDL3")
+                    : _slots[959] = nativeContext.LoadFunction("SDL_WriteU16BE", "SDL3")
             )
         )(dst, value);
 
@@ -76646,9 +86057,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteU16LERaw(IOStreamHandle dst, [NativeTypeName("Uint16")] ushort value) =>
         (
             (delegate* unmanaged<IOStreamHandle, ushort, byte>)(
-                _slots[862] is not null and var loadedFnPtr
+                _slots[960] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[862] = nativeContext.LoadFunction("SDL_WriteU16LE", "SDL3")
+                    : _slots[960] = nativeContext.LoadFunction("SDL_WriteU16LE", "SDL3")
             )
         )(dst, value);
 
@@ -76675,9 +86086,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteU32BERaw(IOStreamHandle dst, [NativeTypeName("Uint32")] uint value) =>
         (
             (delegate* unmanaged<IOStreamHandle, uint, byte>)(
-                _slots[863] is not null and var loadedFnPtr
+                _slots[961] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[863] = nativeContext.LoadFunction("SDL_WriteU32BE", "SDL3")
+                    : _slots[961] = nativeContext.LoadFunction("SDL_WriteU32BE", "SDL3")
             )
         )(dst, value);
 
@@ -76704,9 +86115,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteU32LERaw(IOStreamHandle dst, [NativeTypeName("Uint32")] uint value) =>
         (
             (delegate* unmanaged<IOStreamHandle, uint, byte>)(
-                _slots[864] is not null and var loadedFnPtr
+                _slots[962] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[864] = nativeContext.LoadFunction("SDL_WriteU32LE", "SDL3")
+                    : _slots[962] = nativeContext.LoadFunction("SDL_WriteU32LE", "SDL3")
             )
         )(dst, value);
 
@@ -76733,9 +86144,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteU64BERaw(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value) =>
         (
             (delegate* unmanaged<IOStreamHandle, ulong, byte>)(
-                _slots[865] is not null and var loadedFnPtr
+                _slots[963] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[865] = nativeContext.LoadFunction("SDL_WriteU64BE", "SDL3")
+                    : _slots[963] = nativeContext.LoadFunction("SDL_WriteU64BE", "SDL3")
             )
         )(dst, value);
 
@@ -76762,9 +86173,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteU64LERaw(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value) =>
         (
             (delegate* unmanaged<IOStreamHandle, ulong, byte>)(
-                _slots[866] is not null and var loadedFnPtr
+                _slots[964] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[866] = nativeContext.LoadFunction("SDL_WriteU64LE", "SDL3")
+                    : _slots[964] = nativeContext.LoadFunction("SDL_WriteU64LE", "SDL3")
             )
         )(dst, value);
 
@@ -76791,9 +86202,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     byte ISdl.WriteU8Raw(IOStreamHandle dst, [NativeTypeName("Uint8")] byte value) =>
         (
             (delegate* unmanaged<IOStreamHandle, byte, byte>)(
-                _slots[867] is not null and var loadedFnPtr
+                _slots[965] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[867] = nativeContext.LoadFunction("SDL_WriteU8", "SDL3")
+                    : _slots[965] = nativeContext.LoadFunction("SDL_WriteU8", "SDL3")
             )
         )(dst, value);
 
