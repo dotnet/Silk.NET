@@ -22,4 +22,7 @@ public partial struct DisplayEvent
 
     [NativeTypeName("Sint32")]
     public int Data1;
+
+    [NativeTypeName("Sint32")]
+    public int Data2;
 }

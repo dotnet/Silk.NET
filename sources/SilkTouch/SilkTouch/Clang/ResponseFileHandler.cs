@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.CommandLine;
 using System.CommandLine.Parsing;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.IO.Hashing;
 using System.Linq;
@@ -17,256 +18,124 @@ namespace Silk.NET.SilkTouch.Clang;
 /// <summary>
 /// Reads a response file (rsp) containing ClangSharpPInvokeGenerator command line arguments.
 /// </summary>
-public class ResponseFileHandler
+[SuppressMessage("ReSharper", "InconsistentNaming")]
+public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
 {
-    private static readonly RootCommand _rootCommand;
-
-    private static readonly Option<bool> _versionOption;
-    private static readonly Option<string[]> _additionalOption;
-    private static readonly Option<string[]> _configOption;
-    private static readonly Option<string[]> _defineMacros;
-    private static readonly Option<string[]> _excludedNames;
-    private static readonly Option<string[]> _files;
-    private static readonly Option<string> _fileDirectory;
-    private static readonly Option<string> _headerFile;
-    private static readonly Option<string[]> _includedNames;
-    private static readonly Option<string[]> _includeDirectories;
-    private static readonly Option<string> _language;
-    private static readonly Option<string> _libraryPath;
-    private static readonly Option<string> _methodClassName;
-    private static readonly Option<string> _methodPrefixToStrip;
-    private static readonly Option<string[]> _nativeTypeNamesToStrip;
-    private static readonly Option<string> _namespaceName;
-    private static readonly Option<string> _outputLocation;
-    private static readonly Option<PInvokeGeneratorOutputMode> _outputMode;
-    private static readonly Option<string[]> _remappedNameValuePairs;
-    private static readonly Option<string> _std;
-    private static readonly Option<string> _testOutputLocation;
-    private static readonly Option<string[]> _traversalNames;
-    private static readonly Option<string[]> _withAccessSpecifierNameValuePairs;
-    private static readonly Option<string[]> _withAttributeNameValuePairs;
-    private static readonly Option<string[]> _withCallConvNameValuePairs;
-    private static readonly Option<string[]> _withClassNameValuePairs;
-    private static readonly Option<string[]> _withGuidNameValuePairs;
-    private static readonly Option<string[]> _withLibraryPathNameValuePairs;
-    private static readonly Option<string[]> _withManualImports;
-    private static readonly Option<string[]> _withNamespaceNameValuePairs;
-    private static readonly Option<string[]> _withSetLastErrors;
-    private static readonly Option<string[]> _withSuppressGCTransitions;
-    private static readonly Option<string[]> _withTransparentStructNameValuePairs;
-    private static readonly Option<string[]> _withTypeNameValuePairs;
-    private static readonly Option<string[]> _withUsingNameValuePairs;
-    private static readonly Option<string[]> _withPackingNameValuePairs;
-
-    private static readonly string[] _additionalOptionAliases = new string[]
-    {
-        "--additional",
-        "-a"
-    };
-    private static readonly string[] _configOptionAliases = new string[] { "--config", "-c" };
-    private static readonly string[] _defineMacroOptionAliases = new string[]
-    {
-        "--define-macro",
-        "-D"
-    };
-    private static readonly string[] _excludeOptionAliases = new string[] { "--exclude", "-e" };
-    private static readonly string[] _fileOptionAliases = new string[] { "--file", "-f" };
-    private static readonly string[] _fileDirectionOptionAliases = new string[]
-    {
-        "--file-directory",
-        "-F"
-    };
-    private static readonly string[] _headerOptionAliases = new string[] { "--headerFile", "-h" };
-    private static readonly string[] _includeOptionAliases = new string[] { "--include", "-i" };
-    private static readonly string[] _includeDirectoryOptionAliases = new string[]
-    {
+    // Begin verbatim ClangSharp code
+    private static readonly string[] s_additionalOptionAliases = ["--additional", "-a"];
+    private static readonly string[] s_configOptionAliases = ["--config", "-c"];
+    private static readonly string[] s_defineMacroOptionAliases = ["--define-macro", "-D"];
+    private static readonly string[] s_excludeOptionAliases = ["--exclude", "-e"];
+    private static readonly string[] s_fileOptionAliases = ["--file", "-f"];
+    private static readonly string[] s_fileDirectionOptionAliases = ["--file-directory", "-F"];
+    private static readonly string[] s_headerOptionAliases = ["--headerFile", "-hf"];
+    private static readonly string[] s_includeOptionAliases = ["--include", "-i"];
+    private static readonly string[] s_includeDirectoryOptionAliases =
+    [
         "--include-directory",
-        "-I"
-    };
-    private static readonly string[] _languageOptionAliases = new string[] { "--language", "-x" };
-    private static readonly string[] _libraryOptionAliases = new string[] { "--libraryPath", "-l" };
-    private static readonly string[] _methodClassNameOptionAliases = new string[]
-    {
-        "--methodClassName",
-        "-m"
-    };
-    private static readonly string[] _namespaceOptionAliases = new string[] { "--namespace", "-n" };
-    private static readonly string[] _nativeTypeNamesStripOptionAliases = new string[]
-    {
-        "--nativeTypeNamesToStrip"
-    };
-    private static readonly string[] _outputModeOptionAliases = new string[]
-    {
-        "--output-mode",
-        "-om"
-    };
-    private static readonly string[] _outputOptionAliases = new string[] { "--output", "-o" };
-    private static readonly string[] _prefixStripOptionAliases = new string[]
-    {
-        "--prefixStrip",
-        "-p"
-    };
-    private static readonly string[] _remapOptionAliases = new string[] { "--remap", "-r" };
-    private static readonly string[] _stdOptionAliases = new string[] { "--std", "-std" };
-    private static readonly string[] _testOutputOptionAliases = new string[]
-    {
-        "--test-output",
-        "-to"
-    };
-    private static readonly string[] _versionOptionAliases = new string[] { "--version", "-v" };
-    private static readonly string[] _traverseOptionAliases = new string[] { "--traverse", "-t" };
-    private static readonly string[] _withAccessSpecifierOptionAliases = new string[]
-    {
+        "-I",
+    ];
+    private static readonly string[] s_languageOptionAliases = ["--language", "-x"];
+    private static readonly string[] s_libraryOptionAliases = ["--libraryPath", "-l"];
+    private static readonly string[] s_methodClassNameOptionAliases = ["--methodClassName", "-m"];
+    private static readonly string[] s_namespaceOptionAliases = ["--namespace", "-n"];
+    private static readonly string[] s_nativeTypeNamesStripOptionAliases =
+    [
+        "--nativeTypeNamesToStrip",
+    ];
+    private static readonly string[] s_outputModeOptionAliases = ["--output-mode", "-om"];
+    private static readonly string[] s_outputOptionAliases = ["--output", "-o"];
+    private static readonly string[] s_prefixStripOptionAliases = ["--prefixStrip", "-p"];
+    private static readonly string[] s_remapOptionAliases = ["--remap", "-r"];
+    private static readonly string[] s_stdOptionAliases = ["--std", "-std"];
+    private static readonly string[] s_testOutputOptionAliases = ["--test-output", "-to"];
+    private static readonly string[] s_traverseOptionAliases = ["--traverse", "-t"];
+    private static readonly string[] s_versionOptionAliases = ["--version", "-v"];
+    private static readonly string[] s_withAccessSpecifierOptionAliases =
+    [
         "--with-access-specifier",
-        "-was"
-    };
-    private static readonly string[] _withAttributeOptionAliases = new string[]
-    {
-        "--with-attribute",
-        "-wa"
-    };
-    private static readonly string[] _withCallConvOptionAliases = new string[]
-    {
-        "--with-callconv",
-        "-wcc"
-    };
-    private static readonly string[] _withClassOptionAliases = new string[]
-    {
-        "--with-class",
-        "-wc"
-    };
-    private static readonly string[] _withGuidOptionAliases = new string[] { "--with-guid", "-wg" };
-    private static readonly string[] _withLibraryPathOptionAliases = new string[]
-    {
+        "-was",
+    ];
+    private static readonly string[] s_withAttributeOptionAliases = ["--with-attribute", "-wa"];
+    private static readonly string[] s_withCallConvOptionAliases = ["--with-callconv", "-wcc"];
+    private static readonly string[] s_withClassOptionAliases = ["--with-class", "-wc"];
+    private static readonly string[] s_withGuidOptionAliases = ["--with-guid", "-wg"];
+    private static readonly string[] s_withLengthOptionAliases = ["--with-length", "-wl"];
+    private static readonly string[] s_withLibraryPathOptionAliases =
+    [
         "--with-librarypath",
-        "-wlb"
-    };
-    private static readonly string[] _withManualImportOptionAliases = new string[]
-    {
+        "-wlb",
+    ];
+    private static readonly string[] s_withManualImportOptionAliases =
+    [
         "--with-manual-import",
-        "-wmi"
-    };
-    private static readonly string[] _withNamespaceOptionAliases = new string[]
-    {
-        "--with-namespace",
-        "-wn"
-    };
-    private static readonly string[] _withSetLastErrorOptionAliases = new string[]
-    {
+        "-wmi",
+    ];
+    private static readonly string[] s_withNamespaceOptionAliases = ["--with-namespace", "-wn"];
+    private static readonly string[] s_withPackingOptionAliases = ["--with-packing", "-wp"];
+    private static readonly string[] s_withSetLastErrorOptionAliases =
+    [
         "--with-setlasterror",
-        "-wsle"
-    };
-    private static readonly string[] _withSuppressGCTransitionOptionAliases = new string[]
-    {
+        "-wsle",
+    ];
+    private static readonly string[] s_withSuppressGCTransitionOptionAliases =
+    [
         "--with-suppressgctransition",
-        "-wsgct"
-    };
-    private static readonly string[] _withTransparentStructOptionAliases = new string[]
-    {
+        "-wsgct",
+    ];
+    private static readonly string[] s_withTransparentStructOptionAliases =
+    [
         "--with-transparent-struct",
-        "-wts"
-    };
-    private static readonly string[] _withTypeOptionAliases = new string[] { "--with-type", "-wt" };
-    private static readonly string[] _withUsingOptionAliases = new string[]
-    {
-        "--with-using",
-        "-wu"
-    };
-    private static readonly string[] _withPackingOptionAliases = new string[]
-    {
-        "--with-packing",
-        "-wp"
-    };
-    private readonly ILogger<ResponseFileHandler> _logger;
+        "-wts",
+    ];
+    private static readonly string[] s_withTypeOptionAliases = ["--with-type", "-wt"];
+    private static readonly string[] s_withUsingOptionAliases = ["--with-using", "-wu"];
 
-    static ResponseFileHandler()
-    {
-        _additionalOption = GetAdditionalOption();
-        _configOption = GetConfigOption();
-        _defineMacros = GetDefineMacroOption();
-        _excludedNames = GetExcludeOption();
-        _files = GetFileOption();
-        _fileDirectory = GetFileDirectoryOption();
-        _headerFile = GetHeaderOption();
-        _includedNames = GetIncludeOption();
-        _includeDirectories = GetIncludeDirectoryOption();
-        _language = GetLanguageOption();
-        _libraryPath = GetLibraryOption();
-        _methodClassName = GetMethodClassNameOption();
-        _namespaceName = GetNamespaceOption();
-        _outputMode = GetOutputModeOption();
-        _outputLocation = GetOutputOption();
-        _methodPrefixToStrip = GetPrefixStripOption();
-        _nativeTypeNamesToStrip = GetNativeTypeNamesStripOption();
-        _remappedNameValuePairs = GetRemapOption();
-        _std = GetStdOption();
-        _testOutputLocation = GetTestOutputOption();
-        _traversalNames = GetTraverseOption();
-        _versionOption = GetVersionOption();
-        _withAccessSpecifierNameValuePairs = GetWithAccessSpecifierOption();
-        _withAttributeNameValuePairs = GetWithAttributeOption();
-        _withCallConvNameValuePairs = GetWithCallConvOption();
-        _withClassNameValuePairs = GetWithClassOption();
-        _withGuidNameValuePairs = GetWithGuidOption();
-        _withLibraryPathNameValuePairs = GetWithLibraryPathOption();
-        _withManualImports = GetWithManualImportOption();
-        _withNamespaceNameValuePairs = GetWithNamespaceOption();
-        _withSetLastErrors = GetWithSetLastErrorOption();
-        _withSuppressGCTransitions = GetWithSuppressGCTransitionOption();
-        _withTransparentStructNameValuePairs = GetWithTransparentStructOption();
-        _withTypeNameValuePairs = GetWithTypeOption();
-        _withUsingNameValuePairs = GetWithUsingOption();
-        _withPackingNameValuePairs = GetWithPackingOption();
-
-        _rootCommand = new RootCommand("ClangSharp P/Invoke Binding Generator")
-        {
-            _additionalOption,
-            _configOption,
-            _defineMacros,
-            _excludedNames,
-            _files,
-            _fileDirectory,
-            _headerFile,
-            _includedNames,
-            _includeDirectories,
-            _language,
-            _libraryPath,
-            _methodClassName,
-            _namespaceName,
-            _outputMode,
-            _outputLocation,
-            _methodPrefixToStrip,
-            _nativeTypeNamesToStrip,
-            _remappedNameValuePairs,
-            _std,
-            _testOutputLocation,
-            _traversalNames,
-            _versionOption,
-            _withAccessSpecifierNameValuePairs,
-            _withAttributeNameValuePairs,
-            _withCallConvNameValuePairs,
-            _withClassNameValuePairs,
-            _withGuidNameValuePairs,
-            _withLibraryPathNameValuePairs,
-            _withManualImports,
-            _withNamespaceNameValuePairs,
-            _withSetLastErrors,
-            _withSuppressGCTransitions,
-            _withTransparentStructNameValuePairs,
-            _withTypeNameValuePairs,
-            _withUsingNameValuePairs,
-            _withPackingNameValuePairs
-        };
-    }
-
-    /// <summary>
-    /// Creates a response file handler with the given logger.
-    /// </summary>
-    /// <param name="logger">The logger to use.</param>
-    public ResponseFileHandler(ILogger<ResponseFileHandler> logger)
-    {
-        _logger = logger;
-    }
+    private static readonly Option<string[]> s_additionalOption = GetAdditionalOption();
+    private static readonly Option<string[]> s_configOption = GetConfigOption();
+    private static readonly Option<string[]> s_defineMacros = GetDefineMacroOption();
+    private static readonly Option<string[]> s_excludedNames = GetExcludeOption();
+    private static readonly Option<string[]> s_files = GetFileOption();
+    private static readonly Option<string> s_fileDirectory = GetFileDirectoryOption();
+    private static readonly Option<string> s_headerFile = GetHeaderOption();
+    private static readonly Option<string[]> s_includedNames = GetIncludeOption();
+    private static readonly Option<string[]> s_includeDirectories = GetIncludeDirectoryOption();
+    private static readonly Option<string> s_language = GetLanguageOption();
+    private static readonly Option<string> s_libraryPath = GetLibraryOption();
+    private static readonly Option<string> s_methodClassName = GetMethodClassNameOption();
+    private static readonly Option<string> s_methodPrefixToStrip = GetPrefixStripOption();
+    private static readonly Option<string> s_namespaceName = GetNamespaceOption();
+    private static readonly Option<string[]> s_nativeTypeNamesToStrip =
+        GetNativeTypeNamesStripOption();
+    private static readonly Option<string> s_outputLocation = GetOutputOption();
+    private static readonly Option<PInvokeGeneratorOutputMode> s_outputMode = GetOutputModeOption();
+    private static readonly Option<string[]> s_remappedNameValuePairs = GetRemapOption();
+    private static readonly Option<string> s_std = GetStdOption();
+    private static readonly Option<string> s_testOutputLocation = GetTestOutputOption();
+    private static readonly Option<string[]> s_traversalNames = GetTraverseOption();
+    private static readonly Option<bool> s_versionOption = GetVersionOption();
+    private static readonly Option<string[]> s_withAccessSpecifierNameValuePairs =
+        GetWithAccessSpecifierOption();
+    private static readonly Option<string[]> s_withAttributeNameValuePairs =
+        GetWithAttributeOption();
+    private static readonly Option<string[]> s_withCallConvNameValuePairs = GetWithCallConvOption();
+    private static readonly Option<string[]> s_withClassNameValuePairs = GetWithClassOption();
+    private static readonly Option<string[]> s_withGuidNameValuePairs = GetWithGuidOption();
+    private static readonly Option<string[]> s_withLengthNameValuePairs = GetWithLengthOption();
+    private static readonly Option<string[]> s_withLibraryPathNameValuePairs =
+        GetWithLibraryPathOption();
+    private static readonly Option<string[]> s_withManualImports = GetWithManualImportOption();
+    private static readonly Option<string[]> s_withNamespaceNameValuePairs =
+        GetWithNamespaceOption();
+    private static readonly Option<string[]> s_withPackingNameValuePairs = GetWithPackingOption();
+    private static readonly Option<string[]> s_withSetLastErrors = GetWithSetLastErrorOption();
+    private static readonly Option<string[]> s_withSuppressGCTransitions =
+        GetWithSuppressGCTransitionOption();
+    private static readonly Option<string[]> s_withTransparentStructNameValuePairs =
+        GetWithTransparentStructOption();
+    private static readonly Option<string[]> s_withTypeNameValuePairs = GetWithTypeOption();
+    private static readonly Option<string[]> s_withUsingNameValuePairs = GetWithUsingOption();
+    private static readonly RootCommand s_rootCommand = GetRootCommand();
 
     private static void ParseKeyValuePairs(
         IEnumerable<string> keyValuePairs,
@@ -274,13 +143,13 @@ public class ResponseFileHandler
         out Dictionary<string, string> result
     )
     {
-        result = new Dictionary<string, string>();
+        result = [];
 
         foreach (var keyValuePair in keyValuePairs)
         {
-            var parts = keyValuePair.Split('=');
+            var parts = keyValuePair.Split('=', 2);
 
-            if (parts.Length != 2)
+            if (parts.Length < 2)
             {
                 errorList.Add(
                     $"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value'"
@@ -308,7 +177,7 @@ public class ResponseFileHandler
         out Dictionary<string, AccessSpecifier> result
     )
     {
-        result = new Dictionary<string, AccessSpecifier>();
+        result = [];
 
         foreach (var keyValuePair in keyValuePairs)
         {
@@ -345,7 +214,7 @@ public class ResponseFileHandler
         out Dictionary<string, Guid> result
     )
     {
-        result = new Dictionary<string, Guid>();
+        result = [];
 
         foreach (var keyValuePair in keyValuePairs)
         {
@@ -385,7 +254,7 @@ public class ResponseFileHandler
         out Dictionary<string, (string, PInvokeGeneratorTransparentStructKind)> result
     )
     {
-        result = new Dictionary<string, (string, PInvokeGeneratorTransparentStructKind)>();
+        result = [];
 
         foreach (var keyValuePair in keyValuePairs)
         {
@@ -416,7 +285,7 @@ public class ResponseFileHandler
                 result.Add(key, (parts[0], PInvokeGeneratorTransparentStructKind.Unknown));
             }
             else if (
-                parts.Length == 2
+                (parts.Length == 2)
                 && Enum.TryParse<PInvokeGeneratorTransparentStructKind>(
                     parts[1],
                     out var transparentStructKind
@@ -441,7 +310,7 @@ public class ResponseFileHandler
         out Dictionary<string, IReadOnlyList<string>> result
     )
     {
-        result = new Dictionary<string, IReadOnlyList<string>>();
+        result = [];
 
         foreach (var keyValuePair in keyValuePairs)
         {
@@ -471,67 +340,67 @@ public class ResponseFileHandler
     private static Option<string[]> GetAdditionalOption()
     {
         return new Option<string[]>(
-            aliases: _additionalOptionAliases,
+            aliases: s_additionalOptionAliases,
             description: "An argument to pass to Clang when parsing the input files.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetConfigOption()
     {
         return new Option<string[]>(
-            aliases: _configOptionAliases,
+            aliases: s_configOptionAliases,
             description: "A configuration option that controls how the bindings are generated. Specify 'help' to see the available options.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetDefineMacroOption()
     {
         return new Option<string[]>(
-            aliases: _defineMacroOptionAliases,
+            aliases: s_defineMacroOptionAliases,
             description: "Define <macro> to <value> (or 1 if <value> omitted).",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetExcludeOption()
     {
         return new Option<string[]>(
-            aliases: _excludeOptionAliases,
+            aliases: s_excludeOptionAliases,
             description: "A declaration name to exclude from binding generation.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetFileOption()
     {
         return new Option<string[]>(
-            aliases: _fileOptionAliases,
+            aliases: s_fileOptionAliases,
             description: "A file to parse and generate bindings for.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string> GetFileDirectoryOption()
     {
         return new Option<string>(
-            aliases: _fileDirectionOptionAliases,
+            aliases: s_fileDirectionOptionAliases,
             description: "The base path for files to parse.",
             getDefaultValue: () => string.Empty
         );
@@ -540,7 +409,7 @@ public class ResponseFileHandler
     private static Option<string> GetHeaderOption()
     {
         return new Option<string>(
-            aliases: _headerOptionAliases,
+            aliases: s_headerOptionAliases,
             description: "A file which contains the header to prefix every generated file with.",
             getDefaultValue: () => string.Empty
         );
@@ -549,31 +418,31 @@ public class ResponseFileHandler
     private static Option<string[]> GetIncludeOption()
     {
         return new Option<string[]>(
-            aliases: _includeOptionAliases,
+            aliases: s_includeOptionAliases,
             description: "A declaration name to include in binding generation.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetIncludeDirectoryOption()
     {
         return new Option<string[]>(
-            aliases: _includeDirectoryOptionAliases,
+            aliases: s_includeDirectoryOptionAliases,
             description: "Add directory to include search path.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string> GetLanguageOption()
     {
         return new Option<string>(
-            aliases: _languageOptionAliases,
+            aliases: s_languageOptionAliases,
             description: "Treat subsequent input files as having type <language>.",
             getDefaultValue: () => "c++"
         ).FromAmong("c", "c++");
@@ -582,7 +451,7 @@ public class ResponseFileHandler
     private static Option<string> GetLibraryOption()
     {
         return new Option<string>(
-            aliases: _libraryOptionAliases,
+            aliases: s_libraryOptionAliases,
             description: "The string to use in the DllImport attribute used when generating bindings.",
             getDefaultValue: () => string.Empty
         );
@@ -591,7 +460,7 @@ public class ResponseFileHandler
     private static Option<string> GetMethodClassNameOption()
     {
         return new Option<string>(
-            aliases: _methodClassNameOptionAliases,
+            aliases: s_methodClassNameOptionAliases,
             description: "The name of the static class that will contain the generated method bindings.",
             getDefaultValue: () => "Methods"
         );
@@ -600,7 +469,7 @@ public class ResponseFileHandler
     private static Option<string> GetNamespaceOption()
     {
         return new Option<string>(
-            aliases: _namespaceOptionAliases,
+            aliases: s_namespaceOptionAliases,
             description: "The namespace in which to place the generated bindings.",
             getDefaultValue: () => string.Empty
         );
@@ -609,19 +478,19 @@ public class ResponseFileHandler
     private static Option<string[]> GetNativeTypeNamesStripOption()
     {
         return new Option<string[]>(
-            aliases: _nativeTypeNamesStripOptionAliases,
+            aliases: s_nativeTypeNamesStripOptionAliases,
             description: "The contents to strip from the generated NativeTypeName attributes.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<PInvokeGeneratorOutputMode> GetOutputModeOption()
     {
         return new Option<PInvokeGeneratorOutputMode>(
-            aliases: _outputModeOptionAliases,
+            aliases: s_outputModeOptionAliases,
             description: "The mode describing how the information collected from the headers are presented in the resultant bindings.",
             getDefaultValue: () => PInvokeGeneratorOutputMode.CSharp
         );
@@ -630,7 +499,7 @@ public class ResponseFileHandler
     private static Option<string> GetOutputOption()
     {
         return new Option<string>(
-            aliases: _outputOptionAliases,
+            aliases: s_outputOptionAliases,
             description: "The output location to write the generated bindings to.",
             getDefaultValue: () => string.Empty
         );
@@ -639,7 +508,7 @@ public class ResponseFileHandler
     private static Option<string> GetPrefixStripOption()
     {
         return new Option<string>(
-            aliases: _prefixStripOptionAliases,
+            aliases: s_prefixStripOptionAliases,
             description: "The prefix to strip from the generated method bindings.",
             getDefaultValue: () => string.Empty
         );
@@ -648,19 +517,65 @@ public class ResponseFileHandler
     private static Option<string[]> GetRemapOption()
     {
         return new Option<string[]>(
-            aliases: _remapOptionAliases,
+            aliases: s_remapOptionAliases,
             description: "A declaration name to be remapped to another name during binding generation.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
+    }
+
+    private static RootCommand GetRootCommand()
+    {
+        var rootCommand = new RootCommand("ClangSharp P/Invoke Binding Generator")
+        {
+            s_additionalOption,
+            s_configOption,
+            s_defineMacros,
+            s_excludedNames,
+            s_files,
+            s_fileDirectory,
+            s_headerFile,
+            s_includedNames,
+            s_includeDirectories,
+            s_language,
+            s_libraryPath,
+            s_methodClassName,
+            s_namespaceName,
+            s_outputMode,
+            s_outputLocation,
+            s_methodPrefixToStrip,
+            s_nativeTypeNamesToStrip,
+            s_remappedNameValuePairs,
+            s_std,
+            s_testOutputLocation,
+            s_traversalNames,
+            s_versionOption,
+            s_withAccessSpecifierNameValuePairs,
+            s_withAttributeNameValuePairs,
+            s_withCallConvNameValuePairs,
+            s_withClassNameValuePairs,
+            s_withGuidNameValuePairs,
+            s_withLengthNameValuePairs,
+            s_withLibraryPathNameValuePairs,
+            s_withManualImports,
+            s_withNamespaceNameValuePairs,
+            s_withPackingNameValuePairs,
+            s_withSetLastErrors,
+            s_withSuppressGCTransitions,
+            s_withTransparentStructNameValuePairs,
+            s_withTypeNameValuePairs,
+            s_withUsingNameValuePairs,
+        };
+        // Handler.SetHandler(rootCommand, (Action<InvocationContext>)Run);
+        return rootCommand;
     }
 
     private static Option<string> GetStdOption()
     {
         return new Option<string>(
-            aliases: _stdOptionAliases,
+            aliases: s_stdOptionAliases,
             description: "Language standard to compile for.",
             getDefaultValue: () => ""
         );
@@ -669,7 +584,7 @@ public class ResponseFileHandler
     private static Option<string> GetTestOutputOption()
     {
         return new Option<string>(
-            aliases: _testOutputOptionAliases,
+            aliases: s_testOutputOptionAliases,
             description: "The output location to write the generated tests to.",
             getDefaultValue: () => string.Empty
         );
@@ -678,193 +593,207 @@ public class ResponseFileHandler
     private static Option<bool> GetVersionOption()
     {
         return new Option<bool>(
-            aliases: _versionOptionAliases,
+            aliases: s_versionOptionAliases,
             description: "Prints the current version information for the tool and its native dependencies."
         )
         {
-            Arity = ArgumentArity.Zero
+            Arity = ArgumentArity.Zero,
         };
     }
 
     private static Option<string[]> GetTraverseOption()
     {
         return new Option<string[]>(
-            aliases: _traverseOptionAliases,
+            aliases: s_traverseOptionAliases,
             description: "A file name included either directly or indirectly by -f that should be traversed during binding generation.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithAccessSpecifierOption()
     {
         return new Option<string[]>(
-            aliases: _withAccessSpecifierOptionAliases,
+            aliases: s_withAccessSpecifierOptionAliases,
             description: "An access specifier to be used with the given qualified or remapped declaration name during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithAttributeOption()
     {
         return new Option<string[]>(
-            aliases: _withAttributeOptionAliases,
+            aliases: s_withAttributeOptionAliases,
             description: "An attribute to be added to the given remapped declaration name during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithCallConvOption()
     {
         return new Option<string[]>(
-            aliases: _withCallConvOptionAliases,
+            aliases: s_withCallConvOptionAliases,
             description: "A calling convention to be used for the given declaration during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithClassOption()
     {
         return new Option<string[]>(
-            aliases: _withClassOptionAliases,
+            aliases: s_withClassOptionAliases,
             description: "A class to be used for the given remapped constant or function declaration name during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithGuidOption()
     {
         return new Option<string[]>(
-            aliases: _withGuidOptionAliases,
+            aliases: s_withGuidOptionAliases,
             description: "A GUID to be used for the given declaration during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
+        };
+    }
+
+    private static Option<string[]> GetWithLengthOption()
+    {
+        return new Option<string[]>(
+            aliases: s_withLengthOptionAliases,
+            description: "A length to be used for the given declaration during binding generation. Supports wildcards.",
+            getDefaultValue: Array.Empty<string>
+        )
+        {
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithLibraryPathOption()
     {
         return new Option<string[]>(
-            aliases: _withLibraryPathOptionAliases,
+            aliases: s_withLibraryPathOptionAliases,
             description: "A library path to be used for the given declaration during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithManualImportOption()
     {
         return new Option<string[]>(
-            aliases: _withManualImportOptionAliases,
+            aliases: s_withManualImportOptionAliases,
             description: "A remapped function name to be treated as a manual import during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithNamespaceOption()
     {
         return new Option<string[]>(
-            aliases: _withNamespaceOptionAliases,
+            aliases: s_withNamespaceOptionAliases,
             description: "A namespace to be used for the given remapped declaration name during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithSetLastErrorOption()
     {
         return new Option<string[]>(
-            aliases: _withSetLastErrorOptionAliases,
+            aliases: s_withSetLastErrorOptionAliases,
             description: "Add the SetLastError=true modifier or SetsSystemLastError attribute to a given DllImport or UnmanagedFunctionPointer. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithSuppressGCTransitionOption()
     {
         return new Option<string[]>(
-            aliases: _withSuppressGCTransitionOptionAliases,
+            aliases: s_withSuppressGCTransitionOptionAliases,
             description: "Add the SuppressGCTransition calling convention to a given DllImport or UnmanagedFunctionPointer. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithTransparentStructOption()
     {
         return new Option<string[]>(
-            aliases: _withTransparentStructOptionAliases,
+            aliases: s_withTransparentStructOptionAliases,
             description: "A remapped type name to be treated as a transparent wrapper during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithTypeOption()
     {
         return new Option<string[]>(
-            aliases: _withTypeOptionAliases,
+            aliases: s_withTypeOptionAliases,
             description: "A type to be used for the given enum declaration during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithUsingOption()
     {
         return new Option<string[]>(
-            aliases: _withUsingOptionAliases,
+            aliases: s_withUsingOptionAliases,
             description: "A using directive to be included for the given remapped declaration name during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
 
     private static Option<string[]> GetWithPackingOption()
     {
         return new Option<string[]>(
-            aliases: _withPackingOptionAliases,
+            aliases: s_withPackingOptionAliases,
             description: "Overrides the StructLayoutAttribute.Pack property for the given type. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
         )
         {
-            AllowMultipleArgumentsPerToken = true
+            AllowMultipleArgumentsPerToken = true,
         };
     }
+
+    // End verbatim ClangSharp code
 
     /// <summary>
     /// Reads the given string array as ClangSharpPInvokeGenerator arguments from a response file.
@@ -879,66 +808,75 @@ public class ResponseFileHandler
         string? filePath = null
     )
     {
-        _logger.LogDebug("ClangSharp command line arguments: {0}", string.Join(" ", args));
-        var parseResult = new Parser(_rootCommand).Parse(args);
-        var additionalArgs =
-            parseResult.GetValueForOption(_additionalOption) ?? Array.Empty<string>();
-        var configSwitches = parseResult.GetValueForOption(_configOption) ?? Array.Empty<string>();
-        var defineMacros = parseResult.GetValueForOption(_defineMacros) ?? Array.Empty<string>();
-        var excludedNames = parseResult.GetValueForOption(_excludedNames) ?? Array.Empty<string>();
-        var files = parseResult.GetValueForOption(_files) ?? Array.Empty<string>();
-        var fileDirectory = parseResult.GetValueForOption(_fileDirectory) ?? "";
-        var headerFile = parseResult.GetValueForOption(_headerFile) ?? "";
-        var includedNames = parseResult.GetValueForOption(_includedNames) ?? Array.Empty<string>();
-        var includeDirectories =
-            parseResult.GetValueForOption(_includeDirectories) ?? Array.Empty<string>();
-        var language = parseResult.GetValueForOption(_language) ?? "";
-        var libraryPath = parseResult.GetValueForOption(_libraryPath) ?? "";
-        var methodClassName = parseResult.GetValueForOption(_methodClassName) ?? "";
-        var methodPrefixToStrip = parseResult.GetValueForOption(_methodPrefixToStrip) ?? "";
-        var nativeTypeNamesToStrip =
-            parseResult.GetValueForOption(_nativeTypeNamesToStrip) ?? Array.Empty<string>();
-        var namespaceName = parseResult.GetValueForOption(_namespaceName) ?? "";
-        var outputLocation = parseResult.GetValueForOption(_outputLocation) ?? "";
-        var outputMode = parseResult.GetValueForOption(_outputMode);
-        var remappedNameValuePairs =
-            parseResult.GetValueForOption(_remappedNameValuePairs) ?? Array.Empty<string>();
-        var std = parseResult.GetValueForOption(_std) ?? "";
-        var testOutputLocation = parseResult.GetValueForOption(_testOutputLocation) ?? "";
-        var traversalNames =
-            parseResult.GetValueForOption(_traversalNames) ?? Array.Empty<string>();
-        var withAccessSpecifierNameValuePairs =
-            parseResult.GetValueForOption(_withAccessSpecifierNameValuePairs)
-            ?? Array.Empty<string>();
-        var withAttributeNameValuePairs =
-            parseResult.GetValueForOption(_withAttributeNameValuePairs) ?? Array.Empty<string>();
-        var withCallConvNameValuePairs =
-            parseResult.GetValueForOption(_withCallConvNameValuePairs) ?? Array.Empty<string>();
-        var withClassNameValuePairs =
-            parseResult.GetValueForOption(_withClassNameValuePairs) ?? Array.Empty<string>();
-        var withGuidNameValuePairs =
-            parseResult.GetValueForOption(_withGuidNameValuePairs) ?? Array.Empty<string>();
-        var withLibraryPathNameValuePairs =
-            parseResult.GetValueForOption(_withLibraryPathNameValuePairs) ?? Array.Empty<string>();
-        var withManualImports =
-            parseResult.GetValueForOption(_withManualImports) ?? Array.Empty<string>();
-        var withNamespaceNameValuePairs =
-            parseResult.GetValueForOption(_withNamespaceNameValuePairs) ?? Array.Empty<string>();
-        var withSetLastErrors =
-            parseResult.GetValueForOption(_withSetLastErrors) ?? Array.Empty<string>();
-        var withSuppressGCTransitions =
-            parseResult.GetValueForOption(_withSuppressGCTransitions) ?? Array.Empty<string>();
-        var withTransparentStructNameValuePairs =
-            parseResult.GetValueForOption(_withTransparentStructNameValuePairs)
-            ?? Array.Empty<string>();
-        var withTypeNameValuePairs =
-            parseResult.GetValueForOption(_withTypeNameValuePairs) ?? Array.Empty<string>();
-        var withUsingNameValuePairs =
-            parseResult.GetValueForOption(_withUsingNameValuePairs) ?? Array.Empty<string>();
-        var withPackingNameValuePairs =
-            parseResult.GetValueForOption(_withPackingNameValuePairs) ?? Array.Empty<string>();
+        logger.LogDebug("ClangSharp command line arguments: {0}", string.Join(" ", args));
+        var context = (ParseResult: new Parser(s_rootCommand).Parse(args), Dummy: 0);
 
-        var errorList = new List<string>(parseResult.Errors.Select(x => x.ToString()));
+        // Begin verbatim ClangSharp code: https://github.com/dotnet/ClangSharp/blob/main/sources/ClangSharpPInvokeGenerator/Program.cs
+        var additionalArgs = context.ParseResult.GetValueForOption(s_additionalOption) ?? [];
+        var configSwitches = context.ParseResult.GetValueForOption(s_configOption) ?? [];
+        var defineMacros = context.ParseResult.GetValueForOption(s_defineMacros) ?? [];
+        var excludedNames = context.ParseResult.GetValueForOption(s_excludedNames) ?? [];
+        var files = context.ParseResult.GetValueForOption(s_files) ?? [];
+        var fileDirectory = context.ParseResult.GetValueForOption(s_fileDirectory) ?? "";
+        var headerFile = context.ParseResult.GetValueForOption(s_headerFile) ?? "";
+        var includedNames = context.ParseResult.GetValueForOption(s_includedNames) ?? [];
+        var includeDirectories = context.ParseResult.GetValueForOption(s_includeDirectories) ?? [];
+        var language = context.ParseResult.GetValueForOption(s_language) ?? "";
+        var libraryPath = context.ParseResult.GetValueForOption(s_libraryPath) ?? "";
+        var methodClassName = context.ParseResult.GetValueForOption(s_methodClassName) ?? "";
+        var methodPrefixToStrip =
+            context.ParseResult.GetValueForOption(s_methodPrefixToStrip) ?? "";
+        var nativeTypeNamesToStrip =
+            context.ParseResult.GetValueForOption(s_nativeTypeNamesToStrip) ?? [];
+        var namespaceName = context.ParseResult.GetValueForOption(s_namespaceName) ?? "";
+        var outputLocation = context.ParseResult.GetValueForOption(s_outputLocation) ?? "";
+        var outputMode = context.ParseResult.GetValueForOption(s_outputMode);
+        var remappedNameValuePairs =
+            context.ParseResult.GetValueForOption(s_remappedNameValuePairs) ?? [];
+        var std = context.ParseResult.GetValueForOption(s_std) ?? "";
+        var testOutputLocation = context.ParseResult.GetValueForOption(s_testOutputLocation) ?? "";
+        var traversalNames = context.ParseResult.GetValueForOption(s_traversalNames) ?? [];
+        var withAccessSpecifierNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withAccessSpecifierNameValuePairs) ?? [];
+        var withAttributeNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withAttributeNameValuePairs) ?? [];
+        var withCallConvNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withCallConvNameValuePairs) ?? [];
+        var withClassNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withClassNameValuePairs) ?? [];
+        var withGuidNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withGuidNameValuePairs) ?? [];
+        var withLengthNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withLengthNameValuePairs) ?? [];
+        var withLibraryPathNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withLibraryPathNameValuePairs) ?? [];
+        var withManualImports = context.ParseResult.GetValueForOption(s_withManualImports) ?? [];
+        var withNamespaceNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withNamespaceNameValuePairs) ?? [];
+        var withSetLastErrors = context.ParseResult.GetValueForOption(s_withSetLastErrors) ?? [];
+        var withSuppressGCTransitions =
+            context.ParseResult.GetValueForOption(s_withSuppressGCTransitions) ?? [];
+        var withTransparentStructNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withTransparentStructNameValuePairs) ?? [];
+        var withTypeNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withTypeNameValuePairs) ?? [];
+        var withUsingNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withUsingNameValuePairs) ?? [];
+        var withPackingNameValuePairs =
+            context.ParseResult.GetValueForOption(s_withPackingNameValuePairs) ?? [];
+
+        var versionResult = context.ParseResult.FindResultFor(s_versionOption);
+
+        // if (versionResult is not null)
+        // {
+        //     context.Console.WriteLine($"{s_rootCommand.Description} version 18.1.3");
+        //     context.Console.WriteLine($"  {clang.getClangVersion()}");
+        //     context.Console.WriteLine($"  {clangsharp.getVersion()}");
+        //     context.ExitCode = -1;
+        //     return;
+        // }
+
+        var errorList = new List<string>();
 
         if (files.Length == 0)
         {
@@ -984,6 +922,11 @@ public class ResponseFileHandler
             withGuidNameValuePairs,
             errorList,
             out Dictionary<string, Guid> withGuids
+        );
+        ParseKeyValuePairs(
+            withLengthNameValuePairs,
+            errorList,
+            out Dictionary<string, string> withLengths
         );
         ParseKeyValuePairs(
             withLibraryPathNameValuePairs,
@@ -1239,9 +1182,23 @@ public class ResponseFileHandler
                     break;
                 }
 
+                case "generate-callconv-member-function":
+                {
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.GenerateCallConvMemberFunction;
+                    break;
+                }
+
                 case "generate-cpp-attributes":
                 {
                     configOptions |= PInvokeGeneratorConfigurationOptions.GenerateCppAttributes;
+                    break;
+                }
+
+                case "generate-disable-runtime-marshalling":
+                {
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.GenerateDisableRuntimeMarshalling;
                     break;
                 }
 
@@ -1296,6 +1253,13 @@ public class ResponseFileHandler
                     break;
                 }
 
+                case "generate-generic-pointer-wrapper":
+                {
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.GenerateGenericPointerWrapper;
+                    break;
+                }
+
                 case "generate-setslastsystemerror-attribute":
                 {
                     configOptions |=
@@ -1344,6 +1308,14 @@ public class ResponseFileHandler
                     break;
                 }
 
+                // Strip Options
+
+                case "strip-enum-member-type-name":
+                {
+                    configOptions |= PInvokeGeneratorConfigurationOptions.StripEnumMemberTypeName;
+                    break;
+                }
+
                 // Legacy Options
 
                 case "default-remappings":
@@ -1378,11 +1350,12 @@ public class ResponseFileHandler
             );
         }
 
+        // End verbatim ClangSharp code
         if (errorList.Count != 0)
         {
             foreach (var error in errorList)
             {
-                _logger.LogError($"Error in args for '{files.FirstOrDefault()}': {error}");
+                logger.LogError($"Error in args for '{files.FirstOrDefault()}': {error}");
             }
         }
 
@@ -1416,12 +1389,14 @@ public class ResponseFileHandler
             {
                 $"--language={language}", // Treat subsequent input files as having type <language>
                 "-Wno-pragma-once-outside-header" // We are processing files which may be header files
+                ,
             }
             : new string[]
             {
                 $"--language={language}", // Treat subsequent input files as having type <language>
                 $"--std={std}", // Language standard to compile for
                 "-Wno-pragma-once-outside-header" // We are processing files which may be header files
+                ,
             };
 
         clangCommandLineArgs = clangCommandLineArgs
@@ -1461,6 +1436,7 @@ public class ResponseFileHandler
             WithCallConvs = withCallConvs,
             WithClasses = withClasses,
             WithGuids = withGuids,
+            WithLengths = withLengths,
             WithLibraryPaths = withLibraryPaths,
             WithManualImports = withManualImports,
             WithNamespaces = withNamespaces,
@@ -1511,28 +1487,28 @@ public class ResponseFileHandler
         IReadOnlyList<string> globs
     )
     {
-        _logger.LogDebug(
+        logger.LogDebug(
             "Looking for response files in {0} (we are in {1})",
             directory,
             Environment.CurrentDirectory
         );
         foreach (var rsp in Glob(globs))
         {
-            _logger.LogDebug("Reading found file: {0}", rsp);
+            logger.LogDebug("Reading found file: {0}", rsp);
             var dir =
                 Path.GetDirectoryName(rsp)
                 ?? throw new InvalidOperationException("Couldn't get directory name of path");
             var read = ReadResponseFile(RspRelativeTo(dir, rsp).ToArray(), dir, rsp);
             yield return read with
             {
-                FileDirectory = dir
+                FileDirectory = dir,
             };
         }
     }
 
     private IEnumerable<string> RspRelativeTo(string directory, string fullPath)
     {
-        _logger.LogTrace("Reading {0}", fullPath);
+        logger.LogTrace("Reading {0}", fullPath);
         foreach (var arg in File.ReadAllLines(fullPath))
         {
             if (string.IsNullOrWhiteSpace(arg))
@@ -1543,7 +1519,7 @@ public class ResponseFileHandler
             if (arg[0] == '@')
             {
                 var innerRsp = Path.GetFullPath(arg[1..], directory);
-                _logger.LogTrace("{0} includes {1}", fullPath, innerRsp);
+                logger.LogTrace("{0} includes {1}", fullPath, innerRsp);
                 foreach (var inner in RspRelativeTo(directory, innerRsp))
                 {
                     yield return inner;

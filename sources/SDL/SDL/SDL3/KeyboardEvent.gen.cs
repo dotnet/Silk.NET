@@ -23,17 +23,20 @@ public partial struct KeyboardEvent
 
     [NativeTypeName("SDL_KeyboardID")]
     public uint Which;
+    public Scancode Scancode;
 
-    [NativeTypeName("Uint8")]
-    public byte State;
+    [NativeTypeName("SDL_Keycode")]
+    public uint Key;
 
-    [NativeTypeName("Uint8")]
+    [NativeTypeName("SDL_Keymod")]
+    public ushort Mod;
+
+    [NativeTypeName("Uint16")]
+    public ushort Raw;
+
+    [NativeTypeName("bool")]
+    public byte Down;
+
+    [NativeTypeName("bool")]
     public byte Repeat;
-
-    [NativeTypeName("Uint8")]
-    public byte Padding2;
-
-    [NativeTypeName("Uint8")]
-    public byte Padding3;
-    public Keysym Keysym;
 }

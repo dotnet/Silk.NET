@@ -21,5 +21,5 @@ public enum GamepadType : uint
     NintendoSwitchJoyconLeft,
     NintendoSwitchJoyconRight,
     NintendoSwitchJoyconPair,
-    Max,
+    Count,
 }

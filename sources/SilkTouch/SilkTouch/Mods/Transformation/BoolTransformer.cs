@@ -27,14 +27,11 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
         var cfg = options.Get(ctx.JobKey);
         string? retBoolScheme = null;
         TypeSyntax? newRetType = null;
+        var retNative = current.GetNativeReturnTypeName() ?? current.ReturnType.ToString();
         if (
             (current.ReturnType.IsInteger() && cfg.IntReturnsMaybeBool)
-            || (
-                cfg.BoolTypes?.TryGetValue(
-                    current.GetNativeReturnTypeName() ?? current.ReturnType.ToString(),
-                    out retBoolScheme
-                ) ?? false
-            )
+            || (cfg.BoolTypes?.TryGetValue(retNative, out retBoolScheme) ?? false)
+            || (retNative == "bool" && current.ReturnType.ToString().Trim() != "bool") // stdbool.h, hopefully...
         )
         {
             current = current.WithReturnType(
@@ -60,13 +57,14 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
         for (var i = 0; i < current.ParameterList.Parameters.Count; i++)
         {
             var param = current.ParameterList.Parameters[i];
+            var paramNative = param.GetNativeTypeName() ?? param.Type?.ToString();
+            string? paramBoolScheme = null;
             if (
-                param.Type is not null
+                paramNative is not null
+                && param.Type is not null
                 && (
-                    cfg.BoolTypes?.TryGetValue(
-                        param.GetNativeTypeName() ?? param.Type.ToString(),
-                        out var paramBoolScheme
-                    ) ?? false
+                    (cfg.BoolTypes?.TryGetValue(paramNative, out paramBoolScheme) ?? false)
+                    || (paramNative == "bool" && param.Type.ToString().Trim() != "bool") // stdbool.h, hopefully...
                 )
             )
             {

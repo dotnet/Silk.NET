@@ -9,17 +9,14 @@ namespace Silk.NET.SDL;
 
 public unsafe partial struct VirtualJoystickDesc
 {
+    [NativeTypeName("Uint32")]
+    public uint Version;
+
     [NativeTypeName("Uint16")]
     public ushort Type;
 
     [NativeTypeName("Uint16")]
-    public ushort Naxes;
-
-    [NativeTypeName("Uint16")]
-    public ushort Nbuttons;
-
-    [NativeTypeName("Uint16")]
-    public ushort Nhats;
+    public ushort Padding;
 
     [NativeTypeName("Uint16")]
     public ushort VendorId;
@@ -28,7 +25,25 @@ public unsafe partial struct VirtualJoystickDesc
     public ushort ProductId;
 
     [NativeTypeName("Uint16")]
-    public ushort Padding;
+    public ushort Naxes;
+
+    [NativeTypeName("Uint16")]
+    public ushort Nbuttons;
+
+    [NativeTypeName("Uint16")]
+    public ushort Nballs;
+
+    [NativeTypeName("Uint16")]
+    public ushort Nhats;
+
+    [NativeTypeName("Uint16")]
+    public ushort Ntouchpads;
+
+    [NativeTypeName("Uint16")]
+    public ushort Nsensors;
+
+    [NativeTypeName("Uint16[2]")]
+    public VirtualJoystickDescPadding2 Padding2;
 
     [NativeTypeName("Uint32")]
     public uint ButtonMask;
@@ -38,23 +53,35 @@ public unsafe partial struct VirtualJoystickDesc
 
     [NativeTypeName("const char *")]
     public sbyte* Name;
+
+    [NativeTypeName("const SDL_VirtualJoystickTouchpadDesc *")]
+    public VirtualJoystickTouchpadDesc* Touchpads;
+
+    [NativeTypeName("const SDL_VirtualJoystickSensorDesc *")]
+    public VirtualJoystickSensorDesc* Sensors;
     public void* Userdata;
 
     [NativeTypeName("void (*)(void *)")]
-    public ClipboardCleanupCallback Update;
+    public VirtualJoystickDescUpdate Update;
 
     [NativeTypeName("void (*)(void *, int)")]
     public VirtualJoystickDescSetPlayerIndex SetPlayerIndex;
 
-    [NativeTypeName("int (*)(void *, Uint16, Uint16)")]
-    public VirtualJoystickDescFunction1 Rumble;
+    [NativeTypeName("bool (*)(void *, Uint16, Uint16)")]
+    public VirtualJoystickDescRumble Rumble;
 
-    [NativeTypeName("int (*)(void *, Uint16, Uint16)")]
-    public VirtualJoystickDescFunction1 RumbleTriggers;
+    [NativeTypeName("bool (*)(void *, Uint16, Uint16)")]
+    public VirtualJoystickDescRumbleTriggers RumbleTriggers;
 
-    [NativeTypeName("int (*)(void *, Uint8, Uint8, Uint8)")]
+    [NativeTypeName("bool (*)(void *, Uint8, Uint8, Uint8)")]
     public VirtualJoystickDescSetLED SetLED;
 
-    [NativeTypeName("int (*)(void *, const void *, int)")]
+    [NativeTypeName("bool (*)(void *, const void *, int)")]
     public VirtualJoystickDescSendEffect SendEffect;
+
+    [NativeTypeName("bool (*)(void *, bool)")]
+    public VirtualJoystickDescSetSensorsEnabled SetSensorsEnabled;
+
+    [NativeTypeName("void (*)(void *)")]
+    public VirtualJoystickDescCleanup Cleanup;
 }

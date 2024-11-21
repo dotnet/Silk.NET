@@ -34,11 +34,11 @@ public static unsafe partial class SDL_VirtualJoystickDescTests
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(VirtualJoystickDesc), Is.EqualTo(88));
+            Assert.That(sizeof(VirtualJoystickDesc), Is.EqualTo(136));
         }
         else
         {
-            Assert.That(sizeof(VirtualJoystickDesc), Is.EqualTo(56));
+            Assert.That(sizeof(VirtualJoystickDesc), Is.EqualTo(84));
         }
     }
 }

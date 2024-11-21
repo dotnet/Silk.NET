@@ -34,11 +34,11 @@ public static unsafe partial class SDL_SurfaceTests
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(Surface), Is.EqualTo(96));
+            Assert.That(sizeof(Surface), Is.EqualTo(48));
         }
         else
         {
-            Assert.That(sizeof(Surface), Is.EqualTo(60));
+            Assert.That(sizeof(Surface), Is.EqualTo(32));
         }
     }
 }

@@ -8,4 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-public unsafe delegate nint* EGLAttribArrayCallbackDelegate();
+public unsafe delegate nint* EGLAttribArrayCallbackDelegate(void* arg0);

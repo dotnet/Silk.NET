@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[Transformed]
 public readonly unsafe struct StorageInterfaceInfo : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte*, PathInfo*, int> Handle =>
-        (delegate* unmanaged<void*, sbyte*, PathInfo*, int>)Pointer;
+    public delegate* unmanaged<void*, sbyte*, PathInfo*, byte> Handle =>
+        (delegate* unmanaged<void*, sbyte*, PathInfo*, byte>)Pointer;
 
-    public StorageInterfaceInfo(delegate* unmanaged<void*, sbyte*, PathInfo*, int> ptr) =>
+    public StorageInterfaceInfo(delegate* unmanaged<void*, sbyte*, PathInfo*, byte> ptr) =>
         Pointer = ptr;
 
     public StorageInterfaceInfo(StorageInterfaceInfoDelegate proc) =>
@@ -23,10 +24,10 @@ public readonly unsafe struct StorageInterfaceInfo : IDisposable
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator StorageInterfaceInfo(
-        delegate* unmanaged<void*, sbyte*, PathInfo*, int> pfn
+        delegate* unmanaged<void*, sbyte*, PathInfo*, byte> pfn
     ) => new(pfn);
 
-    public static implicit operator delegate* unmanaged<void*, sbyte*, PathInfo*, int>(
+    public static implicit operator delegate* unmanaged<void*, sbyte*, PathInfo*, byte>(
         StorageInterfaceInfo pfn
-    ) => (delegate* unmanaged<void*, sbyte*, PathInfo*, int>)pfn.Pointer;
+    ) => (delegate* unmanaged<void*, sbyte*, PathInfo*, byte>)pfn.Pointer;
 }

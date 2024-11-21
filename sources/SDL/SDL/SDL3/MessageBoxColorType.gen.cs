@@ -15,5 +15,5 @@ public enum MessageBoxColorType : uint
     ButtonBorder,
     ButtonBackground,
     ButtonSelected,
-    Max,
+    Count,
 }

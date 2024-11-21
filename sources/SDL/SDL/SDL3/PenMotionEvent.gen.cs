@@ -23,17 +23,8 @@ public partial struct PenMotionEvent
     [NativeTypeName("SDL_PenID")]
     public uint Which;
 
-    [NativeTypeName("Uint8")]
-    public byte Padding1;
-
-    [NativeTypeName("Uint8")]
-    public byte Padding2;
-
-    [NativeTypeName("Uint16")]
-    public ushort PenState;
+    [NativeTypeName("SDL_PenInputFlags")]
+    public uint PenState;
     public float X;
     public float Y;
-
-    [NativeTypeName("float[6]")]
-    public PenMotionEventAxes Axes;
 }

@@ -10,17 +10,13 @@ namespace Silk.NET.SDL;
 
 public unsafe partial struct Surface
 {
-    [NativeTypeName("Uint32")]
+    [NativeTypeName("SDL_SurfaceFlags")]
     public uint Flags;
-    public PixelFormat* Format;
+    public PixelFormat Format;
     public int W;
     public int H;
     public int Pitch;
     public void* Pixels;
-    public void* Reserved;
-    public int Locked;
-    public void* ListBlitmap;
-    public Rect ClipRect;
-    public BlitMapHandle Map;
     public int Refcount;
+    public void* Reserved;
 }

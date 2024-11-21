@@ -214,27 +214,27 @@ public class NameTrimmer : INameTrimmer
             container is not null
             && (prefixOverrides?.TryGetValue(container, out var @override) ?? false)
                 ? @override
-                : names.Count == 1 && !string.IsNullOrWhiteSpace(containerTrimmingName)
-                    ? NameUtils.FindCommonPrefix(
-                        [
-                            names.Keys.First(x => !(nonDeterminant?.Contains(x) ?? false)),
-                            containerTrimmingName
-                        ],
-                        true,
-                        false,
-                        naive
-                    )
-                    : NameUtils.FindCommonPrefix(
-                        localNames
-                            .Where(x => !(nonDeterminant?.Contains(x.Value.Key) ?? false))
-                            .Select(x => x.Key)
-                            .ToList(),
-                        // If naive mode is on and we're trimming type names, allow full matches (method class is
-                        // probably the prefix)
-                        naive && container is null,
-                        false,
-                        naive
-                    );
+            : names.Count == 1 && !string.IsNullOrWhiteSpace(containerTrimmingName)
+                ? NameUtils.FindCommonPrefix(
+                    [
+                        names.Keys.First(x => !(nonDeterminant?.Contains(x) ?? false)),
+                        containerTrimmingName,
+                    ],
+                    true,
+                    false,
+                    naive
+                )
+            : NameUtils.FindCommonPrefix(
+                localNames
+                    .Where(x => !(nonDeterminant?.Contains(x.Value.Key) ?? false))
+                    .Select(x => x.Key)
+                    .ToList(),
+                // If naive mode is on and we're trimming type names, allow full matches (method class is
+                // probably the prefix)
+                naive && container is null,
+                false,
+                naive
+            );
 
         // If any of the children's trimming name is shorter than the prefix length,
         if (
@@ -289,7 +289,7 @@ public class NameTrimmer : INameTrimmer
     /// <param name="isContainer">Whether the name passed into <paramref name="name"/> is the container name.</param>
     /// <param name="hint">The global prefix hint.</param>
     /// <returns>The trimming name.</returns>
-    protected virtual string GetTrimmingName(
+    public virtual string GetTrimmingName(
         Dictionary<string, string>? prefixOverrides,
         string name,
         bool isContainer,

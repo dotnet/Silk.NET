@@ -23,17 +23,14 @@ public partial struct PenButtonEvent
     [NativeTypeName("SDL_PenID")]
     public uint Which;
 
-    [NativeTypeName("Uint8")]
-    public byte Button;
-
-    [NativeTypeName("Uint8")]
-    public byte State;
-
-    [NativeTypeName("Uint16")]
-    public ushort PenState;
+    [NativeTypeName("SDL_PenInputFlags")]
+    public uint PenState;
     public float X;
     public float Y;
 
-    [NativeTypeName("float[6]")]
-    public PenButtonEventAxes Axes;
+    [NativeTypeName("Uint8")]
+    public byte Button;
+
+    [NativeTypeName("bool")]
+    public byte Down;
 }
