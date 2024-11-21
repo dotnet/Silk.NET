@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 using System.Numerics;
 using Silk.NET.Maths;
 

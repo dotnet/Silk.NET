@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 using Silk.NET.Maths;
 
 /// <summary>

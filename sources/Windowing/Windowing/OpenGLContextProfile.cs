@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 /// <summary>
 /// Represents the context profile OpenGL should use.
 /// </summary>

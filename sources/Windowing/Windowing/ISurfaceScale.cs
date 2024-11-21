@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 /// <summary>
 /// Provides information pertaining to the surface's graphical scaling.
 /// </summary>

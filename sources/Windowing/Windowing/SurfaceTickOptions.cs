@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 /// <summary>
 /// Contains properties pertaining to the regular execution of the <see cref="Surface.Tick" /> event.
 /// </summary>

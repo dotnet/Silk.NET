@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 /// <summary>
 /// Provides the ability to configure displays on which the surface can render.
 /// </summary>

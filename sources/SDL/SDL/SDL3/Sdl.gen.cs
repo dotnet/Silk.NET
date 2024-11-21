@@ -50898,7 +50898,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         "/Users/dylan/Documents/Silk.NET3/eng/silktouch/sdl/SDL3/sdl-SDL.h"u8;
 
     [NativeTypeName("#define SDL_LINE __LINE__")]
-    public const int Line = 7;
+    public const int Line = 8;
 
     [NativeTypeName("#define SDL_NULL_WHILE_LOOP_CONDITION (0)")]
     public const int NullWhileLoopCondition = (0);

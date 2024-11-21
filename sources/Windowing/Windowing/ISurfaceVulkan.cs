@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 /// <summary>
 /// The Vulkan component of a <see cref="Surface" />.
 /// </summary>

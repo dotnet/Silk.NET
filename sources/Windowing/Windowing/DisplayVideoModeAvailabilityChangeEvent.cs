@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 /// <summary>
 /// Contains properties pertaining to a change in the available video modes for a display.
 /// </summary>

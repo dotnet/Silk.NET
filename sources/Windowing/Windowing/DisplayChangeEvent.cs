@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 /// <summary>
 /// Contains properties pertaining to a surface changing to a different display.
 /// </summary>

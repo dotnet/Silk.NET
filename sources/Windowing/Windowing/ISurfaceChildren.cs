@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 /// <summary>
 /// Provides the ability to spawn children surfaces.
 /// </summary>

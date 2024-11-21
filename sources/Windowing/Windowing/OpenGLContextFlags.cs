@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 /// <summary>
 /// Represents flags related to the OpenGL context.
 /// </summary>

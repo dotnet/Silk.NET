@@ -32,6 +32,7 @@ Silk.NET.SDL
 ../../../submodules/sdl/include/SDL3/SDL_events.h
 ../../../submodules/sdl/include/SDL3/SDL_filesystem.h
 ../../../submodules/sdl/include/SDL3/SDL_gamepad.h
+../../../submodules/sdl/include/SDL3/SDL_gpu.h
 ../../../submodules/sdl/include/SDL3/SDL_guid.h
 ../../../submodules/sdl/include/SDL3/SDL_haptic.h
 ../../../submodules/sdl/include/SDL3/SDL_hidapi.h
@@ -54,6 +55,7 @@ Silk.NET.SDL
 ../../../submodules/sdl/include/SDL3/SDL_pixels.h
 ../../../submodules/sdl/include/SDL3/SDL_platform.h
 ../../../submodules/sdl/include/SDL3/SDL_power.h
+../../../submodules/sdl/include/SDL3/SDL_process.h
 ../../../submodules/sdl/include/SDL3/SDL_properties.h
 ../../../submodules/sdl/include/SDL3/SDL_rect.h
 ../../../submodules/sdl/include/SDL3/SDL_render.h
@@ -68,3 +70,4 @@ Silk.NET.SDL
 ../../../submodules/sdl/include/SDL3/SDL_touch.h
 ../../../submodules/sdl/include/SDL3/SDL_version.h
 ../../../submodules/sdl/include/SDL3/SDL_video.h
+../../../submodules/sdl/include/SDL3/SDL_vulkan.h

@@ -1,3 +1,5 @@
+namespace Silk.NET.Windowing;
+
 /// <summary>
 /// Contains properties pertaining to a display being connected or disconnected.
 /// </summary>
