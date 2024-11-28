@@ -10,10 +10,12 @@ namespace Silk.NET.Core
     /// </summary>
     public readonly struct Bool32 : IEquatable<Bool32>, IEquatable<uint>, IEquatable<bool>
     {
+        private readonly uint _value;
+
         /// <summary>
         /// Gets the 32-bit value for this boolean.
         /// </summary>
-        public uint Value { get; }
+        public uint Value { get => _value; }
 
         /// <summary>
         /// Returns the hash code for this instance.
@@ -63,27 +65,27 @@ namespace Silk.NET.Core
         /// Creates a 32-bit boolean from the given 32-bit unsigned integer.
         /// </summary>
         /// <param name="val">The 32-bit unsigned integer value.</param>
-        public Bool32(uint val) => Value = val;
+        public Bool32(uint val) => _value = val;
 
         /// <summary>
         /// Creates a 32-bit boolean from the given managed boolean.
         /// </summary>
         /// <param name="val">The boolean value.</param>
-        public Bool32(bool val) => Value = val ? 1u : 0u;
+        public Bool32(bool val) => _value = val ? 1u : 0u;
 
         /// <summary>
         /// Converts this 32-bit boolean to a managed boolean.
         /// </summary>
         /// <param name="val">The 32-bit boolean.</param>
         /// <returns>The managed boolean.</returns>
-        public static implicit operator bool(Bool32 val) => val.Value == 1;
+        public static implicit operator bool(Bool32 val) => val._value == 1;
 
         /// <summary>
         /// Converts this 32-bit boolean to a 32-bit unsigned integer.
         /// </summary>
         /// <param name="val">The 32-bit boolean.</param>
         /// <returns>The 32-bit unsigned integer.</returns>
-        public static implicit operator uint(Bool32 val) => val.Value;
+        public static implicit operator uint(Bool32 val) => val._value;
 
         /// <summary>
         /// Creates a 32-bit boolean from the given managed boolean.
