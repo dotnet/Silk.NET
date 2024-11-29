@@ -11,10 +11,12 @@ public unsafe partial struct DisplayMode
 {
     [NativeTypeName("SDL_DisplayID")]
     public uint DisplayID;
-    public PixelFormatEnum Format;
+    public PixelFormat Format;
     public int W;
     public int H;
     public float PixelDensity;
     public float RefreshRate;
-    public void* Driverdata;
+    public int RefreshRateNumerator;
+    public int RefreshRateDenominator;
+    public DisplayModeDataHandle @internal;
 }

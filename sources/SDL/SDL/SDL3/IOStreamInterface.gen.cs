@@ -9,18 +9,24 @@ namespace Silk.NET.SDL;
 
 public unsafe partial struct IOStreamInterface
 {
+    [NativeTypeName("Uint32")]
+    public uint Version;
+
     [NativeTypeName("Sint64 (*)(void *)")]
     public IOStreamInterfaceSize Size;
 
-    [NativeTypeName("Sint64 (*)(void *, Sint64, int)")]
+    [NativeTypeName("Sint64 (*)(void *, Sint64, SDL_IOWhence)")]
     public IOStreamInterfaceSeek Seek;
 
     [NativeTypeName("size_t (*)(void *, void *, size_t, SDL_IOStatus *)")]
-    public IOStreamInterfaceFunction1 Read;
+    public IOStreamInterfaceRead Read;
 
     [NativeTypeName("size_t (*)(void *, const void *, size_t, SDL_IOStatus *)")]
-    public IOStreamInterfaceFunction1 Write;
+    public IOStreamInterfaceWrite Write;
 
-    [NativeTypeName("int (*)(void *)")]
-    public ThreadFunction Close;
+    [NativeTypeName("bool (*)(void *, SDL_IOStatus *)")]
+    public IOStreamInterfaceFlush Flush;
+
+    [NativeTypeName("bool (*)(void *)")]
+    public IOStreamInterfaceClose Close;
 }

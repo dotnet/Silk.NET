@@ -31,6 +31,6 @@ public static unsafe partial class SDL_ClipboardEventTests
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(ClipboardEvent), Is.EqualTo(16));
+        Assert.That(sizeof(ClipboardEvent), Is.EqualTo(32));
     }
 }

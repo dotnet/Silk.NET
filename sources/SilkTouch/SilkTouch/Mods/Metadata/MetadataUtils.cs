@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -79,6 +81,94 @@ public static class MetadataUtils
     }
 
     /// <summary>
+    /// Gets the first matching metadata item for a specific symbol.
+    /// </summary>
+    /// <param name="metadataProviders">The metadata providers.</param>
+    /// <param name="jobKey">The current job key.</param>
+    /// <param name="parentSymbol">
+    /// The parent symbol, optionally containing the symbol identified by <paramref name="childSymbol"/> if provided.
+    /// Used as input to <see cref="IApiMetadataProvider{T}.TryGetChildSymbolMetadata"/> if
+    /// <paramref name="childSymbol"/> is not <c>null</c>, <see cref="IApiMetadataProvider{T}.TryGetSymbolMetadata"/>
+    /// otherwise.
+    /// </param>
+    /// <param name="childSymbol">
+    /// The target symbol to get metadata for. If <c>null</c>, <paramref name="parentSymbol"/> represents the target
+    /// symbol. Otherwise, this is used as input to <see cref="IApiMetadataProvider{T}.TryGetChildSymbolMetadata"/>.
+    /// </param>
+    /// <param name="filter">
+    /// Filters the resolved metadata. If <c>null</c>, the first matching metadata item shall be used.
+    /// </param>
+    /// <param name="defaultValue">The value to return if no matching metadata was found.</param>
+    /// <typeparam name="T">The type of the metadata.</typeparam>
+    /// <returns>The metadata item.</returns>
+    [return: NotNullIfNotNull(nameof(defaultValue))]
+    public static T? GetMetadata<T>(
+        this IEnumerable<IApiMetadataProvider<IEnumerable<T>>> metadataProviders,
+        string? jobKey,
+        string? parentSymbol = null,
+        string? childSymbol = null,
+        Predicate<T>? filter = default,
+        T? defaultValue = default
+    )
+    {
+        if (parentSymbol is null)
+        {
+            return defaultValue;
+        }
+
+        T? parent = default;
+        foreach (var apimd in metadataProviders)
+        {
+            if (
+                childSymbol is not null
+                && apimd.TryGetChildSymbolMetadata(jobKey, parentSymbol, childSymbol, out var vers)
+                && vers.FirstOrDefault(x => filter?.Invoke(x) ?? true) is { } ver
+            )
+            {
+                return ver;
+            }
+
+            // parentVers.FirstOrDefault(x => x.Profile == Profile.Profile) ?? parent
+            if (
+                apimd.TryGetSymbolMetadata(jobKey, parentSymbol, out var parentVers)
+                && (parent = parentVers.FirstOrDefault(x => filter?.Invoke(x) ?? true)) is not null
+                && childSymbol is null
+            )
+            {
+                break;
+            }
+        }
+
+        return parent ?? defaultValue;
+    }
+
+    /// <summary>
+    /// Sets <paramref name="parentSymbol"/> to indicate that the type indicated by
+    /// <paramref name="innerParentSymbol" /> is being recursed into. If <paramref name="parentSymbol" /> indicates that
+    /// this is itself being done as part of a recursion (i.e. this is nested type symbol), the returned value shall
+    /// denote that type qualification.
+    /// </summary>
+    /// <remarks>
+    /// This is mostly just a helper method to reduce code duplication for the metadata symbol identifier format of
+    /// <c>OuterClass.InnerClass</c> should ever it change in the future. It's very doubtful that'd happen, nonetheless
+    /// this should be used if nothing else for code cleanliness.
+    /// </remarks>
+    /// <param name="parentSymbol">The current parent symbol identifier value.</param>
+    /// <param name="innerParentSymbol">The parent symbol being recursed into.</param>
+    /// <param name="oldValue">
+    /// The old value, to restore as soon as <paramref name="innerParentSymbol"/> has been recursed into.
+    /// </param>
+    /// <returns>The new value for <paramref name="parentSymbol"/>.</returns>
+    public static string? PushParentSymbolIdentifier(
+        this string? parentSymbol,
+        string innerParentSymbol,
+        out string? oldValue
+    ) =>
+        (oldValue = parentSymbol) is not null
+            ? $"{parentSymbol}.{innerParentSymbol}"
+            : innerParentSymbol;
+
+    /// <summary>
     /// Creates symbol constraints based on the given length and mutability data. No other properties are set.
     /// </summary>
     /// <param name="lengths">
@@ -124,7 +214,7 @@ public static class MetadataUtils
                             && lengths.Length > 0
                             && lengths[0] == "null-terminated"
                     )
-                )
+                ),
             ],
             IsMutable: mutability[0],
             ComputedFromNames: compSize ? [.. lengths] : [],

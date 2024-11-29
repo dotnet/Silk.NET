@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-public unsafe delegate long IOStreamInterfaceSeekDelegate(void* arg0, long arg1, int arg2);
+[Transformed]
+public unsafe delegate long IOStreamInterfaceSeekDelegate(void* arg0, long arg1, IOWhence arg2);

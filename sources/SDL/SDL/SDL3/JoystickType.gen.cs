@@ -20,4 +20,5 @@ public enum JoystickType : uint
     DrumKit,
     ArcadePad,
     Throttle,
+    Count,
 }

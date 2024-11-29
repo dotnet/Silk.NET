@@ -12,5 +12,4 @@ public enum ScaleMode : uint
 {
     Nearest,
     Linear,
-    Best,
 }

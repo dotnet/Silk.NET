@@ -23,9 +23,9 @@ public unsafe partial struct DropEvent
     public float X;
     public float Y;
 
-    [NativeTypeName("char *")]
+    [NativeTypeName("const char *")]
     public sbyte* Source;
 
-    [NativeTypeName("char *")]
+    [NativeTypeName("const char *")]
     public sbyte* Data;
 }

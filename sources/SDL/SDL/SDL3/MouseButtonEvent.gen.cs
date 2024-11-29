@@ -26,8 +26,8 @@ public partial struct MouseButtonEvent
     [NativeTypeName("Uint8")]
     public byte Button;
 
-    [NativeTypeName("Uint8")]
-    public byte State;
+    [NativeTypeName("bool")]
+    public byte Down;
 
     [NativeTypeName("Uint8")]
     public byte Clicks;

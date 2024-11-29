@@ -6,15 +6,14 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace Silk.NET.SDL;
-
+[Transformed]
 public readonly unsafe struct VirtualJoystickDescSetLED : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, byte, byte, byte, int> Handle =>
-        (delegate* unmanaged<void*, byte, byte, byte, int>)Pointer;
+    public delegate* unmanaged<void*, byte, byte, byte, byte> Handle =>
+        (delegate* unmanaged<void*, byte, byte, byte, byte>)Pointer;
 
-    public VirtualJoystickDescSetLED(delegate* unmanaged<void*, byte, byte, byte, int> ptr) =>
+    public VirtualJoystickDescSetLED(delegate* unmanaged<void*, byte, byte, byte, byte> ptr) =>
         Pointer = ptr;
 
     public VirtualJoystickDescSetLED(VirtualJoystickDescSetLEDDelegate proc) =>
@@ -23,10 +22,10 @@ public readonly unsafe struct VirtualJoystickDescSetLED : IDisposable
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator VirtualJoystickDescSetLED(
-        delegate* unmanaged<void*, byte, byte, byte, int> pfn
+        delegate* unmanaged<void*, byte, byte, byte, byte> pfn
     ) => new(pfn);
 
-    public static implicit operator delegate* unmanaged<void*, byte, byte, byte, int>(
+    public static implicit operator delegate* unmanaged<void*, byte, byte, byte, byte>(
         VirtualJoystickDescSetLED pfn
-    ) => (delegate* unmanaged<void*, byte, byte, byte, int>)pfn.Pointer;
+    ) => (delegate* unmanaged<void*, byte, byte, byte, byte>)pfn.Pointer;
 }

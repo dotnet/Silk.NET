@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-public partial struct ClipboardEvent
+public unsafe partial struct ClipboardEvent
 {
     public EventType Type;
 
@@ -16,4 +16,13 @@ public partial struct ClipboardEvent
 
     [NativeTypeName("Uint64")]
     public ulong Timestamp;
+
+    [NativeTypeName("bool")]
+    public byte Owner;
+
+    [NativeTypeName("Sint32")]
+    public int NMimeTypes;
+
+    [NativeTypeName("const char **")]
+    public sbyte** MimeTypes;
 }

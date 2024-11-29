@@ -9,8 +9,7 @@ namespace Silk.NET.SDL;
 
 public partial struct AudioSpec
 {
-    [NativeTypeName("SDL_AudioFormat")]
-    public ushort Format;
+    public AudioFormat Format;
     public int Channels;
     public int Freq;
 }

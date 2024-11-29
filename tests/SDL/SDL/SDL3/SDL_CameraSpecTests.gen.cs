@@ -31,6 +31,6 @@ public static unsafe partial class SDL_CameraSpecTests
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(CameraSpec), Is.EqualTo(20));
+        Assert.That(sizeof(CameraSpec), Is.EqualTo(24));
     }
 }

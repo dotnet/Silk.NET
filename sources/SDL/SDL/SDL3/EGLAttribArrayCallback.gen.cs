@@ -11,18 +11,18 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct EGLAttribArrayCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<nint*> Handle => (delegate* unmanaged<nint*>)Pointer;
+    public delegate* unmanaged<void*, nint*> Handle => (delegate* unmanaged<void*, nint*>)Pointer;
 
-    public EGLAttribArrayCallback(delegate* unmanaged<nint*> ptr) => Pointer = ptr;
+    public EGLAttribArrayCallback(delegate* unmanaged<void*, nint*> ptr) => Pointer = ptr;
 
     public EGLAttribArrayCallback(EGLAttribArrayCallbackDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     public void Dispose() => SilkMarshal.Free(Pointer);
 
-    public static implicit operator EGLAttribArrayCallback(delegate* unmanaged<nint*> pfn) =>
+    public static implicit operator EGLAttribArrayCallback(delegate* unmanaged<void*, nint*> pfn) =>
         new(pfn);
 
-    public static implicit operator delegate* unmanaged<nint*>(EGLAttribArrayCallback pfn) =>
-        (delegate* unmanaged<nint*>)pfn.Pointer;
+    public static implicit operator delegate* unmanaged<void*, nint*>(EGLAttribArrayCallback pfn) =>
+        (delegate* unmanaged<void*, nint*>)pfn.Pointer;
 }

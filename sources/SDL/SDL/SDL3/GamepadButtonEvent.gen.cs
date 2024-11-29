@@ -23,8 +23,8 @@ public partial struct GamepadButtonEvent
     [NativeTypeName("Uint8")]
     public byte Button;
 
-    [NativeTypeName("Uint8")]
-    public byte State;
+    [NativeTypeName("bool")]
+    public byte Down;
 
     [NativeTypeName("Uint8")]
     public byte Padding1;

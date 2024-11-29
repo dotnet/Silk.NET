@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
 public enum BlendMode : uint
 {
-    None = 0x00000000,
-    Blend = 0x00000001,
-    Add = 0x00000002,
-    Mod = 0x00000004,
-    Mul = 0x00000008,
-    Invalid = 0x7FFFFFFF,
+    None = 0x00000000U,
+    Blend = 0x00000001U,
+    BlendPremultiplied = 0x00000010U,
+    Add = 0x00000002U,
+    AddPremultiplied = 0x00000020U,
+    Mod = 0x00000004U,
+    Mul = 0x00000008U,
+    Invalid = 0x7FFFFFFFU
 }
