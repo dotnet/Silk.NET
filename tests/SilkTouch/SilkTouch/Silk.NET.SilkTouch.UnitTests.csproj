@@ -15,7 +15,7 @@
     <PackageReference Include="Silk.NET.BuildTools" Version="2.22.0" />
     <PackageReference Include="System.Linq.Async" Version="6.0.1" />
     <PackageReference Include="Verify.DiffPlex" Version="3.1.2" />
-    <PackageReference Include="Verify.NUnit" Version="28.1.2" />
+    <PackageReference Include="Verify.NUnit" Version="28.3.0" />
     <None Include="**/*.received.*" />
     <None Include="**/*.verified.*" />
   </ItemGroup>
