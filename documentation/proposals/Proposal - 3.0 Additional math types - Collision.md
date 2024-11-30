@@ -26,7 +26,7 @@ Where it is appropriate for a type in this proposal to have both integer and flo
 
 # Proposed API
 
-`Silk.NET.Math` and the generic math proposal for 3.0 already contain "geometric types that would be suitable to use for collision/intersection types. i.e. Box3F.
+`Silk.NET.Math` and the generic math proposal for 3.0 already contain "geometric types" that would be suitable to use for collision/intersection types. i.e. Box3F.
 
 This proposal is to add additional APIs for the purpose of intersection tests.
 
@@ -177,17 +177,44 @@ public struct SphereF<TScalar>
 }
 ```
 
-### BoxFExtent
+### BoxExtentF
 
 Access aligned box for fast frustum culling. Interface implementations not included for brevity.
 
+* Must include the same members as mentioned in the Generic Math proposal in the `Geometric Types` section 
+
 ```csharp
+public struct BoxExtentF<TScalar>
+    : IEquatable<BoxExtentF<TScalar>>
+    , IEqualityOperators<BoxExtentF<TScalar>, BoxExtentF<TScalar>, bool>
+    , IIntersectWithRay<BoxExtentF<TScalar>, TScalar>
+    , IIntersectWithPlane<BoxExtentF<TScalar>, TScalar>
+    , IColliderShape<BoxExtentF<TScalar>, TScalar>
+    , IContainPoint<BoxExtentF<TScalar>, TScalar>
+    , IIntersect<BoxExtentF<TScalar>, BoxExtentF<TScalar>>
+    //Implement IIntersect for other shapes
+    , IContain<BoxExtentF<TScalar>, BoxExtentF<TScalar>>
+    //Implement IContain for other shapes
+    , IFormattable
+    where TScalar : IBinaryFloatingPointIeee754<TScalar>
+{
+    public Vector3F<TScalar> Center;
+    public Vector3F<TScalar> Extents;
+
+    public BoxExtentF(BoxF<TScalar> box);
+    public BoxExtentF(Vector3F<TScalar> minimum, Vector3F<TScalar> maximum);
+
+    public static explicit operator BoxF<TScalar>(BoxExtentF<TScalar> boxExtent);
+    public static explicit operator BoxExtentF<TScalar>(BoxF<TScalar> box)
+}
 
 ```
 
 ### OrientedBoxF
 
 Box with orientation. Interface implementations not included for brevity.
+
+* Must include the same members as mentioned in the Generic Math proposal in the `Geometric Types` section 
 
 ```csharp
 public struct OrientedBoxF<TScalar>
@@ -204,7 +231,11 @@ public struct OrientedBoxF<TScalar>
     , IFormattable
     where TScalar : IBinaryFloatingPointIeee754<TScalar>
 {
+    public Vector3F<TScalar> Center;
+    public Vector3F<TScalar> Extents;
+    public Quaternion Orientation;
 
+    public OrientedBoxF(Vector3F<TScalar> center, Vector3F<TScalar> extents, Quaternion orientation);
 }
 ```
 
@@ -243,12 +274,6 @@ public static class Frustum
         where TScalar : IBinaryFloatingPointIeee754<TScalar>
         => default;
 }
-
-```
-
-### CollisionHelper
-
-```csharp
 
 ```
 
