@@ -197,11 +197,11 @@ public static class Angle
         where TScalar : IFloatingPointIeee754<TScalar>
          => default;
 
-    public static Angle<TScalar> Between<TScalar>(Vector2F<TScalar> left, Vector2F<TScalar> right)
+    public static Angle<TScalar> Between<TScalar>(in Vector2F<TScalar> left, in Vector2F<TScalar> right)
        where TScalar : IFloatingPointIeee754<TScalar>
        => default;
 
-    public static Angle<TScalar> Between<TScalar>(Vector3F<TScalar> left, Vector3F<TScalar> right)
+    public static Angle<TScalar> Between<TScalar>(in Vector3F<TScalar> left, in Vector3F<TScalar> right)
        where TScalar : IFloatingPointIeee754<TScalar>
        => default;
 
