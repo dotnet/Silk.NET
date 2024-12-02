@@ -5,19 +5,16 @@ using Silk.NET.Core;
 using Silk.NET.OpenGL;
 using Silk.NET.SDL;
 
-var ec = Sdl.Init(uint.MaxValue);
-if (ec is not 0)
+if (!Sdl.Init(uint.MaxValue))
 {
-    throw new Exception(
-        $"failed to init (error code: {(Errorcode)ec} {ec}): {(string)Sdl.GetError()}"
-    );
+    throw new Exception($"failed to init: {(string)Sdl.GetError()}");
 }
 
 var window = Sdl.CreateWindow(
     "Hello Window!",
     1000,
     800,
-    Sdl.WindowOpengl | Sdl.WindowHighPixelDensity
+    Sdl.WindowOpengl | Sdl.WindowHighPixelDensity | Sdl.WindowResizable
 );
 if (window == nullptr)
 {
@@ -40,12 +37,12 @@ Console.WriteLine($"SDL_GetWindowSizeInPixels {px} {py}");
 
 var context = new SdlContext(
     window,
-    new KeyValuePair<GLattr, int>(GLattr.ContextMajorVersion, 3),
-    new KeyValuePair<GLattr, int>(GLattr.ContextMinorVersion, 3),
-    new KeyValuePair<GLattr, int>(GLattr.ContextProfileMask, (int)GLprofile.Core),
-    new KeyValuePair<GLattr, int>(
-        GLattr.ContextFlags,
-        (int)(GLcontextFlag.ForwardCompatibleFlag | GLcontextFlag.DebugFlag)
+    new KeyValuePair<GLAttr, int>(GLAttr.ContextMajorVersion, 3),
+    new KeyValuePair<GLAttr, int>(GLAttr.ContextMinorVersion, 3),
+    new KeyValuePair<GLAttr, int>(GLAttr.ContextProfileMask, Sdl.GlContextProfileCore),
+    new KeyValuePair<GLAttr, int>(
+        GLAttr.ContextFlags,
+        Sdl.GlContextForwardCompatibleFlag | Sdl.GlContextDebugFlag
     )
 );
 GL.ThisThread.MakeCurrent(GL.Create(context));
@@ -101,9 +98,13 @@ GL.UseProgram(prog);
 Event @event = default;
 while (true)
 {
-    if (Sdl.PollEvent(@event.AsRef()) && @event.Type == (int)EventType.Quit)
+    if (Sdl.PollEvent(@event.AsRef()))
     {
-        break;
+        Console.WriteLine((EventType)@event.Type);
+        if (@event.Type == (int)EventType.Quit)
+        {
+            break;
+        }
     }
 
     if (@event.Window.Type == EventType.WindowDisplayScaleChanged)

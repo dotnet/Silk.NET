@@ -9,6 +9,9 @@ SDL_memmove
 SDL_memset
 SDL_BeginThreadFunction
 SDL_EndThreadFunction
+SDL_fabsf
+SDL_size_add_check_overflow_builtin
+SDL_size_mul_check_overflow_builtin
 --file
 sdl-SDL.h
 --methodClassName
@@ -61,6 +64,7 @@ Silk.NET.SDL
 ../../../submodules/sdl/include/SDL3/SDL_render.h
 ../../../submodules/sdl/include/SDL3/SDL_scancode.h
 ../../../submodules/sdl/include/SDL3/SDL_sensor.h
+../../../submodules/sdl/include/SDL3/SDL_stdinc.h
 ../../../submodules/sdl/include/SDL3/SDL_storage.h
 ../../../submodules/sdl/include/SDL3/SDL_surface.h
 ../../../submodules/sdl/include/SDL3/SDL_system.h
