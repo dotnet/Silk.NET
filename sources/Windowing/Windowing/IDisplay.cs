@@ -1,3 +1,5 @@
+using System.Numerics;
+
 namespace Silk.NET.Windowing;
 
 using Silk.NET.Maths;
@@ -6,12 +8,18 @@ using Silk.NET.Maths;
 /// Represents a display on which a surface can be rendered.
 /// </summary>
 /// <remarks>
-/// These objects may be shared with child windows created using <see cref="ISurfaceChildren" /> and vice versa i.e.
-/// this object can be shared between all surfaces that share a common ancestor (the "root surface"). Beyond that, these
-/// objects are not guaranteed to be valid across surfaces. This allows one event handler to enact changes on multiple
-/// surfaces.
+/// Each surface shall get its own <see cref="IDisplay" /> object for each display. This is primarily to ensure that
+/// users get events dispatched with the surface they expect depending on which <see cref="ISurfaceDisplay" /> the
+/// <see cref="IDisplay" /> was sourced from. However, display objects can be somewhat shared between all surfaces that
+/// share a common ancestor (the "root surface"). Specifically, an object at a given index in
+/// <see cref="ISurfaceDisplay.Available" /> on one surface shall be equatable to the object sourced from the same index
+/// in <see cref="ISurfaceDisplay.Available" /> on another surface with the same root surface. Furthermore,
+/// <see cref="ISurfaceDisplay.Current" /> on one surface shall be assignable to an <see cref="IDisplay" /> object
+/// sourced from another surface with the same root surface, where <see cref="ISurfaceDisplay.Current" /> shall lookup
+/// the equivalent <see cref="IDisplay" /> object from its <see cref="ISurfaceDisplay.Available" /> displays upon
+/// assignment.
 /// </remarks>
-public interface IDisplay
+public interface IDisplay : IEquatable<IDisplay>
 {
     /// <summary>
     /// Gets the position and resolution of the monitor in screen space.

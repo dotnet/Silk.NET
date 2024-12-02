@@ -49,6 +49,12 @@ public abstract class Surface : IGLContextSource, INativeWindow
     public abstract Vector2 DrawableSize { get; }
 
     /// <summary>
+    /// Gets a value indicating whether the surface is terminating irrevocably.
+    /// </summary>
+    /// <seealso cref="ISurfaceWindow.IsCloseRequested" />
+    public abstract bool IsTerminating { get; }
+
+    /// <summary>
     /// An event raised as frequently as possible (or in line with <see cref="TickOptions" />).
     /// </summary>
     public event Action<SurfaceTimingEvent>? Tick;
@@ -233,16 +239,18 @@ public abstract class Surface : IGLContextSource, INativeWindow
     /// <summary>
     /// Executes the <see cref="Tick" /> event. This will also call <see cref="OnUpdate" /> and <see cref="OnRender" />.
     /// </summary>
-    protected virtual void OnTick()
+    protected internal virtual void OnTick()
     {
         TimeCheck(ref _lastTick, 0, out var diff);
         Tick?.Invoke(new SurfaceTimingEvent(this, diff / (double)Stopwatch.Frequency));
+        OnUpdate();
+        OnRender();
     }
 
     /// <summary>
     /// Executes the <see cref="Render" /> event if the constraints defined in <see cref="RenderOptions" /> are met.
     /// </summary>
-    protected virtual void OnRender()
+    protected internal virtual void OnRender()
     {
         if (!TimeCheck(ref _lastRender, _renderFrequency, out var diff))
         {
@@ -255,7 +263,7 @@ public abstract class Surface : IGLContextSource, INativeWindow
     /// <summary>
     /// Executes the <see cref="Update" /> event if the constraints defined in <see cref="UpdateOptions" /> are met.
     /// </summary>
-    protected virtual void OnUpdate()
+    protected internal virtual void OnUpdate()
     {
         if (!TimeCheck(ref _lastUpdate, _updateFrequency, out var diff))
         {

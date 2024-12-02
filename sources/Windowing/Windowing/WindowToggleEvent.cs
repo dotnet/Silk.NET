@@ -6,5 +6,6 @@ namespace Silk.NET.Windowing;
 /// <summary>
 /// Contains properties pertaining to a boolean window property being toggled.
 /// </summary>
+/// <param name="Surface">The surface for which the property has been toggled.</param>
 /// <param name="Value">The new value.</param>
 public readonly record struct WindowToggleEvent(Surface Surface, bool Value);

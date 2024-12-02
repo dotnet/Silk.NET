@@ -27,17 +27,17 @@ public static class Extensions
         }
     }
 
-    public static void ThrowSdlError(this int ec)
+    public static void ThrowSdlError(this bool ec)
     {
-        if (ec != 0)
+        if (!ec)
         {
             Sdl.ThrowError();
         }
     }
 
-    public static void ThrowSdlError(this int ec, ISdl sdl)
+    public static void ThrowSdlError(this bool ec, ISdl sdl)
     {
-        if (ec != 0)
+        if (!ec)
         {
             sdl.ThrowError();
         }

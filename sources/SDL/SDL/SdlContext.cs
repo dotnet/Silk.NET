@@ -127,9 +127,9 @@ public class SdlContext : IGLContext
     /// <inheritdoc />
     public void SwapBuffers() => Expect(Api.GLSwapWindow(Window), "swap buffers");
 
-    private void Expect(int ec, string action)
+    private void Expect(bool ec, string action)
     {
-        if (ec is 0)
+        if (ec)
         {
             return;
         }

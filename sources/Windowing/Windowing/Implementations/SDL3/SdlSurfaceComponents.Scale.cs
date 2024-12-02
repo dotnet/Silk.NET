@@ -1,13 +1,35 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Numerics;
+using Silk.NET.SDL;
+
 namespace Silk.NET.Windowing.SDL3;
 
 internal partial class SdlSurfaceComponents : ISurfaceScale
 {
-    float ISurfaceScale.ContentScale => throw new NotImplementedException();
+    public float ContentScale =>
+        IsSurfaceInitialized
+            ? Sdl.GetDisplayContentScale(Sdl.GetDisplayForWindow(Handle))
+            : default;
 
-    float ISurfaceScale.DrawScale => throw new NotImplementedException();
+    public float DrawScale => IsSurfaceInitialized ? Sdl.GetWindowDisplayScale(Handle) : default;
 
-    float ISurfaceScale.PixelDensity => throw new NotImplementedException();
+    public float PixelDensity => IsSurfaceInitialized ? Sdl.GetWindowPixelDensity(Handle) : default;
+
+    public Vector2 DrawableSize
+    {
+        get
+        {
+            if (!IsSurfaceInitialized)
+            {
+                return default;
+            }
+
+            var w = 0;
+            var h = 0;
+            Sdl.GetWindowSizeInPixels(Handle, w.AsRef(), h.AsRef());
+            return new Vector2(w, h);
+        }
+    }
 }

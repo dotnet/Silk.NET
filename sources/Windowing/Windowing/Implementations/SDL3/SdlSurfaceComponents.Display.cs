@@ -1,42 +1,143 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics.CodeAnalysis;
+using Silk.NET.SDL;
+
 namespace Silk.NET.Windowing.SDL3;
 
 internal partial class SdlSurfaceComponents : ISurfaceDisplay
 {
-    IDisplay ISurfaceDisplay.Current
+    [field: AllowNull, MaybeNull]
+    public IDisplay Current
+    {
+        get
+        {
+            if (!IsSurfaceInitialized && field is { } ret)
+            {
+                return ret;
+            }
+
+            var current = IsSurfaceInitialized
+                ? Sdl.GetDisplayForWindow(Handle)
+                : Sdl.GetPrimaryDisplay();
+            if (current == 0)
+            {
+                Sdl.ThrowError();
+            }
+
+            foreach (var display in _displays ??= CreateDisplays())
+            {
+                if (display.Id == current)
+                {
+                    return field = display;
+                }
+            }
+
+            throw new InvalidOperationException(
+                "Mismatch between displays enumerated from the underlying API and the current display reported by "
+                    + "the underlying API."
+            );
+        }
+        set
+        {
+            SdlDisplay? sdlDisplay = null;
+            foreach (var display in _displays ??= CreateDisplays())
+            {
+                if (display.Equals(value))
+                {
+                    // in case value was from another surface, see IDisplay docs for more info.
+                    // vv----------------------------------------------------------------------
+                    value = sdlDisplay = display;
+                    break;
+                }
+            }
+
+            if (sdlDisplay is null)
+            {
+                throw new ArgumentException(
+                    "Display was not one of the Available displays (or that of a related surface).",
+                    nameof(value)
+                );
+            }
+
+            if (!IsSurfaceInitialized)
+            {
+                Return(value);
+                return;
+            }
+
+            if (VideoMode == default) // not fullscreen
+            {
+                var x = 0;
+                var y = 0;
+                if (!Sdl.GetWindowPosition(Handle, x.AsRef(), y.AsRef()))
+                {
+                    Sdl.ThrowError();
+                }
+
+                var currentDisplayWorkArea = Current.WorkArea;
+                var newDisplayWorkArea = sdlDisplay.WorkArea;
+                if (
+                    !Sdl.SetWindowPosition(
+                        Handle,
+                        (int)(x - currentDisplayWorkArea.Origin.X + newDisplayWorkArea.Origin.X),
+                        (int)(y - currentDisplayWorkArea.Origin.Y + newDisplayWorkArea.Origin.Y)
+                    )
+                )
+                {
+                    Sdl.ThrowError();
+                }
+            }
+            else if (
+                !Sdl.SetWindowFullscreenMode(Handle, (Ref<DisplayMode>)sdlDisplay.DisplayModes[0])
+            )
+            {
+                Sdl.ThrowError();
+            }
+
+            Return(value);
+            return;
+            void Return(IDisplay display)
+            {
+                field = value;
+                AvailableVideoModesChanged?.Invoke(
+                    new DisplayVideoModeAvailabilityChangeEvent(surface, display)
+                );
+            }
+        }
+    }
+
+    private SdlDisplay[]? _displays;
+
+    public IReadOnlyList<IDisplay> Available => _displays ??= CreateDisplays();
+
+    private static SdlDisplay[] CreateDisplays()
+    {
+        var count = 0;
+        var displays = Sdl.GetDisplays(count.AsRef());
+        var ret = new SdlDisplay[count];
+        for (nuint i = 0; (int)i < count; i++)
+        {
+            ret[i] = new SdlDisplay(displays[i]);
+        }
+        // TODO SDL_free
+        return ret;
+    }
+
+    public VideoMode VideoMode
     {
         get => throw new NotImplementedException();
         set => throw new NotImplementedException();
     }
 
-    IReadOnlyList<IDisplay> ISurfaceDisplay.Available => throw new NotImplementedException();
+    public IReadOnlyList<VideoMode> AvailableVideoModes => Current.KnownVideoModes ?? [default];
 
-    VideoMode ISurfaceDisplay.VideoMode
-    {
-        get => throw new NotImplementedException();
-        set => throw new NotImplementedException();
-    }
+    public event Action<DisplayChangeEvent>? CurrentDisplayChanged;
+    public event Action<DisplayAvailabilityChangeEvent>? AvailableChanged;
+    public event Action<DisplayVideoModeAvailabilityChangeEvent>? AvailableVideoModesChanged;
 
-    IReadOnlyList<VideoMode> ISurfaceDisplay.AvailableVideoModes =>
-        throw new NotImplementedException();
+    private void PreInitializeDisplay() { }
 
-    event Action<DisplayChangeEvent>? ISurfaceDisplay.CurrentDisplayChanged
-    {
-        add => throw new NotImplementedException();
-        remove => throw new NotImplementedException();
-    }
-
-    event Action<DisplayAvailabilityChangeEvent>? ISurfaceDisplay.AvailableChanged
-    {
-        add => throw new NotImplementedException();
-        remove => throw new NotImplementedException();
-    }
-
-    event Action<DisplayVideoModeAvailabilityChangeEvent>? ISurfaceDisplay.AvailableVideoModesChanged
-    {
-        add => throw new NotImplementedException();
-        remove => throw new NotImplementedException();
-    }
+    private void InitializeDisplay(uint props) { }
 }

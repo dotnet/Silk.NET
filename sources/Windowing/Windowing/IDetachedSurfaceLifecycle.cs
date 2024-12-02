@@ -15,7 +15,7 @@ namespace Silk.NET.Windowing;
 /// to <see cref="ISurfaceApplication.Run{T}" /> if <see cref="TryCreate{T}" /> returns <c>false</c> indicating a lack
 /// of support.
 /// </remarks>
-public interface IDetachedSurfaceLifecycle : IDisposable
+public partial interface IDetachedSurfaceLifecycle : IDisposable
 {
     /// <summary>
     /// Gets the surface with which this lifecycle is associated. The destruction of this surface is handled by
@@ -31,7 +31,7 @@ public interface IDetachedSurfaceLifecycle : IDisposable
     /// <remarks>
     /// It is expected that <see cref="Tick" /> shall not be called if this property is <c>true</c>.
     /// </remarks>
-    bool ShouldTerminate { get; }
+    bool ShouldTerminate => Surface.IsTerminating;
 
     /// <summary>
     /// Steps the underlying implementation's surface lifecycle (i.e. event loop), running a single tick on the
@@ -64,6 +64,8 @@ public interface IDetachedSurfaceLifecycle : IDisposable
     /// <remarks>
     /// This is the same reference implementation that <see cref="ISurfaceApplication.Run{T}" /> would otherwise use.
     /// </remarks>
-    static sealed bool TryCreate<T>([NotNullWhen(true)] out IDetachedSurfaceLifecycle? lifecycle)
-        where T : ISurfaceApplication => throw new NotImplementedException();
+    public static sealed partial bool TryCreate<T>(
+        [NotNullWhen(true)] out IDetachedSurfaceLifecycle? lifecycle
+    )
+        where T : ISurfaceApplication;
 }

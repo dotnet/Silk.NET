@@ -7,89 +7,79 @@ namespace Silk.NET.Windowing.SDL3;
 
 internal partial class SdlSurfaceComponents : ISurfaceWindow
 {
-    Rectangle<float> ISurfaceWindow.Bounds
+    public Rectangle<float> Bounds
     {
         get => throw new NotImplementedException();
         set => throw new NotImplementedException();
     }
 
-    Rectangle<float> ISurfaceWindow.ClientArea
+    public Rectangle<float> ClientArea
     {
         get => throw new NotImplementedException();
         set => throw new NotImplementedException();
     }
 
-    event Action<WindowCoordinatesEvent>? ISurfaceWindow.CoordinatesChanged
+    public event Action<WindowCoordinatesEvent>? CoordinatesChanged;
+
+    public bool IsCloseRequested
     {
-        add => throw new NotImplementedException();
-        remove => throw new NotImplementedException();
+        get;
+        set
+        {
+            var prev = field;
+            field = value;
+            if (!prev && value)
+            {
+                CloseRequested?.Invoke(new WindowToggleEvent(surface, true));
+            }
+        }
     }
 
-    bool ISurfaceWindow.IsCloseRequested
-    {
-        get => throw new NotImplementedException();
-        set => throw new NotImplementedException();
-    }
-
-    bool ISurfaceWindow.IsVisible
-    {
-        get => throw new NotImplementedException();
-        set => throw new NotImplementedException();
-    }
-
-    event Action<WindowToggleEvent>? ISurfaceWindow.CloseRequested
-    {
-        add => throw new NotImplementedException();
-        remove => throw new NotImplementedException();
-    }
-
-    bool ISurfaceWindow.IsFocused
+    public bool IsVisible
     {
         get => throw new NotImplementedException();
         set => throw new NotImplementedException();
     }
 
-    event Action<WindowToggleEvent>? ISurfaceWindow.FocusChanged
-    {
-        add => throw new NotImplementedException();
-        remove => throw new NotImplementedException();
-    }
+    public event Action<WindowToggleEvent>? CloseRequested;
 
-    string ISurfaceWindow.Title
+    public bool IsFocused
     {
         get => throw new NotImplementedException();
         set => throw new NotImplementedException();
     }
 
-    WindowState ISurfaceWindow.State
+    public event Action<WindowToggleEvent>? FocusChanged;
+
+    public string Title
     {
         get => throw new NotImplementedException();
         set => throw new NotImplementedException();
     }
 
-    event Action<WindowStateEvent>? ISurfaceWindow.StateChanged
-    {
-        add => throw new NotImplementedException();
-        remove => throw new NotImplementedException();
-    }
-
-    WindowBorder ISurfaceWindow.Border
+    public WindowState State
     {
         get => throw new NotImplementedException();
         set => throw new NotImplementedException();
     }
 
-    bool ISurfaceWindow.IsTopMost
+    public event Action<WindowStateEvent>? StateChanged;
+
+    public WindowBorder Border
     {
         get => throw new NotImplementedException();
         set => throw new NotImplementedException();
     }
 
-    event Action<WindowFileEvent>? ISurfaceWindow.FileDrop
+    public bool IsTopMost
     {
-        add => throw new NotImplementedException();
-        remove => throw new NotImplementedException();
+        get => throw new NotImplementedException();
+        set => throw new NotImplementedException();
     }
 
-    bool ISurfaceWindow.TrySetIcon(WindowIconVariants icon) => throw new NotImplementedException();
+    public event Action<WindowFileEvent>? FileDrop;
+
+    public bool TrySetIcon(WindowIconVariants icon) => throw new NotImplementedException();
+
+    private void InitializeWindow(uint props) { }
 }

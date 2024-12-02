@@ -1800,6 +1800,27 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_EndGPURenderPass")]
         static abstract void EndGPURenderPass(GPURenderPassHandle render_pass);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_EnterAppMainCallbacks")]
+        static abstract int EnterAppMainCallbacks(
+            int argc,
+            [NativeTypeName("char *[]")] sbyte** argv,
+            [NativeTypeName("SDL_AppInit_func")] AppInitFunc appinit,
+            [NativeTypeName("SDL_AppIterate_func")] AppIterateFunc appiter,
+            [NativeTypeName("SDL_AppEvent_func")] AppEventFunc appevent,
+            [NativeTypeName("SDL_AppQuit_func")] AppQuitFunc appquit
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_EnterAppMainCallbacks")]
+        static abstract int EnterAppMainCallbacks(
+            int argc,
+            [NativeTypeName("char *[]")] Ref2D<sbyte> argv,
+            [NativeTypeName("SDL_AppInit_func")] AppInitFunc appinit,
+            [NativeTypeName("SDL_AppIterate_func")] AppIterateFunc appiter,
+            [NativeTypeName("SDL_AppEvent_func")] AppEventFunc appevent,
+            [NativeTypeName("SDL_AppQuit_func")] AppQuitFunc appquit
+        );
+
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
         static abstract byte EnumerateDirectory(
@@ -6078,6 +6099,13 @@ public unsafe partial interface ISdl
             [NativeTypeName("va_list")] Ref<sbyte> ap
         );
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_main")]
+        static abstract int Main(int argc, [NativeTypeName("char *[]")] sbyte** argv);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_main")]
+        static abstract int Main(int argc, [NativeTypeName("char *[]")] Ref2D<sbyte> argv);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
         static abstract void* MapGPUTransferBuffer(
             GPUDeviceHandle device,
@@ -7651,6 +7679,23 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint32")] uint duration_ms
         );
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_RunApp")]
+        static abstract int RunApp(
+            int argc,
+            [NativeTypeName("char *[]")] sbyte** argv,
+            [NativeTypeName("SDL_main_func")] MainFunc mainFunction,
+            void* reserved
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RunApp")]
+        static abstract int RunApp(
+            int argc,
+            [NativeTypeName("char *[]")] Ref2D<sbyte> argv,
+            [NativeTypeName("SDL_main_func")] MainFunc mainFunction,
+            Ref reserved
+        );
+
         [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RunHapticEffect")]
@@ -8519,6 +8564,9 @@ public unsafe partial interface ISdl
             LogPriority priority,
             [NativeTypeName("const char *")] Ref<sbyte> prefix
         );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetMainReady")]
+        static abstract void SetMainReady();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetModState")]
         static abstract void SetModState([NativeTypeName("SDL_Keymod")] ushort modstate);
@@ -9920,6 +9968,88 @@ public unsafe partial interface ISdl
             [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> destination,
             [NativeTypeName("bool")] MaybeBool<byte> cycle
         );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_CreateSurface")]
+        static abstract byte VulkanCreateSurface(
+            WindowHandle window,
+            [NativeTypeName("VkInstance")] void* instance,
+            [NativeTypeName("const struct VkAllocationCallbacks *")] void* allocator,
+            [NativeTypeName("VkSurfaceKHR *")] ulong* surface
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_CreateSurface")]
+        static abstract MaybeBool<byte> VulkanCreateSurface(
+            WindowHandle window,
+            [NativeTypeName("VkInstance")] Ref instance,
+            [NativeTypeName("const struct VkAllocationCallbacks *")] Ref allocator,
+            [NativeTypeName("VkSurfaceKHR *")] Ref<ulong> surface
+        );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_DestroySurface")]
+        static abstract void VulkanDestroySurface(
+            [NativeTypeName("VkInstance")] void* instance,
+            [NativeTypeName("VkSurfaceKHR")] ulong surface,
+            [NativeTypeName("const struct VkAllocationCallbacks *")] void* allocator
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_DestroySurface")]
+        static abstract void VulkanDestroySurface(
+            [NativeTypeName("VkInstance")] Ref instance,
+            [NativeTypeName("VkSurfaceKHR")] ulong surface,
+            [NativeTypeName("const struct VkAllocationCallbacks *")] Ref allocator
+        );
+
+        [return: NativeTypeName("const char *const *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
+        static abstract sbyte** VulkanGetInstanceExtensions(
+            [NativeTypeName("Uint32 *")] uint* count
+        );
+
+        [return: NativeTypeName("const char *const *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
+        static abstract Ptr2D<sbyte> VulkanGetInstanceExtensions(
+            [NativeTypeName("Uint32 *")] Ref<uint> count
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_GetPresentationSupport")]
+        static abstract byte VulkanGetPresentationSupport(
+            [NativeTypeName("VkInstance")] void* instance,
+            [NativeTypeName("VkPhysicalDevice")] ulong physicalDevice,
+            [NativeTypeName("Uint32")] uint queueFamilyIndex
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_GetPresentationSupport")]
+        static abstract MaybeBool<byte> VulkanGetPresentationSupport(
+            [NativeTypeName("VkInstance")] Ref instance,
+            [NativeTypeName("VkPhysicalDevice")] ulong physicalDevice,
+            [NativeTypeName("Uint32")] uint queueFamilyIndex
+        );
+
+        [return: NativeTypeName("SDL_FunctionPointer")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_GetVkGetInstanceProcAddr")]
+        static abstract FunctionPointer VulkanGetVkGetInstanceProcAddr();
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_LoadLibrary")]
+        static abstract byte VulkanLoadLibrary([NativeTypeName("const char *")] sbyte* path);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_LoadLibrary")]
+        static abstract MaybeBool<byte> VulkanLoadLibrary(
+            [NativeTypeName("const char *")] Ref<sbyte> path
+        );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_UnloadLibrary")]
+        static abstract void VulkanUnloadLibrary();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitCondition")]
         static abstract void WaitCondition(ConditionHandle cond, MutexHandle mutex);
@@ -12091,6 +12221,27 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_EndGPURenderPass")]
     void EndGPURenderPass(GPURenderPassHandle render_pass);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_EnterAppMainCallbacks")]
+    int EnterAppMainCallbacks(
+        int argc,
+        [NativeTypeName("char *[]")] sbyte** argv,
+        [NativeTypeName("SDL_AppInit_func")] AppInitFunc appinit,
+        [NativeTypeName("SDL_AppIterate_func")] AppIterateFunc appiter,
+        [NativeTypeName("SDL_AppEvent_func")] AppEventFunc appevent,
+        [NativeTypeName("SDL_AppQuit_func")] AppQuitFunc appquit
+    );
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_EnterAppMainCallbacks")]
+    int EnterAppMainCallbacks(
+        int argc,
+        [NativeTypeName("char *[]")] Ref2D<sbyte> argv,
+        [NativeTypeName("SDL_AppInit_func")] AppInitFunc appinit,
+        [NativeTypeName("SDL_AppIterate_func")] AppIterateFunc appiter,
+        [NativeTypeName("SDL_AppEvent_func")] AppEventFunc appevent,
+        [NativeTypeName("SDL_AppQuit_func")] AppQuitFunc appquit
+    );
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
@@ -16023,6 +16174,13 @@ public unsafe partial interface ISdl
         [NativeTypeName("va_list")] Ref<sbyte> ap
     );
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_main")]
+    int Main(int argc, [NativeTypeName("char *[]")] sbyte** argv);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_main")]
+    int Main(int argc, [NativeTypeName("char *[]")] Ref2D<sbyte> argv);
+
     [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
     void* MapGPUTransferBuffer(
         GPUDeviceHandle device,
@@ -17468,6 +17626,23 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint32")] uint duration_ms
     );
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_RunApp")]
+    int RunApp(
+        int argc,
+        [NativeTypeName("char *[]")] sbyte** argv,
+        [NativeTypeName("SDL_main_func")] MainFunc mainFunction,
+        void* reserved
+    );
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RunApp")]
+    int RunApp(
+        int argc,
+        [NativeTypeName("char *[]")] Ref2D<sbyte> argv,
+        [NativeTypeName("SDL_main_func")] MainFunc mainFunction,
+        Ref reserved
+    );
+
     [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RunHapticEffect")]
@@ -18276,6 +18451,9 @@ public unsafe partial interface ISdl
         LogPriority priority,
         [NativeTypeName("const char *")] Ref<sbyte> prefix
     );
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetMainReady")]
+    void SetMainReady();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetModState")]
     void SetModState([NativeTypeName("SDL_Keymod")] ushort modstate);
@@ -19570,6 +19748,82 @@ public unsafe partial interface ISdl
         [NativeTypeName("const SDL_GPUTextureRegion *")] Ref<GPUTextureRegion> destination,
         [NativeTypeName("bool")] MaybeBool<byte> cycle
     );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_CreateSurface")]
+    byte VulkanCreateSurface(
+        WindowHandle window,
+        [NativeTypeName("VkInstance")] void* instance,
+        [NativeTypeName("const struct VkAllocationCallbacks *")] void* allocator,
+        [NativeTypeName("VkSurfaceKHR *")] ulong* surface
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_CreateSurface")]
+    MaybeBool<byte> VulkanCreateSurface(
+        WindowHandle window,
+        [NativeTypeName("VkInstance")] Ref instance,
+        [NativeTypeName("const struct VkAllocationCallbacks *")] Ref allocator,
+        [NativeTypeName("VkSurfaceKHR *")] Ref<ulong> surface
+    );
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_DestroySurface")]
+    void VulkanDestroySurface(
+        [NativeTypeName("VkInstance")] void* instance,
+        [NativeTypeName("VkSurfaceKHR")] ulong surface,
+        [NativeTypeName("const struct VkAllocationCallbacks *")] void* allocator
+    );
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_DestroySurface")]
+    void VulkanDestroySurface(
+        [NativeTypeName("VkInstance")] Ref instance,
+        [NativeTypeName("VkSurfaceKHR")] ulong surface,
+        [NativeTypeName("const struct VkAllocationCallbacks *")] Ref allocator
+    );
+
+    [return: NativeTypeName("const char *const *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
+    sbyte** VulkanGetInstanceExtensions([NativeTypeName("Uint32 *")] uint* count);
+
+    [return: NativeTypeName("const char *const *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
+    Ptr2D<sbyte> VulkanGetInstanceExtensions([NativeTypeName("Uint32 *")] Ref<uint> count);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_GetPresentationSupport")]
+    byte VulkanGetPresentationSupport(
+        [NativeTypeName("VkInstance")] void* instance,
+        [NativeTypeName("VkPhysicalDevice")] ulong physicalDevice,
+        [NativeTypeName("Uint32")] uint queueFamilyIndex
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_GetPresentationSupport")]
+    MaybeBool<byte> VulkanGetPresentationSupport(
+        [NativeTypeName("VkInstance")] Ref instance,
+        [NativeTypeName("VkPhysicalDevice")] ulong physicalDevice,
+        [NativeTypeName("Uint32")] uint queueFamilyIndex
+    );
+
+    [return: NativeTypeName("SDL_FunctionPointer")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_GetVkGetInstanceProcAddr")]
+    FunctionPointer VulkanGetVkGetInstanceProcAddr();
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_LoadLibrary")]
+    byte VulkanLoadLibrary([NativeTypeName("const char *")] sbyte* path);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_LoadLibrary")]
+    MaybeBool<byte> VulkanLoadLibrary([NativeTypeName("const char *")] Ref<sbyte> path);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_UnloadLibrary")]
+    void VulkanUnloadLibrary();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitCondition")]
     void WaitCondition(ConditionHandle cond, MutexHandle mutex);
