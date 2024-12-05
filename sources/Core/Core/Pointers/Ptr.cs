@@ -102,6 +102,7 @@ namespace Silk.NET.Core
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
+        // TODO analyzer to ensure ptr is on stack or otherwise pinned
         public static bool operator ==(Ref lh, Ptr rh) => (void*)lh == rh.Native;
 
         /// <summary>

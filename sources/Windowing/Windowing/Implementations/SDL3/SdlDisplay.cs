@@ -86,7 +86,7 @@ internal class SdlDisplay(uint id) : IDisplay
 
             field = new Ptr<DisplayMode>[count];
             videoModes.AsSpan(count).CopyTo(field);
-            // TODO SDL_free
+            Sdl.Free((Ref)videoModes);
             return field;
         }
     }

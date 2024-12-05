@@ -42,11 +42,20 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         }
     }
 
-    private static void ThrowGLPrematureAccessException() =>
+    private void ThrowGLPrematureAccessException()
+    {
+        if (IsSurfaceInitialized)
+        {
+            throw new InvalidOperationException(
+                "The OpenGL context cannot be accessed as it was not enabled during "
+                    + "ISurfaceApplication.Initialize<TSurface>(TSurface)."
+            );
+        }
         throw new InvalidOperationException(
             "The OpenGL context cannot be accessed until ISurfaceApplication.Initialize<TSurface>(TSurface) "
                 + "has finished executing, consider using the Surface.Created callback instead."
         );
+    }
 
     public int SwapInterval
     {
@@ -168,7 +177,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
 
     public bool IsSupported => TryCreateContext(false);
 
-    public bool ShouldSwapAutomatically { get; set; }
+    public bool ShouldSwapAutomatically { get; set; } = true;
 
     public IGLContext? SharedContext
     {
@@ -423,6 +432,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
 
     private void PostInitializeOpenGL()
     {
+        DebugPrint();
         if (!TryCreateContext(true))
         {
             Sdl.ThrowError();

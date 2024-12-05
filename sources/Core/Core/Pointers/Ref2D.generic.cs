@@ -231,6 +231,16 @@ public unsafe readonly ref struct Ref2D<T>
         SilkMarshal.JaggedArrayToPointerArray<T>(array);
 
     /// <summary>
+    /// Expresses this <see cref="Ref2D{T}" /> as a <see cref="Ref"/>. Note that this does not index the
+    /// <see cref="Ref2D{T}"/>'s dimensions, and is effectively equivalent to converting a <c>void**</c> to a
+    /// <c>void*</c>.
+    /// </summary>
+    /// <param name="ptr">The <see cref="Ref2D{T}"/>.</param>
+    /// <returns>The <see cref="Ref"/>.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static implicit operator Ref(Ref2D<T> ptr) => new(ref ptr.InteriorRef);
+
+    /// <summary>
     /// creates a <see cref="Ref2D{T}"/> from a reference array
     /// </summary>
     /// <param name="array"></param>

@@ -252,12 +252,19 @@ public abstract class Surface : IGLContextSource, INativeWindow
     /// </summary>
     protected internal virtual void OnRender()
     {
-        if (!TimeCheck(ref _lastRender, _renderFrequency, out var diff))
+        if (
+            !TimeCheck(ref _lastRender, _renderFrequency, out var diff)
+            && OpenGL is not { IsEnabled: true, VSync: true }
+        )
         {
             return;
         }
 
         Render?.Invoke(new SurfaceTimingEvent(this, diff / (double)Stopwatch.Frequency));
+        if (OpenGL is { IsEnabled: true, IsCurrent: true, ShouldSwapAutomatically: true })
+        {
+            OpenGL.SwapBuffers();
+        }
     }
 
     /// <summary>

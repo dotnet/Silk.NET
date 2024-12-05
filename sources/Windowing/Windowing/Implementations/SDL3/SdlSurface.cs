@@ -44,10 +44,15 @@ internal class SdlSurface : Surface, IDisposable
             );
     }
 
-    public void PreInitialize() => Impl.PreInitializeSurface();
+    public void PreInitialize()
+    {
+        DebugPrint();
+        Impl.PreInitializeSurface();
+    }
 
     public void Initialize()
     {
+        DebugPrint();
         Impl.InitializeSurface();
         Created?.Invoke(new SurfaceLifecycleEvent(this));
     }
@@ -91,4 +96,7 @@ internal class SdlSurface : Surface, IDisposable
         where TPlatformInfo : default => throw new NotImplementedException();
 
     public void Dispose() => Impl.Dispose();
+
+    public override unsafe string ToString() =>
+        $"{base.ToString()} (0x{(nint)Impl.Handle.Handle:X})";
 }

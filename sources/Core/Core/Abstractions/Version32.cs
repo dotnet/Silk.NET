@@ -20,7 +20,7 @@ public readonly struct Version32
     /// <param name="minor">The minor value.</param>
     /// <param name="patch">The patch value.</param>
     /// <param name="variant">The variant value.</param>
-    public Version32(uint major, uint minor, uint patch, uint variant = 0) =>
+    public Version32(uint major, uint minor, uint patch = 0, uint variant = 0) =>
         Value = (variant << 29) | (major << 22) | (minor << 12) | patch;
 
     /// <summary>

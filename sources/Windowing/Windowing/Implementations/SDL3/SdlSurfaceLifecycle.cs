@@ -43,6 +43,7 @@ internal unsafe class SdlSurfaceLifecycle(SdlSurface surface) : IDetachedSurface
     [UnmanagedCallersOnly]
     private static AppResult AttachedLifecycleInit(void** appstate, int argc, sbyte** argv)
     {
+        DebugPrint();
         _attachedLifecycleRootSurface = _attachedLifecycleInit();
         _attachedLifecycleInit = null;
         return AppResult.Continue;
@@ -62,6 +63,7 @@ internal unsafe class SdlSurfaceLifecycle(SdlSurface surface) : IDetachedSurface
     public static SdlSurface CoreInit<T>(SdlSurface? parent)
         where T : ISurfaceApplication
     {
+        DebugPrint();
         var surface = new SdlSurface { Parent = parent };
         surface.PreInitialize();
         T.Initialize(surface);
@@ -112,16 +114,24 @@ internal unsafe class SdlSurfaceLifecycle(SdlSurface surface) : IDetachedSurface
         {
             CoreEvent(_attachedLifecycleRootSurface, ref *@event);
         }
+        else
+        {
+            DebugPrint($"got {(EventType)@event->Type} but no surface attached.");
+        }
 
         return AppResult.Continue;
     }
 
-    private static void CoreEvent(SdlSurface surface, ref Event @event) =>
+    private static void CoreEvent(SdlSurface surface, ref Event @event)
+    {
+        DebugPrint($"got {(EventType)@event.Type}, dispatching to surface {surface}.");
         SdlEventProcessor.DeliverEvent(ref @event);
+    }
 
     [UnmanagedCallersOnly]
     private static void AttachedDispose(void* appstate, AppResult lastResult)
     {
+        DebugPrint();
         if (_attachedLifecycleRootSurface is not null)
         {
             CoreDispose(_attachedLifecycleRootSurface);

@@ -41,6 +41,11 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
         }
         set
         {
+            if (value.Equals(field))
+            {
+                return;
+            }
+
             SdlDisplay? sdlDisplay = null;
             foreach (var display in _displays ??= CreateDisplays())
             {
@@ -61,13 +66,14 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
                 );
             }
 
+            var videoMode = VideoMode;
             if (!IsSurfaceInitialized)
             {
-                Return(value);
+                Return(sdlDisplay, videoMode);
                 return;
             }
 
-            if (VideoMode == default) // not fullscreen
+            if (videoMode == default) // not fullscreen
             {
                 var x = 0;
                 var y = 0;
@@ -96,10 +102,11 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
                 Sdl.ThrowError();
             }
 
-            Return(value);
+            Return(sdlDisplay, videoMode);
             return;
-            void Return(IDisplay display)
+            void Return(SdlDisplay display, VideoMode vidMode)
             {
+                _videoMode = vidMode == default ? vidMode : display.KnownVideoModes![1];
                 field = value;
                 AvailableVideoModesChanged?.Invoke(
                     new DisplayVideoModeAvailabilityChangeEvent(surface, display)
@@ -121,14 +128,90 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
         {
             ret[i] = new SdlDisplay(displays[i]);
         }
-        // TODO SDL_free
+
+        Sdl.Free((Ref)displays);
         return ret;
     }
 
+    private VideoMode _videoMode;
+
     public VideoMode VideoMode
     {
-        get => throw new NotImplementedException();
-        set => throw new NotImplementedException();
+        get
+        {
+            if (!IsSurfaceInitialized)
+            {
+                return _videoMode;
+            }
+
+            var displayMode = Sdl.GetWindowFullscreenMode(Handle);
+            if (displayMode == nullptr)
+            {
+                return default;
+            }
+
+            var display = (SdlDisplay)Current;
+            for (var i = 0; i < display.DisplayModes.Length; i++)
+            {
+                if (display.DisplayModes[i] == displayMode)
+                {
+                    return _videoMode = display.KnownVideoModes![i + 1];
+                }
+            }
+
+            throw new InvalidOperationException(
+                "Mismatch between display modes enumerated from the underlying API and the current display mode "
+                    + "reported by the underlying API."
+            );
+        }
+        set
+        {
+            if (_videoMode == value)
+            {
+                return;
+            }
+
+            var display = (SdlDisplay)Current;
+            if (!display.KnownVideoModes!.Contains(value))
+            {
+                throw new ArgumentException(
+                    "VideoMode was not one of the valid AvailableVideoModes.",
+                    nameof(value)
+                );
+            }
+
+            if (!IsSurfaceInitialized)
+            {
+                _videoMode = value;
+                return;
+            }
+
+            for (var i = 0; i < display.KnownVideoModes!.Count; i++)
+            {
+                if (display.KnownVideoModes[i] != value)
+                {
+                    continue;
+                }
+
+                if (
+                    !Sdl.SetWindowFullscreenMode(
+                        Handle,
+                        (Ref<DisplayMode>)(i == 0 ? nullptr : display.DisplayModes[i - 1])
+                    )
+                )
+                {
+                    Sdl.ThrowError();
+                }
+
+                _videoMode = value;
+                break;
+            }
+
+            throw new InvalidOperationException(
+                "Mismatch between display modes enumerated from the underlying API and the current display mode "
+                    + "reported by the underlying API."
+            );
+        }
     }
 
     public IReadOnlyList<VideoMode> AvailableVideoModes => Current.KnownVideoModes ?? [default];

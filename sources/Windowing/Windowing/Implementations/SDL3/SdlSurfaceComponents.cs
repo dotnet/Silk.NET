@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Windowing.SDL3;
@@ -44,6 +45,7 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
     /// </returns>
     public static WindowHandle InitializePlatform()
     {
+        DebugPrint($"reached, ref count before {_platformInitCount}");
         if (Interlocked.Increment(ref _platformInitCount) > 1)
         {
             return nullptr;
@@ -56,7 +58,10 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
         }
 
         IsOpenGLEnabled = Sdl.GLLoadLibrary(nullptr);
+        DebugPrintWithError(IsOpenGLEnabled ? "OpenGL support enabled" : "OpenGL support disabled");
+
         IsVulkanEnabled = Sdl.VulkanLoadLibrary(nullptr);
+        DebugPrintWithError(IsVulkanEnabled ? "Vulkan support enabled" : "Vulkan support disabled");
         Sdl.ClearError();
 
         var props = CreateDummyWindowProps();
@@ -76,8 +81,11 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
             Sdl.DestroyWindow(tempChildWindow);
         }
 
+        DebugPrintWithError(IsChildrenEnabled ? "Children supported" : "Children unsupported");
         Sdl.ClearError();
+
         IsWindowEnabled = Sdl.SetWindowPosition(tempWindow, 1, 1);
+        DebugPrintWithError($"Window decoration {(IsWindowEnabled ? "supported" : "unsupported")}");
         Sdl.ClearError();
         Sdl.DestroyProperties(props);
         return tempWindow;
@@ -92,6 +100,7 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
 
     public void PreInitializeSurface()
     {
+        DebugPrint();
         Handle = InitializePlatform();
         if (IsDisplayEnabled)
         {
@@ -101,27 +110,27 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
 
     public void InitializeSurface()
     {
-        var props = Sdl.CreateProperties();
+        var createProps = Sdl.CreateProperties();
         try
         {
             if (IsDisplayEnabled)
             {
-                InitializeDisplay(props);
+                InitializeDisplay(createProps);
             }
 
             if (IsOpenGLEnabled)
             {
-                InitializeOpenGL(props);
+                InitializeOpenGL(createProps);
             }
 
             if (IsVulkanEnabled)
             {
-                InitializeVulkan(props);
+                InitializeVulkan(createProps);
             }
 
             if (IsWindowEnabled)
             {
-                InitializeWindow(props);
+                InitializeWindow(createProps);
             }
 
             if (Handle != nullptr)
@@ -129,11 +138,12 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
                 Sdl.DestroyWindow(Handle);
             }
 
-            Handle = Sdl.CreateWindowWithProperties(props);
+            DebugPrintAllProps(createProps);
+            Handle = Sdl.CreateWindowWithProperties(createProps);
         }
         finally
         {
-            Sdl.DestroyProperties(props);
+            Sdl.DestroyProperties(createProps);
         }
 
         if (Handle == nullptr)
@@ -141,11 +151,14 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
             Sdl.ThrowError();
         }
 
+        DebugPrintAllProps(Sdl.GetWindowProperties(Handle));
         IsSurfaceInitialized = true;
         if (IsOpenGLEnabled)
         {
             PostInitializeOpenGL();
         }
+
+        DebugPrint("Initialized");
     }
 
     public static void TerminatePlatform()

@@ -7,7 +7,12 @@ namespace Silk.NET.Windowing.SDL3;
 
 internal partial class SdlSurfaceComponents : ISurfaceVulkan
 {
-    public bool IsEnabled
+    bool ISurfaceVulkan.IsEnabled
+    {
+        get => IsVulkanConfigured;
+        set => IsVulkanConfigured = value;
+    }
+    private bool IsVulkanConfigured
     {
         get;
         set
@@ -58,7 +63,7 @@ internal partial class SdlSurfaceComponents : ISurfaceVulkan
 
     private void InitializeVulkan(uint props)
     {
-        if (!IsEnabled)
+        if (!IsVulkanConfigured)
         {
             return;
         }
