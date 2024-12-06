@@ -9,6 +9,9 @@ namespace Silk.NET.Core.Native
         LPStr = UnmanagedType.LPStr,
         LPTStr = UnmanagedType.LPTStr,
         LPUTF8Str = UnmanagedType.LPUTF8Str,
+        /// <summary>
+        /// On Windows, a 2-byte, null-terminated Unicode character string. On other platforms, each character will be 4 bytes instead.
+        /// </summary>
         LPWStr = UnmanagedType.LPWStr,
         WinString = UnmanagedType.WinString,
         Ansi = LPStr,

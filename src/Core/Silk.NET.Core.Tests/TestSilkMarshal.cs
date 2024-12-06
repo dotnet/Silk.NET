@@ -18,7 +18,7 @@ public class TestSilkMarshal
     };
 
     [Fact]
-    public unsafe void TestEncodingLPWStr()
+    public unsafe void TestEncodingToLPWStr()
     {
         var input = "Hello world";
         
@@ -30,7 +30,7 @@ public class TestSilkMarshal
             Assert.Equal(input.Length, (int)SilkMarshal.StringLength(pointer, NativeStringEncoding.LPWStr));
             
             // Use short for comparison
-            Assert.Equal(new short[] { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64 }, new Span<short>((void*)pointer, input.Length));
+            Assert.Equal(new short[] { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x00 }, new Span<short>((void*)pointer, input.Length + 1));
         }
         else
         {
@@ -39,7 +39,33 @@ public class TestSilkMarshal
             Assert.Equal(input.Length, (int)SilkMarshal.StringLength(pointer, NativeStringEncoding.LPWStr));
             
             // Use int for comparison
-            Assert.Equal(new int[] { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64 }, new Span<int>((void*)pointer, input.Length));
+            Assert.Equal(new int[] { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x00 }, new Span<int>((void*)pointer, input.Length + 1));
+        }
+    }
+    
+    [Fact]
+    public unsafe void TestEncodingFromLPWStr()
+    {
+        var expected = "Hello world";
+        
+        // LPWStr is 2 bytes on Windows, 4 bytes elsewhere (usually)
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            var characters = new short[] { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64 };
+            fixed (short* pCharacters = characters)
+            {
+                var output = SilkMarshal.PtrToString((nint)pCharacters, NativeStringEncoding.LPWStr);
+                Assert.Equal(expected, output);
+            }
+        }
+        else
+        {
+            var characters = new int[] { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64 };
+            fixed (int* pCharacters = characters)
+            {
+                var output = SilkMarshal.PtrToString((nint)pCharacters, NativeStringEncoding.LPWStr);
+                Assert.Equal(expected, output);
+            }
         }
     }
     
