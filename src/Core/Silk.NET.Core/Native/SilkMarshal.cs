@@ -189,15 +189,13 @@ namespace Silk.NET.Core.Native
                     int convertedBytes;
 
                     fixed (char* firstChar = input)
+                    fixed (byte* bytes = span)
                     {
-                        fixed (byte* bytes = span)
-                        {
-                            convertedBytes = Encoding.UTF8.GetBytes(firstChar, input.Length, bytes, span.Length - 1);
-                        }
+                        convertedBytes = Encoding.UTF8.GetBytes(firstChar, input.Length, bytes, span.Length - 1);
+                        bytes[convertedBytes] = 0;
                     }
 
-                    span[convertedBytes] = 0;
-                    return ++convertedBytes;
+                    return convertedBytes + 1;
                 }
                 case NativeStringEncoding.LPWStr when RuntimeInformation.IsOSPlatform(OSPlatform.Windows):
                 {
@@ -212,21 +210,16 @@ namespace Silk.NET.Core.Native
                 }
                 case NativeStringEncoding.LPWStr:
                 {
+                    int convertedBytes;
+
                     fixed (char* firstChar = input)
                     fixed (byte* bytes = span)
                     {
-                        var maxLength = span.Length / 2;
-                        var i = 0;
-                        while (firstChar[i] != 0 && i < maxLength - 1)
-                        {
-                            ((uint*)bytes)[i] = firstChar[i];
-                            i++;
-                        }
-
-                        ((uint*)bytes)[i] = default;
-
-                        return i * 4;
+                        convertedBytes = Encoding.UTF32.GetBytes(firstChar, input.Length, bytes, span.Length - 4);
+                        ((uint*)bytes)[convertedBytes / 4] = 0;
                     }
+
+                    return convertedBytes + 4;
                 }
                 default:
                 {
