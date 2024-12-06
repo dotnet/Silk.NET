@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Text;
 using Silk.NET.Core.Native;
 using Xunit;
 
@@ -19,63 +20,49 @@ public class TestSilkMarshal
         NativeStringEncoding.LPUTF8Str,
         NativeStringEncoding.LPWStr,
     };
+    
+    private readonly Encoding lpwStrEncoding = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
+        ? Encoding.Unicode
+        : Encoding.UTF32;
+
+    private readonly int lpwStrCharacterWidth = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? 2 : 4;
 
     [Fact]
     public unsafe void TestEncodingToLPWStr()
     {
-        var input = "Hello world";
+        var input = "Hello world 🧵";
         
-        // LPWStr is 2 bytes on Windows, 4 bytes elsewhere (usually)
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-        {
-            var pointer = SilkMarshal.StringToPtr(input, NativeStringEncoding.LPWStr);
-            
-            Assert.Equal(input.Length, (int)SilkMarshal.StringLength(pointer, NativeStringEncoding.LPWStr));
-            
-            // Use short for comparison
-            Assert.Equal(new short[] { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x00 }, new Span<short>((void*)pointer, input.Length + 1));
-        }
-        else
-        {
-            var pointer = SilkMarshal.StringToPtr(input, NativeStringEncoding.LPWStr);
-            
-            Assert.Equal(input.Length, (int)SilkMarshal.StringLength(pointer, NativeStringEncoding.LPWStr));
-            
-            // Use int for comparison
-            Assert.Equal(new int[] { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x00 }, new Span<int>((void*)pointer, input.Length + 1));
-        }
+        var expectedByteCount = lpwStrEncoding.GetByteCount(input);
+        var expected = new byte[expectedByteCount + lpwStrCharacterWidth];
+        lpwStrEncoding.GetBytes(input, expected);
+        
+        var pointer = SilkMarshal.StringToPtr(input, NativeStringEncoding.LPWStr);
+        var pointerByteCount = lpwStrCharacterWidth * (int) SilkMarshal.StringLength(pointer, NativeStringEncoding.LPWStr);
+        
+        Assert.Equal(expected, new Span<byte>((void*)pointer, pointerByteCount + lpwStrCharacterWidth));
     }
-    
+ 
     [Fact]
     public unsafe void TestEncodingFromLPWStr()
     {
-        var expected = "Hello world";
+        var expected = "Hello world 🧵";
         
-        // LPWStr is 2 bytes on Windows, 4 bytes elsewhere (usually)
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        var inputByteCount = lpwStrEncoding.GetByteCount(expected);
+        var input = new byte[inputByteCount + lpwStrCharacterWidth];
+        lpwStrEncoding.GetBytes(expected, input);
+
+        fixed (byte* pInput = input)
         {
-            var characters = new short[] { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64 };
-            fixed (short* pCharacters = characters)
-            {
-                var output = SilkMarshal.PtrToString((nint)pCharacters, NativeStringEncoding.LPWStr);
-                Assert.Equal(expected, output);
-            }
-        }
-        else
-        {
-            var characters = new int[] { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64 };
-            fixed (int* pCharacters = characters)
-            {
-                var output = SilkMarshal.PtrToString((nint)pCharacters, NativeStringEncoding.LPWStr);
-                Assert.Equal(expected, output);
-            }
+            var output = SilkMarshal.PtrToString((nint)pInput, NativeStringEncoding.LPWStr);
+            
+            Assert.Equal(expected, output);
         }
     }
     
     [Fact]
     public void TestEncodingString()
     {
-        var input = "Hello world";
+        var input = "Hello world 🧵";
         foreach (var encoding in encodings)
         {
             var pointer = SilkMarshal.StringToPtr(input, encoding);
@@ -89,7 +76,7 @@ public class TestSilkMarshal
     {
         var inputs = new List<string>()
         {
-            "Hello world",
+            "Hello world 🧵",
             "Foo",
             "Bar",
             "123",
