@@ -255,7 +255,7 @@ namespace Silk.NET.Core.Native
                 NativeStringEncoding.LPWStr => Allocate(length),
                 _ => ThrowInvalidEncoding<nint>()
             };
-        
+
         /// <summary>
         /// Free a string pointer
         /// </summary>
@@ -338,16 +338,7 @@ namespace Silk.NET.Core.Native
                 else
                 {
                     var length = StringLength(ptr, NativeStringEncoding.LPWStr);
-                    var characters = new ushort[length];
-                    for (var i = 0; i < (uint)length; i++)
-                    {
-                        characters[i] = (ushort)((uint*)ptr)[i];
-                    }
-
-                    fixed (ushort* pCharacters = characters)
-                    {
-                        return new string((char*)pCharacters);
-                    }
+                    return Encoding.UTF32.GetString((byte*) ptr, 4 * (int) length);
                 }
             };
         }
