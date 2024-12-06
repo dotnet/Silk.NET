@@ -456,7 +456,7 @@ namespace Silk.NET.Core.Native
             var ptrs = (nint*) input;
             for (var i = 0; i < numStrings; i++)
             {
-                ret[i] = PtrToString(ptrs![i]);
+                ret[i] = PtrToString(ptrs![i], encoding);
             }
 
             return ret;
