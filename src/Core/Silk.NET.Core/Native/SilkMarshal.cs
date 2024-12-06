@@ -145,7 +145,7 @@ namespace Silk.NET.Core.Native
                 NativeStringEncoding.LPStr or NativeStringEncoding.LPTStr or NativeStringEncoding.LPUTF8Str
                     => (input is null ? 0 : Encoding.UTF8.GetMaxByteCount(input.Length)) + 1,
                 NativeStringEncoding.LPWStr when RuntimeInformation.IsOSPlatform(OSPlatform.Windows) => ((input?.Length ?? 0) + 1) * 2,
-                NativeStringEncoding.LPWStr when !RuntimeInformation.IsOSPlatform(OSPlatform.Windows) => ((input?.Length ?? 0) + 1) * 4,
+                NativeStringEncoding.LPWStr => ((input?.Length ?? 0) + 1) * 4,
                 _ => -1
             };
 
@@ -210,7 +210,7 @@ namespace Silk.NET.Core.Native
 
                     return input.Length + 1;
                 }
-                case NativeStringEncoding.LPWStr when !RuntimeInformation.IsOSPlatform(OSPlatform.Windows):
+                case NativeStringEncoding.LPWStr:
                 {
                     fixed (char* firstChar = input)
                     fixed (byte* bytes = span)
@@ -569,7 +569,7 @@ namespace Silk.NET.Core.Native
                 {
                     return (nuint)MemoryMarshal.CreateReadOnlySpanFromNullTerminated((char*)ptr).Length;
                 }
-                case NativeStringEncoding.LPWStr when !RuntimeInformation.IsOSPlatform(OSPlatform.Windows):
+                case NativeStringEncoding.LPWStr:
                 {
                     // No int overload for CreateReadOnlySpanFromNullTerminated
                     if (ptr == 0)
@@ -620,7 +620,7 @@ namespace Silk.NET.Core.Native
                     
                     break;
                 }
-                case NativeStringEncoding.LPWStr when !RuntimeInformation.IsOSPlatform(OSPlatform.Windows):
+                case NativeStringEncoding.LPWStr:
                 {
                     while (((uint*) ptr)![length] != 0)
                     {
