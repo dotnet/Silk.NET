@@ -11,97 +11,17 @@ namespace Silk.NET.SDL;
 [NativeTypeName("unsigned int")]
 public enum Colorspace : uint
 {
-    Unknown,
-    Srgb =
-        (
-            ((uint)(ColorType.Rgb) << 28)
-            | ((uint)(ColorRange.Full) << 24)
-            | ((uint)(ChromaLocation.None) << 20)
-            | ((uint)(ColorPrimaries.Bt709) << 10)
-            | ((uint)(TransferCharacteristics.Srgb) << 5)
-            | ((uint)(MatrixCoefficients.Identity) << 0)
-        ),
-    SrgbLinear =
-        (
-            ((uint)(ColorType.Rgb) << 28)
-            | ((uint)(ColorRange.Full) << 24)
-            | ((uint)(ChromaLocation.None) << 20)
-            | ((uint)(ColorPrimaries.Bt709) << 10)
-            | ((uint)(TransferCharacteristics.Linear) << 5)
-            | ((uint)(MatrixCoefficients.Identity) << 0)
-        ),
-    Hdr10 =
-        (
-            ((uint)(ColorType.Rgb) << 28)
-            | ((uint)(ColorRange.Full) << 24)
-            | ((uint)(ChromaLocation.None) << 20)
-            | ((uint)(ColorPrimaries.Bt2020) << 10)
-            | ((uint)(TransferCharacteristics.Pq) << 5)
-            | ((uint)(MatrixCoefficients.Identity) << 0)
-        ),
-    Jpeg =
-        (
-            ((uint)(ColorType.Ycbcr) << 28)
-            | ((uint)(ColorRange.Full) << 24)
-            | ((uint)(ChromaLocation.None) << 20)
-            | ((uint)(ColorPrimaries.Bt709) << 10)
-            | ((uint)(TransferCharacteristics.Bt601) << 5)
-            | ((uint)(MatrixCoefficients.Bt601) << 0)
-        ),
-    Bt601Limited =
-        (
-            ((uint)(ColorType.Ycbcr) << 28)
-            | ((uint)(ColorRange.Limited) << 24)
-            | ((uint)(ChromaLocation.Left) << 20)
-            | ((uint)(ColorPrimaries.Bt601) << 10)
-            | ((uint)(TransferCharacteristics.Bt601) << 5)
-            | ((uint)(MatrixCoefficients.Bt601) << 0)
-        ),
-    Bt601Full =
-        (
-            ((uint)(ColorType.Ycbcr) << 28)
-            | ((uint)(ColorRange.Full) << 24)
-            | ((uint)(ChromaLocation.Left) << 20)
-            | ((uint)(ColorPrimaries.Bt601) << 10)
-            | ((uint)(TransferCharacteristics.Bt601) << 5)
-            | ((uint)(MatrixCoefficients.Bt601) << 0)
-        ),
-    Bt709Limited =
-        (
-            ((uint)(ColorType.Ycbcr) << 28)
-            | ((uint)(ColorRange.Limited) << 24)
-            | ((uint)(ChromaLocation.Left) << 20)
-            | ((uint)(ColorPrimaries.Bt709) << 10)
-            | ((uint)(TransferCharacteristics.Bt709) << 5)
-            | ((uint)(MatrixCoefficients.Bt709) << 0)
-        ),
-    Bt709Full =
-        (
-            ((uint)(ColorType.Ycbcr) << 28)
-            | ((uint)(ColorRange.Full) << 24)
-            | ((uint)(ChromaLocation.Left) << 20)
-            | ((uint)(ColorPrimaries.Bt709) << 10)
-            | ((uint)(TransferCharacteristics.Bt709) << 5)
-            | ((uint)(MatrixCoefficients.Bt709) << 0)
-        ),
-    Bt2020Limited =
-        (
-            ((uint)(ColorType.Ycbcr) << 28)
-            | ((uint)(ColorRange.Limited) << 24)
-            | ((uint)(ChromaLocation.Left) << 20)
-            | ((uint)(ColorPrimaries.Bt2020) << 10)
-            | ((uint)(TransferCharacteristics.Pq) << 5)
-            | ((uint)(MatrixCoefficients.Bt2020Ncl) << 0)
-        ),
-    Bt2020Full =
-        (
-            ((uint)(ColorType.Ycbcr) << 28)
-            | ((uint)(ColorRange.Full) << 24)
-            | ((uint)(ChromaLocation.Left) << 20)
-            | ((uint)(ColorPrimaries.Bt2020) << 10)
-            | ((uint)(TransferCharacteristics.Pq) << 5)
-            | ((uint)(MatrixCoefficients.Bt2020Ncl) << 0)
-        ),
+    Unknown = 0,
+    Srgb = 0x120005a0U,
+    SrgbLinear = 0x12000500U,
+    Hdr10 = 0x12002600U,
+    Jpeg = 0x220004c6U,
+    Bt601Limited = 0x211018c6U,
+    Bt601Full = 0x221018c6U,
+    Bt709Limited = 0x21100421U,
+    Bt709Full = 0x22100421U,
+    Bt2020Limited = 0x21102609U,
+    Bt2020Full = 0x22102609U,
     RgbDefault = Srgb,
     YuvDefault = Jpeg,
 }

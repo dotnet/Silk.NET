@@ -34,11 +34,11 @@ public static unsafe partial class SDL_IOStreamInterfaceTests
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(IOStreamInterface), Is.EqualTo(40));
+            Assert.That(sizeof(IOStreamInterface), Is.EqualTo(56));
         }
         else
         {
-            Assert.That(sizeof(IOStreamInterface), Is.EqualTo(20));
+            Assert.That(sizeof(IOStreamInterface), Is.EqualTo(28));
         }
     }
 }

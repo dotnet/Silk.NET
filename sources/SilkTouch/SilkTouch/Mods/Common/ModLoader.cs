@@ -22,11 +22,13 @@ public class ModLoader
             nameof(PrettifyNames) => typeof(PrettifyNames),
             nameof(AddOpaqueStructs) => typeof(AddOpaqueStructs),
             nameof(AddVTables) => typeof(AddVTables),
+            nameof(BakeSourceSets) => typeof(BakeSourceSets),
             nameof(AddApiProfiles) => typeof(AddApiProfiles),
             nameof(MixKhronosData) => typeof(MixKhronosData),
             nameof(TransformHandles) => typeof(TransformHandles),
             nameof(ExtractNestedTyping) => typeof(ExtractNestedTyping),
+            nameof(TransformProperties) => typeof(TransformProperties),
             nameof(ClangScraper) => typeof(ClangScraper),
-            _ => null
+            _ => null,
         };
 }

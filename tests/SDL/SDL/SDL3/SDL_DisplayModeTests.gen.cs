@@ -34,11 +34,11 @@ public static unsafe partial class SDL_DisplayModeTests
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(DisplayMode), Is.EqualTo(32));
+            Assert.That(sizeof(DisplayMode), Is.EqualTo(40));
         }
         else
         {
-            Assert.That(sizeof(DisplayMode), Is.EqualTo(28));
+            Assert.That(sizeof(DisplayMode), Is.EqualTo(36));
         }
     }
 }

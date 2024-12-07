@@ -20,7 +20,7 @@ public unsafe partial struct TextEditingEvent
     [NativeTypeName("SDL_WindowID")]
     public uint WindowID;
 
-    [NativeTypeName("char *")]
+    [NativeTypeName("const char *")]
     public sbyte* Text;
 
     [NativeTypeName("Sint32")]

@@ -37,5 +37,5 @@ public enum GamepadButton
     Misc4,
     Misc5,
     Misc6,
-    Max,
+    Count,
 }

@@ -7,57 +7,79 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-public unsafe partial struct PixelFormat
+[NativeTypeName("unsigned int")]
+public enum PixelFormat : uint
 {
-    public PixelFormatEnum Format;
-    public Palette* Palette;
-
-    [NativeTypeName("Uint8")]
-    public byte BitsPerPixel;
-
-    [NativeTypeName("Uint8")]
-    public byte BytesPerPixel;
-
-    [NativeTypeName("Uint8[2]")]
-    public PixelFormatPadding Padding;
-
-    [NativeTypeName("Uint32")]
-    public uint Rmask;
-
-    [NativeTypeName("Uint32")]
-    public uint Gmask;
-
-    [NativeTypeName("Uint32")]
-    public uint Bmask;
-
-    [NativeTypeName("Uint32")]
-    public uint Amask;
-
-    [NativeTypeName("Uint8")]
-    public byte Rloss;
-
-    [NativeTypeName("Uint8")]
-    public byte Gloss;
-
-    [NativeTypeName("Uint8")]
-    public byte Bloss;
-
-    [NativeTypeName("Uint8")]
-    public byte Aloss;
-
-    [NativeTypeName("Uint8")]
-    public byte Rshift;
-
-    [NativeTypeName("Uint8")]
-    public byte Gshift;
-
-    [NativeTypeName("Uint8")]
-    public byte Bshift;
-
-    [NativeTypeName("Uint8")]
-    public byte Ashift;
-    public int Refcount;
-
-    [NativeTypeName("struct SDL_PixelFormat *")]
-    public PixelFormat* Next;
+    Unknown = 0,
+    Index1Lsb = 0x11100100U,
+    Index1Msb = 0x11200100U,
+    Index2Lsb = 0x1c100200U,
+    Index2Msb = 0x1c200200U,
+    Index4Lsb = 0x12100400U,
+    Index4Msb = 0x12200400U,
+    Index8 = 0x13000801U,
+    Rgb332 = 0x14110801U,
+    Xrgb4444 = 0x15120c02U,
+    Xbgr4444 = 0x15520c02U,
+    Xrgb1555 = 0x15130f02U,
+    Xbgr1555 = 0x15530f02U,
+    Argb4444 = 0x15321002U,
+    Rgba4444 = 0x15421002U,
+    Abgr4444 = 0x15721002U,
+    Bgra4444 = 0x15821002U,
+    Argb1555 = 0x15331002U,
+    Rgba5551 = 0x15441002U,
+    Abgr1555 = 0x15731002U,
+    Bgra5551 = 0x15841002U,
+    Rgb565 = 0x15151002U,
+    Bgr565 = 0x15551002U,
+    Rgb24 = 0x17101803U,
+    Bgr24 = 0x17401803U,
+    Xrgb8888 = 0x16161804U,
+    Rgbx8888 = 0x16261804U,
+    Xbgr8888 = 0x16561804U,
+    Bgrx8888 = 0x16661804U,
+    Argb8888 = 0x16362004U,
+    Rgba8888 = 0x16462004U,
+    Abgr8888 = 0x16762004U,
+    Bgra8888 = 0x16862004U,
+    Xrgb2101010 = 0x16172004U,
+    Xbgr2101010 = 0x16572004U,
+    Argb2101010 = 0x16372004U,
+    Abgr2101010 = 0x16772004U,
+    Rgb48 = 0x18103006U,
+    Bgr48 = 0x18403006U,
+    Rgba64 = 0x18204008U,
+    Argb64 = 0x18304008U,
+    Bgra64 = 0x18504008U,
+    Abgr64 = 0x18604008U,
+    Rgb48Float = 0x1a103006U,
+    Bgr48Float = 0x1a403006U,
+    Rgba64Float = 0x1a204008U,
+    Argb64Float = 0x1a304008U,
+    Bgra64Float = 0x1a504008U,
+    Abgr64Float = 0x1a604008U,
+    Rgb96Float = 0x1b10600cU,
+    Bgr96Float = 0x1b40600cU,
+    Rgba128Float = 0x1b208010U,
+    Argb128Float = 0x1b308010U,
+    Bgra128Float = 0x1b508010U,
+    Abgr128Float = 0x1b608010U,
+    Yv12 = 0x32315659U,
+    Iyuv = 0x56555949U,
+    Yuy2 = 0x32595559U,
+    Uyvy = 0x59565955U,
+    Yvyu = 0x55595659U,
+    Nv12 = 0x3231564eU,
+    Nv21 = 0x3132564eU,
+    P010 = 0x30313050U,
+    ExternalOes = 0x2053454fU,
+    Rgba32 = Abgr8888,
+    Argb32 = Bgra8888,
+    Bgra32 = Argb8888,
+    Abgr32 = Rgba8888,
+    Rgbx32 = Xbgr8888,
+    Xrgb32 = Bgrx8888,
+    Bgrx32 = Xrgb8888,
+    Xbgr32 = Rgbx8888,
 }

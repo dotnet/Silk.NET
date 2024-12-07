@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeTypeName("unsigned int")]
-public enum GLattr : uint
+public enum GLAttr : uint
 {
     RedSize,
     GreenSize,

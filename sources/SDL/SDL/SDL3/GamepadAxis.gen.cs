@@ -16,5 +16,5 @@ public enum GamepadAxis
     Righty,
     LeftTrigger,
     RightTrigger,
-    Max,
+    Count,
 }

@@ -10,12 +10,12 @@ namespace Silk.NET.SDL;
 [NativeTypeName("unsigned int")]
 public enum PenAxis : uint
 {
-    AxisPressure = 0,
-    AxisXtilt,
-    AxisYtilt,
-    AxisDistance,
-    AxisRotation,
-    AxisSlider,
-    NumAxes,
-    AxisLast = NumAxes - 1,
+    Pressure,
+    Xtilt,
+    Ytilt,
+    Distance,
+    Rotation,
+    Slider,
+    TangentialPressure,
+    Count,
 }

@@ -31,6 +31,6 @@ public static unsafe partial class SDL_DisplayEventTests
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(DisplayEvent), Is.EqualTo(24));
+        Assert.That(sizeof(DisplayEvent), Is.EqualTo(32));
     }
 }
