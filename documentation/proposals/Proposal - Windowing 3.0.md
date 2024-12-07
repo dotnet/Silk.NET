@@ -334,22 +334,28 @@ public abstract partial class Surface
     /// <summary>
     /// Executes the <see cref="Tick" /> event. This will also call <see cref="OnUpdate" /> and <see cref="OnRender" />.
     /// </summary>
-    protected virtual void OnTick();
+    protected internal virtual void OnTick();
 
     /// <summary>
     /// Executes the <see cref="Render" /> event if the constraints defined in <see cref="RenderOptions" /> are met.
     /// </summary>
-    protected virtual void OnRender();
+    protected internal virtual void OnRender();
 
     /// <summary>
     /// Executes the <see cref="Update" /> event if the constraints defined in <see cref="UpdateOptions" /> are met.
     /// </summary>
-    protected virtual void OnUpdate();
+    protected internal virtual void OnUpdate();
 
     /// <summary>
     /// Gets the size <b>in pixels</b> of the area drawable within the surface.
     /// </summary>
     public abstract Vector2 DrawableSize { get; }
+
+    /// <summary>
+    /// Gets a value indicating whether the surface is terminating irrevocably.
+    /// </summary>
+    /// <seealso cref="ISurfaceWindow.IsCloseRequested" />
+    public abstract bool IsTerminating { get; }
 
     /// <summary>
     /// Raised when <see cref="DrawableSize" /> changes.
@@ -1252,6 +1258,13 @@ public readonly record struct DisplayAvailabilityChangeEvent(Surface Surface);
 public readonly record struct DisplayChangeEvent(Surface Surface, IDisplay Display);
 
 /// <summary>
+/// Contains properties pertaining to a surface changing to a different video mode.
+/// </summary>
+/// <param name="Surface">The surface changing to a different video mode.</param>
+/// <param name="VideoMode">The video mode the surface has changed to.</param>
+public readonly record struct VideoModeChangeEvent(Surface Surface, VideoMode VideoMode);
+
+/// <summary>
 /// Contains properties pertaining to a change in the available video modes for a display.
 /// </summary>
 /// <param name="Surface">The surface owning the display.</param>
@@ -1281,6 +1294,7 @@ public readonly record struct DisplayCoordinatesEvent(
 /// Represents the properties of a surface whose rendering is intrinsically linked to the composition of a specific
 /// display. In most cases, this translates to "the surface is rendering in exclusive fullscreen mode".
 /// </summary>
+/// <param name="Index">The index of the video mode in <see cref="IDisplay.KnownVideoModes" />.</param>
 /// <param name="Resolution">
 /// The resolution the surface is rendering on its display at, if known. If <c>null</c>, it is highly likely that the
 /// surface is not rendering in exclusive fullscreen mode or otherwise has its rendering intrinsically linked to the
@@ -1297,18 +1311,24 @@ public readonly record struct DisplayCoordinatesEvent(
 /// fullscreen mode. If an individual property is <c>null</c>, it is highly likely that property is not controllable
 /// programmatically.
 /// </remarks>
-public readonly record struct VideoMode(Vector2? Resolution, int? RefreshRate);
+public readonly record struct VideoMode(int Index, Vector2? Resolution, float? RefreshRate);
 
 /// <summary>
 /// Represents a display on which a surface can be rendered.
 /// </summary>
 /// <remarks>
-/// These objects may be shared with child windows created using <see cref="ISurfaceChildren" /> and vice versa i.e.
-/// this object can be shared between all surfaces that share a common ancestor (the "root surface"). Beyond that, these
-/// objects are not guaranteed to be valid across surfaces. This allows one event handler to enact changes on multiple
-/// surfaces.
+/// Each surface shall get its own <see cref="IDisplay" /> object for each display. This is primarily to ensure that
+/// users get events dispatched with the surface they expect depending on which <see cref="ISurfaceDisplay" /> the
+/// <see cref="IDisplay" /> was sourced from. However, display objects can be somewhat shared between all surfaces that
+/// share a common ancestor (the "root surface"). Specifically, an object at a given index in
+/// <see cref="ISurfaceDisplay.Available" /> on one surface shall be equatable to the object sourced from the same index
+/// in <see cref="ISurfaceDisplay.Available" /> on another surface with the same root surface. Furthermore,
+/// <see cref="ISurfaceDisplay.Current" /> on one surface shall be assignable to an <see cref="IDisplay" /> object
+/// sourced from another surface with the same root surface, where <see cref="ISurfaceDisplay.Current" /> shall lookup
+/// the equivalent <see cref="IDisplay" /> object from its <see cref="ISurfaceDisplay.Available" /> displays upon
+/// assignment.
 /// </remarks>
-public interface IDisplay
+public interface IDisplay : IEquatable<IDisplay>
 {
     /// <summary>
     /// Gets the position and resolution of the monitor in screen space.
@@ -1325,7 +1345,9 @@ public interface IDisplay
     
     /// <summary>
     /// Gets a list of video modes known to be available when this display is <see cref="ISurfaceDisplay.Current" />.
-    /// It may be the case that a list of video modes can't be determined until that's the case.
+    /// It may be the case that a list of video modes can't be determined until that's the case. Note that inclusion of
+    /// a <see cref="VideoMode" /> in this list does not guarantee its presence in
+    /// <see cref="ISurfaceDisplay.AvailableVideoModes" />, as this can depend on the state of other components.
     /// </summary>
     IReadOnlyList<VideoMode>? KnownVideoModes { get; }
 
@@ -1375,8 +1397,12 @@ public interface ISurfaceDisplay
     VideoMode VideoMode { get; set; }
 
     /// <summary>
-    /// Gets a list of video modes with which the surface can be rendered. If the surface cannot programmatically change
-    /// its video mode, it is expected that this shall return a single element list containing <see cref="VideoMode" />.
+    /// Gets a list of video modes known to be available when this display is <see cref="ISurfaceDisplay.Current" />.
+    /// It may be the case that a list of video modes can't be determined until that's the case. Furthermore, if
+    /// <see cref="ISurfaceWindow"/> is supported, <see cref="ISurfaceWindow.State"/> needs to be
+    /// <see cref="WindowState.ExclusiveFullscreen"/> to get access to exclusive fullscreen video modes.
+    /// <see cref="WindowState.WindowedFullscreen"/> may be acceptable if the backend supports implicitly switching
+    /// between windowed and exclusive fullscreen states, but this is not a requirement.
     /// </summary>
     IReadOnlyList<VideoMode> AvailableVideoModes { get; }
 
@@ -1394,6 +1420,11 @@ public interface ISurfaceDisplay
     /// An event raised when <see cref="AvailableVideoModes" /> changes.
     /// </summary>
     event Action<DisplayVideoModeAvailabilityChangeEvent> AvailableVideoModesChanged { add; remove; }
+
+    /// <summary>
+    /// An event raised when <see cref="VideoMode" /> changes.
+    /// </summary>
+    event Action<VideoModeChangeEvent> VideoModeChanged { add; remove; }
 }
 
 public abstract partial class Surface
@@ -1409,6 +1440,36 @@ public abstract partial class Surface
 
 This proposal repeals the Window Hosts (Monitors) proposal from Silk.NET 1.0 Preview 4. All child surfaces must be
 hosted by another surface or be the "root surface".
+
+Note that there are some complex interactions with the `ISurfaceWindow.State` property and `VideoMode` given that the
+former allows changing to exclusive fullscreen and the latter allows changing exclusive fullscreen mode. This raised a
+number of questions about whether using the latter without the former should invoke implicit changes to the former.
+Ultimately, it was decided that this would be bug prone and very hard to implement, as such the following requirements
+are placed on implementors of this component:
+- If the Window component is supported, `AvailableVideoModes` shall return a single-element list containing `default`
+  when `ISurfaceWindow.State` is not `WindowState.ExclusiveFullscreen` and not `WindowState.WindowedFullscreen`.
+- If the Window component is supported, `AvailableVideoModes` shall either return a single-element list containing
+  `default` or return a list containing the `default` video mode along with all exclusive video modes when
+  `ISurfaceWindow.State` is `WindowState.WindowedFullscreen`.
+- If the Window component is supported, `AvailableVideoModes` shall return a list of exclusive video modes when
+  `ISurfaceWindow.State` is `WindowState.ExclusiveFullscreen`, except where the `AvailableVideoModes` implementation
+  includes exclusive video modes when `ISurfaceWindow.State` is `WindowState.WindowedFullscreen`, in which case
+  `AvailableVideoModes` shall return the same list for both `WindowState.WindowedFullscreen` and
+  `WindowState.ExclusiveFullscreen`.
+- If the Window component is supported and `ISurfaceWindow.State` is currently `WindowState.ExclusiveFullscreen`,
+  `ISurfaceWindow.State` shall be changed to `WindowState.WindowedFullscreen` (raising the appropriate events as
+  necessary) when `ISurfaceDisplay.VideoMode` is set to the `default` video mode.
+- If the Window component is supported and `ISurfaceWindow.State` is currently `WindowState.WindowedFullscreen`,
+  `ISurfaceWindow.State` shall be changed to `WindowState.ExclusiveFullscreen` (raising the appropriate events as
+  necessary) when `ISurfaceDisplay.VideoMode` is set to a non-`default` video mode. 
+- If the Window component is not supported, `AvailableVideoModes` shall return a list of video modes supported in
+  exclusive fullscreen mode and may also include the `default` video mode for non-exclusive control of the underlying
+  window manager. What this means is open to the backend's interpretation, as in lieu of the Window component this could
+  simply mean windowed fullscreen, bordered windowed, or basically anything that isn't exclusive fullscreen. 
+- `IDisplay.KnownVideoModes`, if the implementation returns a non-`null` value for this property, shall contain all
+  video modes that may be included in `AvailableVideoModes` regardless of the `State` property i.e. it includes the
+  `default` video mode for non-exclusive and all exclusive fullscreen video modes. This is valid as per the
+  `KnownVideoModes` documentation.  
 
 # The Vulkan Component
 
