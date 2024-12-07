@@ -65,7 +65,7 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
             )
         )
         {
-            Sdl.ThrowError();
+            Sdl.ClearError();
         }
 
         return _bounds = new Rectangle<float>(
