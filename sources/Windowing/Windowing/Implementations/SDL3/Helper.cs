@@ -1,13 +1,13 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-global using static Silk.NET.Windowing.Helper;
+global using static Silk.NET.Windowing.SDL3.Helper;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using Silk.NET.SDL;
 
-namespace Silk.NET.Windowing;
+namespace Silk.NET.Windowing.SDL3;
 
 internal static class Helper
 {

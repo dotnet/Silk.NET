@@ -166,61 +166,72 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
         }
         set
         {
-            if (_videoMode == value)
+            var currentState = State;
+            if (
+                currentState
+                is not (WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen)
+            )
+            {
+                if (value != default)
+                {
+                    Throw();
+                }
+
+                return;
+            }
+
+            if ((_videoMode = VideoMode) == value)
             {
                 return;
             }
 
             var display = (SdlDisplay)Current;
-            if (!display.KnownVideoModes!.Contains(value))
-            {
-                throw new ArgumentException(
-                    "VideoMode was not one of the valid AvailableVideoModes.",
-                    nameof(value)
-                );
-            }
-
-            if (!IsSurfaceInitialized)
-            {
-                _videoMode = value;
-                return;
-            }
-
-            for (var i = 0; i < display.KnownVideoModes!.Count; i++)
+            Ptr<DisplayMode> displayMode = nullptr;
+            var found = false;
+            for (var i = 0; i < display.KnownVideoModes?.Count; i++)
             {
                 if (display.KnownVideoModes[i] != value)
                 {
                     continue;
                 }
 
-                if (
-                    !Sdl.SetWindowFullscreenMode(
-                        Handle,
-                        (Ref<DisplayMode>)(i == 0 ? nullptr : display.DisplayModes[i - 1])
-                    )
-                )
+                if (i > 0)
                 {
-                    Sdl.ThrowError();
+                    displayMode = display.DisplayModes[i - 1];
                 }
 
-                _videoMode = value;
+                found = true;
                 break;
             }
 
-            throw new InvalidOperationException(
-                "Mismatch between display modes enumerated from the underlying API and the current display mode "
-                    + "reported by the underlying API."
+            if (!found)
+            {
+                Throw();
+            }
+
+            SetState(
+                currentState,
+                value == default ? WindowState.WindowedFullscreen : WindowState.ExclusiveFullscreen,
+                (value, displayMode),
+                display
             );
+            return;
+            static void Throw() =>
+                throw new ArgumentException(
+                    "The given video mode is not one of the AvailableVideoModes.",
+                    nameof(value)
+                );
         }
     }
 
-    public IReadOnlyList<VideoMode> AvailableVideoModes => Current.KnownVideoModes ?? [default];
+    public IReadOnlyList<VideoMode> AvailableVideoModes =>
+        State is not (WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen)
+            ? [default]
+            : Current.KnownVideoModes ?? [default];
 
     public event Action<DisplayChangeEvent>? CurrentDisplayChanged;
     public event Action<DisplayAvailabilityChangeEvent>? AvailableChanged;
     public event Action<DisplayVideoModeAvailabilityChangeEvent>? AvailableVideoModesChanged;
-
-    private void PreInitializeDisplay() { }
 
     private void InitializeDisplay(uint props) { }
 }

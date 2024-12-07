@@ -97,6 +97,7 @@ internal class SdlDisplay(uint id) : IDisplay
 
     public event Action<DisplayCoordinatesEvent>? CoordinatesChanged;
     public event Action<DisplayVideoModeAvailabilityChangeEvent>? KnownVideoModesChanged;
+    public event Action<VideoModeChangeEvent>? VideoModeChanged;
 
     private bool Equals(SdlDisplay other) => Id == other.Id;
 

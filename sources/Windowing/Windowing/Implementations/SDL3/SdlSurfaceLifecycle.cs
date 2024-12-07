@@ -86,6 +86,7 @@ internal unsafe class SdlSurfaceLifecycle(SdlSurface surface) : IDetachedSurface
         surface.OnTick();
         if (surface.Window?.IsCloseRequested ?? false)
         {
+            DebugPrint("surface closure was requested by the end of a tick, terminating surface.");
             surface.Terminate();
         }
 
@@ -124,7 +125,7 @@ internal unsafe class SdlSurfaceLifecycle(SdlSurface surface) : IDetachedSurface
 
     private static void CoreEvent(SdlSurface surface, ref Event @event)
     {
-        DebugPrint($"got {(EventType)@event.Type}, dispatching to surface {surface}.");
+        DebugPrint($"got {(EventType)@event.Type}, root surface is {surface}.");
         SdlEventProcessor.DeliverEvent(ref @event);
     }
 

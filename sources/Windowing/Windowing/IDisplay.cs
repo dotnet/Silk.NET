@@ -36,7 +36,11 @@ public interface IDisplay : IEquatable<IDisplay>
 
     /// <summary>
     /// Gets a list of video modes known to be available when this display is <see cref="ISurfaceDisplay.Current" />.
-    /// It may be the case that a list of video modes can't be determined until that's the case.
+    /// It may be the case that a list of video modes can't be determined until that's the case. Furthermore, if
+    /// <see cref="ISurfaceWindow"/> is supported, <see cref="ISurfaceWindow.State"/> needs to be
+    /// <see cref="WindowState.ExclusiveFullscreen"/> to get access to exclusive fullscreen video modes.
+    /// <see cref="WindowState.WindowedFullscreen"/> may be acceptable if the backend supports implicitly switching
+    /// between windowed and exclusive fullscreen states, but this is not a requirement.
     /// </summary>
     IReadOnlyList<VideoMode>? KnownVideoModes { get; }
 
@@ -59,4 +63,9 @@ public interface IDisplay : IEquatable<IDisplay>
     /// An event raised when <see cref="KnownVideoModes" /> changes.
     /// </summary>
     event Action<DisplayVideoModeAvailabilityChangeEvent>? KnownVideoModesChanged;
+
+    /// <summary>
+    /// An event raised when <see cref="VideoMode" /> changes.
+    /// </summary>
+    public event Action<VideoModeChangeEvent>? VideoModeChanged;
 }

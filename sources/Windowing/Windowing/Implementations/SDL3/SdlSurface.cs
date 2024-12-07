@@ -82,10 +82,12 @@ internal class SdlSurface : Surface, IDisposable
 
     public override void Terminate()
     {
+        DebugPrint();
         var prev = _isTerminating;
         _isTerminating = true;
         if (!prev && _isTerminating)
         {
+            DebugPrint("Raising Terminating.");
             Terminating?.Invoke(new SurfaceLifecycleEvent(this));
         }
     }
@@ -93,7 +95,151 @@ internal class SdlSurface : Surface, IDisposable
     public override bool TryGetPlatformInfo<TPlatformInfo>(
         [NotNullWhen(true)] out TPlatformInfo? info
     )
-        where TPlatformInfo : default => throw new NotImplementedException();
+        where TPlatformInfo : default
+    {
+        info = default;
+        if (!Impl.IsSurfaceInitialized)
+        {
+            return false;
+        }
+
+        var props = Sdl.GetWindowProperties(Impl.Handle);
+        if (typeof(TPlatformInfo) == typeof(CocoaPlatformInfo))
+        {
+            info = (TPlatformInfo)
+                (object)
+                    new CocoaPlatformInfo(
+                        (nint)
+                            Sdl.GetPointerProperty(props, Sdl.PropWindowCocoaWindowPointer, nullptr)
+                    );
+            Sdl.ClearError();
+            return true;
+        }
+
+        if (typeof(TPlatformInfo) == typeof(EGLPlatformInfo))
+        {
+            info = (TPlatformInfo)
+                (object)
+                    new EGLPlatformInfo(
+                        (nint)Sdl.EGLGetCurrentDisplay(),
+                        (nint)Sdl.EGLGetWindowSurface(Impl.Handle)
+                    );
+            Sdl.ClearError();
+            return true;
+        }
+
+        if (typeof(TPlatformInfo) == typeof(UIKitPlatformInfo))
+        {
+            info = (TPlatformInfo)
+                (object)
+                    new UIKitPlatformInfo(
+                        (nint)
+                            Sdl.GetPointerProperty(
+                                props,
+                                Sdl.PropWindowUikitWindowPointer,
+                                nullptr
+                            ),
+                        (uint)
+                            Sdl.GetNumberProperty(
+                                props,
+                                Sdl.PropWindowUikitOpenglFramebufferNumber,
+                                0
+                            ),
+                        (uint)
+                            Sdl.GetNumberProperty(
+                                props,
+                                Sdl.PropWindowUikitOpenglRenderbufferNumber,
+                                0
+                            ),
+                        (uint)
+                            Sdl.GetNumberProperty(
+                                props,
+                                Sdl.PropWindowUikitOpenglResolveFramebufferNumber,
+                                0
+                            )
+                    );
+            Sdl.ClearError();
+            return true;
+        }
+
+        if (typeof(TPlatformInfo) == typeof(VivantePlatformInfo))
+        {
+            info = (TPlatformInfo)
+                (object)
+                    new VivantePlatformInfo(
+                        (nint)
+                            Sdl.GetPointerProperty(
+                                props,
+                                Sdl.PropWindowVivanteDisplayPointer,
+                                nullptr
+                            ),
+                        (nint)
+                            Sdl.GetPointerProperty(
+                                props,
+                                Sdl.PropWindowVivanteWindowPointer,
+                                nullptr
+                            )
+                    );
+            Sdl.ClearError();
+            return true;
+        }
+
+        if (typeof(TPlatformInfo) == typeof(WaylandPlatformInfo))
+        {
+            info = (TPlatformInfo)
+                (object)
+                    new WaylandPlatformInfo(
+                        (nint)
+                            Sdl.GetPointerProperty(
+                                props,
+                                Sdl.PropWindowWaylandDisplayPointer,
+                                nullptr
+                            ),
+                        (nint)
+                            Sdl.GetPointerProperty(
+                                props,
+                                Sdl.PropWindowWaylandDisplayPointer,
+                                nullptr
+                            )
+                    );
+            Sdl.ClearError();
+            return true;
+        }
+
+        if (typeof(TPlatformInfo) == typeof(Win32PlatformInfo))
+        {
+            info = (TPlatformInfo)
+                (object)
+                    new Win32PlatformInfo(
+                        (nint)
+                            Sdl.GetPointerProperty(props, Sdl.PropWindowWin32HwndPointer, nullptr),
+                        (nint)Sdl.GetPointerProperty(props, Sdl.PropWindowWin32HdcPointer, nullptr),
+                        (nint)
+                            Sdl.GetPointerProperty(
+                                props,
+                                Sdl.PropWindowWin32InstancePointer,
+                                nullptr
+                            )
+                    );
+            Sdl.ClearError();
+            return true;
+        }
+
+        if (typeof(TPlatformInfo) == typeof(X11PlatformInfo))
+        {
+            info = (TPlatformInfo)
+                (object)
+                    new X11PlatformInfo(
+                        (nint)
+                            Sdl.GetPointerProperty(props, Sdl.PropWindowX11DisplayPointer, nullptr),
+                        (nint)Sdl.GetNumberProperty(props, Sdl.PropWindowX11WindowNumber, 0)
+                    );
+            Sdl.ClearError();
+            return true;
+        }
+
+        return false;
+    }
 
     public void Dispose() => Impl.Dispose();
 

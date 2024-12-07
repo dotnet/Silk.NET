@@ -1,6 +1,10 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+#if NET9_0_OR_GREATER
+using System.Collections;
+#endif
+
 namespace Silk.NET.Windowing;
 
 using System.Diagnostics.CodeAnalysis;
@@ -41,36 +45,56 @@ public ref struct WindowIconVariants
     /// <summary>
     /// Gets or sets the window icon variant at the given index.
     /// </summary>
+    /// <param name="index">The index, between 0 and <see cref="MaxVariants"/>.</param>
     [UnscopedRef]
     public ref WindowIcon this[int index]
     {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         get
         {
-            // csharpier-ignore-start
-            // ReSharper disable EnforceIfStatementBraces - for readability/editability
-            // ReSharper disable ConvertIfStatementToSwitchStatement - false positive
-            if (index == 0) return ref _e0;
-            if (index == 1) return ref _e1;
-            if (index == 2) return ref _e2;
-            if (index == 3) return ref _e3;
-            if (index == 4) return ref _e4;
-            if (index == 5) return ref _e5;
-            if (index == 6) return ref _e6;
-            if (index == 7) return ref _e7;
-            if (index == 8) return ref _e8;
-            if (index == 9) return ref _e9;
-            if (index == 10) return ref _e10;
-            if (index == 11) return ref _e11;
-            if (index == 12) return ref _e12;
-            if (index == 13) return ref _e13;
-            if (index == 14) return ref _e14;
-            if (index == 15) return ref _e15;
-            throw new ArgumentOutOfRangeException(nameof(index));
-            // ReSharper restore ConvertIfStatementToSwitchStatement
-            // ReSharper restore EnforceIfStatementBraces
-            // csharpier-ignore-end
+            ArgumentOutOfRangeException.ThrowIfGreaterThan(index, _count);
+            return ref DangerousGetElement(index);
         }
+    }
+
+    /// <summary>
+    /// Gets a reference to the element at the given index without checking whether <see cref="Count"/> indicates that
+    /// the element at the given index is populated.
+    /// </summary>
+    /// <param name="index">The index, between 0 and <see cref="MaxVariants"/>.</param>
+    /// <returns>The element.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// <paramref name="index"/> was not between  0 and <see cref="MaxVariants"/>.
+    /// </exception>
+    [UnscopedRef]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    private ref WindowIcon DangerousGetElement(int index)
+    {
+        // csharpier-ignore-start
+        // ReSharper disable EnforceIfStatementBraces - for readability/editability
+        // ReSharper disable ConvertIfStatementToSwitchStatement - false positive
+        if (index == 0) return ref _e0;
+        if (index == 1) return ref _e1;
+        if (index == 2) return ref _e2;
+        if (index == 3) return ref _e3;
+        if (index == 4) return ref _e4;
+        if (index == 5) return ref _e5;
+        if (index == 6) return ref _e6;
+        if (index == 7) return ref _e7;
+        if (index == 8) return ref _e8;
+        if (index == 9) return ref _e9;
+        if (index == 10) return ref _e10;
+        if (index == 11) return ref _e11;
+        if (index == 12) return ref _e12;
+        if (index == 13) return ref _e13;
+        if (index == 14) return ref _e14;
+        if (index == 15) return ref _e15;
+        throw new ArgumentOutOfRangeException(nameof(index));
+        // ReSharper restore ConvertIfStatementToSwitchStatement
+        // ReSharper restore EnforceIfStatementBraces
+        // csharpier-ignore-end
     }
 
     /// <summary>

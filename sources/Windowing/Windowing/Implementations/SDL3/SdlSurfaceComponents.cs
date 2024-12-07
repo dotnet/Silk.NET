@@ -18,9 +18,15 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
     public static bool IsWindowEnabled { get; private set; }
 
     /// <summary>
-    /// The window handle. This always points to a valid window, but before creation it is simply
+    /// The window handle. Before creation this is either <c>nullptr</c> or a temporary window handle.
     /// </summary>
-    public WindowHandle Handle { get; set; }
+    public WindowHandle Handle { get; private set; }
+
+    /// <summary>
+    /// The window ID. Only valid if <see cref="Handle"/> is valid and <see cref="IsSurfaceInitialized"/> is
+    /// <c>true</c>.
+    /// </summary>
+    public uint Id { get; private set; }
 
     public bool IsSurfaceInitialized { get; set; }
 
@@ -102,10 +108,6 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
     {
         DebugPrint();
         Handle = InitializePlatform();
-        if (IsDisplayEnabled)
-        {
-            PreInitializeDisplay();
-        }
     }
 
     public void InitializeSurface()
@@ -151,6 +153,8 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
             Sdl.ThrowError();
         }
 
+        Id = Sdl.GetWindowID(Handle);
+        SdlEventProcessor.AddSurface(Id, surface);
         DebugPrintAllProps(Sdl.GetWindowProperties(Handle));
         IsSurfaceInitialized = true;
         if (IsOpenGLEnabled)
@@ -163,6 +167,7 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
 
     public static void TerminatePlatform()
     {
+        DebugPrint($"reached, ref count is {_platformInitCount}");
         if (Interlocked.Decrement(ref _platformInitCount) != 0)
         {
             return;
@@ -184,6 +189,7 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
     {
         if (Handle != nullptr)
         {
+            SdlEventProcessor.RemoveSurface(Id);
             Sdl.DestroyWindow(Handle);
         }
 

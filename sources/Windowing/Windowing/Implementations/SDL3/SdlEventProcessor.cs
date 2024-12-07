@@ -9,10 +9,10 @@ internal static class SdlEventProcessor
 {
     private static BreakneckLock _lock;
     private static uint _emptyEvent;
-    private static Dictionary<int, SdlSurface>? _surfaces;
+    private static Dictionary<uint, SdlSurface>? _surfaces;
 
     // Should be called on the event thread, but given that DeliverEvent can be called on any thread, we need to lock.
-    public static void AddSurface(int id, SdlSurface surface)
+    public static void AddSurface(uint id, SdlSurface surface)
     {
         var taken = false;
         _lock.Enter(ref taken);
@@ -27,7 +27,7 @@ internal static class SdlEventProcessor
     }
 
     // Should be called on the event thread, but given that DeliverEvent can be called on any thread, we need to lock.
-    public static void RemoveSurface(int id)
+    public static void RemoveSurface(uint id)
     {
         var taken = false;
         _lock.Enter(ref taken);
@@ -131,7 +131,16 @@ internal static class SdlEventProcessor
             case (uint)EventType.WindowFocusLost:
                 break;
             case (uint)EventType.WindowCloseRequested:
+            {
+                if (
+                    (_surfaces?.TryGetValue(@event.Window.WindowID, out var surface) ?? false)
+                    && surface.Window is { } window
+                )
+                {
+                    window.IsCloseRequested = true;
+                }
                 break;
+            }
             case (uint)EventType.WindowHitTest:
                 break;
             case (uint)EventType.WindowIccprofChanged:
