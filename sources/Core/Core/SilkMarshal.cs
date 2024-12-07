@@ -215,6 +215,7 @@ public static unsafe class SilkMarshal
     /// <param name="charSize">The character size of the marshalled strings.</param>
     /// <returns>The reference.</returns>
     /// <exception cref="InvalidOperationException">A GC exception occurred.</exception>
+    // TODO analyzer to clarify that this only works if the inner array is const.
     public static ref byte StringArrayToNative(ReadOnlySpan<string[]> strs, nint charSize = 1)
     {
         var ret = new byte[strs.Length * sizeof(nint)];
@@ -235,6 +236,7 @@ public static unsafe class SilkMarshal
     /// <param name="charSize">The character size of the marshalled strings.</param>
     /// <returns>The reference.</returns>
     /// <exception cref="InvalidOperationException">A GC exception occurred.</exception>
+    // TODO analyzer to clarify that this only works if the inner array is const.
     public static ref byte StringArrayToNative(ReadOnlySpan<string[][]> strs, nint charSize = 1)
     {
         var ret = new byte[strs.Length * sizeof(nint)];
@@ -255,6 +257,7 @@ public static unsafe class SilkMarshal
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The created array.</returns>
     /// <exception cref="InvalidOperationException">A GC exception occurred.</exception>
+    // TODO analyzer to clarify that this only works if the inner array is const.
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static T*[] JaggedArrayToPointerArray<T>(ReadOnlySpan<T[]> array)
         where T : unmanaged
@@ -286,6 +289,7 @@ public static unsafe class SilkMarshal
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The created array.</returns>
     /// <exception cref="InvalidOperationException">A GC exception occurred.</exception>
+    // TODO analyzer to clarify that this only works if the inner array is const.
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static T**[] JaggedArrayToPointerArray<T>(ReadOnlySpan<T[][]> array)
         where T : unmanaged
@@ -319,6 +323,7 @@ public static unsafe class SilkMarshal
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The created array.</returns>
     /// <exception cref="InvalidOperationException">A GC exception occurred.</exception>
+    // TODO analyzer to clarify that this only works if the inner array is const.
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static T***[] JaggedArrayToPointerArray<T>(ReadOnlySpan<T[][][]> array)
         where T : unmanaged
@@ -509,6 +514,15 @@ public static unsafe class SilkMarshal
         where T : unmanaged => new(ref @ref.GetPinnableReference());
 
     /// <summary>
+    /// Creates a reference from a readonly span.
+    /// </summary>
+    /// <param name="ref">A span of <typeparamref name="T"/>.</param>
+    /// <typeparam name="T">The pointee type.</typeparam>
+    /// <returns>The pointer to the given span's elements.</returns>
+    public static Ref<T> AsRef<T>(this ReadOnlySpan<T> @ref)
+        where T : unmanaged => @ref;
+
+    /// <summary>
     /// Creates a 2D Ref from a reference.
     /// </summary>
     /// <param name="ref">A reference to a <see cref="Ptr{T}"/>.</param>
@@ -524,6 +538,26 @@ public static unsafe class SilkMarshal
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given reference.</returns>
     public static Ref2D<T> AsRef2D<T>(ref this Span<T> @ref)
+        where T : unmanaged
+    {
+        IL.Emit.Ldarg_0();
+        IL.Emit.Newobj(
+            MethodRef.Constructor(
+                TypeRef.Type(typeof(Ref2D<>).MakeGenericType(typeof(T))),
+                TypeRef.Type(typeof(Ref<>).MakeGenericType(typeof(T)).MakeByRefType())
+            )
+        );
+        IL.Emit.Ret();
+        throw IL.Unreachable();
+    }
+
+    /// <summary>
+    /// Creates a 2D Ref from a reference to a readonly span.
+    /// </summary>
+    /// <param name="ref">A reference to a <see cref="Ptr{T}"/>.</param>
+    /// <typeparam name="T">The pointee type.</typeparam>
+    /// <returns>The pointer to the given reference.</returns>
+    public static Ref2D<T> AsRef2D<T>(ref this ReadOnlySpan<T> @ref)
         where T : unmanaged
     {
         IL.Emit.Ldarg_0();
@@ -685,51 +719,32 @@ public static unsafe class SilkMarshal
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         static TTo UnsignedCast(TFrom value) =>
-            sizeof(TTo) == sizeof(TFrom)
-                ? Unsafe.BitCast<TFrom, TTo>(value)
-                : sizeof(TTo) == 1 && sizeof(TFrom) == 2
-                    ? Unsafe.BitCast<byte, TTo>((byte)Unsafe.BitCast<TFrom, ushort>(value))
-                    : sizeof(TTo) == 1 && sizeof(TFrom) == 4
-                        ? Unsafe.BitCast<byte, TTo>((byte)Unsafe.BitCast<TFrom, uint>(value))
-                        : sizeof(TTo) == 1 && sizeof(TFrom) == 8
-                            ? Unsafe.BitCast<byte, TTo>((byte)Unsafe.BitCast<TFrom, ulong>(value))
-                            : sizeof(TTo) == 2 && sizeof(TFrom) == 1
-                                ? Unsafe.BitCast<ushort, TTo>(Unsafe.BitCast<TFrom, byte>(value))
-                                : sizeof(TTo) == 2 && sizeof(TFrom) == 4
-                                    ? Unsafe.BitCast<ushort, TTo>(
-                                        (ushort)Unsafe.BitCast<TFrom, uint>(value)
-                                    )
-                                    : sizeof(TTo) == 2 && sizeof(TFrom) == 8
-                                        ? Unsafe.BitCast<ushort, TTo>(
-                                            (ushort)Unsafe.BitCast<TFrom, ulong>(value)
-                                        )
-                                        : sizeof(TTo) == 4 && sizeof(TFrom) == 1
-                                            ? Unsafe.BitCast<uint, TTo>(
-                                                Unsafe.BitCast<TFrom, byte>(value)
-                                            )
-                                            : sizeof(TTo) == 4 && sizeof(TFrom) == 2
-                                                ? Unsafe.BitCast<uint, TTo>(
-                                                    Unsafe.BitCast<TFrom, ushort>(value)
-                                                )
-                                                : sizeof(TTo) == 4 && sizeof(TFrom) == 8
-                                                    ? Unsafe.BitCast<uint, TTo>(
-                                                        (uint)Unsafe.BitCast<TFrom, ulong>(value)
-                                                    )
-                                                    : sizeof(TTo) == 8 && sizeof(TFrom) == 1
-                                                        ? Unsafe.BitCast<ulong, TTo>(
-                                                            Unsafe.BitCast<TFrom, byte>(value)
-                                                        )
-                                                        : sizeof(TTo) == 8 && sizeof(TFrom) == 2
-                                                            ? Unsafe.BitCast<ulong, TTo>(
-                                                                Unsafe.BitCast<TFrom, ushort>(value)
-                                                            )
-                                                            : sizeof(TTo) == 8 && sizeof(TFrom) == 4
-                                                                ? Unsafe.BitCast<ulong, TTo>(
-                                                                    Unsafe.BitCast<TFrom, uint>(
-                                                                        value
-                                                                    )
-                                                                )
-                                                                : UnsignedFallback(value);
+            sizeof(TTo) == sizeof(TFrom) ? Unsafe.BitCast<TFrom, TTo>(value)
+            : sizeof(TTo) == 1 && sizeof(TFrom) == 2
+                ? Unsafe.BitCast<byte, TTo>((byte)Unsafe.BitCast<TFrom, ushort>(value))
+            : sizeof(TTo) == 1 && sizeof(TFrom) == 4
+                ? Unsafe.BitCast<byte, TTo>((byte)Unsafe.BitCast<TFrom, uint>(value))
+            : sizeof(TTo) == 1 && sizeof(TFrom) == 8
+                ? Unsafe.BitCast<byte, TTo>((byte)Unsafe.BitCast<TFrom, ulong>(value))
+            : sizeof(TTo) == 2 && sizeof(TFrom) == 1
+                ? Unsafe.BitCast<ushort, TTo>(Unsafe.BitCast<TFrom, byte>(value))
+            : sizeof(TTo) == 2 && sizeof(TFrom) == 4
+                ? Unsafe.BitCast<ushort, TTo>((ushort)Unsafe.BitCast<TFrom, uint>(value))
+            : sizeof(TTo) == 2 && sizeof(TFrom) == 8
+                ? Unsafe.BitCast<ushort, TTo>((ushort)Unsafe.BitCast<TFrom, ulong>(value))
+            : sizeof(TTo) == 4 && sizeof(TFrom) == 1
+                ? Unsafe.BitCast<uint, TTo>(Unsafe.BitCast<TFrom, byte>(value))
+            : sizeof(TTo) == 4 && sizeof(TFrom) == 2
+                ? Unsafe.BitCast<uint, TTo>(Unsafe.BitCast<TFrom, ushort>(value))
+            : sizeof(TTo) == 4 && sizeof(TFrom) == 8
+                ? Unsafe.BitCast<uint, TTo>((uint)Unsafe.BitCast<TFrom, ulong>(value))
+            : sizeof(TTo) == 8 && sizeof(TFrom) == 1
+                ? Unsafe.BitCast<ulong, TTo>(Unsafe.BitCast<TFrom, byte>(value))
+            : sizeof(TTo) == 8 && sizeof(TFrom) == 2
+                ? Unsafe.BitCast<ulong, TTo>(Unsafe.BitCast<TFrom, ushort>(value))
+            : sizeof(TTo) == 8 && sizeof(TFrom) == 4
+                ? Unsafe.BitCast<ulong, TTo>(Unsafe.BitCast<TFrom, uint>(value))
+            : UnsignedFallback(value);
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.AggressiveOptimization)]
         static TTo SignedFallback(TFrom _) =>
@@ -741,57 +756,39 @@ public static unsafe class SilkMarshal
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         static TTo SignedCast(TFrom value) =>
-            sizeof(TTo) == sizeof(TFrom)
-                ? Unsafe.BitCast<TFrom, TTo>(value)
-                : sizeof(TTo) == 1 && sizeof(TFrom) == 2
-                    ? Unsafe.BitCast<sbyte, TTo>((sbyte)Unsafe.BitCast<TFrom, short>(value))
-                    : sizeof(TTo) == 1 && sizeof(TFrom) == 4
-                        ? Unsafe.BitCast<sbyte, TTo>((sbyte)Unsafe.BitCast<TFrom, int>(value))
-                        : sizeof(TTo) == 1 && sizeof(TFrom) == 8
-                            ? Unsafe.BitCast<sbyte, TTo>((sbyte)Unsafe.BitCast<TFrom, long>(value))
-                            : sizeof(TTo) == 2 && sizeof(TFrom) == 1
-                                ? Unsafe.BitCast<short, TTo>(Unsafe.BitCast<TFrom, sbyte>(value))
-                                : sizeof(TTo) == 2 && sizeof(TFrom) == 4
-                                    ? Unsafe.BitCast<short, TTo>(
-                                        (short)Unsafe.BitCast<TFrom, int>(value)
-                                    )
-                                    : sizeof(TTo) == 2 && sizeof(TFrom) == 8
-                                        ? Unsafe.BitCast<short, TTo>(
-                                            (short)Unsafe.BitCast<TFrom, long>(value)
-                                        )
-                                        : sizeof(TTo) == 4 && sizeof(TFrom) == 1
-                                            ? Unsafe.BitCast<int, TTo>(
-                                                Unsafe.BitCast<TFrom, sbyte>(value)
-                                            )
-                                            : sizeof(TTo) == 4 && sizeof(TFrom) == 2
-                                                ? Unsafe.BitCast<int, TTo>(
-                                                    Unsafe.BitCast<TFrom, short>(value)
-                                                )
-                                                : sizeof(TTo) == 4 && sizeof(TFrom) == 8
-                                                    ? Unsafe.BitCast<int, TTo>(
-                                                        (int)Unsafe.BitCast<TFrom, long>(value)
-                                                    )
-                                                    : sizeof(TTo) == 8 && sizeof(TFrom) == 1
-                                                        ? Unsafe.BitCast<long, TTo>(
-                                                            Unsafe.BitCast<TFrom, sbyte>(value)
-                                                        )
-                                                        : sizeof(TTo) == 8 && sizeof(TFrom) == 2
-                                                            ? Unsafe.BitCast<long, TTo>(
-                                                                Unsafe.BitCast<TFrom, short>(value)
-                                                            )
-                                                            : sizeof(TTo) == 8 && sizeof(TFrom) == 4
-                                                                ? Unsafe.BitCast<long, TTo>(
-                                                                    Unsafe.BitCast<TFrom, int>(
-                                                                        value
-                                                                    )
-                                                                )
-                                                                : SignedFallback(value);
+            sizeof(TTo) == sizeof(TFrom) ? Unsafe.BitCast<TFrom, TTo>(value)
+            : sizeof(TTo) == 1 && sizeof(TFrom) == 2
+                ? Unsafe.BitCast<sbyte, TTo>((sbyte)Unsafe.BitCast<TFrom, short>(value))
+            : sizeof(TTo) == 1 && sizeof(TFrom) == 4
+                ? Unsafe.BitCast<sbyte, TTo>((sbyte)Unsafe.BitCast<TFrom, int>(value))
+            : sizeof(TTo) == 1 && sizeof(TFrom) == 8
+                ? Unsafe.BitCast<sbyte, TTo>((sbyte)Unsafe.BitCast<TFrom, long>(value))
+            : sizeof(TTo) == 2 && sizeof(TFrom) == 1
+                ? Unsafe.BitCast<short, TTo>(Unsafe.BitCast<TFrom, sbyte>(value))
+            : sizeof(TTo) == 2 && sizeof(TFrom) == 4
+                ? Unsafe.BitCast<short, TTo>((short)Unsafe.BitCast<TFrom, int>(value))
+            : sizeof(TTo) == 2 && sizeof(TFrom) == 8
+                ? Unsafe.BitCast<short, TTo>((short)Unsafe.BitCast<TFrom, long>(value))
+            : sizeof(TTo) == 4 && sizeof(TFrom) == 1
+                ? Unsafe.BitCast<int, TTo>(Unsafe.BitCast<TFrom, sbyte>(value))
+            : sizeof(TTo) == 4 && sizeof(TFrom) == 2
+                ? Unsafe.BitCast<int, TTo>(Unsafe.BitCast<TFrom, short>(value))
+            : sizeof(TTo) == 4 && sizeof(TFrom) == 8
+                ? Unsafe.BitCast<int, TTo>((int)Unsafe.BitCast<TFrom, long>(value))
+            : sizeof(TTo) == 8 && sizeof(TFrom) == 1
+                ? Unsafe.BitCast<long, TTo>(Unsafe.BitCast<TFrom, sbyte>(value))
+            : sizeof(TTo) == 8 && sizeof(TFrom) == 2
+                ? Unsafe.BitCast<long, TTo>(Unsafe.BitCast<TFrom, short>(value))
+            : sizeof(TTo) == 8 && sizeof(TFrom) == 4
+                ? Unsafe.BitCast<long, TTo>(Unsafe.BitCast<TFrom, int>(value))
+            : SignedFallback(value);
 
         return typeof(TTo).IsAssignableTo(typeof(IFloatingPoint<>))
-            ? throw new NotImplementedException("Floating points are not supported at this time.")
-            : typeof(TTo).IsAssignableTo(typeof(ISignedNumber<>))
-                ? SignedCast(value)
-                : UnsignedCast(value);
+                ? throw new NotImplementedException(
+                    "Floating points are not supported at this time."
+                )
+            : typeof(TTo).IsAssignableTo(typeof(ISignedNumber<>)) ? SignedCast(value)
+            : UnsignedCast(value);
     }
 
     /// <summary>

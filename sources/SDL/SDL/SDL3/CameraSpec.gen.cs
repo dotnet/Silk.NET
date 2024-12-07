@@ -9,9 +9,10 @@ namespace Silk.NET.SDL;
 
 public partial struct CameraSpec
 {
-    public PixelFormatEnum Format;
+    public PixelFormat Format;
+    public Colorspace Colorspace;
     public int Width;
     public int Height;
-    public int IntervalNumerator;
-    public int IntervalDenominator;
+    public int FramerateNumerator;
+    public int FramerateDenominator;
 }

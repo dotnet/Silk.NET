@@ -10,11 +10,13 @@ namespace Silk.NET.SDL;
 [NativeTypeName("unsigned int")]
 public enum LogPriority : uint
 {
-    LogPriorityVerbose = 1,
-    LogPriorityDebug,
-    LogPriorityInfo,
-    LogPriorityWarn,
-    LogPriorityError,
-    LogPriorityCritical,
-    NumLogPriorities,
+    Invalid,
+    Trace,
+    Verbose,
+    Debug,
+    Info,
+    Warn,
+    Error,
+    Critical,
+    Count,
 }

@@ -8,4 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-public unsafe delegate uint TimerCallbackDelegate(uint arg0, void* arg1);
+public unsafe delegate uint TimerCallbackDelegate(void* arg0, uint arg1, uint arg2);

@@ -20,8 +20,8 @@ public partial struct AudioDeviceEvent
     [NativeTypeName("SDL_AudioDeviceID")]
     public uint Which;
 
-    [NativeTypeName("Uint8")]
-    public byte Iscapture;
+    [NativeTypeName("bool")]
+    public byte Recording;
 
     [NativeTypeName("Uint8")]
     public byte Padding1;

@@ -31,6 +31,6 @@ public static unsafe partial class SDL_PenButtonEventTests
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(PenButtonEvent), Is.EqualTo(64));
+        Assert.That(sizeof(PenButtonEvent), Is.EqualTo(40));
     }
 }

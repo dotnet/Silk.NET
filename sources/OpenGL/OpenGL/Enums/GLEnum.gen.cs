@@ -3194,7 +3194,7 @@ public enum GLEnum : uint
     LayoutDepthAttachmentStencilReadOnlyEXT = unchecked((uint)0x9531),
     HandleTypeD3D12FenceEXT = unchecked((uint)0x9594),
     D3D12FenceValueEXT = unchecked((uint)0x9595),
-    ActiveProgramEXT = unchecked((uint)0x8B8D),
+    ActiveProgramEXT = unchecked((uint)0x8259),
     LightModelColorControlEXT = unchecked((uint)0x81F8),
     SingleColorEXT = unchecked((uint)0x81F9),
     SeparateSpecularColorEXT = unchecked((uint)0x81FA),

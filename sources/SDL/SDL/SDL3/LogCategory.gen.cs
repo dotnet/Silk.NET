@@ -19,7 +19,7 @@ public enum LogCategory : uint
     Render,
     Input,
     Test,
-    Reserved1,
+    Gpu,
     Reserved2,
     Reserved3,
     Reserved4,

@@ -17,7 +17,7 @@ public class SdlContext : IGLContext
     /// <exception cref="SdlException">If an error occurs when creating the context.</exception>
     public SdlContext(
         WindowHandle window,
-        Span<KeyValuePair<GLattr, int>> attributes,
+        Span<KeyValuePair<GLAttr, int>> attributes,
         ISdl? sdl = null
     )
     {
@@ -46,7 +46,7 @@ public class SdlContext : IGLContext
     /// <param name="attributes">The context attributes.</param>
     /// <param name="sdl">The SDL interface to use.</param>
     /// <exception cref="SdlException">If an error occurs when creating the context.</exception>
-    public SdlContext(WindowHandle window, ISdl sdl, params KeyValuePair<GLattr, int>[] attributes)
+    public SdlContext(WindowHandle window, ISdl sdl, params KeyValuePair<GLAttr, int>[] attributes)
         : this(window, attributes, sdl) { }
 
     /// <summary>
@@ -55,7 +55,7 @@ public class SdlContext : IGLContext
     /// <param name="window">The window to associate the context with.</param>
     /// <param name="attributes">The context attributes.</param>
     /// <exception cref="SdlException">If an error occurs when creating the context.</exception>
-    public SdlContext(WindowHandle window, params KeyValuePair<GLattr, int>[] attributes)
+    public SdlContext(WindowHandle window, params KeyValuePair<GLAttr, int>[] attributes)
         : this(window, attributes, Sdl.Instance) { }
 
     /// <summary>
@@ -64,7 +64,7 @@ public class SdlContext : IGLContext
     /// <param name="window">The window handle.</param>
     /// <param name="context">The context handle.</param>
     /// <param name="sdl">The SDL interface to use. Defaults to <see cref="Sdl.Instance"/>.</param>
-    public SdlContext(WindowHandle window, Ptr context, ISdl? sdl = null) =>
+    public SdlContext(WindowHandle window, GLContextStateHandle context, ISdl? sdl = null) =>
         (Window, Context, Api) = (window, context, sdl ?? Sdl.Instance);
 
     /// <summary>
@@ -75,7 +75,7 @@ public class SdlContext : IGLContext
     /// <summary>
     /// The context handle.
     /// </summary>
-    public Ptr Context { get; }
+    public GLContextStateHandle Context { get; }
 
     /// <summary>
     /// The API interface in use.
@@ -83,7 +83,7 @@ public class SdlContext : IGLContext
     public ISdl Api { get; }
 
     /// <inheritdoc />
-    public void Dispose() => Expect(Api.GLDeleteContext((Ref)Context), "dispose OpenGL context");
+    public void Dispose() => Expect(Api.GLDestroyContext(Context), "dispose OpenGL context");
 
     /// <inheritdoc />
     public unsafe void* LoadFunction(string functionName, string libraryNameHint)
@@ -106,11 +106,10 @@ public class SdlContext : IGLContext
     public void SwapBuffers() => Expect(Api.GLSwapWindow(Window), "swap buffers");
 
     /// <inheritdoc />
-    public void MakeCurrent() =>
-        Expect(Api.GLMakeCurrent(Window, (Ref)Context), "make context current");
+    public void MakeCurrent() => Expect(Api.GLMakeCurrent(Window, Context), "make context current");
 
     /// <inheritdoc />
-    public void Clear() => Expect(Api.GLMakeCurrent(Window, (Ref)nullptr), "clear current context");
+    public void Clear() => Expect(Api.GLMakeCurrent(Window, nullptr), "clear current context");
 
     private void Expect(int ec, string action)
     {
@@ -122,12 +121,10 @@ public class SdlContext : IGLContext
         var err = (string)Api.GetError();
         Api.ClearError();
 
-        Throw(action, err, ec);
+        Throw(action, err);
         return;
 
-        static void Throw(string act, string err, int ec) =>
-            throw new SdlException(
-                $"Failed to {act} with error code {(Errorcode)ec} ({ec}): {err}"
-            );
+        static void Throw(string act, string err) =>
+            throw new SdlException($"Failed to {act}: {err}");
     }
 }

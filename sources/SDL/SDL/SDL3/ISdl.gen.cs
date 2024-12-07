@@ -25,15 +25,24 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint64 *")] Ref<ulong> timestampNS
         );
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicInt")]
+        static abstract int AddAtomicInt(AtomicInt* a, int v);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicInt")]
+        static abstract int AddAtomicInt(Ref<AtomicInt> a, int v);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
-        static abstract int AddEventWatch(
+        static abstract byte AddEventWatch(
             [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
-        static abstract int AddEventWatch(
+        static abstract MaybeBool<byte> AddEventWatch(
             [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         );
@@ -59,37 +68,51 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_AddGamepadMappingsFromIO")]
         static abstract int AddGamepadMappingsFromIO(
             IOStreamHandle src,
-            [NativeTypeName("SDL_bool")] int closeio
+            [NativeTypeName("bool")] byte closeio
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_AddGamepadMappingsFromIO")]
         static abstract int AddGamepadMappingsFromIO(
             IOStreamHandle src,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> closeio
+            [NativeTypeName("bool")] MaybeBool<byte> closeio
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_AddHintCallback")]
-        static abstract int AddHintCallback(
+        static abstract byte AddHintCallback(
             [NativeTypeName("const char *")] sbyte* name,
             [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             void* userdata
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_AddHintCallback")]
-        static abstract int AddHintCallback(
+        static abstract MaybeBool<byte> AddHintCallback(
             [NativeTypeName("const char *")] Ref<sbyte> name,
             [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             Ref userdata
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AddSurfaceAlternateImage")]
+        static abstract byte AddSurfaceAlternateImage(Surface* surface, Surface* image);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AddSurfaceAlternateImage")]
+        static abstract MaybeBool<byte> AddSurfaceAlternateImage(
+            Ref<Surface> surface,
+            Ref<Surface> image
+        );
+
         [return: NativeTypeName("SDL_TimerID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_AddTimer")]
         static abstract uint AddTimer(
             [NativeTypeName("Uint32")] uint interval,
             [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
-            void* param2
+            void* userdata
         );
 
         [return: NativeTypeName("SDL_TimerID")]
@@ -98,190 +121,154 @@ public unsafe partial interface ISdl
         static abstract uint AddTimer(
             [NativeTypeName("Uint32")] uint interval,
             [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
-            Ref param2
+            Ref userdata
         );
 
+        [return: NativeTypeName("SDL_TimerID")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AddTimerNS")]
+        static abstract uint AddTimerNS(
+            [NativeTypeName("Uint64")] ulong interval,
+            [NativeTypeName("SDL_NSTimerCallback")] NSTimerCallback callback,
+            void* userdata
+        );
+
+        [return: NativeTypeName("SDL_TimerID")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AddTimerNS")]
+        static abstract uint AddTimerNS(
+            [NativeTypeName("Uint64")] ulong interval,
+            [NativeTypeName("SDL_NSTimerCallback")] NSTimerCallback callback,
+            Ref userdata
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_AddVulkanRenderSemaphores")]
-        static abstract int AddVulkanRenderSemaphores(
+        static abstract MaybeBool<byte> AddVulkanRenderSemaphores(
             RendererHandle renderer,
             [NativeTypeName("Uint32")] uint wait_stage_mask,
             [NativeTypeName("Sint64")] long wait_semaphore,
             [NativeTypeName("Sint64")] long signal_semaphore
         );
 
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AllocateEventMemory")]
-        static abstract Ptr AllocateEventMemory([NativeTypeName("size_t")] nuint size);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_AllocateEventMemory")]
-        static abstract void* AllocateEventMemoryRaw([NativeTypeName("size_t")] nuint size);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicAdd")]
-        static abstract int AtomicAdd(AtomicInt* a, int v);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicAdd")]
-        static abstract int AtomicAdd(Ref<AtomicInt> a, int v);
-
-        [return: NativeTypeName("SDL_bool")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicCompareAndSwap")]
-        static abstract int AtomicCompareAndSwap(AtomicInt* a, int oldval, int newval);
-
-        [return: NativeTypeName("SDL_bool")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicCompareAndSwap")]
-        static abstract MaybeBool<int> AtomicCompareAndSwap(
-            Ref<AtomicInt> a,
-            int oldval,
-            int newval
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AddVulkanRenderSemaphores")]
+        static abstract byte AddVulkanRenderSemaphoresRaw(
+            RendererHandle renderer,
+            [NativeTypeName("Uint32")] uint wait_stage_mask,
+            [NativeTypeName("Sint64")] long wait_semaphore,
+            [NativeTypeName("Sint64")] long signal_semaphore
         );
-
-        [return: NativeTypeName("SDL_bool")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicCompareAndSwapPointer")]
-        static abstract int AtomicCompareAndSwapPointer(void** a, void* oldval, void* newval);
-
-        [return: NativeTypeName("SDL_bool")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicCompareAndSwapPointer")]
-        static abstract MaybeBool<int> AtomicCompareAndSwapPointer(Ref2D a, Ref oldval, Ref newval);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicGet")]
-        static abstract int AtomicGet(AtomicInt* a);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicGet")]
-        static abstract int AtomicGet(Ref<AtomicInt> a);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicGetPtr")]
-        static abstract void* AtomicGetPtr(void** a);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicGetPtr")]
-        static abstract Ptr AtomicGetPtr(Ref2D a);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicSet")]
-        static abstract int AtomicSet(AtomicInt* a, int v);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicSet")]
-        static abstract int AtomicSet(Ref<AtomicInt> a, int v);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicSetPtr")]
-        static abstract void* AtomicSetPtr(void** a, void* v);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AtomicSetPtr")]
-        static abstract Ptr AtomicSetPtr(Ref2D a, Ref v);
 
         [return: NativeTypeName("SDL_JoystickID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_AttachVirtualJoystick")]
         static abstract uint AttachVirtualJoystick(
-            JoystickType type,
-            int naxes,
-            int nbuttons,
-            int nhats
-        );
-
-        [return: NativeTypeName("SDL_JoystickID")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AttachVirtualJoystickEx")]
-        static abstract uint AttachVirtualJoystickEx(
             [NativeTypeName("const SDL_VirtualJoystickDesc *")] VirtualJoystickDesc* desc
         );
 
         [return: NativeTypeName("SDL_JoystickID")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_AttachVirtualJoystickEx")]
-        static abstract uint AttachVirtualJoystickEx(
+        [NativeFunction("SDL3", EntryPoint = "SDL_AttachVirtualJoystick")]
+        static abstract uint AttachVirtualJoystick(
             [NativeTypeName("const SDL_VirtualJoystickDesc *")] Ref<VirtualJoystickDesc> desc
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_AudioDevicePaused")]
-        static abstract MaybeBool<int> AudioDevicePaused(
+        static abstract MaybeBool<byte> AudioDevicePaused(
             [NativeTypeName("SDL_AudioDeviceID")] uint dev
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_AudioDevicePaused")]
-        static abstract int AudioDevicePausedRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+        static abstract byte AudioDevicePausedRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindAudioStream")]
-        static abstract int BindAudioStream(
+        static abstract MaybeBool<byte> BindAudioStream(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             AudioStreamHandle stream
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BindAudioStream")]
+        static abstract byte BindAudioStreamRaw(
+            [NativeTypeName("SDL_AudioDeviceID")] uint devid,
+            AudioStreamHandle stream
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindAudioStreams")]
-        static abstract int BindAudioStreams(
+        static abstract byte BindAudioStreams(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             AudioStreamHandle* streams,
             int num_streams
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindAudioStreams")]
-        static abstract int BindAudioStreams(
+        static abstract MaybeBool<byte> BindAudioStreams(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             Ref<AudioStreamHandle> streams,
             int num_streams
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface")]
-        static abstract int BlitSurface(
-            Surface* src,
-            [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
-            Surface* dst,
-            Rect* dstrect
-        );
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface")]
-        static abstract int BlitSurface(
-            Ref<Surface> src,
-            [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
-            Ref<Surface> dst,
-            Ref<Rect> dstrect
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceScaled")]
-        static abstract int BlitSurfaceScaled(
-            Surface* src,
-            [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
-            Surface* dst,
-            Rect* dstrect,
-            ScaleMode scaleMode
-        );
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceScaled")]
-        static abstract int BlitSurfaceScaled(
-            Ref<Surface> src,
-            [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
-            Ref<Surface> dst,
-            Ref<Rect> dstrect,
-            ScaleMode scaleMode
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUnchecked")]
-        static abstract int BlitSurfaceUnchecked(
+        static abstract byte BlitSurface(
             Surface* src,
             [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
             Surface* dst,
             [NativeTypeName("const SDL_Rect *")] Rect* dstrect
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUnchecked")]
-        static abstract int BlitSurfaceUnchecked(
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface")]
+        static abstract MaybeBool<byte> BlitSurface(
             Ref<Surface> src,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
             Ref<Surface> dst,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUncheckedScaled")]
-        static abstract int BlitSurfaceUncheckedScaled(
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface9Grid")]
+        static abstract byte BlitSurface9Grid(
+            Surface* src,
+            [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
+            int left_width,
+            int right_width,
+            int top_height,
+            int bottom_height,
+            float scale,
+            ScaleMode scaleMode,
+            Surface* dst,
+            [NativeTypeName("const SDL_Rect *")] Rect* dstrect
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface9Grid")]
+        static abstract MaybeBool<byte> BlitSurface9Grid(
+            Ref<Surface> src,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
+            int left_width,
+            int right_width,
+            int top_height,
+            int bottom_height,
+            float scale,
+            ScaleMode scaleMode,
+            Ref<Surface> dst,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceScaled")]
+        static abstract byte BlitSurfaceScaled(
             Surface* src,
             [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
             Surface* dst,
@@ -289,9 +276,92 @@ public unsafe partial interface ISdl
             ScaleMode scaleMode
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceScaled")]
+        static abstract MaybeBool<byte> BlitSurfaceScaled(
+            Ref<Surface> src,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
+            Ref<Surface> dst,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect,
+            ScaleMode scaleMode
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceTiled")]
+        static abstract byte BlitSurfaceTiled(
+            Surface* src,
+            [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
+            Surface* dst,
+            [NativeTypeName("const SDL_Rect *")] Rect* dstrect
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceTiled")]
+        static abstract MaybeBool<byte> BlitSurfaceTiled(
+            Ref<Surface> src,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
+            Ref<Surface> dst,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceTiledWithScale")]
+        static abstract byte BlitSurfaceTiledWithScale(
+            Surface* src,
+            [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
+            float scale,
+            ScaleMode scaleMode,
+            Surface* dst,
+            [NativeTypeName("const SDL_Rect *")] Rect* dstrect
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceTiledWithScale")]
+        static abstract MaybeBool<byte> BlitSurfaceTiledWithScale(
+            Ref<Surface> src,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
+            float scale,
+            ScaleMode scaleMode,
+            Ref<Surface> dst,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUnchecked")]
+        static abstract byte BlitSurfaceUnchecked(
+            Surface* src,
+            [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
+            Surface* dst,
+            [NativeTypeName("const SDL_Rect *")] Rect* dstrect
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUnchecked")]
+        static abstract MaybeBool<byte> BlitSurfaceUnchecked(
+            Ref<Surface> src,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
+            Ref<Surface> dst,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUncheckedScaled")]
+        static abstract byte BlitSurfaceUncheckedScaled(
+            Surface* src,
+            [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
+            Surface* dst,
+            [NativeTypeName("const SDL_Rect *")] Rect* dstrect,
+            ScaleMode scaleMode
+        );
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUncheckedScaled")]
-        static abstract int BlitSurfaceUncheckedScaled(
+        static abstract MaybeBool<byte> BlitSurfaceUncheckedScaled(
             Ref<Surface> src,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
             Ref<Surface> dst,
@@ -300,41 +370,86 @@ public unsafe partial interface ISdl
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_BroadcastCondition")]
-        static abstract int BroadcastCondition(ConditionHandle cond);
+        static abstract void BroadcastCondition(ConditionHandle cond);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CaptureMouse")]
-        static abstract int CaptureMouse([NativeTypeName("SDL_bool")] int enabled);
+        static abstract byte CaptureMouse([NativeTypeName("bool")] byte enabled);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CaptureMouse")]
-        static abstract int CaptureMouse([NativeTypeName("SDL_bool")] MaybeBool<int> enabled);
+        static abstract MaybeBool<byte> CaptureMouse(
+            [NativeTypeName("bool")] MaybeBool<byte> enabled
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CleanupTLS")]
         static abstract void CleanupTLS();
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ClearAudioStream")]
-        static abstract int ClearAudioStream(AudioStreamHandle stream);
+        static abstract MaybeBool<byte> ClearAudioStream(AudioStreamHandle stream);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ClearAudioStream")]
+        static abstract byte ClearAudioStreamRaw(AudioStreamHandle stream);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ClearClipboardData")]
-        static abstract int ClearClipboardData();
+        static abstract MaybeBool<byte> ClearClipboardData();
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ClearClipboardData")]
+        static abstract byte ClearClipboardDataRaw();
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ClearComposition")]
-        static abstract void ClearComposition();
+        static abstract MaybeBool<byte> ClearComposition(WindowHandle window);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ClearComposition")]
+        static abstract byte ClearCompositionRaw(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ClearError")]
-        static abstract void ClearError();
+        static abstract MaybeBool<byte> ClearError();
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ClearError")]
+        static abstract byte ClearErrorRaw();
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ClearProperty")]
-        static abstract int ClearProperty(
+        static abstract byte ClearProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ClearProperty")]
-        static abstract int ClearProperty(
+        static abstract MaybeBool<byte> ClearProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ClearSurface")]
+        static abstract byte ClearSurface(Surface* surface, float r, float g, float b, float a);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ClearSurface")]
+        static abstract MaybeBool<byte> ClearSurface(
+            Ref<Surface> surface,
+            float r,
+            float g,
+            float b,
+            float a
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CloseAudioDevice")]
@@ -349,8 +464,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_CloseHaptic")]
         static abstract void CloseHaptic(HapticHandle haptic);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CloseIO")]
-        static abstract int CloseIO(IOStreamHandle context);
+        static abstract MaybeBool<byte> CloseIO(IOStreamHandle context);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CloseIO")]
+        static abstract byte CloseIORaw(IOStreamHandle context);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CloseJoystick")]
         static abstract void CloseJoystick(JoystickHandle joystick);
@@ -358,11 +479,61 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_CloseSensor")]
         static abstract void CloseSensor(SensorHandle sensor);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CloseStorage")]
-        static abstract int CloseStorage(StorageHandle storage);
+        static abstract MaybeBool<byte> CloseStorage(StorageHandle storage);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CloseStorage")]
+        static abstract byte CloseStorageRaw(StorageHandle storage);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicInt")]
+        static abstract byte CompareAndSwapAtomicInt(AtomicInt* a, int oldval, int newval);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicInt")]
+        static abstract MaybeBool<byte> CompareAndSwapAtomicInt(
+            Ref<AtomicInt> a,
+            int oldval,
+            int newval
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicPointer")]
+        static abstract byte CompareAndSwapAtomicPointer(void** a, void* oldval, void* newval);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicPointer")]
+        static abstract MaybeBool<byte> CompareAndSwapAtomicPointer(
+            Ref2D a,
+            Ref oldval,
+            Ref newval
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicU32")]
+        static abstract byte CompareAndSwapAtomicU32(
+            AtomicU32* a,
+            [NativeTypeName("Uint32")] uint oldval,
+            [NativeTypeName("Uint32")] uint newval
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicU32")]
+        static abstract MaybeBool<byte> CompareAndSwapAtomicU32(
+            Ref<AtomicU32> a,
+            [NativeTypeName("Uint32")] uint oldval,
+            [NativeTypeName("Uint32")] uint newval
+        );
+
+        [return: NativeTypeName("SDL_BlendMode")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ComposeCustomBlendMode")]
-        static abstract BlendMode ComposeCustomBlendMode(
+        static abstract uint ComposeCustomBlendMode(
             BlendFactor srcColorFactor,
             BlendFactor dstColorFactor,
             BlendOperation colorOperation,
@@ -371,8 +542,9 @@ public unsafe partial interface ISdl
             BlendOperation alphaOperation
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ConvertAudioSamples")]
-        static abstract int ConvertAudioSamples(
+        static abstract byte ConvertAudioSamples(
             [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* src_spec,
             [NativeTypeName("const Uint8 *")] byte* src_data,
             int src_len,
@@ -381,9 +553,10 @@ public unsafe partial interface ISdl
             int* dst_len
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ConvertAudioSamples")]
-        static abstract int ConvertAudioSamples(
+        static abstract MaybeBool<byte> ConvertAudioSamples(
             [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> src_spec,
             [NativeTypeName("const Uint8 *")] Ref<byte> src_data,
             int src_len,
@@ -392,68 +565,77 @@ public unsafe partial interface ISdl
             Ref<int> dst_len
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ConvertEventToRenderCoordinates")]
-        static abstract int ConvertEventToRenderCoordinates(RendererHandle renderer, Event* @event);
+        static abstract byte ConvertEventToRenderCoordinates(
+            RendererHandle renderer,
+            Event* @event
+        );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ConvertEventToRenderCoordinates")]
-        static abstract int ConvertEventToRenderCoordinates(
+        static abstract MaybeBool<byte> ConvertEventToRenderCoordinates(
             RendererHandle renderer,
             Ref<Event> @event
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ConvertPixels")]
-        static abstract int ConvertPixels(
+        static abstract byte ConvertPixels(
             int width,
             int height,
-            PixelFormatEnum src_format,
+            PixelFormat src_format,
             [NativeTypeName("const void *")] void* src,
             int src_pitch,
-            PixelFormatEnum dst_format,
+            PixelFormat dst_format,
             void* dst,
             int dst_pitch
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ConvertPixels")]
-        static abstract int ConvertPixels(
+        static abstract MaybeBool<byte> ConvertPixels(
             int width,
             int height,
-            PixelFormatEnum src_format,
+            PixelFormat src_format,
             [NativeTypeName("const void *")] Ref src,
             int src_pitch,
-            PixelFormatEnum dst_format,
+            PixelFormat dst_format,
             Ref dst,
             int dst_pitch
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ConvertPixelsAndColorspace")]
-        static abstract int ConvertPixelsAndColorspace(
+        static abstract byte ConvertPixelsAndColorspace(
             int width,
             int height,
-            PixelFormatEnum src_format,
+            PixelFormat src_format,
             Colorspace src_colorspace,
             [NativeTypeName("SDL_PropertiesID")] uint src_properties,
             [NativeTypeName("const void *")] void* src,
             int src_pitch,
-            PixelFormatEnum dst_format,
+            PixelFormat dst_format,
             Colorspace dst_colorspace,
             [NativeTypeName("SDL_PropertiesID")] uint dst_properties,
             void* dst,
             int dst_pitch
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ConvertPixelsAndColorspace")]
-        static abstract int ConvertPixelsAndColorspace(
+        static abstract MaybeBool<byte> ConvertPixelsAndColorspace(
             int width,
             int height,
-            PixelFormatEnum src_format,
+            PixelFormat src_format,
             Colorspace src_colorspace,
             [NativeTypeName("SDL_PropertiesID")] uint src_properties,
             [NativeTypeName("const void *")] Ref src,
             int src_pitch,
-            PixelFormatEnum dst_format,
+            PixelFormat dst_format,
             Colorspace dst_colorspace,
             [NativeTypeName("SDL_PropertiesID")] uint dst_properties,
             Ref dst,
@@ -461,52 +643,76 @@ public unsafe partial interface ISdl
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurface")]
-        static abstract Surface* ConvertSurface(
-            Surface* surface,
-            [NativeTypeName("const SDL_PixelFormat *")] PixelFormat* format
-        );
+        static abstract Surface* ConvertSurface(Surface* surface, PixelFormat format);
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurface")]
-        static abstract Ptr<Surface> ConvertSurface(
-            Ref<Surface> surface,
-            [NativeTypeName("const SDL_PixelFormat *")] Ref<PixelFormat> format
-        );
+        static abstract Ptr<Surface> ConvertSurface(Ref<Surface> surface, PixelFormat format);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceFormat")]
-        static abstract Surface* ConvertSurfaceFormat(
+        [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceAndColorspace")]
+        static abstract Surface* ConvertSurfaceAndColorspace(
             Surface* surface,
-            PixelFormatEnum pixel_format
-        );
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceFormat")]
-        static abstract Ptr<Surface> ConvertSurfaceFormat(
-            Ref<Surface> surface,
-            PixelFormatEnum pixel_format
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceFormatAndColorspace")]
-        static abstract Surface* ConvertSurfaceFormatAndColorspace(
-            Surface* surface,
-            PixelFormatEnum pixel_format,
+            PixelFormat format,
+            Palette* palette,
             Colorspace colorspace,
             [NativeTypeName("SDL_PropertiesID")] uint props
         );
 
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceFormatAndColorspace")]
-        static abstract Ptr<Surface> ConvertSurfaceFormatAndColorspace(
+        [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceAndColorspace")]
+        static abstract Ptr<Surface> ConvertSurfaceAndColorspace(
             Ref<Surface> surface,
-            PixelFormatEnum pixel_format,
+            PixelFormat format,
+            Ref<Palette> palette,
             Colorspace colorspace,
             [NativeTypeName("SDL_PropertiesID")] uint props
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyFile")]
+        static abstract byte CopyFile(
+            [NativeTypeName("const char *")] sbyte* oldpath,
+            [NativeTypeName("const char *")] sbyte* newpath
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyFile")]
+        static abstract MaybeBool<byte> CopyFile(
+            [NativeTypeName("const char *")] Ref<sbyte> oldpath,
+            [NativeTypeName("const char *")] Ref<sbyte> newpath
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CopyProperties")]
-        static abstract int CopyProperties(
+        static abstract MaybeBool<byte> CopyProperties(
             [NativeTypeName("SDL_PropertiesID")] uint src,
             [NativeTypeName("SDL_PropertiesID")] uint dst
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyProperties")]
+        static abstract byte CopyPropertiesRaw(
+            [NativeTypeName("SDL_PropertiesID")] uint src,
+            [NativeTypeName("SDL_PropertiesID")] uint dst
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyStorageFile")]
+        static abstract byte CopyStorageFile(
+            StorageHandle storage,
+            [NativeTypeName("const char *")] sbyte* oldpath,
+            [NativeTypeName("const char *")] sbyte* newpath
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CopyStorageFile")]
+        static abstract MaybeBool<byte> CopyStorageFile(
+            StorageHandle storage,
+            [NativeTypeName("const char *")] Ref<sbyte> oldpath,
+            [NativeTypeName("const char *")] Ref<sbyte> newpath
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateAudioStream")]
@@ -553,12 +759,16 @@ public unsafe partial interface ISdl
             int hot_y
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateDirectory")]
-        static abstract int CreateDirectory([NativeTypeName("const char *")] sbyte* path);
+        static abstract byte CreateDirectory([NativeTypeName("const char *")] sbyte* path);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateDirectory")]
-        static abstract int CreateDirectory([NativeTypeName("const char *")] Ref<sbyte> path);
+        static abstract MaybeBool<byte> CreateDirectory(
+            [NativeTypeName("const char *")] Ref<sbyte> path
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateHapticEffect")]
         static abstract int CreateHapticEffect(
@@ -583,13 +793,6 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_CreatePalette")]
         static abstract Palette* CreatePaletteRaw(int ncolors);
 
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_CreatePixelFormat")]
-        static abstract Ptr<PixelFormat> CreatePixelFormat(PixelFormatEnum pixel_format);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_CreatePixelFormat")]
-        static abstract PixelFormat* CreatePixelFormatRaw(PixelFormatEnum pixel_format);
-
         [NativeFunction("SDL3", EntryPoint = "SDL_CreatePopupWindow")]
         static abstract WindowHandle CreatePopupWindow(
             WindowHandle parent,
@@ -597,7 +800,7 @@ public unsafe partial interface ISdl
             int offset_y,
             int w,
             int h,
-            [NativeTypeName("SDL_WindowFlags")] uint flags
+            [NativeTypeName("SDL_WindowFlags")] ulong flags
         );
 
         [return: NativeTypeName("SDL_PropertiesID")]
@@ -607,16 +810,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateRenderer")]
         static abstract RendererHandle CreateRenderer(
             WindowHandle window,
-            [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("Uint32")] uint flags
+            [NativeTypeName("const char *")] sbyte* name
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateRenderer")]
         static abstract RendererHandle CreateRenderer(
             WindowHandle window,
-            [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("Uint32")] uint flags
+            [NativeTypeName("const char *")] Ref<sbyte> name
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateRendererWithProperties")]
@@ -639,118 +840,134 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateSoftwareRenderer")]
         static abstract RendererHandle CreateSoftwareRenderer(Ref<Surface> surface);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateStorageDirectory")]
-        static abstract int CreateStorageDirectory(
+        static abstract byte CreateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateStorageDirectory")]
-        static abstract int CreateStorageDirectory(
+        static abstract MaybeBool<byte> CreateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurface")]
-        static abstract Ptr<Surface> CreateSurface(int width, int height, PixelFormatEnum format);
+        static abstract Ptr<Surface> CreateSurface(int width, int height, PixelFormat format);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurfaceFrom")]
         static abstract Surface* CreateSurfaceFrom(
-            void* pixels,
             int width,
             int height,
-            int pitch,
-            PixelFormatEnum format
+            PixelFormat format,
+            void* pixels,
+            int pitch
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurfaceFrom")]
         static abstract Ptr<Surface> CreateSurfaceFrom(
-            Ref pixels,
             int width,
             int height,
-            int pitch,
-            PixelFormatEnum format
+            PixelFormat format,
+            Ref pixels,
+            int pitch
         );
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurfacePalette")]
+        static abstract Palette* CreateSurfacePalette(Surface* surface);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurfacePalette")]
+        static abstract Ptr<Palette> CreateSurfacePalette(Ref<Surface> surface);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurface")]
-        static abstract Surface* CreateSurfaceRaw(int width, int height, PixelFormatEnum format);
+        static abstract Surface* CreateSurfaceRaw(int width, int height, PixelFormat format);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateSystemCursor")]
         static abstract CursorHandle CreateSystemCursor(SystemCursor id);
 
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateTexture")]
-        static abstract TextureHandle CreateTexture(
+        static abstract Ptr<Texture> CreateTexture(
             RendererHandle renderer,
-            PixelFormatEnum format,
-            int access,
+            PixelFormat format,
+            TextureAccess access,
             int w,
             int h
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateTextureFromSurface")]
-        static abstract TextureHandle CreateTextureFromSurface(
+        static abstract Texture* CreateTextureFromSurface(
             RendererHandle renderer,
             Surface* surface
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateTextureFromSurface")]
-        static abstract TextureHandle CreateTextureFromSurface(
+        static abstract Ptr<Texture> CreateTextureFromSurface(
             RendererHandle renderer,
             Ref<Surface> surface
         );
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateTexture")]
+        static abstract Texture* CreateTextureRaw(
+            RendererHandle renderer,
+            PixelFormat format,
+            TextureAccess access,
+            int w,
+            int h
+        );
+
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateTextureWithProperties")]
-        static abstract TextureHandle CreateTextureWithProperties(
+        static abstract Ptr<Texture> CreateTextureWithProperties(
             RendererHandle renderer,
             [NativeTypeName("SDL_PropertiesID")] uint props
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_CreateThread")]
-        static abstract ThreadHandle CreateThread(
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateTextureWithProperties")]
+        static abstract Texture* CreateTextureWithPropertiesRaw(
+            RendererHandle renderer,
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadRuntime")]
+        static abstract ThreadHandle CreateThreadRuntime(
             [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] sbyte* name,
-            void* data
+            void* data,
+            [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnBeginThread,
+            [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnEndThread
         );
 
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_CreateThread")]
-        static abstract ThreadHandle CreateThread(
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadRuntime")]
+        static abstract ThreadHandle CreateThreadRuntime(
             [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            Ref data
+            Ref data,
+            [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnBeginThread,
+            [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnEndThread
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithStackSize")]
-        static abstract ThreadHandle CreateThreadWithStackSize(
-            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
-            [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("const size_t")] nuint stacksize,
-            void* data
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithPropertiesRuntime")]
+        static abstract ThreadHandle CreateThreadWithPropertiesRuntime(
+            [NativeTypeName("SDL_PropertiesID")] uint props,
+            [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnBeginThread,
+            [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnEndThread
         );
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithStackSize")]
-        static abstract ThreadHandle CreateThreadWithStackSize(
-            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
-            [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("const size_t")] nuint stacksize,
-            Ref data
-        );
-
-        [return: NativeTypeName("SDL_TLSID")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_CreateTLS")]
-        static abstract uint CreateTLS();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateWindow")]
         static abstract WindowHandle CreateWindow(
             [NativeTypeName("const char *")] sbyte* title,
             int w,
             int h,
-            [NativeTypeName("SDL_WindowFlags")] uint flags
+            [NativeTypeName("SDL_WindowFlags")] ulong flags
         );
 
         [Transformed]
@@ -759,26 +976,28 @@ public unsafe partial interface ISdl
             [NativeTypeName("const char *")] Ref<sbyte> title,
             int w,
             int h,
-            [NativeTypeName("SDL_WindowFlags")] uint flags
+            [NativeTypeName("SDL_WindowFlags")] ulong flags
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateWindowAndRenderer")]
-        static abstract int CreateWindowAndRenderer(
+        static abstract byte CreateWindowAndRenderer(
             [NativeTypeName("const char *")] sbyte* title,
             int width,
             int height,
-            [NativeTypeName("SDL_WindowFlags")] uint window_flags,
+            [NativeTypeName("SDL_WindowFlags")] ulong window_flags,
             WindowHandle* window,
             RendererHandle* renderer
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateWindowAndRenderer")]
-        static abstract int CreateWindowAndRenderer(
+        static abstract MaybeBool<byte> CreateWindowAndRenderer(
             [NativeTypeName("const char *")] Ref<sbyte> title,
             int width,
             int height,
-            [NativeTypeName("SDL_WindowFlags")] uint window_flags,
+            [NativeTypeName("SDL_WindowFlags")] ulong window_flags,
             Ref<WindowHandle> window,
             Ref<RendererHandle> renderer
         );
@@ -788,24 +1007,26 @@ public unsafe partial interface ISdl
             [NativeTypeName("SDL_PropertiesID")] uint props
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CursorVisible")]
-        static abstract MaybeBool<int> CursorVisible();
+        static abstract MaybeBool<byte> CursorVisible();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CursorVisible")]
-        static abstract int CursorVisibleRaw();
+        static abstract byte CursorVisibleRaw();
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DateTimeToTime")]
-        static abstract int DateTimeToTime(
+        static abstract byte DateTimeToTime(
             [NativeTypeName("const SDL_DateTime *")] DateTime* dt,
             [NativeTypeName("SDL_Time *")] long* ticks
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_DateTimeToTime")]
-        static abstract int DateTimeToTime(
+        static abstract MaybeBool<byte> DateTimeToTime(
             [NativeTypeName("const SDL_DateTime *")] Ref<DateTime> dt,
             [NativeTypeName("SDL_Time *")] Ref<long> ticks
         );
@@ -816,33 +1037,8 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_DelayNS")]
         static abstract void DelayNS([NativeTypeName("Uint64")] ulong ns);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_DelEventWatch")]
-        static abstract void DelEventWatch(
-            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
-            void* userdata
-        );
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_DelEventWatch")]
-        static abstract void DelEventWatch(
-            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
-            Ref userdata
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_DelHintCallback")]
-        static abstract void DelHintCallback(
-            [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
-            void* userdata
-        );
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_DelHintCallback")]
-        static abstract void DelHintCallback(
-            [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
-            Ref userdata
-        );
+        [NativeFunction("SDL3", EntryPoint = "SDL_DelayPrecise")]
+        static abstract void DelayPrecise([NativeTypeName("Uint64")] ulong ns);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyAudioStream")]
         static abstract void DestroyAudioStream(AudioStreamHandle stream);
@@ -866,13 +1062,6 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyPalette")]
         static abstract void DestroyPalette(Ref<Palette> palette);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_DestroyPixelFormat")]
-        static abstract void DestroyPixelFormat(PixelFormat* format);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_DestroyPixelFormat")]
-        static abstract void DestroyPixelFormat(Ref<PixelFormat> format);
-
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyProperties")]
         static abstract void DestroyProperties([NativeTypeName("SDL_PropertiesID")] uint props);
 
@@ -893,24 +1082,48 @@ public unsafe partial interface ISdl
         static abstract void DestroySurface(Ref<Surface> surface);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyTexture")]
-        static abstract void DestroyTexture(TextureHandle texture);
+        static abstract void DestroyTexture(Texture* texture);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_DestroyTexture")]
+        static abstract void DestroyTexture(Ref<Texture> texture);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyWindow")]
         static abstract void DestroyWindow(WindowHandle window);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyWindowSurface")]
-        static abstract int DestroyWindowSurface(WindowHandle window);
+        static abstract MaybeBool<byte> DestroyWindowSurface(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_DestroyWindowSurface")]
+        static abstract byte DestroyWindowSurfaceRaw(WindowHandle window);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DetachThread")]
         static abstract void DetachThread(ThreadHandle thread);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_DetachVirtualJoystick")]
-        static abstract int DetachVirtualJoystick(
+        static abstract MaybeBool<byte> DetachVirtualJoystick(
             [NativeTypeName("SDL_JoystickID")] uint instance_id
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_DetachVirtualJoystick")]
+        static abstract byte DetachVirtualJoystickRaw(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_DisableScreenSaver")]
-        static abstract int DisableScreenSaver();
+        static abstract MaybeBool<byte> DisableScreenSaver();
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_DisableScreenSaver")]
+        static abstract byte DisableScreenSaverRaw();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DuplicateSurface")]
         static abstract Surface* DuplicateSurface(Surface* surface);
@@ -921,21 +1134,21 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_EGLConfig")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentEGLConfig")]
-        static abstract Ptr EGLGetCurrentEGLConfig();
+        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentConfig")]
+        static abstract Ptr EGLGetCurrentConfig();
 
         [return: NativeTypeName("SDL_EGLConfig")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentEGLConfig")]
-        static abstract void* EGLGetCurrentEGLConfigRaw();
+        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentConfig")]
+        static abstract void* EGLGetCurrentConfigRaw();
 
         [return: NativeTypeName("SDL_EGLDisplay")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentEGLDisplay")]
-        static abstract Ptr EGLGetCurrentEGLDisplay();
+        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentDisplay")]
+        static abstract Ptr EGLGetCurrentDisplay();
 
         [return: NativeTypeName("SDL_EGLDisplay")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentEGLDisplay")]
-        static abstract void* EGLGetCurrentEGLDisplayRaw();
+        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentDisplay")]
+        static abstract void* EGLGetCurrentDisplayRaw();
 
         [return: NativeTypeName("SDL_FunctionPointer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
@@ -952,111 +1165,135 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_EGLSurface")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowEGLSurface")]
-        static abstract Ptr EGLGetWindowEGLSurface(WindowHandle window);
+        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowSurface")]
+        static abstract Ptr EGLGetWindowSurface(WindowHandle window);
 
         [return: NativeTypeName("SDL_EGLSurface")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowEGLSurface")]
-        static abstract void* EGLGetWindowEGLSurfaceRaw(WindowHandle window);
+        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowSurface")]
+        static abstract void* EGLGetWindowSurfaceRaw(WindowHandle window);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetEGLAttributeCallbacks")]
-        static abstract void EGLSetEGLAttributeCallbacks(
+        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetAttributeCallbacks")]
+        static abstract void EGLSetAttributeCallbacks(
             [NativeTypeName("SDL_EGLAttribArrayCallback")]
                 EGLAttribArrayCallback platformAttribCallback,
             [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback surfaceAttribCallback,
-            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback
+            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback,
+            void* userdata
         );
 
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetAttributeCallbacks")]
+        static abstract void EGLSetAttributeCallbacks(
+            [NativeTypeName("SDL_EGLAttribArrayCallback")]
+                EGLAttribArrayCallback platformAttribCallback,
+            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback surfaceAttribCallback,
+            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback,
+            Ref userdata
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_EnableScreenSaver")]
-        static abstract int EnableScreenSaver();
+        static abstract MaybeBool<byte> EnableScreenSaver();
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_EnableScreenSaver")]
+        static abstract byte EnableScreenSaverRaw();
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
-        static abstract int EnumerateDirectory(
+        static abstract byte EnumerateDirectory(
             [NativeTypeName("const char *")] sbyte* path,
             [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             void* userdata
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
-        static abstract int EnumerateDirectory(
+        static abstract MaybeBool<byte> EnumerateDirectory(
             [NativeTypeName("const char *")] Ref<sbyte> path,
             [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             Ref userdata
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateProperties")]
-        static abstract int EnumerateProperties(
+        static abstract byte EnumerateProperties(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("SDL_EnumeratePropertiesCallback")]
                 EnumeratePropertiesCallback callback,
             void* userdata
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateProperties")]
-        static abstract int EnumerateProperties(
+        static abstract MaybeBool<byte> EnumerateProperties(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("SDL_EnumeratePropertiesCallback")]
                 EnumeratePropertiesCallback callback,
             Ref userdata
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateStorageDirectory")]
-        static abstract int EnumerateStorageDirectory(
+        static abstract byte EnumerateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
             [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             void* userdata
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateStorageDirectory")]
-        static abstract int EnumerateStorageDirectory(
+        static abstract MaybeBool<byte> EnumerateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
             [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             Ref userdata
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_Error")]
-        static abstract int Error(Errorcode code);
-
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_EventEnabled")]
-        static abstract MaybeBool<int> EventEnabled([NativeTypeName("Uint32")] uint type);
+        static abstract MaybeBool<byte> EventEnabled([NativeTypeName("Uint32")] uint type);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EventEnabled")]
-        static abstract int EventEnabledRaw([NativeTypeName("Uint32")] uint type);
+        static abstract byte EventEnabledRaw([NativeTypeName("Uint32")] uint type);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_FillSurfaceRect")]
-        static abstract int FillSurfaceRect(
+        static abstract byte FillSurfaceRect(
             Surface* dst,
             [NativeTypeName("const SDL_Rect *")] Rect* rect,
             [NativeTypeName("Uint32")] uint color
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_FillSurfaceRect")]
-        static abstract int FillSurfaceRect(
+        static abstract MaybeBool<byte> FillSurfaceRect(
             Ref<Surface> dst,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
             [NativeTypeName("Uint32")] uint color
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_FillSurfaceRects")]
-        static abstract int FillSurfaceRects(
+        static abstract byte FillSurfaceRects(
             Surface* dst,
             [NativeTypeName("const SDL_Rect *")] Rect* rects,
             int count,
             [NativeTypeName("Uint32")] uint color
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_FillSurfaceRects")]
-        static abstract int FillSurfaceRects(
+        static abstract MaybeBool<byte> FillSurfaceRects(
             Ref<Surface> dst,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rects,
             int count,
@@ -1076,18 +1313,32 @@ public unsafe partial interface ISdl
             Ref userdata
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_FlashWindow")]
-        static abstract int FlashWindow(WindowHandle window, FlashOperation operation);
+        static abstract MaybeBool<byte> FlashWindow(WindowHandle window, FlashOperation operation);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_FlashWindow")]
+        static abstract byte FlashWindowRaw(WindowHandle window, FlashOperation operation);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_FlipSurface")]
-        static abstract int FlipSurface(Surface* surface, FlipMode flip);
+        static abstract byte FlipSurface(Surface* surface, FlipMode flip);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_FlipSurface")]
-        static abstract int FlipSurface(Ref<Surface> surface, FlipMode flip);
+        static abstract MaybeBool<byte> FlipSurface(Ref<Surface> surface, FlipMode flip);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_FlushAudioStream")]
-        static abstract int FlushAudioStream(AudioStreamHandle stream);
+        static abstract MaybeBool<byte> FlushAudioStream(AudioStreamHandle stream);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_FlushAudioStream")]
+        static abstract byte FlushAudioStreamRaw(AudioStreamHandle stream);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_FlushEvent")]
         static abstract void FlushEvent([NativeTypeName("Uint32")] uint type);
@@ -1098,65 +1349,94 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint32")] uint maxType
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_FlushIO")]
+        static abstract MaybeBool<byte> FlushIO(IOStreamHandle context);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_FlushIO")]
+        static abstract byte FlushIORaw(IOStreamHandle context);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_FlushRenderer")]
-        static abstract int FlushRenderer(RendererHandle renderer);
+        static abstract MaybeBool<byte> FlushRenderer(RendererHandle renderer);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_FlushRenderer")]
+        static abstract byte FlushRendererRaw(RendererHandle renderer);
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadConnected")]
-        static abstract MaybeBool<int> GamepadConnected(GamepadHandle gamepad);
+        static abstract MaybeBool<byte> GamepadConnected(GamepadHandle gamepad);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadConnected")]
-        static abstract int GamepadConnectedRaw(GamepadHandle gamepad);
+        static abstract byte GamepadConnectedRaw(GamepadHandle gamepad);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadEventsEnabled")]
-        static abstract MaybeBool<int> GamepadEventsEnabled();
+        static abstract MaybeBool<byte> GamepadEventsEnabled();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadEventsEnabled")]
-        static abstract int GamepadEventsEnabledRaw();
+        static abstract byte GamepadEventsEnabledRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasAxis")]
-        static abstract MaybeBool<int> GamepadHasAxis(GamepadHandle gamepad, GamepadAxis axis);
+        static abstract MaybeBool<byte> GamepadHasAxis(GamepadHandle gamepad, GamepadAxis axis);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasAxis")]
-        static abstract int GamepadHasAxisRaw(GamepadHandle gamepad, GamepadAxis axis);
+        static abstract byte GamepadHasAxisRaw(GamepadHandle gamepad, GamepadAxis axis);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasButton")]
-        static abstract MaybeBool<int> GamepadHasButton(
+        static abstract MaybeBool<byte> GamepadHasButton(
             GamepadHandle gamepad,
             GamepadButton button
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasButton")]
-        static abstract int GamepadHasButtonRaw(GamepadHandle gamepad, GamepadButton button);
+        static abstract byte GamepadHasButtonRaw(GamepadHandle gamepad, GamepadButton button);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasSensor")]
-        static abstract MaybeBool<int> GamepadHasSensor(GamepadHandle gamepad, SensorType type);
+        static abstract MaybeBool<byte> GamepadHasSensor(GamepadHandle gamepad, SensorType type);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasSensor")]
-        static abstract int GamepadHasSensorRaw(GamepadHandle gamepad, SensorType type);
+        static abstract byte GamepadHasSensorRaw(GamepadHandle gamepad, SensorType type);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadSensorEnabled")]
-        static abstract MaybeBool<int> GamepadSensorEnabled(GamepadHandle gamepad, SensorType type);
+        static abstract MaybeBool<byte> GamepadSensorEnabled(
+            GamepadHandle gamepad,
+            SensorType type
+        );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GamepadSensorEnabled")]
-        static abstract int GamepadSensorEnabledRaw(GamepadHandle gamepad, SensorType type);
+        static abstract byte GamepadSensorEnabledRaw(GamepadHandle gamepad, SensorType type);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAppMetadataProperty")]
+        static abstract sbyte* GetAppMetadataProperty([NativeTypeName("const char *")] sbyte* name);
+
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAppMetadataProperty")]
+        static abstract Ptr<sbyte> GetAppMetadataProperty(
+            [NativeTypeName("const char *")] Ref<sbyte> name
+        );
 
         [return: NativeTypeName("SDL_AssertionHandler")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAssertionHandler")]
@@ -1176,38 +1456,70 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAssertionReport")]
         static abstract AssertData* GetAssertionReportRaw();
 
-        [return: NativeTypeName("SDL_AudioDeviceID *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioCaptureDevices")]
-        static abstract uint* GetAudioCaptureDevices(int* count);
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicInt")]
+        static abstract int GetAtomicInt(AtomicInt* a);
 
-        [return: NativeTypeName("SDL_AudioDeviceID *")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioCaptureDevices")]
-        static abstract Ptr<uint> GetAudioCaptureDevices(Ref<int> count);
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicInt")]
+        static abstract int GetAtomicInt(Ref<AtomicInt> a);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicPointer")]
+        static abstract void* GetAtomicPointer(void** a);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicPointer")]
+        static abstract Ptr GetAtomicPointer(Ref2D a);
+
+        [return: NativeTypeName("Uint32")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicU32")]
+        static abstract uint GetAtomicU32(AtomicU32* a);
+
+        [return: NativeTypeName("Uint32")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicU32")]
+        static abstract uint GetAtomicU32(Ref<AtomicU32> a);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceChannelMap")]
+        static abstract int* GetAudioDeviceChannelMap(
+            [NativeTypeName("SDL_AudioDeviceID")] uint devid,
+            int* count
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceChannelMap")]
+        static abstract Ptr<int> GetAudioDeviceChannelMap(
+            [NativeTypeName("SDL_AudioDeviceID")] uint devid,
+            Ref<int> count
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceFormat")]
-        static abstract int GetAudioDeviceFormat(
+        static abstract byte GetAudioDeviceFormat(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             AudioSpec* spec,
             int* sample_frames
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceFormat")]
-        static abstract int GetAudioDeviceFormat(
+        static abstract MaybeBool<byte> GetAudioDeviceFormat(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             Ref<AudioSpec> spec,
             Ref<int> sample_frames
         );
 
-        [return: NativeTypeName("char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceGain")]
+        static abstract float GetAudioDeviceGain([NativeTypeName("SDL_AudioDeviceID")] uint devid);
+
+        [return: NativeTypeName("const char *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceName")]
         static abstract Ptr<sbyte> GetAudioDeviceName(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid
         );
 
-        [return: NativeTypeName("char *")]
+        [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceName")]
         static abstract sbyte* GetAudioDeviceNameRaw(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid
@@ -1222,14 +1534,32 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDriver")]
         static abstract sbyte* GetAudioDriverRaw(int index);
 
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioFormatName")]
+        static abstract Ptr<sbyte> GetAudioFormatName(AudioFormat format);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioFormatName")]
+        static abstract sbyte* GetAudioFormatNameRaw(AudioFormat format);
+
         [return: NativeTypeName("SDL_AudioDeviceID *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioOutputDevices")]
-        static abstract uint* GetAudioOutputDevices(int* count);
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioPlaybackDevices")]
+        static abstract uint* GetAudioPlaybackDevices(int* count);
 
         [return: NativeTypeName("SDL_AudioDeviceID *")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioOutputDevices")]
-        static abstract Ptr<uint> GetAudioOutputDevices(Ref<int> count);
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioPlaybackDevices")]
+        static abstract Ptr<uint> GetAudioPlaybackDevices(Ref<int> count);
+
+        [return: NativeTypeName("SDL_AudioDeviceID *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioRecordingDevices")]
+        static abstract uint* GetAudioRecordingDevices(int* count);
+
+        [return: NativeTypeName("SDL_AudioDeviceID *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioRecordingDevices")]
+        static abstract Ptr<uint> GetAudioRecordingDevices(Ref<int> count);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamAvailable")]
         static abstract int GetAudioStreamAvailable(AudioStreamHandle stream);
@@ -1245,16 +1575,18 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamDevice")]
         static abstract uint GetAudioStreamDevice(AudioStreamHandle stream);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamFormat")]
-        static abstract int GetAudioStreamFormat(
+        static abstract byte GetAudioStreamFormat(
             AudioStreamHandle stream,
             AudioSpec* src_spec,
             AudioSpec* dst_spec
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamFormat")]
-        static abstract int GetAudioStreamFormat(
+        static abstract MaybeBool<byte> GetAudioStreamFormat(
             AudioStreamHandle stream,
             Ref<AudioSpec> src_spec,
             Ref<AudioSpec> dst_spec
@@ -1263,6 +1595,29 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamFrequencyRatio")]
         static abstract float GetAudioStreamFrequencyRatio(AudioStreamHandle stream);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamGain")]
+        static abstract float GetAudioStreamGain(AudioStreamHandle stream);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamInputChannelMap")]
+        static abstract int* GetAudioStreamInputChannelMap(AudioStreamHandle stream, int* count);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamInputChannelMap")]
+        static abstract Ptr<int> GetAudioStreamInputChannelMap(
+            AudioStreamHandle stream,
+            Ref<int> count
+        );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamOutputChannelMap")]
+        static abstract int* GetAudioStreamOutputChannelMap(AudioStreamHandle stream, int* count);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamOutputChannelMap")]
+        static abstract Ptr<int> GetAudioStreamOutputChannelMap(
+            AudioStreamHandle stream,
+            Ref<int> count
+        );
+
         [return: NativeTypeName("SDL_PropertiesID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamProperties")]
         static abstract uint GetAudioStreamProperties(AudioStreamHandle stream);
@@ -1270,70 +1625,30 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamQueued")]
         static abstract int GetAudioStreamQueued(AudioStreamHandle stream);
 
-        [return: NativeTypeName("char *")]
+        [return: NativeTypeName("const char *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetBasePath")]
         static abstract Ptr<sbyte> GetBasePath();
 
-        [return: NativeTypeName("char *")]
+        [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetBasePath")]
         static abstract sbyte* GetBasePathRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetBooleanProperty")]
-        static abstract int GetBooleanProperty(
+        static abstract byte GetBooleanProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_bool")] int default_value
+            [NativeTypeName("bool")] byte default_value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetBooleanProperty")]
-        static abstract MaybeBool<int> GetBooleanProperty(
+        static abstract MaybeBool<byte> GetBooleanProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> default_value
-        );
-
-        [return: NativeTypeName("char *")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDeviceName")]
-        static abstract Ptr<sbyte> GetCameraDeviceName(
-            [NativeTypeName("SDL_CameraDeviceID")] uint instance_id
-        );
-
-        [return: NativeTypeName("char *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDeviceName")]
-        static abstract sbyte* GetCameraDeviceNameRaw(
-            [NativeTypeName("SDL_CameraDeviceID")] uint instance_id
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDevicePosition")]
-        static abstract CameraPosition GetCameraDevicePosition(
-            [NativeTypeName("SDL_CameraDeviceID")] uint instance_id
-        );
-
-        [return: NativeTypeName("SDL_CameraDeviceID *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDevices")]
-        static abstract uint* GetCameraDevices(int* count);
-
-        [return: NativeTypeName("SDL_CameraDeviceID *")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDevices")]
-        static abstract Ptr<uint> GetCameraDevices(Ref<int> count);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDeviceSupportedFormats")]
-        static abstract CameraSpec* GetCameraDeviceSupportedFormats(
-            [NativeTypeName("SDL_CameraDeviceID")] uint devid,
-            int* count
-        );
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDeviceSupportedFormats")]
-        static abstract Ptr<CameraSpec> GetCameraDeviceSupportedFormats(
-            [NativeTypeName("SDL_CameraDeviceID")] uint devid,
-            Ref<int> count
+            [NativeTypeName("bool")] MaybeBool<byte> default_value
         );
 
         [return: NativeTypeName("const char *")]
@@ -1345,23 +1660,61 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDriver")]
         static abstract sbyte* GetCameraDriverRaw(int index);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraFormat")]
-        static abstract int GetCameraFormat(CameraHandle camera, CameraSpec* spec);
+        static abstract byte GetCameraFormat(CameraHandle camera, CameraSpec* spec);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraFormat")]
-        static abstract int GetCameraFormat(CameraHandle camera, Ref<CameraSpec> spec);
+        static abstract MaybeBool<byte> GetCameraFormat(CameraHandle camera, Ref<CameraSpec> spec);
 
-        [return: NativeTypeName("SDL_CameraDeviceID")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraInstanceID")]
-        static abstract uint GetCameraInstanceID(CameraHandle camera);
+        [return: NativeTypeName("SDL_CameraID")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraID")]
+        static abstract uint GetCameraID(CameraHandle camera);
+
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraName")]
+        static abstract Ptr<sbyte> GetCameraName([NativeTypeName("SDL_CameraID")] uint instance_id);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraName")]
+        static abstract sbyte* GetCameraNameRaw([NativeTypeName("SDL_CameraID")] uint instance_id);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraPermissionState")]
         static abstract int GetCameraPermissionState(CameraHandle camera);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraPosition")]
+        static abstract CameraPosition GetCameraPosition(
+            [NativeTypeName("SDL_CameraID")] uint instance_id
+        );
+
         [return: NativeTypeName("SDL_PropertiesID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraProperties")]
         static abstract uint GetCameraProperties(CameraHandle camera);
+
+        [return: NativeTypeName("SDL_CameraID *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameras")]
+        static abstract uint* GetCameras(int* count);
+
+        [return: NativeTypeName("SDL_CameraID *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameras")]
+        static abstract Ptr<uint> GetCameras(Ref<int> count);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraSupportedFormats")]
+        static abstract CameraSpec** GetCameraSupportedFormats(
+            [NativeTypeName("SDL_CameraID")] uint devid,
+            int* count
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraSupportedFormats")]
+        static abstract Ptr2D<CameraSpec> GetCameraSupportedFormats(
+            [NativeTypeName("SDL_CameraID")] uint devid,
+            Ref<int> count
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetClipboardData")]
         static abstract void* GetClipboardData(
@@ -1376,6 +1729,19 @@ public unsafe partial interface ISdl
             [NativeTypeName("size_t *")] Ref<nuint> size
         );
 
+        [return: NativeTypeName("char **")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetClipboardMimeTypes")]
+        static abstract sbyte** GetClipboardMimeTypes(
+            [NativeTypeName("size_t *")] nuint* num_mime_types
+        );
+
+        [return: NativeTypeName("char **")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetClipboardMimeTypes")]
+        static abstract Ptr2D<sbyte> GetClipboardMimeTypes(
+            [NativeTypeName("size_t *")] Ref<nuint> num_mime_types
+        );
+
         [return: NativeTypeName("char *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetClipboardText")]
@@ -1385,32 +1751,31 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetClipboardText")]
         static abstract sbyte* GetClipboardTextRaw();
 
-        [return: NativeTypeName("const SDL_DisplayMode *")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetClosestFullscreenDisplayMode")]
-        static abstract DisplayMode* GetClosestFullscreenDisplayMode(
+        static abstract byte GetClosestFullscreenDisplayMode(
             [NativeTypeName("SDL_DisplayID")] uint displayID,
             int w,
             int h,
             float refresh_rate,
-            [NativeTypeName("SDL_bool")] int include_high_density_modes
+            [NativeTypeName("bool")] byte include_high_density_modes,
+            DisplayMode* mode
         );
 
-        [return: NativeTypeName("const SDL_DisplayMode *")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetClosestFullscreenDisplayMode")]
-        static abstract Ptr<DisplayMode> GetClosestFullscreenDisplayMode(
+        static abstract MaybeBool<byte> GetClosestFullscreenDisplayMode(
             [NativeTypeName("SDL_DisplayID")] uint displayID,
             int w,
             int h,
             float refresh_rate,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> include_high_density_modes
+            [NativeTypeName("bool")] MaybeBool<byte> include_high_density_modes,
+            Ref<DisplayMode> mode
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCPUCacheLineSize")]
         static abstract int GetCPUCacheLineSize();
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetCPUCount")]
-        static abstract int GetCPUCount();
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -1448,12 +1813,14 @@ public unsafe partial interface ISdl
             [NativeTypeName("SDL_DisplayID")] uint displayID
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentRenderOutputSize")]
-        static abstract int GetCurrentRenderOutputSize(RendererHandle renderer, int* w, int* h);
+        static abstract byte GetCurrentRenderOutputSize(RendererHandle renderer, int* w, int* h);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentRenderOutputSize")]
-        static abstract int GetCurrentRenderOutputSize(
+        static abstract MaybeBool<byte> GetCurrentRenderOutputSize(
             RendererHandle renderer,
             Ref<int> w,
             Ref<int> h
@@ -1463,12 +1830,16 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentThreadID")]
         static abstract ulong GetCurrentThreadID();
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentTime")]
-        static abstract int GetCurrentTime([NativeTypeName("SDL_Time *")] long* ticks);
+        static abstract byte GetCurrentTime([NativeTypeName("SDL_Time *")] long* ticks);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentTime")]
-        static abstract int GetCurrentTime([NativeTypeName("SDL_Time *")] Ref<long> ticks);
+        static abstract MaybeBool<byte> GetCurrentTime(
+            [NativeTypeName("SDL_Time *")] Ref<long> ticks
+        );
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -1481,6 +1852,21 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCursor")]
         static abstract CursorHandle GetCursor();
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetDateTimeLocalePreferences")]
+        static abstract byte GetDateTimeLocalePreferences(
+            DateFormat* dateFormat,
+            TimeFormat* timeFormat
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetDateTimeLocalePreferences")]
+        static abstract MaybeBool<byte> GetDateTimeLocalePreferences(
+            Ref<DateFormat> dateFormat,
+            Ref<TimeFormat> timeFormat
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDayOfWeek")]
         static abstract int GetDayOfWeek(int year, int month, int day);
@@ -1498,6 +1884,10 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultCursor")]
         static abstract CursorHandle GetDefaultCursor();
 
+        [return: NativeTypeName("SDL_LogOutputFunction")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultLogOutputFunction")]
+        static abstract LogOutputFunction GetDefaultLogOutputFunction();
+
         [return: NativeTypeName("const SDL_DisplayMode *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDesktopDisplayMode")]
@@ -1511,15 +1901,17 @@ public unsafe partial interface ISdl
             [NativeTypeName("SDL_DisplayID")] uint displayID
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayBounds")]
-        static abstract int GetDisplayBounds(
+        static abstract byte GetDisplayBounds(
             [NativeTypeName("SDL_DisplayID")] uint displayID,
             Rect* rect
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayBounds")]
-        static abstract int GetDisplayBounds(
+        static abstract MaybeBool<byte> GetDisplayBounds(
             [NativeTypeName("SDL_DisplayID")] uint displayID,
             Ref<Rect> rect
         );
@@ -1575,15 +1967,17 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplays")]
         static abstract Ptr<uint> GetDisplays(Ref<int> count);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayUsableBounds")]
-        static abstract int GetDisplayUsableBounds(
+        static abstract byte GetDisplayUsableBounds(
             [NativeTypeName("SDL_DisplayID")] uint displayID,
             Rect* rect
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayUsableBounds")]
-        static abstract int GetDisplayUsableBounds(
+        static abstract MaybeBool<byte> GetDisplayUsableBounds(
             [NativeTypeName("SDL_DisplayID")] uint displayID,
             Ref<Rect> rect
         );
@@ -1597,17 +1991,17 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetError")]
         static abstract sbyte* GetErrorRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
-        static abstract int GetEventFilter(
+        static abstract byte GetEventFilter(
             [NativeTypeName("SDL_EventFilter *")] EventFilter* filter,
             void** userdata
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
-        static abstract MaybeBool<int> GetEventFilter(
+        static abstract MaybeBool<byte> GetEventFilter(
             [NativeTypeName("SDL_EventFilter *")] Ref<EventFilter> filter,
             Ref2D userdata
         );
@@ -1627,14 +2021,12 @@ public unsafe partial interface ISdl
             float default_value
         );
 
-        [return: NativeTypeName("const SDL_DisplayMode **")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetFullscreenDisplayModes")]
         static abstract DisplayMode** GetFullscreenDisplayModes(
             [NativeTypeName("SDL_DisplayID")] uint displayID,
             int* count
         );
 
-        [return: NativeTypeName("const SDL_DisplayMode **")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetFullscreenDisplayModes")]
         static abstract Ptr2D<DisplayMode> GetFullscreenDisplayModes(
@@ -1697,9 +2089,13 @@ public unsafe partial interface ISdl
             Ref<int> count
         );
 
-        [return: NativeTypeName("Uint8")]
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadButton")]
-        static abstract byte GetGamepadButton(GamepadHandle gamepad, GamepadButton button);
+        static abstract MaybeBool<byte> GetGamepadButton(
+            GamepadHandle gamepad,
+            GamepadButton button
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadButtonFromString")]
         static abstract GamepadButton GetGamepadButtonFromString(
@@ -1724,6 +2120,10 @@ public unsafe partial interface ISdl
             GamepadButton button
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadButton")]
+        static abstract byte GetGamepadButtonRaw(GamepadHandle gamepad, GamepadButton button);
+
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadConnectionState")]
         static abstract JoystickConnectionState GetGamepadConnectionState(GamepadHandle gamepad);
 
@@ -1731,90 +2131,22 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadFirmwareVersion")]
         static abstract ushort GetGamepadFirmwareVersion(GamepadHandle gamepad);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadFromInstanceID")]
-        static abstract GamepadHandle GetGamepadFromInstanceID(
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadFromID")]
+        static abstract GamepadHandle GetGamepadFromID(
             [NativeTypeName("SDL_JoystickID")] uint instance_id
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadFromPlayerIndex")]
         static abstract GamepadHandle GetGamepadFromPlayerIndex(int player_index);
 
-        [return: NativeTypeName("SDL_JoystickGUID")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceGUID")]
-        static abstract Guid GetGamepadInstanceGuid(
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadGUIDForID")]
+        static abstract Guid GetGamepadGuidForID(
             [NativeTypeName("SDL_JoystickID")] uint instance_id
         );
 
         [return: NativeTypeName("SDL_JoystickID")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceID")]
-        static abstract uint GetGamepadInstanceID(GamepadHandle gamepad);
-
-        [return: NativeTypeName("char *")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceMapping")]
-        static abstract Ptr<sbyte> GetGamepadInstanceMapping(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("char *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceMapping")]
-        static abstract sbyte* GetGamepadInstanceMappingRaw(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("const char *")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceName")]
-        static abstract Ptr<sbyte> GetGamepadInstanceName(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("const char *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceName")]
-        static abstract sbyte* GetGamepadInstanceNameRaw(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("const char *")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstancePath")]
-        static abstract Ptr<sbyte> GetGamepadInstancePath(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("const char *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstancePath")]
-        static abstract sbyte* GetGamepadInstancePathRaw(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstancePlayerIndex")]
-        static abstract int GetGamepadInstancePlayerIndex(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("Uint16")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceProduct")]
-        static abstract ushort GetGamepadInstanceProduct(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("Uint16")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceProductVersion")]
-        static abstract ushort GetGamepadInstanceProductVersion(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceType")]
-        static abstract GamepadType GetGamepadInstanceType(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("Uint16")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceVendor")]
-        static abstract ushort GetGamepadInstanceVendor(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadID")]
+        static abstract uint GetGamepadID(GamepadHandle gamepad);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadJoystick")]
         static abstract JoystickHandle GetGamepadJoystick(GamepadHandle gamepad);
@@ -1827,14 +2159,23 @@ public unsafe partial interface ISdl
         [return: NativeTypeName("char *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadMappingForGUID")]
-        static abstract Ptr<sbyte> GetGamepadMappingForGuid(
-            [NativeTypeName("SDL_JoystickGUID")] Guid guid
-        );
+        static abstract Ptr<sbyte> GetGamepadMappingForGuid(Guid guid);
 
         [return: NativeTypeName("char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadMappingForGUID")]
-        static abstract sbyte* GetGamepadMappingForGuidRaw(
-            [NativeTypeName("SDL_JoystickGUID")] Guid guid
+        static abstract sbyte* GetGamepadMappingForGuidRaw(Guid guid);
+
+        [return: NativeTypeName("char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadMappingForID")]
+        static abstract Ptr<sbyte> GetGamepadMappingForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadMappingForID")]
+        static abstract sbyte* GetGamepadMappingForIDRaw(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
         );
 
         [return: NativeTypeName("char *")]
@@ -1856,6 +2197,19 @@ public unsafe partial interface ISdl
         static abstract Ptr<sbyte> GetGamepadName(GamepadHandle gamepad);
 
         [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadNameForID")]
+        static abstract Ptr<sbyte> GetGamepadNameForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadNameForID")]
+        static abstract sbyte* GetGamepadNameForIDRaw(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadName")]
         static abstract sbyte* GetGamepadNameRaw(GamepadHandle gamepad);
 
@@ -1865,11 +2219,29 @@ public unsafe partial interface ISdl
         static abstract Ptr<sbyte> GetGamepadPath(GamepadHandle gamepad);
 
         [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPathForID")]
+        static abstract Ptr<sbyte> GetGamepadPathForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPathForID")]
+        static abstract sbyte* GetGamepadPathForIDRaw(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPath")]
         static abstract sbyte* GetGamepadPathRaw(GamepadHandle gamepad);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPlayerIndex")]
         static abstract int GetGamepadPlayerIndex(GamepadHandle gamepad);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPlayerIndexForID")]
+        static abstract int GetGamepadPlayerIndexForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPowerInfo")]
         static abstract PowerState GetGamepadPowerInfo(GamepadHandle gamepad, int* percent);
@@ -1883,8 +2255,20 @@ public unsafe partial interface ISdl
         static abstract ushort GetGamepadProduct(GamepadHandle gamepad);
 
         [return: NativeTypeName("Uint16")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadProductForID")]
+        static abstract ushort GetGamepadProductForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("Uint16")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadProductVersion")]
         static abstract ushort GetGamepadProductVersion(GamepadHandle gamepad);
+
+        [return: NativeTypeName("Uint16")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadProductVersionForID")]
+        static abstract ushort GetGamepadProductVersionForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
 
         [return: NativeTypeName("SDL_PropertiesID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadProperties")]
@@ -1899,17 +2283,19 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepads")]
         static abstract Ptr<uint> GetGamepads(Ref<int> count);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadSensorData")]
-        static abstract int GetGamepadSensorData(
+        static abstract byte GetGamepadSensorData(
             GamepadHandle gamepad,
             SensorType type,
             float* data,
             int num_values
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadSensorData")]
-        static abstract int GetGamepadSensorData(
+        static abstract MaybeBool<byte> GetGamepadSensorData(
             GamepadHandle gamepad,
             SensorType type,
             Ref<float> data,
@@ -1959,24 +2345,26 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadStringForType")]
         static abstract sbyte* GetGamepadStringForTypeRaw(GamepadType type);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadTouchpadFinger")]
-        static abstract int GetGamepadTouchpadFinger(
+        static abstract byte GetGamepadTouchpadFinger(
             GamepadHandle gamepad,
             int touchpad,
             int finger,
-            [NativeTypeName("Uint8 *")] byte* state,
+            bool* down,
             float* x,
             float* y,
             float* pressure
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadTouchpadFinger")]
-        static abstract int GetGamepadTouchpadFinger(
+        static abstract MaybeBool<byte> GetGamepadTouchpadFinger(
             GamepadHandle gamepad,
             int touchpad,
             int finger,
-            [NativeTypeName("Uint8 *")] Ref<byte> state,
+            Ref<bool> down,
             Ref<float> x,
             Ref<float> y,
             Ref<float> pressure
@@ -1984,6 +2372,11 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadType")]
         static abstract GamepadType GetGamepadType(GamepadHandle gamepad);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadTypeForID")]
+        static abstract GamepadType GetGamepadTypeForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadTypeFromString")]
         static abstract GamepadType GetGamepadTypeFromString(
@@ -2000,11 +2393,17 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadVendor")]
         static abstract ushort GetGamepadVendor(GamepadHandle gamepad);
 
-        [return: NativeTypeName("Uint32")]
+        [return: NativeTypeName("Uint16")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadVendorForID")]
+        static abstract ushort GetGamepadVendorForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("SDL_MouseButtonFlags")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGlobalMouseState")]
         static abstract uint GetGlobalMouseState(float* x, float* y);
 
-        [return: NativeTypeName("Uint32")]
+        [return: NativeTypeName("SDL_MouseButtonFlags")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGlobalMouseState")]
         static abstract uint GetGlobalMouseState(Ref<float> x, Ref<float> y);
@@ -2016,39 +2415,45 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGrabbedWindow")]
         static abstract WindowHandle GetGrabbedWindow();
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticEffectStatus")]
-        static abstract int GetHapticEffectStatus(HapticHandle haptic, int effect);
+        static abstract MaybeBool<byte> GetHapticEffectStatus(HapticHandle haptic, int effect);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticEffectStatus")]
+        static abstract byte GetHapticEffectStatusRaw(HapticHandle haptic, int effect);
 
         [return: NativeTypeName("Uint32")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticFeatures")]
         static abstract uint GetHapticFeatures(HapticHandle haptic);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticFromInstanceID")]
-        static abstract HapticHandle GetHapticFromInstanceID(
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticFromID")]
+        static abstract HapticHandle GetHapticFromID(
             [NativeTypeName("SDL_HapticID")] uint instance_id
         );
 
         [return: NativeTypeName("SDL_HapticID")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticInstanceID")]
-        static abstract uint GetHapticInstanceID(HapticHandle haptic);
-
-        [return: NativeTypeName("const char *")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticInstanceName")]
-        static abstract Ptr<sbyte> GetHapticInstanceName(
-            [NativeTypeName("SDL_HapticID")] uint instance_id
-        );
-
-        [return: NativeTypeName("const char *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticInstanceName")]
-        static abstract sbyte* GetHapticInstanceNameRaw(
-            [NativeTypeName("SDL_HapticID")] uint instance_id
-        );
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticID")]
+        static abstract uint GetHapticID(HapticHandle haptic);
 
         [return: NativeTypeName("const char *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticName")]
         static abstract Ptr<sbyte> GetHapticName(HapticHandle haptic);
+
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticNameForID")]
+        static abstract Ptr<sbyte> GetHapticNameForID(
+            [NativeTypeName("SDL_HapticID")] uint instance_id
+        );
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticNameForID")]
+        static abstract sbyte* GetHapticNameForIDRaw(
+            [NativeTypeName("SDL_HapticID")] uint instance_id
+        );
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticName")]
@@ -2072,19 +2477,19 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetHint")]
         static abstract Ptr<sbyte> GetHint([NativeTypeName("const char *")] Ref<sbyte> name);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetHintBoolean")]
-        static abstract int GetHintBoolean(
+        static abstract byte GetHintBoolean(
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_bool")] int default_value
+            [NativeTypeName("bool")] byte default_value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetHintBoolean")]
-        static abstract MaybeBool<int> GetHintBoolean(
+        static abstract MaybeBool<byte> GetHintBoolean(
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> default_value
+            [NativeTypeName("bool")] MaybeBool<byte> default_value
         );
 
         [return: NativeTypeName("SDL_PropertiesID")]
@@ -2102,38 +2507,45 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickAxis")]
         static abstract short GetJoystickAxis(JoystickHandle joystick, int axis);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickAxisInitialState")]
-        static abstract int GetJoystickAxisInitialState(
+        static abstract byte GetJoystickAxisInitialState(
             JoystickHandle joystick,
             int axis,
             [NativeTypeName("Sint16 *")] short* state
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickAxisInitialState")]
-        static abstract MaybeBool<int> GetJoystickAxisInitialState(
+        static abstract MaybeBool<byte> GetJoystickAxisInitialState(
             JoystickHandle joystick,
             int axis,
             [NativeTypeName("Sint16 *")] Ref<short> state
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickBall")]
-        static abstract int GetJoystickBall(JoystickHandle joystick, int ball, int* dx, int* dy);
+        static abstract byte GetJoystickBall(JoystickHandle joystick, int ball, int* dx, int* dy);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickBall")]
-        static abstract int GetJoystickBall(
+        static abstract MaybeBool<byte> GetJoystickBall(
             JoystickHandle joystick,
             int ball,
             Ref<int> dx,
             Ref<int> dy
         );
 
-        [return: NativeTypeName("Uint8")]
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickButton")]
-        static abstract byte GetJoystickButton(JoystickHandle joystick, int button);
+        static abstract MaybeBool<byte> GetJoystickButton(JoystickHandle joystick, int button);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickButton")]
+        static abstract byte GetJoystickButtonRaw(JoystickHandle joystick, int button);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickConnectionState")]
         static abstract JoystickConnectionState GetJoystickConnectionState(JoystickHandle joystick);
@@ -2142,34 +2554,25 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickFirmwareVersion")]
         static abstract ushort GetJoystickFirmwareVersion(JoystickHandle joystick);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickFromInstanceID")]
-        static abstract JoystickHandle GetJoystickFromInstanceID(
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickFromID")]
+        static abstract JoystickHandle GetJoystickFromID(
             [NativeTypeName("SDL_JoystickID")] uint instance_id
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickFromPlayerIndex")]
         static abstract JoystickHandle GetJoystickFromPlayerIndex(int player_index);
 
-        [return: NativeTypeName("SDL_JoystickGUID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUID")]
         static abstract Guid GetJoystickGuid(JoystickHandle joystick);
 
-        [return: NativeTypeName("SDL_JoystickGUID")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDFromString")]
-        static abstract Guid GetJoystickGuidFromString(
-            [NativeTypeName("const char *")] sbyte* pchGUID
-        );
-
-        [return: NativeTypeName("SDL_JoystickGUID")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDFromString")]
-        static abstract Guid GetJoystickGuidFromString(
-            [NativeTypeName("const char *")] Ref<sbyte> pchGUID
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDForID")]
+        static abstract Guid GetJoystickGuidForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDInfo")]
         static abstract void GetJoystickGuidInfo(
-            [NativeTypeName("SDL_JoystickGUID")] Guid guid,
+            Guid guid,
             [NativeTypeName("Uint16 *")] ushort* vendor,
             [NativeTypeName("Uint16 *")] ushort* product,
             [NativeTypeName("Uint16 *")] ushort* version,
@@ -2179,100 +2582,38 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDInfo")]
         static abstract void GetJoystickGuidInfo(
-            [NativeTypeName("SDL_JoystickGUID")] Guid guid,
+            Guid guid,
             [NativeTypeName("Uint16 *")] Ref<ushort> vendor,
             [NativeTypeName("Uint16 *")] Ref<ushort> product,
             [NativeTypeName("Uint16 *")] Ref<ushort> version,
             [NativeTypeName("Uint16 *")] Ref<ushort> crc16
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDString")]
-        static abstract int GetJoystickGuidString(
-            [NativeTypeName("SDL_JoystickGUID")] Guid guid,
-            [NativeTypeName("char *")] sbyte* pszGUID,
-            int cbGUID
-        );
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDString")]
-        static abstract int GetJoystickGuidString(
-            [NativeTypeName("SDL_JoystickGUID")] Guid guid,
-            [NativeTypeName("char *")] Ref<sbyte> pszGUID,
-            int cbGUID
-        );
-
         [return: NativeTypeName("Uint8")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickHat")]
         static abstract byte GetJoystickHat(JoystickHandle joystick, int hat);
 
-        [return: NativeTypeName("SDL_JoystickGUID")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceGUID")]
-        static abstract Guid GetJoystickInstanceGuid(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
         [return: NativeTypeName("SDL_JoystickID")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceID")]
-        static abstract uint GetJoystickInstanceID(JoystickHandle joystick);
-
-        [return: NativeTypeName("const char *")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceName")]
-        static abstract Ptr<sbyte> GetJoystickInstanceName(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("const char *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceName")]
-        static abstract sbyte* GetJoystickInstanceNameRaw(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("const char *")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstancePath")]
-        static abstract Ptr<sbyte> GetJoystickInstancePath(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("const char *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstancePath")]
-        static abstract sbyte* GetJoystickInstancePathRaw(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstancePlayerIndex")]
-        static abstract int GetJoystickInstancePlayerIndex(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("Uint16")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceProduct")]
-        static abstract ushort GetJoystickInstanceProduct(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("Uint16")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceProductVersion")]
-        static abstract ushort GetJoystickInstanceProductVersion(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceType")]
-        static abstract JoystickType GetJoystickInstanceType(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
-        [return: NativeTypeName("Uint16")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceVendor")]
-        static abstract ushort GetJoystickInstanceVendor(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickID")]
+        static abstract uint GetJoystickID(JoystickHandle joystick);
 
         [return: NativeTypeName("const char *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickName")]
         static abstract Ptr<sbyte> GetJoystickName(JoystickHandle joystick);
+
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickNameForID")]
+        static abstract Ptr<sbyte> GetJoystickNameForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickNameForID")]
+        static abstract sbyte* GetJoystickNameForIDRaw(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickName")]
@@ -2284,11 +2625,29 @@ public unsafe partial interface ISdl
         static abstract Ptr<sbyte> GetJoystickPath(JoystickHandle joystick);
 
         [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPathForID")]
+        static abstract Ptr<sbyte> GetJoystickPathForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPathForID")]
+        static abstract sbyte* GetJoystickPathForIDRaw(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPath")]
         static abstract sbyte* GetJoystickPathRaw(JoystickHandle joystick);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPlayerIndex")]
         static abstract int GetJoystickPlayerIndex(JoystickHandle joystick);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPlayerIndexForID")]
+        static abstract int GetJoystickPlayerIndexForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPowerInfo")]
         static abstract PowerState GetJoystickPowerInfo(JoystickHandle joystick, int* percent);
@@ -2302,8 +2661,20 @@ public unsafe partial interface ISdl
         static abstract ushort GetJoystickProduct(JoystickHandle joystick);
 
         [return: NativeTypeName("Uint16")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickProductForID")]
+        static abstract ushort GetJoystickProductForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("Uint16")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickProductVersion")]
         static abstract ushort GetJoystickProductVersion(JoystickHandle joystick);
+
+        [return: NativeTypeName("Uint16")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickProductVersionForID")]
+        static abstract ushort GetJoystickProductVersionForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
 
         [return: NativeTypeName("SDL_PropertiesID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickProperties")]
@@ -2330,23 +2701,34 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickType")]
         static abstract JoystickType GetJoystickType(JoystickHandle joystick);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickTypeForID")]
+        static abstract JoystickType GetJoystickTypeForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
         [return: NativeTypeName("Uint16")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickVendor")]
         static abstract ushort GetJoystickVendor(JoystickHandle joystick);
+
+        [return: NativeTypeName("Uint16")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickVendorForID")]
+        static abstract ushort GetJoystickVendorForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardFocus")]
         static abstract WindowHandle GetKeyboardFocus();
 
         [return: NativeTypeName("const char *")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardInstanceName")]
-        static abstract Ptr<sbyte> GetKeyboardInstanceName(
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardNameForID")]
+        static abstract Ptr<sbyte> GetKeyboardNameForID(
             [NativeTypeName("SDL_KeyboardID")] uint instance_id
         );
 
         [return: NativeTypeName("const char *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardInstanceName")]
-        static abstract sbyte* GetKeyboardInstanceNameRaw(
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardNameForID")]
+        static abstract sbyte* GetKeyboardNameForIDRaw(
             [NativeTypeName("SDL_KeyboardID")] uint instance_id
         );
 
@@ -2359,36 +2741,49 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboards")]
         static abstract Ptr<uint> GetKeyboards(Ref<int> count);
 
-        [return: NativeTypeName("const Uint8 *")]
+        [return: NativeTypeName("const bool *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardState")]
-        static abstract byte* GetKeyboardState(int* numkeys);
+        static abstract bool* GetKeyboardState(int* numkeys);
 
-        [return: NativeTypeName("const Uint8 *")]
+        [return: NativeTypeName("const bool *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardState")]
-        static abstract Ptr<byte> GetKeyboardState(Ref<int> numkeys);
+        static abstract Ptr<bool> GetKeyboardState(Ref<int> numkeys);
 
         [return: NativeTypeName("SDL_Keycode")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyFromName")]
-        static abstract int GetKeyFromName([NativeTypeName("const char *")] sbyte* name);
+        static abstract uint GetKeyFromName([NativeTypeName("const char *")] sbyte* name);
 
         [return: NativeTypeName("SDL_Keycode")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyFromName")]
-        static abstract int GetKeyFromName([NativeTypeName("const char *")] Ref<sbyte> name);
+        static abstract uint GetKeyFromName([NativeTypeName("const char *")] Ref<sbyte> name);
 
         [return: NativeTypeName("SDL_Keycode")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyFromScancode")]
-        static abstract int GetKeyFromScancode(Scancode scancode);
+        static abstract uint GetKeyFromScancode(
+            Scancode scancode,
+            [NativeTypeName("SDL_Keymod")] ushort modstate,
+            [NativeTypeName("bool")] byte key_event
+        );
+
+        [return: NativeTypeName("SDL_Keycode")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyFromScancode")]
+        static abstract uint GetKeyFromScancode(
+            Scancode scancode,
+            [NativeTypeName("SDL_Keymod")] ushort modstate,
+            [NativeTypeName("bool")] MaybeBool<byte> key_event
+        );
 
         [return: NativeTypeName("const char *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyName")]
-        static abstract Ptr<sbyte> GetKeyName([NativeTypeName("SDL_Keycode")] int key);
+        static abstract Ptr<sbyte> GetKeyName([NativeTypeName("SDL_Keycode")] uint key);
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyName")]
-        static abstract sbyte* GetKeyNameRaw([NativeTypeName("SDL_Keycode")] int key);
+        static abstract sbyte* GetKeyNameRaw([NativeTypeName("SDL_Keycode")] uint key);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetLogOutputFunction")]
         static abstract void GetLogOutputFunction(
@@ -2403,10 +2798,13 @@ public unsafe partial interface ISdl
             Ref2D userdata
         );
 
-        [return: NativeTypeName("SDL_bool")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetMasksForPixelFormatEnum")]
-        static abstract int GetMasksForPixelFormatEnum(
-            PixelFormatEnum format,
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetLogPriority")]
+        static abstract LogPriority GetLogPriority(int category);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetMasksForPixelFormat")]
+        static abstract byte GetMasksForPixelFormat(
+            PixelFormat format,
             int* bpp,
             [NativeTypeName("Uint32 *")] uint* Rmask,
             [NativeTypeName("Uint32 *")] uint* Gmask,
@@ -2414,11 +2812,11 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint32 *")] uint* Amask
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetMasksForPixelFormatEnum")]
-        static abstract MaybeBool<int> GetMasksForPixelFormatEnum(
-            PixelFormatEnum format,
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetMasksForPixelFormat")]
+        static abstract MaybeBool<byte> GetMasksForPixelFormat(
+            PixelFormat format,
             Ref<int> bpp,
             [NativeTypeName("Uint32 *")] Ref<uint> Rmask,
             [NativeTypeName("Uint32 *")] Ref<uint> Gmask,
@@ -2441,30 +2839,31 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetMice")]
         static abstract Ptr<uint> GetMice(Ref<int> count);
 
+        [return: NativeTypeName("SDL_Keymod")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetModState")]
-        static abstract Keymod GetModState();
+        static abstract ushort GetModState();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseFocus")]
         static abstract WindowHandle GetMouseFocus();
 
         [return: NativeTypeName("const char *")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseInstanceName")]
-        static abstract Ptr<sbyte> GetMouseInstanceName(
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseNameForID")]
+        static abstract Ptr<sbyte> GetMouseNameForID(
             [NativeTypeName("SDL_MouseID")] uint instance_id
         );
 
         [return: NativeTypeName("const char *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseInstanceName")]
-        static abstract sbyte* GetMouseInstanceNameRaw(
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseNameForID")]
+        static abstract sbyte* GetMouseNameForIDRaw(
             [NativeTypeName("SDL_MouseID")] uint instance_id
         );
 
-        [return: NativeTypeName("Uint32")]
+        [return: NativeTypeName("SDL_MouseButtonFlags")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseState")]
         static abstract uint GetMouseState(float* x, float* y);
 
-        [return: NativeTypeName("Uint32")]
+        [return: NativeTypeName("SDL_MouseButtonFlags")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseState")]
         static abstract uint GetMouseState(Ref<float> x, Ref<float> y);
@@ -2518,88 +2917,29 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumJoystickHats")]
         static abstract int GetNumJoystickHats(JoystickHandle joystick);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetNumLogicalCPUCores")]
+        static abstract int GetNumLogicalCPUCores();
+
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumRenderDrivers")]
         static abstract int GetNumRenderDrivers();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumVideoDrivers")]
         static abstract int GetNumVideoDrivers();
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPathInfo")]
-        static abstract int GetPathInfo(
+        static abstract byte GetPathInfo(
             [NativeTypeName("const char *")] sbyte* path,
             PathInfo* info
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPathInfo")]
-        static abstract int GetPathInfo(
+        static abstract MaybeBool<byte> GetPathInfo(
             [NativeTypeName("const char *")] Ref<sbyte> path,
             Ref<PathInfo> info
         );
-
-        [return: NativeTypeName("Uint32")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPenCapabilities")]
-        static abstract uint GetPenCapabilities(
-            [NativeTypeName("SDL_PenID")] uint instance_id,
-            PenCapabilityInfo* capabilities
-        );
-
-        [return: NativeTypeName("Uint32")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPenCapabilities")]
-        static abstract uint GetPenCapabilities(
-            [NativeTypeName("SDL_PenID")] uint instance_id,
-            Ref<PenCapabilityInfo> capabilities
-        );
-
-        [return: NativeTypeName("SDL_PenID")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPenFromGUID")]
-        static abstract uint GetPenFromGuid(Guid guid);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPenGUID")]
-        static abstract Guid GetPenGuid([NativeTypeName("SDL_PenID")] uint instance_id);
-
-        [return: NativeTypeName("const char *")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPenName")]
-        static abstract Ptr<sbyte> GetPenName([NativeTypeName("SDL_PenID")] uint instance_id);
-
-        [return: NativeTypeName("const char *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPenName")]
-        static abstract sbyte* GetPenNameRaw([NativeTypeName("SDL_PenID")] uint instance_id);
-
-        [return: NativeTypeName("SDL_PenID *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPens")]
-        static abstract uint* GetPens(int* count);
-
-        [return: NativeTypeName("SDL_PenID *")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPens")]
-        static abstract Ptr<uint> GetPens(Ref<int> count);
-
-        [return: NativeTypeName("Uint32")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPenStatus")]
-        static abstract uint GetPenStatus(
-            [NativeTypeName("SDL_PenID")] uint instance_id,
-            float* x,
-            float* y,
-            float* axes,
-            [NativeTypeName("size_t")] nuint num_axes
-        );
-
-        [return: NativeTypeName("Uint32")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPenStatus")]
-        static abstract uint GetPenStatus(
-            [NativeTypeName("SDL_PenID")] uint instance_id,
-            Ref<float> x,
-            Ref<float> y,
-            Ref<float> axes,
-            [NativeTypeName("size_t")] nuint num_axes
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPenType")]
-        static abstract PenSubtype GetPenType([NativeTypeName("SDL_PenID")] uint instance_id);
 
         [return: NativeTypeName("Uint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPerformanceCounter")]
@@ -2609,8 +2949,17 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPerformanceFrequency")]
         static abstract ulong GetPerformanceFrequency();
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatEnumForMasks")]
-        static abstract PixelFormatEnum GetPixelFormatEnumForMasks(
+        [return: NativeTypeName("const SDL_PixelFormatDetails *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatDetails")]
+        static abstract Ptr<PixelFormatDetails> GetPixelFormatDetails(PixelFormat format);
+
+        [return: NativeTypeName("const SDL_PixelFormatDetails *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatDetails")]
+        static abstract PixelFormatDetails* GetPixelFormatDetailsRaw(PixelFormat format);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatForMasks")]
+        static abstract PixelFormat GetPixelFormatForMasks(
             int bpp,
             [NativeTypeName("Uint32")] uint Rmask,
             [NativeTypeName("Uint32")] uint Gmask,
@@ -2621,11 +2970,11 @@ public unsafe partial interface ISdl
         [return: NativeTypeName("const char *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatName")]
-        static abstract Ptr<sbyte> GetPixelFormatName(PixelFormatEnum format);
+        static abstract Ptr<sbyte> GetPixelFormatName(PixelFormat format);
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatName")]
-        static abstract sbyte* GetPixelFormatNameRaw(PixelFormatEnum format);
+        static abstract sbyte* GetPixelFormatNameRaw(PixelFormat format);
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -2636,6 +2985,21 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPlatform")]
         static abstract sbyte* GetPlatformRaw();
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetPointerProperty")]
+        static abstract void* GetPointerProperty(
+            [NativeTypeName("SDL_PropertiesID")] uint props,
+            [NativeTypeName("const char *")] sbyte* name,
+            void* default_value
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetPointerProperty")]
+        static abstract Ptr GetPointerProperty(
+            [NativeTypeName("SDL_PropertiesID")] uint props,
+            [NativeTypeName("const char *")] Ref<sbyte> name,
+            Ref default_value
+        );
+
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPowerInfo")]
         static abstract PowerState GetPowerInfo(int* seconds, int* percent);
 
@@ -2643,12 +3007,12 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPowerInfo")]
         static abstract PowerState GetPowerInfo(Ref<int> seconds, Ref<int> percent);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetPreferredLocales")]
+        static abstract Locale** GetPreferredLocales(int* count);
+
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPreferredLocales")]
-        static abstract Ptr<Locale> GetPreferredLocales();
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetPreferredLocales")]
-        static abstract Locale* GetPreferredLocalesRaw();
+        static abstract Ptr2D<Locale> GetPreferredLocales(Ref<int> count);
 
         [return: NativeTypeName("char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPrefPath")]
@@ -2678,21 +3042,6 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPrimarySelectionText")]
         static abstract sbyte* GetPrimarySelectionTextRaw();
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetProperty")]
-        static abstract void* GetProperty(
-            [NativeTypeName("SDL_PropertiesID")] uint props,
-            [NativeTypeName("const char *")] sbyte* name,
-            void* default_value
-        );
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetProperty")]
-        static abstract Ptr GetProperty(
-            [NativeTypeName("SDL_PropertiesID")] uint props,
-            [NativeTypeName("const char *")] Ref<sbyte> name,
-            Ref default_value
-        );
-
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPropertyType")]
         static abstract PropertyType GetPropertyType(
             [NativeTypeName("SDL_PropertiesID")] uint props,
@@ -2706,17 +3055,17 @@ public unsafe partial interface ISdl
             [NativeTypeName("const char *")] Ref<sbyte> name
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetRealGamepadInstanceType")]
-        static abstract GamepadType GetRealGamepadInstanceType(
-            [NativeTypeName("SDL_JoystickID")] uint instance_id
-        );
-
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRealGamepadType")]
         static abstract GamepadType GetRealGamepadType(GamepadHandle gamepad);
 
-        [return: NativeTypeName("SDL_bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRealGamepadTypeForID")]
+        static abstract GamepadType GetRealGamepadTypeForID(
+            [NativeTypeName("SDL_JoystickID")] uint instance_id
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectAndLineIntersection")]
-        static abstract int GetRectAndLineIntersection(
+        static abstract byte GetRectAndLineIntersection(
             [NativeTypeName("const SDL_Rect *")] Rect* rect,
             int* X1,
             int* Y1,
@@ -2724,10 +3073,10 @@ public unsafe partial interface ISdl
             int* Y2
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectAndLineIntersection")]
-        static abstract MaybeBool<int> GetRectAndLineIntersection(
+        static abstract MaybeBool<byte> GetRectAndLineIntersection(
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
             Ref<int> X1,
             Ref<int> Y1,
@@ -2735,9 +3084,9 @@ public unsafe partial interface ISdl
             Ref<int> Y2
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectAndLineIntersectionFloat")]
-        static abstract int GetRectAndLineIntersectionFloat(
+        static abstract byte GetRectAndLineIntersectionFloat(
             [NativeTypeName("const SDL_FRect *")] FRect* rect,
             float* X1,
             float* Y1,
@@ -2745,10 +3094,10 @@ public unsafe partial interface ISdl
             float* Y2
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectAndLineIntersectionFloat")]
-        static abstract MaybeBool<int> GetRectAndLineIntersectionFloat(
+        static abstract MaybeBool<byte> GetRectAndLineIntersectionFloat(
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> rect,
             Ref<float> X1,
             Ref<float> Y1,
@@ -2756,152 +3105,160 @@ public unsafe partial interface ISdl
             Ref<float> Y2
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectEnclosingPoints")]
-        static abstract int GetRectEnclosingPoints(
+        static abstract byte GetRectEnclosingPoints(
             [NativeTypeName("const SDL_Point *")] Point* points,
             int count,
             [NativeTypeName("const SDL_Rect *")] Rect* clip,
             Rect* result
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectEnclosingPoints")]
-        static abstract MaybeBool<int> GetRectEnclosingPoints(
+        static abstract MaybeBool<byte> GetRectEnclosingPoints(
             [NativeTypeName("const SDL_Point *")] Ref<Point> points,
             int count,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> clip,
             Ref<Rect> result
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectEnclosingPointsFloat")]
-        static abstract int GetRectEnclosingPointsFloat(
+        static abstract byte GetRectEnclosingPointsFloat(
             [NativeTypeName("const SDL_FPoint *")] FPoint* points,
             int count,
             [NativeTypeName("const SDL_FRect *")] FRect* clip,
             FRect* result
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectEnclosingPointsFloat")]
-        static abstract MaybeBool<int> GetRectEnclosingPointsFloat(
+        static abstract MaybeBool<byte> GetRectEnclosingPointsFloat(
             [NativeTypeName("const SDL_FPoint *")] Ref<FPoint> points,
             int count,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> clip,
             Ref<FRect> result
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectIntersection")]
-        static abstract int GetRectIntersection(
+        static abstract byte GetRectIntersection(
             [NativeTypeName("const SDL_Rect *")] Rect* A,
             [NativeTypeName("const SDL_Rect *")] Rect* B,
             Rect* result
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectIntersection")]
-        static abstract MaybeBool<int> GetRectIntersection(
+        static abstract MaybeBool<byte> GetRectIntersection(
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> A,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> B,
             Ref<Rect> result
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectIntersectionFloat")]
-        static abstract int GetRectIntersectionFloat(
+        static abstract byte GetRectIntersectionFloat(
             [NativeTypeName("const SDL_FRect *")] FRect* A,
             [NativeTypeName("const SDL_FRect *")] FRect* B,
             FRect* result
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectIntersectionFloat")]
-        static abstract MaybeBool<int> GetRectIntersectionFloat(
+        static abstract MaybeBool<byte> GetRectIntersectionFloat(
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> A,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> B,
             Ref<FRect> result
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectUnion")]
-        static abstract int GetRectUnion(
+        static abstract byte GetRectUnion(
             [NativeTypeName("const SDL_Rect *")] Rect* A,
             [NativeTypeName("const SDL_Rect *")] Rect* B,
             Rect* result
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectUnion")]
-        static abstract int GetRectUnion(
+        static abstract MaybeBool<byte> GetRectUnion(
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> A,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> B,
             Ref<Rect> result
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectUnionFloat")]
-        static abstract int GetRectUnionFloat(
+        static abstract byte GetRectUnionFloat(
             [NativeTypeName("const SDL_FRect *")] FRect* A,
             [NativeTypeName("const SDL_FRect *")] FRect* B,
             FRect* result
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRectUnionFloat")]
-        static abstract int GetRectUnionFloat(
+        static abstract MaybeBool<byte> GetRectUnionFloat(
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> A,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> B,
             Ref<FRect> result
         );
 
-        [return: NativeTypeName("SDL_bool")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetRelativeMouseMode")]
-        static abstract MaybeBool<int> GetRelativeMouseMode();
-
-        [return: NativeTypeName("SDL_bool")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetRelativeMouseMode")]
-        static abstract int GetRelativeMouseModeRaw();
-
-        [return: NativeTypeName("Uint32")]
+        [return: NativeTypeName("SDL_MouseButtonFlags")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRelativeMouseState")]
         static abstract uint GetRelativeMouseState(float* x, float* y);
 
-        [return: NativeTypeName("Uint32")]
+        [return: NativeTypeName("SDL_MouseButtonFlags")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRelativeMouseState")]
         static abstract uint GetRelativeMouseState(Ref<float> x, Ref<float> y);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderClipRect")]
-        static abstract int GetRenderClipRect(RendererHandle renderer, Rect* rect);
+        static abstract byte GetRenderClipRect(RendererHandle renderer, Rect* rect);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderClipRect")]
-        static abstract int GetRenderClipRect(RendererHandle renderer, Ref<Rect> rect);
+        static abstract MaybeBool<byte> GetRenderClipRect(RendererHandle renderer, Ref<Rect> rect);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderColorScale")]
-        static abstract int GetRenderColorScale(RendererHandle renderer, float* scale);
+        static abstract byte GetRenderColorScale(RendererHandle renderer, float* scale);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderColorScale")]
-        static abstract int GetRenderColorScale(RendererHandle renderer, Ref<float> scale);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawBlendMode")]
-        static abstract int GetRenderDrawBlendMode(RendererHandle renderer, BlendMode* blendMode);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawBlendMode")]
-        static abstract int GetRenderDrawBlendMode(
+        static abstract MaybeBool<byte> GetRenderColorScale(
             RendererHandle renderer,
-            Ref<BlendMode> blendMode
+            Ref<float> scale
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawBlendMode")]
+        static abstract byte GetRenderDrawBlendMode(
+            RendererHandle renderer,
+            [NativeTypeName("SDL_BlendMode *")] BlendMode* blendMode
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawBlendMode")]
+        static abstract MaybeBool<byte> GetRenderDrawBlendMode(
+            RendererHandle renderer,
+            [NativeTypeName("SDL_BlendMode *")] Ref<BlendMode> blendMode
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawColor")]
-        static abstract int GetRenderDrawColor(
+        static abstract byte GetRenderDrawColor(
             RendererHandle renderer,
             [NativeTypeName("Uint8 *")] byte* r,
             [NativeTypeName("Uint8 *")] byte* g,
@@ -2909,9 +3266,10 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint8 *")] byte* a
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawColor")]
-        static abstract int GetRenderDrawColor(
+        static abstract MaybeBool<byte> GetRenderDrawColor(
             RendererHandle renderer,
             [NativeTypeName("Uint8 *")] Ref<byte> r,
             [NativeTypeName("Uint8 *")] Ref<byte> g,
@@ -2919,8 +3277,9 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint8 *")] Ref<byte> a
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawColorFloat")]
-        static abstract int GetRenderDrawColorFloat(
+        static abstract byte GetRenderDrawColorFloat(
             RendererHandle renderer,
             float* r,
             float* g,
@@ -2928,9 +3287,10 @@ public unsafe partial interface ISdl
             float* a
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawColorFloat")]
-        static abstract int GetRenderDrawColorFloat(
+        static abstract MaybeBool<byte> GetRenderDrawColorFloat(
             RendererHandle renderer,
             Ref<float> r,
             Ref<float> g,
@@ -2951,36 +3311,54 @@ public unsafe partial interface ISdl
         static abstract RendererHandle GetRenderer(WindowHandle window);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererFromTexture")]
-        static abstract RendererHandle GetRendererFromTexture(TextureHandle texture);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererInfo")]
-        static abstract int GetRendererInfo(RendererHandle renderer, RendererInfo* info);
+        static abstract RendererHandle GetRendererFromTexture(Texture* texture);
 
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererInfo")]
-        static abstract int GetRendererInfo(RendererHandle renderer, Ref<RendererInfo> info);
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererFromTexture")]
+        static abstract RendererHandle GetRendererFromTexture(Ref<Texture> texture);
+
+        [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererName")]
+        static abstract Ptr<sbyte> GetRendererName(RendererHandle renderer);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererName")]
+        static abstract sbyte* GetRendererNameRaw(RendererHandle renderer);
 
         [return: NativeTypeName("SDL_PropertiesID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererProperties")]
         static abstract uint GetRendererProperties(RendererHandle renderer);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderLogicalPresentation")]
-        static abstract int GetRenderLogicalPresentation(
+        static abstract byte GetRenderLogicalPresentation(
             RendererHandle renderer,
             int* w,
             int* h,
-            RendererLogicalPresentation* mode,
-            ScaleMode* scale_mode
+            RendererLogicalPresentation* mode
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderLogicalPresentation")]
-        static abstract int GetRenderLogicalPresentation(
+        static abstract MaybeBool<byte> GetRenderLogicalPresentation(
             RendererHandle renderer,
             Ref<int> w,
             Ref<int> h,
-            Ref<RendererLogicalPresentation> mode,
-            Ref<ScaleMode> scale_mode
+            Ref<RendererLogicalPresentation> mode
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderLogicalPresentationRect")]
+        static abstract byte GetRenderLogicalPresentationRect(RendererHandle renderer, FRect* rect);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderLogicalPresentationRect")]
+        static abstract MaybeBool<byte> GetRenderLogicalPresentationRect(
+            RendererHandle renderer,
+            Ref<FRect> rect
         );
 
         [Transformed]
@@ -2997,40 +3375,65 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderMetalLayer")]
         static abstract void* GetRenderMetalLayerRaw(RendererHandle renderer);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderOutputSize")]
-        static abstract int GetRenderOutputSize(RendererHandle renderer, int* w, int* h);
+        static abstract byte GetRenderOutputSize(RendererHandle renderer, int* w, int* h);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderOutputSize")]
-        static abstract int GetRenderOutputSize(RendererHandle renderer, Ref<int> w, Ref<int> h);
+        static abstract MaybeBool<byte> GetRenderOutputSize(
+            RendererHandle renderer,
+            Ref<int> w,
+            Ref<int> h
+        );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderSafeArea")]
+        static abstract byte GetRenderSafeArea(RendererHandle renderer, Rect* rect);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderSafeArea")]
+        static abstract MaybeBool<byte> GetRenderSafeArea(RendererHandle renderer, Ref<Rect> rect);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderScale")]
-        static abstract int GetRenderScale(RendererHandle renderer, float* scaleX, float* scaleY);
+        static abstract byte GetRenderScale(RendererHandle renderer, float* scaleX, float* scaleY);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderScale")]
-        static abstract int GetRenderScale(
+        static abstract MaybeBool<byte> GetRenderScale(
             RendererHandle renderer,
             Ref<float> scaleX,
             Ref<float> scaleY
         );
 
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderTarget")]
-        static abstract TextureHandle GetRenderTarget(RendererHandle renderer);
+        static abstract Ptr<Texture> GetRenderTarget(RendererHandle renderer);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderTarget")]
+        static abstract Texture* GetRenderTargetRaw(RendererHandle renderer);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderViewport")]
-        static abstract int GetRenderViewport(RendererHandle renderer, Rect* rect);
+        static abstract byte GetRenderViewport(RendererHandle renderer, Rect* rect);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderViewport")]
-        static abstract int GetRenderViewport(RendererHandle renderer, Ref<Rect> rect);
+        static abstract MaybeBool<byte> GetRenderViewport(RendererHandle renderer, Ref<Rect> rect);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderVSync")]
-        static abstract int GetRenderVSync(RendererHandle renderer, int* vsync);
+        static abstract byte GetRenderVSync(RendererHandle renderer, int* vsync);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderVSync")]
-        static abstract int GetRenderVSync(RendererHandle renderer, Ref<int> vsync);
+        static abstract MaybeBool<byte> GetRenderVSync(RendererHandle renderer, Ref<int> vsync);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderWindow")]
         static abstract WindowHandle GetRenderWindow(RendererHandle renderer);
@@ -3047,7 +3450,8 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
         static abstract void GetRGB(
             [NativeTypeName("Uint32")] uint pixel,
-            [NativeTypeName("const SDL_PixelFormat *")] PixelFormat* format,
+            [NativeTypeName("const SDL_PixelFormatDetails *")] PixelFormatDetails* format,
+            [NativeTypeName("const SDL_Palette *")] Palette* palette,
             [NativeTypeName("Uint8 *")] byte* r,
             [NativeTypeName("Uint8 *")] byte* g,
             [NativeTypeName("Uint8 *")] byte* b
@@ -3057,7 +3461,8 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
         static abstract void GetRGB(
             [NativeTypeName("Uint32")] uint pixel,
-            [NativeTypeName("const SDL_PixelFormat *")] Ref<PixelFormat> format,
+            [NativeTypeName("const SDL_PixelFormatDetails *")] Ref<PixelFormatDetails> format,
+            [NativeTypeName("const SDL_Palette *")] Ref<Palette> palette,
             [NativeTypeName("Uint8 *")] Ref<byte> r,
             [NativeTypeName("Uint8 *")] Ref<byte> g,
             [NativeTypeName("Uint8 *")] Ref<byte> b
@@ -3066,7 +3471,8 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRGBA")]
         static abstract void GetRgba(
             [NativeTypeName("Uint32")] uint pixel,
-            [NativeTypeName("const SDL_PixelFormat *")] PixelFormat* format,
+            [NativeTypeName("const SDL_PixelFormatDetails *")] PixelFormatDetails* format,
+            [NativeTypeName("const SDL_Palette *")] Palette* palette,
             [NativeTypeName("Uint8 *")] byte* r,
             [NativeTypeName("Uint8 *")] byte* g,
             [NativeTypeName("Uint8 *")] byte* b,
@@ -3077,15 +3483,29 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRGBA")]
         static abstract void GetRgba(
             [NativeTypeName("Uint32")] uint pixel,
-            [NativeTypeName("const SDL_PixelFormat *")] Ref<PixelFormat> format,
+            [NativeTypeName("const SDL_PixelFormatDetails *")] Ref<PixelFormatDetails> format,
+            [NativeTypeName("const SDL_Palette *")] Ref<Palette> palette,
             [NativeTypeName("Uint8 *")] Ref<byte> r,
             [NativeTypeName("Uint8 *")] Ref<byte> g,
             [NativeTypeName("Uint8 *")] Ref<byte> b,
             [NativeTypeName("Uint8 *")] Ref<byte> a
         );
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSandbox")]
+        static abstract Sandbox GetSandbox();
+
         [NativeFunction("SDL3", EntryPoint = "SDL_GetScancodeFromKey")]
-        static abstract Scancode GetScancodeFromKey([NativeTypeName("SDL_Keycode")] int key);
+        static abstract Scancode GetScancodeFromKey(
+            [NativeTypeName("SDL_Keycode")] uint key,
+            [NativeTypeName("SDL_Keymod *")] ushort* modstate
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetScancodeFromKey")]
+        static abstract Scancode GetScancodeFromKey(
+            [NativeTypeName("SDL_Keycode")] uint key,
+            [NativeTypeName("SDL_Keymod *")] Ref<ushort> modstate
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetScancodeFromName")]
         static abstract Scancode GetScancodeFromName([NativeTypeName("const char *")] sbyte* name);
@@ -3109,44 +3529,27 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSemaphoreValue")]
         static abstract uint GetSemaphoreValue(SemaphoreHandle sem);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorData")]
-        static abstract int GetSensorData(SensorHandle sensor, float* data, int num_values);
+        static abstract byte GetSensorData(SensorHandle sensor, float* data, int num_values);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorData")]
-        static abstract int GetSensorData(SensorHandle sensor, Ref<float> data, int num_values);
+        static abstract MaybeBool<byte> GetSensorData(
+            SensorHandle sensor,
+            Ref<float> data,
+            int num_values
+        );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorFromInstanceID")]
-        static abstract SensorHandle GetSensorFromInstanceID(
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorFromID")]
+        static abstract SensorHandle GetSensorFromID(
             [NativeTypeName("SDL_SensorID")] uint instance_id
         );
 
         [return: NativeTypeName("SDL_SensorID")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorInstanceID")]
-        static abstract uint GetSensorInstanceID(SensorHandle sensor);
-
-        [return: NativeTypeName("const char *")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorInstanceName")]
-        static abstract Ptr<sbyte> GetSensorInstanceName(
-            [NativeTypeName("SDL_SensorID")] uint instance_id
-        );
-
-        [return: NativeTypeName("const char *")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorInstanceName")]
-        static abstract sbyte* GetSensorInstanceNameRaw(
-            [NativeTypeName("SDL_SensorID")] uint instance_id
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorInstanceNonPortableType")]
-        static abstract int GetSensorInstanceNonPortableType(
-            [NativeTypeName("SDL_SensorID")] uint instance_id
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorInstanceType")]
-        static abstract SensorType GetSensorInstanceType(
-            [NativeTypeName("SDL_SensorID")] uint instance_id
-        );
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorID")]
+        static abstract uint GetSensorID(SensorHandle sensor);
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -3154,11 +3557,29 @@ public unsafe partial interface ISdl
         static abstract Ptr<sbyte> GetSensorName(SensorHandle sensor);
 
         [return: NativeTypeName("const char *")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorNameForID")]
+        static abstract Ptr<sbyte> GetSensorNameForID(
+            [NativeTypeName("SDL_SensorID")] uint instance_id
+        );
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorNameForID")]
+        static abstract sbyte* GetSensorNameForIDRaw(
+            [NativeTypeName("SDL_SensorID")] uint instance_id
+        );
+
+        [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorName")]
         static abstract sbyte* GetSensorNameRaw(SensorHandle sensor);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorNonPortableType")]
         static abstract int GetSensorNonPortableType(SensorHandle sensor);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorNonPortableTypeForID")]
+        static abstract int GetSensorNonPortableTypeForID(
+            [NativeTypeName("SDL_SensorID")] uint instance_id
+        );
 
         [return: NativeTypeName("SDL_PropertiesID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorProperties")]
@@ -3176,36 +3597,47 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorType")]
         static abstract SensorType GetSensorType(SensorHandle sensor);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetSilenceValueForFormat")]
-        static abstract int GetSilenceValueForFormat(
-            [NativeTypeName("SDL_AudioFormat")] ushort format
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorTypeForID")]
+        static abstract SensorType GetSensorTypeForID(
+            [NativeTypeName("SDL_SensorID")] uint instance_id
         );
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSilenceValueForFormat")]
+        static abstract int GetSilenceValueForFormat(AudioFormat format);
+
+        [return: NativeTypeName("size_t")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSIMDAlignment")]
+        static abstract nuint GetSimdAlignment();
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetStorageFileSize")]
-        static abstract int GetStorageFileSize(
+        static abstract byte GetStorageFileSize(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
             [NativeTypeName("Uint64 *")] ulong* length
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetStorageFileSize")]
-        static abstract int GetStorageFileSize(
+        static abstract MaybeBool<byte> GetStorageFileSize(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
             [NativeTypeName("Uint64 *")] Ref<ulong> length
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetStoragePathInfo")]
-        static abstract int GetStoragePathInfo(
+        static abstract byte GetStoragePathInfo(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
             PathInfo* info
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetStoragePathInfo")]
-        static abstract int GetStoragePathInfo(
+        static abstract MaybeBool<byte> GetStoragePathInfo(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
             Ref<PathInfo> info
@@ -3232,57 +3664,73 @@ public unsafe partial interface ISdl
             [NativeTypeName("const char *")] Ref<sbyte> default_value
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceAlphaMod")]
-        static abstract int GetSurfaceAlphaMod(
+        static abstract byte GetSurfaceAlphaMod(
             Surface* surface,
             [NativeTypeName("Uint8 *")] byte* alpha
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceAlphaMod")]
-        static abstract int GetSurfaceAlphaMod(
+        static abstract MaybeBool<byte> GetSurfaceAlphaMod(
             Ref<Surface> surface,
             [NativeTypeName("Uint8 *")] Ref<byte> alpha
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceBlendMode")]
-        static abstract int GetSurfaceBlendMode(Surface* surface, BlendMode* blendMode);
+        static abstract byte GetSurfaceBlendMode(
+            Surface* surface,
+            [NativeTypeName("SDL_BlendMode *")] BlendMode* blendMode
+        );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceBlendMode")]
-        static abstract int GetSurfaceBlendMode(Ref<Surface> surface, Ref<BlendMode> blendMode);
+        static abstract MaybeBool<byte> GetSurfaceBlendMode(
+            Ref<Surface> surface,
+            [NativeTypeName("SDL_BlendMode *")] Ref<BlendMode> blendMode
+        );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceClipRect")]
-        static abstract int GetSurfaceClipRect(Surface* surface, Rect* rect);
+        static abstract byte GetSurfaceClipRect(Surface* surface, Rect* rect);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceClipRect")]
-        static abstract int GetSurfaceClipRect(Ref<Surface> surface, Ref<Rect> rect);
+        static abstract MaybeBool<byte> GetSurfaceClipRect(Ref<Surface> surface, Ref<Rect> rect);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorKey")]
-        static abstract int GetSurfaceColorKey(
+        static abstract byte GetSurfaceColorKey(
             Surface* surface,
             [NativeTypeName("Uint32 *")] uint* key
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorKey")]
-        static abstract int GetSurfaceColorKey(
+        static abstract MaybeBool<byte> GetSurfaceColorKey(
             Ref<Surface> surface,
             [NativeTypeName("Uint32 *")] Ref<uint> key
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorMod")]
-        static abstract int GetSurfaceColorMod(
+        static abstract byte GetSurfaceColorMod(
             Surface* surface,
             [NativeTypeName("Uint8 *")] byte* r,
             [NativeTypeName("Uint8 *")] byte* g,
             [NativeTypeName("Uint8 *")] byte* b
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorMod")]
-        static abstract int GetSurfaceColorMod(
+        static abstract MaybeBool<byte> GetSurfaceColorMod(
             Ref<Surface> surface,
             [NativeTypeName("Uint8 *")] Ref<byte> r,
             [NativeTypeName("Uint8 *")] Ref<byte> g,
@@ -3290,11 +3738,25 @@ public unsafe partial interface ISdl
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorspace")]
-        static abstract int GetSurfaceColorspace(Surface* surface, Colorspace* colorspace);
+        static abstract Colorspace GetSurfaceColorspace(Surface* surface);
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorspace")]
-        static abstract int GetSurfaceColorspace(Ref<Surface> surface, Ref<Colorspace> colorspace);
+        static abstract Colorspace GetSurfaceColorspace(Ref<Surface> surface);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceImages")]
+        static abstract Surface** GetSurfaceImages(Surface* surface, int* count);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceImages")]
+        static abstract Ptr2D<Surface> GetSurfaceImages(Ref<Surface> surface, Ref<int> count);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfacePalette")]
+        static abstract Palette* GetSurfacePalette(Surface* surface);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfacePalette")]
+        static abstract Ptr<Palette> GetSurfacePalette(Ref<Surface> surface);
 
         [return: NativeTypeName("SDL_PropertiesID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceProperties")]
@@ -3311,62 +3773,94 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSystemTheme")]
         static abstract SystemTheme GetSystemTheme();
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetTextInputArea")]
+        static abstract byte GetTextInputArea(WindowHandle window, Rect* rect, int* cursor);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetTextInputArea")]
+        static abstract MaybeBool<byte> GetTextInputArea(
+            WindowHandle window,
+            Ref<Rect> rect,
+            Ref<int> cursor
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureAlphaMod")]
-        static abstract int GetTextureAlphaMod(
-            TextureHandle texture,
+        static abstract byte GetTextureAlphaMod(
+            Texture* texture,
             [NativeTypeName("Uint8 *")] byte* alpha
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureAlphaMod")]
-        static abstract int GetTextureAlphaMod(
-            TextureHandle texture,
+        static abstract MaybeBool<byte> GetTextureAlphaMod(
+            Ref<Texture> texture,
             [NativeTypeName("Uint8 *")] Ref<byte> alpha
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureAlphaModFloat")]
-        static abstract int GetTextureAlphaModFloat(TextureHandle texture, float* alpha);
+        static abstract byte GetTextureAlphaModFloat(Texture* texture, float* alpha);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureAlphaModFloat")]
-        static abstract int GetTextureAlphaModFloat(TextureHandle texture, Ref<float> alpha);
+        static abstract MaybeBool<byte> GetTextureAlphaModFloat(
+            Ref<Texture> texture,
+            Ref<float> alpha
+        );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureBlendMode")]
-        static abstract int GetTextureBlendMode(TextureHandle texture, BlendMode* blendMode);
+        static abstract byte GetTextureBlendMode(
+            Texture* texture,
+            [NativeTypeName("SDL_BlendMode *")] BlendMode* blendMode
+        );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureBlendMode")]
-        static abstract int GetTextureBlendMode(TextureHandle texture, Ref<BlendMode> blendMode);
+        static abstract MaybeBool<byte> GetTextureBlendMode(
+            Ref<Texture> texture,
+            [NativeTypeName("SDL_BlendMode *")] Ref<BlendMode> blendMode
+        );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureColorMod")]
-        static abstract int GetTextureColorMod(
-            TextureHandle texture,
+        static abstract byte GetTextureColorMod(
+            Texture* texture,
             [NativeTypeName("Uint8 *")] byte* r,
             [NativeTypeName("Uint8 *")] byte* g,
             [NativeTypeName("Uint8 *")] byte* b
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureColorMod")]
-        static abstract int GetTextureColorMod(
-            TextureHandle texture,
+        static abstract MaybeBool<byte> GetTextureColorMod(
+            Ref<Texture> texture,
             [NativeTypeName("Uint8 *")] Ref<byte> r,
             [NativeTypeName("Uint8 *")] Ref<byte> g,
             [NativeTypeName("Uint8 *")] Ref<byte> b
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureColorModFloat")]
-        static abstract int GetTextureColorModFloat(
-            TextureHandle texture,
+        static abstract byte GetTextureColorModFloat(
+            Texture* texture,
             float* r,
             float* g,
             float* b
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureColorModFloat")]
-        static abstract int GetTextureColorModFloat(
-            TextureHandle texture,
+        static abstract MaybeBool<byte> GetTextureColorModFloat(
+            Ref<Texture> texture,
             Ref<float> r,
             Ref<float> g,
             Ref<float> b
@@ -3374,14 +3868,37 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_PropertiesID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureProperties")]
-        static abstract uint GetTextureProperties(TextureHandle texture);
+        static abstract uint GetTextureProperties(Texture* texture);
 
+        [return: NativeTypeName("SDL_PropertiesID")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureProperties")]
+        static abstract uint GetTextureProperties(Ref<Texture> texture);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureScaleMode")]
-        static abstract int GetTextureScaleMode(TextureHandle texture, ScaleMode* scaleMode);
+        static abstract byte GetTextureScaleMode(Texture* texture, ScaleMode* scaleMode);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureScaleMode")]
-        static abstract int GetTextureScaleMode(TextureHandle texture, Ref<ScaleMode> scaleMode);
+        static abstract MaybeBool<byte> GetTextureScaleMode(
+            Ref<Texture> texture,
+            Ref<ScaleMode> scaleMode
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureSize")]
+        static abstract byte GetTextureSize(Texture* texture, float* w, float* h);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureSize")]
+        static abstract MaybeBool<byte> GetTextureSize(
+            Ref<Texture> texture,
+            Ref<float> w,
+            Ref<float> h
+        );
 
         [return: NativeTypeName("SDL_ThreadID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetThreadID")]
@@ -3404,12 +3921,12 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTicksNS")]
         static abstract ulong GetTicksNS();
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
+        static abstract void* GetTLS([NativeTypeName("SDL_TLSID *")] AtomicInt* id);
+
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
-        static abstract Ptr GetTLS([NativeTypeName("SDL_TLSID")] uint id);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
-        static abstract void* GetTLSRaw([NativeTypeName("SDL_TLSID")] uint id);
+        static abstract Ptr GetTLS([NativeTypeName("SDL_TLSID *")] Ref<AtomicInt> id);
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -3449,21 +3966,17 @@ public unsafe partial interface ISdl
             Ref<int> count
         );
 
-        [return: NativeTypeName("char *")]
+        [return: NativeTypeName("const char *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetUserFolder")]
         static abstract Ptr<sbyte> GetUserFolder(Folder folder);
 
-        [return: NativeTypeName("char *")]
+        [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetUserFolder")]
         static abstract sbyte* GetUserFolderRaw(Folder folder);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetVersion")]
-        static abstract int GetVersion(Version* ver);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetVersion")]
-        static abstract int GetVersion(Ref<Version> ver);
+        static abstract int GetVersion();
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -3474,8 +3987,26 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetVideoDriver")]
         static abstract sbyte* GetVideoDriverRaw(int index);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowAspectRatio")]
+        static abstract byte GetWindowAspectRatio(
+            WindowHandle window,
+            float* min_aspect,
+            float* max_aspect
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowAspectRatio")]
+        static abstract MaybeBool<byte> GetWindowAspectRatio(
+            WindowHandle window,
+            Ref<float> min_aspect,
+            Ref<float> max_aspect
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowBordersSize")]
-        static abstract int GetWindowBordersSize(
+        static abstract byte GetWindowBordersSize(
             WindowHandle window,
             int* top,
             int* left,
@@ -3483,9 +4014,10 @@ public unsafe partial interface ISdl
             int* right
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowBordersSize")]
-        static abstract int GetWindowBordersSize(
+        static abstract MaybeBool<byte> GetWindowBordersSize(
             WindowHandle window,
             Ref<int> top,
             Ref<int> left,
@@ -3498,7 +4030,18 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_WindowFlags")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFlags")]
-        static abstract uint GetWindowFlags(WindowHandle window);
+        static abstract ulong GetWindowFlags(WindowHandle window);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFromEvent")]
+        static abstract WindowHandle GetWindowFromEvent(
+            [NativeTypeName("const SDL_Event *")] Event* @event
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFromEvent")]
+        static abstract WindowHandle GetWindowFromEvent(
+            [NativeTypeName("const SDL_Event *")] Ref<Event> @event
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFromID")]
         static abstract WindowHandle GetWindowFromID([NativeTypeName("SDL_WindowID")] uint id);
@@ -3529,37 +4072,49 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowID")]
         static abstract uint GetWindowID(WindowHandle window);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowKeyboardGrab")]
-        static abstract MaybeBool<int> GetWindowKeyboardGrab(WindowHandle window);
+        static abstract MaybeBool<byte> GetWindowKeyboardGrab(WindowHandle window);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowKeyboardGrab")]
-        static abstract int GetWindowKeyboardGrabRaw(WindowHandle window);
+        static abstract byte GetWindowKeyboardGrabRaw(WindowHandle window);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMaximumSize")]
-        static abstract int GetWindowMaximumSize(WindowHandle window, int* w, int* h);
+        static abstract byte GetWindowMaximumSize(WindowHandle window, int* w, int* h);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMaximumSize")]
-        static abstract int GetWindowMaximumSize(WindowHandle window, Ref<int> w, Ref<int> h);
+        static abstract MaybeBool<byte> GetWindowMaximumSize(
+            WindowHandle window,
+            Ref<int> w,
+            Ref<int> h
+        );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMinimumSize")]
-        static abstract int GetWindowMinimumSize(WindowHandle window, int* w, int* h);
+        static abstract byte GetWindowMinimumSize(WindowHandle window, int* w, int* h);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMinimumSize")]
-        static abstract int GetWindowMinimumSize(WindowHandle window, Ref<int> w, Ref<int> h);
+        static abstract MaybeBool<byte> GetWindowMinimumSize(
+            WindowHandle window,
+            Ref<int> w,
+            Ref<int> h
+        );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMouseGrab")]
-        static abstract MaybeBool<int> GetWindowMouseGrab(WindowHandle window);
+        static abstract MaybeBool<byte> GetWindowMouseGrab(WindowHandle window);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMouseGrab")]
-        static abstract int GetWindowMouseGrabRaw(WindowHandle window);
+        static abstract byte GetWindowMouseGrabRaw(WindowHandle window);
 
         [return: NativeTypeName("const SDL_Rect *")]
         [Transformed]
@@ -3571,11 +4126,7 @@ public unsafe partial interface ISdl
         static abstract Rect* GetWindowMouseRectRaw(WindowHandle window);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowOpacity")]
-        static abstract int GetWindowOpacity(WindowHandle window, float* out_opacity);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowOpacity")]
-        static abstract int GetWindowOpacity(WindowHandle window, Ref<float> out_opacity);
+        static abstract float GetWindowOpacity(WindowHandle window);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowParent")]
         static abstract WindowHandle GetWindowParent(WindowHandle window);
@@ -3583,34 +4134,72 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowPixelDensity")]
         static abstract float GetWindowPixelDensity(WindowHandle window);
 
-        [return: NativeTypeName("Uint32")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowPixelFormat")]
-        static abstract uint GetWindowPixelFormat(WindowHandle window);
+        static abstract PixelFormat GetWindowPixelFormat(WindowHandle window);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowPosition")]
-        static abstract int GetWindowPosition(WindowHandle window, int* x, int* y);
+        static abstract byte GetWindowPosition(WindowHandle window, int* x, int* y);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowPosition")]
-        static abstract int GetWindowPosition(WindowHandle window, Ref<int> x, Ref<int> y);
+        static abstract MaybeBool<byte> GetWindowPosition(
+            WindowHandle window,
+            Ref<int> x,
+            Ref<int> y
+        );
 
         [return: NativeTypeName("SDL_PropertiesID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowProperties")]
         static abstract uint GetWindowProperties(WindowHandle window);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSize")]
-        static abstract int GetWindowSize(WindowHandle window, int* w, int* h);
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowRelativeMouseMode")]
+        static abstract MaybeBool<byte> GetWindowRelativeMouseMode(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowRelativeMouseMode")]
+        static abstract byte GetWindowRelativeMouseModeRaw(WindowHandle window);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindows")]
+        static abstract WindowHandle* GetWindows(int* count);
 
         [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindows")]
+        static abstract Ptr<WindowHandle> GetWindows(Ref<int> count);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSafeArea")]
+        static abstract byte GetWindowSafeArea(WindowHandle window, Rect* rect);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSafeArea")]
+        static abstract MaybeBool<byte> GetWindowSafeArea(WindowHandle window, Ref<Rect> rect);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSize")]
-        static abstract int GetWindowSize(WindowHandle window, Ref<int> w, Ref<int> h);
+        static abstract byte GetWindowSize(WindowHandle window, int* w, int* h);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSize")]
+        static abstract MaybeBool<byte> GetWindowSize(WindowHandle window, Ref<int> w, Ref<int> h);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSizeInPixels")]
-        static abstract int GetWindowSizeInPixels(WindowHandle window, int* w, int* h);
+        static abstract byte GetWindowSizeInPixels(WindowHandle window, int* w, int* h);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSizeInPixels")]
-        static abstract int GetWindowSizeInPixels(WindowHandle window, Ref<int> w, Ref<int> h);
+        static abstract MaybeBool<byte> GetWindowSizeInPixels(
+            WindowHandle window,
+            Ref<int> w,
+            Ref<int> h
+        );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSurface")]
@@ -3618,6 +4207,15 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSurface")]
         static abstract Surface* GetWindowSurfaceRaw(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSurfaceVSync")]
+        static abstract byte GetWindowSurfaceVSync(WindowHandle window, int* vsync);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSurfaceVSync")]
+        static abstract MaybeBool<byte> GetWindowSurfaceVSync(WindowHandle window, Ref<int> vsync);
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -3629,47 +4227,47 @@ public unsafe partial interface ISdl
         static abstract sbyte* GetWindowTitleRaw(WindowHandle window);
 
         [return: NativeTypeName("SDL_GLContext")]
-        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_CreateContext")]
-        static abstract Ptr GLCreateContext(WindowHandle window);
+        static abstract GLContextStateHandle GLCreateContext(WindowHandle window);
 
-        [return: NativeTypeName("SDL_GLContext")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GL_CreateContext")]
-        static abstract void* GLCreateContextRaw(WindowHandle window);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GL_DeleteContext")]
-        static abstract int GLDeleteContext([NativeTypeName("SDL_GLContext")] void* context);
-
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GL_DeleteContext")]
-        static abstract int GLDeleteContext([NativeTypeName("SDL_GLContext")] Ref context);
+        [NativeFunction("SDL3", EntryPoint = "SDL_GL_DestroyContext")]
+        static abstract MaybeBool<byte> GLDestroyContext(
+            [NativeTypeName("SDL_GLContext")] GLContextStateHandle context
+        );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GL_DestroyContext")]
+        static abstract byte GLDestroyContextRaw(
+            [NativeTypeName("SDL_GLContext")] GLContextStateHandle context
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_ExtensionSupported")]
-        static abstract int GLExtensionSupported([NativeTypeName("const char *")] sbyte* extension);
+        static abstract byte GLExtensionSupported(
+            [NativeTypeName("const char *")] sbyte* extension
+        );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_ExtensionSupported")]
-        static abstract MaybeBool<int> GLExtensionSupported(
+        static abstract MaybeBool<byte> GLExtensionSupported(
             [NativeTypeName("const char *")] Ref<sbyte> extension
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetAttribute")]
-        static abstract int GLGetAttribute(GLattr attr, int* value);
+        static abstract byte GLGetAttribute(GLAttr attr, int* value);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetAttribute")]
-        static abstract int GLGetAttribute(GLattr attr, Ref<int> value);
-
-        [return: NativeTypeName("SDL_GLContext")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetCurrentContext")]
-        static abstract Ptr GLGetCurrentContext();
+        static abstract MaybeBool<byte> GLGetAttribute(GLAttr attr, Ref<int> value);
 
         [return: NativeTypeName("SDL_GLContext")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetCurrentContext")]
-        static abstract void* GLGetCurrentContextRaw();
+        static abstract GLContextStateHandle GLGetCurrentContext();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetCurrentWindow")]
         static abstract WindowHandle GLGetCurrentWindow();
@@ -3687,44 +4285,70 @@ public unsafe partial interface ISdl
             [NativeTypeName("const char *")] Ref<sbyte> proc
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetSwapInterval")]
-        static abstract int GLGetSwapInterval(int* interval);
+        static abstract byte GLGetSwapInterval(int* interval);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetSwapInterval")]
-        static abstract int GLGetSwapInterval(Ref<int> interval);
+        static abstract MaybeBool<byte> GLGetSwapInterval(Ref<int> interval);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_LoadLibrary")]
-        static abstract int GLLoadLibrary([NativeTypeName("const char *")] sbyte* path);
+        static abstract byte GLLoadLibrary([NativeTypeName("const char *")] sbyte* path);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_LoadLibrary")]
-        static abstract int GLLoadLibrary([NativeTypeName("const char *")] Ref<sbyte> path);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_GL_MakeCurrent")]
-        static abstract int GLMakeCurrent(
-            WindowHandle window,
-            [NativeTypeName("SDL_GLContext")] void* context
+        static abstract MaybeBool<byte> GLLoadLibrary(
+            [NativeTypeName("const char *")] Ref<sbyte> path
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_MakeCurrent")]
-        static abstract int GLMakeCurrent(
+        static abstract MaybeBool<byte> GLMakeCurrent(
             WindowHandle window,
-            [NativeTypeName("SDL_GLContext")] Ref context
+            [NativeTypeName("SDL_GLContext")] GLContextStateHandle context
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GL_MakeCurrent")]
+        static abstract byte GLMakeCurrentRaw(
+            WindowHandle window,
+            [NativeTypeName("SDL_GLContext")] GLContextStateHandle context
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_ResetAttributes")]
         static abstract void GLResetAttributes();
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_SetAttribute")]
-        static abstract int GLSetAttribute(GLattr attr, int value);
+        static abstract MaybeBool<byte> GLSetAttribute(GLAttr attr, int value);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GL_SetAttribute")]
+        static abstract byte GLSetAttributeRaw(GLAttr attr, int value);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_SetSwapInterval")]
-        static abstract int GLSetSwapInterval(int interval);
+        static abstract MaybeBool<byte> GLSetSwapInterval(int interval);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GL_SetSwapInterval")]
+        static abstract byte GLSetSwapIntervalRaw(int interval);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_SwapWindow")]
-        static abstract int GLSwapWindow(WindowHandle window);
+        static abstract MaybeBool<byte> GLSwapWindow(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GL_SwapWindow")]
+        static abstract byte GLSwapWindowRaw(WindowHandle window);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_UnloadLibrary")]
         static abstract void GLUnloadLibrary();
@@ -3734,7 +4358,7 @@ public unsafe partial interface ISdl
         static abstract sbyte** GlobDirectory(
             [NativeTypeName("const char *")] sbyte* path,
             [NativeTypeName("const char *")] sbyte* pattern,
-            [NativeTypeName("Uint32")] uint flags,
+            [NativeTypeName("SDL_GlobFlags")] uint flags,
             int* count
         );
 
@@ -3744,7 +4368,7 @@ public unsafe partial interface ISdl
         static abstract Ptr2D<sbyte> GlobDirectory(
             [NativeTypeName("const char *")] Ref<sbyte> path,
             [NativeTypeName("const char *")] Ref<sbyte> pattern,
-            [NativeTypeName("Uint32")] uint flags,
+            [NativeTypeName("SDL_GlobFlags")] uint flags,
             Ref<int> count
         );
 
@@ -3754,7 +4378,7 @@ public unsafe partial interface ISdl
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
             [NativeTypeName("const char *")] sbyte* pattern,
-            [NativeTypeName("Uint32")] uint flags,
+            [NativeTypeName("SDL_GlobFlags")] uint flags,
             int* count
         );
 
@@ -3765,19 +4389,12 @@ public unsafe partial interface ISdl
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
             [NativeTypeName("const char *")] Ref<sbyte> pattern,
-            [NativeTypeName("Uint32")] uint flags,
+            [NativeTypeName("SDL_GlobFlags")] uint flags,
             Ref<int> count
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_GUIDFromString")]
-        static abstract Guid GuidFromString([NativeTypeName("const char *")] sbyte* pchGUID);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_GUIDFromString")]
-        static abstract Guid GuidFromString([NativeTypeName("const char *")] Ref<sbyte> pchGUID);
-
         [NativeFunction("SDL3", EntryPoint = "SDL_GUIDToString")]
-        static abstract int GuidToString(
+        static abstract void GuidToString(
             Guid guid,
             [NativeTypeName("char *")] sbyte* pszGUID,
             int cbGUID
@@ -3785,311 +4402,311 @@ public unsafe partial interface ISdl
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GUIDToString")]
-        static abstract int GuidToString(
+        static abstract void GuidToString(
             Guid guid,
             [NativeTypeName("char *")] Ref<sbyte> pszGUID,
             int cbGUID
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HapticEffectSupported")]
-        static abstract int HapticEffectSupported(
+        static abstract byte HapticEffectSupported(
             HapticHandle haptic,
             [NativeTypeName("const SDL_HapticEffect *")] HapticEffect* effect
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HapticEffectSupported")]
-        static abstract MaybeBool<int> HapticEffectSupported(
+        static abstract MaybeBool<byte> HapticEffectSupported(
             HapticHandle haptic,
             [NativeTypeName("const SDL_HapticEffect *")] Ref<HapticEffect> effect
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HapticRumbleSupported")]
-        static abstract MaybeBool<int> HapticRumbleSupported(HapticHandle haptic);
+        static abstract MaybeBool<byte> HapticRumbleSupported(HapticHandle haptic);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HapticRumbleSupported")]
-        static abstract int HapticRumbleSupportedRaw(HapticHandle haptic);
+        static abstract byte HapticRumbleSupportedRaw(HapticHandle haptic);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAltiVec")]
-        static abstract MaybeBool<int> HasAltiVec();
+        static abstract MaybeBool<byte> HasAltiVec();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAltiVec")]
-        static abstract int HasAltiVecRaw();
+        static abstract byte HasAltiVecRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasARMSIMD")]
-        static abstract MaybeBool<int> HasArmsimd();
+        static abstract MaybeBool<byte> HasArmsimd();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasARMSIMD")]
-        static abstract int HasArmsimdRaw();
+        static abstract byte HasArmsimdRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX")]
-        static abstract MaybeBool<int> HasAVX();
+        static abstract MaybeBool<byte> HasAVX();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX2")]
-        static abstract MaybeBool<int> HasAVX2();
+        static abstract MaybeBool<byte> HasAVX2();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX2")]
-        static abstract int HasAVX2Raw();
+        static abstract byte HasAVX2Raw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX512F")]
-        static abstract MaybeBool<int> HasAVX512F();
+        static abstract MaybeBool<byte> HasAVX512F();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX512F")]
-        static abstract int HasAVX512FRaw();
+        static abstract byte HasAVX512FRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX")]
-        static abstract int HasAVXRaw();
+        static abstract byte HasAVXRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasClipboardData")]
-        static abstract int HasClipboardData([NativeTypeName("const char *")] sbyte* mime_type);
+        static abstract byte HasClipboardData([NativeTypeName("const char *")] sbyte* mime_type);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasClipboardData")]
-        static abstract MaybeBool<int> HasClipboardData(
+        static abstract MaybeBool<byte> HasClipboardData(
             [NativeTypeName("const char *")] Ref<sbyte> mime_type
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasClipboardText")]
-        static abstract MaybeBool<int> HasClipboardText();
+        static abstract MaybeBool<byte> HasClipboardText();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasClipboardText")]
-        static abstract int HasClipboardTextRaw();
+        static abstract byte HasClipboardTextRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasEvent")]
-        static abstract MaybeBool<int> HasEvent([NativeTypeName("Uint32")] uint type);
+        static abstract MaybeBool<byte> HasEvent([NativeTypeName("Uint32")] uint type);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasEvent")]
-        static abstract int HasEventRaw([NativeTypeName("Uint32")] uint type);
+        static abstract byte HasEventRaw([NativeTypeName("Uint32")] uint type);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasEvents")]
-        static abstract MaybeBool<int> HasEvents(
+        static abstract MaybeBool<byte> HasEvents(
             [NativeTypeName("Uint32")] uint minType,
             [NativeTypeName("Uint32")] uint maxType
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasEvents")]
-        static abstract int HasEventsRaw(
+        static abstract byte HasEventsRaw(
             [NativeTypeName("Uint32")] uint minType,
             [NativeTypeName("Uint32")] uint maxType
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasGamepad")]
-        static abstract MaybeBool<int> HasGamepad();
+        static abstract MaybeBool<byte> HasGamepad();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasGamepad")]
-        static abstract int HasGamepadRaw();
+        static abstract byte HasGamepadRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasJoystick")]
-        static abstract MaybeBool<int> HasJoystick();
+        static abstract MaybeBool<byte> HasJoystick();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasJoystick")]
-        static abstract int HasJoystickRaw();
+        static abstract byte HasJoystickRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasKeyboard")]
-        static abstract MaybeBool<int> HasKeyboard();
+        static abstract MaybeBool<byte> HasKeyboard();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasKeyboard")]
-        static abstract int HasKeyboardRaw();
+        static abstract byte HasKeyboardRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasLASX")]
-        static abstract MaybeBool<int> HasLasx();
+        static abstract MaybeBool<byte> HasLasx();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasLASX")]
-        static abstract int HasLasxRaw();
+        static abstract byte HasLasxRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasLSX")]
-        static abstract MaybeBool<int> HasLSX();
+        static abstract MaybeBool<byte> HasLSX();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasLSX")]
-        static abstract int HasLSXRaw();
+        static abstract byte HasLSXRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasMMX")]
-        static abstract MaybeBool<int> HasMMX();
+        static abstract MaybeBool<byte> HasMMX();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasMMX")]
-        static abstract int HasMMXRaw();
+        static abstract byte HasMMXRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasMouse")]
-        static abstract MaybeBool<int> HasMouse();
+        static abstract MaybeBool<byte> HasMouse();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasMouse")]
-        static abstract int HasMouseRaw();
+        static abstract byte HasMouseRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasNEON")]
-        static abstract MaybeBool<int> HasNeon();
+        static abstract MaybeBool<byte> HasNeon();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasNEON")]
-        static abstract int HasNeonRaw();
+        static abstract byte HasNeonRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasPrimarySelectionText")]
-        static abstract MaybeBool<int> HasPrimarySelectionText();
+        static abstract MaybeBool<byte> HasPrimarySelectionText();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasPrimarySelectionText")]
-        static abstract int HasPrimarySelectionTextRaw();
+        static abstract byte HasPrimarySelectionTextRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasProperty")]
-        static abstract int HasProperty(
+        static abstract byte HasProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasProperty")]
-        static abstract MaybeBool<int> HasProperty(
+        static abstract MaybeBool<byte> HasProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasRectIntersection")]
-        static abstract int HasRectIntersection(
+        static abstract byte HasRectIntersection(
             [NativeTypeName("const SDL_Rect *")] Rect* A,
             [NativeTypeName("const SDL_Rect *")] Rect* B
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasRectIntersection")]
-        static abstract MaybeBool<int> HasRectIntersection(
+        static abstract MaybeBool<byte> HasRectIntersection(
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> A,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> B
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasRectIntersectionFloat")]
-        static abstract int HasRectIntersectionFloat(
+        static abstract byte HasRectIntersectionFloat(
             [NativeTypeName("const SDL_FRect *")] FRect* A,
             [NativeTypeName("const SDL_FRect *")] FRect* B
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasRectIntersectionFloat")]
-        static abstract MaybeBool<int> HasRectIntersectionFloat(
+        static abstract MaybeBool<byte> HasRectIntersectionFloat(
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> A,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> B
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasScreenKeyboardSupport")]
-        static abstract MaybeBool<int> HasScreenKeyboardSupport();
+        static abstract MaybeBool<byte> HasScreenKeyboardSupport();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasScreenKeyboardSupport")]
-        static abstract int HasScreenKeyboardSupportRaw();
+        static abstract byte HasScreenKeyboardSupportRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE")]
-        static abstract MaybeBool<int> HasSSE();
+        static abstract MaybeBool<byte> HasSSE();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE2")]
-        static abstract MaybeBool<int> HasSSE2();
+        static abstract MaybeBool<byte> HasSSE2();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE2")]
-        static abstract int HasSSE2Raw();
+        static abstract byte HasSSE2Raw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE3")]
-        static abstract MaybeBool<int> HasSSE3();
+        static abstract MaybeBool<byte> HasSSE3();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE3")]
-        static abstract int HasSSE3Raw();
+        static abstract byte HasSSE3Raw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE41")]
-        static abstract MaybeBool<int> HasSSE41();
+        static abstract MaybeBool<byte> HasSSE41();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE41")]
-        static abstract int HasSSE41Raw();
+        static abstract byte HasSSE41Raw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE42")]
-        static abstract MaybeBool<int> HasSSE42();
+        static abstract MaybeBool<byte> HasSSE42();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE42")]
-        static abstract int HasSSE42Raw();
+        static abstract byte HasSSE42Raw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE")]
-        static abstract int HasSSERaw();
+        static abstract byte HasSSERaw();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_hid_ble_scan")]
-        static abstract void HidBleScan([NativeTypeName("SDL_bool")] int active);
+        static abstract void HidBleScan([NativeTypeName("bool")] byte active);
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_hid_ble_scan")]
-        static abstract void HidBleScan([NativeTypeName("SDL_bool")] MaybeBool<int> active);
+        static abstract void HidBleScan([NativeTypeName("bool")] MaybeBool<byte> active);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_hid_close")]
         static abstract int HidClose(HidDeviceHandle dev);
@@ -4327,20 +4944,50 @@ public unsafe partial interface ISdl
             [NativeTypeName("size_t")] nuint length
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HideCursor")]
-        static abstract int HideCursor();
+        static abstract MaybeBool<byte> HideCursor();
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_HideCursor")]
+        static abstract byte HideCursorRaw();
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_HideWindow")]
-        static abstract int HideWindow(WindowHandle window);
+        static abstract MaybeBool<byte> HideWindow(WindowHandle window);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_HideWindow")]
+        static abstract byte HideWindowRaw(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_Init")]
-        static abstract int Init([NativeTypeName("Uint32")] uint flags);
+        static abstract MaybeBool<byte> Init([NativeTypeName("SDL_InitFlags")] uint flags);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_InitHapticRumble")]
-        static abstract int InitHapticRumble(HapticHandle haptic);
+        static abstract MaybeBool<byte> InitHapticRumble(HapticHandle haptic);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_InitHapticRumble")]
+        static abstract byte InitHapticRumbleRaw(HapticHandle haptic);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_Init")]
+        static abstract byte InitRaw([NativeTypeName("SDL_InitFlags")] uint flags);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_InitSubSystem")]
-        static abstract int InitSubSystem([NativeTypeName("Uint32")] uint flags);
+        static abstract MaybeBool<byte> InitSubSystem([NativeTypeName("SDL_InitFlags")] uint flags);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_InitSubSystem")]
+        static abstract byte InitSubSystemRaw([NativeTypeName("SDL_InitFlags")] uint flags);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_IOFromConstMem")]
         static abstract IOStreamHandle IOFromConstMem(
@@ -4395,74 +5042,83 @@ public unsafe partial interface ISdl
             [NativeTypeName("va_list")] Ref<sbyte> ap
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_IsGamepad")]
-        static abstract MaybeBool<int> IsGamepad(
+        static abstract MaybeBool<byte> IsGamepad(
             [NativeTypeName("SDL_JoystickID")] uint instance_id
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_IsGamepad")]
-        static abstract int IsGamepadRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
+        static abstract byte IsGamepadRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_IsJoystickHaptic")]
-        static abstract MaybeBool<int> IsJoystickHaptic(JoystickHandle joystick);
+        static abstract MaybeBool<byte> IsJoystickHaptic(JoystickHandle joystick);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_IsJoystickHaptic")]
-        static abstract int IsJoystickHapticRaw(JoystickHandle joystick);
+        static abstract byte IsJoystickHapticRaw(JoystickHandle joystick);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_IsJoystickVirtual")]
-        static abstract MaybeBool<int> IsJoystickVirtual(
+        static abstract MaybeBool<byte> IsJoystickVirtual(
             [NativeTypeName("SDL_JoystickID")] uint instance_id
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_IsJoystickVirtual")]
-        static abstract int IsJoystickVirtualRaw(
+        static abstract byte IsJoystickVirtualRaw(
             [NativeTypeName("SDL_JoystickID")] uint instance_id
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_IsMouseHaptic")]
-        static abstract MaybeBool<int> IsMouseHaptic();
+        static abstract MaybeBool<byte> IsMouseHaptic();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_IsMouseHaptic")]
-        static abstract int IsMouseHapticRaw();
+        static abstract byte IsMouseHapticRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_IsTablet")]
-        static abstract MaybeBool<int> IsTablet();
+        static abstract MaybeBool<byte> IsTablet();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_IsTablet")]
-        static abstract int IsTabletRaw();
+        static abstract byte IsTabletRaw();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_IsTV")]
+        static abstract MaybeBool<byte> IsTV();
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_IsTV")]
+        static abstract byte IsTVRaw();
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_JoystickConnected")]
-        static abstract MaybeBool<int> JoystickConnected(JoystickHandle joystick);
+        static abstract MaybeBool<byte> JoystickConnected(JoystickHandle joystick);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_JoystickConnected")]
-        static abstract int JoystickConnectedRaw(JoystickHandle joystick);
+        static abstract byte JoystickConnectedRaw(JoystickHandle joystick);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_JoystickEventsEnabled")]
-        static abstract MaybeBool<int> JoystickEventsEnabled();
+        static abstract MaybeBool<byte> JoystickEventsEnabled();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_JoystickEventsEnabled")]
-        static abstract int JoystickEventsEnabledRaw();
+        static abstract byte JoystickEventsEnabledRaw();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP")]
         static abstract Surface* LoadBMP([NativeTypeName("const char *")] sbyte* file);
@@ -4474,14 +5130,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP_IO")]
         static abstract Surface* LoadBMPIO(
             IOStreamHandle src,
-            [NativeTypeName("SDL_bool")] int closeio
+            [NativeTypeName("bool")] byte closeio
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP_IO")]
         static abstract Ptr<Surface> LoadBMPIO(
             IOStreamHandle src,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> closeio
+            [NativeTypeName("bool")] MaybeBool<byte> closeio
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadFile")]
@@ -4501,7 +5157,7 @@ public unsafe partial interface ISdl
         static abstract void* LoadFileIO(
             IOStreamHandle src,
             [NativeTypeName("size_t *")] nuint* datasize,
-            [NativeTypeName("SDL_bool")] int closeio
+            [NativeTypeName("bool")] byte closeio
         );
 
         [Transformed]
@@ -4509,13 +5165,13 @@ public unsafe partial interface ISdl
         static abstract Ptr LoadFileIO(
             IOStreamHandle src,
             [NativeTypeName("size_t *")] Ref<nuint> datasize,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> closeio
+            [NativeTypeName("bool")] MaybeBool<byte> closeio
         );
 
         [return: NativeTypeName("SDL_FunctionPointer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadFunction")]
         static abstract FunctionPointer LoadFunction(
-            void* handle,
+            SharedObjectHandle handle,
             [NativeTypeName("const char *")] sbyte* name
         );
 
@@ -4523,55 +5179,69 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadFunction")]
         static abstract FunctionPointer LoadFunction(
-            Ref handle,
+            SharedObjectHandle handle,
             [NativeTypeName("const char *")] Ref<sbyte> name
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadObject")]
-        static abstract void* LoadObject([NativeTypeName("const char *")] sbyte* sofile);
+        static abstract SharedObjectHandle LoadObject(
+            [NativeTypeName("const char *")] sbyte* sofile
+        );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadObject")]
-        static abstract Ptr LoadObject([NativeTypeName("const char *")] Ref<sbyte> sofile);
+        static abstract SharedObjectHandle LoadObject(
+            [NativeTypeName("const char *")] Ref<sbyte> sofile
+        );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV")]
-        static abstract int LoadWAV(
+        static abstract byte LoadWAV(
             [NativeTypeName("const char *")] sbyte* path,
             AudioSpec* spec,
             [NativeTypeName("Uint8 **")] byte** audio_buf,
             [NativeTypeName("Uint32 *")] uint* audio_len
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV")]
-        static abstract int LoadWAV(
+        static abstract MaybeBool<byte> LoadWAV(
             [NativeTypeName("const char *")] Ref<sbyte> path,
             Ref<AudioSpec> spec,
             [NativeTypeName("Uint8 **")] Ref2D<byte> audio_buf,
             [NativeTypeName("Uint32 *")] Ref<uint> audio_len
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV_IO")]
-        static abstract int LoadWAVIO(
+        static abstract byte LoadWAVIO(
             IOStreamHandle src,
-            [NativeTypeName("SDL_bool")] int closeio,
+            [NativeTypeName("bool")] byte closeio,
             AudioSpec* spec,
             [NativeTypeName("Uint8 **")] byte** audio_buf,
             [NativeTypeName("Uint32 *")] uint* audio_len
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV_IO")]
-        static abstract int LoadWAVIO(
+        static abstract MaybeBool<byte> LoadWAVIO(
             IOStreamHandle src,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> closeio,
+            [NativeTypeName("bool")] MaybeBool<byte> closeio,
             Ref<AudioSpec> spec,
             [NativeTypeName("Uint8 **")] Ref2D<byte> audio_buf,
             [NativeTypeName("Uint32 *")] Ref<uint> audio_len
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_LockAudioStream")]
-        static abstract int LockAudioStream(AudioStreamHandle stream);
+        static abstract MaybeBool<byte> LockAudioStream(AudioStreamHandle stream);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_LockAudioStream")]
+        static abstract byte LockAudioStreamRaw(AudioStreamHandle stream);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_LockJoysticks")]
         static abstract void LockJoysticks();
@@ -4579,8 +5249,16 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_LockMutex")]
         static abstract void LockMutex(MutexHandle mutex);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_LockProperties")]
-        static abstract int LockProperties([NativeTypeName("SDL_PropertiesID")] uint props);
+        static abstract MaybeBool<byte> LockProperties(
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_LockProperties")]
+        static abstract byte LockPropertiesRaw([NativeTypeName("SDL_PropertiesID")] uint props);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_LockRWLockForReading")]
         static abstract void LockRWLockForReading(RWLockHandle rwlock);
@@ -4595,47 +5273,50 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_LockSpinlock")]
         static abstract void LockSpinlock([NativeTypeName("SDL_SpinLock *")] Ref<int> @lock);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LockSurface")]
-        static abstract int LockSurface(Surface* surface);
+        static abstract byte LockSurface(Surface* surface);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_LockSurface")]
-        static abstract int LockSurface(Ref<Surface> surface);
+        static abstract MaybeBool<byte> LockSurface(Ref<Surface> surface);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LockTexture")]
-        static abstract int LockTexture(
-            TextureHandle texture,
+        static abstract byte LockTexture(
+            Texture* texture,
             [NativeTypeName("const SDL_Rect *")] Rect* rect,
             void** pixels,
             int* pitch
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_LockTexture")]
-        static abstract int LockTexture(
-            TextureHandle texture,
+        static abstract MaybeBool<byte> LockTexture(
+            Ref<Texture> texture,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
             Ref2D pixels,
             Ref<int> pitch
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LockTextureToSurface")]
-        static abstract int LockTextureToSurface(
-            TextureHandle texture,
+        static abstract byte LockTextureToSurface(
+            Texture* texture,
             [NativeTypeName("const SDL_Rect *")] Rect* rect,
             Surface** surface
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_LockTextureToSurface")]
-        static abstract int LockTextureToSurface(
-            TextureHandle texture,
+        static abstract MaybeBool<byte> LockTextureToSurface(
+            Ref<Texture> texture,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
             Ref2D<Surface> surface
         );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_LogGetPriority")]
-        static abstract LogPriority LogGetPriority(int category);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_LogMessageV")]
         static abstract void LogMessageV(
@@ -4654,19 +5335,11 @@ public unsafe partial interface ISdl
             [NativeTypeName("va_list")] Ref<sbyte> ap
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_LogResetPriorities")]
-        static abstract void LogResetPriorities();
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_LogSetAllPriority")]
-        static abstract void LogSetAllPriority(LogPriority priority);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_LogSetPriority")]
-        static abstract void LogSetPriority(int category, LogPriority priority);
-
         [return: NativeTypeName("Uint32")]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapRGB")]
         static abstract uint MapRGB(
-            [NativeTypeName("const SDL_PixelFormat *")] PixelFormat* format,
+            [NativeTypeName("const SDL_PixelFormatDetails *")] PixelFormatDetails* format,
+            [NativeTypeName("const SDL_Palette *")] Palette* palette,
             [NativeTypeName("Uint8")] byte r,
             [NativeTypeName("Uint8")] byte g,
             [NativeTypeName("Uint8")] byte b
@@ -4676,7 +5349,8 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapRGB")]
         static abstract uint MapRGB(
-            [NativeTypeName("const SDL_PixelFormat *")] Ref<PixelFormat> format,
+            [NativeTypeName("const SDL_PixelFormatDetails *")] Ref<PixelFormatDetails> format,
+            [NativeTypeName("const SDL_Palette *")] Ref<Palette> palette,
             [NativeTypeName("Uint8")] byte r,
             [NativeTypeName("Uint8")] byte g,
             [NativeTypeName("Uint8")] byte b
@@ -4685,7 +5359,8 @@ public unsafe partial interface ISdl
         [return: NativeTypeName("Uint32")]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapRGBA")]
         static abstract uint MapRgba(
-            [NativeTypeName("const SDL_PixelFormat *")] PixelFormat* format,
+            [NativeTypeName("const SDL_PixelFormatDetails *")] PixelFormatDetails* format,
+            [NativeTypeName("const SDL_Palette *")] Palette* palette,
             [NativeTypeName("Uint8")] byte r,
             [NativeTypeName("Uint8")] byte g,
             [NativeTypeName("Uint8")] byte b,
@@ -4696,15 +5371,62 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapRGBA")]
         static abstract uint MapRgba(
-            [NativeTypeName("const SDL_PixelFormat *")] Ref<PixelFormat> format,
+            [NativeTypeName("const SDL_PixelFormatDetails *")] Ref<PixelFormatDetails> format,
+            [NativeTypeName("const SDL_Palette *")] Ref<Palette> palette,
             [NativeTypeName("Uint8")] byte r,
             [NativeTypeName("Uint8")] byte g,
             [NativeTypeName("Uint8")] byte b,
             [NativeTypeName("Uint8")] byte a
         );
 
+        [return: NativeTypeName("Uint32")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGB")]
+        static abstract uint MapSurfaceRGB(
+            Surface* surface,
+            [NativeTypeName("Uint8")] byte r,
+            [NativeTypeName("Uint8")] byte g,
+            [NativeTypeName("Uint8")] byte b
+        );
+
+        [return: NativeTypeName("Uint32")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGB")]
+        static abstract uint MapSurfaceRGB(
+            Ref<Surface> surface,
+            [NativeTypeName("Uint8")] byte r,
+            [NativeTypeName("Uint8")] byte g,
+            [NativeTypeName("Uint8")] byte b
+        );
+
+        [return: NativeTypeName("Uint32")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGBA")]
+        static abstract uint MapSurfaceRgba(
+            Surface* surface,
+            [NativeTypeName("Uint8")] byte r,
+            [NativeTypeName("Uint8")] byte g,
+            [NativeTypeName("Uint8")] byte b,
+            [NativeTypeName("Uint8")] byte a
+        );
+
+        [return: NativeTypeName("Uint32")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGBA")]
+        static abstract uint MapSurfaceRgba(
+            Ref<Surface> surface,
+            [NativeTypeName("Uint8")] byte r,
+            [NativeTypeName("Uint8")] byte g,
+            [NativeTypeName("Uint8")] byte b,
+            [NativeTypeName("Uint8")] byte a
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_MaximizeWindow")]
-        static abstract int MaximizeWindow(WindowHandle window);
+        static abstract MaybeBool<byte> MaximizeWindow(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_MaximizeWindow")]
+        static abstract byte MaximizeWindowRaw(WindowHandle window);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_MemoryBarrierAcquireFunction")]
         static abstract void MemoryBarrierAcquireFunction();
@@ -4735,42 +5457,50 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_Metal_GetLayer")]
         static abstract Ptr MetalGetLayer([NativeTypeName("SDL_MetalView")] Ref view);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_MinimizeWindow")]
-        static abstract int MinimizeWindow(WindowHandle window);
+        static abstract MaybeBool<byte> MinimizeWindow(WindowHandle window);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_MixAudioFormat")]
-        static abstract int MixAudioFormat(
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_MinimizeWindow")]
+        static abstract byte MinimizeWindowRaw(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_MixAudio")]
+        static abstract byte MixAudio(
             [NativeTypeName("Uint8 *")] byte* dst,
             [NativeTypeName("const Uint8 *")] byte* src,
-            [NativeTypeName("SDL_AudioFormat")] ushort format,
+            AudioFormat format,
             [NativeTypeName("Uint32")] uint len,
-            int volume
+            float volume
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_MixAudioFormat")]
-        static abstract int MixAudioFormat(
+        [NativeFunction("SDL3", EntryPoint = "SDL_MixAudio")]
+        static abstract MaybeBool<byte> MixAudio(
             [NativeTypeName("Uint8 *")] Ref<byte> dst,
             [NativeTypeName("const Uint8 *")] Ref<byte> src,
-            [NativeTypeName("SDL_AudioFormat")] ushort format,
+            AudioFormat format,
             [NativeTypeName("Uint32")] uint len,
-            int volume
+            float volume
         );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationDidBecomeActive")]
-        static abstract void OnApplicationDidBecomeActive();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationDidEnterBackground")]
         static abstract void OnApplicationDidEnterBackground();
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationDidEnterForeground")]
+        static abstract void OnApplicationDidEnterForeground();
+
         [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationDidReceiveMemoryWarning")]
         static abstract void OnApplicationDidReceiveMemoryWarning();
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationWillEnterBackground")]
+        static abstract void OnApplicationWillEnterBackground();
+
         [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationWillEnterForeground")]
         static abstract void OnApplicationWillEnterForeground();
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationWillResignActive")]
-        static abstract void OnApplicationWillResignActive();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationWillTerminate")]
         static abstract void OnApplicationWillTerminate();
@@ -4807,16 +5537,16 @@ public unsafe partial interface ISdl
             Ref userdata
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_OpenCameraDevice")]
-        static abstract CameraHandle OpenCameraDevice(
-            [NativeTypeName("SDL_CameraDeviceID")] uint instance_id,
+        [NativeFunction("SDL3", EntryPoint = "SDL_OpenCamera")]
+        static abstract CameraHandle OpenCamera(
+            [NativeTypeName("SDL_CameraID")] uint instance_id,
             [NativeTypeName("const SDL_CameraSpec *")] CameraSpec* spec
         );
 
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_OpenCameraDevice")]
-        static abstract CameraHandle OpenCameraDevice(
-            [NativeTypeName("SDL_CameraDeviceID")] uint instance_id,
+        [NativeFunction("SDL3", EntryPoint = "SDL_OpenCamera")]
+        static abstract CameraHandle OpenCamera(
+            [NativeTypeName("SDL_CameraID")] uint instance_id,
             [NativeTypeName("const SDL_CameraSpec *")] Ref<CameraSpec> spec
         );
 
@@ -4890,12 +5620,14 @@ public unsafe partial interface ISdl
             [NativeTypeName("SDL_PropertiesID")] uint props
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_OpenURL")]
-        static abstract int OpenURL([NativeTypeName("const char *")] sbyte* url);
+        static abstract byte OpenURL([NativeTypeName("const char *")] sbyte* url);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_OpenURL")]
-        static abstract int OpenURL([NativeTypeName("const char *")] Ref<sbyte> url);
+        static abstract MaybeBool<byte> OpenURL([NativeTypeName("const char *")] Ref<sbyte> url);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_OpenUserStorage")]
         static abstract StorageHandle OpenUserStorage(
@@ -4912,11 +5644,43 @@ public unsafe partial interface ISdl
             [NativeTypeName("SDL_PropertiesID")] uint props
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_PauseAudioDevice")]
-        static abstract int PauseAudioDevice([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_OutOfMemory")]
+        static abstract MaybeBool<byte> OutOfMemory();
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_OutOfMemory")]
+        static abstract byte OutOfMemoryRaw();
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PauseAudioDevice")]
+        static abstract MaybeBool<byte> PauseAudioDevice(
+            [NativeTypeName("SDL_AudioDeviceID")] uint dev
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PauseAudioDevice")]
+        static abstract byte PauseAudioDeviceRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PauseAudioStreamDevice")]
+        static abstract MaybeBool<byte> PauseAudioStreamDevice(AudioStreamHandle stream);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PauseAudioStreamDevice")]
+        static abstract byte PauseAudioStreamDeviceRaw(AudioStreamHandle stream);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_PauseHaptic")]
-        static abstract int PauseHaptic(HapticHandle haptic);
+        static abstract MaybeBool<byte> PauseHaptic(HapticHandle haptic);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PauseHaptic")]
+        static abstract byte PauseHapticRaw(HapticHandle haptic);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_PeepEvents")]
         static abstract int PeepEvents(
@@ -4937,111 +5701,119 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint32")] uint maxType
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_PenConnected")]
-        static abstract MaybeBool<int> PenConnected([NativeTypeName("SDL_PenID")] uint instance_id);
-
-        [return: NativeTypeName("SDL_bool")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_PenConnected")]
-        static abstract int PenConnectedRaw([NativeTypeName("SDL_PenID")] uint instance_id);
-
         [NativeFunction("SDL3", EntryPoint = "SDL_PlayHapticRumble")]
-        static abstract int PlayHapticRumble(
+        static abstract MaybeBool<byte> PlayHapticRumble(
             HapticHandle haptic,
             float strength,
             [NativeTypeName("Uint32")] uint length
         );
 
-        [return: NativeTypeName("SDL_bool")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_PollEvent")]
-        static abstract int PollEvent(Event* @event);
-
-        [return: NativeTypeName("SDL_bool")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_PollEvent")]
-        static abstract MaybeBool<int> PollEvent(Ref<Event> @event);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_PostSemaphore")]
-        static abstract int PostSemaphore(SemaphoreHandle sem);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplyAlpha")]
-        static abstract int PremultiplyAlpha(
-            int width,
-            int height,
-            PixelFormatEnum src_format,
-            [NativeTypeName("const void *")] void* src,
-            int src_pitch,
-            PixelFormatEnum dst_format,
-            void* dst,
-            int dst_pitch
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PlayHapticRumble")]
+        static abstract byte PlayHapticRumbleRaw(
+            HapticHandle haptic,
+            float strength,
+            [NativeTypeName("Uint32")] uint length
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PollEvent")]
+        static abstract byte PollEvent(Event* @event);
+
+        [return: NativeTypeName("bool")]
         [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PollEvent")]
+        static abstract MaybeBool<byte> PollEvent(Ref<Event> @event);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplyAlpha")]
-        static abstract int PremultiplyAlpha(
+        static abstract byte PremultiplyAlpha(
             int width,
             int height,
-            PixelFormatEnum src_format,
+            PixelFormat src_format,
+            [NativeTypeName("const void *")] void* src,
+            int src_pitch,
+            PixelFormat dst_format,
+            void* dst,
+            int dst_pitch,
+            [NativeTypeName("bool")] byte linear
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplyAlpha")]
+        static abstract MaybeBool<byte> PremultiplyAlpha(
+            int width,
+            int height,
+            PixelFormat src_format,
             [NativeTypeName("const void *")] Ref src,
             int src_pitch,
-            PixelFormatEnum dst_format,
+            PixelFormat dst_format,
             Ref dst,
-            int dst_pitch
+            int dst_pitch,
+            [NativeTypeName("bool")] MaybeBool<byte> linear
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplySurfaceAlpha")]
+        static abstract byte PremultiplySurfaceAlpha(
+            Surface* surface,
+            [NativeTypeName("bool")] byte linear
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplySurfaceAlpha")]
+        static abstract MaybeBool<byte> PremultiplySurfaceAlpha(
+            Ref<Surface> surface,
+            [NativeTypeName("bool")] MaybeBool<byte> linear
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_PumpEvents")]
         static abstract void PumpEvents();
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PushEvent")]
-        static abstract int PushEvent(Event* @event);
+        static abstract byte PushEvent(Event* @event);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_PushEvent")]
-        static abstract int PushEvent(Ref<Event> @event);
+        static abstract MaybeBool<byte> PushEvent(Ref<Event> @event);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamData")]
-        static abstract int PutAudioStreamData(
+        static abstract byte PutAudioStreamData(
             AudioStreamHandle stream,
             [NativeTypeName("const void *")] void* buf,
             int len
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamData")]
-        static abstract int PutAudioStreamData(
+        static abstract MaybeBool<byte> PutAudioStreamData(
             AudioStreamHandle stream,
             [NativeTypeName("const void *")] Ref buf,
             int len
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_QueryTexture")]
-        static abstract int QueryTexture(
-            TextureHandle texture,
-            PixelFormatEnum* format,
-            int* access,
-            int* w,
-            int* h
-        );
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_QueryTexture")]
-        static abstract int QueryTexture(
-            TextureHandle texture,
-            Ref<PixelFormatEnum> format,
-            Ref<int> access,
-            Ref<int> w,
-            Ref<int> h
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_Quit")]
         static abstract void Quit();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_QuitSubSystem")]
-        static abstract void QuitSubSystem([NativeTypeName("Uint32")] uint flags);
+        static abstract void QuitSubSystem([NativeTypeName("SDL_InitFlags")] uint flags);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RaiseWindow")]
-        static abstract int RaiseWindow(WindowHandle window);
+        static abstract MaybeBool<byte> RaiseWindow(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RaiseWindow")]
+        static abstract byte RaiseWindowRaw(WindowHandle window);
 
         [return: NativeTypeName("size_t")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadIO")]
@@ -5060,103 +5832,124 @@ public unsafe partial interface ISdl
             [NativeTypeName("size_t")] nuint size
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS16BE")]
-        static abstract int ReadS16BE(
+        static abstract byte ReadS16BE(
             IOStreamHandle src,
             [NativeTypeName("Sint16 *")] short* value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS16BE")]
-        static abstract MaybeBool<int> ReadS16BE(
+        static abstract MaybeBool<byte> ReadS16BE(
             IOStreamHandle src,
             [NativeTypeName("Sint16 *")] Ref<short> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS16LE")]
-        static abstract int ReadS16LE(
+        static abstract byte ReadS16LE(
             IOStreamHandle src,
             [NativeTypeName("Sint16 *")] short* value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS16LE")]
-        static abstract MaybeBool<int> ReadS16LE(
+        static abstract MaybeBool<byte> ReadS16LE(
             IOStreamHandle src,
             [NativeTypeName("Sint16 *")] Ref<short> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS32BE")]
-        static abstract int ReadS32BE(IOStreamHandle src, [NativeTypeName("Sint32 *")] int* value);
+        static abstract byte ReadS32BE(IOStreamHandle src, [NativeTypeName("Sint32 *")] int* value);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS32BE")]
-        static abstract MaybeBool<int> ReadS32BE(
+        static abstract MaybeBool<byte> ReadS32BE(
             IOStreamHandle src,
             [NativeTypeName("Sint32 *")] Ref<int> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS32LE")]
-        static abstract int ReadS32LE(IOStreamHandle src, [NativeTypeName("Sint32 *")] int* value);
+        static abstract byte ReadS32LE(IOStreamHandle src, [NativeTypeName("Sint32 *")] int* value);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS32LE")]
-        static abstract MaybeBool<int> ReadS32LE(
+        static abstract MaybeBool<byte> ReadS32LE(
             IOStreamHandle src,
             [NativeTypeName("Sint32 *")] Ref<int> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64BE")]
-        static abstract int ReadS64BE(IOStreamHandle src, [NativeTypeName("Sint64 *")] long* value);
+        static abstract byte ReadS64BE(
+            IOStreamHandle src,
+            [NativeTypeName("Sint64 *")] long* value
+        );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64BE")]
-        static abstract MaybeBool<int> ReadS64BE(
+        static abstract MaybeBool<byte> ReadS64BE(
             IOStreamHandle src,
             [NativeTypeName("Sint64 *")] Ref<long> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64LE")]
-        static abstract int ReadS64LE(IOStreamHandle src, [NativeTypeName("Sint64 *")] long* value);
+        static abstract byte ReadS64LE(
+            IOStreamHandle src,
+            [NativeTypeName("Sint64 *")] long* value
+        );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64LE")]
-        static abstract MaybeBool<int> ReadS64LE(
+        static abstract MaybeBool<byte> ReadS64LE(
             IOStreamHandle src,
             [NativeTypeName("Sint64 *")] Ref<long> value
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReadS8")]
+        static abstract byte ReadS8(IOStreamHandle src, [NativeTypeName("Sint8 *")] sbyte* value);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReadS8")]
+        static abstract MaybeBool<byte> ReadS8(
+            IOStreamHandle src,
+            [NativeTypeName("Sint8 *")] Ref<sbyte> value
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadStorageFile")]
-        static abstract int ReadStorageFile(
+        static abstract byte ReadStorageFile(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
             void* destination,
             [NativeTypeName("Uint64")] ulong length
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadStorageFile")]
-        static abstract int ReadStorageFile(
+        static abstract MaybeBool<byte> ReadStorageFile(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
             Ref destination,
             [NativeTypeName("Uint64")] ulong length
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadSurfacePixel")]
-        static abstract int ReadSurfacePixel(
+        static abstract byte ReadSurfacePixel(
             Surface* surface,
             int x,
             int y,
@@ -5166,9 +5959,10 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint8 *")] byte* a
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadSurfacePixel")]
-        static abstract int ReadSurfacePixel(
+        static abstract MaybeBool<byte> ReadSurfacePixel(
             Ref<Surface> surface,
             int x,
             int y,
@@ -5178,98 +5972,129 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint8 *")] Ref<byte> a
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReadSurfacePixelFloat")]
+        static abstract byte ReadSurfacePixelFloat(
+            Surface* surface,
+            int x,
+            int y,
+            float* r,
+            float* g,
+            float* b,
+            float* a
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReadSurfacePixelFloat")]
+        static abstract MaybeBool<byte> ReadSurfacePixelFloat(
+            Ref<Surface> surface,
+            int x,
+            int y,
+            Ref<float> r,
+            Ref<float> g,
+            Ref<float> b,
+            Ref<float> a
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU16BE")]
-        static abstract int ReadU16BE(
+        static abstract byte ReadU16BE(
             IOStreamHandle src,
             [NativeTypeName("Uint16 *")] ushort* value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU16BE")]
-        static abstract MaybeBool<int> ReadU16BE(
+        static abstract MaybeBool<byte> ReadU16BE(
             IOStreamHandle src,
             [NativeTypeName("Uint16 *")] Ref<ushort> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU16LE")]
-        static abstract int ReadU16LE(
+        static abstract byte ReadU16LE(
             IOStreamHandle src,
             [NativeTypeName("Uint16 *")] ushort* value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU16LE")]
-        static abstract MaybeBool<int> ReadU16LE(
+        static abstract MaybeBool<byte> ReadU16LE(
             IOStreamHandle src,
             [NativeTypeName("Uint16 *")] Ref<ushort> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU32BE")]
-        static abstract int ReadU32BE(IOStreamHandle src, [NativeTypeName("Uint32 *")] uint* value);
+        static abstract byte ReadU32BE(
+            IOStreamHandle src,
+            [NativeTypeName("Uint32 *")] uint* value
+        );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU32BE")]
-        static abstract MaybeBool<int> ReadU32BE(
+        static abstract MaybeBool<byte> ReadU32BE(
             IOStreamHandle src,
             [NativeTypeName("Uint32 *")] Ref<uint> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU32LE")]
-        static abstract int ReadU32LE(IOStreamHandle src, [NativeTypeName("Uint32 *")] uint* value);
+        static abstract byte ReadU32LE(
+            IOStreamHandle src,
+            [NativeTypeName("Uint32 *")] uint* value
+        );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU32LE")]
-        static abstract MaybeBool<int> ReadU32LE(
+        static abstract MaybeBool<byte> ReadU32LE(
             IOStreamHandle src,
             [NativeTypeName("Uint32 *")] Ref<uint> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64BE")]
-        static abstract int ReadU64BE(
+        static abstract byte ReadU64BE(
             IOStreamHandle src,
             [NativeTypeName("Uint64 *")] ulong* value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64BE")]
-        static abstract MaybeBool<int> ReadU64BE(
+        static abstract MaybeBool<byte> ReadU64BE(
             IOStreamHandle src,
             [NativeTypeName("Uint64 *")] Ref<ulong> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64LE")]
-        static abstract int ReadU64LE(
+        static abstract byte ReadU64LE(
             IOStreamHandle src,
             [NativeTypeName("Uint64 *")] ulong* value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64LE")]
-        static abstract MaybeBool<int> ReadU64LE(
+        static abstract MaybeBool<byte> ReadU64LE(
             IOStreamHandle src,
             [NativeTypeName("Uint64 *")] Ref<ulong> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU8")]
-        static abstract int ReadU8(IOStreamHandle src, [NativeTypeName("Uint8 *")] byte* value);
+        static abstract byte ReadU8(IOStreamHandle src, [NativeTypeName("Uint8 *")] byte* value);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU8")]
-        static abstract MaybeBool<int> ReadU8(
+        static abstract MaybeBool<byte> ReadU8(
             IOStreamHandle src,
             [NativeTypeName("Uint8 *")] Ref<byte> value
         );
@@ -5279,86 +6104,144 @@ public unsafe partial interface ISdl
         static abstract uint RegisterEvents(int numevents);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseCameraFrame")]
-        static abstract int ReleaseCameraFrame(CameraHandle camera, Surface* frame);
+        static abstract void ReleaseCameraFrame(CameraHandle camera, Surface* frame);
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseCameraFrame")]
-        static abstract int ReleaseCameraFrame(CameraHandle camera, Ref<Surface> frame);
+        static abstract void ReleaseCameraFrame(CameraHandle camera, Ref<Surface> frame);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReloadGamepadMappings")]
-        static abstract int ReloadGamepadMappings();
+        static abstract MaybeBool<byte> ReloadGamepadMappings();
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_RemovePath")]
-        static abstract int RemovePath([NativeTypeName("const char *")] sbyte* path);
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ReloadGamepadMappings")]
+        static abstract byte ReloadGamepadMappingsRaw();
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_RemoveEventWatch")]
+        static abstract void RemoveEventWatch(
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
+            void* userdata
+        );
 
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_RemovePath")]
-        static abstract int RemovePath([NativeTypeName("const char *")] Ref<sbyte> path);
+        [NativeFunction("SDL3", EntryPoint = "SDL_RemoveEventWatch")]
+        static abstract void RemoveEventWatch(
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
+            Ref userdata
+        );
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_RemoveHintCallback")]
+        static abstract void RemoveHintCallback(
+            [NativeTypeName("const char *")] sbyte* name,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
+            void* userdata
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RemoveHintCallback")]
+        static abstract void RemoveHintCallback(
+            [NativeTypeName("const char *")] Ref<sbyte> name,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
+            Ref userdata
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RemovePath")]
+        static abstract byte RemovePath([NativeTypeName("const char *")] sbyte* path);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RemovePath")]
+        static abstract MaybeBool<byte> RemovePath(
+            [NativeTypeName("const char *")] Ref<sbyte> path
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RemoveStoragePath")]
-        static abstract int RemoveStoragePath(
+        static abstract byte RemoveStoragePath(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RemoveStoragePath")]
-        static abstract int RemoveStoragePath(
+        static abstract MaybeBool<byte> RemoveStoragePath(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RemoveSurfaceAlternateImages")]
+        static abstract void RemoveSurfaceAlternateImages(Surface* surface);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RemoveSurfaceAlternateImages")]
+        static abstract void RemoveSurfaceAlternateImages(Ref<Surface> surface);
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RemoveTimer")]
-        static abstract MaybeBool<int> RemoveTimer([NativeTypeName("SDL_TimerID")] uint id);
+        static abstract MaybeBool<byte> RemoveTimer([NativeTypeName("SDL_TimerID")] uint id);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RemoveTimer")]
-        static abstract int RemoveTimerRaw([NativeTypeName("SDL_TimerID")] uint id);
+        static abstract byte RemoveTimerRaw([NativeTypeName("SDL_TimerID")] uint id);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenamePath")]
-        static abstract int RenamePath(
+        static abstract byte RenamePath(
             [NativeTypeName("const char *")] sbyte* oldpath,
             [NativeTypeName("const char *")] sbyte* newpath
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenamePath")]
-        static abstract int RenamePath(
+        static abstract MaybeBool<byte> RenamePath(
             [NativeTypeName("const char *")] Ref<sbyte> oldpath,
             [NativeTypeName("const char *")] Ref<sbyte> newpath
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenameStoragePath")]
-        static abstract int RenameStoragePath(
+        static abstract byte RenameStoragePath(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* oldpath,
             [NativeTypeName("const char *")] sbyte* newpath
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenameStoragePath")]
-        static abstract int RenameStoragePath(
+        static abstract MaybeBool<byte> RenameStoragePath(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> oldpath,
             [NativeTypeName("const char *")] Ref<sbyte> newpath
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderClear")]
-        static abstract int RenderClear(RendererHandle renderer);
+        static abstract MaybeBool<byte> RenderClear(RendererHandle renderer);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderClear")]
+        static abstract byte RenderClearRaw(RendererHandle renderer);
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderClipEnabled")]
-        static abstract MaybeBool<int> RenderClipEnabled(RendererHandle renderer);
+        static abstract MaybeBool<byte> RenderClipEnabled(RendererHandle renderer);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderClipEnabled")]
-        static abstract int RenderClipEnabledRaw(RendererHandle renderer);
+        static abstract byte RenderClipEnabledRaw(RendererHandle renderer);
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderCoordinatesFromWindow")]
-        static abstract int RenderCoordinatesFromWindow(
+        static abstract byte RenderCoordinatesFromWindow(
             RendererHandle renderer,
             float window_x,
             float window_y,
@@ -5366,9 +6249,10 @@ public unsafe partial interface ISdl
             float* y
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderCoordinatesFromWindow")]
-        static abstract int RenderCoordinatesFromWindow(
+        static abstract MaybeBool<byte> RenderCoordinatesFromWindow(
             RendererHandle renderer,
             float window_x,
             float window_y,
@@ -5376,8 +6260,9 @@ public unsafe partial interface ISdl
             Ref<float> y
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderCoordinatesToWindow")]
-        static abstract int RenderCoordinatesToWindow(
+        static abstract byte RenderCoordinatesToWindow(
             RendererHandle renderer,
             float x,
             float y,
@@ -5385,9 +6270,10 @@ public unsafe partial interface ISdl
             float* window_y
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderCoordinatesToWindow")]
-        static abstract int RenderCoordinatesToWindow(
+        static abstract MaybeBool<byte> RenderCoordinatesToWindow(
             RendererHandle renderer,
             float x,
             float y,
@@ -5395,92 +6281,85 @@ public unsafe partial interface ISdl
             Ref<float> window_y
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderDebugText")]
+        static abstract byte RenderDebugText(
+            RendererHandle renderer,
+            float x,
+            float y,
+            [NativeTypeName("const char *")] sbyte* str
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderDebugText")]
+        static abstract MaybeBool<byte> RenderDebugText(
+            RendererHandle renderer,
+            float x,
+            float y,
+            [NativeTypeName("const char *")] Ref<sbyte> str
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderFillRect")]
-        static abstract int RenderFillRect(
+        static abstract byte RenderFillRect(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FRect *")] FRect* rect
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderFillRect")]
-        static abstract int RenderFillRect(
+        static abstract MaybeBool<byte> RenderFillRect(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> rect
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderFillRects")]
-        static abstract int RenderFillRects(
+        static abstract byte RenderFillRects(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FRect *")] FRect* rects,
             int count
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderFillRects")]
-        static abstract int RenderFillRects(
+        static abstract MaybeBool<byte> RenderFillRects(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> rects,
             int count
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometry")]
-        static abstract int RenderGeometry(
+        static abstract byte RenderGeometry(
             RendererHandle renderer,
-            TextureHandle texture,
+            Texture* texture,
             [NativeTypeName("const SDL_Vertex *")] Vertex* vertices,
             int num_vertices,
             [NativeTypeName("const int *")] int* indices,
             int num_indices
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometry")]
-        static abstract int RenderGeometry(
+        static abstract MaybeBool<byte> RenderGeometry(
             RendererHandle renderer,
-            TextureHandle texture,
+            Ref<Texture> texture,
             [NativeTypeName("const SDL_Vertex *")] Ref<Vertex> vertices,
             int num_vertices,
             [NativeTypeName("const int *")] Ref<int> indices,
             int num_indices
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometryRaw")]
-        static abstract int RenderGeometryRaw(
+        static abstract byte RenderGeometryRaw(
             RendererHandle renderer,
-            TextureHandle texture,
-            [NativeTypeName("const float *")] float* xy,
-            int xy_stride,
-            [NativeTypeName("const SDL_Color *")] Color* color,
-            int color_stride,
-            [NativeTypeName("const float *")] float* uv,
-            int uv_stride,
-            int num_vertices,
-            [NativeTypeName("const void *")] void* indices,
-            int num_indices,
-            int size_indices
-        );
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometryRaw")]
-        static abstract int RenderGeometryRaw(
-            RendererHandle renderer,
-            TextureHandle texture,
-            [NativeTypeName("const float *")] Ref<float> xy,
-            int xy_stride,
-            [NativeTypeName("const SDL_Color *")] Ref<Color> color,
-            int color_stride,
-            [NativeTypeName("const float *")] Ref<float> uv,
-            int uv_stride,
-            int num_vertices,
-            [NativeTypeName("const void *")] Ref indices,
-            int num_indices,
-            int size_indices
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometryRawFloat")]
-        static abstract int RenderGeometryRawFloat(
-            RendererHandle renderer,
-            TextureHandle texture,
+            Texture* texture,
             [NativeTypeName("const float *")] float* xy,
             int xy_stride,
             [NativeTypeName("const SDL_FColor *")] FColor* color,
@@ -5493,11 +6372,12 @@ public unsafe partial interface ISdl
             int size_indices
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometryRawFloat")]
-        static abstract int RenderGeometryRawFloat(
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometryRaw")]
+        static abstract MaybeBool<byte> RenderGeometryRaw(
             RendererHandle renderer,
-            TextureHandle texture,
+            Ref<Texture> texture,
             [NativeTypeName("const float *")] Ref<float> xy,
             int xy_stride,
             [NativeTypeName("const SDL_FColor *")] Ref<FColor> color,
@@ -5510,8 +6390,10 @@ public unsafe partial interface ISdl
             int size_indices
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderLine")]
-        static abstract int RenderLine(
+        static abstract MaybeBool<byte> RenderLine(
             RendererHandle renderer,
             float x1,
             float y1,
@@ -5519,41 +6401,67 @@ public unsafe partial interface ISdl
             float y2
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderLine")]
+        static abstract byte RenderLineRaw(
+            RendererHandle renderer,
+            float x1,
+            float y1,
+            float x2,
+            float y2
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderLines")]
-        static abstract int RenderLines(
+        static abstract byte RenderLines(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FPoint *")] FPoint* points,
             int count
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderLines")]
-        static abstract int RenderLines(
+        static abstract MaybeBool<byte> RenderLines(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FPoint *")] Ref<FPoint> points,
             int count
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderPoint")]
-        static abstract int RenderPoint(RendererHandle renderer, float x, float y);
+        static abstract MaybeBool<byte> RenderPoint(RendererHandle renderer, float x, float y);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderPoint")]
+        static abstract byte RenderPointRaw(RendererHandle renderer, float x, float y);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderPoints")]
-        static abstract int RenderPoints(
+        static abstract byte RenderPoints(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FPoint *")] FPoint* points,
             int count
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderPoints")]
-        static abstract int RenderPoints(
+        static abstract MaybeBool<byte> RenderPoints(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FPoint *")] Ref<FPoint> points,
             int count
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderPresent")]
-        static abstract int RenderPresent(RendererHandle renderer);
+        static abstract MaybeBool<byte> RenderPresent(RendererHandle renderer);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderPresent")]
+        static abstract byte RenderPresentRaw(RendererHandle renderer);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderReadPixels")]
         static abstract Surface* RenderReadPixels(
@@ -5568,82 +6476,140 @@ public unsafe partial interface ISdl
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderRect")]
-        static abstract int RenderRect(
+        static abstract byte RenderRect(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FRect *")] FRect* rect
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderRect")]
-        static abstract int RenderRect(
+        static abstract MaybeBool<byte> RenderRect(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> rect
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderRects")]
-        static abstract int RenderRects(
+        static abstract byte RenderRects(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FRect *")] FRect* rects,
             int count
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderRects")]
-        static abstract int RenderRects(
+        static abstract MaybeBool<byte> RenderRects(
             RendererHandle renderer,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> rects,
             int count
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture")]
-        static abstract int RenderTexture(
+        static abstract byte RenderTexture(
             RendererHandle renderer,
-            TextureHandle texture,
+            Texture* texture,
             [NativeTypeName("const SDL_FRect *")] FRect* srcrect,
             [NativeTypeName("const SDL_FRect *")] FRect* dstrect
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture")]
-        static abstract int RenderTexture(
+        static abstract MaybeBool<byte> RenderTexture(
             RendererHandle renderer,
-            TextureHandle texture,
+            Ref<Texture> texture,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> srcrect,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> dstrect
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureRotated")]
-        static abstract int RenderTextureRotated(
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture9Grid")]
+        static abstract byte RenderTexture9Grid(
             RendererHandle renderer,
-            TextureHandle texture,
+            Texture* texture,
+            [NativeTypeName("const SDL_FRect *")] FRect* srcrect,
+            float left_width,
+            float right_width,
+            float top_height,
+            float bottom_height,
+            float scale,
+            [NativeTypeName("const SDL_FRect *")] FRect* dstrect
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture9Grid")]
+        static abstract MaybeBool<byte> RenderTexture9Grid(
+            RendererHandle renderer,
+            Ref<Texture> texture,
+            [NativeTypeName("const SDL_FRect *")] Ref<FRect> srcrect,
+            float left_width,
+            float right_width,
+            float top_height,
+            float bottom_height,
+            float scale,
+            [NativeTypeName("const SDL_FRect *")] Ref<FRect> dstrect
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureRotated")]
+        static abstract byte RenderTextureRotated(
+            RendererHandle renderer,
+            Texture* texture,
             [NativeTypeName("const SDL_FRect *")] FRect* srcrect,
             [NativeTypeName("const SDL_FRect *")] FRect* dstrect,
-            [NativeTypeName("const double")] double angle,
+            double angle,
             [NativeTypeName("const SDL_FPoint *")] FPoint* center,
-            [NativeTypeName("const SDL_FlipMode")] FlipMode flip
+            FlipMode flip
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureRotated")]
-        static abstract int RenderTextureRotated(
+        static abstract MaybeBool<byte> RenderTextureRotated(
             RendererHandle renderer,
-            TextureHandle texture,
+            Ref<Texture> texture,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> srcrect,
             [NativeTypeName("const SDL_FRect *")] Ref<FRect> dstrect,
-            [NativeTypeName("const double")] double angle,
+            double angle,
             [NativeTypeName("const SDL_FPoint *")] Ref<FPoint> center,
-            [NativeTypeName("const SDL_FlipMode")] FlipMode flip
+            FlipMode flip
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureTiled")]
+        static abstract byte RenderTextureTiled(
+            RendererHandle renderer,
+            Texture* texture,
+            [NativeTypeName("const SDL_FRect *")] FRect* srcrect,
+            float scale,
+            [NativeTypeName("const SDL_FRect *")] FRect* dstrect
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureTiled")]
+        static abstract MaybeBool<byte> RenderTextureTiled(
+            RendererHandle renderer,
+            Ref<Texture> texture,
+            [NativeTypeName("const SDL_FRect *")] Ref<FRect> srcrect,
+            float scale,
+            [NativeTypeName("const SDL_FRect *")] Ref<FRect> dstrect
+        );
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderViewportSet")]
-        static abstract MaybeBool<int> RenderViewportSet(RendererHandle renderer);
+        static abstract MaybeBool<byte> RenderViewportSet(RendererHandle renderer);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderViewportSet")]
-        static abstract int RenderViewportSetRaw(RendererHandle renderer);
+        static abstract byte RenderViewportSetRaw(RendererHandle renderer);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_ReportAssertion")]
         static abstract AssertState ReportAssertion(
@@ -5665,14 +6631,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_ResetAssertionReport")]
         static abstract void ResetAssertionReport();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ResetHint")]
-        static abstract int ResetHint([NativeTypeName("const char *")] sbyte* name);
+        static abstract byte ResetHint([NativeTypeName("const char *")] sbyte* name);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ResetHint")]
-        static abstract MaybeBool<int> ResetHint([NativeTypeName("const char *")] Ref<sbyte> name);
+        static abstract MaybeBool<byte> ResetHint([NativeTypeName("const char *")] Ref<sbyte> name);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_ResetHints")]
         static abstract void ResetHints();
@@ -5680,133 +6646,300 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_ResetKeyboard")]
         static abstract void ResetKeyboard();
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_ResetLogPriorities")]
+        static abstract void ResetLogPriorities();
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RestoreWindow")]
-        static abstract int RestoreWindow(WindowHandle window);
+        static abstract MaybeBool<byte> RestoreWindow(WindowHandle window);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RestoreWindow")]
+        static abstract byte RestoreWindowRaw(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ResumeAudioDevice")]
-        static abstract int ResumeAudioDevice([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+        static abstract MaybeBool<byte> ResumeAudioDevice(
+            [NativeTypeName("SDL_AudioDeviceID")] uint dev
+        );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ResumeAudioDevice")]
+        static abstract byte ResumeAudioDeviceRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ResumeAudioStreamDevice")]
+        static abstract MaybeBool<byte> ResumeAudioStreamDevice(AudioStreamHandle stream);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ResumeAudioStreamDevice")]
+        static abstract byte ResumeAudioStreamDeviceRaw(AudioStreamHandle stream);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ResumeHaptic")]
-        static abstract int ResumeHaptic(HapticHandle haptic);
+        static abstract MaybeBool<byte> ResumeHaptic(HapticHandle haptic);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ResumeHaptic")]
+        static abstract byte ResumeHapticRaw(HapticHandle haptic);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RumbleGamepad")]
-        static abstract int RumbleGamepad(
+        static abstract MaybeBool<byte> RumbleGamepad(
             GamepadHandle gamepad,
             [NativeTypeName("Uint16")] ushort low_frequency_rumble,
             [NativeTypeName("Uint16")] ushort high_frequency_rumble,
             [NativeTypeName("Uint32")] uint duration_ms
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RumbleGamepad")]
+        static abstract byte RumbleGamepadRaw(
+            GamepadHandle gamepad,
+            [NativeTypeName("Uint16")] ushort low_frequency_rumble,
+            [NativeTypeName("Uint16")] ushort high_frequency_rumble,
+            [NativeTypeName("Uint32")] uint duration_ms
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RumbleGamepadTriggers")]
-        static abstract int RumbleGamepadTriggers(
+        static abstract MaybeBool<byte> RumbleGamepadTriggers(
             GamepadHandle gamepad,
             [NativeTypeName("Uint16")] ushort left_rumble,
             [NativeTypeName("Uint16")] ushort right_rumble,
             [NativeTypeName("Uint32")] uint duration_ms
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RumbleGamepadTriggers")]
+        static abstract byte RumbleGamepadTriggersRaw(
+            GamepadHandle gamepad,
+            [NativeTypeName("Uint16")] ushort left_rumble,
+            [NativeTypeName("Uint16")] ushort right_rumble,
+            [NativeTypeName("Uint32")] uint duration_ms
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RumbleJoystick")]
-        static abstract int RumbleJoystick(
+        static abstract MaybeBool<byte> RumbleJoystick(
             JoystickHandle joystick,
             [NativeTypeName("Uint16")] ushort low_frequency_rumble,
             [NativeTypeName("Uint16")] ushort high_frequency_rumble,
             [NativeTypeName("Uint32")] uint duration_ms
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RumbleJoystick")]
+        static abstract byte RumbleJoystickRaw(
+            JoystickHandle joystick,
+            [NativeTypeName("Uint16")] ushort low_frequency_rumble,
+            [NativeTypeName("Uint16")] ushort high_frequency_rumble,
+            [NativeTypeName("Uint32")] uint duration_ms
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RumbleJoystickTriggers")]
-        static abstract int RumbleJoystickTriggers(
+        static abstract MaybeBool<byte> RumbleJoystickTriggers(
             JoystickHandle joystick,
             [NativeTypeName("Uint16")] ushort left_rumble,
             [NativeTypeName("Uint16")] ushort right_rumble,
             [NativeTypeName("Uint32")] uint duration_ms
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RumbleJoystickTriggers")]
+        static abstract byte RumbleJoystickTriggersRaw(
+            JoystickHandle joystick,
+            [NativeTypeName("Uint16")] ushort left_rumble,
+            [NativeTypeName("Uint16")] ushort right_rumble,
+            [NativeTypeName("Uint32")] uint duration_ms
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_RunHapticEffect")]
-        static abstract int RunHapticEffect(
+        static abstract MaybeBool<byte> RunHapticEffect(
             HapticHandle haptic,
             int effect,
             [NativeTypeName("Uint32")] uint iterations
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP")]
-        static abstract int SaveBMP(Surface* surface, [NativeTypeName("const char *")] sbyte* file);
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RunHapticEffect")]
+        static abstract byte RunHapticEffectRaw(
+            HapticHandle haptic,
+            int effect,
+            [NativeTypeName("Uint32")] uint iterations
+        );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP")]
+        static abstract byte SaveBMP(
+            Surface* surface,
+            [NativeTypeName("const char *")] sbyte* file
+        );
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP")]
-        static abstract int SaveBMP(
+        static abstract MaybeBool<byte> SaveBMP(
             Ref<Surface> surface,
             [NativeTypeName("const char *")] Ref<sbyte> file
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP_IO")]
-        static abstract int SaveBMPIO(
+        static abstract byte SaveBMPIO(
             Surface* surface,
             IOStreamHandle dst,
-            [NativeTypeName("SDL_bool")] int closeio
+            [NativeTypeName("bool")] byte closeio
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP_IO")]
-        static abstract int SaveBMPIO(
+        static abstract MaybeBool<byte> SaveBMPIO(
             Ref<Surface> surface,
             IOStreamHandle dst,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> closeio
+            [NativeTypeName("bool")] MaybeBool<byte> closeio
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ScaleSurface")]
+        static abstract Surface* ScaleSurface(
+            Surface* surface,
+            int width,
+            int height,
+            ScaleMode scaleMode
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ScaleSurface")]
+        static abstract Ptr<Surface> ScaleSurface(
+            Ref<Surface> surface,
+            int width,
+            int height,
+            ScaleMode scaleMode
+        );
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ScreenKeyboardShown")]
-        static abstract MaybeBool<int> ScreenKeyboardShown(WindowHandle window);
+        static abstract MaybeBool<byte> ScreenKeyboardShown(WindowHandle window);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ScreenKeyboardShown")]
-        static abstract int ScreenKeyboardShownRaw(WindowHandle window);
+        static abstract byte ScreenKeyboardShownRaw(WindowHandle window);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ScreenSaverEnabled")]
-        static abstract MaybeBool<int> ScreenSaverEnabled();
+        static abstract MaybeBool<byte> ScreenSaverEnabled();
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ScreenSaverEnabled")]
-        static abstract int ScreenSaverEnabledRaw();
+        static abstract byte ScreenSaverEnabledRaw();
 
         [return: NativeTypeName("Sint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SeekIO")]
         static abstract long SeekIO(
             IOStreamHandle context,
             [NativeTypeName("Sint64")] long offset,
-            int whence
+            IOWhence whence
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SendGamepadEffect")]
-        static abstract int SendGamepadEffect(
+        static abstract byte SendGamepadEffect(
             GamepadHandle gamepad,
             [NativeTypeName("const void *")] void* data,
             int size
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SendGamepadEffect")]
-        static abstract int SendGamepadEffect(
+        static abstract MaybeBool<byte> SendGamepadEffect(
             GamepadHandle gamepad,
             [NativeTypeName("const void *")] Ref data,
             int size
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SendJoystickEffect")]
-        static abstract int SendJoystickEffect(
+        static abstract byte SendJoystickEffect(
             JoystickHandle joystick,
             [NativeTypeName("const void *")] void* data,
             int size
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SendJoystickEffect")]
-        static abstract int SendJoystickEffect(
+        static abstract MaybeBool<byte> SendJoystickEffect(
             JoystickHandle joystick,
             [NativeTypeName("const void *")] Ref data,
             int size
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SendJoystickVirtualSensorData")]
+        static abstract byte SendJoystickVirtualSensorData(
+            JoystickHandle joystick,
+            SensorType type,
+            [NativeTypeName("Uint64")] ulong sensor_timestamp,
+            [NativeTypeName("const float *")] float* data,
+            int num_values
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SendJoystickVirtualSensorData")]
+        static abstract MaybeBool<byte> SendJoystickVirtualSensorData(
+            JoystickHandle joystick,
+            SensorType type,
+            [NativeTypeName("Uint64")] ulong sensor_timestamp,
+            [NativeTypeName("const float *")] Ref<float> data,
+            int num_values
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAppMetadata")]
+        static abstract byte SetAppMetadata(
+            [NativeTypeName("const char *")] sbyte* appname,
+            [NativeTypeName("const char *")] sbyte* appversion,
+            [NativeTypeName("const char *")] sbyte* appidentifier
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAppMetadata")]
+        static abstract MaybeBool<byte> SetAppMetadata(
+            [NativeTypeName("const char *")] Ref<sbyte> appname,
+            [NativeTypeName("const char *")] Ref<sbyte> appversion,
+            [NativeTypeName("const char *")] Ref<sbyte> appidentifier
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAppMetadataProperty")]
+        static abstract byte SetAppMetadataProperty(
+            [NativeTypeName("const char *")] sbyte* name,
+            [NativeTypeName("const char *")] sbyte* value
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAppMetadataProperty")]
+        static abstract MaybeBool<byte> SetAppMetadataProperty(
+            [NativeTypeName("const char *")] Ref<sbyte> name,
+            [NativeTypeName("const char *")] Ref<sbyte> value
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAssertionHandler")]
@@ -5822,86 +6955,187 @@ public unsafe partial interface ISdl
             Ref userdata
         );
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicInt")]
+        static abstract int SetAtomicInt(AtomicInt* a, int v);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicInt")]
+        static abstract int SetAtomicInt(Ref<AtomicInt> a, int v);
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicPointer")]
+        static abstract void* SetAtomicPointer(void** a, void* v);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicPointer")]
+        static abstract Ptr SetAtomicPointer(Ref2D a, Ref v);
+
+        [return: NativeTypeName("Uint32")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicU32")]
+        static abstract uint SetAtomicU32(AtomicU32* a, [NativeTypeName("Uint32")] uint v);
+
+        [return: NativeTypeName("Uint32")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicU32")]
+        static abstract uint SetAtomicU32(Ref<AtomicU32> a, [NativeTypeName("Uint32")] uint v);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioDeviceGain")]
+        static abstract MaybeBool<byte> SetAudioDeviceGain(
+            [NativeTypeName("SDL_AudioDeviceID")] uint devid,
+            float gain
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioDeviceGain")]
+        static abstract byte SetAudioDeviceGainRaw(
+            [NativeTypeName("SDL_AudioDeviceID")] uint devid,
+            float gain
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioPostmixCallback")]
-        static abstract int SetAudioPostmixCallback(
+        static abstract byte SetAudioPostmixCallback(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
             void* userdata
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioPostmixCallback")]
-        static abstract int SetAudioPostmixCallback(
+        static abstract MaybeBool<byte> SetAudioPostmixCallback(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
             Ref userdata
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamFormat")]
-        static abstract int SetAudioStreamFormat(
+        static abstract byte SetAudioStreamFormat(
             AudioStreamHandle stream,
             [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* src_spec,
             [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* dst_spec
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamFormat")]
-        static abstract int SetAudioStreamFormat(
+        static abstract MaybeBool<byte> SetAudioStreamFormat(
             AudioStreamHandle stream,
             [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> src_spec,
             [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> dst_spec
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamFrequencyRatio")]
-        static abstract int SetAudioStreamFrequencyRatio(AudioStreamHandle stream, float ratio);
+        static abstract MaybeBool<byte> SetAudioStreamFrequencyRatio(
+            AudioStreamHandle stream,
+            float ratio
+        );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamFrequencyRatio")]
+        static abstract byte SetAudioStreamFrequencyRatioRaw(AudioStreamHandle stream, float ratio);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGain")]
+        static abstract MaybeBool<byte> SetAudioStreamGain(AudioStreamHandle stream, float gain);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGain")]
+        static abstract byte SetAudioStreamGainRaw(AudioStreamHandle stream, float gain);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGetCallback")]
-        static abstract int SetAudioStreamGetCallback(
+        static abstract byte SetAudioStreamGetCallback(
             AudioStreamHandle stream,
             [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGetCallback")]
-        static abstract int SetAudioStreamGetCallback(
+        static abstract MaybeBool<byte> SetAudioStreamGetCallback(
             AudioStreamHandle stream,
             [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamInputChannelMap")]
+        static abstract byte SetAudioStreamInputChannelMap(
+            AudioStreamHandle stream,
+            [NativeTypeName("const int *")] int* chmap,
+            int count
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamInputChannelMap")]
+        static abstract MaybeBool<byte> SetAudioStreamInputChannelMap(
+            AudioStreamHandle stream,
+            [NativeTypeName("const int *")] Ref<int> chmap,
+            int count
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamOutputChannelMap")]
+        static abstract byte SetAudioStreamOutputChannelMap(
+            AudioStreamHandle stream,
+            [NativeTypeName("const int *")] int* chmap,
+            int count
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamOutputChannelMap")]
+        static abstract MaybeBool<byte> SetAudioStreamOutputChannelMap(
+            AudioStreamHandle stream,
+            [NativeTypeName("const int *")] Ref<int> chmap,
+            int count
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamPutCallback")]
-        static abstract int SetAudioStreamPutCallback(
+        static abstract byte SetAudioStreamPutCallback(
             AudioStreamHandle stream,
             [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamPutCallback")]
-        static abstract int SetAudioStreamPutCallback(
+        static abstract MaybeBool<byte> SetAudioStreamPutCallback(
             AudioStreamHandle stream,
             [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetBooleanProperty")]
-        static abstract int SetBooleanProperty(
+        static abstract byte SetBooleanProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_bool")] int value
+            [NativeTypeName("bool")] byte value
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetBooleanProperty")]
-        static abstract int SetBooleanProperty(
+        static abstract MaybeBool<byte> SetBooleanProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> value
+            [NativeTypeName("bool")] MaybeBool<byte> value
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardData")]
-        static abstract int SetClipboardData(
+        static abstract byte SetClipboardData(
             [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
             [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
             void* userdata,
@@ -5909,9 +7143,10 @@ public unsafe partial interface ISdl
             [NativeTypeName("size_t")] nuint num_mime_types
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardData")]
-        static abstract int SetClipboardData(
+        static abstract MaybeBool<byte> SetClipboardData(
             [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
             [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
             Ref userdata,
@@ -5919,27 +7154,61 @@ public unsafe partial interface ISdl
             [NativeTypeName("size_t")] nuint num_mime_types
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardText")]
-        static abstract int SetClipboardText([NativeTypeName("const char *")] sbyte* text);
+        static abstract byte SetClipboardText([NativeTypeName("const char *")] sbyte* text);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardText")]
-        static abstract int SetClipboardText([NativeTypeName("const char *")] Ref<sbyte> text);
+        static abstract MaybeBool<byte> SetClipboardText(
+            [NativeTypeName("const char *")] Ref<sbyte> text
+        );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetCurrentThreadPriority")]
+        static abstract MaybeBool<byte> SetCurrentThreadPriority(ThreadPriority priority);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetCurrentThreadPriority")]
+        static abstract byte SetCurrentThreadPriorityRaw(ThreadPriority priority);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetCursor")]
-        static abstract int SetCursor(CursorHandle cursor);
+        static abstract MaybeBool<byte> SetCursor(CursorHandle cursor);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetCursor")]
+        static abstract byte SetCursorRaw(CursorHandle cursor);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
+        static abstract byte SetErrorV(
+            [NativeTypeName("const char *")] sbyte* fmt,
+            [NativeTypeName("va_list")] sbyte* ap
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
+        static abstract MaybeBool<byte> SetErrorV(
+            [NativeTypeName("const char *")] Ref<sbyte> fmt,
+            [NativeTypeName("va_list")] Ref<sbyte> ap
+        );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetEventEnabled")]
         static abstract void SetEventEnabled(
             [NativeTypeName("Uint32")] uint type,
-            [NativeTypeName("SDL_bool")] int enabled
+            [NativeTypeName("bool")] byte enabled
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetEventEnabled")]
         static abstract void SetEventEnabled(
             [NativeTypeName("Uint32")] uint type,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> enabled
+            [NativeTypeName("bool")] MaybeBool<byte> enabled
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetEventFilter")]
@@ -5955,146 +7224,291 @@ public unsafe partial interface ISdl
             Ref userdata
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetFloatProperty")]
-        static abstract int SetFloatProperty(
+        static abstract byte SetFloatProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
             float value
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetFloatProperty")]
-        static abstract int SetFloatProperty(
+        static abstract MaybeBool<byte> SetFloatProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             float value
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadEventsEnabled")]
-        static abstract void SetGamepadEventsEnabled([NativeTypeName("SDL_bool")] int enabled);
+        static abstract void SetGamepadEventsEnabled([NativeTypeName("bool")] byte enabled);
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadEventsEnabled")]
         static abstract void SetGamepadEventsEnabled(
-            [NativeTypeName("SDL_bool")] MaybeBool<int> enabled
+            [NativeTypeName("bool")] MaybeBool<byte> enabled
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadLED")]
-        static abstract int SetGamepadLED(
+        static abstract MaybeBool<byte> SetGamepadLED(
             GamepadHandle gamepad,
             [NativeTypeName("Uint8")] byte red,
             [NativeTypeName("Uint8")] byte green,
             [NativeTypeName("Uint8")] byte blue
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadLED")]
+        static abstract byte SetGamepadLEDRaw(
+            GamepadHandle gamepad,
+            [NativeTypeName("Uint8")] byte red,
+            [NativeTypeName("Uint8")] byte green,
+            [NativeTypeName("Uint8")] byte blue
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadMapping")]
-        static abstract int SetGamepadMapping(
+        static abstract byte SetGamepadMapping(
             [NativeTypeName("SDL_JoystickID")] uint instance_id,
             [NativeTypeName("const char *")] sbyte* mapping
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadMapping")]
-        static abstract int SetGamepadMapping(
+        static abstract MaybeBool<byte> SetGamepadMapping(
             [NativeTypeName("SDL_JoystickID")] uint instance_id,
             [NativeTypeName("const char *")] Ref<sbyte> mapping
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadPlayerIndex")]
-        static abstract int SetGamepadPlayerIndex(GamepadHandle gamepad, int player_index);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadSensorEnabled")]
-        static abstract int SetGamepadSensorEnabled(
+        static abstract MaybeBool<byte> SetGamepadPlayerIndex(
             GamepadHandle gamepad,
-            SensorType type,
-            [NativeTypeName("SDL_bool")] int enabled
+            int player_index
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadPlayerIndex")]
+        static abstract byte SetGamepadPlayerIndexRaw(GamepadHandle gamepad, int player_index);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadSensorEnabled")]
+        static abstract byte SetGamepadSensorEnabled(
+            GamepadHandle gamepad,
+            SensorType type,
+            [NativeTypeName("bool")] byte enabled
+        );
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadSensorEnabled")]
-        static abstract int SetGamepadSensorEnabled(
+        static abstract MaybeBool<byte> SetGamepadSensorEnabled(
             GamepadHandle gamepad,
             SensorType type,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> enabled
+            [NativeTypeName("bool")] MaybeBool<byte> enabled
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetHapticAutocenter")]
-        static abstract int SetHapticAutocenter(HapticHandle haptic, int autocenter);
+        static abstract MaybeBool<byte> SetHapticAutocenter(HapticHandle haptic, int autocenter);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetHapticAutocenter")]
+        static abstract byte SetHapticAutocenterRaw(HapticHandle haptic, int autocenter);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetHapticGain")]
-        static abstract int SetHapticGain(HapticHandle haptic, int gain);
+        static abstract MaybeBool<byte> SetHapticGain(HapticHandle haptic, int gain);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetHapticGain")]
+        static abstract byte SetHapticGainRaw(HapticHandle haptic, int gain);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetHint")]
-        static abstract int SetHint(
+        static abstract byte SetHint(
             [NativeTypeName("const char *")] sbyte* name,
             [NativeTypeName("const char *")] sbyte* value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetHint")]
-        static abstract MaybeBool<int> SetHint(
+        static abstract MaybeBool<byte> SetHint(
             [NativeTypeName("const char *")] Ref<sbyte> name,
             [NativeTypeName("const char *")] Ref<sbyte> value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetHintWithPriority")]
-        static abstract int SetHintWithPriority(
+        static abstract byte SetHintWithPriority(
             [NativeTypeName("const char *")] sbyte* name,
             [NativeTypeName("const char *")] sbyte* value,
             HintPriority priority
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetHintWithPriority")]
-        static abstract MaybeBool<int> SetHintWithPriority(
+        static abstract MaybeBool<byte> SetHintWithPriority(
             [NativeTypeName("const char *")] Ref<sbyte> name,
             [NativeTypeName("const char *")] Ref<sbyte> value,
             HintPriority priority
         );
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetInitialized")]
+        static abstract void SetInitialized(
+            InitState* state,
+            [NativeTypeName("bool")] byte initialized
+        );
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetInitialized")]
+        static abstract void SetInitialized(
+            Ref<InitState> state,
+            [NativeTypeName("bool")] MaybeBool<byte> initialized
+        );
+
         [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickEventsEnabled")]
-        static abstract void SetJoystickEventsEnabled([NativeTypeName("SDL_bool")] int enabled);
+        static abstract void SetJoystickEventsEnabled([NativeTypeName("bool")] byte enabled);
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickEventsEnabled")]
         static abstract void SetJoystickEventsEnabled(
-            [NativeTypeName("SDL_bool")] MaybeBool<int> enabled
+            [NativeTypeName("bool")] MaybeBool<byte> enabled
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickLED")]
-        static abstract int SetJoystickLED(
+        static abstract MaybeBool<byte> SetJoystickLED(
             JoystickHandle joystick,
             [NativeTypeName("Uint8")] byte red,
             [NativeTypeName("Uint8")] byte green,
             [NativeTypeName("Uint8")] byte blue
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickPlayerIndex")]
-        static abstract int SetJoystickPlayerIndex(JoystickHandle joystick, int player_index);
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickLED")]
+        static abstract byte SetJoystickLEDRaw(
+            JoystickHandle joystick,
+            [NativeTypeName("Uint8")] byte red,
+            [NativeTypeName("Uint8")] byte green,
+            [NativeTypeName("Uint8")] byte blue
+        );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickPlayerIndex")]
+        static abstract MaybeBool<byte> SetJoystickPlayerIndex(
+            JoystickHandle joystick,
+            int player_index
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickPlayerIndex")]
+        static abstract byte SetJoystickPlayerIndexRaw(JoystickHandle joystick, int player_index);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualAxis")]
-        static abstract int SetJoystickVirtualAxis(
+        static abstract MaybeBool<byte> SetJoystickVirtualAxis(
             JoystickHandle joystick,
             int axis,
             [NativeTypeName("Sint16")] short value
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualButton")]
-        static abstract int SetJoystickVirtualButton(
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualAxis")]
+        static abstract byte SetJoystickVirtualAxisRaw(
             JoystickHandle joystick,
-            int button,
-            [NativeTypeName("Uint8")] byte value
+            int axis,
+            [NativeTypeName("Sint16")] short value
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualBall")]
+        static abstract MaybeBool<byte> SetJoystickVirtualBall(
+            JoystickHandle joystick,
+            int ball,
+            [NativeTypeName("Sint16")] short xrel,
+            [NativeTypeName("Sint16")] short yrel
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualBall")]
+        static abstract byte SetJoystickVirtualBallRaw(
+            JoystickHandle joystick,
+            int ball,
+            [NativeTypeName("Sint16")] short xrel,
+            [NativeTypeName("Sint16")] short yrel
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualButton")]
+        static abstract byte SetJoystickVirtualButton(
+            JoystickHandle joystick,
+            int button,
+            [NativeTypeName("bool")] byte down
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualButton")]
+        static abstract MaybeBool<byte> SetJoystickVirtualButton(
+            JoystickHandle joystick,
+            int button,
+            [NativeTypeName("bool")] MaybeBool<byte> down
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualHat")]
-        static abstract int SetJoystickVirtualHat(
+        static abstract MaybeBool<byte> SetJoystickVirtualHat(
             JoystickHandle joystick,
             int hat,
             [NativeTypeName("Uint8")] byte value
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualHat")]
+        static abstract byte SetJoystickVirtualHatRaw(
+            JoystickHandle joystick,
+            int hat,
+            [NativeTypeName("Uint8")] byte value
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualTouchpad")]
+        static abstract byte SetJoystickVirtualTouchpad(
+            JoystickHandle joystick,
+            int touchpad,
+            int finger,
+            [NativeTypeName("bool")] byte down,
+            float x,
+            float y,
+            float pressure
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualTouchpad")]
+        static abstract MaybeBool<byte> SetJoystickVirtualTouchpad(
+            JoystickHandle joystick,
+            int touchpad,
+            int finger,
+            [NativeTypeName("bool")] MaybeBool<byte> down,
+            float x,
+            float y,
+            float pressure
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
@@ -6110,121 +7524,158 @@ public unsafe partial interface ISdl
             Ref userdata
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetModState")]
-        static abstract void SetModState(Keymod modstate);
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetLogPriorities")]
+        static abstract void SetLogPriorities(LogPriority priority);
 
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetLogPriority")]
+        static abstract void SetLogPriority(int category, LogPriority priority);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetLogPriorityPrefix")]
+        static abstract byte SetLogPriorityPrefix(
+            LogPriority priority,
+            [NativeTypeName("const char *")] sbyte* prefix
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetLogPriorityPrefix")]
+        static abstract MaybeBool<byte> SetLogPriorityPrefix(
+            LogPriority priority,
+            [NativeTypeName("const char *")] Ref<sbyte> prefix
+        );
+
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetModState")]
+        static abstract void SetModState([NativeTypeName("SDL_Keymod")] ushort modstate);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetNumberProperty")]
-        static abstract int SetNumberProperty(
+        static abstract byte SetNumberProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
             [NativeTypeName("Sint64")] long value
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetNumberProperty")]
-        static abstract int SetNumberProperty(
+        static abstract MaybeBool<byte> SetNumberProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             [NativeTypeName("Sint64")] long value
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetPaletteColors")]
-        static abstract int SetPaletteColors(
+        static abstract byte SetPaletteColors(
             Palette* palette,
             [NativeTypeName("const SDL_Color *")] Color* colors,
             int firstcolor,
             int ncolors
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetPaletteColors")]
-        static abstract int SetPaletteColors(
+        static abstract MaybeBool<byte> SetPaletteColors(
             Ref<Palette> palette,
             [NativeTypeName("const SDL_Color *")] Ref<Color> colors,
             int firstcolor,
             int ncolors
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetPixelFormatPalette")]
-        static abstract int SetPixelFormatPalette(PixelFormat* format, Palette* palette);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetPixelFormatPalette")]
-        static abstract int SetPixelFormatPalette(Ref<PixelFormat> format, Ref<Palette> palette);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetPrimarySelectionText")]
-        static abstract int SetPrimarySelectionText([NativeTypeName("const char *")] sbyte* text);
-
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetPrimarySelectionText")]
-        static abstract int SetPrimarySelectionText(
-            [NativeTypeName("const char *")] Ref<sbyte> text
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetProperty")]
-        static abstract int SetProperty(
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetPointerProperty")]
+        static abstract byte SetPointerProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
             void* value
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetProperty")]
-        static abstract int SetProperty(
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetPointerProperty")]
+        static abstract MaybeBool<byte> SetPointerProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             Ref value
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetPropertyWithCleanup")]
-        static abstract int SetPropertyWithCleanup(
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetPointerPropertyWithCleanup")]
+        static abstract byte SetPointerPropertyWithCleanup(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
             void* value,
-            [NativeTypeName("void (*)(void *, void *)")] SetPropertyWithCleanupCleanup cleanup,
+            [NativeTypeName("SDL_CleanupPropertyCallback")] CleanupPropertyCallback cleanup,
             void* userdata
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetPropertyWithCleanup")]
-        static abstract int SetPropertyWithCleanup(
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetPointerPropertyWithCleanup")]
+        static abstract MaybeBool<byte> SetPointerPropertyWithCleanup(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             Ref value,
-            [NativeTypeName("void (*)(void *, void *)")] SetPropertyWithCleanupCleanup cleanup,
+            [NativeTypeName("SDL_CleanupPropertyCallback")] CleanupPropertyCallback cleanup,
             Ref userdata
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetRelativeMouseMode")]
-        static abstract int SetRelativeMouseMode([NativeTypeName("SDL_bool")] int enabled);
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetPrimarySelectionText")]
+        static abstract byte SetPrimarySelectionText([NativeTypeName("const char *")] sbyte* text);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetRelativeMouseMode")]
-        static abstract int SetRelativeMouseMode(
-            [NativeTypeName("SDL_bool")] MaybeBool<int> enabled
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetPrimarySelectionText")]
+        static abstract MaybeBool<byte> SetPrimarySelectionText(
+            [NativeTypeName("const char *")] Ref<sbyte> text
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderClipRect")]
-        static abstract int SetRenderClipRect(
+        static abstract byte SetRenderClipRect(
             RendererHandle renderer,
             [NativeTypeName("const SDL_Rect *")] Rect* rect
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderClipRect")]
-        static abstract int SetRenderClipRect(
+        static abstract MaybeBool<byte> SetRenderClipRect(
             RendererHandle renderer,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderColorScale")]
-        static abstract int SetRenderColorScale(RendererHandle renderer, float scale);
+        static abstract MaybeBool<byte> SetRenderColorScale(RendererHandle renderer, float scale);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderColorScale")]
+        static abstract byte SetRenderColorScaleRaw(RendererHandle renderer, float scale);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawBlendMode")]
-        static abstract int SetRenderDrawBlendMode(RendererHandle renderer, BlendMode blendMode);
+        static abstract MaybeBool<byte> SetRenderDrawBlendMode(
+            RendererHandle renderer,
+            [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+        );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawBlendMode")]
+        static abstract byte SetRenderDrawBlendModeRaw(
+            RendererHandle renderer,
+            [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawColor")]
-        static abstract int SetRenderDrawColor(
+        static abstract MaybeBool<byte> SetRenderDrawColor(
             RendererHandle renderer,
             [NativeTypeName("Uint8")] byte r,
             [NativeTypeName("Uint8")] byte g,
@@ -6232,8 +7683,10 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint8")] byte a
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawColorFloat")]
-        static abstract int SetRenderDrawColorFloat(
+        static abstract MaybeBool<byte> SetRenderDrawColorFloat(
             RendererHandle renderer,
             float r,
             float g,
@@ -6241,391 +7694,702 @@ public unsafe partial interface ISdl
             float a
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawColorFloat")]
+        static abstract byte SetRenderDrawColorFloatRaw(
+            RendererHandle renderer,
+            float r,
+            float g,
+            float b,
+            float a
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawColor")]
+        static abstract byte SetRenderDrawColorRaw(
+            RendererHandle renderer,
+            [NativeTypeName("Uint8")] byte r,
+            [NativeTypeName("Uint8")] byte g,
+            [NativeTypeName("Uint8")] byte b,
+            [NativeTypeName("Uint8")] byte a
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderLogicalPresentation")]
-        static abstract int SetRenderLogicalPresentation(
+        static abstract MaybeBool<byte> SetRenderLogicalPresentation(
             RendererHandle renderer,
             int w,
             int h,
-            RendererLogicalPresentation mode,
-            ScaleMode scale_mode
+            RendererLogicalPresentation mode
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderLogicalPresentation")]
+        static abstract byte SetRenderLogicalPresentationRaw(
+            RendererHandle renderer,
+            int w,
+            int h,
+            RendererLogicalPresentation mode
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderScale")]
-        static abstract int SetRenderScale(RendererHandle renderer, float scaleX, float scaleY);
+        static abstract MaybeBool<byte> SetRenderScale(
+            RendererHandle renderer,
+            float scaleX,
+            float scaleY
+        );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderScale")]
+        static abstract byte SetRenderScaleRaw(RendererHandle renderer, float scaleX, float scaleY);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderTarget")]
-        static abstract int SetRenderTarget(RendererHandle renderer, TextureHandle texture);
+        static abstract byte SetRenderTarget(RendererHandle renderer, Texture* texture);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderTarget")]
+        static abstract MaybeBool<byte> SetRenderTarget(
+            RendererHandle renderer,
+            Ref<Texture> texture
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderViewport")]
-        static abstract int SetRenderViewport(
+        static abstract byte SetRenderViewport(
             RendererHandle renderer,
             [NativeTypeName("const SDL_Rect *")] Rect* rect
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderViewport")]
-        static abstract int SetRenderViewport(
+        static abstract MaybeBool<byte> SetRenderViewport(
             RendererHandle renderer,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderVSync")]
-        static abstract int SetRenderVSync(RendererHandle renderer, int vsync);
+        static abstract MaybeBool<byte> SetRenderVSync(RendererHandle renderer, int vsync);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderVSync")]
+        static abstract byte SetRenderVSyncRaw(RendererHandle renderer, int vsync);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetScancodeName")]
+        static abstract byte SetScancodeName(
+            Scancode scancode,
+            [NativeTypeName("const char *")] sbyte* name
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetScancodeName")]
+        static abstract MaybeBool<byte> SetScancodeName(
+            Scancode scancode,
+            [NativeTypeName("const char *")] Ref<sbyte> name
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetStringProperty")]
-        static abstract int SetStringProperty(
+        static abstract byte SetStringProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
             [NativeTypeName("const char *")] sbyte* value
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetStringProperty")]
-        static abstract int SetStringProperty(
+        static abstract MaybeBool<byte> SetStringProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             [NativeTypeName("const char *")] Ref<sbyte> value
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceAlphaMod")]
-        static abstract int SetSurfaceAlphaMod(
+        static abstract byte SetSurfaceAlphaMod(
             Surface* surface,
             [NativeTypeName("Uint8")] byte alpha
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceAlphaMod")]
-        static abstract int SetSurfaceAlphaMod(
+        static abstract MaybeBool<byte> SetSurfaceAlphaMod(
             Ref<Surface> surface,
             [NativeTypeName("Uint8")] byte alpha
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceBlendMode")]
-        static abstract int SetSurfaceBlendMode(Surface* surface, BlendMode blendMode);
+        static abstract byte SetSurfaceBlendMode(
+            Surface* surface,
+            [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+        );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceBlendMode")]
-        static abstract int SetSurfaceBlendMode(Ref<Surface> surface, BlendMode blendMode);
+        static abstract MaybeBool<byte> SetSurfaceBlendMode(
+            Ref<Surface> surface,
+            [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+        );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceClipRect")]
-        static abstract int SetSurfaceClipRect(
+        static abstract byte SetSurfaceClipRect(
             Surface* surface,
             [NativeTypeName("const SDL_Rect *")] Rect* rect
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceClipRect")]
-        static abstract MaybeBool<int> SetSurfaceClipRect(
+        static abstract MaybeBool<byte> SetSurfaceClipRect(
             Ref<Surface> surface,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorKey")]
-        static abstract int SetSurfaceColorKey(
+        static abstract byte SetSurfaceColorKey(
             Surface* surface,
-            int flag,
+            [NativeTypeName("bool")] byte enabled,
             [NativeTypeName("Uint32")] uint key
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorKey")]
-        static abstract int SetSurfaceColorKey(
+        static abstract MaybeBool<byte> SetSurfaceColorKey(
             Ref<Surface> surface,
-            int flag,
+            [NativeTypeName("bool")] MaybeBool<byte> enabled,
             [NativeTypeName("Uint32")] uint key
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorMod")]
-        static abstract int SetSurfaceColorMod(
+        static abstract byte SetSurfaceColorMod(
             Surface* surface,
             [NativeTypeName("Uint8")] byte r,
             [NativeTypeName("Uint8")] byte g,
             [NativeTypeName("Uint8")] byte b
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorMod")]
-        static abstract int SetSurfaceColorMod(
+        static abstract MaybeBool<byte> SetSurfaceColorMod(
             Ref<Surface> surface,
             [NativeTypeName("Uint8")] byte r,
             [NativeTypeName("Uint8")] byte g,
             [NativeTypeName("Uint8")] byte b
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorspace")]
-        static abstract int SetSurfaceColorspace(Surface* surface, Colorspace colorspace);
+        static abstract byte SetSurfaceColorspace(Surface* surface, Colorspace colorspace);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorspace")]
-        static abstract int SetSurfaceColorspace(Ref<Surface> surface, Colorspace colorspace);
+        static abstract MaybeBool<byte> SetSurfaceColorspace(
+            Ref<Surface> surface,
+            Colorspace colorspace
+        );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfacePalette")]
-        static abstract int SetSurfacePalette(Surface* surface, Palette* palette);
+        static abstract byte SetSurfacePalette(Surface* surface, Palette* palette);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfacePalette")]
-        static abstract int SetSurfacePalette(Ref<Surface> surface, Ref<Palette> palette);
+        static abstract MaybeBool<byte> SetSurfacePalette(
+            Ref<Surface> surface,
+            Ref<Palette> palette
+        );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceRLE")]
-        static abstract int SetSurfaceRLE(Surface* surface, int flag);
+        static abstract byte SetSurfaceRLE(Surface* surface, [NativeTypeName("bool")] byte enabled);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceRLE")]
-        static abstract int SetSurfaceRLE(Ref<Surface> surface, int flag);
+        static abstract MaybeBool<byte> SetSurfaceRLE(
+            Ref<Surface> surface,
+            [NativeTypeName("bool")] MaybeBool<byte> enabled
+        );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetTextInputRect")]
-        static abstract int SetTextInputRect([NativeTypeName("const SDL_Rect *")] Rect* rect);
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetTextInputArea")]
+        static abstract byte SetTextInputArea(
+            WindowHandle window,
+            [NativeTypeName("const SDL_Rect *")] Rect* rect,
+            int cursor
+        );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetTextInputRect")]
-        static abstract int SetTextInputRect([NativeTypeName("const SDL_Rect *")] Ref<Rect> rect);
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetTextInputArea")]
+        static abstract MaybeBool<byte> SetTextInputArea(
+            WindowHandle window,
+            [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
+            int cursor
+        );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureAlphaMod")]
-        static abstract int SetTextureAlphaMod(
-            TextureHandle texture,
+        static abstract byte SetTextureAlphaMod(
+            Texture* texture,
             [NativeTypeName("Uint8")] byte alpha
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureAlphaMod")]
+        static abstract MaybeBool<byte> SetTextureAlphaMod(
+            Ref<Texture> texture,
+            [NativeTypeName("Uint8")] byte alpha
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureAlphaModFloat")]
-        static abstract int SetTextureAlphaModFloat(TextureHandle texture, float alpha);
+        static abstract byte SetTextureAlphaModFloat(Texture* texture, float alpha);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureAlphaModFloat")]
+        static abstract MaybeBool<byte> SetTextureAlphaModFloat(Ref<Texture> texture, float alpha);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureBlendMode")]
-        static abstract int SetTextureBlendMode(TextureHandle texture, BlendMode blendMode);
+        static abstract byte SetTextureBlendMode(
+            Texture* texture,
+            [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+        );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureBlendMode")]
+        static abstract MaybeBool<byte> SetTextureBlendMode(
+            Ref<Texture> texture,
+            [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureColorMod")]
-        static abstract int SetTextureColorMod(
-            TextureHandle texture,
+        static abstract byte SetTextureColorMod(
+            Texture* texture,
             [NativeTypeName("Uint8")] byte r,
             [NativeTypeName("Uint8")] byte g,
             [NativeTypeName("Uint8")] byte b
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureColorMod")]
+        static abstract MaybeBool<byte> SetTextureColorMod(
+            Ref<Texture> texture,
+            [NativeTypeName("Uint8")] byte r,
+            [NativeTypeName("Uint8")] byte g,
+            [NativeTypeName("Uint8")] byte b
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureColorModFloat")]
-        static abstract int SetTextureColorModFloat(
-            TextureHandle texture,
+        static abstract byte SetTextureColorModFloat(Texture* texture, float r, float g, float b);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureColorModFloat")]
+        static abstract MaybeBool<byte> SetTextureColorModFloat(
+            Ref<Texture> texture,
             float r,
             float g,
             float b
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureScaleMode")]
-        static abstract int SetTextureScaleMode(TextureHandle texture, ScaleMode scaleMode);
+        static abstract byte SetTextureScaleMode(Texture* texture, ScaleMode scaleMode);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetThreadPriority")]
-        static abstract int SetThreadPriority(ThreadPriority priority);
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureScaleMode")]
+        static abstract MaybeBool<byte> SetTextureScaleMode(
+            Ref<Texture> texture,
+            ScaleMode scaleMode
+        );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetTLS")]
-        static abstract int SetTLS(
-            [NativeTypeName("SDL_TLSID")] uint id,
+        static abstract byte SetTLS(
+            [NativeTypeName("SDL_TLSID *")] AtomicInt* id,
             [NativeTypeName("const void *")] void* value,
-            [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
+            [NativeTypeName("SDL_TLSDestructorCallback")] TLSDestructorCallback destructor
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetTLS")]
-        static abstract int SetTLS(
-            [NativeTypeName("SDL_TLSID")] uint id,
+        static abstract MaybeBool<byte> SetTLS(
+            [NativeTypeName("SDL_TLSID *")] Ref<AtomicInt> id,
             [NativeTypeName("const void *")] Ref value,
-            [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
+            [NativeTypeName("SDL_TLSDestructorCallback")] TLSDestructorCallback destructor
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAlwaysOnTop")]
-        static abstract int SetWindowAlwaysOnTop(
+        static abstract byte SetWindowAlwaysOnTop(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] int on_top
+            [NativeTypeName("bool")] byte on_top
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAlwaysOnTop")]
-        static abstract int SetWindowAlwaysOnTop(
+        static abstract MaybeBool<byte> SetWindowAlwaysOnTop(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> on_top
+            [NativeTypeName("bool")] MaybeBool<byte> on_top
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAspectRatio")]
+        static abstract MaybeBool<byte> SetWindowAspectRatio(
+            WindowHandle window,
+            float min_aspect,
+            float max_aspect
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAspectRatio")]
+        static abstract byte SetWindowAspectRatioRaw(
+            WindowHandle window,
+            float min_aspect,
+            float max_aspect
+        );
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowBordered")]
-        static abstract int SetWindowBordered(
+        static abstract byte SetWindowBordered(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] int bordered
+            [NativeTypeName("bool")] byte bordered
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowBordered")]
-        static abstract int SetWindowBordered(
+        static abstract MaybeBool<byte> SetWindowBordered(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> bordered
+            [NativeTypeName("bool")] MaybeBool<byte> bordered
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFocusable")]
-        static abstract int SetWindowFocusable(
+        static abstract byte SetWindowFocusable(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] int focusable
+            [NativeTypeName("bool")] byte focusable
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFocusable")]
-        static abstract int SetWindowFocusable(
+        static abstract MaybeBool<byte> SetWindowFocusable(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> focusable
+            [NativeTypeName("bool")] MaybeBool<byte> focusable
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFullscreen")]
-        static abstract int SetWindowFullscreen(
+        static abstract byte SetWindowFullscreen(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] int fullscreen
+            [NativeTypeName("bool")] byte fullscreen
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFullscreen")]
-        static abstract int SetWindowFullscreen(
+        static abstract MaybeBool<byte> SetWindowFullscreen(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> fullscreen
+            [NativeTypeName("bool")] MaybeBool<byte> fullscreen
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFullscreenMode")]
-        static abstract int SetWindowFullscreenMode(
+        static abstract byte SetWindowFullscreenMode(
             WindowHandle window,
             [NativeTypeName("const SDL_DisplayMode *")] DisplayMode* mode
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFullscreenMode")]
-        static abstract int SetWindowFullscreenMode(
+        static abstract MaybeBool<byte> SetWindowFullscreenMode(
             WindowHandle window,
             [NativeTypeName("const SDL_DisplayMode *")] Ref<DisplayMode> mode
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowHitTest")]
-        static abstract int SetWindowHitTest(
+        static abstract byte SetWindowHitTest(
             WindowHandle window,
             [NativeTypeName("SDL_HitTest")] HitTest callback,
             void* callback_data
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowHitTest")]
-        static abstract int SetWindowHitTest(
+        static abstract MaybeBool<byte> SetWindowHitTest(
             WindowHandle window,
             [NativeTypeName("SDL_HitTest")] HitTest callback,
             Ref callback_data
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowIcon")]
-        static abstract int SetWindowIcon(WindowHandle window, Surface* icon);
+        static abstract byte SetWindowIcon(WindowHandle window, Surface* icon);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowIcon")]
-        static abstract int SetWindowIcon(WindowHandle window, Ref<Surface> icon);
+        static abstract MaybeBool<byte> SetWindowIcon(WindowHandle window, Ref<Surface> icon);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowInputFocus")]
-        static abstract int SetWindowInputFocus(WindowHandle window);
-
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowKeyboardGrab")]
-        static abstract int SetWindowKeyboardGrab(
+        static abstract byte SetWindowKeyboardGrab(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] int grabbed
+            [NativeTypeName("bool")] byte grabbed
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowKeyboardGrab")]
-        static abstract int SetWindowKeyboardGrab(
+        static abstract MaybeBool<byte> SetWindowKeyboardGrab(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> grabbed
+            [NativeTypeName("bool")] MaybeBool<byte> grabbed
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMaximumSize")]
-        static abstract int SetWindowMaximumSize(WindowHandle window, int max_w, int max_h);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMinimumSize")]
-        static abstract int SetWindowMinimumSize(WindowHandle window, int min_w, int min_h);
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowModalFor")]
-        static abstract int SetWindowModalFor(
-            WindowHandle modal_window,
-            WindowHandle parent_window
-        );
-
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseGrab")]
-        static abstract int SetWindowMouseGrab(
+        static abstract MaybeBool<byte> SetWindowMaximumSize(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] int grabbed
+            int max_w,
+            int max_h
         );
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMaximumSize")]
+        static abstract byte SetWindowMaximumSizeRaw(WindowHandle window, int max_w, int max_h);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMinimumSize")]
+        static abstract MaybeBool<byte> SetWindowMinimumSize(
+            WindowHandle window,
+            int min_w,
+            int min_h
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMinimumSize")]
+        static abstract byte SetWindowMinimumSizeRaw(WindowHandle window, int min_w, int min_h);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowModal")]
+        static abstract byte SetWindowModal(
+            WindowHandle window,
+            [NativeTypeName("bool")] byte modal
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowModal")]
+        static abstract MaybeBool<byte> SetWindowModal(
+            WindowHandle window,
+            [NativeTypeName("bool")] MaybeBool<byte> modal
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseGrab")]
+        static abstract byte SetWindowMouseGrab(
+            WindowHandle window,
+            [NativeTypeName("bool")] byte grabbed
+        );
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseGrab")]
-        static abstract int SetWindowMouseGrab(
+        static abstract MaybeBool<byte> SetWindowMouseGrab(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> grabbed
+            [NativeTypeName("bool")] MaybeBool<byte> grabbed
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseRect")]
-        static abstract int SetWindowMouseRect(
+        static abstract byte SetWindowMouseRect(
             WindowHandle window,
             [NativeTypeName("const SDL_Rect *")] Rect* rect
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseRect")]
-        static abstract int SetWindowMouseRect(
+        static abstract MaybeBool<byte> SetWindowMouseRect(
             WindowHandle window,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowOpacity")]
-        static abstract int SetWindowOpacity(WindowHandle window, float opacity);
+        static abstract MaybeBool<byte> SetWindowOpacity(WindowHandle window, float opacity);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowOpacity")]
+        static abstract byte SetWindowOpacityRaw(WindowHandle window, float opacity);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowParent")]
+        static abstract MaybeBool<byte> SetWindowParent(WindowHandle window, WindowHandle parent);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowParent")]
+        static abstract byte SetWindowParentRaw(WindowHandle window, WindowHandle parent);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowPosition")]
-        static abstract int SetWindowPosition(WindowHandle window, int x, int y);
+        static abstract MaybeBool<byte> SetWindowPosition(WindowHandle window, int x, int y);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowResizable")]
-        static abstract int SetWindowResizable(
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowPosition")]
+        static abstract byte SetWindowPositionRaw(WindowHandle window, int x, int y);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowRelativeMouseMode")]
+        static abstract byte SetWindowRelativeMouseMode(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] int resizable
+            [NativeTypeName("bool")] byte enabled
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowResizable")]
-        static abstract int SetWindowResizable(
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowRelativeMouseMode")]
+        static abstract MaybeBool<byte> SetWindowRelativeMouseMode(
             WindowHandle window,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> resizable
+            [NativeTypeName("bool")] MaybeBool<byte> enabled
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowShape")]
-        static abstract int SetWindowShape(WindowHandle window, Surface* shape);
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowResizable")]
+        static abstract byte SetWindowResizable(
+            WindowHandle window,
+            [NativeTypeName("bool")] byte resizable
+        );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowResizable")]
+        static abstract MaybeBool<byte> SetWindowResizable(
+            WindowHandle window,
+            [NativeTypeName("bool")] MaybeBool<byte> resizable
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowShape")]
+        static abstract byte SetWindowShape(WindowHandle window, Surface* shape);
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowShape")]
-        static abstract int SetWindowShape(WindowHandle window, Ref<Surface> shape);
+        static abstract MaybeBool<byte> SetWindowShape(WindowHandle window, Ref<Surface> shape);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSize")]
-        static abstract int SetWindowSize(WindowHandle window, int w, int h);
+        static abstract MaybeBool<byte> SetWindowSize(WindowHandle window, int w, int h);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSize")]
+        static abstract byte SetWindowSizeRaw(WindowHandle window, int w, int h);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSurfaceVSync")]
+        static abstract MaybeBool<byte> SetWindowSurfaceVSync(WindowHandle window, int vsync);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSurfaceVSync")]
+        static abstract byte SetWindowSurfaceVSyncRaw(WindowHandle window, int vsync);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowTitle")]
-        static abstract int SetWindowTitle(
+        static abstract byte SetWindowTitle(
             WindowHandle window,
             [NativeTypeName("const char *")] sbyte* title
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowTitle")]
-        static abstract int SetWindowTitle(
+        static abstract MaybeBool<byte> SetWindowTitle(
             WindowHandle window,
             [NativeTypeName("const char *")] Ref<sbyte> title
         );
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_ShowCursor")]
-        static abstract int ShowCursor();
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ShouldInit")]
+        static abstract byte ShouldInit(InitState* state);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ShouldInit")]
+        static abstract MaybeBool<byte> ShouldInit(Ref<InitState> state);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ShouldQuit")]
+        static abstract byte ShouldQuit(InitState* state);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ShouldQuit")]
+        static abstract MaybeBool<byte> ShouldQuit(Ref<InitState> state);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ShowCursor")]
+        static abstract MaybeBool<byte> ShowCursor();
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ShowCursor")]
+        static abstract byte ShowCursorRaw();
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowMessageBox")]
-        static abstract int ShowMessageBox(
+        static abstract byte ShowMessageBox(
             [NativeTypeName("const SDL_MessageBoxData *")] MessageBoxData* messageboxdata,
             int* buttonid
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowMessageBox")]
-        static abstract int ShowMessageBox(
+        static abstract MaybeBool<byte> ShowMessageBox(
             [NativeTypeName("const SDL_MessageBoxData *")] Ref<MessageBoxData> messageboxdata,
             Ref<int> buttonid
         );
@@ -6636,8 +8400,9 @@ public unsafe partial interface ISdl
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
+            int nfilters,
             [NativeTypeName("const char *")] sbyte* default_location,
-            [NativeTypeName("SDL_bool")] int allow_many
+            [NativeTypeName("bool")] byte allow_many
         );
 
         [Transformed]
@@ -6647,8 +8412,9 @@ public unsafe partial interface ISdl
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
+            int nfilters,
             [NativeTypeName("const char *")] Ref<sbyte> default_location,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> allow_many
+            [NativeTypeName("bool")] MaybeBool<byte> allow_many
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFolderDialog")]
@@ -6657,7 +8423,7 @@ public unsafe partial interface ISdl
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const char *")] sbyte* default_location,
-            [NativeTypeName("SDL_bool")] int allow_many
+            [NativeTypeName("bool")] byte allow_many
         );
 
         [Transformed]
@@ -6667,7 +8433,7 @@ public unsafe partial interface ISdl
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const char *")] Ref<sbyte> default_location,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> allow_many
+            [NativeTypeName("bool")] MaybeBool<byte> allow_many
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowSaveFileDialog")]
@@ -6676,6 +8442,7 @@ public unsafe partial interface ISdl
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
+            int nfilters,
             [NativeTypeName("const char *")] sbyte* default_location
         );
 
@@ -6686,115 +8453,177 @@ public unsafe partial interface ISdl
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
+            int nfilters,
             [NativeTypeName("const char *")] Ref<sbyte> default_location
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowSimpleMessageBox")]
-        static abstract int ShowSimpleMessageBox(
-            [NativeTypeName("Uint32")] uint flags,
+        static abstract byte ShowSimpleMessageBox(
+            [NativeTypeName("SDL_MessageBoxFlags")] uint flags,
             [NativeTypeName("const char *")] sbyte* title,
             [NativeTypeName("const char *")] sbyte* message,
             WindowHandle window
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowSimpleMessageBox")]
-        static abstract int ShowSimpleMessageBox(
-            [NativeTypeName("Uint32")] uint flags,
+        static abstract MaybeBool<byte> ShowSimpleMessageBox(
+            [NativeTypeName("SDL_MessageBoxFlags")] uint flags,
             [NativeTypeName("const char *")] Ref<sbyte> title,
             [NativeTypeName("const char *")] Ref<sbyte> message,
             WindowHandle window
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowWindow")]
-        static abstract int ShowWindow(WindowHandle window);
+        static abstract MaybeBool<byte> ShowWindow(WindowHandle window);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ShowWindow")]
+        static abstract byte ShowWindowRaw(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowWindowSystemMenu")]
-        static abstract int ShowWindowSystemMenu(WindowHandle window, int x, int y);
+        static abstract MaybeBool<byte> ShowWindowSystemMenu(WindowHandle window, int x, int y);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_ShowWindowSystemMenu")]
+        static abstract byte ShowWindowSystemMenuRaw(WindowHandle window, int x, int y);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SignalCondition")]
-        static abstract int SignalCondition(ConditionHandle cond);
+        static abstract void SignalCondition(ConditionHandle cond);
 
-        [return: NativeTypeName("size_t")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SIMDGetAlignment")]
-        static abstract nuint SimdGetAlignment();
+        [NativeFunction("SDL3", EntryPoint = "SDL_SignalSemaphore")]
+        static abstract void SignalSemaphore(SemaphoreHandle sem);
 
-        [NativeFunction("SDL3", EntryPoint = "SDL_SoftStretch")]
-        static abstract int SoftStretch(
-            Surface* src,
-            [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
-            Surface* dst,
-            [NativeTypeName("const SDL_Rect *")] Rect* dstrect,
-            ScaleMode scaleMode
-        );
-
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SoftStretch")]
-        static abstract int SoftStretch(
-            Ref<Surface> src,
-            [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
-            Ref<Surface> dst,
-            [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect,
-            ScaleMode scaleMode
-        );
-
         [NativeFunction("SDL3", EntryPoint = "SDL_StartTextInput")]
-        static abstract void StartTextInput();
+        static abstract MaybeBool<byte> StartTextInput(WindowHandle window);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_StartTextInput")]
+        static abstract byte StartTextInputRaw(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_StartTextInputWithProperties")]
+        static abstract MaybeBool<byte> StartTextInputWithProperties(
+            WindowHandle window,
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_StartTextInputWithProperties")]
+        static abstract byte StartTextInputWithPropertiesRaw(
+            WindowHandle window,
+            [NativeTypeName("SDL_PropertiesID")] uint props
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticEffect")]
-        static abstract int StopHapticEffect(HapticHandle haptic, int effect);
+        static abstract MaybeBool<byte> StopHapticEffect(HapticHandle haptic, int effect);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticEffect")]
+        static abstract byte StopHapticEffectRaw(HapticHandle haptic, int effect);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticEffects")]
-        static abstract int StopHapticEffects(HapticHandle haptic);
+        static abstract MaybeBool<byte> StopHapticEffects(HapticHandle haptic);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticEffects")]
+        static abstract byte StopHapticEffectsRaw(HapticHandle haptic);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticRumble")]
-        static abstract int StopHapticRumble(HapticHandle haptic);
+        static abstract MaybeBool<byte> StopHapticRumble(HapticHandle haptic);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticRumble")]
+        static abstract byte StopHapticRumbleRaw(HapticHandle haptic);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_StopTextInput")]
-        static abstract void StopTextInput();
+        static abstract MaybeBool<byte> StopTextInput(WindowHandle window);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_StopTextInput")]
+        static abstract byte StopTextInputRaw(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_StorageReady")]
-        static abstract MaybeBool<int> StorageReady(StorageHandle storage);
+        static abstract MaybeBool<byte> StorageReady(StorageHandle storage);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_StorageReady")]
-        static abstract int StorageReadyRaw(StorageHandle storage);
+        static abstract byte StorageReadyRaw(StorageHandle storage);
 
-        [return: NativeTypeName("SDL_bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_StringToGUID")]
+        static abstract Guid StringToGuid([NativeTypeName("const char *")] sbyte* pchGUID);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_StringToGUID")]
+        static abstract Guid StringToGuid([NativeTypeName("const char *")] Ref<sbyte> pchGUID);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasAlternateImages")]
+        static abstract byte SurfaceHasAlternateImages(Surface* surface);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasAlternateImages")]
+        static abstract MaybeBool<byte> SurfaceHasAlternateImages(Ref<Surface> surface);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasColorKey")]
-        static abstract int SurfaceHasColorKey(Surface* surface);
+        static abstract byte SurfaceHasColorKey(Surface* surface);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasColorKey")]
-        static abstract MaybeBool<int> SurfaceHasColorKey(Ref<Surface> surface);
+        static abstract MaybeBool<byte> SurfaceHasColorKey(Ref<Surface> surface);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasRLE")]
-        static abstract int SurfaceHasRLE(Surface* surface);
+        static abstract byte SurfaceHasRLE(Surface* surface);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasRLE")]
-        static abstract MaybeBool<int> SurfaceHasRLE(Ref<Surface> surface);
+        static abstract MaybeBool<byte> SurfaceHasRLE(Ref<Surface> surface);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SyncWindow")]
-        static abstract int SyncWindow(WindowHandle window);
+        static abstract MaybeBool<byte> SyncWindow(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SyncWindow")]
+        static abstract byte SyncWindowRaw(WindowHandle window);
 
         [return: NativeTypeName("Sint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_TellIO")]
         static abstract long TellIO(IOStreamHandle context);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_TextInputActive")]
-        static abstract MaybeBool<int> TextInputActive();
+        static abstract MaybeBool<byte> TextInputActive(WindowHandle window);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_TextInputActive")]
-        static abstract int TextInputActiveRaw();
+        static abstract byte TextInputActiveRaw(WindowHandle window);
 
         [return: NativeTypeName("SDL_Time")]
         [NativeFunction("SDL3", EntryPoint = "SDL_TimeFromWindows")]
@@ -6803,19 +8632,21 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint32")] uint dwHighDateTime
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_TimeToDateTime")]
-        static abstract int TimeToDateTime(
+        static abstract byte TimeToDateTime(
             [NativeTypeName("SDL_Time")] long ticks,
             DateTime* dt,
-            [NativeTypeName("SDL_bool")] int localTime
+            [NativeTypeName("bool")] byte localTime
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_TimeToDateTime")]
-        static abstract int TimeToDateTime(
+        static abstract MaybeBool<byte> TimeToDateTime(
             [NativeTypeName("SDL_Time")] long ticks,
             Ref<DateTime> dt,
-            [NativeTypeName("SDL_bool")] MaybeBool<int> localTime
+            [NativeTypeName("bool")] MaybeBool<byte> localTime
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_TimeToWindows")]
@@ -6833,28 +8664,52 @@ public unsafe partial interface ISdl
             [NativeTypeName("Uint32 *")] Ref<uint> dwHighDateTime
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_TryLockMutex")]
-        static abstract int TryLockMutex(MutexHandle mutex);
+        static abstract MaybeBool<byte> TryLockMutex(MutexHandle mutex);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_TryLockMutex")]
+        static abstract byte TryLockMutexRaw(MutexHandle mutex);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_TryLockRWLockForReading")]
-        static abstract int TryLockRWLockForReading(RWLockHandle rwlock);
+        static abstract MaybeBool<byte> TryLockRWLockForReading(RWLockHandle rwlock);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_TryLockRWLockForReading")]
+        static abstract byte TryLockRWLockForReadingRaw(RWLockHandle rwlock);
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_TryLockRWLockForWriting")]
-        static abstract int TryLockRWLockForWriting(RWLockHandle rwlock);
+        static abstract MaybeBool<byte> TryLockRWLockForWriting(RWLockHandle rwlock);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_TryLockRWLockForWriting")]
+        static abstract byte TryLockRWLockForWritingRaw(RWLockHandle rwlock);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_TryLockSpinlock")]
-        static abstract int TryLockSpinlock([NativeTypeName("SDL_SpinLock *")] int* @lock);
+        static abstract byte TryLockSpinlock([NativeTypeName("SDL_SpinLock *")] int* @lock);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_TryLockSpinlock")]
-        static abstract MaybeBool<int> TryLockSpinlock(
+        static abstract MaybeBool<byte> TryLockSpinlock(
             [NativeTypeName("SDL_SpinLock *")] Ref<int> @lock
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_TryWaitSemaphore")]
-        static abstract int TryWaitSemaphore(SemaphoreHandle sem);
+        static abstract MaybeBool<byte> TryWaitSemaphore(SemaphoreHandle sem);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_TryWaitSemaphore")]
+        static abstract byte TryWaitSemaphoreRaw(SemaphoreHandle sem);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_UnbindAudioStream")]
         static abstract void UnbindAudioStream(AudioStreamHandle stream);
@@ -6867,14 +8722,16 @@ public unsafe partial interface ISdl
         static abstract void UnbindAudioStreams(Ref<AudioStreamHandle> streams, int num_streams);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_UnloadObject")]
-        static abstract void UnloadObject(void* handle);
+        static abstract void UnloadObject(SharedObjectHandle handle);
 
+        [return: NativeTypeName("bool")]
         [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_UnloadObject")]
-        static abstract void UnloadObject(Ref handle);
-
         [NativeFunction("SDL3", EntryPoint = "SDL_UnlockAudioStream")]
-        static abstract int UnlockAudioStream(AudioStreamHandle stream);
+        static abstract MaybeBool<byte> UnlockAudioStream(AudioStreamHandle stream);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_UnlockAudioStream")]
+        static abstract byte UnlockAudioStreamRaw(AudioStreamHandle stream);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_UnlockJoysticks")]
         static abstract void UnlockJoysticks();
@@ -6903,21 +8760,27 @@ public unsafe partial interface ISdl
         static abstract void UnlockSurface(Ref<Surface> surface);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_UnlockTexture")]
-        static abstract void UnlockTexture(TextureHandle texture);
+        static abstract void UnlockTexture(Texture* texture);
+
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_UnlockTexture")]
+        static abstract void UnlockTexture(Ref<Texture> texture);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateGamepads")]
         static abstract void UpdateGamepads();
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateHapticEffect")]
-        static abstract int UpdateHapticEffect(
+        static abstract byte UpdateHapticEffect(
             HapticHandle haptic,
             int effect,
             [NativeTypeName("const SDL_HapticEffect *")] HapticEffect* data
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateHapticEffect")]
-        static abstract int UpdateHapticEffect(
+        static abstract MaybeBool<byte> UpdateHapticEffect(
             HapticHandle haptic,
             int effect,
             [NativeTypeName("const SDL_HapticEffect *")] Ref<HapticEffect> data
@@ -6926,9 +8789,10 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateJoysticks")]
         static abstract void UpdateJoysticks();
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateNVTexture")]
-        static abstract int UpdateNVTexture(
-            TextureHandle texture,
+        static abstract byte UpdateNVTexture(
+            Texture* texture,
             [NativeTypeName("const SDL_Rect *")] Rect* rect,
             [NativeTypeName("const Uint8 *")] byte* Yplane,
             int Ypitch,
@@ -6936,10 +8800,11 @@ public unsafe partial interface ISdl
             int UVpitch
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateNVTexture")]
-        static abstract int UpdateNVTexture(
-            TextureHandle texture,
+        static abstract MaybeBool<byte> UpdateNVTexture(
+            Ref<Texture> texture,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
             [NativeTypeName("const Uint8 *")] Ref<byte> Yplane,
             int Ypitch,
@@ -6950,44 +8815,55 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateSensors")]
         static abstract void UpdateSensors();
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateTexture")]
-        static abstract int UpdateTexture(
-            TextureHandle texture,
+        static abstract byte UpdateTexture(
+            Texture* texture,
             [NativeTypeName("const SDL_Rect *")] Rect* rect,
             [NativeTypeName("const void *")] void* pixels,
             int pitch
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateTexture")]
-        static abstract int UpdateTexture(
-            TextureHandle texture,
+        static abstract MaybeBool<byte> UpdateTexture(
+            Ref<Texture> texture,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
             [NativeTypeName("const void *")] Ref pixels,
             int pitch
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateWindowSurface")]
-        static abstract int UpdateWindowSurface(WindowHandle window);
+        static abstract MaybeBool<byte> UpdateWindowSurface(WindowHandle window);
 
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_UpdateWindowSurface")]
+        static abstract byte UpdateWindowSurfaceRaw(WindowHandle window);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateWindowSurfaceRects")]
-        static abstract int UpdateWindowSurfaceRects(
+        static abstract byte UpdateWindowSurfaceRects(
             WindowHandle window,
             [NativeTypeName("const SDL_Rect *")] Rect* rects,
             int numrects
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateWindowSurfaceRects")]
-        static abstract int UpdateWindowSurfaceRects(
+        static abstract MaybeBool<byte> UpdateWindowSurfaceRects(
             WindowHandle window,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rects,
             int numrects
         );
 
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateYUVTexture")]
-        static abstract int UpdateYUVTexture(
-            TextureHandle texture,
+        static abstract byte UpdateYUVTexture(
+            Texture* texture,
             [NativeTypeName("const SDL_Rect *")] Rect* rect,
             [NativeTypeName("const Uint8 *")] byte* Yplane,
             int Ypitch,
@@ -6997,10 +8873,11 @@ public unsafe partial interface ISdl
             int Vpitch
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateYUVTexture")]
-        static abstract int UpdateYUVTexture(
-            TextureHandle texture,
+        static abstract MaybeBool<byte> UpdateYUVTexture(
+            Ref<Texture> texture,
             [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
             [NativeTypeName("const Uint8 *")] Ref<byte> Yplane,
             int Ypitch,
@@ -7011,44 +8888,63 @@ public unsafe partial interface ISdl
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitCondition")]
-        static abstract int WaitCondition(ConditionHandle cond, MutexHandle mutex);
+        static abstract void WaitCondition(ConditionHandle cond, MutexHandle mutex);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitConditionTimeout")]
-        static abstract int WaitConditionTimeout(
+        static abstract MaybeBool<byte> WaitConditionTimeout(
             ConditionHandle cond,
             MutexHandle mutex,
             [NativeTypeName("Sint32")] int timeoutMS
         );
 
-        [return: NativeTypeName("SDL_bool")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_WaitEvent")]
-        static abstract int WaitEvent(Event* @event);
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitConditionTimeout")]
+        static abstract byte WaitConditionTimeoutRaw(
+            ConditionHandle cond,
+            MutexHandle mutex,
+            [NativeTypeName("Sint32")] int timeoutMS
+        );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitEvent")]
+        static abstract byte WaitEvent(Event* @event);
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitEvent")]
-        static abstract MaybeBool<int> WaitEvent(Ref<Event> @event);
+        static abstract MaybeBool<byte> WaitEvent(Ref<Event> @event);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitEventTimeout")]
-        static abstract int WaitEventTimeout(
+        static abstract byte WaitEventTimeout(
             Event* @event,
             [NativeTypeName("Sint32")] int timeoutMS
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitEventTimeout")]
-        static abstract MaybeBool<int> WaitEventTimeout(
+        static abstract MaybeBool<byte> WaitEventTimeout(
             Ref<Event> @event,
             [NativeTypeName("Sint32")] int timeoutMS
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitSemaphore")]
-        static abstract int WaitSemaphore(SemaphoreHandle sem);
+        static abstract void WaitSemaphore(SemaphoreHandle sem);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitSemaphoreTimeout")]
-        static abstract int WaitSemaphoreTimeout(
+        static abstract MaybeBool<byte> WaitSemaphoreTimeout(
+            SemaphoreHandle sem,
+            [NativeTypeName("Sint32")] int timeoutMS
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WaitSemaphoreTimeout")]
+        static abstract byte WaitSemaphoreTimeoutRaw(
             SemaphoreHandle sem,
             [NativeTypeName("Sint32")] int timeoutMS
         );
@@ -7060,24 +8956,30 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitThread")]
         static abstract void WaitThread(ThreadHandle thread, Ref<int> status);
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WarpMouseGlobal")]
-        static abstract int WarpMouseGlobal(float x, float y);
+        static abstract MaybeBool<byte> WarpMouseGlobal(float x, float y);
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WarpMouseGlobal")]
+        static abstract byte WarpMouseGlobalRaw(float x, float y);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_WarpMouseInWindow")]
         static abstract void WarpMouseInWindow(WindowHandle window, float x, float y);
 
-        [return: NativeTypeName("Uint32")]
+        [return: NativeTypeName("SDL_InitFlags")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WasInit")]
-        static abstract uint WasInit([NativeTypeName("Uint32")] uint flags);
+        static abstract uint WasInit([NativeTypeName("SDL_InitFlags")] uint flags);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WindowHasSurface")]
-        static abstract MaybeBool<int> WindowHasSurface(WindowHandle window);
+        static abstract MaybeBool<byte> WindowHasSurface(WindowHandle window);
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WindowHasSurface")]
-        static abstract int WindowHasSurfaceRaw(WindowHandle window);
+        static abstract byte WindowHasSurfaceRaw(WindowHandle window);
 
         [return: NativeTypeName("size_t")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteIO")]
@@ -7096,208 +8998,278 @@ public unsafe partial interface ISdl
             [NativeTypeName("size_t")] nuint size
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS16BE")]
-        static abstract MaybeBool<int> WriteS16BE(
+        static abstract MaybeBool<byte> WriteS16BE(
             IOStreamHandle dst,
             [NativeTypeName("Sint16")] short value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS16BE")]
-        static abstract int WriteS16BERaw(
+        static abstract byte WriteS16BERaw(
             IOStreamHandle dst,
             [NativeTypeName("Sint16")] short value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS16LE")]
-        static abstract MaybeBool<int> WriteS16LE(
+        static abstract MaybeBool<byte> WriteS16LE(
             IOStreamHandle dst,
             [NativeTypeName("Sint16")] short value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS16LE")]
-        static abstract int WriteS16LERaw(
+        static abstract byte WriteS16LERaw(
             IOStreamHandle dst,
             [NativeTypeName("Sint16")] short value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS32BE")]
-        static abstract MaybeBool<int> WriteS32BE(
+        static abstract MaybeBool<byte> WriteS32BE(
             IOStreamHandle dst,
             [NativeTypeName("Sint32")] int value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS32BE")]
-        static abstract int WriteS32BERaw(IOStreamHandle dst, [NativeTypeName("Sint32")] int value);
-
-        [return: NativeTypeName("SDL_bool")]
-        [Transformed]
-        [NativeFunction("SDL3", EntryPoint = "SDL_WriteS32LE")]
-        static abstract MaybeBool<int> WriteS32LE(
+        static abstract byte WriteS32BERaw(
             IOStreamHandle dst,
             [NativeTypeName("Sint32")] int value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS32LE")]
-        static abstract int WriteS32LERaw(IOStreamHandle dst, [NativeTypeName("Sint32")] int value);
+        static abstract MaybeBool<byte> WriteS32LE(
+            IOStreamHandle dst,
+            [NativeTypeName("Sint32")] int value
+        );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WriteS32LE")]
+        static abstract byte WriteS32LERaw(
+            IOStreamHandle dst,
+            [NativeTypeName("Sint32")] int value
+        );
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64BE")]
-        static abstract MaybeBool<int> WriteS64BE(
+        static abstract MaybeBool<byte> WriteS64BE(
             IOStreamHandle dst,
             [NativeTypeName("Sint64")] long value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64BE")]
-        static abstract int WriteS64BERaw(
+        static abstract byte WriteS64BERaw(
             IOStreamHandle dst,
             [NativeTypeName("Sint64")] long value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64LE")]
-        static abstract MaybeBool<int> WriteS64LE(
+        static abstract MaybeBool<byte> WriteS64LE(
             IOStreamHandle dst,
             [NativeTypeName("Sint64")] long value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64LE")]
-        static abstract int WriteS64LERaw(
+        static abstract byte WriteS64LERaw(
             IOStreamHandle dst,
             [NativeTypeName("Sint64")] long value
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WriteS8")]
+        static abstract MaybeBool<byte> WriteS8(
+            IOStreamHandle dst,
+            [NativeTypeName("Sint8")] sbyte value
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WriteS8")]
+        static abstract byte WriteS8Raw(IOStreamHandle dst, [NativeTypeName("Sint8")] sbyte value);
+
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteStorageFile")]
-        static abstract int WriteStorageFile(
+        static abstract byte WriteStorageFile(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
             [NativeTypeName("const void *")] void* source,
             [NativeTypeName("Uint64")] ulong length
         );
 
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteStorageFile")]
-        static abstract int WriteStorageFile(
+        static abstract MaybeBool<byte> WriteStorageFile(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
             [NativeTypeName("const void *")] Ref source,
             [NativeTypeName("Uint64")] ulong length
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WriteSurfacePixel")]
+        static abstract byte WriteSurfacePixel(
+            Surface* surface,
+            int x,
+            int y,
+            [NativeTypeName("Uint8")] byte r,
+            [NativeTypeName("Uint8")] byte g,
+            [NativeTypeName("Uint8")] byte b,
+            [NativeTypeName("Uint8")] byte a
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WriteSurfacePixel")]
+        static abstract MaybeBool<byte> WriteSurfacePixel(
+            Ref<Surface> surface,
+            int x,
+            int y,
+            [NativeTypeName("Uint8")] byte r,
+            [NativeTypeName("Uint8")] byte g,
+            [NativeTypeName("Uint8")] byte b,
+            [NativeTypeName("Uint8")] byte a
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WriteSurfacePixelFloat")]
+        static abstract byte WriteSurfacePixelFloat(
+            Surface* surface,
+            int x,
+            int y,
+            float r,
+            float g,
+            float b,
+            float a
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_WriteSurfacePixelFloat")]
+        static abstract MaybeBool<byte> WriteSurfacePixelFloat(
+            Ref<Surface> surface,
+            int x,
+            int y,
+            float r,
+            float g,
+            float b,
+            float a
+        );
+
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU16BE")]
-        static abstract MaybeBool<int> WriteU16BE(
+        static abstract MaybeBool<byte> WriteU16BE(
             IOStreamHandle dst,
             [NativeTypeName("Uint16")] ushort value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU16BE")]
-        static abstract int WriteU16BERaw(
+        static abstract byte WriteU16BERaw(
             IOStreamHandle dst,
             [NativeTypeName("Uint16")] ushort value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU16LE")]
-        static abstract MaybeBool<int> WriteU16LE(
+        static abstract MaybeBool<byte> WriteU16LE(
             IOStreamHandle dst,
             [NativeTypeName("Uint16")] ushort value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU16LE")]
-        static abstract int WriteU16LERaw(
+        static abstract byte WriteU16LERaw(
             IOStreamHandle dst,
             [NativeTypeName("Uint16")] ushort value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU32BE")]
-        static abstract MaybeBool<int> WriteU32BE(
+        static abstract MaybeBool<byte> WriteU32BE(
             IOStreamHandle dst,
             [NativeTypeName("Uint32")] uint value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU32BE")]
-        static abstract int WriteU32BERaw(
+        static abstract byte WriteU32BERaw(
             IOStreamHandle dst,
             [NativeTypeName("Uint32")] uint value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU32LE")]
-        static abstract MaybeBool<int> WriteU32LE(
+        static abstract MaybeBool<byte> WriteU32LE(
             IOStreamHandle dst,
             [NativeTypeName("Uint32")] uint value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU32LE")]
-        static abstract int WriteU32LERaw(
+        static abstract byte WriteU32LERaw(
             IOStreamHandle dst,
             [NativeTypeName("Uint32")] uint value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64BE")]
-        static abstract MaybeBool<int> WriteU64BE(
+        static abstract MaybeBool<byte> WriteU64BE(
             IOStreamHandle dst,
             [NativeTypeName("Uint64")] ulong value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64BE")]
-        static abstract int WriteU64BERaw(
+        static abstract byte WriteU64BERaw(
             IOStreamHandle dst,
             [NativeTypeName("Uint64")] ulong value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64LE")]
-        static abstract MaybeBool<int> WriteU64LE(
+        static abstract MaybeBool<byte> WriteU64LE(
             IOStreamHandle dst,
             [NativeTypeName("Uint64")] ulong value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64LE")]
-        static abstract int WriteU64LERaw(
+        static abstract byte WriteU64LERaw(
             IOStreamHandle dst,
             [NativeTypeName("Uint64")] ulong value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU8")]
-        static abstract MaybeBool<int> WriteU8(
+        static abstract MaybeBool<byte> WriteU8(
             IOStreamHandle dst,
             [NativeTypeName("Uint8")] byte value
         );
 
-        [return: NativeTypeName("SDL_bool")]
+        [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU8")]
-        static abstract int WriteU8Raw(IOStreamHandle dst, [NativeTypeName("Uint8")] byte value);
+        static abstract byte WriteU8Raw(IOStreamHandle dst, [NativeTypeName("Uint8")] byte value);
     }
 
     [NativeFunction("SDL3", EntryPoint = "SDL_AcquireCameraFrame")]
@@ -7313,12 +9285,24 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint64 *")] Ref<ulong> timestampNS
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
-    int AddEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, void* userdata);
+    [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicInt")]
+    int AddAtomicInt(AtomicInt* a, int v);
 
     [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicInt")]
+    int AddAtomicInt(Ref<AtomicInt> a, int v);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
-    int AddEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata);
+    byte AddEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, void* userdata);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
+    MaybeBool<byte> AddEventWatch(
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
+        Ref userdata
+    );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_AddGamepadMapping")]
     int AddGamepadMapping([NativeTypeName("const char *")] sbyte* mapping);
@@ -7335,36 +9319,47 @@ public unsafe partial interface ISdl
     int AddGamepadMappingsFromFile([NativeTypeName("const char *")] Ref<sbyte> file);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_AddGamepadMappingsFromIO")]
-    int AddGamepadMappingsFromIO(IOStreamHandle src, [NativeTypeName("SDL_bool")] int closeio);
+    int AddGamepadMappingsFromIO(IOStreamHandle src, [NativeTypeName("bool")] byte closeio);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_AddGamepadMappingsFromIO")]
     int AddGamepadMappingsFromIO(
         IOStreamHandle src,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> closeio
+        [NativeTypeName("bool")] MaybeBool<byte> closeio
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_AddHintCallback")]
-    int AddHintCallback(
+    byte AddHintCallback(
         [NativeTypeName("const char *")] sbyte* name,
         [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         void* userdata
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_AddHintCallback")]
-    int AddHintCallback(
+    MaybeBool<byte> AddHintCallback(
         [NativeTypeName("const char *")] Ref<sbyte> name,
         [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         Ref userdata
     );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_AddSurfaceAlternateImage")]
+    byte AddSurfaceAlternateImage(Surface* surface, Surface* image);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_AddSurfaceAlternateImage")]
+    MaybeBool<byte> AddSurfaceAlternateImage(Ref<Surface> surface, Ref<Surface> image);
+
     [return: NativeTypeName("SDL_TimerID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_AddTimer")]
     uint AddTimer(
         [NativeTypeName("Uint32")] uint interval,
         [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
-        void* param2
+        void* userdata
     );
 
     [return: NativeTypeName("SDL_TimerID")]
@@ -7373,176 +9368,152 @@ public unsafe partial interface ISdl
     uint AddTimer(
         [NativeTypeName("Uint32")] uint interval,
         [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
-        Ref param2
+        Ref userdata
     );
 
+    [return: NativeTypeName("SDL_TimerID")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_AddTimerNS")]
+    uint AddTimerNS(
+        [NativeTypeName("Uint64")] ulong interval,
+        [NativeTypeName("SDL_NSTimerCallback")] NSTimerCallback callback,
+        void* userdata
+    );
+
+    [return: NativeTypeName("SDL_TimerID")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_AddTimerNS")]
+    uint AddTimerNS(
+        [NativeTypeName("Uint64")] ulong interval,
+        [NativeTypeName("SDL_NSTimerCallback")] NSTimerCallback callback,
+        Ref userdata
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_AddVulkanRenderSemaphores")]
-    int AddVulkanRenderSemaphores(
+    MaybeBool<byte> AddVulkanRenderSemaphores(
         RendererHandle renderer,
         [NativeTypeName("Uint32")] uint wait_stage_mask,
         [NativeTypeName("Sint64")] long wait_semaphore,
         [NativeTypeName("Sint64")] long signal_semaphore
     );
 
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AllocateEventMemory")]
-    Ptr AllocateEventMemory([NativeTypeName("size_t")] nuint size);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_AllocateEventMemory")]
-    void* AllocateEventMemoryRaw([NativeTypeName("size_t")] nuint size);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicAdd")]
-    int AtomicAdd(AtomicInt* a, int v);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicAdd")]
-    int AtomicAdd(Ref<AtomicInt> a, int v);
-
-    [return: NativeTypeName("SDL_bool")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicCompareAndSwap")]
-    int AtomicCompareAndSwap(AtomicInt* a, int oldval, int newval);
-
-    [return: NativeTypeName("SDL_bool")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicCompareAndSwap")]
-    MaybeBool<int> AtomicCompareAndSwap(Ref<AtomicInt> a, int oldval, int newval);
-
-    [return: NativeTypeName("SDL_bool")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicCompareAndSwapPointer")]
-    int AtomicCompareAndSwapPointer(void** a, void* oldval, void* newval);
-
-    [return: NativeTypeName("SDL_bool")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicCompareAndSwapPointer")]
-    MaybeBool<int> AtomicCompareAndSwapPointer(Ref2D a, Ref oldval, Ref newval);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicGet")]
-    int AtomicGet(AtomicInt* a);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicGet")]
-    int AtomicGet(Ref<AtomicInt> a);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicGetPtr")]
-    void* AtomicGetPtr(void** a);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicGetPtr")]
-    Ptr AtomicGetPtr(Ref2D a);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicSet")]
-    int AtomicSet(AtomicInt* a, int v);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicSet")]
-    int AtomicSet(Ref<AtomicInt> a, int v);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicSetPtr")]
-    void* AtomicSetPtr(void** a, void* v);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AtomicSetPtr")]
-    Ptr AtomicSetPtr(Ref2D a, Ref v);
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_AddVulkanRenderSemaphores")]
+    byte AddVulkanRenderSemaphoresRaw(
+        RendererHandle renderer,
+        [NativeTypeName("Uint32")] uint wait_stage_mask,
+        [NativeTypeName("Sint64")] long wait_semaphore,
+        [NativeTypeName("Sint64")] long signal_semaphore
+    );
 
     [return: NativeTypeName("SDL_JoystickID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_AttachVirtualJoystick")]
-    uint AttachVirtualJoystick(JoystickType type, int naxes, int nbuttons, int nhats);
-
-    [return: NativeTypeName("SDL_JoystickID")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AttachVirtualJoystickEx")]
-    uint AttachVirtualJoystickEx(
+    uint AttachVirtualJoystick(
         [NativeTypeName("const SDL_VirtualJoystickDesc *")] VirtualJoystickDesc* desc
     );
 
     [return: NativeTypeName("SDL_JoystickID")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_AttachVirtualJoystickEx")]
-    uint AttachVirtualJoystickEx(
+    [NativeFunction("SDL3", EntryPoint = "SDL_AttachVirtualJoystick")]
+    uint AttachVirtualJoystick(
         [NativeTypeName("const SDL_VirtualJoystickDesc *")] Ref<VirtualJoystickDesc> desc
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_AudioDevicePaused")]
-    MaybeBool<int> AudioDevicePaused([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+    MaybeBool<byte> AudioDevicePaused([NativeTypeName("SDL_AudioDeviceID")] uint dev);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_AudioDevicePaused")]
-    int AudioDevicePausedRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+    byte AudioDevicePausedRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindAudioStream")]
-    int BindAudioStream([NativeTypeName("SDL_AudioDeviceID")] uint devid, AudioStreamHandle stream);
+    MaybeBool<byte> BindAudioStream(
+        [NativeTypeName("SDL_AudioDeviceID")] uint devid,
+        AudioStreamHandle stream
+    );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BindAudioStream")]
+    byte BindAudioStreamRaw(
+        [NativeTypeName("SDL_AudioDeviceID")] uint devid,
+        AudioStreamHandle stream
+    );
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindAudioStreams")]
-    int BindAudioStreams(
+    byte BindAudioStreams(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         AudioStreamHandle* streams,
         int num_streams
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindAudioStreams")]
-    int BindAudioStreams(
+    MaybeBool<byte> BindAudioStreams(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         Ref<AudioStreamHandle> streams,
         int num_streams
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface")]
-    int BlitSurface(
-        Surface* src,
-        [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
-        Surface* dst,
-        Rect* dstrect
-    );
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface")]
-    int BlitSurface(
-        Ref<Surface> src,
-        [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
-        Ref<Surface> dst,
-        Ref<Rect> dstrect
-    );
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceScaled")]
-    int BlitSurfaceScaled(
-        Surface* src,
-        [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
-        Surface* dst,
-        Rect* dstrect,
-        ScaleMode scaleMode
-    );
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceScaled")]
-    int BlitSurfaceScaled(
-        Ref<Surface> src,
-        [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
-        Ref<Surface> dst,
-        Ref<Rect> dstrect,
-        ScaleMode scaleMode
-    );
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUnchecked")]
-    int BlitSurfaceUnchecked(
+    byte BlitSurface(
         Surface* src,
         [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
         Surface* dst,
         [NativeTypeName("const SDL_Rect *")] Rect* dstrect
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUnchecked")]
-    int BlitSurfaceUnchecked(
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface")]
+    MaybeBool<byte> BlitSurface(
         Ref<Surface> src,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
         Ref<Surface> dst,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUncheckedScaled")]
-    int BlitSurfaceUncheckedScaled(
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface9Grid")]
+    byte BlitSurface9Grid(
+        Surface* src,
+        [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
+        int left_width,
+        int right_width,
+        int top_height,
+        int bottom_height,
+        float scale,
+        ScaleMode scaleMode,
+        Surface* dst,
+        [NativeTypeName("const SDL_Rect *")] Rect* dstrect
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface9Grid")]
+    MaybeBool<byte> BlitSurface9Grid(
+        Ref<Surface> src,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
+        int left_width,
+        int right_width,
+        int top_height,
+        int bottom_height,
+        float scale,
+        ScaleMode scaleMode,
+        Ref<Surface> dst,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceScaled")]
+    byte BlitSurfaceScaled(
         Surface* src,
         [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
         Surface* dst,
@@ -7550,9 +9521,92 @@ public unsafe partial interface ISdl
         ScaleMode scaleMode
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceScaled")]
+    MaybeBool<byte> BlitSurfaceScaled(
+        Ref<Surface> src,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
+        Ref<Surface> dst,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect,
+        ScaleMode scaleMode
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceTiled")]
+    byte BlitSurfaceTiled(
+        Surface* src,
+        [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
+        Surface* dst,
+        [NativeTypeName("const SDL_Rect *")] Rect* dstrect
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceTiled")]
+    MaybeBool<byte> BlitSurfaceTiled(
+        Ref<Surface> src,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
+        Ref<Surface> dst,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceTiledWithScale")]
+    byte BlitSurfaceTiledWithScale(
+        Surface* src,
+        [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
+        float scale,
+        ScaleMode scaleMode,
+        Surface* dst,
+        [NativeTypeName("const SDL_Rect *")] Rect* dstrect
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceTiledWithScale")]
+    MaybeBool<byte> BlitSurfaceTiledWithScale(
+        Ref<Surface> src,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
+        float scale,
+        ScaleMode scaleMode,
+        Ref<Surface> dst,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUnchecked")]
+    byte BlitSurfaceUnchecked(
+        Surface* src,
+        [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
+        Surface* dst,
+        [NativeTypeName("const SDL_Rect *")] Rect* dstrect
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUnchecked")]
+    MaybeBool<byte> BlitSurfaceUnchecked(
+        Ref<Surface> src,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
+        Ref<Surface> dst,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUncheckedScaled")]
+    byte BlitSurfaceUncheckedScaled(
+        Surface* src,
+        [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
+        Surface* dst,
+        [NativeTypeName("const SDL_Rect *")] Rect* dstrect,
+        ScaleMode scaleMode
+    );
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurfaceUncheckedScaled")]
-    int BlitSurfaceUncheckedScaled(
+    MaybeBool<byte> BlitSurfaceUncheckedScaled(
         Ref<Surface> src,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
         Ref<Surface> dst,
@@ -7561,42 +9615,79 @@ public unsafe partial interface ISdl
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_BroadcastCondition")]
-    int BroadcastCondition(ConditionHandle cond);
+    void BroadcastCondition(ConditionHandle cond);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CaptureMouse")]
-    int CaptureMouse([NativeTypeName("SDL_bool")] int enabled);
+    byte CaptureMouse([NativeTypeName("bool")] byte enabled);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CaptureMouse")]
-    int CaptureMouse([NativeTypeName("SDL_bool")] MaybeBool<int> enabled);
+    MaybeBool<byte> CaptureMouse([NativeTypeName("bool")] MaybeBool<byte> enabled);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CleanupTLS")]
     void CleanupTLS();
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ClearAudioStream")]
-    int ClearAudioStream(AudioStreamHandle stream);
+    MaybeBool<byte> ClearAudioStream(AudioStreamHandle stream);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ClearAudioStream")]
+    byte ClearAudioStreamRaw(AudioStreamHandle stream);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ClearClipboardData")]
-    int ClearClipboardData();
+    MaybeBool<byte> ClearClipboardData();
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ClearClipboardData")]
+    byte ClearClipboardDataRaw();
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ClearComposition")]
-    void ClearComposition();
+    MaybeBool<byte> ClearComposition(WindowHandle window);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ClearComposition")]
+    byte ClearCompositionRaw(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ClearError")]
-    void ClearError();
+    MaybeBool<byte> ClearError();
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ClearError")]
+    byte ClearErrorRaw();
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ClearProperty")]
-    int ClearProperty(
+    byte ClearProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ClearProperty")]
-    int ClearProperty(
+    MaybeBool<byte> ClearProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name
     );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ClearSurface")]
+    byte ClearSurface(Surface* surface, float r, float g, float b, float a);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ClearSurface")]
+    MaybeBool<byte> ClearSurface(Ref<Surface> surface, float r, float g, float b, float a);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CloseAudioDevice")]
     void CloseAudioDevice([NativeTypeName("SDL_AudioDeviceID")] uint devid);
@@ -7610,8 +9701,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_CloseHaptic")]
     void CloseHaptic(HapticHandle haptic);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CloseIO")]
-    int CloseIO(IOStreamHandle context);
+    MaybeBool<byte> CloseIO(IOStreamHandle context);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CloseIO")]
+    byte CloseIORaw(IOStreamHandle context);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CloseJoystick")]
     void CloseJoystick(JoystickHandle joystick);
@@ -7619,11 +9716,53 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_CloseSensor")]
     void CloseSensor(SensorHandle sensor);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CloseStorage")]
-    int CloseStorage(StorageHandle storage);
+    MaybeBool<byte> CloseStorage(StorageHandle storage);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CloseStorage")]
+    byte CloseStorageRaw(StorageHandle storage);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicInt")]
+    byte CompareAndSwapAtomicInt(AtomicInt* a, int oldval, int newval);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicInt")]
+    MaybeBool<byte> CompareAndSwapAtomicInt(Ref<AtomicInt> a, int oldval, int newval);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicPointer")]
+    byte CompareAndSwapAtomicPointer(void** a, void* oldval, void* newval);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicPointer")]
+    MaybeBool<byte> CompareAndSwapAtomicPointer(Ref2D a, Ref oldval, Ref newval);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicU32")]
+    byte CompareAndSwapAtomicU32(
+        AtomicU32* a,
+        [NativeTypeName("Uint32")] uint oldval,
+        [NativeTypeName("Uint32")] uint newval
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CompareAndSwapAtomicU32")]
+    MaybeBool<byte> CompareAndSwapAtomicU32(
+        Ref<AtomicU32> a,
+        [NativeTypeName("Uint32")] uint oldval,
+        [NativeTypeName("Uint32")] uint newval
+    );
+
+    [return: NativeTypeName("SDL_BlendMode")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ComposeCustomBlendMode")]
-    BlendMode ComposeCustomBlendMode(
+    uint ComposeCustomBlendMode(
         BlendFactor srcColorFactor,
         BlendFactor dstColorFactor,
         BlendOperation colorOperation,
@@ -7632,8 +9771,9 @@ public unsafe partial interface ISdl
         BlendOperation alphaOperation
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ConvertAudioSamples")]
-    int ConvertAudioSamples(
+    byte ConvertAudioSamples(
         [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* src_spec,
         [NativeTypeName("const Uint8 *")] byte* src_data,
         int src_len,
@@ -7642,9 +9782,10 @@ public unsafe partial interface ISdl
         int* dst_len
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ConvertAudioSamples")]
-    int ConvertAudioSamples(
+    MaybeBool<byte> ConvertAudioSamples(
         [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> src_spec,
         [NativeTypeName("const Uint8 *")] Ref<byte> src_data,
         int src_len,
@@ -7653,65 +9794,71 @@ public unsafe partial interface ISdl
         Ref<int> dst_len
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ConvertEventToRenderCoordinates")]
-    int ConvertEventToRenderCoordinates(RendererHandle renderer, Event* @event);
+    byte ConvertEventToRenderCoordinates(RendererHandle renderer, Event* @event);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ConvertEventToRenderCoordinates")]
-    int ConvertEventToRenderCoordinates(RendererHandle renderer, Ref<Event> @event);
+    MaybeBool<byte> ConvertEventToRenderCoordinates(RendererHandle renderer, Ref<Event> @event);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ConvertPixels")]
-    int ConvertPixels(
+    byte ConvertPixels(
         int width,
         int height,
-        PixelFormatEnum src_format,
+        PixelFormat src_format,
         [NativeTypeName("const void *")] void* src,
         int src_pitch,
-        PixelFormatEnum dst_format,
+        PixelFormat dst_format,
         void* dst,
         int dst_pitch
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ConvertPixels")]
-    int ConvertPixels(
+    MaybeBool<byte> ConvertPixels(
         int width,
         int height,
-        PixelFormatEnum src_format,
+        PixelFormat src_format,
         [NativeTypeName("const void *")] Ref src,
         int src_pitch,
-        PixelFormatEnum dst_format,
+        PixelFormat dst_format,
         Ref dst,
         int dst_pitch
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ConvertPixelsAndColorspace")]
-    int ConvertPixelsAndColorspace(
+    byte ConvertPixelsAndColorspace(
         int width,
         int height,
-        PixelFormatEnum src_format,
+        PixelFormat src_format,
         Colorspace src_colorspace,
         [NativeTypeName("SDL_PropertiesID")] uint src_properties,
         [NativeTypeName("const void *")] void* src,
         int src_pitch,
-        PixelFormatEnum dst_format,
+        PixelFormat dst_format,
         Colorspace dst_colorspace,
         [NativeTypeName("SDL_PropertiesID")] uint dst_properties,
         void* dst,
         int dst_pitch
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ConvertPixelsAndColorspace")]
-    int ConvertPixelsAndColorspace(
+    MaybeBool<byte> ConvertPixelsAndColorspace(
         int width,
         int height,
-        PixelFormatEnum src_format,
+        PixelFormat src_format,
         Colorspace src_colorspace,
         [NativeTypeName("SDL_PropertiesID")] uint src_properties,
         [NativeTypeName("const void *")] Ref src,
         int src_pitch,
-        PixelFormatEnum dst_format,
+        PixelFormat dst_format,
         Colorspace dst_colorspace,
         [NativeTypeName("SDL_PropertiesID")] uint dst_properties,
         Ref dst,
@@ -7719,46 +9866,76 @@ public unsafe partial interface ISdl
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurface")]
-    Surface* ConvertSurface(
-        Surface* surface,
-        [NativeTypeName("const SDL_PixelFormat *")] PixelFormat* format
-    );
+    Surface* ConvertSurface(Surface* surface, PixelFormat format);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurface")]
-    Ptr<Surface> ConvertSurface(
-        Ref<Surface> surface,
-        [NativeTypeName("const SDL_PixelFormat *")] Ref<PixelFormat> format
-    );
+    Ptr<Surface> ConvertSurface(Ref<Surface> surface, PixelFormat format);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceFormat")]
-    Surface* ConvertSurfaceFormat(Surface* surface, PixelFormatEnum pixel_format);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceFormat")]
-    Ptr<Surface> ConvertSurfaceFormat(Ref<Surface> surface, PixelFormatEnum pixel_format);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceFormatAndColorspace")]
-    Surface* ConvertSurfaceFormatAndColorspace(
+    [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceAndColorspace")]
+    Surface* ConvertSurfaceAndColorspace(
         Surface* surface,
-        PixelFormatEnum pixel_format,
+        PixelFormat format,
+        Palette* palette,
         Colorspace colorspace,
         [NativeTypeName("SDL_PropertiesID")] uint props
     );
 
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceFormatAndColorspace")]
-    Ptr<Surface> ConvertSurfaceFormatAndColorspace(
+    [NativeFunction("SDL3", EntryPoint = "SDL_ConvertSurfaceAndColorspace")]
+    Ptr<Surface> ConvertSurfaceAndColorspace(
         Ref<Surface> surface,
-        PixelFormatEnum pixel_format,
+        PixelFormat format,
+        Ref<Palette> palette,
         Colorspace colorspace,
         [NativeTypeName("SDL_PropertiesID")] uint props
     );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CopyFile")]
+    byte CopyFile(
+        [NativeTypeName("const char *")] sbyte* oldpath,
+        [NativeTypeName("const char *")] sbyte* newpath
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CopyFile")]
+    MaybeBool<byte> CopyFile(
+        [NativeTypeName("const char *")] Ref<sbyte> oldpath,
+        [NativeTypeName("const char *")] Ref<sbyte> newpath
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CopyProperties")]
-    int CopyProperties(
+    MaybeBool<byte> CopyProperties(
         [NativeTypeName("SDL_PropertiesID")] uint src,
         [NativeTypeName("SDL_PropertiesID")] uint dst
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CopyProperties")]
+    byte CopyPropertiesRaw(
+        [NativeTypeName("SDL_PropertiesID")] uint src,
+        [NativeTypeName("SDL_PropertiesID")] uint dst
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CopyStorageFile")]
+    byte CopyStorageFile(
+        StorageHandle storage,
+        [NativeTypeName("const char *")] sbyte* oldpath,
+        [NativeTypeName("const char *")] sbyte* newpath
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CopyStorageFile")]
+    MaybeBool<byte> CopyStorageFile(
+        StorageHandle storage,
+        [NativeTypeName("const char *")] Ref<sbyte> oldpath,
+        [NativeTypeName("const char *")] Ref<sbyte> newpath
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateAudioStream")]
@@ -7805,12 +9982,14 @@ public unsafe partial interface ISdl
         int hot_y
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateDirectory")]
-    int CreateDirectory([NativeTypeName("const char *")] sbyte* path);
+    byte CreateDirectory([NativeTypeName("const char *")] sbyte* path);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateDirectory")]
-    int CreateDirectory([NativeTypeName("const char *")] Ref<sbyte> path);
+    MaybeBool<byte> CreateDirectory([NativeTypeName("const char *")] Ref<sbyte> path);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateHapticEffect")]
     int CreateHapticEffect(
@@ -7835,13 +10014,6 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_CreatePalette")]
     Palette* CreatePaletteRaw(int ncolors);
 
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_CreatePixelFormat")]
-    Ptr<PixelFormat> CreatePixelFormat(PixelFormatEnum pixel_format);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_CreatePixelFormat")]
-    PixelFormat* CreatePixelFormatRaw(PixelFormatEnum pixel_format);
-
     [NativeFunction("SDL3", EntryPoint = "SDL_CreatePopupWindow")]
     WindowHandle CreatePopupWindow(
         WindowHandle parent,
@@ -7849,7 +10021,7 @@ public unsafe partial interface ISdl
         int offset_y,
         int w,
         int h,
-        [NativeTypeName("SDL_WindowFlags")] uint flags
+        [NativeTypeName("SDL_WindowFlags")] ulong flags
     );
 
     [return: NativeTypeName("SDL_PropertiesID")]
@@ -7859,16 +10031,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateRenderer")]
     RendererHandle CreateRenderer(
         WindowHandle window,
-        [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("Uint32")] uint flags
+        [NativeTypeName("const char *")] sbyte* name
     );
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateRenderer")]
     RendererHandle CreateRenderer(
         WindowHandle window,
-        [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("Uint32")] uint flags
+        [NativeTypeName("const char *")] Ref<sbyte> name
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateRendererWithProperties")]
@@ -7887,109 +10057,122 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateSoftwareRenderer")]
     RendererHandle CreateSoftwareRenderer(Ref<Surface> surface);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateStorageDirectory")]
-    int CreateStorageDirectory(StorageHandle storage, [NativeTypeName("const char *")] sbyte* path);
+    byte CreateStorageDirectory(
+        StorageHandle storage,
+        [NativeTypeName("const char *")] sbyte* path
+    );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateStorageDirectory")]
-    int CreateStorageDirectory(
+    MaybeBool<byte> CreateStorageDirectory(
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path
     );
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurface")]
-    Ptr<Surface> CreateSurface(int width, int height, PixelFormatEnum format);
+    Ptr<Surface> CreateSurface(int width, int height, PixelFormat format);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurfaceFrom")]
-    Surface* CreateSurfaceFrom(
-        void* pixels,
-        int width,
-        int height,
-        int pitch,
-        PixelFormatEnum format
-    );
+    Surface* CreateSurfaceFrom(int width, int height, PixelFormat format, void* pixels, int pitch);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurfaceFrom")]
     Ptr<Surface> CreateSurfaceFrom(
-        Ref pixels,
         int width,
         int height,
-        int pitch,
-        PixelFormatEnum format
+        PixelFormat format,
+        Ref pixels,
+        int pitch
     );
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurfacePalette")]
+    Palette* CreateSurfacePalette(Surface* surface);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurfacePalette")]
+    Ptr<Palette> CreateSurfacePalette(Ref<Surface> surface);
+
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateSurface")]
-    Surface* CreateSurfaceRaw(int width, int height, PixelFormatEnum format);
+    Surface* CreateSurfaceRaw(int width, int height, PixelFormat format);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateSystemCursor")]
     CursorHandle CreateSystemCursor(SystemCursor id);
 
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateTexture")]
-    TextureHandle CreateTexture(
+    Ptr<Texture> CreateTexture(
         RendererHandle renderer,
-        PixelFormatEnum format,
-        int access,
+        PixelFormat format,
+        TextureAccess access,
         int w,
         int h
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateTextureFromSurface")]
-    TextureHandle CreateTextureFromSurface(RendererHandle renderer, Surface* surface);
+    Texture* CreateTextureFromSurface(RendererHandle renderer, Surface* surface);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateTextureFromSurface")]
-    TextureHandle CreateTextureFromSurface(RendererHandle renderer, Ref<Surface> surface);
+    Ptr<Texture> CreateTextureFromSurface(RendererHandle renderer, Ref<Surface> surface);
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateTexture")]
+    Texture* CreateTextureRaw(
+        RendererHandle renderer,
+        PixelFormat format,
+        TextureAccess access,
+        int w,
+        int h
+    );
+
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateTextureWithProperties")]
-    TextureHandle CreateTextureWithProperties(
+    Ptr<Texture> CreateTextureWithProperties(
         RendererHandle renderer,
         [NativeTypeName("SDL_PropertiesID")] uint props
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_CreateThread")]
-    ThreadHandle CreateThread(
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateTextureWithProperties")]
+    Texture* CreateTextureWithPropertiesRaw(
+        RendererHandle renderer,
+        [NativeTypeName("SDL_PropertiesID")] uint props
+    );
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadRuntime")]
+    ThreadHandle CreateThreadRuntime(
         [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] sbyte* name,
-        void* data
+        void* data,
+        [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnBeginThread,
+        [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnEndThread
     );
 
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_CreateThread")]
-    ThreadHandle CreateThread(
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadRuntime")]
+    ThreadHandle CreateThreadRuntime(
         [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        Ref data
+        Ref data,
+        [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnBeginThread,
+        [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnEndThread
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithStackSize")]
-    ThreadHandle CreateThreadWithStackSize(
-        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
-        [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("const size_t")] nuint stacksize,
-        void* data
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithPropertiesRuntime")]
+    ThreadHandle CreateThreadWithPropertiesRuntime(
+        [NativeTypeName("SDL_PropertiesID")] uint props,
+        [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnBeginThread,
+        [NativeTypeName("SDL_FunctionPointer")] FunctionPointer pfnEndThread
     );
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithStackSize")]
-    ThreadHandle CreateThreadWithStackSize(
-        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
-        [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("const size_t")] nuint stacksize,
-        Ref data
-    );
-
-    [return: NativeTypeName("SDL_TLSID")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_CreateTLS")]
-    uint CreateTLS();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateWindow")]
     WindowHandle CreateWindow(
         [NativeTypeName("const char *")] sbyte* title,
         int w,
         int h,
-        [NativeTypeName("SDL_WindowFlags")] uint flags
+        [NativeTypeName("SDL_WindowFlags")] ulong flags
     );
 
     [Transformed]
@@ -7998,26 +10181,28 @@ public unsafe partial interface ISdl
         [NativeTypeName("const char *")] Ref<sbyte> title,
         int w,
         int h,
-        [NativeTypeName("SDL_WindowFlags")] uint flags
+        [NativeTypeName("SDL_WindowFlags")] ulong flags
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateWindowAndRenderer")]
-    int CreateWindowAndRenderer(
+    byte CreateWindowAndRenderer(
         [NativeTypeName("const char *")] sbyte* title,
         int width,
         int height,
-        [NativeTypeName("SDL_WindowFlags")] uint window_flags,
+        [NativeTypeName("SDL_WindowFlags")] ulong window_flags,
         WindowHandle* window,
         RendererHandle* renderer
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateWindowAndRenderer")]
-    int CreateWindowAndRenderer(
+    MaybeBool<byte> CreateWindowAndRenderer(
         [NativeTypeName("const char *")] Ref<sbyte> title,
         int width,
         int height,
-        [NativeTypeName("SDL_WindowFlags")] uint window_flags,
+        [NativeTypeName("SDL_WindowFlags")] ulong window_flags,
         Ref<WindowHandle> window,
         Ref<RendererHandle> renderer
     );
@@ -8025,24 +10210,26 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateWindowWithProperties")]
     WindowHandle CreateWindowWithProperties([NativeTypeName("SDL_PropertiesID")] uint props);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CursorVisible")]
-    MaybeBool<int> CursorVisible();
+    MaybeBool<byte> CursorVisible();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CursorVisible")]
-    int CursorVisibleRaw();
+    byte CursorVisibleRaw();
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DateTimeToTime")]
-    int DateTimeToTime(
+    byte DateTimeToTime(
         [NativeTypeName("const SDL_DateTime *")] DateTime* dt,
         [NativeTypeName("SDL_Time *")] long* ticks
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_DateTimeToTime")]
-    int DateTimeToTime(
+    MaybeBool<byte> DateTimeToTime(
         [NativeTypeName("const SDL_DateTime *")] Ref<DateTime> dt,
         [NativeTypeName("SDL_Time *")] Ref<long> ticks
     );
@@ -8053,27 +10240,8 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_DelayNS")]
     void DelayNS([NativeTypeName("Uint64")] ulong ns);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_DelEventWatch")]
-    void DelEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, void* userdata);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_DelEventWatch")]
-    void DelEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_DelHintCallback")]
-    void DelHintCallback(
-        [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
-        void* userdata
-    );
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_DelHintCallback")]
-    void DelHintCallback(
-        [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
-        Ref userdata
-    );
+    [NativeFunction("SDL3", EntryPoint = "SDL_DelayPrecise")]
+    void DelayPrecise([NativeTypeName("Uint64")] ulong ns);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_DestroyAudioStream")]
     void DestroyAudioStream(AudioStreamHandle stream);
@@ -8097,13 +10265,6 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_DestroyPalette")]
     void DestroyPalette(Ref<Palette> palette);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_DestroyPixelFormat")]
-    void DestroyPixelFormat(PixelFormat* format);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_DestroyPixelFormat")]
-    void DestroyPixelFormat(Ref<PixelFormat> format);
-
     [NativeFunction("SDL3", EntryPoint = "SDL_DestroyProperties")]
     void DestroyProperties([NativeTypeName("SDL_PropertiesID")] uint props);
 
@@ -8124,22 +10285,44 @@ public unsafe partial interface ISdl
     void DestroySurface(Ref<Surface> surface);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_DestroyTexture")]
-    void DestroyTexture(TextureHandle texture);
+    void DestroyTexture(Texture* texture);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_DestroyTexture")]
+    void DestroyTexture(Ref<Texture> texture);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_DestroyWindow")]
     void DestroyWindow(WindowHandle window);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_DestroyWindowSurface")]
-    int DestroyWindowSurface(WindowHandle window);
+    MaybeBool<byte> DestroyWindowSurface(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_DestroyWindowSurface")]
+    byte DestroyWindowSurfaceRaw(WindowHandle window);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_DetachThread")]
     void DetachThread(ThreadHandle thread);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_DetachVirtualJoystick")]
-    int DetachVirtualJoystick([NativeTypeName("SDL_JoystickID")] uint instance_id);
+    MaybeBool<byte> DetachVirtualJoystick([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_DetachVirtualJoystick")]
+    byte DetachVirtualJoystickRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_DisableScreenSaver")]
-    int DisableScreenSaver();
+    MaybeBool<byte> DisableScreenSaver();
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_DisableScreenSaver")]
+    byte DisableScreenSaverRaw();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_DuplicateSurface")]
     Surface* DuplicateSurface(Surface* surface);
@@ -8150,21 +10333,21 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_EGLConfig")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentEGLConfig")]
-    Ptr EGLGetCurrentEGLConfig();
+    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentConfig")]
+    Ptr EGLGetCurrentConfig();
 
     [return: NativeTypeName("SDL_EGLConfig")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentEGLConfig")]
-    void* EGLGetCurrentEGLConfigRaw();
+    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentConfig")]
+    void* EGLGetCurrentConfigRaw();
 
     [return: NativeTypeName("SDL_EGLDisplay")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentEGLDisplay")]
-    Ptr EGLGetCurrentEGLDisplay();
+    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentDisplay")]
+    Ptr EGLGetCurrentDisplay();
 
     [return: NativeTypeName("SDL_EGLDisplay")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentEGLDisplay")]
-    void* EGLGetCurrentEGLDisplayRaw();
+    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentDisplay")]
+    void* EGLGetCurrentDisplayRaw();
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
@@ -8177,109 +10360,133 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_EGLSurface")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowEGLSurface")]
-    Ptr EGLGetWindowEGLSurface(WindowHandle window);
+    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowSurface")]
+    Ptr EGLGetWindowSurface(WindowHandle window);
 
     [return: NativeTypeName("SDL_EGLSurface")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowEGLSurface")]
-    void* EGLGetWindowEGLSurfaceRaw(WindowHandle window);
+    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowSurface")]
+    void* EGLGetWindowSurfaceRaw(WindowHandle window);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetEGLAttributeCallbacks")]
-    void EGLSetEGLAttributeCallbacks(
+    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetAttributeCallbacks")]
+    void EGLSetAttributeCallbacks(
         [NativeTypeName("SDL_EGLAttribArrayCallback")]
             EGLAttribArrayCallback platformAttribCallback,
         [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback surfaceAttribCallback,
-        [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback
+        [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback,
+        void* userdata
     );
 
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetAttributeCallbacks")]
+    void EGLSetAttributeCallbacks(
+        [NativeTypeName("SDL_EGLAttribArrayCallback")]
+            EGLAttribArrayCallback platformAttribCallback,
+        [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback surfaceAttribCallback,
+        [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback,
+        Ref userdata
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_EnableScreenSaver")]
-    int EnableScreenSaver();
+    MaybeBool<byte> EnableScreenSaver();
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_EnableScreenSaver")]
+    byte EnableScreenSaverRaw();
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
-    int EnumerateDirectory(
+    byte EnumerateDirectory(
         [NativeTypeName("const char *")] sbyte* path,
         [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         void* userdata
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
-    int EnumerateDirectory(
+    MaybeBool<byte> EnumerateDirectory(
         [NativeTypeName("const char *")] Ref<sbyte> path,
         [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         Ref userdata
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateProperties")]
-    int EnumerateProperties(
+    byte EnumerateProperties(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("SDL_EnumeratePropertiesCallback")] EnumeratePropertiesCallback callback,
         void* userdata
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateProperties")]
-    int EnumerateProperties(
+    MaybeBool<byte> EnumerateProperties(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("SDL_EnumeratePropertiesCallback")] EnumeratePropertiesCallback callback,
         Ref userdata
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateStorageDirectory")]
-    int EnumerateStorageDirectory(
+    byte EnumerateStorageDirectory(
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
         [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         void* userdata
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateStorageDirectory")]
-    int EnumerateStorageDirectory(
+    MaybeBool<byte> EnumerateStorageDirectory(
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
         [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         Ref userdata
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_Error")]
-    int Error(Errorcode code);
-
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_EventEnabled")]
-    MaybeBool<int> EventEnabled([NativeTypeName("Uint32")] uint type);
+    MaybeBool<byte> EventEnabled([NativeTypeName("Uint32")] uint type);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EventEnabled")]
-    int EventEnabledRaw([NativeTypeName("Uint32")] uint type);
+    byte EventEnabledRaw([NativeTypeName("Uint32")] uint type);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_FillSurfaceRect")]
-    int FillSurfaceRect(
+    byte FillSurfaceRect(
         Surface* dst,
         [NativeTypeName("const SDL_Rect *")] Rect* rect,
         [NativeTypeName("Uint32")] uint color
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_FillSurfaceRect")]
-    int FillSurfaceRect(
+    MaybeBool<byte> FillSurfaceRect(
         Ref<Surface> dst,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
         [NativeTypeName("Uint32")] uint color
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_FillSurfaceRects")]
-    int FillSurfaceRects(
+    byte FillSurfaceRects(
         Surface* dst,
         [NativeTypeName("const SDL_Rect *")] Rect* rects,
         int count,
         [NativeTypeName("Uint32")] uint color
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_FillSurfaceRects")]
-    int FillSurfaceRects(
+    MaybeBool<byte> FillSurfaceRects(
         Ref<Surface> dst,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rects,
         int count,
@@ -8293,18 +10500,32 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_FilterEvents")]
     void FilterEvents([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_FlashWindow")]
-    int FlashWindow(WindowHandle window, FlashOperation operation);
+    MaybeBool<byte> FlashWindow(WindowHandle window, FlashOperation operation);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_FlashWindow")]
+    byte FlashWindowRaw(WindowHandle window, FlashOperation operation);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_FlipSurface")]
-    int FlipSurface(Surface* surface, FlipMode flip);
+    byte FlipSurface(Surface* surface, FlipMode flip);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_FlipSurface")]
-    int FlipSurface(Ref<Surface> surface, FlipMode flip);
+    MaybeBool<byte> FlipSurface(Ref<Surface> surface, FlipMode flip);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_FlushAudioStream")]
-    int FlushAudioStream(AudioStreamHandle stream);
+    MaybeBool<byte> FlushAudioStream(AudioStreamHandle stream);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_FlushAudioStream")]
+    byte FlushAudioStreamRaw(AudioStreamHandle stream);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_FlushEvent")]
     void FlushEvent([NativeTypeName("Uint32")] uint type);
@@ -8315,62 +10536,86 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint32")] uint maxType
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_FlushIO")]
+    MaybeBool<byte> FlushIO(IOStreamHandle context);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_FlushIO")]
+    byte FlushIORaw(IOStreamHandle context);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_FlushRenderer")]
-    int FlushRenderer(RendererHandle renderer);
+    MaybeBool<byte> FlushRenderer(RendererHandle renderer);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_FlushRenderer")]
+    byte FlushRendererRaw(RendererHandle renderer);
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadConnected")]
-    MaybeBool<int> GamepadConnected(GamepadHandle gamepad);
+    MaybeBool<byte> GamepadConnected(GamepadHandle gamepad);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadConnected")]
-    int GamepadConnectedRaw(GamepadHandle gamepad);
+    byte GamepadConnectedRaw(GamepadHandle gamepad);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadEventsEnabled")]
-    MaybeBool<int> GamepadEventsEnabled();
+    MaybeBool<byte> GamepadEventsEnabled();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadEventsEnabled")]
-    int GamepadEventsEnabledRaw();
+    byte GamepadEventsEnabledRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasAxis")]
-    MaybeBool<int> GamepadHasAxis(GamepadHandle gamepad, GamepadAxis axis);
+    MaybeBool<byte> GamepadHasAxis(GamepadHandle gamepad, GamepadAxis axis);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasAxis")]
-    int GamepadHasAxisRaw(GamepadHandle gamepad, GamepadAxis axis);
+    byte GamepadHasAxisRaw(GamepadHandle gamepad, GamepadAxis axis);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasButton")]
-    MaybeBool<int> GamepadHasButton(GamepadHandle gamepad, GamepadButton button);
+    MaybeBool<byte> GamepadHasButton(GamepadHandle gamepad, GamepadButton button);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasButton")]
-    int GamepadHasButtonRaw(GamepadHandle gamepad, GamepadButton button);
+    byte GamepadHasButtonRaw(GamepadHandle gamepad, GamepadButton button);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasSensor")]
-    MaybeBool<int> GamepadHasSensor(GamepadHandle gamepad, SensorType type);
+    MaybeBool<byte> GamepadHasSensor(GamepadHandle gamepad, SensorType type);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadHasSensor")]
-    int GamepadHasSensorRaw(GamepadHandle gamepad, SensorType type);
+    byte GamepadHasSensorRaw(GamepadHandle gamepad, SensorType type);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadSensorEnabled")]
-    MaybeBool<int> GamepadSensorEnabled(GamepadHandle gamepad, SensorType type);
+    MaybeBool<byte> GamepadSensorEnabled(GamepadHandle gamepad, SensorType type);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GamepadSensorEnabled")]
-    int GamepadSensorEnabledRaw(GamepadHandle gamepad, SensorType type);
+    byte GamepadSensorEnabledRaw(GamepadHandle gamepad, SensorType type);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAppMetadataProperty")]
+    sbyte* GetAppMetadataProperty([NativeTypeName("const char *")] sbyte* name);
+
+    [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAppMetadataProperty")]
+    Ptr<sbyte> GetAppMetadataProperty([NativeTypeName("const char *")] Ref<sbyte> name);
 
     [return: NativeTypeName("SDL_AssertionHandler")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAssertionHandler")]
@@ -8390,36 +10635,65 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAssertionReport")]
     AssertData* GetAssertionReportRaw();
 
-    [return: NativeTypeName("SDL_AudioDeviceID *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioCaptureDevices")]
-    uint* GetAudioCaptureDevices(int* count);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicInt")]
+    int GetAtomicInt(AtomicInt* a);
 
-    [return: NativeTypeName("SDL_AudioDeviceID *")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioCaptureDevices")]
-    Ptr<uint> GetAudioCaptureDevices(Ref<int> count);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicInt")]
+    int GetAtomicInt(Ref<AtomicInt> a);
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicPointer")]
+    void* GetAtomicPointer(void** a);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicPointer")]
+    Ptr GetAtomicPointer(Ref2D a);
+
+    [return: NativeTypeName("Uint32")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicU32")]
+    uint GetAtomicU32(AtomicU32* a);
+
+    [return: NativeTypeName("Uint32")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAtomicU32")]
+    uint GetAtomicU32(Ref<AtomicU32> a);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceChannelMap")]
+    int* GetAudioDeviceChannelMap([NativeTypeName("SDL_AudioDeviceID")] uint devid, int* count);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceChannelMap")]
+    Ptr<int> GetAudioDeviceChannelMap(
+        [NativeTypeName("SDL_AudioDeviceID")] uint devid,
+        Ref<int> count
+    );
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceFormat")]
-    int GetAudioDeviceFormat(
+    byte GetAudioDeviceFormat(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         AudioSpec* spec,
         int* sample_frames
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceFormat")]
-    int GetAudioDeviceFormat(
+    MaybeBool<byte> GetAudioDeviceFormat(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         Ref<AudioSpec> spec,
         Ref<int> sample_frames
     );
 
-    [return: NativeTypeName("char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceGain")]
+    float GetAudioDeviceGain([NativeTypeName("SDL_AudioDeviceID")] uint devid);
+
+    [return: NativeTypeName("const char *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceName")]
     Ptr<sbyte> GetAudioDeviceName([NativeTypeName("SDL_AudioDeviceID")] uint devid);
 
-    [return: NativeTypeName("char *")]
+    [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDeviceName")]
     sbyte* GetAudioDeviceNameRaw([NativeTypeName("SDL_AudioDeviceID")] uint devid);
 
@@ -8432,14 +10706,32 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioDriver")]
     sbyte* GetAudioDriverRaw(int index);
 
+    [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioFormatName")]
+    Ptr<sbyte> GetAudioFormatName(AudioFormat format);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioFormatName")]
+    sbyte* GetAudioFormatNameRaw(AudioFormat format);
+
     [return: NativeTypeName("SDL_AudioDeviceID *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioOutputDevices")]
-    uint* GetAudioOutputDevices(int* count);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioPlaybackDevices")]
+    uint* GetAudioPlaybackDevices(int* count);
 
     [return: NativeTypeName("SDL_AudioDeviceID *")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioOutputDevices")]
-    Ptr<uint> GetAudioOutputDevices(Ref<int> count);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioPlaybackDevices")]
+    Ptr<uint> GetAudioPlaybackDevices(Ref<int> count);
+
+    [return: NativeTypeName("SDL_AudioDeviceID *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioRecordingDevices")]
+    uint* GetAudioRecordingDevices(int* count);
+
+    [return: NativeTypeName("SDL_AudioDeviceID *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioRecordingDevices")]
+    Ptr<uint> GetAudioRecordingDevices(Ref<int> count);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamAvailable")]
     int GetAudioStreamAvailable(AudioStreamHandle stream);
@@ -8455,12 +10747,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamDevice")]
     uint GetAudioStreamDevice(AudioStreamHandle stream);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamFormat")]
-    int GetAudioStreamFormat(AudioStreamHandle stream, AudioSpec* src_spec, AudioSpec* dst_spec);
+    byte GetAudioStreamFormat(AudioStreamHandle stream, AudioSpec* src_spec, AudioSpec* dst_spec);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamFormat")]
-    int GetAudioStreamFormat(
+    MaybeBool<byte> GetAudioStreamFormat(
         AudioStreamHandle stream,
         Ref<AudioSpec> src_spec,
         Ref<AudioSpec> dst_spec
@@ -8469,6 +10763,23 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamFrequencyRatio")]
     float GetAudioStreamFrequencyRatio(AudioStreamHandle stream);
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamGain")]
+    float GetAudioStreamGain(AudioStreamHandle stream);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamInputChannelMap")]
+    int* GetAudioStreamInputChannelMap(AudioStreamHandle stream, int* count);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamInputChannelMap")]
+    Ptr<int> GetAudioStreamInputChannelMap(AudioStreamHandle stream, Ref<int> count);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamOutputChannelMap")]
+    int* GetAudioStreamOutputChannelMap(AudioStreamHandle stream, int* count);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamOutputChannelMap")]
+    Ptr<int> GetAudioStreamOutputChannelMap(AudioStreamHandle stream, Ref<int> count);
+
     [return: NativeTypeName("SDL_PropertiesID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamProperties")]
     uint GetAudioStreamProperties(AudioStreamHandle stream);
@@ -8476,64 +10787,30 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAudioStreamQueued")]
     int GetAudioStreamQueued(AudioStreamHandle stream);
 
-    [return: NativeTypeName("char *")]
+    [return: NativeTypeName("const char *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetBasePath")]
     Ptr<sbyte> GetBasePath();
 
-    [return: NativeTypeName("char *")]
+    [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetBasePath")]
     sbyte* GetBasePathRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetBooleanProperty")]
-    int GetBooleanProperty(
+    byte GetBooleanProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("SDL_bool")] int default_value
+        [NativeTypeName("bool")] byte default_value
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetBooleanProperty")]
-    MaybeBool<int> GetBooleanProperty(
+    MaybeBool<byte> GetBooleanProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> default_value
-    );
-
-    [return: NativeTypeName("char *")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDeviceName")]
-    Ptr<sbyte> GetCameraDeviceName([NativeTypeName("SDL_CameraDeviceID")] uint instance_id);
-
-    [return: NativeTypeName("char *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDeviceName")]
-    sbyte* GetCameraDeviceNameRaw([NativeTypeName("SDL_CameraDeviceID")] uint instance_id);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDevicePosition")]
-    CameraPosition GetCameraDevicePosition([NativeTypeName("SDL_CameraDeviceID")] uint instance_id);
-
-    [return: NativeTypeName("SDL_CameraDeviceID *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDevices")]
-    uint* GetCameraDevices(int* count);
-
-    [return: NativeTypeName("SDL_CameraDeviceID *")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDevices")]
-    Ptr<uint> GetCameraDevices(Ref<int> count);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDeviceSupportedFormats")]
-    CameraSpec* GetCameraDeviceSupportedFormats(
-        [NativeTypeName("SDL_CameraDeviceID")] uint devid,
-        int* count
-    );
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDeviceSupportedFormats")]
-    Ptr<CameraSpec> GetCameraDeviceSupportedFormats(
-        [NativeTypeName("SDL_CameraDeviceID")] uint devid,
-        Ref<int> count
+        [NativeTypeName("bool")] MaybeBool<byte> default_value
     );
 
     [return: NativeTypeName("const char *")]
@@ -8545,23 +10822,56 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraDriver")]
     sbyte* GetCameraDriverRaw(int index);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraFormat")]
-    int GetCameraFormat(CameraHandle camera, CameraSpec* spec);
+    byte GetCameraFormat(CameraHandle camera, CameraSpec* spec);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraFormat")]
-    int GetCameraFormat(CameraHandle camera, Ref<CameraSpec> spec);
+    MaybeBool<byte> GetCameraFormat(CameraHandle camera, Ref<CameraSpec> spec);
 
-    [return: NativeTypeName("SDL_CameraDeviceID")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraInstanceID")]
-    uint GetCameraInstanceID(CameraHandle camera);
+    [return: NativeTypeName("SDL_CameraID")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraID")]
+    uint GetCameraID(CameraHandle camera);
+
+    [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraName")]
+    Ptr<sbyte> GetCameraName([NativeTypeName("SDL_CameraID")] uint instance_id);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraName")]
+    sbyte* GetCameraNameRaw([NativeTypeName("SDL_CameraID")] uint instance_id);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraPermissionState")]
     int GetCameraPermissionState(CameraHandle camera);
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraPosition")]
+    CameraPosition GetCameraPosition([NativeTypeName("SDL_CameraID")] uint instance_id);
+
     [return: NativeTypeName("SDL_PropertiesID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraProperties")]
     uint GetCameraProperties(CameraHandle camera);
+
+    [return: NativeTypeName("SDL_CameraID *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameras")]
+    uint* GetCameras(int* count);
+
+    [return: NativeTypeName("SDL_CameraID *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameras")]
+    Ptr<uint> GetCameras(Ref<int> count);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraSupportedFormats")]
+    CameraSpec** GetCameraSupportedFormats([NativeTypeName("SDL_CameraID")] uint devid, int* count);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraSupportedFormats")]
+    Ptr2D<CameraSpec> GetCameraSupportedFormats(
+        [NativeTypeName("SDL_CameraID")] uint devid,
+        Ref<int> count
+    );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetClipboardData")]
     void* GetClipboardData(
@@ -8576,6 +10886,15 @@ public unsafe partial interface ISdl
         [NativeTypeName("size_t *")] Ref<nuint> size
     );
 
+    [return: NativeTypeName("char **")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetClipboardMimeTypes")]
+    sbyte** GetClipboardMimeTypes([NativeTypeName("size_t *")] nuint* num_mime_types);
+
+    [return: NativeTypeName("char **")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetClipboardMimeTypes")]
+    Ptr2D<sbyte> GetClipboardMimeTypes([NativeTypeName("size_t *")] Ref<nuint> num_mime_types);
+
     [return: NativeTypeName("char *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetClipboardText")]
@@ -8585,32 +10904,31 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetClipboardText")]
     sbyte* GetClipboardTextRaw();
 
-    [return: NativeTypeName("const SDL_DisplayMode *")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetClosestFullscreenDisplayMode")]
-    DisplayMode* GetClosestFullscreenDisplayMode(
+    byte GetClosestFullscreenDisplayMode(
         [NativeTypeName("SDL_DisplayID")] uint displayID,
         int w,
         int h,
         float refresh_rate,
-        [NativeTypeName("SDL_bool")] int include_high_density_modes
+        [NativeTypeName("bool")] byte include_high_density_modes,
+        DisplayMode* mode
     );
 
-    [return: NativeTypeName("const SDL_DisplayMode *")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetClosestFullscreenDisplayMode")]
-    Ptr<DisplayMode> GetClosestFullscreenDisplayMode(
+    MaybeBool<byte> GetClosestFullscreenDisplayMode(
         [NativeTypeName("SDL_DisplayID")] uint displayID,
         int w,
         int h,
         float refresh_rate,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> include_high_density_modes
+        [NativeTypeName("bool")] MaybeBool<byte> include_high_density_modes,
+        Ref<DisplayMode> mode
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCPUCacheLineSize")]
     int GetCPUCacheLineSize();
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetCPUCount")]
-    int GetCPUCount();
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -8644,23 +10962,27 @@ public unsafe partial interface ISdl
         [NativeTypeName("SDL_DisplayID")] uint displayID
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentRenderOutputSize")]
-    int GetCurrentRenderOutputSize(RendererHandle renderer, int* w, int* h);
+    byte GetCurrentRenderOutputSize(RendererHandle renderer, int* w, int* h);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentRenderOutputSize")]
-    int GetCurrentRenderOutputSize(RendererHandle renderer, Ref<int> w, Ref<int> h);
+    MaybeBool<byte> GetCurrentRenderOutputSize(RendererHandle renderer, Ref<int> w, Ref<int> h);
 
     [return: NativeTypeName("SDL_ThreadID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentThreadID")]
     ulong GetCurrentThreadID();
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentTime")]
-    int GetCurrentTime([NativeTypeName("SDL_Time *")] long* ticks);
+    byte GetCurrentTime([NativeTypeName("SDL_Time *")] long* ticks);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentTime")]
-    int GetCurrentTime([NativeTypeName("SDL_Time *")] Ref<long> ticks);
+    MaybeBool<byte> GetCurrentTime([NativeTypeName("SDL_Time *")] Ref<long> ticks);
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -8673,6 +10995,18 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCursor")]
     CursorHandle GetCursor();
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetDateTimeLocalePreferences")]
+    byte GetDateTimeLocalePreferences(DateFormat* dateFormat, TimeFormat* timeFormat);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetDateTimeLocalePreferences")]
+    MaybeBool<byte> GetDateTimeLocalePreferences(
+        Ref<DateFormat> dateFormat,
+        Ref<TimeFormat> timeFormat
+    );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDayOfWeek")]
     int GetDayOfWeek(int year, int month, int day);
@@ -8690,6 +11024,10 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultCursor")]
     CursorHandle GetDefaultCursor();
 
+    [return: NativeTypeName("SDL_LogOutputFunction")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultLogOutputFunction")]
+    LogOutputFunction GetDefaultLogOutputFunction();
+
     [return: NativeTypeName("const SDL_DisplayMode *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDesktopDisplayMode")]
@@ -8699,12 +11037,17 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDesktopDisplayMode")]
     DisplayMode* GetDesktopDisplayModeRaw([NativeTypeName("SDL_DisplayID")] uint displayID);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayBounds")]
-    int GetDisplayBounds([NativeTypeName("SDL_DisplayID")] uint displayID, Rect* rect);
+    byte GetDisplayBounds([NativeTypeName("SDL_DisplayID")] uint displayID, Rect* rect);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayBounds")]
-    int GetDisplayBounds([NativeTypeName("SDL_DisplayID")] uint displayID, Ref<Rect> rect);
+    MaybeBool<byte> GetDisplayBounds(
+        [NativeTypeName("SDL_DisplayID")] uint displayID,
+        Ref<Rect> rect
+    );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayContentScale")]
     float GetDisplayContentScale([NativeTypeName("SDL_DisplayID")] uint displayID);
@@ -8753,12 +11096,17 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplays")]
     Ptr<uint> GetDisplays(Ref<int> count);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayUsableBounds")]
-    int GetDisplayUsableBounds([NativeTypeName("SDL_DisplayID")] uint displayID, Rect* rect);
+    byte GetDisplayUsableBounds([NativeTypeName("SDL_DisplayID")] uint displayID, Rect* rect);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayUsableBounds")]
-    int GetDisplayUsableBounds([NativeTypeName("SDL_DisplayID")] uint displayID, Ref<Rect> rect);
+    MaybeBool<byte> GetDisplayUsableBounds(
+        [NativeTypeName("SDL_DisplayID")] uint displayID,
+        Ref<Rect> rect
+    );
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -8769,14 +11117,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetError")]
     sbyte* GetErrorRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
-    int GetEventFilter([NativeTypeName("SDL_EventFilter *")] EventFilter* filter, void** userdata);
+    byte GetEventFilter([NativeTypeName("SDL_EventFilter *")] EventFilter* filter, void** userdata);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
-    MaybeBool<int> GetEventFilter(
+    MaybeBool<byte> GetEventFilter(
         [NativeTypeName("SDL_EventFilter *")] Ref<EventFilter> filter,
         Ref2D userdata
     );
@@ -8796,14 +11144,12 @@ public unsafe partial interface ISdl
         float default_value
     );
 
-    [return: NativeTypeName("const SDL_DisplayMode **")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetFullscreenDisplayModes")]
     DisplayMode** GetFullscreenDisplayModes(
         [NativeTypeName("SDL_DisplayID")] uint displayID,
         int* count
     );
 
-    [return: NativeTypeName("const SDL_DisplayMode **")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetFullscreenDisplayModes")]
     Ptr2D<DisplayMode> GetFullscreenDisplayModes(
@@ -8847,9 +11193,10 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadBindings")]
     Ptr2D<GamepadBinding> GetGamepadBindings(GamepadHandle gamepad, Ref<int> count);
 
-    [return: NativeTypeName("Uint8")]
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadButton")]
-    byte GetGamepadButton(GamepadHandle gamepad, GamepadButton button);
+    MaybeBool<byte> GetGamepadButton(GamepadHandle gamepad, GamepadButton button);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadButtonFromString")]
     GamepadButton GetGamepadButtonFromString([NativeTypeName("const char *")] sbyte* str);
@@ -8864,6 +11211,10 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadButtonLabelForType")]
     GamepadButtonLabel GetGamepadButtonLabelForType(GamepadType type, GamepadButton button);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadButton")]
+    byte GetGamepadButtonRaw(GamepadHandle gamepad, GamepadButton button);
+
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadConnectionState")]
     JoystickConnectionState GetGamepadConnectionState(GamepadHandle gamepad);
 
@@ -8871,64 +11222,18 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadFirmwareVersion")]
     ushort GetGamepadFirmwareVersion(GamepadHandle gamepad);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadFromInstanceID")]
-    GamepadHandle GetGamepadFromInstanceID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadFromID")]
+    GamepadHandle GetGamepadFromID([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadFromPlayerIndex")]
     GamepadHandle GetGamepadFromPlayerIndex(int player_index);
 
-    [return: NativeTypeName("SDL_JoystickGUID")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceGUID")]
-    Guid GetGamepadInstanceGuid([NativeTypeName("SDL_JoystickID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadGUIDForID")]
+    Guid GetGamepadGuidForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [return: NativeTypeName("SDL_JoystickID")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceID")]
-    uint GetGamepadInstanceID(GamepadHandle gamepad);
-
-    [return: NativeTypeName("char *")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceMapping")]
-    Ptr<sbyte> GetGamepadInstanceMapping([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("char *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceMapping")]
-    sbyte* GetGamepadInstanceMappingRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("const char *")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceName")]
-    Ptr<sbyte> GetGamepadInstanceName([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("const char *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceName")]
-    sbyte* GetGamepadInstanceNameRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("const char *")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstancePath")]
-    Ptr<sbyte> GetGamepadInstancePath([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("const char *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstancePath")]
-    sbyte* GetGamepadInstancePathRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstancePlayerIndex")]
-    int GetGamepadInstancePlayerIndex([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("Uint16")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceProduct")]
-    ushort GetGamepadInstanceProduct([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("Uint16")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceProductVersion")]
-    ushort GetGamepadInstanceProductVersion([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceType")]
-    GamepadType GetGamepadInstanceType([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("Uint16")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadInstanceVendor")]
-    ushort GetGamepadInstanceVendor([NativeTypeName("SDL_JoystickID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadID")]
+    uint GetGamepadID(GamepadHandle gamepad);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadJoystick")]
     JoystickHandle GetGamepadJoystick(GamepadHandle gamepad);
@@ -8941,11 +11246,20 @@ public unsafe partial interface ISdl
     [return: NativeTypeName("char *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadMappingForGUID")]
-    Ptr<sbyte> GetGamepadMappingForGuid([NativeTypeName("SDL_JoystickGUID")] Guid guid);
+    Ptr<sbyte> GetGamepadMappingForGuid(Guid guid);
 
     [return: NativeTypeName("char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadMappingForGUID")]
-    sbyte* GetGamepadMappingForGuidRaw([NativeTypeName("SDL_JoystickGUID")] Guid guid);
+    sbyte* GetGamepadMappingForGuidRaw(Guid guid);
+
+    [return: NativeTypeName("char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadMappingForID")]
+    Ptr<sbyte> GetGamepadMappingForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadMappingForID")]
+    sbyte* GetGamepadMappingForIDRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [return: NativeTypeName("char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadMapping")]
@@ -8966,6 +11280,15 @@ public unsafe partial interface ISdl
     Ptr<sbyte> GetGamepadName(GamepadHandle gamepad);
 
     [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadNameForID")]
+    Ptr<sbyte> GetGamepadNameForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadNameForID")]
+    sbyte* GetGamepadNameForIDRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadName")]
     sbyte* GetGamepadNameRaw(GamepadHandle gamepad);
 
@@ -8975,11 +11298,23 @@ public unsafe partial interface ISdl
     Ptr<sbyte> GetGamepadPath(GamepadHandle gamepad);
 
     [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPathForID")]
+    Ptr<sbyte> GetGamepadPathForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPathForID")]
+    sbyte* GetGamepadPathForIDRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPath")]
     sbyte* GetGamepadPathRaw(GamepadHandle gamepad);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPlayerIndex")]
     int GetGamepadPlayerIndex(GamepadHandle gamepad);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPlayerIndexForID")]
+    int GetGamepadPlayerIndexForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadPowerInfo")]
     PowerState GetGamepadPowerInfo(GamepadHandle gamepad, int* percent);
@@ -8993,8 +11328,16 @@ public unsafe partial interface ISdl
     ushort GetGamepadProduct(GamepadHandle gamepad);
 
     [return: NativeTypeName("Uint16")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadProductForID")]
+    ushort GetGamepadProductForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("Uint16")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadProductVersion")]
     ushort GetGamepadProductVersion(GamepadHandle gamepad);
+
+    [return: NativeTypeName("Uint16")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadProductVersionForID")]
+    ushort GetGamepadProductVersionForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [return: NativeTypeName("SDL_PropertiesID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadProperties")]
@@ -9009,12 +11352,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepads")]
     Ptr<uint> GetGamepads(Ref<int> count);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadSensorData")]
-    int GetGamepadSensorData(GamepadHandle gamepad, SensorType type, float* data, int num_values);
+    byte GetGamepadSensorData(GamepadHandle gamepad, SensorType type, float* data, int num_values);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadSensorData")]
-    int GetGamepadSensorData(
+    MaybeBool<byte> GetGamepadSensorData(
         GamepadHandle gamepad,
         SensorType type,
         Ref<float> data,
@@ -9064,24 +11409,26 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadStringForType")]
     sbyte* GetGamepadStringForTypeRaw(GamepadType type);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadTouchpadFinger")]
-    int GetGamepadTouchpadFinger(
+    byte GetGamepadTouchpadFinger(
         GamepadHandle gamepad,
         int touchpad,
         int finger,
-        [NativeTypeName("Uint8 *")] byte* state,
+        bool* down,
         float* x,
         float* y,
         float* pressure
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadTouchpadFinger")]
-    int GetGamepadTouchpadFinger(
+    MaybeBool<byte> GetGamepadTouchpadFinger(
         GamepadHandle gamepad,
         int touchpad,
         int finger,
-        [NativeTypeName("Uint8 *")] Ref<byte> state,
+        Ref<bool> down,
         Ref<float> x,
         Ref<float> y,
         Ref<float> pressure
@@ -9089,6 +11436,9 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadType")]
     GamepadType GetGamepadType(GamepadHandle gamepad);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadTypeForID")]
+    GamepadType GetGamepadTypeForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadTypeFromString")]
     GamepadType GetGamepadTypeFromString([NativeTypeName("const char *")] sbyte* str);
@@ -9101,11 +11451,15 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadVendor")]
     ushort GetGamepadVendor(GamepadHandle gamepad);
 
-    [return: NativeTypeName("Uint32")]
+    [return: NativeTypeName("Uint16")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadVendorForID")]
+    ushort GetGamepadVendorForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("SDL_MouseButtonFlags")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGlobalMouseState")]
     uint GetGlobalMouseState(float* x, float* y);
 
-    [return: NativeTypeName("Uint32")]
+    [return: NativeTypeName("SDL_MouseButtonFlags")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGlobalMouseState")]
     uint GetGlobalMouseState(Ref<float> x, Ref<float> y);
@@ -9117,33 +11471,39 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGrabbedWindow")]
     WindowHandle GetGrabbedWindow();
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticEffectStatus")]
-    int GetHapticEffectStatus(HapticHandle haptic, int effect);
+    MaybeBool<byte> GetHapticEffectStatus(HapticHandle haptic, int effect);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticEffectStatus")]
+    byte GetHapticEffectStatusRaw(HapticHandle haptic, int effect);
 
     [return: NativeTypeName("Uint32")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticFeatures")]
     uint GetHapticFeatures(HapticHandle haptic);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticFromInstanceID")]
-    HapticHandle GetHapticFromInstanceID([NativeTypeName("SDL_HapticID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticFromID")]
+    HapticHandle GetHapticFromID([NativeTypeName("SDL_HapticID")] uint instance_id);
 
     [return: NativeTypeName("SDL_HapticID")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticInstanceID")]
-    uint GetHapticInstanceID(HapticHandle haptic);
-
-    [return: NativeTypeName("const char *")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticInstanceName")]
-    Ptr<sbyte> GetHapticInstanceName([NativeTypeName("SDL_HapticID")] uint instance_id);
-
-    [return: NativeTypeName("const char *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticInstanceName")]
-    sbyte* GetHapticInstanceNameRaw([NativeTypeName("SDL_HapticID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticID")]
+    uint GetHapticID(HapticHandle haptic);
 
     [return: NativeTypeName("const char *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticName")]
     Ptr<sbyte> GetHapticName(HapticHandle haptic);
+
+    [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticNameForID")]
+    Ptr<sbyte> GetHapticNameForID([NativeTypeName("SDL_HapticID")] uint instance_id);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticNameForID")]
+    sbyte* GetHapticNameForIDRaw([NativeTypeName("SDL_HapticID")] uint instance_id);
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetHapticName")]
@@ -9167,19 +11527,19 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetHint")]
     Ptr<sbyte> GetHint([NativeTypeName("const char *")] Ref<sbyte> name);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetHintBoolean")]
-    int GetHintBoolean(
+    byte GetHintBoolean(
         [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("SDL_bool")] int default_value
+        [NativeTypeName("bool")] byte default_value
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetHintBoolean")]
-    MaybeBool<int> GetHintBoolean(
+    MaybeBool<byte> GetHintBoolean(
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> default_value
+        [NativeTypeName("bool")] MaybeBool<byte> default_value
     );
 
     [return: NativeTypeName("SDL_PropertiesID")]
@@ -9197,33 +11557,40 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickAxis")]
     short GetJoystickAxis(JoystickHandle joystick, int axis);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickAxisInitialState")]
-    int GetJoystickAxisInitialState(
+    byte GetJoystickAxisInitialState(
         JoystickHandle joystick,
         int axis,
         [NativeTypeName("Sint16 *")] short* state
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickAxisInitialState")]
-    MaybeBool<int> GetJoystickAxisInitialState(
+    MaybeBool<byte> GetJoystickAxisInitialState(
         JoystickHandle joystick,
         int axis,
         [NativeTypeName("Sint16 *")] Ref<short> state
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickBall")]
-    int GetJoystickBall(JoystickHandle joystick, int ball, int* dx, int* dy);
+    byte GetJoystickBall(JoystickHandle joystick, int ball, int* dx, int* dy);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickBall")]
-    int GetJoystickBall(JoystickHandle joystick, int ball, Ref<int> dx, Ref<int> dy);
+    MaybeBool<byte> GetJoystickBall(JoystickHandle joystick, int ball, Ref<int> dx, Ref<int> dy);
 
-    [return: NativeTypeName("Uint8")]
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickButton")]
-    byte GetJoystickButton(JoystickHandle joystick, int button);
+    MaybeBool<byte> GetJoystickButton(JoystickHandle joystick, int button);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickButton")]
+    byte GetJoystickButtonRaw(JoystickHandle joystick, int button);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickConnectionState")]
     JoystickConnectionState GetJoystickConnectionState(JoystickHandle joystick);
@@ -9232,28 +11599,21 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickFirmwareVersion")]
     ushort GetJoystickFirmwareVersion(JoystickHandle joystick);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickFromInstanceID")]
-    JoystickHandle GetJoystickFromInstanceID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickFromID")]
+    JoystickHandle GetJoystickFromID([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickFromPlayerIndex")]
     JoystickHandle GetJoystickFromPlayerIndex(int player_index);
 
-    [return: NativeTypeName("SDL_JoystickGUID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUID")]
     Guid GetJoystickGuid(JoystickHandle joystick);
 
-    [return: NativeTypeName("SDL_JoystickGUID")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDFromString")]
-    Guid GetJoystickGuidFromString([NativeTypeName("const char *")] sbyte* pchGUID);
-
-    [return: NativeTypeName("SDL_JoystickGUID")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDFromString")]
-    Guid GetJoystickGuidFromString([NativeTypeName("const char *")] Ref<sbyte> pchGUID);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDForID")]
+    Guid GetJoystickGuidForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDInfo")]
     void GetJoystickGuidInfo(
-        [NativeTypeName("SDL_JoystickGUID")] Guid guid,
+        Guid guid,
         [NativeTypeName("Uint16 *")] ushort* vendor,
         [NativeTypeName("Uint16 *")] ushort* product,
         [NativeTypeName("Uint16 *")] ushort* version,
@@ -9263,80 +11623,34 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDInfo")]
     void GetJoystickGuidInfo(
-        [NativeTypeName("SDL_JoystickGUID")] Guid guid,
+        Guid guid,
         [NativeTypeName("Uint16 *")] Ref<ushort> vendor,
         [NativeTypeName("Uint16 *")] Ref<ushort> product,
         [NativeTypeName("Uint16 *")] Ref<ushort> version,
         [NativeTypeName("Uint16 *")] Ref<ushort> crc16
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDString")]
-    int GetJoystickGuidString(
-        [NativeTypeName("SDL_JoystickGUID")] Guid guid,
-        [NativeTypeName("char *")] sbyte* pszGUID,
-        int cbGUID
-    );
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickGUIDString")]
-    int GetJoystickGuidString(
-        [NativeTypeName("SDL_JoystickGUID")] Guid guid,
-        [NativeTypeName("char *")] Ref<sbyte> pszGUID,
-        int cbGUID
-    );
-
     [return: NativeTypeName("Uint8")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickHat")]
     byte GetJoystickHat(JoystickHandle joystick, int hat);
 
-    [return: NativeTypeName("SDL_JoystickGUID")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceGUID")]
-    Guid GetJoystickInstanceGuid([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
     [return: NativeTypeName("SDL_JoystickID")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceID")]
-    uint GetJoystickInstanceID(JoystickHandle joystick);
-
-    [return: NativeTypeName("const char *")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceName")]
-    Ptr<sbyte> GetJoystickInstanceName([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("const char *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceName")]
-    sbyte* GetJoystickInstanceNameRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("const char *")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstancePath")]
-    Ptr<sbyte> GetJoystickInstancePath([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("const char *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstancePath")]
-    sbyte* GetJoystickInstancePathRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstancePlayerIndex")]
-    int GetJoystickInstancePlayerIndex([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("Uint16")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceProduct")]
-    ushort GetJoystickInstanceProduct([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("Uint16")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceProductVersion")]
-    ushort GetJoystickInstanceProductVersion([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceType")]
-    JoystickType GetJoystickInstanceType([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
-    [return: NativeTypeName("Uint16")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickInstanceVendor")]
-    ushort GetJoystickInstanceVendor([NativeTypeName("SDL_JoystickID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickID")]
+    uint GetJoystickID(JoystickHandle joystick);
 
     [return: NativeTypeName("const char *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickName")]
     Ptr<sbyte> GetJoystickName(JoystickHandle joystick);
+
+    [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickNameForID")]
+    Ptr<sbyte> GetJoystickNameForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickNameForID")]
+    sbyte* GetJoystickNameForIDRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickName")]
@@ -9348,11 +11662,23 @@ public unsafe partial interface ISdl
     Ptr<sbyte> GetJoystickPath(JoystickHandle joystick);
 
     [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPathForID")]
+    Ptr<sbyte> GetJoystickPathForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPathForID")]
+    sbyte* GetJoystickPathForIDRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPath")]
     sbyte* GetJoystickPathRaw(JoystickHandle joystick);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPlayerIndex")]
     int GetJoystickPlayerIndex(JoystickHandle joystick);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPlayerIndexForID")]
+    int GetJoystickPlayerIndexForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickPowerInfo")]
     PowerState GetJoystickPowerInfo(JoystickHandle joystick, int* percent);
@@ -9366,8 +11692,16 @@ public unsafe partial interface ISdl
     ushort GetJoystickProduct(JoystickHandle joystick);
 
     [return: NativeTypeName("Uint16")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickProductForID")]
+    ushort GetJoystickProductForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("Uint16")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickProductVersion")]
     ushort GetJoystickProductVersion(JoystickHandle joystick);
+
+    [return: NativeTypeName("Uint16")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickProductVersionForID")]
+    ushort GetJoystickProductVersionForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [return: NativeTypeName("SDL_PropertiesID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickProperties")]
@@ -9394,21 +11728,28 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickType")]
     JoystickType GetJoystickType(JoystickHandle joystick);
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickTypeForID")]
+    JoystickType GetJoystickTypeForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
     [return: NativeTypeName("Uint16")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickVendor")]
     ushort GetJoystickVendor(JoystickHandle joystick);
+
+    [return: NativeTypeName("Uint16")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetJoystickVendorForID")]
+    ushort GetJoystickVendorForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardFocus")]
     WindowHandle GetKeyboardFocus();
 
     [return: NativeTypeName("const char *")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardInstanceName")]
-    Ptr<sbyte> GetKeyboardInstanceName([NativeTypeName("SDL_KeyboardID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardNameForID")]
+    Ptr<sbyte> GetKeyboardNameForID([NativeTypeName("SDL_KeyboardID")] uint instance_id);
 
     [return: NativeTypeName("const char *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardInstanceName")]
-    sbyte* GetKeyboardInstanceNameRaw([NativeTypeName("SDL_KeyboardID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardNameForID")]
+    sbyte* GetKeyboardNameForIDRaw([NativeTypeName("SDL_KeyboardID")] uint instance_id);
 
     [return: NativeTypeName("SDL_KeyboardID *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboards")]
@@ -9419,36 +11760,49 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboards")]
     Ptr<uint> GetKeyboards(Ref<int> count);
 
-    [return: NativeTypeName("const Uint8 *")]
+    [return: NativeTypeName("const bool *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardState")]
-    byte* GetKeyboardState(int* numkeys);
+    bool* GetKeyboardState(int* numkeys);
 
-    [return: NativeTypeName("const Uint8 *")]
+    [return: NativeTypeName("const bool *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyboardState")]
-    Ptr<byte> GetKeyboardState(Ref<int> numkeys);
+    Ptr<bool> GetKeyboardState(Ref<int> numkeys);
 
     [return: NativeTypeName("SDL_Keycode")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyFromName")]
-    int GetKeyFromName([NativeTypeName("const char *")] sbyte* name);
+    uint GetKeyFromName([NativeTypeName("const char *")] sbyte* name);
 
     [return: NativeTypeName("SDL_Keycode")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyFromName")]
-    int GetKeyFromName([NativeTypeName("const char *")] Ref<sbyte> name);
+    uint GetKeyFromName([NativeTypeName("const char *")] Ref<sbyte> name);
 
     [return: NativeTypeName("SDL_Keycode")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyFromScancode")]
-    int GetKeyFromScancode(Scancode scancode);
+    uint GetKeyFromScancode(
+        Scancode scancode,
+        [NativeTypeName("SDL_Keymod")] ushort modstate,
+        [NativeTypeName("bool")] byte key_event
+    );
+
+    [return: NativeTypeName("SDL_Keycode")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyFromScancode")]
+    uint GetKeyFromScancode(
+        Scancode scancode,
+        [NativeTypeName("SDL_Keymod")] ushort modstate,
+        [NativeTypeName("bool")] MaybeBool<byte> key_event
+    );
 
     [return: NativeTypeName("const char *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyName")]
-    Ptr<sbyte> GetKeyName([NativeTypeName("SDL_Keycode")] int key);
+    Ptr<sbyte> GetKeyName([NativeTypeName("SDL_Keycode")] uint key);
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetKeyName")]
-    sbyte* GetKeyNameRaw([NativeTypeName("SDL_Keycode")] int key);
+    sbyte* GetKeyNameRaw([NativeTypeName("SDL_Keycode")] uint key);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetLogOutputFunction")]
     void GetLogOutputFunction(
@@ -9463,10 +11817,13 @@ public unsafe partial interface ISdl
         Ref2D userdata
     );
 
-    [return: NativeTypeName("SDL_bool")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetMasksForPixelFormatEnum")]
-    int GetMasksForPixelFormatEnum(
-        PixelFormatEnum format,
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetLogPriority")]
+    LogPriority GetLogPriority(int category);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetMasksForPixelFormat")]
+    byte GetMasksForPixelFormat(
+        PixelFormat format,
         int* bpp,
         [NativeTypeName("Uint32 *")] uint* Rmask,
         [NativeTypeName("Uint32 *")] uint* Gmask,
@@ -9474,11 +11831,11 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint32 *")] uint* Amask
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetMasksForPixelFormatEnum")]
-    MaybeBool<int> GetMasksForPixelFormatEnum(
-        PixelFormatEnum format,
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetMasksForPixelFormat")]
+    MaybeBool<byte> GetMasksForPixelFormat(
+        PixelFormat format,
         Ref<int> bpp,
         [NativeTypeName("Uint32 *")] Ref<uint> Rmask,
         [NativeTypeName("Uint32 *")] Ref<uint> Gmask,
@@ -9501,26 +11858,27 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetMice")]
     Ptr<uint> GetMice(Ref<int> count);
 
+    [return: NativeTypeName("SDL_Keymod")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetModState")]
-    Keymod GetModState();
+    ushort GetModState();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseFocus")]
     WindowHandle GetMouseFocus();
 
     [return: NativeTypeName("const char *")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseInstanceName")]
-    Ptr<sbyte> GetMouseInstanceName([NativeTypeName("SDL_MouseID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseNameForID")]
+    Ptr<sbyte> GetMouseNameForID([NativeTypeName("SDL_MouseID")] uint instance_id);
 
     [return: NativeTypeName("const char *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseInstanceName")]
-    sbyte* GetMouseInstanceNameRaw([NativeTypeName("SDL_MouseID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseNameForID")]
+    sbyte* GetMouseNameForIDRaw([NativeTypeName("SDL_MouseID")] uint instance_id);
 
-    [return: NativeTypeName("Uint32")]
+    [return: NativeTypeName("SDL_MouseButtonFlags")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseState")]
     uint GetMouseState(float* x, float* y);
 
-    [return: NativeTypeName("Uint32")]
+    [return: NativeTypeName("SDL_MouseButtonFlags")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetMouseState")]
     uint GetMouseState(Ref<float> x, Ref<float> y);
@@ -9574,82 +11932,26 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetNumJoystickHats")]
     int GetNumJoystickHats(JoystickHandle joystick);
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetNumLogicalCPUCores")]
+    int GetNumLogicalCPUCores();
+
     [NativeFunction("SDL3", EntryPoint = "SDL_GetNumRenderDrivers")]
     int GetNumRenderDrivers();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetNumVideoDrivers")]
     int GetNumVideoDrivers();
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPathInfo")]
-    int GetPathInfo([NativeTypeName("const char *")] sbyte* path, PathInfo* info);
+    byte GetPathInfo([NativeTypeName("const char *")] sbyte* path, PathInfo* info);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPathInfo")]
-    int GetPathInfo([NativeTypeName("const char *")] Ref<sbyte> path, Ref<PathInfo> info);
-
-    [return: NativeTypeName("Uint32")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPenCapabilities")]
-    uint GetPenCapabilities(
-        [NativeTypeName("SDL_PenID")] uint instance_id,
-        PenCapabilityInfo* capabilities
+    MaybeBool<byte> GetPathInfo(
+        [NativeTypeName("const char *")] Ref<sbyte> path,
+        Ref<PathInfo> info
     );
-
-    [return: NativeTypeName("Uint32")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPenCapabilities")]
-    uint GetPenCapabilities(
-        [NativeTypeName("SDL_PenID")] uint instance_id,
-        Ref<PenCapabilityInfo> capabilities
-    );
-
-    [return: NativeTypeName("SDL_PenID")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPenFromGUID")]
-    uint GetPenFromGuid(Guid guid);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPenGUID")]
-    Guid GetPenGuid([NativeTypeName("SDL_PenID")] uint instance_id);
-
-    [return: NativeTypeName("const char *")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPenName")]
-    Ptr<sbyte> GetPenName([NativeTypeName("SDL_PenID")] uint instance_id);
-
-    [return: NativeTypeName("const char *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPenName")]
-    sbyte* GetPenNameRaw([NativeTypeName("SDL_PenID")] uint instance_id);
-
-    [return: NativeTypeName("SDL_PenID *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPens")]
-    uint* GetPens(int* count);
-
-    [return: NativeTypeName("SDL_PenID *")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPens")]
-    Ptr<uint> GetPens(Ref<int> count);
-
-    [return: NativeTypeName("Uint32")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPenStatus")]
-    uint GetPenStatus(
-        [NativeTypeName("SDL_PenID")] uint instance_id,
-        float* x,
-        float* y,
-        float* axes,
-        [NativeTypeName("size_t")] nuint num_axes
-    );
-
-    [return: NativeTypeName("Uint32")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPenStatus")]
-    uint GetPenStatus(
-        [NativeTypeName("SDL_PenID")] uint instance_id,
-        Ref<float> x,
-        Ref<float> y,
-        Ref<float> axes,
-        [NativeTypeName("size_t")] nuint num_axes
-    );
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPenType")]
-    PenSubtype GetPenType([NativeTypeName("SDL_PenID")] uint instance_id);
 
     [return: NativeTypeName("Uint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPerformanceCounter")]
@@ -9659,8 +11961,17 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPerformanceFrequency")]
     ulong GetPerformanceFrequency();
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatEnumForMasks")]
-    PixelFormatEnum GetPixelFormatEnumForMasks(
+    [return: NativeTypeName("const SDL_PixelFormatDetails *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatDetails")]
+    Ptr<PixelFormatDetails> GetPixelFormatDetails(PixelFormat format);
+
+    [return: NativeTypeName("const SDL_PixelFormatDetails *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatDetails")]
+    PixelFormatDetails* GetPixelFormatDetailsRaw(PixelFormat format);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatForMasks")]
+    PixelFormat GetPixelFormatForMasks(
         int bpp,
         [NativeTypeName("Uint32")] uint Rmask,
         [NativeTypeName("Uint32")] uint Gmask,
@@ -9671,11 +11982,11 @@ public unsafe partial interface ISdl
     [return: NativeTypeName("const char *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatName")]
-    Ptr<sbyte> GetPixelFormatName(PixelFormatEnum format);
+    Ptr<sbyte> GetPixelFormatName(PixelFormat format);
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatName")]
-    sbyte* GetPixelFormatNameRaw(PixelFormatEnum format);
+    sbyte* GetPixelFormatNameRaw(PixelFormat format);
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -9686,6 +11997,21 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPlatform")]
     sbyte* GetPlatformRaw();
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetPointerProperty")]
+    void* GetPointerProperty(
+        [NativeTypeName("SDL_PropertiesID")] uint props,
+        [NativeTypeName("const char *")] sbyte* name,
+        void* default_value
+    );
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetPointerProperty")]
+    Ptr GetPointerProperty(
+        [NativeTypeName("SDL_PropertiesID")] uint props,
+        [NativeTypeName("const char *")] Ref<sbyte> name,
+        Ref default_value
+    );
+
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPowerInfo")]
     PowerState GetPowerInfo(int* seconds, int* percent);
 
@@ -9693,12 +12019,12 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPowerInfo")]
     PowerState GetPowerInfo(Ref<int> seconds, Ref<int> percent);
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetPreferredLocales")]
+    Locale** GetPreferredLocales(int* count);
+
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPreferredLocales")]
-    Ptr<Locale> GetPreferredLocales();
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetPreferredLocales")]
-    Locale* GetPreferredLocalesRaw();
+    Ptr2D<Locale> GetPreferredLocales(Ref<int> count);
 
     [return: NativeTypeName("char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPrefPath")]
@@ -9728,21 +12054,6 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPrimarySelectionText")]
     sbyte* GetPrimarySelectionTextRaw();
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetProperty")]
-    void* GetProperty(
-        [NativeTypeName("SDL_PropertiesID")] uint props,
-        [NativeTypeName("const char *")] sbyte* name,
-        void* default_value
-    );
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetProperty")]
-    Ptr GetProperty(
-        [NativeTypeName("SDL_PropertiesID")] uint props,
-        [NativeTypeName("const char *")] Ref<sbyte> name,
-        Ref default_value
-    );
-
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPropertyType")]
     PropertyType GetPropertyType(
         [NativeTypeName("SDL_PropertiesID")] uint props,
@@ -9756,15 +12067,15 @@ public unsafe partial interface ISdl
         [NativeTypeName("const char *")] Ref<sbyte> name
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetRealGamepadInstanceType")]
-    GamepadType GetRealGamepadInstanceType([NativeTypeName("SDL_JoystickID")] uint instance_id);
-
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRealGamepadType")]
     GamepadType GetRealGamepadType(GamepadHandle gamepad);
 
-    [return: NativeTypeName("SDL_bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetRealGamepadTypeForID")]
+    GamepadType GetRealGamepadTypeForID([NativeTypeName("SDL_JoystickID")] uint instance_id);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectAndLineIntersection")]
-    int GetRectAndLineIntersection(
+    byte GetRectAndLineIntersection(
         [NativeTypeName("const SDL_Rect *")] Rect* rect,
         int* X1,
         int* Y1,
@@ -9772,10 +12083,10 @@ public unsafe partial interface ISdl
         int* Y2
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectAndLineIntersection")]
-    MaybeBool<int> GetRectAndLineIntersection(
+    MaybeBool<byte> GetRectAndLineIntersection(
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
         Ref<int> X1,
         Ref<int> Y1,
@@ -9783,9 +12094,9 @@ public unsafe partial interface ISdl
         Ref<int> Y2
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectAndLineIntersectionFloat")]
-    int GetRectAndLineIntersectionFloat(
+    byte GetRectAndLineIntersectionFloat(
         [NativeTypeName("const SDL_FRect *")] FRect* rect,
         float* X1,
         float* Y1,
@@ -9793,10 +12104,10 @@ public unsafe partial interface ISdl
         float* Y2
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectAndLineIntersectionFloat")]
-    MaybeBool<int> GetRectAndLineIntersectionFloat(
+    MaybeBool<byte> GetRectAndLineIntersectionFloat(
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> rect,
         Ref<float> X1,
         Ref<float> Y1,
@@ -9804,149 +12115,157 @@ public unsafe partial interface ISdl
         Ref<float> Y2
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectEnclosingPoints")]
-    int GetRectEnclosingPoints(
+    byte GetRectEnclosingPoints(
         [NativeTypeName("const SDL_Point *")] Point* points,
         int count,
         [NativeTypeName("const SDL_Rect *")] Rect* clip,
         Rect* result
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectEnclosingPoints")]
-    MaybeBool<int> GetRectEnclosingPoints(
+    MaybeBool<byte> GetRectEnclosingPoints(
         [NativeTypeName("const SDL_Point *")] Ref<Point> points,
         int count,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> clip,
         Ref<Rect> result
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectEnclosingPointsFloat")]
-    int GetRectEnclosingPointsFloat(
+    byte GetRectEnclosingPointsFloat(
         [NativeTypeName("const SDL_FPoint *")] FPoint* points,
         int count,
         [NativeTypeName("const SDL_FRect *")] FRect* clip,
         FRect* result
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectEnclosingPointsFloat")]
-    MaybeBool<int> GetRectEnclosingPointsFloat(
+    MaybeBool<byte> GetRectEnclosingPointsFloat(
         [NativeTypeName("const SDL_FPoint *")] Ref<FPoint> points,
         int count,
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> clip,
         Ref<FRect> result
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectIntersection")]
-    int GetRectIntersection(
+    byte GetRectIntersection(
         [NativeTypeName("const SDL_Rect *")] Rect* A,
         [NativeTypeName("const SDL_Rect *")] Rect* B,
         Rect* result
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectIntersection")]
-    MaybeBool<int> GetRectIntersection(
+    MaybeBool<byte> GetRectIntersection(
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> A,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> B,
         Ref<Rect> result
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectIntersectionFloat")]
-    int GetRectIntersectionFloat(
+    byte GetRectIntersectionFloat(
         [NativeTypeName("const SDL_FRect *")] FRect* A,
         [NativeTypeName("const SDL_FRect *")] FRect* B,
         FRect* result
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectIntersectionFloat")]
-    MaybeBool<int> GetRectIntersectionFloat(
+    MaybeBool<byte> GetRectIntersectionFloat(
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> A,
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> B,
         Ref<FRect> result
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectUnion")]
-    int GetRectUnion(
+    byte GetRectUnion(
         [NativeTypeName("const SDL_Rect *")] Rect* A,
         [NativeTypeName("const SDL_Rect *")] Rect* B,
         Rect* result
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectUnion")]
-    int GetRectUnion(
+    MaybeBool<byte> GetRectUnion(
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> A,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> B,
         Ref<Rect> result
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectUnionFloat")]
-    int GetRectUnionFloat(
+    byte GetRectUnionFloat(
         [NativeTypeName("const SDL_FRect *")] FRect* A,
         [NativeTypeName("const SDL_FRect *")] FRect* B,
         FRect* result
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRectUnionFloat")]
-    int GetRectUnionFloat(
+    MaybeBool<byte> GetRectUnionFloat(
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> A,
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> B,
         Ref<FRect> result
     );
 
-    [return: NativeTypeName("SDL_bool")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetRelativeMouseMode")]
-    MaybeBool<int> GetRelativeMouseMode();
-
-    [return: NativeTypeName("SDL_bool")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetRelativeMouseMode")]
-    int GetRelativeMouseModeRaw();
-
-    [return: NativeTypeName("Uint32")]
+    [return: NativeTypeName("SDL_MouseButtonFlags")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRelativeMouseState")]
     uint GetRelativeMouseState(float* x, float* y);
 
-    [return: NativeTypeName("Uint32")]
+    [return: NativeTypeName("SDL_MouseButtonFlags")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRelativeMouseState")]
     uint GetRelativeMouseState(Ref<float> x, Ref<float> y);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderClipRect")]
-    int GetRenderClipRect(RendererHandle renderer, Rect* rect);
+    byte GetRenderClipRect(RendererHandle renderer, Rect* rect);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderClipRect")]
-    int GetRenderClipRect(RendererHandle renderer, Ref<Rect> rect);
+    MaybeBool<byte> GetRenderClipRect(RendererHandle renderer, Ref<Rect> rect);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderColorScale")]
-    int GetRenderColorScale(RendererHandle renderer, float* scale);
+    byte GetRenderColorScale(RendererHandle renderer, float* scale);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderColorScale")]
-    int GetRenderColorScale(RendererHandle renderer, Ref<float> scale);
+    MaybeBool<byte> GetRenderColorScale(RendererHandle renderer, Ref<float> scale);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawBlendMode")]
-    int GetRenderDrawBlendMode(RendererHandle renderer, BlendMode* blendMode);
+    byte GetRenderDrawBlendMode(
+        RendererHandle renderer,
+        [NativeTypeName("SDL_BlendMode *")] BlendMode* blendMode
+    );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawBlendMode")]
-    int GetRenderDrawBlendMode(RendererHandle renderer, Ref<BlendMode> blendMode);
+    MaybeBool<byte> GetRenderDrawBlendMode(
+        RendererHandle renderer,
+        [NativeTypeName("SDL_BlendMode *")] Ref<BlendMode> blendMode
+    );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawColor")]
-    int GetRenderDrawColor(
+    byte GetRenderDrawColor(
         RendererHandle renderer,
         [NativeTypeName("Uint8 *")] byte* r,
         [NativeTypeName("Uint8 *")] byte* g,
@@ -9954,9 +12273,10 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint8 *")] byte* a
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawColor")]
-    int GetRenderDrawColor(
+    MaybeBool<byte> GetRenderDrawColor(
         RendererHandle renderer,
         [NativeTypeName("Uint8 *")] Ref<byte> r,
         [NativeTypeName("Uint8 *")] Ref<byte> g,
@@ -9964,12 +12284,14 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint8 *")] Ref<byte> a
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawColorFloat")]
-    int GetRenderDrawColorFloat(RendererHandle renderer, float* r, float* g, float* b, float* a);
+    byte GetRenderDrawColorFloat(RendererHandle renderer, float* r, float* g, float* b, float* a);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderDrawColorFloat")]
-    int GetRenderDrawColorFloat(
+    MaybeBool<byte> GetRenderDrawColorFloat(
         RendererHandle renderer,
         Ref<float> r,
         Ref<float> g,
@@ -9990,37 +12312,52 @@ public unsafe partial interface ISdl
     RendererHandle GetRenderer(WindowHandle window);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererFromTexture")]
-    RendererHandle GetRendererFromTexture(TextureHandle texture);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererInfo")]
-    int GetRendererInfo(RendererHandle renderer, RendererInfo* info);
+    RendererHandle GetRendererFromTexture(Texture* texture);
 
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererInfo")]
-    int GetRendererInfo(RendererHandle renderer, Ref<RendererInfo> info);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererFromTexture")]
+    RendererHandle GetRendererFromTexture(Ref<Texture> texture);
+
+    [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererName")]
+    Ptr<sbyte> GetRendererName(RendererHandle renderer);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererName")]
+    sbyte* GetRendererNameRaw(RendererHandle renderer);
 
     [return: NativeTypeName("SDL_PropertiesID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRendererProperties")]
     uint GetRendererProperties(RendererHandle renderer);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderLogicalPresentation")]
-    int GetRenderLogicalPresentation(
+    byte GetRenderLogicalPresentation(
         RendererHandle renderer,
         int* w,
         int* h,
-        RendererLogicalPresentation* mode,
-        ScaleMode* scale_mode
+        RendererLogicalPresentation* mode
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderLogicalPresentation")]
-    int GetRenderLogicalPresentation(
+    MaybeBool<byte> GetRenderLogicalPresentation(
         RendererHandle renderer,
         Ref<int> w,
         Ref<int> h,
-        Ref<RendererLogicalPresentation> mode,
-        Ref<ScaleMode> scale_mode
+        Ref<RendererLogicalPresentation> mode
     );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderLogicalPresentationRect")]
+    byte GetRenderLogicalPresentationRect(RendererHandle renderer, FRect* rect);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderLogicalPresentationRect")]
+    MaybeBool<byte> GetRenderLogicalPresentationRect(RendererHandle renderer, Ref<FRect> rect);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderMetalCommandEncoder")]
@@ -10036,36 +12373,57 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderMetalLayer")]
     void* GetRenderMetalLayerRaw(RendererHandle renderer);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderOutputSize")]
-    int GetRenderOutputSize(RendererHandle renderer, int* w, int* h);
+    byte GetRenderOutputSize(RendererHandle renderer, int* w, int* h);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderOutputSize")]
-    int GetRenderOutputSize(RendererHandle renderer, Ref<int> w, Ref<int> h);
+    MaybeBool<byte> GetRenderOutputSize(RendererHandle renderer, Ref<int> w, Ref<int> h);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderSafeArea")]
+    byte GetRenderSafeArea(RendererHandle renderer, Rect* rect);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderSafeArea")]
+    MaybeBool<byte> GetRenderSafeArea(RendererHandle renderer, Ref<Rect> rect);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderScale")]
-    int GetRenderScale(RendererHandle renderer, float* scaleX, float* scaleY);
+    byte GetRenderScale(RendererHandle renderer, float* scaleX, float* scaleY);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderScale")]
-    int GetRenderScale(RendererHandle renderer, Ref<float> scaleX, Ref<float> scaleY);
+    MaybeBool<byte> GetRenderScale(RendererHandle renderer, Ref<float> scaleX, Ref<float> scaleY);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderTarget")]
+    Ptr<Texture> GetRenderTarget(RendererHandle renderer);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderTarget")]
-    TextureHandle GetRenderTarget(RendererHandle renderer);
+    Texture* GetRenderTargetRaw(RendererHandle renderer);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderViewport")]
-    int GetRenderViewport(RendererHandle renderer, Rect* rect);
+    byte GetRenderViewport(RendererHandle renderer, Rect* rect);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderViewport")]
-    int GetRenderViewport(RendererHandle renderer, Ref<Rect> rect);
+    MaybeBool<byte> GetRenderViewport(RendererHandle renderer, Ref<Rect> rect);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderVSync")]
-    int GetRenderVSync(RendererHandle renderer, int* vsync);
+    byte GetRenderVSync(RendererHandle renderer, int* vsync);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderVSync")]
-    int GetRenderVSync(RendererHandle renderer, Ref<int> vsync);
+    MaybeBool<byte> GetRenderVSync(RendererHandle renderer, Ref<int> vsync);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderWindow")]
     WindowHandle GetRenderWindow(RendererHandle renderer);
@@ -10082,7 +12440,8 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
     void GetRGB(
         [NativeTypeName("Uint32")] uint pixel,
-        [NativeTypeName("const SDL_PixelFormat *")] PixelFormat* format,
+        [NativeTypeName("const SDL_PixelFormatDetails *")] PixelFormatDetails* format,
+        [NativeTypeName("const SDL_Palette *")] Palette* palette,
         [NativeTypeName("Uint8 *")] byte* r,
         [NativeTypeName("Uint8 *")] byte* g,
         [NativeTypeName("Uint8 *")] byte* b
@@ -10092,7 +12451,8 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
     void GetRGB(
         [NativeTypeName("Uint32")] uint pixel,
-        [NativeTypeName("const SDL_PixelFormat *")] Ref<PixelFormat> format,
+        [NativeTypeName("const SDL_PixelFormatDetails *")] Ref<PixelFormatDetails> format,
+        [NativeTypeName("const SDL_Palette *")] Ref<Palette> palette,
         [NativeTypeName("Uint8 *")] Ref<byte> r,
         [NativeTypeName("Uint8 *")] Ref<byte> g,
         [NativeTypeName("Uint8 *")] Ref<byte> b
@@ -10101,7 +12461,8 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRGBA")]
     void GetRgba(
         [NativeTypeName("Uint32")] uint pixel,
-        [NativeTypeName("const SDL_PixelFormat *")] PixelFormat* format,
+        [NativeTypeName("const SDL_PixelFormatDetails *")] PixelFormatDetails* format,
+        [NativeTypeName("const SDL_Palette *")] Palette* palette,
         [NativeTypeName("Uint8 *")] byte* r,
         [NativeTypeName("Uint8 *")] byte* g,
         [NativeTypeName("Uint8 *")] byte* b,
@@ -10112,15 +12473,29 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRGBA")]
     void GetRgba(
         [NativeTypeName("Uint32")] uint pixel,
-        [NativeTypeName("const SDL_PixelFormat *")] Ref<PixelFormat> format,
+        [NativeTypeName("const SDL_PixelFormatDetails *")] Ref<PixelFormatDetails> format,
+        [NativeTypeName("const SDL_Palette *")] Ref<Palette> palette,
         [NativeTypeName("Uint8 *")] Ref<byte> r,
         [NativeTypeName("Uint8 *")] Ref<byte> g,
         [NativeTypeName("Uint8 *")] Ref<byte> b,
         [NativeTypeName("Uint8 *")] Ref<byte> a
     );
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSandbox")]
+    Sandbox GetSandbox();
+
     [NativeFunction("SDL3", EntryPoint = "SDL_GetScancodeFromKey")]
-    Scancode GetScancodeFromKey([NativeTypeName("SDL_Keycode")] int key);
+    Scancode GetScancodeFromKey(
+        [NativeTypeName("SDL_Keycode")] uint key,
+        [NativeTypeName("SDL_Keymod *")] ushort* modstate
+    );
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetScancodeFromKey")]
+    Scancode GetScancodeFromKey(
+        [NativeTypeName("SDL_Keycode")] uint key,
+        [NativeTypeName("SDL_Keymod *")] Ref<ushort> modstate
+    );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetScancodeFromName")]
     Scancode GetScancodeFromName([NativeTypeName("const char *")] sbyte* name);
@@ -10142,34 +12517,21 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSemaphoreValue")]
     uint GetSemaphoreValue(SemaphoreHandle sem);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorData")]
-    int GetSensorData(SensorHandle sensor, float* data, int num_values);
+    byte GetSensorData(SensorHandle sensor, float* data, int num_values);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorData")]
-    int GetSensorData(SensorHandle sensor, Ref<float> data, int num_values);
+    MaybeBool<byte> GetSensorData(SensorHandle sensor, Ref<float> data, int num_values);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorFromInstanceID")]
-    SensorHandle GetSensorFromInstanceID([NativeTypeName("SDL_SensorID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorFromID")]
+    SensorHandle GetSensorFromID([NativeTypeName("SDL_SensorID")] uint instance_id);
 
     [return: NativeTypeName("SDL_SensorID")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorInstanceID")]
-    uint GetSensorInstanceID(SensorHandle sensor);
-
-    [return: NativeTypeName("const char *")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorInstanceName")]
-    Ptr<sbyte> GetSensorInstanceName([NativeTypeName("SDL_SensorID")] uint instance_id);
-
-    [return: NativeTypeName("const char *")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorInstanceName")]
-    sbyte* GetSensorInstanceNameRaw([NativeTypeName("SDL_SensorID")] uint instance_id);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorInstanceNonPortableType")]
-    int GetSensorInstanceNonPortableType([NativeTypeName("SDL_SensorID")] uint instance_id);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorInstanceType")]
-    SensorType GetSensorInstanceType([NativeTypeName("SDL_SensorID")] uint instance_id);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorID")]
+    uint GetSensorID(SensorHandle sensor);
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -10177,11 +12539,23 @@ public unsafe partial interface ISdl
     Ptr<sbyte> GetSensorName(SensorHandle sensor);
 
     [return: NativeTypeName("const char *")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorNameForID")]
+    Ptr<sbyte> GetSensorNameForID([NativeTypeName("SDL_SensorID")] uint instance_id);
+
+    [return: NativeTypeName("const char *")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorNameForID")]
+    sbyte* GetSensorNameForIDRaw([NativeTypeName("SDL_SensorID")] uint instance_id);
+
+    [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorName")]
     sbyte* GetSensorNameRaw(SensorHandle sensor);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorNonPortableType")]
     int GetSensorNonPortableType(SensorHandle sensor);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorNonPortableTypeForID")]
+    int GetSensorNonPortableTypeForID([NativeTypeName("SDL_SensorID")] uint instance_id);
 
     [return: NativeTypeName("SDL_PropertiesID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorProperties")]
@@ -10199,34 +12573,45 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorType")]
     SensorType GetSensorType(SensorHandle sensor);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetSilenceValueForFormat")]
-    int GetSilenceValueForFormat([NativeTypeName("SDL_AudioFormat")] ushort format);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSensorTypeForID")]
+    SensorType GetSensorTypeForID([NativeTypeName("SDL_SensorID")] uint instance_id);
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSilenceValueForFormat")]
+    int GetSilenceValueForFormat(AudioFormat format);
+
+    [return: NativeTypeName("size_t")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSIMDAlignment")]
+    nuint GetSimdAlignment();
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetStorageFileSize")]
-    int GetStorageFileSize(
+    byte GetStorageFileSize(
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
         [NativeTypeName("Uint64 *")] ulong* length
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetStorageFileSize")]
-    int GetStorageFileSize(
+    MaybeBool<byte> GetStorageFileSize(
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
         [NativeTypeName("Uint64 *")] Ref<ulong> length
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetStoragePathInfo")]
-    int GetStoragePathInfo(
+    byte GetStoragePathInfo(
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
         PathInfo* info
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetStoragePathInfo")]
-    int GetStoragePathInfo(
+    MaybeBool<byte> GetStoragePathInfo(
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
         Ref<PathInfo> info
@@ -10253,45 +12638,67 @@ public unsafe partial interface ISdl
         [NativeTypeName("const char *")] Ref<sbyte> default_value
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceAlphaMod")]
-    int GetSurfaceAlphaMod(Surface* surface, [NativeTypeName("Uint8 *")] byte* alpha);
+    byte GetSurfaceAlphaMod(Surface* surface, [NativeTypeName("Uint8 *")] byte* alpha);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceAlphaMod")]
-    int GetSurfaceAlphaMod(Ref<Surface> surface, [NativeTypeName("Uint8 *")] Ref<byte> alpha);
+    MaybeBool<byte> GetSurfaceAlphaMod(
+        Ref<Surface> surface,
+        [NativeTypeName("Uint8 *")] Ref<byte> alpha
+    );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceBlendMode")]
-    int GetSurfaceBlendMode(Surface* surface, BlendMode* blendMode);
+    byte GetSurfaceBlendMode(
+        Surface* surface,
+        [NativeTypeName("SDL_BlendMode *")] BlendMode* blendMode
+    );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceBlendMode")]
-    int GetSurfaceBlendMode(Ref<Surface> surface, Ref<BlendMode> blendMode);
+    MaybeBool<byte> GetSurfaceBlendMode(
+        Ref<Surface> surface,
+        [NativeTypeName("SDL_BlendMode *")] Ref<BlendMode> blendMode
+    );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceClipRect")]
-    int GetSurfaceClipRect(Surface* surface, Rect* rect);
+    byte GetSurfaceClipRect(Surface* surface, Rect* rect);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceClipRect")]
-    int GetSurfaceClipRect(Ref<Surface> surface, Ref<Rect> rect);
+    MaybeBool<byte> GetSurfaceClipRect(Ref<Surface> surface, Ref<Rect> rect);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorKey")]
-    int GetSurfaceColorKey(Surface* surface, [NativeTypeName("Uint32 *")] uint* key);
+    byte GetSurfaceColorKey(Surface* surface, [NativeTypeName("Uint32 *")] uint* key);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorKey")]
-    int GetSurfaceColorKey(Ref<Surface> surface, [NativeTypeName("Uint32 *")] Ref<uint> key);
+    MaybeBool<byte> GetSurfaceColorKey(
+        Ref<Surface> surface,
+        [NativeTypeName("Uint32 *")] Ref<uint> key
+    );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorMod")]
-    int GetSurfaceColorMod(
+    byte GetSurfaceColorMod(
         Surface* surface,
         [NativeTypeName("Uint8 *")] byte* r,
         [NativeTypeName("Uint8 *")] byte* g,
         [NativeTypeName("Uint8 *")] byte* b
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorMod")]
-    int GetSurfaceColorMod(
+    MaybeBool<byte> GetSurfaceColorMod(
         Ref<Surface> surface,
         [NativeTypeName("Uint8 *")] Ref<byte> r,
         [NativeTypeName("Uint8 *")] Ref<byte> g,
@@ -10299,11 +12706,25 @@ public unsafe partial interface ISdl
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorspace")]
-    int GetSurfaceColorspace(Surface* surface, Colorspace* colorspace);
+    Colorspace GetSurfaceColorspace(Surface* surface);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceColorspace")]
-    int GetSurfaceColorspace(Ref<Surface> surface, Ref<Colorspace> colorspace);
+    Colorspace GetSurfaceColorspace(Ref<Surface> surface);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceImages")]
+    Surface** GetSurfaceImages(Surface* surface, int* count);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceImages")]
+    Ptr2D<Surface> GetSurfaceImages(Ref<Surface> surface, Ref<int> count);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfacePalette")]
+    Palette* GetSurfacePalette(Surface* surface);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfacePalette")]
+    Ptr<Palette> GetSurfacePalette(Ref<Surface> surface);
 
     [return: NativeTypeName("SDL_PropertiesID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceProperties")]
@@ -10320,61 +12741,110 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSystemTheme")]
     SystemTheme GetSystemTheme();
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetTextInputArea")]
+    byte GetTextInputArea(WindowHandle window, Rect* rect, int* cursor);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetTextInputArea")]
+    MaybeBool<byte> GetTextInputArea(WindowHandle window, Ref<Rect> rect, Ref<int> cursor);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureAlphaMod")]
-    int GetTextureAlphaMod(TextureHandle texture, [NativeTypeName("Uint8 *")] byte* alpha);
+    byte GetTextureAlphaMod(Texture* texture, [NativeTypeName("Uint8 *")] byte* alpha);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureAlphaMod")]
-    int GetTextureAlphaMod(TextureHandle texture, [NativeTypeName("Uint8 *")] Ref<byte> alpha);
+    MaybeBool<byte> GetTextureAlphaMod(
+        Ref<Texture> texture,
+        [NativeTypeName("Uint8 *")] Ref<byte> alpha
+    );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureAlphaModFloat")]
-    int GetTextureAlphaModFloat(TextureHandle texture, float* alpha);
+    byte GetTextureAlphaModFloat(Texture* texture, float* alpha);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureAlphaModFloat")]
-    int GetTextureAlphaModFloat(TextureHandle texture, Ref<float> alpha);
+    MaybeBool<byte> GetTextureAlphaModFloat(Ref<Texture> texture, Ref<float> alpha);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureBlendMode")]
-    int GetTextureBlendMode(TextureHandle texture, BlendMode* blendMode);
+    byte GetTextureBlendMode(
+        Texture* texture,
+        [NativeTypeName("SDL_BlendMode *")] BlendMode* blendMode
+    );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureBlendMode")]
-    int GetTextureBlendMode(TextureHandle texture, Ref<BlendMode> blendMode);
+    MaybeBool<byte> GetTextureBlendMode(
+        Ref<Texture> texture,
+        [NativeTypeName("SDL_BlendMode *")] Ref<BlendMode> blendMode
+    );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureColorMod")]
-    int GetTextureColorMod(
-        TextureHandle texture,
+    byte GetTextureColorMod(
+        Texture* texture,
         [NativeTypeName("Uint8 *")] byte* r,
         [NativeTypeName("Uint8 *")] byte* g,
         [NativeTypeName("Uint8 *")] byte* b
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureColorMod")]
-    int GetTextureColorMod(
-        TextureHandle texture,
+    MaybeBool<byte> GetTextureColorMod(
+        Ref<Texture> texture,
         [NativeTypeName("Uint8 *")] Ref<byte> r,
         [NativeTypeName("Uint8 *")] Ref<byte> g,
         [NativeTypeName("Uint8 *")] Ref<byte> b
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureColorModFloat")]
-    int GetTextureColorModFloat(TextureHandle texture, float* r, float* g, float* b);
+    byte GetTextureColorModFloat(Texture* texture, float* r, float* g, float* b);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureColorModFloat")]
-    int GetTextureColorModFloat(TextureHandle texture, Ref<float> r, Ref<float> g, Ref<float> b);
+    MaybeBool<byte> GetTextureColorModFloat(
+        Ref<Texture> texture,
+        Ref<float> r,
+        Ref<float> g,
+        Ref<float> b
+    );
 
     [return: NativeTypeName("SDL_PropertiesID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureProperties")]
-    uint GetTextureProperties(TextureHandle texture);
+    uint GetTextureProperties(Texture* texture);
 
+    [return: NativeTypeName("SDL_PropertiesID")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureProperties")]
+    uint GetTextureProperties(Ref<Texture> texture);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureScaleMode")]
-    int GetTextureScaleMode(TextureHandle texture, ScaleMode* scaleMode);
+    byte GetTextureScaleMode(Texture* texture, ScaleMode* scaleMode);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureScaleMode")]
-    int GetTextureScaleMode(TextureHandle texture, Ref<ScaleMode> scaleMode);
+    MaybeBool<byte> GetTextureScaleMode(Ref<Texture> texture, Ref<ScaleMode> scaleMode);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureSize")]
+    byte GetTextureSize(Texture* texture, float* w, float* h);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureSize")]
+    MaybeBool<byte> GetTextureSize(Ref<Texture> texture, Ref<float> w, Ref<float> h);
 
     [return: NativeTypeName("SDL_ThreadID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetThreadID")]
@@ -10397,12 +12867,12 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTicksNS")]
     ulong GetTicksNS();
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
+    void* GetTLS([NativeTypeName("SDL_TLSID *")] AtomicInt* id);
+
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
-    Ptr GetTLS([NativeTypeName("SDL_TLSID")] uint id);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
-    void* GetTLSRaw([NativeTypeName("SDL_TLSID")] uint id);
+    Ptr GetTLS([NativeTypeName("SDL_TLSID *")] Ref<AtomicInt> id);
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -10432,21 +12902,17 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchFingers")]
     Ptr2D<Finger> GetTouchFingers([NativeTypeName("SDL_TouchID")] ulong touchID, Ref<int> count);
 
-    [return: NativeTypeName("char *")]
+    [return: NativeTypeName("const char *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetUserFolder")]
     Ptr<sbyte> GetUserFolder(Folder folder);
 
-    [return: NativeTypeName("char *")]
+    [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetUserFolder")]
     sbyte* GetUserFolderRaw(Folder folder);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetVersion")]
-    int GetVersion(Version* ver);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetVersion")]
-    int GetVersion(Ref<Version> ver);
+    int GetVersion();
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -10457,12 +12923,27 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetVideoDriver")]
     sbyte* GetVideoDriverRaw(int index);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowBordersSize")]
-    int GetWindowBordersSize(WindowHandle window, int* top, int* left, int* bottom, int* right);
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowAspectRatio")]
+    byte GetWindowAspectRatio(WindowHandle window, float* min_aspect, float* max_aspect);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowAspectRatio")]
+    MaybeBool<byte> GetWindowAspectRatio(
+        WindowHandle window,
+        Ref<float> min_aspect,
+        Ref<float> max_aspect
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowBordersSize")]
+    byte GetWindowBordersSize(WindowHandle window, int* top, int* left, int* bottom, int* right);
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowBordersSize")]
-    int GetWindowBordersSize(
+    MaybeBool<byte> GetWindowBordersSize(
         WindowHandle window,
         Ref<int> top,
         Ref<int> left,
@@ -10475,7 +12956,14 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_WindowFlags")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFlags")]
-    uint GetWindowFlags(WindowHandle window);
+    ulong GetWindowFlags(WindowHandle window);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFromEvent")]
+    WindowHandle GetWindowFromEvent([NativeTypeName("const SDL_Event *")] Event* @event);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFromEvent")]
+    WindowHandle GetWindowFromEvent([NativeTypeName("const SDL_Event *")] Ref<Event> @event);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFromID")]
     WindowHandle GetWindowFromID([NativeTypeName("SDL_WindowID")] uint id);
@@ -10500,37 +12988,41 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowID")]
     uint GetWindowID(WindowHandle window);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowKeyboardGrab")]
-    MaybeBool<int> GetWindowKeyboardGrab(WindowHandle window);
+    MaybeBool<byte> GetWindowKeyboardGrab(WindowHandle window);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowKeyboardGrab")]
-    int GetWindowKeyboardGrabRaw(WindowHandle window);
+    byte GetWindowKeyboardGrabRaw(WindowHandle window);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMaximumSize")]
-    int GetWindowMaximumSize(WindowHandle window, int* w, int* h);
+    byte GetWindowMaximumSize(WindowHandle window, int* w, int* h);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMaximumSize")]
-    int GetWindowMaximumSize(WindowHandle window, Ref<int> w, Ref<int> h);
+    MaybeBool<byte> GetWindowMaximumSize(WindowHandle window, Ref<int> w, Ref<int> h);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMinimumSize")]
-    int GetWindowMinimumSize(WindowHandle window, int* w, int* h);
+    byte GetWindowMinimumSize(WindowHandle window, int* w, int* h);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMinimumSize")]
-    int GetWindowMinimumSize(WindowHandle window, Ref<int> w, Ref<int> h);
+    MaybeBool<byte> GetWindowMinimumSize(WindowHandle window, Ref<int> w, Ref<int> h);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMouseGrab")]
-    MaybeBool<int> GetWindowMouseGrab(WindowHandle window);
+    MaybeBool<byte> GetWindowMouseGrab(WindowHandle window);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowMouseGrab")]
-    int GetWindowMouseGrabRaw(WindowHandle window);
+    byte GetWindowMouseGrabRaw(WindowHandle window);
 
     [return: NativeTypeName("const SDL_Rect *")]
     [Transformed]
@@ -10542,11 +13034,7 @@ public unsafe partial interface ISdl
     Rect* GetWindowMouseRectRaw(WindowHandle window);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowOpacity")]
-    int GetWindowOpacity(WindowHandle window, float* out_opacity);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowOpacity")]
-    int GetWindowOpacity(WindowHandle window, Ref<float> out_opacity);
+    float GetWindowOpacity(WindowHandle window);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowParent")]
     WindowHandle GetWindowParent(WindowHandle window);
@@ -10554,34 +13042,64 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowPixelDensity")]
     float GetWindowPixelDensity(WindowHandle window);
 
-    [return: NativeTypeName("Uint32")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowPixelFormat")]
-    uint GetWindowPixelFormat(WindowHandle window);
+    PixelFormat GetWindowPixelFormat(WindowHandle window);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowPosition")]
-    int GetWindowPosition(WindowHandle window, int* x, int* y);
+    byte GetWindowPosition(WindowHandle window, int* x, int* y);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowPosition")]
-    int GetWindowPosition(WindowHandle window, Ref<int> x, Ref<int> y);
+    MaybeBool<byte> GetWindowPosition(WindowHandle window, Ref<int> x, Ref<int> y);
 
     [return: NativeTypeName("SDL_PropertiesID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowProperties")]
     uint GetWindowProperties(WindowHandle window);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSize")]
-    int GetWindowSize(WindowHandle window, int* w, int* h);
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowRelativeMouseMode")]
+    MaybeBool<byte> GetWindowRelativeMouseMode(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowRelativeMouseMode")]
+    byte GetWindowRelativeMouseModeRaw(WindowHandle window);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindows")]
+    WindowHandle* GetWindows(int* count);
 
     [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindows")]
+    Ptr<WindowHandle> GetWindows(Ref<int> count);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSafeArea")]
+    byte GetWindowSafeArea(WindowHandle window, Rect* rect);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSafeArea")]
+    MaybeBool<byte> GetWindowSafeArea(WindowHandle window, Ref<Rect> rect);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSize")]
-    int GetWindowSize(WindowHandle window, Ref<int> w, Ref<int> h);
+    byte GetWindowSize(WindowHandle window, int* w, int* h);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSize")]
+    MaybeBool<byte> GetWindowSize(WindowHandle window, Ref<int> w, Ref<int> h);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSizeInPixels")]
-    int GetWindowSizeInPixels(WindowHandle window, int* w, int* h);
+    byte GetWindowSizeInPixels(WindowHandle window, int* w, int* h);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSizeInPixels")]
-    int GetWindowSizeInPixels(WindowHandle window, Ref<int> w, Ref<int> h);
+    MaybeBool<byte> GetWindowSizeInPixels(WindowHandle window, Ref<int> w, Ref<int> h);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSurface")]
@@ -10589,6 +13107,15 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSurface")]
     Surface* GetWindowSurfaceRaw(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSurfaceVSync")]
+    byte GetWindowSurfaceVSync(WindowHandle window, int* vsync);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowSurfaceVSync")]
+    MaybeBool<byte> GetWindowSurfaceVSync(WindowHandle window, Ref<int> vsync);
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -10600,45 +13127,41 @@ public unsafe partial interface ISdl
     sbyte* GetWindowTitleRaw(WindowHandle window);
 
     [return: NativeTypeName("SDL_GLContext")]
-    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_CreateContext")]
-    Ptr GLCreateContext(WindowHandle window);
+    GLContextStateHandle GLCreateContext(WindowHandle window);
 
-    [return: NativeTypeName("SDL_GLContext")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GL_CreateContext")]
-    void* GLCreateContextRaw(WindowHandle window);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_GL_DeleteContext")]
-    int GLDeleteContext([NativeTypeName("SDL_GLContext")] void* context);
-
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GL_DeleteContext")]
-    int GLDeleteContext([NativeTypeName("SDL_GLContext")] Ref context);
+    [NativeFunction("SDL3", EntryPoint = "SDL_GL_DestroyContext")]
+    MaybeBool<byte> GLDestroyContext(
+        [NativeTypeName("SDL_GLContext")] GLContextStateHandle context
+    );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GL_DestroyContext")]
+    byte GLDestroyContextRaw([NativeTypeName("SDL_GLContext")] GLContextStateHandle context);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_ExtensionSupported")]
-    int GLExtensionSupported([NativeTypeName("const char *")] sbyte* extension);
+    byte GLExtensionSupported([NativeTypeName("const char *")] sbyte* extension);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_ExtensionSupported")]
-    MaybeBool<int> GLExtensionSupported([NativeTypeName("const char *")] Ref<sbyte> extension);
+    MaybeBool<byte> GLExtensionSupported([NativeTypeName("const char *")] Ref<sbyte> extension);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetAttribute")]
-    int GLGetAttribute(GLattr attr, int* value);
+    byte GLGetAttribute(GLAttr attr, int* value);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetAttribute")]
-    int GLGetAttribute(GLattr attr, Ref<int> value);
-
-    [return: NativeTypeName("SDL_GLContext")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetCurrentContext")]
-    Ptr GLGetCurrentContext();
+    MaybeBool<byte> GLGetAttribute(GLAttr attr, Ref<int> value);
 
     [return: NativeTypeName("SDL_GLContext")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetCurrentContext")]
-    void* GLGetCurrentContextRaw();
+    GLContextStateHandle GLGetCurrentContext();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetCurrentWindow")]
     WindowHandle GLGetCurrentWindow();
@@ -10652,38 +13175,68 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetProcAddress")]
     FunctionPointer GLGetProcAddress([NativeTypeName("const char *")] Ref<sbyte> proc);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetSwapInterval")]
-    int GLGetSwapInterval(int* interval);
+    byte GLGetSwapInterval(int* interval);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetSwapInterval")]
-    int GLGetSwapInterval(Ref<int> interval);
+    MaybeBool<byte> GLGetSwapInterval(Ref<int> interval);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_LoadLibrary")]
-    int GLLoadLibrary([NativeTypeName("const char *")] sbyte* path);
+    byte GLLoadLibrary([NativeTypeName("const char *")] sbyte* path);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_LoadLibrary")]
-    int GLLoadLibrary([NativeTypeName("const char *")] Ref<sbyte> path);
+    MaybeBool<byte> GLLoadLibrary([NativeTypeName("const char *")] Ref<sbyte> path);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GL_MakeCurrent")]
-    int GLMakeCurrent(WindowHandle window, [NativeTypeName("SDL_GLContext")] void* context);
-
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_MakeCurrent")]
-    int GLMakeCurrent(WindowHandle window, [NativeTypeName("SDL_GLContext")] Ref context);
+    MaybeBool<byte> GLMakeCurrent(
+        WindowHandle window,
+        [NativeTypeName("SDL_GLContext")] GLContextStateHandle context
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GL_MakeCurrent")]
+    byte GLMakeCurrentRaw(
+        WindowHandle window,
+        [NativeTypeName("SDL_GLContext")] GLContextStateHandle context
+    );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_ResetAttributes")]
     void GLResetAttributes();
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_SetAttribute")]
-    int GLSetAttribute(GLattr attr, int value);
+    MaybeBool<byte> GLSetAttribute(GLAttr attr, int value);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GL_SetAttribute")]
+    byte GLSetAttributeRaw(GLAttr attr, int value);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_SetSwapInterval")]
-    int GLSetSwapInterval(int interval);
+    MaybeBool<byte> GLSetSwapInterval(int interval);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GL_SetSwapInterval")]
+    byte GLSetSwapIntervalRaw(int interval);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_SwapWindow")]
-    int GLSwapWindow(WindowHandle window);
+    MaybeBool<byte> GLSwapWindow(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GL_SwapWindow")]
+    byte GLSwapWindowRaw(WindowHandle window);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_UnloadLibrary")]
     void GLUnloadLibrary();
@@ -10693,7 +13246,7 @@ public unsafe partial interface ISdl
     sbyte** GlobDirectory(
         [NativeTypeName("const char *")] sbyte* path,
         [NativeTypeName("const char *")] sbyte* pattern,
-        [NativeTypeName("Uint32")] uint flags,
+        [NativeTypeName("SDL_GlobFlags")] uint flags,
         int* count
     );
 
@@ -10703,7 +13256,7 @@ public unsafe partial interface ISdl
     Ptr2D<sbyte> GlobDirectory(
         [NativeTypeName("const char *")] Ref<sbyte> path,
         [NativeTypeName("const char *")] Ref<sbyte> pattern,
-        [NativeTypeName("Uint32")] uint flags,
+        [NativeTypeName("SDL_GlobFlags")] uint flags,
         Ref<int> count
     );
 
@@ -10713,7 +13266,7 @@ public unsafe partial interface ISdl
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
         [NativeTypeName("const char *")] sbyte* pattern,
-        [NativeTypeName("Uint32")] uint flags,
+        [NativeTypeName("SDL_GlobFlags")] uint flags,
         int* count
     );
 
@@ -10724,321 +13277,314 @@ public unsafe partial interface ISdl
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
         [NativeTypeName("const char *")] Ref<sbyte> pattern,
-        [NativeTypeName("Uint32")] uint flags,
+        [NativeTypeName("SDL_GlobFlags")] uint flags,
         Ref<int> count
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_GUIDFromString")]
-    Guid GuidFromString([NativeTypeName("const char *")] sbyte* pchGUID);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_GUIDFromString")]
-    Guid GuidFromString([NativeTypeName("const char *")] Ref<sbyte> pchGUID);
-
     [NativeFunction("SDL3", EntryPoint = "SDL_GUIDToString")]
-    int GuidToString(Guid guid, [NativeTypeName("char *")] sbyte* pszGUID, int cbGUID);
+    void GuidToString(Guid guid, [NativeTypeName("char *")] sbyte* pszGUID, int cbGUID);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GUIDToString")]
-    int GuidToString(Guid guid, [NativeTypeName("char *")] Ref<sbyte> pszGUID, int cbGUID);
+    void GuidToString(Guid guid, [NativeTypeName("char *")] Ref<sbyte> pszGUID, int cbGUID);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HapticEffectSupported")]
-    int HapticEffectSupported(
+    byte HapticEffectSupported(
         HapticHandle haptic,
         [NativeTypeName("const SDL_HapticEffect *")] HapticEffect* effect
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HapticEffectSupported")]
-    MaybeBool<int> HapticEffectSupported(
+    MaybeBool<byte> HapticEffectSupported(
         HapticHandle haptic,
         [NativeTypeName("const SDL_HapticEffect *")] Ref<HapticEffect> effect
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HapticRumbleSupported")]
-    MaybeBool<int> HapticRumbleSupported(HapticHandle haptic);
+    MaybeBool<byte> HapticRumbleSupported(HapticHandle haptic);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HapticRumbleSupported")]
-    int HapticRumbleSupportedRaw(HapticHandle haptic);
+    byte HapticRumbleSupportedRaw(HapticHandle haptic);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAltiVec")]
-    MaybeBool<int> HasAltiVec();
+    MaybeBool<byte> HasAltiVec();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAltiVec")]
-    int HasAltiVecRaw();
+    byte HasAltiVecRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasARMSIMD")]
-    MaybeBool<int> HasArmsimd();
+    MaybeBool<byte> HasArmsimd();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasARMSIMD")]
-    int HasArmsimdRaw();
+    byte HasArmsimdRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX")]
-    MaybeBool<int> HasAVX();
+    MaybeBool<byte> HasAVX();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX2")]
-    MaybeBool<int> HasAVX2();
+    MaybeBool<byte> HasAVX2();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX2")]
-    int HasAVX2Raw();
+    byte HasAVX2Raw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX512F")]
-    MaybeBool<int> HasAVX512F();
+    MaybeBool<byte> HasAVX512F();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX512F")]
-    int HasAVX512FRaw();
+    byte HasAVX512FRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX")]
-    int HasAVXRaw();
+    byte HasAVXRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasClipboardData")]
-    int HasClipboardData([NativeTypeName("const char *")] sbyte* mime_type);
+    byte HasClipboardData([NativeTypeName("const char *")] sbyte* mime_type);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasClipboardData")]
-    MaybeBool<int> HasClipboardData([NativeTypeName("const char *")] Ref<sbyte> mime_type);
+    MaybeBool<byte> HasClipboardData([NativeTypeName("const char *")] Ref<sbyte> mime_type);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasClipboardText")]
-    MaybeBool<int> HasClipboardText();
+    MaybeBool<byte> HasClipboardText();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasClipboardText")]
-    int HasClipboardTextRaw();
+    byte HasClipboardTextRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasEvent")]
-    MaybeBool<int> HasEvent([NativeTypeName("Uint32")] uint type);
+    MaybeBool<byte> HasEvent([NativeTypeName("Uint32")] uint type);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasEvent")]
-    int HasEventRaw([NativeTypeName("Uint32")] uint type);
+    byte HasEventRaw([NativeTypeName("Uint32")] uint type);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasEvents")]
-    MaybeBool<int> HasEvents(
+    MaybeBool<byte> HasEvents(
         [NativeTypeName("Uint32")] uint minType,
         [NativeTypeName("Uint32")] uint maxType
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasEvents")]
-    int HasEventsRaw(
+    byte HasEventsRaw(
         [NativeTypeName("Uint32")] uint minType,
         [NativeTypeName("Uint32")] uint maxType
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasGamepad")]
-    MaybeBool<int> HasGamepad();
+    MaybeBool<byte> HasGamepad();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasGamepad")]
-    int HasGamepadRaw();
+    byte HasGamepadRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasJoystick")]
-    MaybeBool<int> HasJoystick();
+    MaybeBool<byte> HasJoystick();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasJoystick")]
-    int HasJoystickRaw();
+    byte HasJoystickRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasKeyboard")]
-    MaybeBool<int> HasKeyboard();
+    MaybeBool<byte> HasKeyboard();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasKeyboard")]
-    int HasKeyboardRaw();
+    byte HasKeyboardRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasLASX")]
-    MaybeBool<int> HasLasx();
+    MaybeBool<byte> HasLasx();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasLASX")]
-    int HasLasxRaw();
+    byte HasLasxRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasLSX")]
-    MaybeBool<int> HasLSX();
+    MaybeBool<byte> HasLSX();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasLSX")]
-    int HasLSXRaw();
+    byte HasLSXRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasMMX")]
-    MaybeBool<int> HasMMX();
+    MaybeBool<byte> HasMMX();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasMMX")]
-    int HasMMXRaw();
+    byte HasMMXRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasMouse")]
-    MaybeBool<int> HasMouse();
+    MaybeBool<byte> HasMouse();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasMouse")]
-    int HasMouseRaw();
+    byte HasMouseRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasNEON")]
-    MaybeBool<int> HasNeon();
+    MaybeBool<byte> HasNeon();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasNEON")]
-    int HasNeonRaw();
+    byte HasNeonRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasPrimarySelectionText")]
-    MaybeBool<int> HasPrimarySelectionText();
+    MaybeBool<byte> HasPrimarySelectionText();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasPrimarySelectionText")]
-    int HasPrimarySelectionTextRaw();
+    byte HasPrimarySelectionTextRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasProperty")]
-    int HasProperty(
+    byte HasProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasProperty")]
-    MaybeBool<int> HasProperty(
+    MaybeBool<byte> HasProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasRectIntersection")]
-    int HasRectIntersection(
+    byte HasRectIntersection(
         [NativeTypeName("const SDL_Rect *")] Rect* A,
         [NativeTypeName("const SDL_Rect *")] Rect* B
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasRectIntersection")]
-    MaybeBool<int> HasRectIntersection(
+    MaybeBool<byte> HasRectIntersection(
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> A,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> B
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasRectIntersectionFloat")]
-    int HasRectIntersectionFloat(
+    byte HasRectIntersectionFloat(
         [NativeTypeName("const SDL_FRect *")] FRect* A,
         [NativeTypeName("const SDL_FRect *")] FRect* B
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasRectIntersectionFloat")]
-    MaybeBool<int> HasRectIntersectionFloat(
+    MaybeBool<byte> HasRectIntersectionFloat(
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> A,
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> B
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasScreenKeyboardSupport")]
-    MaybeBool<int> HasScreenKeyboardSupport();
+    MaybeBool<byte> HasScreenKeyboardSupport();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasScreenKeyboardSupport")]
-    int HasScreenKeyboardSupportRaw();
+    byte HasScreenKeyboardSupportRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE")]
-    MaybeBool<int> HasSSE();
+    MaybeBool<byte> HasSSE();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE2")]
-    MaybeBool<int> HasSSE2();
+    MaybeBool<byte> HasSSE2();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE2")]
-    int HasSSE2Raw();
+    byte HasSSE2Raw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE3")]
-    MaybeBool<int> HasSSE3();
+    MaybeBool<byte> HasSSE3();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE3")]
-    int HasSSE3Raw();
+    byte HasSSE3Raw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE41")]
-    MaybeBool<int> HasSSE41();
+    MaybeBool<byte> HasSSE41();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE41")]
-    int HasSSE41Raw();
+    byte HasSSE41Raw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE42")]
-    MaybeBool<int> HasSSE42();
+    MaybeBool<byte> HasSSE42();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE42")]
-    int HasSSE42Raw();
+    byte HasSSE42Raw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE")]
-    int HasSSERaw();
+    byte HasSSERaw();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_ble_scan")]
-    void HidBleScan([NativeTypeName("SDL_bool")] int active);
+    void HidBleScan([NativeTypeName("bool")] byte active);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_ble_scan")]
-    void HidBleScan([NativeTypeName("SDL_bool")] MaybeBool<int> active);
+    void HidBleScan([NativeTypeName("bool")] MaybeBool<byte> active);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_close")]
     int HidClose(HidDeviceHandle dev);
@@ -11274,20 +13820,50 @@ public unsafe partial interface ISdl
         [NativeTypeName("size_t")] nuint length
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HideCursor")]
-    int HideCursor();
+    MaybeBool<byte> HideCursor();
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_HideCursor")]
+    byte HideCursorRaw();
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_HideWindow")]
-    int HideWindow(WindowHandle window);
+    MaybeBool<byte> HideWindow(WindowHandle window);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_HideWindow")]
+    byte HideWindowRaw(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_Init")]
-    int Init([NativeTypeName("Uint32")] uint flags);
+    MaybeBool<byte> Init([NativeTypeName("SDL_InitFlags")] uint flags);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_InitHapticRumble")]
-    int InitHapticRumble(HapticHandle haptic);
+    MaybeBool<byte> InitHapticRumble(HapticHandle haptic);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_InitHapticRumble")]
+    byte InitHapticRumbleRaw(HapticHandle haptic);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_Init")]
+    byte InitRaw([NativeTypeName("SDL_InitFlags")] uint flags);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_InitSubSystem")]
-    int InitSubSystem([NativeTypeName("Uint32")] uint flags);
+    MaybeBool<byte> InitSubSystem([NativeTypeName("SDL_InitFlags")] uint flags);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_InitSubSystem")]
+    byte InitSubSystemRaw([NativeTypeName("SDL_InitFlags")] uint flags);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_IOFromConstMem")]
     IOStreamHandle IOFromConstMem(
@@ -11342,68 +13918,77 @@ public unsafe partial interface ISdl
         [NativeTypeName("va_list")] Ref<sbyte> ap
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_IsGamepad")]
-    MaybeBool<int> IsGamepad([NativeTypeName("SDL_JoystickID")] uint instance_id);
+    MaybeBool<byte> IsGamepad([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_IsGamepad")]
-    int IsGamepadRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
+    byte IsGamepadRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_IsJoystickHaptic")]
-    MaybeBool<int> IsJoystickHaptic(JoystickHandle joystick);
+    MaybeBool<byte> IsJoystickHaptic(JoystickHandle joystick);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_IsJoystickHaptic")]
-    int IsJoystickHapticRaw(JoystickHandle joystick);
+    byte IsJoystickHapticRaw(JoystickHandle joystick);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_IsJoystickVirtual")]
-    MaybeBool<int> IsJoystickVirtual([NativeTypeName("SDL_JoystickID")] uint instance_id);
+    MaybeBool<byte> IsJoystickVirtual([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_IsJoystickVirtual")]
-    int IsJoystickVirtualRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
+    byte IsJoystickVirtualRaw([NativeTypeName("SDL_JoystickID")] uint instance_id);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_IsMouseHaptic")]
-    MaybeBool<int> IsMouseHaptic();
+    MaybeBool<byte> IsMouseHaptic();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_IsMouseHaptic")]
-    int IsMouseHapticRaw();
+    byte IsMouseHapticRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_IsTablet")]
-    MaybeBool<int> IsTablet();
+    MaybeBool<byte> IsTablet();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_IsTablet")]
-    int IsTabletRaw();
+    byte IsTabletRaw();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_IsTV")]
+    MaybeBool<byte> IsTV();
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_IsTV")]
+    byte IsTVRaw();
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_JoystickConnected")]
-    MaybeBool<int> JoystickConnected(JoystickHandle joystick);
+    MaybeBool<byte> JoystickConnected(JoystickHandle joystick);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_JoystickConnected")]
-    int JoystickConnectedRaw(JoystickHandle joystick);
+    byte JoystickConnectedRaw(JoystickHandle joystick);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_JoystickEventsEnabled")]
-    MaybeBool<int> JoystickEventsEnabled();
+    MaybeBool<byte> JoystickEventsEnabled();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_JoystickEventsEnabled")]
-    int JoystickEventsEnabledRaw();
+    byte JoystickEventsEnabledRaw();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP")]
     Surface* LoadBMP([NativeTypeName("const char *")] sbyte* file);
@@ -11413,11 +13998,11 @@ public unsafe partial interface ISdl
     Ptr<Surface> LoadBMP([NativeTypeName("const char *")] Ref<sbyte> file);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP_IO")]
-    Surface* LoadBMPIO(IOStreamHandle src, [NativeTypeName("SDL_bool")] int closeio);
+    Surface* LoadBMPIO(IOStreamHandle src, [NativeTypeName("bool")] byte closeio);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP_IO")]
-    Ptr<Surface> LoadBMPIO(IOStreamHandle src, [NativeTypeName("SDL_bool")] MaybeBool<int> closeio);
+    Ptr<Surface> LoadBMPIO(IOStreamHandle src, [NativeTypeName("bool")] MaybeBool<byte> closeio);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadFile")]
     void* LoadFile(
@@ -11436,7 +14021,7 @@ public unsafe partial interface ISdl
     void* LoadFileIO(
         IOStreamHandle src,
         [NativeTypeName("size_t *")] nuint* datasize,
-        [NativeTypeName("SDL_bool")] int closeio
+        [NativeTypeName("bool")] byte closeio
     );
 
     [Transformed]
@@ -11444,63 +14029,79 @@ public unsafe partial interface ISdl
     Ptr LoadFileIO(
         IOStreamHandle src,
         [NativeTypeName("size_t *")] Ref<nuint> datasize,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> closeio
+        [NativeTypeName("bool")] MaybeBool<byte> closeio
     );
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadFunction")]
-    FunctionPointer LoadFunction(void* handle, [NativeTypeName("const char *")] sbyte* name);
+    FunctionPointer LoadFunction(
+        SharedObjectHandle handle,
+        [NativeTypeName("const char *")] sbyte* name
+    );
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadFunction")]
-    FunctionPointer LoadFunction(Ref handle, [NativeTypeName("const char *")] Ref<sbyte> name);
+    FunctionPointer LoadFunction(
+        SharedObjectHandle handle,
+        [NativeTypeName("const char *")] Ref<sbyte> name
+    );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadObject")]
-    void* LoadObject([NativeTypeName("const char *")] sbyte* sofile);
+    SharedObjectHandle LoadObject([NativeTypeName("const char *")] sbyte* sofile);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadObject")]
-    Ptr LoadObject([NativeTypeName("const char *")] Ref<sbyte> sofile);
+    SharedObjectHandle LoadObject([NativeTypeName("const char *")] Ref<sbyte> sofile);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV")]
-    int LoadWAV(
+    byte LoadWAV(
         [NativeTypeName("const char *")] sbyte* path,
         AudioSpec* spec,
         [NativeTypeName("Uint8 **")] byte** audio_buf,
         [NativeTypeName("Uint32 *")] uint* audio_len
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV")]
-    int LoadWAV(
+    MaybeBool<byte> LoadWAV(
         [NativeTypeName("const char *")] Ref<sbyte> path,
         Ref<AudioSpec> spec,
         [NativeTypeName("Uint8 **")] Ref2D<byte> audio_buf,
         [NativeTypeName("Uint32 *")] Ref<uint> audio_len
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV_IO")]
-    int LoadWAVIO(
+    byte LoadWAVIO(
         IOStreamHandle src,
-        [NativeTypeName("SDL_bool")] int closeio,
+        [NativeTypeName("bool")] byte closeio,
         AudioSpec* spec,
         [NativeTypeName("Uint8 **")] byte** audio_buf,
         [NativeTypeName("Uint32 *")] uint* audio_len
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV_IO")]
-    int LoadWAVIO(
+    MaybeBool<byte> LoadWAVIO(
         IOStreamHandle src,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> closeio,
+        [NativeTypeName("bool")] MaybeBool<byte> closeio,
         Ref<AudioSpec> spec,
         [NativeTypeName("Uint8 **")] Ref2D<byte> audio_buf,
         [NativeTypeName("Uint32 *")] Ref<uint> audio_len
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LockAudioStream")]
-    int LockAudioStream(AudioStreamHandle stream);
+    MaybeBool<byte> LockAudioStream(AudioStreamHandle stream);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_LockAudioStream")]
+    byte LockAudioStreamRaw(AudioStreamHandle stream);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_LockJoysticks")]
     void LockJoysticks();
@@ -11508,8 +14109,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_LockMutex")]
     void LockMutex(MutexHandle mutex);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LockProperties")]
-    int LockProperties([NativeTypeName("SDL_PropertiesID")] uint props);
+    MaybeBool<byte> LockProperties([NativeTypeName("SDL_PropertiesID")] uint props);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_LockProperties")]
+    byte LockPropertiesRaw([NativeTypeName("SDL_PropertiesID")] uint props);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_LockRWLockForReading")]
     void LockRWLockForReading(RWLockHandle rwlock);
@@ -11524,47 +14131,50 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_LockSpinlock")]
     void LockSpinlock([NativeTypeName("SDL_SpinLock *")] Ref<int> @lock);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LockSurface")]
-    int LockSurface(Surface* surface);
+    byte LockSurface(Surface* surface);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LockSurface")]
-    int LockSurface(Ref<Surface> surface);
+    MaybeBool<byte> LockSurface(Ref<Surface> surface);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LockTexture")]
-    int LockTexture(
-        TextureHandle texture,
+    byte LockTexture(
+        Texture* texture,
         [NativeTypeName("const SDL_Rect *")] Rect* rect,
         void** pixels,
         int* pitch
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LockTexture")]
-    int LockTexture(
-        TextureHandle texture,
+    MaybeBool<byte> LockTexture(
+        Ref<Texture> texture,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
         Ref2D pixels,
         Ref<int> pitch
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LockTextureToSurface")]
-    int LockTextureToSurface(
-        TextureHandle texture,
+    byte LockTextureToSurface(
+        Texture* texture,
         [NativeTypeName("const SDL_Rect *")] Rect* rect,
         Surface** surface
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LockTextureToSurface")]
-    int LockTextureToSurface(
-        TextureHandle texture,
+    MaybeBool<byte> LockTextureToSurface(
+        Ref<Texture> texture,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
         Ref2D<Surface> surface
     );
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_LogGetPriority")]
-    LogPriority LogGetPriority(int category);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_LogMessageV")]
     void LogMessageV(
@@ -11583,19 +14193,11 @@ public unsafe partial interface ISdl
         [NativeTypeName("va_list")] Ref<sbyte> ap
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_LogResetPriorities")]
-    void LogResetPriorities();
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_LogSetAllPriority")]
-    void LogSetAllPriority(LogPriority priority);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_LogSetPriority")]
-    void LogSetPriority(int category, LogPriority priority);
-
     [return: NativeTypeName("Uint32")]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapRGB")]
     uint MapRGB(
-        [NativeTypeName("const SDL_PixelFormat *")] PixelFormat* format,
+        [NativeTypeName("const SDL_PixelFormatDetails *")] PixelFormatDetails* format,
+        [NativeTypeName("const SDL_Palette *")] Palette* palette,
         [NativeTypeName("Uint8")] byte r,
         [NativeTypeName("Uint8")] byte g,
         [NativeTypeName("Uint8")] byte b
@@ -11605,7 +14207,8 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapRGB")]
     uint MapRGB(
-        [NativeTypeName("const SDL_PixelFormat *")] Ref<PixelFormat> format,
+        [NativeTypeName("const SDL_PixelFormatDetails *")] Ref<PixelFormatDetails> format,
+        [NativeTypeName("const SDL_Palette *")] Ref<Palette> palette,
         [NativeTypeName("Uint8")] byte r,
         [NativeTypeName("Uint8")] byte g,
         [NativeTypeName("Uint8")] byte b
@@ -11614,7 +14217,8 @@ public unsafe partial interface ISdl
     [return: NativeTypeName("Uint32")]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapRGBA")]
     uint MapRgba(
-        [NativeTypeName("const SDL_PixelFormat *")] PixelFormat* format,
+        [NativeTypeName("const SDL_PixelFormatDetails *")] PixelFormatDetails* format,
+        [NativeTypeName("const SDL_Palette *")] Palette* palette,
         [NativeTypeName("Uint8")] byte r,
         [NativeTypeName("Uint8")] byte g,
         [NativeTypeName("Uint8")] byte b,
@@ -11625,15 +14229,62 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapRGBA")]
     uint MapRgba(
-        [NativeTypeName("const SDL_PixelFormat *")] Ref<PixelFormat> format,
+        [NativeTypeName("const SDL_PixelFormatDetails *")] Ref<PixelFormatDetails> format,
+        [NativeTypeName("const SDL_Palette *")] Ref<Palette> palette,
         [NativeTypeName("Uint8")] byte r,
         [NativeTypeName("Uint8")] byte g,
         [NativeTypeName("Uint8")] byte b,
         [NativeTypeName("Uint8")] byte a
     );
 
+    [return: NativeTypeName("Uint32")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGB")]
+    uint MapSurfaceRGB(
+        Surface* surface,
+        [NativeTypeName("Uint8")] byte r,
+        [NativeTypeName("Uint8")] byte g,
+        [NativeTypeName("Uint8")] byte b
+    );
+
+    [return: NativeTypeName("Uint32")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGB")]
+    uint MapSurfaceRGB(
+        Ref<Surface> surface,
+        [NativeTypeName("Uint8")] byte r,
+        [NativeTypeName("Uint8")] byte g,
+        [NativeTypeName("Uint8")] byte b
+    );
+
+    [return: NativeTypeName("Uint32")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGBA")]
+    uint MapSurfaceRgba(
+        Surface* surface,
+        [NativeTypeName("Uint8")] byte r,
+        [NativeTypeName("Uint8")] byte g,
+        [NativeTypeName("Uint8")] byte b,
+        [NativeTypeName("Uint8")] byte a
+    );
+
+    [return: NativeTypeName("Uint32")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGBA")]
+    uint MapSurfaceRgba(
+        Ref<Surface> surface,
+        [NativeTypeName("Uint8")] byte r,
+        [NativeTypeName("Uint8")] byte g,
+        [NativeTypeName("Uint8")] byte b,
+        [NativeTypeName("Uint8")] byte a
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_MaximizeWindow")]
-    int MaximizeWindow(WindowHandle window);
+    MaybeBool<byte> MaximizeWindow(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_MaximizeWindow")]
+    byte MaximizeWindowRaw(WindowHandle window);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_MemoryBarrierAcquireFunction")]
     void MemoryBarrierAcquireFunction();
@@ -11664,42 +14315,50 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_Metal_GetLayer")]
     Ptr MetalGetLayer([NativeTypeName("SDL_MetalView")] Ref view);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_MinimizeWindow")]
-    int MinimizeWindow(WindowHandle window);
+    MaybeBool<byte> MinimizeWindow(WindowHandle window);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_MixAudioFormat")]
-    int MixAudioFormat(
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_MinimizeWindow")]
+    byte MinimizeWindowRaw(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_MixAudio")]
+    byte MixAudio(
         [NativeTypeName("Uint8 *")] byte* dst,
         [NativeTypeName("const Uint8 *")] byte* src,
-        [NativeTypeName("SDL_AudioFormat")] ushort format,
+        AudioFormat format,
         [NativeTypeName("Uint32")] uint len,
-        int volume
+        float volume
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_MixAudioFormat")]
-    int MixAudioFormat(
+    [NativeFunction("SDL3", EntryPoint = "SDL_MixAudio")]
+    MaybeBool<byte> MixAudio(
         [NativeTypeName("Uint8 *")] Ref<byte> dst,
         [NativeTypeName("const Uint8 *")] Ref<byte> src,
-        [NativeTypeName("SDL_AudioFormat")] ushort format,
+        AudioFormat format,
         [NativeTypeName("Uint32")] uint len,
-        int volume
+        float volume
     );
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationDidBecomeActive")]
-    void OnApplicationDidBecomeActive();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationDidEnterBackground")]
     void OnApplicationDidEnterBackground();
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationDidEnterForeground")]
+    void OnApplicationDidEnterForeground();
+
     [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationDidReceiveMemoryWarning")]
     void OnApplicationDidReceiveMemoryWarning();
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationWillEnterBackground")]
+    void OnApplicationWillEnterBackground();
+
     [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationWillEnterForeground")]
     void OnApplicationWillEnterForeground();
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationWillResignActive")]
-    void OnApplicationWillResignActive();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_OnApplicationWillTerminate")]
     void OnApplicationWillTerminate();
@@ -11736,16 +14395,16 @@ public unsafe partial interface ISdl
         Ref userdata
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_OpenCameraDevice")]
-    CameraHandle OpenCameraDevice(
-        [NativeTypeName("SDL_CameraDeviceID")] uint instance_id,
+    [NativeFunction("SDL3", EntryPoint = "SDL_OpenCamera")]
+    CameraHandle OpenCamera(
+        [NativeTypeName("SDL_CameraID")] uint instance_id,
         [NativeTypeName("const SDL_CameraSpec *")] CameraSpec* spec
     );
 
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_OpenCameraDevice")]
-    CameraHandle OpenCameraDevice(
-        [NativeTypeName("SDL_CameraDeviceID")] uint instance_id,
+    [NativeFunction("SDL3", EntryPoint = "SDL_OpenCamera")]
+    CameraHandle OpenCamera(
+        [NativeTypeName("SDL_CameraID")] uint instance_id,
         [NativeTypeName("const SDL_CameraSpec *")] Ref<CameraSpec> spec
     );
 
@@ -11813,12 +14472,14 @@ public unsafe partial interface ISdl
         [NativeTypeName("SDL_PropertiesID")] uint props
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_OpenURL")]
-    int OpenURL([NativeTypeName("const char *")] sbyte* url);
+    byte OpenURL([NativeTypeName("const char *")] sbyte* url);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_OpenURL")]
-    int OpenURL([NativeTypeName("const char *")] Ref<sbyte> url);
+    MaybeBool<byte> OpenURL([NativeTypeName("const char *")] Ref<sbyte> url);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_OpenUserStorage")]
     StorageHandle OpenUserStorage(
@@ -11835,11 +14496,41 @@ public unsafe partial interface ISdl
         [NativeTypeName("SDL_PropertiesID")] uint props
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_PauseAudioDevice")]
-    int PauseAudioDevice([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_OutOfMemory")]
+    MaybeBool<byte> OutOfMemory();
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_OutOfMemory")]
+    byte OutOfMemoryRaw();
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PauseAudioDevice")]
+    MaybeBool<byte> PauseAudioDevice([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PauseAudioDevice")]
+    byte PauseAudioDeviceRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PauseAudioStreamDevice")]
+    MaybeBool<byte> PauseAudioStreamDevice(AudioStreamHandle stream);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PauseAudioStreamDevice")]
+    byte PauseAudioStreamDeviceRaw(AudioStreamHandle stream);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_PauseHaptic")]
-    int PauseHaptic(HapticHandle haptic);
+    MaybeBool<byte> PauseHaptic(HapticHandle haptic);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PauseHaptic")]
+    byte PauseHapticRaw(HapticHandle haptic);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_PeepEvents")]
     int PeepEvents(
@@ -11860,105 +14551,116 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint32")] uint maxType
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_PenConnected")]
-    MaybeBool<int> PenConnected([NativeTypeName("SDL_PenID")] uint instance_id);
-
-    [return: NativeTypeName("SDL_bool")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_PenConnected")]
-    int PenConnectedRaw([NativeTypeName("SDL_PenID")] uint instance_id);
-
     [NativeFunction("SDL3", EntryPoint = "SDL_PlayHapticRumble")]
-    int PlayHapticRumble(
+    MaybeBool<byte> PlayHapticRumble(
         HapticHandle haptic,
         float strength,
         [NativeTypeName("Uint32")] uint length
     );
 
-    [return: NativeTypeName("SDL_bool")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_PollEvent")]
-    int PollEvent(Event* @event);
-
-    [return: NativeTypeName("SDL_bool")]
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_PollEvent")]
-    MaybeBool<int> PollEvent(Ref<Event> @event);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_PostSemaphore")]
-    int PostSemaphore(SemaphoreHandle sem);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplyAlpha")]
-    int PremultiplyAlpha(
-        int width,
-        int height,
-        PixelFormatEnum src_format,
-        [NativeTypeName("const void *")] void* src,
-        int src_pitch,
-        PixelFormatEnum dst_format,
-        void* dst,
-        int dst_pitch
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PlayHapticRumble")]
+    byte PlayHapticRumbleRaw(
+        HapticHandle haptic,
+        float strength,
+        [NativeTypeName("Uint32")] uint length
     );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PollEvent")]
+    byte PollEvent(Event* @event);
+
+    [return: NativeTypeName("bool")]
     [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PollEvent")]
+    MaybeBool<byte> PollEvent(Ref<Event> @event);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplyAlpha")]
-    int PremultiplyAlpha(
+    byte PremultiplyAlpha(
         int width,
         int height,
-        PixelFormatEnum src_format,
+        PixelFormat src_format,
+        [NativeTypeName("const void *")] void* src,
+        int src_pitch,
+        PixelFormat dst_format,
+        void* dst,
+        int dst_pitch,
+        [NativeTypeName("bool")] byte linear
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplyAlpha")]
+    MaybeBool<byte> PremultiplyAlpha(
+        int width,
+        int height,
+        PixelFormat src_format,
         [NativeTypeName("const void *")] Ref src,
         int src_pitch,
-        PixelFormatEnum dst_format,
+        PixelFormat dst_format,
         Ref dst,
-        int dst_pitch
+        int dst_pitch,
+        [NativeTypeName("bool")] MaybeBool<byte> linear
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplySurfaceAlpha")]
+    byte PremultiplySurfaceAlpha(Surface* surface, [NativeTypeName("bool")] byte linear);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PremultiplySurfaceAlpha")]
+    MaybeBool<byte> PremultiplySurfaceAlpha(
+        Ref<Surface> surface,
+        [NativeTypeName("bool")] MaybeBool<byte> linear
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_PumpEvents")]
     void PumpEvents();
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PushEvent")]
-    int PushEvent(Event* @event);
+    byte PushEvent(Event* @event);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_PushEvent")]
-    int PushEvent(Ref<Event> @event);
+    MaybeBool<byte> PushEvent(Ref<Event> @event);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamData")]
-    int PutAudioStreamData(
+    byte PutAudioStreamData(
         AudioStreamHandle stream,
         [NativeTypeName("const void *")] void* buf,
         int len
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamData")]
-    int PutAudioStreamData(
+    MaybeBool<byte> PutAudioStreamData(
         AudioStreamHandle stream,
         [NativeTypeName("const void *")] Ref buf,
         int len
-    );
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_QueryTexture")]
-    int QueryTexture(TextureHandle texture, PixelFormatEnum* format, int* access, int* w, int* h);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_QueryTexture")]
-    int QueryTexture(
-        TextureHandle texture,
-        Ref<PixelFormatEnum> format,
-        Ref<int> access,
-        Ref<int> w,
-        Ref<int> h
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_Quit")]
     void Quit();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_QuitSubSystem")]
-    void QuitSubSystem([NativeTypeName("Uint32")] uint flags);
+    void QuitSubSystem([NativeTypeName("SDL_InitFlags")] uint flags);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RaiseWindow")]
-    int RaiseWindow(WindowHandle window);
+    MaybeBool<byte> RaiseWindow(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RaiseWindow")]
+    byte RaiseWindowRaw(WindowHandle window);
 
     [return: NativeTypeName("size_t")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadIO")]
@@ -11969,79 +14671,91 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadIO")]
     nuint ReadIO(IOStreamHandle context, Ref ptr, [NativeTypeName("size_t")] nuint size);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS16BE")]
-    int ReadS16BE(IOStreamHandle src, [NativeTypeName("Sint16 *")] short* value);
+    byte ReadS16BE(IOStreamHandle src, [NativeTypeName("Sint16 *")] short* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS16BE")]
-    MaybeBool<int> ReadS16BE(IOStreamHandle src, [NativeTypeName("Sint16 *")] Ref<short> value);
+    MaybeBool<byte> ReadS16BE(IOStreamHandle src, [NativeTypeName("Sint16 *")] Ref<short> value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS16LE")]
-    int ReadS16LE(IOStreamHandle src, [NativeTypeName("Sint16 *")] short* value);
+    byte ReadS16LE(IOStreamHandle src, [NativeTypeName("Sint16 *")] short* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS16LE")]
-    MaybeBool<int> ReadS16LE(IOStreamHandle src, [NativeTypeName("Sint16 *")] Ref<short> value);
+    MaybeBool<byte> ReadS16LE(IOStreamHandle src, [NativeTypeName("Sint16 *")] Ref<short> value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS32BE")]
-    int ReadS32BE(IOStreamHandle src, [NativeTypeName("Sint32 *")] int* value);
+    byte ReadS32BE(IOStreamHandle src, [NativeTypeName("Sint32 *")] int* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS32BE")]
-    MaybeBool<int> ReadS32BE(IOStreamHandle src, [NativeTypeName("Sint32 *")] Ref<int> value);
+    MaybeBool<byte> ReadS32BE(IOStreamHandle src, [NativeTypeName("Sint32 *")] Ref<int> value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS32LE")]
-    int ReadS32LE(IOStreamHandle src, [NativeTypeName("Sint32 *")] int* value);
+    byte ReadS32LE(IOStreamHandle src, [NativeTypeName("Sint32 *")] int* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS32LE")]
-    MaybeBool<int> ReadS32LE(IOStreamHandle src, [NativeTypeName("Sint32 *")] Ref<int> value);
+    MaybeBool<byte> ReadS32LE(IOStreamHandle src, [NativeTypeName("Sint32 *")] Ref<int> value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64BE")]
-    int ReadS64BE(IOStreamHandle src, [NativeTypeName("Sint64 *")] long* value);
+    byte ReadS64BE(IOStreamHandle src, [NativeTypeName("Sint64 *")] long* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64BE")]
-    MaybeBool<int> ReadS64BE(IOStreamHandle src, [NativeTypeName("Sint64 *")] Ref<long> value);
+    MaybeBool<byte> ReadS64BE(IOStreamHandle src, [NativeTypeName("Sint64 *")] Ref<long> value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64LE")]
-    int ReadS64LE(IOStreamHandle src, [NativeTypeName("Sint64 *")] long* value);
+    byte ReadS64LE(IOStreamHandle src, [NativeTypeName("Sint64 *")] long* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64LE")]
-    MaybeBool<int> ReadS64LE(IOStreamHandle src, [NativeTypeName("Sint64 *")] Ref<long> value);
+    MaybeBool<byte> ReadS64LE(IOStreamHandle src, [NativeTypeName("Sint64 *")] Ref<long> value);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReadS8")]
+    byte ReadS8(IOStreamHandle src, [NativeTypeName("Sint8 *")] sbyte* value);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReadS8")]
+    MaybeBool<byte> ReadS8(IOStreamHandle src, [NativeTypeName("Sint8 *")] Ref<sbyte> value);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadStorageFile")]
-    int ReadStorageFile(
+    byte ReadStorageFile(
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
         void* destination,
         [NativeTypeName("Uint64")] ulong length
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadStorageFile")]
-    int ReadStorageFile(
+    MaybeBool<byte> ReadStorageFile(
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
         Ref destination,
         [NativeTypeName("Uint64")] ulong length
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadSurfacePixel")]
-    int ReadSurfacePixel(
+    byte ReadSurfacePixel(
         Surface* surface,
         int x,
         int y,
@@ -12051,9 +14765,10 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint8 *")] byte* a
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadSurfacePixel")]
-    int ReadSurfacePixel(
+    MaybeBool<byte> ReadSurfacePixel(
         Ref<Surface> surface,
         int x,
         int y,
@@ -12063,148 +14778,226 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint8 *")] Ref<byte> a
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReadSurfacePixelFloat")]
+    byte ReadSurfacePixelFloat(
+        Surface* surface,
+        int x,
+        int y,
+        float* r,
+        float* g,
+        float* b,
+        float* a
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReadSurfacePixelFloat")]
+    MaybeBool<byte> ReadSurfacePixelFloat(
+        Ref<Surface> surface,
+        int x,
+        int y,
+        Ref<float> r,
+        Ref<float> g,
+        Ref<float> b,
+        Ref<float> a
+    );
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU16BE")]
-    int ReadU16BE(IOStreamHandle src, [NativeTypeName("Uint16 *")] ushort* value);
+    byte ReadU16BE(IOStreamHandle src, [NativeTypeName("Uint16 *")] ushort* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU16BE")]
-    MaybeBool<int> ReadU16BE(IOStreamHandle src, [NativeTypeName("Uint16 *")] Ref<ushort> value);
+    MaybeBool<byte> ReadU16BE(IOStreamHandle src, [NativeTypeName("Uint16 *")] Ref<ushort> value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU16LE")]
-    int ReadU16LE(IOStreamHandle src, [NativeTypeName("Uint16 *")] ushort* value);
+    byte ReadU16LE(IOStreamHandle src, [NativeTypeName("Uint16 *")] ushort* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU16LE")]
-    MaybeBool<int> ReadU16LE(IOStreamHandle src, [NativeTypeName("Uint16 *")] Ref<ushort> value);
+    MaybeBool<byte> ReadU16LE(IOStreamHandle src, [NativeTypeName("Uint16 *")] Ref<ushort> value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU32BE")]
-    int ReadU32BE(IOStreamHandle src, [NativeTypeName("Uint32 *")] uint* value);
+    byte ReadU32BE(IOStreamHandle src, [NativeTypeName("Uint32 *")] uint* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU32BE")]
-    MaybeBool<int> ReadU32BE(IOStreamHandle src, [NativeTypeName("Uint32 *")] Ref<uint> value);
+    MaybeBool<byte> ReadU32BE(IOStreamHandle src, [NativeTypeName("Uint32 *")] Ref<uint> value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU32LE")]
-    int ReadU32LE(IOStreamHandle src, [NativeTypeName("Uint32 *")] uint* value);
+    byte ReadU32LE(IOStreamHandle src, [NativeTypeName("Uint32 *")] uint* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU32LE")]
-    MaybeBool<int> ReadU32LE(IOStreamHandle src, [NativeTypeName("Uint32 *")] Ref<uint> value);
+    MaybeBool<byte> ReadU32LE(IOStreamHandle src, [NativeTypeName("Uint32 *")] Ref<uint> value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64BE")]
-    int ReadU64BE(IOStreamHandle src, [NativeTypeName("Uint64 *")] ulong* value);
+    byte ReadU64BE(IOStreamHandle src, [NativeTypeName("Uint64 *")] ulong* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64BE")]
-    MaybeBool<int> ReadU64BE(IOStreamHandle src, [NativeTypeName("Uint64 *")] Ref<ulong> value);
+    MaybeBool<byte> ReadU64BE(IOStreamHandle src, [NativeTypeName("Uint64 *")] Ref<ulong> value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64LE")]
-    int ReadU64LE(IOStreamHandle src, [NativeTypeName("Uint64 *")] ulong* value);
+    byte ReadU64LE(IOStreamHandle src, [NativeTypeName("Uint64 *")] ulong* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64LE")]
-    MaybeBool<int> ReadU64LE(IOStreamHandle src, [NativeTypeName("Uint64 *")] Ref<ulong> value);
+    MaybeBool<byte> ReadU64LE(IOStreamHandle src, [NativeTypeName("Uint64 *")] Ref<ulong> value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU8")]
-    int ReadU8(IOStreamHandle src, [NativeTypeName("Uint8 *")] byte* value);
+    byte ReadU8(IOStreamHandle src, [NativeTypeName("Uint8 *")] byte* value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU8")]
-    MaybeBool<int> ReadU8(IOStreamHandle src, [NativeTypeName("Uint8 *")] Ref<byte> value);
+    MaybeBool<byte> ReadU8(IOStreamHandle src, [NativeTypeName("Uint8 *")] Ref<byte> value);
 
     [return: NativeTypeName("Uint32")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RegisterEvents")]
     uint RegisterEvents(int numevents);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseCameraFrame")]
-    int ReleaseCameraFrame(CameraHandle camera, Surface* frame);
+    void ReleaseCameraFrame(CameraHandle camera, Surface* frame);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseCameraFrame")]
-    int ReleaseCameraFrame(CameraHandle camera, Ref<Surface> frame);
+    void ReleaseCameraFrame(CameraHandle camera, Ref<Surface> frame);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReloadGamepadMappings")]
-    int ReloadGamepadMappings();
+    MaybeBool<byte> ReloadGamepadMappings();
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_RemovePath")]
-    int RemovePath([NativeTypeName("const char *")] sbyte* path);
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ReloadGamepadMappings")]
+    byte ReloadGamepadMappingsRaw();
 
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_RemovePath")]
-    int RemovePath([NativeTypeName("const char *")] Ref<sbyte> path);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_RemoveStoragePath")]
-    int RemoveStoragePath(StorageHandle storage, [NativeTypeName("const char *")] sbyte* path);
+    [NativeFunction("SDL3", EntryPoint = "SDL_RemoveEventWatch")]
+    void RemoveEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, void* userdata);
 
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_RemoveStoragePath")]
-    int RemoveStoragePath(StorageHandle storage, [NativeTypeName("const char *")] Ref<sbyte> path);
+    [NativeFunction("SDL3", EntryPoint = "SDL_RemoveEventWatch")]
+    void RemoveEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata);
 
-    [return: NativeTypeName("SDL_bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RemoveHintCallback")]
+    void RemoveHintCallback(
+        [NativeTypeName("const char *")] sbyte* name,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
+        void* userdata
+    );
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RemoveHintCallback")]
+    void RemoveHintCallback(
+        [NativeTypeName("const char *")] Ref<sbyte> name,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
+        Ref userdata
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RemovePath")]
+    byte RemovePath([NativeTypeName("const char *")] sbyte* path);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RemovePath")]
+    MaybeBool<byte> RemovePath([NativeTypeName("const char *")] Ref<sbyte> path);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RemoveStoragePath")]
+    byte RemoveStoragePath(StorageHandle storage, [NativeTypeName("const char *")] sbyte* path);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RemoveStoragePath")]
+    MaybeBool<byte> RemoveStoragePath(
+        StorageHandle storage,
+        [NativeTypeName("const char *")] Ref<sbyte> path
+    );
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_RemoveSurfaceAlternateImages")]
+    void RemoveSurfaceAlternateImages(Surface* surface);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RemoveSurfaceAlternateImages")]
+    void RemoveSurfaceAlternateImages(Ref<Surface> surface);
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RemoveTimer")]
-    MaybeBool<int> RemoveTimer([NativeTypeName("SDL_TimerID")] uint id);
+    MaybeBool<byte> RemoveTimer([NativeTypeName("SDL_TimerID")] uint id);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RemoveTimer")]
-    int RemoveTimerRaw([NativeTypeName("SDL_TimerID")] uint id);
+    byte RemoveTimerRaw([NativeTypeName("SDL_TimerID")] uint id);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenamePath")]
-    int RenamePath(
+    byte RenamePath(
         [NativeTypeName("const char *")] sbyte* oldpath,
         [NativeTypeName("const char *")] sbyte* newpath
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenamePath")]
-    int RenamePath(
+    MaybeBool<byte> RenamePath(
         [NativeTypeName("const char *")] Ref<sbyte> oldpath,
         [NativeTypeName("const char *")] Ref<sbyte> newpath
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenameStoragePath")]
-    int RenameStoragePath(
+    byte RenameStoragePath(
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* oldpath,
         [NativeTypeName("const char *")] sbyte* newpath
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenameStoragePath")]
-    int RenameStoragePath(
+    MaybeBool<byte> RenameStoragePath(
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> oldpath,
         [NativeTypeName("const char *")] Ref<sbyte> newpath
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderClear")]
-    int RenderClear(RendererHandle renderer);
+    MaybeBool<byte> RenderClear(RendererHandle renderer);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderClear")]
+    byte RenderClearRaw(RendererHandle renderer);
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderClipEnabled")]
-    MaybeBool<int> RenderClipEnabled(RendererHandle renderer);
+    MaybeBool<byte> RenderClipEnabled(RendererHandle renderer);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderClipEnabled")]
-    int RenderClipEnabledRaw(RendererHandle renderer);
+    byte RenderClipEnabledRaw(RendererHandle renderer);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderCoordinatesFromWindow")]
-    int RenderCoordinatesFromWindow(
+    byte RenderCoordinatesFromWindow(
         RendererHandle renderer,
         float window_x,
         float window_y,
@@ -12212,9 +15005,10 @@ public unsafe partial interface ISdl
         float* y
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderCoordinatesFromWindow")]
-    int RenderCoordinatesFromWindow(
+    MaybeBool<byte> RenderCoordinatesFromWindow(
         RendererHandle renderer,
         float window_x,
         float window_y,
@@ -12222,8 +15016,9 @@ public unsafe partial interface ISdl
         Ref<float> y
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderCoordinatesToWindow")]
-    int RenderCoordinatesToWindow(
+    byte RenderCoordinatesToWindow(
         RendererHandle renderer,
         float x,
         float y,
@@ -12231,9 +15026,10 @@ public unsafe partial interface ISdl
         float* window_y
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderCoordinatesToWindow")]
-    int RenderCoordinatesToWindow(
+    MaybeBool<byte> RenderCoordinatesToWindow(
         RendererHandle renderer,
         float x,
         float y,
@@ -12241,89 +15037,82 @@ public unsafe partial interface ISdl
         Ref<float> window_y
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_RenderFillRect")]
-    int RenderFillRect(RendererHandle renderer, [NativeTypeName("const SDL_FRect *")] FRect* rect);
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderDebugText")]
+    byte RenderDebugText(
+        RendererHandle renderer,
+        float x,
+        float y,
+        [NativeTypeName("const char *")] sbyte* str
+    );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderDebugText")]
+    MaybeBool<byte> RenderDebugText(
+        RendererHandle renderer,
+        float x,
+        float y,
+        [NativeTypeName("const char *")] Ref<sbyte> str
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderFillRect")]
+    byte RenderFillRect(RendererHandle renderer, [NativeTypeName("const SDL_FRect *")] FRect* rect);
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderFillRect")]
-    int RenderFillRect(
+    MaybeBool<byte> RenderFillRect(
         RendererHandle renderer,
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> rect
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderFillRects")]
-    int RenderFillRects(
+    byte RenderFillRects(
         RendererHandle renderer,
         [NativeTypeName("const SDL_FRect *")] FRect* rects,
         int count
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderFillRects")]
-    int RenderFillRects(
+    MaybeBool<byte> RenderFillRects(
         RendererHandle renderer,
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> rects,
         int count
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometry")]
-    int RenderGeometry(
+    byte RenderGeometry(
         RendererHandle renderer,
-        TextureHandle texture,
+        Texture* texture,
         [NativeTypeName("const SDL_Vertex *")] Vertex* vertices,
         int num_vertices,
         [NativeTypeName("const int *")] int* indices,
         int num_indices
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometry")]
-    int RenderGeometry(
+    MaybeBool<byte> RenderGeometry(
         RendererHandle renderer,
-        TextureHandle texture,
+        Ref<Texture> texture,
         [NativeTypeName("const SDL_Vertex *")] Ref<Vertex> vertices,
         int num_vertices,
         [NativeTypeName("const int *")] Ref<int> indices,
         int num_indices
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometryRaw")]
-    int RenderGeometryRaw(
+    byte RenderGeometryRaw(
         RendererHandle renderer,
-        TextureHandle texture,
-        [NativeTypeName("const float *")] float* xy,
-        int xy_stride,
-        [NativeTypeName("const SDL_Color *")] Color* color,
-        int color_stride,
-        [NativeTypeName("const float *")] float* uv,
-        int uv_stride,
-        int num_vertices,
-        [NativeTypeName("const void *")] void* indices,
-        int num_indices,
-        int size_indices
-    );
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometryRaw")]
-    int RenderGeometryRaw(
-        RendererHandle renderer,
-        TextureHandle texture,
-        [NativeTypeName("const float *")] Ref<float> xy,
-        int xy_stride,
-        [NativeTypeName("const SDL_Color *")] Ref<Color> color,
-        int color_stride,
-        [NativeTypeName("const float *")] Ref<float> uv,
-        int uv_stride,
-        int num_vertices,
-        [NativeTypeName("const void *")] Ref indices,
-        int num_indices,
-        int size_indices
-    );
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometryRawFloat")]
-    int RenderGeometryRawFloat(
-        RendererHandle renderer,
-        TextureHandle texture,
+        Texture* texture,
         [NativeTypeName("const float *")] float* xy,
         int xy_stride,
         [NativeTypeName("const SDL_FColor *")] FColor* color,
@@ -12336,11 +15125,12 @@ public unsafe partial interface ISdl
         int size_indices
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometryRawFloat")]
-    int RenderGeometryRawFloat(
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderGeometryRaw")]
+    MaybeBool<byte> RenderGeometryRaw(
         RendererHandle renderer,
-        TextureHandle texture,
+        Ref<Texture> texture,
         [NativeTypeName("const float *")] Ref<float> xy,
         int xy_stride,
         [NativeTypeName("const SDL_FColor *")] Ref<FColor> color,
@@ -12353,44 +15143,66 @@ public unsafe partial interface ISdl
         int size_indices
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderLine")]
-    int RenderLine(RendererHandle renderer, float x1, float y1, float x2, float y2);
+    MaybeBool<byte> RenderLine(RendererHandle renderer, float x1, float y1, float x2, float y2);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderLine")]
+    byte RenderLineRaw(RendererHandle renderer, float x1, float y1, float x2, float y2);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderLines")]
-    int RenderLines(
+    byte RenderLines(
         RendererHandle renderer,
         [NativeTypeName("const SDL_FPoint *")] FPoint* points,
         int count
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderLines")]
-    int RenderLines(
+    MaybeBool<byte> RenderLines(
         RendererHandle renderer,
         [NativeTypeName("const SDL_FPoint *")] Ref<FPoint> points,
         int count
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderPoint")]
-    int RenderPoint(RendererHandle renderer, float x, float y);
+    MaybeBool<byte> RenderPoint(RendererHandle renderer, float x, float y);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderPoint")]
+    byte RenderPointRaw(RendererHandle renderer, float x, float y);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderPoints")]
-    int RenderPoints(
+    byte RenderPoints(
         RendererHandle renderer,
         [NativeTypeName("const SDL_FPoint *")] FPoint* points,
         int count
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderPoints")]
-    int RenderPoints(
+    MaybeBool<byte> RenderPoints(
         RendererHandle renderer,
         [NativeTypeName("const SDL_FPoint *")] Ref<FPoint> points,
         int count
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderPresent")]
-    int RenderPresent(RendererHandle renderer);
+    MaybeBool<byte> RenderPresent(RendererHandle renderer);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderPresent")]
+    byte RenderPresentRaw(RendererHandle renderer);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderReadPixels")]
     Surface* RenderReadPixels(
@@ -12405,76 +15217,137 @@ public unsafe partial interface ISdl
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderRect")]
-    int RenderRect(RendererHandle renderer, [NativeTypeName("const SDL_FRect *")] FRect* rect);
+    byte RenderRect(RendererHandle renderer, [NativeTypeName("const SDL_FRect *")] FRect* rect);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderRect")]
-    int RenderRect(RendererHandle renderer, [NativeTypeName("const SDL_FRect *")] Ref<FRect> rect);
+    MaybeBool<byte> RenderRect(
+        RendererHandle renderer,
+        [NativeTypeName("const SDL_FRect *")] Ref<FRect> rect
+    );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderRects")]
-    int RenderRects(
+    byte RenderRects(
         RendererHandle renderer,
         [NativeTypeName("const SDL_FRect *")] FRect* rects,
         int count
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderRects")]
-    int RenderRects(
+    MaybeBool<byte> RenderRects(
         RendererHandle renderer,
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> rects,
         int count
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture")]
-    int RenderTexture(
+    byte RenderTexture(
         RendererHandle renderer,
-        TextureHandle texture,
+        Texture* texture,
         [NativeTypeName("const SDL_FRect *")] FRect* srcrect,
         [NativeTypeName("const SDL_FRect *")] FRect* dstrect
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture")]
-    int RenderTexture(
+    MaybeBool<byte> RenderTexture(
         RendererHandle renderer,
-        TextureHandle texture,
+        Ref<Texture> texture,
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> srcrect,
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> dstrect
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureRotated")]
-    int RenderTextureRotated(
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture9Grid")]
+    byte RenderTexture9Grid(
         RendererHandle renderer,
-        TextureHandle texture,
+        Texture* texture,
+        [NativeTypeName("const SDL_FRect *")] FRect* srcrect,
+        float left_width,
+        float right_width,
+        float top_height,
+        float bottom_height,
+        float scale,
+        [NativeTypeName("const SDL_FRect *")] FRect* dstrect
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture9Grid")]
+    MaybeBool<byte> RenderTexture9Grid(
+        RendererHandle renderer,
+        Ref<Texture> texture,
+        [NativeTypeName("const SDL_FRect *")] Ref<FRect> srcrect,
+        float left_width,
+        float right_width,
+        float top_height,
+        float bottom_height,
+        float scale,
+        [NativeTypeName("const SDL_FRect *")] Ref<FRect> dstrect
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureRotated")]
+    byte RenderTextureRotated(
+        RendererHandle renderer,
+        Texture* texture,
         [NativeTypeName("const SDL_FRect *")] FRect* srcrect,
         [NativeTypeName("const SDL_FRect *")] FRect* dstrect,
-        [NativeTypeName("const double")] double angle,
+        double angle,
         [NativeTypeName("const SDL_FPoint *")] FPoint* center,
-        [NativeTypeName("const SDL_FlipMode")] FlipMode flip
+        FlipMode flip
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureRotated")]
-    int RenderTextureRotated(
+    MaybeBool<byte> RenderTextureRotated(
         RendererHandle renderer,
-        TextureHandle texture,
+        Ref<Texture> texture,
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> srcrect,
         [NativeTypeName("const SDL_FRect *")] Ref<FRect> dstrect,
-        [NativeTypeName("const double")] double angle,
+        double angle,
         [NativeTypeName("const SDL_FPoint *")] Ref<FPoint> center,
-        [NativeTypeName("const SDL_FlipMode")] FlipMode flip
+        FlipMode flip
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureTiled")]
+    byte RenderTextureTiled(
+        RendererHandle renderer,
+        Texture* texture,
+        [NativeTypeName("const SDL_FRect *")] FRect* srcrect,
+        float scale,
+        [NativeTypeName("const SDL_FRect *")] FRect* dstrect
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureTiled")]
+    MaybeBool<byte> RenderTextureTiled(
+        RendererHandle renderer,
+        Ref<Texture> texture,
+        [NativeTypeName("const SDL_FRect *")] Ref<FRect> srcrect,
+        float scale,
+        [NativeTypeName("const SDL_FRect *")] Ref<FRect> dstrect
+    );
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderViewportSet")]
-    MaybeBool<int> RenderViewportSet(RendererHandle renderer);
+    MaybeBool<byte> RenderViewportSet(RendererHandle renderer);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderViewportSet")]
-    int RenderViewportSetRaw(RendererHandle renderer);
+    byte RenderViewportSetRaw(RendererHandle renderer);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_ReportAssertion")]
     AssertState ReportAssertion(
@@ -12496,14 +15369,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_ResetAssertionReport")]
     void ResetAssertionReport();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ResetHint")]
-    int ResetHint([NativeTypeName("const char *")] sbyte* name);
+    byte ResetHint([NativeTypeName("const char *")] sbyte* name);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ResetHint")]
-    MaybeBool<int> ResetHint([NativeTypeName("const char *")] Ref<sbyte> name);
+    MaybeBool<byte> ResetHint([NativeTypeName("const char *")] Ref<sbyte> name);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_ResetHints")]
     void ResetHints();
@@ -12511,122 +15384,274 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_ResetKeyboard")]
     void ResetKeyboard();
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_ResetLogPriorities")]
+    void ResetLogPriorities();
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RestoreWindow")]
-    int RestoreWindow(WindowHandle window);
+    MaybeBool<byte> RestoreWindow(WindowHandle window);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RestoreWindow")]
+    byte RestoreWindowRaw(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ResumeAudioDevice")]
-    int ResumeAudioDevice([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+    MaybeBool<byte> ResumeAudioDevice([NativeTypeName("SDL_AudioDeviceID")] uint dev);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ResumeAudioDevice")]
+    byte ResumeAudioDeviceRaw([NativeTypeName("SDL_AudioDeviceID")] uint dev);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ResumeAudioStreamDevice")]
+    MaybeBool<byte> ResumeAudioStreamDevice(AudioStreamHandle stream);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ResumeAudioStreamDevice")]
+    byte ResumeAudioStreamDeviceRaw(AudioStreamHandle stream);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ResumeHaptic")]
-    int ResumeHaptic(HapticHandle haptic);
+    MaybeBool<byte> ResumeHaptic(HapticHandle haptic);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ResumeHaptic")]
+    byte ResumeHapticRaw(HapticHandle haptic);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RumbleGamepad")]
-    int RumbleGamepad(
+    MaybeBool<byte> RumbleGamepad(
         GamepadHandle gamepad,
         [NativeTypeName("Uint16")] ushort low_frequency_rumble,
         [NativeTypeName("Uint16")] ushort high_frequency_rumble,
         [NativeTypeName("Uint32")] uint duration_ms
     );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RumbleGamepad")]
+    byte RumbleGamepadRaw(
+        GamepadHandle gamepad,
+        [NativeTypeName("Uint16")] ushort low_frequency_rumble,
+        [NativeTypeName("Uint16")] ushort high_frequency_rumble,
+        [NativeTypeName("Uint32")] uint duration_ms
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RumbleGamepadTriggers")]
-    int RumbleGamepadTriggers(
+    MaybeBool<byte> RumbleGamepadTriggers(
         GamepadHandle gamepad,
         [NativeTypeName("Uint16")] ushort left_rumble,
         [NativeTypeName("Uint16")] ushort right_rumble,
         [NativeTypeName("Uint32")] uint duration_ms
     );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RumbleGamepadTriggers")]
+    byte RumbleGamepadTriggersRaw(
+        GamepadHandle gamepad,
+        [NativeTypeName("Uint16")] ushort left_rumble,
+        [NativeTypeName("Uint16")] ushort right_rumble,
+        [NativeTypeName("Uint32")] uint duration_ms
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RumbleJoystick")]
-    int RumbleJoystick(
+    MaybeBool<byte> RumbleJoystick(
         JoystickHandle joystick,
         [NativeTypeName("Uint16")] ushort low_frequency_rumble,
         [NativeTypeName("Uint16")] ushort high_frequency_rumble,
         [NativeTypeName("Uint32")] uint duration_ms
     );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RumbleJoystick")]
+    byte RumbleJoystickRaw(
+        JoystickHandle joystick,
+        [NativeTypeName("Uint16")] ushort low_frequency_rumble,
+        [NativeTypeName("Uint16")] ushort high_frequency_rumble,
+        [NativeTypeName("Uint32")] uint duration_ms
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RumbleJoystickTriggers")]
-    int RumbleJoystickTriggers(
+    MaybeBool<byte> RumbleJoystickTriggers(
         JoystickHandle joystick,
         [NativeTypeName("Uint16")] ushort left_rumble,
         [NativeTypeName("Uint16")] ushort right_rumble,
         [NativeTypeName("Uint32")] uint duration_ms
     );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RumbleJoystickTriggers")]
+    byte RumbleJoystickTriggersRaw(
+        JoystickHandle joystick,
+        [NativeTypeName("Uint16")] ushort left_rumble,
+        [NativeTypeName("Uint16")] ushort right_rumble,
+        [NativeTypeName("Uint32")] uint duration_ms
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_RunHapticEffect")]
-    int RunHapticEffect(
+    MaybeBool<byte> RunHapticEffect(
         HapticHandle haptic,
         int effect,
         [NativeTypeName("Uint32")] uint iterations
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP")]
-    int SaveBMP(Surface* surface, [NativeTypeName("const char *")] sbyte* file);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP")]
-    int SaveBMP(Ref<Surface> surface, [NativeTypeName("const char *")] Ref<sbyte> file);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP_IO")]
-    int SaveBMPIO(Surface* surface, IOStreamHandle dst, [NativeTypeName("SDL_bool")] int closeio);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP_IO")]
-    int SaveBMPIO(
-        Ref<Surface> surface,
-        IOStreamHandle dst,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> closeio
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RunHapticEffect")]
+    byte RunHapticEffectRaw(
+        HapticHandle haptic,
+        int effect,
+        [NativeTypeName("Uint32")] uint iterations
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP")]
+    byte SaveBMP(Surface* surface, [NativeTypeName("const char *")] sbyte* file);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP")]
+    MaybeBool<byte> SaveBMP(Ref<Surface> surface, [NativeTypeName("const char *")] Ref<sbyte> file);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP_IO")]
+    byte SaveBMPIO(Surface* surface, IOStreamHandle dst, [NativeTypeName("bool")] byte closeio);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP_IO")]
+    MaybeBool<byte> SaveBMPIO(
+        Ref<Surface> surface,
+        IOStreamHandle dst,
+        [NativeTypeName("bool")] MaybeBool<byte> closeio
+    );
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_ScaleSurface")]
+    Surface* ScaleSurface(Surface* surface, int width, int height, ScaleMode scaleMode);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ScaleSurface")]
+    Ptr<Surface> ScaleSurface(Ref<Surface> surface, int width, int height, ScaleMode scaleMode);
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ScreenKeyboardShown")]
-    MaybeBool<int> ScreenKeyboardShown(WindowHandle window);
+    MaybeBool<byte> ScreenKeyboardShown(WindowHandle window);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ScreenKeyboardShown")]
-    int ScreenKeyboardShownRaw(WindowHandle window);
+    byte ScreenKeyboardShownRaw(WindowHandle window);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ScreenSaverEnabled")]
-    MaybeBool<int> ScreenSaverEnabled();
+    MaybeBool<byte> ScreenSaverEnabled();
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ScreenSaverEnabled")]
-    int ScreenSaverEnabledRaw();
+    byte ScreenSaverEnabledRaw();
 
     [return: NativeTypeName("Sint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SeekIO")]
-    long SeekIO(IOStreamHandle context, [NativeTypeName("Sint64")] long offset, int whence);
+    long SeekIO(IOStreamHandle context, [NativeTypeName("Sint64")] long offset, IOWhence whence);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SendGamepadEffect")]
-    int SendGamepadEffect(
+    byte SendGamepadEffect(
         GamepadHandle gamepad,
         [NativeTypeName("const void *")] void* data,
         int size
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SendGamepadEffect")]
-    int SendGamepadEffect(
+    MaybeBool<byte> SendGamepadEffect(
         GamepadHandle gamepad,
         [NativeTypeName("const void *")] Ref data,
         int size
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SendJoystickEffect")]
-    int SendJoystickEffect(
+    byte SendJoystickEffect(
         JoystickHandle joystick,
         [NativeTypeName("const void *")] void* data,
         int size
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SendJoystickEffect")]
-    int SendJoystickEffect(
+    MaybeBool<byte> SendJoystickEffect(
         JoystickHandle joystick,
         [NativeTypeName("const void *")] Ref data,
         int size
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SendJoystickVirtualSensorData")]
+    byte SendJoystickVirtualSensorData(
+        JoystickHandle joystick,
+        SensorType type,
+        [NativeTypeName("Uint64")] ulong sensor_timestamp,
+        [NativeTypeName("const float *")] float* data,
+        int num_values
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SendJoystickVirtualSensorData")]
+    MaybeBool<byte> SendJoystickVirtualSensorData(
+        JoystickHandle joystick,
+        SensorType type,
+        [NativeTypeName("Uint64")] ulong sensor_timestamp,
+        [NativeTypeName("const float *")] Ref<float> data,
+        int num_values
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAppMetadata")]
+    byte SetAppMetadata(
+        [NativeTypeName("const char *")] sbyte* appname,
+        [NativeTypeName("const char *")] sbyte* appversion,
+        [NativeTypeName("const char *")] sbyte* appidentifier
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAppMetadata")]
+    MaybeBool<byte> SetAppMetadata(
+        [NativeTypeName("const char *")] Ref<sbyte> appname,
+        [NativeTypeName("const char *")] Ref<sbyte> appversion,
+        [NativeTypeName("const char *")] Ref<sbyte> appidentifier
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAppMetadataProperty")]
+    byte SetAppMetadataProperty(
+        [NativeTypeName("const char *")] sbyte* name,
+        [NativeTypeName("const char *")] sbyte* value
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAppMetadataProperty")]
+    MaybeBool<byte> SetAppMetadataProperty(
+        [NativeTypeName("const char *")] Ref<sbyte> name,
+        [NativeTypeName("const char *")] Ref<sbyte> value
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAssertionHandler")]
@@ -12642,86 +15667,181 @@ public unsafe partial interface ISdl
         Ref userdata
     );
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicInt")]
+    int SetAtomicInt(AtomicInt* a, int v);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicInt")]
+    int SetAtomicInt(Ref<AtomicInt> a, int v);
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicPointer")]
+    void* SetAtomicPointer(void** a, void* v);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicPointer")]
+    Ptr SetAtomicPointer(Ref2D a, Ref v);
+
+    [return: NativeTypeName("Uint32")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicU32")]
+    uint SetAtomicU32(AtomicU32* a, [NativeTypeName("Uint32")] uint v);
+
+    [return: NativeTypeName("Uint32")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAtomicU32")]
+    uint SetAtomicU32(Ref<AtomicU32> a, [NativeTypeName("Uint32")] uint v);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioDeviceGain")]
+    MaybeBool<byte> SetAudioDeviceGain(
+        [NativeTypeName("SDL_AudioDeviceID")] uint devid,
+        float gain
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioDeviceGain")]
+    byte SetAudioDeviceGainRaw([NativeTypeName("SDL_AudioDeviceID")] uint devid, float gain);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioPostmixCallback")]
-    int SetAudioPostmixCallback(
+    byte SetAudioPostmixCallback(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
         void* userdata
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioPostmixCallback")]
-    int SetAudioPostmixCallback(
+    MaybeBool<byte> SetAudioPostmixCallback(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
         Ref userdata
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamFormat")]
-    int SetAudioStreamFormat(
+    byte SetAudioStreamFormat(
         AudioStreamHandle stream,
         [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* src_spec,
         [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* dst_spec
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamFormat")]
-    int SetAudioStreamFormat(
+    MaybeBool<byte> SetAudioStreamFormat(
         AudioStreamHandle stream,
         [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> src_spec,
         [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> dst_spec
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamFrequencyRatio")]
-    int SetAudioStreamFrequencyRatio(AudioStreamHandle stream, float ratio);
+    MaybeBool<byte> SetAudioStreamFrequencyRatio(AudioStreamHandle stream, float ratio);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamFrequencyRatio")]
+    byte SetAudioStreamFrequencyRatioRaw(AudioStreamHandle stream, float ratio);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGain")]
+    MaybeBool<byte> SetAudioStreamGain(AudioStreamHandle stream, float gain);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGain")]
+    byte SetAudioStreamGainRaw(AudioStreamHandle stream, float gain);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGetCallback")]
-    int SetAudioStreamGetCallback(
+    byte SetAudioStreamGetCallback(
         AudioStreamHandle stream,
         [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         void* userdata
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGetCallback")]
-    int SetAudioStreamGetCallback(
+    MaybeBool<byte> SetAudioStreamGetCallback(
         AudioStreamHandle stream,
         [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         Ref userdata
     );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamInputChannelMap")]
+    byte SetAudioStreamInputChannelMap(
+        AudioStreamHandle stream,
+        [NativeTypeName("const int *")] int* chmap,
+        int count
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamInputChannelMap")]
+    MaybeBool<byte> SetAudioStreamInputChannelMap(
+        AudioStreamHandle stream,
+        [NativeTypeName("const int *")] Ref<int> chmap,
+        int count
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamOutputChannelMap")]
+    byte SetAudioStreamOutputChannelMap(
+        AudioStreamHandle stream,
+        [NativeTypeName("const int *")] int* chmap,
+        int count
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamOutputChannelMap")]
+    MaybeBool<byte> SetAudioStreamOutputChannelMap(
+        AudioStreamHandle stream,
+        [NativeTypeName("const int *")] Ref<int> chmap,
+        int count
+    );
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamPutCallback")]
-    int SetAudioStreamPutCallback(
+    byte SetAudioStreamPutCallback(
         AudioStreamHandle stream,
         [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         void* userdata
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamPutCallback")]
-    int SetAudioStreamPutCallback(
+    MaybeBool<byte> SetAudioStreamPutCallback(
         AudioStreamHandle stream,
         [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         Ref userdata
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetBooleanProperty")]
-    int SetBooleanProperty(
+    byte SetBooleanProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("SDL_bool")] int value
+        [NativeTypeName("bool")] byte value
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetBooleanProperty")]
-    int SetBooleanProperty(
+    MaybeBool<byte> SetBooleanProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> value
+        [NativeTypeName("bool")] MaybeBool<byte> value
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardData")]
-    int SetClipboardData(
+    byte SetClipboardData(
         [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
         [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
         void* userdata,
@@ -12729,9 +15849,10 @@ public unsafe partial interface ISdl
         [NativeTypeName("size_t")] nuint num_mime_types
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardData")]
-    int SetClipboardData(
+    MaybeBool<byte> SetClipboardData(
         [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
         [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
         Ref userdata,
@@ -12739,27 +15860,59 @@ public unsafe partial interface ISdl
         [NativeTypeName("size_t")] nuint num_mime_types
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardText")]
-    int SetClipboardText([NativeTypeName("const char *")] sbyte* text);
+    byte SetClipboardText([NativeTypeName("const char *")] sbyte* text);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardText")]
-    int SetClipboardText([NativeTypeName("const char *")] Ref<sbyte> text);
+    MaybeBool<byte> SetClipboardText([NativeTypeName("const char *")] Ref<sbyte> text);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetCurrentThreadPriority")]
+    MaybeBool<byte> SetCurrentThreadPriority(ThreadPriority priority);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetCurrentThreadPriority")]
+    byte SetCurrentThreadPriorityRaw(ThreadPriority priority);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetCursor")]
-    int SetCursor(CursorHandle cursor);
+    MaybeBool<byte> SetCursor(CursorHandle cursor);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetCursor")]
+    byte SetCursorRaw(CursorHandle cursor);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
+    byte SetErrorV(
+        [NativeTypeName("const char *")] sbyte* fmt,
+        [NativeTypeName("va_list")] sbyte* ap
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
+    MaybeBool<byte> SetErrorV(
+        [NativeTypeName("const char *")] Ref<sbyte> fmt,
+        [NativeTypeName("va_list")] Ref<sbyte> ap
+    );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetEventEnabled")]
     void SetEventEnabled(
         [NativeTypeName("Uint32")] uint type,
-        [NativeTypeName("SDL_bool")] int enabled
+        [NativeTypeName("bool")] byte enabled
     );
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetEventEnabled")]
     void SetEventEnabled(
         [NativeTypeName("Uint32")] uint type,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> enabled
+        [NativeTypeName("bool")] MaybeBool<byte> enabled
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetEventFilter")]
@@ -12769,142 +15922,275 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetEventFilter")]
     void SetEventFilter([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetFloatProperty")]
-    int SetFloatProperty(
+    byte SetFloatProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
         float value
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetFloatProperty")]
-    int SetFloatProperty(
+    MaybeBool<byte> SetFloatProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         float value
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadEventsEnabled")]
-    void SetGamepadEventsEnabled([NativeTypeName("SDL_bool")] int enabled);
+    void SetGamepadEventsEnabled([NativeTypeName("bool")] byte enabled);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadEventsEnabled")]
-    void SetGamepadEventsEnabled([NativeTypeName("SDL_bool")] MaybeBool<int> enabled);
+    void SetGamepadEventsEnabled([NativeTypeName("bool")] MaybeBool<byte> enabled);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadLED")]
-    int SetGamepadLED(
+    MaybeBool<byte> SetGamepadLED(
         GamepadHandle gamepad,
         [NativeTypeName("Uint8")] byte red,
         [NativeTypeName("Uint8")] byte green,
         [NativeTypeName("Uint8")] byte blue
     );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadLED")]
+    byte SetGamepadLEDRaw(
+        GamepadHandle gamepad,
+        [NativeTypeName("Uint8")] byte red,
+        [NativeTypeName("Uint8")] byte green,
+        [NativeTypeName("Uint8")] byte blue
+    );
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadMapping")]
-    int SetGamepadMapping(
+    byte SetGamepadMapping(
         [NativeTypeName("SDL_JoystickID")] uint instance_id,
         [NativeTypeName("const char *")] sbyte* mapping
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadMapping")]
-    int SetGamepadMapping(
+    MaybeBool<byte> SetGamepadMapping(
         [NativeTypeName("SDL_JoystickID")] uint instance_id,
         [NativeTypeName("const char *")] Ref<sbyte> mapping
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadPlayerIndex")]
-    int SetGamepadPlayerIndex(GamepadHandle gamepad, int player_index);
+    MaybeBool<byte> SetGamepadPlayerIndex(GamepadHandle gamepad, int player_index);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadPlayerIndex")]
+    byte SetGamepadPlayerIndexRaw(GamepadHandle gamepad, int player_index);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadSensorEnabled")]
-    int SetGamepadSensorEnabled(
+    byte SetGamepadSensorEnabled(
         GamepadHandle gamepad,
         SensorType type,
-        [NativeTypeName("SDL_bool")] int enabled
+        [NativeTypeName("bool")] byte enabled
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadSensorEnabled")]
-    int SetGamepadSensorEnabled(
+    MaybeBool<byte> SetGamepadSensorEnabled(
         GamepadHandle gamepad,
         SensorType type,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> enabled
+        [NativeTypeName("bool")] MaybeBool<byte> enabled
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetHapticAutocenter")]
-    int SetHapticAutocenter(HapticHandle haptic, int autocenter);
+    MaybeBool<byte> SetHapticAutocenter(HapticHandle haptic, int autocenter);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetHapticAutocenter")]
+    byte SetHapticAutocenterRaw(HapticHandle haptic, int autocenter);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetHapticGain")]
-    int SetHapticGain(HapticHandle haptic, int gain);
+    MaybeBool<byte> SetHapticGain(HapticHandle haptic, int gain);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetHapticGain")]
+    byte SetHapticGainRaw(HapticHandle haptic, int gain);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetHint")]
-    int SetHint(
+    byte SetHint(
         [NativeTypeName("const char *")] sbyte* name,
         [NativeTypeName("const char *")] sbyte* value
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetHint")]
-    MaybeBool<int> SetHint(
+    MaybeBool<byte> SetHint(
         [NativeTypeName("const char *")] Ref<sbyte> name,
         [NativeTypeName("const char *")] Ref<sbyte> value
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetHintWithPriority")]
-    int SetHintWithPriority(
+    byte SetHintWithPriority(
         [NativeTypeName("const char *")] sbyte* name,
         [NativeTypeName("const char *")] sbyte* value,
         HintPriority priority
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetHintWithPriority")]
-    MaybeBool<int> SetHintWithPriority(
+    MaybeBool<byte> SetHintWithPriority(
         [NativeTypeName("const char *")] Ref<sbyte> name,
         [NativeTypeName("const char *")] Ref<sbyte> value,
         HintPriority priority
     );
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetInitialized")]
+    void SetInitialized(InitState* state, [NativeTypeName("bool")] byte initialized);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetInitialized")]
+    void SetInitialized(Ref<InitState> state, [NativeTypeName("bool")] MaybeBool<byte> initialized);
+
     [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickEventsEnabled")]
-    void SetJoystickEventsEnabled([NativeTypeName("SDL_bool")] int enabled);
+    void SetJoystickEventsEnabled([NativeTypeName("bool")] byte enabled);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickEventsEnabled")]
-    void SetJoystickEventsEnabled([NativeTypeName("SDL_bool")] MaybeBool<int> enabled);
+    void SetJoystickEventsEnabled([NativeTypeName("bool")] MaybeBool<byte> enabled);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickLED")]
-    int SetJoystickLED(
+    MaybeBool<byte> SetJoystickLED(
         JoystickHandle joystick,
         [NativeTypeName("Uint8")] byte red,
         [NativeTypeName("Uint8")] byte green,
         [NativeTypeName("Uint8")] byte blue
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickPlayerIndex")]
-    int SetJoystickPlayerIndex(JoystickHandle joystick, int player_index);
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickLED")]
+    byte SetJoystickLEDRaw(
+        JoystickHandle joystick,
+        [NativeTypeName("Uint8")] byte red,
+        [NativeTypeName("Uint8")] byte green,
+        [NativeTypeName("Uint8")] byte blue
+    );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickPlayerIndex")]
+    MaybeBool<byte> SetJoystickPlayerIndex(JoystickHandle joystick, int player_index);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickPlayerIndex")]
+    byte SetJoystickPlayerIndexRaw(JoystickHandle joystick, int player_index);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualAxis")]
-    int SetJoystickVirtualAxis(
+    MaybeBool<byte> SetJoystickVirtualAxis(
         JoystickHandle joystick,
         int axis,
         [NativeTypeName("Sint16")] short value
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualButton")]
-    int SetJoystickVirtualButton(
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualAxis")]
+    byte SetJoystickVirtualAxisRaw(
         JoystickHandle joystick,
-        int button,
-        [NativeTypeName("Uint8")] byte value
+        int axis,
+        [NativeTypeName("Sint16")] short value
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualBall")]
+    MaybeBool<byte> SetJoystickVirtualBall(
+        JoystickHandle joystick,
+        int ball,
+        [NativeTypeName("Sint16")] short xrel,
+        [NativeTypeName("Sint16")] short yrel
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualBall")]
+    byte SetJoystickVirtualBallRaw(
+        JoystickHandle joystick,
+        int ball,
+        [NativeTypeName("Sint16")] short xrel,
+        [NativeTypeName("Sint16")] short yrel
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualButton")]
+    byte SetJoystickVirtualButton(
+        JoystickHandle joystick,
+        int button,
+        [NativeTypeName("bool")] byte down
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualButton")]
+    MaybeBool<byte> SetJoystickVirtualButton(
+        JoystickHandle joystick,
+        int button,
+        [NativeTypeName("bool")] MaybeBool<byte> down
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualHat")]
-    int SetJoystickVirtualHat(
+    MaybeBool<byte> SetJoystickVirtualHat(
         JoystickHandle joystick,
         int hat,
         [NativeTypeName("Uint8")] byte value
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualHat")]
+    byte SetJoystickVirtualHatRaw(
+        JoystickHandle joystick,
+        int hat,
+        [NativeTypeName("Uint8")] byte value
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualTouchpad")]
+    byte SetJoystickVirtualTouchpad(
+        JoystickHandle joystick,
+        int touchpad,
+        int finger,
+        [NativeTypeName("bool")] byte down,
+        float x,
+        float y,
+        float pressure
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickVirtualTouchpad")]
+    MaybeBool<byte> SetJoystickVirtualTouchpad(
+        JoystickHandle joystick,
+        int touchpad,
+        int finger,
+        [NativeTypeName("bool")] MaybeBool<byte> down,
+        float x,
+        float y,
+        float pressure
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
@@ -12920,114 +16206,153 @@ public unsafe partial interface ISdl
         Ref userdata
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetModState")]
-    void SetModState(Keymod modstate);
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetLogPriorities")]
+    void SetLogPriorities(LogPriority priority);
 
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetLogPriority")]
+    void SetLogPriority(int category, LogPriority priority);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetLogPriorityPrefix")]
+    byte SetLogPriorityPrefix(LogPriority priority, [NativeTypeName("const char *")] sbyte* prefix);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetLogPriorityPrefix")]
+    MaybeBool<byte> SetLogPriorityPrefix(
+        LogPriority priority,
+        [NativeTypeName("const char *")] Ref<sbyte> prefix
+    );
+
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetModState")]
+    void SetModState([NativeTypeName("SDL_Keymod")] ushort modstate);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetNumberProperty")]
-    int SetNumberProperty(
+    byte SetNumberProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
         [NativeTypeName("Sint64")] long value
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetNumberProperty")]
-    int SetNumberProperty(
+    MaybeBool<byte> SetNumberProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         [NativeTypeName("Sint64")] long value
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetPaletteColors")]
-    int SetPaletteColors(
+    byte SetPaletteColors(
         Palette* palette,
         [NativeTypeName("const SDL_Color *")] Color* colors,
         int firstcolor,
         int ncolors
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetPaletteColors")]
-    int SetPaletteColors(
+    MaybeBool<byte> SetPaletteColors(
         Ref<Palette> palette,
         [NativeTypeName("const SDL_Color *")] Ref<Color> colors,
         int firstcolor,
         int ncolors
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetPixelFormatPalette")]
-    int SetPixelFormatPalette(PixelFormat* format, Palette* palette);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetPixelFormatPalette")]
-    int SetPixelFormatPalette(Ref<PixelFormat> format, Ref<Palette> palette);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetPrimarySelectionText")]
-    int SetPrimarySelectionText([NativeTypeName("const char *")] sbyte* text);
-
-    [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetPrimarySelectionText")]
-    int SetPrimarySelectionText([NativeTypeName("const char *")] Ref<sbyte> text);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetProperty")]
-    int SetProperty(
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetPointerProperty")]
+    byte SetPointerProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
         void* value
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetProperty")]
-    int SetProperty(
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetPointerProperty")]
+    MaybeBool<byte> SetPointerProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         Ref value
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetPropertyWithCleanup")]
-    int SetPropertyWithCleanup(
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetPointerPropertyWithCleanup")]
+    byte SetPointerPropertyWithCleanup(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
         void* value,
-        [NativeTypeName("void (*)(void *, void *)")] SetPropertyWithCleanupCleanup cleanup,
+        [NativeTypeName("SDL_CleanupPropertyCallback")] CleanupPropertyCallback cleanup,
         void* userdata
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetPropertyWithCleanup")]
-    int SetPropertyWithCleanup(
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetPointerPropertyWithCleanup")]
+    MaybeBool<byte> SetPointerPropertyWithCleanup(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         Ref value,
-        [NativeTypeName("void (*)(void *, void *)")] SetPropertyWithCleanupCleanup cleanup,
+        [NativeTypeName("SDL_CleanupPropertyCallback")] CleanupPropertyCallback cleanup,
         Ref userdata
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetRelativeMouseMode")]
-    int SetRelativeMouseMode([NativeTypeName("SDL_bool")] int enabled);
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetPrimarySelectionText")]
+    byte SetPrimarySelectionText([NativeTypeName("const char *")] sbyte* text);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetRelativeMouseMode")]
-    int SetRelativeMouseMode([NativeTypeName("SDL_bool")] MaybeBool<int> enabled);
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetPrimarySelectionText")]
+    MaybeBool<byte> SetPrimarySelectionText([NativeTypeName("const char *")] Ref<sbyte> text);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderClipRect")]
-    int SetRenderClipRect(RendererHandle renderer, [NativeTypeName("const SDL_Rect *")] Rect* rect);
+    byte SetRenderClipRect(
+        RendererHandle renderer,
+        [NativeTypeName("const SDL_Rect *")] Rect* rect
+    );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderClipRect")]
-    int SetRenderClipRect(
+    MaybeBool<byte> SetRenderClipRect(
         RendererHandle renderer,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderColorScale")]
-    int SetRenderColorScale(RendererHandle renderer, float scale);
+    MaybeBool<byte> SetRenderColorScale(RendererHandle renderer, float scale);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderColorScale")]
+    byte SetRenderColorScaleRaw(RendererHandle renderer, float scale);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawBlendMode")]
-    int SetRenderDrawBlendMode(RendererHandle renderer, BlendMode blendMode);
+    MaybeBool<byte> SetRenderDrawBlendMode(
+        RendererHandle renderer,
+        [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+    );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawBlendMode")]
+    byte SetRenderDrawBlendModeRaw(
+        RendererHandle renderer,
+        [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawColor")]
-    int SetRenderDrawColor(
+    MaybeBool<byte> SetRenderDrawColor(
         RendererHandle renderer,
         [NativeTypeName("Uint8")] byte r,
         [NativeTypeName("Uint8")] byte g,
@@ -13035,333 +16360,619 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint8")] byte a
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawColorFloat")]
-    int SetRenderDrawColorFloat(RendererHandle renderer, float r, float g, float b, float a);
+    MaybeBool<byte> SetRenderDrawColorFloat(
+        RendererHandle renderer,
+        float r,
+        float g,
+        float b,
+        float a
+    );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawColorFloat")]
+    byte SetRenderDrawColorFloatRaw(RendererHandle renderer, float r, float g, float b, float a);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderDrawColor")]
+    byte SetRenderDrawColorRaw(
+        RendererHandle renderer,
+        [NativeTypeName("Uint8")] byte r,
+        [NativeTypeName("Uint8")] byte g,
+        [NativeTypeName("Uint8")] byte b,
+        [NativeTypeName("Uint8")] byte a
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderLogicalPresentation")]
-    int SetRenderLogicalPresentation(
+    MaybeBool<byte> SetRenderLogicalPresentation(
         RendererHandle renderer,
         int w,
         int h,
-        RendererLogicalPresentation mode,
-        ScaleMode scale_mode
+        RendererLogicalPresentation mode
     );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderLogicalPresentation")]
+    byte SetRenderLogicalPresentationRaw(
+        RendererHandle renderer,
+        int w,
+        int h,
+        RendererLogicalPresentation mode
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderScale")]
-    int SetRenderScale(RendererHandle renderer, float scaleX, float scaleY);
+    MaybeBool<byte> SetRenderScale(RendererHandle renderer, float scaleX, float scaleY);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderScale")]
+    byte SetRenderScaleRaw(RendererHandle renderer, float scaleX, float scaleY);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderTarget")]
-    int SetRenderTarget(RendererHandle renderer, TextureHandle texture);
+    byte SetRenderTarget(RendererHandle renderer, Texture* texture);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderTarget")]
+    MaybeBool<byte> SetRenderTarget(RendererHandle renderer, Ref<Texture> texture);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderViewport")]
-    int SetRenderViewport(RendererHandle renderer, [NativeTypeName("const SDL_Rect *")] Rect* rect);
+    byte SetRenderViewport(
+        RendererHandle renderer,
+        [NativeTypeName("const SDL_Rect *")] Rect* rect
+    );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderViewport")]
-    int SetRenderViewport(
+    MaybeBool<byte> SetRenderViewport(
         RendererHandle renderer,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderVSync")]
-    int SetRenderVSync(RendererHandle renderer, int vsync);
+    MaybeBool<byte> SetRenderVSync(RendererHandle renderer, int vsync);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderVSync")]
+    byte SetRenderVSyncRaw(RendererHandle renderer, int vsync);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetScancodeName")]
+    byte SetScancodeName(Scancode scancode, [NativeTypeName("const char *")] sbyte* name);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetScancodeName")]
+    MaybeBool<byte> SetScancodeName(
+        Scancode scancode,
+        [NativeTypeName("const char *")] Ref<sbyte> name
+    );
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetStringProperty")]
-    int SetStringProperty(
+    byte SetStringProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
         [NativeTypeName("const char *")] sbyte* value
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetStringProperty")]
-    int SetStringProperty(
+    MaybeBool<byte> SetStringProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         [NativeTypeName("const char *")] Ref<sbyte> value
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceAlphaMod")]
-    int SetSurfaceAlphaMod(Surface* surface, [NativeTypeName("Uint8")] byte alpha);
+    byte SetSurfaceAlphaMod(Surface* surface, [NativeTypeName("Uint8")] byte alpha);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceAlphaMod")]
-    int SetSurfaceAlphaMod(Ref<Surface> surface, [NativeTypeName("Uint8")] byte alpha);
+    MaybeBool<byte> SetSurfaceAlphaMod(Ref<Surface> surface, [NativeTypeName("Uint8")] byte alpha);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceBlendMode")]
-    int SetSurfaceBlendMode(Surface* surface, BlendMode blendMode);
+    byte SetSurfaceBlendMode(
+        Surface* surface,
+        [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+    );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceBlendMode")]
-    int SetSurfaceBlendMode(Ref<Surface> surface, BlendMode blendMode);
+    MaybeBool<byte> SetSurfaceBlendMode(
+        Ref<Surface> surface,
+        [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+    );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceClipRect")]
-    int SetSurfaceClipRect(Surface* surface, [NativeTypeName("const SDL_Rect *")] Rect* rect);
+    byte SetSurfaceClipRect(Surface* surface, [NativeTypeName("const SDL_Rect *")] Rect* rect);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceClipRect")]
-    MaybeBool<int> SetSurfaceClipRect(
+    MaybeBool<byte> SetSurfaceClipRect(
         Ref<Surface> surface,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorKey")]
-    int SetSurfaceColorKey(Surface* surface, int flag, [NativeTypeName("Uint32")] uint key);
+    byte SetSurfaceColorKey(
+        Surface* surface,
+        [NativeTypeName("bool")] byte enabled,
+        [NativeTypeName("Uint32")] uint key
+    );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorKey")]
-    int SetSurfaceColorKey(Ref<Surface> surface, int flag, [NativeTypeName("Uint32")] uint key);
+    MaybeBool<byte> SetSurfaceColorKey(
+        Ref<Surface> surface,
+        [NativeTypeName("bool")] MaybeBool<byte> enabled,
+        [NativeTypeName("Uint32")] uint key
+    );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorMod")]
-    int SetSurfaceColorMod(
+    byte SetSurfaceColorMod(
         Surface* surface,
         [NativeTypeName("Uint8")] byte r,
         [NativeTypeName("Uint8")] byte g,
         [NativeTypeName("Uint8")] byte b
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorMod")]
-    int SetSurfaceColorMod(
+    MaybeBool<byte> SetSurfaceColorMod(
         Ref<Surface> surface,
         [NativeTypeName("Uint8")] byte r,
         [NativeTypeName("Uint8")] byte g,
         [NativeTypeName("Uint8")] byte b
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorspace")]
-    int SetSurfaceColorspace(Surface* surface, Colorspace colorspace);
+    byte SetSurfaceColorspace(Surface* surface, Colorspace colorspace);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceColorspace")]
-    int SetSurfaceColorspace(Ref<Surface> surface, Colorspace colorspace);
+    MaybeBool<byte> SetSurfaceColorspace(Ref<Surface> surface, Colorspace colorspace);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfacePalette")]
-    int SetSurfacePalette(Surface* surface, Palette* palette);
+    byte SetSurfacePalette(Surface* surface, Palette* palette);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfacePalette")]
-    int SetSurfacePalette(Ref<Surface> surface, Ref<Palette> palette);
+    MaybeBool<byte> SetSurfacePalette(Ref<Surface> surface, Ref<Palette> palette);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceRLE")]
-    int SetSurfaceRLE(Surface* surface, int flag);
+    byte SetSurfaceRLE(Surface* surface, [NativeTypeName("bool")] byte enabled);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceRLE")]
-    int SetSurfaceRLE(Ref<Surface> surface, int flag);
+    MaybeBool<byte> SetSurfaceRLE(
+        Ref<Surface> surface,
+        [NativeTypeName("bool")] MaybeBool<byte> enabled
+    );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetTextInputRect")]
-    int SetTextInputRect([NativeTypeName("const SDL_Rect *")] Rect* rect);
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetTextInputArea")]
+    byte SetTextInputArea(
+        WindowHandle window,
+        [NativeTypeName("const SDL_Rect *")] Rect* rect,
+        int cursor
+    );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetTextInputRect")]
-    int SetTextInputRect([NativeTypeName("const SDL_Rect *")] Ref<Rect> rect);
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetTextInputArea")]
+    MaybeBool<byte> SetTextInputArea(
+        WindowHandle window,
+        [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
+        int cursor
+    );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureAlphaMod")]
-    int SetTextureAlphaMod(TextureHandle texture, [NativeTypeName("Uint8")] byte alpha);
+    byte SetTextureAlphaMod(Texture* texture, [NativeTypeName("Uint8")] byte alpha);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureAlphaMod")]
+    MaybeBool<byte> SetTextureAlphaMod(Ref<Texture> texture, [NativeTypeName("Uint8")] byte alpha);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureAlphaModFloat")]
-    int SetTextureAlphaModFloat(TextureHandle texture, float alpha);
+    byte SetTextureAlphaModFloat(Texture* texture, float alpha);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureAlphaModFloat")]
+    MaybeBool<byte> SetTextureAlphaModFloat(Ref<Texture> texture, float alpha);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureBlendMode")]
-    int SetTextureBlendMode(TextureHandle texture, BlendMode blendMode);
+    byte SetTextureBlendMode(
+        Texture* texture,
+        [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+    );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureBlendMode")]
+    MaybeBool<byte> SetTextureBlendMode(
+        Ref<Texture> texture,
+        [NativeTypeName("SDL_BlendMode")] BlendMode blendMode
+    );
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureColorMod")]
-    int SetTextureColorMod(
-        TextureHandle texture,
+    byte SetTextureColorMod(
+        Texture* texture,
         [NativeTypeName("Uint8")] byte r,
         [NativeTypeName("Uint8")] byte g,
         [NativeTypeName("Uint8")] byte b
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureColorMod")]
+    MaybeBool<byte> SetTextureColorMod(
+        Ref<Texture> texture,
+        [NativeTypeName("Uint8")] byte r,
+        [NativeTypeName("Uint8")] byte g,
+        [NativeTypeName("Uint8")] byte b
+    );
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureColorModFloat")]
-    int SetTextureColorModFloat(TextureHandle texture, float r, float g, float b);
+    byte SetTextureColorModFloat(Texture* texture, float r, float g, float b);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureColorModFloat")]
+    MaybeBool<byte> SetTextureColorModFloat(Ref<Texture> texture, float r, float g, float b);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureScaleMode")]
-    int SetTextureScaleMode(TextureHandle texture, ScaleMode scaleMode);
+    byte SetTextureScaleMode(Texture* texture, ScaleMode scaleMode);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetThreadPriority")]
-    int SetThreadPriority(ThreadPriority priority);
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureScaleMode")]
+    MaybeBool<byte> SetTextureScaleMode(Ref<Texture> texture, ScaleMode scaleMode);
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTLS")]
-    int SetTLS(
-        [NativeTypeName("SDL_TLSID")] uint id,
+    byte SetTLS(
+        [NativeTypeName("SDL_TLSID *")] AtomicInt* id,
         [NativeTypeName("const void *")] void* value,
-        [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
+        [NativeTypeName("SDL_TLSDestructorCallback")] TLSDestructorCallback destructor
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTLS")]
-    int SetTLS(
-        [NativeTypeName("SDL_TLSID")] uint id,
+    MaybeBool<byte> SetTLS(
+        [NativeTypeName("SDL_TLSID *")] Ref<AtomicInt> id,
         [NativeTypeName("const void *")] Ref value,
-        [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
+        [NativeTypeName("SDL_TLSDestructorCallback")] TLSDestructorCallback destructor
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAlwaysOnTop")]
-    int SetWindowAlwaysOnTop(WindowHandle window, [NativeTypeName("SDL_bool")] int on_top);
+    byte SetWindowAlwaysOnTop(WindowHandle window, [NativeTypeName("bool")] byte on_top);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAlwaysOnTop")]
-    int SetWindowAlwaysOnTop(
+    MaybeBool<byte> SetWindowAlwaysOnTop(
         WindowHandle window,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> on_top
+        [NativeTypeName("bool")] MaybeBool<byte> on_top
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAspectRatio")]
+    MaybeBool<byte> SetWindowAspectRatio(WindowHandle window, float min_aspect, float max_aspect);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAspectRatio")]
+    byte SetWindowAspectRatioRaw(WindowHandle window, float min_aspect, float max_aspect);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowBordered")]
-    int SetWindowBordered(WindowHandle window, [NativeTypeName("SDL_bool")] int bordered);
+    byte SetWindowBordered(WindowHandle window, [NativeTypeName("bool")] byte bordered);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowBordered")]
-    int SetWindowBordered(
+    MaybeBool<byte> SetWindowBordered(
         WindowHandle window,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> bordered
+        [NativeTypeName("bool")] MaybeBool<byte> bordered
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFocusable")]
-    int SetWindowFocusable(WindowHandle window, [NativeTypeName("SDL_bool")] int focusable);
+    byte SetWindowFocusable(WindowHandle window, [NativeTypeName("bool")] byte focusable);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFocusable")]
-    int SetWindowFocusable(
+    MaybeBool<byte> SetWindowFocusable(
         WindowHandle window,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> focusable
+        [NativeTypeName("bool")] MaybeBool<byte> focusable
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFullscreen")]
-    int SetWindowFullscreen(WindowHandle window, [NativeTypeName("SDL_bool")] int fullscreen);
+    byte SetWindowFullscreen(WindowHandle window, [NativeTypeName("bool")] byte fullscreen);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFullscreen")]
-    int SetWindowFullscreen(
+    MaybeBool<byte> SetWindowFullscreen(
         WindowHandle window,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> fullscreen
+        [NativeTypeName("bool")] MaybeBool<byte> fullscreen
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFullscreenMode")]
-    int SetWindowFullscreenMode(
+    byte SetWindowFullscreenMode(
         WindowHandle window,
         [NativeTypeName("const SDL_DisplayMode *")] DisplayMode* mode
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFullscreenMode")]
-    int SetWindowFullscreenMode(
+    MaybeBool<byte> SetWindowFullscreenMode(
         WindowHandle window,
         [NativeTypeName("const SDL_DisplayMode *")] Ref<DisplayMode> mode
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowHitTest")]
-    int SetWindowHitTest(
+    byte SetWindowHitTest(
         WindowHandle window,
         [NativeTypeName("SDL_HitTest")] HitTest callback,
         void* callback_data
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowHitTest")]
-    int SetWindowHitTest(
+    MaybeBool<byte> SetWindowHitTest(
         WindowHandle window,
         [NativeTypeName("SDL_HitTest")] HitTest callback,
         Ref callback_data
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowIcon")]
-    int SetWindowIcon(WindowHandle window, Surface* icon);
+    byte SetWindowIcon(WindowHandle window, Surface* icon);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowIcon")]
-    int SetWindowIcon(WindowHandle window, Ref<Surface> icon);
+    MaybeBool<byte> SetWindowIcon(WindowHandle window, Ref<Surface> icon);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowInputFocus")]
-    int SetWindowInputFocus(WindowHandle window);
-
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowKeyboardGrab")]
-    int SetWindowKeyboardGrab(WindowHandle window, [NativeTypeName("SDL_bool")] int grabbed);
+    byte SetWindowKeyboardGrab(WindowHandle window, [NativeTypeName("bool")] byte grabbed);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowKeyboardGrab")]
-    int SetWindowKeyboardGrab(
+    MaybeBool<byte> SetWindowKeyboardGrab(
         WindowHandle window,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> grabbed
+        [NativeTypeName("bool")] MaybeBool<byte> grabbed
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMaximumSize")]
-    int SetWindowMaximumSize(WindowHandle window, int max_w, int max_h);
+    MaybeBool<byte> SetWindowMaximumSize(WindowHandle window, int max_w, int max_h);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMinimumSize")]
-    int SetWindowMinimumSize(WindowHandle window, int min_w, int min_h);
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMaximumSize")]
+    byte SetWindowMaximumSizeRaw(WindowHandle window, int max_w, int max_h);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowModalFor")]
-    int SetWindowModalFor(WindowHandle modal_window, WindowHandle parent_window);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseGrab")]
-    int SetWindowMouseGrab(WindowHandle window, [NativeTypeName("SDL_bool")] int grabbed);
-
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseGrab")]
-    int SetWindowMouseGrab(
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMinimumSize")]
+    MaybeBool<byte> SetWindowMinimumSize(WindowHandle window, int min_w, int min_h);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMinimumSize")]
+    byte SetWindowMinimumSizeRaw(WindowHandle window, int min_w, int min_h);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowModal")]
+    byte SetWindowModal(WindowHandle window, [NativeTypeName("bool")] byte modal);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowModal")]
+    MaybeBool<byte> SetWindowModal(
         WindowHandle window,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> grabbed
+        [NativeTypeName("bool")] MaybeBool<byte> modal
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseRect")]
-    int SetWindowMouseRect(WindowHandle window, [NativeTypeName("const SDL_Rect *")] Rect* rect);
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseGrab")]
+    byte SetWindowMouseGrab(WindowHandle window, [NativeTypeName("bool")] byte grabbed);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseGrab")]
+    MaybeBool<byte> SetWindowMouseGrab(
+        WindowHandle window,
+        [NativeTypeName("bool")] MaybeBool<byte> grabbed
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseRect")]
+    byte SetWindowMouseRect(WindowHandle window, [NativeTypeName("const SDL_Rect *")] Rect* rect);
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowMouseRect")]
-    int SetWindowMouseRect(
+    MaybeBool<byte> SetWindowMouseRect(
         WindowHandle window,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowOpacity")]
-    int SetWindowOpacity(WindowHandle window, float opacity);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowPosition")]
-    int SetWindowPosition(WindowHandle window, int x, int y);
-
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowResizable")]
-    int SetWindowResizable(WindowHandle window, [NativeTypeName("SDL_bool")] int resizable);
-
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowResizable")]
-    int SetWindowResizable(
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowOpacity")]
+    MaybeBool<byte> SetWindowOpacity(WindowHandle window, float opacity);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowOpacity")]
+    byte SetWindowOpacityRaw(WindowHandle window, float opacity);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowParent")]
+    MaybeBool<byte> SetWindowParent(WindowHandle window, WindowHandle parent);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowParent")]
+    byte SetWindowParentRaw(WindowHandle window, WindowHandle parent);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowPosition")]
+    MaybeBool<byte> SetWindowPosition(WindowHandle window, int x, int y);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowPosition")]
+    byte SetWindowPositionRaw(WindowHandle window, int x, int y);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowRelativeMouseMode")]
+    byte SetWindowRelativeMouseMode(WindowHandle window, [NativeTypeName("bool")] byte enabled);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowRelativeMouseMode")]
+    MaybeBool<byte> SetWindowRelativeMouseMode(
         WindowHandle window,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> resizable
+        [NativeTypeName("bool")] MaybeBool<byte> enabled
     );
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowShape")]
-    int SetWindowShape(WindowHandle window, Surface* shape);
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowResizable")]
+    byte SetWindowResizable(WindowHandle window, [NativeTypeName("bool")] byte resizable);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowResizable")]
+    MaybeBool<byte> SetWindowResizable(
+        WindowHandle window,
+        [NativeTypeName("bool")] MaybeBool<byte> resizable
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowShape")]
+    byte SetWindowShape(WindowHandle window, Surface* shape);
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowShape")]
-    int SetWindowShape(WindowHandle window, Ref<Surface> shape);
+    MaybeBool<byte> SetWindowShape(WindowHandle window, Ref<Surface> shape);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSize")]
-    int SetWindowSize(WindowHandle window, int w, int h);
+    MaybeBool<byte> SetWindowSize(WindowHandle window, int w, int h);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSize")]
+    byte SetWindowSizeRaw(WindowHandle window, int w, int h);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSurfaceVSync")]
+    MaybeBool<byte> SetWindowSurfaceVSync(WindowHandle window, int vsync);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSurfaceVSync")]
+    byte SetWindowSurfaceVSyncRaw(WindowHandle window, int vsync);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowTitle")]
-    int SetWindowTitle(WindowHandle window, [NativeTypeName("const char *")] sbyte* title);
+    byte SetWindowTitle(WindowHandle window, [NativeTypeName("const char *")] sbyte* title);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowTitle")]
-    int SetWindowTitle(WindowHandle window, [NativeTypeName("const char *")] Ref<sbyte> title);
+    MaybeBool<byte> SetWindowTitle(
+        WindowHandle window,
+        [NativeTypeName("const char *")] Ref<sbyte> title
+    );
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ShouldInit")]
+    byte ShouldInit(InitState* state);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ShouldInit")]
+    MaybeBool<byte> ShouldInit(Ref<InitState> state);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ShouldQuit")]
+    byte ShouldQuit(InitState* state);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ShouldQuit")]
+    MaybeBool<byte> ShouldQuit(Ref<InitState> state);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowCursor")]
-    int ShowCursor();
+    MaybeBool<byte> ShowCursor();
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ShowCursor")]
+    byte ShowCursorRaw();
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowMessageBox")]
-    int ShowMessageBox(
+    byte ShowMessageBox(
         [NativeTypeName("const SDL_MessageBoxData *")] MessageBoxData* messageboxdata,
         int* buttonid
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowMessageBox")]
-    int ShowMessageBox(
+    MaybeBool<byte> ShowMessageBox(
         [NativeTypeName("const SDL_MessageBoxData *")] Ref<MessageBoxData> messageboxdata,
         Ref<int> buttonid
     );
@@ -13372,8 +16983,9 @@ public unsafe partial interface ISdl
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
+        int nfilters,
         [NativeTypeName("const char *")] sbyte* default_location,
-        [NativeTypeName("SDL_bool")] int allow_many
+        [NativeTypeName("bool")] byte allow_many
     );
 
     [Transformed]
@@ -13383,8 +16995,9 @@ public unsafe partial interface ISdl
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
+        int nfilters,
         [NativeTypeName("const char *")] Ref<sbyte> default_location,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> allow_many
+        [NativeTypeName("bool")] MaybeBool<byte> allow_many
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFolderDialog")]
@@ -13393,7 +17006,7 @@ public unsafe partial interface ISdl
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const char *")] sbyte* default_location,
-        [NativeTypeName("SDL_bool")] int allow_many
+        [NativeTypeName("bool")] byte allow_many
     );
 
     [Transformed]
@@ -13403,7 +17016,7 @@ public unsafe partial interface ISdl
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const char *")] Ref<sbyte> default_location,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> allow_many
+        [NativeTypeName("bool")] MaybeBool<byte> allow_many
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowSaveFileDialog")]
@@ -13412,6 +17025,7 @@ public unsafe partial interface ISdl
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
+        int nfilters,
         [NativeTypeName("const char *")] sbyte* default_location
     );
 
@@ -13422,115 +17036,177 @@ public unsafe partial interface ISdl
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
+        int nfilters,
         [NativeTypeName("const char *")] Ref<sbyte> default_location
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowSimpleMessageBox")]
-    int ShowSimpleMessageBox(
-        [NativeTypeName("Uint32")] uint flags,
+    byte ShowSimpleMessageBox(
+        [NativeTypeName("SDL_MessageBoxFlags")] uint flags,
         [NativeTypeName("const char *")] sbyte* title,
         [NativeTypeName("const char *")] sbyte* message,
         WindowHandle window
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowSimpleMessageBox")]
-    int ShowSimpleMessageBox(
-        [NativeTypeName("Uint32")] uint flags,
+    MaybeBool<byte> ShowSimpleMessageBox(
+        [NativeTypeName("SDL_MessageBoxFlags")] uint flags,
         [NativeTypeName("const char *")] Ref<sbyte> title,
         [NativeTypeName("const char *")] Ref<sbyte> message,
         WindowHandle window
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowWindow")]
-    int ShowWindow(WindowHandle window);
+    MaybeBool<byte> ShowWindow(WindowHandle window);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ShowWindow")]
+    byte ShowWindowRaw(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowWindowSystemMenu")]
-    int ShowWindowSystemMenu(WindowHandle window, int x, int y);
+    MaybeBool<byte> ShowWindowSystemMenu(WindowHandle window, int x, int y);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_ShowWindowSystemMenu")]
+    byte ShowWindowSystemMenuRaw(WindowHandle window, int x, int y);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SignalCondition")]
-    int SignalCondition(ConditionHandle cond);
+    void SignalCondition(ConditionHandle cond);
 
-    [return: NativeTypeName("size_t")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SIMDGetAlignment")]
-    nuint SimdGetAlignment();
+    [NativeFunction("SDL3", EntryPoint = "SDL_SignalSemaphore")]
+    void SignalSemaphore(SemaphoreHandle sem);
 
-    [NativeFunction("SDL3", EntryPoint = "SDL_SoftStretch")]
-    int SoftStretch(
-        Surface* src,
-        [NativeTypeName("const SDL_Rect *")] Rect* srcrect,
-        Surface* dst,
-        [NativeTypeName("const SDL_Rect *")] Rect* dstrect,
-        ScaleMode scaleMode
-    );
-
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SoftStretch")]
-    int SoftStretch(
-        Ref<Surface> src,
-        [NativeTypeName("const SDL_Rect *")] Ref<Rect> srcrect,
-        Ref<Surface> dst,
-        [NativeTypeName("const SDL_Rect *")] Ref<Rect> dstrect,
-        ScaleMode scaleMode
-    );
-
     [NativeFunction("SDL3", EntryPoint = "SDL_StartTextInput")]
-    void StartTextInput();
+    MaybeBool<byte> StartTextInput(WindowHandle window);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_StartTextInput")]
+    byte StartTextInputRaw(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_StartTextInputWithProperties")]
+    MaybeBool<byte> StartTextInputWithProperties(
+        WindowHandle window,
+        [NativeTypeName("SDL_PropertiesID")] uint props
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_StartTextInputWithProperties")]
+    byte StartTextInputWithPropertiesRaw(
+        WindowHandle window,
+        [NativeTypeName("SDL_PropertiesID")] uint props
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticEffect")]
-    int StopHapticEffect(HapticHandle haptic, int effect);
+    MaybeBool<byte> StopHapticEffect(HapticHandle haptic, int effect);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticEffect")]
+    byte StopHapticEffectRaw(HapticHandle haptic, int effect);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticEffects")]
-    int StopHapticEffects(HapticHandle haptic);
+    MaybeBool<byte> StopHapticEffects(HapticHandle haptic);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticEffects")]
+    byte StopHapticEffectsRaw(HapticHandle haptic);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticRumble")]
-    int StopHapticRumble(HapticHandle haptic);
+    MaybeBool<byte> StopHapticRumble(HapticHandle haptic);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticRumble")]
+    byte StopHapticRumbleRaw(HapticHandle haptic);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_StopTextInput")]
-    void StopTextInput();
+    MaybeBool<byte> StopTextInput(WindowHandle window);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_StopTextInput")]
+    byte StopTextInputRaw(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_StorageReady")]
-    MaybeBool<int> StorageReady(StorageHandle storage);
+    MaybeBool<byte> StorageReady(StorageHandle storage);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_StorageReady")]
-    int StorageReadyRaw(StorageHandle storage);
+    byte StorageReadyRaw(StorageHandle storage);
 
-    [return: NativeTypeName("SDL_bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_StringToGUID")]
+    Guid StringToGuid([NativeTypeName("const char *")] sbyte* pchGUID);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_StringToGUID")]
+    Guid StringToGuid([NativeTypeName("const char *")] Ref<sbyte> pchGUID);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasAlternateImages")]
+    byte SurfaceHasAlternateImages(Surface* surface);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasAlternateImages")]
+    MaybeBool<byte> SurfaceHasAlternateImages(Ref<Surface> surface);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasColorKey")]
-    int SurfaceHasColorKey(Surface* surface);
+    byte SurfaceHasColorKey(Surface* surface);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasColorKey")]
-    MaybeBool<int> SurfaceHasColorKey(Ref<Surface> surface);
+    MaybeBool<byte> SurfaceHasColorKey(Ref<Surface> surface);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasRLE")]
-    int SurfaceHasRLE(Surface* surface);
+    byte SurfaceHasRLE(Surface* surface);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasRLE")]
-    MaybeBool<int> SurfaceHasRLE(Ref<Surface> surface);
+    MaybeBool<byte> SurfaceHasRLE(Ref<Surface> surface);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SyncWindow")]
-    int SyncWindow(WindowHandle window);
+    MaybeBool<byte> SyncWindow(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SyncWindow")]
+    byte SyncWindowRaw(WindowHandle window);
 
     [return: NativeTypeName("Sint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_TellIO")]
     long TellIO(IOStreamHandle context);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_TextInputActive")]
-    MaybeBool<int> TextInputActive();
+    MaybeBool<byte> TextInputActive(WindowHandle window);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_TextInputActive")]
-    int TextInputActiveRaw();
+    byte TextInputActiveRaw(WindowHandle window);
 
     [return: NativeTypeName("SDL_Time")]
     [NativeFunction("SDL3", EntryPoint = "SDL_TimeFromWindows")]
@@ -13539,19 +17215,21 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint32")] uint dwHighDateTime
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_TimeToDateTime")]
-    int TimeToDateTime(
+    byte TimeToDateTime(
         [NativeTypeName("SDL_Time")] long ticks,
         DateTime* dt,
-        [NativeTypeName("SDL_bool")] int localTime
+        [NativeTypeName("bool")] byte localTime
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_TimeToDateTime")]
-    int TimeToDateTime(
+    MaybeBool<byte> TimeToDateTime(
         [NativeTypeName("SDL_Time")] long ticks,
         Ref<DateTime> dt,
-        [NativeTypeName("SDL_bool")] MaybeBool<int> localTime
+        [NativeTypeName("bool")] MaybeBool<byte> localTime
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_TimeToWindows")]
@@ -13569,26 +17247,50 @@ public unsafe partial interface ISdl
         [NativeTypeName("Uint32 *")] Ref<uint> dwHighDateTime
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_TryLockMutex")]
-    int TryLockMutex(MutexHandle mutex);
+    MaybeBool<byte> TryLockMutex(MutexHandle mutex);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_TryLockMutex")]
+    byte TryLockMutexRaw(MutexHandle mutex);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_TryLockRWLockForReading")]
-    int TryLockRWLockForReading(RWLockHandle rwlock);
+    MaybeBool<byte> TryLockRWLockForReading(RWLockHandle rwlock);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_TryLockRWLockForReading")]
+    byte TryLockRWLockForReadingRaw(RWLockHandle rwlock);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_TryLockRWLockForWriting")]
-    int TryLockRWLockForWriting(RWLockHandle rwlock);
+    MaybeBool<byte> TryLockRWLockForWriting(RWLockHandle rwlock);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_TryLockRWLockForWriting")]
+    byte TryLockRWLockForWritingRaw(RWLockHandle rwlock);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_TryLockSpinlock")]
-    int TryLockSpinlock([NativeTypeName("SDL_SpinLock *")] int* @lock);
+    byte TryLockSpinlock([NativeTypeName("SDL_SpinLock *")] int* @lock);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_TryLockSpinlock")]
-    MaybeBool<int> TryLockSpinlock([NativeTypeName("SDL_SpinLock *")] Ref<int> @lock);
+    MaybeBool<byte> TryLockSpinlock([NativeTypeName("SDL_SpinLock *")] Ref<int> @lock);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_TryWaitSemaphore")]
-    int TryWaitSemaphore(SemaphoreHandle sem);
+    MaybeBool<byte> TryWaitSemaphore(SemaphoreHandle sem);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_TryWaitSemaphore")]
+    byte TryWaitSemaphoreRaw(SemaphoreHandle sem);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_UnbindAudioStream")]
     void UnbindAudioStream(AudioStreamHandle stream);
@@ -13601,14 +17303,16 @@ public unsafe partial interface ISdl
     void UnbindAudioStreams(Ref<AudioStreamHandle> streams, int num_streams);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_UnloadObject")]
-    void UnloadObject(void* handle);
+    void UnloadObject(SharedObjectHandle handle);
 
+    [return: NativeTypeName("bool")]
     [Transformed]
-    [NativeFunction("SDL3", EntryPoint = "SDL_UnloadObject")]
-    void UnloadObject(Ref handle);
-
     [NativeFunction("SDL3", EntryPoint = "SDL_UnlockAudioStream")]
-    int UnlockAudioStream(AudioStreamHandle stream);
+    MaybeBool<byte> UnlockAudioStream(AudioStreamHandle stream);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_UnlockAudioStream")]
+    byte UnlockAudioStreamRaw(AudioStreamHandle stream);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_UnlockJoysticks")]
     void UnlockJoysticks();
@@ -13637,21 +17341,27 @@ public unsafe partial interface ISdl
     void UnlockSurface(Ref<Surface> surface);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_UnlockTexture")]
-    void UnlockTexture(TextureHandle texture);
+    void UnlockTexture(Texture* texture);
+
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_UnlockTexture")]
+    void UnlockTexture(Ref<Texture> texture);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateGamepads")]
     void UpdateGamepads();
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateHapticEffect")]
-    int UpdateHapticEffect(
+    byte UpdateHapticEffect(
         HapticHandle haptic,
         int effect,
         [NativeTypeName("const SDL_HapticEffect *")] HapticEffect* data
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateHapticEffect")]
-    int UpdateHapticEffect(
+    MaybeBool<byte> UpdateHapticEffect(
         HapticHandle haptic,
         int effect,
         [NativeTypeName("const SDL_HapticEffect *")] Ref<HapticEffect> data
@@ -13660,9 +17370,10 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateJoysticks")]
     void UpdateJoysticks();
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateNVTexture")]
-    int UpdateNVTexture(
-        TextureHandle texture,
+    byte UpdateNVTexture(
+        Texture* texture,
         [NativeTypeName("const SDL_Rect *")] Rect* rect,
         [NativeTypeName("const Uint8 *")] byte* Yplane,
         int Ypitch,
@@ -13670,10 +17381,11 @@ public unsafe partial interface ISdl
         int UVpitch
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateNVTexture")]
-    int UpdateNVTexture(
-        TextureHandle texture,
+    MaybeBool<byte> UpdateNVTexture(
+        Ref<Texture> texture,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
         [NativeTypeName("const Uint8 *")] Ref<byte> Yplane,
         int Ypitch,
@@ -13684,44 +17396,55 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateSensors")]
     void UpdateSensors();
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateTexture")]
-    int UpdateTexture(
-        TextureHandle texture,
+    byte UpdateTexture(
+        Texture* texture,
         [NativeTypeName("const SDL_Rect *")] Rect* rect,
         [NativeTypeName("const void *")] void* pixels,
         int pitch
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateTexture")]
-    int UpdateTexture(
-        TextureHandle texture,
+    MaybeBool<byte> UpdateTexture(
+        Ref<Texture> texture,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
         [NativeTypeName("const void *")] Ref pixels,
         int pitch
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateWindowSurface")]
-    int UpdateWindowSurface(WindowHandle window);
+    MaybeBool<byte> UpdateWindowSurface(WindowHandle window);
 
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_UpdateWindowSurface")]
+    byte UpdateWindowSurfaceRaw(WindowHandle window);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateWindowSurfaceRects")]
-    int UpdateWindowSurfaceRects(
+    byte UpdateWindowSurfaceRects(
         WindowHandle window,
         [NativeTypeName("const SDL_Rect *")] Rect* rects,
         int numrects
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateWindowSurfaceRects")]
-    int UpdateWindowSurfaceRects(
+    MaybeBool<byte> UpdateWindowSurfaceRects(
         WindowHandle window,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rects,
         int numrects
     );
 
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateYUVTexture")]
-    int UpdateYUVTexture(
-        TextureHandle texture,
+    byte UpdateYUVTexture(
+        Texture* texture,
         [NativeTypeName("const SDL_Rect *")] Rect* rect,
         [NativeTypeName("const Uint8 *")] byte* Yplane,
         int Ypitch,
@@ -13731,10 +17454,11 @@ public unsafe partial interface ISdl
         int Vpitch
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateYUVTexture")]
-    int UpdateYUVTexture(
-        TextureHandle texture,
+    MaybeBool<byte> UpdateYUVTexture(
+        Ref<Texture> texture,
         [NativeTypeName("const SDL_Rect *")] Ref<Rect> rect,
         [NativeTypeName("const Uint8 *")] Ref<byte> Yplane,
         int Ypitch,
@@ -13745,38 +17469,57 @@ public unsafe partial interface ISdl
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitCondition")]
-    int WaitCondition(ConditionHandle cond, MutexHandle mutex);
+    void WaitCondition(ConditionHandle cond, MutexHandle mutex);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitConditionTimeout")]
-    int WaitConditionTimeout(
+    MaybeBool<byte> WaitConditionTimeout(
         ConditionHandle cond,
         MutexHandle mutex,
         [NativeTypeName("Sint32")] int timeoutMS
     );
 
-    [return: NativeTypeName("SDL_bool")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_WaitEvent")]
-    int WaitEvent(Event* @event);
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WaitConditionTimeout")]
+    byte WaitConditionTimeoutRaw(
+        ConditionHandle cond,
+        MutexHandle mutex,
+        [NativeTypeName("Sint32")] int timeoutMS
+    );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WaitEvent")]
+    byte WaitEvent(Event* @event);
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitEvent")]
-    MaybeBool<int> WaitEvent(Ref<Event> @event);
+    MaybeBool<byte> WaitEvent(Ref<Event> @event);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitEventTimeout")]
-    int WaitEventTimeout(Event* @event, [NativeTypeName("Sint32")] int timeoutMS);
+    byte WaitEventTimeout(Event* @event, [NativeTypeName("Sint32")] int timeoutMS);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitEventTimeout")]
-    MaybeBool<int> WaitEventTimeout(Ref<Event> @event, [NativeTypeName("Sint32")] int timeoutMS);
+    MaybeBool<byte> WaitEventTimeout(Ref<Event> @event, [NativeTypeName("Sint32")] int timeoutMS);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitSemaphore")]
-    int WaitSemaphore(SemaphoreHandle sem);
+    void WaitSemaphore(SemaphoreHandle sem);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitSemaphoreTimeout")]
-    int WaitSemaphoreTimeout(SemaphoreHandle sem, [NativeTypeName("Sint32")] int timeoutMS);
+    MaybeBool<byte> WaitSemaphoreTimeout(
+        SemaphoreHandle sem,
+        [NativeTypeName("Sint32")] int timeoutMS
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WaitSemaphoreTimeout")]
+    byte WaitSemaphoreTimeoutRaw(SemaphoreHandle sem, [NativeTypeName("Sint32")] int timeoutMS);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitThread")]
     void WaitThread(ThreadHandle thread, int* status);
@@ -13785,24 +17528,30 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitThread")]
     void WaitThread(ThreadHandle thread, Ref<int> status);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WarpMouseGlobal")]
-    int WarpMouseGlobal(float x, float y);
+    MaybeBool<byte> WarpMouseGlobal(float x, float y);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WarpMouseGlobal")]
+    byte WarpMouseGlobalRaw(float x, float y);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_WarpMouseInWindow")]
     void WarpMouseInWindow(WindowHandle window, float x, float y);
 
-    [return: NativeTypeName("Uint32")]
+    [return: NativeTypeName("SDL_InitFlags")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WasInit")]
-    uint WasInit([NativeTypeName("Uint32")] uint flags);
+    uint WasInit([NativeTypeName("SDL_InitFlags")] uint flags);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WindowHasSurface")]
-    MaybeBool<int> WindowHasSurface(WindowHandle window);
+    MaybeBool<byte> WindowHasSurface(WindowHandle window);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WindowHasSurface")]
-    int WindowHasSurfaceRaw(WindowHandle window);
+    byte WindowHasSurfaceRaw(WindowHandle window);
 
     [return: NativeTypeName("size_t")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteIO")]
@@ -13821,137 +17570,190 @@ public unsafe partial interface ISdl
         [NativeTypeName("size_t")] nuint size
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS16BE")]
-    MaybeBool<int> WriteS16BE(IOStreamHandle dst, [NativeTypeName("Sint16")] short value);
+    MaybeBool<byte> WriteS16BE(IOStreamHandle dst, [NativeTypeName("Sint16")] short value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS16BE")]
-    int WriteS16BERaw(IOStreamHandle dst, [NativeTypeName("Sint16")] short value);
+    byte WriteS16BERaw(IOStreamHandle dst, [NativeTypeName("Sint16")] short value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS16LE")]
-    MaybeBool<int> WriteS16LE(IOStreamHandle dst, [NativeTypeName("Sint16")] short value);
+    MaybeBool<byte> WriteS16LE(IOStreamHandle dst, [NativeTypeName("Sint16")] short value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS16LE")]
-    int WriteS16LERaw(IOStreamHandle dst, [NativeTypeName("Sint16")] short value);
+    byte WriteS16LERaw(IOStreamHandle dst, [NativeTypeName("Sint16")] short value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS32BE")]
-    MaybeBool<int> WriteS32BE(IOStreamHandle dst, [NativeTypeName("Sint32")] int value);
+    MaybeBool<byte> WriteS32BE(IOStreamHandle dst, [NativeTypeName("Sint32")] int value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS32BE")]
-    int WriteS32BERaw(IOStreamHandle dst, [NativeTypeName("Sint32")] int value);
+    byte WriteS32BERaw(IOStreamHandle dst, [NativeTypeName("Sint32")] int value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS32LE")]
-    MaybeBool<int> WriteS32LE(IOStreamHandle dst, [NativeTypeName("Sint32")] int value);
+    MaybeBool<byte> WriteS32LE(IOStreamHandle dst, [NativeTypeName("Sint32")] int value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS32LE")]
-    int WriteS32LERaw(IOStreamHandle dst, [NativeTypeName("Sint32")] int value);
+    byte WriteS32LERaw(IOStreamHandle dst, [NativeTypeName("Sint32")] int value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64BE")]
-    MaybeBool<int> WriteS64BE(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
+    MaybeBool<byte> WriteS64BE(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64BE")]
-    int WriteS64BERaw(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
+    byte WriteS64BERaw(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64LE")]
-    MaybeBool<int> WriteS64LE(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
+    MaybeBool<byte> WriteS64LE(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64LE")]
-    int WriteS64LERaw(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
+    byte WriteS64LERaw(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WriteS8")]
+    MaybeBool<byte> WriteS8(IOStreamHandle dst, [NativeTypeName("Sint8")] sbyte value);
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WriteS8")]
+    byte WriteS8Raw(IOStreamHandle dst, [NativeTypeName("Sint8")] sbyte value);
+
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteStorageFile")]
-    int WriteStorageFile(
+    byte WriteStorageFile(
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
         [NativeTypeName("const void *")] void* source,
         [NativeTypeName("Uint64")] ulong length
     );
 
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteStorageFile")]
-    int WriteStorageFile(
+    MaybeBool<byte> WriteStorageFile(
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
         [NativeTypeName("const void *")] Ref source,
         [NativeTypeName("Uint64")] ulong length
     );
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WriteSurfacePixel")]
+    byte WriteSurfacePixel(
+        Surface* surface,
+        int x,
+        int y,
+        [NativeTypeName("Uint8")] byte r,
+        [NativeTypeName("Uint8")] byte g,
+        [NativeTypeName("Uint8")] byte b,
+        [NativeTypeName("Uint8")] byte a
+    );
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WriteSurfacePixel")]
+    MaybeBool<byte> WriteSurfacePixel(
+        Ref<Surface> surface,
+        int x,
+        int y,
+        [NativeTypeName("Uint8")] byte r,
+        [NativeTypeName("Uint8")] byte g,
+        [NativeTypeName("Uint8")] byte b,
+        [NativeTypeName("Uint8")] byte a
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WriteSurfacePixelFloat")]
+    byte WriteSurfacePixelFloat(Surface* surface, int x, int y, float r, float g, float b, float a);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_WriteSurfacePixelFloat")]
+    MaybeBool<byte> WriteSurfacePixelFloat(
+        Ref<Surface> surface,
+        int x,
+        int y,
+        float r,
+        float g,
+        float b,
+        float a
+    );
+
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU16BE")]
-    MaybeBool<int> WriteU16BE(IOStreamHandle dst, [NativeTypeName("Uint16")] ushort value);
+    MaybeBool<byte> WriteU16BE(IOStreamHandle dst, [NativeTypeName("Uint16")] ushort value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU16BE")]
-    int WriteU16BERaw(IOStreamHandle dst, [NativeTypeName("Uint16")] ushort value);
+    byte WriteU16BERaw(IOStreamHandle dst, [NativeTypeName("Uint16")] ushort value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU16LE")]
-    MaybeBool<int> WriteU16LE(IOStreamHandle dst, [NativeTypeName("Uint16")] ushort value);
+    MaybeBool<byte> WriteU16LE(IOStreamHandle dst, [NativeTypeName("Uint16")] ushort value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU16LE")]
-    int WriteU16LERaw(IOStreamHandle dst, [NativeTypeName("Uint16")] ushort value);
+    byte WriteU16LERaw(IOStreamHandle dst, [NativeTypeName("Uint16")] ushort value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU32BE")]
-    MaybeBool<int> WriteU32BE(IOStreamHandle dst, [NativeTypeName("Uint32")] uint value);
+    MaybeBool<byte> WriteU32BE(IOStreamHandle dst, [NativeTypeName("Uint32")] uint value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU32BE")]
-    int WriteU32BERaw(IOStreamHandle dst, [NativeTypeName("Uint32")] uint value);
+    byte WriteU32BERaw(IOStreamHandle dst, [NativeTypeName("Uint32")] uint value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU32LE")]
-    MaybeBool<int> WriteU32LE(IOStreamHandle dst, [NativeTypeName("Uint32")] uint value);
+    MaybeBool<byte> WriteU32LE(IOStreamHandle dst, [NativeTypeName("Uint32")] uint value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU32LE")]
-    int WriteU32LERaw(IOStreamHandle dst, [NativeTypeName("Uint32")] uint value);
+    byte WriteU32LERaw(IOStreamHandle dst, [NativeTypeName("Uint32")] uint value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64BE")]
-    MaybeBool<int> WriteU64BE(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
+    MaybeBool<byte> WriteU64BE(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64BE")]
-    int WriteU64BERaw(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
+    byte WriteU64BERaw(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64LE")]
-    MaybeBool<int> WriteU64LE(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
+    MaybeBool<byte> WriteU64LE(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64LE")]
-    int WriteU64LERaw(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
+    byte WriteU64LERaw(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU8")]
-    MaybeBool<int> WriteU8(IOStreamHandle dst, [NativeTypeName("Uint8")] byte value);
+    MaybeBool<byte> WriteU8(IOStreamHandle dst, [NativeTypeName("Uint8")] byte value);
 
-    [return: NativeTypeName("SDL_bool")]
+    [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU8")]
-    int WriteU8Raw(IOStreamHandle dst, [NativeTypeName("Uint8")] byte value);
+    byte WriteU8Raw(IOStreamHandle dst, [NativeTypeName("Uint8")] byte value);
 }
