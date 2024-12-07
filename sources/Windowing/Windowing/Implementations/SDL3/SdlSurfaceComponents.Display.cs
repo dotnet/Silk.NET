@@ -8,12 +8,12 @@ namespace Silk.NET.Windowing.SDL3;
 
 internal partial class SdlSurfaceComponents : ISurfaceDisplay
 {
-    [field: AllowNull, MaybeNull]
+    private SdlDisplay? _display;
     public IDisplay Current
     {
         get
         {
-            if (!IsSurfaceInitialized && field is { } ret)
+            if (!IsSurfaceInitialized && _display is { } ret)
             {
                 return ret;
             }
@@ -30,7 +30,7 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
             {
                 if (display.Id == current)
                 {
-                    return field = display;
+                    return _display = display;
                 }
             }
 
@@ -41,7 +41,7 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
         }
         set
         {
-            if (value.Equals(field))
+            if (value.Equals(_display))
             {
                 return;
             }
@@ -106,8 +106,30 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
             return;
             void Return(SdlDisplay display, VideoMode vidMode)
             {
+                // If the video mode indicates that we are not exclusive fullscreen, then we keep it as it is.
+                // Otherwise, we have just changed display and have changed to the first known exclusive video mode.
                 _videoMode = vidMode == default ? vidMode : display.KnownVideoModes![1];
-                field = value;
+                var oldDisplay = _display;
+                _display = display;
+
+                // if oldDisplay is null, we don't have enough confidence to raise an event.
+                if (!(oldDisplay?.Equals(display) ?? true))
+                {
+                    DebugPrint("Raising CurrentDisplayChanged due to a programmatic change...");
+                    CurrentDisplayChanged?.Invoke(new DisplayChangeEvent(surface, display));
+                }
+
+                if (
+                    _state
+                    is not (WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen)
+                )
+                {
+                    return;
+                }
+
+                DebugPrint(
+                    "Raising AvailableVideoModes due to current fullscreen display changing..."
+                );
                 AvailableVideoModesChanged?.Invoke(
                     new DisplayVideoModeAvailabilityChangeEvent(surface, display)
                 );
@@ -119,18 +141,30 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
 
     public IReadOnlyList<IDisplay> Available => _displays ??= CreateDisplays();
 
-    private static SdlDisplay[] CreateDisplays()
+    private SdlDisplay[] CreateDisplays(SdlDisplay[]? reuse = null)
     {
         var count = 0;
         var displays = Sdl.GetDisplays(count.AsRef());
-        var ret = new SdlDisplay[count];
+        var ret = new SdlDisplay?[count];
         for (nuint i = 0; (int)i < count; i++)
         {
-            ret[i] = new SdlDisplay(displays[i]);
+            var id = displays[i];
+            if (reuse is not null)
+            {
+                foreach (var display in reuse)
+                {
+                    if (display.Id == id)
+                    {
+                        ret[i] = display;
+                        break;
+                    }
+                }
+            }
+            ret[i] ??= new SdlDisplay(surface, id);
         }
 
         Sdl.Free((Ref)displays);
-        return ret;
+        return ret!;
     }
 
     private VideoMode _videoMode;
@@ -232,6 +266,94 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
     public event Action<DisplayChangeEvent>? CurrentDisplayChanged;
     public event Action<DisplayAvailabilityChangeEvent>? AvailableChanged;
     public event Action<DisplayVideoModeAvailabilityChangeEvent>? AvailableVideoModesChanged;
+    public event Action<VideoModeChangeEvent>? VideoModeChanged;
+
+    internal void OnAvailableDisplaysChanged()
+    {
+        if (_displays is not null)
+        {
+            // Recreate _displays if it's already created (as this indicates the user is interested in the display
+            // component). If not, we'll do this next time the user accesses display information. This prevents needless
+            // work and allocation for something the user may not be interested in.
+            _displays = CreateDisplays(_displays);
+        }
+
+        DebugPrint("Raising AvailableChanged...");
+        AvailableChanged?.Invoke(new DisplayAvailabilityChangeEvent(surface));
+    }
+
+    internal void OnDisplayCoordinatesChanged(uint id)
+    {
+        if (_displays is null)
+        {
+            // User doesn't care.
+            return;
+        }
+
+        foreach (var display in _displays)
+        {
+            if (display.Id != id)
+            {
+                continue;
+            }
+
+            display.OnCoordinatesChanged();
+            break;
+        }
+    }
+
+    // Called for either a desktop mode change or a current mode change. Neither is used to directly raise an event,
+    // rather this is used as an indicator that the known video modes might've changed to try and raise
+    // KnownVideoModesChanged.
+    internal void OnPotentialVideoModeChanges(uint id, out bool isCurrent, uint currentDisplay = 0)
+    {
+        var current = currentDisplay == 0 ? Sdl.GetDisplayForWindow(Handle) : currentDisplay;
+        isCurrent = current == id;
+        if (_displays is null)
+        {
+            // User doesn't care.
+            return;
+        }
+
+        foreach (var display in _displays)
+        {
+            if (display.Id != id)
+            {
+                continue;
+            }
+
+            if (
+                display.OnModeChanged()
+                && isCurrent
+                && _state is WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen
+            )
+            {
+                DebugPrint(
+                    "Raising AvailableVideoModesChanged due to a detected change of KnownVideoModes in the current "
+                        + "fullscreen display..."
+                );
+                AvailableVideoModesChanged?.Invoke(
+                    new DisplayVideoModeAvailabilityChangeEvent(surface, display)
+                );
+            }
+
+            break;
+        }
+    }
 
     private void InitializeDisplay(uint props) { }
+
+    public void OnVideoModeChanged()
+    {
+        var oldVideoMode = _videoMode;
+        var newVideoMode = VideoMode;
+        if (oldVideoMode != newVideoMode)
+        {
+            DebugPrint("Raising VideoModeChanged due to a detected change...");
+            VideoModeChanged?.Invoke(new VideoModeChangeEvent(surface, newVideoMode));
+        }
+    }
+
+    public void OnCurrentDisplayChanged() =>
+        CurrentDisplayChanged?.Invoke(new DisplayChangeEvent(surface, Current));
 }

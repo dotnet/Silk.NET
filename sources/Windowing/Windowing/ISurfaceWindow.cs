@@ -65,9 +65,16 @@ public interface ISurfaceWindow
 
     /// <summary>
     /// Gets or sets a value indicating whether, unless set to <c>false</c> before the next <see cref="Surface.Tick" />,
-    /// the window will close resulting in the irrevocable termination of the surface.
+    /// the window will close resulting in the irrevocable termination of the surface. Any children active at this point
+    /// will also be irrevocably terminated, and parent windows should bear this in mind when responding to their
+    /// <see cref="CloseRequested"/> events - not rejecting the closure request shall terminate all child surfaces too.
     /// </summary>
     bool IsCloseRequested { get; set; }
+
+    /// <summary>
+    /// Raised when <see cref="IsCloseRequested" /> is set to <c>true</c>.
+    /// </summary>
+    event Action<WindowToggleEvent>? CloseRequested;
 
     /// <summary>
     /// Gets or sets a value indicating whether the window is visible.
@@ -75,9 +82,9 @@ public interface ISurfaceWindow
     bool IsVisible { get; set; }
 
     /// <summary>
-    /// Raised when <see cref="IsCloseRequested" /> is set to <c>true</c>.
+    /// Raised when <see cref="IsVisible" /> changes.
     /// </summary>
-    event Action<WindowToggleEvent>? CloseRequested;
+    event Action<WindowToggleEvent>? VisibilityChanged;
 
     /// <summary>
     /// Gets or sets a value indicating whether the window currently has input focus. If setting to <c>true</c>, the

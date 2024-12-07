@@ -43,6 +43,18 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
         }
     }
 
+    private static void AddWindowCreateFlag(uint props, ulong flag)
+    {
+        var flags = unchecked(
+            (ulong)Sdl.GetNumberProperty(props, Sdl.PropWindowCreateFlagsNumber, 0)
+        );
+        flags |= flag;
+        if (!Sdl.SetNumberProperty(props, Sdl.PropWindowCreateFlagsNumber, unchecked((long)flags)))
+        {
+            Sdl.ThrowError();
+        }
+    }
+
     /// <summary>
     /// Initializes the platform and returns the temporary window handle used in the process if applicable.
     /// </summary>
@@ -125,6 +137,11 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
                 InitializeOpenGL(createProps);
             }
 
+            if (IsScaleEnabled)
+            {
+                InitializeScale(createProps);
+            }
+
             if (IsVulkanEnabled)
             {
                 InitializeVulkan(createProps);
@@ -162,7 +179,10 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
             PostInitializeOpenGL();
         }
 
-        DebugPrint("Initialized");
+        if (IsWindowEnabled)
+        {
+            PostInitializeWindow();
+        }
     }
 
     public static void TerminatePlatform()

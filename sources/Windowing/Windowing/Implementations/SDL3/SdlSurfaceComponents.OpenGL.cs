@@ -417,17 +417,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
             return;
         }
 
-        if (
-            !Sdl.SetNumberProperty(
-                props,
-                Sdl.PropWindowCreateFlagsNumber,
-                Sdl.GetNumberProperty(props, Sdl.PropWindowCreateFlagsNumber, 0)
-                    | (long)Sdl.WindowOpengl
-            )
-        )
-        {
-            Sdl.ThrowError();
-        }
+        AddWindowCreateFlag(props, Sdl.WindowOpengl);
     }
 
     private void PostInitializeOpenGL()

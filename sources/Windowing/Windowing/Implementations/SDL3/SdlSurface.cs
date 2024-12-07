@@ -9,15 +9,13 @@ namespace Silk.NET.Windowing.SDL3;
 
 internal class SdlSurface : Surface, IDisposable
 {
-    private static uint _emptyEvent;
-    private static BreakneckLock _staticLock;
     private bool _isTerminating;
 
     public SdlSurface() => Impl = new SdlSurfaceComponents(this);
 
     // This is its own separate class so that users don't inadvertently rely on type system details (i.e. use
     // `surface is ISurfaceWindow` instead of `surface.Window`)
-    private SdlSurfaceComponents Impl { get; }
+    internal SdlSurfaceComponents Impl { get; }
     internal SdlSurface? Parent { get; set; }
     public override ISurfaceOpenGL? OpenGL => SdlSurfaceComponents.IsOpenGLEnabled ? Impl : null;
     public override ISurfaceWindow? Window => SdlSurfaceComponents.IsWindowEnabled ? Impl : null;
@@ -26,7 +24,7 @@ internal class SdlSurface : Surface, IDisposable
     public override ISurfaceChildren? Children =>
         SdlSurfaceComponents.IsChildrenEnabled ? Impl : null;
     public override ISurfaceScale? Scale => SdlSurfaceComponents.IsScaleEnabled ? Impl : null;
-    public override Vector2 DrawableSize => Impl.DrawableSize;
+    public override Vector2 DrawableSize => _drawableSize = Impl.DrawableSize;
     public override bool IsTerminating => _isTerminating;
     public override event Action<SurfaceResizeEvent>? DrawableSizeChanged;
     public override event Action<SurfaceLifecycleEvent>? Created;
@@ -54,25 +52,11 @@ internal class SdlSurface : Surface, IDisposable
     {
         DebugPrint();
         Impl.InitializeSurface();
+        DebugPrint("Raising Created...");
         Created?.Invoke(new SurfaceLifecycleEvent(this));
     }
 
-    public override void Continue()
-    {
-        var locked = false;
-        _staticLock.Enter(ref locked); // <-- locked is always true, not sure why it's needed.
-        if (_emptyEvent == 0)
-        {
-            _emptyEvent = Sdl.RegisterEvents(1);
-        }
-
-        _staticLock.Exit();
-        var @event = new Event { Type = _emptyEvent };
-        if (!Sdl.PushEvent(@event.AsRef()))
-        {
-            Sdl.ThrowError();
-        }
-    }
+    public override void Continue() => SdlEventProcessor.ContinueEvents();
 
     protected internal override void OnTick()
     {
@@ -87,7 +71,9 @@ internal class SdlSurface : Surface, IDisposable
         _isTerminating = true;
         if (!prev && _isTerminating)
         {
-            DebugPrint("Raising Terminating.");
+            DebugPrint("Recursing into children...");
+            Impl.TerminateChildren();
+            DebugPrint("Raising Terminating...");
             Terminating?.Invoke(new SurfaceLifecycleEvent(this));
         }
     }
@@ -239,6 +225,39 @@ internal class SdlSurface : Surface, IDisposable
         }
 
         return false;
+    }
+
+    internal void OnPausing()
+    {
+        DebugPrint("Raising Pausing...");
+        Pausing?.Invoke(new SurfaceLifecycleEvent(this));
+    }
+
+    internal void OnResuming()
+    {
+        DebugPrint("Raising Resuming...");
+        Resuming?.Invoke(new SurfaceLifecycleEvent(this));
+    }
+
+    internal void OnLowMemory()
+    {
+        DebugPrint("Raising LowMemory...");
+        LowMemory?.Invoke(new SurfaceLifecycleEvent(this));
+    }
+
+    private Vector2 _drawableSize;
+
+    internal void OnDrawableSizeChanged()
+    {
+        var oldDrawableSize = _drawableSize;
+        var newDrawableSize = DrawableSize;
+        if (oldDrawableSize != newDrawableSize)
+        {
+            DebugPrint("Raising DrawableSizeChanged...");
+            DrawableSizeChanged?.Invoke(
+                new SurfaceResizeEvent(this, oldDrawableSize, newDrawableSize)
+            );
+        }
     }
 
     public void Dispose() => Impl.Dispose();

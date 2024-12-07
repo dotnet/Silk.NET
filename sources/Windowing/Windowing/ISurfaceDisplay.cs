@@ -44,4 +44,9 @@ public interface ISurfaceDisplay
     /// An event raised when <see cref="AvailableVideoModes" /> changes.
     /// </summary>
     event Action<DisplayVideoModeAvailabilityChangeEvent>? AvailableVideoModesChanged;
+
+    /// <summary>
+    /// An event raised when <see cref="VideoMode" /> changes.
+    /// </summary>
+    public event Action<VideoModeChangeEvent>? VideoModeChanged;
 }

@@ -8,9 +8,22 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Windowing.SDL3;
 
-internal class SdlDisplay(uint id) : IDisplay
+internal class SdlDisplay : IDisplay
 {
-    public uint Id { get; } = id;
+    private Rectangle<float> _bounds;
+    private Rectangle<float> _workArea;
+
+    public SdlDisplay(SdlSurface surface, uint id)
+    {
+        Surface = surface;
+        Id = id;
+        _bounds = Bounds;
+        _workArea = WorkArea;
+    }
+
+    public uint Id { get; }
+    public SdlSurface Surface { get; }
+
     public Rectangle<float> Bounds
     {
         get
@@ -50,14 +63,14 @@ internal class SdlDisplay(uint id) : IDisplay
                 return _silkModes;
             }
 
-            var videoModes = DisplayModes;
-            var ret = new VideoMode[videoModes.Length + 1];
+            UpdateDisplayModes();
+            var ret = new VideoMode[_displayModes.Length + 1];
             ret[0] = default; // This is to change back to non-fullscreen.
-            for (nuint i = 0; (int)i < videoModes.Length; i++)
+            for (nuint i = 0; (int)i < _displayModes.Length; i++)
             {
-                ref var videoMode = ref videoModes[i].Handle;
+                ref var videoMode = ref _displayModes[i].Handle;
                 ret[i + 1] = new VideoMode(
-                    (int)i,
+                    (int)(i + 1),
                     new Vector2(videoMode.W, videoMode.H),
                     videoMode.RefreshRate
                 );
@@ -67,28 +80,51 @@ internal class SdlDisplay(uint id) : IDisplay
         }
     }
 
-    [field: AllowNull, MaybeNull]
+    private Ptr<DisplayMode>[]? _displayModes;
+
     internal Ptr<DisplayMode>[] DisplayModes
     {
         get
         {
-            if (field is not null)
+            if (_displayModes is not null)
             {
-                return field;
+                return _displayModes;
             }
 
-            var count = 0;
-            var videoModes = Sdl.GetFullscreenDisplayModes(Id, count.AsRef());
-            if (videoModes == nullptr)
-            {
-                Sdl.ThrowError();
-            }
-
-            field = new Ptr<DisplayMode>[count];
-            videoModes.AsSpan(count).CopyTo(field);
-            Sdl.Free((Ref)videoModes);
-            return field;
+            UpdateDisplayModes();
+            return _displayModes;
         }
+    }
+
+    [MemberNotNull(nameof(_displayModes))]
+    private bool UpdateDisplayModes()
+    {
+        DebugPrint();
+        var count = 0;
+        var videoModes = Sdl.GetFullscreenDisplayModes(Id, count.AsRef());
+        if (videoModes == nullptr)
+        {
+            Sdl.ThrowError();
+        }
+
+        var span = videoModes.AsSpan(count);
+        if (_displayModes?.Length == count && span.SequenceEqual(_displayModes))
+        {
+            return false;
+        }
+
+        var wasNull = _displayModes is null;
+        _displayModes = new Ptr<DisplayMode>[count];
+        videoModes.AsSpan(count).CopyTo(_displayModes);
+        Sdl.Free((Ref)videoModes);
+        _silkModes = null;
+        if (!wasNull)
+        {
+            DebugPrint("Raising KnownVideoModesChanged");
+            _knownVideoModesChanged?.Invoke(new DisplayVideoModeAvailabilityChangeEvent());
+        }
+
+        return !wasNull;
     }
 
     public bool IsPrimary => Sdl.GetPrimaryDisplay() == Id;
@@ -96,8 +132,26 @@ internal class SdlDisplay(uint id) : IDisplay
     public string Name => Sdl.GetDisplayName(Id).ReadToString();
 
     public event Action<DisplayCoordinatesEvent>? CoordinatesChanged;
-    public event Action<DisplayVideoModeAvailabilityChangeEvent>? KnownVideoModesChanged;
-    public event Action<VideoModeChangeEvent>? VideoModeChanged;
+    private Action<DisplayVideoModeAvailabilityChangeEvent>? _knownVideoModesChanged;
+
+    public event Action<DisplayVideoModeAvailabilityChangeEvent>? KnownVideoModesChanged
+    {
+        add
+        {
+            if (value is null)
+            {
+                return;
+            }
+
+            if (_displayModes is null)
+            {
+                UpdateDisplayModes();
+            }
+
+            _knownVideoModesChanged += value;
+        }
+        remove => _knownVideoModesChanged -= value;
+    }
 
     private bool Equals(SdlDisplay other) => Id == other.Id;
 
@@ -108,4 +162,15 @@ internal class SdlDisplay(uint id) : IDisplay
         && (ReferenceEquals(this, obj) || (obj.GetType() == GetType() && Equals((SdlDisplay)obj)));
 
     public override int GetHashCode() => (int)Id;
+
+    public void OnCoordinatesChanged()
+    {
+        DebugPrint("Raising CoordinatesChanged...");
+        CoordinatesChanged?.Invoke(
+            new DisplayCoordinatesEvent(Surface, this, _bounds, Bounds, _workArea, WorkArea)
+        );
+    }
+
+    // If _displayModes is null, user doesn't care.
+    public bool OnModeChanged() => _displayModes is not null && UpdateDisplayModes();
 }

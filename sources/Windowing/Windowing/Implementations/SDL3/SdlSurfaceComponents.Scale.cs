@@ -8,14 +8,37 @@ namespace Silk.NET.Windowing.SDL3;
 
 internal partial class SdlSurfaceComponents : ISurfaceScale
 {
-    public float ContentScale =>
+    private float _contentScale,
+        _drawScale,
+        _pixelDensity;
+    public float Content =>
         IsSurfaceInitialized
-            ? Sdl.GetDisplayContentScale(Sdl.GetDisplayForWindow(Handle))
+            ? _contentScale = Sdl.GetDisplayContentScale(Sdl.GetDisplayForWindow(Handle))
             : default;
 
-    public float DrawScale => IsSurfaceInitialized ? Sdl.GetWindowDisplayScale(Handle) : default;
+    public float Draw =>
+        IsSurfaceInitialized ? _drawScale = Sdl.GetWindowDisplayScale(Handle) : default;
 
-    public float PixelDensity => IsSurfaceInitialized ? Sdl.GetWindowPixelDensity(Handle) : default;
+    public float PixelDensity =>
+        IsSurfaceInitialized ? _pixelDensity = Sdl.GetWindowPixelDensity(Handle) : default;
+
+    event Action<ScaleChangedEvent>? ISurfaceScale.Changed
+    {
+        add
+        {
+            if (ScaleChanged is null)
+            {
+                _contentScale = Content;
+                _drawScale = Draw;
+                _pixelDensity = PixelDensity;
+            }
+
+            ScaleChanged += value;
+        }
+        remove => ScaleChanged -= value;
+    }
+
+    private event Action<ScaleChangedEvent>? ScaleChanged;
 
     public Vector2 DrawableSize
     {
@@ -28,8 +51,54 @@ internal partial class SdlSurfaceComponents : ISurfaceScale
 
             var w = 0;
             var h = 0;
-            Sdl.GetWindowSizeInPixels(Handle, w.AsRef(), h.AsRef());
+            if (!Sdl.GetWindowSizeInPixels(Handle, w.AsRef(), h.AsRef()))
+            {
+                Sdl.ThrowError();
+            }
             return new Vector2(w, h);
+        }
+    }
+
+    public void OnPotentialScaleChanges()
+    {
+        if (ScaleChanged is null)
+        {
+            // User doesn't care.
+            return;
+        }
+
+        var oldContent = _contentScale;
+        var newContent = _contentScale;
+        var oldDraw = _drawScale;
+        var newDraw = Draw;
+        var oldPixelDensity = _pixelDensity;
+        var newPixelDensity = PixelDensity;
+        if (
+            MathF.Abs(oldContent - newContent) > float.Epsilon
+            || MathF.Abs(oldDraw - newDraw) > float.Epsilon
+            || MathF.Abs(oldPixelDensity - newPixelDensity) > float.Epsilon
+        )
+        {
+            DebugPrint("Raising ScaleChanged...");
+            ScaleChanged?.Invoke(
+                new ScaleChangedEvent(
+                    surface,
+                    oldContent,
+                    newContent,
+                    oldDraw,
+                    newDraw,
+                    oldPixelDensity,
+                    newPixelDensity
+                )
+            );
+        }
+    }
+
+    private void InitializeScale(uint createProps)
+    {
+        if (!Sdl.SetBooleanProperty(createProps, Sdl.PropWindowCreateHighPixelDensityBoolean, true))
+        {
+            Sdl.ThrowError();
         }
     }
 }

@@ -68,16 +68,6 @@ internal partial class SdlSurfaceComponents : ISurfaceVulkan
             return;
         }
 
-        if (
-            !Sdl.SetNumberProperty(
-                props,
-                Sdl.PropWindowCreateFlagsNumber,
-                Sdl.GetNumberProperty(props, Sdl.PropWindowCreateFlagsNumber, 0)
-                    | (long)Sdl.WindowVulkan
-            )
-        )
-        {
-            Sdl.ThrowError();
-        }
+        AddWindowCreateFlag(props, Sdl.WindowVulkan);
     }
 }

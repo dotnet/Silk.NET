@@ -63,9 +63,4 @@ public interface IDisplay : IEquatable<IDisplay>
     /// An event raised when <see cref="KnownVideoModes" /> changes.
     /// </summary>
     event Action<DisplayVideoModeAvailabilityChangeEvent>? KnownVideoModesChanged;
-
-    /// <summary>
-    /// An event raised when <see cref="VideoMode" /> changes.
-    /// </summary>
-    public event Action<VideoModeChangeEvent>? VideoModeChanged;
 }

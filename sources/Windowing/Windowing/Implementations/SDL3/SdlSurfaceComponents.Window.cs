@@ -10,40 +10,10 @@ namespace Silk.NET.Windowing.SDL3;
 
 internal partial class SdlSurfaceComponents : ISurfaceWindow
 {
+    private Rectangle<float> _bounds;
     public Rectangle<float> Bounds
     {
-        get
-        {
-            var ca = ClientArea;
-            if (!IsSurfaceInitialized)
-            {
-                return ca;
-            }
-
-            var top = 0;
-            var left = 0;
-            var bottom = 0;
-            var right = 0;
-            if (
-                !Sdl.GetWindowBordersSize(
-                    Handle,
-                    top.AsRef(),
-                    left.AsRef(),
-                    bottom.AsRef(),
-                    right.AsRef()
-                )
-            )
-            {
-                Sdl.ThrowError();
-            }
-
-            return new Rectangle<float>(
-                ca.Origin.X - left,
-                ca.Origin.Y + top,
-                ca.Size.X + left + right,
-                ca.Size.Y + top + bottom
-            );
-        }
+        get => GetBounds(ClientArea);
         set
         {
             var top = 0;
@@ -70,16 +40,50 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
                 value.Size.X - left - right,
                 value.Size.Y - top - bottom
             );
+            _bounds = value;
         }
     }
 
+    private Rectangle<float> GetBounds(Rectangle<float> ca)
+    {
+        if (!IsSurfaceInitialized)
+        {
+            return _bounds = ca;
+        }
+
+        var top = 0;
+        var left = 0;
+        var bottom = 0;
+        var right = 0;
+        if (
+            !Sdl.GetWindowBordersSize(
+                Handle,
+                top.AsRef(),
+                left.AsRef(),
+                bottom.AsRef(),
+                right.AsRef()
+            )
+        )
+        {
+            Sdl.ThrowError();
+        }
+
+        return _bounds = new Rectangle<float>(
+            ca.Origin.X - left,
+            ca.Origin.Y + top,
+            ca.Size.X + left + right,
+            ca.Size.Y + top + bottom
+        );
+    }
+
+    private Rectangle<float> _clientArea = new(-1, -1, 640, 480);
     public Rectangle<float> ClientArea
     {
         get
         {
             if (!IsSurfaceInitialized)
             {
-                return field;
+                return _clientArea;
             }
 
             var x = 0;
@@ -96,13 +100,13 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
                 Sdl.ThrowError();
             }
 
-            return field = new Rectangle<float>(x, y, width, height);
+            return _clientArea = new Rectangle<float>(x, y, width, height);
         }
         set
         {
             if (!IsSurfaceInitialized)
             {
-                field = value;
+                OnWindowCoordinatesChanged(value);
                 return;
             }
 
@@ -114,9 +118,9 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
                 Sdl.ThrowError();
             }
 
-            field = value;
+            OnWindowCoordinatesChanged(value);
         }
-    } = new(-1, -1, 640, 480);
+    }
 
     public event Action<WindowCoordinatesEvent>? CoordinatesChanged;
 
@@ -129,28 +133,31 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
             field = value;
             if (!prev && value)
             {
-                DebugPrint("Raising CloseRequested");
+                DebugPrint("Raising CloseRequested...");
                 CloseRequested?.Invoke(new WindowToggleEvent(surface, true));
             }
         }
     }
 
+    public event Action<WindowToggleEvent>? CloseRequested;
+
+    private bool _isVisible = true;
     public bool IsVisible
     {
         get
         {
             if (!IsSurfaceInitialized)
             {
-                return field;
+                return _isVisible;
             }
 
-            return field = (Sdl.GetWindowFlags(Handle) & Sdl.WindowHidden) == 0;
+            return _isVisible = (Sdl.GetWindowFlags(Handle) & Sdl.WindowHidden) == 0;
         }
         set
         {
             if (!IsSurfaceInitialized)
             {
-                field = value;
+                OnVisibilityChanged(value);
                 return;
             }
 
@@ -158,10 +165,11 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
             {
                 Sdl.ThrowError();
             }
+            OnVisibilityChanged(value);
         }
-    } = true;
+    }
 
-    public event Action<WindowToggleEvent>? CloseRequested;
+    public event Action<WindowToggleEvent>? VisibilityChanged;
 
     public bool IsFocused
     {
@@ -216,25 +224,35 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
         }
     } = Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Application";
 
-    private ulong _stateFlags;
+    private WindowState _state;
 
     public WindowState State
     {
         get
         {
-            var flags = IsSurfaceInitialized
-                ? _stateFlags = Sdl.GetWindowFlags(Handle)
-                : _stateFlags;
-            return (flags & Sdl.WindowFullscreen) != 0
-                ? (IsSurfaceInitialized && Sdl.GetWindowFullscreenMode(Handle) == nullptr)
-                || (!IsSurfaceInitialized && VideoMode == default)
-                    ? WindowState.WindowedFullscreen
-                    : WindowState.ExclusiveFullscreen
-                : (flags & Sdl.WindowMaximized) != 0
-                    ? WindowState.Maximized
-                    : (flags & Sdl.WindowMinimized) != 0
-                        ? WindowState.Minimized
-                        : WindowState.Normal;
+            if (!IsSurfaceInitialized)
+            {
+                // The windows vs exclusive fullscreen doesn't need to be up-to-date in _state as they're encoded in the
+                // window create flags the same.
+                return _state = _state
+                    is WindowState.ExclusiveFullscreen
+                        or WindowState.WindowedFullscreen
+                    ? VideoMode == default
+                        ? WindowState.WindowedFullscreen
+                        : WindowState.ExclusiveFullscreen
+                    : _state;
+            }
+            var flags = Sdl.GetWindowFlags(Handle);
+            return _state =
+                (flags & Sdl.WindowFullscreen) != 0
+                    ? Sdl.GetWindowFullscreenMode(Handle) == nullptr
+                        ? WindowState.WindowedFullscreen
+                        : WindowState.ExclusiveFullscreen
+                    : (flags & Sdl.WindowMaximized) != 0
+                        ? WindowState.Maximized
+                        : (flags & Sdl.WindowMinimized) != 0
+                            ? WindowState.Minimized
+                            : WindowState.Normal;
         }
         set => SetState(State, value);
     }
@@ -246,20 +264,14 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
         SdlDisplay? display = null
     )
     {
+        var goingFullscreen =
+            value is WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen;
+        var wasFullscreen =
+            current is WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen;
         if (current == value && exclusiveMode is null)
         {
             return;
         }
-
-        var newStateFlags = value switch
-        {
-            WindowState.Normal => 0ul,
-            WindowState.Minimized => Sdl.WindowMinimized,
-            WindowState.Maximized => Sdl.WindowMaximized,
-            WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen =>
-                Sdl.WindowFullscreen,
-            _ => throw new ArgumentOutOfRangeException(nameof(value), value, null),
-        };
 
         // Note that if we are changing state, we need to enact the appropriate changes to the video mode.
         // If `value` is not exclusive fullscreen but we have a video mode that indicates that we're in exclusive
@@ -273,19 +285,12 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
             ?? (value == WindowState.ExclusiveFullscreen ? display.KnownVideoModes![1] : default);
         if (!IsSurfaceInitialized)
         {
-            _stateFlags = newStateFlags;
-            _videoMode = newVideoMode;
+            Return();
             return;
         }
 
-        var goingFullscreen =
-            value is WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen;
         if (
-            (
-                current is WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen
-                    != goingFullscreen
-                && !Sdl.SetWindowFullscreen(Handle, goingFullscreen)
-            )
+            (wasFullscreen != goingFullscreen && !Sdl.SetWindowFullscreen(Handle, goingFullscreen))
             || (
                 goingFullscreen
                 && !Sdl.SetWindowFullscreenMode(
@@ -300,8 +305,33 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
             Sdl.ThrowError();
         }
 
-        _stateFlags = newStateFlags;
-        _videoMode = newVideoMode;
+        Return();
+        return;
+        void Return()
+        {
+            _state = value;
+            var oldVideoMode = _videoMode;
+            _videoMode = newVideoMode;
+            if (oldVideoMode != newVideoMode)
+            {
+                DebugPrint("Raising VideoModeChanged due to a programmatic change...");
+                VideoModeChanged?.Invoke(new VideoModeChangeEvent(surface, newVideoMode));
+            }
+
+            if (current != value)
+            {
+                DebugPrint("Raising StateChanged due to a programmatic change...");
+                StateChanged?.Invoke(new WindowStateEvent(surface, current, value));
+            }
+
+            if (wasFullscreen != goingFullscreen)
+            {
+                DebugPrint("Raising AvailableVideoModesChanged due to a window state change...");
+                AvailableVideoModesChanged?.Invoke(
+                    new DisplayVideoModeAvailabilityChangeEvent(surface, display)
+                );
+            }
+        }
     }
 
     public event Action<WindowStateEvent>? StateChanged;
@@ -345,6 +375,7 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
             }
 
             field = value;
+            OnWindowCoordinatesChanged(); // <-- Bounds includes the border
         }
     }
 
@@ -398,18 +429,7 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
         }
 
         // TODO borders
-        if (
-            !Sdl.SetNumberProperty(
-                props,
-                Sdl.PropWindowCreateFlagsNumber,
-                Sdl.GetNumberProperty(props, Sdl.PropWindowCreateFlagsNumber, 0)
-                    | (long)Sdl.WindowResizable
-            )
-        )
-        {
-            Sdl.ThrowError();
-        }
-
+        AddWindowCreateFlag(props, Sdl.WindowResizable);
         if (!IsWindowEnabled)
         {
             return;
@@ -491,5 +511,80 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
                 return ret;
             }
         }
+    }
+
+    public void OnVisibilityChanged(bool isVisible)
+    {
+        var wasVisible = _isVisible;
+        _isVisible = isVisible;
+        if (wasVisible != isVisible)
+        {
+            DebugPrint("Raising VisibilityChanged...");
+            VisibilityChanged?.Invoke(new WindowToggleEvent(surface, isVisible));
+        }
+    }
+
+    public void OnWindowCoordinatesChanged(Rectangle<float>? requestedClientArea = null)
+    {
+        var oldBounds = _bounds;
+        var oldClientArea = _clientArea;
+        Rectangle<float> newBounds;
+        Rectangle<float> newClientArea;
+        if (requestedClientArea is { } ca)
+        {
+            newBounds = GetBounds(ca);
+            newClientArea = ca;
+        }
+        else
+        {
+            newBounds = Bounds;
+            newClientArea = _clientArea; // <-- not a typo! Bounds getter calls ClientArea getter and updates this
+        }
+
+        _clientArea = newClientArea;
+        _bounds = newBounds;
+        if (oldBounds == newBounds && oldClientArea == newClientArea)
+        {
+            return;
+        }
+
+        DebugPrint("Raising CoordinatesChanged...");
+        CoordinatesChanged?.Invoke(
+            new WindowCoordinatesEvent(surface, oldBounds, oldClientArea, newBounds, newClientArea)
+        );
+    }
+
+    private void PostInitializeWindow() => OnWindowCoordinatesChanged();
+
+    public void OnWindowStateChanged(WindowState? newState = null)
+    {
+        var oldState = _state;
+        _state = newState ?? State;
+        if (oldState == _state)
+        {
+            return;
+        }
+
+        DebugPrint("Raising StateChanged due to a detected change...");
+        StateChanged?.Invoke(new WindowStateEvent(surface, oldState, _state));
+        if (
+            oldState is WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen
+            || _state is WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen
+        )
+        {
+            OnVideoModeChanged(); // just in case of exclusive vs windowed differences
+        }
+    }
+
+    public void OnWindowFocusChanged(bool value)
+    {
+        DebugPrint("Raising FocusChanged...");
+        FocusChanged?.Invoke(new WindowToggleEvent(surface, value));
+    }
+
+    public void OnFileDrop(IReadOnlyList<string> droppedFiles)
+    {
+        DebugPrint("Raising FileDrop...");
+        FileDrop?.Invoke(new WindowFileEvent(surface, droppedFiles));
     }
 }

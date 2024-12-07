@@ -35,4 +35,17 @@ internal partial class SdlSurfaceComponents : ISurfaceChildren
             child.OnTick();
         }
     }
+
+    public void TerminateChildren()
+    {
+        if (_children is null)
+        {
+            return;
+        }
+
+        foreach (var child in _children)
+        {
+            child.Terminate();
+        }
+    }
 }
