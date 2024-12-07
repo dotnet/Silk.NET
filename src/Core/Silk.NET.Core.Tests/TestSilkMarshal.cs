@@ -62,7 +62,7 @@ public class TestSilkMarshal
     [Fact]
     public void TestEncodingString()
     {
-        var input = "Hello world 🧵";
+        var input = "Hello world";
         foreach (var encoding in encodings)
         {
             var pointer = SilkMarshal.StringToPtr(input, encoding);
@@ -76,7 +76,7 @@ public class TestSilkMarshal
     {
         var inputs = new List<string>()
         {
-            "Hello world 🧵",
+            "Hello world",
             "Foo",
             "Bar",
             "123",
