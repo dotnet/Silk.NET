@@ -31,6 +31,6 @@ public static unsafe partial class SDL_KeyboardEventTests
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(KeyboardEvent), Is.EqualTo(48));
+        Assert.That(sizeof(KeyboardEvent), Is.EqualTo(40));
     }
 }

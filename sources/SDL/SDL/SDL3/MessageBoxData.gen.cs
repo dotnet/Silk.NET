@@ -9,7 +9,7 @@ namespace Silk.NET.SDL;
 
 public unsafe partial struct MessageBoxData
 {
-    [NativeTypeName("Uint32")]
+    [NativeTypeName("SDL_MessageBoxFlags")]
     public uint Flags;
     public WindowHandle Window;
 

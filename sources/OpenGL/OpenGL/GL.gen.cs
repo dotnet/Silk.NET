@@ -23,6 +23,8 @@ partial class GL(INativeContext nativeContext) : IDisposable
         public static partial void MakeCurrent(IGL ctx);
     }
 
+    private readonly unsafe void*[] _slots = new void*[3291];
+
     public static IGL Create(INativeContext ctx) => new GL(ctx);
 
     /// <inheritdoc/>

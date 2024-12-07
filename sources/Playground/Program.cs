@@ -1,31 +1,48 @@
 // See https://aka.ms/new-console-template for more information
 
 using System.Runtime.InteropServices;
+using Silk.NET.Core;
 using Silk.NET.OpenGL;
 using Silk.NET.SDL;
 
-var ec = Sdl.Init(uint.MaxValue);
-if (ec is not 0)
+if (!Sdl.Init(uint.MaxValue))
 {
-    throw new Exception(
-        $"failed to init (error code: {(Errorcode)ec} {ec}): {(string)Sdl.GetError()}"
-    );
+    throw new Exception($"failed to init: {(string)Sdl.GetError()}");
 }
 
-var window = Sdl.CreateWindow("Hello Window!", 1000, 800, Sdl.WindowOpengl);
+var window = Sdl.CreateWindow(
+    "Hello Window!",
+    1000,
+    800,
+    Sdl.WindowOpengl | Sdl.WindowHighPixelDensity | Sdl.WindowResizable
+);
 if (window == nullptr)
 {
     throw new Exception($"failed to create window: {(string)Sdl.GetError()}");
 }
 
+Console.WriteLine(
+    $"SDL_GetDisplayContentScale {Sdl.GetDisplayContentScale(Sdl.GetDisplayForWindow(window))}"
+);
+Console.WriteLine($"SDL_GetWindowDisplayScale {Sdl.GetWindowDisplayScale(window)}");
+Console.WriteLine($"SDL_GetWindowPixelDensity {Sdl.GetWindowPixelDensity(window)}");
+int sx = 0,
+    sy = 0,
+    px = 0,
+    py = 0;
+Sdl.GetWindowSize(window, sx.AsRef(), sy.AsRef());
+Sdl.GetWindowSizeInPixels(window, px.AsRef(), py.AsRef());
+Console.WriteLine($"SDL_GetWindowSize {sx} {sy}");
+Console.WriteLine($"SDL_GetWindowSizeInPixels {px} {py}");
+
 var context = new SdlContext(
     window,
-    new KeyValuePair<GLattr, int>(GLattr.ContextMajorVersion, 3),
-    new KeyValuePair<GLattr, int>(GLattr.ContextMinorVersion, 3),
-    new KeyValuePair<GLattr, int>(GLattr.ContextProfileMask, (int)GLprofile.Core),
-    new KeyValuePair<GLattr, int>(
-        GLattr.ContextFlags,
-        (int)(GLcontextFlag.ForwardCompatibleFlag | GLcontextFlag.DebugFlag)
+    new KeyValuePair<GLAttr, int>(GLAttr.ContextMajorVersion, 3),
+    new KeyValuePair<GLAttr, int>(GLAttr.ContextMinorVersion, 3),
+    new KeyValuePair<GLAttr, int>(GLAttr.ContextProfileMask, Sdl.GlContextProfileCore),
+    new KeyValuePair<GLAttr, int>(
+        GLAttr.ContextFlags,
+        Sdl.GlContextForwardCompatibleFlag | Sdl.GlContextDebugFlag
     )
 );
 GL.ThisThread.MakeCurrent(GL.Create(context));
@@ -81,9 +98,30 @@ GL.UseProgram(prog);
 Event @event = default;
 while (true)
 {
-    if (Sdl.PollEvent(@event.AsRef()) && @event.Type == (int)EventType.Quit)
+    if (Sdl.PollEvent(@event.AsRef()))
     {
-        break;
+        Console.WriteLine((EventType)@event.Type);
+        if (@event.Type == (int)EventType.Quit)
+        {
+            break;
+        }
+    }
+
+    if (@event.Window.Type == EventType.WindowDisplayScaleChanged)
+    {
+        Console.WriteLine(
+            $"SDL_GetDisplayContentScale {Sdl.GetDisplayContentScale(Sdl.GetDisplayForWindow(window))}"
+        );
+        Console.WriteLine($"SDL_GetWindowDisplayScale {Sdl.GetWindowDisplayScale(window)}");
+        Console.WriteLine($"SDL_GetWindowPixelDensity {Sdl.GetWindowPixelDensity(window)}");
+    }
+
+    if (@event.Window.Type == EventType.WindowResized)
+    {
+        Sdl.GetWindowSize(window, sx.AsRef(), sy.AsRef());
+        Sdl.GetWindowSizeInPixels(window, px.AsRef(), py.AsRef());
+        Console.WriteLine($"SDL_GetWindowSize {sx} {sy}");
+        Console.WriteLine($"SDL_GetWindowSizeInPixels {px} {py}");
     }
 
     GL.Clear(ClearBufferMask.ColorBufferBit);

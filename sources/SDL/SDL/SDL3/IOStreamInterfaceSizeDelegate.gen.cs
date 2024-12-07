@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[Transformed]
 public unsafe delegate long IOStreamInterfaceSizeDelegate(void* arg0);

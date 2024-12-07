@@ -20,7 +20,7 @@ public class NameTrimmer217 : NameTrimmer
     protected override bool HasNaivePass => false;
 
     /// <inheritdoc />
-    protected override string GetTrimmingName(
+    public override string GetTrimmingName(
         Dictionary<string, string>? prefixOverrides,
         string name,
         bool isContainer,

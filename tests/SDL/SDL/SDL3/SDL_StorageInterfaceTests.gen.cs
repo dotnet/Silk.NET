@@ -34,11 +34,11 @@ public static unsafe partial class SDL_StorageInterfaceTests
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(StorageInterface), Is.EqualTo(80));
+            Assert.That(sizeof(StorageInterface), Is.EqualTo(96));
         }
         else
         {
-            Assert.That(sizeof(StorageInterface), Is.EqualTo(40));
+            Assert.That(sizeof(StorageInterface), Is.EqualTo(48));
         }
     }
 }

@@ -8,14 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[Transformed]
 public readonly unsafe struct StorageInterfaceEnumerate : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, int> Handle =>
-        (delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, int>)Pointer;
+    public delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, byte> Handle =>
+        (delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, byte>)Pointer;
 
     public StorageInterfaceEnumerate(
-        delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, int> ptr
+        delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, byte> ptr
     ) => Pointer = ptr;
 
     public StorageInterfaceEnumerate(StorageInterfaceEnumerateDelegate proc) =>
@@ -24,7 +25,7 @@ public readonly unsafe struct StorageInterfaceEnumerate : IDisposable
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator StorageInterfaceEnumerate(
-        delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, int> pfn
+        delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, byte> pfn
     ) => new(pfn);
 
     public static implicit operator delegate* unmanaged<
@@ -32,6 +33,6 @@ public readonly unsafe struct StorageInterfaceEnumerate : IDisposable
         sbyte*,
         EnumerateDirectoryCallback,
         void*,
-        int>(StorageInterfaceEnumerate pfn) =>
-        (delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, int>)pfn.Pointer;
+        byte>(StorageInterfaceEnumerate pfn) =>
+        (delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, byte>)pfn.Pointer;
 }

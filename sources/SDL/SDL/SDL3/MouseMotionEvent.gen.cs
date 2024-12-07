@@ -23,7 +23,7 @@ public partial struct MouseMotionEvent
     [NativeTypeName("SDL_MouseID")]
     public uint Which;
 
-    [NativeTypeName("Uint32")]
+    [NativeTypeName("SDL_MouseButtonFlags")]
     public uint State;
     public float X;
     public float Y;

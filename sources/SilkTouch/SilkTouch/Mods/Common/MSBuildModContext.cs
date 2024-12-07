@@ -110,7 +110,7 @@ internal class MSBuildModContext(
 
         // Wipe the slate clean. The generator should only be able to see generated code.
         // TODO maybe one day we'll lift this restriction? I couldn't think of a reason not to have it, but there's also not many to have it.
-        _srcProject = _srcProject.RemoveDocuments([.. _srcProject.DocumentIds]);
+        SourceProject = _srcProject.RemoveDocuments([.. _srcProject.DocumentIds]);
         solution = _srcProject.Solution;
         if (_cfg.TestProject is not null)
         {
@@ -120,7 +120,7 @@ internal class MSBuildModContext(
                 .FirstOrDefault(x =>
                     Path.GetFullPath(x.FilePath!, ConfigurationDirectory) == testProjectFile
                 );
-            _testProject = _testProject?.RemoveDocuments([.. _testProject.DocumentIds]);
+            TestProject = _testProject?.RemoveDocuments([.. _testProject.DocumentIds]);
             solution = _testProject?.Solution ?? solution;
         }
     }
