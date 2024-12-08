@@ -68,6 +68,6 @@ internal partial class SdlSurfaceComponents : ISurfaceVulkan
             return;
         }
 
-        AddWindowCreateFlag(props, Sdl.WindowVulkan);
+        AddWindowCreateFlags(props, Sdl.WindowVulkan);
     }
 }

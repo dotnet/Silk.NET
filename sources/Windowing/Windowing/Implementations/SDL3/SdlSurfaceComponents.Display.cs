@@ -1,7 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Diagnostics.CodeAnalysis;
+using Silk.NET.Maths;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Windowing.SDL3;
@@ -9,18 +9,49 @@ namespace Silk.NET.Windowing.SDL3;
 internal partial class SdlSurfaceComponents : ISurfaceDisplay
 {
     private SdlDisplay? _display;
+    private bool CanPositionDetermineDisplay =>
+        IsWindowEnabled
+        && _state is not (WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen);
+
+    private bool IsDisplayDeterminedByPosition =>
+        CanPositionDetermineDisplay && ClientArea is not ({ Origin.X: -1 } or { Origin.Y: -1 });
+
     public IDisplay Current
     {
         get
         {
-            if (!IsSurfaceInitialized && _display is { } ret)
+            // If Window decoration is not supported, then the display field is the exclusive determinant of the
+            // display. Note that if the surface is initialized we defer to SDL to get the most accurate result.
+            if (!IsSurfaceInitialized && !IsDisplayDeterminedByPosition && _display is { } ret)
             {
                 return ret;
             }
 
-            var current = IsSurfaceInitialized
-                ? Sdl.GetDisplayForWindow(Handle)
-                : Sdl.GetPrimaryDisplay();
+            uint current;
+            if (IsSurfaceInitialized)
+            {
+                // Get the most up-to-date value.
+                current = Sdl.GetDisplayForWindow(Handle);
+            }
+            else if (IsDisplayDeterminedByPosition)
+            {
+                // Determine the display from the requested position. -1 indicates "don't care" for which _display is
+                // the determinant.
+                var ca = ClientArea;
+                var rect = new Rect
+                {
+                    X = (int)ca.Origin.X,
+                    Y = (int)ca.Origin.Y,
+                    W = (int)ca.Size.X,
+                    H = (int)ca.Size.Y,
+                };
+                current = Sdl.GetDisplayForRect(rect.AsRef());
+            }
+            else
+            {
+                current = Sdl.GetPrimaryDisplay();
+            }
+
             if (current == 0)
             {
                 Sdl.ThrowError();
@@ -41,7 +72,8 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
         }
         set
         {
-            if (value.Equals(_display))
+            var current = Current;
+            if (value.Equals(current))
             {
                 return;
             }
@@ -67,7 +99,7 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
             }
 
             var videoMode = VideoMode;
-            if (!IsSurfaceInitialized)
+            if (!IsSurfaceInitialized && !IsDisplayDeterminedByPosition)
             {
                 Return(sdlDisplay, videoMode);
                 return;
@@ -75,28 +107,20 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
 
             if (videoMode == default) // not fullscreen
             {
-                var x = 0;
-                var y = 0;
-                if (!Sdl.GetWindowPosition(Handle, x.AsRef(), y.AsRef()))
-                {
-                    Sdl.ThrowError();
-                }
-
-                var currentDisplayWorkArea = Current.WorkArea;
+                GetPosition(out var x, out var y);
+                var currentDisplayWorkArea = current.WorkArea;
                 var newDisplayWorkArea = sdlDisplay.WorkArea;
-                if (
-                    !Sdl.SetWindowPosition(
-                        Handle,
-                        (int)(x - currentDisplayWorkArea.Origin.X + newDisplayWorkArea.Origin.X),
-                        (int)(y - currentDisplayWorkArea.Origin.Y + newDisplayWorkArea.Origin.Y)
-                    )
-                )
-                {
-                    Sdl.ThrowError();
-                }
+                SetPosition(
+                    (int)(x - currentDisplayWorkArea.Origin.X + newDisplayWorkArea.Origin.X),
+                    (int)(y - currentDisplayWorkArea.Origin.Y + newDisplayWorkArea.Origin.Y)
+                );
             }
             else if (
-                !Sdl.SetWindowFullscreenMode(Handle, (Ref<DisplayMode>)sdlDisplay.DisplayModes[0])
+                IsSurfaceInitialized
+                && !Sdl.SetWindowFullscreenMode(
+                    Handle,
+                    (Ref<DisplayMode>)sdlDisplay.DisplayModes[0]
+                )
             )
             {
                 Sdl.ThrowError();
@@ -133,6 +157,36 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
                 AvailableVideoModesChanged?.Invoke(
                     new DisplayVideoModeAvailabilityChangeEvent(surface, display)
                 );
+            }
+
+            void GetPosition(out int x, out int y)
+            {
+                (x, y) = (0, 0);
+                if (!IsSurfaceInitialized)
+                {
+                    var ca = ClientArea;
+                    (x, y) = ((int)ca.Origin.X, (int)ca.Origin.Y);
+                    return;
+                }
+
+                if (!Sdl.GetWindowPosition(Handle, x.AsRef(), y.AsRef()))
+                {
+                    Sdl.ThrowError();
+                }
+            }
+
+            void SetPosition(int x, int y)
+            {
+                if (!IsSurfaceInitialized)
+                {
+                    ClientArea = ClientArea with { Origin = new Vector2D<float>(x, y) };
+                    return;
+                }
+
+                if (!Sdl.SetWindowPosition(Handle, x, y))
+                {
+                    Sdl.ThrowError();
+                }
             }
         }
     }
@@ -208,7 +262,7 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
             {
                 if (value != default)
                 {
-                    Throw();
+                    ThrowBadVideoMode(nameof(value));
                 }
 
                 return;
@@ -220,42 +274,48 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
             }
 
             var display = (SdlDisplay)Current;
-            Ptr<DisplayMode> displayMode = nullptr;
-            var found = false;
-            for (var i = 0; i < display.KnownVideoModes?.Count; i++)
-            {
-                if (display.KnownVideoModes[i] != value)
-                {
-                    continue;
-                }
-
-                if (i > 0)
-                {
-                    displayMode = display.DisplayModes[i - 1];
-                }
-
-                found = true;
-                break;
-            }
-
-            if (!found)
-            {
-                Throw();
-            }
-
+            var displayMode = GetDisplayMode(display, in value);
             SetState(
                 currentState,
                 value == default ? WindowState.WindowedFullscreen : WindowState.ExclusiveFullscreen,
                 (value, displayMode),
                 display
             );
-            return;
-            static void Throw() =>
-                throw new ArgumentException(
-                    "The given video mode is not one of the AvailableVideoModes.",
-                    nameof(value)
-                );
         }
+    }
+
+    private static void ThrowBadVideoMode(string? arg) =>
+        throw new ArgumentException(
+            "The given video mode is not one of the AvailableVideoModes.",
+            arg
+        );
+
+    private Ptr<DisplayMode> GetDisplayMode(SdlDisplay display, in VideoMode value)
+    {
+        Ptr<DisplayMode> displayMode = nullptr;
+        var found = false;
+        for (var i = 0; i < display.KnownVideoModes?.Count; i++)
+        {
+            if (display.KnownVideoModes[i] != value)
+            {
+                continue;
+            }
+
+            if (i > 0)
+            {
+                displayMode = display.DisplayModes[i - 1];
+            }
+
+            found = true;
+            break;
+        }
+
+        if (!found)
+        {
+            ThrowBadVideoMode(nameof(value));
+        }
+
+        return displayMode;
     }
 
     public IReadOnlyList<VideoMode> AvailableVideoModes =>
@@ -341,8 +401,6 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
         }
     }
 
-    private void InitializeDisplay(uint props) { }
-
     public void OnVideoModeChanged()
     {
         var oldVideoMode = _videoMode;
@@ -356,4 +414,18 @@ internal partial class SdlSurfaceComponents : ISurfaceDisplay
 
     public void OnCurrentDisplayChanged() =>
         CurrentDisplayChanged?.Invoke(new DisplayChangeEvent(surface, Current));
+
+    private void PostInitializeDisplay()
+    {
+        if (
+            _state == WindowState.ExclusiveFullscreen
+            && !Sdl.SetWindowFullscreenMode(
+                Handle,
+                (Ref<DisplayMode>)GetDisplayMode((SdlDisplay)Current, in _videoMode)
+            )
+        )
+        {
+            Sdl.ThrowError();
+        }
+    }
 }

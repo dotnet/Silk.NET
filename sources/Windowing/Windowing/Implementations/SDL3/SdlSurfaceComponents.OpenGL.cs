@@ -417,7 +417,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
             return;
         }
 
-        AddWindowCreateFlag(props, Sdl.WindowOpengl);
+        AddWindowCreateFlags(props, Sdl.WindowOpengl);
     }
 
     private void PostInitializeOpenGL()

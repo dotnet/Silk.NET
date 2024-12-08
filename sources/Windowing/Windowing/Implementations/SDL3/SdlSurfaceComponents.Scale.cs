@@ -101,4 +101,6 @@ internal partial class SdlSurfaceComponents : ISurfaceScale
             Sdl.ThrowError();
         }
     }
+
+    private void PostInitializeScale() => OnPotentialScaleChanges();
 }

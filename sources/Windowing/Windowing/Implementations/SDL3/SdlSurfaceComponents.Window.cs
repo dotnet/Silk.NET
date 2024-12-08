@@ -110,8 +110,13 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
                 return;
             }
 
+            var x = (int)value.Origin.X;
+            var y = (int)value.Origin.Y;
+            var currentDisplay = 0u;
+            CheckForDontCare(ref x, ref currentDisplay);
+            CheckForDontCare(ref y, ref currentDisplay);
             if (
-                !Sdl.SetWindowPosition(Handle, (int)value.Origin.X, (int)value.Origin.Y)
+                !Sdl.SetWindowPosition(Handle, x, y)
                 || !Sdl.SetWindowSize(Handle, (int)value.Size.X, (int)value.Size.Y)
             )
             {
@@ -119,6 +124,21 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
             }
 
             OnWindowCoordinatesChanged(value);
+            return;
+            void CheckForDontCare(ref int axis, ref uint display)
+            {
+                if (axis != -1)
+                {
+                    return;
+                }
+
+                if (display == 0)
+                {
+                    display = Sdl.GetDisplayForWindow(Handle);
+                }
+
+                axis = (int)(Sdl.WindowposUndefinedMask | display);
+            }
         }
     }
 
@@ -411,6 +431,24 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
 
     private void InitializeWindow(uint props)
     {
+        var clientArea = ClientArea;
+        var display = 0u;
+        var posX = (int)clientArea.Size.X;
+        var posY = (int)clientArea.Size.Y;
+
+        // If the user has specified "don't care", we use the display configured in the display component to determine
+        // the position. The Display component is aware of this, and allows the user to select the display without
+        // changing the position if IsDisplayDeterminedByPosition is false (if it's true, then ClientArea is changed to
+        // go on the correct display anyway). In all other cases, the display is determined by the ClientArea.
+        posX =
+            CanPositionDetermineDisplay && posX != -1
+                ? posX
+                : (int)(Sdl.WindowposUndefinedMask | GetDisplayId(ref display));
+        posY =
+            CanPositionDetermineDisplay && posY != -1
+                ? posY
+                : (int)(Sdl.WindowposUndefinedMask | GetDisplayId(ref display));
+
         if (
             !Sdl.SetStringProperty(props, Sdl.PropWindowCreateTitleString, Title)
             || !Sdl.SetNumberProperty(
@@ -423,16 +461,53 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
                 Sdl.PropWindowCreateHeightNumber,
                 (long)ClientArea.Size.Y
             )
+            || !Sdl.SetNumberProperty(props, Sdl.PropWindowCreateXNumber, posX)
+            || !Sdl.SetNumberProperty(props, Sdl.PropWindowCreateYNumber, posY)
         )
         {
             Sdl.ThrowError();
         }
 
-        // TODO borders
-        AddWindowCreateFlag(props, Sdl.WindowResizable);
         if (!IsWindowEnabled)
         {
+            AddWindowCreateFlags(props, Sdl.WindowResizable | Sdl.WindowFullscreen);
             return;
+        }
+
+        AddWindowCreateFlags(
+            props,
+            Border switch
+            {
+                WindowBorder.Resizable => Sdl.WindowResizable,
+                WindowBorder.Fixed => 0ul,
+                WindowBorder.Hidden => Sdl.WindowBorderless,
+                _ => throw new ArgumentOutOfRangeException(),
+            }
+                | State switch
+                {
+                    WindowState.Normal => 0ul,
+                    WindowState.Minimized => Sdl.WindowMinimized,
+                    WindowState.Maximized => Sdl.WindowMaximized,
+                    WindowState.ExclusiveFullscreen or WindowState.WindowedFullscreen =>
+                        Sdl.WindowFullscreen,
+                    _ => throw new ArgumentOutOfRangeException(),
+                }
+                | (IsVisible ? 0 : Sdl.WindowHidden)
+                | (IsTopMost ? Sdl.WindowAlwaysOnTop : 0)
+        );
+
+        return;
+
+        // Helper method so this doesn't ruin my ternaries :)
+        // This also intentionally does not call Current so we don't unnecessarily realise SdlDisplay objects.
+        uint GetDisplayId(ref uint cache)
+        {
+            if (cache != 0)
+            {
+                return cache;
+            }
+
+            return cache = _display?.Id ?? Sdl.GetPrimaryDisplay();
         }
     }
 

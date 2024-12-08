@@ -43,13 +43,19 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
         }
     }
 
-    private static void AddWindowCreateFlag(uint props, ulong flag)
+    private static void AddWindowCreateFlags(uint props, ulong flags)
     {
-        var flags = unchecked(
+        var currentFlags = unchecked(
             (ulong)Sdl.GetNumberProperty(props, Sdl.PropWindowCreateFlagsNumber, 0)
         );
-        flags |= flag;
-        if (!Sdl.SetNumberProperty(props, Sdl.PropWindowCreateFlagsNumber, unchecked((long)flags)))
+        currentFlags |= flags;
+        if (
+            !Sdl.SetNumberProperty(
+                props,
+                Sdl.PropWindowCreateFlagsNumber,
+                unchecked((long)currentFlags)
+            )
+        )
         {
             Sdl.ThrowError();
         }
@@ -127,9 +133,9 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
         var createProps = Sdl.CreateProperties();
         try
         {
-            if (IsDisplayEnabled)
+            if (IsChildrenEnabled)
             {
-                InitializeDisplay(createProps);
+                InitializeChildren(createProps);
             }
 
             if (IsOpenGLEnabled)
@@ -179,9 +185,19 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
             PostInitializeOpenGL();
         }
 
+        if (IsScaleEnabled)
+        {
+            PostInitializeScale();
+        }
+
         if (IsWindowEnabled)
         {
             PostInitializeWindow();
+        }
+
+        if (IsDisplayEnabled)
+        {
+            PostInitializeDisplay();
         }
     }
 
