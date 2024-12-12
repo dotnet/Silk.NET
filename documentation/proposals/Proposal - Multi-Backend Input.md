@@ -179,12 +179,12 @@ All handler methods are called in the order that the state changes happened in t
 The `IInputHandler` passed into `Update` may implement multiple other handler interfaces (as defined below), and if the actor implements an extra interface (such as `IMouseInputHandler` defined below) that would allow the backend to forward more events to the handler, the backend must do so via type checking. That is, if `handler` is an instance of `IMouseInputHandler`, any mouse events are delivered to that actor. But if `handler` does not implement `IMouseInputHandler`, no mouse events will be delivered. All events, including those that were not delivered due to the actor not implementing a necessary interface, must be discarded at the end of the `Update` call.
 
 Note that during the `Update` call, a backend must only update the device's state in the order that the events are delivered. For example when `IInputBackend.Update` is called:
-1. The backend has a queued "mouse down" event.
-2. The backend updates the `State` of the relevant `IMouse` for that button press.
-3. The backend calls `HandleButtonChanged` with `IsDown` set to `true` on the `IMouseInputHandler` (if applicable).
-4. The backend has a queued "mouse up" event.
-5. The backend updates the `State` of the relevant `IMouse` for that button release.
-6. The backend calls `HandleButtonChanged` with `IsDown` set to `true` on the `IMouseInputHandler` (if applicable).
+1. The backend has a queued "pointer down" event for a mouse, for example.
+2. The backend updates the `State` of the relevant `IPointer` for that button press.
+3. The backend calls `HandleButtonChanged` with `IsDown` set to `true` on the `IPointerInputHandler` (if applicable).
+4. The backend has a queued "pointer up" event on that mouse.
+5. The backend updates the `State` of the relevant `IPointer` for that button release.
+6. The backend calls `HandleButtonChanged` with `IsDown` set to `false` on the `IPointerInputHandler` (if applicable).
 
 This allows the actor to work with the whole device state with the device state being representative of the time that the original event occurred.
 
@@ -289,7 +289,7 @@ public readonly record struct GamepadTriggerMoveEvent(IGamepad Gamepad, long Tim
 
 `Timestamp` shall be the `Stopwatch.GetTimestamp()` at which the event was raised. This allows the user to get the
 precise time of the event's occurrence, which is not otherwise possible given the requirement for state changes to be
-enacted only upon a call to `Update`.
+enacted only upon a call to `Update`. 
 
 This is the part of this proposal that incorporates the ideas in Enhanced Input Events, and is why this proposal supersedes that one.
 
@@ -416,10 +416,10 @@ public interface IPointerTarget
 ```
 
 **INFORMATIVE TEXT**: Furthermore, it is our eventual goal to be able to support considering VR hands as pointer devices
-through raycasting. Such a future proposal will involve a way to "fork" a `IPointerTarget` from that which represents
-the 3D world (i.e. the entire VR world is a target, and the point representing the hand is _within_ that target - with
-the `TargetPoint` being populated using `XrPosef` values), where calculation of points on forked targets are calculated
-using raycasting from that position.
+through raycasting. Such a future proposal will involve a way to create a child target within the bounds of this target
+a `IPointerTarget` from that which represents the 3D world (i.e. the entire VR world is a target, and the point
+representing the hand is _within_ that target - with the `TargetPoint` being populated using ``XrPosef values), where
+calculation of points on those child targets are calculated using raycasting from that position.
 
 The functionality of these APIs are described in the XML documentation inline.
 
@@ -495,7 +495,7 @@ by `IPointer.Targets`.
 
 Additional APIs to construct `PointerState` will be added as appropriate.
 
-Changes to `PointerState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
+Changes to `PointerState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section). For the avoidance of doubt, this implies that `Timestamp` in ascending order.
 
 The handler for pointer inputs shall be defined as follows:
 ```cs
@@ -578,9 +578,12 @@ public class MouseState : PointerState
 }
 ```
 
+`WheelPosition` represents the number of times the scroll wheel (e.g. ratchets) has scrolled in a particular direction
+between the previous and latest times the input was captured by the backend.
+
 Additional APIs to construct `MouseState` will be added as appropriate.
 
-Changes to `MouseState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
+Changes to `MouseState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section). For the avoidance of doubt, this implies that `Timestamp` in ascending order.
 
 ```cs
 public interface IMouseInputHandler : IButtonInputHandler<PointerButton>
@@ -698,7 +701,7 @@ public class KeyboardState
 
 **INFORMATIVE TEXT:** This is something we can optimize in `InputList` to not be allocatey, rest assured it is not acceptable to the Silk.NET team to allocate a new list for every character.
 
-Changes to `KeyboardState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
+Changes to `KeyboardState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section). For the avoidance of doubt, this implies that `Timestamp` in ascending order.
 
 ```cs
 public interface IKeyboardInputHandler : IButtonInputHandler<KeyName>
@@ -1071,7 +1074,7 @@ public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
 
 This is used where the list will only ever have exactly two elements, mainly because the "gamepad" form factor is standard and it doesn't make sense to have multiple thumbsticks or triggers given a human only has two thumbs or index fingers. More exotic devices should be exposed using the joystick API.
 
-Changes to `GamepadState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
+Changes to `GamepadState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section). For the avoidance of doubt, this implies that `Timestamp` in ascending order.
 
 ```cs
 public interface IGamepadInputHandler : IButtonInputHandler<JoystickButton>
@@ -1136,7 +1139,7 @@ public enum JoystickButton
 }
 ```
 
-Changes to `JoystickState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
+Changes to `JoystickState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section). For the avoidance of doubt, this implies that `Timestamp` in ascending order.
 
 ```cs
 public interface IJoystickInputHandler : IButtonInputHandler<JoystickButton>
