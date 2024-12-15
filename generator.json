@@ -21,16 +21,16 @@
           "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs"
         },
         "InputSourceRoot": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
-        "InputTestRoot": "eng/submodules/terrafx.interop.windows/tests/Interop/Windows"
+        "InputTestRoot": "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
+        "SkipScrapeIf": [
+          "!win"
+        ]
       },
       "ChangeNamespace": {
         "Mappings": {
           "TerraFX.Interop.(.*)": "Silk.NET.$1"
         }
-      },
-      "SkipScrapeIf": [
-        "!win"
-      ]
+      }
     },
     "SDL": {
       "SourceProject": "sources/SDL/SDL/Silk.NET.SDL.csproj",

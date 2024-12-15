@@ -1,0 +1,181 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "Host": {
+      "type": "string",
+      "enum": [
+        "AppVeyor",
+        "AzurePipelines",
+        "Bamboo",
+        "Bitbucket",
+        "Bitrise",
+        "GitHubActions",
+        "GitLab",
+        "Jenkins",
+        "Rider",
+        "SpaceAutomation",
+        "TeamCity",
+        "Terminal",
+        "TravisCI",
+        "VisualStudio",
+        "VSCode"
+      ]
+    },
+    "ExecutableTarget": {
+      "type": "string",
+      "enum": [
+        "Clean",
+        "Compile",
+        "DeclareApi",
+        "Pack",
+        "Prerequisites",
+        "PushToNuGet",
+        "RegenerateBindings",
+        "ShipApi",
+        "SignPackages"
+      ]
+    },
+    "Verbosity": {
+      "type": "string",
+      "description": "",
+      "enum": [
+        "Verbose",
+        "Normal",
+        "Minimal",
+        "Quiet"
+      ]
+    },
+    "NukeBuild": {
+      "properties": {
+        "Continue": {
+          "type": "boolean",
+          "description": "Indicates to continue a previously failed build attempt"
+        },
+        "Help": {
+          "type": "boolean",
+          "description": "Shows the help text for this build assembly"
+        },
+        "Host": {
+          "description": "Host for execution. Default is 'automatic'",
+          "$ref": "#/definitions/Host"
+        },
+        "NoLogo": {
+          "type": "boolean",
+          "description": "Disables displaying the NUKE logo"
+        },
+        "Partition": {
+          "type": "string",
+          "description": "Partition to use on CI"
+        },
+        "Plan": {
+          "type": "boolean",
+          "description": "Shows the execution plan (HTML)"
+        },
+        "Profile": {
+          "type": "array",
+          "description": "Defines the profiles to load",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Root": {
+          "type": "string",
+          "description": "Root directory during build execution"
+        },
+        "Skip": {
+          "type": "array",
+          "description": "List of targets to be skipped. Empty list skips all dependencies",
+          "items": {
+            "$ref": "#/definitions/ExecutableTarget"
+          }
+        },
+        "Target": {
+          "type": "array",
+          "description": "List of targets to be invoked. Default is '{default_target}'",
+          "items": {
+            "$ref": "#/definitions/ExecutableTarget"
+          }
+        },
+        "Verbosity": {
+          "description": "Logging verbosity during build execution. Default is 'Normal'",
+          "$ref": "#/definitions/Verbosity"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "AkvCertificate": {
+          "type": "string",
+          "description": "Code-signing service Azure Key Vault certificate"
+        },
+        "AkvClientId": {
+          "type": "string",
+          "description": "Code-signing service Azure Key Vault client ID"
+        },
+        "AkvClientSecret": {
+          "type": "string",
+          "description": "Code-signing service Azure Key Vault client secret"
+        },
+        "AkvTenant": {
+          "type": "string",
+          "description": "Code-signing service Azure Key Vault tenant ID"
+        },
+        "AkvVaultUrl": {
+          "type": "string",
+          "description": "Code-signing service Azure Key Vault URL"
+        },
+        "Configuration": {
+          "type": "string",
+          "description": "Configuration to build - Default is 'Debug' (local) or 'Release' (server)",
+          "enum": [
+            "Debug",
+            "Release"
+          ]
+        },
+        "MsbuildProperties": {
+          "type": "array",
+          "description": "Extra properties passed to MSBuild commands",
+          "items": {
+            "type": "string"
+          }
+        },
+        "NugetApiKey": {
+          "type": "string",
+          "description": "The API key used to push packages and symbols packages to NuGet"
+        },
+        "NugetFeed": {
+          "type": "string",
+          "description": "NuGet feed"
+        },
+        "NugetNoServiceEndpoint": {
+          "type": "boolean",
+          "description": "NuGet -NoServiceEndpoint"
+        },
+        "NugetPassword": {
+          "type": "string",
+          "description": "NuGet password"
+        },
+        "NugetUsername": {
+          "type": "string",
+          "description": "NuGet username"
+        },
+        "SilkTouchAdditionalArgs": {
+          "type": "array",
+          "description": "Additional arguments to prepend to SilkTouch invocations",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Solution": {
+          "type": "string",
+          "description": "Path to a solution file that is automatically loaded"
+        }
+      }
+    },
+    {
+      "$ref": "#/definitions/NukeBuild"
+    }
+  ]
+}

@@ -5,6 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <OutputType>Exe</OutputType>
     <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+    <SilkTrimmingExempt>true</SilkTrimmingExempt>
   </PropertyGroup>
 
   <ItemGroup>

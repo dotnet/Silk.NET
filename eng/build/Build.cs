@@ -1,0 +1,94 @@
+using Nuke.Common;
+using Nuke.Common.IO;
+using Nuke.Common.Tools.DotNet;
+using static Nuke.Common.Tools.DotNet.DotNetTasks;
+
+partial class Build : NukeBuild
+{
+    Target Prerequisites => x => x.Executes(RemoveTemporaryFeeds);
+
+    Target Clean =>
+        CommonTarget(x =>
+            x.Before(Compile)
+                .Executes(
+                    () =>
+                        DotNetClean(x =>
+                            x.SetConfiguration(Configuration)
+                                .SetProperties(ProcessedMsbuildProperties)
+                        )
+                )
+        );
+
+    Target Compile =>
+        CommonTarget(x =>
+            x.Executes(
+                () =>
+                    DotNetBuild(x =>
+                        x.SetConfiguration(Configuration).SetProperties(ProcessedMsbuildProperties)
+                    )
+            )
+        );
+
+    Target Pack =>
+        CommonTarget(x =>
+            x.Executes(() =>
+            {
+                OutputPackageDir.CreateOrCleanDirectory();
+                return DotNetPack(x =>
+                    x.SetConfiguration(Configuration).SetProperties(ProcessedMsbuildProperties)
+                );
+            })
+        );
+
+    [Parameter("Additional arguments to prepend to SilkTouch invocations.")]
+    readonly string[]? SilkTouchAdditionalArgs;
+
+    Target RegenerateBindings =>
+        CommonTarget(x =>
+            x.Executes(
+                () =>
+                    DotNetRun(x =>
+                        x.SetProjectFile(Solution.GetProject("Silk.NET.SilkTouch"))
+                            .SetConfiguration("Release") // don't want to run this with anything else tbh
+                            .SetApplicationArguments(
+                                [.. SilkTouchAdditionalArgs ?? [], RootDirectory / "generator.json"]
+                            )
+                    )
+            )
+        );
+
+    Target DeclareApi =>
+        CommonTarget(x =>
+            x.Executes(
+                () =>
+                    DotNet(
+                        $"format analyzers {Solution} --diagnostics=RS0016 -v=diag --include-generated"
+                    )
+            )
+        );
+
+    Target ShipApi => CommonTarget(x => x.Executes(MoveUnshippedContentsToShipped));
+
+    Target SignPackages =>
+        CommonTarget(x => x.Before(PushToNuGet).After(Pack).Executes(CodesignAllPackageOutputs));
+
+    Target PushToNuGet =>
+        CommonTarget(x =>
+            x.After(Pack)
+                .Executes(async () =>
+                {
+                    AddTemporaryFeed();
+                    try
+                    {
+                        await foreach (var pkg in GetPackagesToPublish())
+                        {
+                            DotNetNuGetPush(NuGetPushSettings.SetTargetPath(pkg));
+                        }
+                    }
+                    finally
+                    {
+                        RemoveTemporaryFeeds();
+                    }
+                })
+        );
+}

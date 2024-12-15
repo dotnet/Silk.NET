@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project>
+<Project InitialTargets="SilkAddIcon;SilkGenerateNuGetReadme;SilkShippingControl">
 
   <!--
     Directory.Build.targets is automatically picked up and imported by
@@ -22,4 +22,175 @@
     <PackageReference Update="NUnit3TestAdapter" Version="4.6.0" />
   </ItemGroup>
 
+  <!-- Nuget Icon - done as a target so it doesn't appear in the IDE -->
+  <Target Name="SilkAddIcon" Condition="'$(SilkIconExempt)' == ''">
+    <ItemGroup>
+      <None Include="$(MSBuildThisFileDirectory)docs/readme/silkdotnet_v3.png"
+            Pack="true"
+            PackagePath="\" />
+    </ItemGroup>
+    <PropertyGroup>
+      <PackageIcon>silkdotnet_v3.png</PackageIcon>
+    </PropertyGroup>
+  </Target>
+
+  <!-- NuGet README -->
+  <Target Name="SilkGenerateNuGetReadme" Condition="'$(SilkReadmeExempt)' == ''">
+    <PropertyGroup>
+      <SilkReadme>$([System.IO.File]::ReadAllText("$(MSBuildThisFileDirectory)docs/README.md"))</SilkReadme>
+      <SilkReadme>$([System.String]::Copy($(SilkReadme))
+        .Replace('&lt;!-- Begin exclude from NuGet readme. --&gt;','&lt;!--')
+        .Replace('&lt;!-- End exclude from NuGet readme. --&gt;','--&gt;')
+        .Replace('&lt;!-- Begin include in NuGet readme.','')
+        .Replace('End include in NuGet readme. --&gt;','')
+        .Replace('&lt;h1 align=&quot;center&quot;&gt;', '# ')
+        .Replace('&lt;h2 align=&quot;center&quot;&gt;', '# ')
+        .Replace('&lt;/h1&gt;', '').Replace('&lt;/h2&gt;', '')
+        .Replace('&lt;br /&gt;', '%0a%0a').Replace('&lt;br/&gt;', '%0a%0a')
+        .Replace('&lt;div&gt;', '').Replace('&lt;/div&gt;', '')
+        .Replace('&lt;a&gt;', '').Replace('&lt;/a&gt;', ''))
+      </SilkReadme>
+      <SilkReadmePath>$(IntermediateOutputPath)$(TargetFramework)/README.md</SilkReadmePath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(SilkDescription)' != ''">
+      <Description>$(SilkDescription) $(Description)</Description>
+      <SilkExtendedDescription>$(SilkDescription) $(SilkExtendedDescription)%0a%0a</SilkExtendedDescription>
+      <SilkReadme>$([System.String]::Copy($(SilkReadme))
+        .Replace('&lt;!-- Package description inserted here automatically. --&gt;',
+        '# About This Package%0a%0a$(SilkExtendedDescription)'))
+      </SilkReadme>
+    </PropertyGroup>
+    <ItemGroup>
+      <SilkReadmeLines Include="$(SilkReadme)" />
+      <SilkReadmeGenerated Include="$(SilkReadmePath)" />
+    </ItemGroup>
+    <WriteLinesToFile File="@(SilkReadmeGenerated)"
+                      Lines="@(SilkReadmeLines)"
+                      Overwrite="true"
+                      Encoding="UTF-8" />
+    <PropertyGroup>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    <ItemGroup>
+      <None Include="$(SilkReadmePath)" Pack="true" PackagePath="\" />
+    </ItemGroup>
+  </Target>
+
+  <UsingTask TaskName="SilkGetVersionInfoTask"
+             TaskFactory="RoslynCodeTaskFactory"
+             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <SilkChangelogLines Required="true" />
+      <SilkVersion Output="true" />
+      <SilkVersionSuffix Output="true" />
+      <SilkReleaseNotes Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System"/>
+      <Using Namespace="System.Text"/>
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+        #nullable enable
+        var lines = SilkChangelogLines.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+
+        var capturing = false;
+        var notes = new StringBuilder();
+        string? version = null;
+        string? versionSuffix = null;
+        foreach (var theLine in lines)
+        {
+            var line = theLine.Trim();
+            if (!line.StartsWith("##"))
+            {
+                if (capturing)
+                {
+                    notes.AppendLine(line);
+                }
+                continue;
+            }
+
+            if (capturing)
+            {
+                break;
+            }
+
+            version = line.Substring(2).Trim();
+            var versionStop = version.IndexOf(' ');
+            if (versionStop != -1)
+            {
+                version = version.Substring(0, versionStop);
+            }
+            versionSuffix = string.Empty;
+            var versionSuffixStart = version.IndexOf('-');
+            if (versionSuffixStart != -1)
+            {
+                versionSuffix = version.Substring(versionSuffixStart + 1);
+                version = version.Substring(0, versionSuffixStart);
+            }
+            versionSuffix = versionSuffix.Trim();
+            version = version.Trim();
+            capturing = true;
+        }
+
+        if (!capturing)
+        {
+            throw new Exception("Failed to determine version information.");
+        }
+
+        SilkVersion = version ?? "3.0.0";
+        SilkVersionSuffix = versionSuffix ?? "unknown";
+        SilkReleaseNotes = notes.ToString();
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+
+  <Target Name="SilkShippingControl" BeforeTargets="BeforeBuild">
+    <!-- Public API -->
+    <PropertyGroup Condition="'$(SilkTrackPublicAPI)' != 'true' or '$(TargetFramework)' == ''">
+      <SilkTrackPublicAPI>false</SilkTrackPublicAPI>
+    </PropertyGroup>
+    <ItemGroup Condition="'$(SilkTrackPublicAPI)' == 'true'">
+      <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4" PrivateAssets="All" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(SilkSourceLinkExempt)' == ''">
+      <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All"/>
+      <PackageReference Include="DotNet.ReproducibleBuilds.Isolated" Version="1.1.1" PrivateAssets="All"/>
+    </ItemGroup>
+    <ItemGroup>
+      <SilkNewPublicAPILines Include="#nullable enable" />
+    </ItemGroup>
+    <MakeDir Directories="PublicAPI" Condition="'$(SilkTrackPublicAPI)' == 'true' and !Exists('PublicAPI')" />
+    <MakeDir Directories="PublicAPI/$(TargetFramework)" Condition="'$(SilkTrackPublicAPI)' == 'true' and !Exists('PublicAPI/$(TargetFramework)')" />
+    <WriteLinesToFile File="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt"
+                      Lines="@(SilkNewPublicAPILines)"
+                      Condition="'$(SilkTrackPublicAPI)' == 'true' and !Exists('PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt')" />
+    <WriteLinesToFile File="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt"
+                      Lines="@(SilkNewPublicAPILines)"
+                      Condition="'$(SilkTrackPublicAPI)' == 'true' and !Exists('PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt')" />
+    <!-- Versioning -->
+    <PropertyGroup>
+      <SilkChangelog>$([System.IO.File]::ReadAllText("$(MSBuildThisFileDirectory)docs/CHANGELOG.md"))</SilkChangelog>
+    </PropertyGroup>
+    <SilkGetVersionInfoTask SilkChangelogLines="$(SilkChangelog)">
+      <Output PropertyName="SilkVersion" TaskParameter="SilkVersion" />
+      <Output PropertyName="SilkVersionSuffix" TaskParameter="SilkVersionSuffix" />
+      <Output PropertyName="SilkReleaseNotes" TaskParameter="SilkReleaseNotes" />
+    </SilkGetVersionInfoTask>
+    <PropertyGroup>
+      <Version>$(SilkVersion)</Version>
+      <VersionSuffix Condition="'$(VersionSuffix)' == ''">$(SilkVersionSuffix)</VersionSuffix>
+      <PackageReleaseNotes>$(SilkReleaseNotes)</PackageReleaseNotes>
+      <PackageVersion Condition="'$(VersionSuffix)' == ''">$(SilkVersion)</PackageVersion>
+      <PackageVersion Condition="'$(VersionSuffix)' != ''">$(SilkVersion)-$(VersionSuffix)</PackageVersion>
+    </PropertyGroup>
+    <!-- Trimming -->
+    <PropertyGroup>
+      <IsTrimmable Condition="'$(SilkTrimmingExempt)' == ''">true</IsTrimmable>
+      <EnableTrimAnalyzer Condition="'$(SilkTrimmingExempt)' == ''">true</EnableTrimAnalyzer>
+      <EnableAotAnalyzer Condition="'$(SilkTrimmingExempt)' == ''">true</EnableAotAnalyzer>
+      <EnableSingleFileAnalyzer Condition="'$(SilkTrimmingExempt)' == ''">true</EnableSingleFileAnalyzer>
+      <TrimMode Condition="'$(SilkTrimmingExempt)' == ''">full</TrimMode>
+    </PropertyGroup>
+  </Target>
 </Project>
