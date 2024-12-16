@@ -18,10 +18,15 @@
 
   <Import Project="$(MSBuildThisFileDirectory)..\Directory.Build.props" />
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" IsImplicitlyDefined="true" />
-    <PackageReference Include="NUnit" IsImplicitlyDefined="true" />
-    <PackageReference Include="NUnit3TestAdapter" IsImplicitlyDefined="true" />
+  <ItemGroup Condition="'$(SilkNUnitExempt)' != 'true'">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NUnit"  />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <PackageReference Include="NUnit.Analyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" />
   </ItemGroup>
 
 </Project>

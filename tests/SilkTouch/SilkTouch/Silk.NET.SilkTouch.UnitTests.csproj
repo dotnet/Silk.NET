@@ -11,11 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="NUnit" Version="4.2.2" />
-    <PackageReference Include="Silk.NET.BuildTools" Version="2.22.0" />
-    <PackageReference Include="System.Linq.Async" Version="6.0.1" />
-    <PackageReference Include="Verify.DiffPlex" Version="3.1.2" />
-    <PackageReference Include="Verify.NUnit" Version="28.3.2" />
+    <PackageReference Include="Silk.NET.BuildTools" />
+    <PackageReference Include="System.Linq.Async" />
+    <PackageReference Include="Verify.DiffPlex" />
+    <PackageReference Include="Verify.NUnit" />
     <None Include="**/*.received.*" />
     <None Include="**/*.verified.*" />
   </ItemGroup>

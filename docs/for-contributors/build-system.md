@@ -61,6 +61,11 @@ The `ItemGroup` is an unfortunate deficiency with `Directory.Build.targets`. Whi
 sufficient for build, it does not make for a pleasant development experience as IDEs do not pick it up from those files.
 The empty public API files are automatically generated on first resolve.
 
+### Central Package Management
+
+We manage all the versions for our dependencies in Directory.Packages.props. Learn more about Central Package Management
+[here](https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management).
+
 ## NUKE
 
 NUKE is used to provide an easy interface into both MSBuild and our other non-C# or otherwise auxiliary build tasks.

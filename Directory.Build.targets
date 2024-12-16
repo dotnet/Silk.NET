@@ -15,13 +15,6 @@
     <DefineConstants>$(DefineConstants);$(OS)</DefineConstants>
   </PropertyGroup>
 
-  <!-- Package versions for package references across all projects -->
-  <ItemGroup>
-    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.12.0" />
-    <PackageReference Update="NUnit" Version="4.2.2" />
-    <PackageReference Update="NUnit3TestAdapter" Version="4.6.0" />
-  </ItemGroup>
-
   <!-- Nuget Icon - done as a target so it doesn't appear in the IDE -->
   <Target Name="SilkAddIcon" Condition="'$(SilkIconExempt)' == ''">
     <ItemGroup>
@@ -151,11 +144,11 @@
       <SilkTrackPublicAPI>false</SilkTrackPublicAPI>
     </PropertyGroup>
     <ItemGroup Condition="'$(SilkTrackPublicAPI)' == 'true'">
-      <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4" PrivateAssets="All" />
+      <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="All" />
     </ItemGroup>
     <ItemGroup Condition="'$(SilkSourceLinkExempt)' == ''">
-      <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All"/>
-      <PackageReference Include="DotNet.ReproducibleBuilds.Isolated" Version="1.1.1" PrivateAssets="All"/>
+      <PackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All"/>
+      <PackageReference Include="DotNet.ReproducibleBuilds.Isolated" PrivateAssets="All"/>
     </ItemGroup>
     <ItemGroup>
       <SilkNewPublicAPILines Include="#nullable enable" />
