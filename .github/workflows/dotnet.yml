@@ -11,18 +11,36 @@ permissions:
     actions: write
 jobs:
     Build:
-        runs-on: macos-latest
+        runs-on: macos-latest-xlarge
         steps:
             - uses: actions/checkout@v3
             - name: Setup .NET
               uses: actions/setup-dotnet@v3
               with:
-                dotnet-version: '8.0.x'
+                dotnet-version: '9.0.x'
                 dotnet-quality: 'preview'
-            - name: Restore
-              run: dotnet restore
             - name: Pack
-              run: dotnet pack -c Release
+              # TODO decide whether we want experimental builds to use Debug or Release - using Release for now...
+              run: >-
+                dotnet run --project eng/build/Silk.NET.NUKE.csproj -c Release --
+                Pack
+                --configuration Release
+                --msbuild-properties
+                VersionSuffix=${{ github.event_name != 'pull_request' && format('build{0}.0', github.run_number) || format('pr{0}.{1}', github.event.number, github.run_number) }}
+                ContinuousIntegrationBuild=true
+            - name: Upload Unsigned Artifacts to Actions
+              uses: actions/upload-artifact@v4
+              with:
+                name: unsigned_nupkgs
+                path: "artifacts/**/*nupkg"
+                if-no-files-found: warn
+                retention-days: 1
+            - name: Push to Experimental Feed
+              if: ${{ github.repository == 'dotnet/Silk.NET' }}
+              run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://dotnet.github.io/Silk.NET/nuget/experimental/index.json --nuget-username ${{ secrets.EXP_NUGET_USERNAME }} --nuget-password ${{ secrets.EXP_NUGET_PASSWORD }} --nuget-api-key ${{ secrets.EXP_NUGET_PASSWORD }}
+            - name: Push to GitHub Packages
+              if: ${{ github.repository == 'dotnet/Silk.NET' }}
+              run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
     Test:
         strategy:
             fail-fast: false
