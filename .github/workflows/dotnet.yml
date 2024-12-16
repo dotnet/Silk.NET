@@ -9,6 +9,7 @@ permissions:
     contents: write
     pull-requests: write
     actions: write
+    packages: write
 jobs:
     Build:
         runs-on: macos-latest
