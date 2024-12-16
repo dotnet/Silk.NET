@@ -11,7 +11,7 @@ permissions:
     actions: write
 jobs:
     Build:
-        runs-on: macos-latest-xlarge
+        runs-on: macos-latest
         steps:
             - uses: actions/checkout@v3
             - name: Setup .NET
