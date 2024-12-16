@@ -277,8 +277,9 @@ public readonly record struct ConnectionEvent(IInputDevice Device, long Timestam
 public readonly record struct KeyChangedEvent(IKeyboard Keyboard, long Timestamp, Button<KeyName> Key, Button<KeyName> Previous, bool IsRepeat, KeyModifiers Modifiers);
 public readonly record struct KeyCharEvent(IKeyboard Keyboard, long Timestamp, char? Character);
 public readonly record struct ButtonChangedEvent<T>(IButtonDevice<T> Device, long Timestamp, Button<T> Button, Button<T> Previous) where T : struct, Enum;
-public readonly record struct PointChangedEvent(IPointer Pointer, long Timestamp, TargetPoint? OldPoint, TargetPoint Point);
+public readonly record struct PointChangedEvent(IPointer Pointer, long Timestamp, TargetPoint? OldPoint, TargetPoint? NewPoint);
 public readonly record struct PointerGripChangedEvent(IPointer Pointer, long Timestamp, float GripPressure, float Delta);
+public readonly record struct PointerTargetChangedEvent(IPointer Pointer, long Timestamp, IPointerTarget Target, bool IsAdded, Box3F<float> OldBounds, Box3F<float> NewBounds);
 public readonly record struct MouseScrollEvent(IMouse Mouse, long Timestamp, TargetPoint Point, Vector2 WheelPosition, Vector2 Delta);
 public readonly record struct PointerClickEvent(IPointer Pointer, long Timestamp, TargetPoint Point, MouseButton Button);
 public readonly record struct JoystickHatMoveEvent(IJoystick Joystick, long Timestamp, Vector2 Value, Vector2 Delta);
@@ -372,23 +373,13 @@ A target is defined as follows:
 public interface IPointerTarget
 {
     /// <summary>
-    /// The minimum position of points on this target, where <see cref="float.NegativeInfinity" /> represents the lack
-    /// of a lower bound on a particular axis and <c>0</c> represents an unused axis if <see cref="MaxPosition" /> is
-    /// also <c>0</c> for that axis.
+    /// The boundary in which positions of points on this target shall fall. For <see cref="Box3F{T}.Min" />,
+    /// <see cref="float.NegativeInfinity" /> shall represent the lack of a lower bound on a particular axis. For
+    /// For <see cref="Box3F{T}.Max" />, <see cref="float.PositiveInfinity" /> shall represent the lack of a lower bound
+    /// on a particular axis. <c>0</c> represents an unused axis that axis is <c>0</c> on both
+    /// <see cref="Box3F{T}.Min" /> and <see cref="Box3F{T}.Max" />.
     /// </summary>
-    Vector3 MinPosition { get; }
-
-    /// <summary>
-    /// The maximum position of points on this target, where <see cref="float.PositiveInfinity" /> represents the lack
-    /// of an upper bound on a particular axis and <c>0</c> represents an unused axis if <see cref="MinPosition" /> is
-    /// also <c>0</c> for that axis.
-    /// </summary>
-    Vector3 MaxPosition { get; }
-
-    /// <summary>
-    /// An optional name describing the target.
-    /// </summary>
-    string? Name { get; }
+    Box3F<float> Bounds { get; }
 
     /// <summary>
     /// Gets the number of points with which the given pointer is pointing at this target.
@@ -414,6 +405,10 @@ public interface IPointerTarget
     TargetPoint GetPoint(IPointer pointer, int point);
 }
 ```
+
+**FUTURE IMPROVEMENT:** This interface could be expanded to provide rotation of the target itself as well, representing
+a full `Transform` structure for the space. At this time, this was not deemed necessary for inclusion, but should be a
+trivial extension to add in the future.
 
 **INFORMATIVE TEXT**: Furthermore, it is our eventual goal to be able to support considering VR hands as pointer devices
 through raycasting. Such a future proposal will involve a way to create a child target within the bounds of this target
@@ -445,6 +440,12 @@ public enum TargetPointFlags
 /// <summary>
 /// Represents a point on a target at which a pointer is pointing.
 /// </summary>
+/// <param name="Id">
+/// An integral identifier for the point. This point must be the only point for the device currently pointing at a
+/// target with this identifier at any given time. If this point ceases to point at the target, then the identifier
+/// becomes free for another device point. This means that this identifier can just be an index, but may be globally
+/// unique depending on the backend's capabilities.
+/// </param> 
 /// <param name="Flags">Flags describing the state of the point.</param>
 /// <param name="Position">The absolute position on the target at which the pointer is pointing.</param>
 /// <param name="NormalizedPosition">
@@ -452,24 +453,26 @@ public enum TargetPointFlags
 /// (e.g. due to the target being infinitely large a.k.a. "unbounded"), then this property shall have a value of
 /// <c>default</c>.
 /// </param>
-/// <param name="Orientation">
-/// The angle at which the pointer is pointing at the point on the target. An identity quaternion shall be interpreted
-/// as the point directly perpendicular to and facing towards the target. This shall carry an identity quaternion if
-/// there is no orientation available.
+/// <param name="Pointer">
+/// A ray representing the distance and angle at which the pointer is pointing at the point on the target. A ray with an
+/// orientation equivalent to an identity quaternion shall be interpreted as the point directly perpendicular to and
+/// facing towards the target, with this being the default value should this information be unavailable. If distance
+/// information is unavailable, this shall be equivalent to a <c>default</c> vector.
 /// </param>
-/// <param name="Distance">The distance of the pointer from the point the pointer is pointing at.</param>
 /// <param name="Pressure">
 /// The pressure applied to the point on the target by the pointer, between <c>0.0</c> representing the minimum amount
 /// of pressure and <c>1.0</c> representing the maximum amount of pressure. This shall be <c>1.0</c> if such data is
 /// unavailable but the point is otherwise valid.
 /// </param>
+/// <param name="Target">The pointer being pointed at.</param>
 public readonly record struct TargetPoint(
+    int Id,
     TargetPointFlags Flags,
     Vector3 Position,
     Vector3 NormalizedPosition,
-    Quaternion Orientation,
-    Vector3 Distance,
-    float Pressure
+    Ray3F<float> Pointer,
+    float Pressure,
+    IPointerTarget Target
 ) {
     public bool IsValid => (Flags & Flags.PointingAtTarget) != Flags.NotPointingAtTarget;
 }
@@ -480,11 +483,9 @@ The `PointerState` shall be defined as follows:
 public class PointerState
 {
     public ButtonReadOnlyList<PointerButton> Buttons { get; }
-    public InputReadOnlyList<PointerStatePoint> Points { get; }
+    public InputReadOnlyList<TargetPoint> Points { get; }
     public float GripPressure { get; }
 }
-
-public readonly record struct PointerStatePoint(IPointerTarget Target, TargetPoint Point);
 ```
 
 `Points` represents the `TargetPoint`s this pointer is pointing at on its "native targets" i.e. that which is enumerated
@@ -501,14 +502,42 @@ The handler for pointer inputs shall be defined as follows:
 ```cs
 public interface IPointerInputHandler : IButtonInputHandler<PointerButton>
 {
+    void HandleTargetChanged(PointerTargetChangedEvent @event);
     void HandlePointChanged(PointChangedEvent @event);
     void HandleGripChanged(PointerGripChangedEvent @event);
 }
 ```
 
+`HandleTargetChanged` must be called when properties on an `IPointerTarget` within `IPointer.Targets` changes, or when
+an `IPointerTarget` is added or removed to/from `IPointer.Targets`. `IsAdded` shall be `true` if it has been added,
+`false` if it has been removed.
+
 `HandlePointChanged` must be called when a point within `PointerState.Points` changes.
 
 `HandleGripChanged` must be called when `PointerState.GripPressure` changes.
+
+These device interfaces and related APIs are designed to mirror physical hardware that the user uses to point at a
+target. However, there are many cases where applications would work better with an abstraction that creates "virtual
+pointers" for each point, rather that the points being spread across many logical devices. For this we propose the
+following addendum to the `Pointers` class:
+
+```cs
+public partial class Pointers
+{
+    public IReadOnlyList<ContextPoint> Points { get; }
+}
+
+public readonly record struct ContextPoint(IPointer Device, TargetPoint Point, ButtonReadOnlyList<PointerButton> Buttons, float GripPressure)
+{
+    public int Id { get; }
+}
+```
+
+`Id` shall be an identifier that mixes `Point.Id` and `Device.Id` in a way that ensures the identifier is unique across
+the whole context.
+
+**FUTURE IMPROVEMENT:** The `Pointers` class is also expected to be the site of gesture recognition when proposed in the
+future.
 
 `PointerButton` shall be defined as follows:
 ```cs
