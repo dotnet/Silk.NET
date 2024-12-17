@@ -233,7 +233,18 @@ partial class Build
             Git($"checkout {GitHubActions.Instance.RefName}");
         }
         Git("add **/PublicAPI.*.txt");
-        Git("commit -m \"Update public API after release\"");
+
+        // Must be an interpolated string even if we're not interpolating because NUKE specially recognises this idfk.
+        // The issue this caused if you omitted the $ is as follows:
+        // 20:14:58 [INF] > "C:\Program Files\Git\bin\git.exe" config user.email "9011267+dotnet-bot@users.noreply.github.com"
+        // 20:14:58 [INF] > "C:\Program Files\Git\bin\git.exe" config user.name "The Silk.NET Automaton"
+        // 20:14:58 [INF] > "C:\Program Files\Git\bin\git.exe" tag v3.0.0-preview
+        // 20:14:59 [DBG] ...
+        // 20:15:00 [INF] > "C:\Program Files\Git\bin\git.exe" "commit -m \"Update public API after release\""
+        // 20:15:00 [DBG] git: 'commit -m "Update public API after release"' is not a git command. See 'git --help'.
+        // Error: Target "FinishRelease" has thrown an exception
+        // THE ONLY DISCERNABLE DIFFERENCE BETWEEN THE GIT CONFIG COMMANDS AND GIT COMMIT COMMAND WAS THE LACK OF A $
+        Git($"commit -m \"Update public API after release\"");
     }
 
     private readonly record struct VersionsList(

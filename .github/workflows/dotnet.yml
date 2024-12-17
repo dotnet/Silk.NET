@@ -34,8 +34,7 @@ jobs:
                 Pack
                 --configuration Release
                 --msbuild-properties
-                ${{ github.event_name == 'workflow_dispatch' && inputs.release && '' || github.event_name != 'pull_request' && format('VersionSuffix=build{0}.0', github.run_number) || format('VersionSuffix=pr{0}.{1}', github.event.number, github.run_number) }}
-                ContinuousIntegrationBuild=true
+                ${{ github.event_name == 'workflow_dispatch' && inputs.release && 'ContinuousIntegrationBuild=true' || github.event_name != 'pull_request' && format('ContinuousIntegrationBuild=true VersionSuffix=build{0}.0', github.run_number) || format('ContinuousIntegrationBuild=true VersionSuffix=pr{0}.{1}', github.event.number, github.run_number) }}
             - name: Upload Unsigned Artifacts to Actions
               uses: actions/upload-artifact@v4
               with:
