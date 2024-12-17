@@ -197,17 +197,8 @@ partial class Build
     {
         var tag =
             $"v{version}{(string.IsNullOrWhiteSpace(versionSuffix) ? string.Empty : $"-{versionSuffix}")}";
-        if (Environment.GetEnvironmentVariable("SILK_ACTIONS_DEPLOY_KEY") is { } deployKey)
-        {
-            await File.WriteAllTextAsync(TemporaryDirectory / "deploy_key.pem", deployKey);
-            Git(
-                $"config core.sshCommand \"ssh -i \\\"{TemporaryDirectory / "deploy_key.pem"}\\\"\""
-            );
-        }
-
         Git($"config user.email \"9011267+dotnet-bot@users.noreply.github.com\"");
         Git($"config user.name \"The Silk.NET Automaton\"");
-        Git("remote set-url origin git@github.com:dotnet/Silk.NET.git");
         Git($"tag {tag}");
         Git($"push origin {tag}");
         return; // TODO while testing release flow

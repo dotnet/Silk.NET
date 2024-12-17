@@ -122,6 +122,8 @@ jobs:
         environment: Release
         steps:
           - uses: actions/checkout@v3
+            with:
+              ssh-key: ${{ secrets.SILK_ACTIONS_DEPLOY_KEY }}
           - uses: actions/download-artifact@v4
             with:
               name: unsigned_nupkgs
@@ -137,8 +139,6 @@ jobs:
               --akv-tenant ${{ secrets.AKV_TENANT }}
               --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
               --discord-webhook ${{ secrets.DISCORD_ANNOUNCEMENT_WEBHOOK }}
-            env:
-              SILK_ACTIONS_DEPLOY_KEY: ${{ secrets.SILK_ACTIONS_DEPLOY_KEY }}
           - name: Upload Signed Artifacts to Actions
             uses: actions/upload-artifact@v4
             with:
