@@ -305,7 +305,7 @@ partial class Build
         // 20:15:00 [INF] > "C:\Program Files\Git\bin\git.exe" "commit -m \"Update public API after release\""
         // 20:15:00 [DBG] git: 'commit -m "Update public API after release"' is not a git command. See 'git --help'.
         // Error: Target "FinishRelease" has thrown an exception
-        // THE ONLY DISCERNABLE DIFFERENCE BETWEEN THE GIT CONFIG COMMANDS AND GIT COMMIT COMMAND WAS THE LACK OF A $
+        // THE ONLY DISCERNIBLE DIFFERENCE BETWEEN THE GIT CONFIG COMMANDS AND GIT COMMIT COMMAND WAS THE LACK OF A $
         Git($"commit -m \"Update public API and changelog for next release\"");
         Git("push");
     }

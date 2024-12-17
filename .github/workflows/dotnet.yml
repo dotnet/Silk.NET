@@ -131,13 +131,15 @@ jobs:
             if: ${{ github.repository == 'dotnet/Silk.NET' }}
             run: >-
               .\build.cmd SignPackages PushToNuGet FinishRelease --skip Clean Compile Pack
-              --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
+              --nuget-api-key ${{ secrets.NUGET_TOKEN }}
               --akv-certificate ${{ secrets.AKV_CERTIFICATE }}
               --akv-client-id ${{ secrets.AKV_CLIENT_ID }}
               --akv-client-secret ${{ secrets.AKV_CLIENT_SECRET }}
               --akv-tenant ${{ secrets.AKV_TENANT }}
               --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
               --discord-webhook ${{ secrets.DISCORD_ANNOUNCEMENT_WEBHOOK }}
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           - name: Upload Signed Artifacts to Actions
             uses: actions/upload-artifact@v4
             with:
