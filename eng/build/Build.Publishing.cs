@@ -207,6 +207,7 @@ partial class Build
 
         Git($"config user.email \"9011267+dotnet-bot@users.noreply.github.com\"");
         Git($"config user.name \"The Silk.NET Automaton\"");
+        Git("remote set-url origin git@github.com:dotnet/Silk.NET.git");
         Git($"tag {tag}");
         Git($"push origin {tag}");
         return; // TODO while testing release flow
