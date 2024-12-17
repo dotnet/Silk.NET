@@ -10,6 +10,11 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Humanizer;
+using Markdig;
+using Markdig.Renderers.Normalize;
+using Markdig.Renderers.Normalize.Inlines;
+using Markdig.Syntax.Inlines;
 using Nuke.Common;
 using Nuke.Common.CI.GitHubActions;
 using Nuke.Common.IO;
@@ -201,7 +206,6 @@ partial class Build
         Git($"config user.name \"The Silk.NET Automaton\"");
         Git($"tag {tag}");
         Git($"push origin {tag}");
-        return; // TODO while testing release flow
         var github = new GitHubClient(
             new ProductHeaderValue("Silk.NET-CI"),
             new Octokit.Internal.InMemoryCredentialStore(
@@ -226,13 +230,71 @@ partial class Build
         );
     }
 
-    private void CommitShippedApi()
+    private void CommitAfterShipping(string version, string versionSuffix, string releaseNotes)
     {
         if (GitIsDetached())
         {
             Git($"checkout {GitHubActions.Instance.RefName}");
         }
-        Git("add **/PublicAPI.*.txt");
+        string nextVersion;
+        string nextVersionHeadline;
+        if (string.IsNullOrWhiteSpace(versionSuffix))
+        {
+            var ver = Version.Parse(version);
+            ver = new Version(ver.Major, ver.Minor + 1, ver.Build);
+            nextVersion = ver.ToString();
+            nextVersionHeadline = $"Silk.NET {ver.ToString(2)}";
+        }
+        else
+        {
+            var suffixSpan = versionSuffix.AsSpan();
+            var suffixNumberStart = suffixSpan.IndexOfAnyInRange('0', '9');
+            if (suffixNumberStart == -1)
+            {
+                versionSuffix = $"{versionSuffix}2";
+            }
+            else
+            {
+                var suffixNumberEnd =
+                    suffixSpan[suffixNumberStart..].IndexOfAnyExceptInRange('0', '9')
+                    + suffixNumberStart;
+                versionSuffix =
+                    versionSuffix[..suffixNumberStart]
+                    + (
+                        int.Parse(
+                            suffixSpan[
+                                suffixNumberEnd == -1
+                                    ? suffixNumberStart..
+                                    : suffixNumberStart..suffixNumberEnd
+                            ]
+                        ) + 1
+                    )
+                    + (suffixNumberEnd == -1 ? string.Empty : versionSuffix[suffixNumberEnd..]);
+            }
+
+            nextVersion = $"{version}-{versionSuffix}";
+            nextVersionHeadline =
+                $"Silk.NET {Version.Parse(version)} {versionSuffix.Humanize(LetterCasing.Title)}";
+        }
+
+        var lines = File.ReadAllLines(RootDirectory / "docs" / "CHANGELOG.md").ToList();
+        for (var i = 0; i < lines.Count; i++)
+        {
+            if (!lines[i].StartsWith("## "))
+            {
+                continue;
+            }
+
+            lines[i] = $"{lines[i]} ({DateTime.UtcNow:dd/MM/yyyy})";
+            lines.InsertRange(
+                i,
+                [$"## {nextVersion}", string.Empty, nextVersionHeadline, string.Empty]
+            );
+            break;
+        }
+
+        File.WriteAllLines(RootDirectory / "docs" / "CHANGELOG.md", lines);
+        Git("add **/PublicAPI.*.txt docs/CHANGELOG.md");
 
         // Must be an interpolated string even if we're not interpolating because NUKE specially recognises this idfk.
         // The issue this caused if you omitted the $ is as follows:
@@ -244,7 +306,8 @@ partial class Build
         // 20:15:00 [DBG] git: 'commit -m "Update public API after release"' is not a git command. See 'git --help'.
         // Error: Target "FinishRelease" has thrown an exception
         // THE ONLY DISCERNABLE DIFFERENCE BETWEEN THE GIT CONFIG COMMANDS AND GIT COMMIT COMMAND WAS THE LACK OF A $
-        Git($"commit -m \"Update public API after release\"");
+        Git($"commit -m \"Update public API and changelog for next release\"");
+        Git("push");
     }
 
     private readonly record struct VersionsList(
@@ -303,9 +366,18 @@ partial class Build
         var headline = $"{lines[0].Trim()} (v{fullVersion})";
         var message =
             $"**__{headline}__** <@335783158223994890>\n\n"
-            + $"Get it on NuGet: https://nuget.org/packages/Silk.NET/{fullVersion}\n\n"
+            + $"Get it on NuGet: TODOINSERTRELEASENUGETURLHERE\n\n"
             + string.Join('\n', lines.Skip(1).SkipWhile(string.IsNullOrWhiteSpace))
             + $"\n\n**__Get {headline} on NuGet__**";
+        var sw = new StringWriter();
+        var normRenderer = new NormalizeRenderer(sw);
+        normRenderer.ObjectRenderers.Replace<LinkInlineRenderer>(new DiscordUrlEscapeRenderer());
+        normRenderer.Render(Markdown.Parse(message));
+        message = sw.ToString()
+            .Replace(
+                "TODOINSERTRELEASENUGETURLHERE",
+                $"https://nuget.org/packages/Silk.NET/{fullVersion}"
+            );
         using var http = new HttpClient();
         (
             await http.PostAsJsonAsync(
@@ -316,5 +388,21 @@ partial class Build
                 )
             )
         ).EnsureSuccessStatusCode();
+    }
+
+    class DiscordUrlEscapeRenderer : NormalizeObjectRenderer<LinkInline>
+    {
+        private LinkInlineRenderer _fallback = new();
+
+        protected override void Write(NormalizeRenderer renderer, LinkInline obj)
+        {
+            if (obj.IsAutoLink)
+            {
+                renderer.Write($"<{obj.Url}>");
+                return;
+            }
+
+            _fallback.Write(renderer, obj);
+        }
     }
 }

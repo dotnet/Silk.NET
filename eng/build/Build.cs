@@ -108,7 +108,7 @@ partial class Build : NukeBuild
                         out var releaseNotes
                     );
                     await CreateReleaseAsync(version, versionSuffix, releaseNotes);
-                    CommitShippedApi();
+                    CommitAfterShipping();
                     await WaitForNuGetToUpdateAsync(version, versionSuffix);
                     await SendWebhookAsync(version, versionSuffix, releaseNotes);
                 })
