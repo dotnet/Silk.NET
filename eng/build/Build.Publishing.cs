@@ -230,7 +230,7 @@ partial class Build
         );
     }
 
-    private void CommitAfterShipping(string version, string versionSuffix, string releaseNotes)
+    private void CommitAfterShipping(string version, string versionSuffix)
     {
         if (GitIsDetached())
         {
