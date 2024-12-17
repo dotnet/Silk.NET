@@ -6,11 +6,7 @@ should be in SemVer order.
 
 Please read [the Contributions Guide](CONTRIBUTING.md) before writing release notes here!
 
-## 3.0.0-preview2
-
-Silk.NET 3.0.0 Preview 2
-
-## 3.0.0-preview (17/12/2024)
+## 3.0.0-preview
 
 Silk.NET 3.0 Preview 1
 
