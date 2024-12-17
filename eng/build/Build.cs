@@ -1,3 +1,4 @@
+using System.IO;
 using Nuke.Common;
 using Nuke.Common.IO;
 using Nuke.Common.Tools.DotNet;
@@ -67,14 +68,15 @@ partial class Build : NukeBuild
             )
         );
 
-    Target ShipApi => CommonTarget(x => x.Executes(MoveUnshippedContentsToShipped));
+    Target ShipApi =>
+        CommonTarget(x => x.After(PushToNuGet).Executes(MoveUnshippedContentsToShipped));
 
     Target SignPackages =>
         CommonTarget(x => x.Before(PushToNuGet).After(Pack).Executes(CodesignAllPackageOutputs));
 
     Target PushToNuGet =>
         CommonTarget(x =>
-            x.After(Pack)
+            x.After(Pack, SignPackages)
                 .Executes(async () =>
                 {
                     AddTemporaryFeed();
@@ -89,6 +91,25 @@ partial class Build : NukeBuild
                     {
                         RemoveTemporaryFeeds();
                     }
+                })
+        );
+
+    Target FinishRelease =>
+        CommonTarget(x =>
+            x.After(PushToNuGet)
+                .DependsOn(ShipApi)
+                .Executes(async () =>
+                {
+                    GetVersionInfo(
+                        File.ReadAllText(RootDirectory / "docs" / "CHANGELOG.md"),
+                        out var version,
+                        out var versionSuffix,
+                        out var releaseNotes
+                    );
+                    await CreateReleaseAsync(version, versionSuffix, releaseNotes);
+                    CommitShippedApi();
+                    await WaitForNuGetToUpdateAsync(version, versionSuffix);
+                    await SendWebhookAsync(version, versionSuffix, releaseNotes);
                 })
         );
 }

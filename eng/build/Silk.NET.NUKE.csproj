@@ -13,5 +13,6 @@
 
   <ItemGroup>
     <PackageReference Include="Nuke.Common" Version="9.0.3" />
+    <PackageReference Include="Octokit" Version="13.0.1" />
   </ItemGroup>
 </Project>
