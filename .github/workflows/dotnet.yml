@@ -124,7 +124,7 @@ jobs:
           - uses: actions/checkout@v3
           - uses: actions/download-artifact@v4
             with:
-              path: "artifacts/**/*nupkg"
+              name: unsigned_nupkgs
           - name: Push to NuGet
             if: ${{ github.repository == 'dotnet/Silk.NET' }}
             run: >-
