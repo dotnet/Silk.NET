@@ -8,6 +8,7 @@
         <SilkExtendedDescription>You probably don't want all that, and it is strongly recommended to pull in only the packages you need instead. This package exists just to simplify project bring-up.</SilkExtendedDescription>
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
+        <NoWarn>NU5128</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>

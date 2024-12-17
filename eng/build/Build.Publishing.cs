@@ -209,6 +209,7 @@ partial class Build
         Git($"config user.name \"The Silk.NET Automaton\"");
         Git($"tag {tag}");
         Git($"push origin {tag}");
+        return; // TODO while testing release flow
         var github = new GitHubClient(
             new ProductHeaderValue("Silk.NET-CI"),
             new Octokit.Internal.InMemoryCredentialStore(
@@ -249,6 +250,7 @@ partial class Build
 
     private async Task WaitForNuGetToUpdateAsync(string version, string versionSuffix)
     {
+        return; // TODO while testing release flow
         var fullVersion = string.IsNullOrWhiteSpace(versionSuffix)
             ? version
             : $"{version}-{versionSuffix}";
