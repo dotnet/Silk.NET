@@ -79,7 +79,6 @@ partial class Build : NukeBuild
             x.After(Pack, SignPackages)
                 .Executes(async () =>
                 {
-                    return; // TODO while testing release flow
                     AddTemporaryFeed();
                     try
                     {

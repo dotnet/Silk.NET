@@ -316,7 +316,6 @@ partial class Build
 
     private async Task WaitForNuGetToUpdateAsync(string version, string versionSuffix)
     {
-        return; // TODO while testing release flow
         var fullVersion = string.IsNullOrWhiteSpace(versionSuffix)
             ? version
             : $"{version}-{versionSuffix}";
@@ -372,6 +371,9 @@ partial class Build
         var sw = new StringWriter();
         var normRenderer = new NormalizeRenderer(sw);
         normRenderer.ObjectRenderers.Replace<LinkInlineRenderer>(new DiscordUrlEscapeRenderer());
+        normRenderer.ObjectRenderers.Replace<LineBreakInlineRenderer>(
+            new DiscordSoftLineRemovalRenderer()
+        );
         normRenderer.Render(Markdown.Parse(message));
         message = sw.ToString()
             .Replace(
@@ -403,6 +405,21 @@ partial class Build
             }
 
             _fallback.Write(renderer, obj);
+        }
+    }
+
+    class DiscordSoftLineRemovalRenderer : NormalizeObjectRenderer<LineBreakInline>
+    {
+        protected override void Write(NormalizeRenderer renderer, LineBreakInline obj)
+        {
+            if (!obj.IsHard)
+            {
+                renderer.Write(' ');
+                return;
+            }
+
+            renderer.Write(obj.IsBackslash ? "\\" : "  ");
+            renderer.WriteLine();
         }
     }
 }
