@@ -1419,3 +1419,4 @@ static Silk.NET.Maths.Vector4D<T>.UnitX.get -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.UnitY.get -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.UnitZ.get -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.Zero.get -> Silk.NET.Maths.Vector4D<T>
+
