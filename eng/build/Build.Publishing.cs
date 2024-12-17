@@ -223,7 +223,7 @@ partial class Build
             {
                 Prerelease = !string.IsNullOrWhiteSpace(versionSuffix),
                 Body = releaseNotes,
-                DiscussionCategoryName = "Q&A",
+                DiscussionCategoryName = "General",
                 Name = lines[0].Replace("Silk.NET", string.Empty).Trim(), // tradition
                 TargetCommitish = GitCurrentCommit(),
             }
@@ -274,7 +274,7 @@ partial class Build
 
             nextVersion = $"{version}-{versionSuffix}";
             nextVersionHeadline =
-                $"Silk.NET {Version.Parse(version)} {versionSuffix.Humanize(LetterCasing.Title)}";
+                $"Silk.NET {Version.Parse(version).ToString(2)} {versionSuffix.Humanize(LetterCasing.Title)}";
         }
 
         var lines = File.ReadAllLines(RootDirectory / "docs" / "CHANGELOG.md").ToList();
@@ -364,7 +364,7 @@ partial class Build
             .ToList();
         var headline = $"{lines[0].Trim()} (v{fullVersion})";
         var message =
-            $"**__{headline}__** <@335783158223994890>\n\n"
+            $"**__{headline}__** <@&685572809543385140>\n\n"
             + $"Get it on NuGet: TODOINSERTRELEASENUGETURLHERE\n\n"
             + string.Join('\n', lines.Skip(1).SkipWhile(string.IsNullOrWhiteSpace))
             + $"\n\n**__Get {headline} on NuGet__**";
@@ -386,7 +386,7 @@ partial class Build
                 DiscordWebhook,
                 new Webhook(
                     message,
-                    new Dictionary<string, string[]> { { "users", ["335783158223994890"] } }
+                    new Dictionary<string, string[]> { { "roles", ["685572809543385140"] } }
                 )
             )
         ).EnsureSuccessStatusCode();
