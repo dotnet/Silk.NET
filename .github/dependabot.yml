@@ -6,9 +6,17 @@ updates:
   schedule:
     interval: weekly
     day: thursday
+  groups:
+    All 2.X Dependencies:
+      patterns:
+        - "*"
 - package-ecosystem: nuget
   target-branch: develop/3.0
   directory: "/"
   schedule:
     interval: weekly
     day: thursday
+  groups:
+    All 3.0 Dependencies:
+      patterns:
+        - "*"
