@@ -159,6 +159,7 @@ public static unsafe class SilkMarshal
         }
     }
 
+#pragma warning disable RS0026 // 'Do not add multiple overloads with optional parameters' - Parameters differ only by span generic type, this is intended.
     /// <summary>
     /// Creates an array containing the native representation of the given string array.
     /// </summary>
@@ -442,6 +443,7 @@ public static unsafe class SilkMarshal
 
         return strings;
     }
+#pragma warning restore RS0026
 
     /// <summary>
     /// Converts a byte reference to a string.
@@ -540,6 +542,7 @@ public static unsafe class SilkMarshal
     public static Ref2D<T> AsRef2D<T>(ref this Span<T> @ref)
         where T : unmanaged
     {
+#pragma warning disable IL3050 // Problematic code removed at build time by Fody.
         IL.Emit.Ldarg_0();
         IL.Emit.Newobj(
             MethodRef.Constructor(
@@ -549,6 +552,7 @@ public static unsafe class SilkMarshal
         );
         IL.Emit.Ret();
         throw IL.Unreachable();
+#pragma warning restore IL3050
     }
 
     /// <summary>
@@ -560,6 +564,7 @@ public static unsafe class SilkMarshal
     public static Ref2D<T> AsRef2D<T>(ref this ReadOnlySpan<T> @ref)
         where T : unmanaged
     {
+#pragma warning disable IL3050 // Problematic code removed at build time by Fody.
         IL.Emit.Ldarg_0();
         IL.Emit.Newobj(
             MethodRef.Constructor(
@@ -569,6 +574,7 @@ public static unsafe class SilkMarshal
         );
         IL.Emit.Ret();
         throw IL.Unreachable();
+#pragma warning restore IL3050
     }
 
     /// <summary>

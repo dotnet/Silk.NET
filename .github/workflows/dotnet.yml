@@ -3,12 +3,20 @@ on:
     push:
     pull_request:
     merge_group:
+    workflow_dispatch:
+      inputs:
+        release:
+          description: "Release to NuGet"
+          required: false
+          type: boolean
+          default: false
 permissions:
     statuses: write
     checks: write
     contents: write
     pull-requests: write
     actions: write
+    packages: write
 jobs:
     Build:
         runs-on: macos-latest
@@ -17,12 +25,29 @@ jobs:
             - name: Setup .NET
               uses: actions/setup-dotnet@v3
               with:
-                dotnet-version: '8.0.x'
+                dotnet-version: '9.0.x'
                 dotnet-quality: 'preview'
-            - name: Restore
-              run: dotnet restore
             - name: Pack
-              run: dotnet pack -c Release
+              # TODO decide whether we want experimental builds to use Debug or Release - using Release for now...
+              run: >-
+                dotnet run --project eng/build/Silk.NET.NUKE.csproj -c Release --
+                Pack
+                --configuration Release
+                --msbuild-properties
+                ${{ github.event_name == 'workflow_dispatch' && inputs.release && 'ContinuousIntegrationBuild=true' || github.event_name != 'pull_request' && format('ContinuousIntegrationBuild=true VersionSuffix=build{0}.0', github.run_number) || format('ContinuousIntegrationBuild=true VersionSuffix=pr{0}.{1}', github.event.number, github.run_number) }}
+            - name: Upload Unsigned Artifacts to Actions
+              uses: actions/upload-artifact@v4
+              with:
+                name: unsigned_nupkgs
+                path: "artifacts/**/*nupkg"
+                if-no-files-found: warn
+                retention-days: 1
+            - name: Push to Experimental Feed
+              if: ${{ github.repository == 'dotnet/Silk.NET' }}
+              run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://dotnet.github.io/Silk.NET/nuget/experimental/index.json --nuget-username ${{ secrets.EXP_NUGET_USERNAME }} --nuget-password ${{ secrets.EXP_NUGET_PASSWORD }} --nuget-api-key ${{ secrets.EXP_NUGET_PASSWORD }}
+            - name: Push to GitHub Packages
+              if: ${{ github.repository == 'dotnet/Silk.NET' }}
+              run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
     Test:
         strategy:
             fail-fast: false
@@ -57,18 +82,19 @@ jobs:
                 path: ./coverage/**/*.trx
                 reporter: dotnet-trx
             - name: Upload Coverage Results
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                 name: coverage-${{ matrix.name }}
                 path: ./coverage/**/coverage.cobertura.xml
     Report-Coverage:
+        name: "Report Coverage"
         runs-on: ubuntu-latest
         needs: Test
         permissions:
             pull-requests: write
             checks: write
         steps:
-            - uses: actions/download-artifact@v3
+            - uses: actions/download-artifact@v4
               with:
                 path: ./coverage
             - name: Setup .NET Core
@@ -88,3 +114,36 @@ jobs:
               with:
                 path: coveragereport/Cobertura.xml
                 minimum_coverage: 0
+    Release:
+        runs-on: windows-latest
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.release }}
+        needs: [Build, Test]
+        environment: Release
+        steps:
+          - uses: actions/checkout@v3
+            with:
+              ssh-key: ${{ secrets.SILK_ACTIONS_DEPLOY_KEY }}
+          - uses: actions/download-artifact@v4
+            with:
+              name: unsigned_nupkgs
+              path: artifacts
+          - name: Push to NuGet
+            if: ${{ github.repository == 'dotnet/Silk.NET' }}
+            run: >-
+              .\build.cmd SignPackages PushToNuGet FinishRelease --skip Clean Compile Pack
+              --nuget-api-key ${{ secrets.NUGET_TOKEN }}
+              --akv-certificate ${{ secrets.AKV_CERTIFICATE }}
+              --akv-client-id ${{ secrets.AKV_CLIENT_ID }}
+              --akv-client-secret ${{ secrets.AKV_CLIENT_SECRET }}
+              --akv-tenant ${{ secrets.AKV_TENANT }}
+              --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
+              --discord-webhook ${{ secrets.DISCORD_ANNOUNCEMENT_WEBHOOK }}
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          - name: Upload Signed Artifacts to Actions
+            uses: actions/upload-artifact@v4
+            with:
+              name: signed_nupkgs
+              path: "artifacts/**/*nupkg"
+              if-no-files-found: warn
+              retention-days: 30

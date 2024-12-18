@@ -21,6 +21,7 @@ public unsafe readonly ref struct Ref2D<T>
     /// <param name="Ref">The underlying ref.</param>
     public Ref2D(ref Ref<T> @Ref)
     {
+#pragma warning disable IL3050 // Problematic code is removed at build time by Fody.
         IL.Emit.Ldarg_0();
         IL.Emit.Ldarg_1();
         IL.Emit.Stfld(
@@ -31,6 +32,7 @@ public unsafe readonly ref struct Ref2D<T>
         );
         IL.Emit.Ret();
         throw IL.Unreachable();
+#pragma warning restore IL3050
     }
 
     /// <summary>
@@ -47,6 +49,7 @@ public unsafe readonly ref struct Ref2D<T>
     /// </summary>
     public readonly ref Ref<T> Ref
     {
+#pragma warning disable IL3050 // Problematic code is removed at build time by Fody.
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
@@ -63,6 +66,7 @@ public unsafe readonly ref struct Ref2D<T>
             IL.Emit.Ret();
             throw IL.Unreachable();
         }
+#pragma warning restore IL3050
     }
 
     /// <summary>
@@ -83,6 +87,7 @@ public unsafe readonly ref struct Ref2D<T>
         )]
         get
         {
+#pragma warning disable IL3050 // Problematic code is removed at build time by Fody.
             IL.Emit.Ldarg_0();
             IL.Emit.Ldfld(
                 FieldRef.Field(
@@ -96,6 +101,7 @@ public unsafe readonly ref struct Ref2D<T>
             IL.Emit.Add();
             IL.Emit.Ret();
             throw IL.Unreachable();
+#pragma warning restore IL3050
         }
     }
 
@@ -108,6 +114,7 @@ public unsafe readonly ref struct Ref2D<T>
     /// </remarks>
     public ref T* GetPinnableReference()
     {
+#pragma warning disable IL3050 // Problematic code is removed at build time by Fody.
         IL.Emit.Ldarg_0();
         IL.Emit.Ldfld(
             FieldRef.Field(
@@ -117,6 +124,7 @@ public unsafe readonly ref struct Ref2D<T>
         );
         IL.Emit.Ret();
         throw IL.Unreachable();
+#pragma warning restore IL3050
     }
 
     /// <summary>
@@ -236,6 +244,7 @@ public unsafe readonly ref struct Ref2D<T>
     /// <param name="array"></param>
     public static implicit operator Ref2D<T>(T*[] array)
     {
+#pragma warning disable IL3050 // Problematic code is removed at build time by Fody.
         IL.Emit.Ldarg_0();
         IL.Emit.Ldc_I4_0();
         IL.Emit.Ldelema(TypeRef.Type(typeof(T).MakePointerType()));
@@ -247,6 +256,7 @@ public unsafe readonly ref struct Ref2D<T>
         );
         IL.Emit.Ret();
         throw IL.Unreachable();
+#pragma warning restore IL3050
     }
 
     /// <summary>

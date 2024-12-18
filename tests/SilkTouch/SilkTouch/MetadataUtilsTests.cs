@@ -52,8 +52,8 @@ public class MetadataUtilsTests
         TestCase("int**", 2, new[] { true, true, true }, 0),
         TestCase("int** const*", 3, new[] { true, false, true, true }, 0),
         TestCase("int** const*[16]", 4, new[] { true, true, false, true, true }, 16),
-        TestCase("int** const* a[16]", 4, new[] { true, true, false, true, true }, 0),
-        TestCase("int** const* a[2][8]", 4, new[] { true, true, false, true, true }, 0),
+        TestCase("int** const* a[16]", 4, new[] { true, true, false, true, true }, 16),
+        TestCase("int** const* a[2][8]", 4, new[] { true, true, false, true, true }, 16),
         TestCase("int a", 0, new[] { true }, 0)
     ]
     public void GetMutability(
@@ -65,7 +65,10 @@ public class MetadataUtilsTests
     {
         var mutability = new bool[indirection + 1];
         MetadataUtils.GetTypeDetails(type, mutability, out var outerCount);
-        Assert.That(outerCount, Is.EqualTo(outerCount));
-        Assert.That(mutability, Is.EquivalentTo(expectedMutability));
+        Assert.Multiple(() =>
+        {
+            Assert.That(outerCount, Is.EqualTo(expectedOuterCount));
+            Assert.That(mutability, Is.EquivalentTo(expectedMutability));
+        });
     }
 }
