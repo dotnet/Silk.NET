@@ -1,0 +1,48 @@
+name: Native Builds
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+env:
+  # A space-separated list of paths to native libraries to build.
+  NATIVE_LIBRARY_PATHS: "sources/SDL/Native"
+  # A space-separated list of submodule paths for each native library path. Use _ if a submodule is not used - this must
+  # match the number of spaces in NATIVE_LIBRARY_PATHS.
+  NATIVE_LIBRARY_SUBMODULE_PATHS: "eng/submodules/sdl"
+  # A space-separated list of shorthands to the native library paths that will build the native library for each native
+  # library path. This must match the number of spaces in NATIVE_LIBRARY_PATHS. If a shorthand builds multiple native
+  # binary paths, these will be deduplicated.
+  NATIVE_LIBRARY_SHORTHANDS: "SDL"
+jobs:
+  prerequisites:
+    name: PR Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: parse
+        name: Determine which native libraries the user has asked to build, and where to look for changes.
+        run: ./workflow-stage1.sh
+        working-directory: eng/native/buildsystem
+        env:
+          PR_COMMENT: ${{ github.event.pull_request.body }}
+      - uses: dorny/paths-filter@v3
+        id: filter
+        name: Determine which natives need to be rebuilt.
+        with:
+          filters: ${{ steps.parse.outputs.workflow_filters }}
+      - name: Find a warning message from a previous run, if applicable.
+        uses: peter-evans/find-comment@v3
+        id: fc
+        with:
+          issue-number: ${{ github.event.number }}
+          comment-author: "github-actions"
+          body-includes: "Some of the native library builds modified in this PR were not referenced in the PR description."
+      - id: strat
+        name: Create the matrix strategy for the native builds.
+        run: ./workflow-stage2.sh
+        working-directory: eng/native/buildsystem
+        env:
+          NATIVE_LIBRARY_APPLICABLE_SHORTHANDS: ${{ join(steps.filter.outputs.changes, ' ') }}
+          NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS: ${{ join(steps.parse.outputs.targets_referenced, ' ') }}
+          PR_EXISTING_NOTICE_ID: ${{ steps.fc.outputs.comment-id }}
+    outputs:
+      matrix_strategy: ${{ steps.strat.outputs.matrix_strategy }}
