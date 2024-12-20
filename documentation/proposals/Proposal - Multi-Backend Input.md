@@ -517,24 +517,12 @@ an `IPointerTarget` is added or removed to/from `IPointer.Targets`. `IsAdded` sh
 `HandleGripChanged` must be called when `PointerState.GripPressure` changes.
 
 These device interfaces and related APIs are designed to mirror physical hardware that the user uses to point at a
-target. However, there are many cases where applications would work better with an abstraction that creates "virtual
-pointers" for each point, rather that the points being spread across many logical devices. For this we propose the
-following addendum to the `Pointers` class:
+target. 
 
-```cs
-public partial class Pointers
-{
-    public IReadOnlyList<ContextPoint> Points { get; }
-}
-
-public readonly record struct ContextPoint(IPointer Device, TargetPoint Point, ButtonReadOnlyList<PointerButton> Buttons, float GripPressure)
-{
-    public int Id { get; }
-}
-```
-
-`Id` shall be an identifier that mixes `Point.Id` and `Device.Id` in a way that ensures the identifier is unique across
-the whole context.
+**FUTURE IMPROVEMENT:** There are many cases where applications would work better with an abstraction that creates
+"virtual pointers" for each point, rather that the points being spread across many logical devices. These can be added
+as non-breaking extensions to the `Pointers` class in the future, as the input context is intended to be the aggregator
+of device inputs.
 
 **FUTURE IMPROVEMENT:** The `Pointers` class is also expected to be the site of gesture recognition when proposed in the
 future.
