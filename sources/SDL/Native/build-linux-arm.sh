@@ -18,7 +18,7 @@ fi
 rm -rf build
 mkdir build
 cd build
-cmake ../../../../eng/submodules/sdl -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../../../../eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.17.cmake
+cmake ../../../../eng/submodules/sdl -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../../../../eng/native/cmake/zig-toolchain-arm-linux-gnueabihf.2.34.cmake
 cmake --build . --parallel
 cd ..
 mkdir -p runtimes/linux-arm/native
