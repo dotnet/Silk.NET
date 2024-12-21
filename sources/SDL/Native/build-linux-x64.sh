@@ -1,4 +1,8 @@
 #!/usr/bin/env -S bash -eu
+if [ ! -e ../../../eng/submodules/sdl/CMakeLists.txt ]; then
+    git submodule update --init --recursive --depth 1 ../../../eng/submodules/sdl
+fi
+
 if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     ../../../eng/native/buildsystem/download-zig.py
     export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig/zig")"
