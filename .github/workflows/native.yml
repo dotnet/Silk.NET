@@ -67,14 +67,17 @@ jobs:
     name: ${{ matrix.flat.target }} / ${{ matrix.flat.runtime }}
     steps:
       - uses: actions/checkout@v3
-      - run: ${{ format('.{0}{1}', startsWith(matrix.flat.runtime, 'win') && '\' || '/', matrix.flat.exec) }}
+      - run: |
+          echo "https://github.com/actions/upload-artifact/issues/174" > .workaround-${{ matrix.flat.target }}-${{ matrix.flat.runtime }}.txt
+          ${{ format('.{0}{1}', startsWith(matrix.flat.runtime, 'win') && '\' || '/', matrix.flat.exec) }}
         working-directory: ${{ matrix.flat.dir }}
       - uses: actions/upload-artifact@v4
         with:
           name: natives-${{ matrix.flat.target }}-${{ matrix.flat.runtime }}
           path: |
-            ${{ matrix.flat.dir }}/runtimes/${{ matrix.flat.runtime }}/**/*
-            ${{ matrix.flat.dir}}/lib/*${{ matrix.flat.runtime }}*/**/*
+            ./workaround-*.txt
+            ./${{ matrix.flat.dir }}/runtimes/${{ matrix.flat.runtime }}/**/*
+            ./${{ matrix.flat.dir}}/lib/*${{ matrix.flat.runtime }}*/**/*
   commit:
     name: Commit Binaries
     needs: [prerequisites, build]
