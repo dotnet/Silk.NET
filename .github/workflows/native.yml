@@ -56,6 +56,7 @@ jobs:
           edit-mode: replace
     outputs:
       matrix_strategy: ${{ steps.strat.outputs.matrix_strategy }}
+      targets_referenced: ${{ steps.parse.outputs.targets_referenced }}
   build:
     needs: [prerequisites]
     strategy:
@@ -73,3 +74,25 @@ jobs:
           path: |
             ${{ matrix.flat.dir }}/runtimes/${{ matrix.flat.runtime }}/**/*
             ${{ matrix.flat.dir}}/lib/*${{ matrix.flat.runtime }}*/**/*
+  commit:
+    name: Commit Binaries
+    needs: [prerequisites, build]
+    runs-on: ubuntu-latest
+    if: ${{ needs.prerequisites.outputs.targets_referenced }}
+    steps:
+      - name: Checkout PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr checkout ${{ github.event.pull_request.number }}
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: natives-*
+          merge-multiple: true
+      - name: Commit Artifacts
+        run: |
+          git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+          git config --local user.name "The Silk.NET Automaton"
+          git add .
+          git commit -m "Update native binaries for ${{ github.sha }}"
+          git push

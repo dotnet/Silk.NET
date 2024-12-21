@@ -489,3 +489,11 @@ src/Website/Silk.NET.Statiq/cache
 
 # Verify
 *.received.*
+
+# Native Binaries
+!**/runtimes/*/native/*.dylib
+!**/runtimes/*/native/*.so
+!**/runtimes/*/native/*.dll
+!**/lib/**/*.aar
+build/
+!eng/build/
