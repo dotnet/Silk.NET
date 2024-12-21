@@ -36,7 +36,7 @@ jobs:
         id: fc
         with:
           issue-number: ${{ github.event.number }}
-          comment-author: "github-actions"
+          comment-author: "github-actions[bot]"
           body-includes: "Some of the native library builds modified in this PR were not referenced in the PR description."
       - id: strat
         name: Create the matrix strategy for the native builds.
