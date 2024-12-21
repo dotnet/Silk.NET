@@ -94,5 +94,5 @@ jobs:
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton"
           git add .
-          git commit -m "Update native binaries for ${{ github.sha }}"
+          git commit -m "Update native binaries for $(git rev-parse HEAD)"
           git push

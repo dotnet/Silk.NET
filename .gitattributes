@@ -53,6 +53,10 @@
 *.7z binary
 *.ttf binary
 *.stout binary
+*.so binary
+*.dll binary
+*.dylib binary
+
 
 # Verify
 *.verified.txt text eol=lf working-tree-encoding=UTF-8
