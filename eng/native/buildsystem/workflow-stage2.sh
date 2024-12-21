@@ -16,9 +16,6 @@ if [ "${#NATIVE_LIBRARY_APPLICABLE_SHORTHANDS_ARRAY[@]}" -gt "${#NATIVE_LIBRARY_
 else
    COMMENT="All native library builds modified in this PR shall attempt to be built by CI."
 fi
-if [[ $PR_EXISTING_NOTICE_ID != 0 && $PR_EXISTING_NOTICE_ID != "" || $ANGRY_COMMENT == true ]]; then
-    ${GH:-gh} pr comment $PR_EXISTING_NOTICE_ID --body "$COMMENT"
-fi
 
 echo "matrix_strategy<<EOF" >> $GITHUB_OUTPUT
 echo "[" >> $GITHUB_OUTPUT
@@ -27,7 +24,6 @@ for item in $NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS; do
   i=0
   for target in ${NATIVE_LIBRARY_SHORTHANDS_ARRAY[@]}; do
     if [[ "$target" == "$item" ]]; then
-      #mkdir -p "../../../${NATIVE_LIBRARY_PATHS_ARRAY[$i]}"
       shopt -s nullglob
       for runtime_script in "../../../${NATIVE_LIBRARY_PATHS_ARRAY[$i]}"/build-*.*; do
         runtime="$(basename "$runtime_script")"
@@ -39,7 +35,7 @@ for item in $NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS; do
         echo "  \"runtime\": \"$runtime\"," >> $GITHUB_OUTPUT
         # :9 trim ../../../ prefix
         echo "  \"exec\": \"$(basename "$runtime_script")\"," >> $GITHUB_OUTPUT
-        echo "  \"dir: \"$(dirname "${runtime_script:9}")\"" >> $GITHUB_OUTPUT
+        echo "  \"dir\": \"$(dirname "${runtime_script:9}")\"" >> $GITHUB_OUTPUT
         echo "}" >> $GITHUB_OUTPUT
       done
     fi
@@ -48,3 +44,6 @@ for item in $NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS; do
 done
 echo "]" >> $GITHUB_OUTPUT
 echo EOF >> $GITHUB_OUTPUT
+if [[ $PR_EXISTING_NOTICE_ID != 0 && $PR_EXISTING_NOTICE_ID != "" || $ANGRY_COMMENT == true ]]; then
+    echo "comment_to_write=$COMMENT" >> $GITHUB_OUTPUT
+fi

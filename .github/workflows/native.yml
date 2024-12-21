@@ -44,6 +44,12 @@ jobs:
           NATIVE_LIBRARY_APPLICABLE_SHORTHANDS: ${{ join(steps.filter.outputs.changes, ' ') }}
           NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS: ${{ steps.parse.outputs.targets_referenced }}
           PR_EXISTING_NOTICE_ID: ${{ steps.fc.outputs.comment-id }}
-          GH_TOKEN: ${{ github.token }}
+      - name: Write a comment if needed.
+        if: ${{ steps.strat.outputs.comment_to_write }}
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.number }}
+          body: ${{ steps.strat.outputs.comment_to_write }}
     outputs:
       matrix_strategy: ${{ fromJSON(steps.strat.outputs.matrix_strategy || '[]') }}

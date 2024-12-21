@@ -9,12 +9,12 @@ export PR_COMMENT=$'Hello\n/build-native sdl aaaa\nworld'
 rm -f test.txt
 ./workflow-stage1.sh
 
-EXPECTED='workflow_filters<<EOF
-Aaaa: ["sources/Aaaa/Native/*", "eng/submodules/aaaa"]
-B: ["sources/B/Native/*", "eng/submodules/b"]
-Sdl: ["sources/SDL/Native/*", "eng/submodules/sdl", "sources/SDL-Other/Native/*", "eng/submodules/sdl-other"]
+EXPECTED="workflow_filters<<EOF
+Aaaa: [\"sources/Aaaa/Native/*\", \"eng/submodules/aaa\"]
+B: [\"sources/B/Native/*\", \"eng/submodules/b\"]
+Sdl: [\"sources/SDL/Native/*\", \"eng/submodules/sdl\", \"sources/SDL-Other/Native/*\", \"eng/submodules/sdl-other\"]
 EOF
-targets_referenced=Aaaa Sdl'
+targets_referenced=Aaaa Sdl"
 
 if [[ "$(cat test.txt)" == "$EXPECTED" ]]; then
     echo stage1 pass
@@ -23,81 +23,74 @@ else
     cat test.txt
 fi
 
-export GH="echo"
-
 export NATIVE_LIBRARY_APPLICABLE_SHORTHANDS="Sdl Aaaa"
 export NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS="Sdl"
 
 rm -f test.txt
-GH_COMMENT="$(./workflow-stage2.sh)"
+./workflow-stage2.sh
 
-EXPECTED='matrix_strategy<<EOF
+EXPECTED="matrix_strategy<<EOF
 [
 {
-  "target": "Sdl",
-  "runtime": "osx",
-  "exec": "build-osx.sh",
-  "dir: "sources/SDL/Native"
+  \"target\": \"Sdl\",
+  \"runtime\": \"osx\",
+  \"exec\": \"build-osx.sh\",
+  \"dir\": \"sources/SDL/Native\"
 }
 ]
-EOF'
-EXPECTED_GH_COMMENT="pr comment --body Some of the native library builds modified in this PR were not referenced in the PR description. Please ensure that the PR description contains \`/build-native Sdl Aaaa\`. These libraries won't be rebuilt without this being specified. If you believe this is in error, then please write a comment explaining why and ignore this suggestion. This comment will be automatically updated if rectified."
-if [[ "$(cat test.txt)" == "$EXPECTED" && "$EXPECTED_GH_COMMENT" == "$GH_COMMENT" ]]; then
+EOF
+comment_to_write=Some of the native library builds modified in this PR were not referenced in the PR description. Please ensure that the PR description contains \`/build-native Sdl Aaaa\`. These libraries won't be rebuilt without this being specified. If you believe this is in error, then please write a comment explaining why and ignore this suggestion. This comment will be automatically updated if rectified."
+if [[ "$(cat test.txt)" == "$EXPECTED" ]]; then
     echo stage2 with angry comment pass
 else
     echo stage2 with angry comment fail
     cat test.txt
-    echo $GH_COMMENT
 fi
 
 export NATIVE_LIBRARY_APPLICABLE_SHORTHANDS="Sdl Aaaa"
 export NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS="Sdl Aaaa"
 
 rm -f test.txt
-GH_COMMENT="$(./workflow-stage2.sh)"
+./workflow-stage2.sh
 
-EXPECTED='matrix_strategy<<EOF
+EXPECTED="matrix_strategy<<EOF
 [
 {
-  "target": "Sdl",
-  "runtime": "osx",
-  "exec": "build-osx.sh",
-  "dir: "sources/SDL/Native"
+  \"target\": \"Sdl\",
+  \"runtime\": \"osx\",
+  \"exec\": \"build-osx.sh\",
+  \"dir\": \"sources/SDL/Native\"
 }
 ]
-EOF'
-EXPECTED_GH_COMMENT=""
-if [[ "$(cat test.txt)" == "$EXPECTED" && "$EXPECTED_GH_COMMENT" == "$GH_COMMENT" ]]; then
+EOF"
+if [[ "$(cat test.txt)" == "$EXPECTED" ]]; then
     echo stage2 with no angry comment pass
 else
     echo stage2 with no angry comment fail
     cat test.txt
-    echo $GH_COMMENT
 fi
 
 export NATIVE_LIBRARY_APPLICABLE_SHORTHANDS="Sdl Aaaa"
 export NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS="Sdl Aaaa B"
 
 rm -f test.txt
-GH_COMMENT="$(./workflow-stage2.sh)"
+./workflow-stage2.sh
 
-EXPECTED='matrix_strategy<<EOF
+EXPECTED="matrix_strategy<<EOF
 [
 {
-  "target": "Sdl",
-  "runtime": "osx",
-  "exec": "build-osx.sh",
-  "dir: "sources/SDL/Native"
+  \"target\": \"Sdl\",
+  \"runtime\": \"osx\",
+  \"exec\": \"build-osx.sh\",
+  \"dir\": \"sources/SDL/Native\"
 }
 ]
-EOF'
-EXPECTED_GH_COMMENT=""
-if [[ "$(cat test.txt)" == "$EXPECTED" && "$EXPECTED_GH_COMMENT" == "$GH_COMMENT" ]]; then
+EOF"
+if [[ "$(cat test.txt)" == "$EXPECTED" ]]; then
     echo stage2 with no angry comment when we have extra targets pass
 else
     echo stage2 with no angry comment when we have extra targets fail
     cat test.txt
-    echo $GH_COMMENT
 fi
 
 export NATIVE_LIBRARY_APPLICABLE_SHORTHANDS="Sdl Aaaa"
@@ -105,23 +98,22 @@ export NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS="Sdl Aaaa B"
 export PR_EXISTING_NOTICE_ID=123
 
 rm -f test.txt
-GH_COMMENT="$(./workflow-stage2.sh)"
+./workflow-stage2.sh
 
-EXPECTED='matrix_strategy<<EOF
+EXPECTED="matrix_strategy<<EOF
 [
 {
-  "target": "Sdl",
-  "runtime": "osx",
-  "exec": "build-osx.sh",
-  "dir: "sources/SDL/Native"
+  \"target\": \"Sdl\",
+  \"runtime\": \"osx\",
+  \"exec\": \"build-osx.sh\",
+  \"dir\": \"sources/SDL/Native\"
 }
 ]
-EOF'
-EXPECTED_GH_COMMENT="pr comment 123 --body All native library builds modified in this PR shall attempt to be built by CI."
-if [[ "$(cat test.txt)" == "$EXPECTED" && "$EXPECTED_GH_COMMENT" == "$GH_COMMENT" ]]; then
+EOF
+comment_to_write=All native library builds modified in this PR shall attempt to be built by CI."
+if [[ "$(cat test.txt)" == "$EXPECTED" ]]; then
     echo stage2 with updating angry comment to not be angry pass
 else
     echo stage2 with updating angry comment to not be angry fail
     cat test.txt
-    echo $GH_COMMENT
 fi
