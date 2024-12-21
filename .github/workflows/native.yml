@@ -53,5 +53,6 @@ jobs:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.number }}
           body: ${{ steps.strat.outputs.comment_to_write }}
+          edit-mode: replace
     outputs:
       matrix_strategy: ${{ steps.strat.outputs.matrix_strategy }}
