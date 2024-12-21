@@ -1,4 +1,4 @@
-if "%GITHUB_ACTIONS%"!="" (
+if not "%GITHUB_ACTIONS%"=="" (
     wget https://go.microsoft.com/fwlink/?linkid=2286561 -o winsdksetup.exe
     .\winsdksetup.exe /q /norestart /ceip off /features+
     rm winsdksetup.exe
