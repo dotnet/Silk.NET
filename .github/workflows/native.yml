@@ -80,11 +80,9 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ needs.prerequisites.outputs.targets_referenced }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Checkout PR
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr checkout ${{ github.event.pull_request.number }}
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
       - name: Download All Artifacts
         uses: actions/download-artifact@v4
         with:
