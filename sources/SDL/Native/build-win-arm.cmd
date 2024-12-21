@@ -9,4 +9,4 @@ cmake ..\..\..\..\eng\submodules\sdl -A arm -DCMAKE_BUILD_TYPE=Release
 cmake --build . --parallel
 cd ..
 mkdir runtimes\win-arm\native
-copy build\SDL3.dll runtimes\win-arm\native
+copy build\Release\SDL3.dll runtimes\win-arm\native
