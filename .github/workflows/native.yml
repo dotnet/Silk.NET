@@ -80,6 +80,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ needs.prerequisites.outputs.targets_referenced }}
     steps:
+      - uses: actions/checkout@v3
       - name: Checkout PR
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
