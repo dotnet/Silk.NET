@@ -62,6 +62,7 @@ jobs:
       matrix:
         flat: ${{ fromJSON(needs.prerequisites.outputs.matrix_strategy) }}
     runs-on: ${{ startsWith(matrix.flat.runtime, 'osx') && 'macos-latest' || startsWith(matrix.flat.runtime, 'win') && 'windows-latest' || 'ubuntu-latest' }}
+    name: ${{ matrix.flat.target }} / ${{ matrix.flat.runtime }}
     steps:
       - uses: actions/checkout@v3
       - run: ${{ format('.{0}{1}', startsWith(matrix.flat.runtime, 'win') && '\' || '/', matrix.flat.exec) }}
