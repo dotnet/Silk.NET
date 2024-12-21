@@ -2,6 +2,8 @@ name: Native Builds
 on:
   pull_request:
     types: [opened, edited, synchronize]
+permissions:
+  issues: write
 env:
   # A space-separated list of paths to native libraries to build.
   NATIVE_LIBRARY_PATHS: "sources/SDL/Native"
@@ -52,4 +54,4 @@ jobs:
           issue-number: ${{ github.event.number }}
           body: ${{ steps.strat.outputs.comment_to_write }}
     outputs:
-      matrix_strategy: ${{ fromJSON(steps.strat.outputs.matrix_strategy || '[]') }}
+      matrix_strategy: ${{ fromJSON(steps.strat.outputs.matrix_strategy) }}
