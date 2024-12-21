@@ -14,8 +14,7 @@ Aaaa: ["sources/Aaaa/Native/*", "eng/submodules/aaaa"]
 B: ["sources/B/Native/*", "eng/submodules/b"]
 Sdl: ["sources/SDL/Native/*", "eng/submodules/sdl", "sources/SDL-Other/Native/*", "eng/submodules/sdl-other"]
 EOF
-unique_targets=["Aaaa", "B", "Sdl"]
-targets_referenced=["Aaaa", "Sdl"]'
+targets_referenced=Aaaa Sdl'
 
 if [[ "$(cat test.txt)" == "$EXPECTED" ]]; then
     echo stage1 pass
@@ -33,10 +32,14 @@ rm -f test.txt
 GH_COMMENT="$(./workflow-stage2.sh)"
 
 EXPECTED='matrix_strategy<<EOF
-- target: Sdl
-  runtime: osx
-  exec: build-osx.sh
-  dir: sources/SDL/Native
+[
+{
+  "target": "Sdl",
+  "runtime": "osx",
+  "exec": "build-osx.sh",
+  "dir: "sources/SDL/Native"
+}
+]
 EOF'
 EXPECTED_GH_COMMENT="pr comment --body Some of the native library builds modified in this PR were not referenced in the PR description. Please ensure that the PR description contains \`/build-native Sdl Aaaa\`. These libraries won't be rebuilt without this being specified. If you believe this is in error, then please write a comment explaining why and ignore this suggestion. This comment will be automatically updated if rectified."
 if [[ "$(cat test.txt)" == "$EXPECTED" && "$EXPECTED_GH_COMMENT" == "$GH_COMMENT" ]]; then
@@ -54,10 +57,14 @@ rm -f test.txt
 GH_COMMENT="$(./workflow-stage2.sh)"
 
 EXPECTED='matrix_strategy<<EOF
-- target: Sdl
-  runtime: osx
-  exec: build-osx.sh
-  dir: sources/SDL/Native
+[
+{
+  "target": "Sdl",
+  "runtime": "osx",
+  "exec": "build-osx.sh",
+  "dir: "sources/SDL/Native"
+}
+]
 EOF'
 EXPECTED_GH_COMMENT=""
 if [[ "$(cat test.txt)" == "$EXPECTED" && "$EXPECTED_GH_COMMENT" == "$GH_COMMENT" ]]; then
@@ -75,10 +82,14 @@ rm -f test.txt
 GH_COMMENT="$(./workflow-stage2.sh)"
 
 EXPECTED='matrix_strategy<<EOF
-- target: Sdl
-  runtime: osx
-  exec: build-osx.sh
-  dir: sources/SDL/Native
+[
+{
+  "target": "Sdl",
+  "runtime": "osx",
+  "exec": "build-osx.sh",
+  "dir: "sources/SDL/Native"
+}
+]
 EOF'
 EXPECTED_GH_COMMENT=""
 if [[ "$(cat test.txt)" == "$EXPECTED" && "$EXPECTED_GH_COMMENT" == "$GH_COMMENT" ]]; then
@@ -97,10 +108,14 @@ rm -f test.txt
 GH_COMMENT="$(./workflow-stage2.sh)"
 
 EXPECTED='matrix_strategy<<EOF
-- target: Sdl
-  runtime: osx
-  exec: build-osx.sh
-  dir: sources/SDL/Native
+[
+{
+  "target": "Sdl",
+  "runtime": "osx",
+  "exec": "build-osx.sh",
+  "dir: "sources/SDL/Native"
+}
+]
 EOF'
 EXPECTED_GH_COMMENT="pr comment 123 --body All native library builds modified in this PR shall attempt to be built by CI."
 if [[ "$(cat test.txt)" == "$EXPECTED" && "$EXPECTED_GH_COMMENT" == "$GH_COMMENT" ]]; then

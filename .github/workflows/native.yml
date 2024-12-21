@@ -42,7 +42,7 @@ jobs:
         working-directory: eng/native/buildsystem
         env:
           NATIVE_LIBRARY_APPLICABLE_SHORTHANDS: ${{ join(steps.filter.outputs.changes, ' ') }}
-          NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS: ${{ join(steps.parse.outputs.targets_referenced, ' ') }}
+          NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS: ${{ steps.parse.outputs.targets_referenced }}
           PR_EXISTING_NOTICE_ID: ${{ steps.fc.outputs.comment-id }}
     outputs:
-      matrix_strategy: ${{ steps.strat.outputs.matrix_strategy }}
+      matrix_strategy: ${{ fromJSON(steps.strat.outputs.matrix_strategy) }}

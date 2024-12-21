@@ -21,6 +21,8 @@ if [[ $PR_EXISTING_NOTICE_ID != 0 && $PR_EXISTING_NOTICE_ID != "" || $ANGRY_COMM
 fi
 
 echo "matrix_strategy<<EOF" >> $GITHUB_OUTPUT
+echo "[" >> $GITHUB_OUTPUT
+json_open="{"
 for item in $NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS; do
   i=0
   for target in ${NATIVE_LIBRARY_SHORTHANDS_ARRAY[@]}; do
@@ -31,14 +33,18 @@ for item in $NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS; do
         runtime="$(basename "$runtime_script")"
         runtime="${runtime:6}" # trim build- prefix
         runtime="${runtime%.*}" # remove extension
-        echo "- target: $target" >> $GITHUB_OUTPUT
-        echo "  runtime: $runtime" >> $GITHUB_OUTPUT
+        echo "$json_open" >> $GITHUB_OUTPUT
+        json_open=",{"
+        echo "  \"target\": \"$target\"," >> $GITHUB_OUTPUT
+        echo "  \"runtime\": \"$runtime\"," >> $GITHUB_OUTPUT
         # :9 trim ../../../ prefix
-        echo "  exec: $(basename "$runtime_script")" >> $GITHUB_OUTPUT
-        echo "  dir: $(dirname "${runtime_script:9}")" >> $GITHUB_OUTPUT
+        echo "  \"exec\": \"$(basename "$runtime_script")\"," >> $GITHUB_OUTPUT
+        echo "  \"dir: \"$(dirname "${runtime_script:9}")\"" >> $GITHUB_OUTPUT
+        echo "}" >> $GITHUB_OUTPUT
       done
     fi
     i=$(expr $i + 1)
   done
 done
+echo "]" >> $GITHUB_OUTPUT
 echo EOF >> $GITHUB_OUTPUT
