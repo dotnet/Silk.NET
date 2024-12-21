@@ -4,6 +4,7 @@ on:
     types: [opened, edited, synchronize]
 permissions:
   pull-requests: write
+  contents: write
 env:
   # A space-separated list of paths to native libraries to build.
   NATIVE_LIBRARY_PATHS: "sources/SDL/Native"
