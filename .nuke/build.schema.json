@@ -67,6 +67,10 @@
             "VSCode"
           ]
         },
+        "MatrixArg": {
+          "type": "string",
+          "description": "Matrix job argument e.g. a RID for native builds"
+        },
         "MsbuildProperties": {
           "type": "array",
           "description": "Extra properties passed to MSBuild commands",

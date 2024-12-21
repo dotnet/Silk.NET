@@ -73,7 +73,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 337, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 338, Column 22 in spirv_cross_c.h")]
         public static unsafe void MslVertexAttributeInit(this Cross thisApi, Span<MslVertexAttribute> attr)
         {
             // SpanOverloader
@@ -81,7 +81,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 352, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 353, Column 22 in spirv_cross_c.h")]
         public static unsafe void MslShaderInterfaceVarInit(this Cross thisApi, Span<MslShaderInterfaceVar> var)
         {
             // SpanOverloader
@@ -89,7 +89,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 356, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 357, Column 22 in spirv_cross_c.h")]
         public static unsafe void MslShaderInputInit(this Cross thisApi, Span<MslShaderInterfaceVar> input)
         {
             // SpanOverloader
@@ -97,7 +97,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 381, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 382, Column 22 in spirv_cross_c.h")]
         public static unsafe void MslShaderInterfaceVarInit2(this Cross thisApi, Span<MslShaderInterfaceVar2> var)
         {
             // SpanOverloader
@@ -105,7 +105,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 398, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 412, Column 22 in spirv_cross_c.h")]
         public static unsafe void MslResourceBindingInit(this Cross thisApi, Span<MslResourceBinding> binding)
         {
             // SpanOverloader
@@ -113,7 +113,15 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 545, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 413, Column 22 in spirv_cross_c.h")]
+        public static unsafe void MslResourceBindingInit2(this Cross thisApi, Span<MslResourceBinding2> binding)
+        {
+            // SpanOverloader
+            thisApi.MslResourceBindingInit2(ref binding.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 560, Column 22 in spirv_cross_c.h")]
         public static unsafe void MslConstexprSamplerInit(this Cross thisApi, Span<MslConstexprSampler> sampler)
         {
             // SpanOverloader
@@ -121,7 +129,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 565, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 580, Column 22 in spirv_cross_c.h")]
         public static unsafe void MslSamplerYcbcrConversionInit(this Cross thisApi, Span<MslSamplerYcbcrConversion> conv)
         {
             // SpanOverloader
@@ -129,7 +137,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 603, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 618, Column 22 in spirv_cross_c.h")]
         public static unsafe void HlslResourceBindingInit(this Cross thisApi, Span<HlslResourceBinding> binding)
         {
             // SpanOverloader
@@ -137,7 +145,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 755, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 774, Column 22 in spirv_cross_c.h")]
         public static unsafe void ContextSetErrorCallback<T0>(this Cross thisApi, Context* context, PfnErrorCallback cb, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -145,7 +153,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 758, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 777, Column 29 in spirv_cross_c.h")]
         public static unsafe Result ContextParseSpirv(this Cross thisApi, Context* context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> spirv, nuint word_count, ParsedIr** parsed_ir)
         {
             // SpanOverloader
@@ -153,7 +161,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 758, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 777, Column 29 in spirv_cross_c.h")]
         public static unsafe Result ContextParseSpirv(this Cross thisApi, Context* context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> spirv, nuint word_count, ref ParsedIr* parsed_ir)
         {
             // SpanOverloader
@@ -161,7 +169,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 788, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 807, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerAddHeaderLine(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> line)
         {
             // SpanOverloader
@@ -169,7 +177,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 789, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 808, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerRequireExtension(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> ext)
         {
             // SpanOverloader
@@ -177,7 +185,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 804, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 823, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerHlslSetRootConstantsLayout(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HlslRootConstants> constant_info, nuint count)
         {
             // SpanOverloader
@@ -185,7 +193,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 807, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 826, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerHlslAddVertexAttributeRemap(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HlslVertexAttributeRemap> remap, nuint remaps)
         {
             // SpanOverloader
@@ -193,7 +201,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 815, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 834, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerHlslAddResourceBinding(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HlslResourceBinding> binding)
         {
             // SpanOverloader
@@ -201,7 +209,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 836, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 855, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslAddVertexAttribute(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslVertexAttribute> attrs)
         {
             // SpanOverloader
@@ -209,7 +217,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 838, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 858, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslAddResourceBinding(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslResourceBinding> binding)
         {
             // SpanOverloader
@@ -217,7 +225,15 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 841, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 860, Column 29 in spirv_cross_c.h")]
+        public static unsafe Result CompilerMslAddResourceBinding2(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslResourceBinding2> binding)
+        {
+            // SpanOverloader
+            return thisApi.CompilerMslAddResourceBinding2(compiler, in binding.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 863, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslAddShaderInput(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslShaderInterfaceVar> input)
         {
             // SpanOverloader
@@ -225,7 +241,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 843, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 865, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslAddShaderInput2(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslShaderInterfaceVar2> input)
         {
             // SpanOverloader
@@ -233,7 +249,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 846, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 868, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslAddShaderOutput(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslShaderInterfaceVar> output)
         {
             // SpanOverloader
@@ -241,7 +257,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 848, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 870, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslAddShaderOutput2(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslShaderInterfaceVar2> output)
         {
             // SpanOverloader
@@ -249,7 +265,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 862, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 884, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslRemapConstexprSampler(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslConstexprSampler> sampler)
         {
             // SpanOverloader
@@ -257,7 +273,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 863, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 885, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslRemapConstexprSamplerByBinding(this Cross thisApi, Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslConstexprSampler> sampler)
         {
             // SpanOverloader
@@ -265,7 +281,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 864, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 886, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslRemapConstexprSamplerYcbcr(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslConstexprSampler* sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslSamplerYcbcrConversion> conv)
         {
             // SpanOverloader
@@ -273,7 +289,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 864, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 886, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslRemapConstexprSamplerYcbcr(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslConstexprSampler> sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslSamplerYcbcrConversion* conv)
         {
             // SpanOverloader
@@ -281,7 +297,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 864, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 886, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslRemapConstexprSamplerYcbcr(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslConstexprSampler> sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslSamplerYcbcrConversion> conv)
         {
             // SpanOverloader
@@ -289,7 +305,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 865, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 887, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslRemapConstexprSamplerByBindingYcbcr(this Cross thisApi, Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslConstexprSampler* sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslSamplerYcbcrConversion> conv)
         {
             // SpanOverloader
@@ -297,7 +313,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 865, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 887, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslRemapConstexprSamplerByBindingYcbcr(this Cross thisApi, Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslConstexprSampler> sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslSamplerYcbcrConversion* conv)
         {
             // SpanOverloader
@@ -305,7 +321,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 865, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 887, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslRemapConstexprSamplerByBindingYcbcr(this Cross thisApi, Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslConstexprSampler> sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MslSamplerYcbcrConversion> conv)
         {
             // SpanOverloader
@@ -313,7 +329,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 897, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerMslSetCombinedSamplerSuffix(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> suffix)
         {
             // SpanOverloader
@@ -321,7 +337,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 888, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 910, Column 29 in spirv_cross_c.h")]
         public static unsafe Result ResourcesGetResourceListForType(this Cross thisApi, Resources* resources, ResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectedResource** resource_list, Span<nuint> resource_size)
         {
             // SpanOverloader
@@ -329,7 +345,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 888, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 910, Column 29 in spirv_cross_c.h")]
         public static unsafe Result ResourcesGetResourceListForType(this Cross thisApi, Resources* resources, ResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReflectedResource* resource_list, Span<nuint> resource_size)
         {
             // SpanOverloader
@@ -337,7 +353,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 892, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 914, Column 29 in spirv_cross_c.h")]
         public static unsafe Result ResourcesGetBuiltinResourceListForType(this Cross thisApi, Resources* resources, BuiltinResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectedBuiltinResource** resource_list, Span<nuint> resource_size)
         {
             // SpanOverloader
@@ -345,7 +361,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 892, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 914, Column 29 in spirv_cross_c.h")]
         public static unsafe Result ResourcesGetBuiltinResourceListForType(this Cross thisApi, Resources* resources, BuiltinResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReflectedBuiltinResource* resource_list, Span<nuint> resource_size)
         {
             // SpanOverloader
@@ -353,7 +369,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 903, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 925, Column 22 in spirv_cross_c.h")]
         public static unsafe void CompilerSetDecorationString(this Cross thisApi, Compiler* compiler, uint id, Silk.NET.SPIRV.Decoration decoration, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> argument)
         {
             // SpanOverloader
@@ -361,7 +377,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 905, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 927, Column 22 in spirv_cross_c.h")]
         public static unsafe void CompilerSetName(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> argument)
         {
             // SpanOverloader
@@ -369,7 +385,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 908, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 930, Column 22 in spirv_cross_c.h")]
         public static unsafe void CompilerSetMemberDecorationString(this Cross thisApi, Compiler* compiler, uint id, uint member_index, Silk.NET.SPIRV.Decoration decoration, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> argument)
         {
             // SpanOverloader
@@ -377,7 +393,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 911, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 933, Column 22 in spirv_cross_c.h")]
         public static unsafe void CompilerSetMemberName(this Cross thisApi, Compiler* compiler, uint id, uint member_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> argument)
         {
             // SpanOverloader
@@ -385,7 +401,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 934, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 956, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetEntryPoints(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EntryPoint** entry_points, Span<nuint> num_entry_points)
         {
             // SpanOverloader
@@ -393,7 +409,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 934, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 956, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetEntryPoints(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EntryPoint* entry_points, Span<nuint> num_entry_points)
         {
             // SpanOverloader
@@ -401,7 +417,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 937, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 959, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerSetEntryPoint(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, Silk.NET.SPIRV.ExecutionModel model)
         {
             // SpanOverloader
@@ -409,7 +425,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 939, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 961, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerRenameEntryPoint(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> new_name, Silk.NET.SPIRV.ExecutionModel model)
         {
             // SpanOverloader
@@ -417,7 +433,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 939, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 961, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerRenameEntryPoint(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* new_name, Silk.NET.SPIRV.ExecutionModel model)
         {
             // SpanOverloader
@@ -425,7 +441,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 939, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 961, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerRenameEntryPoint(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> new_name, Silk.NET.SPIRV.ExecutionModel model)
         {
             // SpanOverloader
@@ -433,7 +449,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 939, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 961, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerRenameEntryPoint(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string new_name, Silk.NET.SPIRV.ExecutionModel model)
         {
             // SpanOverloader
@@ -441,7 +457,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 939, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 961, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerRenameEntryPoint(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> new_name, Silk.NET.SPIRV.ExecutionModel model)
         {
             // SpanOverloader
@@ -449,7 +465,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 941, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 963, Column 29 in spirv_cross_c.h")]
         public static unsafe byte* CompilerGetCleansedEntryPointName(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, Silk.NET.SPIRV.ExecutionModel model)
         {
             // SpanOverloader
@@ -457,7 +473,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 947, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 969, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetExecutionModes(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.SPIRV.ExecutionMode** modes, Span<nuint> num_modes)
         {
             // SpanOverloader
@@ -465,7 +481,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 947, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 969, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetExecutionModes(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.ExecutionMode* modes, Span<nuint> num_modes)
         {
             // SpanOverloader
@@ -473,7 +489,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 993, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1015, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetDeclaredStructSize(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CrossType* struct_type, Span<nuint> size)
         {
             // SpanOverloader
@@ -481,7 +497,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 994, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1016, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetDeclaredStructSizeRuntimeArray(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CrossType* struct_type, nuint array_size, Span<nuint> size)
         {
             // SpanOverloader
@@ -489,7 +505,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 996, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1018, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetDeclaredStructMemberSize(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CrossType* type, uint index, Span<nuint> size)
         {
             // SpanOverloader
@@ -497,7 +513,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 998, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1020, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerTypeStructMemberOffset(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CrossType* type, uint index, Span<uint> offset)
         {
             // SpanOverloader
@@ -505,7 +521,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1000, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1022, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerTypeStructMemberArrayStride(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CrossType* type, uint index, Span<uint> stride)
         {
             // SpanOverloader
@@ -513,7 +529,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1002, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1024, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerTypeStructMemberMatrixStride(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CrossType* type, uint index, Span<uint> stride)
         {
             // SpanOverloader
@@ -521,7 +537,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1009, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1031, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerBuildDummySamplerForCombinedImages(this Cross thisApi, Compiler* compiler, Span<uint> id)
         {
             // SpanOverloader
@@ -529,7 +545,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1011, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1033, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetCombinedImageSamplers(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinedImageSampler** samplers, Span<nuint> num_samplers)
         {
             // SpanOverloader
@@ -537,7 +553,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1011, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1033, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetCombinedImageSamplers(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CombinedImageSampler* samplers, Span<nuint> num_samplers)
         {
             // SpanOverloader
@@ -545,7 +561,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1019, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1041, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetSpecializationConstants(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SpecializationConstant** constants, Span<nuint> num_constants)
         {
             // SpanOverloader
@@ -553,7 +569,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1019, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1041, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetSpecializationConstants(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpecializationConstant* constants, Span<nuint> num_constants)
         {
             // SpanOverloader
@@ -561,7 +577,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1025, Column 34 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1047, Column 34 in spirv_cross_c.h")]
         public static unsafe uint CompilerGetWorkGroupSizeSpecializationConstants(this Cross thisApi, Compiler* compiler, SpecializationConstant* x, SpecializationConstant* y, Span<SpecializationConstant> z)
         {
             // SpanOverloader
@@ -569,7 +585,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1025, Column 34 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1047, Column 34 in spirv_cross_c.h")]
         public static unsafe uint CompilerGetWorkGroupSizeSpecializationConstants(this Cross thisApi, Compiler* compiler, SpecializationConstant* x, Span<SpecializationConstant> y, SpecializationConstant* z)
         {
             // SpanOverloader
@@ -577,7 +593,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1025, Column 34 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1047, Column 34 in spirv_cross_c.h")]
         public static unsafe uint CompilerGetWorkGroupSizeSpecializationConstants(this Cross thisApi, Compiler* compiler, SpecializationConstant* x, Span<SpecializationConstant> y, Span<SpecializationConstant> z)
         {
             // SpanOverloader
@@ -585,7 +601,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1025, Column 34 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1047, Column 34 in spirv_cross_c.h")]
         public static unsafe uint CompilerGetWorkGroupSizeSpecializationConstants(this Cross thisApi, Compiler* compiler, Span<SpecializationConstant> x, SpecializationConstant* y, SpecializationConstant* z)
         {
             // SpanOverloader
@@ -593,7 +609,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1025, Column 34 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1047, Column 34 in spirv_cross_c.h")]
         public static unsafe uint CompilerGetWorkGroupSizeSpecializationConstants(this Cross thisApi, Compiler* compiler, Span<SpecializationConstant> x, SpecializationConstant* y, Span<SpecializationConstant> z)
         {
             // SpanOverloader
@@ -601,7 +617,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1025, Column 34 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1047, Column 34 in spirv_cross_c.h")]
         public static unsafe uint CompilerGetWorkGroupSizeSpecializationConstants(this Cross thisApi, Compiler* compiler, Span<SpecializationConstant> x, Span<SpecializationConstant> y, SpecializationConstant* z)
         {
             // SpanOverloader
@@ -609,7 +625,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1025, Column 34 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1047, Column 34 in spirv_cross_c.h")]
         public static unsafe uint CompilerGetWorkGroupSizeSpecializationConstants(this Cross thisApi, Compiler* compiler, Span<SpecializationConstant> x, Span<SpecializationConstant> y, Span<SpecializationConstant> z)
         {
             // SpanOverloader
@@ -617,7 +633,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1034, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1056, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetActiveBufferRanges(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferRange** ranges, Span<nuint> num_ranges)
         {
             // SpanOverloader
@@ -625,7 +641,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1034, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1056, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetActiveBufferRanges(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BufferRange* ranges, Span<nuint> num_ranges)
         {
             // SpanOverloader
@@ -633,7 +649,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1054, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1076, Column 22 in spirv_cross_c.h")]
         public static unsafe void ConstantGetSubconstants(this Cross thisApi, Constant* constant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint** constituents, Span<nuint> count)
         {
             // SpanOverloader
@@ -641,7 +657,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1054, Column 22 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1076, Column 22 in spirv_cross_c.h")]
         public static unsafe void ConstantGetSubconstants(this Cross thisApi, Constant* constant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint* constituents, Span<nuint> count)
         {
             // SpanOverloader
@@ -649,7 +665,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1078, Column 27 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1100, Column 27 in spirv_cross_c.h")]
         public static unsafe byte CompilerGetBinaryOffsetForDecoration(this Cross thisApi, Compiler* compiler, uint id, Silk.NET.SPIRV.Decoration decoration, Span<uint> word_offset)
         {
             // SpanOverloader
@@ -657,7 +673,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1084, Column 27 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1106, Column 27 in spirv_cross_c.h")]
         public static unsafe byte CompilerBufferGetHlslCounterBuffer(this Cross thisApi, Compiler* compiler, uint id, Span<uint> counter_id)
         {
             // SpanOverloader
@@ -665,7 +681,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1087, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1109, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetDeclaredCapabilities(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.SPIRV.Capability** capabilities, Span<nuint> num_capabilities)
         {
             // SpanOverloader
@@ -673,7 +689,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1087, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1109, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetDeclaredCapabilities(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.Capability* capabilities, Span<nuint> num_capabilities)
         {
             // SpanOverloader
@@ -681,7 +697,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1090, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1112, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetDeclaredExtensions(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte*** extensions, Span<nuint> num_extensions)
         {
             // SpanOverloader
@@ -689,7 +705,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1090, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1112, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetDeclaredExtensions(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte** extensions, Span<nuint> num_extensions)
         {
             // SpanOverloader
@@ -697,7 +713,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1094, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1116, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetBufferBlockDecorations(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.SPIRV.Decoration** decorations, Span<nuint> num_decorations)
         {
             // SpanOverloader
@@ -705,7 +721,7 @@ namespace Silk.NET.SPIRV.Cross
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1094, Column 29 in spirv_cross_c.h")]
+        [NativeName("Src", "Line 1116, Column 29 in spirv_cross_c.h")]
         public static unsafe Result CompilerGetBufferBlockDecorations(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.Decoration* decorations, Span<nuint> num_decorations)
         {
             // SpanOverloader

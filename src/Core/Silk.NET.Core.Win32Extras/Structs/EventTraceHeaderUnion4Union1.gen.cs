@@ -16,7 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [NativeName("Name", "__AnonymousRecord_evntrace_L903_C9")]
+    [NativeName("Name", "__AnonymousRecord_evntrace_L937_C9")]
     public unsafe partial struct EventTraceHeaderUnion4Union1
     {
         public EventTraceHeaderUnion4Union1

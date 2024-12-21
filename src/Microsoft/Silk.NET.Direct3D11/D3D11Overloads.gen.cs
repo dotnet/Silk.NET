@@ -97,7 +97,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -105,7 +105,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -113,7 +113,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -121,7 +121,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -129,7 +129,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -137,7 +137,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -145,7 +145,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -153,7 +153,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -161,7 +161,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -169,7 +169,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -177,7 +177,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -185,7 +185,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -193,7 +193,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -201,7 +201,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -209,7 +209,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -217,7 +217,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -225,7 +225,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -233,7 +233,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -241,7 +241,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -249,7 +249,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -257,7 +257,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -265,7 +265,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -273,7 +273,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -281,7 +281,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -289,7 +289,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -297,7 +297,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -305,7 +305,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -313,7 +313,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15041, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15060, Column 16 in d3d11.h")]
         public static unsafe int CreateDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -321,7 +321,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -329,7 +329,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -337,7 +337,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -345,7 +345,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -353,7 +353,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -361,7 +361,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -369,7 +369,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -377,7 +377,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -385,7 +385,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -393,7 +393,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -401,7 +401,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -409,7 +409,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -417,7 +417,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -425,7 +425,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -433,7 +433,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -441,7 +441,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -449,7 +449,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -457,7 +457,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -465,7 +465,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -473,7 +473,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -481,7 +481,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -489,7 +489,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -497,7 +497,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -505,7 +505,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -513,7 +513,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -521,7 +521,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -529,7 +529,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -537,7 +537,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -545,7 +545,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -553,7 +553,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -561,7 +561,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -569,7 +569,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -577,7 +577,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -585,7 +585,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -593,7 +593,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -601,7 +601,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -609,7 +609,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -617,7 +617,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -625,7 +625,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -633,7 +633,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -641,7 +641,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -649,7 +649,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -657,7 +657,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -665,7 +665,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -673,7 +673,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -681,7 +681,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -689,7 +689,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -697,7 +697,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -705,7 +705,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -713,7 +713,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -721,7 +721,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -729,7 +729,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -737,7 +737,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -745,7 +745,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -753,7 +753,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -761,7 +761,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Silk.NET.DXGI.IDXGIAdapter* pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -769,7 +769,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -777,7 +777,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -785,7 +785,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -793,7 +793,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -801,7 +801,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -809,7 +809,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -817,7 +817,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -825,7 +825,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -833,7 +833,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -841,7 +841,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -849,7 +849,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -857,7 +857,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -865,7 +865,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -873,7 +873,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -881,7 +881,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -889,7 +889,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -897,7 +897,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -905,7 +905,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -913,7 +913,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -921,7 +921,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -929,7 +929,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -937,7 +937,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -945,7 +945,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -953,7 +953,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -961,7 +961,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -969,7 +969,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -977,7 +977,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -985,7 +985,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -993,7 +993,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1001,7 +1001,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1009,7 +1009,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1017,7 +1017,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1025,7 +1025,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1033,7 +1033,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1041,7 +1041,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1049,7 +1049,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1057,7 +1057,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1065,7 +1065,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1073,7 +1073,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1081,7 +1081,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1089,7 +1089,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1097,7 +1097,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1105,7 +1105,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1113,7 +1113,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1121,7 +1121,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1129,7 +1129,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1137,7 +1137,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1145,7 +1145,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.SwapChainDesc* pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1153,7 +1153,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1161,7 +1161,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1169,7 +1169,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1177,7 +1177,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1185,7 +1185,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1193,7 +1193,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1201,7 +1201,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1209,7 +1209,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1217,7 +1217,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1225,7 +1225,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1233,7 +1233,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1241,7 +1241,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ID3D11Device** ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1249,7 +1249,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1257,7 +1257,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader
@@ -1265,7 +1265,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ID3D11DeviceContext** ppImmediateContext)
         {
             // SpanOverloader
@@ -1273,7 +1273,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
+        [NativeName("Src", "Line 15134, Column 16 in d3d11.h")]
         public static unsafe int CreateDeviceAndSwapChain(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIAdapter> pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.SwapChainDesc> pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, Span<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext)
         {
             // SpanOverloader

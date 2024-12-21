@@ -21,16 +21,16 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"SliceControl\"")]
         [NativeName("Name", "D3D12_VIDEO_DECODE_ARGUMENT_TYPE_SLICE_CONTROL")]
         VideoDecodeArgumentTypeSliceControl = 0x2,
-        [Obsolete("Deprecated in favour of \"MaxValid\"")]
-        [NativeName("Name", "D3D12_VIDEO_DECODE_ARGUMENT_TYPE_MAX_VALID")]
-        VideoDecodeArgumentTypeMaxValid = 0x3,
+        [Obsolete("Deprecated in favour of \"HuffmanTable\"")]
+        [NativeName("Name", "D3D12_VIDEO_DECODE_ARGUMENT_TYPE_HUFFMAN_TABLE")]
+        VideoDecodeArgumentTypeHuffmanTable = 0x3,
         [NativeName("Name", "D3D12_VIDEO_DECODE_ARGUMENT_TYPE_PICTURE_PARAMETERS")]
         PictureParameters = 0x0,
         [NativeName("Name", "D3D12_VIDEO_DECODE_ARGUMENT_TYPE_INVERSE_QUANTIZATION_MATRIX")]
         InverseQuantizationMatrix = 0x1,
         [NativeName("Name", "D3D12_VIDEO_DECODE_ARGUMENT_TYPE_SLICE_CONTROL")]
         SliceControl = 0x2,
-        [NativeName("Name", "D3D12_VIDEO_DECODE_ARGUMENT_TYPE_MAX_VALID")]
-        MaxValid = 0x3,
+        [NativeName("Name", "D3D12_VIDEO_DECODE_ARGUMENT_TYPE_HUFFMAN_TABLE")]
+        HuffmanTable = 0x3,
     }
 }

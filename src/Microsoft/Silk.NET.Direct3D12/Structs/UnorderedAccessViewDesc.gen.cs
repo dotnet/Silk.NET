@@ -29,6 +29,8 @@ namespace Silk.NET.Direct3D12
             Tex1DArrayUav? texture1DArray = null,
             Tex2DUav? texture2D = null,
             Tex2DArrayUav? texture2DArray = null,
+            Tex2DmsUav? texture2DMS = null,
+            Tex2DmsArrayUav? texture2DMSArray = null,
             Tex3DUav? texture3D = null
         ) : this()
         {
@@ -72,6 +74,16 @@ namespace Silk.NET.Direct3D12
                 Texture2DArray = texture2DArray.Value;
             }
 
+            if (texture2DMS is not null)
+            {
+                Texture2DMS = texture2DMS.Value;
+            }
+
+            if (texture2DMSArray is not null)
+            {
+                Texture2DMSArray = texture2DMSArray.Value;
+            }
+
             if (texture3D is not null)
             {
                 Texture3D = texture3D.Value;
@@ -90,7 +102,7 @@ namespace Silk.NET.Direct3D12
         public UavDimension ViewDimension;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3346_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3692_C5")]
         [NativeName("Name", "anonymous1")]
         public UnorderedAccessViewDescUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
@@ -160,6 +172,34 @@ namespace Silk.NET.Direct3D12
         {
             get => Anonymous.Texture2DArray;
             set => Anonymous.Texture2DArray = value;
+        }
+#endif
+
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref Tex2DmsUav Texture2DMS
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Texture2DMS;
+        }
+#else
+        public Tex2DmsUav Texture2DMS
+        {
+            get => Anonymous.Texture2DMS;
+            set => Anonymous.Texture2DMS = value;
+        }
+#endif
+
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref Tex2DmsArrayUav Texture2DMSArray
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Texture2DMSArray;
+        }
+#else
+        public Tex2DmsArrayUav Texture2DMSArray
+        {
+            get => Anonymous.Texture2DMSArray;
+            set => Anonymous.Texture2DMSArray = value;
         }
 #endif
 

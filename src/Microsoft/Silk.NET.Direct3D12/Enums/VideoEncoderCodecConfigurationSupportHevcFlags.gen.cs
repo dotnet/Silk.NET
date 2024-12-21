@@ -43,6 +43,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"PFramesImplementedAsLowDelayBFrames\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAG_P_FRAMES_IMPLEMENTED_AS_LOW_DELAY_B_FRAMES")]
         VideoEncoderCodecConfigurationSupportHevcFlagPFramesImplementedAsLowDelayBFrames = 0x100,
+        [Obsolete("Deprecated in favour of \"NumRefIdxActiveOverrideFlagSliceSupport\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAG_NUM_REF_IDX_ACTIVE_OVERRIDE_FLAG_SLICE_SUPPORT")]
+        VideoEncoderCodecConfigurationSupportHevcFlagNumRefIdxActiveOverrideFlagSliceSupport = 0x200,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAG_BFRAME_LTR_COMBINED_SUPPORT")]
@@ -63,5 +66,7 @@ namespace Silk.NET.Direct3D12
         DisablingLoopFilterAcrossSlicesSupport = 0x80,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAG_P_FRAMES_IMPLEMENTED_AS_LOW_DELAY_B_FRAMES")]
         PFramesImplementedAsLowDelayBFrames = 0x100,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAG_NUM_REF_IDX_ACTIVE_OVERRIDE_FLAG_SLICE_SUPPORT")]
+        NumRefIdxActiveOverrideFlagSliceSupport = 0x200,
     }
 }

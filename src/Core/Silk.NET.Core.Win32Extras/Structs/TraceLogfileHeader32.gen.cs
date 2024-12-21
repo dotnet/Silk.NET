@@ -187,7 +187,7 @@ namespace Silk.NET.Core.Win32Extras
         public uint BufferSize;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1076_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1110_C5")]
         [NativeName("Name", "anonymous1")]
         public TraceLogfileHeader32Union1 Anonymous1;
 
@@ -227,7 +227,7 @@ namespace Silk.NET.Core.Win32Extras
         public uint BuffersWritten;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1092_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1126_C5")]
         [NativeName("Name", "anonymous2")]
         public TraceLogfileHeader32Union2 Anonymous2;
 

@@ -24,6 +24,15 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"NoAccess\"")]
         [NativeName("Name", "D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_NO_ACCESS")]
         RenderPassEndingAccessTypeNoAccess = 0x3,
+        [Obsolete("Deprecated in favour of \"PreserveLocalRender\"")]
+        [NativeName("Name", "D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_PRESERVE_LOCAL_RENDER")]
+        RenderPassEndingAccessTypePreserveLocalRender = 0x4,
+        [Obsolete("Deprecated in favour of \"PreserveLocalSrv\"")]
+        [NativeName("Name", "D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_PRESERVE_LOCAL_SRV")]
+        RenderPassEndingAccessTypePreserveLocalSrv = 0x5,
+        [Obsolete("Deprecated in favour of \"PreserveLocalUav\"")]
+        [NativeName("Name", "D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_PRESERVE_LOCAL_UAV")]
+        RenderPassEndingAccessTypePreserveLocalUav = 0x6,
         [NativeName("Name", "D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_DISCARD")]
         Discard = 0x0,
         [NativeName("Name", "D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_PRESERVE")]
@@ -32,5 +41,11 @@ namespace Silk.NET.Direct3D12
         Resolve = 0x2,
         [NativeName("Name", "D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_NO_ACCESS")]
         NoAccess = 0x3,
+        [NativeName("Name", "D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_PRESERVE_LOCAL_RENDER")]
+        PreserveLocalRender = 0x4,
+        [NativeName("Name", "D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_PRESERVE_LOCAL_SRV")]
+        PreserveLocalSrv = 0x5,
+        [NativeName("Name", "D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_PRESERVE_LOCAL_UAV")]
+        PreserveLocalUav = 0x6,
     }
 }

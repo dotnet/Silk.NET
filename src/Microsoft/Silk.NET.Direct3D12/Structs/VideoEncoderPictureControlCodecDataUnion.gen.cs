@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12video_L7601_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12video_L8363_C5")]
     public unsafe partial struct VideoEncoderPictureControlCodecDataUnion
     {
         public VideoEncoderPictureControlCodecDataUnion
         (
             VideoEncoderPictureControlCodecDataH264* pH264PicData = null,
-            VideoEncoderPictureControlCodecDataHevc* pHEVCPicData = null
+            VideoEncoderPictureControlCodecDataHevc* pHEVCPicData = null,
+            VideoEncoderAV1PictureControlCodecData* pAV1PicData = null
         ) : this()
         {
             if (pH264PicData is not null)
@@ -34,6 +35,11 @@ namespace Silk.NET.Direct3D12
             if (pHEVCPicData is not null)
             {
                 PHEVCPicData = pHEVCPicData;
+            }
+
+            if (pAV1PicData is not null)
+            {
+                PAV1PicData = pAV1PicData;
             }
         }
 
@@ -49,5 +55,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC *")]
         [NativeName("Name", "pHEVCPicData")]
         public VideoEncoderPictureControlCodecDataHevc* PHEVCPicData;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_CODEC_DATA *")]
+        [NativeName("Type.Name", "D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_CODEC_DATA *")]
+        [NativeName("Name", "pAV1PicData")]
+        public VideoEncoderAV1PictureControlCodecData* PAV1PicData;
     }
 }

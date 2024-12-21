@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
+    [Flags]
     [NativeName("Name", "tagOLEDCFLAGS")]
     public enum OLEDCFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"Nodraw\"")]
         [NativeName("Name", "OLEDC_NODRAW")]
         OledcNodraw = 0x1,

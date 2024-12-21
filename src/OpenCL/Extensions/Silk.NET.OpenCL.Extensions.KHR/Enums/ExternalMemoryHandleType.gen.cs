@@ -14,19 +14,13 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_DMA_BUF_KHR")]
         DmaBuf = 0x2067,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D11_TEXTURE_KHR")]
-        D3D11Texture = 0x2063,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D11_TEXTURE_KMT_KHR")]
-        D3D11TextureKmt = 0x2064,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D12_HEAP_KHR")]
-        D3D12Heap = 0x2065,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D12_RESOURCE_KHR")]
-        D3D12Resource = 0x2066,
         [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_FD_KHR")]
         OpaqueFD = 0x2060,
         [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_KHR")]
         OpaqueWin32 = 0x2061,
         [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_KMT_KHR")]
         OpaqueWin32Kmt = 0x2062,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_NAME_KHR")]
+        OpaqueWin32Name = 0x2069,
     }
 }

@@ -17,7 +17,7 @@ namespace Silk.NET.WindowsCodecs
     public static class WindowsCodecsOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4968, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 5244, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationProxy(this WindowsCodecs thisApi, IWICBitmapCodecProgressNotification* This, Span<IWICProgressCallback> pICallback, uint dwProgressFlags)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4968, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 5244, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationProxy(this WindowsCodecs thisApi, Span<IWICBitmapCodecProgressNotification> This, IWICProgressCallback* pICallback, uint dwProgressFlags)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4968, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 5244, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationProxy(this WindowsCodecs thisApi, Span<IWICBitmapCodecProgressNotification> This, Span<IWICProgressCallback> pICallback, uint dwProgressFlags)
         {
             // SpanOverloader
@@ -41,7 +41,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -49,7 +49,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -57,7 +57,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -65,7 +65,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -73,7 +73,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -81,7 +81,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -89,7 +89,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -97,7 +97,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -105,7 +105,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -113,7 +113,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -121,7 +121,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -129,7 +129,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -137,7 +137,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -145,7 +145,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -153,7 +153,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4974, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 5250, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapCodecProgressNotificationRemoteRegisterProgressNotificationStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -161,7 +161,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 6480, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, BitmapPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -169,7 +169,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 6480, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, ref BitmapPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -177,7 +177,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 6480, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, BitmapPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -185,7 +185,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 6480, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, BitmapPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -193,7 +193,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 6480, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref BitmapPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -201,7 +201,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6204, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 6480, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref BitmapPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -209,7 +209,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -217,7 +217,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -225,7 +225,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -233,7 +233,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -241,7 +241,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -249,7 +249,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -257,7 +257,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -265,7 +265,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -273,7 +273,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -281,7 +281,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -289,7 +289,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -297,7 +297,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -305,7 +305,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -313,7 +313,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -321,7 +321,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 6210, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 6486, Column 17 in wincodec.h")]
         public static unsafe void IWICBitmapDecoderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -329,7 +329,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7696, Column 16 in wincodec.h")]
         public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Guid* dstFormat, Span<IWICBitmapSource> pISrc, IWICBitmapSource** ppIDst)
         {
             // SpanOverloader
@@ -337,7 +337,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7696, Column 16 in wincodec.h")]
         public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Guid* dstFormat, Span<IWICBitmapSource> pISrc, ref IWICBitmapSource* ppIDst)
         {
             // SpanOverloader
@@ -345,7 +345,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7696, Column 16 in wincodec.h")]
         public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst)
         {
             // SpanOverloader
@@ -353,7 +353,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7696, Column 16 in wincodec.h")]
         public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, IWICBitmapSource* pISrc, ref IWICBitmapSource* ppIDst)
         {
             // SpanOverloader
@@ -361,7 +361,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7696, Column 16 in wincodec.h")]
         public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, Span<IWICBitmapSource> pISrc, IWICBitmapSource** ppIDst)
         {
             // SpanOverloader
@@ -369,7 +369,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7420, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7696, Column 16 in wincodec.h")]
         public static unsafe int ConvertBitmapSource(this WindowsCodecs thisApi, Span<Guid> dstFormat, Span<IWICBitmapSource> pISrc, ref IWICBitmapSource* ppIDst)
         {
             // SpanOverloader
@@ -377,7 +377,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7701, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, IWICBitmap** ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
@@ -385,7 +385,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7701, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
@@ -393,7 +393,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7701, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSection(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, IWICBitmap** ppIBitmap)
         {
             // SpanOverloader
@@ -401,7 +401,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7701, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSection(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap)
         {
             // SpanOverloader
@@ -409,7 +409,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7701, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, IWICBitmap** ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
@@ -417,7 +417,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7425, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7701, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSection<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
@@ -425,7 +425,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7710, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
@@ -433,7 +433,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7710, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Guid* pixelFormat, Span<T0> hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
@@ -441,7 +441,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7710, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSectionEx(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap)
         {
             // SpanOverloader
@@ -449,7 +449,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7710, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSectionEx(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, void* hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap)
         {
             // SpanOverloader
@@ -457,7 +457,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7710, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
@@ -465,7 +465,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7434, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7710, Column 16 in wincodec.h")]
         public static unsafe int CreateBitmapFromSectionEx<T0>(this WindowsCodecs thisApi, uint width, uint height, Span<Guid> pixelFormat, Span<T0> hSection, uint stride, uint offset, SectionAccessLevel desiredAccessLevel, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
         {
             // SpanOverloader
@@ -473,7 +473,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7720, Column 16 in wincodec.h")]
         public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -481,7 +481,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7720, Column 16 in wincodec.h")]
         public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -489,7 +489,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7720, Column 16 in wincodec.h")]
         public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -497,7 +497,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7720, Column 16 in wincodec.h")]
         public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Guid* guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -505,7 +505,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7720, Column 16 in wincodec.h")]
         public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, char* wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -513,7 +513,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7720, Column 16 in wincodec.h")]
         public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -521,7 +521,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7720, Column 16 in wincodec.h")]
         public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -529,7 +529,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7720, Column 16 in wincodec.h")]
         public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -537,7 +537,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7720, Column 16 in wincodec.h")]
         public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -545,7 +545,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7444, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7720, Column 16 in wincodec.h")]
         public static unsafe int MapGuidToShortName(this WindowsCodecs thisApi, Span<Guid> guid, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -553,7 +553,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7726, Column 16 in wincodec.h")]
         public static unsafe int MapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, Span<Guid> pguid)
         {
             // SpanOverloader
@@ -561,7 +561,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7726, Column 16 in wincodec.h")]
         public static unsafe int MapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzName, Guid* pguid)
         {
             // SpanOverloader
@@ -569,7 +569,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7726, Column 16 in wincodec.h")]
         public static unsafe int MapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzName, Span<Guid> pguid)
         {
             // SpanOverloader
@@ -577,7 +577,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7450, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7726, Column 16 in wincodec.h")]
         public static unsafe int MapShortNameToGuid(this WindowsCodecs thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<Guid> pguid)
         {
             // SpanOverloader
@@ -585,7 +585,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -593,7 +593,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -601,7 +601,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -609,7 +609,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -617,7 +617,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -625,7 +625,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -633,7 +633,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -641,7 +641,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -649,7 +649,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -657,7 +657,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -665,7 +665,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -673,7 +673,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -681,7 +681,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -689,7 +689,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Guid* guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -697,7 +697,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -705,7 +705,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -713,7 +713,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -721,7 +721,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -729,7 +729,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -737,7 +737,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, char* pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -745,7 +745,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -753,7 +753,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -761,7 +761,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -769,7 +769,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -777,7 +777,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -785,7 +785,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, Span<char> pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -793,7 +793,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -801,7 +801,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, char* wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -809,7 +809,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -817,7 +817,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, Span<char> wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -825,7 +825,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, uint* pcchActual)
         {
             // SpanOverloader
@@ -833,7 +833,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 7454, Column 16 in wincodec.h")]
+        [NativeName("Src", "Line 7730, Column 16 in wincodec.h")]
         public static unsafe int MapSchemaToName(this WindowsCodecs thisApi, Span<Guid> guidMetadataFormat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pwzSchema, uint cchName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wzName, Span<uint> pcchActual)
         {
             // SpanOverloader
@@ -841,7 +841,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8505, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
@@ -849,7 +849,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8505, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, RawCapabilitiesInfo* pInfo)
         {
             // SpanOverloader
@@ -857,7 +857,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8219, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8505, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
@@ -865,7 +865,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -873,7 +873,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -881,7 +881,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -889,7 +889,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -897,7 +897,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -905,7 +905,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -913,7 +913,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -921,7 +921,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -929,7 +929,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -937,7 +937,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -945,7 +945,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -953,7 +953,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -961,7 +961,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -969,7 +969,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -977,7 +977,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8224, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8510, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -985,7 +985,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8517, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteSetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurvePoint> aPoints)
         {
             // SpanOverloader
@@ -993,7 +993,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8517, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurvePoint* aPoints)
         {
             // SpanOverloader
@@ -1001,7 +1001,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8231, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8517, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurvePoint> aPoints)
         {
             // SpanOverloader
@@ -1009,7 +1009,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1017,7 +1017,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1025,7 +1025,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1033,7 +1033,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1041,7 +1041,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1049,7 +1049,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1057,7 +1057,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1065,7 +1065,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1073,7 +1073,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1081,7 +1081,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1089,7 +1089,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1097,7 +1097,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1105,7 +1105,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1113,7 +1113,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1121,7 +1121,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8237, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteSetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1129,7 +1129,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8530, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
@@ -1137,7 +1137,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8530, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
@@ -1145,7 +1145,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8530, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
@@ -1153,7 +1153,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8530, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
@@ -1161,7 +1161,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8530, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
@@ -1169,7 +1169,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8244, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 8530, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawRemoteGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
@@ -1177,7 +1177,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1185,7 +1185,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1193,7 +1193,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1201,7 +1201,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1209,7 +1209,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1217,7 +1217,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1225,7 +1225,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1233,7 +1233,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1241,7 +1241,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1249,7 +1249,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1257,7 +1257,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1265,7 +1265,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1273,7 +1273,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1281,7 +1281,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -1289,7 +1289,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8250, Column 17 in wincodec.h")]
+        [NativeName("Src", "Line 8536, Column 17 in wincodec.h")]
         public static unsafe void IWICDevelopRawRemoteGetToneCurveStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -1297,7 +1297,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8989, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9275, Column 39 in wincodec.h")]
         public static unsafe uint BSTRUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, char** arg2)
         {
             // SpanOverloader
@@ -1305,7 +1305,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8989, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9275, Column 39 in wincodec.h")]
         public static unsafe uint BSTRUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref char* arg2)
         {
             // SpanOverloader
@@ -1313,7 +1313,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8990, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9276, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, char** arg2)
         {
             // SpanOverloader
@@ -1321,7 +1321,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8990, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9276, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref char* arg2)
         {
             // SpanOverloader
@@ -1329,7 +1329,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8990, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9276, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, char** arg2)
         {
             // SpanOverloader
@@ -1337,7 +1337,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8990, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9276, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref char* arg2)
         {
             // SpanOverloader
@@ -1345,7 +1345,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8990, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9276, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, char** arg2)
         {
             // SpanOverloader
@@ -1353,7 +1353,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8990, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9276, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref char* arg2)
         {
             // SpanOverloader
@@ -1361,7 +1361,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8990, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9276, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, char** arg2)
         {
             // SpanOverloader
@@ -1369,7 +1369,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8990, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9276, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref char* arg2)
         {
             // SpanOverloader
@@ -1377,7 +1377,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8991, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9277, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, char** arg2)
         {
             // SpanOverloader
@@ -1385,7 +1385,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8991, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9277, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref char* arg2)
         {
             // SpanOverloader
@@ -1393,7 +1393,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8991, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9277, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, char** arg2)
         {
             // SpanOverloader
@@ -1401,7 +1401,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8991, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9277, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref char* arg2)
         {
             // SpanOverloader
@@ -1409,7 +1409,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8991, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9277, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, char** arg2)
         {
             // SpanOverloader
@@ -1417,7 +1417,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8991, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9277, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref char* arg2)
         {
             // SpanOverloader
@@ -1425,7 +1425,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8991, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9277, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, char** arg2)
         {
             // SpanOverloader
@@ -1433,7 +1433,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8991, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9277, Column 29 in wincodec.h")]
         public static unsafe byte* BSTRUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref char* arg2)
         {
             // SpanOverloader
@@ -1441,7 +1441,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8992, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9278, Column 39 in wincodec.h")]
         public static unsafe void BSTRUserFree(this WindowsCodecs thisApi, Span<uint> arg0, char** arg1)
         {
             // SpanOverloader
@@ -1449,7 +1449,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8992, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9278, Column 39 in wincodec.h")]
         public static unsafe void BSTRUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref char* arg1)
         {
             // SpanOverloader
@@ -1457,7 +1457,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8994, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9280, Column 39 in wincodec.h")]
         public static unsafe uint HBITMAPUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
@@ -1465,7 +1465,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8994, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9280, Column 39 in wincodec.h")]
         public static unsafe uint HBITMAPUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1473,7 +1473,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9281, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1481,7 +1481,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9281, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1489,7 +1489,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9281, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
@@ -1497,7 +1497,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9281, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1505,7 +1505,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9281, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1513,7 +1513,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9281, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1521,7 +1521,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9281, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
@@ -1529,7 +1529,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9281, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1537,7 +1537,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9282, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1545,7 +1545,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9282, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1553,7 +1553,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9282, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
@@ -1561,7 +1561,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9282, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1569,7 +1569,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9282, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1577,7 +1577,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9282, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1585,7 +1585,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9282, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
@@ -1593,7 +1593,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9282, Column 29 in wincodec.h")]
         public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1601,7 +1601,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8997, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9283, Column 39 in wincodec.h")]
         public static unsafe void HBITMAPUserFree(this WindowsCodecs thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
@@ -1609,7 +1609,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8997, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9283, Column 39 in wincodec.h")]
         public static unsafe void HBITMAPUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
@@ -1617,7 +1617,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8999, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9285, Column 39 in wincodec.h")]
         public static unsafe uint HICONUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
@@ -1625,7 +1625,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8999, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9285, Column 39 in wincodec.h")]
         public static unsafe uint HICONUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1633,7 +1633,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9286, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1641,7 +1641,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9286, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1649,7 +1649,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9286, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
@@ -1657,7 +1657,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9286, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1665,7 +1665,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9286, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1673,7 +1673,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9286, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1681,7 +1681,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9286, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
@@ -1689,7 +1689,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9286, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1697,7 +1697,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9287, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1705,7 +1705,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9287, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1713,7 +1713,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9287, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
@@ -1721,7 +1721,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9287, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1729,7 +1729,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9287, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1737,7 +1737,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9287, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1745,7 +1745,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9287, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
@@ -1753,7 +1753,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9287, Column 29 in wincodec.h")]
         public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1761,7 +1761,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9002, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9288, Column 39 in wincodec.h")]
         public static unsafe void HICONUserFree(this WindowsCodecs thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
@@ -1769,7 +1769,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9002, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9288, Column 39 in wincodec.h")]
         public static unsafe void HICONUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
@@ -1777,7 +1777,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9004, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9290, Column 39 in wincodec.h")]
         public static unsafe uint HPALETTEUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
@@ -1785,7 +1785,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9004, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9290, Column 39 in wincodec.h")]
         public static unsafe uint HPALETTEUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1793,7 +1793,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9291, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1801,7 +1801,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9291, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1809,7 +1809,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9291, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
@@ -1817,7 +1817,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9291, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1825,7 +1825,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9291, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1833,7 +1833,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9291, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1841,7 +1841,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9291, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
@@ -1849,7 +1849,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9291, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1857,7 +1857,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9292, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1865,7 +1865,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9292, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1873,7 +1873,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9292, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
@@ -1881,7 +1881,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9292, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1889,7 +1889,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9292, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
@@ -1897,7 +1897,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9292, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1905,7 +1905,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9292, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
@@ -1913,7 +1913,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9292, Column 29 in wincodec.h")]
         public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
@@ -1921,7 +1921,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9007, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9293, Column 39 in wincodec.h")]
         public static unsafe void HPALETTEUserFree(this WindowsCodecs thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
@@ -1929,7 +1929,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9007, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9293, Column 39 in wincodec.h")]
         public static unsafe void HPALETTEUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
@@ -1937,7 +1937,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9009, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9295, Column 39 in wincodec.h")]
         public static unsafe uint LPSAFEARRAYUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, Silk.NET.Core.Win32Extras.SafeArray** arg2)
         {
             // SpanOverloader
@@ -1945,7 +1945,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9009, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9295, Column 39 in wincodec.h")]
         public static unsafe uint LPSAFEARRAYUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref Silk.NET.Core.Win32Extras.SafeArray* arg2)
         {
             // SpanOverloader
@@ -1953,7 +1953,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9010, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9296, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, Silk.NET.Core.Win32Extras.SafeArray** arg2)
         {
             // SpanOverloader
@@ -1961,7 +1961,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9010, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9296, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref Silk.NET.Core.Win32Extras.SafeArray* arg2)
         {
             // SpanOverloader
@@ -1969,7 +1969,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9010, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9296, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, Silk.NET.Core.Win32Extras.SafeArray** arg2)
         {
             // SpanOverloader
@@ -1977,7 +1977,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9010, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9296, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref Silk.NET.Core.Win32Extras.SafeArray* arg2)
         {
             // SpanOverloader
@@ -1985,7 +1985,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9010, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9296, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, Silk.NET.Core.Win32Extras.SafeArray** arg2)
         {
             // SpanOverloader
@@ -1993,7 +1993,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9010, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9296, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref Silk.NET.Core.Win32Extras.SafeArray* arg2)
         {
             // SpanOverloader
@@ -2001,7 +2001,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9010, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9296, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Silk.NET.Core.Win32Extras.SafeArray** arg2)
         {
             // SpanOverloader
@@ -2009,7 +2009,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9010, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9296, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref Silk.NET.Core.Win32Extras.SafeArray* arg2)
         {
             // SpanOverloader
@@ -2017,7 +2017,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9011, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9297, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, Silk.NET.Core.Win32Extras.SafeArray** arg2)
         {
             // SpanOverloader
@@ -2025,7 +2025,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9011, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9297, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref Silk.NET.Core.Win32Extras.SafeArray* arg2)
         {
             // SpanOverloader
@@ -2033,7 +2033,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9011, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9297, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, Silk.NET.Core.Win32Extras.SafeArray** arg2)
         {
             // SpanOverloader
@@ -2041,7 +2041,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9011, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9297, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref Silk.NET.Core.Win32Extras.SafeArray* arg2)
         {
             // SpanOverloader
@@ -2049,7 +2049,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9011, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9297, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, Silk.NET.Core.Win32Extras.SafeArray** arg2)
         {
             // SpanOverloader
@@ -2057,7 +2057,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9011, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9297, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref Silk.NET.Core.Win32Extras.SafeArray* arg2)
         {
             // SpanOverloader
@@ -2065,7 +2065,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9011, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9297, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Silk.NET.Core.Win32Extras.SafeArray** arg2)
         {
             // SpanOverloader
@@ -2073,7 +2073,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9011, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9297, Column 29 in wincodec.h")]
         public static unsafe byte* LPSAFEARRAYUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref Silk.NET.Core.Win32Extras.SafeArray* arg2)
         {
             // SpanOverloader
@@ -2081,7 +2081,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9012, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9298, Column 39 in wincodec.h")]
         public static unsafe void LPSAFEARRAYUserFree(this WindowsCodecs thisApi, Span<uint> arg0, Silk.NET.Core.Win32Extras.SafeArray** arg1)
         {
             // SpanOverloader
@@ -2089,7 +2089,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9012, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9298, Column 39 in wincodec.h")]
         public static unsafe void LPSAFEARRAYUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref Silk.NET.Core.Win32Extras.SafeArray* arg1)
         {
             // SpanOverloader
@@ -2097,7 +2097,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9014, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9300, Column 39 in wincodec.h")]
         public static unsafe uint InProcPointerUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, byte** arg2)
         {
             // SpanOverloader
@@ -2105,7 +2105,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9014, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9300, Column 39 in wincodec.h")]
         public static unsafe uint InProcPointerUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref byte* arg2)
         {
             // SpanOverloader
@@ -2113,7 +2113,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9301, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, byte** arg2)
         {
             // SpanOverloader
@@ -2121,7 +2121,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9301, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref byte* arg2)
         {
             // SpanOverloader
@@ -2129,7 +2129,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9301, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, byte** arg2)
         {
             // SpanOverloader
@@ -2137,7 +2137,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9301, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref byte* arg2)
         {
             // SpanOverloader
@@ -2145,7 +2145,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9301, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, byte** arg2)
         {
             // SpanOverloader
@@ -2153,7 +2153,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9301, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref byte* arg2)
         {
             // SpanOverloader
@@ -2161,7 +2161,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9301, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2)
         {
             // SpanOverloader
@@ -2169,7 +2169,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9015, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9301, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2)
         {
             // SpanOverloader
@@ -2177,7 +2177,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9302, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, byte** arg2)
         {
             // SpanOverloader
@@ -2185,7 +2185,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9302, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref byte* arg2)
         {
             // SpanOverloader
@@ -2193,7 +2193,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9302, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, byte** arg2)
         {
             // SpanOverloader
@@ -2201,7 +2201,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9302, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref byte* arg2)
         {
             // SpanOverloader
@@ -2209,7 +2209,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9302, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, byte** arg2)
         {
             // SpanOverloader
@@ -2217,7 +2217,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9302, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref byte* arg2)
         {
             // SpanOverloader
@@ -2225,7 +2225,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9302, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte** arg2)
         {
             // SpanOverloader
@@ -2233,7 +2233,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9016, Column 29 in wincodec.h")]
+        [NativeName("Src", "Line 9302, Column 29 in wincodec.h")]
         public static unsafe byte* InProcPointerUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte* arg2)
         {
             // SpanOverloader
@@ -2241,7 +2241,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9017, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9303, Column 39 in wincodec.h")]
         public static unsafe void InProcPointerUserFree(this WindowsCodecs thisApi, Span<uint> arg0, byte** arg1)
         {
             // SpanOverloader
@@ -2249,7 +2249,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9017, Column 39 in wincodec.h")]
+        [NativeName("Src", "Line 9303, Column 39 in wincodec.h")]
         public static unsafe void InProcPointerUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref byte* arg1)
         {
             // SpanOverloader
@@ -2257,7 +2257,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9019, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9305, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapCodecProgressNotificationRegisterProgressNotificationProxy<T0>(this WindowsCodecs thisApi, IWICBitmapCodecProgressNotification* This, PfnProgressNotification pfnProgressNotification, Span<T0> pvData, uint dwProgressFlags) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2265,7 +2265,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9019, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9305, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapCodecProgressNotificationRegisterProgressNotificationProxy(this WindowsCodecs thisApi, Span<IWICBitmapCodecProgressNotification> This, PfnProgressNotification pfnProgressNotification, void* pvData, uint dwProgressFlags)
         {
             // SpanOverloader
@@ -2273,7 +2273,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9019, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9305, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapCodecProgressNotificationRegisterProgressNotificationProxy<T0>(this WindowsCodecs thisApi, Span<IWICBitmapCodecProgressNotification> This, PfnProgressNotification pfnProgressNotification, Span<T0> pvData, uint dwProgressFlags) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2281,7 +2281,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9028, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9314, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapCodecProgressNotificationRegisterProgressNotificationStub(this WindowsCodecs thisApi, IWICBitmapCodecProgressNotification* This, Span<IWICProgressCallback> pICallback, uint dwProgressFlags)
         {
             // SpanOverloader
@@ -2289,7 +2289,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9028, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9314, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapCodecProgressNotificationRegisterProgressNotificationStub(this WindowsCodecs thisApi, Span<IWICBitmapCodecProgressNotification> This, IWICProgressCallback* pICallback, uint dwProgressFlags)
         {
             // SpanOverloader
@@ -2297,7 +2297,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9028, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9314, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapCodecProgressNotificationRegisterProgressNotificationStub(this WindowsCodecs thisApi, Span<IWICBitmapCodecProgressNotification> This, Span<IWICProgressCallback> pICallback, uint dwProgressFlags)
         {
             // SpanOverloader
@@ -2305,7 +2305,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
@@ -2313,7 +2313,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, BitmapPattern* pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
@@ -2321,7 +2321,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, BitmapPattern* pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
@@ -2329,7 +2329,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
@@ -2337,7 +2337,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
@@ -2345,7 +2345,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
@@ -2353,7 +2353,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
@@ -2361,7 +2361,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
@@ -2369,7 +2369,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, BitmapPattern* pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
@@ -2377,7 +2377,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, BitmapPattern* pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
@@ -2385,7 +2385,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, BitmapPattern* pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
@@ -2393,7 +2393,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, uint* pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
@@ -2401,7 +2401,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, uint* pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
@@ -2409,7 +2409,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, Span<uint> pcPatterns, uint* pcbPatternsActual)
         {
             // SpanOverloader
@@ -2417,7 +2417,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9033, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9319, Column 41 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, uint cbSizePatterns, Span<BitmapPattern> pPatterns, Span<uint> pcPatterns, Span<uint> pcbPatternsActual)
         {
             // SpanOverloader
@@ -2425,7 +2425,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9330, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, BitmapPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2433,7 +2433,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9330, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICBitmapDecoderInfo* This, ref BitmapPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2441,7 +2441,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9330, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, BitmapPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -2449,7 +2449,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9330, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, BitmapPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2457,7 +2457,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9330, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref BitmapPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -2465,7 +2465,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9044, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9330, Column 43 in wincodec.h")]
         public static unsafe int IWICBitmapDecoderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICBitmapDecoderInfo> This, ref BitmapPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2473,7 +2473,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9335, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
@@ -2481,7 +2481,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9335, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, RawCapabilitiesInfo* pInfo)
         {
             // SpanOverloader
@@ -2489,7 +2489,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9049, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9335, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
@@ -2497,7 +2497,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9340, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
@@ -2505,7 +2505,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9340, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, RawCapabilitiesInfo* pInfo)
         {
             // SpanOverloader
@@ -2513,7 +2513,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9054, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9340, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawQueryRawCapabilitiesInfoStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<RawCapabilitiesInfo> pInfo)
         {
             // SpanOverloader
@@ -2521,7 +2521,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9344, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawSetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurve> pToneCurve)
         {
             // SpanOverloader
@@ -2529,7 +2529,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9344, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurve* pToneCurve)
         {
             // SpanOverloader
@@ -2537,7 +2537,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9058, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9344, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawSetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurve> pToneCurve)
         {
             // SpanOverloader
@@ -2545,7 +2545,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9351, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawSetToneCurveStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurvePoint> aPoints)
         {
             // SpanOverloader
@@ -2553,7 +2553,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9351, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawSetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RawToneCurvePoint* aPoints)
         {
             // SpanOverloader
@@ -2561,7 +2561,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9065, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9351, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawSetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RawToneCurvePoint> aPoints)
         {
             // SpanOverloader
@@ -2569,7 +2569,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9356, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
@@ -2577,7 +2577,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9356, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveBufferSize, Span<RawToneCurve> pToneCurve, uint* pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
@@ -2585,7 +2585,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9356, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, IWICDevelopRaw* This, uint cbToneCurveBufferSize, Span<RawToneCurve> pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
@@ -2593,7 +2593,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9356, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
@@ -2601,7 +2601,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9356, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, RawToneCurve* pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
@@ -2609,7 +2609,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9356, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, Span<RawToneCurve> pToneCurve, uint* pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
@@ -2617,7 +2617,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9070, Column 41 in wincodec.h")]
+        [NativeName("Src", "Line 9356, Column 41 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveProxy(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint cbToneCurveBufferSize, Span<RawToneCurve> pToneCurve, Span<uint> pcbActualToneCurveBufferSize)
         {
             // SpanOverloader
@@ -2625,7 +2625,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9365, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
@@ -2633,7 +2633,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9365, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, IWICDevelopRaw* This, Span<uint> pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
@@ -2641,7 +2641,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9365, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
@@ -2649,7 +2649,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9365, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, uint* pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
@@ -2657,7 +2657,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9365, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, RawToneCurvePoint** paPoints)
         {
             // SpanOverloader
@@ -2665,7 +2665,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9079, Column 43 in wincodec.h")]
+        [NativeName("Src", "Line 9365, Column 43 in wincodec.h")]
         public static unsafe int IWICDevelopRawGetToneCurveStub(this WindowsCodecs thisApi, Span<IWICDevelopRaw> This, Span<uint> pcPoints, ref RawToneCurvePoint* paPoints)
         {
             // SpanOverloader
@@ -2673,7 +2673,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2681,7 +2681,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2689,7 +2689,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -2697,7 +2697,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2705,7 +2705,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -2713,7 +2713,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2721,7 +2721,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -2729,7 +2729,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2737,7 +2737,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -2745,7 +2745,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2753,7 +2753,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -2761,7 +2761,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2769,7 +2769,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -2777,7 +2777,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1676, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1683, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoRemoteGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -2785,7 +2785,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -2793,7 +2793,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -2801,7 +2801,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -2809,7 +2809,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -2817,7 +2817,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -2825,7 +2825,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -2833,7 +2833,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -2841,7 +2841,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -2849,7 +2849,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -2857,7 +2857,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -2865,7 +2865,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -2873,7 +2873,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -2881,7 +2881,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -2889,7 +2889,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -2897,7 +2897,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1683, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1690, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataReaderInfoRemoteGetPatternsStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -2905,7 +2905,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1954, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
@@ -2913,7 +2913,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1954, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
@@ -2921,7 +2921,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1954, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
@@ -2929,7 +2929,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1954, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
@@ -2937,7 +2937,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1954, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
@@ -2945,7 +2945,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1954, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
@@ -2953,7 +2953,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1947, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1954, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoRemoteGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
@@ -2961,7 +2961,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -2969,7 +2969,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -2977,7 +2977,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -2985,7 +2985,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -2993,7 +2993,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -3001,7 +3001,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -3009,7 +3009,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Silk.NET.Core.Win32Extras.IRpcStubBuffer* This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -3017,7 +3017,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -3025,7 +3025,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -3033,7 +3033,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -3041,7 +3041,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Silk.NET.Core.Win32Extras.IRpcChannelBuffer* _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -3049,7 +3049,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -3057,7 +3057,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Silk.NET.Core.Win32Extras.RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -3065,7 +3065,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -3073,7 +3073,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1953, Column 17 in wincodecsdk.h")]
+        [NativeName("Src", "Line 1960, Column 17 in wincodecsdk.h")]
         public static unsafe void IWICMetadataWriterInfoRemoteGetHeaderStub(this WindowsCodecs thisApi, Span<Silk.NET.Core.Win32Extras.IRpcStubBuffer> This, Span<Silk.NET.Core.Win32Extras.IRpcChannelBuffer> _pRpcChannelBuffer, Span<Silk.NET.Core.Win32Extras.RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -3081,7 +3081,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3089,7 +3089,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3097,7 +3097,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3105,7 +3105,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3113,7 +3113,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3121,7 +3121,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3129,7 +3129,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3137,7 +3137,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3145,7 +3145,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3153,7 +3153,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3161,7 +3161,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3169,7 +3169,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3177,7 +3177,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3185,7 +3185,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Guid* pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3193,7 +3193,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2396, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         public static unsafe int MatchMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pguidVendor, Span<Silk.NET.Core.Win32Extras.IStream> pIStream, Span<Guid> pguidMetadataFormat)
         {
             // SpanOverloader
@@ -3201,7 +3201,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2409, Column 16 in wincodecsdk.h")]
         public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
         {
             // SpanOverloader
@@ -3209,7 +3209,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2409, Column 16 in wincodecsdk.h")]
         public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream)
         {
             // SpanOverloader
@@ -3217,7 +3217,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2409, Column 16 in wincodecsdk.h")]
         public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
         {
             // SpanOverloader
@@ -3225,7 +3225,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2409, Column 16 in wincodecsdk.h")]
         public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream)
         {
             // SpanOverloader
@@ -3233,7 +3233,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2409, Column 16 in wincodecsdk.h")]
         public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
         {
             // SpanOverloader
@@ -3241,7 +3241,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2409, Column 16 in wincodecsdk.h")]
         public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Silk.NET.Core.Win32Extras.IStream* pIStream)
         {
             // SpanOverloader
@@ -3249,7 +3249,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2402, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2409, Column 16 in wincodecsdk.h")]
         public static unsafe int SerializeMetadataContent(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, uint dwPersistOptions, Span<Silk.NET.Core.Win32Extras.IStream> pIStream)
         {
             // SpanOverloader
@@ -3257,7 +3257,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2415, Column 16 in wincodecsdk.h")]
         public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, Span<ulong> pcbSize)
         {
             // SpanOverloader
@@ -3265,7 +3265,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2415, Column 16 in wincodecsdk.h")]
         public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, ulong* pcbSize)
         {
             // SpanOverloader
@@ -3273,7 +3273,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2415, Column 16 in wincodecsdk.h")]
         public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Guid* guidContainerFormat, Span<IWICMetadataWriter> pIWriter, Span<ulong> pcbSize)
         {
             // SpanOverloader
@@ -3281,7 +3281,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2415, Column 16 in wincodecsdk.h")]
         public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, ulong* pcbSize)
         {
             // SpanOverloader
@@ -3289,7 +3289,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2415, Column 16 in wincodecsdk.h")]
         public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, IWICMetadataWriter* pIWriter, Span<ulong> pcbSize)
         {
             // SpanOverloader
@@ -3297,7 +3297,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2415, Column 16 in wincodecsdk.h")]
         public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, ulong* pcbSize)
         {
             // SpanOverloader
@@ -3305,7 +3305,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2408, Column 16 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2415, Column 16 in wincodecsdk.h")]
         public static unsafe int GetMetadataContentSize(this WindowsCodecs thisApi, Span<Guid> guidContainerFormat, Span<IWICMetadataWriter> pIWriter, Span<ulong> pcbSize)
         {
             // SpanOverloader
@@ -3313,7 +3313,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2425, Column 39 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2432, Column 39 in wincodecsdk.h")]
         public static unsafe uint CLIPFORMATUserSize(this WindowsCodecs thisApi, uint* arg0, uint arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3321,7 +3321,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2425, Column 39 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2432, Column 39 in wincodecsdk.h")]
         public static unsafe uint CLIPFORMATUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ushort* arg2)
         {
             // SpanOverloader
@@ -3329,7 +3329,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2425, Column 39 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2432, Column 39 in wincodecsdk.h")]
         public static unsafe uint CLIPFORMATUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3337,7 +3337,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2426, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2433, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserMarshal(this WindowsCodecs thisApi, uint* arg0, byte* arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3345,7 +3345,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2426, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2433, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ushort* arg2)
         {
             // SpanOverloader
@@ -3353,7 +3353,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2426, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2433, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3361,7 +3361,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2426, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2433, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserMarshal(this WindowsCodecs thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3369,7 +3369,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2426, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2433, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ushort* arg2)
         {
             // SpanOverloader
@@ -3377,7 +3377,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2426, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2433, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3385,7 +3385,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2426, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2433, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ushort* arg2)
         {
             // SpanOverloader
@@ -3393,7 +3393,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2426, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2433, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3401,7 +3401,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2426, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2433, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ushort* arg2)
         {
             // SpanOverloader
@@ -3409,7 +3409,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2426, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2433, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3417,7 +3417,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2427, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2434, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, byte* arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3425,7 +3425,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2427, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2434, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ushort* arg2)
         {
             // SpanOverloader
@@ -3433,7 +3433,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2427, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2434, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3441,7 +3441,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2427, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2434, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3449,7 +3449,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2427, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2434, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ushort* arg2)
         {
             // SpanOverloader
@@ -3457,7 +3457,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2427, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2434, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3465,7 +3465,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2427, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2434, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ushort* arg2)
         {
             // SpanOverloader
@@ -3473,7 +3473,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2427, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2434, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3481,7 +3481,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2427, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2434, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ushort* arg2)
         {
             // SpanOverloader
@@ -3489,7 +3489,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2427, Column 29 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2434, Column 29 in wincodecsdk.h")]
         public static unsafe byte* CLIPFORMATUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<ushort> arg2)
         {
             // SpanOverloader
@@ -3497,7 +3497,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2428, Column 39 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2435, Column 39 in wincodecsdk.h")]
         public static unsafe void CLIPFORMATUserFree(this WindowsCodecs thisApi, uint* arg0, Span<ushort> arg1)
         {
             // SpanOverloader
@@ -3505,7 +3505,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2428, Column 39 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2435, Column 39 in wincodecsdk.h")]
         public static unsafe void CLIPFORMATUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ushort* arg1)
         {
             // SpanOverloader
@@ -3513,7 +3513,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2428, Column 39 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2435, Column 39 in wincodecsdk.h")]
         public static unsafe void CLIPFORMATUserFree(this WindowsCodecs thisApi, Span<uint> arg0, Span<ushort> arg1)
         {
             // SpanOverloader
@@ -3521,7 +3521,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3529,7 +3529,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3537,7 +3537,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3545,7 +3545,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3553,7 +3553,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3561,7 +3561,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3569,7 +3569,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3577,7 +3577,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3585,7 +3585,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3593,7 +3593,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3601,7 +3601,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3609,7 +3609,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3617,7 +3617,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3625,7 +3625,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3633,7 +3633,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3641,7 +3641,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3649,7 +3649,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3657,7 +3657,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3665,7 +3665,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3673,7 +3673,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3681,7 +3681,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3689,7 +3689,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3697,7 +3697,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3705,7 +3705,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3713,7 +3713,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3721,7 +3721,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3729,7 +3729,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataPattern* pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3737,7 +3737,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3745,7 +3745,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, uint* pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3753,7 +3753,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, uint* pcbActual)
         {
             // SpanOverloader
@@ -3761,7 +3761,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2435, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2442, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsProxy(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataPattern> pPattern, Span<uint> pcCount, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3769,7 +3769,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -3777,7 +3777,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -3785,7 +3785,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -3793,7 +3793,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -3801,7 +3801,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -3809,7 +3809,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, IWICMetadataReaderInfo* This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -3817,7 +3817,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -3825,7 +3825,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -3833,7 +3833,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -3841,7 +3841,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Guid* guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -3849,7 +3849,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -3857,7 +3857,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, MetadataPattern** ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -3865,7 +3865,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, uint* pcPatterns)
         {
             // SpanOverloader
@@ -3873,7 +3873,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2447, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2454, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataReaderInfoGetPatternsStub(this WindowsCodecs thisApi, Span<IWICMetadataReaderInfo> This, Span<Guid> guidContainerFormat, ref MetadataPattern* ppPatterns, Span<uint> pcPatterns)
         {
             // SpanOverloader
@@ -3881,7 +3881,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3889,7 +3889,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, uint* pcbActual)
         {
             // SpanOverloader
@@ -3897,7 +3897,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3905,7 +3905,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual)
         {
             // SpanOverloader
@@ -3913,7 +3913,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, MetadataHeader* pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3921,7 +3921,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, uint* pcbActual)
         {
             // SpanOverloader
@@ -3929,7 +3929,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3937,7 +3937,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual)
         {
             // SpanOverloader
@@ -3945,7 +3945,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, MetadataHeader* pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3953,7 +3953,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, uint* pcbActual)
         {
             // SpanOverloader
@@ -3961,7 +3961,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3969,7 +3969,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataHeader* pHeader, uint* pcbActual)
         {
             // SpanOverloader
@@ -3977,7 +3977,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, MetadataHeader* pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -3985,7 +3985,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, uint* pcbActual)
         {
             // SpanOverloader
@@ -3993,7 +3993,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2453, Column 41 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2460, Column 41 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderProxy(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, uint cbSize, Span<MetadataHeader> pHeader, Span<uint> pcbActual)
         {
             // SpanOverloader
@@ -4001,7 +4001,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2470, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Guid* guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
@@ -4009,7 +4009,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2470, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
@@ -4017,7 +4017,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2470, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, IWICMetadataWriterInfo* This, Span<Guid> guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
@@ -4025,7 +4025,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2470, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
@@ -4033,7 +4033,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2470, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Guid* guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
@@ -4041,7 +4041,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2470, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, MetadataHeader* pHeader)
         {
             // SpanOverloader
@@ -4049,7 +4049,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2463, Column 43 in wincodecsdk.h")]
+        [NativeName("Src", "Line 2470, Column 43 in wincodecsdk.h")]
         public static unsafe int IWICMetadataWriterInfoGetHeaderStub(this WindowsCodecs thisApi, Span<IWICMetadataWriterInfo> This, Span<Guid> guidContainerFormat, Span<MetadataHeader> pHeader)
         {
             // SpanOverloader
