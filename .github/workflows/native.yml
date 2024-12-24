@@ -75,7 +75,7 @@ jobs:
         with:
           name: natives-${{ matrix.flat.target }}-${{ matrix.flat.runtime }}
           path: |
-            ./workaround-*.txt
+            ./.workaround-*.txt
             ./${{ matrix.flat.dir }}/runtimes/${{ matrix.flat.runtime }}/**/*
             ./${{ matrix.flat.dir}}/lib/*${{ matrix.flat.runtime }}*/**/*
   commit:
