@@ -1,4 +1,4 @@
-#/usr/bin/env -S bash -eu
+#!/usr/bin/env -S bash -eu
 if [ ! -e ../../../eng/submodules/sdl/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/sdl
 fi
