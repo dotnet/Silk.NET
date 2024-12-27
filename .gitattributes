@@ -56,7 +56,7 @@
 *.so binary
 *.dll binary
 *.dylib binary
-
+*.jar binary
 
 # Verify
 *.verified.txt text eol=lf working-tree-encoding=UTF-8
