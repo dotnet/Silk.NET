@@ -6,7 +6,8 @@ fi
 
 if [ ! -z "$GITHUB_ACTIONS" ]; then
   # NDK already installed: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
-  sdkmanager --install "platforms;android-19"
+  sdkmanager=( /usr/local/lib/android/sdk/cmdline-tools/*/bin/sdkmanager )
+  ${sdkmanager[-1]} --install "platforms;android-19"
 fi
 
 ../../../eng/submodules/sdl/build-scripts/build-release.py --actions android --root ../../../eng/submodules/sdl
