@@ -139,6 +139,19 @@
   </UsingTask>
 
   <Target Name="SilkShippingControl" BeforeTargets="BeforeBuild">
+    <!-- SourceLink -->
+    <PropertyGroup Condition="'$(SilkSourceLinkExempt)' == '' and '$(SilkNativePackage)' != 'true' and '$(SilkMetapackage)' != 'true'">
+      <DebugType>portable</DebugType>
+      <EmbedAllSources>true</EmbedAllSources>
+      <EmbedUntrackedSources>true</EmbedUntrackedSources>
+      <IncludeSymbols>true</IncludeSymbols>
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+    <!-- Non-C# packages (i.e. metapackages, natives) -->
+    <PropertyGroup Condition="'$(SilkNativePackage)' == 'true' or '$(SilkMetapackage)' == 'true'">
+      <IncludeBuildOutput>false</IncludeBuildOutput>
+      <NoWarn>NU5128</NoWarn>
+    </PropertyGroup>
     <!-- Public API -->
     <PropertyGroup Condition="'$(SilkTrackPublicAPI)' != 'true' or '$(TargetFramework)' == ''">
       <SilkTrackPublicAPI>false</SilkTrackPublicAPI>
@@ -146,7 +159,8 @@
     <ItemGroup Condition="'$(SilkTrackPublicAPI)' == 'true'">
       <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="All" />
     </ItemGroup>
-    <ItemGroup Condition="'$(SilkSourceLinkExempt)' == ''">
+    <!-- SourceLink -->
+    <ItemGroup Condition="'$(SilkSourceLinkExempt)' == '' and '$(SilkNativePackage)' != 'true' and '$(SilkMetapackage)' != 'true'">
       <PackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All"/>
       <PackageReference Include="DotNet.ReproducibleBuilds.Isolated" PrivateAssets="All"/>
     </ItemGroup>
@@ -178,12 +192,12 @@
       <PackageVersion Condition="'$(VersionSuffix)' != ''">$(SilkVersion)-$(VersionSuffix)</PackageVersion>
     </PropertyGroup>
     <!-- Trimming -->
-    <PropertyGroup>
-      <IsTrimmable Condition="'$(SilkTrimmingExempt)' == ''">true</IsTrimmable>
-      <EnableTrimAnalyzer Condition="'$(SilkTrimmingExempt)' == ''">true</EnableTrimAnalyzer>
-      <EnableAotAnalyzer Condition="'$(SilkTrimmingExempt)' == ''">true</EnableAotAnalyzer>
-      <EnableSingleFileAnalyzer Condition="'$(SilkTrimmingExempt)' == ''">true</EnableSingleFileAnalyzer>
-      <TrimMode Condition="'$(SilkTrimmingExempt)' == ''">full</TrimMode>
+    <PropertyGroup Condition="'$(SilkTrimmingExempt)' == ''">
+      <IsTrimmable>true</IsTrimmable>
+      <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+      <EnableAotAnalyzer>true</EnableAotAnalyzer>
+      <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+      <TrimMode>full</TrimMode>
     </PropertyGroup>
   </Target>
 </Project>

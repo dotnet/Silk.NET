@@ -65,13 +65,4 @@
     <VersionDependsOn>SilkShippingControl;$(VersionDependsOn)</VersionDependsOn>
     <PackageVersionDependsOn>SilkShippingControl;$(PackageVersionDependsOn)</PackageVersionDependsOn>
   </PropertyGroup>
-
-  <!-- SourceLink -->
-  <PropertyGroup Condition="'$(SilkSourceLinkExempt)' == ''">
-    <DebugType>portable</DebugType>
-    <EmbedAllSources>true</EmbedAllSources>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-  </PropertyGroup>
 </Project>

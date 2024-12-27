@@ -497,3 +497,4 @@ src/Website/Silk.NET.Statiq/cache
 !**/lib/**/*.aar
 build/
 !eng/build/
+.workaround*
