@@ -195,8 +195,8 @@
     <PropertyGroup>
       <SilkVersionTxtPath>$(MSBuildProjectDirectory)/version.txt</SilkVersionTxtPath>
       <PackageVersion Condition="Exists('$(SilkVersionTxtPath)')">$([System.IO.File]::ReadAllText("$(SilkVersionTxtPath)").Trim())</PackageVersion>
-      <PackageVersion Condition="'$(SilkOriginalVersionSuffix)' != '' and $(PackageVersion.Contains('-'))">$(PackageVersion)$(SilkOriginalVersionSuffix)</PackageVersion>
-      <PackageVersion Condition="'$(SilkOriginalVersionSuffix)' != '' and !$(PackageVersion.Contains('-'))">$(PackageVersion)-$(SilkOriginalVersionSuffix)</PackageVersion>
+      <PackageVersion Condition="'$(SilkOriginalVersionSuffix)' != '' and Exists('$(SilkVersionTxtPath)') and $(PackageVersion.Contains('-'))">$(PackageVersion)$(SilkOriginalVersionSuffix)</PackageVersion>
+      <PackageVersion Condition="'$(SilkOriginalVersionSuffix)' != '' and Exists('$(SilkVersionTxtPath)') and !$(PackageVersion.Contains('-'))">$(PackageVersion)-$(SilkOriginalVersionSuffix)</PackageVersion>
     </PropertyGroup>
     <Error Text="Native packages should have a version.txt file! Read documentation/for-contributors/build-system.md for more info."
            Condition="'$(SilkNativePackage)' == 'true' and !Exists('$(SilkVersionTxtPath)')" />
