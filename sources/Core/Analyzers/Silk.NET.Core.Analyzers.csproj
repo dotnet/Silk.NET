@@ -16,8 +16,4 @@
         <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
         <EmbeddedResource Include="*Attribute.cs" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="Properties\launchsettings.json" />
-    </ItemGroup>
 </Project>
