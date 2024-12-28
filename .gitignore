@@ -484,3 +484,12 @@ src/**/build/
 
 # Verify
 *.received.*
+
+# Native Binaries
+!**/runtimes/*/native/*.dylib
+!**/runtimes/*/native/*.so
+!**/runtimes/*/native/*.dll
+!**/lib/**/*.aar
+build/
+!eng/build/
+.workaround*

@@ -1,0 +1,23 @@
+<Project ToolsVersion="15.0">
+  <!-- This file is part of the built native NuGet package, added in Directory.Build.targets.
+       Read documentation/for-contributors/build-system.md for more info -->
+  <PropertyGroup>
+    <_TO_BE_REPLACED_PROPERTY_PREFIX_IsMtouch Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' or $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst' or $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tvos'">true</_TO_BE_REPLACED_PROPERTY_PREFIX_IsMtouch>
+  </PropertyGroup>
+  <ItemGroup>
+    <NativeReference Include="$(MSBuildThisFileDirectory)../../runtimes/$(RuntimeIdentifier)/native/*.a" Condition="'$(_TO_BE_REPLACED_PROPERTY_PREFIX_IsMtouch)' == 'true'">
+      <Kind>Static</Kind>
+      <Forceload>True</Forceload>
+      <IsCxx>True</IsCxx>
+      <SmartLink>False</SmartLink>
+      <LinkerFlags>TO_BE_REPLACED_MTOUCH_NATIVE_REFERENCE_LINKER_FLAGS</LinkerFlags>
+    </NativeReference>
+    <NativeReference Include="$(MSBuildThisFileDirectory)../../runtimes/$(RuntimeIdentifier.Split('-')[0])/native/*.a" Condition="'$(_TO_BE_REPLACED_PROPERTY_PREFIX_IsMtouch)' == 'true'">
+      <Kind>Static</Kind>
+      <Forceload>True</Forceload>
+      <IsCxx>True</IsCxx>
+      <SmartLink>False</SmartLink>
+      <LinkerFlags>TO_BE_REPLACED_MTOUCH_NATIVE_REFERENCE_LINKER_FLAGS</LinkerFlags>
+    </NativeReference>
+  </ItemGroup>
+</Project>

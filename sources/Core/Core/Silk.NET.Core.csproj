@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!-- NOTE: Multitargeting here will be a PITA due to the references to TFM below -->
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -9,13 +10,22 @@
   <ItemGroup>
     <Compile Remove="Silk.NET.Core.cs" />
     <None Include="FodyWeavers.xml" />
-    <Content Include="Silk.NET.Core.cs" />
-    <Content Include="Silk.NET.Core.targets" PackagePath="build\$(TargetFramework)\$(PackageId).targets" />
+    <None Include="Silk.NET.Core.cs" Pack="true" PackagePath="build\$(TargetFramework)\Silk.NET.Core.cs" />
+    <None Include="Silk.NET.Core.targets" Pack="true" PackagePath="build\$(TargetFramework)\$(PackageId).targets" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fody" Version="6.8.2" PrivateAssets="all" />
-    <PackageReference Include="InlineIL.Fody" Version="1.9.0" PrivateAssets="all" />
+    <PackageReference Include="Fody" PrivateAssets="all" />
+    <PackageReference Include="InlineIL.Fody" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- Public API Tracking -->
+  <PropertyGroup>
+    <SilkTrackPublicAPI>true</SilkTrackPublicAPI>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != ''">
+    <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt" />
   </ItemGroup>
 
   <!-- Dogfooding -->

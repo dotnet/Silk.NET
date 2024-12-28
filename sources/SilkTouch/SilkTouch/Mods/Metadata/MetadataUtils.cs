@@ -50,19 +50,33 @@ public static class MetadataUtils
         {
             if (cType[idx] == '[')
             {
-                outerCount = 1;
                 do
                 {
                     var num = cType[(idx + 1)..];
-                    if (cType[(idx + 1)..].IndexOf(']') is not -1 and var j)
+                    if (num.IndexOf(']') is not -1 and var j)
                     {
-                        idx++;
                         num = num[..j];
+                        idx += num.Length + 2; // + 1 for [, + 1 again for ]
+                    }
+                    else
+                    {
+                        idx += num.Length;
                     }
 
-                    idx += num.Length;
-                    outerCount *= num.Length == 0 ? 0 : int.Parse(num);
-                } while (cType[idx] == '[');
+                    if (num.Length == 0)
+                    {
+                        break;
+                    }
+
+                    // MD array bounds will be complete, so once we've encountered one array bound with a number we'll
+                    // have a number for all of them.
+                    if (outerCount == 0)
+                    {
+                        outerCount = 1;
+                    }
+
+                    outerCount *= int.Parse(num);
+                } while (idx < cType.Length && cType[idx] == '[');
                 idx = cType.LastIndexOf(']');
             }
 

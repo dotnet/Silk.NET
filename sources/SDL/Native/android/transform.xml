@@ -1,0 +1,16 @@
+<metadata>
+    <!-- Protected members excluded because they reference private members -->
+    <remove-node
+        path="/api/package[@name='org.libsdl.app']/class[@name='SDLControllerManager']/field[@name='mHapticHandler']"/>
+    <remove-node
+        path="/api/package[@name='org.libsdl.app']/class[@name='SDLControllerManager']/field[@name='mJoystickHandler']"/>
+    <remove-node
+        path="/api/package[@name='org.libsdl.app']/class[@name='SDLActivity']/field[@name='mMotionListener']"/>
+    <remove-node
+        path="/api/package[@name='org.libsdl.app']/class[@name='SDLActivity']/field[@name='mClipboardHandler']"/>
+    <remove-node
+        path="/api/package[@name='org.libsdl.app']/class[@name='SDLActivity']/method[@name='getMotionListener' and count(parameter)=0]"/>
+    <attr path="/api/package[@name='org.libsdl.app']/class[@name='SDLSurface']/method[@name='onApplyWindowInsets' and count(parameter)=2]/parameter[1]" name="not-null">true</attr>
+    <attr path="/api/package[@name='org.libsdl.app']/class[@name='SDLSurface']/method[@name='onApplyWindowInsets' and count(parameter)=2]/parameter[2]" name="not-null">true</attr>
+    <attr path="/api/package[@name='org.libsdl.app']/class[@name='SDLSurface']/method[@name='onApplyWindowInsets' and count(parameter)=2]" name="return-not-null">true</attr>
+</metadata>

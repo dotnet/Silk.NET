@@ -31,7 +31,9 @@ internal class MyApplication : ISurfaceApplication
             surface.MakeCurrent();
 
             Console.WriteLine("=== BEGIN OPENGL INFORMATION");
+#pragma warning disable IL3050
             foreach (StringName val in Enum.GetValues(typeof(StringName)))
+#pragma warning restore IL3050
             {
                 Console.WriteLine($"{val} = {GL.GetString(val).ReadToString()}");
             }

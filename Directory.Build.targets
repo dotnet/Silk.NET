@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project>
+<Project InitialTargets="SilkAddIcon;SilkGenerateNuGetReadme;SilkShippingControl">
 
   <!--
     Directory.Build.targets is automatically picked up and imported by
@@ -15,11 +15,249 @@
     <DefineConstants>$(DefineConstants);$(OS)</DefineConstants>
   </PropertyGroup>
 
-  <!-- Package versions for package references across all projects -->
-  <ItemGroup>
-    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.11.1" />
-    <PackageReference Update="NUnit" Version="4.2.2" />
-    <PackageReference Update="NUnit3TestAdapter" Version="4.6.0" />
-  </ItemGroup>
+  <!-- Nuget Icon - done as a target so it doesn't appear in the IDE -->
+  <Target Name="SilkAddIcon" Condition="'$(SilkIconExempt)' == ''">
+    <ItemGroup>
+      <None Include="$(MSBuildThisFileDirectory)docs/readme/silkdotnet_v3.png"
+            Pack="true"
+            PackagePath="\" />
+    </ItemGroup>
+    <PropertyGroup>
+      <PackageIcon>silkdotnet_v3.png</PackageIcon>
+    </PropertyGroup>
+  </Target>
 
+  <!-- NuGet README -->
+  <Target Name="SilkGenerateNuGetReadme" Condition="'$(SilkReadmeExempt)' == ''">
+    <PropertyGroup>
+      <SilkReadme>$([System.IO.File]::ReadAllText("$(MSBuildThisFileDirectory)docs/README.md"))</SilkReadme>
+      <SilkReadme>$([System.String]::Copy($(SilkReadme))
+        .Replace('&lt;!-- Begin exclude from NuGet readme. --&gt;','&lt;!--')
+        .Replace('&lt;!-- End exclude from NuGet readme. --&gt;','--&gt;')
+        .Replace('&lt;!-- Begin include in NuGet readme.','')
+        .Replace('End include in NuGet readme. --&gt;','')
+        .Replace('&lt;h1 align=&quot;center&quot;&gt;', '# ')
+        .Replace('&lt;h2 align=&quot;center&quot;&gt;', '# ')
+        .Replace('&lt;/h1&gt;', '').Replace('&lt;/h2&gt;', '')
+        .Replace('&lt;br /&gt;', '%0a%0a').Replace('&lt;br/&gt;', '%0a%0a')
+        .Replace('&lt;div&gt;', '').Replace('&lt;/div&gt;', '')
+        .Replace('&lt;a&gt;', '').Replace('&lt;/a&gt;', ''))
+      </SilkReadme>
+      <SilkReadmePath>$(IntermediateOutputPath)$(TargetFramework)/README.md</SilkReadmePath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(SilkDescription)' != ''">
+      <Description>$(SilkDescription) $(Description)</Description>
+      <SilkExtendedDescription>$(SilkDescription) $(SilkExtendedDescription)%0a%0a</SilkExtendedDescription>
+      <SilkReadme>$([System.String]::Copy($(SilkReadme))
+        .Replace('&lt;!-- Package description inserted here automatically. --&gt;',
+        '# About This Package%0a%0a$(SilkExtendedDescription)'))
+      </SilkReadme>
+    </PropertyGroup>
+    <ItemGroup>
+      <SilkReadmeLines Include="$(SilkReadme)" />
+      <SilkReadmeGenerated Include="$(SilkReadmePath)" />
+    </ItemGroup>
+    <WriteLinesToFile File="@(SilkReadmeGenerated)"
+                      Lines="@(SilkReadmeLines)"
+                      Overwrite="true"
+                      Encoding="UTF-8" />
+    <PropertyGroup>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    <ItemGroup>
+      <None Include="$(SilkReadmePath)" Pack="true" PackagePath="\" />
+    </ItemGroup>
+  </Target>
+
+  <UsingTask TaskName="SilkGetVersionInfoTask"
+             TaskFactory="RoslynCodeTaskFactory"
+             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <SilkChangelogLines Required="true" />
+      <SilkVersion Output="true" />
+      <SilkVersionSuffix Output="true" />
+      <SilkReleaseNotes Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System"/>
+      <Using Namespace="System.Text"/>
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+        #nullable enable
+        var lines = SilkChangelogLines.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+
+        var capturing = false;
+        var notes = new StringBuilder();
+        string? version = null;
+        string? versionSuffix = null;
+        foreach (var theLine in lines)
+        {
+            var line = theLine.Trim();
+            if (!line.StartsWith("##"))
+            {
+                if (capturing)
+                {
+                    notes.AppendLine(line);
+                }
+                continue;
+            }
+
+            if (capturing)
+            {
+                break;
+            }
+
+            version = line.Substring(2).Trim();
+            var versionStop = version.IndexOf(' ');
+            if (versionStop != -1)
+            {
+                version = version.Substring(0, versionStop);
+            }
+            versionSuffix = string.Empty;
+            var versionSuffixStart = version.IndexOf('-');
+            if (versionSuffixStart != -1)
+            {
+                versionSuffix = version.Substring(versionSuffixStart + 1);
+                version = version.Substring(0, versionSuffixStart);
+            }
+            versionSuffix = versionSuffix.Trim();
+            version = version.Trim();
+            capturing = true;
+        }
+
+        if (!capturing)
+        {
+            throw new Exception("Failed to determine version information.");
+        }
+
+        SilkVersion = version ?? "3.0.0";
+        SilkVersionSuffix = versionSuffix ?? "unknown";
+        SilkReleaseNotes = notes.ToString();
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+
+  <Target Name="SilkShippingControl" BeforeTargets="BeforeBuild">
+    <!-- Non-C# packages (i.e. metapackages, natives) -->
+    <PropertyGroup Condition="'$(SilkNativePackage)' == 'true' or '$(SilkMetapackage)' == 'true'">
+      <IncludeBuildOutput Condition="'$(SilkNativeHasAndroidJars)' != 'true'">false</IncludeBuildOutput>
+      <IncludeBuildOutput Condition="'$(TargetFramework)' != ''">false</IncludeBuildOutput>
+      <IncludeBuildOutput Condition="'$(SilkNativeHasAndroidJars)' == 'true' and $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">true</IncludeBuildOutput>
+      <NoWarn>NU5128;1591;$(NoWarn)</NoWarn>
+      <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <!-- Public API -->
+    <PropertyGroup Condition="'$(SilkTrackPublicAPI)' != 'true' or '$(TargetFramework)' == ''">
+      <SilkTrackPublicAPI>false</SilkTrackPublicAPI>
+    </PropertyGroup>
+    <ItemGroup Condition="'$(SilkTrackPublicAPI)' == 'true'">
+      <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="All" />
+    </ItemGroup>
+
+    <!-- SourceLink -->
+    <ItemGroup Condition="'$(SilkSourceLinkExempt)' == '' and '$(SilkNativePackage)' != 'true' and '$(SilkMetapackage)' != 'true'">
+      <PackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All"/>
+      <PackageReference Include="DotNet.ReproducibleBuilds.Isolated" PrivateAssets="All"/>
+    </ItemGroup>
+    <ItemGroup>
+      <SilkNewPublicAPILines Include="#nullable enable" />
+    </ItemGroup>
+    <MakeDir Directories="PublicAPI" Condition="'$(SilkTrackPublicAPI)' == 'true' and !Exists('PublicAPI')" />
+    <MakeDir Directories="PublicAPI/$(TargetFramework)" Condition="'$(SilkTrackPublicAPI)' == 'true' and !Exists('PublicAPI/$(TargetFramework)')" />
+    <WriteLinesToFile File="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt"
+                      Lines="@(SilkNewPublicAPILines)"
+                      Condition="'$(SilkTrackPublicAPI)' == 'true' and !Exists('PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt')" />
+    <WriteLinesToFile File="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt"
+                      Lines="@(SilkNewPublicAPILines)"
+                      Condition="'$(SilkTrackPublicAPI)' == 'true' and !Exists('PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt')" />
+
+    <!-- Versioning -->
+    <PropertyGroup>
+      <SilkChangelog>$([System.IO.File]::ReadAllText("$(MSBuildThisFileDirectory)docs/CHANGELOG.md"))</SilkChangelog>
+    </PropertyGroup>
+    <SilkGetVersionInfoTask SilkChangelogLines="$(SilkChangelog)">
+      <Output PropertyName="SilkVersion" TaskParameter="SilkVersion" />
+      <Output PropertyName="SilkVersionSuffix" TaskParameter="SilkVersionSuffix" />
+      <Output PropertyName="SilkReleaseNotes" TaskParameter="SilkReleaseNotes" />
+    </SilkGetVersionInfoTask>
+    <PropertyGroup>
+      <SilkOriginalVersionSuffix>$(VersionSuffix)</SilkOriginalVersionSuffix>
+      <Version>$(SilkVersion)</Version>
+      <VersionSuffix Condition="'$(VersionSuffix)' == ''">$(SilkVersionSuffix)</VersionSuffix>
+      <PackageReleaseNotes>$(SilkReleaseNotes)</PackageReleaseNotes>
+      <PackageVersion Condition="'$(VersionSuffix)' == ''">$(SilkVersion)</PackageVersion>
+      <PackageVersion Condition="'$(VersionSuffix)' != ''">$(SilkVersion)-$(VersionSuffix)</PackageVersion>
+    </PropertyGroup>
+
+    <!-- Native Packaging -->
+    <PropertyGroup>
+      <SilkVersionTxtPath>$(MSBuildProjectDirectory)/version.txt</SilkVersionTxtPath>
+      <PackageVersion Condition="Exists('$(SilkVersionTxtPath)')">$([System.IO.File]::ReadAllText("$(SilkVersionTxtPath)").Trim())</PackageVersion>
+      <PackageVersion Condition="'$(SilkOriginalVersionSuffix)' != '' and $(PackageVersion.Contains('-'))">$(PackageVersion)$(SilkOriginalVersionSuffix)</PackageVersion>
+      <PackageVersion Condition="'$(SilkOriginalVersionSuffix)' != '' and !$(PackageVersion.Contains('-'))">$(PackageVersion)-$(SilkOriginalVersionSuffix)</PackageVersion>
+    </PropertyGroup>
+    <Error Text="Native packages should have a version.txt file! Read documentation/for-contributors/build-system.md for more info."
+           Condition="'$(SilkNativePackage)' == 'true' and !Exists('$(SilkVersionTxtPath)')" />
+    <ItemGroup Condition="'$(SilkNativePackage)' == 'true'">
+      <None Include="$(MSBuildProjectDirectory)/runtimes/**/*" Pack="true" PackagePath="runtimes" />
+      <!-- bundled in the aar instead -->
+      <None Remove="$(MSBuildProjectDirectory)/runtimes/android*/**/*" Condition="'$(SilkNativeHasAndroidJars)' == 'true'" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(SilkNativePackage)' == 'true' and $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+      <AndroidNativeLibrary Include="$(MSBuildProjectDirectory)/runtimes/android*/native/*.so" />
+      <ProguardConfiguration Include="$(MSBuildProjectDirectory)/android/proguard.txt" Condition="Exists('$(MSBuildProjectDirectory)/android/proguard.txt')" />
+      <AndroidLibrary Include="$(MSBuildProjectDirectory)/android/*.jar" Bind="true" Pack="true" />
+      <TransformFile Include="$(MSBuildProjectDirectory)/android/*.xml" />
+    </ItemGroup>
+
+    <!-- Trimming -->
+    <PropertyGroup Condition="'$(SilkTrimmingExempt)' == ''">
+      <IsTrimmable>true</IsTrimmable>
+      <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+      <EnableAotAnalyzer>true</EnableAotAnalyzer>
+      <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+      <TrimMode>full</TrimMode>
+    </PropertyGroup>
+  </Target>
+
+
+  <!-- Closest things to documentation on what the hell this voodoo does:
+       https://github.com/NuGet/Home/issues/10063#issuecomment-713083004
+       https://github.com/xamarin/xamarin-android/pull/5242
+       https://github.com/dotnet/sdk/issues/14042
+       https://github.com/dotnet/sdk/blob/main/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.PackTool.targets#L54
+       https://github.com/xamarin/xamarin-android/issues/5957
+       https://github.com/xamarin/xamarin-android/blob/main/Documentation/guides/OneDotNetEmbeddedResources.md
+
+       This is an adaptation of what we used in Silk.NET 2.X to add files to packages, which was originally focused on
+       Android. For 3.0, we're trying to lean as much as possible on the built-in stuff for e.g. jars as this is in a
+       much better state these days. However, some of the links above may only be relevant with that context. -->
+  <Target Name="SilkNativePackaging" Condition="'$(SilkNativePackage)' == 'true'">
+    <GetNuGetShortFolderName TargetFrameworkMoniker="$(TargetFrameworkMoniker)" TargetPlatformMoniker="$(TargetPlatformMoniker)">
+      <Output TaskParameter="NuGetShortFolderName" PropertyName="SilkNuGetShortFolderName" />
+    </GetNuGetShortFolderName>
+    <ReadLinesFromFile File="$(MSBuildThisFileDirectory)eng/native/nuget/NativeNuGetPackage.targets">
+      <Output TaskParameter="Lines" ItemName="SilkNativeNuGetPackageTargets" />
+    </ReadLinesFromFile>
+    <WriteLinesToFile File="$(IntermediateOutputPath)$(TargetFramework)/$(MSBuildProjectName).targets"
+                      Lines="@(SilkNativeNuGetPackageTargets->'%(Identity)'->Replace('TO_BE_REPLACED_MTOUCH_NATIVE_REFERENCE_LINKER_FLAGS', '$(SilkNativeiOSLinkerFlags)')->Replace('TO_BE_REPLACED_PROPERTY_PREFIX', '$(MSBuildProjectName.Replace('.', '_'))'))" />
+    <WriteLinesToFile File="$(IntermediateOutputPath)$(TargetFramework)/_._" Lines="@(SilkDummyItem)" />
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(IntermediateOutputPath)$(TargetFramework)/$(MSBuildProjectName).targets"
+                              Link="build/$(SilkNuGetShortFolderName)/$(MSBuildProjectName).targets"
+                              Pack="true"
+                              PackagePath="build/$(SilkNuGetShortFolderName)/$(MSBuildProjectName).targets" />
+      <TfmSpecificPackageFile Include="$(IntermediateOutputPath)$(TargetFramework)/$(MSBuildProjectName).targets"
+                              Link="build/$(SilkNuGetShortFolderName)/$(MSBuildProjectName).targets"
+                              Pack="true"
+                              PackagePath="buildTransitive/$(SilkNuGetShortFolderName)/$(MSBuildProjectName).targets" />
+      <TfmSpecificPackageFile Include="$(IntermediateOutputPath)$(TargetFramework)/_._"
+                              Link="lib/$(SilkNuGetShortFolderName)/_._"
+                              Pack="true"
+                              PackagePath="lib/$(SilkNuGetShortFolderName)/_._"
+                              Condition="'$(IncludeBuildOutput)' == 'false'" />
+    </ItemGroup>
+  </Target>
 </Project>
