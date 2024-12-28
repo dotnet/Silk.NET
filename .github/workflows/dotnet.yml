@@ -26,7 +26,7 @@ jobs:
               uses: actions/setup-dotnet@v3
               with:
                 dotnet-version: '9.0.x'
-                dotnet-quality: 'preview'
+                #dotnet-quality: 'preview'
             - name: Install Workloads
               run: dotnet workload restore
             - name: Pack
@@ -71,7 +71,7 @@ jobs:
               uses: actions/setup-dotnet@v3
               with:
                 dotnet-version: '9.0.x'
-                dotnet-quality: 'preview'
+                #dotnet-quality: 'preview'
             - name: Install Workloads
               run: dotnet workload restore
             - name: Restore
