@@ -2,18 +2,11 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net8.0-android</TargetFrameworks>
-    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('Linux')) == false">$(TargetFrameworks);net8.0-ios</TargetFrameworks>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <SilkDescription>Native binaries for SDL3.</SilkDescription>
     <SilkNativePackage>true</SilkNativePackage>
     <SilkNativeHasAndroidJars>true</SilkNativeHasAndroidJars>
     <SilkNativeiOSLinkerFlags>-framework AudioToolbox -framework AVFoundation -framework CoreAudio -framework CoreBluetooth -framework CoreFoundation -framework CoreGraphics -framework CoreHaptics -framework CoreMotion -framework CoreVideo -framework GameController -framework IOKit -framework Metal -framework OpenGLES -framework QuartzCore -framework UIKit -framework Foundation</SilkNativeiOSLinkerFlags>
     <EnableDefaultAndroidItems>false</EnableDefaultAndroidItems>
-    <GenerateDocumentationFile>false</GenerateDocumentationFile>
-    <NoWarn>1591</NoWarn>
-    <IncludeBuildOutput Condition="'$(TargetFramework)' != ''">false</IncludeBuildOutput>
-    <IncludeBuildOutput Condition="'$(SilkNativeHasAndroidJars)' == 'true' and $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">true</IncludeBuildOutput>
   </PropertyGroup>
 
 </Project>
