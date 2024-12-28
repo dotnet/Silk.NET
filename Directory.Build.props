@@ -66,5 +66,15 @@
     <VersionDependsOn>SilkShippingControl;$(VersionDependsOn)</VersionDependsOn>
     <PackageVersionDependsOn>SilkShippingControl;$(PackageVersionDependsOn)</PackageVersionDependsOn>
     <TargetsForTfmSpecificContentInPackage>SilkNativePackaging;$(TargetsForTfmSpecificContentInPackage)</TargetsForTfmSpecificContentInPackage>
+    <GenerateNuspecDependsOn>SilkShippingControl;$(GenerateNuspecDependsOn)</GenerateNuspecDependsOn>
+  </PropertyGroup>
+
+  <!-- SourceLink -->
+  <PropertyGroup Condition="'$(SilkSourceLinkExempt)' == '' and '$(SilkNativePackage)' != 'true' and '$(SilkMetapackage)' != 'true'">
+    <DebugType>portable</DebugType>
+    <EmbedAllSources>true</EmbedAllSources>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 </Project>

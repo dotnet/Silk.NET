@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!-- NOTE: Multitargeting here will be a PITA due to the references to TFM below -->
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -9,8 +10,8 @@
   <ItemGroup>
     <Compile Remove="Silk.NET.Core.cs" />
     <None Include="FodyWeavers.xml" />
-    <Content Include="Silk.NET.Core.cs" />
-    <Content Include="Silk.NET.Core.targets" PackagePath="build\$(TargetFramework)\$(PackageId).targets" />
+    <None Include="Silk.NET.Core.cs" Pack="true" PackagePath="build\$(TargetFramework)\Silk.NET.Core.cs" />
+    <None Include="Silk.NET.Core.targets" Pack="true" PackagePath="build\$(TargetFramework)\$(PackageId).targets" />
   </ItemGroup>
 
   <ItemGroup>
