@@ -1,2 +1,6 @@
 --remap
 SDL_fabsf=float.Abs
+VkSurfaceKHR=ulong
+VkInstance=void*
+VkPhysicalDevice=ulong
+VkAllocationCallbacks=void

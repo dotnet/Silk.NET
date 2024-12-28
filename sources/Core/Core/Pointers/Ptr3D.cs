@@ -370,13 +370,37 @@ namespace Silk.NET.Core
         public static implicit operator void***(Ptr3D ptr) => (void***)ptr.Native;
 
         /// <summary>
-        /// Creates a <see cref="Ref2D"/> from a <see cref="Ptr3D"/>
+        /// Creates a <see cref="Ref3D"/> from a <see cref="Ptr3D"/>
         /// </summary>
         /// <param name="ptr"></param>
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static implicit operator Ref2D(Ptr3D ptr) => ptr.Native;
+        public static implicit operator Ref3D(Ptr3D ptr) => ptr.Native;
+
+        /// <summary>
+        /// Expresses this <see cref="Ptr3D" /> as a <see cref="Ref"/>. Note that this does not index the
+        /// <see cref="Ptr3D"/>'s dimensions, and is effectively equivalent to converting a <c>void***</c> to a
+        /// <c>void*</c>.
+        /// </summary>
+        /// <param name="ptr">The <see cref="Ptr3D"/>.</param>
+        /// <returns>The <see cref="Ref"/>.</returns>
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static implicit operator Ref(Ptr3D ptr) => ptr.Native;
+
+        /// <summary>
+        /// Expresses this <see cref="Ptr3D" /> as a <see cref="Ptr"/>. Note that this does not index the
+        /// <see cref="Ptr3D"/>'s dimensions, and is effectively equivalent to converting a <c>void***</c> to a
+        /// <c>void*</c>.
+        /// </summary>
+        /// <param name="ptr">The <see cref="Ptr3D"/>.</param>
+        /// <returns>The <see cref="Ptr"/>.</returns>
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static implicit operator Ptr(Ptr3D ptr) => ptr.Native;
 
         /// <summary>
         /// Creates a <see cref="Ptr3D"/> from a <see cref="Ref2D"/>
@@ -385,6 +409,7 @@ namespace Silk.NET.Core
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
+        // TODO analyzer to ensure ptr is on stack or otherwise pinned
         public static explicit operator Ptr3D(Ref2D ptr) => (void**)ptr;
 
         /// <summary>

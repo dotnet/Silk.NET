@@ -102,6 +102,7 @@ namespace Silk.NET.Core
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
+        // TODO analyzer to ensure ptr is on stack or otherwise pinned
         public static bool operator ==(Ref lh, Ptr rh) => (void*)lh == rh.Native;
 
         /// <summary>
@@ -256,6 +257,20 @@ namespace Silk.NET.Core
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static explicit operator string(Ptr ptr) => ptr.ReadToString();
+
+        /// <summary>
+        /// Casts the underlying pointer to a native-sized integer.
+        /// </summary>
+        /// <param name="ptr">The pointer.</param>
+        /// <returns>The integer.</returns>
+        public static explicit operator nint(Ptr ptr) => (nint)(void*)ptr;
+
+        /// <summary>
+        /// Interprets the given native-sized integer as a pointer.
+        /// </summary>
+        /// <param name="ptr">The integer.</param>
+        /// <returns>The pointer.</returns>
+        public static explicit operator Ptr(nint ptr) => (void*)ptr;
 
         /// <summary>
         /// Creates a null ptr

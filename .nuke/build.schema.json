@@ -27,6 +27,7 @@
         "Clean",
         "Compile",
         "DeclareApi",
+        "FinishRelease",
         "Pack",
         "Prerequisites",
         "PushToNuGet",
@@ -133,6 +134,10 @@
             "Debug",
             "Release"
           ]
+        },
+        "DiscordWebhook": {
+          "type": "string",
+          "description": "Discord release announcement webhook"
         },
         "MsbuildProperties": {
           "type": "array",
