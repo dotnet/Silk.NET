@@ -64,5 +64,6 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <VersionDependsOn>SilkShippingControl;$(VersionDependsOn)</VersionDependsOn>
     <PackageVersionDependsOn>SilkShippingControl;$(PackageVersionDependsOn)</PackageVersionDependsOn>
+    <TargetsForTfmSpecificContentInPackage>SilkNativePackaging;$(TargetsForTfmSpecificContentInPackage)</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
 </Project>

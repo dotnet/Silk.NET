@@ -149,8 +149,8 @@
     </PropertyGroup>
     <!-- Non-C# packages (i.e. metapackages, natives) -->
     <PropertyGroup Condition="'$(SilkNativePackage)' == 'true' or '$(SilkMetapackage)' == 'true'">
-      <IncludeBuildOutput>false</IncludeBuildOutput>
-      <NoWarn>NU5128</NoWarn>
+      <IncludeBuildOutput Condition="'$(SilkNativeHasAndroidJars)' != 'true'">false</IncludeBuildOutput>
+      <NoWarn>NU5128;$(NoWarn)</NoWarn>
     </PropertyGroup>
     <!-- Public API -->
     <PropertyGroup Condition="'$(SilkTrackPublicAPI)' != 'true' or '$(TargetFramework)' == ''">
@@ -191,6 +191,22 @@
       <PackageVersion Condition="'$(VersionSuffix)' == ''">$(SilkVersion)</PackageVersion>
       <PackageVersion Condition="'$(VersionSuffix)' != ''">$(SilkVersion)-$(VersionSuffix)</PackageVersion>
     </PropertyGroup>
+    <!-- Native Packaging -->
+    <PropertyGroup>
+      <SilkVersionTxtPath>$(MSBuildProjectDirectory)/version.txt</SilkVersionTxtPath>
+      <PackageVersion Condition="Exists('$(SilkVersionTxtPath)')">$([System.IO.File]::ReadAllText("$(SilkVersionTxtPath)"))</PackageVersion>
+    </PropertyGroup>
+    <ItemGroup Condition="'$(SilkNativePackage)' == 'true'">
+      <None Include="$(MSBuildProjectDirectory)/runtimes/**/*" Pack="true" PackagePath="runtimes" />
+      <!-- bundled in the aar instead -->
+      <None Remove="$(MSBuildProjectDirectory)/runtimes/android*/**/*" Condition="'$(SilkNativeHasAndroidJars)' == 'true'" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(SilkNativePackage)' == 'true' and $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+      <AndroidNativeLibrary Include="$(MSBuildProjectDirectory)/runtimes/android*/native/*.so" />
+      <ProguardConfiguration Include="$(MSBuildProjectDirectory)/android/proguard.txt" Condition="Exists('$(MSBuildProjectDirectory)/android/proguard.txt')" />
+      <AndroidLibrary Include="$(MSBuildProjectDirectory)/android/*.jar" Bind="true" Pack="true" />
+      <TransformFile Include="$(MSBuildProjectDirectory)/android/*.xml" />
+    </ItemGroup>
     <!-- Trimming -->
     <PropertyGroup Condition="'$(SilkTrimmingExempt)' == ''">
       <IsTrimmable>true</IsTrimmable>
@@ -199,5 +215,44 @@
       <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
       <TrimMode>full</TrimMode>
     </PropertyGroup>
+  </Target>
+
+
+  <!-- Closest things to documentation on what the hell this voodoo does:
+       https://github.com/NuGet/Home/issues/10063#issuecomment-713083004
+       https://github.com/xamarin/xamarin-android/pull/5242
+       https://github.com/dotnet/sdk/issues/14042
+       https://github.com/dotnet/sdk/blob/main/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.PackTool.targets#L54
+       https://github.com/xamarin/xamarin-android/issues/5957
+       https://github.com/xamarin/xamarin-android/blob/main/Documentation/guides/OneDotNetEmbeddedResources.md
+
+       This is an adaptation of what we used in Silk.NET 2.X to add files to packages, which was originally focused on
+       Android. For 3.0, we're trying to lean as much as possible on the built-in stuff for e.g. jars as this is in a
+       much better state these days. However, some of the links above may only be relevant with that context. -->
+  <Target Name="SilkNativePackaging" Condition="'$(SilkNativePackage)' == 'true'">
+    <GetNuGetShortFolderName TargetFrameworkMoniker="$(TargetFrameworkMoniker)" TargetPlatformMoniker="$(TargetPlatformMoniker)">
+      <Output TaskParameter="NuGetShortFolderName" PropertyName="SilkNuGetShortFolderName" />
+    </GetNuGetShortFolderName>
+    <ReadLinesFromFile File="$(MSBuildThisFileDirectory)eng/native/nuget/NativeNuGetPackage.targets">
+      <Output TaskParameter="Lines" ItemName="SilkNativeNuGetPackageTargets" />
+    </ReadLinesFromFile>
+    <WriteLinesToFile File="$(IntermediateOutputPath)$(TargetFramework)/$(MSBuildProjectName).targets"
+                      Lines="@(SilkNativeNuGetPackageTargets->'%(Identity)'->Replace('TO_BE_REPLACED_MTOUCH_NATIVE_REFERENCE_LINKER_FLAGS', '$(SilkNativeiOSLinkerFlags)')->Replace('TO_BE_REPLACED_PROPERTY_PREFIX', '$(MSBuildProjectName.Replace('.', '_'))'))" />
+    <WriteLinesToFile File="$(IntermediateOutputPath)$(TargetFramework)/_._" Lines="@(SilkDummyItem)" />
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(IntermediateOutputPath)$(TargetFramework)/$(MSBuildProjectName).targets"
+                              Link="build/$(SilkNuGetShortFolderName)/$(MSBuildProjectName).targets"
+                              Pack="true"
+                              PackagePath="build/$(SilkNuGetShortFolderName)/$(MSBuildProjectName).targets" />
+      <TfmSpecificPackageFile Include="$(IntermediateOutputPath)$(TargetFramework)/$(MSBuildProjectName).targets"
+                              Link="build/$(SilkNuGetShortFolderName)/$(MSBuildProjectName).targets"
+                              Pack="true"
+                              PackagePath="buildTransitive/$(SilkNuGetShortFolderName)/$(MSBuildProjectName).targets" />
+      <TfmSpecificPackageFile Include="$(IntermediateOutputPath)$(TargetFramework)/_._"
+                              Link="lib/$(SilkNuGetShortFolderName)/_._"
+                              Pack="true"
+                              PackagePath="lib/$(SilkNuGetShortFolderName)/_._"
+                              Condition="'$(IncludeBuildOutput)' == 'false'" />
+    </ItemGroup>
   </Target>
 </Project>

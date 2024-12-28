@@ -21,3 +21,4 @@ cp ../../../eng/submodules/sdl/install-android/x86-install/lib/libSDL3.so runtim
 cp ../../../eng/submodules/sdl/install-android/x86_64-install/lib/libSDL3.so runtimes/android-x64/native
 jars=( ../../../eng/submodules/sdl/install-android/armeabi-v7a-install/share/java/SDL3/SDL3-*.jar )
 cp "${jars[1]}" android/SDL3.jar
+cp "$(dirname "${jars[1]}")/proguard.txt" android/proguard.txt
