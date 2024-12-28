@@ -30,6 +30,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
@@ -64,10 +65,12 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <VersionDependsOn>SilkShippingControl;$(VersionDependsOn)</VersionDependsOn>
     <PackageVersionDependsOn>SilkShippingControl;$(PackageVersionDependsOn)</PackageVersionDependsOn>
+    <TargetsForTfmSpecificContentInPackage>SilkNativePackaging;$(TargetsForTfmSpecificContentInPackage)</TargetsForTfmSpecificContentInPackage>
+    <GenerateNuspecDependsOn>SilkShippingControl;$(GenerateNuspecDependsOn)</GenerateNuspecDependsOn>
   </PropertyGroup>
 
   <!-- SourceLink -->
-  <PropertyGroup Condition="'$(SilkSourceLinkExempt)' == ''">
+  <PropertyGroup Condition="'$(SilkSourceLinkExempt)' == '' and '$(SilkNativePackage)' != 'true' and '$(SilkMetapackage)' != 'true'">
     <DebugType>portable</DebugType>
     <EmbedAllSources>true</EmbedAllSources>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>

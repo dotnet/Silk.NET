@@ -83,6 +83,190 @@ top-level directory in `sources`. It is highly likely that we'll want to amend t
 SilkTouch from this as this is unlikely to be useful to an end user. This is done using cursed MSBuild patterns that I
 recommend just squinting at for ages until they click.
 
+### Native Packaging
+
+Native packaging is one of the most frustratingly difficult aspect of packaging a library such as Silk.NET in an
+effective, elegant way. Silk.NET 2.X had a fairly easy-to-maintain system, but there were some small issues we decided
+to factor into the rewrite.
+
+The primary goals in the native packaging system used for Silk.NET 3.0 are:
+- As in 2.X, ensuring our native binaries come from a trusted source (CI), and that executing these builds is as simple
+  as possible.
+- Making it as easy as possible to add a new native binary build.
+- Ensuring that the native binary builds are maximally low-maintenance, in-keeping with the native library author's
+  intent, and resistant to breakage when we update the native library version used.
+
+There are two parts to this: the GitHub Actions workflow and the MSBuild Usage. Obviously as this is the MSBuild Usage
+section, we'll discuss the latter here.
+
+NuGet's native packaging scheme in the simple case is fairly obvious - the native binaries are placed into the
+`runtimes/rid/native` directory of the package where `rid` is replaced with the appropriate runtime identifier. For fat
+binaries, we omit the architecture suffix. We automatically do this in the `SilkShippingControl` target (which is really
+just a kitchen sink of MSBuild fluff) in `Directory.Build.targets`, where all of the binaries are added as `None` items
+that are packed into the `runtimes` directory. The binaries are picked up from the project directory in the same
+`runtimes` directory structure as that which is added to the package.
+
+To create a new native package, first create a csproj with the following contents:
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <SilkDescription>Native binaries for LIBRARY_NAME_HERE.</SilkDescription>
+    <SilkNativePackage>true</SilkNativePackage>
+  </PropertyGroup>
+</Project>
+```
+
+After that, create a `version.txt` that contains the `PackageVersion` for the native binary. Ideally you should create
+an `update.sh` script that will automatically update the submodule to the latest upstream release, and update the
+`version.txt` to contain that version. If your native library doesn't really have a versioning scheme (we've experienced
+this with some of the Google libraries e.g. ANGLE, SwiftShader, etc), then it's recommended that the version be set to
+a date-style version `YYYY.MM.DD` where the date used is the date of the commit the submodule is currently checked out
+to.
+
+Android is a bit of a unique case, as we not only have native binaries, we also have Java JARs in some cases. These need
+to be exposed to the .NET for Android toolchain to ensure these JARs are accessible. This toolchain produces an `aar`
+file which is added to the NuGet package, which incidentally includes both the JAR and the native binaries. Therefore,
+we exclude the android binaries from the `runtimes` directory in this case. If you have JARs, add the following to the
+native package csproj:
+```diff
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+-   <TargetFrameworks>net8.0</TargetFrameworks>
++   <TargetFrameworks>net8.0;net8.0-android</TargetFrameworks>
++   <SilkNativeHasAndroidJars>true</SilkNativeHasAndroidJars>
++   <EnableDefaultAndroidItems>false</EnableDefaultAndroidItems>
+  </PropertyGroup>
+</Project>
+```
+
+The JARs, Proguard configurations, and XML transforms (for the .NET for Android generator) will be picked up from an
+`android` subdirectory of the project folder. Native binaries will be picked up from `runtimes/android*/native` as
+usual, but obviously merged into the `aar` as above.
+
+iOS on the other hand is a lot simpler, however we still have some iOS-specific handling. Specifically, we inject a
+`targets` file that is pulled in by downstream packages to add the `NativeReference` with the appropriate flags. We have
+seen anecdotal evidence that modern .NET for iOS toolchains pull in `runtimes` `.a` files as `NativeReference`s
+automatically, however in some cases there are specific linker flags required which are not picked up automatically. The
+`.targets` file adds this. If these linker flags are required, add something similar to the following:
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <SilkNativeiOSLinkerFlags>-framework AudioToolbox -framework AVFoundation -framework CoreAudio -framework CoreBluetooth -framework CoreFoundation -framework CoreGraphics -framework CoreHaptics -framework CoreMotion -framework CoreVideo -framework GameController -framework IOKit -framework Metal -framework OpenGLES -framework QuartzCore -framework UIKit -framework Foundation</SilkNativeiOSLinkerFlags>
+  </PropertyGroup>
+</Project>
+```
+
+The `.targets` injected can be seen at `eng/native/nuget/NativeNuGetPackage.targets` with the `TO_BE_REPLACED`
+placeholders replaced in `Directory.Build.targets`.
+
+## Native Build Workflow
+
+As mentioned previously, we build all of our native binaries in CI to ensure they come from a trusted source and also to
+ensure silly mistakes like forgetting to update the binaries when we update the bindings don't happen. We check every
+single PR for changes to the native build and, if we detect any, tell the PR author that they need to declare those
+changes in their PR description. This is done by simply adding `/build-native sdl` for example in the description. This
+is to ensure an unrelated change or merge doesn't result in a rebuild of an unnecessary amount of native binaries, as
+was an issue with 2.X's build system. Also unlike 2.X, the binaries are committed straight to the PR rather than having
+a PR into that PR (as this was very annoying), in a single commit aggregating all the outputs from all of the builds.
+
+The workflow is split into three jobs:
+1. **PR Check** - runs on every PR, evaluates what binaries the author has indicated should be rebuilt.
+2. **Native Build** - a matrix job that uses a strategy determined dynamically as part of the PR Check to run all of the
+   required native builds on the appropriate runners.
+3. **Commit Native Binaries** - all the outputs from the matrix jobs are downloaded, aggregated, and then committed to
+   the PR.
+
+To add a new native build to this workflow, modify the `env` at the top of the `native.yml` GitHub Actions workflow:
+```yaml
+env:
+  # A space-separated list of paths to native libraries to build.
+  NATIVE_LIBRARY_PATHS: "sources/SDL/Native"
+  # A space-separated list of submodule paths for each native library path. Use _ if a submodule is not used - this must
+  # match the number of spaces in NATIVE_LIBRARY_PATHS.
+  NATIVE_LIBRARY_SUBMODULE_PATHS: "eng/submodules/sdl"
+  # A space-separated list of shorthands to the native library paths that will build the native library for each native
+  # library path. This must match the number of spaces in NATIVE_LIBRARY_PATHS. If a shorthand builds multiple native
+  # binary paths, these will be deduplicated.
+  NATIVE_LIBRARY_SHORTHANDS: "SDL"
+```
+
+This is obviously assuming the native library path is valid. After this, any PR that contains `/build-native whatever`
+where `whatever` is replaced with the "shorthand" added to `NATIVE_LIBRARY_SHORTHANDS` will run a native binary build on
+each PR change.
+
+After that, create the native package csproj as described in the MSBuild Usage section and add `build-rid.ext` scripts
+where `rid` is replaced with a runtime identifier and `ext` is replaced with `sh` or `cmd` if the build is running on
+Windows. All `osx`/`ios`/`tvos` prefixed RID builds run on macOS, all `win` prefixed RID builds run on Windows, and all
+other builds run on Linux. All of this again in the project directory/the directory added to `NATIVE_LIBRARY_PATHS`.
+
+Note that for Linux we strive to have compatibility with glibc 2.17 and above, which in our experience from 2.X is a
+happy medium in terms of wide compatibility and feature set in most cases. It's not easy to build for a specific glibc
+target on Linux, which is why we use `zig cc` for these targets. For CMake targets, this is easy as we include the
+relevant toolchain files all ready to use at `eng/native/cmake`. For the build scripts themselves, we include a
+`eng/native/buildsystem/download-zig.py` script which will download the zig toolchain to `eng/native/buildsystem/zig`,
+which should then be added to the `PATH`. This often looks similar to the following:
+```bash
+if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
+    ../../../eng/native/buildsystem/download-zig.py
+    export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
+fi
+```
+
+Note that there are no prerequisite actions run before the native build occurs in the Build job, so these need to be
+integrated into the build scripts, using the `GITHUB_ACTIONS` environment variable as appropriate. Other cases where
+this is used beyond downloading Zig is installing `apt` dependencies, installing Android toolchains using `sdkmanager`,
+etc.
+
+### PR Check
+
+First, the script located at `eng/native/buildsystem/workflow-stage1.sh` is run. This script outputs something similar
+to the following to `GITHUB_OUTPUT`:
+```
+workflow_filters<<EOF
+SDL: ["sources/SDL/Native/*", "eng/submodules/sdl"]
+EOF
+targets_referenced=SDL
+```
+
+The `targets_referenced` is one of the main exports from this job. The `workflow_filters` is used as an input to the
+`dorny/paths-filter@v3` action which will determine which targets had any changes that match the patterns given in the
+output array. This is so we can tell the user off for missing out `/build-native`s. Note that we try to edit an existing
+comment so we're not constantly spamming the PR, which is why we use `peter-evans/find-comment@v3` and
+`peter-evans/create-or-update-comment@v4`.
+
+After this Stage 1 script has run, and we've tried to locate an existing comment, we run the Stage 2 script to determine
+the matrix strategy and the contents of the comment we should add/update. This outputs something like the following to
+`GITHUB_OUTPUT`:
+```
+matrix_strategy<<EOF
+[
+{
+  "target": "SDL",
+  "runtime": "osx",
+  "exec": "build-osx.sh",
+  "dir": "sources/SDL/Native"
+}
+]
+EOF
+comment_to_write=Some of the native library builds modified in this PR were not referenced in the PR description. Please ensure that the PR description contains \`/build-native SDL\`. These libraries won't be rebuilt without this being specified. If you believe this is in error, then please write a comment explaining why and ignore this suggestion. This comment will be automatically updated if rectified.
+```
+
+`matrix_strategy` is the actual JSON representation of what would be in the `matrix: strategy:` section of the GitHub
+Workflow for the Build job. This is determined by the `build-*.{sh,cmd}` scripts added to the `NATIVE_LIBRARY_PATHS`
+directories. `comment_to_write` is the... comment to write... Note that this Stage 2 script receives the output from the
+`find-comment` action and this will indicate whether the issues have been resolved as appropriate (i.e. if we've already
+told the PR author off and they've listened). If no comment should be written and we don't have a comment to update,
+this is simply omitted.
+
+The rest of the workflow continues as expected - the Build job essentially does exactly what is expected from the
+`matrix_strategy` outputs and uploads the binaries as an artifact, which are all pulled down in the Commit Native
+Binaries job and aggregated into a single commit.
+
+To better understand the workflow scripts, it's probably better to just read through the
+`eng/native/buildsystem/test-workflow-stages.sh` script as this has a number of different test cases, but the scripts
+aren't too hard to understand if you're familiar with Bash.
+
 ## NUKE
 
 NUKE is used to provide an easy interface into both MSBuild and our other non-C# or otherwise auxiliary build tasks.
