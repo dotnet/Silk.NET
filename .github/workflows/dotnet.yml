@@ -28,7 +28,7 @@ jobs:
                 dotnet-version: '9.0.x'
                 dotnet-quality: 'preview'
             - name: Install Workloads
-              run: dotnet workload install android macos ios maccatalyst maui tvos
+              run: dotnet workload restore
             - name: Pack
               # TODO decide whether we want experimental builds to use Debug or Release - using Release for now...
               run: >-
@@ -72,6 +72,8 @@ jobs:
               with:
                 dotnet-version: '8.0.x'
                 dotnet-quality: 'preview'
+            - name: Install Workloads
+              run: dotnet workload restore
             - name: Restore
               run: dotnet restore --runtime ${{ matrix.rid }}
             - name: Test
