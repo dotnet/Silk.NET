@@ -70,7 +70,7 @@ jobs:
             - name: Setup .NET
               uses: actions/setup-dotnet@v3
               with:
-                dotnet-version: '8.0.x'
+                dotnet-version: '9.0.x'
                 dotnet-quality: 'preview'
             - name: Install Workloads
               run: dotnet workload restore
