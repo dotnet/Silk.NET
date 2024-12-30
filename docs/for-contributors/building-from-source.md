@@ -1,4 +1,9 @@
 
+## Requirements
+At this time, you need Android SDK for API level 34 and 35 installed to successfully build all projects.
+
+## Building the solution
+Silk.NET 3.0 aims to be compatible with regular `dotnet build` workflows. You can run this command on the solution, or run the Build command in your favorite IDE.
 
 ## Regenerating bindings
 Bindings can be regenerated using `nuke regenerate-bindings` but this is **not reccommended** as it rebuilds all.
