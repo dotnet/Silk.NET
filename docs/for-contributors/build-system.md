@@ -6,6 +6,15 @@ library itself that are provided by a auxiliary build system implemented using t
 
 ## MSBuild Usage
 
+### Target Frameworks
+
+It is our goal to always target the latest LTS .NET release, and optionally multi-targeting to the next non-LTS version
+thereafter. We also make use of the mobile frameworks e.g. `net8.0-android`, `net8.0-ios`, but these shall always be
+guarded using properties such as `SilkAndroidDisabled`, `SilkiOSDisabled` etc which are set in `Directory.Build.props`,
+which in turn check whether a file named `excluded-platforms.txt` exists and contains the target platform identifier.
+This can be quickly modified by using the NUKE target `nuke disable-platforms`, which just writes to this file the
+values provided for `--platforms`.
+
 ### Package READMEs
 
 NuGet has recently added functionality to include a "README" rendered from Markdown on the front page of a package in
@@ -159,6 +168,21 @@ automatically, however in some cases there are specific linker flags required wh
 
 The `.targets` injected can be seen at `eng/native/nuget/NativeNuGetPackage.targets` with the `TO_BE_REPLACED`
 placeholders replaced in `Directory.Build.targets`.
+
+Obviously, the native packages only work when consumed as a NuGet. However, we have a "best effort" attempt to copy the
+appropriate native binary to the output directory for projects that `ProjectReference` a native binary, whether directly
+or transitively. To make this work however, projects must include this:
+```xml
+<Project>
+  <PropertyGroup>
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+  </PropertyGroup>
+</Project>
+```
+
+This logic is defined in the `SilkProjectReferenceNatives` target in `Directory.Build.targets`.
+
+We currently have not explored doing this for static linking (i.e. iOS) builds.
 
 ## Native Build Workflow
 
