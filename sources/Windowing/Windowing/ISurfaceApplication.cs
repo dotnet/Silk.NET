@@ -1,7 +1,5 @@
 namespace Silk.NET.Windowing;
 
-using System.Runtime.Versioning;
-
 /// <summary>
 /// Represents an application running within a surface.
 /// </summary>
@@ -22,7 +20,6 @@ public partial interface ISurfaceApplication
     /// Runs an application using the reference implementation of Silk.NET.Windowing.
     /// </summary>
     /// <typeparam name="T">The application.</typeparam>
-    [UnsupportedOSPlatform("android")]
     public static sealed partial void Run<T>()
         where T : ISurfaceApplication;
 }
