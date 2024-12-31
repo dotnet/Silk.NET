@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -58,6 +58,12 @@ public sealed class ClangScraper(
         /// The response files to read.
         /// </summary>
         public required string[] ClangSharpResponseFiles { get; init; }
+
+        /// <summary>
+        /// Whether or not to Cache the output when scraping
+        /// Caching currently fails on large multithreaded jobs
+        /// </summary>
+        public bool CacheOutput { get; init; } = true;
 
         /// <summary>
         /// Manual overrides for ClangSharp outputs (i.e. manual tweaks of generated output) that should still flow through
@@ -300,7 +306,9 @@ public sealed class ClangScraper(
                                     .TrimEnd('/');
 
                                 // Cache the output.
-                                if (cacheKey is not null && !hasErrors)
+                                //TODO: Refactor for better Parallelisation
+                                //Breaks with high concurrency
+                                if (cacheKey is not null && !hasErrors && cfg.CacheOutput) 
                                 {
                                     cacheDir ??= (
                                         await cacheProvider!.GetDirectory(
@@ -381,6 +389,7 @@ public sealed class ClangScraper(
                     filePath: src.FullPath(fname)
                 )
                 .Project;
+            logger.LogDebug($"Add Src Document {fname}");
         }
 
         job.SourceProject = src;

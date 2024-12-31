@@ -2,13 +2,13 @@
   "Jobs": {
     "Microsoft": {
       "Solution": "Silk.NET.sln",
-      "SourceProject": "TODO.csproj",
-      "TestProject": "tests/TODO.csproj",
+      "SourceProject": "sources/Win32/Win32/Silk.NET.Win32.csproj",
+      "TestProject": "tests/Win32/Win32/Silk.NET.Win32.UnitTests.csproj",
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
-        "AddIncludes",
         "ClangScraper",
-        "ChangeNamespace"
+        "ChangeNamespace",
+        "TransformCOM"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -24,7 +24,8 @@
         "InputTestRoot": "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
         "SkipScrapeIf": [
           "!win"
-        ]
+        ],
+        "CacheOutput": false
       },
       "ChangeNamespace": {
         "Mappings": {
