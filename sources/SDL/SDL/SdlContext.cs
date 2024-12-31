@@ -113,7 +113,7 @@ public class SdlContext : IGLContext
 
     private void Expect(int ec, string action)
     {
-        if (ec is 0)
+        if (ec is 1)
         {
             return;
         }
