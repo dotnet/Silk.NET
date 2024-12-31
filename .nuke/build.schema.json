@@ -27,6 +27,8 @@
         "Clean",
         "Compile",
         "DeclareApi",
+        "DisablePlatforms",
+        "FinishRelease",
         "Pack",
         "Prerequisites",
         "PushToNuGet",
@@ -134,6 +136,10 @@
             "Release"
           ]
         },
+        "DiscordWebhook": {
+          "type": "string",
+          "description": "Discord release announcement webhook"
+        },
         "MsbuildProperties": {
           "type": "array",
           "description": "Extra properties passed to MSBuild commands",
@@ -160,6 +166,13 @@
         "NugetUsername": {
           "type": "string",
           "description": "NuGet username"
+        },
+        "Platforms": {
+          "type": "array",
+          "description": "A list of platforms that DisablePlatforms should exclude from MSBuild usages, both inside and outside of NUKE. This can be reset by running DisablePlatforms with no platforms, or by deleting the excluded-platforms.txt file",
+          "items": {
+            "type": "string"
+          }
         },
         "SilkTouchAdditionalArgs": {
           "type": "array",

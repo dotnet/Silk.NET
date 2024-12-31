@@ -2,6 +2,7 @@ using System.IO;
 using Nuke.Common;
 using Nuke.Common.IO;
 using Nuke.Common.Tools.DotNet;
+using Nuke.Common.Utilities;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 partial class Build : NukeBuild
@@ -111,5 +112,23 @@ partial class Build : NukeBuild
                     await WaitForNuGetToUpdateAsync(version, versionSuffix);
                     await SendWebhookAsync(version, versionSuffix, releaseNotes);
                 })
+        );
+
+    [Parameter(
+        $"A list of platforms that {nameof(DisablePlatforms)} should exclude from MSBuild usages, both "
+            + $"inside and outside of NUKE. This can be reset by running {nameof(DisablePlatforms)} with no platforms, "
+            + $"or by deleting the excluded-platforms.txt file."
+    )]
+    readonly string[]? Platforms;
+
+    Target DisablePlatforms =>
+        CommonTarget(x =>
+            x.Executes(
+                () =>
+                    File.WriteAllText(
+                        RootDirectory / "excluded-platforms.txt",
+                        (Platforms ?? []).Join(' ')
+                    )
+            )
         );
 }

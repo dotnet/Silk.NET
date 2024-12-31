@@ -473,6 +473,7 @@ src/**/build/
 # Silk.NET Build System
 *.gen.sln
 *.gen.txt
+excluded-platforms.txt
 
 # Silk.NET Website Generation Output
 #/docs/
