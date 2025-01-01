@@ -11,14 +11,21 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.FindSymbols;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using System.Diagnostics;
+using System.Reflection.Metadata;
+using Microsoft.CodeAnalysis.Editing;
+using System.Xml.Linq;
+using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Clang;
 
 namespace Silk.NET.SilkTouch.Mods
 {
     /// <summary>
     /// A mod to modify COM interface structs into opaque structs that act like ComPtr objects
     /// </summary>
+    /// <param name="logger">The logger to use.</param>
     [ModConfiguration<Config>]
-    public class TransformCOM : Mod
+    public class TransformCOM(ILogger<TransformCOM> logger) : Mod
     {
         /// <summary>
         /// The configuration for the <see cref="TransformCOM"/> mod.
@@ -39,30 +46,29 @@ namespace Silk.NET.SilkTouch.Mods
             {
                 return;
             }
-            Compilation? comp = await proj.GetCompilationAsync();
-            IEnumerable<ISymbol>? unknowns = comp?.GetSymbolsWithName("IUnknown");
-            //foreach (var doc in ctx.SourceProject?.Documents ?? [])
-            //{
-            //    if (await doc.GetSyntaxRootAsync(ct) is { } root)
-            //    {
-            //        firstPass.Visit(root);
-            //    }
-            //}
 
-            if (unknowns is null || unknowns.Count() == 0)
-            {
-                return;
-            }
-
-            IEnumerable<ISymbol>? symbols = await SymbolFinder.FindImplementationsAsync(unknowns.First(), proj.Solution, [proj], ct);
-            
-            List<(string, bool)> COMTypes = firstPass.FoundCOMTypes;
-
-            Dictionary<string, CompilationUnitSyntax> duplicates = new();
-
-            var rewriter = new Rewriter(COMTypes);
+            logger.LogInformation("Starting COM Object Collection");
             foreach (var docId in proj?.DocumentIds ?? [])
             {
+                var doc =
+                    proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                if (await doc.GetSyntaxRootAsync(ct) is not { } root)
+                {
+                    continue;
+                }
+
+                firstPass.Visit(root);
+            }
+
+            firstPass.FoundCOMTypes = firstPass.FoundCOMTypes.Where(val => val.Item2).ToList();
+
+            var rewriter = new Rewriter(firstPass.FoundCOMTypes);
+            int index = 0;
+            int count = proj?.DocumentIds.Count ?? 0;
+            logger.LogInformation("Starting COM Object Rewrite");
+            foreach (var docId in proj?.DocumentIds ?? [])
+            {
+                index++;
                 var doc =
                     proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
                 if (await doc.GetSyntaxRootAsync(ct) is not { } root)
@@ -73,6 +79,46 @@ namespace Silk.NET.SilkTouch.Mods
                 doc = doc.WithSyntaxRoot(rewriter.Visit(root).NormalizeWhitespace());
 
                 proj = doc.Project;
+
+                logger.LogInformation("COM Object Rewrite for {0} Complete ({1}/{2})", doc.Name, index, count);
+            }
+
+            index = 0;
+            logger.LogInformation("Starting COM Object Usage Update");
+            foreach (var docId in proj?.DocumentIds ?? [])
+            {
+                index++;
+                var doc =
+                    proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                if (await doc.GetSyntaxRootAsync(ct) is not { } root)
+                {
+                    continue;
+                }
+
+                var semanticModel = await doc.GetSemanticModelAsync();
+                var editor = new SyntaxEditor(root, proj.Solution.Workspace.Services);
+                // Replace pointer member access -> with regular member access .
+                var memberAccesses = root.DescendantNodes()
+                    .OfType<MemberAccessExpressionSyntax>()
+                    .Where(m => m.Expression is PrefixUnaryExpressionSyntax pues && pues.IsKind(SyntaxKind.PointerMemberAccessExpression));
+
+                foreach (var memberAccess in memberAccesses)
+                {
+                    var pointerIndirection = (PrefixUnaryExpressionSyntax)memberAccess.Expression;
+                    var typeInfo = semanticModel.GetTypeInfo(pointerIndirection.Operand);
+                    // Check if the type is a ComType
+                    if (typeInfo.Type != null && firstPass.FoundCOMTypes.Any(type => type.Item1 == typeInfo.Type.ToDisplayString()))
+                    {
+                        var newMemberAccess = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, pointerIndirection.Operand, memberAccess.Name);
+                        editor.ReplaceNode(memberAccess, newMemberAccess);
+                    }
+                }
+
+                doc = doc.WithSyntaxRoot(rewriter.Visit(root).NormalizeWhitespace());
+
+                proj = doc.Project;
+
+                logger.LogInformation("COM Object Usage Update for {0} Complete ({1}/{2})", doc.Name, index, count);
             }
 
             ctx.SourceProject = proj;
@@ -172,7 +218,8 @@ namespace Silk.NET.SilkTouch.Mods
                 for (int i = 0; i < ComTypes.Count; i++)
                 {
                     (string, bool) val = ComTypes[i];
-                    if (val.Item1 == node.ElementType.ToString() && val.Item2)
+
+                    if (val.Item1 == node.ElementType.ToString())
                     {
                         return IdentifierName(val.Item1);
                     }
@@ -183,15 +230,15 @@ namespace Silk.NET.SilkTouch.Mods
 
             public override SyntaxNode VisitGenericName(GenericNameSyntax node) => node;
 
-            public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
-            {
-                if (node.Identifier.ToString() == "lpVtbl")
-                {
-                    return ParenthesizedExpression(PrefixUnaryExpression(SyntaxKind.PointerIndirectionExpression, node));
-                }
+            //public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
+            //{
+            //    if (node.Identifier.ToString() == "lpVtbl")
+            //    {
+            //        return ParenthesizedExpression(PrefixUnaryExpression(SyntaxKind.PointerIndirectionExpression, node));
+            //    }
 
-                return base.VisitIdentifierName(node);
-            }
+            //    return base.VisitIdentifierName(node);
+            //}
 
             public override SyntaxNode? VisitVariableDeclaration(VariableDeclarationSyntax node)
             {
@@ -207,8 +254,6 @@ namespace Silk.NET.SilkTouch.Mods
             public override SyntaxNode? VisitInterfaceDeclaration(InterfaceDeclarationSyntax node)
             {
                 var ret = base.VisitInterfaceDeclaration(node);
-
-
 
                 if (ret is InterfaceDeclarationSyntax inter && inter.BaseList is not null && inter.BaseList.Types.Any(baseType => baseType.Type.ToString().StartsWith("I") && baseType.Type.ToString().EndsWith(".Interface")))
                 {
@@ -245,7 +290,8 @@ namespace Silk.NET.SilkTouch.Mods
                 for (int i = 0; i < ComTypes.Count; i++)
                 {
                     (string, bool) val = ComTypes[i];
-                    if (castType == $"{val.Item1}*" && val.Item2)
+
+                    if (castType == $"{val.Item1}*")
                     {
                         return ThisExpression();
                     }
