@@ -103,6 +103,8 @@ Silk.NET.Core.IGLContextSource
 Silk.NET.Core.IGLContextSource.GLContext.get -> Silk.NET.Core.IGLContext?
 Silk.NET.Core.INativeWindow
 Silk.NET.Core.INativeWindow.TryGetPlatformInfo<TPlatformInfo>(out TPlatformInfo? info) -> bool
+Silk.NET.Core.INativeGuid
+Silk.NET.Core.INativeGuid.NativeGuid.get -> System.Guid*
 Silk.NET.Core.Loader.DefaultNativeContext
 Silk.NET.Core.Loader.DefaultNativeContext.DefaultNativeContext() -> void
 Silk.NET.Core.Loader.DefaultNativeContext.Dispose() -> void

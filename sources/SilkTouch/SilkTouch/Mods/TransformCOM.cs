@@ -95,12 +95,18 @@ namespace Silk.NET.SilkTouch.Mods
                     continue;
                 }
 
-                var semanticModel = await doc.GetSemanticModelAsync();
                 var editor = new SyntaxEditor(root, proj.Solution.Workspace.Services);
                 // Replace pointer member access -> with regular member access .
                 var memberAccesses = root.DescendantNodes()
                     .OfType<MemberAccessExpressionSyntax>()
                     .Where(m => m.Expression is PrefixUnaryExpressionSyntax pues && pues.IsKind(SyntaxKind.PointerMemberAccessExpression));
+
+                if (memberAccesses.Count() == 0)
+                {
+                    continue;
+                }
+
+                var semanticModel = await doc.GetSemanticModelAsync();
 
                 foreach (var memberAccess in memberAccesses)
                 {
@@ -113,8 +119,6 @@ namespace Silk.NET.SilkTouch.Mods
                         editor.ReplaceNode(memberAccess, newMemberAccess);
                     }
                 }
-
-                doc = doc.WithSyntaxRoot(rewriter.Visit(root).NormalizeWhitespace());
 
                 proj = doc.Project;
 
@@ -230,15 +234,15 @@ namespace Silk.NET.SilkTouch.Mods
 
             public override SyntaxNode VisitGenericName(GenericNameSyntax node) => node;
 
-            //public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
-            //{
-            //    if (node.Identifier.ToString() == "lpVtbl")
-            //    {
-            //        return ParenthesizedExpression(PrefixUnaryExpression(SyntaxKind.PointerIndirectionExpression, node));
-            //    }
+            public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
+            {
+                if (node.Identifier.ToString() == "lpVtbl")
+                {
+                    return ParenthesizedExpression(PrefixUnaryExpression(SyntaxKind.PointerIndirectionExpression, node));
+                }
 
-            //    return base.VisitIdentifierName(node);
-            //}
+                return base.VisitIdentifierName(node);
+            }
 
             public override SyntaxNode? VisitVariableDeclaration(VariableDeclarationSyntax node)
             {
