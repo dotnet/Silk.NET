@@ -12,10 +12,14 @@
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
-          "eng/submodules/terrafx.interop.windows/generation/**/generate.rsp"
+          "eng/submodules/terrafx.interop.windows/generation/**/generate.rsp",
+          "!eng/submodules/terrafx.interop.windows/generation/DirectX/d3dx12/d3dx12_state_object/generate.rsp"
         ],
         "ManualOverrides": {
           "sources/Windows/um/icm/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
+          "sources/Windows/um/WinUser/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/WinUser/Windows.cs",
+          "sources/Windows/shared/strsafe/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/strsafe/Windows.cs",
+          "sources/Windows/shared/hidpi/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/hidpi/Windows.cs",
           "sources/Gdiplus/um/gdiplustypes/GpRect.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRect.cs",
           "sources/Gdiplus/um/gdiplustypes/GpRectF.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRectF.cs",
           "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs"
