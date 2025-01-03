@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -194,6 +194,22 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             return base.VisitFileScopedNamespaceDeclaration(node) switch
             {
                 FileScopedNamespaceDeclarationSyntax syntax
+                    => syntax.WithName(ModUtils.NamespaceIntoIdentifierName(newNs)),
+                { } ret => ret,
+                null => null
+            };
+        }
+
+        public override SyntaxNode? VisitUsingDirective(UsingDirectiveSyntax node)
+        {
+            var oldNs = node.Name?.ToString() ?? string.Empty;
+            var newNs = ModUtils.GroupedRegexReplace(_regexes, oldNs);
+            if (oldNs != newNs && _allNamespaces.Contains(oldNs))
+            {
+                _usingsToAdd.Add(oldNs);
+            }
+            return base.VisitUsingDirective(node) switch {
+                UsingDirectiveSyntax syntax
                     => syntax.WithName(ModUtils.NamespaceIntoIdentifierName(newNs)),
                 { } ret => ret,
                 null => null

@@ -17,6 +17,7 @@ using Microsoft.CodeAnalysis.Editing;
 using System.Xml.Linq;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Clang;
+using Microsoft.Extensions.Options;
 
 namespace Silk.NET.SilkTouch.Mods
 {
@@ -24,15 +25,22 @@ namespace Silk.NET.SilkTouch.Mods
     /// A mod to modify COM interface structs into opaque structs that act like ComPtr objects
     /// </summary>
     /// <param name="logger">The logger to use.</param>
-    [ModConfiguration<Config>]
-    public class TransformCOM(ILogger<TransformCOM> logger) : Mod
+    /// <param name="config">The configuration to use.</param>
+    [ModConfiguration<Configuration>]
+    public class TransformCOM(
+        ILogger<TransformCOM> logger,
+        IOptionsSnapshot<TransformCOM.Configuration> config) : Mod
     {
         /// <summary>
         /// The configuration for the <see cref="TransformCOM"/> mod.
         /// </summary>
-        public class Config
+        public class Configuration
         {
-
+            /// <summary>
+            /// The base type to consider the base of the com tree
+            /// Usually this is IUknown.Interface
+            /// </summary>
+            public string? BaseType { get; init; }
         }
 
         /// <inheritdoc />
@@ -40,7 +48,7 @@ namespace Silk.NET.SilkTouch.Mods
         {
             await base.ExecuteAsync(ctx, ct);
 
-            var firstPass = new TypeDiscoverer();
+            var firstPass = new TypeDiscoverer(config.Value.BaseType ?? "IUnknown.Interface");
             var proj = ctx.SourceProject;
             if (proj is null)
             {
@@ -101,7 +109,11 @@ namespace Silk.NET.SilkTouch.Mods
                     .OfType<MemberAccessExpressionSyntax>()
                     .Where(m => m.Expression is PrefixUnaryExpressionSyntax pues && pues.IsKind(SyntaxKind.PointerMemberAccessExpression));
 
-                if (memberAccesses.Count() == 0)
+                var nullAssignments = root.DescendantNodes()
+                    .OfType<AssignmentExpressionSyntax>()
+                    .Where(aes => aes.Right.IsKind(SyntaxKind.NullLiteralExpression));
+
+                if (memberAccesses.Count() == 0 && nullAssignments.Count() == 0)
                 {
                     continue;
                 }
@@ -120,6 +132,16 @@ namespace Silk.NET.SilkTouch.Mods
                     }
                 }
 
+                foreach (var nullAssignment in nullAssignments)
+                {
+                    var typeInfo = semanticModel.GetTypeInfo(nullAssignment.Left);
+                    // Check if the type is a ComType
+                    if (typeInfo.Type != null && firstPass.FoundCOMTypes.Any(type => type.Item1 == typeInfo.Type.ToDisplayString()))
+                    {
+                        var newNullAssignment = SyntaxFactory.AssignmentExpression(nullAssignment.Kind(), nullAssignment.Left, LiteralExpression(SyntaxKind.DefaultExpression));
+                        editor.ReplaceNode(nullAssignment, newNullAssignment);
+                    }
+                }
                 proj = doc.Project;
 
                 logger.LogInformation("COM Object Usage Update for {0} Complete ({1}/{2})", doc.Name, index, count);
@@ -128,7 +150,7 @@ namespace Silk.NET.SilkTouch.Mods
             ctx.SourceProject = proj;
         }
 
-        class TypeDiscoverer : CSharpSyntaxWalker
+        class TypeDiscoverer(string BaseType) : CSharpSyntaxWalker
         {
             private Dictionary<string, List<(string, bool)>> _interfaceParenting = new Dictionary<string, List<(string, bool)>>();
 
@@ -179,7 +201,7 @@ namespace Silk.NET.SilkTouch.Mods
 
             private void CheckBases((string, bool) className, BaseListSyntax bases)
             {
-                if (bases.Types.Any(baseType => baseType.Type.ToString() == "IUnknown.Interface" || FoundCOMTypes.Any(val => val.Item1 == $"{baseType.Type}")))
+                if (bases.Types.Any(baseType => baseType.Type.ToString() == BaseType || FoundCOMTypes.Any(val => val.Item1 == $"{baseType.Type}")))
                 {
                     COMTypeValidated(className);
                     return;
@@ -302,6 +324,20 @@ namespace Silk.NET.SilkTouch.Mods
                 }
 
                 return base.VisitCastExpression(node);
+            }
+
+            public override SyntaxNode? VisitParameter(ParameterSyntax node)
+            {
+                var visited = base.VisitParameter(node);
+                var visitedParameter = visited as ParameterSyntax;
+                if (visitedParameter is null || visitedParameter.Default is null || visitedParameter.Type is null ||
+                    visitedParameter.Default.Value.IsKind(SyntaxKind.NullLiteralExpression) ||
+                    !ComTypes.Any(com => visitedParameter.Type?.ToString() == com.Item1))
+                {
+                    return visited;
+                }
+
+                return Parameter(visitedParameter.AttributeLists, visitedParameter.Modifiers, visitedParameter.Type, visitedParameter.Identifier, EqualsValueClause(LiteralExpression(SyntaxKind.DefaultExpression)));
             }
         }
     }
