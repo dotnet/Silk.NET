@@ -10,3 +10,7 @@
 [submodule "eng/submodules/sdl"]
 	path = eng/submodules/sdl
 	url = https://github.com/libsdl-org/SDL
+[submodule "eng/submodules/silk.net-2.x"]
+	path = eng/submodules/silk.net-2.x
+	url = https://github.com/dotnet/Silk.NET
+	shallow = true
