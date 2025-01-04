@@ -1,30 +1,530 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Space+Grotesk:wght@300..700&display=swap');
+@import 'variables.css';
 
-/* You can override the default Infima variables here. */
-:root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+html {
+    scroll-behavior: smooth;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+.version-picker {
+    background-color: var(--ifm-color-emphasis-200);
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.version-picker__toggle:hover {
+    background-color: unset;
+}
+
+.version-picker__item,
+.version-picker__list-item {
+    border-radius: var(--ifm-global-radius);
+    background-color: var(--ifm-color-emphasis-200);
+}
+
+.version-picker__link--active,
+.version-picker__link:hover {
+    background-color: unset;
+}
+
+.dropdown__label,
+.footer__title {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+}
+
+.dropdown__link {
+    font-size: 1rem;
+}
+
+.card {
+    min-width: 14rem;
+}
+
+.card--pointer {
+    cursor: pointer;
+}
+
+.card-radius--md {
+    border-radius: 60px;
+}
+
+.card__image {
+    background: linear-gradient(180deg, #001c56, #074db6);
+    width: 100%;
+    height: auto;
+}
+
+.card__header {
+    text-align: center;
+}
+
+.card__footer {
+    text-align: center;
+}
+
+.card-background:hover {
+    background: var(--ifm-color-emphasis-200);
+}
+
+.Collapsible__trigger {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    padding: 10px;
+    /* background-color: rgb(102, 104, 201); */
+    /* border: 1px solid red; */
+    border-radius: 5rem;
+}
+
+.Collapsible__trigger:after {
+    font-size: var(--ifm-h2-font-size);
+    font-weight: var(--ifm-heading-font-weight);
+    font-family: 'Material Icons';
+    content: '\e5cf';
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    transition: transform 300ms;
+}
+
+.Collapsible__trigger.is-open:after {
+    transform: rotateZ(180deg);
+}
+
+.footer {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.footer__copyright {
+    text-align: left;
+    margin: 0 var(--ifm-spacing-horizontal);
+}
+
+.footer__bottom {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.footer__links {
+    font-size: 1rem;
+    margin: 2rem 0;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+@media (max-width: 966px) {
+    .footer__links {
+        justify-content: left;
+    }
+}
+
+.footer__col {
+    flex: unset;
+    width: unset;
+}
+
+@media (max-width: 966px) {
+    .footer__col {
+        width: 14rem;
+    }
+}
+
+.footer__logo {
+    height: 3rem;
+    margin: 0 var(--ifm-spacing-horizontal) -0.8rem var(--ifm-spacing-horizontal);
+}
+
+.image-gallery {
+    display: grid;
+}
+
+.image-gallery-content {
+    overflow: hidden;
+}
+
+.image-gallery-content.fullscreen {
+    align-self: center;
+}
+
+.image-gallery-icon:hover {
+    color: var(--ifm-color-emphasis-200) !important;
+}
+
+.image-gallery-image {
+    background: var(--ifm-color-emphasis-200);
+}
+
+.image-gallery-video {
+    max-width: 100%;
+}
+
+.image-gallery-thumbnail-image {
+    object-fit: cover;
+}
+
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail:focus,
+.image-gallery-thumbnail:hover {
+    border: 4px solid var(--ifm-color-emphasis-500) !important;
+}
+
+.link__icon {
+    font-size: 2.5rem;
+}
+
+[data-theme='dark'] .link__icon {
+    color: var(--ifm-menu-color);
+}
+
+.markdown {
+    margin: 2rem 0rem;
+}
+
+.menu {
+    border-top: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
+    font-weight: var(--ifm-font-weight-normal);
+    font-size: 0.9rem;
+    margin-top: calc(-1 * var(--ifm-global-border-width));
+    padding-top: calc(1rem + var(--ifm-toc-padding-vertical)) !important;
+}
+
+.menu__link--active,
+.navbar__link.active {
+    color: var(--ifm-navbar-link-hover-color);
+    font-weight: var(--ifm-font-weight-semibold);
+}
+
+.navbar {
+    border-bottom: var(--ifm-global-border-width) solid
+    var(--ifm-color-emphasis-200);
+}
+
+.navbar__brand {
+    align-self: flex-start;
+    margin: calc(-1 * var(--ifm-navbar-padding-vertical)) 0
+    calc(-1 * var(--ifm-navbar-padding-vertical))
+    calc(-1 * var(--ifm-navbar-padding-horizontal));
+}
+
+.navbar__logo {
+    height: calc(var(--ifm-navbar-height) - var(--ifm-global-border-width));
+}
+
+.navbar__logo img {
+    padding: 6px;
+}
+
+[data-theme='dark'] .navbar__logo img {
+    filter: brightness(100);
+}
+
+/* Effectively center the logo in the navbar */
+@media (max-width: 996px) {
+    .navbar__brand {
+        margin-left: auto;
+        margin-right: auto;
+        /* Because of absolutely placed search icon */
+        padding-right: 28px;
+    }
+}
+
+.navbar__item {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.screen-reader-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+.table-of-contents,
+.table-of-contents li,
+.table-of-contents ul,
+.table-of-contents__left-border {
+    border: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.table-of-contents__link {
+    border-left: var(--ifm-global-border-width) solid var(--ifm-toc-border-color);
+    display: inline-block;
+    padding: var(--ifm-toc-padding-vertical) var(--ifm-toc-padding-horizontal);
+
+    transition-property: border-color, color;
+    transition-duration: var(--ifm-transition-slow);
+    transition-timing-function: var(--ifm-transition-timing-default);
+}
+
+.table-of-contents__link:hover {
+    color: var(--ifm-menu-color-active);
+}
+
+ul ul .table-of-contents__link {
+    padding-left: calc(2 * var(--ifm-toc-padding-horizontal));
+}
+
+.table-of-contents__link--active {
+    border-left-color: var(--ifm-menu-color-active);
+    color: var(--ifm-menu-color-active);
+    font-weight: var(--ifm-font-weight-semibold);
+}
+
+.team__icon {
+    fill: var(--ifm-color-primary);
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/** Remove badge on desktop */
+@media (min-width: 997px) {
+    .theme-doc-version-badge {
+        display: none;
+    }
+}
+
+.link-list {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.theme-doc-toc-mobile {
+    color: var(--ifm-menu-color);
+}
+
+.theme-doc-toc-mobile button::after {
+    content: 'expand_less';
+    font-family: 'Material Icons';
+    font-size: 1.25rem;
+}
+
+.theme-doc-toc-mobile .table-of-contents__link {
+    border-left: none;
+    color: var(--ifm-menu-color);
+}
+
+::selection {
+    background-color: #b3d4fc;
+    color: #000;
+    text-shadow: none;
+}
+
+.DocSearch .DocSearch-Hit[aria-selected='true'] a {
+    background-color: var(--ifm-hover-overlay);
+}
+
+.DocSearch-Button-Keys,
+.DocSearch-Button-Placeholder {
+    display: none !important;
+}
+
+.DocSearch.DocSearch-Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    width: 28px;
+    height: 28px;
+}
+
+.DocSearch .DocSearch-Form {
+    border-radius: 0;
+    border-bottom: 1px solid var(--docsearch-muted-color);
+}
+
+.DocSearch .DocSearch-Footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 1px solid var(--docsearch-muted-color);
+}
+
+.DocSearch .DocSearch-Search-Icon {
+    color: var(--ifm-color-emphasis-600);
+}
+
+.DocSearch .DocSearch-Hit[aria-selected='true'] mark {
+    color: var(--docsearch-highlight-color) !important;
+    text-decoration: none;
+}
+
+.theme-doc-sidebar-container {
+    margin-right: 1rem;
+}
+
+.math {
+    overflow-x: auto;
+    margin-bottom: 1em;
+}
+
+/* Sidebar Method labels */
+.api-method > .menu__link {
+    align-items: center;
+    justify-content: start;
+}
+
+.api-method > .menu__link::before {
+    width: 50px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    border: 1px solid;
+    margin-right: var(--ifm-spacing-horizontal);
+    text-align: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    color: white;
+}
+
+.get > .menu__link::before {
+    content: 'get';
+    background-color: var(--ifm-color-primary);
+}
+
+/*------------Jargon---------------*/
+/* Add a dashed line under jargon terms */
+.jargon-term {
+    text-decoration: underline var(--ifm-color-primary-light);
+}
+/* Add a question mark behind/above jargon terms */
+.jargon-term::after {
+    content: '?';
+    font-weight: bold;
+    display: inline-block;
+    transform: translate(0, -0.5em);
+    font-size: 75%;
+    color: var(--ifm-color-primary-light);
+    margin-left: 3px;
+}
+/* Hover behavior for the therm itself */
+.jargon-term:hover {
+    position: relative;
+    text-decoration: none;
+    cursor: help;
+}
+/* Hide info by default */
+.jargon-term .jargon-info {
+    display: none;
+}
+/* Show info on hover */
+.jargon-term:hover .jargon-info {
+    display: block;
+    position: absolute;
+    top: 1.5em;
+    left: 0;
+    background: var(--ifm-hover-overlay);
+    border: 1px solid var(--ifm-color-primary-light);
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 90%;
+    min-width: 250px;
+    max-width: 450px;
+    z-index: 1;
+}
+/*---------------------------------*/
+
+.post > .menu__link::before {
+    content: 'post';
+    background-color: var(--openapi-code-green);
+}
+
+.delete > .menu__link::before {
+    content: 'del';
+    background-color: var(--openapi-code-red);
+}
+
+.put > .menu__link::before {
+    content: 'put';
+    background-color: var(--openapi-code-blue);
+}
+
+.patch > .menu__link::before {
+    content: 'patch';
+    background-color: var(--openapi-code-orange);
+}
+
+.head > .menu__link::before {
+    content: 'head';
+    background-color: var(--ifm-color-secondary-darkest);
+}
+
+/** Added to hide the See full example on GitHub link in imported code examples **/
+
+.hide-code-block-extras a {
+    display: none;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.inlined {
+    display: inline-block;
+}
+
+.react-select__control {
+    background-color: var(--ifm-color-emphasis-200) !important;
+    border: 0 !important;
+    margin: 0 !important;
+}
+
+.react-select__placeholder {
+    color: var(--ifm-font-color-base) !important;
+}
+
+.react-select__indicator {
+    color: var(--ifm-font-color-base) !important;
+}
+
+.react-select__indicator-separator {
+    background-color: transparent !important;
+}
+
+.react-select__menu {
+    background-color: var(--ifm-color-emphasis-200) !important;
+    z-index: 9999;
+}
+
+.react-select__option--is-focused {
+    background-color: var(--ifm-color-emphasis-300) !important;
+}
+
+.react-select__multi-value {
+    background-color: var(--ifm-background-color) !important;
+}
+
+.react-select__single-value,
+.react-select__multi-value__label {
+    color: var(--ifm-font-color-base) !important;
+}
+
+.recharts-text {
+    fill: var(--ifm-menu-color) !important;
 }

@@ -1,53 +1,58 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  image: string;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Up-to-Date',
+    image: '/img/home/beakers.png',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+          Silk.NET provides low-level bindings to many high-performance graphics &amp; compute frameworks.
+          With an efficient bindings regeneration mechanism, we are committed to ensuring all our bindings reflect the
+          latest specifications with monthly updates generated straight from the upstream sources.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Development Made Easy',
+    image: '/img/home/devices2.png',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+          In addition to providing high-speed, direct, and transparent bindings, we provide high-level utilities and
+          wrappers to maximise productivity in common workloads such as platform-agnostic abstractions around Windowing
+          and Input, bringing your apps to a vast number of platforms without changing a single line!
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Ready To Go',
+    image: '/img/home/world.png',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+          Silk.NET caters for anything you could need in swift development of multimedia, graphics, compute
+          applications. Silk.NET is an all-in-one solution, complete with Graphics, Compute, Audio, Input, and
+          Windowing. With support for all major desktop and mobile platforms included too, you have everything you need
+          to excel.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, image, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+    <div className={clsx('col col--4')} style={{padding: "0"}}>
+      <div>
+        <img src={useBaseUrl(image)} className={styles.featureimg} role="img" />
       </div>
-      <div className="text--center padding-horiz--md">
+      <div className="padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </div>
@@ -57,8 +62,8 @@ function Feature({title, Svg, description}: FeatureItem) {
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <section className={styles.features}>
-      <div className="container">
+    <section className={styles.corerow}>
+      <div className="container" style={{padding: "0"}}>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

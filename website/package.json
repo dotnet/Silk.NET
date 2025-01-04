@@ -21,7 +21,8 @@
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-responsive-3d-carousel": "^2.1.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.6.3",
