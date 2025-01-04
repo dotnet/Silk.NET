@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-directives";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -37,14 +38,15 @@ const config: Config = {
             'classic',
             {
                 docs: {
-                    sidebarPath: './sidebars.ts',
+                    sidebarPath: '../../docs/sidebars.ts',
                     path: "../../docs",
                     routeBasePath: "docs",
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     // editUrl:
                     //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-                    exclude: ["README.md"]
+                    exclude: ["README.md"],
+                    beforeDefaultRemarkPlugins: [remarkGithubAdmonitionsToDirectives],
                 },
                 blog: {
                     showReadingTime: true,
@@ -75,7 +77,7 @@ const config: Config = {
             items: [
                 {
                     type: 'docSidebar',
-                    sidebarId: 'tutorialSidebar',
+                    sidebarId: 'docsSidebar',
                     position: 'left',
                     label: 'Documentation',
                 },

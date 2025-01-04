@@ -1,4 +1,8 @@
-﻿# Overview
+﻿---
+title: Structure Chaining
+---
+
+# Overview
 
 ## Table of Contents
 
