@@ -1,0 +1,15 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from shared/ksmedia.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+namespace Silk.NET.Windows;
+
+public partial struct KSJACK_DESCRIPTION2
+{
+    [NativeTypeName("DWORD")]
+    public uint DeviceStateInfo;
+
+    [NativeTypeName("DWORD")]
+    public uint JackCapabilities;
+}
