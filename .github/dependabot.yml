@@ -7,7 +7,7 @@ updates:
     interval: weekly
     day: thursday
   groups:
-    All 2.X Dependencies:
+    silk2_deps:
       patterns:
         - "*"
 - package-ecosystem: nuget
@@ -17,6 +17,6 @@ updates:
     interval: weekly
     day: thursday
   groups:
-    All 3.0 Dependencies:
+    silk3_deps:
       patterns:
         - "*"
