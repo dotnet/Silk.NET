@@ -17,4 +17,13 @@
     <PackageReference Include="Nuke.Common" Version="9.0.3" />
     <PackageReference Include="Octokit" Version="13.0.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\sources\FidelityFX\FidelityFX\Silk.NET.FidelityFX.csproj">
+      <Link>Directory.Build\sources\FidelityFX\FidelityFX\Silk.NET.FidelityFX.csproj</Link>
+    </Content>
+    <Content Include="..\..\tests\FidelityFX\FidelityFX\Silk.NET.FidelityFX.UnitTests.csproj">
+      <Link>Directory.Build\tests\FidelityFX\FidelityFX\Silk.NET.FidelityFX.UnitTests.csproj</Link>
+    </Content>
+  </ItemGroup>
 </Project>

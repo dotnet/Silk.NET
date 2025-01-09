@@ -64,6 +64,33 @@
         }
       }
     },
+    "FidelityFX": {
+      "SourceProject": "sources/FidelityFX/FidelityFX/Silk.NET.FidelityFX.csproj",
+      "TestProject": "tests/FidelityFX/FidelityFX/Silk.NET.FidelityFX.UnitTests.csproj",
+      "Solution": "Silk.NET.sln",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
+      "Mods": [
+        "AddIncludes",
+        "ClangScraper",
+        "ExtractNestedTyping",
+        "TransformHandles",
+        "TransformFunctions",
+        "TransformProperties",
+        "PrettifyNames",
+        "AddVTables"
+      ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/fidelityfx/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/FidelityFX",
+        "InputTestRoot": "tests/FidelityFX"
+      },
+      "TransformHandles": {
+        "AssumeMissingTypesOpaque": true,
+        "UseDSL": true
+      }
+    },
     "OpenGL": {
       "SourceProject": "sources/OpenGL/OpenGL/Silk.NET.OpenGL.csproj",
       "Solution": "Silk.NET.sln",

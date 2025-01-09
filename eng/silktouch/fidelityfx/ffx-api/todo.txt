@@ -1,0 +1,2 @@
+../../../submodules/fidelityfx/ffx-api/include/ffx_api/dx12/ffx_api_dx12.h
+../../../submodules/fidelityfx/ffx-api/include/ffx_api/vk/ffx_api_vk.h

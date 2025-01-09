@@ -10,3 +10,6 @@
 [submodule "eng/submodules/sdl"]
 	path = eng/submodules/sdl
 	url = https://github.com/libsdl-org/SDL
+[submodule "eng/submodules/fidelityfx"]
+	path = eng/submodules/fidelityfx
+	url = https://github.com/GPUOpen-LibrariesAndSDKs/FidelityFX-SDK
