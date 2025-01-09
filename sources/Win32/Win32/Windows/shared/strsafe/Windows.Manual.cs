@@ -13,7 +13,6 @@ namespace Silk.NET.Windows;
 
 public static unsafe partial class Windows
 {
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringLengthWorkerA"]/*' />
     public static HRESULT StringLengthWorkerA([NativeTypeName("STRSAFE_PCNZCH")] sbyte* psz, [NativeTypeName("size_t")] nuint cchMax, [NativeTypeName("size_t *")] nuint* pcchLength)
     {
         HRESULT hr = S_OK;
@@ -45,7 +44,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringLengthWorkerW"]/*' />
     public static HRESULT StringLengthWorkerW([NativeTypeName("STRSAFE_PCNZWCH")] char* psz, [NativeTypeName("size_t")] nuint cchMax, [NativeTypeName("size_t *")] nuint* pcchLength)
     {
         HRESULT hr = S_OK;
@@ -77,7 +75,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnalignedStringLengthWorkerW"]/*' />
     public static HRESULT UnalignedStringLengthWorkerW([NativeTypeName("STRSAFE_PCUNZWCH")] char* psz, [NativeTypeName("size_t")] nuint cchMax, [NativeTypeName("size_t *")] nuint* pcchLength)
     {
         HRESULT hr = S_OK;
@@ -109,7 +106,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringExValidateSrcA"]/*' />
     public static HRESULT StringExValidateSrcA([NativeTypeName("STRSAFE_PCNZCH *")] sbyte** ppszSrc, [NativeTypeName("size_t *")] nuint* pcchToRead, [NativeTypeName("const size_t")] nuint cchMax, [NativeTypeName("DWORD")] uint dwFlags)
     {
         HRESULT hr = S_OK;
@@ -130,7 +126,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringExValidateSrcW"]/*' />
     public static HRESULT StringExValidateSrcW([NativeTypeName("STRSAFE_PCNZWCH *")] char** ppszSrc, [NativeTypeName("size_t *")] nuint* pcchToRead, [NativeTypeName("const size_t")] nuint cchMax, [NativeTypeName("DWORD")] uint dwFlags)
     {
         HRESULT hr = S_OK;
@@ -151,7 +146,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringValidateDestA"]/*' />
     public static HRESULT StringValidateDestA([NativeTypeName("STRSAFE_PCNZCH")] sbyte* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("const size_t")] nuint cchMax)
     {
         HRESULT hr = S_OK;
@@ -164,7 +158,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringValidateDestAndLengthA"]/*' />
     public static HRESULT StringValidateDestAndLengthA([NativeTypeName("STRSAFE_LPCSTR")] sbyte* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("size_t *")] nuint* pcchDestLength, [NativeTypeName("const size_t")] nuint cchMax)
     {
         HRESULT hr;
@@ -182,7 +175,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringValidateDestW"]/*' />
     public static HRESULT StringValidateDestW([NativeTypeName("STRSAFE_PCNZWCH")] char* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("const size_t")] nuint cchMax)
     {
         HRESULT hr = S_OK;
@@ -195,7 +187,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringValidateDestAndLengthW"]/*' />
     public static HRESULT StringValidateDestAndLengthW([NativeTypeName("STRSAFE_LPCWSTR")] char* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("size_t *")] nuint* pcchDestLength, [NativeTypeName("const size_t")] nuint cchMax)
     {
         HRESULT hr;
@@ -213,7 +204,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringExValidateDestA"]/*' />
     public static HRESULT StringExValidateDestA([NativeTypeName("STRSAFE_PCNZCH")] sbyte* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("const size_t")] nuint cchMax, [NativeTypeName("DWORD")] uint dwFlags)
     {
         HRESULT hr = S_OK;
@@ -233,7 +223,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringExValidateDestAndLengthA"]/*' />
     public static HRESULT StringExValidateDestAndLengthA([NativeTypeName("STRSAFE_LPCSTR")] sbyte* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("size_t *")] nuint* pcchDestLength, [NativeTypeName("const size_t")] nuint cchMax, [NativeTypeName("DWORD")] uint dwFlags)
     {
         HRESULT hr;
@@ -258,7 +247,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringExValidateDestW"]/*' />
     public static HRESULT StringExValidateDestW([NativeTypeName("STRSAFE_PCNZWCH")] char* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("const size_t")] nuint cchMax, [NativeTypeName("DWORD")] uint dwFlags)
     {
         HRESULT hr = S_OK;
@@ -278,7 +266,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringExValidateDestAndLengthW"]/*' />
     public static HRESULT StringExValidateDestAndLengthW([NativeTypeName("STRSAFE_LPCWSTR")] char* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("size_t *")] nuint* pcchDestLength, [NativeTypeName("const size_t")] nuint cchMax, [NativeTypeName("DWORD")] uint dwFlags)
     {
         HRESULT hr;
@@ -303,7 +290,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCopyWorkerA"]/*' />
     public static HRESULT StringCopyWorkerA([NativeTypeName("STRSAFE_LPSTR")] sbyte* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("size_t *")] nuint* pcchNewDestLength, [NativeTypeName("STRSAFE_PCNZCH")] sbyte* pszSrc, [NativeTypeName("size_t")] nuint cchToCopy)
     {
         HRESULT hr = S_OK;
@@ -333,7 +319,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCopyWorkerW"]/*' />
     public static HRESULT StringCopyWorkerW([NativeTypeName("STRSAFE_LPWSTR")] char* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("size_t *")] nuint* pcchNewDestLength, [NativeTypeName("STRSAFE_PCNZWCH")] char* pszSrc, [NativeTypeName("size_t")] nuint cchToCopy)
     {
         HRESULT hr = S_OK;
@@ -363,7 +348,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringGetsWorkerA"]/*' />
     public static HRESULT StringGetsWorkerA([NativeTypeName("STRSAFE_LPSTR")] sbyte* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("size_t *")] nuint* pcchNewDestLength)
     {
         HRESULT hr = S_OK;
@@ -413,7 +397,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringGetsWorkerW"]/*' />
     public static HRESULT StringGetsWorkerW([NativeTypeName("STRSAFE_LPWSTR")] char* pszDest, [NativeTypeName("size_t")] nuint cchDest, [NativeTypeName("size_t *")] nuint* pcchNewDestLength)
     {
         HRESULT hr = S_OK;
@@ -461,7 +444,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringExHandleFillBehindNullA"]/*' />
     public static HRESULT StringExHandleFillBehindNullA([NativeTypeName("STRSAFE_LPSTR")] sbyte* pszDestEnd, [NativeTypeName("size_t")] nuint cbRemaining, [NativeTypeName("DWORD")] uint dwFlags)
     {
         if (cbRemaining > unchecked(sizeof(sbyte)))
@@ -472,7 +454,6 @@ public static unsafe partial class Windows
         return S_OK;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringExHandleFillBehindNullW"]/*' />
     public static HRESULT StringExHandleFillBehindNullW([NativeTypeName("STRSAFE_LPWSTR")] char* pszDestEnd, [NativeTypeName("size_t")] nuint cbRemaining, [NativeTypeName("DWORD")] uint dwFlags)
     {
         if (cbRemaining > unchecked(sizeof(char)))
@@ -483,7 +464,6 @@ public static unsafe partial class Windows
         return S_OK;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringExHandleOtherFlagsA"]/*' />
     public static HRESULT StringExHandleOtherFlagsA([NativeTypeName("STRSAFE_LPSTR")] sbyte* pszDest, [NativeTypeName("size_t")] nuint cbDest, [NativeTypeName("size_t")] nuint cchOriginalDestLength, [NativeTypeName("STRSAFE_LPSTR *")] sbyte** ppszDestEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining, [NativeTypeName("DWORD")] uint dwFlags)
     {
         nuint cchDest = cbDest / 1;
@@ -530,7 +510,6 @@ public static unsafe partial class Windows
         return S_OK;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringExHandleOtherFlagsW"]/*' />
     public static HRESULT StringExHandleOtherFlagsW([NativeTypeName("STRSAFE_LPWSTR")] char* pszDest, [NativeTypeName("size_t")] nuint cbDest, [NativeTypeName("size_t")] nuint cchOriginalDestLength, [NativeTypeName("STRSAFE_LPWSTR *")] char** ppszDestEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining, [NativeTypeName("DWORD")] uint dwFlags)
     {
         nuint cchDest = cbDest / 2;
@@ -577,7 +556,6 @@ public static unsafe partial class Windows
         return S_OK;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCopyExA"]/*' />
     public static HRESULT StringCbCopyExA([NativeTypeName("STRSAFE_LPSTR")] sbyte* pszDest, [NativeTypeName("size_t")] nuint cbDest, [NativeTypeName("STRSAFE_LPCSTR")] sbyte* pszSrc, [NativeTypeName("STRSAFE_LPSTR *")] sbyte** ppszDestEnd, [NativeTypeName("size_t *")] nuint* pcbRemaining, [NativeTypeName("DWORD")] uint dwFlags)
     {
         HRESULT hr;
@@ -664,7 +642,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCopyExW"]/*' />
     public static HRESULT StringCbCopyExW([NativeTypeName("STRSAFE_LPWSTR")] char* pszDest, [NativeTypeName("size_t")] nuint cbDest, [NativeTypeName("STRSAFE_LPCWSTR")] char* pszSrc, [NativeTypeName("STRSAFE_LPWSTR *")] char** ppszDestEnd, [NativeTypeName("size_t *")] nuint* pcbRemaining, [NativeTypeName("DWORD")] uint dwFlags)
     {
         HRESULT hr;
@@ -751,7 +728,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCopyNExA"]/*' />
     public static HRESULT StringCbCopyNExA([NativeTypeName("STRSAFE_LPSTR")] sbyte* pszDest, [NativeTypeName("size_t")] nuint cbDest, [NativeTypeName("STRSAFE_PCNZCH")] sbyte* pszSrc, [NativeTypeName("size_t")] nuint cbToCopy, [NativeTypeName("STRSAFE_LPSTR *")] sbyte** ppszDestEnd, [NativeTypeName("size_t *")] nuint* pcbRemaining, [NativeTypeName("DWORD")] uint dwFlags)
     {
         HRESULT hr;
@@ -835,7 +811,6 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCopyNExW"]/*' />
     public static HRESULT StringCbCopyNExW([NativeTypeName("STRSAFE_LPWSTR")] char* pszDest, [NativeTypeName("size_t")] nuint cbDest, [NativeTypeName("STRSAFE_PCNZWCH")] char* pszSrc, [NativeTypeName("size_t")] nuint cbToCopy, [NativeTypeName("STRSAFE_LPWSTR *")] char** ppszDestEnd, [NativeTypeName("size_t *")] nuint* pcbRemaining, [NativeTypeName("DWORD")] uint dwFlags)
     {
         HRESULT hr;

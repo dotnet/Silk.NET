@@ -30,6 +30,7 @@ public class ModLoader
             nameof(TransformProperties) => typeof(TransformProperties),
             nameof(ClangScraper) => typeof(ClangScraper),
             nameof(TransformCOM) => typeof(TransformCOM),
+            nameof(DisableWarnings) => typeof(DisableWarnings),
             _ => null,
         };
 }

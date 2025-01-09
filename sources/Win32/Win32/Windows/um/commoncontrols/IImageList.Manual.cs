@@ -8,7 +8,6 @@ using static Silk.NET.Windows.IID;
 
 namespace Silk.NET.Windows;
 
-/// <include file='IImageList.xml' path='doc/member[@name="IImageList"]/*'/>
 public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
 {
     public static explicit operator HIMAGELIST(IImageList imageList) => new(imageList.lpVtbl);

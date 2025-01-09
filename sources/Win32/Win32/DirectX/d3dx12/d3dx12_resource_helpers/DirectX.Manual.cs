@@ -26,7 +26,6 @@ public static unsafe partial class DirectX
         PlaneSlice = V.CreateTruncating(Subresource / (MipLevels * ArraySize));
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.GetRequiredIntermediateSize"]/*' />
     [return: NativeTypeName("UINT64")]
     public static ulong GetRequiredIntermediateSize(ID3D12Resource* pDestinationResource, uint FirstSubresource, uint NumSubresources)
     {
@@ -40,7 +39,6 @@ public static unsafe partial class DirectX
         return RequiredSize;
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.UpdateSubresources"]/*' />
     [return: NativeTypeName("UINT64")]
     public static ulong UpdateSubresources(ID3D12GraphicsCommandList pCmdList, ID3D12Resource pDestinationResource, ID3D12Resource pIntermediate, uint FirstSubresource, uint NumSubresources, [NativeTypeName("UINT64")] ulong RequiredSize, [NativeTypeName("const D3D12_PLACED_SUBRESOURCE_FOOTPRINT *")] D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, [NativeTypeName("const UINT *")] uint* pNumRows, [NativeTypeName("const UINT64 *")] ulong* pRowSizesInBytes, [NativeTypeName("const D3D12_SUBRESOURCE_DATA *")] D3D12_SUBRESOURCE_DATA* pSrcData)
     {
@@ -95,7 +93,6 @@ public static unsafe partial class DirectX
         return RequiredSize;
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.UpdateSubresources"]/*' />
     [return: NativeTypeName("UINT64")]
     public static ulong UpdateSubresources(ID3D12GraphicsCommandList pCmdList, ID3D12Resource pDestinationResource, ID3D12Resource pIntermediate, uint FirstSubresource, uint NumSubresources, [NativeTypeName("UINT64")] ulong RequiredSize, [NativeTypeName("const D3D12_PLACED_SUBRESOURCE_FOOTPRINT *")] D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, [NativeTypeName("const UINT *")] uint* pNumRows, [NativeTypeName("const UINT64 *")] ulong* pRowSizesInBytes, [NativeTypeName("const void *")] void* pResourceData, [NativeTypeName("const D3D12_SUBRESOURCE_INFO *")] D3D12_SUBRESOURCE_INFO* pSrcData)
     {
@@ -150,7 +147,6 @@ public static unsafe partial class DirectX
         return RequiredSize;
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.UpdateSubresources"]/*' />
     [return: NativeTypeName("UINT64")]
     public static ulong UpdateSubresources(ID3D12GraphicsCommandList pCmdList, ID3D12Resource pDestinationResource, ID3D12Resource pIntermediate, [NativeTypeName("UINT64")] ulong IntermediateOffset, uint FirstSubresource, uint NumSubresources, [NativeTypeName("const D3D12_SUBRESOURCE_DATA *")] D3D12_SUBRESOURCE_DATA* pSrcData)
     {
@@ -184,7 +180,6 @@ public static unsafe partial class DirectX
         return Result;
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.UpdateSubresources"]/*' />
     [return: NativeTypeName("UINT64")]
     public static ulong UpdateSubresources(ID3D12GraphicsCommandList pCmdList, ID3D12Resource pDestinationResource, ID3D12Resource pIntermediate, [NativeTypeName("UINT64")] ulong IntermediateOffset, uint FirstSubresource, uint NumSubresources, [NativeTypeName("const void *")] void* pResourceData, [NativeTypeName("const D3D12_SUBRESOURCE_INFO *")] D3D12_SUBRESOURCE_INFO* pSrcData)
     {
@@ -218,7 +213,6 @@ public static unsafe partial class DirectX
         return Result;
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DX12Align"]/*' />
     public static T D3DX12Align<T>(T uValue, T uAlign)
         where T : IBinaryInteger<T>
     {
@@ -230,7 +224,6 @@ public static unsafe partial class DirectX
         return uResult;
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DX12AlignAtLeast"]/*' />
     public static T D3DX12AlignAtLeast<T>(T uValue, T uAlign)
         where T : IBinaryInteger<T>
     {
@@ -238,7 +231,6 @@ public static unsafe partial class DirectX
         return (aligned > uAlign) ? aligned : uAlign;
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DX12GetCopyableFootprints"]/*' />
     public static bool D3DX12GetCopyableFootprints([NativeTypeName("const D3D12_RESOURCE_DESC1 &")] in D3D12_RESOURCE_DESC1 ResourceDesc, uint FirstSubresource, uint NumSubresources, [NativeTypeName("UINT64")] ulong BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint* pNumRows, [NativeTypeName("UINT64 *")] ulong* pRowSizeInBytes, [NativeTypeName("UINT64 *")] ulong* pTotalBytes)
     {
         const ulong uint64_max = ~0ul;
@@ -367,7 +359,6 @@ public static unsafe partial class DirectX
         return true;
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DX12GetCopyableFootprints"]/*' />
     public static bool D3DX12GetCopyableFootprints([NativeTypeName("const D3D12_RESOURCE_DESC1 &")] D3D12_RESOURCE_DESC1* ResourceDesc, uint FirstSubresource, uint NumSubresources, [NativeTypeName("UINT64")] ulong BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint* pNumRows, [NativeTypeName("UINT64 *")] ulong* pRowSizeInBytes, [NativeTypeName("UINT64 *")] ulong* pTotalBytes)
     {
         const ulong uint64_max = ~0ul;
@@ -496,14 +487,12 @@ public static unsafe partial class DirectX
         return true;
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DX12GetCopyableFootprints"]/*' />
     public static bool D3DX12GetCopyableFootprints([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC pResourceDesc, uint FirstSubresource, uint NumSubresources, [NativeTypeName("UINT64")] ulong BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint* pNumRows, [NativeTypeName("UINT64 *")] ulong* pRowSizeInBytes, [NativeTypeName("UINT64 *")] ulong* pTotalBytes)
     {
         D3D12_RESOURCE_DESC1 desc = D3DX12ResourceDesc0ToDesc1(pResourceDesc);
         return D3DX12GetCopyableFootprints(in desc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, pRowSizeInBytes, pTotalBytes);
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DX12ResourceDesc0ToDesc1"]/*' />
     public static D3D12_RESOURCE_DESC1 D3DX12ResourceDesc0ToDesc1([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC desc0)
     {
         D3D12_RESOURCE_DESC1 desc1 = new D3D12_RESOURCE_DESC1() {
@@ -530,7 +519,6 @@ public static unsafe partial class DirectX
         return desc1;
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DX12ResourceDesc0ToDesc1"]/*' />
     public static D3D12_RESOURCE_DESC1 D3DX12ResourceDesc0ToDesc1([NativeTypeName("const D3D12_RESOURCE_DESC &")] D3D12_RESOURCE_DESC* desc0)
     {
         D3D12_RESOURCE_DESC1 desc1 = new D3D12_RESOURCE_DESC1() {

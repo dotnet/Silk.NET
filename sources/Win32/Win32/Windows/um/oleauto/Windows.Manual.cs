@@ -11,11 +11,9 @@ namespace Silk.NET.Windows;
 
 public static unsafe partial class Windows
 {
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI4FromI8"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
     public static extern HRESULT VarI4FromI8([NativeTypeName("LONG64")] long i64In, [NativeTypeName("LONG *")] int* plOut);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI4FromUI8"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
     public static extern HRESULT VarI4FromUI8([NativeTypeName("ULONG64")] ulong ui64In, [NativeTypeName("LONG *")] int* plOut);
 }

@@ -1,24 +1,16 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.FindSymbols;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using System.Diagnostics;
-using System.Reflection.Metadata;
 using Microsoft.CodeAnalysis.Editing;
-using System.Xml.Linq;
 using Microsoft.Extensions.Logging;
-using Silk.NET.SilkTouch.Clang;
 using Microsoft.Extensions.Options;
 using System.Reflection;
+using Silk.NET.SilkTouch.Utility;
+using Silk.NET.SilkTouch.Sources;
 
 namespace Silk.NET.SilkTouch.Mods
 {
@@ -38,13 +30,14 @@ namespace Silk.NET.SilkTouch.Mods
         public class Configuration
         {
             /// <summary>
-            /// The base types to consider the base of the com tree
-            /// Usually this is IUknown.Interface
+            /// The base type names and their full namespace definition to consider the base of the com tree
+            /// Usually this is (IUnknown.Interface, Silk.NET.Windows.IUnknown.Interface)
             /// </summary>
-            public string[]? BaseTypes { get; init; }
+            public Dictionary<string, string>? BaseTypes { get; init; }
 
             /// <summary>
             /// Additional Com Types which are not in this job but referenced by it
+            /// No cast statements will be generated for these types
             /// </summary>
             public string[]? AdditionalCOMTypes { get; init; }
         }
@@ -54,7 +47,10 @@ namespace Silk.NET.SilkTouch.Mods
         {
             await base.ExecuteAsync(ctx, ct);
 
-            var firstPass = new TypeDiscoverer(config.Value.BaseTypes ?? ["IUnknown.Interface"]);
+            // Read the configuration.
+            var cfg = config.Get(ctx.JobKey);
+
+            var firstPass = new TypeDiscoverer(cfg.BaseTypes ?? new() { { "IUnknown.Interface", "Silk.NET.Windows.IUnknown.Interface" } }, logger);
             var proj = ctx.SourceProject;
 
             if (proj is null)
@@ -77,11 +73,13 @@ namespace Silk.NET.SilkTouch.Mods
                 firstPass.Visit(root);
             }
 
+            //Cleanup our lists
             firstPass.FoundCOMTypes = firstPass.FoundCOMTypes.Where(val => val.Item2).ToList();
+            firstPass.SupportedOSTypes = firstPass.SupportedOSTypes.Where(val => firstPass.FoundCOMTypes.Any(com => com.Item1 == val)).ToList();
 
-            foreach (string comType in config.Value.AdditionalCOMTypes ?? [])
+            foreach (string comType in cfg.AdditionalCOMTypes ?? [])
             {
-                firstPass.FoundCOMTypes.Add((comType, true));
+                firstPass.FoundCOMTypes.Add((comType, true, null));
             }
 
             int index = 0;
@@ -284,7 +282,7 @@ namespace Silk.NET.SilkTouch.Mods
             ctx.SourceProject = proj;
         }
 
-        class TypeDiscoverer(string[] BaseTypes) : CSharpSyntaxWalker
+        class TypeDiscoverer : CSharpSyntaxWalker
         {
             private Dictionary<string, List<(string, bool)>> _interfaceParenting = new Dictionary<string, List<(string, bool)>>();
 
@@ -292,7 +290,44 @@ namespace Silk.NET.SilkTouch.Mods
             /// The list of known COM interface types
             /// (name of type, is it a struct?)
             /// </summary>
-            public List<(string, bool)> FoundCOMTypes = [];
+            public List<(string, bool, KeyedStringTree?)> FoundCOMTypes = [];
+
+            public List<string> SupportedOSTypes = [];
+
+            private readonly Dictionary<string, string> _baseTypes;
+            private ILogger<TransformCOM> _logger;
+
+            private List<string> _Namespace = [];
+
+            public TypeDiscoverer(Dictionary<string, string> BaseTypes, ILogger<TransformCOM> logger)
+            {
+                _logger = logger;
+                _baseTypes = BaseTypes;
+                InheritanceTrees = new KeyedStringTree[_baseTypes.Count];
+
+                int i = 0;
+                foreach (var baseType in BaseTypes)
+                {
+                    InheritanceTrees[i] = new(baseType.Key, baseType.Value);
+                    i++;
+                }
+            }
+
+            public KeyedStringTree[] InheritanceTrees;
+
+            public override void VisitNamespaceDeclaration(NamespaceDeclarationSyntax node)
+            {
+                _Namespace.Add(node.Name.ToString());
+                base.VisitNamespaceDeclaration(node);
+                _Namespace.RemoveAt(_Namespace.Count - 1);
+            }
+
+            public override void VisitFileScopedNamespaceDeclaration(FileScopedNamespaceDeclarationSyntax node)
+            {
+                _Namespace.Add(node.Name.ToString());
+                base.VisitFileScopedNamespaceDeclaration(node);
+                _Namespace.RemoveAt(_Namespace.Count - 1);
+            }
 
             public override void VisitStructDeclaration(StructDeclarationSyntax node)
             {
@@ -306,6 +341,11 @@ namespace Silk.NET.SilkTouch.Mods
                 }
 
                 var className = $"{node.Identifier}";
+
+                if (node.AttributeLists.Any(attrList => attrList.Attributes.Any(attr => attr.Name.ToString() == "SupportedOSPlatform")))
+                {
+                    SupportedOSTypes.Add(className);
+                }
 
                 CheckBases((className, true), bases);
             }
@@ -327,7 +367,21 @@ namespace Silk.NET.SilkTouch.Mods
                 {
                     var parent = node.Parent as StructDeclarationSyntax;
                     if (parent is not null)
+                    {
                         name = $"{parent.Identifier}.{name}";
+
+                        if (parent.AttributeLists.Any(attrList => attrList.Attributes.Any(attr => attr.Name.ToString() == "SupportedOSPlatform")))
+                        {
+                            SupportedOSTypes.Add(name);
+                        }
+                    }
+                    else
+                    {
+                        if (node.AttributeLists.Any(attrList => attrList.Attributes.Any(attr => attr.Name.ToString() == "SupportedOSPlatform")))
+                        {
+                            SupportedOSTypes.Add(name);
+                        }
+                    }
                 }
 
                 CheckBases((name, false), bases);
@@ -335,10 +389,33 @@ namespace Silk.NET.SilkTouch.Mods
 
             private void CheckBases((string, bool) className, BaseListSyntax bases)
             {
-                if (bases.Types.Any(baseType => BaseTypes.Any(BaseType => baseType.Type.ToString() == BaseType) || FoundCOMTypes.Any(val => val.Item1 == $"{baseType.Type}")))
+                foreach (BaseTypeSyntax baseType in bases.Types)
                 {
-                    COMTypeValidated(className);
-                    return;
+                    string type = baseType.Type.ToString();
+                    bool found = false;
+
+                    int i = 0;
+                    foreach (var BaseType in _baseTypes)
+                    {
+                        if (BaseType.Key == type)
+                        {
+                            COMTypeValidated((className.Item1, className.Item2, InheritanceTrees[i]), BaseType.Key);
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (found)
+                        break;
+
+                    foreach ((string, bool, KeyedStringTree?) val in FoundCOMTypes)
+                    {
+                        if (val.Item1 == type)
+                        {
+                            COMTypeValidated((className.Item1, className.Item2, val.Item3), val.Item1);
+                            break;
+                        }
+                    }
                 }
 
                 foreach (BaseTypeSyntax baseType in bases.Types)
@@ -351,7 +428,7 @@ namespace Silk.NET.SilkTouch.Mods
                 }
             }
 
-            private void COMTypeValidated((string, bool) typeName)
+            private void COMTypeValidated((string, bool, KeyedStringTree?) typeName, string parentName)
             {
                 if (FoundCOMTypes.Contains(typeName))
                 {
@@ -360,24 +437,29 @@ namespace Silk.NET.SilkTouch.Mods
 
                 FoundCOMTypes.Add(typeName);
 
+                if (!typeName.Item3?.TryAddNode(parentName, typeName.Item1, $"{string.Join('.',_Namespace)}.{typeName.Item1}") ?? true)
+                {
+                    _logger.LogWarning("Failed to add {} to its Inheritence tree, casts will not generate properly", typeName.Item1);
+                }
+
                 if (!_interfaceParenting.TryGetValue(typeName.Item1, out List<(string, bool)>? children))
                     return;
 
                 foreach ((string, bool) childName in children)
                 {
-                    COMTypeValidated(childName);
+                    COMTypeValidated((childName.Item1, childName.Item2, typeName.Item3), typeName.Item1);
                 }
             }
         }
 
-        class Rewriter(List<(string, bool)> ComTypes)
+        class Rewriter(List<(string, bool, KeyedStringTree?)> ComTypes)
             : CSharpSyntaxRewriter
         {
             public override SyntaxNode? VisitPointerType(PointerTypeSyntax node)
             {
                 for (int i = 0; i < ComTypes.Count; i++)
                 {
-                    (string, bool) val = ComTypes[i];
+                    (string, bool, KeyedStringTree?) val = ComTypes[i];
 
                     if (val.Item1 == node.ElementType.ToString())
                     {
@@ -387,8 +469,6 @@ namespace Silk.NET.SilkTouch.Mods
 
                 return base.VisitPointerType(node);
             }
-
-            public override SyntaxNode VisitGenericName(GenericNameSyntax node) => node;
 
             public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
             {
@@ -449,7 +529,7 @@ namespace Silk.NET.SilkTouch.Mods
 
                 for (int i = 0; i < ComTypes.Count; i++)
                 {
-                    (string, bool) val = ComTypes[i];
+                    (string, bool, KeyedStringTree ?) val = ComTypes[i];
 
                     if (castType == $"{val.Item1}*")
                     {
@@ -472,6 +552,191 @@ namespace Silk.NET.SilkTouch.Mods
                 }
 
                 return Parameter(visitedParameter.AttributeLists, visitedParameter.Modifiers, visitedParameter.Type, visitedParameter.Identifier, EqualsValueClause(LiteralExpression(SyntaxKind.DefaultLiteralExpression)));
+            }
+
+            public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
+            {
+                string name = node.Identifier.ToString();
+                foreach (var ComType in ComTypes)
+                {
+                    if (name == ComType.Item1 && ComType.Item3 is not null && ComType.Item3.FindNode(name, out KeyedStringTree.Node? treeNode) && treeNode.Parent is not null)
+                    {
+                        //visit and modify ComType Variables and internal usages first
+                        node = (base.VisitStructDeclaration(node) as StructDeclarationSyntax)!;
+
+                        //Correct to the .Interface version which will always be our parent
+                        treeNode = treeNode.Parent;
+
+                        //Add vtbl constructor to ComType
+                        node = node.AddMembers(ConstructorDeclaration(ComType.Item1).
+                                               WithModifiers(
+                                                TokenList(
+                                                    Token(SyntaxKind.PublicKeyword))).
+                                               WithParameterList(
+                                                ParameterList(
+                                                    SingletonSeparatedList(
+                                                        Parameter(
+                                                            Identifier("vtbl")).
+                                                        WithType(
+                                                            ParseTypeName("void***"))))).
+                                               WithBody(
+                                                Block(
+                                                    SingletonList(
+                                                        ExpressionStatement(
+                                                            AssignmentExpression(
+                                                                SyntaxKind.SimpleAssignmentExpression,
+                                                                IdentifierName("lpVtbl"),
+                                                                IdentifierName("vtbl")))))).
+                                               WithLeadingTrivia(
+                                                TriviaList(
+                                                    Trivia(
+                                                        DocumentationCommentTrivia(
+                                                            SyntaxKind.SingleLineDocumentationCommentTrivia)
+                                                        .WithContent(
+                                                            List(
+                                                                new XmlNodeSyntax[]
+                                                                {
+                                                                    XmlText().WithTextTokens(
+                                                                        TokenList(
+                                                                            XmlTextLiteral(
+                                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
+                                                                    XmlElement(
+                                                                        XmlElementStartTag(
+                                                                            XmlName("summary")),
+                                                                        List(new XmlNodeSyntax[]
+                                                                        {
+                                                                            XmlText("Initializes a new instance of the "),
+                                                                            XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(ComType.Item1))) })),
+                                                                            XmlText(" struct with the specified virtual table pointer.")
+                                                                        }),
+                                                                        XmlElementEndTag(
+                                                                            XmlName("summary"))),
+                                                                    XmlText().WithTextTokens(
+                                                                        TokenList(
+                                                                            XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList()))),
+                                                                    XmlText().WithTextTokens(
+                                                                        TokenList(
+                                                                            XmlTextLiteral(
+                                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
+                                                                    XmlElement(
+                                                                        XmlElementStartTag(
+                                                                            XmlName("param")).WithAttributes(
+                                                                                SingletonList<XmlAttributeSyntax>(
+                                                                                    XmlNameAttribute(
+                                                                                        XmlName("name"),
+                                                                                        Token(SyntaxKind.DoubleQuoteToken),
+                                                                                        IdentifierName("vtbl"),
+                                                                                        Token(SyntaxKind.DoubleQuoteToken)))),
+                                                                        SingletonList<XmlNodeSyntax>(
+                                                                            XmlText("The pointer to virtual table.")),
+                                                                        XmlElementEndTag(
+                                                                            XmlName("param")))
+                                                                }))))));
+
+                        if (treeNode.Parent is not null)
+                        {
+                            node = generateUpcasts(node, ComType.Item1, treeNode.Parent);
+                        }
+
+                        return node;
+                    }
+                }
+
+                return base.VisitStructDeclaration(node);
+            }
+
+            private StructDeclarationSyntax generateUpcasts(StructDeclarationSyntax node, string className, KeyedStringTree.Node treeNode)
+            {
+                string castName = InterfaceNameToStructName(treeNode.Value);
+
+                node = node.AddMembers(GenerateCastDefinition(className, castName, false));
+                node = node.AddMembers(GenerateCastDefinition(castName, className));
+
+                if (treeNode.Parent is not null)
+                {
+                    return generateUpcasts(node, className, treeNode.Parent);
+                }
+
+                return node;
+            }
+
+            private string InterfaceNameToStructName(string interfaceName) => interfaceName.EndsWith(".Interface") ? interfaceName.Remove(interfaceName.Length - 10) : interfaceName;
+
+            private ConversionOperatorDeclarationSyntax GenerateCastDefinition(string className, string castName, bool implicitCast = true)
+            {
+                return ConversionOperatorDeclaration(Token(implicitCast ? SyntaxKind.ImplicitKeyword : SyntaxKind.ExplicitKeyword),
+                            ParseTypeName(className)).
+                        WithModifiers(
+                            TokenList(
+                                Token(SyntaxKind.PublicKeyword),
+                                Token(SyntaxKind.StaticKeyword))).
+                        WithParameterList(
+                            ParameterList(
+                                SingletonSeparatedList(
+                                    Parameter(Identifier("value")).
+                                    WithType(ParseTypeName(castName))))).
+                        WithBody(
+                            Block(
+                                SingletonList(
+                                    ReturnStatement(
+                                        ObjectCreationExpression(
+                                            IdentifierName(className)).
+                                        WithArgumentList(
+                                            ArgumentList(
+                                                SingletonSeparatedList(
+                                                    Argument(
+                                                        IdentifierName("value.lpVtbl"))))))))).
+                        WithLeadingTrivia(
+                            TriviaList(
+                                Trivia(
+                                    DocumentationCommentTrivia(
+                                        SyntaxKind.SingleLineDocumentationCommentTrivia)
+                                    .WithContent(
+                                        List(
+                                            new XmlNodeSyntax[]
+                                            {
+                                                XmlText().WithTextTokens(
+                                                    TokenList(
+                                                        XmlTextLiteral(
+                                                            TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
+                                                XmlElement(
+                                                    XmlElementStartTag(
+                                                        XmlName("summary")),
+                                                    List(new XmlNodeSyntax[]
+                                                    {
+                                                        XmlText($"{(implicitCast ? "Up" : "Down")}casts "),
+                                                        XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(castName))) })),
+                                                        XmlText(" to "),
+                                                        XmlEmptyElement(XmlName("see"), List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(className))) })),
+                                                        XmlText(".")
+                                                    }),
+                                                    XmlElementEndTag(
+                                                        XmlName("summary"))),
+                                                XmlText().WithTextTokens(
+                                                    TokenList(
+                                                        XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList()))),
+                                                XmlText().WithTextTokens(
+                                                    TokenList(
+                                                        XmlTextLiteral(
+                                                            TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
+                                                XmlElement(
+                                                    XmlElementStartTag(
+                                                        XmlName("param")).WithAttributes(
+                                                            SingletonList<XmlAttributeSyntax>(
+                                                                XmlNameAttribute(
+                                                                    XmlName("name"),
+                                                                    Token(SyntaxKind.DoubleQuoteToken),
+                                                                    IdentifierName("value"),
+                                                                    Token(SyntaxKind.DoubleQuoteToken)))),
+                                                    List(new XmlNodeSyntax[]
+                                                    {
+                                                        XmlText("The "),
+                                                        XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(castName))) })),
+                                                        XmlText(" instance to be converted ")
+                                                    }),
+                                                    XmlElementEndTag(
+                                                        XmlName("param")))
+                                            })))));
             }
         }
 
