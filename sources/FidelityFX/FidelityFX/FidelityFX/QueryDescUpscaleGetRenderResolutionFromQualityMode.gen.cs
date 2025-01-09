@@ -1,0 +1,26 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from ffx-api and corresponding dependencies of FidelityFX.
+// Original source is Copyright (C) 2024 Advanced Micro Devices, Inc. Licensed under the MIT license.
+namespace Silk.NET.FidelityFX;
+
+public unsafe partial struct QueryDescUpscaleGetRenderResolutionFromQualityMode
+{
+    [NativeTypeName("ffxQueryDescHeader")]
+    public ApiHeader Header;
+
+    [NativeTypeName("uint32_t")]
+    public uint DisplayWidth;
+
+    [NativeTypeName("uint32_t")]
+    public uint DisplayHeight;
+
+    [NativeTypeName("uint32_t")]
+    public uint QualityMode;
+
+    [NativeTypeName("uint32_t *")]
+    public uint* POutRenderWidth;
+
+    [NativeTypeName("uint32_t *")]
+    public uint* POutRenderHeight;
+}

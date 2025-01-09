@@ -89,6 +89,9 @@
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
         "UseDSL": true
+      },
+      "PrettifyNames": {
+        "GlobalPrefixHint": "ffx"
       }
     },
     "OpenGL": {
