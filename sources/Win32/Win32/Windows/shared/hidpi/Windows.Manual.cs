@@ -29,7 +29,6 @@ public static unsafe partial class Windows
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int HIDP_ERROR_CODES(int sev, int code) => (sev << 28) | (FACILITY_HID_ERROR_CODE << 16) | code;
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.HidP_GetVersion"]/*' />
     [return: NativeTypeName("NTSTATUS")]
     public static int HidP_GetVersion([NativeTypeName("ULONG *")] uint* Version)
     {

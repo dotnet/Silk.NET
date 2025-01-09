@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.CommandLine;
 using System.CommandLine.Parsing;
@@ -1204,7 +1204,7 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
 
                 case "generate-doc-includes":
                 {
-                    configOptions |= PInvokeGeneratorConfigurationOptions.GenerateDocIncludes;
+                    //configOptions |= PInvokeGeneratorConfigurationOptions.GenerateDocIncludes;
                     break;
                 }
 

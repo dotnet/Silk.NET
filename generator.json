@@ -8,7 +8,8 @@
       "Mods": [
         "ClangScraper",
         "ChangeNamespace",
-        "TransformCOM"
+        "TransformCOM",
+        "DisableWarnings"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -50,8 +51,15 @@
         }
       },
       "TransformCOM": {
-        "BaseTypes": [
-          "IUnknown.Interface"
+        "BaseTypes": {
+          "IUnknown.Interface": "Silk.NET.Windows.IUnknown.Interface"
+        }
+      },
+      "DisableWarnings": {
+        "WarningCodes": [
+          "CS1589", //XML Comments missing (due to missing docs)
+          "CS0419", //Inheritdoc issue (due to bug)
+          "CA1416"  //Function available outside of target os (intended)
         ]
       }
     },

@@ -14,7 +14,6 @@ namespace Silk.NET.DirectX;
 
 public unsafe partial struct D3D12_RESOURCE_DESC : IEquatable<D3D12_RESOURCE_DESC>
 {
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Equals"]/*' />
     public static bool operator ==([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC l, [NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC r)
         => (l.Dimension == r.Dimension)
         && (l.Alignment == r.Alignment)
@@ -28,7 +27,6 @@ public unsafe partial struct D3D12_RESOURCE_DESC : IEquatable<D3D12_RESOURCE_DES
         && (l.Layout == r.Layout)
         && (l.Flags == r.Flags);
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.NotEquals"]/*' />
     public static bool operator !=([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC l, [NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC r)
         => !(l == r);
 
