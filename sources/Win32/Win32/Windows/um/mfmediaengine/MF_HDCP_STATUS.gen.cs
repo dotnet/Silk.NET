@@ -1,0 +1,12 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/mfmediaengine.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Windows;
+
+public enum MF_HDCP_STATUS
+{
+    MF_HDCP_STATUS_ON = 0,
+    MF_HDCP_STATUS_OFF = 1,
+    MF_HDCP_STATUS_ON_WITH_TYPE_ENFORCEMENT = 2,
+}

@@ -1,0 +1,154 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/mfcontentdecryptionmodule.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using static Silk.NET.Windows.IID;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Windows;
+
+[Guid("A853D1F4-E2A0-4303-9EDC-F1A68EE43136")]
+[NativeTypeName("struct IMFContentDecryptionModuleAccess : IUnknown")]
+[NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.19041.0")]
+public unsafe partial struct IMFContentDecryptionModuleAccess
+    : IMFContentDecryptionModuleAccess.Interface,
+        INativeGuid
+{
+    static Guid* INativeGuid.NativeGuid =>
+        (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFContentDecryptionModuleAccess));
+    public void*** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+    {
+        return (
+            (delegate* unmanaged<IMFContentDecryptionModuleAccess, Guid*, void**, int>)(
+                (*lpVtbl)[0]
+            )
+        )(this, riid, ppvObject);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFContentDecryptionModuleAccess, uint>)((*lpVtbl)[1]))(this);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFContentDecryptionModuleAccess, uint>)((*lpVtbl)[2]))(this);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateContentDecryptionModule(
+        IPropertyStore contentDecryptionModuleProperties,
+        IMFContentDecryptionModule* contentDecryptionModule
+    )
+    {
+        return (
+            (delegate* unmanaged<
+                IMFContentDecryptionModuleAccess,
+                IPropertyStore,
+                IMFContentDecryptionModule*,
+                int>)((*lpVtbl)[3])
+        )(this, contentDecryptionModuleProperties, contentDecryptionModule);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetConfiguration(IPropertyStore* configuration)
+    {
+        return (
+            (delegate* unmanaged<IMFContentDecryptionModuleAccess, IPropertyStore*, int>)(
+                (*lpVtbl)[4]
+            )
+        )(this, configuration);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] ushort** keySystem)
+    {
+        return (
+            (delegate* unmanaged<IMFContentDecryptionModuleAccess, ushort**, int>)((*lpVtbl)[5])
+        )(this, keySystem);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
+        [VtblIndex(3)]
+        HRESULT CreateContentDecryptionModule(
+            IPropertyStore contentDecryptionModuleProperties,
+            IMFContentDecryptionModule* contentDecryptionModule
+        );
+
+        [VtblIndex(4)]
+        HRESULT GetConfiguration(IPropertyStore* configuration);
+
+        [VtblIndex(5)]
+        HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] ushort** keySystem);
+    }
+
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, uint> AddRef;
+
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, uint> Release;
+
+        [NativeTypeName(
+            "HRESULT (IPropertyStore *, IMFContentDecryptionModule **) __attribute__((stdcall))"
+        )]
+        public delegate* unmanaged<
+            TSelf*,
+            IPropertyStore,
+            IMFContentDecryptionModule*,
+            int> CreateContentDecryptionModule;
+
+        [NativeTypeName("HRESULT (IPropertyStore **) __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, IPropertyStore*, int> GetConfiguration;
+
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, ushort**, int> GetKeySystem;
+    }
+
+    /// <summary>Initializes a new instance of the <see cref = "IMFContentDecryptionModuleAccess"/> struct with the specified virtual table pointer.</summary>
+    /// <param name = "vtbl">The pointer to virtual table.</param>
+    public IMFContentDecryptionModuleAccess(void*** vtbl)
+    {
+        lpVtbl = vtbl;
+    }
+
+    /// <summary>Downcasts <see cref = "Silk.NET.Windows.IUnknown"/> to <see cref = "IMFContentDecryptionModuleAccess"/>.</summary>
+    /// <param name = "value">The <see cref = "Silk.NET.Windows.IUnknown"/> instance to be converted </param>
+    public static explicit operator IMFContentDecryptionModuleAccess(
+        Silk.NET.Windows.IUnknown value
+    )
+    {
+        return new IMFContentDecryptionModuleAccess(value.lpVtbl);
+    }
+
+    /// <summary>Upcasts <see cref = "IMFContentDecryptionModuleAccess"/> to <see cref = "Silk.NET.Windows.IUnknown"/>.</summary>
+    /// <param name = "value">The <see cref = "IMFContentDecryptionModuleAccess"/> instance to be converted </param>
+    public static implicit operator Silk.NET.Windows.IUnknown(
+        IMFContentDecryptionModuleAccess value
+    )
+    {
+        return new Silk.NET.Windows.IUnknown(value.lpVtbl);
+    }
+}

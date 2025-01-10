@@ -1,0 +1,14 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.614.0
+// Original source is Copyright © Microsoft. Licensed under the MIT license
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.DirectX;
+
+public enum D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_FLAGS
+{
+    D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_FLAG_NONE = 0,
+    D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_FLAG_USE_CONSTRAINED_INTRAPREDICTION = 0x1,
+    D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_FLAG_USE_ADAPTIVE_8x8_TRANSFORM = 0x2,
+    D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_FLAG_ENABLE_CABAC_ENCODING = 0x4,
+    D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_FLAG_ALLOW_REQUEST_INTRA_CONSTRAINED_SLICES = 0x8,
+}

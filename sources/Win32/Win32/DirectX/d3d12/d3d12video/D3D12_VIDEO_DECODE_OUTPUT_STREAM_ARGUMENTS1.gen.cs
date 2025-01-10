@@ -1,0 +1,22 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.614.0
+// Original source is Copyright © Microsoft. Licensed under the MIT license
+using System.Runtime.CompilerServices;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.DirectX;
+
+public unsafe partial struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1
+{
+    public ID3D12Resource pOutputTexture2D;
+    public uint OutputSubresource;
+    public D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1 ConversionArguments;
+
+    [NativeTypeName("D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM[4]")]
+    public _Histograms_e__FixedBuffer Histograms;
+
+    [InlineArray(4)]
+    public partial struct _Histograms_e__FixedBuffer
+    {
+        public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e0;
+    }
+}

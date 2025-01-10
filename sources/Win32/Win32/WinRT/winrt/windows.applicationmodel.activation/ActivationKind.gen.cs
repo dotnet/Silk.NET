@@ -1,0 +1,53 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from winrt/windows.applicationmodel.activation.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.WinRT;
+
+public enum ActivationKind
+{
+    ActivationKind_Launch = 0,
+    ActivationKind_Search = 1,
+    ActivationKind_ShareTarget = 2,
+    ActivationKind_File = 3,
+    ActivationKind_Protocol = 4,
+    ActivationKind_FileOpenPicker = 5,
+    ActivationKind_FileSavePicker = 6,
+    ActivationKind_CachedFileUpdater = 7,
+    ActivationKind_ContactPicker = 8,
+    ActivationKind_Device = 9,
+    ActivationKind_PrintTaskSettings = 10,
+    ActivationKind_CameraSettings = 11,
+    ActivationKind_RestrictedLaunch = 12,
+    ActivationKind_AppointmentsProvider = 13,
+    ActivationKind_Contact = 14,
+    ActivationKind_LockScreenCall = 15,
+    ActivationKind_VoiceCommand = 16,
+    ActivationKind_LockScreen = 17,
+    ActivationKind_PickerReturned = 1000,
+    ActivationKind_WalletAction = 1001,
+    ActivationKind_PickFileContinuation = 1002,
+    ActivationKind_PickSaveFileContinuation = 1003,
+    ActivationKind_PickFolderContinuation = 1004,
+    ActivationKind_WebAuthenticationBrokerContinuation = 1005,
+    ActivationKind_WebAccountProvider = 1006,
+    ActivationKind_ComponentUI = 1007,
+    ActivationKind_ProtocolForResults = 1009,
+    ActivationKind_ToastNotification = 1010,
+    ActivationKind_Print3DWorkflow = 1011,
+    ActivationKind_DialReceiver = 1012,
+    ActivationKind_DevicePairing = 1013,
+    ActivationKind_UserDataAccountsProvider = 1014,
+    ActivationKind_FilePickerExperience = 1015,
+    ActivationKind_LockScreenComponent = 1016,
+    ActivationKind_ContactPanel = 1017,
+    ActivationKind_PrintWorkflowForegroundTask = 1018,
+    ActivationKind_GameUIProvider = 1019,
+    ActivationKind_StartupTask = 1020,
+    ActivationKind_CommandLineLaunch = 1021,
+    ActivationKind_BarcodeScannerProvider = 1022,
+    ActivationKind_PrintSupportJobUI = 1023,
+    ActivationKind_PrintSupportSettingsUI = 1024,
+    ActivationKind_PhoneCallActivation = 1025,
+    ActivationKind_VpnForeground = 1026,
+}

@@ -1,0 +1,42 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Windows;
+
+public partial struct EMRSETPALETTEENTRIES
+{
+    public EMR emr;
+
+    [NativeTypeName("DWORD")]
+    public uint ihPal;
+
+    [NativeTypeName("DWORD")]
+    public uint iStart;
+
+    [NativeTypeName("DWORD")]
+    public uint cEntries;
+
+    [NativeTypeName("PALETTEENTRY[1]")]
+    public _aPalEntries_e__FixedBuffer aPalEntries;
+
+    public partial struct _aPalEntries_e__FixedBuffer
+    {
+        public PALETTEENTRY e0;
+
+        [UnscopedRef]
+        public ref PALETTEENTRY this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get { return ref Unsafe.Add(ref e0, index); }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<PALETTEENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
+}
