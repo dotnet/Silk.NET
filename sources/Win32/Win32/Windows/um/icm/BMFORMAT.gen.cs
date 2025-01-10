@@ -1,0 +1,50 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/icm.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Windows;
+
+public enum BMFORMAT
+{
+    BM_x555RGB = 0x0000,
+    BM_x555XYZ = 0x0101,
+    BM_x555Yxy,
+    BM_x555Lab,
+    BM_x555G3CH,
+    BM_RGBTRIPLETS = 0x0002,
+    BM_BGRTRIPLETS = 0x0004,
+    BM_XYZTRIPLETS = 0x0201,
+    BM_YxyTRIPLETS,
+    BM_LabTRIPLETS,
+    BM_G3CHTRIPLETS,
+    BM_5CHANNEL,
+    BM_6CHANNEL,
+    BM_7CHANNEL,
+    BM_8CHANNEL,
+    BM_GRAY,
+    BM_xRGBQUADS = 0x0008,
+    BM_xBGRQUADS = 0x0010,
+    BM_xG3CHQUADS = 0x0304,
+    BM_KYMCQUADS,
+    BM_CMYKQUADS = 0x0020,
+    BM_10b_RGB = 0x0009,
+    BM_10b_XYZ = 0x0401,
+    BM_10b_Yxy,
+    BM_10b_Lab,
+    BM_10b_G3CH,
+    BM_NAMED_INDEX,
+    BM_16b_RGB = 0x000A,
+    BM_16b_XYZ = 0x0501,
+    BM_16b_Yxy,
+    BM_16b_Lab,
+    BM_16b_G3CH,
+    BM_16b_GRAY,
+    BM_565RGB = 0x0001,
+    BM_32b_scRGB = 0x0601,
+    BM_32b_scARGB = 0x0602,
+    BM_S2DOT13FIXED_scRGB = 0x0603,
+    BM_S2DOT13FIXED_scARGB = 0x0604,
+    BM_R10G10B10A2 = 0x0701,
+    BM_R10G10B10A2_XR = 0x0702,
+    BM_R16G16B16A16_FLOAT = 0x0703,
+}

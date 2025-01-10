@@ -1,0 +1,58 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from winrt/windows.devices.bluetooth.advertisement.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
+using System;
+using System.Runtime.InteropServices;
+using NUnit.Framework;
+using static Silk.NET.Windows.IID;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref = "IBluetoothLEAdvertisementWatcher"/> struct.</summary>
+public static unsafe partial class IBluetoothLEAdvertisementWatcherTests
+{
+    /// <summary>Validates that the <see cref = "Guid"/> of the <see cref = "IBluetoothLEAdvertisementWatcher"/> struct is correct.</summary>
+
+    [Test]
+    public static void GuidOfTest()
+    {
+        Assert.That(
+            typeof(IBluetoothLEAdvertisementWatcher).GUID,
+            Is.EqualTo(IID_IBluetoothLEAdvertisementWatcher)
+        );
+    }
+
+    /// <summary>Validates that the <see cref = "IBluetoothLEAdvertisementWatcher"/> struct is blittable.</summary>
+
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(
+            Marshal.SizeOf<IBluetoothLEAdvertisementWatcher>(),
+            Is.EqualTo(sizeof(IBluetoothLEAdvertisementWatcher))
+        );
+    }
+
+    /// <summary>Validates that the <see cref = "IBluetoothLEAdvertisementWatcher"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IBluetoothLEAdvertisementWatcher).IsLayoutSequential, Is.True);
+    }
+
+    /// <summary>Validates that the <see cref = "IBluetoothLEAdvertisementWatcher"/> struct has the correct size.</summary>
+
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
+        {
+            Assert.That(sizeof(IBluetoothLEAdvertisementWatcher), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IBluetoothLEAdvertisementWatcher), Is.EqualTo(4));
+        }
+    }
+}

@@ -1,0 +1,52 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from winrt/windows.devices.printers.extensions.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
+using System;
+using System.Runtime.InteropServices;
+using NUnit.Framework;
+using static Silk.NET.Windows.IID;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref = "IPrint3DWorkflow"/> struct.</summary>
+public static unsafe partial class IPrint3DWorkflowTests
+{
+    /// <summary>Validates that the <see cref = "Guid"/> of the <see cref = "IPrint3DWorkflow"/> struct is correct.</summary>
+
+    [Test]
+    public static void GuidOfTest()
+    {
+        Assert.That(typeof(IPrint3DWorkflow).GUID, Is.EqualTo(IID_IPrint3DWorkflow));
+    }
+
+    /// <summary>Validates that the <see cref = "IPrint3DWorkflow"/> struct is blittable.</summary>
+
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPrint3DWorkflow>(), Is.EqualTo(sizeof(IPrint3DWorkflow)));
+    }
+
+    /// <summary>Validates that the <see cref = "IPrint3DWorkflow"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPrint3DWorkflow).IsLayoutSequential, Is.True);
+    }
+
+    /// <summary>Validates that the <see cref = "IPrint3DWorkflow"/> struct has the correct size.</summary>
+
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
+        {
+            Assert.That(sizeof(IPrint3DWorkflow), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPrint3DWorkflow), Is.EqualTo(4));
+        }
+    }
+}

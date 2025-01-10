@@ -2,7 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.Windows;
 
 /// <summary>Specifies that the given method sets the last system error and it can be retrieved via <see cref = "Marshal.GetLastSystemError"/>.</summary>

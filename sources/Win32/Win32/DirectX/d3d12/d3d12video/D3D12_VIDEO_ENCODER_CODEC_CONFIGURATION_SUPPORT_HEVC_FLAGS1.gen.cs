@@ -1,0 +1,12 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.614.0
+// Original source is Copyright © Microsoft. Licensed under the MIT license
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.DirectX;
+
+public enum D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAGS1
+{
+    D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAG1_NONE = 0,
+    D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAG1_SEPARATE_COLOUR_PLANE_SUPPORT = 0x1,
+    D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAG1_SEPARATE_COLOUR_PLANE_REQUIRED = 0x2,
+}

@@ -1,0 +1,122 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/mfreadwrite.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using static Silk.NET.Windows.IID;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Windows;
+
+[Guid("666F76DE-33D2-41B9-A458-29ED0A972C58")]
+[NativeTypeName("struct IMFSinkWriterCallback : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFSinkWriterCallback : IMFSinkWriterCallback.Interface, INativeGuid
+{
+    static Guid* INativeGuid.NativeGuid =>
+        (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSinkWriterCallback));
+    public void*** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterCallback, Guid*, void**, int>)((*lpVtbl)[0]))(
+            this,
+            riid,
+            ppvObject
+        );
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFSinkWriterCallback, uint>)((*lpVtbl)[1]))(this);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFSinkWriterCallback, uint>)((*lpVtbl)[2]))(this);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT OnFinalize(HRESULT hrStatus)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterCallback, HRESULT, int>)((*lpVtbl)[3]))(
+            this,
+            hrStatus
+        );
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT OnMarker(
+        [NativeTypeName("DWORD")] uint dwStreamIndex,
+        [NativeTypeName("LPVOID")] void* pvContext
+    )
+    {
+        return ((delegate* unmanaged<IMFSinkWriterCallback, uint, void*, int>)((*lpVtbl)[4]))(
+            this,
+            dwStreamIndex,
+            pvContext
+        );
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
+        [VtblIndex(3)]
+        HRESULT OnFinalize(HRESULT hrStatus);
+
+        [VtblIndex(4)]
+        HRESULT OnMarker(
+            [NativeTypeName("DWORD")] uint dwStreamIndex,
+            [NativeTypeName("LPVOID")] void* pvContext
+        );
+    }
+
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, uint> AddRef;
+
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, uint> Release;
+
+        [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, HRESULT, int> OnFinalize;
+
+        [NativeTypeName("HRESULT (DWORD, LPVOID) __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, uint, void*, int> OnMarker;
+    }
+
+    /// <summary>Initializes a new instance of the <see cref = "IMFSinkWriterCallback"/> struct with the specified virtual table pointer.</summary>
+    /// <param name = "vtbl">The pointer to virtual table.</param>
+    public IMFSinkWriterCallback(void*** vtbl)
+    {
+        lpVtbl = vtbl;
+    }
+
+    /// <summary>Downcasts <see cref = "Silk.NET.Windows.IUnknown"/> to <see cref = "IMFSinkWriterCallback"/>.</summary>
+    /// <param name = "value">The <see cref = "Silk.NET.Windows.IUnknown"/> instance to be converted </param>
+    public static explicit operator IMFSinkWriterCallback(Silk.NET.Windows.IUnknown value)
+    {
+        return new IMFSinkWriterCallback(value.lpVtbl);
+    }
+
+    /// <summary>Upcasts <see cref = "IMFSinkWriterCallback"/> to <see cref = "Silk.NET.Windows.IUnknown"/>.</summary>
+    /// <param name = "value">The <see cref = "IMFSinkWriterCallback"/> instance to be converted </param>
+    public static implicit operator Silk.NET.Windows.IUnknown(IMFSinkWriterCallback value)
+    {
+        return new Silk.NET.Windows.IUnknown(value.lpVtbl);
+    }
+}
