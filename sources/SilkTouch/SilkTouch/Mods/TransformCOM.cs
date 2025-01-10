@@ -11,6 +11,7 @@ using Microsoft.Extensions.Options;
 using System.Reflection;
 using Silk.NET.SilkTouch.Utility;
 using Silk.NET.SilkTouch.Sources;
+using Microsoft.CodeAnalysis.Differencing;
 
 namespace Silk.NET.SilkTouch.Mods
 {
@@ -91,6 +92,7 @@ namespace Silk.NET.SilkTouch.Mods
             }
 
             logger.LogInformation("Starting COM Object Usage Update");
+            UsageUpdater updater = new(firstPass.FoundCOMTypes);
             foreach (var docId in proj?.DocumentIds ?? [])
             {
                 index++;
@@ -101,156 +103,15 @@ namespace Silk.NET.SilkTouch.Mods
                     continue;
                 }
 
-                var editor = new SyntaxEditor(root, proj.Solution.Workspace.Services);
-                // Replace pointer member access -> with regular member access .
-                var memberAccesses = root.DescendantNodes()
-                    .OfType<MemberAccessExpressionSyntax>()
-                    .Where(m => m.IsKind(SyntaxKind.PointerMemberAccessExpression));
-
-                var nullAssignments = root.DescendantNodes()
-                    .OfType<AssignmentExpressionSyntax>()
-                    .Where(aes => aes.Right.IsKind(SyntaxKind.NullLiteralExpression));
-
-                var invocationsWithNullArgs = root.DescendantNodes()
-                    .OfType<InvocationExpressionSyntax>()
-                    .Where(ies => ies.ArgumentList.Arguments.Any(arg => arg.Expression.IsKind(SyntaxKind.NullLiteralExpression)));
-
-                var nullExpressions = root.DescendantNodes()
-                    .OfType<BinaryExpressionSyntax>()
-                    .Where(bes => bes.Left.IsKind(SyntaxKind.NullLiteralExpression) || bes.Right.IsKind(SyntaxKind.NullLiteralExpression));
-
-                var nullInstantiations = root.DescendantNodes()
-                    .OfType<VariableDeclarationSyntax>()
-                    .Where(vds => vds.Variables.Any(var => var.Initializer is not null && var.Initializer.Value is LiteralExpressionSyntax lit && lit.IsKind(SyntaxKind.NullLiteralExpression)));
-
-                if (memberAccesses.Count() == 0 && nullAssignments.Count() == 0 &&
-                    invocationsWithNullArgs.Count() == 0 && nullExpressions.Count() == 0 &&
-                    nullInstantiations.Count() == 0)
-                {
-                    logger.LogInformation("COM Object Usage Update for {0} Skipped ({1}/{2})", doc.Name, index, count);
-
-                    continue;
-                }
-
                 var syntaxTree = await doc.GetSyntaxTreeAsync();
                 if (syntaxTree is null)
                 {
                     logger.LogWarning("unable to retrieve Semantic Model for {}", doc.Name);
+                    continue;
                 }
-                var semanticModel = compilation is not null ? compilation.GetSemanticModel(syntaxTree!) : await doc.GetSemanticModelAsync();
+                updater.SemanticModel = compilation is not null ? compilation.GetSemanticModel(syntaxTree!) : await doc.GetSemanticModelAsync();
 
-                foreach (var memberAccess in memberAccesses)
-                {
-                    var typeInfo = semanticModel.GetTypeInfo(memberAccess.Expression);
-                    var name = GetTypeName(typeInfo.Type?.ToString() ?? string.Empty);
-
-                    // Check if the type is a ComType
-
-                    if (typeInfo.Type != null && firstPass.FoundCOMTypes.Any(type => $"{type.Item1}*" == name))
-                    {
-                        var newMemberAccess = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, memberAccess.Expression, memberAccess.Name);
-                        editor.ReplaceNode(memberAccess, newMemberAccess);
-                    }
-                }
-
-                foreach (var nullAssignment in nullAssignments)
-                {
-                    var typeInfo = semanticModel.GetTypeInfo(nullAssignment);
-                    var name = GetTypeName(typeInfo.Type?.ToString() ?? string.Empty);
-                    // Check if the type is a ComType
-                    if (typeInfo.Type != null && firstPass.FoundCOMTypes.Any(type => $"{type.Item1}*" == name))
-                    {
-                        var newNullAssignment = AssignmentExpression(nullAssignment.Kind(), nullAssignment.Left, LiteralExpression(SyntaxKind.DefaultExpression));
-                        editor.ReplaceNode(nullAssignment, newNullAssignment);
-                    }
-                }
-
-                foreach (var invocation in invocationsWithNullArgs)
-                {
-                    var symbolInfo = semanticModel.GetSymbolInfo(invocation);
-                    var newInvocation = invocation;
-                    if (symbolInfo.Symbol is IMethodSymbol methodSymbol)
-                    {
-                        var arguments = invocation.ArgumentList.Arguments;
-                        for (int i = 0; i < arguments.Count; i++)
-                        {
-                            var argument = arguments[i];
-                            // Check if the argument is a null literal
-                            if (argument.Expression.IsKind(SyntaxKind.NullLiteralExpression))
-                            {
-                                // Get the corresponding parameter type
-                                var parameterType = methodSymbol.Parameters[i].Type;
-                                var name = GetTypeName(parameterType?.ToString() ?? string.Empty);
-
-                                // Check if the parameter type is ComType
-                                if (firstPass.FoundCOMTypes.Any(type => $"{type.Item1}*" == name))
-                                {
-                                    var newDefaultArg = Argument(LiteralExpression(SyntaxKind.DefaultLiteralExpression));
-                                    newInvocation = newInvocation.ReplaceNode(argument, newDefaultArg);
-                                }
-                            }
-                        }
-                    }
-                    editor.ReplaceNode(invocation, newInvocation);
-                }
-
-                foreach (var nullExpression in nullExpressions)
-                {
-                    var typeInfoR = semanticModel.GetTypeInfo(nullExpression.Right);
-                    var typeInfoL = semanticModel.GetTypeInfo(nullExpression.Left);
-                    var nameR = GetTypeName(typeInfoR.Type?.ToString() ?? string.Empty);
-                    var nameL = GetTypeName(typeInfoL.Type?.ToString() ?? string.Empty);
-
-
-                    if (nullExpression.Left.IsKind(SyntaxKind.NullLiteralExpression))
-                    {
-                        // Check if the type is a ComType
-                        if (typeInfoR.Type != null && firstPass.FoundCOMTypes.Any(type => $"{type.Item1}*" == nameR))
-                        {
-                            var newExpression = BinaryExpression(nullExpression.Kind(), nullExpression.Left, IdentifierName($"{nullExpression.Right.ToFullString()}.lpVtbl"));
-                            editor.ReplaceNode(nullExpression, newExpression);
-                        }
-                    }
-                    else
-                    {
-                        // Check if the type is a ComType
-                        if (typeInfoL.Type != null && firstPass.FoundCOMTypes.Any(type => $"{type.Item1}*" == nameL))
-                        {
-                            var newExpression = BinaryExpression(nullExpression.Kind(), IdentifierName($"{nullExpression.Left.ToFullString()}.lpVtbl"), nullExpression.Right);
-                            editor.ReplaceNode(nullExpression, newExpression);
-                        }
-                    }
-
-                }
-
-                foreach (var instantiation in nullInstantiations)
-                {
-                    // Get the corresponding parameter type
-                    var variableType = instantiation.Type;
-                    var name = GetTypeName(variableType?.ToString() ?? string.Empty);
-
-                    // Check if the parameter type is ComType
-                    if (!firstPass.FoundCOMTypes.Any(type => $"{type.Item1}*" == name))
-                    {
-                        continue;
-                    }
-
-                    var newInstantiation = instantiation;
-                    var variables = instantiation.Variables;
-                    for (int i = 0; i < variables.Count; i++)
-                    {
-                        var variableExpression = variables[i].Initializer?.Value as LiteralExpressionSyntax;
-                        // Check if the variable is instantiated to a null literal
-                        if (variableExpression is not null && variableExpression.IsKind(SyntaxKind.NullLiteralExpression))
-                        {
-                            var newDefaultArg = LiteralExpression(SyntaxKind.DefaultLiteralExpression);
-                            newInstantiation = newInstantiation.ReplaceNode(variableExpression, newDefaultArg);
-                        }
-                    }
-                    editor.ReplaceNode(instantiation, newInstantiation);
-                }
-
-                doc = doc.WithSyntaxRoot(editor.GetChangedRoot().NormalizeWhitespace());
+                doc = doc.WithSyntaxRoot(updater.Visit(root).NormalizeWhitespace());
 
                 proj = doc.Project;
 
@@ -449,6 +310,151 @@ namespace Silk.NET.SilkTouch.Mods
                 {
                     COMTypeValidated((childName.Item1, childName.Item2, typeName.Item3), typeName.Item1);
                 }
+            }
+        }
+
+        class UsageUpdater(
+            List<(string, bool, KeyedStringTree?)> ComTypes)
+            : CSharpSyntaxRewriter
+        {
+            public SemanticModel? SemanticModel;
+            public override SyntaxNode? VisitMemberAccessExpression(MemberAccessExpressionSyntax node)
+            {
+                if (!node.IsKind(SyntaxKind.PointerMemberAccessExpression))
+                    return base.VisitMemberAccessExpression(node);
+
+                var typeInfo = SemanticModel.GetTypeInfo(node.Expression);
+                var name = GetTypeName(typeInfo.Type?.ToString() ?? string.Empty);
+
+                // Check if the type is a ComType
+
+                if (typeInfo.Type != null && ComTypes.Any(type => $"{type.Item1}*" == name))
+                {
+                    return MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, node.Expression, node.Name);
+                }
+                return base.VisitMemberAccessExpression(node);
+            }
+
+            public override SyntaxNode? VisitAssignmentExpression(AssignmentExpressionSyntax node)
+            {
+                if (!node.Right.IsKind(SyntaxKind.NullLiteralExpression))
+                    return base.VisitAssignmentExpression(node);
+
+                var typeInfo = SemanticModel.GetTypeInfo(node);
+                var name = GetTypeName(typeInfo.Type?.ToString() ?? string.Empty);
+                // Check if the type is a ComType
+                if (typeInfo.Type != null && ComTypes.Any(type => $"{type.Item1}*" == name))
+                {
+                    return AssignmentExpression(node.Kind(), node.Left, LiteralExpression(SyntaxKind.DefaultExpression));
+                }
+                return base.VisitAssignmentExpression(node);
+            }
+
+            public override SyntaxNode? VisitInvocationExpression(InvocationExpressionSyntax node)
+            {
+                if (!node.ArgumentList.Arguments.Any(arg => arg.Expression.IsKind(SyntaxKind.NullLiteralExpression)))
+                    return base.VisitInvocationExpression(node);
+
+                var symbolInfo = SemanticModel.GetSymbolInfo(node);
+                var newInvocation = node;
+                bool changed = false;
+                if (symbolInfo.Symbol is IMethodSymbol methodSymbol)
+                {
+                    var arguments = node.ArgumentList.Arguments;
+                    for (int i = 0; i < arguments.Count; i++)
+                    {
+                        var argument = arguments[i];
+                        // Check if the argument is a null literal
+                        if (argument.Expression.IsKind(SyntaxKind.NullLiteralExpression))
+                        {
+                            // Get the corresponding parameter type
+                            var parameterType = methodSymbol.Parameters[i].Type;
+                            var name = GetTypeName(parameterType?.ToString() ?? string.Empty);
+
+                            // Check if the parameter type is ComType
+                            if (ComTypes.Any(type => $"{type.Item1}*" == name))
+                            {
+                                changed = true;
+                                var newDefaultArg = Argument(LiteralExpression(SyntaxKind.DefaultLiteralExpression));
+                                newInvocation = newInvocation.ReplaceNode(argument, newDefaultArg);
+                            }
+                        }
+                    }
+                }
+                return changed ? newInvocation : base.VisitInvocationExpression(node);
+            }
+
+            public override SyntaxNode? VisitBinaryExpression(BinaryExpressionSyntax node)
+            {
+                if (!node.Left.IsKind(SyntaxKind.NullLiteralExpression) && !node.Right.IsKind(SyntaxKind.NullLiteralExpression))
+                    return base.VisitBinaryExpression(node);
+
+                var typeInfoR = SemanticModel.GetTypeInfo(node.Right);
+                var typeInfoL = SemanticModel.GetTypeInfo(node.Left);
+                var nameR = GetTypeName(typeInfoR.Type?.ToString() ?? string.Empty);
+                var nameL = GetTypeName(typeInfoL.Type?.ToString() ?? string.Empty);
+
+
+                if (node.Left.IsKind(SyntaxKind.NullLiteralExpression))
+                {
+                    // Check if the type is a ComType
+                    if (typeInfoR.Type != null && ComTypes.Any(type => $"{type.Item1}*" == nameR))
+                    {
+                        return BinaryExpression(node.Kind(), node.Left, IdentifierName($"{node.Right.ToFullString()}.lpVtbl"));
+                    }
+                }
+                else
+                {
+                    // Check if the type is a ComType
+                    if (typeInfoL.Type != null && ComTypes.Any(type => $"{type.Item1}*" == nameL))
+                    {
+                        return BinaryExpression(node.Kind(), IdentifierName($"{node.Left.ToFullString()}.lpVtbl"), node.Right);
+                    }
+                }
+
+                return base.VisitBinaryExpression(node);
+            }
+
+            public override SyntaxNode? VisitVariableDeclaration(VariableDeclarationSyntax node)
+            {
+                if (!node.Variables.Any(var => var.Initializer is not null && var.Initializer.Value is LiteralExpressionSyntax lit && lit.IsKind(SyntaxKind.NullLiteralExpression)))
+                    return base.VisitVariableDeclaration(node);
+
+                // Get the corresponding parameter type
+                var variableType = node.Type;
+                var name = GetTypeName(variableType?.ToString() ?? string.Empty);
+
+                // Check if the parameter type is ComType
+                if (!ComTypes.Any(type => $"{type.Item1}*" == name))
+                {
+                    return base.VisitVariableDeclaration(node);
+                }
+
+                var newInstantiation = node;
+                var variables = node.Variables;
+                for (int i = 0; i < variables.Count; i++)
+                {
+                    var variableExpression = variables[i].Initializer?.Value as LiteralExpressionSyntax;
+                    // Check if the variable is instantiated to a null literal
+                    if (variableExpression is not null && variableExpression.IsKind(SyntaxKind.NullLiteralExpression))
+                    {
+                        var newDefaultArg = LiteralExpression(SyntaxKind.DefaultLiteralExpression);
+                        newInstantiation = newInstantiation.ReplaceNode(variableExpression, newDefaultArg);
+                    }
+                }
+                return newInstantiation;
+            }
+
+            private string GetTypeName(string fullTypeName)
+            {
+                int dot = fullTypeName.LastIndexOf('.');
+
+                if (dot != -1)
+                {
+                    return fullTypeName.Substring(dot + 1);
+                }
+
+                return fullTypeName;
             }
         }
 
@@ -738,18 +744,6 @@ namespace Silk.NET.SilkTouch.Mods
                                                         XmlName("param")))
                                             })))));
             }
-        }
-
-        private string GetTypeName(string fullTypeName)
-        {
-            int dot = fullTypeName.LastIndexOf('.');
-
-            if (dot != -1)
-            {
-                return fullTypeName.Substring(dot + 1);
-            }
-
-            return fullTypeName;
         }
     }
 }
