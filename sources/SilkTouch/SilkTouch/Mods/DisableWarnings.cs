@@ -5,12 +5,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using Microsoft.CodeAnalysis.Editing;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System.Reflection;
-using Silk.NET.SilkTouch.Utility;
-using Silk.NET.SilkTouch.Sources;
 
 namespace Silk.NET.SilkTouch.Mods
 {
@@ -46,8 +41,6 @@ namespace Silk.NET.SilkTouch.Mods
                 return;
             }
 
-            var proj = ctx.SourceProject;
-
             // Create the pragma directive trivia
             var pragmaDirective = Trivia(
                                     PragmaWarningDirectiveTrivia(
@@ -56,6 +49,8 @@ namespace Silk.NET.SilkTouch.Mods
                                     .WithErrorCodes(
                                         SeparatedList<ExpressionSyntax>(
                                             cfg.WarningCodes.Select(warn => IdentifierName(warn)))));
+
+            var proj = ctx.SourceProject;
 
             foreach (var docId in proj?.DocumentIds ?? [])
             {
@@ -93,6 +88,45 @@ namespace Silk.NET.SilkTouch.Mods
             }
 
             ctx.SourceProject = proj;
+
+            proj = ctx.TestProject;
+
+            foreach (var docId in proj?.DocumentIds ?? [])
+            {
+                var doc =
+                    proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                if (await doc.GetSyntaxRootAsync(ct) is not { } root)
+                {
+                    continue;
+                }
+
+                // Find the using directive
+                SyntaxNode? namespaceNode = root.DescendantNodes().OfType<FileScopedNamespaceDeclarationSyntax>().FirstOrDefault();
+
+                if (namespaceNode == null)
+                {
+                    // Skip the case where no using directive is found
+                    continue;
+                }
+
+                // Get the leading trivia (comments) of the first using directive
+                var leadingTrivia = namespaceNode.GetLeadingTrivia();
+
+                // Insert the pragma directive after the comments
+                var newLeadingTrivia = leadingTrivia.Insert(leadingTrivia.Count, pragmaDirective)
+                    .Add(CarriageReturnLineFeed);
+
+                // Update the using directive with the new leading trivia
+                var newUsingDirective = namespaceNode.WithLeadingTrivia(newLeadingTrivia);
+
+                // Replace the old using directive with the new one in the root node
+                root = root.ReplaceNode(namespaceNode, newUsingDirective);
+                doc = doc.WithSyntaxRoot(root);
+
+                proj = doc.Project;
+            }
+
+            ctx.TestProject = proj;
         }
     }
 }

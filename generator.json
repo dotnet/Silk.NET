@@ -23,17 +23,12 @@
           "sources/Windows/um/httpserv/IHttpResponse4.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/IHttpResponse4.cs",
           "sources/Windows/um/httpserv/IHttpTraceContext.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/IHttpTraceContext.cs",
           "sources/Windows/um/httpserv/CHttpModule.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/CHttpModule.cs",
-          "sources/Windows/um/icm/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
           "sources/Windows/um/winioctl/TXFS_READ_BACKUP_INFORMATION_OUT.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/winioctl/TXFS_READ_BACKUP_INFORMATION_OUT.cs",
           "sources/Windows/um/winioctl/STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/winioctl/STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.cs",
           "sources/Windows/um/WinUser/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/WinUser/Windows.cs",
           "sources/Windows/shared/strsafe/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/strsafe/Windows.cs",
-          "sources/Windows/shared/hidpi/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/hidpi/Windows.cs",
           "sources/Windows/shared/ws2ipdef/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/ws2ipdef/Windows.cs",
           "sources/Windows/shared/Iprtrmib/MIB_OPAQUE_INFO.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/Iprtrmib/MIB_OPAQUE_INFO.cs",
-          "sources/Gdiplus/um/gdiplustypes/GpRect.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRect.cs",
-          "sources/Gdiplus/um/gdiplustypes/GpRectF.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRectF.cs",
-          "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs",
           "sources/WinRT/winrt/windows.perception.spatial/ISpatialCoordinateSystem.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.perception.spatial/ISpatialCoordinateSystem.cs",
           "sources/WinRT/winrt/windows.security.authentication.web.core/IID.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.security.authentication.web.core/IID.Manual.cs",
           "sources/WinRT/winrt/windows.ui.input/IID.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.ui.input/IID.Manual.cs"
@@ -43,7 +38,11 @@
         "SkipScrapeIf": [
           "!win"
         ],
-        "CacheOutput": false
+        "CacheOutput": false,
+        "GeneratedToRemove": [
+          "tests/DirectX/d3dx12/d3dx12_core/**.cs",
+          "tests/DirectX/d3dx12/d3dx12_barriers/**.cs"
+        ]
       },
       "ChangeNamespace": {
         "Mappings": {
@@ -59,7 +58,8 @@
         "WarningCodes": [
           "CS1589", //XML Comments missing (due to missing docs)
           "CS0419", //Inheritdoc issue (due to bug)
-          "CA1416"  //Function available outside of target os (intended)
+          "CA1416", //Function available outside of target os (intended)
+          "CS0618"  //Obsolete Warnings
         ]
       }
     },

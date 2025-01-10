@@ -9,6 +9,7 @@ using System.IO;
 using System.IO.Hashing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using ClangSharp;
@@ -91,6 +92,11 @@ public sealed class ClangScraper(
         /// </summary>
         // TODO document
         public string[]? SkipScrapeIf { get; init; }
+
+        /// <summary>
+        /// Generated files to Remove
+        /// </summary>
+        public string[]? GeneratedToRemove { get; init; }
     }
 
     /// <summary>
@@ -238,6 +244,7 @@ public sealed class ClangScraper(
     /// Runs ClangSharp for each of the given response files and aggregates the raw outputs.
     /// </summary>
     /// <param name="rsps">The response files.</param>
+    /// <param name="toRemovePatterns">files to remove</param>
     /// <param name="job">The job context.</param>
     /// <param name="cfg">The configuration.</param>
     /// <param name="cacheKey">The cache key.</param>
@@ -245,6 +252,7 @@ public sealed class ClangScraper(
     /// <exception cref="InvalidOperationException">The scraper output wasn't as expected.</exception>
     private async Task ScrapeBindingsAsync(
         IReadOnlyList<ResponseFile> rsps,
+        IEnumerable<string> toRemovePatterns,
         IModContext job,
         Configuration cfg,
         string? cacheKey = null,
@@ -325,6 +333,7 @@ public sealed class ClangScraper(
                                 // Cache the output.
                                 //TODO: Refactor for better Parallelisation
                                 //Breaks with high concurrency
+                                string relativePath = $"{(isTest ? "tests" : "sources")}/{relativeKey}";
                                 if (cacheKey is not null && !hasErrors && cfg.CacheOutput) 
                                 {
                                     cacheDir ??= (
@@ -338,12 +347,18 @@ public sealed class ClangScraper(
                                         cacheKey,
                                         CacheIntent.StageIntermediateOutput,
                                         CacheFlags.RequireNewLocked | CacheFlags.NoHostDirectory,
-                                        $"{(isTest ? "tests" : "sources")}/{relativeKey}",
+                                        relativePath,
                                         stream
                                     );
                                     stream.Seek(0, SeekOrigin.Begin);
                                 }
 
+                                if (toRemovePatterns.Any(pattern => Regex.IsMatch(relativePath, pattern)))
+                                {
+                                    logger.LogTrace("ClangSharp skipped {0}", relativePath);
+                                    continue;
+                                }
+                                
                                 // Add it to the dictionary.
                                 if (
                                     !(isTest ? aggregatedTests : aggregatedSources).TryAdd(
@@ -351,7 +366,7 @@ public sealed class ClangScraper(
                                         CSharpSyntaxTree.ParseText(
                                             SourceText.From(
                                                 cfg.ManualOverrides?.TryGetValue(
-                                                    $"{(isTest ? "tests" : "sources")}/{relativeKey}",
+                                                    relativePath,
                                                     out var @override
                                                 ) ?? false
                                                     ? File.OpenRead(
@@ -467,6 +482,8 @@ public sealed class ClangScraper(
             .ReadResponseFiles(ctx.ConfigurationDirectory, cfg.ClangSharpResponseFiles)
             .ToList();
 
+        var toRemovePatterns = cfg.GeneratedToRemove?.Select(toRemove => Regex.Escape(toRemove).Replace(@"\*\*", ".*")) ?? [];
+
         if (rsps.Count == 0)
         {
             logger.LogWarning("No Response files found for {}", ctx.JobKey);
@@ -504,7 +521,7 @@ public sealed class ClangScraper(
             if (!skip)
             {
                 // Run the scraper over the response files
-                await ScrapeBindingsAsync(rsps, ctx, cfg, cacheKey, ct);
+                await ScrapeBindingsAsync(rsps, toRemovePatterns, ctx, cfg, cacheKey, ct);
             }
         }
         catch (Exception e)
