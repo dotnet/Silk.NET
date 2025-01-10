@@ -77,4 +77,15 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <SilkExcludedPlatforms />
+    <SilkExcludedPlatforms Condition="Exists('$(MSBuildThisFileDirectory)excluded-platforms.txt')">$([System.IO.File]::ReadAllText("$(MSBuildThisFileDirectory)excluded-platforms.txt"))</SilkExcludedPlatforms>
+    <SilkExcludedPlatforms Condition="$([MSBuild]::IsOSPlatform('Linux'))">$(SilkExcludedPlatforms) ios tvos mac maccatalyst</SilkExcludedPlatforms>
+    <SilkAndroidDisabled Condition="$(SilkExcludedPlatforms.Contains('android'))">true</SilkAndroidDisabled>
+    <SilkiOSDisabled Condition="$(SilkExcludedPlatforms.Contains('ios'))">true</SilkiOSDisabled>
+    <SilkTvOSDisabled Condition="$(SilkExcludedPlatforms.Contains('tvos'))">true</SilkTvOSDisabled>
+    <SilkMacDisabled Condition="$(SilkExcludedPlatforms.Contains('mac'))">true</SilkMacDisabled>
+    <SilkMacCatalystDisabled Condition="$(SilkExcludedPlatforms.Contains('maccatalyst'))">true</SilkMacCatalystDisabled>
+  </PropertyGroup>
 </Project>

@@ -201,7 +201,7 @@
     <Error Text="Native packages should have a version.txt file! Read documentation/for-contributors/build-system.md for more info."
            Condition="'$(SilkNativePackage)' == 'true' and !Exists('$(SilkVersionTxtPath)')" />
     <ItemGroup Condition="'$(SilkNativePackage)' == 'true'">
-      <None Include="$(MSBuildProjectDirectory)/runtimes/**/*" Pack="true" PackagePath="runtimes" />
+      <None Include="$(MSBuildProjectDirectory)/runtimes/**/*" Pack="true" PackagePath="runtimes" KeepMetadata="Link;CopyToOutputDirectory" CopyToOutputDirectory="PreserveNewest" />
       <!-- bundled in the aar instead -->
       <None Remove="$(MSBuildProjectDirectory)/runtimes/android*/**/*" Condition="'$(SilkNativeHasAndroidJars)' == 'true'" />
     </ItemGroup>
@@ -259,5 +259,15 @@
                               PackagePath="lib/$(SilkNuGetShortFolderName)/_._"
                               Condition="'$(IncludeBuildOutput)' == 'false'" />
     </ItemGroup>
+  </Target>
+
+  <!-- This is a bodge to make native packages feel like they're working when in repo i.e. with ProjectReferences -->
+  <Target Name="SilkProjectReferenceNatives" AfterTargets="GetCopyToOutputDirectoryItems" Condition="'$(RuntimeIdentifier)' != ''">
+    <ItemGroup>
+      <SilkThisRidItems Include="@(AllItemsFullPathWithTargetPath)"
+                        Condition="$([System.String]::Copy('%(TargetPath)').Contains('$(RuntimeIdentifier)')) or $([System.String]::Copy('%(TargetPath)').Contains('$(RuntimeIdentifier.Split('-')[0])'))"
+                        TargetPath="$([System.String]::Copy('%(Filename)%(Extension)'))" />
+    </ItemGroup>
+    <Copy SourceFiles="@(SilkThisRidItems)" DestinationFiles="@(SilkThisRidItems->'$(OutDir)%(TargetPath)')" />
   </Target>
 </Project>
