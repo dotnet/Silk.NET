@@ -109,7 +109,7 @@ If you are creating a chain once, and then throwing it away, it can be done so s
 create never leave the stack. Silk.NET provides fluent extension methods that allow you to manipulate `IChainable`
 structures directly, performing the pointer logic for you, and providing compile-time type validation. Although,
 avoiding the heap entirely, there are some scenarios where this may still be slower than
-using [Managed Chains](managed-chains.md), and so this approach should only be considered when looking to optimise hot
+using [Managed Chains](managed-chaining.md), and so this approach should only be considered when looking to optimise hot
 paths. For example:
 
 ```csharp

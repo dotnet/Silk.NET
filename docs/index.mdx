@@ -71,7 +71,7 @@ jumping-off point for new users to Silk.NET - regardless of whether you've used 
 or you've never seen anything about it before! To that end, you can find our own documentation indexed below or
 throughout this site.
 
-<DocCardList items={useDocsSidebar().items} />
+<DocCardList items={useDocsSidebar().items.filter((e) => e.label != "Welcome")} />
 
 Have fun! We always look forward to seeing what people can create with Silk.NET and would love to hear how you get on in
 our Discord server.
