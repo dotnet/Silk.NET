@@ -6,6 +6,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 using Microsoft.Extensions.Options;
+using Microsoft.Build.Evaluation;
 
 namespace Silk.NET.SilkTouch.Mods
 {
@@ -50,47 +51,12 @@ namespace Silk.NET.SilkTouch.Mods
                                         SeparatedList<ExpressionSyntax>(
                                             cfg.WarningCodes.Select(warn => IdentifierName(warn)))));
 
-            var proj = ctx.SourceProject;
+            ctx.SourceProject = await DisableWarningsAsync(ctx.SourceProject, pragmaDirective, ct);
+            ctx.TestProject = await DisableWarningsAsync(ctx.TestProject, pragmaDirective, ct);
+        }
 
-            foreach (var docId in proj?.DocumentIds ?? [])
-            {
-                var doc =
-                    proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
-                if (await doc.GetSyntaxRootAsync(ct) is not { } root)
-                {
-                    continue;
-                }
-
-                // Find the using directive
-                SyntaxNode? namespaceNode = root.DescendantNodes().OfType<FileScopedNamespaceDeclarationSyntax>().FirstOrDefault();
-                
-                if (namespaceNode == null)
-                {
-                    // Skip the case where no using directive is found
-                    continue;
-                }
-
-                // Get the leading trivia (comments) of the first using directive
-                var leadingTrivia = namespaceNode.GetLeadingTrivia();
-
-                // Insert the pragma directive after the comments
-                var newLeadingTrivia = leadingTrivia.Insert(leadingTrivia.Count, pragmaDirective)
-                    .Add(CarriageReturnLineFeed);
-
-                // Update the using directive with the new leading trivia
-                var newUsingDirective = namespaceNode.WithLeadingTrivia(newLeadingTrivia);
-
-                // Replace the old using directive with the new one in the root node
-                root = root.ReplaceNode(namespaceNode, newUsingDirective);
-                doc = doc.WithSyntaxRoot(root);
-
-                proj = doc.Project;
-            }
-
-            ctx.SourceProject = proj;
-
-            proj = ctx.TestProject;
-
+        private async Task<Microsoft.CodeAnalysis.Project?> DisableWarningsAsync(Microsoft.CodeAnalysis.Project? proj, SyntaxTrivia pragmaDirective, CancellationToken ct)
+        {
             foreach (var docId in proj?.DocumentIds ?? [])
             {
                 var doc =
@@ -125,8 +91,7 @@ namespace Silk.NET.SilkTouch.Mods
 
                 proj = doc.Project;
             }
-
-            ctx.TestProject = proj;
+            return proj;
         }
     }
 }
