@@ -1204,7 +1204,7 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
 
                 case "generate-doc-includes":
                 {
-                    //configOptions |= PInvokeGeneratorConfigurationOptions.GenerateDocIncludes;
+                    configOptions |= PInvokeGeneratorConfigurationOptions.GenerateDocIncludes;
                     break;
                 }
 
