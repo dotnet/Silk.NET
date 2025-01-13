@@ -9,6 +9,7 @@ using static Silk.NET.Windows.IID;
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.DirectX;
 
+/// <include file='ID3DBlob.xml' path='doc/member[@name="ID3DBlob"]/*'/>
 [Guid("8BA5FB08-5195-40E2-AC58-0D989C3A0102")]
 [NativeTypeName("struct ID3D10Blob : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,8 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
     static Guid* INativeGuid.NativeGuid =>
         (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D10Blob));
     public void*** lpVtbl;
+
+    /// <inheritdoc cref = "IUnknown.QueryInterface"/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
@@ -29,6 +32,8 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
         );
     }
 
+    /// <inheritdoc cref = "IUnknown.AddRef"/>
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -36,6 +41,8 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
     {
         return ((delegate* unmanaged<ID3DBlob, uint>)((*lpVtbl)[1]))(this);
     }
+
+    /// <inheritdoc cref = "IUnknown.Release"/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
@@ -45,6 +52,8 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
         return ((delegate* unmanaged<ID3DBlob, uint>)((*lpVtbl)[2]))(this);
     }
 
+    /// <include file='ID3DBlob.xml' path='doc/member[@name="ID3DBlob.GetBufferPointer"]/*'/>
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("LPVOID")]
@@ -52,6 +61,8 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
     {
         return ((delegate* unmanaged<ID3DBlob, void*>)((*lpVtbl)[3]))(this);
     }
+
+    /// <include file='ID3DBlob.xml' path='doc/member[@name="ID3DBlob.GetBufferSize"]/*'/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
@@ -93,22 +104,15 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
 
     /// <summary>Initializes a new instance of the <see cref = "ID3DBlob"/> struct with the specified virtual table pointer.</summary>
     /// <param name = "vtbl">The pointer to virtual table.</param>
-    public ID3DBlob(void*** vtbl)
-    {
-        lpVtbl = vtbl;
-    }
+    public ID3DBlob(void*** vtbl) => lpVtbl = vtbl;
 
     /// <summary>Downcasts <see cref = "Silk.NET.Windows.IUnknown"/> to <see cref = "ID3DBlob"/>.</summary>
     /// <param name = "value">The <see cref = "Silk.NET.Windows.IUnknown"/> instance to be converted </param>
-    public static explicit operator ID3DBlob(Silk.NET.Windows.IUnknown value)
-    {
-        return new ID3DBlob(value.lpVtbl);
-    }
+    public static explicit operator ID3DBlob(Silk.NET.Windows.IUnknown value) =>
+        new ID3DBlob(value.lpVtbl);
 
     /// <summary>Upcasts <see cref = "ID3DBlob"/> to <see cref = "Silk.NET.Windows.IUnknown"/>.</summary>
     /// <param name = "value">The <see cref = "ID3DBlob"/> instance to be converted </param>
-    public static implicit operator Silk.NET.Windows.IUnknown(ID3DBlob value)
-    {
-        return new Silk.NET.Windows.IUnknown(value.lpVtbl);
-    }
+    public static implicit operator Silk.NET.Windows.IUnknown(ID3DBlob value) =>
+        new Silk.NET.Windows.IUnknown(value.lpVtbl);
 }

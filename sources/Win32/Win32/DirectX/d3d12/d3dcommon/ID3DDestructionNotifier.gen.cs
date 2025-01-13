@@ -9,6 +9,7 @@ using static Silk.NET.Windows.IID;
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.DirectX;
 
+/// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier"]/*'/>
 [Guid("A06EB39A-50DA-425B-8C31-4EECD6C270F3")]
 [NativeTypeName("struct ID3DDestructionNotifier : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,8 @@ public unsafe partial struct ID3DDestructionNotifier
     static Guid* INativeGuid.NativeGuid =>
         (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3DDestructionNotifier));
     public void*** lpVtbl;
+
+    /// <inheritdoc cref = "IUnknown.QueryInterface"/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
@@ -31,6 +34,8 @@ public unsafe partial struct ID3DDestructionNotifier
         );
     }
 
+    /// <inheritdoc cref = "IUnknown.AddRef"/>
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +44,8 @@ public unsafe partial struct ID3DDestructionNotifier
         return ((delegate* unmanaged<ID3DDestructionNotifier, uint>)((*lpVtbl)[1]))(this);
     }
 
+    /// <inheritdoc cref = "IUnknown.Release"/>
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -46,6 +53,8 @@ public unsafe partial struct ID3DDestructionNotifier
     {
         return ((delegate* unmanaged<ID3DDestructionNotifier, uint>)((*lpVtbl)[2]))(this);
     }
+
+    /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.RegisterDestructionCallback"]/*'/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
@@ -64,6 +73,8 @@ public unsafe partial struct ID3DDestructionNotifier
                 int>)((*lpVtbl)[3])
         )(this, callbackFn, pData, pCallbackID);
     }
+
+    /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.UnregisterDestructionCallback"]/*'/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
@@ -109,22 +120,15 @@ public unsafe partial struct ID3DDestructionNotifier
 
     /// <summary>Initializes a new instance of the <see cref = "ID3DDestructionNotifier"/> struct with the specified virtual table pointer.</summary>
     /// <param name = "vtbl">The pointer to virtual table.</param>
-    public ID3DDestructionNotifier(void*** vtbl)
-    {
-        lpVtbl = vtbl;
-    }
+    public ID3DDestructionNotifier(void*** vtbl) => lpVtbl = vtbl;
 
     /// <summary>Downcasts <see cref = "Silk.NET.Windows.IUnknown"/> to <see cref = "ID3DDestructionNotifier"/>.</summary>
     /// <param name = "value">The <see cref = "Silk.NET.Windows.IUnknown"/> instance to be converted </param>
-    public static explicit operator ID3DDestructionNotifier(Silk.NET.Windows.IUnknown value)
-    {
-        return new ID3DDestructionNotifier(value.lpVtbl);
-    }
+    public static explicit operator ID3DDestructionNotifier(Silk.NET.Windows.IUnknown value) =>
+        new ID3DDestructionNotifier(value.lpVtbl);
 
     /// <summary>Upcasts <see cref = "ID3DDestructionNotifier"/> to <see cref = "Silk.NET.Windows.IUnknown"/>.</summary>
     /// <param name = "value">The <see cref = "ID3DDestructionNotifier"/> instance to be converted </param>
-    public static implicit operator Silk.NET.Windows.IUnknown(ID3DDestructionNotifier value)
-    {
-        return new Silk.NET.Windows.IUnknown(value.lpVtbl);
-    }
+    public static implicit operator Silk.NET.Windows.IUnknown(ID3DDestructionNotifier value) =>
+        new Silk.NET.Windows.IUnknown(value.lpVtbl);
 }

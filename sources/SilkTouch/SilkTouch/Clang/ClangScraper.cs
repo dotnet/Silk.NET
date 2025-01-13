@@ -17,6 +17,7 @@ using ClangSharp.Interop;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
+using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
@@ -244,7 +245,7 @@ public sealed class ClangScraper(
     /// Runs ClangSharp for each of the given response files and aggregates the raw outputs.
     /// </summary>
     /// <param name="rsps">The response files.</param>
-    /// <param name="toRemovePatterns">files to remove</param>
+    /// <param name="toRemoveMatcher">glob matcher to remove</param>
     /// <param name="job">The job context.</param>
     /// <param name="cfg">The configuration.</param>
     /// <param name="cacheKey">The cache key.</param>
@@ -252,7 +253,7 @@ public sealed class ClangScraper(
     /// <exception cref="InvalidOperationException">The scraper output wasn't as expected.</exception>
     private async Task ScrapeBindingsAsync(
         IReadOnlyList<ResponseFile> rsps,
-        IEnumerable<string> toRemovePatterns,
+        Matcher toRemoveMatcher,
         IModContext job,
         Configuration cfg,
         string? cacheKey = null,
@@ -353,7 +354,7 @@ public sealed class ClangScraper(
                                     stream.Seek(0, SeekOrigin.Begin);
                                 }
 
-                                if (toRemovePatterns.Any(pattern => Regex.IsMatch(relativePath, pattern)))
+                                if (toRemoveMatcher.Match(relativePath).HasMatches)
                                 {
                                     logger.LogTrace("ClangSharp skipped {0}", relativePath);
                                     continue;
@@ -482,7 +483,12 @@ public sealed class ClangScraper(
             .ReadResponseFiles(ctx.ConfigurationDirectory, cfg.ClangSharpResponseFiles)
             .ToList();
 
-        var toRemovePatterns = cfg.GeneratedToRemove?.Select(toRemove => Regex.Escape(toRemove).Replace(@"\*\*", ".*")) ?? [];
+        var toRemoveMatcher = new Matcher();
+        if (cfg.GeneratedToRemove is not null)
+        {
+            toRemoveMatcher.AddIncludePatterns(cfg.GeneratedToRemove.Where(toRemove => !toRemove.StartsWith("!")).Select(ResponseFileHandler.PathFixup));
+            toRemoveMatcher.AddExcludePatterns(cfg.GeneratedToRemove.Where(toRemove => toRemove.StartsWith("!")).Select(toRemove => toRemove[1..]).Select(ResponseFileHandler.PathFixup));
+        }
 
         if (rsps.Count == 0)
         {
@@ -521,7 +527,7 @@ public sealed class ClangScraper(
             if (!skip)
             {
                 // Run the scraper over the response files
-                await ScrapeBindingsAsync(rsps, toRemovePatterns, ctx, cfg, cacheKey, ct);
+                await ScrapeBindingsAsync(rsps, toRemoveMatcher, ctx, cfg, cacheKey, ct);
             }
         }
         catch (Exception e)

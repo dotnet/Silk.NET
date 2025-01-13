@@ -6,9 +6,12 @@ using Silk.NET.Windows;
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.DirectX;
 
+/// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude"]/*'/>
 public unsafe partial struct ID3DInclude : ID3DInclude.Interface
 {
     public void*** lpVtbl;
+
+    /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Open"]/*'/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
@@ -38,6 +41,8 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Interface
             pBytes
         );
     }
+
+    /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Close"]/*'/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]

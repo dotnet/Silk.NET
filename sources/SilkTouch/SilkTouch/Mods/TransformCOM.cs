@@ -501,7 +501,7 @@ namespace Silk.NET.SilkTouch.Mods
             {
                 var ret = base.VisitInterfaceDeclaration(node);
 
-                if (ret is InterfaceDeclarationSyntax inter && inter.BaseList is not null && inter.BaseList.Types.Any(baseType => baseType.Type.ToString().StartsWith("I") && baseType.Type.ToString().EndsWith(".Interface")))
+                if (ret is InterfaceDeclarationSyntax inter && inter.BaseList is not null && inter.BaseList.Types.Any(baseType => baseType.Type.ToString().EndsWith(".Interface")))
                 {
                     List<BaseTypeSyntax> baseTypes = [];
                     foreach (BaseTypeSyntax baseType in inter.BaseList.Types)
@@ -535,7 +535,7 @@ namespace Silk.NET.SilkTouch.Mods
 
                 for (int i = 0; i < ComTypes.Count; i++)
                 {
-                    (string, bool, KeyedStringTree ?) val = ComTypes[i];
+                    (string, bool, KeyedStringTree?) val = ComTypes[i];
 
                     if (castType == $"{val.Item1}*")
                     {
@@ -585,14 +585,14 @@ namespace Silk.NET.SilkTouch.Mods
                                                             Identifier("vtbl")).
                                                         WithType(
                                                             ParseTypeName("void***"))))).
-                                               WithBody(
-                                                Block(
-                                                    SingletonList(
-                                                        ExpressionStatement(
-                                                            AssignmentExpression(
-                                                                SyntaxKind.SimpleAssignmentExpression,
-                                                                IdentifierName("lpVtbl"),
-                                                                IdentifierName("vtbl")))))).
+                                               WithExpressionBody(
+                                                ArrowExpressionClause(
+                                                    AssignmentExpression(
+                                                        SyntaxKind.SimpleAssignmentExpression,
+                                                        IdentifierName("lpVtbl"),
+                                                        IdentifierName("vtbl")))).
+                                               WithSemicolonToken(
+                                                Token(SyntaxKind.SemicolonToken)).
                                                WithLeadingTrivia(
                                                 TriviaList(
                                                     Trivia(
@@ -681,17 +681,17 @@ namespace Silk.NET.SilkTouch.Mods
                                 SingletonSeparatedList(
                                     Parameter(Identifier("value")).
                                     WithType(ParseTypeName(castName))))).
-                        WithBody(
-                            Block(
-                                SingletonList(
-                                    ReturnStatement(
+                        WithExpressionBody(
+                            ArrowExpressionClause(
                                         ObjectCreationExpression(
                                             IdentifierName(className)).
                                         WithArgumentList(
                                             ArgumentList(
                                                 SingletonSeparatedList(
                                                     Argument(
-                                                        IdentifierName("value.lpVtbl"))))))))).
+                                                        IdentifierName("value.lpVtbl"))))))).
+                        WithSemicolonToken(
+                            Token(SyntaxKind.SemicolonToken)).
                         WithLeadingTrivia(
                             TriviaList(
                                 Trivia(
