@@ -29,6 +29,8 @@
           "sources/Windows/shared/strsafe/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/strsafe/Windows.cs",
           "sources/Windows/shared/ws2ipdef/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/ws2ipdef/Windows.cs",
           "sources/Windows/shared/Iprtrmib/MIB_OPAQUE_INFO.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/Iprtrmib/MIB_OPAQUE_INFO.cs",
+          "sources/WinRT/winrt/windows.applicationmodel.email/IEmailMailboxSmimeEncryptionAlgorithm.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.email/EmailMailboxSmimeEncryptionAlgorithm.cs",
+          "sources/WinRT/winrt/windows.applicationmodel.email/IEmailMailboxSmimeSigningAlgorithm.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.email/EmailMailboxSmimeSigningAlgorithm.cs",
           "sources/WinRT/winrt/windows.perception.spatial/ISpatialCoordinateSystem.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.perception.spatial/ISpatialCoordinateSystem.cs",
           "sources/WinRT/winrt/windows.security.authentication.web.core/IID.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.security.authentication.web.core/IID.Manual.cs",
           "sources/WinRT/winrt/windows.ui.input/IID.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.ui.input/IID.Manual.cs"
@@ -46,6 +48,7 @@
       },
       "ChangeNamespace": {
         "Mappings": {
+          "TerraFX.Interop.Windows(.*)": "Silk.NET.Win32$1",
           "TerraFX.Interop(.*)": "Silk.NET$1"
         }
       },
