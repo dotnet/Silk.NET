@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -9,6 +9,7 @@ using System.IO;
 using System.IO.Hashing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using ClangSharp;
@@ -16,6 +17,7 @@ using ClangSharp.Interop;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
+using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
@@ -60,6 +62,12 @@ public sealed class ClangScraper(
         public required string[] ClangSharpResponseFiles { get; init; }
 
         /// <summary>
+        /// Whether or not to Cache the output when scraping
+        /// Caching currently fails on large multithreaded jobs
+        /// </summary>
+        public bool CacheOutput { get; init; } = true;
+
+        /// <summary>
         /// Manual overrides for ClangSharp outputs (i.e. manual tweaks of generated output) that should still flow through
         /// the SilkTouch pipeline as if it came from ClangSharp.
         /// </summary>
@@ -85,17 +93,24 @@ public sealed class ClangScraper(
         /// </summary>
         // TODO document
         public string[]? SkipScrapeIf { get; init; }
+
+        /// <summary>
+        /// Generated files to Remove
+        /// </summary>
+        public string[]? GeneratedToRemove { get; init; }
     }
 
     /// <summary>
     /// Runs ClangSharp to obtain the raw bindings for the given response file.
     /// </summary>
     /// <param name="config">The ClangSharp configuration.</param>
+    /// <param name="rspIndex">the index of the current rsp for logging</param>
+    /// <param name="rspCount">the total number of rsps</param>
     private (
         IEnumerable<KeyValuePair<string, Stream>> Sources,
         IEnumerable<KeyValuePair<string, Stream>> Tests,
         bool HasErrors
-    ) ScrapeRawBindings(ResponseFile config)
+    ) ScrapeRawBindings(ResponseFile config, int rspIndex, int rspCount)
     {
         var files = new Dictionary<string, Stream>();
 
@@ -115,8 +130,11 @@ public sealed class ClangScraper(
             OutputStreamFactory
         );
         var hasErrors = false;
+        int index = 0;
+        int count = config.Files.Count;
         foreach (var file in config.Files)
         {
+            index++;
             var filePath = Path.Combine(config.FileDirectory, file);
             var fileName = Path.GetFileName(file);
             logger.LogTrace(
@@ -184,7 +202,7 @@ public sealed class ClangScraper(
                 using var translationUnit = TranslationUnit.GetOrCreate(handle);
                 Debug.Assert(translationUnit is not null);
 
-                logger.LogInformation("Generating raw bindings for '{0}'", fileName);
+                logger.LogInformation("Generating raw bindings for '{0}' ({1}/{2}) ({3}/{4})", fileName, index, count, rspIndex, rspCount);
                 pinvokeGenerator.GenerateBindings(
                     translationUnit,
                     filePath,
@@ -192,11 +210,20 @@ public sealed class ClangScraper(
                     config.TranslationFlags
                 );
                 pinvokeGenerator.Close();
-                logger.LogDebug(
+
+                if (files.Count == 0)
+                {
+                    logger.LogWarning("No files generated for {0}",
+                    filePath);
+                }
+                else
+                {
+                    logger.LogDebug(
                     "Completed generation for {0}, file count: {1}",
                     filePath,
                     files.Count
-                );
+                    );
+                }
             }
             catch (Exception e)
             {
@@ -218,6 +245,7 @@ public sealed class ClangScraper(
     /// Runs ClangSharp for each of the given response files and aggregates the raw outputs.
     /// </summary>
     /// <param name="rsps">The response files.</param>
+    /// <param name="toRemoveMatcher">glob matcher to remove</param>
     /// <param name="job">The job context.</param>
     /// <param name="cfg">The configuration.</param>
     /// <param name="cacheKey">The cache key.</param>
@@ -225,6 +253,7 @@ public sealed class ClangScraper(
     /// <exception cref="InvalidOperationException">The scraper output wasn't as expected.</exception>
     private async Task ScrapeBindingsAsync(
         IReadOnlyList<ResponseFile> rsps,
+        Matcher toRemoveMatcher,
         IModContext job,
         Configuration cfg,
         string? cacheKey = null,
@@ -260,6 +289,8 @@ public sealed class ClangScraper(
         // Generate all the sources and tests.
         var aggregatedSources = new ConcurrentDictionary<string, SyntaxTree>();
         var aggregatedTests = new ConcurrentDictionary<string, SyntaxTree>();
+        int rspIndex = 0;
+        int rspCount = rsps.Count;
         try
         {
             await Parallel.ForEachAsync(
@@ -273,8 +304,9 @@ public sealed class ClangScraper(
                     await Task.Run(
                         async () =>
                         {
+                            int index = Interlocked.Increment(ref rspIndex);
                             // Generate the raw bindings.
-                            var (sources, tests, hasErrors) = ScrapeRawBindings(rsp);
+                            var (sources, tests, hasErrors) = ScrapeRawBindings(rsp, index, rspCount);
 
                             static MemoryStream Reopen(MemoryStream ms) =>
                                 ms.TryGetBuffer(out var buff) && buff.Array is not null
@@ -300,7 +332,10 @@ public sealed class ClangScraper(
                                     .TrimEnd('/');
 
                                 // Cache the output.
-                                if (cacheKey is not null && !hasErrors)
+                                //TODO: Refactor for better Parallelisation
+                                //Breaks with high concurrency
+                                string relativePath = $"{(isTest ? "tests" : "sources")}/{relativeKey}";
+                                if (cacheKey is not null && !hasErrors && cfg.CacheOutput) 
                                 {
                                     cacheDir ??= (
                                         await cacheProvider!.GetDirectory(
@@ -313,12 +348,18 @@ public sealed class ClangScraper(
                                         cacheKey,
                                         CacheIntent.StageIntermediateOutput,
                                         CacheFlags.RequireNewLocked | CacheFlags.NoHostDirectory,
-                                        $"{(isTest ? "tests" : "sources")}/{relativeKey}",
+                                        relativePath,
                                         stream
                                     );
                                     stream.Seek(0, SeekOrigin.Begin);
                                 }
 
+                                if (toRemoveMatcher.Match(relativePath).HasMatches)
+                                {
+                                    logger.LogTrace("ClangSharp skipped {0}", relativePath);
+                                    continue;
+                                }
+                                
                                 // Add it to the dictionary.
                                 if (
                                     !(isTest ? aggregatedTests : aggregatedSources).TryAdd(
@@ -326,7 +367,7 @@ public sealed class ClangScraper(
                                         CSharpSyntaxTree.ParseText(
                                             SourceText.From(
                                                 cfg.ManualOverrides?.TryGetValue(
-                                                    $"{(isTest ? "tests" : "sources")}/{relativeKey}",
+                                                    relativePath,
                                                     out var @override
                                                 ) ?? false
                                                     ? File.OpenRead(
@@ -381,6 +422,7 @@ public sealed class ClangScraper(
                     filePath: src.FullPath(fname)
                 )
                 .Project;
+            logger.LogDebug($"Add Src Document {fname}");
         }
 
         job.SourceProject = src;
@@ -441,6 +483,24 @@ public sealed class ClangScraper(
             .ReadResponseFiles(ctx.ConfigurationDirectory, cfg.ClangSharpResponseFiles)
             .ToList();
 
+        var toRemoveMatcher = new Matcher();
+        if (cfg.GeneratedToRemove is not null)
+        {
+            toRemoveMatcher.AddIncludePatterns(cfg.GeneratedToRemove.Where(toRemove => !toRemove.StartsWith("!")).Select(ResponseFileHandler.PathFixup));
+            toRemoveMatcher.AddExcludePatterns(cfg.GeneratedToRemove.Where(toRemove => toRemove.StartsWith("!")).Select(toRemove => toRemove[1..]).Select(ResponseFileHandler.PathFixup));
+        }
+
+        if (rsps.Count == 0)
+        {
+            logger.LogWarning("No Response files found for {}", ctx.JobKey);
+        }
+
+        var missingIncludes = rsps.SelectMany<ResponseFile, string>(rsp => rsp.ClangCommandLineArgs.Where(arg => arg.StartsWith("--include-directory=") && !Directory.Exists(arg.Substring(20)))).Select(arg => arg.Substring(20)).Distinct();
+        if (missingIncludes.Count() > 0)
+        {
+            logger.LogWarning("The following includes are missing and may cause erroneous generation: \n" + string.Join("\n", missingIncludes));
+        }
+
         // Apply modifications. This is done before the cache key as modifications to the rsps result in different
         // outputs.
         foreach (var mod in responseFileMods?.SelectMany(x => x.Get(ctx.JobKey)) ?? [])
@@ -467,7 +527,7 @@ public sealed class ClangScraper(
             if (!skip)
             {
                 // Run the scraper over the response files
-                await ScrapeBindingsAsync(rsps, ctx, cfg, cacheKey, ct);
+                await ScrapeBindingsAsync(rsps, toRemoveMatcher, ctx, cfg, cacheKey, ct);
             }
         }
         catch (Exception e)

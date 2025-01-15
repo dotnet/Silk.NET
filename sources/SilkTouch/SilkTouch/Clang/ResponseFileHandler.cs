@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.CommandLine;
 using System.CommandLine.Parsing;
@@ -1532,20 +1532,21 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
         }
     }
 
+    internal static string PathFixup(string path)
+    {
+        if (Path.IsPathFullyQualified(path))
+        {
+            path = Path.GetRelativePath(Path.GetPathRoot(path)!, path);
+        }
+
+        return path.Replace('\\', '/');
+    }
+
     internal static IEnumerable<string> Glob(IReadOnlyCollection<string> paths, string? cd = null)
     {
         cd ??= Environment.CurrentDirectory;
         var matcher = new Matcher();
-        static string PathFixup(string path)
-        {
-            if (Path.IsPathFullyQualified(path))
-            {
-                path = Path.GetRelativePath(Path.GetPathRoot(path)!, path);
-            }
-
-            return path.Replace('\\', '/');
-        }
-
+        
         matcher.AddIncludePatterns(paths.Where(x => !x.StartsWith("!")).Select(PathFixup));
         matcher.AddExcludePatterns(
             paths.Where(x => x.StartsWith("!")).Select(x => x[1..]).Select(PathFixup)
