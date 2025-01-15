@@ -49,7 +49,7 @@
       "ChangeNamespace": {
         "Mappings": {
           "TerraFX.Interop.Windows(.*)": "Silk.NET.Win32$1",
-          "TerraFX.Interop(.*)": "Silk.NET$1"
+          "TerraFX.Interop.(?!Windows)(.*)": "Silk.NET$1"
         }
       },
       "TransformCOM": {
