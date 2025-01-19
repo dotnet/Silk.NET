@@ -49,12 +49,12 @@
       "ChangeNamespace": {
         "Mappings": {
           "TerraFX.Interop.Windows(.*)": "Silk.NET.Win32$1",
-          "TerraFX.Interop.(?!Windows)(.*)": "Silk.NET$1"
+          "TerraFX.Interop(?!.Windows)(.*)": "Silk.NET$1"
         }
       },
       "TransformCOM": {
         "BaseTypes": {
-          "IUnknown.Interface": "Silk.NET.Windows.IUnknown.Interface"
+          "IUnknown.Interface": "Silk.NET.Win32.IUnknown.Interface"
         }
       },
       "DisableWarnings": {
