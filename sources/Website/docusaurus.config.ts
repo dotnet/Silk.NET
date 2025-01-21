@@ -23,17 +23,24 @@ const rewriteSourceLinks = (options) => {
             if (isAbsolute(node.url)) {
                 return;
             }
+            let url = node.url;
+            let hashtag = url.indexOf('#');
+            if (hashtag !== -1) {
+                url = url.substring(0, hashtag);
+            }
             let resolvedUrlPath = path.join(fileDirPath, node.url);
-            console.log(resolvedUrlPath + " - " + node.url + " - " + fileDirPath);
-            if (!path.relative(resolvedUrlPath, docsRoot).startsWith("..")) {
+            if (!path.relative(docsRoot, resolvedUrlPath).startsWith("..")) {
                 return;
             }
-            let silk2Rel = path.relative(resolvedUrlPath, silk2Src);
+            console.log(resolvedUrlPath + " - " + node.url + " - " + fileDirPath + " - " + path.relative(docsRoot, resolvedUrlPath));
+            let silk2Rel = path.relative(silk2Src, resolvedUrlPath);
             if (!silk2Rel.startsWith("..")) {
+                console.log(`replaced ${silk2Rel}`);
                 node.url = `https://github.com/dotnet/Silk.NET/blob/main/src/${silk2Rel}`
             }
-            let silk3Rel = path.relative(resolvedUrlPath, repoRoot);
+            let silk3Rel = path.relative(repoRoot, resolvedUrlPath);
             if (!silk3Rel.startsWith("..")) {
+                console.log(`replaced ${silk3Rel}`);
                 node.url = `https://github.com/dotnet/Silk.NET/blob/develop/3.0/${silk3Rel}`
             }
         });
