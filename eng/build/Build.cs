@@ -131,4 +131,6 @@ partial class Build : NukeBuild
                     )
             )
         );
+
+    Target Website => CommonTarget(x => x.Executes(FullBuildWebsite));
 }

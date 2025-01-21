@@ -34,7 +34,8 @@
         "PushToNuGet",
         "RegenerateBindings",
         "ShipApi",
-        "SignPackages"
+        "SignPackages",
+        "Website"
       ]
     },
     "Verbosity": {

@@ -5,6 +5,17 @@ import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-di
 import { visit } from 'unist-util-visit';
 import { pathToFileURL } from 'node:url';
 import path from 'node:path';
+import { exec } from 'node:child_process';
+
+function getSilk2Version(): string {
+    let ver = "";
+    exec(
+        "git describe --tags HEAD --abbrev=0",
+        { cwd: "../../eng/submodules/silk.net-2.x" },
+        (_a, stdout, _b)=> ver = stdout
+    );
+    return ver;
+}
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -32,15 +43,15 @@ const rewriteSourceLinks = (options) => {
             if (!path.relative(docsRoot, resolvedUrlPath).startsWith("..")) {
                 return;
             }
-            console.log(resolvedUrlPath + " - " + node.url + " - " + fileDirPath + " - " + path.relative(docsRoot, resolvedUrlPath));
+            // console.log(resolvedUrlPath + " - " + node.url + " - " + fileDirPath + " - " + path.relative(docsRoot, resolvedUrlPath));
             let silk2Rel = path.relative(silk2Src, resolvedUrlPath);
             if (!silk2Rel.startsWith("..")) {
-                console.log(`replaced ${silk2Rel}`);
+                // console.log(`replaced ${silk2Rel}`);
                 node.url = `https://github.com/dotnet/Silk.NET/blob/main/src/${silk2Rel}`
             }
             let silk3Rel = path.relative(repoRoot, resolvedUrlPath);
             if (!silk3Rel.startsWith("..")) {
-                console.log(`replaced ${silk3Rel}`);
+                // console.log(`replaced ${silk3Rel}`);
                 node.url = `https://github.com/dotnet/Silk.NET/blob/develop/3.0/${silk3Rel}`
             }
         });
@@ -76,6 +87,8 @@ const config: Config = {
         locales: ['en'],
     },
 
+    staticDirectories: ["static", "../../eng/submodules/silk.net-2.x/documentation/images"],
+
     presets: [
         [
             'classic',
@@ -93,6 +106,17 @@ const config: Config = {
                         remarkGithubAdmonitionsToDirectives,
                         rewriteSourceLinks
                     ],
+                    // TODO uncomment when v3 is released
+                    // lastVersion: "current",
+                    versions: {
+                        current: {
+                            label: 'v3.0.0',
+                            path: "v3"
+                        },
+                        "v2": {
+                            label: getSilk2Version()
+                        }
+                    },
                 },
                 blog: {
                     showReadingTime: true,
@@ -128,6 +152,12 @@ const config: Config = {
                     label: 'Documentation',
                 },
                 {to: '/blog', label: 'Blog', position: 'left'},
+                {
+                    type: 'docsVersionDropdown',
+                    position: 'right',
+                    dropdownItemsAfter: [],
+                    dropdownActiveClassDisabled: true,
+                },
                 {
                     href: 'https://github.com/facebook/docusaurus',
                     label: 'GitHub',
