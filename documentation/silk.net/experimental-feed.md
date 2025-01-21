@@ -9,9 +9,11 @@
 
 # Experimental Feed
 
-<?# Warning "The experimental feed is not recommended for use for anything beyond playing around with the new features. We don't officially support these builds as they may be unstable, and should not be used in production." /?>
+> [!WARNING]
+> The experimental feed is not recommended for use for anything beyond playing around with the new features. We don't officially support these builds as they may be unstable, and should not be used in production.
 
-<?# Info "Changes in the experimental feed happen rapidly. We recommend joining the [Silk.NET Discord server](https://discord.gg/DTHHXRt) so that you can keep up with development." /?>
+> [!NOTE]
+> Changes in the experimental feed happen rapidly. We recommend joining the [Silk.NET Discord server](https://discord.gg/DTHHXRt) so that you can keep up with development.
 
 ## Configure your project
 
@@ -55,6 +57,8 @@ At the time of writing, the latest version is `2.0.0-build97.0`. Now to install 
   </ItemGroup>
 ```
 
-<?# Warning "Experimental Feed builds may be deleted without warning at the Silk.NET team's discretion." /?>
+
+> [!WARNING]
+> Experimental Feed builds may be deleted without warning at the Silk.NET team's discretion.
 
 Now you have access to bleeding-edge experimental builds of Silk.NET. Have fun!

@@ -4,7 +4,9 @@ sidebar_label: Hello Quad
 ---
 
 # 1.2 - Hello Quad
-<?# Info "You can view the source code for this tutorial [here](../sources/1.2-final-result.html). This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here](1-hello-window.html)." /?>
+
+> ![NOTE]
+> You can view the source code for this tutorial [here](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.2%20-%20Hello%20Quad).
 
 Let's draw something on-screen! In this tutorial, you'll learn:
 
@@ -40,7 +42,8 @@ _gl = _window.CreateOpenGL();
 
 What are we doing here? Silk.NET requires you to keep a **reference** to the OpenGL API. If you've used or seen OpenGL in C, you'll notice that this is different to the way that it is done there. This is done so that you can more easily keep track of multiple contexts. If you don't know what that is, don't worry about it for now, we won't be using it in these tutorials.
 
-<?# Info "If you take a look at the source in the Silk.NET samples repository, you will notice that it uses `_gl = GL.GetApi(_window)`. This is another way to get the GL API, however when using Silk.NET windowing, it's recommended that you use `_window.CreateOpenGL()` instead." /?>
+> [!NOTE]
+> If you take a look at the source in the Silk.NET samples repository, you will notice that it uses `_gl = GL.GetApi(_window)`. This is another way to get the GL API, however when using Silk.NET windowing, it's recommended that you use `_window.CreateOpenGL()` instead.
 
 Now, run your application again. If all is good, you should see no change. Awesome! Let's do our first steps in OpenGL: Clearing the window.
 
@@ -52,7 +55,8 @@ A window contains at least two **framebuffers**. A framebuffer is a set of textu
 * Color texture
 * Depth stencil texture
 
-<?# Info "The technical name for these textures is **buffers**. For simplicity reasons we will call them textures here, as to not confuse you with the buffers we use later in the tutorial." /?>
+> [!NOTE]
+> The technical name for these textures is **buffers**. For simplicity reasons we will call them textures here, as to not confuse you with the buffers we use later in the tutorial.
 
 On top of this, a window will contain at least two of these framebuffers. This is known as **double-buffering** and is imperative for rendering to work properly. One buffer is displayed, while another is rendered to. They are then swapped between once the GPU is ready.
 
@@ -84,7 +88,7 @@ _gl.Clear(ClearBufferMask.ColorBufferBit);
 
 Run your application again, and you should see a lovely sky blue window!
 
-![Sky blue window](../../../images/opengl/chapter1/cornflower-window.png)
+![Sky blue window](/images/opengl/chapter1/cornflower-window.png)
 
 Congrats! You've done your first thing in OpenGL! Didn't work? Check the [source code](../sources/1.2.2-clear-window.html) for this section here.
 
@@ -163,7 +167,7 @@ In modern graphics programming, you are expected to use triangles, lines, or poi
 
 Therefore, a quad is made of two right-angle triangles. This can best be seen if we view the result in **wireframe** mode.
 
-![Wireframe quad](../../../images/opengl/chapter1/wireframe-quad.png)
+![Wireframe quad](/images/opengl/chapter1/wireframe-quad.png)
 
 In the image, you can also see where the four vertices go in relation to the quad. While you won't *usually* be defining vertices yourself, it's still handy to know how it works.
 
@@ -197,7 +201,8 @@ Let's fill our buffer with some data! Before we do that though, you need to be a
 #### Unsafe C#
 Silk.NET heavily uses `unsafe` code. Don't worry, this won't make your computer explode, however it does exit out of the "memory safe" managed environment of C#, and enters a realm where undefined behavior, segmentation faults, and strange results are more likely to occur if you are not careful. Since we're working with low-level APIs, and OpenGL is defined in plain C, some unsafe code will be necessary in order for us to be able to communicate with it from C#.
 
-<?# Info "If you wish to use `Span` instead, and remain in `safe` mode, Silk.NET does support these too. However, I will be using `unsafe` in this tutorial instead, as this is both what I personally use, as well as what the samples use." /?>
+> [!NOTE]
+> If you wish to use `Span` instead, and remain in `safe` mode, Silk.NET does support these too. However, I will be using `unsafe` in this tutorial instead, as this is both what I personally use, as well as what the samples use.
 
 Unsafe mode is not enabled by default, so we need to enable it. To enable it:
 - If you're on Visual Studio 2022, open your project properties and under Build --> General, make sure the box that says "Unsafe code" is checked.
@@ -448,7 +453,8 @@ The last thing we need to do before we can begin drawing our quad to the screen 
 
 This is done with the **attribute setup**. This sets various parameters in the VAO, which tells OpenGL how to read the vertex data in the vertex buffer. As vertex buffers can contain more than just position data (it can contain almost anything you want), it is vital that OpenGL knows how to separate out the individual bits of data, so it can pass it to the shader correctly.
 
-<?# Warning "While fragment shaders (and other shaders) can have `in` attributes, the only ones you can directly set *outside* of a shader are the ones going into the vertex shader. The only way to set attributes in the fragment shader is to pass them through the vertex shader. Therefore, the attribute setup only affects the vertex shader and vertex buffer, not any other shader." /?>
+> [!WARNING]
+> While fragment shaders (and other shaders) can have `in` attributes, the only ones you can directly set *outside* of a shader are the ones going into the vertex shader. The only way to set attributes in the fragment shader is to pass them through the vertex shader. Therefore, the attribute setup only affects the vertex shader and vertex buffer, not any other shader.
 
 Add the following to your `OnLoad` method:
 
@@ -470,7 +476,7 @@ The stride tells OpenGL the size (in bytes) of a *single* vertex. The offset tel
 
 This diagram gives a visual explanation of what stride and offset do (credit to LearnOpenGL):
 
-![stride and offset](../../../images/opengl/chapter1/vertex_attribute_pointer.png)
+![stride and offset](/images/opengl/chapter1/vertex_attribute_pointer.png)
 
 In our example, the only things we define per vertex is the position of the vertex itself, which is 3 values per vertex. Therefore, our stride is just `3 * sizeof(float)` (remember, stride is in **bytes**, so we must multiply by the size of the float primitive). Since we are only defining one attribute, we don't need to have any offset. Therefore, we can just use `0`. OpenGL expects a `void` pointer, so we must cast it to `void*`.
 
@@ -487,7 +493,8 @@ _gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, 0);
 
 Doing this means we've "un-bound" everything, so calling something like `BufferData` won't affect the buffers we've just created.
 
-<?# Warning "You **MUST** unbind the vertex array first, before unbinding the other buffers. If you forget to do it in this order, the buffer will be unbound from the vertex array, meaning you'll see incorrect results when you render the object." /?>
+> [!WARNING]
+> You **MUST** unbind the vertex array first, before unbinding the other buffers. If you forget to do it in this order, the buffer will be unbound from the vertex array, meaning you'll see incorrect results when you render the object.
 
 If you want to see the resulting code so far, you can see it [here](../sources/1.2.7-finished-setup.html).
 
@@ -520,7 +527,7 @@ The last parameter is a pointer to the starting index of the indices. Since we w
 
 And that's it! Run your program and you should see a lovely orange rectangle on a blue background. Exciting, isn't it... Right...?
 
-![Final result](../../../images/opengl/chapter1/final-result-t2.png)
+![Final result](/opengl/chapter1/final-result-t2.png)
 
 While this may have seen like a lot of set up for a boring result, this code can render pretty much anything you want to the screen. It remains pretty much the same, whether you're rendering a basic quad like this, or a complex 3D model. All you need to change are the vertices & indices going in, and some more complex shader code to handle the transformations.
 

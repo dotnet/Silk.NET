@@ -69,7 +69,9 @@ To help us expand further to these mobile platforms we're releasing bindings and
 
 ## Mobile support
 
-<?# FancyImage "../../images/blog/nov-2020/triangledroid.jpg" "A triangle on an Android phone with a plant behind it." "(The plant's name is frank)" /?>
+![A triangle on an Android phone with a plant behind it.](/images/blog/nov-2020/triangledroid.jpg)
+
+_(The plant's name is frank)_
 
 Many have been waiting for this for a long time, a windowing and OpenGL bindings library that truly is cross-platform. Now we're happy to be making steps towards this with one of 2.0's largest features: Android and experimental iOS support. Currently, we have successfully ran an amalgamation of our Triangle and InputTest lab applications on Android and iOS simulators, as well as on an Android device to great avail pictured above. This is new territory for Silk.NET, so it may have some early teething issues, but if anything that should encourage you more to play around with our Android support! Our iOS support is still experimental, but that's because we're waiting for an iOS guru to come along and help drive our iOS backend home. If this is you, join our Discord server!
 

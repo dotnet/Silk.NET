@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-sidebar_label: Hello Window
 ---
 
-# 1.1 - Hello Window
-<?# Info "You can view the source code for this tutorial [here](../sources/1.1-final-result.html)." /?>
+# Hello Window
+
+> ![NOTE]
+> You can view the source code for this tutorial [here](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.1%20-%20Hello%20Window).
 
 ## Introduction
 Welcome to your first Silk.NET tutorial!
@@ -114,7 +115,7 @@ _window.Run();
 
 And that's it! Run the program and you should hopefully see a window.
 
-![Window](../../../images/opengl/chapter1/window1.png)
+![Window](/images/opengl/chapter1/window1.png)
 
 ## Window Events
 The window we've just created has several events we can subscribe to, such as loading and rendering, which are key for your program to work properly.
@@ -136,7 +137,9 @@ private static void OnRender(double deltaTime) { }
 
 These are the methods that will power our main application. For this tutorial, we'll only be using `OnLoad`, but it's helpful to have all three.
 
-<?# Info "The `deltaTime` parameter is the amount of time, in seconds, that has passed since the last frame. Using delta time is key for framerate-independent actions, such as movement." /?>
+
+> ![NOTE]
+> The `deltaTime` parameter is the amount of time, in seconds, that has passed since the last frame. Using delta time is key for framerate-independent actions, such as movement.
 
 Next, we need to subscribe to these events. Add the following code to your `Main` method, just after you call `Window.Create()`:
 
@@ -148,7 +151,7 @@ _window.Render += OnRender;
 
 Launch your program again and you will see that... nothing has changed. Good! That means it's working correctly. Try adding some logs in the load, update, and render methods to see exactly when they are called.
 
-<img src="../../../images/opengl/chapter1/loading-rendering.png" title="Load, update, and render demo." alt="Load, update, and render demo" style="width: 100px" />
+<img src="../../../images/opengl/chapter1/loading-rendering.png" title="Load, update, and render demo." alt="Load, update, and render demo" />
 
 We're now ready to handle some input!
 

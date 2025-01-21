@@ -36,7 +36,9 @@ Let's look at some of the new Silk.NET features and improvements in 2.0 Preview 
 
 ## Mobile support
 
-<?# FancyImage "../../images/blog/nov-2020/triangledroid.jpg" "A triangle on an Android phone with a plant behind it." "(The plant's name is frank)" /?>
+![A triangle on an Android phone with a plant behind it.](/images/blog/nov-2020/triangledroid.jpg)
+
+_(The plant's name is frank)_
 
 Many have been waiting for this for a long time, a windowing and OpenGL bindings library that truly is cross-platform. Now we're happy to be making steps towards this with one of Preview 3's largest features: experimental Android and iOS support. Currently, we have successfully ran an amalgamation of our Triangle and InputTest lab applications on Android and iOS simulators, as well as on an Android device to great avail pictured above.
 

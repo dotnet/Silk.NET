@@ -4,7 +4,9 @@ sidebar_label: Hello Texture
 ---
 
 # 1.3 - Hello Texture
-<?# Info "You can view the source code for this tutorial [here](../sources/1.3-final-result.html). This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here](1-hello-window.html)." /?>
+
+> ![NOTE]
+> You can view the source code for this tutorial [here](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.3%20-%20Hello%20Texture).
 
 In the previous tutorial, we've shown you how to open an OpenGL window and draw a colored quad.
                                                     
@@ -26,7 +28,8 @@ The most common type of texture is a 2D texture, which stores the 2D grid of pix
 as texture objects are a lot more complex than just 2D arrays!
 This data is stored in GPU memory, and can be read by a shader.
 
-<?# Info "There are multiple different dimensions of texture from 1D through to 3D. For the purposes of this tutorial, we will be focusing on 2D." /?>
+> [!NOTE]
+> There are multiple different dimensions of texture from 1D through to 3D. For the purposes of this tutorial, we will be focusing on 2D.
 
 Textures are quite finicky to setup, and need quite a bit of information in order to be drawn.
 The most important piece of information that we need to send to the texture to see it on the screen are the texture coordinates.
@@ -53,7 +56,7 @@ With how we have structured the data, both the vertex and texture coordinates ca
 
 If we try to run our program now...
 
-![A really messed up quad!](../../../images/opengl/chapter1/lesson3/messed-up-quad.png)
+![A really messed up quad!](/images/opengl/chapter1/lesson3/messed-up-quad.png)
 
 Well, that doesn't look like the quad we were expecting. This is because we have updated the vertex buffer we're passing to the vertex shader,
 but haven't updated anything else such as our vertex layout definition. Luckily, it's very easy to modify the the example vertex layout
@@ -62,7 +65,7 @@ shown in the previous tutorial to work with our new texture coordinates.
 In our `VertexAttribPointer` calls, we declared an `aPosition` attribute with a size of 3 floats and a stride of 12 bytes (`3 * sizeof(float)` equals 12).
 Because of this, our buffer is being read like this:
 
-![Buffer reading wrong data](../../../images/opengl/chapter1/lesson3/wrong-pointers.png)
+![Buffer reading wrong data](/images/opengl/chapter1/lesson3/wrong-pointers.png)
 
 As you can see, the vertex buffer is being read as if the first vertex was composed of the first three floats in the buffer, then the second
 vertex the next three floats, the third vertex the next three, and so on and so forth. However, this is now wrong! Since each
@@ -79,7 +82,7 @@ _gl.VertexAttribPointer(positionLoc, 3, VertexAttribPointerType.Float, false, 5 
 
 This will make the buffer be read like this (including the texture coordinate pointer, which we'll add into our code later):
 
-![Buffer reading right data](../../../images/opengl/chapter1/lesson3/right-pointers.png)
+![Buffer reading right data](/images/opengl/chapter1/lesson3/right-pointers.png)
 
 Now the positions of each vertex are being read correctly! Each position is still three floats, but by skipping the two floats after each position,
 we skip over the U and V floats in between each XYZ floats, thus reading them correctly.
@@ -146,7 +149,7 @@ should be incremented before reading the vertex attribute data. This means that 
 
 If you do everything right, you will see this result!
 
-![Quad with UVs](../../../images/opengl/chapter1/lesson3/quad-with-uvs.png)
+![Quad with UVs](/images/opengl/chapter1/lesson3/quad-with-uvs.png)
 
 This gives us a nice visualisation of the texture coordinates, but it's not a textured quad. What exactly are we looking at?
 What you are seeing is the texture coordinates we passed displayed as a color!
@@ -154,7 +157,7 @@ What you are seeing is the texture coordinates we passed displayed as a color!
 The Red, Green and mix between these two colors you see are, respectively, the X and Y texture coordinate values of that pixel.
 In the shader, the values are being read like this:
 
-![UV values](../../../images/opengl/chapter1/lesson3/quad-with-uvs-and-numbers.png)
+![UV values](/images/opengl/chapter1/lesson3/quad-with-uvs-and-numbers.png)
 
 As you can see, as the X/U coordinate increases so does the amount of red in the output pixel, and likewise as the Y/V coordinate increases so does the amount of green.
 Even though we only specified UV values for each vertex, all pixels in the quad have UV values. That's because, as you read before,
@@ -197,8 +200,10 @@ _texture = _gl.GenTexture();
 _gl.ActiveTexture(TextureUnit.Texture0);
 _gl.BindTexture(TextureTarget.Texture2D, _texture);
 ```
-<?# info "Texture units are locations in the OpenGL state where textures can be bound. Instead of textures being specified directly to shader samplers,
-textures are bound to a texture unit, and the texture unit is then specified to the shader sampler." /?>
+
+> [!NOTE]
+> Texture units are locations in the OpenGL state where textures can be bound. Instead of textures being specified directly to shader samplers,
+textures are bound to a texture unit, and the texture unit is then specified to the shader sampler.
 
 After that, we need to load the image. You can do it with the following line:
 ```cs
@@ -271,7 +276,8 @@ But pay attention! Notice that our texture coordinates are between the ranges of
 with normalized values! To better understand this, think about a 250x500 pixels image. If you want to get the pixel at the position
 (250, 250), we need to send (250 / width, 250 / height), or (1, 0.5), as the texture coordinate. This way the size of the texture doesn't matter to the shader.
 
-<?# Info "You can use the equation ` 1/size * pixel_position ` to get the normalized coordinate for a particlar axis!" /?>
+> [!NOTE]
+> You can use the equation ` 1/size * pixel_position ` to get the normalized coordinate for a particlar axis!
 
 After having configured our uniform `uTexture`, we need to bind our texture unit to it. To do so, we do it using the following lines:
 ```cs
@@ -300,7 +306,7 @@ With that, the texture in the texture unit 0 should be set for our sampler2D.
 
 And now when you run it (drumroll...), you can see the image being drawn inside the quad!
 
-![Quad with texture](../../../images/opengl/chapter1/lesson3/quad-with-texture.png)
+![Quad with texture](/images/opengl/chapter1/lesson3/quad-with-texture.png)
 
 ## Transparency in OpenGL
 Well, you must have noticed the black corners around the texture. If you use another program to check the texture, it's completely transparent! So why isn't it rendering like so?
@@ -328,7 +334,7 @@ If this isn't sufficient, there are a large amount of other blending function co
 
 And when you run the program now, the transparent pixels of the image will not be visible anymore:
 
-![Quad with texture and transparency](../../../images/opengl/chapter1/lesson3/quad-with-transparency.png)
+![Quad with texture and transparency](/images/opengl/chapter1/lesson3/quad-with-transparency.png)
 
 you can see the code final result [clicking here](../sources/1.3-final-result.html).
 
@@ -353,15 +359,15 @@ Let's see the most common values for these parameters:
 
 #### `TextureWrapMode.Repeat`:
 Just repeats the image without any change, turning any coordinates outside the [0, 1) range by taking the fractional part of said number.  
-![Repeat](../../../images/opengl/chapter1/lesson3/texParameters/repeat.png)
+![Repeat](/images/opengl/chapter1/lesson3/texParameters/repeat.png)
 
 #### `TextureWrapMode.MirroredRepeat`:
 Mirror the texture for each 1 texture coordinate unit.  
-![Mirrored](../../../images/opengl/chapter1/lesson3/texParameters/repeatMirrored.png)
+![Mirrored](/images/opengl/chapter1/lesson3/texParameters/repeatMirrored.png)
 
 #### `TextureWrapMode.ClampToEdge`:
 Returns the pixel on the respective edge of the image.  
-![A weird border](../../../images/opengl/chapter1/lesson3/texParameters/clampToEdge.png)
+![A weird border](/images/opengl/chapter1/lesson3/texParameters/clampToEdge.png)
 
 ### `TextureMinFilter` & `TextureMagFilter`:
 When we draw a texture, the area on the screen in which we're drawing the texture typically doesn't have the same size or shape as the texture. This means that during rendering we
@@ -377,15 +383,16 @@ pixels to the texture coordinates and will return a linear interpolation of them
 This is an example from [Learn OpenGL](https://learnopengl.com/Getting-started/Textures). See how the neighbor colors are interpolated to return a different
 color:
 
-![linear filter](../../../images/opengl/chapter1/lesson3/texParameters/filter_linear.png)
+![linear filter](/images/opengl/chapter1/lesson3/texParameters/filter_linear.png)
 
 
 #### `Texture(Min/Mag)Filter.Nearest`:
 The nearest filter returns the color of the center of the nearest pixel, no interpolation is done.
 
-![Nearest filter](../../../images/opengl/chapter1/lesson3/texParameters/filter_nearest.png)
+![Nearest filter](/images/opengl/chapter1/lesson3/texParameters/filter_nearest.png)
 
-<?# Info "As `TexParameter` functions don't accepts enuns, you will have to do a explicit convertion using `(int)` in a `TexParameterI`, for integer parameters." /?> 
+> [!NOTE]
+> As `TexParameter` functions don't accepts enuns, you will have to do a explicit convertion using `(int)` in a `TexParameterI`, for integer parameters.
 
 ## Mipmaps
 Now for the last part of this tutorial. Mipmaps are an essential resource for making good renders.
@@ -393,7 +400,7 @@ Now for the last part of this tutorial. Mipmaps are an essential resource for ma
 But first, what are Mipmaps?
 
 Mipmaps are a map of tiny versions of the texture. The following is an example of mipmap texture:
-![An example of a Mipmap texture](../../../images/opengl/chapter1/lesson3/example_mipmap.png)
+![An example of a Mipmap texture](/images/opengl/chapter1/lesson3/example_mipmap.png)
 
 But what is this used for?
 
@@ -407,7 +414,7 @@ eliminating the moiré effect.
 An example from [Wikipedia](https://en.wikipedia.org/wiki/File:Mipmap_Aliasing_Comparison.png). It's possible to notice weird patterns
 generated far away in the render without mipmaps:
 
-![Mipmap usage example](../../../images/opengl/chapter1/lesson3/mipmap_comparation.png)
+![Mipmap usage example](/images/opengl/chapter1/lesson3/mipmap_comparation.png)
 
 But if you think that generating mipmaps by hand for all your textures is really hard work, don't worry! OpenGL provides a special method to
 do this for you.
@@ -448,7 +455,7 @@ And now the mipmaps will be used.
 
 ## Wrapping up
 You've just completed another Silk.NET tutorial! Here are some next steps you can take:
-* Move on to the [next tutorial](../../coming-soon.html), where we'll be abstracting away some of our code to make it easier to read.
+* Move on to the next tutorial, where we'll be abstracting away some of our code to make it easier to read.
 * View the full tutorial source code on the [Silk.NET git repository](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.3%20-%20Textures).
 * Join the [Discord server](https://discord.gg/DTHHXRt), where you can ask questions, show your stuff, and chat with everyone there.
 
