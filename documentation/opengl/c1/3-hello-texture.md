@@ -1,15 +1,6 @@
 ---
-{
-    "TableOfContents": {
-        "Name": "1.3 - Hello Texture",
-        "Url": "3-hello-texture.html",
-        "Metadata": {
-            "AuthorGitHub": "lumi2021",
-            "DateTimeWritten": "11/01/2024 16:00",
-            "PreviewImage": ""
-        }
-    }
-}
+sidebar_position: 3
+sidebar_label: Hello Texture
 ---
 
 # 1.3 - Hello Texture

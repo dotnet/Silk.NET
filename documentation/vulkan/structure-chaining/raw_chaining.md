@@ -15,7 +15,7 @@ API.
 
 The easiest way to prevent pointers moving is to ensure that structures are created and used locally in the same
 function. This ensures that they remain in the current stack frame, preventing the runtime from moving any data.
-Sometimes, it is desirable to store structures for later use, in which case [Managed Chaining](managed-chains.md) should
+Sometimes, it is desirable to store structures for later use, in which case [Managed Chaining](managed-chaining.md) should
 be considered.
 
 Each structure defines a constructor which accepts the fields as parameters and specifies defaults, including the

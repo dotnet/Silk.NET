@@ -1,15 +1,6 @@
 ---
-{
-    "TableOfContents": {
-        "Name": "1.1 - Hello Window",
-        "Url": "1-hello-window.html",
-        "Metadata": {
-            "AuthorGitHub": "ohtrobinson",
-            "DateTimeWritten": "02/11/2022 12:00",
-            "PreviewImage": ""
-        }
-    }
-}
+sidebar_position: 1
+sidebar_label: Hello Window
 ---
 
 # 1.1 - Hello Window
