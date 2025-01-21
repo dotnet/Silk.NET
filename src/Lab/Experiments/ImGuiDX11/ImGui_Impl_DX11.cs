@@ -102,9 +102,9 @@ public sealed class ImGui_Impl_DX11
     /// </returns>
     internal unsafe bool ImGui_ImplDX11_CreateDeviceObjects()
     {
-        if ((long)pd3dDevice.Handle == IntPtr.Zero)
+        if ((long)pd3dDevice.Handle == 0)
             return false;
-        if ((long)pFontSampler.Handle != IntPtr.Zero)
+        if ((long)pFontSampler.Handle != 0)
             ImGui_ImplDX11_InvalidateDeviceObjects();
 
         // By using D3DCompile() from <d3dcompiler.h> / d3dcompiler.lib, we introduce a dependency to a given version of d3dcompiler_XX.dll (see D3DCOMPILER_DLL_A)
@@ -184,8 +184,7 @@ public sealed class ImGui_Impl_DX11
         fixed (byte* col = SilkMarshal.StringToMemory("COLOR"))
         {
             // Create the input layout
-            ReadOnlySpan<InputElementDesc> local_layout =
-            [
+            ReadOnlySpan<InputElementDesc> local_layout = new[]{
                 new InputElementDesc()
                 {
                     SemanticName = pos,
@@ -216,7 +215,7 @@ public sealed class ImGui_Impl_DX11
                     InputSlotClass = InputClassification.PerVertexData,
                     InstanceDataStepRate = 0
                 },
-            ];
+            };
             try
             {
                 SilkMarshal.ThrowHResult(
@@ -418,7 +417,7 @@ public sealed class ImGui_Impl_DX11
         pd3dDeviceContext.CSSetShader(ref Unsafe.NullRef<ID3D11ComputeShader>(), null, 0); // In theory we should backup and restore this as well.. very infrequently used..
 
         // Setup blend state
-        float[] blendFactor = [0f, 0f, 0f, 0f];
+        float[] blendFactor = {0f, 0f, 0f, 0f};
         fixed (float* blendFactorPtr = blendFactor)
         {
             pd3dDeviceContext.OMSetBlendState(pBlendState, blendFactorPtr, 0xffffffff);
@@ -444,10 +443,10 @@ public sealed class ImGui_Impl_DX11
             return;
 
         // Create and grow vertex/index buffers if needed
-        if ((long)pVB.Handle == IntPtr.Zero || vertexBufferSize < drawDataPtr.TotalVtxCount)
+        if ((long)pVB.Handle == 0 || vertexBufferSize < drawDataPtr.TotalVtxCount)
         {
             // Looks like it is never called, but there's an OR gate right above
-            if ((long)pVB.Handle != IntPtr.Zero)
+            if ((long)pVB.Handle != 0)
             {
                 pVB.Release();
                 pVB = null;
@@ -464,10 +463,10 @@ public sealed class ImGui_Impl_DX11
             SilkMarshal.ThrowHResult(
                 pd3dDevice.CreateBuffer(in desc, null, ref pVB));
         }
-        if ((long)pIB.Handle == IntPtr.Zero || indexBufferSize < drawDataPtr.TotalIdxCount)
+        if ((long)pIB.Handle == 0 || indexBufferSize < drawDataPtr.TotalIdxCount)
         {
             // Looks like it is never called, but there's an OR gate right above
-            if ((long)pIB.Handle != IntPtr.Zero)
+            if ((long)pIB.Handle != 0)
             {
                 pIB.Release();
                 pIB = null;
@@ -559,7 +558,7 @@ public sealed class ImGui_Impl_DX11
             for (int cmd_i = 0; cmd_i < drawListPtr.CmdBuffer.Size; cmd_i++)
             {
                 ImDrawCmdPtr drawCmdPtr = drawListPtr.CmdBuffer[cmd_i];
-                if ((long)drawCmdPtr.UserCallback != IntPtr.Zero)
+                if ((long)drawCmdPtr.UserCallback != 0)
                 {
                     throw new NotImplementedException();
                 }
@@ -685,11 +684,11 @@ public sealed class ImGui_Impl_DX11
     /// </summary>
     private unsafe void ImGui_ImplDX11_DestroyFontsTexture()
     {
-        if ((long)pFontTextureView.Handle != IntPtr.Zero)
+        if ((long)pFontTextureView.Handle != 0)
         {
             pFontTextureView.Release();
             pFontTextureView = null;
-            ImGui.GetIO().Fonts.SetTexID(0); // We copied data->pFontTextureView to io.Fonts->TexID so let's clear that as well.
+            ImGui.GetIO().Fonts.SetTexID(IntPtr.Zero); // We copied data->pFontTextureView to io.Fonts->TexID so let's clear that as well.
         }
     }
     
@@ -698,7 +697,7 @@ public sealed class ImGui_Impl_DX11
     /// </summary>
     private unsafe void ImGui_ImplDX11_InvalidateDeviceObjects()
     {
-        if ((long)pd3dDevice.Handle == IntPtr.Zero)
+        if ((long)pd3dDevice.Handle == 0)
             return;
 
         ImGui_ImplDX11_DestroyFontsTexture();

@@ -4,6 +4,7 @@
         <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
         <Nullable>enable</Nullable>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>12</LangVersion>
     </PropertyGroup>
     
     <ItemGroup>
