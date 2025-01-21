@@ -5,17 +5,7 @@ import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-di
 import { visit } from 'unist-util-visit';
 import { pathToFileURL } from 'node:url';
 import path from 'node:path';
-import { exec } from 'node:child_process';
-
-function getSilk2Version(): string {
-    let ver = "";
-    exec(
-        "git describe --tags HEAD --abbrev=0",
-        { cwd: "../../eng/submodules/silk.net-2.x" },
-        (_a, stdout, _b)=> ver = stdout
-    );
-    return ver;
-}
+import { readFileSync, existsSync } from 'node:fs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -59,6 +49,18 @@ const rewriteSourceLinks = (options) => {
     return transformer;
 };
 
+// Used in the NUKE workflow
+function addSilkVersionsJson(dict: object): object {
+    if (existsSync("silkversions.json")) {
+        for (const [key, value] of Object.entries(JSON.parse(readFileSync("silkversions.json", "utf8")))) {
+            dict[key] = value;
+        }
+    }
+    return dict;
+}
+
+// @ts-ignore
+// @ts-ignore
 const config: Config = {
     title: 'Silk.NET',
     tagline: 'Your one-stop-shop for high performance .NET graphics & compute.',
@@ -108,15 +110,8 @@ const config: Config = {
                     ],
                     // TODO uncomment when v3 is released
                     // lastVersion: "current",
-                    versions: {
-                        current: {
-                            label: 'v3.0.0',
-                            path: "v3"
-                        },
-                        "v2": {
-                            label: getSilk2Version()
-                        }
-                    },
+                    // @ts-ignore
+                    versions: addSilkVersionsJson({}),
                 },
                 blog: {
                     showReadingTime: true,

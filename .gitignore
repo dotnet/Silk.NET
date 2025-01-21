@@ -479,6 +479,7 @@ excluded-platforms.txt
 #/docs/
 src/Website/Silk.NET.Statiq/temp
 src/Website/Silk.NET.Statiq/cache
+.nuke/temp
 
 # SilkTouch configs
 !eng/silktouch/**/*.rsp
