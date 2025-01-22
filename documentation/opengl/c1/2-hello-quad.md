@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Hello Quad
+slug: 2-hello-quad
 ---
 
 # 1.2 - Hello Quad

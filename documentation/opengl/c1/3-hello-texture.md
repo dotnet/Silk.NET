@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Hello Texture
+slug: 3-hello-texture
 ---
 
 # 1.3 - Hello Texture
