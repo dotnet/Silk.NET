@@ -295,13 +295,6 @@ ul ul .table-of-contents__link {
     justify-content: center;
 }
 
-/** Remove badge on desktop */
-@media (min-width: 997px) {
-    .theme-doc-version-badge {
-        display: none;
-    }
-}
-
 .link-list {
     display: flex;
     align-items: stretch;
