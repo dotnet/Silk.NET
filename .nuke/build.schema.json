@@ -182,6 +182,10 @@
             "type": "string"
           }
         },
+        "SkipContributorsScrape": {
+          "type": "boolean",
+          "description": "If enabled, skips scraping the contributors for the authors.yml file of the blog"
+        },
         "Solution": {
           "type": "string",
           "description": "Path to a solution file that is automatically loaded"

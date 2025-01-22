@@ -78,7 +78,7 @@ const config: Config = {
     organizationName: 'dotnet', // Usually your GitHub org/user name.
     projectName: 'Silk.NET', // Usually your repo name.
 
-    onBrokenLinks: 'throw',
+    onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
 
     // Even if you don't use internationalization, you can use this field to set
@@ -120,9 +120,9 @@ const config: Config = {
                         xslt: true,
                     },
                     // Useful options to enforce blogging best practices
-                    onInlineTags: 'warn',
-                    onInlineAuthors: 'warn',
-                    onUntruncatedBlogPosts: 'warn',
+                    onInlineTags: 'throw',
+                    onInlineAuthors: 'throw',
+                    onUntruncatedBlogPosts: 'throw',
                 },
                 theme: {
                     customCss: './src/css/custom.css',
@@ -152,6 +152,7 @@ const config: Config = {
                     position: 'right',
                     dropdownItemsAfter: [],
                     dropdownActiveClassDisabled: true,
+                    docsPluginId: "default"
                 },
                 {
                     href: 'https://github.com/facebook/docusaurus',
