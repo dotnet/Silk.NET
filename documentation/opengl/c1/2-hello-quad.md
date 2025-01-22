@@ -5,7 +5,7 @@ sidebar_label: Hello Quad
 
 # 1.2 - Hello Quad
 
-> ![NOTE]
+> [!NOTE]
 > You can view the source code for this tutorial [here](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.2%20-%20Hello%20Quad).
 
 Let's draw something on-screen! In this tutorial, you'll learn:

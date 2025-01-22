@@ -5,7 +5,7 @@ sidebar_label: Hello Texture
 
 # 1.3 - Hello Texture
 
-> ![NOTE]
+> [!NOTE]
 > You can view the source code for this tutorial [here](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.3%20-%20Hello%20Texture).
 
 In the previous tutorial, we've shown you how to open an OpenGL window and draw a colored quad.

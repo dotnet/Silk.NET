@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Hello Window
 
-> ![NOTE]
+> [!NOTE]
 > You can view the source code for this tutorial [here](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.1%20-%20Hello%20Window).
 
 ## Introduction
@@ -138,7 +138,7 @@ private static void OnRender(double deltaTime) { }
 These are the methods that will power our main application. For this tutorial, we'll only be using `OnLoad`, but it's helpful to have all three.
 
 
-> ![NOTE]
+> [!NOTE]
 > The `deltaTime` parameter is the amount of time, in seconds, that has passed since the last frame. Using delta time is key for framerate-independent actions, such as movement.
 
 Next, we need to subscribe to these events. Add the following code to your `Main` method, just after you call `Window.Create()`:
