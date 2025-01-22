@@ -37,7 +37,7 @@ function HomepageHeader() {
                             </Link>
                             <Link
                                 className={clsx('button button--secondary button--lg', styles.silkBtn)}
-                                to="/docs/">
+                                to="https://github.com/dotnet/Silk.NET">
                                 GitHub
                             </Link>
                         </div>
