@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
             label: 'Vulkan Documentation',
             link: {
                 type: "generated-index",
+                slug: "/vulkan"
             },
             items: [
                 {
@@ -36,6 +37,7 @@ const sidebars: SidebarsConfig = {
                 type: 'generated-index',
                 title: 'Miscellaneous',
                 description: 'This section of the website contains useful miscellaneous tidbits which we think will come in handy to get the most out of your Silk.NET application! It also contains other more general information pertaining to the project.',
+                slug: "/silk.net"
             },
             items: [
                 {type: "doc", id: "CHANGELOG"},

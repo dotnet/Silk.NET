@@ -254,5 +254,8 @@ partial class Build
                 GetRedirect(dir.GetRelativePathTo(basePath).ToString().Replace('\\', '/'))
             );
         }
+
+        (basePath / "blog" / "rss.xml").Copy(basePath / "blog" / "feed.rss");
+        (basePath / "blog" / "atom.xml").Copy(basePath / "blog" / "feed.atom");
     }
 }
