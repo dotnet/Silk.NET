@@ -13,4 +13,3 @@
 [submodule "eng/submodules/silk.net-2.x"]
 	path = eng/submodules/silk.net-2.x
 	url = https://github.com/dotnet/Silk.NET
-	shallow = true
