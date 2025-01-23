@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build Website
         run: |
-          git submodule update --init --recommend-shallow eng/submodules/silk.net-2.x
+          git submodule update --init eng/submodules/silk.net-2.x
           ./build.sh website
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -103,6 +103,15 @@ const config: Config = {
                     // Remove this to remove the "edit this page" links.
                     // editUrl:
                     //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+                    editUrl: x => {
+                        // TODO basically change everything here once 3.0 is releasing
+                        if (x.version == "v2") {
+                            // TODO once v2 is no longer maintained, remove this.
+                            return `https://github.com/dotnet/Silk.NET/edit/main/documentation/${x.docPath}`
+                        }
+                        // TODO handle more than 3.0
+                        return `https://github.com/dotnet/Silk.NET/edit/develop/${x.version[1]}.0/docs/${x.docPath}`;
+                    },
                     exclude: ["README.md"],
                     beforeDefaultRemarkPlugins: [
                         remarkGithubAdmonitionsToDirectives,
@@ -132,7 +141,7 @@ const config: Config = {
     ],
     themeConfig: {
         // Replace with your project's social card
-        image: 'img/docusaurus-social-card.jpg',
+        image: 'img/wallpaper.png',
         navbar: {
             // title: 'My Site',
             logo: {
@@ -155,7 +164,7 @@ const config: Config = {
                     docsPluginId: "default"
                 },
                 {
-                    href: 'https://github.com/facebook/docusaurus',
+                    href: 'https://github.com/dotnet/Silk.NET',
                     label: 'GitHub',
                     position: 'right',
                 },
