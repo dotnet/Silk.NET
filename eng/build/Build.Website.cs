@@ -109,9 +109,11 @@ partial class Build
                 jsonVersions[i == versions.Length - 1 ? "current" : version.Name] = new JsonVersion(
                     version.Changelog is { } changelog
                         ? GetVersionFromChangelog(changelog)
-                        : Git($"describe --tags --abbrev=0", version.Path)
-                            .First(x => x.Type == OutputType.Std)
-                            .Text.Trim(),
+                        : File.Exists(version.Path / "version.txt")
+                            ? File.ReadAllText(version.Path / "version.txt")
+                            : Git($"describe --tags --abbrev=0", version.Path)
+                                .First(x => x.Type == OutputType.Std)
+                                .Text.Trim(),
                     i == versions.Length - 1 ? version.Name : null
                 );
             }
