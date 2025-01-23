@@ -2,7 +2,7 @@ name: Website Build
 on:
   push:
     branches:
-      - 'feature/website-3.0'
+      - 'develop/3.0'
   pull_request:
 permissions:
   contents: read
