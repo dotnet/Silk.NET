@@ -14,8 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Build Website
         run: |
           git submodule update --init eng/submodules/silk.net-2.x
