@@ -33,7 +33,7 @@ partial class Build
                     Log.Information("3.0 clone not found, cloning...");
                     path = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
                     Directory.CreateDirectory(path);
-                    Git($"clone \"https://github.com/dotnet/Silk.NET\" --depth 1 --branch feature/website-3.0 {path}");
+                    Git($"clone \"https://github.com/dotnet/Silk.NET\" --depth 1 --branch develop/3.0 {path}");
                     File.WriteAllText(RootDirectory / "dir.log", path);
                 }
                 else if (PullBaseSite)
