@@ -1,0 +1,36 @@
+name: Website Build
+on:
+  push:
+    branches:
+      - 'feature/website-3.0'
+  pull_request:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Website
+        run: |
+          git submodule update --init --recommend-shallow eng/submodules/silk.net-2.x
+          ./build.sh website
+      - name: Upload artifact
+        if: ${{ github.repository == 'dotnet/Silk.NET' && github.ref == 'refs/heads/develop/3.0' }}
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: "artifacts/docs/Silk.NET"
+  Deploy:
+    if: ${{ github.repository == 'dotnet/Silk.NET' && github.ref == 'refs/heads/develop/3.0' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: Build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

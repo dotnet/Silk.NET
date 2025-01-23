@@ -27,9 +27,6 @@ partial class Build
         AbsolutePath? Changelog = null
     );
 
-    // From oldest to newest. Last one is current.
-    const bool IsCurrentVersionPreview = true;
-
     [Parameter("If enabled, skips scraping the contributors for the authors.yml file of the blog.")]
     readonly bool SkipContributorsScrape;
 
@@ -107,13 +104,12 @@ partial class Build
                 }
 
                 jsonVersions[i == versions.Length - 1 ? "current" : version.Name] = new JsonVersion(
-                    version.Changelog is { } changelog
-                        ? GetVersionFromChangelog(changelog)
+                    version.Changelog is { } changelog ? GetVersionFromChangelog(changelog)
                         : File.Exists(version.Path / "version.txt")
                             ? File.ReadAllText(version.Path / "version.txt")
-                            : Git($"describe --tags --abbrev=0", version.Path)
-                                .First(x => x.Type == OutputType.Std)
-                                .Text.Trim(),
+                        : Git($"describe --tags --abbrev=0", version.Path)
+                            .First(x => x.Type == OutputType.Std)
+                            .Text.Trim(),
                     i == versions.Length - 1 ? version.Name : null
                 );
             }
