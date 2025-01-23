@@ -20,7 +20,7 @@ jobs:
           ./build.sh website
       - name: Upload artifact
         if: ${{ github.repository == 'dotnet/Silk.NET' && github.ref == 'refs/heads/develop/3.0' }}
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "artifacts/docs/Silk.NET"
   Deploy:
@@ -33,4 +33,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
