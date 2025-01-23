@@ -17,6 +17,9 @@ jobs:
       - name: Build Website
         run: |
           git submodule update --init eng/submodules/silk.net-2.x
+          cd eng/submodules/silk.net-2.x
+          git fetch --all
+          cd ../../..
           ./build.sh website
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
