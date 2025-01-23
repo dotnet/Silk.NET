@@ -18,6 +18,8 @@ jobs:
         run: |
           git submodule update --init --recommend-shallow eng/submodules/silk.net-2.x
           ./build.sh website
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifact
         if: ${{ github.repository == 'dotnet/Silk.NET' && github.ref == 'refs/heads/develop/3.0' }}
         uses: actions/upload-pages-artifact@v3
