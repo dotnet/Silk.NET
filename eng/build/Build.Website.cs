@@ -247,8 +247,9 @@ partial class Build
                 continue;
             }
 
+            Directory.CreateDirectory(dir.Parent / $"{dir.Name}.html");
             File.WriteAllText(
-                dir.Parent / $"{dir.Name}.html",
+                dir.Parent / $"{dir.Name}.html" / "index.html",
                 GetRedirect(basePath.GetRelativePathTo(dir).ToString().Replace('\\', '/'))
             );
         }
