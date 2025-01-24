@@ -82,7 +82,7 @@ For each vector struct, the following requirements **must** fulfill the followin
   - Try variants of these methods should also be defined which out the resulting vector and return a bool representing success or failure of the operation.
 - Define Transform functions which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
   - A Static implementation of these functions **must** be available
-- Define VectorN<T> `*` MatrixNxM operators where N is the same for both Vector and Matrix, but M is any number
+- Define VectorN\<T\> `*` MatrixNxM operators where N is the same for both Vector and Matrix, but M is any number
   - These operators should function like Transform, but without needed assumptions
 - Define TransformNormal functions which take a Matrix of higher dimensionality assuming 0 in for all missing components (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
   - A Static implementation of these functions **must** be available
@@ -181,9 +181,9 @@ For F types, the following additional requirements **must** be fulfilled:
   - ReciprocalEstimate(Vector x)
   - ReciprocalSqrtEstimate(Vector x)
   - ILogB(Vector x)
-    - Returns VectorNI<T>, where N matches the dimensionality of the vector
+    - Returns VectorNI\<T\>, where N matches the dimensionality of the vector
     - **INFORMATIVE** This may require multiple methods depending on implementation
-  - ScaleB(Vector x, VectorNI<int> n)
+  - ScaleB(Vector x, VectorNI\<int\> n)
   - ScaleB(Vector x, int n)
   - RoundToInt(Vector x)
     - Returns `VectorNI`, where N matches the dimensionality of the vector
@@ -287,9 +287,9 @@ A Quaternion struct **must** be defined and match the following requirements:
 - Implements IEquatable with itself
 - Contain 4 scalar properties (X, Y, Z, W)
 - Define a Constructor taking 4 scalar values matching the properties
-- Define a Constructor taking a Vector3F<T> and a Scalar, with the vector 3 mapping to X, Y, Z and the Scalar to the W
-- Define a Constructor taking a Vector4F<T>
-- A Vector3F<T> Axis property mapping to (X, Y, Z)
+- Define a Constructor taking a Vector3F\<T\> and a Scalar, with the vector 3 mapping to X, Y, Z and the Scalar to the W
+- Define a Constructor taking a Vector4F\<T\>
+- A Vector3F\<T\> Axis property mapping to (X, Y, Z)
 - A T Angle property mapping to 2 * Acos(W)
 - A ref Indexer which takes an int and returns the components in order
 - An AsSpan function which returns this quaternion as a Span of the generic type
@@ -309,9 +309,9 @@ A Quaternion struct **must** be defined and match the following requirements:
   - A static implementation of this function **must** be available but it returns a new Quaternion rather than affecting the originals
 - A Conjugate function which returns the conjugate of this quaternion
   - A static implementation of this function **must** be available
-- A static CreateFromAxisAngle function which takes in a Vector3F<T> and an angle and returns a Quaternion representing that rotation
+- A static CreateFromAxisAngle function which takes in a Vector3F\<T\> and an angle and returns a Quaternion representing that rotation
 - A static CreateFromRotationMatrix function which takes either a Matrix3x3 or Matrix4x4 and returns a Quaternion representing that rotation
-- A static CreateFromYawPitchRoll which takes either each components separately or in a Vector3F<T> and outputs a Quaternion representing that rotation
+- A static CreateFromYawPitchRoll which takes either each components separately or in a Vector3F\<T\> and outputs a Quaternion representing that rotation
 - A static Lerp function which takes 2 Quaternions and a Scalar matching the generic type which linearly interpolates between the 2 Quaternions with scalar used as the amount to lerp
 - A static SLerp function which takes 2 Quaternions and a Scalar matching the generic type which Spherical linearly interpolates between the 2 Quaternions with scalar used as the amount to lerp
 - A static Zero Quaternion Property
@@ -362,7 +362,7 @@ Each type **must** include the following:
 
 [Video](https://www.youtube.com/live/yXNDZDE3AHE?feature=shared&t=9444)
 
-- We agree with the addition to add scalar operations over vectors (i.e. Vector4<T> * T does X*T, Y*T, ...)
+- We agree with the addition to add scalar operations over vectors (i.e. Vector4\<T\> * T does X*T, Y*T, ...)
 - Add an analyser for encouraging the most correct and most efficient type instead of using sub-optimal types. 
 - Ensure we've documented that.
 - Vector * Matrix?
