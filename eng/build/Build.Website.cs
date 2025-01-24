@@ -249,7 +249,7 @@ partial class Build
 
             File.WriteAllText(
                 dir.Parent / $"{dir.Name}.html",
-                GetRedirect(dir.GetRelativePathTo(basePath).ToString().Replace('\\', '/'))
+                GetRedirect(basePath.GetRelativePathTo(dir).ToString().Replace('\\', '/'))
             );
         }
 
