@@ -12,7 +12,7 @@ import { useDocsSidebar } from '@docusaurus/plugin-content-docs/client'
 
 ## Getting Started
 
-To get started, install the relevant NuGet packages. They add start with `Silk.NET`, and the next inner namespace after
+To get started, install the relevant NuGet packages. They all start with `Silk.NET`, and the next inner namespace after
 that indicates the binding or High-Level Utility (HLU, e.g. Windowing or Input) that package belongs. Here' some example
 commands to install such NuGet packages:
 
@@ -63,7 +63,7 @@ As always, we're happy to help in our Discord server with whatever questions you
 
 Now that you've pulled in the APIs you would like to use, it's time to find documentation to follow. Most Silk.NET APIs
 (other than our High-Level Utilities) map 1:1 directly into a native API signature that should be easily searchable by
-its API name (e.g. `GL.GetString` becomes `glGetString`). Note that these rules are not consistent and it is expected
+its API name (e.g. `glGetString` becomes `GL.GetString` in Silk.NET). Note that these rules are not consistent and it is expected
 that you have at least some familiarity with how the native API is structured.
 
 Of course, there are some bindings for which we have our own introductory documentation for, which presents a good
@@ -74,4 +74,4 @@ throughout this site.
 <DocCardList items={useDocsSidebar().items.filter((e) => e.label != "Welcome")} />
 
 Have fun! We always look forward to seeing what people can create with Silk.NET and would love to hear how you get on in
-our Discord server.
+[our Discord server](https://discord.gg/DTHHXRt).
