@@ -11,12 +11,13 @@ permissions:
   id-token: write
 jobs:
   Build:
+    environment: github-pages
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
         ref: "develop/3.0"
-        token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+        ssh-key: ${{ secrets.SILK_ACTIONS_DEPLOY_KEY }}
     - run: |
         git submodule update --init --recommend-shallow eng/submodules/silk.net-2.x
         cd eng/submodules/silk.net-2.x
