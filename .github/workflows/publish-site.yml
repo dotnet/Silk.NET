@@ -5,6 +5,7 @@ on:
       - 'main'
     paths:
       - "documentation/**/*"
+      - ".github/workflows/publish-site.yml"
 permissions:
   contents: read
   pages: write
@@ -25,5 +26,7 @@ jobs:
         git checkout FETCH_HEAD
         cd ../../..
         git add eng/submodules/silk.net-2.x
+        git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+        git config --local user.name "The Silk.NET Automaton"
         git commit -m "Update Silk.NET 2.X submodule for website"
         git push
