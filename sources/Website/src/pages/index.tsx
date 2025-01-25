@@ -34,11 +34,11 @@ function HomepageHeader() {
                         <Heading as="h1">
                             {siteConfig.title}
                         </Heading>
-                        
+
                         <p className={clsx(styles.heroSubtitle)} style={{textAlign: "initial"}}>
                             {siteConfig.tagline}
                         </p>
-                        
+
                         <div className={clsx(styles.heroButtons)}>
                             <Link
                                 className={clsx('button button--primary button--lg', styles.silkBtn)}
@@ -51,9 +51,9 @@ function HomepageHeader() {
                                 GitHub
                             </Link>
                         </div>
-                        
+
                         <br/>
-                        
+
                         <div className={clsx(styles.silkDnfText)}>
                             <span>An official</span>
                             <a href="https://dotnetfoundation.org">

@@ -129,7 +129,6 @@ partial class Build
         }
         finally
         {
-            File.Delete(RootDirectory / "sources" / "Website" / "silkversions.json");
             (RootDirectory / "docs").CreateOrCleanDirectory();
             (TemporaryDirectory / "docs").Copy(
                 RootDirectory / "docs",

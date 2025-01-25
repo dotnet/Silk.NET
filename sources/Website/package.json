@@ -30,6 +30,9 @@
     "@docusaurus/module-type-aliases": "3.7.0",
     "@docusaurus/tsconfig": "3.7.0",
     "@docusaurus/types": "3.7.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
     "typescript": "~5.6.2"
   },
   "browserslist": {

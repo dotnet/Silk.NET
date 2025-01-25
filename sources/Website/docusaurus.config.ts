@@ -6,6 +6,7 @@ import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-di
 import { visit } from 'unist-util-visit';
 import path from 'node:path';
 import { readFileSync, existsSync } from 'node:fs';
+import tailwindPlugin from './plugins/tailwind-config.cjs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -90,6 +91,10 @@ const config: Config = {
     },
 
     staticDirectories: ["static", "../../eng/submodules/silk.net-2.x/documentation/images"],
+
+    plugins: [
+        tailwindPlugin
+    ],
 
     presets: [
         [
