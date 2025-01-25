@@ -13,12 +13,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 function HomepageHeader() {
     const {siteConfig} = useDocusaurusContext();
     const items = [
-        <a href="#" className={clsx(styles.carouselImage)}><img src={useBaseUrl("/img/home/hedra.gif")} alt="Image 1"/></a>,
-        <a href="#" className={clsx(styles.carouselImage)}><img src={useBaseUrl("/img/home/platformer.gif")}
-                                                                alt="Image 2"/></a>,
-        <a href="#" className={clsx(styles.carouselImage)}><img src={useBaseUrl("/img/home/cat.gif")}
-                                                                alt="Image 3"/></a>,
-        <a href="#" className={clsx(styles.carouselImage)}><img src={useBaseUrl("/img/home/cubes.gif")} alt="Image 4"/></a>,
+        <span className={clsx(styles.carouselImage)}>
+            <img src={useBaseUrl("/img/home/hedra.gif")} alt="Hedra preview"/>
+        </span>,
+        <span className={clsx(styles.carouselImage)}>
+            <img src={useBaseUrl("/img/home/platformer.gif")} alt="Platformer preview"/>
+        </span>,
+        <span className={clsx(styles.carouselImage)}>
+            <img src={useBaseUrl("/img/home/cat.gif")} alt="Cat preview"/>
+        </span>,
+        <span className={clsx(styles.carouselImage)}>
+            <img src={useBaseUrl("/img/home/cubes.gif")} alt="Cubes demo preview"/>
+        </span>,
     ];
     return (
         <header className={clsx('hero', styles.heroBanner)}>
@@ -28,7 +34,11 @@ function HomepageHeader() {
                         <Heading as="h1">
                             {siteConfig.title}
                         </Heading>
-                        <p className={clsx(styles.heroSubtitle)} style={{textAlign: "initial"}}>{siteConfig.tagline}</p>
+                        
+                        <p className={clsx(styles.heroSubtitle)} style={{textAlign: "initial"}}>
+                            {siteConfig.tagline}
+                        </p>
+                        
                         <div className={clsx(styles.heroButtons)}>
                             <Link
                                 className={clsx('button button--primary button--lg', styles.silkBtn)}
@@ -41,7 +51,9 @@ function HomepageHeader() {
                                 GitHub
                             </Link>
                         </div>
+                        
                         <br/>
+                        
                         <div className={clsx(styles.silkDnfText)}>
                             <span>An official</span>
                             <a href="https://dotnetfoundation.org">
@@ -73,6 +85,12 @@ function HomepageHeader() {
     );
 }
 
+function SupportedTechnology({icon}) {
+    return (<li className={clsx(styles.supportedIcon)}>
+        <img src={useBaseUrl(icon)}/>
+    </li>);
+}
+
 export default function Home(): JSX.Element {
     const {siteConfig} = useDocusaurusContext();
     return (
@@ -82,49 +100,40 @@ export default function Home(): JSX.Element {
             <HomepageHeader/>
             <main>
                 <HomepageFeatures/>
-                <section className={clsx('container')}>
-                    <div className={clsx('row', styles.otherMoreDifferentSection)}>
+
+                <section className={clsx(styles.homeContainer)}>
+                    <div className={clsx(styles.technologiesSection)}>
                         <div>
                             <h1>Supported Technologies</h1>
-                            <div className={clsx(styles.supportedIcons)}>
-                                <div className={clsx(styles.supportedIcon)}><img
-                                    src={useBaseUrl("/img/home/assimp.png")}/></div>
-                                <div className={clsx(styles.supportedIcon)}><img
-                                    src={useBaseUrl("/img/home/dx12ultimate.png")}/></div>
-                                <div className={clsx(styles.supportedIcon)}><img
-                                    src={useBaseUrl("/img/home/glfw.png")}/></div>
-                                <div className={clsx(styles.supportedIcon)}><img
-                                    src={useBaseUrl("/img/home/openal.png")}/></div>
-                                <div className={clsx(styles.supportedIcon)}><img
-                                    src={useBaseUrl("/img/home/opencl.svg")}/></div>
-                                <div className={clsx(styles.supportedIcon)}><img
-                                    src={useBaseUrl("/img/home/opengl.jpg")}/></div>
-                                <div className={clsx(styles.supportedIcon)}><img
-                                    src={useBaseUrl("/img/home/opengles.png")}/></div>
-                                <div className={clsx(styles.supportedIcon)}><img
-                                    src={useBaseUrl("/img/home/openxr.svg")}/></div>
-                                <div className={clsx(styles.supportedIcon)}><img src={useBaseUrl("/img/home/sdl.png")}/>
-                                </div>
-                                <div className={clsx(styles.supportedIcon)}><img
-                                    src={useBaseUrl("/img/home/vulkan.svg")}/></div>
-                            </div>
+                            <ul className={clsx(styles.supportedIcons)}>
+                                <SupportedTechnology icon={"/img/home/assimp.png"}/>
+                                <SupportedTechnology icon={"/img/home/dx12ultimate.png"}/>
+                                <SupportedTechnology icon={"/img/home/glfw.png"}/>
+                                <SupportedTechnology icon={"/img/home/openal.png"}/>
+                                <SupportedTechnology icon={"/img/home/opencl.svg"}/>
+                                <SupportedTechnology icon={"/img/home/opengl.jpg"}/>
+                                <SupportedTechnology icon={"/img/home/opengles.png"}/>
+                                <SupportedTechnology icon={"/img/home/openxr.svg"}/>
+                                <SupportedTechnology icon={"/img/home/sdl.png"}/>
+                                <SupportedTechnology icon={"/img/home/vulkan.svg"}/>
+                            </ul>
                         </div>
                         <div>
                             <h1>Supported Targets</h1>
-                            <div className={clsx(styles.supportedIcons)}>
-                                <img src={useBaseUrl("/img/home/windows.svg")} className={clsx(styles.supportedIcon)}/>
-                                <img src={useBaseUrl("/img/home/linux.svg")} className={clsx(styles.supportedIcon)}/>
-                                <img src={useBaseUrl("/img/home/macos.svg")} className={clsx(styles.supportedIcon)}/>
-                                <img src={useBaseUrl("/img/home/ios.svg")} className={clsx(styles.supportedIcon)}/>
-                                <img src={useBaseUrl("/img/home/android.svg")} className={clsx(styles.supportedIcon)}/>
-                            </div>
+                            <ul className={clsx(styles.supportedIcons)}>
+                                <SupportedTechnology icon={"/img/home/windows.svg"}/>
+                                <SupportedTechnology icon={"/img/home/linux.svg"}/>
+                                <SupportedTechnology icon={"/img/home/macos.svg"}/>
+                                <SupportedTechnology icon={"/img/home/ios.svg"}/>
+                                <SupportedTechnology icon={"/img/home/android.svg"}/>
+                            </ul>
                         </div>
                     </div>
                 </section>
-                <br/>
-                <section className={clsx('container')}>
+
+                <section className={clsx(styles.homeContainer)}>
                     <h1 className={clsx(styles.centerText)}>Why choose Silk.NET?</h1>
-                    <div className={clsx('row')}>
+                    <div className={clsx(styles.homeRow)}>
                         <div className={clsx('col col--6')}>
                             <h2>Backed &amp; Built to Last</h2>
                             <p>
@@ -146,29 +155,30 @@ export default function Home(): JSX.Element {
                         </div>
                     </div>
                 </section>
-                <br/>
-                <section className={clsx('container', styles.centerText)}>
+
+                <section className={clsx(styles.homeContainer, styles.centerText)}>
                     <h1>Join the Conversation.</h1>
                     <div className={clsx(styles.supportedIcons)}>
-                        <a href="https://discord.gg/DTHHXRt" className={clsx(styles.communityIcon)}><img
-                            src={useBaseUrl("/img/home/discord.svg")}
-                        /></a>
+                        <a href="https://discord.gg/DTHHXRt" className={clsx(styles.communityIcon)}>
+                            <img src={useBaseUrl("/img/home/discord.svg")}/>
+                        </a>
                         <a href="https://github.com/dotnet/Silk.NET"
-                           className={clsx(styles.invertOnDark, styles.communityIcon)}><img
-                            src={useBaseUrl("/img/home/github.svg")}
-                        /></a>
+                           className={clsx(styles.invertOnDark, styles.communityIcon)}>
+                            <img src={useBaseUrl("/img/home/github.svg")}/>
+                        </a>
                     </div>
-                    <div className={clsx(styles.supportedIcons)}>
-                        <p style={{width: "50%", textAlign: "center"}}>
+                    <div className={clsx(styles.contactUs)}>
+                        <p>
                             Join, chat, ask for help on our vibrant Discord community frequented by power users, top
                             contributors, and the library maintainers themselves. Keep up-to-date with the project's
                             latest developments on GitHub. We don't have premium support, which means that through these
                             channels you always get equal access to the best resources available.
-                        </p></div>
+                        </p>
+                    </div>
                 </section>
-                <br/>
-                <section className={clsx('container')}>
-                    <div className={clsx('row', styles.strideSection)}>
+
+                <section className={clsx(styles.homeContainer)}>
+                    <div className={clsx(styles.homeRow, styles.strideSection)}>
                         <div className={clsx('col col--9')} style={{alignContent: 'center'}}>
                             <h2>Not your cup of tea? Try Stride.</h2>
                             <p>
@@ -180,7 +190,7 @@ export default function Home(): JSX.Element {
                         </div>
                         <div className={clsx('col col--3')} style={{alignContent: 'center'}}>
                             <img src={useBaseUrl("/img/home/stride.svg")}
-                                 style={{filter: "invert(1)", padding: "var(--ifm-spacing-horizontal)"}}/>
+                                 style={{filter: "invert(1)", padding: "var(--ifm-spacing-horizontal)", width: "min(15rem, 100%)"}}/>
                             <br/>
                             <Link
                                 className={clsx('button button--secondary button--lg', styles.silkBtn)}
@@ -191,7 +201,6 @@ export default function Home(): JSX.Element {
                         </div>
                     </div>
                 </section>
-                <br />
             </main>
         </Layout>
     );

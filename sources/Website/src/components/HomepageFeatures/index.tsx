@@ -48,7 +48,7 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({title, image, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')} style={{padding: "0"}}>
+    <div className={clsx('col col--4')}>
       <div>
         <img src={useBaseUrl(image)} className={styles.featureimg} role="img" />
       </div>
@@ -63,7 +63,7 @@ function Feature({title, image, description}: FeatureItem) {
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.corerow}>
-      <div className="container" style={{padding: "0"}}>
+      <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

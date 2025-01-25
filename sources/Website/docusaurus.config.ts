@@ -1,9 +1,9 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+
 import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-directives";
 import { visit } from 'unist-util-visit';
-import { pathToFileURL } from 'node:url';
 import path from 'node:path';
 import { readFileSync, existsSync } from 'node:fs';
 
