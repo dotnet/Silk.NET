@@ -80,9 +80,9 @@ The root of the API is in the interface `IAxisDevice`. This interface is essenti
 It is important to note that the value of an input axis a single 32-bit floating point value. is primarily expected between 0-1.0. There are some axis types, or rather `AxisTrait`s, that are not straightforwardly normalized, and those respective axes can be labeled as such (more on that later).
 
 ## Device Validation
-Due to the complex set of constraints detailed below, it is important that a validation layer exists to ensure that higher-level code can trust the device is following important conventions and constraints. As a result, each `IAxisDevice` must be validated, similar to Vulkan's validation layers, through the current `IInputContext` if such a context desires to make reliable use of this API. The Silk.NET team shall make their validation implementation easily callable by custom `IInputContext` implementations due to its inevitable complexity.
+Due to the complex set of constraints detailed below, it is important that a validation layer exists to ensure that higher-level code can trust the device is following important conventions and constraints. As a result, each `IAxisDevice` must be validated, similar to Vulkan's validation layers, before `InputContext` can use the device to create a wrapper/implementation of the higher-level interfaces defined in Multi-Backend Input (or otherwise make use of the raw axes). This validation is done by `InputContext` if used, however if the user is using their own device aggregator type then it is important that the validation implementation is easily callable by those implementations due to its inevitable complexity.
 
-The signature of Silk's validation method should resemble the following:
+This validation shall be exposed as follows:
 
 ```csharp
 public static bool IsAxisDeviceValid(IAxisDevice device, [NotNullWhen(false)] out string? error);
