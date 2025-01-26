@@ -85,7 +85,11 @@ Due to the complex set of constraints detailed below, it is important that a val
 This validation shall be exposed as follows:
 
 ```csharp
-public static bool IsAxisDeviceValid(IAxisDevice device, [NotNullWhen(false)] out string? error);
+namespace Silk.NET.Input;
+public partial interface IAxisDevice
+{
+    static sealed void Validate(IAxisDevice device);
+}
 ```
 
 
