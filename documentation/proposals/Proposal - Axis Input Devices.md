@@ -148,7 +148,7 @@ These are the primary flags through which an axis's use is defined. Its definiti
 /// Pay attention to the flags which require specific implementation details related to their RawValues and normalization
 /// </summary>
 [Flags]
-public enum AxisTrait
+public enum AxisTrait : ulong
 {
     Unknown = 0,
     Analog = 1 << 0,
