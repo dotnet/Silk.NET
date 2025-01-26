@@ -39,16 +39,9 @@ The hopes is to put a small level of burden on backend implementations, thoughtf
 - Provide an API foundation for in-depth input accessibility features (related to the above-mentioned modularity)
 
 # Note on Requirements
-
 This proposal can be thought of in two primary areas: the API surface, and the implementation requirements. Wherever it was possible, the API surface was designed to enforce certain requirements, however there are quite a few requirements that must be followed that are not enforced by the API itself. Comments have been added to the API where these requirements are necessary and further detail is provided where needed. Feedback on clarity is welcome.
 
-# Core API
-
-The root of the API is in the interface `IAxisDevice`. This interface is essentially a host for collections of axes paired with definitions of these axes and how they relate to one another. In order to be used, each `IAxisDevice` must be validated, similar to Vulkan's validation layers, through the use of the `AxisDeviceRegistry` class. 
-
-It is important to note that the value of an input axis a single 32-bit floating point value. is primarily expected between 0-1.0. There are some axis types, or rather `AxisTrait`s, that are not straightforwardly normalized, and those respective axes can be labeled as such (more on that later).
-
-## IInputDevice
+# Modifications to the Multi-Backend Input Proposal
 We propose the following properties be added to `IInputDevice` for their general utility and to help keep this API and the [base input API](./Proposal - Multi-Backend
 Input.md) consistent with each other.
 
@@ -79,6 +72,22 @@ public interface IInputDevice : IEquatable<IInputDevice>
     bool IsVirtual => false;
 }
 ```
+
+# Core API
+
+The root of the API is in the interface `IAxisDevice`. This interface is essentially a host for collections of axes paired with definitions of these axes and how they relate to one another. 
+
+It is important to note that the value of an input axis a single 32-bit floating point value. is primarily expected between 0-1.0. There are some axis types, or rather `AxisTrait`s, that are not straightforwardly normalized, and those respective axes can be labeled as such (more on that later).
+
+## Device Validation
+Due to the complex set of constraints detailed below, it is important that a validation layer exists to ensure that higher-level code can trust the device is following important conventions and constraints. As a result, each `IAxisDevice` must be validated, similar to Vulkan's validation layers, through the current `IInputContext` if such a context desires to make reliable use of this API. The Silk.NET team shall make their validation implementation easily callable by custom `IInputContext` implementations due to its inevitable complexity.
+
+The signature of Silk's validation method should resemble the following:
+
+```csharp
+public static bool IsAxisDeviceValid(IAxisDevice device, [NotNullWhen(false)] out string? error);
+```
+
 
 ## IAxisDevice
 
@@ -598,55 +607,5 @@ public bool IsInDeadzone(IAxisDevice device, int descriptionIndex, Deadzone dead
     
     // Requires that the length of the deadzones span matches the number of axes in the group
     public bool IsGroupInDeadzone(IAxisDevice device, int groupIndex, ReadOnlySpan<Deadzone> deadzones);
-}
-```
-
-# Device Registration
-Due to the complex set of constraints detailed above, it is important that a validation layer exists to ensure that higher-level code can trust the device is following important conventions and constraints. For each device that connects, it must first register to the `AxisDeviceRegistry` in order to be used as an `IAxisDevice`.
-
-Any interested party can then reference the `AxisDeviceRegistry` to retrieve all available devices. Notably, this is missing a way to alert users of devices that have been newly connected or disconnected. Feedback is requested on this front: is this necessary or should it be implemented elsewhere?
-
-```csharp
-public class AxisDeviceRegistry
-{
-    /// <summary>
-    /// Required before usage of an IAxisDevice - this is essentially a "validation layer" where we can check if the device
-    /// configuration is valid, e.g. "do this AxisGroup's axes have definitions that satisfy the axis group?"
-    /// Things like checking for axes with a rotational definition, Left/Right handedness, groups' axis counts, etc
-    /// Will populate the proper AxisDeviceRegistry collections using runtime type checks
-    /// Registration is required to use a device each time it connects
-    ///
-    /// Should we develop a way to register these conditions at compile time as like a list of functions?
-    /// </summary>
-    public bool TryRegister(IAxisDevice device, [NotNullWhen(false)] out string? error);
-
-    /// <summary>
-    /// Unregisters a device
-    /// Will remove the device from the registry, required to be called when a device disconnects
-    /// </summary>
-    /// <param name="device"></param>
-    /// <returns>True if the device was previously registered and is now unregistered</returns>
-    public bool Unregister(IAxisDevice device);
-
-    /// <summary>
-    /// All currently registered devices
-    /// </summary>
-    public IReadOnlyList<IAxisDevice> Devices { get; }
-
-    /// <summary>
-    /// Runtime-generated virtual devices
-    /// </summary>
-    public IReadOnlyList<IAxisDevice> VirtualDevices { get; }
-
-    /// <summary>
-    /// Physical devices
-    /// </summary>
-    public IReadOnlyList<IAxisDevice> PhysicalDevices { get; }
-
-    // A future composability proposal can include additional properties to retrieve all available axis groups, irrespective
-    // of the source devices
-    
-    // there may also be a case for making the above 3 collection types (All, Virtual, Physical) a model that can be followed by 
-    // the standard input context, which would be the primary benefit to adding `IsVirtual` to `IInputDevice` - to be discussed in a future proposal
 }
 ```
