@@ -708,13 +708,58 @@ public enum OutputAxisTrait : ulong
     RightSide = AxisTrait.RightSide
 }
 
+
 /// <summary>
 /// The definition of an output of an <see cref="IAxisDevice"/>
 /// </summary>
-/// <param name="Index">The index of this output in <see cref="IAxisDevice.Outputs"/></param>
-/// <param name="AssociatedAxisIndex">An associated axis index if one exists - for example, force feedback for a
-/// specific trigger, an LED for a specific button, etc.</param>
-/// <param name="Name">An optional name for the output</param>
-/// <param name="CustomDataType">Valid (and required) only for outputs marked as <see cref="OutputAxisTrait.RawDataOnly"/></param>
-public readonly record struct OutputDescription(int Index, OutputAxisTrait Traits, int? AssociatedAxisIndex = null, string? Name = null, Type? CustomDataType = null);
+public readonly record struct OutputDescription
+{
+    /// <summary>
+    /// The index of this output in <see cref="IAxisDevice.Outputs"/>
+    /// </summary>
+    public int Index { get; init; }
+
+    public OutputAxisTrait Traits { get; init; }
+
+    /// <summary>
+    /// An associated axis index if one exists - for example, force feedback for a
+    /// specific trigger, an LED for a specific button, etc.
+    /// </summary>
+    public int? AssociatedAxisIndex { get; init; }
+
+    /// <summary>
+    /// An optional name for the output
+    /// </summary>
+    public string? Name { get; init; }
+
+    /// <summary>
+    /// Valid (and required) only for outputs marked as <see cref="OutputAxisTrait.RawDataOnly"/>
+    /// </summary>
+    public Type? DataType { get; init; }
+    
+    /// <summary>
+    /// The definition of an output of an <see cref="IAxisDevice"/>
+    /// </summary>
+    /// <param name="index">The index of this output in <see cref="IAxisDevice.Outputs"/></param>
+    /// <param name="traits">The traits of this output</param>
+    /// <param name="associatedAxisIndex">An associated axis index if one exists - for example, force feedback for a
+    /// specific trigger, an LED for a specific button, etc.</param>
+    /// <param name="name">An optional name for the output</param>
+    public OutputDescription(int index, OutputAxisTrait traits, int? associatedAxisIndex = null, string? name = null) :
+        this(index, traits, typeof(float), name, associatedAxisIndex)
+    {
+    }
+
+    /// <inheritdoc cref="OutputDescription(int, OutputAxisTrait, int?, string?)"/>
+    /// <param name="dataType">Valid (and required) only for outputs marked as <see cref="OutputAxisTrait.RawDataOnly"/></param>
+    public OutputDescription(int index, OutputAxisTrait traits, Type dataType, string? name,
+        int? associatedAxisIndex = null)
+    {
+        Index = index;
+        Traits = traits;
+        AssociatedAxisIndex = associatedAxisIndex;
+        Name = name;
+        DataType = dataType;
+    }
+}
 ```
