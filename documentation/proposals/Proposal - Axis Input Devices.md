@@ -426,7 +426,8 @@ public enum AxisGroupType : ulong
     /// <summary>
     /// 1D touch surface or tracker
     /// 1 logical axis, (-1, 1)
-    /// made of 2 physical axes, (-X, +X)
+    /// made of 2 physical axes, (-X, +X).
+    /// If constructed with 3 axes, the 3rd axis is the "pressure" axis for a pointer
     /// Physically, this can be a represented as a touch strip
     /// </summary>
     Position1D = 1u << 6,
@@ -436,6 +437,8 @@ public enum AxisGroupType : ulong
     /// 2 logical axes, (X, Y) (-1, 1)
     /// made of 4 physical axes (-X, +X, -Y, +Y)
     /// If constructed with 5 axes, the 5th axis is the "pressure" axis for a pointer
+    /// * Request for feedback: do we want to allow this to be defined with 2 "physical" axes as well?
+    /// Wherein if it is provided with 3 "physical" axes, the 3rd is the "pressure" axis
     /// </summary>
     Position2D = 1u << 7,
 
@@ -443,6 +446,8 @@ public enum AxisGroupType : ulong
     /// 3D touch surface or tracker, 3 logical axes, (X, Y, Z)
     /// made of 6 physical axes (-X, +X, -Y, +Y, -Z, +Z)
     /// If constructed with 7 axes, the 7th axis is the "pressure" axis for a pointer
+    /// * Request for feedback: do we want to allow this to be defined with 3 "physical" axes as well?
+    /// Wherein if it is provided with 4 "physical" axes, the 4th is the "pressure" axis
     /// </summary>
     Position3D = 1u << 8,
 
