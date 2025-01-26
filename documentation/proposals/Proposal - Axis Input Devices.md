@@ -361,7 +361,8 @@ Like `AxisDescription`, it contains hard-coded constraints to help ensure that g
 /// It has specifications that must be followed to be considered valid
 /// </summary>
 [Flags]
-public enum AxisGroupType : uint
+public enum AxisGroupType : ulong
+
 {
     Unknown = 0u,
 
