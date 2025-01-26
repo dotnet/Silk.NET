@@ -52,7 +52,7 @@ public interface IDisplay : IEquatable<IDisplay>
     /// <summary>
     /// Gets a colloquial name for the display. This may change, but hopefully not to something the end user won't recognise.
     /// </summary>
-    string Name { get; }
+    string Description { get; }
 
     /// <summary>
     /// An event raised when <see cref="Bounds" /> and/or <see cref="WorkArea" /> changes.

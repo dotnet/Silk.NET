@@ -129,7 +129,7 @@ internal class SdlDisplay : IDisplay
 
     public bool IsPrimary => Sdl.GetPrimaryDisplay() == Id;
 
-    public string Name => Sdl.GetDisplayName(Id).ReadToString();
+    public string Description => Sdl.GetDisplayName(Id).ReadToString();
 
     public event Action<DisplayCoordinatesEvent>? CoordinatesChanged;
     private Action<DisplayVideoModeAvailabilityChangeEvent>? _knownVideoModesChanged;
