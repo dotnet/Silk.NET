@@ -560,7 +560,7 @@ Though no such API is defined in this proposal, the Silk.NET team reserves the r
 Below is an incomplete example of how an `AxisGroup` list can be populated.
 
 ```csharp
-private static readonly IReadOnlyList<AxisGroup> Families =
+private static readonly IReadOnlyList<AxisGroup> Groups =
 [
     new(0, AxisGroupType.Joystick2D | AxisGroupType.LeftHanded, [0, 1, 2, 3], 1, "Left Joystick"),
     new(1, AxisGroupType.Joystick2D | AxisGroupType.RightHanded, [4, 5, 6, 7], 0, "Right Joystick"),
@@ -569,6 +569,8 @@ private static readonly IReadOnlyList<AxisGroup> Families =
     new(5, AxisGroupType.Position2D, [18, 19], null, "Touchpad"),
     new(6, AxisGroupType.Unknown, [20, 21], null, "Unknown")
 ];
+
+IReadOnlyList<AxisGroup> IAxisDevice.Groups => Groups;
 ```
 
 
