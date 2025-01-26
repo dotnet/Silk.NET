@@ -673,6 +673,9 @@ public partial interface IAxisDevice
     /// Output definitions for this device - commonly haptics, LEDs, etc
     /// </summary>
     IReadOnlyList<OutputDescription> Outputs { get; }
+
+    // for groups of outputs, e.g. all LEDs, all vibration motors, left side vibration motors, etc
+    IReadOnlyList<OutputGroup> OutputGroups { get; }
     
     /// <summary>
     /// Allows the caller to set an output value for a specific output index.
@@ -700,17 +703,11 @@ public partial interface IAxisDevice
     public void SetOutput<T>(int index, T* values, int count = 1) where T : unmanaged => throw new NotImplementedException();
 }
 
-public enum OutputAxisTrait : ulong
+public enum OutputTrait : ulong
 {
     None = 0,
     LED = 1u << 0,
     Haptic = 1u << 1,
-    
-    LEDBrightness = 1 << 4 | LED,
-    LEDRed = 1u << 5 | LED,
-    LEDGreen = 1u << 6 | LED,
-    LEDBlue = 1u << 7 | LED,
-    LEDWhite = 1u << 8 | LED,
     
     ForceFeedback = 1u << 2 | Haptic,
     VibrationMotor = 1u << 3 | Haptic,
@@ -737,7 +734,7 @@ public readonly record struct OutputDescription
     /// </summary>
     public int Index { get; init; }
 
-    public OutputAxisTrait Traits { get; init; }
+    public OutputTrait Traits { get; init; }
 
     /// <summary>
     /// An associated axis index if one exists - for example, force feedback for a
@@ -749,6 +746,8 @@ public readonly record struct OutputDescription
     /// An optional name for the output
     /// </summary>
     public string? Name { get; init; }
+
+    public bool IsAvailable {get; init;}
     
     /// <summary>
     /// The definition of an output of an <see cref="IAxisDevice"/>
@@ -758,12 +757,40 @@ public readonly record struct OutputDescription
     /// <param name="associatedAxisIndex">An associated axis index if one exists - for example, force feedback for a
     /// specific trigger, an LED for a specific button, etc.</param>
     /// <param name="name">An optional name for the output</param>
-    public OutputDescription(int index, OutputAxisTrait traits, int? associatedAxisIndex = null, string? name = null)
+    public OutputDescription(int index, OutputTrait traits, int? associatedAxisIndex = null, string? name = null, bool isAvailable = true)
     {
         Index = index;
         Traits = traits;
         AssociatedAxisIndex = associatedAxisIndex;
         Name = name;
+        IsAvailable = isAvailable;
     }
+}
+
+public readonly record struct OutputGroup(int index, OutputAxisGroupType Purpose, IReadOnlyList<int> AssociatedOutputs, string? Name = null
+
+public enum OutputGroupType : ulong
+{
+    None = 0,
+
+    // Indicates that this group controls an LED or group of LEDs
+    // Depending on <see cref="OutputGroup.AssociatedOutputs"/> length:
+    // length == 1, this is brightness
+    // length == 3, RGB
+    // length == 4, RGBA (RGB + Brightness)
+    LED = 1u << 0,
+
+    Haptics = 1u << 1,
+    Vibration = 1u << 2 | Haptics
+
+    /// <summary>
+    /// Indicates that this axis has been added at runtime, and requires validation at first sight.
+    /// Example use cases: touch pads and touch screens, the results of object sensors, etc
+    /// As a result of being added at runtime, groups marked with this flag must not precede any groups not marked with this flag.
+    /// </summary>
+    Dynamic = 1u << 28,
+
+    LeftSide = AxisGroupType.LeftHanded, // allowing for left/right swap of symmetrical devices
+    RightSide = AxisGroupType.RightHanded, // allowing for left/right swap of symmetrical devices
 }
 ```
