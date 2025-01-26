@@ -48,6 +48,38 @@ The root of the API is in the interface `IAxisDevice`. This interface is essenti
 
 It is important to note that the value of an input axis a single 32-bit floating point value. is primarily expected between 0-1.0. There are some axis types, or rather `AxisTrait`s, that are not straightforwardly normalized, and those respective axes can be labeled as such (more on that later).
 
+## IInputDevice
+We propose the following properties be added to `IInputDevice` for their general utility and to help keep this API and the [base input API](./Proposal - Multi-Backend
+Input.md) consistent with each other.
+
+```csharp
+public interface IInputDevice : IEquatable<IInputDevice>
+{
+    // ---- Current API ----- //
+    nint Id { get; } 
+    string Name { get; }
+    // ---------------------- //
+
+    /// <summary>
+    /// A human-readable description of the device, intended for end-user display
+    /// </summary>
+    public string? Description => null;
+
+    /// <summary>
+    /// A human-readable description of the device's status, intended for end-user display
+    /// In the case of device malfunctions, especially those that are composed of multiple devices,
+    /// this can be used to display any issues preventing the device from functioning properly
+    /// </summary>
+    public string? Status => null;
+    
+    /// <summary>
+    /// False if this is a single real-world device, true if this is a device based on one or more physical devices,
+    /// or is entirely virtual (e.g. a pointer in a VR environment, a virtual gamepad, etc)
+    /// </summary>
+    bool IsVirtual => false;
+}
+```
+
 ## IAxisDevice
 
 ```csharp
@@ -77,27 +109,6 @@ public interface IAxisDevice : IReadOnlyList<float>, IInputDevice
     /// Must be provided in order of <see cref="AxisDescription.Index"/>
     /// </summary>
     IReadOnlyList<float> RawValues { get; }
-
-    /// <summary>
-    /// A human-readable description of the device, intended for end-user display
-    /// </summary>
-    public string? Description { get; }
-
-    /// <summary>
-    /// A human-readable description of the device's status, intended for end-user display
-    /// In the case of device malfunctions, especially those that are composed of multiple devices,
-    /// this can be used to display any issues preventing the device from functioning properly
-    /// </summary>
-    public string? Status { get; }
-    
-    /// <summary>
-    /// False if this is a single real-world device, true if this is a device based on one or more physical devices,
-    /// or is entirely virtual (e.g. a pointer in a VR environment, a virtual gamepad, etc)
-    ///
-    /// Note: defining "virtual" input devices should not *necessarily* come with
-    /// the burden of a full-blown IAxisDevice implementation. Future proposal may include a request to move this to IInputDevice, which would help make the IInputDevice <-> IAxisDevice APIs more consistent with each other.
-    /// </summary>
-    bool IsVirtual { get; }
 }
 ```
 
