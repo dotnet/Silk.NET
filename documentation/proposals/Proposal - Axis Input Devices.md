@@ -749,11 +749,6 @@ public readonly record struct OutputDescription
     /// An optional name for the output
     /// </summary>
     public string? Name { get; init; }
-
-    /// <summary>
-    /// Valid (and required) only for outputs marked as <see cref="OutputAxisTrait.RawDataOnly"/>
-    /// </summary>
-    public Type? DataType { get; init; }
     
     /// <summary>
     /// The definition of an output of an <see cref="IAxisDevice"/>
@@ -763,21 +758,12 @@ public readonly record struct OutputDescription
     /// <param name="associatedAxisIndex">An associated axis index if one exists - for example, force feedback for a
     /// specific trigger, an LED for a specific button, etc.</param>
     /// <param name="name">An optional name for the output</param>
-    public OutputDescription(int index, OutputAxisTrait traits, int? associatedAxisIndex = null, string? name = null) :
-        this(index, traits, typeof(float), name, associatedAxisIndex)
-    {
-    }
-
-    /// <inheritdoc cref="OutputDescription(int, OutputAxisTrait, int?, string?)"/>
-    /// <param name="dataType">Valid (and required) only for outputs marked as <see cref="OutputAxisTrait.RawDataOnly"/></param>
-    public OutputDescription(int index, OutputAxisTrait traits, Type dataType, string? name,
-        int? associatedAxisIndex = null)
+    public OutputDescription(int index, OutputAxisTrait traits, int? associatedAxisIndex = null, string? name = null)
     {
         Index = index;
         Traits = traits;
         AssociatedAxisIndex = associatedAxisIndex;
         Name = name;
-        DataType = dataType;
     }
 }
 ```
