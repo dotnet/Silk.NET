@@ -251,6 +251,19 @@ public enum AxisTrait : ulong
     DeltaOnly = 1 << 27 | Delta | RawValueOnly,
 
     /// <summary>
+    /// Indicates that this axis has been added at runtime, and requires validation at first sight.
+    /// Example use cases: touch pads and touch screens, the results of object sensors, etc
+    /// Also suggests this axis's index is subject to change, or is liable to be removed. As a result, axes marked with this flag must not precede any axes not marked with this flag.
+    /// Axes marked with this flag may not be included in any AxisGroup unless the AxisGroup is marked with the AxisGroupType.Dynamic flag as well.
+    /// It is highly recommended that axes defined in this way be grouped in the same way one would group a struct - if multiple axes per-item (in this case, a finger)
+    /// are present, these should be contiguous. for example, in the case of a touch surface:
+    ///     Finger 1 begins at index i
+    ///     i is an X component, i + 1 is a Y component, and i + 2 is a pressure component,
+    ///     Finger 2 begins at i + 3 following the same pattern
+    /// </summary>
+    Dynamic = 1 << 28u,
+
+    /// <summary>
     /// Used for axes that are on the left side of a device from the user's perspective.
     /// Useful for left/right handedness accommodation and various symmetrical devices. <br/><br/>
     /// For example: a left stick on a gamepad, a left trigger, a left shoulder button, the DPad on a gamepad, etc
@@ -473,6 +486,14 @@ public enum AxisGroupType : ulong
     Accelerometer = 1u << 11, // 3D accelerometer, requires 3 axes, XYZ order
 
     DeviceInformation = 1u << 24, // battery level, microphone level, etc
+
+    /// <summary>
+    /// Indicates that this axis has been added at runtime, and requires validation at first sight.
+    /// Example use cases: touch pads and touch screens, the results of object sensors, etc
+    /// Also suggests this groups's index is subject to change, or is liable to be removed. As a result, groups marked with this flag must not precede any groups not marked with this flag.
+    /// </summary>
+    Dynamic = 1u << 28,
+
     LeftHanded = 1u << 30, // allowing for left/right swap of symmetrical devices and labeling left/right buttons
     RightHanded = 1u << 31, // allowing for left/right swap of symmetrical devices
 }
