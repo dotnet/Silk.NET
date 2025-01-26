@@ -134,8 +134,7 @@ This is how a developer could subscribe directly to the axis changes of an `IAxi
 /// <summary>
 /// Represents the state of a single axis
 /// </summary>
-/// <param name="IsActive">True if the axis is currently in use / actively updated (required to be true if axis is not <see cref="AxisTrait.Dynamic"/>)
-public readonly record struct AxisState(IAxisDevice Device, AxisDescription Description, float Value, bool IsActive = true);
+public readonly record struct AxisState(IAxisDevice Device, AxisDescription Description, float Value);
 
 public interface IAxisInputHandler
 {
@@ -156,15 +155,34 @@ There are two primary structures that give meaning to the axes of an `IAxisDevic
 /// <param name="Index">the index of the axis in the device</param>
 /// <param name="Traits">the traints of the axis, described above</param>
 /// <param name="Name">A human-readable name for the axis</param>
-/// <param name="RawValueBounds">The bounds of the raw value - a value of 'default' indicates it is typical (0, 1), or
-/// in the case that the provided traits are <see cref="AxisTrait.RawValueOnly"/>, this must be default and indicates no known bounds.</param>
+///
+/// <param name="IsAvailable">
+/// If a given axis is unavailable for any reason during runtime, this would be marked as "false". This field is not included
+/// in the validation process. <br/>
+/// Axes with the <see cref="AxisTrait.Dynamic"/> flag are expected to make liberal use of this value in order to keep their axis indices consistent for the lifetime of each axis.
+/// </param>
+///
+/// <param name="RawValueBounds">
+/// The bounds of the raw value - a value of 'default' indicates it is typical (0, 1), or
+/// in the case that the provided traits are <see cref="AxisTrait.RawValueOnly"/>, this must be default and indicates no known bounds.
+/// </param>
 public readonly record struct AxisDescription(
     int Index,
     AxisTrait Traits,
     string Name,
+    bool IsAvailable = true,
     Vector2 RawValueBounds = default)
 {
     public static implicit operator int(in AxisDescription description) => description.Index;
+}
+
+public static class AxisDescriptionExtensions
+{
+    /// <summary>
+    /// Creates a copy of the given axis description with a modified <see cref="IsAvailable"/> value.
+    /// </summary>
+    /// <remarks>Request for feedback: naming?</remarks>
+    public static AxisDescription AsAvailable(this AxisDescription description, bool available);
 }
 ```
 
