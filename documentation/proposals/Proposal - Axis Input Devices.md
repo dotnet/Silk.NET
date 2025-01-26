@@ -120,7 +120,7 @@ This is how a developer could subscribe directly to the axis changes of an `IAxi
 
 public interface IAxisInputHandler
 {
-    public void OnAxisChanged(IAxisDevice device, AxisDescription description, float value);
+    public void OnAxisChanged(IAxisDevice device, in AxisDescription description, float value);
 }
 ```
 
@@ -145,7 +145,7 @@ public readonly record struct AxisDescription(
     string Name,
     Vector2 RawValueBounds = default)
 {
-    public static implicit operator int(AxisDescription description) => description.Index;
+    public static implicit operator int(in AxisDescription description) => description.Index;
 }
 ```
 
