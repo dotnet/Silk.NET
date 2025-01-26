@@ -496,7 +496,8 @@ new(4, AxisGroupType.FourFaceButtons | AxisGroupType.LeftHanded, [14, 15, 16, 17
 As previously stated, the latter grants you the benefit of having a defined order of primacy for the axes in the D-Pad group, which can be useful for certain implementations.
 
 
-Though no such API is defined in this proposal, I strongly encourage the development of extension methods to aid in determining the "ranking" of `AxisGroup`s for any given axis, as well as determining the "default" set of axis groups that make up a given device. (Request for feedback: would the latter require an additional property in `IAxisDevice`?)
+Though no such API is defined in this proposal, the Silk.NET team reserves the right to expose extension methods to aid in determining the "ranking" of `AxisGroup`s for any given axis, as well as determining the "default" set of axis groups that make up a given device. (Request for feedback: would the latter require an additional property in `IAxisDevice`?)
+
 
 ### Example Axis Group List
 
