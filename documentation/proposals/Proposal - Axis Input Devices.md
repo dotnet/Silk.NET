@@ -131,9 +131,15 @@ This is how a developer could subscribe directly to the axis changes of an `IAxi
 
 ```csharp
 
+/// <summary>
+/// Represents the state of a single axis
+/// </summary>
+/// <param name="IsActive">True if the axis is currently in use / actively updated (required to be true if axis is not <see cref="AxisTrait.Dynamic"/>)
+public readonly record struct AxisState(IAxisDevice Device, AxisDescription Description, float Value, bool IsActive = true);
+
 public interface IAxisInputHandler
 {
-    public void OnAxisChanged(IAxisDevice device, in AxisDescription description, float value);
+    public void OnAxisChanged(in AxisState state);
 }
 ```
 
@@ -253,7 +259,7 @@ public enum AxisTrait : ulong
     /// <summary>
     /// Indicates that this axis has been added at runtime, and requires validation at first sight.
     /// Example use cases: touch pads and touch screens, the results of object sensors, etc
-    /// Also suggests this axis's index is subject to change, or is liable to be removed. As a result, axes marked with this flag must not precede any axes not marked with this flag.
+    /// As a result of being added at runtime, axes marked with this flag must not precede any axes not marked with this flag.
     /// Axes marked with this flag may not be included in any AxisGroup unless the AxisGroup is marked with the AxisGroupType.Dynamic flag as well.
     /// It is highly recommended that axes defined in this way be grouped in the same way one would group a struct - if multiple axes per-item (in this case, a finger)
     /// are present, these should be contiguous. for example, in the case of a touch surface:
@@ -490,7 +496,7 @@ public enum AxisGroupType : ulong
     /// <summary>
     /// Indicates that this axis has been added at runtime, and requires validation at first sight.
     /// Example use cases: touch pads and touch screens, the results of object sensors, etc
-    /// Also suggests this groups's index is subject to change, or is liable to be removed. As a result, groups marked with this flag must not precede any groups not marked with this flag.
+    /// As a result of being added at runtime, groups marked with this flag must not precede any groups not marked with this flag.
     /// </summary>
     Dynamic = 1u << 28,
 
