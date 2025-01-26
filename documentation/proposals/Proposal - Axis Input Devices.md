@@ -150,8 +150,16 @@ These are the primary flags through which an axis's use is defined. Its definiti
 [Flags]
 public enum AxisTrait : ulong
 {
+    // To be treated as a default value / null. No axis should be left with this trait, and if they are it will be treated as an error.
     Unknown = 0,
+
+    // Indicates that the axis is non-binary and has multiple values aside from 0 and 1.
+    // Note: inputs with a finite set of values that aren't binary should either be marked as an Analog axis, or more likely be split into several Binary axes.
     Analog = 1 << 0,
+
+    // This axis has two possible values - on/off, pressed/not pressed, 0 or 1. Implementations claiming a "Binary" axis trait will be expected to satisfy the condition that
+    // The `Deadzone` will determine the default on/off behavior, which will default to `if(value > 0.0) return "on"`
+    // The same default behavior will apply to any axis being treated as a Binary input, whether or not it has this trait.
     Binary = 1 << 1,
 
     // an analog axis that explicitly does not return to center or zero like a joystick or trigger
