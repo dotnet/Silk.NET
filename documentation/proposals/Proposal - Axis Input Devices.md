@@ -640,3 +640,79 @@ public bool IsInDeadzone(IAxisDevice device, int descriptionIndex, Deadzone dead
     public bool IsGroupInDeadzone(IAxisDevice device, int groupIndex, ReadOnlySpan<Deadzone> deadzones);
 }
 ```
+
+# Outputs
+Many controllers have haptics, LEDs, etc, that would be nice to access in a generic, normalized way as well. The following is a first draft concept for this functionality that could accomplish this while leaving room for different sorts of outputs later on. 
+
+Feedback requested: is custom data handling necessary here? At that point it violates the "axis" concept pretty strongly and is best served by higher-level interfaces, but I wanted to make sure we at least consider these things.
+
+```csharp
+public partial interface IAxisDevice
+{
+    /// <summary>
+    /// Output definitions for this device - commonly haptics, LEDs, etc
+    /// </summary>
+    IReadOnlyList<OutputDescription> Outputs { get; }
+    
+    /// <summary>
+    /// Allows the caller to set an output value for a specific output index.
+    /// Valid for any axis not marked as <see cref="OutputAxisTrait.RawDataOnly"/>.
+    /// </summary>
+    public void SetOutput(int index, float value);
+    
+    /// <summary>
+    /// Allows the caller to set an output value(s) for a non-floating-point output.
+    /// Valid only for axes marked as <see cref="OutputAxisTrait.RawDataOnly"/>.
+    /// Requires that the caller knows the correct data type for the output, and as such the implementation must throw
+    /// an exception if the data type is not correct.
+    /// <br/><br/>
+    /// More than likely, concrete implementations or higher-level interfaces will provide a safer way to set these
+    /// sorts of values. The absence of higher-level utilities for this method should be considered a missing feature
+    /// if the implementation utilizes <see cref = "OutputAxisTrait.RawDataOnly"/>.
+    ///<br/><br/>
+    /// It is more or less expected that this will have few, if any, implementations in the early stages of this API.
+    /// Its use is reserved for advanced use-cases or higher-level implementations where the caller knows the exact
+    /// data type required the output - for example, setting a specific bit pattern for a specific LED, driving
+    /// embedded displays, built-in speakers, etc.
+    /// </summary>
+    /// <param name="index">The index of the <see cref="OutputDescription"/> in <see cref="Outputs"/></param>
+    /// <param name="values">A pointer to the value(s) to be set</param>
+    public void SetOutput<T>(int index, T* values, int count = 1) where T : unmanaged => throw new NotImplementedException();
+}
+
+public enum OutputAxisTrait : ulong
+{
+    None = 0,
+    LED = 1u << 0,
+    Haptic = 1u << 1,
+    
+    LEDBrightness = 1 << 4 | LED,
+    LEDRed = 1u << 5 | LED,
+    LEDGreen = 1u << 6 | LED,
+    LEDBlue = 1u << 7 | LED,
+    LEDWhite = 1u << 8 | LED,
+    
+    ForceFeedback = 1u << 2 | Haptic,
+    VibrationMotor = 1u << 3 | Haptic,
+
+    /// <summary>
+    /// For firmware-controlled device settings, such as microphone gain, calibration parameters, etc. Necessarily requires additional descriptors that should be expanded upon in this or another proposal.
+    /// In the case of a "virtual" device, this could apply to any device setting that is specific to that device. 
+    /// </summary>
+    DeviceControl = 1u << 4.
+    
+    RawDataOnly = AxisTrait.RawValueOnly,
+    LeftSide = AxisTrait.LeftSide,
+    RightSide = AxisTrait.RightSide
+}
+
+/// <summary>
+/// The definition of an output of an <see cref="IAxisDevice"/>
+/// </summary>
+/// <param name="Index">The index of this output in <see cref="IAxisDevice.Outputs"/></param>
+/// <param name="AssociatedAxisIndex">An associated axis index if one exists - for example, force feedback for a
+/// specific trigger, an LED for a specific button, etc.</param>
+/// <param name="Name">An optional name for the output</param>
+/// <param name="CustomDataType">Valid (and required) only for outputs marked as <see cref="OutputAxisTrait.RawDataOnly"/></param>
+public readonly record struct OutputDescription(int Index, OutputAxisTrait Traits, int? AssociatedAxisIndex = null, string? Name = null, Type? CustomDataType = null);
+```
