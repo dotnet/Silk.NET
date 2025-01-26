@@ -150,7 +150,7 @@ These are the primary flags through which an axis's use is defined. Its definiti
 [Flags]
 public enum AxisTrait : ulong
 {
-    // To be treated as a default value / null. No axis should be left with this trait, and if they are it will be treated as an error.
+    // To be treated as a default value / null. No axis should be left with this trait, and if they are it will be treated as an error or ignored.
     Unknown = 0,
 
     // Indicates that the axis is non-binary and has multiple values aside from 0 and 1.
@@ -170,13 +170,14 @@ public enum AxisTrait : ulong
     Orientation = 1 << 2 | Analog,
     Rotation = 1 << 3 | Orientation,
 
-    // this is specified because single axes of euler angle components can be useful by themselves,
-    // whereas anything shorter than 3 or 4 axes is not for quaternion rotation components
     /// <summary>
     /// Indicates that this axis is a component of a euler angle (do we want this to be in degrees or radians?)
     /// If this flag is set, the axis is expected to be normalized between 0-360 degrees, with wrapping applied
     /// It is required you do NOT set <see cref="AxisDescription.RawValueBounds"/>, as it will be assumed to be (0, 360/2pi).
     /// </summary>
+
+    // this is specified because single axes of euler angle components can be useful by themselves,
+    // whereas anything shorter than 3 or 4 axes is not useful for quaternion rotation components
     EulerAngleComponent = 1 << 4 | Rotation | HasRawValue,
 
     /// <summary>
@@ -372,6 +373,7 @@ Like `AxisDescription`, it contains hard-coded constraints to help ensure that g
 public enum AxisGroupType : ulong
 
 {
+    // To be treated as a default value / null. No axis should be left with this trait, and if they are it will be treated as an error or ignored.
     Unknown = 0u,
 
     // an ordering convention for family axes is left/right/bottom/top/back/forward - "negative" to "positive" values
