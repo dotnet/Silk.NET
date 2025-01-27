@@ -153,3 +153,12 @@ Maintainers **shall** be responsible for ensuring Bindings Owners and Additional
 - [4] D. Perks et al, "3.0 & 3.X Software Development Plan," Nov-2023. [Online]. Available: https://github.com/dotnet/Silk.NET/blob/main/documentation/proposals/Proposal%20-%203.0%20%26%203.X%20Software%20Development%20Plan.md
 - [5] D. Perks et al, "Windowing 3.0," Aug-2022. [Online]. Available: https://github.com/dotnet/Silk.NET/blob/main/documentation/proposals/Proposal%20-%20Windowing%203.0.md
 - [6] D. Perks et al, "Silk.NET Community," Sep-2021. [Online]. Available: https://github.com/SilkCommunity/SilkCommunity
+
+# Meeting Notes
+## 26/01/2025
+
+[Video](https://www.youtube.com/live/jNIAH2raTMY)
+
+- Approved subject to these comments.
+- Version suffixes should be used for betas, specifically for bindings that are not quite stable but still meet the requirements. Those suffixes apply only to those additional binding nuget packages.
+
