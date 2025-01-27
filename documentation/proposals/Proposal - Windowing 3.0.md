@@ -1731,6 +1731,13 @@ public interface IDetachedSurfaceLifecycle : IDisposable
 
 # Meeting Notes
 
+## 26/01/2025
+
+[Video](https://www.youtube.com/live/jNIAH2raTMY?feature=shared&t=2334)
+
+- Approved, with changes...
+- `Name` for colloquial names should be `Description` to clarify it's a non-programmatic user-facing description
+
 ## 25/02/2022
 
 [Video](https://youtu.be/dac3t0oh3VU?t=1984)
