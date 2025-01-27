@@ -27,13 +27,15 @@
         "Clean",
         "Compile",
         "DeclareApi",
+        "DisablePlatforms",
         "FinishRelease",
         "Pack",
         "Prerequisites",
         "PushToNuGet",
         "RegenerateBindings",
         "ShipApi",
-        "SignPackages"
+        "SignPackages",
+        "Website"
       ]
     },
     "Verbosity": {
@@ -166,12 +168,23 @@
           "type": "string",
           "description": "NuGet username"
         },
+        "Platforms": {
+          "type": "array",
+          "description": "A list of platforms that DisablePlatforms should exclude from MSBuild usages, both inside and outside of NUKE. This can be reset by running DisablePlatforms with no platforms, or by deleting the excluded-platforms.txt file",
+          "items": {
+            "type": "string"
+          }
+        },
         "SilkTouchAdditionalArgs": {
           "type": "array",
           "description": "Additional arguments to prepend to SilkTouch invocations",
           "items": {
             "type": "string"
           }
+        },
+        "SkipContributorsScrape": {
+          "type": "boolean",
+          "description": "If enabled, skips scraping the contributors for the authors.yml file of the blog"
         },
         "Solution": {
           "type": "string",
