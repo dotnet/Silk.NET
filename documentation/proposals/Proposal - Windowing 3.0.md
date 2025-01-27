@@ -8,9 +8,9 @@ Cross-platform windowing for Silk.NET rebuilt from the ground-up.
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with Community
-- [ ] Approved
-- [ ] Implemented
+- [x] Discussed with Community
+- [x] Approved
+- [x] Implemented
 
 # Dependencies
 
@@ -1364,7 +1364,7 @@ public interface IDisplay : IEquatable<IDisplay>
     /// <summary>
     /// Gets a colloquial name for the display. This may change, but hopefully not to something the end user won't recognise.
     /// </summary>
-    string Name { get; }
+    string Description { get; }
 
     /// <summary>
     /// An event raised when <see cref="Bounds" /> and/or <see cref="WorkArea" /> changes.
