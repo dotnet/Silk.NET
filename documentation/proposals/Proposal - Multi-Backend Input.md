@@ -3,6 +3,7 @@ Proposal API for backend-agnostic, refactored Input via keyboards, mice, and con
 
 # Contributors
 - Dylan Perks (@Perksey)
+- Dom Portera (@domportera)
 
 # Current Status
 - [x] Proposed
