@@ -674,14 +674,6 @@ public enum CursorStyles
     Custom = 1 << 7,
 }
 ```
-```cs
-[Flags]
-public enum CursorFlags
-{
-    None,
-    Confined = 1 << 0
-}
-```
 
 # Keyboard Input
 
@@ -1172,6 +1164,14 @@ public interface IJoystickInputHandler : IButtonInputHandler<JoystickButton>
 `HandleHatMove` must be called when any value of `JoystickState.Hats` changes.
 
 # Meeting Notes
+
+## 26/01/2025
+
+[Video](https://www.youtube.com/live/jNIAH2raTMY?feature=shared&t=4635)
+
+- Approved, with changes...
+- `IPointer` should be renamed to `IPointerDevice` 
+- `CursorFlags` remove - unused
 
 ## 05/08/2021
 
