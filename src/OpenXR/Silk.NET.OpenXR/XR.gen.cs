@@ -17,8 +17,53 @@ namespace Silk.NET.OpenXR
     public unsafe partial class XR : NativeAPI
     {
         [NativeName("Type", "")]
+        [NativeName("Name", "XR_API_LAYER_CREATE_INFO_STRUCT_VERSION")]
+        public const uint ApiLayerCreateInfoStructVersion = unchecked((uint) 1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_API_LAYER_INFO_STRUCT_VERSION")]
+        public const uint ApiLayerInfoStructVersion = unchecked((uint) 1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_API_LAYER_MAX_SETTINGS_PATH_SIZE")]
+        public const uint ApiLayerMaxSettingsPathSize = unchecked((uint) 512);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_API_LAYER_NEXT_INFO_STRUCT_VERSION")]
+        public const uint ApiLayerNextInfoStructVersion = unchecked((uint) 1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_BODY_JOINT_COUNT_HTC")]
+        public const uint BodyJointCountHtc = unchecked((uint) 26);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_CURRENT_LOADER_API_LAYER_VERSION")]
+        public const uint CurrentLoaderApiLayerVersion = unchecked((uint) 1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_CURRENT_LOADER_RUNTIME_VERSION")]
+        public const uint CurrentLoaderRuntimeVersion = unchecked((uint) 1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_EXTENSION_ENUM_BASE")]
+        public const uint ExtensionEnumBase = unchecked((uint) 1000000000);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_EXTENSION_ENUM_STRIDE")]
+        public const uint ExtensionEnumStride = unchecked((uint) 1000);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_FACIAL_EXPRESSION_EYE_COUNT_HTC")]
+        public const uint FacialExpressionEyeCountHtc = unchecked((uint) 14);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_FACIAL_EXPRESSION_LIP_COUNT_HTC")]
+        public const uint FacialExpressionLipCountHtc = unchecked((uint) 37);
+        [NativeName("Type", "")]
         [NativeName("Name", "XR_FALSE")]
         public const uint False = unchecked((uint) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_FREQUENCY_UNSPECIFIED")]
+        public const uint FrequencyUnspecified = unchecked((uint) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_HAND_FOREARM_JOINT_COUNT_ULTRALEAP")]
+        public const uint HandForearmJointCountUltraleap = unchecked((uint) 27);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_HAND_JOINT_COUNT_EXT")]
+        public const uint HandJointCountExt = unchecked((uint) 26);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_LOADER_INFO_STRUCT_VERSION")]
+        public const uint LoaderInfoStructVersion = unchecked((uint) 1);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_ACTION_NAME_SIZE")]
         public const uint MaxActionNameSize = unchecked((uint) 64);
@@ -44,6 +89,9 @@ namespace Silk.NET.OpenXR
         [NativeName("Name", "XR_MAX_GRAPHICS_APIS_SUPPORTED")]
         public const uint MaxGraphicsApisSupported = unchecked((uint) 32);
         [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_HAPTIC_PCM_BUFFER_SIZE_FB")]
+        public const uint MaxHapticPcmBufferSizeFB = unchecked((uint) 4000);
+        [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_LOCALIZED_ACTION_NAME_SIZE")]
         public const uint MaxLocalizedActionNameSize = unchecked((uint) 128);
         [NativeName("Type", "")]
@@ -65,8 +113,51 @@ namespace Silk.NET.OpenXR
         [NativeName("Name", "XR_MAX_SYSTEM_NAME_SIZE")]
         public const uint MaxSystemNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
+        [NativeName("Name", "XR_MIN_COMPOSITION_LAYERS_SUPPORTED")]
+        public const uint MinCompositionLayersSupported = unchecked((uint) 16);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MIN_HAPTIC_DURATION")]
+        public const uint MinHapticDuration = unchecked((uint) -1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_NO_DURATION")]
+        public const uint NoDuration = unchecked((uint) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_NULL_CONTROLLER_MODEL_KEY_MSFT")]
+        public const uint NullControllerModelKeyMsft = unchecked((uint) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_NULL_PATH")]
+        public const uint NullPath = unchecked((uint) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_NULL_RENDER_MODEL_KEY_FB")]
+        public const uint NullRenderModelKeyFB = unchecked((uint) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_NULL_SYSTEM_ID")]
+        public const uint NullSystemID = unchecked((uint) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_RUNTIME_INFO_STRUCT_VERSION")]
+        public const uint RuntimeInfoStructVersion = unchecked((uint) 1);
+        [NativeName("Type", "")]
         [NativeName("Name", "XR_TRUE")]
         public const uint True = unchecked((uint) 1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_UUID_SIZE")]
+        public const uint UuidSize = unchecked((uint) 16);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrLocateSpaces", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpacesLocateInfo* locateInfo, [Count(Count = 0)] SpaceLocations* spaceLocations);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrLocateSpaces", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpacesLocateInfo* locateInfo, [Count(Count = 0)] ref SpaceLocations spaceLocations);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrLocateSpaces", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpacesLocateInfo locateInfo, [Count(Count = 0)] SpaceLocations* spaceLocations);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrLocateSpaces", Convention = CallingConvention.Winapi)]
+        public partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpacesLocateInfo locateInfo, [Count(Count = 0)] ref SpaceLocations spaceLocations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrAcquireSwapchainImage", Convention = CallingConvention.Winapi)]
@@ -871,6 +962,102 @@ namespace Silk.NET.OpenXR
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrWaitSwapchainImage", Convention = CallingConvention.Winapi)]
         public partial Result WaitSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainImageWaitInfo waitInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ApiLayerCreateInfo* layerInfo, [Count(Count = 0)] Instance* instance);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ApiLayerCreateInfo* layerInfo, [Count(Count = 0)] ref Instance instance);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ApiLayerCreateInfo layerInfo, [Count(Count = 0)] Instance* instance);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ApiLayerCreateInfo layerInfo, [Count(Count = 0)] ref Instance instance);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ApiLayerCreateInfo* layerInfo, [Count(Count = 0)] Instance* instance);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ApiLayerCreateInfo* layerInfo, [Count(Count = 0)] ref Instance instance);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ApiLayerCreateInfo layerInfo, [Count(Count = 0)] Instance* instance);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
+        public partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ApiLayerCreateInfo layerInfo, [Count(Count = 0)] ref Instance instance);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
+        public partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderRuntimeInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderRuntimeInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0)] NegotiateRuntimeRequest* runtimeRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderRuntimeInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderRuntimeInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0)] ref NegotiateRuntimeRequest runtimeRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderRuntimeInterface", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result NegotiateLoaderRuntimeInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0)] NegotiateRuntimeRequest* runtimeRequest);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrNegotiateLoaderRuntimeInterface", Convention = CallingConvention.Winapi)]
+        public partial Result NegotiateLoaderRuntimeInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0)] ref NegotiateRuntimeRequest runtimeRequest);
 
         /// <summary>To be documented.</summary>
         public unsafe Result EnumerateApiLayerProperties([Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ApiLayerProperties> properties)

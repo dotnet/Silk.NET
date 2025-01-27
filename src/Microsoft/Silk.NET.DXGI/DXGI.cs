@@ -70,10 +70,7 @@ namespace Silk.NET.DXGI
         public bool TryGetExtension<T>(out T ext)
             where T:NativeExtension<DXGI>
         {
-             ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
-                 ? (T) Activator.CreateInstance(typeof(T), Context)
-                 : null;
-             return !(ext is null);
+            throw new NotImplementedException();
         }
 
         public override bool IsExtensionPresent(string extension)

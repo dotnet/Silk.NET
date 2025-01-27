@@ -91,7 +91,7 @@ namespace Silk.NET.Input.Glfw
                         JoystickHats.RightUp => Position2D.UpRight,
                         JoystickHats.RightDown => Position2D.DownRight,
                         JoystickHats.LeftUp => Position2D.UpLeft,
-                        JoystickHats.LeftDown => Position2D.UpRight,
+                        JoystickHats.LeftDown => Position2D.DownLeft,
                         _ => Position2D.Centered
                     }
                 );

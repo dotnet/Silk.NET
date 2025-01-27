@@ -13,10 +13,12 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
     [NativeName("Name", "WGPUInstanceBackend")]
     public enum InstanceBackend : int
     {
+        [NativeName("Name", "WGPUInstanceBackend_All")]
+        All = 0x0,
         [NativeName("Name", "WGPUInstanceBackend_Vulkan")]
-        Vulkan = 0x2,
+        Vulkan = 0x1,
         [NativeName("Name", "WGPUInstanceBackend_GL")]
-        GL = 0x20,
+        GL = 0x2,
         [NativeName("Name", "WGPUInstanceBackend_Metal")]
         Metal = 0x4,
         [NativeName("Name", "WGPUInstanceBackend_DX12")]
@@ -24,13 +26,11 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "WGPUInstanceBackend_DX11")]
         DX11 = 0x10,
         [NativeName("Name", "WGPUInstanceBackend_BrowserWebGPU")]
-        BrowserWebGpu = 0x40,
+        BrowserWebGpu = 0x20,
         [NativeName("Name", "WGPUInstanceBackend_Primary")]
-        Primary = 0x4E,
+        Primary = 0x2D,
         [NativeName("Name", "WGPUInstanceBackend_Secondary")]
-        Secondary = 0x30,
-        [NativeName("Name", "WGPUInstanceBackend_None")]
-        None = 0x0,
+        Secondary = 0x12,
         [NativeName("Name", "WGPUInstanceBackend_Force32")]
         Force32 = 0x7FFFFFFF,
     }

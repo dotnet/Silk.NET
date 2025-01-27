@@ -21,21 +21,22 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
     {
         public HubReport
         (
-            StorageReport? adapters = null,
-            StorageReport? devices = null,
-            StorageReport? pipelineLayouts = null,
-            StorageReport? shaderModules = null,
-            StorageReport? bindGroupLayouts = null,
-            StorageReport? bindGroups = null,
-            StorageReport? commandBuffers = null,
-            StorageReport? renderBundles = null,
-            StorageReport? renderPipelines = null,
-            StorageReport? computePipelines = null,
-            StorageReport? querySets = null,
-            StorageReport? buffers = null,
-            StorageReport? textures = null,
-            StorageReport? textureViews = null,
-            StorageReport? samplers = null
+            RegistryReport? adapters = null,
+            RegistryReport? devices = null,
+            RegistryReport? queues = null,
+            RegistryReport? pipelineLayouts = null,
+            RegistryReport? shaderModules = null,
+            RegistryReport? bindGroupLayouts = null,
+            RegistryReport? bindGroups = null,
+            RegistryReport? commandBuffers = null,
+            RegistryReport? renderBundles = null,
+            RegistryReport? renderPipelines = null,
+            RegistryReport? computePipelines = null,
+            RegistryReport? querySets = null,
+            RegistryReport? buffers = null,
+            RegistryReport? textures = null,
+            RegistryReport? textureViews = null,
+            RegistryReport? samplers = null
         ) : this()
         {
             if (adapters is not null)
@@ -46,6 +47,11 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
             if (devices is not null)
             {
                 Devices = devices.Value;
+            }
+
+            if (queues is not null)
+            {
+                Queues = queues.Value;
             }
 
             if (pipelineLayouts is not null)
@@ -115,79 +121,84 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         }
 
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "adapters")]
-        public StorageReport Adapters;
+        public RegistryReport Adapters;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "devices")]
-        public StorageReport Devices;
+        public RegistryReport Devices;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
+        [NativeName("Name", "queues")]
+        public RegistryReport Queues;
+
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "pipelineLayouts")]
-        public StorageReport PipelineLayouts;
+        public RegistryReport PipelineLayouts;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "shaderModules")]
-        public StorageReport ShaderModules;
+        public RegistryReport ShaderModules;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "bindGroupLayouts")]
-        public StorageReport BindGroupLayouts;
+        public RegistryReport BindGroupLayouts;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "bindGroups")]
-        public StorageReport BindGroups;
+        public RegistryReport BindGroups;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "commandBuffers")]
-        public StorageReport CommandBuffers;
+        public RegistryReport CommandBuffers;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "renderBundles")]
-        public StorageReport RenderBundles;
+        public RegistryReport RenderBundles;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "renderPipelines")]
-        public StorageReport RenderPipelines;
+        public RegistryReport RenderPipelines;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "computePipelines")]
-        public StorageReport ComputePipelines;
+        public RegistryReport ComputePipelines;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "querySets")]
-        public StorageReport QuerySets;
+        public RegistryReport QuerySets;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "buffers")]
-        public StorageReport Buffers;
+        public RegistryReport Buffers;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "textures")]
-        public StorageReport Textures;
+        public RegistryReport Textures;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "textureViews")]
-        public StorageReport TextureViews;
+        public RegistryReport TextureViews;
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "samplers")]
-        public StorageReport Samplers;
+        public RegistryReport Samplers;
     }
 }

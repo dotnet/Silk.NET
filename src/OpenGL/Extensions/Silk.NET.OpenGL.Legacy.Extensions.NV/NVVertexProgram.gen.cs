@@ -477,7 +477,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void VertexAttribPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int fsize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "fsize, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexAttribPointerNV", Convention = CallingConvention.Winapi)]
+        public partial void VertexAttribPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int fsize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "fsize, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
+
+        [NativeApi(EntryPoint = "glVertexAttribPointerNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int fsize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexAttribEnumNV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "fsize, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glVertexAttribPointerNV", Convention = CallingConvention.Winapi)]
+        public partial void VertexAttribPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int fsize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexAttribEnumNV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "fsize, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         [NativeApi(EntryPoint = "glVertexAttribs1dvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribs1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* v);

@@ -30,7 +30,7 @@ namespace Silk.NET.DXGI
         public const int WindowsFoundationFoundationcontractVersion = unchecked((int) 0x40000);
         [NativeName("Type", "int")]
         [NativeName("Name", "WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION")]
-        public const int WindowsFoundationUniversalapicontractVersion = unchecked((int) 0xF0000);
+        public const int WindowsFoundationUniversalapicontractVersion = unchecked((int) 0x130000);
         [NativeName("Type", "int")]
         [NativeName("Name", "DXGI_FORMAT_DEFINED")]
         public const int FormatDefined = unchecked((int) 0x1);

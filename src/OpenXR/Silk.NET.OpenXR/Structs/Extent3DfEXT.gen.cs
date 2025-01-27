@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrExtent3DfEXT")]
+    [NativeName("AliasOf", "XrExtent3Df")]
     public unsafe partial struct Extent3DfEXT
     {
         public Extent3DfEXT

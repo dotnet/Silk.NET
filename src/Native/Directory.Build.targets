@@ -1,5 +1,8 @@
 <Project>
   <ItemGroup>
+    <Content Include="build/**" PackagePath="build/%(RecursiveDir)%(Filename)%(Extension)" />
+    <Content Include="build/**" PackagePath="buildTransitive/%(RecursiveDir)%(Filename)%(Extension)" />
+    <Content Include="runtimes/**" PackagePath="runtimes/%(RecursiveDir)%(Filename)%(Extension)" />
     <Content Include="$(MSBuildThisFileDirectory)_._" PackagePath="lib/net461" />
     <Content Include="$(MSBuildThisFileDirectory)_._" PackagePath="lib/netstandard2.0" />
   </ItemGroup>

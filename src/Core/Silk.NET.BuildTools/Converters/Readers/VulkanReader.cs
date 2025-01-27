@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
@@ -335,6 +336,25 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 }
             }
 
+            var toString = new Function
+            {
+                Accessibility = Accessibility.Public,
+                IsOverride = true,
+                ReturnType = new Type { Name = "string" },
+                Name = "ToString"
+            };
+
+            var handleFuns = new List<ImplementedFunction>
+            {
+                new
+                (
+                    toString,
+                    new StringBuilder("return sizeof(nint) == 8 ? $\"0x{Handle:x16}\" : $\"0x{Handle:x8}\";"),
+                    toString,
+                    false
+                )
+            };
+
             foreach (var h in spec.Handles)
             {
                 ret.Add
@@ -346,7 +366,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             new Field {Name = "Handle", Type = new Type {Name = h.CanBeDispatched ? "nint" : "ulong"}}
                         },
                         Name = Naming.TranslateLite(TrimName(h.Name, task), prefix),
-                        NativeName = h.Name
+                        NativeName = h.Name,
+                        Functions = handleFuns
                     }
                 );
             }

@@ -708,10 +708,26 @@ namespace Silk.NET.SPIRV
         StencilAttachmentReadExt = 0x1042,
         [NativeName("Name", "SpvOpTerminateInvocation")]
         TerminateInvocation = 0x1140,
+        [NativeName("Name", "SpvOpTypeUntypedPointerKHR")]
+        TypeUntypedPointerKhr = 0x1141,
+        [NativeName("Name", "SpvOpUntypedVariableKHR")]
+        UntypedVariableKhr = 0x1142,
+        [NativeName("Name", "SpvOpUntypedAccessChainKHR")]
+        UntypedAccessChainKhr = 0x1143,
+        [NativeName("Name", "SpvOpUntypedInBoundsAccessChainKHR")]
+        UntypedInBoundsAccessChainKhr = 0x1144,
         [NativeName("Name", "SpvOpSubgroupBallotKHR")]
         SubgroupBallotKhr = 0x1145,
         [NativeName("Name", "SpvOpSubgroupFirstInvocationKHR")]
         SubgroupFirstInvocationKhr = 0x1146,
+        [NativeName("Name", "SpvOpUntypedPtrAccessChainKHR")]
+        UntypedPtrAccessChainKhr = 0x1147,
+        [NativeName("Name", "SpvOpUntypedInBoundsPtrAccessChainKHR")]
+        UntypedInBoundsPtrAccessChainKhr = 0x1148,
+        [NativeName("Name", "SpvOpUntypedArrayLengthKHR")]
+        UntypedArrayLengthKhr = 0x1149,
+        [NativeName("Name", "SpvOpUntypedPrefetchKHR")]
+        UntypedPrefetchKhr = 0x114A,
         [NativeName("Name", "SpvOpSubgroupAllKHR")]
         SubgroupAllKhr = 0x114C,
         [NativeName("Name", "SpvOpSubgroupAnyKHR")]
@@ -722,6 +738,8 @@ namespace Silk.NET.SPIRV
         GroupNonUniformRotateKhr = 0x114F,
         [NativeName("Name", "SpvOpSubgroupReadInvocationKHR")]
         SubgroupReadInvocationKhr = 0x1150,
+        [NativeName("Name", "SpvOpExtInstWithForwardRefsKHR")]
+        ExtInstWithForwardRefsKhr = 0x1151,
         [NativeName("Name", "SpvOpTraceRayKHR")]
         TraceRayKhr = 0x115D,
         [NativeName("Name", "SpvOpExecuteCallableKHR")]
@@ -766,6 +784,12 @@ namespace Silk.NET.SPIRV
         CooperativeMatrixMulAddKhr = 0x116B,
         [NativeName("Name", "SpvOpCooperativeMatrixLengthKHR")]
         CooperativeMatrixLengthKhr = 0x116C,
+        [NativeName("Name", "SpvOpConstantCompositeReplicateEXT")]
+        ConstantCompositeReplicateExt = 0x116D,
+        [NativeName("Name", "SpvOpSpecConstantCompositeReplicateEXT")]
+        SpecConstantCompositeReplicateExt = 0x116E,
+        [NativeName("Name", "SpvOpCompositeConstructReplicateEXT")]
+        CompositeConstructReplicateExt = 0x116F,
         [NativeName("Name", "SpvOpTypeRayQueryKHR")]
         TypeRayQueryKhr = 0x1178,
         [NativeName("Name", "SpvOpRayQueryInitializeKHR")]
@@ -788,6 +812,14 @@ namespace Silk.NET.SPIRV
         ImageBlockMatchSsdqcom = 0x1182,
         [NativeName("Name", "SpvOpImageBlockMatchSADQCOM")]
         ImageBlockMatchSadqcom = 0x1183,
+        [NativeName("Name", "SpvOpImageBlockMatchWindowSSDQCOM")]
+        ImageBlockMatchWindowSsdqcom = 0x1194,
+        [NativeName("Name", "SpvOpImageBlockMatchWindowSADQCOM")]
+        ImageBlockMatchWindowSadqcom = 0x1195,
+        [NativeName("Name", "SpvOpImageBlockMatchGatherSSDQCOM")]
+        ImageBlockMatchGatherSsdqcom = 0x1196,
+        [NativeName("Name", "SpvOpImageBlockMatchGatherSADQCOM")]
+        ImageBlockMatchGatherSadqcom = 0x1197,
         [NativeName("Name", "SpvOpGroupIAddNonUniformAMD")]
         GroupIAddNonUniformAmd = 0x1388,
         [NativeName("Name", "SpvOpGroupFAddNonUniformAMD")]
@@ -816,6 +848,10 @@ namespace Silk.NET.SPIRV
         FinishWritingNodePayloadAmdx = 0x13D6,
         [NativeName("Name", "SpvOpInitializeNodePayloadsAMDX")]
         InitializeNodePayloadsAmdx = 0x13E2,
+        [NativeName("Name", "SpvOpGroupNonUniformQuadAllKHR")]
+        GroupNonUniformQuadAllKhr = 0x13F6,
+        [NativeName("Name", "SpvOpGroupNonUniformQuadAnyKHR")]
+        GroupNonUniformQuadAnyKhr = 0x13F7,
         [NativeName("Name", "SpvOpHitObjectRecordHitMotionNV")]
         HitObjectRecordHitMotionNV = 0x1481,
         [NativeName("Name", "SpvOpHitObjectRecordHitWithIndexMotionNV")]
@@ -952,6 +988,8 @@ namespace Silk.NET.SPIRV
         ConvertSampledImageToUnv = 0x1514,
         [NativeName("Name", "SpvOpSamplerImageAddressingModeNV")]
         SamplerImageAddressingModeNV = 0x1515,
+        [NativeName("Name", "SpvOpRawAccessChainNV")]
+        RawAccessChainNV = 0x1516,
         [NativeName("Name", "SpvOpSubgroupShuffleINTEL")]
         SubgroupShuffleIntel = 0x15C3,
         [NativeName("Name", "SpvOpSubgroupShuffleDownINTEL")]
@@ -1434,6 +1472,8 @@ namespace Silk.NET.SPIRV
         ConstantCompositeContinuedIntel = 0x17CB,
         [NativeName("Name", "SpvOpSpecConstantCompositeContinuedINTEL")]
         SpecConstantCompositeContinuedIntel = 0x17CC,
+        [NativeName("Name", "SpvOpCompositeConstructContinuedINTEL")]
+        CompositeConstructContinuedIntel = 0x17D0,
         [NativeName("Name", "SpvOpConvertFToBF16INTEL")]
         ConvertFToBF16intel = 0x17E4,
         [NativeName("Name", "SpvOpConvertBF16ToFINTEL")]
@@ -1442,6 +1482,8 @@ namespace Silk.NET.SPIRV
         ControlBarrierArriveIntel = 0x17FE,
         [NativeName("Name", "SpvOpControlBarrierWaitINTEL")]
         ControlBarrierWaitIntel = 0x17FF,
+        [NativeName("Name", "SpvOpSubgroupBlockPrefetchINTEL")]
+        SubgroupBlockPrefetchIntel = 0x184D,
         [NativeName("Name", "SpvOpGroupIMulKHR")]
         GroupIMulKhr = 0x1901,
         [NativeName("Name", "SpvOpGroupFMulKHR")]
@@ -1458,6 +1500,10 @@ namespace Silk.NET.SPIRV
         GroupLogicalOrKhr = 0x1907,
         [NativeName("Name", "SpvOpGroupLogicalXorKHR")]
         GroupLogicalXorKhr = 0x1908,
+        [NativeName("Name", "SpvOpMaskedGatherINTEL")]
+        MaskedGatherIntel = 0x191C,
+        [NativeName("Name", "SpvOpMaskedScatterINTEL")]
+        MaskedScatterIntel = 0x191D,
         [NativeName("Name", "SpvOpMax")]
         Max = 0x7FFFFFFF,
     }

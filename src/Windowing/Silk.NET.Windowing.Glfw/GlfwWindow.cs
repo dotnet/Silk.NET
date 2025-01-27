@@ -38,7 +38,7 @@ namespace Silk.NET.Windowing.Glfw
         private string _localTitleCache; // glfw doesn't let us get the window title.
         private GlfwContext? _glContext;
         private string _windowClass;
-        private bool _inDoEvents;
+        private bool _inRefresh;
 
         /// <summary>
         /// The action passed to <see cref="Run"/>.
@@ -376,8 +376,18 @@ namespace Silk.NET.Windowing.Glfw
             // Set video mode (-1 = don't care)
             
             _glfw.WindowHint(WindowHintInt.RefreshRate, opts.VideoMode.RefreshRate      ?? GLFW.Glfw.DontCare);
-            _glfw.WindowHint(WindowHintInt.DepthBits, opts.PreferredDepthBufferBits     ?? GLFW.Glfw.DontCare);
-            _glfw.WindowHint(WindowHintInt.StencilBits, opts.PreferredStencilBufferBits ?? GLFW.Glfw.DontCare);
+            _glfw.WindowHint(WindowHintInt.DepthBits, opts.PreferredDepthBufferBits switch
+            {
+                null when opts.PreferredStencilBufferBits is null => 24,
+                {} x => x,
+                _ => GLFW.Glfw.DontCare
+            });
+            _glfw.WindowHint(WindowHintInt.StencilBits, opts.PreferredStencilBufferBits switch
+            {
+                null when opts.PreferredDepthBufferBits is null => 8,
+                {} x => x,
+                _ => GLFW.Glfw.DontCare
+            });
             
             _glfw.WindowHint(WindowHintInt.RedBits,   opts.PreferredBitDepth?.X ?? GLFW.Glfw.DontCare);
             _glfw.WindowHint(WindowHintInt.GreenBits, opts.PreferredBitDepth?.Y ?? GLFW.Glfw.DontCare);
@@ -552,6 +562,7 @@ namespace Silk.NET.Windowing.Glfw
             }
             set
             {
+                _swapIntervalChanged = true;
                 if (!IsInitialized)
                 {
                     throw new InvalidOperationException("Window is not running.");
@@ -622,23 +633,15 @@ namespace Silk.NET.Windowing.Glfw
 
         public override void DoEvents()
         {
-            if (!_inDoEvents)
+            if (!_inRefresh)
             {
-                try
+                if (IsEventDriven)
                 {
-                    _inDoEvents = true;
-                    if (IsEventDriven)
-                    {
-                        _glfw.WaitEvents();
-                    }
-                    else
-                    {
-                        _glfw.PollEvents();
-                    }
+                    _glfw.WaitEvents();
                 }
-                finally
+                else
                 {
-                    _inDoEvents = false;
+                    _glfw.PollEvents();
                 }
             }
         }
@@ -664,6 +667,11 @@ namespace Silk.NET.Windowing.Glfw
             var ret = (addr = _glfw.GetProcAddress(proc)) != 0;
             _glfw.SetErrorCallback(errorCallback);
             return ret;
+        }
+
+        public override void Focus() 
+        {
+            _glfw.FocusWindow(_glfwWindow);
         }
 
         public override void Close()
@@ -693,7 +701,23 @@ namespace Silk.NET.Windowing.Glfw
                 FramebufferResize?.Invoke(new(width, height));
             };
 
-            _onRefresh = (window) => _onFrame?.Invoke();
+            _onRefresh = (window) =>
+            {
+                if (_inRefresh)
+                {
+                    return;
+                }
+
+                try
+                {
+                    _inRefresh = true;
+                    _onFrame?.Invoke();
+                }
+                finally
+                {
+                    _inRefresh = false;
+                }
+            };
 
             _onClosing = window => Closing?.Invoke();
 

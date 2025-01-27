@@ -22,5 +22,7 @@ namespace Silk.NET.Vulkan
         NoneNV = 1000165000,
         [NativeName("Name", "VK_INDEX_TYPE_UINT8_EXT")]
         Uint8Ext = 1000265000,
+        [NativeName("Name", "VK_INDEX_TYPE_UINT8_KHR")]
+        Uint8Khr = 1000265000,
     }
 }

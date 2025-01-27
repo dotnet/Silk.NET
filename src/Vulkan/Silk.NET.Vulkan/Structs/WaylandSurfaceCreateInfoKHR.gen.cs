@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.WaylandSurfaceCreateInfoKhr,
             void* pNext = null,
-            uint? flags = null,
+            WaylandSurfaceCreateFlagsKHR? flags = null,
             nint* display = null,
             nint* surface = null
         ) : this()
@@ -68,7 +68,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkWaylandSurfaceCreateFlagsKHR")]
         [NativeName("Type.Name", "VkWaylandSurfaceCreateFlagsKHR")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public WaylandSurfaceCreateFlagsKHR Flags;
 /// <summary></summary>
         [NativeName("Type", "wl_display*")]
         [NativeName("Type.Name", "wl_display")]

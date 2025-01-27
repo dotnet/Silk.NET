@@ -23,5 +23,7 @@ namespace Silk.NET.OpenXR
         PrimaryQuadVarjo = 1000037000,
         [NativeName("Name", "XR_VIEW_CONFIGURATION_TYPE_SECONDARY_MONO_FIRST_PERSON_OBSERVER_MSFT")]
         SecondaryMonoFirstPersonObserverMsft = 1000054000,
+        [NativeName("Name", "XR_VIEW_CONFIGURATION_TYPE_PRIMARY_STEREO_WITH_FOVEATED_INSET")]
+        PrimaryStereoWithFoveatedInset = 1000037000,
     }
 }

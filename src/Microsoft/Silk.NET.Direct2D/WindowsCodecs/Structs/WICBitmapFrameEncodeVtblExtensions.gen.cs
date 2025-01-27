@@ -85,22 +85,22 @@ public unsafe static class WICBitmapFrameEncodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Initialize(this ComPtr<IWICBitmapFrameEncode> thisVtbl, Silk.NET.Core.Native.IUnknown* pIEncoderOptions)
+    public static unsafe int Initialize(this ComPtr<IWICBitmapFrameEncode> thisVtbl, Silk.NET.Core.Win32Extras.IPropertyBag2* pIEncoderOptions)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pIEncoderOptions);
+        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, Silk.NET.Core.Win32Extras.IPropertyBag2*, int>)@this->LpVtbl[3])(@this, pIEncoderOptions);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize(this ComPtr<IWICBitmapFrameEncode> thisVtbl, ref Silk.NET.Core.Native.IUnknown pIEncoderOptions)
+    public static int Initialize(this ComPtr<IWICBitmapFrameEncode> thisVtbl, ref Silk.NET.Core.Win32Extras.IPropertyBag2 pIEncoderOptions)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Core.Native.IUnknown* pIEncoderOptionsPtr = &pIEncoderOptions)
+        fixed (Silk.NET.Core.Win32Extras.IPropertyBag2* pIEncoderOptionsPtr = &pIEncoderOptions)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pIEncoderOptionsPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, Silk.NET.Core.Win32Extras.IPropertyBag2*, int>)@this->LpVtbl[3])(@this, pIEncoderOptionsPtr);
         }
         return ret;
     }
@@ -343,15 +343,7 @@ public unsafe static class WICBitmapFrameEncodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Initialize<TI0>(this ComPtr<IWICBitmapFrameEncode> thisVtbl, ComPtr<TI0> pIEncoderOptions) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->Initialize((Silk.NET.Core.Native.IUnknown*) pIEncoderOptions.Handle);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int Initialize(this ComPtr<IWICBitmapFrameEncode> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pIEncoderOptions)
+    public static int Initialize(this ComPtr<IWICBitmapFrameEncode> thisVtbl, Span<Silk.NET.Core.Win32Extras.IPropertyBag2> pIEncoderOptions)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

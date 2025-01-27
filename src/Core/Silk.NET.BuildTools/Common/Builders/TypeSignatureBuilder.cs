@@ -37,6 +37,8 @@ namespace Silk.NET.BuildTools.Common.Builders
         private Function _newFunctionPointerSignature;
 
         private List<Type> _newGenericParams;
+        
+        private bool _newIsIntAsPtr;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TypeSignatureBuilder" /> class.
@@ -56,6 +58,7 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newIsGenericType = typeSignature.IsGenericTypeParameterReference;
             _newFunctionPointerSignature = typeSignature.FunctionPointerSignature;
             _newGenericParams = typeSignature.GenericTypes;
+            _newIsIntAsPtr = typeSignature.IsIntAsPtr;
         }
 
         /// <summary>
@@ -142,7 +145,8 @@ namespace Silk.NET.BuildTools.Common.Builders
                 OriginalGroup = _newOriginalGroup,
                 OriginalClass = _newOriginalClass,
                 IsGenericTypeParameterReference = _newIsGenericType,
-                GenericTypes = _newGenericParams
+                GenericTypes = _newGenericParams,
+                IsIntAsPtr = _newIsIntAsPtr
             };
         }
 
@@ -189,6 +193,12 @@ namespace Silk.NET.BuildTools.Common.Builders
         public TypeSignatureBuilder WithGenericTypes(params Type[] parameters)
         {
             _newGenericParams = parameters.ToList();
+            return this;
+        }
+
+        public TypeSignatureBuilder WithIsIntAsPtr(bool isIntAsPtr)
+        {
+            _newIsIntAsPtr = isIntAsPtr;
             return this;
         }
         // ReSharper restore UnusedParameter.Global

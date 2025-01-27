@@ -42,7 +42,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void FogCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glFogCoordPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void FogCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
+
+        [NativeApi(EntryPoint = "glFogCoordPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void FogCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FogPointerTypeEXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glFogCoordPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void FogCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] FogPointerTypeEXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         public ExtFogCoord(INativeContext ctx)
             : base(ctx)

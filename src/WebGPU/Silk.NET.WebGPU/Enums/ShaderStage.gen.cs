@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
+    [Flags]
     [NativeName("Name", "WGPUShaderStage")]
     public enum ShaderStage : int
     {

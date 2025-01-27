@@ -34,9 +34,10 @@ namespace Silk.NET.Windowing.Sdl
         (
             () =>
             {
+                SDL.Sdl? api = null;
                 try
                 {
-                    SDL.Sdl.GetApi();
+                    api = SDL.Sdl.GetApi();
                 }
                 catch (Exception ex)
                 {
@@ -44,6 +45,10 @@ namespace Silk.NET.Windowing.Sdl
                     Console.WriteLine($"Can't load SDL: {ex}");
 #endif
                     return false;
+                }
+                finally
+                {
+                    api?.Dispose();
                 }
 
                 return true;

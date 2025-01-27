@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineLayoutCreateInfo")]
-    public unsafe partial struct PipelineLayoutCreateInfo : IChainable
+    public unsafe partial struct PipelineLayoutCreateInfo : IExtendsChain<BindDescriptorSetsInfoKHR>, IExtendsChain<PushConstantsInfoKHR>, IExtendsChain<PushDescriptorSetInfoKHR>, IExtendsChain<PushDescriptorSetWithTemplateInfoKHR>, IExtendsChain<SetDescriptorBufferOffsetsInfoEXT>, IExtendsChain<BindDescriptorBufferEmbeddedSamplersInfoEXT>, IExtendsChain<IndirectCommandsLayoutCreateInfoEXT>
     {
         public PipelineLayoutCreateInfo
         (

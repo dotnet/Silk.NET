@@ -29,7 +29,7 @@ using static Nuke.Common.Tools.GitHub.GitHubTasks;
 partial class Build {
     [Nuke.Common.Parameter("Build native code")] readonly bool Native;
 
-    [CanBeNull] string AndroidHomeValue;
+    [Nuke.Common.Parameter("Android home. Will be determined from dotnet if not provided.")] [CanBeNull] string AndroidHomeValue;
 
     static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.Job)
         ? $" -j{Jobs}"
@@ -39,13 +39,18 @@ partial class Build {
         ? Environment.ProcessorCount - 1
         : 1;
 
+    public string GetCMakeToolchainFlag(string target)
+    {
+        return $"-DCMAKE_TOOLCHAIN_FILE={RootDirectory / "build" / "cmake" / target}.cmake";
+    }
+
     public void CopyAs(AbsolutePath @out, string from, string to)
     {
         var file = @out.GlobFiles(from).First();
         CopyFile(file, to, FileExistsPolicy.Overwrite);
     }
 
-    public void PrUpdatedNativeBinary(string name, [CanBeNull] string glob = null)
+    public void PrUpdatedNativeBinary(string name)
     {
         var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
         var curBranch = GitCurrentBranch(RootDirectory);
@@ -58,22 +63,11 @@ partial class Build {
             !curBranch.StartsWith("develop/", StringComparison.OrdinalIgnoreCase))
         {
             // it's assumed that the pushable token was used to checkout the repo
-            if (OperatingSystem.IsWindows())
-            {
-                glob ??= "src/Native/**/*.dll";
-            }
-            else if (OperatingSystem.IsMacOS())
-            {
-                glob ??= "src/Native/**/libMoltenVK.a src/Native/**/*.dylib";
-            }
-            else if (OperatingSystem.IsLinux())
-            {
-                glob ??= "src/Native/**/*.so*";
-            }
 
             Git("fetch --all", RootDirectory);
             Git("pull");
-            Git($"add -f {glob}", RootDirectory);
+            Git("add -f src/Native/*/runtimes/*/native/*", RootDirectory);
+            Git("add **/*.aar **/*.java **/PublicAPI.Unshipped.txt", RootDirectory);
             var newBranch = $"ci/{curBranch}/{name.ToLower().Replace(' ', '_')}_bins";
             var curCommit = GitCurrentCommit(RootDirectory);
             var commitCmd = InheritedShell
@@ -81,7 +75,7 @@ partial class Build {
                     $"git commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\""
                 )
                 .AssertWaitForExit();
-            if (!commitCmd.Output.Any(x => x.Text.Contains("no changes added to commit", StringComparison.OrdinalIgnoreCase) || x.Text.Contains("nothing to commit", StringComparison.OrdinalIgnoreCase)))
+            if (!commitCmd.Output.Any(x => x.Text.Contains("no changes added to commit", StringComparison.OrdinalIgnoreCase) || x.Text.Contains("nothing", StringComparison.OrdinalIgnoreCase)))
             {
                 commitCmd.AssertZeroExitCode();
             }

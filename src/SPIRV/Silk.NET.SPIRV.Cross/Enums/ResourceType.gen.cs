@@ -42,6 +42,8 @@ namespace Silk.NET.SPIRV.Cross
         RayQuery = 0xD,
         [NativeName("Name", "SPVC_RESOURCE_TYPE_SHADER_RECORD_BUFFER")]
         ShaderRecordBuffer = 0xE,
+        [NativeName("Name", "SPVC_RESOURCE_TYPE_GL_PLAIN_UNIFORM")]
+        GLPlainUniform = 0xF,
         [NativeName("Name", "SPVC_RESOURCE_TYPE_INT_MAX")]
         IntMax = 0x7FFFFFFF,
     }

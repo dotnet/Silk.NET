@@ -54,10 +54,16 @@ namespace Silk.NET.GLFW
             if (api.Context.TryGetProcAddress("glfwGetX11Display", out var getX11Display) && 
                 api.Context.TryGetProcAddress("glfwGetX11Window", out var getX11Window))
             {
-                Kind |= NativeWindowFlags.X11;
-                X11 = ((nint) ((delegate* unmanaged[Cdecl]<void*>) getX11Display)(),
-                    ((delegate* unmanaged[Cdecl]<WindowHandle*, nuint>) getX11Window)(window));
-                return;
+                var x11Display = (nint) ((delegate* unmanaged[Cdecl]<void*>) getX11Display)();
+                var x11Window = ((delegate* unmanaged[Cdecl]<WindowHandle*, nuint>) getX11Window)(window);
+                
+                if (x11Display != 0 && x11Window != 0)
+                {
+                    Kind |= NativeWindowFlags.X11;
+                
+                    X11 = (x11Display, x11Window);
+                    return;
+                }
             }
 
             if (api.Context.TryGetProcAddress("glfwGetWaylandDisplay", out var getWaylandDisplay) && 

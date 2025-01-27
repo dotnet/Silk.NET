@@ -163,12 +163,12 @@ namespace Silk.NET.Core.Win32Extras
         public ushort Size;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L920_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L954_C5")]
         [NativeName("Name", "anonymous1")]
         public EventInstanceHeaderUnion1 Anonymous1;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L927_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L961_C5")]
         [NativeName("Name", "anonymous2")]
         public EventInstanceHeaderUnion2 Anonymous2;
 
@@ -203,7 +203,7 @@ namespace Silk.NET.Core.Win32Extras
         public uint ParentInstanceId;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L941_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L975_C5")]
         [NativeName("Name", "anonymous3")]
         public EventInstanceHeaderUnion3 Anonymous3;
 

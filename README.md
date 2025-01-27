@@ -13,6 +13,24 @@
 </div>
 
 <div>
+
+<h1 align="center">🚧 Silk.NET 3.0 is coming... 🚧</h1>
+
+We are currently hard at work on Silk.NET 3.0 - the latest and greatest Silk.NET, laser-focused on addressing pain points and reimagining how C# bindings libraries can be done.
+
+Because of this, Silk.NET 2.X investment is currently limited by the Silk.NET team, who consist entirely of volunteers working in their free time. Silk.NET 2.X updates are now released ad-hoc when development effort is justified and available.
+
+**If you're reading this and would like to step up to keep Silk.NET 2.X going, be that as a contributor or a maintainer, please do not hesitate to reach out to the Silk.NET team in our official Discord server!**
+
+Learn more about Silk.NET 3.0:
+- [Silk.NET 3.0 Plan](https://github.com/dotnet/Silk.NET/blob/14ee3f16a1c1b7c5f561c307b956f769c5e89474/documentation/proposals/Proposal%20-%203.0%20%26%203.X%20Software%20Development%20Plan.md)
+- [Silk.NET 3.0 Bindings Design](https://github.com/dotnet/Silk.NET/blob/main/documentation/proposals/Proposal%20-%20Generation%20of%20Library%20Sources%20and%20PInvoke%20Mechanisms.md)
+- [Silk.NET 3.0 Meeting 1](https://www.youtube.com/watch?v=dac3t0oh3VU)
+- [Silk.NET 3.0 Meeting 2](https://www.youtube.com/watch?v=yXNDZDE3AHE)
+- [SilkX (Silk.NET 3.0) Design Discussion](https://www.youtube.com/live/N7qcETE4X_I?t=1799)
+
+<h1 align="center">About Silk.NET 2.X</h1>
+
 <!-- End exclude from NuGet readme. -->
 <!-- Begin include in NuGet readme.
 ![Silk.NET Logo](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/silkdotnet_v3_horizontal_96.svg)
@@ -73,24 +91,26 @@ In addition, the Silk.NET working group help drive larger user-facing changes pr
 
 <h1 align="center">Building from source</h1>
 
-Prerequisites
+**Prerequisites**
+
 - .NET 6 SDK and .NET 7 SDK
 - Android, iOS, and Mac Catalyst workloads (use `dotnet workload install android ios maccatalyst` to install them)
     - On Linux, `ios` and `maccatalyst` should be omitted as they are not available
-- Android SDK version 30 with NDK tools installed
-    - On Windows, for best results this should be installed into `C:\ProgramData\Android\android-sdk`
-- Java 11 JDK
+- Android SDK versions 31, 33, and 34 with NDK tools installed
+    - On Windows, for best results, this should be installed into `C:\ProgramData\Android\android-sdk`
+- Java JDK 11+
 - Visual Studio 2022 Community version 17.0 or later (optional)
 
-Instructions
-- Clone the repository (recursively)
-- Run build.sh, build.cmd, build.ps1, or `nuke compile`.
+**Instructions**
+
+- Clone the repository
+    - Note: Avoid performing a recursive clone as the submodules are not necessary for a normal build
+- Run `build.sh`, `build.cmd`, `build.ps1`, or `nuke compile`
     - On Linux, you may need to pass `--msbuild-properties AndroidSdkDirectory=/path/to/android/sdk`
-- Use the DLLs. To get nupkgs you can use with NuGet instead, use `nuke pack`.
+- Use the built assemblies
+    - To get `.nupkg`s that you can use with NuGet instead, use `nuke pack`
 
-There are more advanced build actions you can do too, such as FullBuild, Pack, FullPack, among others which you can view by doing `nuke --plan`.
-
-Note: Some .NET 6 workloads are only supported on Windows and macOS today.
+There are more advanced build actions you can do too, such as `FullBuild`, `Pack`, `FullPack`, among others which you can view by doing `nuke --plan`.
 
 <h1 align="center">Contributing</h1>
 

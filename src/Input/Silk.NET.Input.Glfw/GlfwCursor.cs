@@ -22,6 +22,10 @@ namespace Silk.NET.Input.Glfw
                 {StandardCursor.Hand, CursorShape.Hand},
                 {StandardCursor.HResize, CursorShape.HResize},
                 {StandardCursor.VResize, CursorShape.VResize},
+                {StandardCursor.ResizeAll, CursorShape.AllResize},
+                {StandardCursor.NeswResize, CursorShape.NeswResize},
+                {StandardCursor.NwseResize, CursorShape.NwseResize},
+                {StandardCursor.NotAllowed, CursorShape.NotAllowed}
             };
 
         private const int BytesPerCursorPixel = 4;
@@ -162,6 +166,8 @@ namespace Silk.NET.Input.Glfw
         /// <inheritdoc />
         public bool IsSupported(StandardCursor standardCursor)
         {
+            GlfwProvider.GLFW.Value.GetVersion(out var major, out var minor, out _);
+            var is34OrLater = major > 3 || major == 3 && minor >= 4;
             return standardCursor switch
             {
                 StandardCursor.Default => true,
@@ -171,6 +177,10 @@ namespace Silk.NET.Input.Glfw
                 StandardCursor.Hand => true,
                 StandardCursor.HResize => true,
                 StandardCursor.VResize => true,
+                StandardCursor.NeswResize when is34OrLater => true,
+                StandardCursor.NwseResize when is34OrLater => true,
+                StandardCursor.ResizeAll when is34OrLater => true,
+                StandardCursor.NotAllowed when is34OrLater => true,
                 _ => false
             };
         }

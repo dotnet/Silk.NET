@@ -679,7 +679,7 @@ namespace Silk.NET.BuildTools.Cpp
                 if (type is ArrayType arrayType)
                 {
                     ret = GetType(arrayType.ElementType, out var currentCount, ref flow, out _);
-                    ret.IndirectionLevels++;
+                    ret.IndirectionLevels++; // TODO this is wrong for >2 dims!
                     var asize = arrayType.Handle.ArraySize;
                     if (asize != -1)
                     {
@@ -812,7 +812,13 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else
                     {
-                        ret = new Type { Name = elaboratedType.NamedType.AsString };
+                        var name = elaboratedType.NamedType.AsString;
+                        if (name.LastIndexOf("::", StringComparison.Ordinal) is not -1 and var v)
+                        {
+                            name = name[(v + 2)..];
+                        }
+
+                        ret = new Type { Name = name };
                     }
                 }
                 else if (type is FunctionType functionType)
@@ -907,11 +913,14 @@ namespace Silk.NET.BuildTools.Cpp
                                 // rename the struct as we've found a typedef for it, and we haven't found a better name
                                 // already.
                                 pfns[wrapper].NativeName = typedefType.Decl.Name;
-                                var name = Naming.TranslateVariable
-                                    (Naming.TrimName(pfns[wrapper].NativeName, task), task.FunctionPrefix);
-                                if (name.ToLower().StartsWith("pfn"))
+                                if (!task.RenamedNativeNames.TryGetValue(typedefType.Decl.Name, out var name))
                                 {
-                                    name = name.Substring(3);
+                                    name = Naming.TranslateVariable
+                                        (Naming.TrimName(pfns[wrapper].NativeName, task), task.FunctionPrefix);
+                                    if (name.ToLower().StartsWith("pfn"))
+                                    {
+                                        name = name.Substring(3);
+                                    }
                                 }
 
                                 var intrinsic = pfns[wrapper].Attributes.First(x => x.Name == "BuildToolsIntrinsic");

@@ -36,53 +36,65 @@ partial class Build {
             (
                 () =>
                 {
-                    var @out = AssimpPath / "build";
-                    var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON -DASSIMP_WARNINGS_AS_ERRORS=OFF";
-                    var build = $"cmake --build build --config Release{JobsArg}";
-                    EnsureCleanDirectory(@out);
+                    var buildDir = AssimpPath / "build";
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Assimp.Native" / "runtimes";
+
+                    var prepare = "cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DASSIMP_BUILD_ZLIB=ON -DASSIMP_WARNINGS_AS_ERRORS=OFF -DASSIMP_BUILD_TESTS=OFF";
+                    var build = $"cmake --build . --config Release{JobsArg}";
+
                     if (OperatingSystem.IsWindows())
                     {
-                        InheritedShell($"{prepare} -A X64", AssimpPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, AssimpPath)
-                            .AssertZeroExitCode();
+                        foreach (var (platform, rid) in new[]
+                        {
+                            ("Win32", "win-x86"),
+                            ("x64", "win-x64"),
+                            ("ARM64", "win-arm64"),
+                        })
+                        {
+                            EnsureCleanDirectory(buildDir);
 
-                        CopyAs(@out, "bin/Release/assimp-*-mt.dll", runtimes / "win-x64" / "native" / "Assimp64.dll");
-                        EnsureCleanDirectory(@out);
+                            InheritedShell($"{prepare} -A {platform}", buildDir).AssertZeroExitCode();
+                            InheritedShell(build, buildDir).AssertZeroExitCode();
 
-                        InheritedShell($"{prepare} -A Win32", AssimpPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, AssimpPath)
-                            .AssertZeroExitCode();
-
-                        CopyAs(@out, "bin/Release/assimp-*-mt.dll", runtimes / "win-x86" / "native" / "Assimp32.dll");
+                            CopyAs(buildDir / "bin" / "Release", "assimp-*-mt.dll", runtimes / rid / "native" / $"Assimp{(rid.Contains("64") ? 64 : 32)}.dll");
+                        }
                     }
                     else if (OperatingSystem.IsLinux())
                     {
-                        InheritedShell($"{prepare} -DCMAKE_SYSTEM_PROCESSOR=x86_64", AssimpPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, AssimpPath)
-                            .AssertZeroExitCode();
+                        foreach (var (triple, rid) in new[]
+                        {
+                            ("x86_64-linux-gnu", "linux-x64"),
+                            ("arm-linux-gnueabihf", "linux-arm"),
+                            ("aarch64-linux-gnu", "linux-arm64"),
+                        })
+                        {
+                            EnsureCleanDirectory(buildDir);
 
-                        CopyAll(@out.GlobFiles("bin/libassimp.so.5"), runtimes / "linux-x64" / "native");
+                            InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)}", buildDir).AssertZeroExitCode();
+                            InheritedShell(build, buildDir).AssertZeroExitCode();
+
+                            InheritedShell($"{triple}-strip --strip-unneeded bin/libassimp.so.5", buildDir).AssertZeroExitCode();
+
+                            CopyAll((buildDir / "bin").GlobFiles("libassimp.so.5"), runtimes / rid / "native");
+                        }
                     }
                     else if (OperatingSystem.IsMacOS())
                     {
-                        InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=x86_64", AssimpPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, AssimpPath)
-                            .AssertZeroExitCode();
-                        CopyAll(@out.GlobFiles("bin/libassimp.5.dylib"), runtimes / "osx-x64" / "native");
+                        foreach (var (arch, rid) in new[]
+                        {
+                            ("x86_64", "osx-x64"),
+                            ("arm64", "osx-arm64"),
+                        })
+                        {
+                            EnsureCleanDirectory(buildDir);
 
-                        EnsureCleanDirectory(@out);
+                            InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES={arch}", buildDir).AssertZeroExitCode();
+                            InheritedShell(build, buildDir).AssertZeroExitCode();
 
-                        InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", AssimpPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, AssimpPath)
-                            .AssertZeroExitCode();
+                            InheritedShell($"strip -Sx bin/libassimp.5.dylib", buildDir).AssertZeroExitCode();
 
-                        CopyAll(@out.GlobFiles("bin/libassimp.5.dylib"), runtimes / "osx-arm64" / "native");
+                            CopyAll((buildDir / "bin").GlobFiles("libassimp.5.dylib"), runtimes / rid / "native");
+                        }
                     }
 
                     PrUpdatedNativeBinary("Assimp");

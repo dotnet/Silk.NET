@@ -1,1 +1,54 @@
 #nullable enable
+Org.Libsdl.App.SDLSurface
+Org.Libsdl.App.SDLSurface.MDisplay.get -> Android.Views.Display?
+Org.Libsdl.App.SDLSurface.MDisplay.set -> void
+Org.Libsdl.App.SDLSurface.MHeight.get -> float
+Org.Libsdl.App.SDLSurface.MHeight.set -> void
+Org.Libsdl.App.SDLSurface.MIsSurfaceReady.get -> bool
+Org.Libsdl.App.SDLSurface.MIsSurfaceReady.set -> void
+Org.Libsdl.App.SDLSurface.MSensorManager.get -> Android.Hardware.SensorManager?
+Org.Libsdl.App.SDLSurface.MSensorManager.set -> void
+Org.Libsdl.App.SDLSurface.MWidth.get -> float
+Org.Libsdl.App.SDLSurface.MWidth.set -> void
+Org.Libsdl.App.SDLSurface.SDLSurface(Android.Content.Context? context) -> void
+Org.Libsdl.App.SDLSurface.SDLSurface(System.IntPtr javaReference, Android.Runtime.JniHandleOwnership transfer) -> void
+override Org.Libsdl.App.SDLSurface.JniPeerMembers.get -> Java.Interop.JniPeerMembers!
+override Org.Libsdl.App.SDLSurface.ThresholdClass.get -> System.IntPtr
+override Org.Libsdl.App.SDLSurface.ThresholdType.get -> System.Type!
+static Org.Libsdl.App.SDL.LoadLibrary(string? libraryName, Android.Content.Context? context) -> void
+static Org.Libsdl.App.SDLActivity.DestroyCustomCursor(int cursorID) -> void
+static Org.Libsdl.App.SDLActivity.HandleKeyEvent(Android.Views.View? v, int keyCode, Android.Views.KeyEvent? e, Android.Views.InputMethods.IInputConnection? ic) -> bool
+static Org.Libsdl.App.SDLActivity.NativeGetHintBoolean(string? p0, bool p1) -> bool
+static Org.Libsdl.App.SDLActivity.NativeGetVersion() -> string?
+static Org.Libsdl.App.SDLActivity.NativeSetScreenResolution(int p0, int p1, int p2, int p3, float p4) -> void
+static Org.Libsdl.App.SDLAudioManager.AddAudioDevice(bool p0, int p1) -> void
+static Org.Libsdl.App.SDLAudioManager.AudioOpen(int sampleRate, int audioFormat, int desiredChannels, int desiredFrames, int deviceId) -> int[]?
+static Org.Libsdl.App.SDLAudioManager.CaptureOpen(int sampleRate, int audioFormat, int desiredChannels, int desiredFrames, int deviceId) -> int[]?
+static Org.Libsdl.App.SDLAudioManager.GetAudioInputDevices() -> int[]?
+static Org.Libsdl.App.SDLAudioManager.GetAudioOutputDevices() -> int[]?
+static Org.Libsdl.App.SDLAudioManager.MContext.get -> Android.Content.Context?
+static Org.Libsdl.App.SDLAudioManager.MContext.set -> void
+static Org.Libsdl.App.SDLAudioManager.Open(bool isCapture, int sampleRate, int audioFormat, int desiredChannels, int desiredFrames, int deviceId) -> int[]?
+static Org.Libsdl.App.SDLAudioManager.Release(Android.Content.Context? context) -> void
+static Org.Libsdl.App.SDLAudioManager.RemoveAudioDevice(bool p0, int p1) -> void
+static Org.Libsdl.App.SDLAudioManager.SetContext(Android.Content.Context? context) -> void
+static Org.Libsdl.App.SDLControllerManager.NativeAddJoystick(int p0, string? p1, string? p2, int p3, int p4, bool p5, int p6, int p7, int p8, int p9, int p10) -> int
+virtual Org.Libsdl.App.HIDDeviceManager.Initialize(bool usb, bool bluetooth) -> bool
+virtual Org.Libsdl.App.SDLActivity.CreateSDLSurface(Android.Content.Context? context) -> Org.Libsdl.App.SDLSurface?
+virtual Org.Libsdl.App.SDLSurface.EnableSensor(int sensortype, bool enabled) -> void
+virtual Org.Libsdl.App.SDLSurface.HandlePause() -> void
+virtual Org.Libsdl.App.SDLSurface.HandleResume() -> void
+virtual Org.Libsdl.App.SDLSurface.NativeSurface.get -> Android.Views.Surface?
+virtual Org.Libsdl.App.SDLSurface.OnAccuracyChanged(Android.Hardware.Sensor? sensor, Android.Hardware.SensorStatus accuracy) -> void
+virtual Org.Libsdl.App.SDLSurface.OnKey(Android.Views.View? v, Android.Views.Keycode keyCode, Android.Views.KeyEvent? e) -> bool
+virtual Org.Libsdl.App.SDLSurface.OnSensorChanged(Android.Hardware.SensorEvent? e) -> void
+virtual Org.Libsdl.App.SDLSurface.OnTouch(Android.Views.View? v, Android.Views.MotionEvent? e) -> bool
+virtual Org.Libsdl.App.SDLSurface.SurfaceChanged(Android.Views.ISurfaceHolder? holder, Android.Graphics.Format format, int width, int height) -> void
+virtual Org.Libsdl.App.SDLSurface.SurfaceCreated(Android.Views.ISurfaceHolder? holder) -> void
+virtual Org.Libsdl.App.SDLSurface.SurfaceDestroyed(Android.Views.ISurfaceHolder? holder) -> void
+~override Silk.NET.Windowing.Sdl.Android.SilkActivity.SetOrientationBis(int w, int h, bool resizable, string hint) -> void
+~static Silk.NET.Windowing.Sdl.SdlWindowing.CreateFrom(void* handle, Silk.NET.Core.Contexts.IGLContext? ctx = null) -> Silk.NET.Windowing.IView
+~static Silk.NET.Windowing.Sdl.SdlWindowing.GetExistingApi(Silk.NET.Windowing.IView view) -> Silk.NET.SDL.Sdl?
+~static Silk.NET.Windowing.Sdl.SdlWindowing.GetHandle(Silk.NET.Windowing.IView view) -> Silk.NET.SDL.Window*
+~static Silk.NET.Windowing.Sdl.SdlWindowing.GetSysWMInfo(Silk.NET.Windowing.IView view) -> Silk.NET.SDL.SysWMInfo?
+~static Silk.NET.Windowing.Sdl.SdlWindowing.IsViewSdl(Silk.NET.Windowing.IView view) -> bool

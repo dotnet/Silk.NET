@@ -92,8 +92,6 @@ namespace Silk.NET.Vulkan
         PrimitiveRestartEnableExt = 1000377004,
         [NativeName("Name", "VK_DYNAMIC_STATE_COLOR_WRITE_ENABLE_EXT")]
         ColorWriteEnableExt = 1000381000,
-        [NativeName("Name", "VK_DYNAMIC_STATE_TESSELLATION_DOMAIN_ORIGIN_EXT")]
-        TessellationDomainOriginExt = 1000455002,
         [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_CLAMP_ENABLE_EXT")]
         DepthClampEnableExt = 1000455003,
         [NativeName("Name", "VK_DYNAMIC_STATE_POLYGON_MODE_EXT")]
@@ -114,6 +112,8 @@ namespace Silk.NET.Vulkan
         ColorBlendEquationExt = 1000455011,
         [NativeName("Name", "VK_DYNAMIC_STATE_COLOR_WRITE_MASK_EXT")]
         ColorWriteMaskExt = 1000455012,
+        [NativeName("Name", "VK_DYNAMIC_STATE_TESSELLATION_DOMAIN_ORIGIN_EXT")]
+        TessellationDomainOriginExt = 1000455002,
         [NativeName("Name", "VK_DYNAMIC_STATE_RASTERIZATION_STREAM_EXT")]
         RasterizationStreamExt = 1000455013,
         [NativeName("Name", "VK_DYNAMIC_STATE_CONSERVATIVE_RASTERIZATION_MODE_EXT")]
@@ -156,6 +156,10 @@ namespace Silk.NET.Vulkan
         CoverageReductionModeNV = 1000455032,
         [NativeName("Name", "VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT")]
         AttachmentFeedbackLoopEnableExt = 1000524000,
+        [NativeName("Name", "VK_DYNAMIC_STATE_LINE_STIPPLE_KHR")]
+        LineStippleKhr = 1000259000,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_CLAMP_RANGE_EXT")]
+        DepthClampRangeExt = 1000582000,
         [NativeName("Name", "VK_DYNAMIC_STATE_CULL_MODE")]
         CullMode = 1000267000,
         [NativeName("Name", "VK_DYNAMIC_STATE_FRONT_FACE")]

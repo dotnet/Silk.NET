@@ -6,9 +6,17 @@ updates:
   schedule:
     interval: weekly
     day: thursday
+  groups:
+    silk2_deps:
+      patterns:
+        - "*"
 - package-ecosystem: nuget
   target-branch: develop/3.0
   directory: "/"
   schedule:
     interval: weekly
     day: thursday
+  groups:
+    silk3_deps:
+      patterns:
+        - "*"

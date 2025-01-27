@@ -35,8 +35,11 @@ partial class Build
     ///   - Microsoft VSCode           https://nuke.build/vscode
     public static int Main() => Execute<Build>(x => x.Compile);
 
-    [Parameter("Outputs build warnings instead of keeping the MSBuild logging quiet with just errors.")]
+    [Nuke.Common.Parameter("Outputs build warnings instead of keeping the MSBuild logging quiet with just errors.")]
     bool Warnings;
+
+    [Parameter("Matrix job argument e.g. a RID for native builds."), CanBeNull]
+    string MatrixArg;
 
     static int IndexOfOrThrow(string x, char y)
     {
@@ -49,15 +52,16 @@ partial class Build
         return idx;
     }
 
-    Dictionary<string, string> CreateEnvVarDictionary()
+    Dictionary<string, string> CreateEnvVarDictionary([CanBeNull] IReadOnlyDictionary<string, string> concat = null)
         => Environment.GetEnvironmentVariables()
             .Cast<DictionaryEntry>()
+            .Concat((concat ?? Enumerable.Empty<KeyValuePair<string, string>>()).Select(x => new DictionaryEntry(x.Key, x.Value)))
             .ToDictionary(x => (string) x.Key, x => (string) x.Value);
 
-    IProcess InheritedShell(string cmd, [CanBeNull] string workDir = null)
+    IProcess InheritedShell(string cmd, [CanBeNull] string workDir = null, [CanBeNull] IReadOnlyDictionary<string, string> envVars = null)
         => OperatingSystem.IsWindows()
-            ? StartProcess("powershell", $"-Command {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary())
-            : StartProcess("bash", $"-c {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary());
+            ? StartProcess("powershell", $"-Command {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary(envVars))
+            : StartProcess("bash", $"-c {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary(envVars));
 
     void AddToPath(string dir)
     {
@@ -126,6 +130,18 @@ partial class Build
             {
                 // probably hasn't existed yet, don't care.
             }
+            try
+            {
+                if (Native)
+                {
+                    DotNet("workload install android");
+                }
+            }
+            catch
+            {
+                // oh well. maybe it's already installed?
+            }
+
             GenerateSolution();
         }
     );

@@ -101,6 +101,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// members.
         /// </summary>
         public bool IsReadOnly { get; set; }
+        
+        /// <summary>
+        /// Whether this method is an override.
+        /// </summary>
+        public bool IsOverride { get; set; }
 
         /// <summary>
         /// Prefix to invocations of this function e.g. "@this->". May be null.
@@ -210,6 +215,11 @@ namespace Silk.NET.BuildTools.Common.Functions
             if (Parameters.Any(p => p.Type.IsPointer) || ReturnType.IsPointer || @unsafe.HasValue && @unsafe.Value)
             {
                 sb.Append("unsafe ");
+            }
+
+            if (IsOverride)
+            {
+                sb.Append("override ");
             }
 
             if (partial)

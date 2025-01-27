@@ -1,9 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
     <SilkGitDirForVersion>$(MSBuildThisFileDirectory)..\..\..\build\submodules\Vulkan-Loader</SilkGitDirForVersion>
   </PropertyGroup>
+
   <Import Project="..\..\..\build\props\common.props" />
+
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
     <Authors>.NET Foundation and Contributors</Authors>
@@ -13,14 +15,6 @@
     <Description>Multi-platform native library for Vulkan Loader.</Description>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/KhronosGroup/Vulkan-Loader</RepositoryUrl>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
-    <IncludeContentInPack>true</IncludeContentInPack>
   </PropertyGroup>
-  <ItemGroup>
-    <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
-    <Content Include="runtimes\linux-x64\native\libvulkan.so" PackagePath="runtimes\linux-x64\native\libvulkan.so" />
-    <Content Include="runtimes\osx-x64\native\libvulkan.dylib" PackagePath="runtimes\osx-x64\native\libvulkan.dylib" />
-    <Content Include="runtimes\win-x64\native\vulkan-1.dll" PackagePath="runtimes\win-x64\native\vulkan-1.dll" />
-    <Content Include="runtimes\win-x86\native\vulkan-1.dll" PackagePath="runtimes\win-x86\native\vulkan-1.dll" />
-  </ItemGroup>
+
 </Project>

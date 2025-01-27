@@ -26,7 +26,7 @@ using static Nuke.Common.Tools.Git.GitTasks;
 using static Nuke.Common.Tools.GitHub.GitHubTasks;
 
 partial class Build {
-    AbsolutePath SwiftShaderBuildPath => RootDirectory / "build" / "submodules" / "SwiftShader" / "build";
+    AbsolutePath SwiftShaderPath => RootDirectory / "build" / "submodules" / "SwiftShader";
 
     Target SwiftShader => CommonTarget
     (
@@ -36,75 +36,86 @@ partial class Build {
             (
                 () =>
                 {
-                    var sysName = OperatingSystem.IsLinux() ? "Linux" :
-                        OperatingSystem.IsWindows() ? "Windows" :
-                        OperatingSystem.IsMacOS() ? "Darwin" : throw new PlatformNotSupportedException();
-                    DeleteDirectory(SwiftShaderBuildPath);
-                    Git("checkout HEAD build/", SwiftShaderBuildPath / "..");
-                    StartProcess("cmake", ".. -DCMAKE_BUILD_TYPE=Release", SwiftShaderBuildPath)
-                        .AssertZeroExitCode();
-                    StartProcess("cmake", $"--build .{JobsArg} --config Release", SwiftShaderBuildPath)
-                        .AssertWaitForExit(); // might fail... as long as the output exists we're happy
-                    var fname = sysName switch
-                    {
-                        "Linux" => "libvk_swiftshader.so",
-                        "Windows" => "vk_swiftshader.dll",
-                        "Darwin" => "libvk_swiftshader.dylib",
-                        _ => throw new("what")
-                    };
-
+                    var buildDir = SwiftShaderPath / "build";
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.SwiftShader.Native" / "runtimes";
-                    var outputPath = SwiftShaderBuildPath / sysName;
-                    const string icd = "vk_swiftshader_icd.json";
+
+                    var prepare = "cmake .. -DSWIFTSHADER_WARNINGS_AS_ERRORS=FALSE -DSWIFTSHADER_BUILD_TESTS=FALSE";
+                    var build = $"cmake --build . --config Release{JobsArg}";
+
+                    // Work around SwiftShader's silly Git hook installation logic that fails as a submodule
+                    // since `.git` is just a file containing a `gitdir` directive.
+                    File.WriteAllText(
+                        SwiftShaderPath / "CMakeLists.txt",
+                        File.ReadAllText(SwiftShaderPath / "CMakeLists.txt")
+                            .Replace("if(NOT EXISTS ${CMAKE_SOURCE_DIR}/.git/hooks/commit-msg)", "if(FALSE)"));
+
                     if (OperatingSystem.IsWindows())
                     {
-                        CopyFile
-                        (
-                            outputPath / fname, runtimes / "win-x64" / "native" / fname,
-                            FileExistsPolicy.Overwrite
-                        ); // we'll use WOW64
-                        CopyFile
-                        (
-                            outputPath / fname, runtimes / "win-x86" / "native" / fname,
-                            FileExistsPolicy.Overwrite
-                        );
-                        CopyFile
-                        (
-                            outputPath / icd, runtimes / "win-x64" / "native" / icd,
-                            FileExistsPolicy.Overwrite
-                        );
-                        CopyFile
-                        (
-                            outputPath / icd, runtimes / "win-x86" / "native" / icd,
-                            FileExistsPolicy.Overwrite
-                        );
+                        foreach (var (platform, rid) in new[]
+                        {
+                            ("Win32", "win-x86"),
+                            ("x64", "win-x64"),
+                            ("ARM64", "win-arm64"),
+                        })
+                        {
+                            EnsureCleanDirectory(buildDir);
+
+                            InheritedShell($"{prepare} -A {platform}", buildDir).AssertZeroExitCode();
+                            InheritedShell(build, buildDir).AssertZeroExitCode();
+
+                            CopyFile(buildDir / "Windows" / "vk_swiftshader.dll", runtimes / rid / "native" / "vk_swiftshader.dll", FileExistsPolicy.Overwrite);
+                            CopyFile(buildDir / "Windows" / "vk_swiftshader_icd.json", runtimes / rid / "native" / "vk_swiftshader_icd.json", FileExistsPolicy.Overwrite);
+                        }
                     }
                     else if (OperatingSystem.IsLinux())
                     {
-                        CopyFile
-                        (
-                            outputPath / fname, runtimes / "linux-x64" / "native" / fname,
-                            FileExistsPolicy.Overwrite
-                        );
-                        CopyFile
-                        (
-                            outputPath / icd, runtimes / "linux-x64" / "native" / icd,
-                            FileExistsPolicy.Overwrite
-                        );
+                        foreach (var (triple, rid) in new[]
+                        {
+                            ("zig-toolchain-x86_64-linux-gnu.2.17", "linux-x64"),
+                            ("zig-toolchain-arm-linux-gnueabihf.2.17", "linux-arm"),
+                            ("zig-toolchain-aarch64-linux-gnu.2.17", "linux-arm64"),
+                        }.Where(x => string.IsNullOrWhiteSpace(MatrixArg) || x.Item2 == MatrixArg))
+                        {
+                            EnsureCleanDirectory(buildDir);
+                            InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)} -DCMAKE_C_FLAGS_RELEASE=\"-s -Wl,--undefined-version\" -DCMAKE_CXX_FLAGS_RELEASE=\"-s -Wl,--undefined-version\"", buildDir).AssertZeroExitCode();
+                            InheritedShell
+                            (
+                                build,
+                                buildDir,
+                                new Dictionary<string, string>
+                                {
+                                    // zig cc doesn't recognise generic as a valid -mtune for some reason
+                                    {"SILKDOTNET_ReplaceArchitectureZigCcFlags", "generic="},
+                                    // https://issues.chromium.org/issues/40242425#comment3
+                                    {"LDFLAGS", "-Wl,--undefined-version"}
+                                }
+                            ).AssertZeroExitCode();
+
+                            CopyFile(buildDir / "Linux" / "libvk_swiftshader.so", runtimes / rid / "native" / "libvk_swiftshader.so", FileExistsPolicy.Overwrite);
+                            CopyFile(buildDir / "Linux" / "vk_swiftshader_icd.json", runtimes / rid / "native" / "vk_swiftshader_icd.json", FileExistsPolicy.Overwrite);
+                        }
                     }
                     else if (OperatingSystem.IsMacOS())
                     {
-                        CopyFile
-                        (
-                            outputPath / fname, runtimes / "osx-x64" / "native" / fname,
-                            FileExistsPolicy.Overwrite
-                        );
-                        CopyFile
-                        (
-                            outputPath / icd, runtimes / "osx-x64" / "native" / icd,
-                            FileExistsPolicy.Overwrite
-                        );
+                        foreach (var (arch, rid) in new[]
+                        {
+                            ("x86_64", "osx-x64"),
+                            ("arm64", "osx-arm64"),
+                        })
+                        {
+                            EnsureCleanDirectory(buildDir);
+
+                            InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES={arch}", buildDir).AssertZeroExitCode();
+                            InheritedShell(build, buildDir).AssertZeroExitCode();
+
+                            InheritedShell($"strip -Sx Darwin/libvk_swiftshader.dylib", buildDir).AssertZeroExitCode();
+
+                            CopyFile(buildDir / "Darwin" / "libvk_swiftshader.dylib", runtimes / rid / "native" / "libvk_swiftshader.dylib", FileExistsPolicy.Overwrite);
+                            CopyFile(buildDir / "Darwin" / "vk_swiftshader_icd.json", runtimes / rid / "native" / "vk_swiftshader_icd.json", FileExistsPolicy.Overwrite);
+                        }
                     }
+
+                    Git("checkout HEAD CMakeLists.txt build/", SwiftShaderPath);
 
                     PrUpdatedNativeBinary("SwiftShader");
                 }

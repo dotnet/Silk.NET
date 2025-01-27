@@ -2426,48 +2426,48 @@ public unsafe static class WICComponentFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEncoderPropertyBag(this ComPtr<IWICComponentFactory> thisVtbl, void* ppropOptions, uint cCount, Silk.NET.Core.Native.IUnknown** ppIPropertyBag)
+    public static unsafe int CreateEncoderPropertyBag(this ComPtr<IWICComponentFactory> thisVtbl, Silk.NET.Core.Win32Extras.PropBag2* ppropOptions, uint cCount, Silk.NET.Core.Win32Extras.IPropertyBag2** ppIPropertyBag)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[34])(@this, ppropOptions, cCount, ppIPropertyBag);
+        ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, Silk.NET.Core.Win32Extras.PropBag2*, uint, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[34])(@this, ppropOptions, cCount, ppIPropertyBag);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEncoderPropertyBag(this ComPtr<IWICComponentFactory> thisVtbl, void* ppropOptions, uint cCount, ref Silk.NET.Core.Native.IUnknown* ppIPropertyBag)
+    public static unsafe int CreateEncoderPropertyBag(this ComPtr<IWICComponentFactory> thisVtbl, Silk.NET.Core.Win32Extras.PropBag2* ppropOptions, uint cCount, ref Silk.NET.Core.Win32Extras.IPropertyBag2* ppIPropertyBag)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Core.Native.IUnknown** ppIPropertyBagPtr = &ppIPropertyBag)
+        fixed (Silk.NET.Core.Win32Extras.IPropertyBag2** ppIPropertyBagPtr = &ppIPropertyBag)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[34])(@this, ppropOptions, cCount, ppIPropertyBagPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, Silk.NET.Core.Win32Extras.PropBag2*, uint, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[34])(@this, ppropOptions, cCount, ppIPropertyBagPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEncoderPropertyBag<T0>(this ComPtr<IWICComponentFactory> thisVtbl, ref T0 ppropOptions, uint cCount, Silk.NET.Core.Native.IUnknown** ppIPropertyBag) where T0 : unmanaged
+    public static unsafe int CreateEncoderPropertyBag(this ComPtr<IWICComponentFactory> thisVtbl, ref Silk.NET.Core.Win32Extras.PropBag2 ppropOptions, uint cCount, Silk.NET.Core.Win32Extras.IPropertyBag2** ppIPropertyBag)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (void* ppropOptionsPtr = &ppropOptions)
+        fixed (Silk.NET.Core.Win32Extras.PropBag2* ppropOptionsPtr = &ppropOptions)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[34])(@this, ppropOptionsPtr, cCount, ppIPropertyBag);
+            ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, Silk.NET.Core.Win32Extras.PropBag2*, uint, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[34])(@this, ppropOptionsPtr, cCount, ppIPropertyBag);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEncoderPropertyBag<T0>(this ComPtr<IWICComponentFactory> thisVtbl, ref T0 ppropOptions, uint cCount, ref Silk.NET.Core.Native.IUnknown* ppIPropertyBag) where T0 : unmanaged
+    public static unsafe int CreateEncoderPropertyBag(this ComPtr<IWICComponentFactory> thisVtbl, ref Silk.NET.Core.Win32Extras.PropBag2 ppropOptions, uint cCount, ref Silk.NET.Core.Win32Extras.IPropertyBag2* ppIPropertyBag)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (void* ppropOptionsPtr = &ppropOptions)
+        fixed (Silk.NET.Core.Win32Extras.PropBag2* ppropOptionsPtr = &ppropOptions)
         {
-            fixed (Silk.NET.Core.Native.IUnknown** ppIPropertyBagPtr = &ppIPropertyBag)
+            fixed (Silk.NET.Core.Win32Extras.IPropertyBag2** ppIPropertyBagPtr = &ppIPropertyBag)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[34])(@this, ppropOptionsPtr, cCount, ppIPropertyBagPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, Silk.NET.Core.Win32Extras.PropBag2*, uint, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[34])(@this, ppropOptionsPtr, cCount, ppIPropertyBagPtr);
             }
         }
         return ret;
@@ -4270,15 +4270,7 @@ public unsafe static class WICComponentFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEncoderPropertyBag<TI0>(this ComPtr<IWICComponentFactory> thisVtbl, void* ppropOptions, uint cCount, ref ComPtr<TI0> ppIPropertyBag) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateEncoderPropertyBag(ppropOptions, cCount, (Silk.NET.Core.Native.IUnknown**) ppIPropertyBag.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateEncoderPropertyBag<T0>(this ComPtr<IWICComponentFactory> thisVtbl, Span<T0> ppropOptions, uint cCount, Silk.NET.Core.Native.IUnknown** ppIPropertyBag) where T0 : unmanaged
+    public static unsafe int CreateEncoderPropertyBag(this ComPtr<IWICComponentFactory> thisVtbl, Span<Silk.NET.Core.Win32Extras.PropBag2> ppropOptions, uint cCount, Silk.NET.Core.Win32Extras.IPropertyBag2** ppIPropertyBag)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4286,15 +4278,7 @@ public unsafe static class WICComponentFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateEncoderPropertyBag<T0, TI0>(this ComPtr<IWICComponentFactory> thisVtbl, ref T0 ppropOptions, uint cCount, ref ComPtr<TI0> ppIPropertyBag) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateEncoderPropertyBag(ref ppropOptions, cCount, (Silk.NET.Core.Native.IUnknown**) ppIPropertyBag.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateEncoderPropertyBag<T0>(this ComPtr<IWICComponentFactory> thisVtbl, Span<T0> ppropOptions, uint cCount, ref Silk.NET.Core.Native.IUnknown* ppIPropertyBag) where T0 : unmanaged
+    public static unsafe int CreateEncoderPropertyBag(this ComPtr<IWICComponentFactory> thisVtbl, Span<Silk.NET.Core.Win32Extras.PropBag2> ppropOptions, uint cCount, ref Silk.NET.Core.Win32Extras.IPropertyBag2* ppIPropertyBag)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

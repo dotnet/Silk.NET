@@ -28,6 +28,10 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         STypeBindGroupEntryExtras = 0x30007,
         [NativeName("Name", "WGPUSType_BindGroupLayoutEntryExtras")]
         STypeBindGroupLayoutEntryExtras = 0x30008,
+        [NativeName("Name", "WGPUSType_QuerySetDescriptorExtras")]
+        STypeQuerySetDescriptorExtras = 0x30009,
+        [NativeName("Name", "WGPUSType_SurfaceConfigurationExtras")]
+        STypeSurfaceConfigurationExtras = 0x3000A,
         [NativeName("Name", "WGPUNativeSType_Force32")]
         NativeSTypeForce32 = 0x7FFFFFFF,
     }

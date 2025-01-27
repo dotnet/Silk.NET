@@ -22,6 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public SharedTextureMemoryBeginAccessDescriptor
         (
             ChainedStruct* nextInChain = null,
+            Silk.NET.Core.Bool32? concurrentRead = null,
             Silk.NET.Core.Bool32? initialized = null,
             nuint? fenceCount = null,
             SharedFenceImpl** fences = null,
@@ -31,6 +32,11 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
             if (nextInChain is not null)
             {
                 NextInChain = nextInChain;
+            }
+
+            if (concurrentRead is not null)
+            {
+                ConcurrentRead = concurrentRead.Value;
             }
 
             if (initialized is not null)
@@ -59,6 +65,11 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type.Name", "const WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
+
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
+        [NativeName("Name", "concurrentRead")]
+        public Silk.NET.Core.Bool32 ConcurrentRead;
 
         [NativeName("Type", "WGPUBool")]
         [NativeName("Type.Name", "WGPUBool")]

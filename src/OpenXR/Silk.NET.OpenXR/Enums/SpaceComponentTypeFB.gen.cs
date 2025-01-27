@@ -36,6 +36,9 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"SpaceContainerFB\"")]
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_SPACE_CONTAINER_FB")]
         SpaceComponentTypeSpaceContainerFB = 7,
+        [Obsolete("Deprecated in favour of \"TriangleMeshMeta\"")]
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_TRIANGLE_MESH_META")]
+        SpaceComponentTypeTriangleMeshMeta = 1000269000,
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_LOCATABLE_FB")]
         LocatableFB = 0,
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_STORABLE_FB")]
@@ -52,5 +55,7 @@ namespace Silk.NET.OpenXR
         RoomLayoutFB = 6,
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_SPACE_CONTAINER_FB")]
         SpaceContainerFB = 7,
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_TRIANGLE_MESH_META")]
+        TriangleMeshMeta = 1000269000,
     }
 }

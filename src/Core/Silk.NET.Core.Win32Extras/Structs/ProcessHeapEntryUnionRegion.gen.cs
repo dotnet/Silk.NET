@@ -16,7 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [NativeName("Name", "__AnonymousRecord_minwinbase_L254_C9")]
+    [NativeName("Name", "__AnonymousRecord_minwinbase_L257_C9")]
     public unsafe partial struct ProcessHeapEntryUnionRegion
     {
         public ProcessHeapEntryUnionRegion

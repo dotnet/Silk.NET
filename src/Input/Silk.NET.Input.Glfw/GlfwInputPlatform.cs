@@ -26,10 +26,11 @@ namespace Silk.NET.Input.Glfw
 
         internal static unsafe void RegisterWindow(WindowHandle* handle, IEnumerable<IGlfwSubscriber> subscribers)
         {
-            var events = _subs.ContainsKey
-                ((nint) handle)
-                ? _subs[(nint) handle]
-                : _subs[(nint) handle] = new GlfwEvents(handle);
+            if (_subs.ContainsKey((nint) handle))
+            {
+                throw new InvalidOperationException($"More than one input context for window {(nint) handle}.");
+            }
+            var events = _subs[(nint) handle] = new GlfwEvents(handle);
             foreach (var subscriber in subscribers)
             {
                 subscriber.Subscribe(events);
@@ -38,13 +39,19 @@ namespace Silk.NET.Input.Glfw
 
         internal static unsafe void UnregisterWindow(WindowHandle* handle, IEnumerable<IGlfwSubscriber> subscribers)
         {
-            var events = _subs.ContainsKey
-                ((nint) handle)
-                ? _subs[(nint) handle]
-                : _subs[(nint) handle] = new GlfwEvents(handle);
-            foreach (var subscriber in subscribers)
+            if (_subs.TryGetValue((nint) handle, out var events))
             {
-                subscriber.Unsubscribe(events);
+                foreach (var subscriber in subscribers)
+                {
+                    subscriber.Unsubscribe(events);
+                }
+
+                events.Dispose();
+                _subs.Remove((nint) handle);
+            }
+            else
+            {
+                throw new ObjectDisposedException($"Input context already disposed for window {(nint) handle}");
             }
         }
     }

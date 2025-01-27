@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Silk.NET.BuildTools.Common;
@@ -70,8 +71,15 @@ namespace Silk.NET.BuildTools.Bind
             (
                 x =>
                 {
-                    if (!task.Task.Controls.Contains("allow-redefinitions") && (coreProject != project &&
-                        coreProject.Structs.Any(y => y.NativeName == x.NativeName)))
+                    if (!task.Task.Controls.Contains("allow-redefinitions") && 
+                        coreProject != project &&
+                        coreProject.Structs.Any
+                        (
+                            y => y.NativeName == x.NativeName ||
+                                task.Task.RenamedNativeNames.TryGetValue(y.NativeName, out var rmy) &&
+                                task.Task.RenamedNativeNames.TryGetValue(x.NativeName, out var rmx) &&
+                                rmx == rmy
+                        ))
                     {
                         return;
                     }

@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct? chain = null,
             void* display = null,
-            uint? window = null
+            ulong? window = null
         ) : this()
         {
             if (chain is not null)
@@ -53,9 +53,9 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "display")]
         public void* Display;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "window")]
-        public uint Window;
+        public ulong Window;
     }
 }

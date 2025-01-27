@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12video_L6390_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12video_L7041_C5")]
     public unsafe partial struct VideoEncoderLevelSettingUnion
     {
         public VideoEncoderLevelSettingUnion
         (
             VideoEncoderLevelsH264* pH264LevelSetting = null,
-            VideoEncoderLevelTierConstraintsHevc* pHEVCLevelSetting = null
+            VideoEncoderLevelTierConstraintsHevc* pHEVCLevelSetting = null,
+            VideoEncoderAV1LevelTierConstraints* pAV1LevelSetting = null
         ) : this()
         {
             if (pH264LevelSetting is not null)
@@ -34,6 +35,11 @@ namespace Silk.NET.Direct3D12
             if (pHEVCLevelSetting is not null)
             {
                 PHEVCLevelSetting = pHEVCLevelSetting;
+            }
+
+            if (pAV1LevelSetting is not null)
+            {
+                PAV1LevelSetting = pAV1LevelSetting;
             }
         }
 
@@ -49,5 +55,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_VIDEO_ENCODER_LEVEL_TIER_CONSTRAINTS_HEVC *")]
         [NativeName("Name", "pHEVCLevelSetting")]
         public VideoEncoderLevelTierConstraintsHevc* PHEVCLevelSetting;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D12_VIDEO_ENCODER_AV1_LEVEL_TIER_CONSTRAINTS *")]
+        [NativeName("Type.Name", "D3D12_VIDEO_ENCODER_AV1_LEVEL_TIER_CONSTRAINTS *")]
+        [NativeName("Name", "pAV1LevelSetting")]
+        public VideoEncoderAV1LevelTierConstraints* PAV1LevelSetting;
     }
 }

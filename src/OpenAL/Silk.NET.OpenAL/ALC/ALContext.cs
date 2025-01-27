@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
@@ -117,7 +118,11 @@ namespace Silk.NET.OpenAL
         /// <param name="device">The device the context is on.</param>
         /// <param name="ext">The extension to check for.</param>
         /// <returns>Whether the extension is available.</returns>
+#if NET5_0_OR_GREATER
+        public unsafe bool TryGetExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] T>(Device* device, out T ext) where T : NativeExtension<ALContext>
+#else
         public unsafe bool TryGetExtension<T>(Device* device, out T ext) where T : NativeExtension<ALContext>
+#endif
             => !((ext = IsExtensionPresent(device, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T) Activator.CreateInstance(typeof(T), Context)
                 : null) is null);

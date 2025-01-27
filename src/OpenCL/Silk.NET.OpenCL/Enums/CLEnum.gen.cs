@@ -151,6 +151,8 @@ namespace Silk.NET.OpenCL
         UnsignedIntRaw10Ext = 0x10E3,
         [NativeName("Name", "CL_UNSIGNED_INT_RAW12_EXT")]
         UnsignedIntRaw12Ext = 0x10E4,
+        [NativeName("Name", "CL_UNORM_INT_2_101010_EXT")]
+        UnormInt2101010Ext = 0x10E5,
         [NativeName("Name", "CL_COMPLETE")]
         Complete = 0x0,
         [NativeName("Name", "CL_RUNNING")]
@@ -531,22 +533,6 @@ namespace Silk.NET.OpenCL
         ShowDiagnosticsIntel = 0x4106,
         [NativeName("Name", "CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
         ContextShowDiagnosticsIntel = 0x4106,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
-        DiagnosticsLevelAllIntel = 0xFF,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
-        ContextDiagnosticsLevelAllIntel = 0xFF,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
-        DiagnosticsLevelGoodIntel = 0x1,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
-        ContextDiagnosticsLevelGoodIntel = 0x1,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL")]
-        DiagnosticsLevelBadIntel = 0x2,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL")]
-        ContextDiagnosticsLevelBadIntel = 0x2,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
-        DiagnosticsLevelNeutralIntel = 0x4,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
-        ContextDiagnosticsLevelNeutralIntel = 0x4,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_NUMA")]
         Numa = 0x1,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_NUMA")]
@@ -1478,6 +1464,10 @@ namespace Silk.NET.OpenCL
         CommandBufferSyncDevicesKhr = 0x12AC,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
         DeviceCommandBufferSyncDevicesKhr = 0x12AC,
+        [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
+        KernelClockCapabilitiesKhr = 0x1076,
+        [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
+        DeviceKernelClockCapabilitiesKhr = 0x1076,
         [NativeName("Name", "CL_LOCAL")]
         Local = 0x1,
         [NativeName("Name", "CL_GLOBAL")]
@@ -1742,6 +1732,8 @@ namespace Silk.NET.OpenCL
         IncompatibleCommandQueueKhr = unchecked((int) 0xFFFFFFFFFFFFFB8C),
         [NativeName("Name", "CL_INVALID_MUTABLE_COMMAND_KHR")]
         InvalidMutableCommandKhr = unchecked((int) 0xFFFFFFFFFFFFFB8B),
+        [NativeName("Name", "CL_CANCELLED_IMG")]
+        CancelledImg = unchecked((int) 0xFFFFFFFFFFFFFB9A),
         [NativeName("Name", "CL_EVENT_COMMAND_QUEUE")]
         CommandQueue = 0x11D0,
         [NativeName("Name", "CL_EVENT_COMMAND_QUEUE")]

@@ -7,7 +7,7 @@
     </PropertyGroup>
     
     <ItemGroup>
-      <PackageReference Include="Ultz.Native.GLFW" Version="3.3.*" />
+      <ProjectReference Include="..\..\Native\Silk.NET.GLFW.Native\Silk.NET.GLFW.Native.csproj" />
     </ItemGroup>
 
     <Import Project="..\..\..\build\props\bindings.props" />

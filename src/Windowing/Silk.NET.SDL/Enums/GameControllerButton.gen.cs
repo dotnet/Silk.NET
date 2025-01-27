@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_gamecontroller_L708_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_gamecontroller_L730_C9")]
     [NativeName("Name", "SDL_GameControllerButton")]
     public enum GameControllerButton : int
     {

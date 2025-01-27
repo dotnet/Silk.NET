@@ -232,48 +232,48 @@ public unsafe static class WICBitmapEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateNewFrame(this ComPtr<IWICBitmapEncoder> thisVtbl, IWICBitmapFrameEncode** ppIFrameEncode, Silk.NET.Core.Native.IUnknown** ppIEncoderOptions)
+    public static unsafe int CreateNewFrame(this ComPtr<IWICBitmapEncoder> thisVtbl, IWICBitmapFrameEncode** ppIFrameEncode, Silk.NET.Core.Win32Extras.IPropertyBag2** ppIEncoderOptions)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, IWICBitmapFrameEncode**, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[10])(@this, ppIFrameEncode, ppIEncoderOptions);
+        ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, IWICBitmapFrameEncode**, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[10])(@this, ppIFrameEncode, ppIEncoderOptions);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateNewFrame(this ComPtr<IWICBitmapEncoder> thisVtbl, IWICBitmapFrameEncode** ppIFrameEncode, ref Silk.NET.Core.Native.IUnknown* ppIEncoderOptions)
+    public static unsafe int CreateNewFrame(this ComPtr<IWICBitmapEncoder> thisVtbl, IWICBitmapFrameEncode** ppIFrameEncode, ref Silk.NET.Core.Win32Extras.IPropertyBag2* ppIEncoderOptions)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Core.Native.IUnknown** ppIEncoderOptionsPtr = &ppIEncoderOptions)
+        fixed (Silk.NET.Core.Win32Extras.IPropertyBag2** ppIEncoderOptionsPtr = &ppIEncoderOptions)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, IWICBitmapFrameEncode**, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[10])(@this, ppIFrameEncode, ppIEncoderOptionsPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, IWICBitmapFrameEncode**, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[10])(@this, ppIFrameEncode, ppIEncoderOptionsPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateNewFrame(this ComPtr<IWICBitmapEncoder> thisVtbl, ref IWICBitmapFrameEncode* ppIFrameEncode, Silk.NET.Core.Native.IUnknown** ppIEncoderOptions)
+    public static unsafe int CreateNewFrame(this ComPtr<IWICBitmapEncoder> thisVtbl, ref IWICBitmapFrameEncode* ppIFrameEncode, Silk.NET.Core.Win32Extras.IPropertyBag2** ppIEncoderOptions)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapFrameEncode** ppIFrameEncodePtr = &ppIFrameEncode)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, IWICBitmapFrameEncode**, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[10])(@this, ppIFrameEncodePtr, ppIEncoderOptions);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, IWICBitmapFrameEncode**, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[10])(@this, ppIFrameEncodePtr, ppIEncoderOptions);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateNewFrame(this ComPtr<IWICBitmapEncoder> thisVtbl, ref IWICBitmapFrameEncode* ppIFrameEncode, ref Silk.NET.Core.Native.IUnknown* ppIEncoderOptions)
+    public static unsafe int CreateNewFrame(this ComPtr<IWICBitmapEncoder> thisVtbl, ref IWICBitmapFrameEncode* ppIFrameEncode, ref Silk.NET.Core.Win32Extras.IPropertyBag2* ppIEncoderOptions)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapFrameEncode** ppIFrameEncodePtr = &ppIFrameEncode)
         {
-            fixed (Silk.NET.Core.Native.IUnknown** ppIEncoderOptionsPtr = &ppIEncoderOptions)
+            fixed (Silk.NET.Core.Win32Extras.IPropertyBag2** ppIEncoderOptionsPtr = &ppIEncoderOptions)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, IWICBitmapFrameEncode**, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[10])(@this, ppIFrameEncodePtr, ppIEncoderOptionsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapEncoder*, IWICBitmapFrameEncode**, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[10])(@this, ppIFrameEncodePtr, ppIEncoderOptionsPtr);
             }
         }
         return ret;
@@ -423,27 +423,19 @@ public unsafe static class WICBitmapEncoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateNewFrame<TI0, TI1>(this ComPtr<IWICBitmapEncoder> thisVtbl, ref ComPtr<TI0> ppIFrameEncode, ref ComPtr<TI1> ppIEncoderOptions) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1>
+    public static unsafe int CreateNewFrame<TI0>(this ComPtr<IWICBitmapEncoder> thisVtbl, ref ComPtr<TI0> ppIFrameEncode, Silk.NET.Core.Win32Extras.IPropertyBag2** ppIEncoderOptions) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateNewFrame((IWICBitmapFrameEncode**) ppIFrameEncode.GetAddressOf(), (Silk.NET.Core.Native.IUnknown**) ppIEncoderOptions.GetAddressOf());
+        return @this->CreateNewFrame((IWICBitmapFrameEncode**) ppIFrameEncode.GetAddressOf(), ppIEncoderOptions);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateNewFrame<TI0>(this ComPtr<IWICBitmapEncoder> thisVtbl, ref ComPtr<TI0> ppIFrameEncode, ref Silk.NET.Core.Native.IUnknown* ppIEncoderOptions) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+    public static unsafe int CreateNewFrame<TI0>(this ComPtr<IWICBitmapEncoder> thisVtbl, ref ComPtr<TI0> ppIFrameEncode, ref Silk.NET.Core.Win32Extras.IPropertyBag2* ppIEncoderOptions) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateNewFrame((IWICBitmapFrameEncode**) ppIFrameEncode.GetAddressOf(), ref ppIEncoderOptions);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateNewFrame<TI0>(this ComPtr<IWICBitmapEncoder> thisVtbl, ref IWICBitmapFrameEncode* ppIFrameEncode, ref ComPtr<TI0> ppIEncoderOptions) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateNewFrame(ref ppIFrameEncode, (Silk.NET.Core.Native.IUnknown**) ppIEncoderOptions.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

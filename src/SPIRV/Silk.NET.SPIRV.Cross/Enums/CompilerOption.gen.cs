@@ -188,6 +188,18 @@ namespace Silk.NET.SPIRV.Cross
         MslArgumentBuffersTier = 0x8000054,
         [NativeName("Name", "SPVC_COMPILER_OPTION_MSL_SAMPLE_DREF_LOD_ARRAY_AS_GRAD")]
         MslSampleDrefLodArrayAsGrad = 0x8000055,
+        [NativeName("Name", "SPVC_COMPILER_OPTION_MSL_READWRITE_TEXTURE_FENCES")]
+        MslReadwriteTextureFences = 0x8000056,
+        [NativeName("Name", "SPVC_COMPILER_OPTION_MSL_REPLACE_RECURSIVE_INPUTS")]
+        MslReplaceRecursiveInputs = 0x8000057,
+        [NativeName("Name", "SPVC_COMPILER_OPTION_MSL_AGX_MANUAL_CUBE_GRAD_FIXUP")]
+        MslAgxManualCubeGradFixup = 0x8000058,
+        [NativeName("Name", "SPVC_COMPILER_OPTION_MSL_FORCE_FRAGMENT_WITH_SIDE_EFFECTS_EXECUTION")]
+        MslForceFragmentWithSideEffectsExecution = 0x8000059,
+        [NativeName("Name", "SPVC_COMPILER_OPTION_HLSL_USE_ENTRY_POINT_NAME")]
+        HlslUseEntryPointName = 0x400005A,
+        [NativeName("Name", "SPVC_COMPILER_OPTION_HLSL_PRESERVE_STRUCTURED_BUFFERS")]
+        HlslPreserveStructuredBuffers = 0x400005B,
         [NativeName("Name", "SPVC_COMPILER_OPTION_INT_MAX")]
         IntMax = 0x7FFFFFFF,
     }

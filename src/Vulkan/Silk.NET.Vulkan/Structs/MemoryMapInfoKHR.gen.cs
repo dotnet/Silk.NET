@@ -17,13 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryMapInfoKHR")]
-    public unsafe partial struct MemoryMapInfoKHR : IChainable
+    public unsafe partial struct MemoryMapInfoKHR : IChainStart
     {
         public MemoryMapInfoKHR
         (
             StructureType? sType = StructureType.MemoryMapInfoKhr,
             void* pNext = null,
-            uint? flags = null,
+            MemoryMapFlags? flags = null,
             DeviceMemory? memory = null,
             ulong? offset = null,
             ulong? size = null
@@ -74,7 +74,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkMemoryMapFlags")]
         [NativeName("Type.Name", "VkMemoryMapFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public MemoryMapFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "VkDeviceMemory")]
         [NativeName("Type.Name", "VkDeviceMemory")]
@@ -102,6 +102,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref MemoryMapInfoKHR Chain(
+            out MemoryMapInfoKHR capture)
+        {
+            capture = new MemoryMapInfoKHR(StructureType.MemoryMapInfoKhr);
+            return ref capture;
         }
     }
 }
