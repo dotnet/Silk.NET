@@ -8,9 +8,9 @@ Proposal for maintenance reform to encourage wider applicability of Silk.NET by 
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with Working Group
-- [ ] Approved
-- [ ] Implemented
+- [x] Discussed with Working Group
+- [x] Approved
+- [x] Implemented
 
 # Conventions
 
@@ -119,6 +119,8 @@ Additional Bindings to retain their eligibility as Additional Bindings **shall**
 3. An Additional Binding **must** serve a use case which the Silk.NET maintainers team recognises as best served with a Silk.NET binding, and they believe that the Additional Binding is useful when building libraries and applications that use Silk.NET.
 4. The Bindings Owners meets the requirements for Silk.NET Community Project Maintainers as defined by the Silk.NET Community Program.
 5. Both the Bindings Owners and Additional Binding **shall** be subject to any other Silk.NET Community Program requirements not listed here [6].
+
+Where Additional Bindings are not fully classed as stable, as agreed by the Bindings Owners and the Silk.NET Maintainers, Additional Bindings packages should use a version suffix to indicate this. This should not impact other unrelated Silk.NET packages i.e. the version suffix is only applied to the Additional Bindings.
 
 The Silk.NET maintainers **must** ensure that Additional Bindings and Bindings Owners are in compliance with these requirements on an ongoing basis and, if arrangements cannot be made to bring the Additional Binding into compliance with these requirements, the Additional Binding **must** be excluded as a Silk.NET artifact as published to NuGet. An Additional Binding that is not compliant **should** only be removed from the repository if it poses a maintenance concern for the maintainers. 
 
