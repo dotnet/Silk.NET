@@ -180,10 +180,10 @@ The `IInputHandler` passed into `Update` may implement multiple other handler in
 
 Note that during the `Update` call, a backend must only update the device's state in the order that the events are delivered. For example when `IInputBackend.Update` is called:
 1. The backend has a queued "pointer down" event for a mouse, for example.
-2. The backend updates the `State` of the relevant `IPointer` for that button press.
+2. The backend updates the `State` of the relevant `IPointerDevice` for that button press.
 3. The backend calls `HandleButtonChanged` with `IsDown` set to `true` on the `IPointerInputHandler` (if applicable).
 4. The backend has a queued "pointer up" event on that mouse.
-5. The backend updates the `State` of the relevant `IPointer` for that button release.
+5. The backend updates the `State` of the relevant `IPointerDevice` for that button release.
 6. The backend calls `HandleButtonChanged` with `IsDown` set to `false` on the `IPointerInputHandler` (if applicable).
 
 This allows the actor to work with the whole device state with the device state being representative of the time that the original event occurred.
@@ -225,7 +225,7 @@ By virtue of the `State` properties not updating until `IInputBackend.Update` is
 These are relatively simple list wrappers with the events fired when state changes.
 
 ```cs
-public partial class Pointers : IReadOnlyList<IPointer>
+public partial class Pointers : IReadOnlyList<IPointerDevice>
 {
     public PointerClickConfiguration ClickConfiguration { get; set; }
     public event Action<ButtonChangedEvent<PointerButton>>? ButtonChanged;
@@ -277,11 +277,11 @@ public readonly record struct ConnectionEvent(IInputDevice Device, long Timestam
 public readonly record struct KeyChangedEvent(IKeyboard Keyboard, long Timestamp, Button<KeyName> Key, Button<KeyName> Previous, bool IsRepeat, KeyModifiers Modifiers);
 public readonly record struct KeyCharEvent(IKeyboard Keyboard, long Timestamp, char? Character);
 public readonly record struct ButtonChangedEvent<T>(IButtonDevice<T> Device, long Timestamp, Button<T> Button, Button<T> Previous) where T : struct, Enum;
-public readonly record struct PointChangedEvent(IPointer Pointer, long Timestamp, TargetPoint? OldPoint, TargetPoint? NewPoint);
-public readonly record struct PointerGripChangedEvent(IPointer Pointer, long Timestamp, float GripPressure, float Delta);
-public readonly record struct PointerTargetChangedEvent(IPointer Pointer, long Timestamp, IPointerTarget Target, bool IsAdded, Box3F<float> OldBounds, Box3F<float> NewBounds);
+public readonly record struct PointChangedEvent(IPointerDevice Pointer, long Timestamp, TargetPoint? OldPoint, TargetPoint? NewPoint);
+public readonly record struct PointerGripChangedEvent(IPointerDevice Pointer, long Timestamp, float GripPressure, float Delta);
+public readonly record struct PointerTargetChangedEvent(IPointerDevice Pointer, long Timestamp, IPointerTarget Target, bool IsAdded, Box3F<float> OldBounds, Box3F<float> NewBounds);
 public readonly record struct MouseScrollEvent(IMouse Mouse, long Timestamp, TargetPoint Point, Vector2 WheelPosition, Vector2 Delta);
-public readonly record struct PointerClickEvent(IPointer Pointer, long Timestamp, TargetPoint Point, MouseButton Button);
+public readonly record struct PointerClickEvent(IPointerDevice Pointer, long Timestamp, TargetPoint Point, MouseButton Button);
 public readonly record struct JoystickHatMoveEvent(IJoystick Joystick, long Timestamp, Vector2 Value, Vector2 Delta);
 public readonly record struct JoystickAxisMoveEvent(IJoystick Joystick, long Timestamp, int Axis, float Value, float Delta);
 public readonly record struct GamepadThumbstickMoveEvent(IGamepad Gamepad, long Timestamp, Vector2 Value, Vector2 Delta);
@@ -346,7 +346,7 @@ public interface IButtonInputHandler<T> where T : struct, Enum
 As discussed earlier, the interface will be very simple.
 
 ```cs
-public interface IPointer : IButtonDevice<T>
+public interface IPointerDevice : IButtonDevice<T>
 {
     PointerState State { get; }
     ButtonReadOnlyList<T> IButtonDevice<T>.State => State.Buttons;
@@ -392,7 +392,7 @@ public interface IPointerTarget
     /// "windowed" target. This is also true for touch input - a touch screen is represented as a single touch device,
     /// where each finger is its own point.
     /// </remarks>
-    int GetPointCount(IPointer pointer);
+    int GetPointCount(IPointerDevice pointer);
 
     /// <summary>
     /// Gets a point with which the given pointer is pointing at this target.
@@ -402,7 +402,7 @@ public interface IPointerTarget
     /// The index of the point, between <c>0</c> and the number sourced from <see cref="GetPointCount" />.
     /// </param>
     /// <returns>The point at the given index with which the given pointer device is pointing at the target.</returns>
-    TargetPoint GetPoint(IPointer pointer, int point);
+    TargetPoint GetPoint(IPointerDevice pointer, int point);
 }
 ```
 
@@ -489,7 +489,7 @@ public class PointerState
 ```
 
 `Points` represents the `TargetPoint`s this pointer is pointing at on its "native targets" i.e. that which is enumerated
-by `IPointer.Targets`.
+by `IPointerDevice.Targets`.
 
 `GripPressure` represents the amount of pressure the user is applying to the device itself (e.g. the pen barrel) between
 `0.0` and `1.0`. This shall be `1.0` if unavailable.
@@ -508,8 +508,8 @@ public interface IPointerInputHandler : IButtonInputHandler<PointerButton>
 }
 ```
 
-`HandleTargetChanged` must be called when properties on an `IPointerTarget` within `IPointer.Targets` changes, or when
-an `IPointerTarget` is added or removed to/from `IPointer.Targets`. `IsAdded` shall be `true` if it has been added,
+`HandleTargetChanged` must be called when properties on an `IPointerTarget` within `IPointerDevice.Targets` changes, or when
+an `IPointerTarget` is added or removed to/from `IPointerDevice.Targets`. `IsAdded` shall be `true` if it has been added,
 `false` if it has been removed.
 
 `HandlePointChanged` must be called when a point within `PointerState.Points` changes.
@@ -573,10 +573,10 @@ There will be derived types for different types of pointers.
 ## Mouse Input
 
 ```cs
-public interface IMouse : IPointer
+public interface IMouse : IPointerDevice
 {
     MouseState State { get; }
-    PointerState IPointer.State => State;
+    PointerState IPointerDevice.State => State;
     ICursorConfiguration Cursor { get; }
     bool TrySetPosition(Vector2 position);
 }
@@ -1033,7 +1033,7 @@ develop their application in terms of their native layout.
 
 **INFORMATIVE TEXT**: There has been some questions on whether we should expose options to generalise keyboard input
 even further to common key bindings or common use cases. Such ideas have included providing a way to consider a
-`IKeyboard`/`IPointer` combination as an `IGamepad` implicitly, or having a `KeyName`-like enum that has more generic
+`IKeyboard`/`IPointerDevice` combination as an `IGamepad` implicitly, or having a `KeyName`-like enum that has more generic
 names that are more closely aligned with the user's use case e.g. instead of `W` we have `Forward`. Both ideas are
 shelved for now, but we believe we will explore the former in future proposals (namely Axis-Based Input and/or Input Actions).
 
