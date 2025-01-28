@@ -7,10 +7,10 @@ using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Silk.NET.Windows;
+using Silk.NET.Win32;
 using static Silk.NET.DirectX.D3D12;
 using static Silk.NET.DirectX.D3D12_RESOURCE_DIMENSION;
-using static Silk.NET.Windows.Windows;
+using static Silk.NET.Win32.Windows;
 
 namespace Silk.NET.DirectX;
 

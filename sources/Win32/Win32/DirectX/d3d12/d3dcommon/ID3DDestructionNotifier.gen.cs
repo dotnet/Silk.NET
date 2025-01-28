@@ -1,134 +1,178 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
+using Silk.NET.Win32;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Silk.NET.Windows;
-using static Silk.NET.Windows.IID;
+using static Silk.NET.Win32.IID;
+
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.DirectX;
-
-/// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier"]/*'/>
-[Guid("A06EB39A-50DA-425B-8C31-4EECD6C270F3")]
+/// <inheritdoc cref = "IDisposable.Dispose"></inheritdoc>
+	[Guid("A06EB39A-50DA-425B-8C31-4EECD6C270F3")]
 [NativeTypeName("struct ID3DDestructionNotifier : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID3DDestructionNotifier
-    : ID3DDestructionNotifier.Interface,
-        INativeGuid
+public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.Native.Interface, IComInterface, IDisposable
 {
-    static Guid* INativeGuid.NativeGuid =>
-        (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3DDestructionNotifier));
-    public void*** lpVtbl;
+    public Native* lpVtbl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3DDestructionNotifier));
 
     /// <inheritdoc cref = "IUnknown.QueryInterface"/>
-
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
-    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-    {
-        return ((delegate* unmanaged<ID3DDestructionNotifier, Guid*, void**, int>)((*lpVtbl)[0]))(
-            this,
-            riid,
-            ppvObject
-        );
-    }
-
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject) => lpVtbl->QueryInterface(riid, ppvObject);
     /// <inheritdoc cref = "IUnknown.AddRef"/>
-
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
-    public uint AddRef()
-    {
-        return ((delegate* unmanaged<ID3DDestructionNotifier, uint>)((*lpVtbl)[1]))(this);
-    }
-
+    public uint AddRef() => lpVtbl->AddRef();
     /// <inheritdoc cref = "IUnknown.Release"/>
-
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
-    public uint Release()
-    {
-        return ((delegate* unmanaged<ID3DDestructionNotifier, uint>)((*lpVtbl)[2]))(this);
-    }
-
+    public uint Release() => lpVtbl->Release();
     /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.RegisterDestructionCallback"]/*'/>
-
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RegisterDestructionCallback(
-        [NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* unmanaged<void*, void> callbackFn,
-        void* pData,
-        uint* pCallbackID
-    )
-    {
-        return (
-            (delegate* unmanaged<
-                ID3DDestructionNotifier,
-                delegate* unmanaged<void*, void>,
-                void*,
-                uint*,
-                int>)((*lpVtbl)[3])
-        )(this, callbackFn, pData, pCallbackID);
-    }
-
+    public HRESULT RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* unmanaged<void*, void> callbackFn, void* pData, uint* pCallbackID) => lpVtbl->RegisterDestructionCallback(callbackFn, pData, pCallbackID);
     /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.UnregisterDestructionCallback"]/*'/>
-
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT UnregisterDestructionCallback(uint callbackID)
+    public HRESULT UnregisterDestructionCallback(uint callbackID) => lpVtbl->UnregisterDestructionCallback(callbackID);
+    /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier"]/*'/>
+    [Guid("A06EB39A-50DA-425B-8C31-4EECD6C270F3")]
+    [NativeTypeName("struct ID3DDestructionNotifier : IUnknown")]
+    [NativeInheritance("IUnknown")]
+    public unsafe partial struct Native : ID3DDestructionNotifier.Native.Interface, INativeGuid
     {
-        return ((delegate* unmanaged<ID3DDestructionNotifier, uint, int>)((*lpVtbl)[4]))(
-            this,
-            callbackID
-        );
-    }
+        static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3DDestructionNotifier));
 
-    public interface Interface : IUnknown.Interface
-    {
+        public void** lpVtbl;
+        /// <inheritdoc cref = "IUnknown.QueryInterface"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        {
+            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, Guid*, void**, int> )(lpVtbl[0]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        /// <inheritdoc cref = "IUnknown.AddRef"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, uint> )(lpVtbl[1]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this));
+        }
+
+        /// <inheritdoc cref = "IUnknown.Release"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, uint> )(lpVtbl[2]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this));
+        }
+
+        /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.RegisterDestructionCallback"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
+        public HRESULT RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* unmanaged<void*, void> callbackFn, void* pData, uint* pCallbackID)
+        {
+            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, delegate* unmanaged<void*, void> , void*, uint*, int> )(lpVtbl[3]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this), callbackFn, pData, pCallbackID);
+        }
+
+        /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.UnregisterDestructionCallback"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        HRESULT UnregisterDestructionCallback(uint callbackID);
-    }
+        public HRESULT UnregisterDestructionCallback(uint callbackID)
+        {
+            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, uint, int> )(lpVtbl[4]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this), callbackID);
+        }
 
-    public partial struct Vtbl<TSelf>
-        where TSelf : unmanaged, Interface
-    {
-        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public interface Interface : IUnknown.Native.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT UnregisterDestructionCallback(uint callbackID);
+        }
 
-        [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public partial struct Vtbl<TSelf>
+            where TSelf : unmanaged, Interface
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, uint> AddRef;
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, uint> Release;
+            [NativeTypeName("HRESULT (PFN_DESTRUCTION_CALLBACK, void *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, delegate* unmanaged<void*, void> , void*, uint*, int> RegisterDestructionCallback;
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, uint, int> UnregisterDestructionCallback;
+        }
 
-        [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
-
-        [NativeTypeName(
-            "HRESULT (PFN_DESTRUCTION_CALLBACK, void *, UINT *) __attribute__((stdcall))"
-        )]
-        public delegate* unmanaged<
-            TSelf*,
-            delegate* unmanaged<void*, void>,
-            void*,
-            uint*,
-            int> RegisterDestructionCallback;
-
-        [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> UnregisterDestructionCallback;
+        /// <inheritdoc cref = "IUnknown.QueryInterface"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
+        public HRESULT QueryInterface<TCom>(out TCom ppvObject)
+            where TCom : unmanaged, IComInterface
+        {
+            ppvObject = default(TCom);
+            return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
+        }
     }
 
     /// <summary>Initializes a new instance of the <see cref = "ID3DDestructionNotifier"/> struct with the specified virtual table pointer.</summary>
     /// <param name = "vtbl">The pointer to virtual table.</param>
-    public ID3DDestructionNotifier(void*** vtbl) => lpVtbl = vtbl;
-
-    /// <summary>Downcasts <see cref = "Silk.NET.Windows.IUnknown"/> to <see cref = "ID3DDestructionNotifier"/>.</summary>
-    /// <param name = "value">The <see cref = "Silk.NET.Windows.IUnknown"/> instance to be converted </param>
-    public static explicit operator ID3DDestructionNotifier(Silk.NET.Windows.IUnknown value) =>
-        new ID3DDestructionNotifier(value.lpVtbl);
-
-    /// <summary>Upcasts <see cref = "ID3DDestructionNotifier"/> to <see cref = "Silk.NET.Windows.IUnknown"/>.</summary>
+    public ID3DDestructionNotifier(Ptr2D* vtbl) => lpVtbl = (ID3DDestructionNotifier.Native*)vtbl;
+    /// <summary>Initializes a new instance of the <see cref = "ID3DDestructionNotifier"/> struct with the specified virtual table pointer.</summary>
+    /// <param name = "vtbl">The pointer to virtual table.</param>
+    public ID3DDestructionNotifier(ID3DDestructionNotifier.Native* vtbl) => lpVtbl = vtbl;
+    /// <inheritdoc cref = "INativeInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
+	public readonly TNativeInterface** GetAddressOf<TNativeInterface>()
+        where TNativeInterface : unmanaged => (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+    /// <inheritdoc cref = "INativeInterface.GetAddressOf()"></inheritdoc>
+	public readonly void** GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+    /// <summary>casts <see cref = "ID3DDestructionNotifier.Native"/> to <see cref = "ID3DDestructionNotifier"/>.</summary>
+    /// <param name = "value">The <see cref = "ID3DDestructionNotifier.Native"/> instance to be converted </param>
+    public static implicit operator ID3DDestructionNotifier(ID3DDestructionNotifier.Native* value) => new ID3DDestructionNotifier(value);
+    /// <summary>casts <see cref = "ID3DDestructionNotifier"/> to <see cref = "ID3DDestructionNotifier.Native"/> pointer.</summary>
     /// <param name = "value">The <see cref = "ID3DDestructionNotifier"/> instance to be converted </param>
-    public static implicit operator Silk.NET.Windows.IUnknown(ID3DDestructionNotifier value) =>
-        new Silk.NET.Windows.IUnknown(value.lpVtbl);
+    public static implicit operator ID3DDestructionNotifier.Native*(ID3DDestructionNotifier value) => value.lpVtbl;
+    /// <summary>casts <see cref = "Ptr2D"/> to <see cref = "ID3DDestructionNotifier"/>.</summary>
+    /// <param name = "value">The <see cref = "Ptr2D"/> instance to be converted </param>
+    public static explicit operator ID3DDestructionNotifier(Ptr2D* value) => new ID3DDestructionNotifier(value);
+    /// <summary>casts <see cref = "ID3DDestructionNotifier"/> to <see cref = "Ptr2D"/> pointer.</summary>
+    /// <param name = "value">The <see cref = "ID3DDestructionNotifier"/> instance to be converted </param>
+    public static implicit operator Ptr2D*(ID3DDestructionNotifier value) => (Ptr2D*)value.lpVtbl;
+    /// <summary>casts void*** pointer to <see cref = "ID3DDestructionNotifier"/>.</summary>
+    /// <param name = "value">The void*** instance to be converted</param>
+    public static explicit operator ID3DDestructionNotifier(void*** value) => new ID3DDestructionNotifier((Native*)value);
+    /// <summary>casts <see cref = "ID3DDestructionNotifier"/> to void*** pointer</summary>
+    /// <param name = "value">The <see cref = "ID3DDestructionNotifier"/> instance to be converted </param>
+    public static implicit operator void***(ID3DDestructionNotifier value) => (void***)value.lpVtbl;
+    /// <summary>casts nuint to <see cref = "ID3DDestructionNotifier"/>.</summary>
+    /// <param name = "value">The nuint instance to be converted</param>
+    public static explicit operator ID3DDestructionNotifier(nuint value) => new ID3DDestructionNotifier((Native*)value.ToPointer());
+    /// <summary>casts <see cref = "ID3DDestructionNotifier"/> to nuint</summary>
+    /// <param name = "value">The <see cref = "ID3DDestructionNotifier"/> instance to be converted </param>
+    public static implicit operator nuint(ID3DDestructionNotifier value) => (nuint)value.lpVtbl;
+    /// <inheritdoc cref = "IUnknown.QueryInterface"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface<TCom>(out TCom ppvObject)
+        where TCom : unmanaged, IComInterface
+    {
+        ppvObject = default(TCom);
+        return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
+    }
+
+    public void Dispose() => Release();
+    /// <summary>Downcasts <see cref = "Silk.NET.Win32.IUnknown"/> to <see cref = "ID3DDestructionNotifier"/>.</summary>
+    /// <param name = "value">The <see cref = "Silk.NET.Win32.IUnknown"/> instance to be converted </param>
+    public static explicit operator ID3DDestructionNotifier(Silk.NET.Win32.IUnknown value) => new ID3DDestructionNotifier((ID3DDestructionNotifier.Native*)value.lpVtbl);
+    /// <summary>Upcasts <see cref = "ID3DDestructionNotifier"/> to <see cref = "Silk.NET.Win32.IUnknown"/>.</summary>
+    /// <param name = "value">The <see cref = "ID3DDestructionNotifier"/> instance to be converted </param>
+    public static implicit operator Silk.NET.Win32.IUnknown(ID3DDestructionNotifier value) => new Silk.NET.Win32.IUnknown((Silk.NET.Win32.IUnknown.Native*)value.lpVtbl);
 }

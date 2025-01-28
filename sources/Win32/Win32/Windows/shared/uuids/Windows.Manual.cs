@@ -7,7 +7,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Silk.NET.Windows;
+namespace Silk.NET.Win32;
 
 public static partial class Windows
 {

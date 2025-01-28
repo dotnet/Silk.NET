@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
-using static Silk.NET.Windows.IID;
+using static Silk.NET.Win32.IID;
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.DirectX.UnitTests;
 

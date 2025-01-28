@@ -1,12 +1,12 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis;
-using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using Microsoft.Extensions.Options;
 using Microsoft.Build.Evaluation;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.Options;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods
 {
@@ -15,8 +15,7 @@ namespace Silk.NET.SilkTouch.Mods
     /// </summary>
     /// <param name="config">The configuration to use.</param>
     [ModConfiguration<Configuration>]
-    public class DisableWarnings(
-        IOptionsSnapshot<DisableWarnings.Configuration> config) : Mod
+    public class DisableWarnings(IOptionsSnapshot<DisableWarnings.Configuration> config) : Mod
     {
         /// <summary>
         /// The configuration for the <see cref="DisableWarnings"/> mod.
@@ -44,30 +43,38 @@ namespace Silk.NET.SilkTouch.Mods
 
             // Create the pragma directive trivia
             var pragmaDirective = Trivia(
-                                    PragmaWarningDirectiveTrivia(
-                                        Token(SyntaxKind.DisableKeyword),
-                                        true)
-                                    .WithErrorCodes(
-                                        SeparatedList<ExpressionSyntax>(
-                                            cfg.WarningCodes.Select(warn => IdentifierName(warn)))));
+                PragmaWarningDirectiveTrivia(Token(SyntaxKind.DisableKeyword), true)
+                    .WithErrorCodes(
+                        SeparatedList<ExpressionSyntax>(
+                            cfg.WarningCodes.Select(warn => IdentifierName(warn))
+                        )
+                    )
+            );
 
             ctx.SourceProject = await DisableWarningsAsync(ctx.SourceProject, pragmaDirective, ct);
             ctx.TestProject = await DisableWarningsAsync(ctx.TestProject, pragmaDirective, ct);
         }
 
-        private async Task<Microsoft.CodeAnalysis.Project?> DisableWarningsAsync(Microsoft.CodeAnalysis.Project? proj, SyntaxTrivia pragmaDirective, CancellationToken ct)
+        private async Task<Microsoft.CodeAnalysis.Project?> DisableWarningsAsync(
+            Microsoft.CodeAnalysis.Project? proj,
+            SyntaxTrivia pragmaDirective,
+            CancellationToken ct
+        )
         {
             foreach (var docId in proj?.DocumentIds ?? [])
             {
                 var doc =
-                    proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                    proj?.GetDocument(docId)
+                    ?? throw new InvalidOperationException("Document missing");
                 if (await doc.GetSyntaxRootAsync(ct) is not { } root)
                 {
                     continue;
                 }
 
                 // Find the using directive
-                SyntaxNode? namespaceNode = root.DescendantNodes().OfType<FileScopedNamespaceDeclarationSyntax>().FirstOrDefault();
+                SyntaxNode? namespaceNode = root.DescendantNodes()
+                    .OfType<FileScopedNamespaceDeclarationSyntax>()
+                    .FirstOrDefault();
 
                 if (namespaceNode == null)
                 {
@@ -79,7 +86,8 @@ namespace Silk.NET.SilkTouch.Mods
                 var leadingTrivia = namespaceNode.GetLeadingTrivia();
 
                 // Insert the pragma directive after the comments
-                var newLeadingTrivia = leadingTrivia.Insert(leadingTrivia.Count, pragmaDirective)
+                var newLeadingTrivia = leadingTrivia
+                    .Insert(leadingTrivia.Count, pragmaDirective)
                     .Add(CarriageReturnLineFeed);
 
                 // Update the using directive with the new leading trivia

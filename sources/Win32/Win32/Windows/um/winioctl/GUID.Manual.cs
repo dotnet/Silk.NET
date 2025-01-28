@@ -7,7 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace Silk.NET.Windows;
+namespace Silk.NET.Win32;
 
 public static unsafe partial class GUID
 {

@@ -3,9 +3,9 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 using System;
 using NUnit.Framework;
-using static Silk.NET.Windows.IID;
+using static Silk.NET.Win32.IID;
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
-namespace Silk.NET.Windows.UnitTests;
+namespace Silk.NET.Win32.UnitTests;
 
 /// <summary>Provides validation of the <see cref = "IID"/> class.</summary>
 public static partial class IIDTests

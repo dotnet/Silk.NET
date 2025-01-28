@@ -179,7 +179,7 @@ public sealed class ClangScraper(
                             CXDiagnostic_Warning => LogLevel.Warning,
                             CXDiagnostic_Error => LogLevel.Error,
                             CXDiagnostic_Fatal => LogLevel.Critical,
-                            _ => LogLevel.Trace
+                            _ => LogLevel.Trace,
                         },
                         "    {0}",
                         diagnostic.Format(CXDiagnostic.DefaultDisplayOptions).ToString()
@@ -202,7 +202,14 @@ public sealed class ClangScraper(
                 using var translationUnit = TranslationUnit.GetOrCreate(handle);
                 Debug.Assert(translationUnit is not null);
 
-                logger.LogInformation("Generating raw bindings for '{0}' ({1}/{2}) ({3}/{4})", fileName, index, count, rspIndex, rspCount);
+                logger.LogInformation(
+                    "Generating raw bindings for '{0}' ({1}/{2}) ({3}/{4})",
+                    fileName,
+                    index,
+                    count,
+                    rspIndex,
+                    rspCount
+                );
                 pinvokeGenerator.GenerateBindings(
                     translationUnit,
                     filePath,
@@ -213,15 +220,14 @@ public sealed class ClangScraper(
 
                 if (files.Count == 0)
                 {
-                    logger.LogWarning("No files generated for {0}",
-                    filePath);
+                    logger.LogWarning("No files generated for {0}", filePath);
                 }
                 else
                 {
                     logger.LogDebug(
-                    "Completed generation for {0}, file count: {1}",
-                    filePath,
-                    files.Count
+                        "Completed generation for {0}, file count: {1}",
+                        filePath,
+                        files.Count
                     );
                 }
             }
@@ -298,7 +304,7 @@ public sealed class ClangScraper(
                 new ParallelOptions
                 {
                     CancellationToken = ct,
-                    MaxDegreeOfParallelism = parallelism
+                    MaxDegreeOfParallelism = parallelism,
                 },
                 async (rsp, innerCt) =>
                     await Task.Run(
@@ -306,7 +312,11 @@ public sealed class ClangScraper(
                         {
                             int index = Interlocked.Increment(ref rspIndex);
                             // Generate the raw bindings.
-                            var (sources, tests, hasErrors) = ScrapeRawBindings(rsp, index, rspCount);
+                            var (sources, tests, hasErrors) = ScrapeRawBindings(
+                                rsp,
+                                index,
+                                rspCount
+                            );
 
                             static MemoryStream Reopen(MemoryStream ms) =>
                                 ms.TryGetBuffer(out var buff) && buff.Array is not null
@@ -334,8 +344,9 @@ public sealed class ClangScraper(
                                 // Cache the output.
                                 //TODO: Refactor for better Parallelisation
                                 //Breaks with high concurrency
-                                string relativePath = $"{(isTest ? "tests" : "sources")}/{relativeKey}";
-                                if (cacheKey is not null && !hasErrors && cfg.CacheOutput) 
+                                string relativePath =
+                                    $"{(isTest ? "tests" : "sources")}/{relativeKey}";
+                                if (cacheKey is not null && !hasErrors && cfg.CacheOutput)
                                 {
                                     cacheDir ??= (
                                         await cacheProvider!.GetDirectory(
@@ -359,7 +370,7 @@ public sealed class ClangScraper(
                                     logger.LogTrace("ClangSharp skipped {0}", relativePath);
                                     continue;
                                 }
-                                
+
                                 // Add it to the dictionary.
                                 if (
                                     !(isTest ? aggregatedTests : aggregatedSources).TryAdd(
@@ -471,7 +482,7 @@ public sealed class ClangScraper(
             // Others
             VisualStudioResolver.TryGetVisualStudioInfo(out _)
                 ? "vs"
-                : "!vs"
+                : "!vs",
         };
 
         // Read the configuration.
@@ -486,8 +497,15 @@ public sealed class ClangScraper(
         var toRemoveMatcher = new Matcher();
         if (cfg.GeneratedToRemove is not null)
         {
-            toRemoveMatcher.AddIncludePatterns(cfg.GeneratedToRemove.Where(toRemove => !toRemove.StartsWith("!")).Select(ResponseFileHandler.PathFixup));
-            toRemoveMatcher.AddExcludePatterns(cfg.GeneratedToRemove.Where(toRemove => toRemove.StartsWith("!")).Select(toRemove => toRemove[1..]).Select(ResponseFileHandler.PathFixup));
+            toRemoveMatcher.AddIncludePatterns(
+                cfg.GeneratedToRemove.Where(toRemove => !toRemove.StartsWith("!"))
+                    .Select(ResponseFileHandler.PathFixup)
+            );
+            toRemoveMatcher.AddExcludePatterns(
+                cfg.GeneratedToRemove.Where(toRemove => toRemove.StartsWith("!"))
+                    .Select(toRemove => toRemove[1..])
+                    .Select(ResponseFileHandler.PathFixup)
+            );
         }
 
         if (rsps.Count == 0)
@@ -495,10 +513,19 @@ public sealed class ClangScraper(
             logger.LogWarning("No Response files found for {}", ctx.JobKey);
         }
 
-        var missingIncludes = rsps.SelectMany<ResponseFile, string>(rsp => rsp.ClangCommandLineArgs.Where(arg => arg.StartsWith("--include-directory=") && !Directory.Exists(arg.Substring(20)))).Select(arg => arg.Substring(20)).Distinct();
+        var missingIncludes = rsps.SelectMany<ResponseFile, string>(rsp =>
+                rsp.ClangCommandLineArgs.Where(arg =>
+                    arg.StartsWith("--include-directory=") && !Directory.Exists(arg.Substring(20))
+                )
+            )
+            .Select(arg => arg.Substring(20))
+            .Distinct();
         if (missingIncludes.Count() > 0)
         {
-            logger.LogWarning("The following includes are missing and may cause erroneous generation: \n" + string.Join("\n", missingIncludes));
+            logger.LogWarning(
+                "The following includes are missing and may cause erroneous generation: \n"
+                    + string.Join("\n", missingIncludes)
+            );
         }
 
         // Apply modifications. This is done before the cache key as modifications to the rsps result in different

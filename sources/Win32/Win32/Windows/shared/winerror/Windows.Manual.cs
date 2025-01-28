@@ -3,9 +3,9 @@
 // Ported from shared/winerror.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static Silk.NET.Windows.FACILITY;
+using static Silk.NET.Win32.FACILITY;
 
-namespace Silk.NET.Windows;
+namespace Silk.NET.Win32;
 
 public static partial class Windows
 {

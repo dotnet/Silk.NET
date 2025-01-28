@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.WinRT;
 
-namespace Silk.NET.Windows;
+namespace Silk.NET.Win32;
 
 public static unsafe partial class IID
 {

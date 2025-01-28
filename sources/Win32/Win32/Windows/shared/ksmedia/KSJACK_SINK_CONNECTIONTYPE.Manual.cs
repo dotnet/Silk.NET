@@ -3,7 +3,7 @@
 // Ported from shared/ksmedia.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace Silk.NET.Windows;
+namespace Silk.NET.Win32;
 
 public enum KSJACK_SINK_CONNECTIONTYPE
 {

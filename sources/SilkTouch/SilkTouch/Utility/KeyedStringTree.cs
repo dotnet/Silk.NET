@@ -10,6 +10,8 @@ namespace Silk.NET.SilkTouch.Utility
     /// </summary>
     public class KeyedStringTree
     {
+        ReaderWriterLockSlim _concurrencyLock = new();
+
         /// <summary>
         /// ctor for <see cref="KeyedStringTree"/>
         /// </summary>
@@ -29,6 +31,14 @@ namespace Silk.NET.SilkTouch.Utility
         /// <param name="node">found node or null</param>
         /// <returns>Whether node was present in the tree</returns>
         public bool FindNode(string key, [NotNullWhen(true)] out Node? node)
+        {
+            _concurrencyLock.EnterReadLock();
+            bool ret = _FindNode(key, out node);
+            _concurrencyLock.ExitReadLock();
+            return ret;
+        }
+
+        private bool _FindNode(string key, [NotNullWhen(true)] out Node? node)
         {
             node = null;
             if (RootNode is null)
@@ -70,12 +80,15 @@ namespace Silk.NET.SilkTouch.Utility
         /// <returns>Whether combination was successful</returns>
         public bool TryConsume(KeyedStringTree other)
         {
-            if (!FindNode(other.RootNode.Key, out Node? node))
+            _concurrencyLock.EnterWriteLock();
+            if (!_FindNode(other.RootNode.Key, out Node? node))
             {
+                _concurrencyLock.ExitWriteLock();
                 return false;
             }
 
             CombineNodes(node, other.RootNode);
+            _concurrencyLock.ExitWriteLock();
             return true;
         }
 
@@ -88,8 +101,10 @@ namespace Silk.NET.SilkTouch.Utility
         /// <returns>if the parent node was found in the tree</returns>
         public bool TryAddNode(string parentKey, string newNodeKey, string newNodeValue)
         {
-            if (!FindNode(parentKey, out Node? node))
+            _concurrencyLock.EnterWriteLock();
+            if (!_FindNode(parentKey, out Node? node))
             {
+                _concurrencyLock.ExitWriteLock();
                 return false;
             }
 
@@ -97,12 +112,13 @@ namespace Silk.NET.SilkTouch.Utility
             {
                 node.Children.Add(newNodeKey, new(newNodeKey, newNodeValue, node));
             }
+            _concurrencyLock.ExitWriteLock();
             return true;
         }
 
         private void CombineNodes(Node baseNode, Node additiveNode)
         {
-            foreach(KeyValuePair<string, Node> child in additiveNode.Children)
+            foreach (KeyValuePair<string, Node> child in additiveNode.Children)
             {
                 if (baseNode.Children.TryGetValue(child.Key, out Node? baseChild))
                 {
@@ -131,14 +147,17 @@ namespace Silk.NET.SilkTouch.Utility
             /// Key at this node
             /// </summary>
             public string Key;
+
             /// <summary>
             /// Value at this node
             /// </summary>
             public string Value;
+
             /// <summary>
             /// All children for this node
             /// </summary>
             public Dictionary<string, Node> Children = new();
+
             /// <summary>
             /// this node's parent or null if root node
             /// </summary>

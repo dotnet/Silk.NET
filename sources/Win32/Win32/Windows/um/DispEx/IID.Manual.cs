@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace Silk.NET.Windows;
+namespace Silk.NET.Win32;
 
 public static partial class IID
 {
