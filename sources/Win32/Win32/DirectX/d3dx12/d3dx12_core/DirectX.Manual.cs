@@ -13,7 +13,7 @@ namespace Silk.NET.DirectX;
 public static unsafe partial class DirectX
 {
     public static ID3D12CommandList* CommandListCast<t_CommandListType>(t_CommandListType* pp)
-        where t_CommandListType : unmanaged, ID3D12CommandList.Interface
+        where t_CommandListType : unmanaged, ID3D12CommandList.Native.Interface
     {
         return (ID3D12CommandList*)(pp);
     }

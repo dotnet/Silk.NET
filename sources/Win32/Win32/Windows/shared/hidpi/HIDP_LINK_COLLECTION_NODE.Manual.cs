@@ -6,7 +6,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace Silk.NET.Windows;
+namespace Silk.NET.Win32;
 
 [StructLayout(LayoutKind.Sequential, Pack = 4)]
 public unsafe struct HIDP_LINK_COLLECTION_NODE

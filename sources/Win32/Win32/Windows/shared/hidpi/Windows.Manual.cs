@@ -4,10 +4,10 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
-using static Silk.NET.Windows.FACILITY;
-using static Silk.NET.Windows.HIDP;
+using static Silk.NET.Win32.FACILITY;
+using static Silk.NET.Win32.HIDP;
 
-namespace Silk.NET.Windows;
+namespace Silk.NET.Win32;
 
 public static unsafe partial class Windows
 {

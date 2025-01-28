@@ -8,6 +8,7 @@
       "Mods": [
         "ClangScraper",
         "ChangeNamespace",
+        "TransformInterfaces",
         "TransformCOM",
         "DisableWarnings"
       ],
@@ -52,9 +53,21 @@
           "TerraFX.Interop(?!.Windows)(.*)": "Silk.NET$1"
         }
       },
+      "TransformInterfaces": {
+        "AdditionalInterfaces": [
+          "IDispatchEx"
+        ]
+      },
       "TransformCOM": {
         "BaseTypes": {
-          "IUnknown.Interface": "Silk.NET.Win32.IUnknown.Interface"
+          "IUnknown.Native.Interface": "Silk.NET.Win32.IUnknown.Native.Interface"
+        },
+        "AdditionalCOMTypes": {
+          "IDispatchEx.Native.Interface": {
+            "Namespace": "Silk.NET.Win32",
+            "Parent": "IDispatch.Native.Interface"
+
+          }
         }
       },
       "DisableWarnings": {
@@ -62,7 +75,7 @@
           "CS1589", //XML Comments missing (due to missing docs)
           "CS0419", //Inheritdoc issue (due to bug)
           "CA1416", //Function available outside of target os (intended)
-          "CS0618"  //Obsolete Warnings
+          "CS0618" //Obsolete Warnings
         ]
       }
     },

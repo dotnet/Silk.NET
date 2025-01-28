@@ -91,6 +91,7 @@ Silk.NET.Core.IBoolScheme
 Silk.NET.Core.IBoolScheme.False<T>() -> T
 Silk.NET.Core.IBoolScheme.IsTrue<T>(T value) -> bool
 Silk.NET.Core.IBoolScheme.True<T>() -> T
+Silk.NET.Core.IComInterface
 Silk.NET.Core.IGLContext
 Silk.NET.Core.IGLContext.IsCurrent.get -> bool
 Silk.NET.Core.IGLContext.IsCurrent.set -> void
@@ -105,6 +106,9 @@ Silk.NET.Core.INativeWindow
 Silk.NET.Core.INativeWindow.TryGetPlatformInfo<TPlatformInfo>(out TPlatformInfo? info) -> bool
 Silk.NET.Core.INativeGuid
 Silk.NET.Core.INativeGuid.NativeGuid.get -> System.Guid*
+Silk.NET.Core.INativeInterface
+Silk.NET.Core.INativeInterface.GetAddressOf() -> void**
+Silk.NET.Core.INativeInterface.GetAddressOf<TNativeInterface>() -> TNativeInterface**
 Silk.NET.Core.Loader.DefaultNativeContext
 Silk.NET.Core.Loader.DefaultNativeContext.DefaultNativeContext() -> void
 Silk.NET.Core.Loader.DefaultNativeContext.Dispose() -> void

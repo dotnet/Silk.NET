@@ -7,9 +7,9 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static Silk.NET.Windows.S;
+using static Silk.NET.Win32.S;
 
-namespace Silk.NET.Windows;
+namespace Silk.NET.Win32;
 
 public static unsafe partial class Windows
 {

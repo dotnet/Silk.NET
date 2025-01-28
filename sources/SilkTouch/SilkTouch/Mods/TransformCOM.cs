@@ -1,21 +1,23 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis;
-using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using Microsoft.CodeAnalysis.Editing;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using System.Reflection;
-using Silk.NET.SilkTouch.Utility;
-using Silk.NET.SilkTouch.Sources;
-using Microsoft.CodeAnalysis.Differencing;
-using System.Diagnostics;
 using System.CommandLine;
+using System.Diagnostics;
+using System.Reflection;
 using ClangSharp;
 using ClangSharp.Interop;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Differencing;
+using Microsoft.CodeAnalysis.Editing;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Silk.NET.Core;
+using Silk.NET.SilkTouch.Sources;
+using Silk.NET.SilkTouch.Utility;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods
 {
@@ -27,7 +29,8 @@ namespace Silk.NET.SilkTouch.Mods
     [ModConfiguration<Configuration>]
     public class TransformCOM(
         ILogger<TransformCOM> logger,
-        IOptionsSnapshot<TransformCOM.Configuration> config) : Mod
+        IOptionsSnapshot<TransformCOM.Configuration> config
+    ) : Mod
     {
         /// <summary>
         /// The configuration for the <see cref="TransformCOM"/> mod.
@@ -41,10 +44,9 @@ namespace Silk.NET.SilkTouch.Mods
             public Dictionary<string, string>? BaseTypes { get; init; }
 
             /// <summary>
-            /// Additional Com Types which are not in this job but referenced by it
-            /// No cast statements will be generated for these types
+            /// Additional Com Types and (namespace, parent type) which are not read in this job but referenced by it
             /// </summary>
-            public string[]? AdditionalCOMTypes { get; init; }
+            public IConfigurationSection[]? AdditionalCOMTypes { get; init; }
         }
 
         /// <inheritdoc />
@@ -61,19 +63,27 @@ namespace Silk.NET.SilkTouch.Mods
                 return;
             }
 
-            Stopwatch timer = new Stopwatch();
-            TimeSpan[] times = new TimeSpan[4];
-            timer.Start();
+            var firstPass = new TypeDiscoverer(
+                cfg.BaseTypes
+                    ?? new() { { "IUnknown.Interface", "Silk.NET.Windows.IUnknown.Interface" } },
+                logger
+            );
 
-            var firstPass = new TypeDiscoverer(cfg.BaseTypes ?? new() { { "IUnknown.Interface", "Silk.NET.Windows.IUnknown.Interface" } }, logger);
-
-            int count = proj?.DocumentIds.Count ?? 0;
+            foreach (var comType in cfg.AdditionalCOMTypes ?? [])
+            {
+                firstPass.AddInitialType(
+                    comType.Key,
+                    comType.GetValue<string>("Namespace") ?? "Silk.NET",
+                    comType.GetValue<string>("Parent") ?? string.Empty
+                );
+            }
 
             logger.LogInformation("Starting COM Object Collection");
             foreach (var docId in proj?.DocumentIds ?? [])
             {
                 var doc =
-                    proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                    proj?.GetDocument(docId)
+                    ?? throw new InvalidOperationException("Document missing");
                 if (await doc.GetSyntaxRootAsync(ct) is not { } root)
                 {
                     continue;
@@ -83,70 +93,21 @@ namespace Silk.NET.SilkTouch.Mods
             }
 
             //Cleanup our lists
-            firstPass.FoundCOMTypes = firstPass.FoundCOMTypes.Where(val => val.Value.Item1).ToDictionary();
-            firstPass.SupportedOSTypes = firstPass.SupportedOSTypes.Where(val => firstPass.FoundCOMTypes.ContainsKey(val)).ToList();
+            firstPass.FoundCOMTypes = firstPass
+                .FoundCOMTypes.Where(val => val.Value.Item1)
+                .ToDictionary();
 
-            foreach (string comType in cfg.AdditionalCOMTypes ?? [])
-            {
-                firstPass.FoundCOMTypes.Add(comType, (true, null));
-            }
-
-            timer.Stop();
-            times[0] = timer.Elapsed;
-            timer.Restart();
-
+            int count = proj?.DocumentIds.Count ?? 0;
             int index = 0;
 
-            logger.LogInformation("Starting Project Compilation");
-            var compilation = await proj!.GetCompilationAsync();
-            if (compilation is null)
-            {
-                logger.LogWarning("project was unable to compile, some usages may not be properly updated");
-            }
-
-            timer.Stop();
-            times[1] = timer.Elapsed;
-            timer.Restart();
-
-            logger.LogInformation("Starting COM Object Usage Update");
-            UsageUpdater updater = new(firstPass.FoundCOMTypes);
-            foreach (var docId in proj?.DocumentIds ?? [])
-            {
-                index++;
-                var doc =
-                    proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
-                if (await doc.GetSyntaxRootAsync(ct) is not { } root)
-                {
-                    continue;
-                }
-
-                var syntaxTree = await doc.GetSyntaxTreeAsync();
-                if (syntaxTree is null)
-                {
-                    logger.LogWarning("unable to retrieve Semantic Model for {}", doc.Name);
-                    continue;
-                }
-                updater.SemanticModel = compilation is not null ? compilation.GetSemanticModel(syntaxTree!) : await doc.GetSemanticModelAsync();
-
-                doc = doc.WithSyntaxRoot(updater.Visit(root).NormalizeWhitespace());
-
-                proj = doc.Project;
-
-                logger.LogInformation("COM Object Usage Update for {0} Complete ({1}/{2})", doc.Name, index, count);
-            }
-
-            timer.Stop();
-            times[2] = timer.Elapsed;
-            timer.Restart();
-
             var rewriter = new Rewriter(firstPass.FoundCOMTypes);
-            index = 0;
             logger.LogInformation("Starting COM Object Rewrite");
             foreach (var docId in proj?.DocumentIds ?? [])
             {
                 index++;
                 var doc =
-                    proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                    proj?.GetDocument(docId)
+                    ?? throw new InvalidOperationException("Document missing");
                 if (await doc.GetSyntaxRootAsync(ct) is not { } root)
                 {
                     continue;
@@ -156,26 +117,21 @@ namespace Silk.NET.SilkTouch.Mods
 
                 proj = doc.Project;
 
-                logger.LogInformation("COM Object Rewrite for {0} Complete ({1}/{2})", doc.Name, index, count);
+                logger.LogInformation(
+                    "COM Rewrite for {0} Complete ({1}/{2})",
+                    doc.Name,
+                    index,
+                    count
+                );
             }
-
-            timer.Stop();
-            times[3] = timer.Elapsed;
-
-            logger.LogInformation("TransformCOM Phase Timings");
-            logger.LogInformation("--------------------------");
-            logger.LogInformation("COM Object Collection : {}s ({})", times[0].TotalSeconds, times[0].ToString());
-            logger.LogInformation("Project Compilation   : {}s ({})", times[1].TotalSeconds, times[1].ToString());
-            logger.LogInformation("COM Usage Updates     : {}s ({})", times[2].TotalSeconds, times[2].ToString());
-            logger.LogInformation("COM Object Rewrite    : {}s ({})", times[3].TotalSeconds, times[3].ToString());
-            logger.LogInformation("--------------------------");
 
             ctx.SourceProject = proj;
         }
 
         class TypeDiscoverer : CSharpSyntaxWalker
         {
-            private Dictionary<string, List<(string, bool)>> _interfaceParenting = new Dictionary<string, List<(string, bool)>>();
+            private Dictionary<string, List<(string, bool, string)>> _interfaceParenting =
+                new Dictionary<string, List<(string, bool, string)>>();
 
             /// <summary>
             /// The list of known COM interface types
@@ -183,14 +139,17 @@ namespace Silk.NET.SilkTouch.Mods
             /// </summary>
             public Dictionary<string, (bool, KeyedStringTree?)> FoundCOMTypes = [];
 
-            public List<string> SupportedOSTypes = [];
-
             private readonly Dictionary<string, string> _baseTypes;
             private ILogger<TransformCOM> _logger;
 
             private List<string> _Namespace = [];
 
-            public TypeDiscoverer(Dictionary<string, string> BaseTypes, ILogger<TransformCOM> logger)
+            private List<string> _ObjectNames = [];
+
+            public TypeDiscoverer(
+                Dictionary<string, string> BaseTypes,
+                ILogger<TransformCOM> logger
+            )
             {
                 _logger = logger;
                 _baseTypes = BaseTypes;
@@ -213,7 +172,9 @@ namespace Silk.NET.SilkTouch.Mods
                 _Namespace.RemoveAt(_Namespace.Count - 1);
             }
 
-            public override void VisitFileScopedNamespaceDeclaration(FileScopedNamespaceDeclarationSyntax node)
+            public override void VisitFileScopedNamespaceDeclaration(
+                FileScopedNamespaceDeclarationSyntax node
+            )
             {
                 _Namespace.Add(node.Name.ToString());
                 base.VisitFileScopedNamespaceDeclaration(node);
@@ -222,33 +183,41 @@ namespace Silk.NET.SilkTouch.Mods
 
             public override void VisitStructDeclaration(StructDeclarationSyntax node)
             {
+                _ObjectNames.Add(node.Identifier.Text);
                 base.VisitStructDeclaration(node);
+                _ObjectNames.RemoveAt(_Namespace.Count - 1);
+
+                if (node.Identifier.Text == "Native")
+                    return;
 
                 var bases = node.BaseList;
 
-                var fields = node.DescendantNodes().OfType<FieldDeclarationSyntax>();
+                var fields = node.Members.OfType<FieldDeclarationSyntax>();
 
-                if (bases is null ||
-                    fields
-                        .Any(fds => !fds.Modifiers.Contains(Token(SyntaxKind.StaticKeyword)) &&
-                                    fds.Declaration.Variables.Count > 1 &&
-                                    fds.Declaration.Type.ToString() != "void**" &&
-                                    !fds.Declaration.Type.ToString().StartsWith("delegate") &&
-                                    fds.Declaration.Variables[0].Identifier.Text != "lpVtbl"))
+                if (
+                    bases is null
+                    || fields.Any(fds =>
+                        !fds.Modifiers.Contains(Token(SyntaxKind.StaticKeyword))
+                        && fds.Declaration.Type.ToString() != "Native*"
+                        && !fds.Declaration.Type.ToString().StartsWith("delegate")
+                        && fds.Declaration.Variables[0].Identifier.Text != "lpVtbl"
+                    )
+                    || !fields.Any(fds =>
+                        fds.Declaration.Type.ToString() == "Native*"
+                        && fds.Declaration.Variables[0].Identifier.Text == "lpVtbl"
+                    )
+                )
                 {
                     return;
                 }
 
-                var className = $"{node.Identifier}";
+                var typeName = $"{node.Identifier}";
 
-                if (node.AttributeLists.Any(attrList => attrList.Attributes.Any(attr => attr.Name.ToString() == "SupportedOSPlatform")))
-                {
-                    SupportedOSTypes.Add(className);
-                }
+                if (_ObjectNames.Count > 0)
+                    typeName = $"{string.Join('.', _ObjectNames)}.{typeName}";
 
-                CheckBases((className, true), bases);
+                CheckBases((typeName, true, string.Join('.', _Namespace)), bases);
             }
-
 
             public override void VisitInterfaceDeclaration(InterfaceDeclarationSyntax node)
             {
@@ -261,32 +230,47 @@ namespace Silk.NET.SilkTouch.Mods
                     return;
                 }
 
-                string name = $"{node.Identifier}";
-                if (name == "Interface")
-                {
-                    var parent = node.Parent as StructDeclarationSyntax;
-                    if (parent is not null)
-                    {
-                        name = $"{parent.Identifier}.{name}";
+                var typeName = $"{node.Identifier}";
 
-                        if (parent.AttributeLists.Any(attrList => attrList.Attributes.Any(attr => attr.Name.ToString() == "SupportedOSPlatform")))
-                        {
-                            SupportedOSTypes.Add(name);
-                        }
-                    }
-                    else
+                if (_ObjectNames.Count > 0)
+                    typeName = $"{string.Join('.', _ObjectNames)}.{typeName}";
+
+                CheckBases((typeName, false, string.Join('.', _Namespace)), bases);
+            }
+
+            public void AddInitialType(string typeName, string _namespace, string? parentName)
+            {
+                if (parentName is null)
+                {
+                    FoundCOMTypes.Add(typeName, (true, null));
+                    return;
+                }
+                KeyedStringTree? tree = null;
+
+                foreach (var inheritanceTree in InheritanceTrees)
+                {
+                    if (
+                        inheritanceTree.TryAddNode(parentName, typeName, $"{_namespace}.{typeName}")
+                    )
                     {
-                        if (node.AttributeLists.Any(attrList => attrList.Attributes.Any(attr => attr.Name.ToString() == "SupportedOSPlatform")))
-                        {
-                            SupportedOSTypes.Add(name);
-                        }
+                        tree = inheritanceTree;
+                        break;
                     }
                 }
 
-                CheckBases((name, false), bases);
+                if (tree is not null)
+                {
+                    COMTypeValidated(typeName, (false, tree), parentName, _namespace);
+                    return;
+                }
+
+                if (!_interfaceParenting.ContainsKey(parentName))
+                    _interfaceParenting.Add(parentName, new());
+
+                _interfaceParenting[parentName].Add((typeName, false, _namespace));
             }
 
-            private void CheckBases((string, bool) className, BaseListSyntax bases)
+            private void CheckBases((string, bool, string) typeName, BaseListSyntax bases)
             {
                 foreach (BaseTypeSyntax baseType in bases.Types)
                 {
@@ -298,7 +282,12 @@ namespace Silk.NET.SilkTouch.Mods
                     {
                         if (BaseType.Key == type)
                         {
-                            COMTypeValidated(className.Item1, (className.Item2, InheritanceTrees[i]), BaseType.Key);
+                            COMTypeValidated(
+                                typeName.Item1,
+                                (typeName.Item2, InheritanceTrees[i]),
+                                BaseType.Key,
+                                typeName.Item3
+                            );
                             found = true;
                             break;
                         }
@@ -307,13 +296,15 @@ namespace Silk.NET.SilkTouch.Mods
                     if (found)
                         break;
 
-                    foreach (var val in FoundCOMTypes)
+                    if (FoundCOMTypes.TryGetValue(type, out var val))
                     {
-                        if (val.Key == type)
-                        {
-                            COMTypeValidated(className.Item1, (className.Item2, val.Value.Item2), val.Key);
-                            break;
-                        }
+                        COMTypeValidated(
+                            typeName.Item1,
+                            (typeName.Item2, val.Item2),
+                            type,
+                            typeName.Item3
+                        );
+                        break;
                     }
                 }
 
@@ -323,11 +314,16 @@ namespace Silk.NET.SilkTouch.Mods
                     if (!_interfaceParenting.ContainsKey(fullName))
                         _interfaceParenting.Add(fullName, new());
 
-                    _interfaceParenting[fullName].Add(className);
+                    _interfaceParenting[fullName].Add(typeName);
                 }
             }
 
-            private void COMTypeValidated(string typeName, (bool, KeyedStringTree?) value, string parentName)
+            private void COMTypeValidated(
+                string typeName,
+                (bool, KeyedStringTree?) value,
+                string parentName,
+                string _namespace
+            )
             {
                 if (FoundCOMTypes.ContainsKey(typeName))
                 {
@@ -336,850 +332,317 @@ namespace Silk.NET.SilkTouch.Mods
 
                 FoundCOMTypes.Add(typeName, value);
 
-                if (!value.Item2?.TryAddNode(parentName, typeName, $"{string.Join('.',_Namespace)}.{typeName}") ?? true)
+                if (_namespace is null)
                 {
-                    _logger.LogWarning("Failed to add {} to its Inheritence tree, casts will not generate properly", typeName);
+                    _namespace = string.Join('.', _Namespace);
                 }
 
-                if (!_interfaceParenting.TryGetValue(typeName, out List<(string, bool)>? children))
+                if (
+                    !value.Item2?.TryAddNode(parentName, typeName, $"{_namespace}.{typeName}")
+                    ?? true
+                )
+                {
+                    _logger.LogWarning(
+                        "Failed to add {} to its Inheritence tree, casts will not generate properly",
+                        typeName
+                    );
+                }
+
+                if (
+                    !_interfaceParenting.TryGetValue(
+                        typeName,
+                        out List<(string, bool, string)>? children
+                    )
+                )
                     return;
 
-                foreach ((string, bool) childName in children)
+                foreach ((string, bool, string) childName in children)
                 {
-                    COMTypeValidated(childName.Item1, (childName.Item2, value.Item2), typeName);
+                    COMTypeValidated(
+                        childName.Item1,
+                        (childName.Item2, value.Item2),
+                        typeName,
+                        childName.Item3
+                    );
                 }
             }
         }
 
-        class UsageUpdater(
-            Dictionary<string, (bool, KeyedStringTree?)> ComTypes)
-            : CSharpSyntaxRewriter
+        class Rewriter(Dictionary<string, (bool, KeyedStringTree?)> ComTypes) : CSharpSyntaxRewriter
         {
-            public SemanticModel? SemanticModel;
-            List<MemberDeclarationSyntax> _newMethods = [];
-            public override SyntaxNode? VisitMemberAccessExpression(MemberAccessExpressionSyntax node)
-            {
-                if (!node.IsKind(SyntaxKind.PointerMemberAccessExpression))
-                    return base.VisitMemberAccessExpression(node);
-
-                var typeInfo = SemanticModel.GetTypeInfo(node.Expression);
-                if (typeInfo.Type is null || GetPointerDepth(typeInfo.Type, out ITypeSymbol innerType) > 1)
-                    return base.VisitMemberAccessExpression(node);
-                var name = GetTypeName(innerType.ToString() ?? string.Empty);
-
-                // Check if the type is a ComType
-                if (typeInfo.Type != null && ComTypes.ContainsKey(name))
-                {
-                    return MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, node.Expression, node.Name);
-                }
-                return base.VisitMemberAccessExpression(node);
-            }
-
-            public override SyntaxNode? VisitAssignmentExpression(AssignmentExpressionSyntax node)
-            {
-                if (!node.Right.IsKind(SyntaxKind.NullLiteralExpression))
-                    return base.VisitAssignmentExpression(node);
-
-                var typeInfo = SemanticModel.GetTypeInfo(node);
-                if (typeInfo.Type is null || GetPointerDepth(typeInfo.Type, out ITypeSymbol innerType) > 1)
-                    return base.VisitAssignmentExpression(node);
-
-                var name = GetTypeName(innerType.ToString() ?? string.Empty);
-                // Check if the type is a ComType
-                if (typeInfo.Type != null && ComTypes.ContainsKey(name))
-                {
-                    return AssignmentExpression(node.Kind(), node.Left, LiteralExpression(SyntaxKind.DefaultExpression));
-                }
-                return base.VisitAssignmentExpression(node);
-            }
-
-            public override SyntaxNode? VisitInvocationExpression(InvocationExpressionSyntax node)
-            {
-                var symbolInfo = SemanticModel.GetSymbolInfo(node);
-                ExpressionSyntax newInvocation = node;
-                bool changed = false;
-                string type = symbolInfo.Symbol?.GetType().ToString() ?? "";
-                if (symbolInfo.Symbol is IMethodSymbol methodSymbol)
-                {
-                    var arguments = node.ArgumentList.Arguments;
-                    for (int i = 0; i < arguments.Count; i++)
-                    {
-                        var argument = arguments[i];
-
-                        // Get the corresponding parameter type
-                        int pointerDepth = GetPointerDepth(methodSymbol.Parameters[i].Type, out ITypeSymbol parameterType);
-
-                        if (pointerDepth > 1)
-                            continue;
-
-                        var name = GetTypeName(parameterType?.ToString() ?? string.Empty);
-
-                        // Check if the argument is a null literal
-                        if (argument.Expression.IsKind(SyntaxKind.NullLiteralExpression))
-                        {
-                            // Check if the parameter type is ComType
-                            if (ComTypes.ContainsKey(name))
-                            {
-                                changed = true;
-                                var newDefaultArg = Argument(LiteralExpression(SyntaxKind.DefaultLiteralExpression));
-                                newInvocation = newInvocation.ReplaceNode(argument, newDefaultArg);
-                            }
-                        }
-                    }
-                }
-                else if (symbolInfo.Symbol is IFunctionPointerTypeSymbol functionPointerSymbol)
-                {
-                    var arguments = node.ArgumentList.Arguments;
-                    int pointerDepth = 0;
-                    ITypeSymbol parameterType;
-                    string? name;
-                    int i;
-                    TypeSyntax castType;
-                    for (i = 0; i < arguments.Count; i++)
-                    {
-                        var argument = arguments[i];
-
-                        // Get the corresponding parameter type
-                        pointerDepth = GetPointerDepth(functionPointerSymbol.Signature.Parameters[i].Type, out parameterType);
-
-                        if (pointerDepth > 1)
-                        {
-                            castType = PointerType(ParseTypeName("Ptr2D"));
-                            for (pointerDepth--; pointerDepth > 0; pointerDepth--)
-                            {
-                                castType = PointerType(castType);
-                            }
-
-                            changed = true;
-                            var newArg = Argument(CastExpression(castType, argument.Expression));
-                            newInvocation = newInvocation.ReplaceNode(argument, newArg);
-
-                            continue;
-                        }
-
-                        name = GetTypeName(parameterType?.ToString() ?? string.Empty);
-
-                        // Check if the argument is a null literal
-                        if (argument.Expression.IsKind(SyntaxKind.NullLiteralExpression))
-                        {
-                            // Check if the parameter type is ComType
-                            if (ComTypes.ContainsKey(name))
-                            {
-                                changed = true;
-                                var newDefaultArg = Argument(LiteralExpression(SyntaxKind.DefaultLiteralExpression));
-                                newInvocation = newInvocation.ReplaceNode(argument, newDefaultArg);
-                            }
-                        }
-                        else
-                        {
-                            if (ComTypes.ContainsKey(name))
-                            {
-                                changed = true;
-                                var newArg = Argument(MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, argument.Expression, IdentifierName("lpVtbl")));
-                                newInvocation = newInvocation.ReplaceNode(argument, newArg);
-                            }
-                        }
-                    }
-
-                    pointerDepth = GetPointerDepth(functionPointerSymbol.Signature.ReturnType, out parameterType);
-                    name = GetTypeName(parameterType?.ToString() ?? string.Empty);
-
-                    castType = ParseTypeName(name);
-                    for (pointerDepth--; pointerDepth > 0; pointerDepth--)
-                    {
-                        castType = PointerType(castType);
-                    }
-
-                    if (ComTypes.ContainsKey(name))
-                    {
-                        changed = true;
-                        newInvocation = CastExpression(castType, newInvocation);
-                    }
-
-                }
-                return changed ? newInvocation : base.VisitInvocationExpression(node);
-            }
-
-            public override SyntaxNode? VisitBinaryExpression(BinaryExpressionSyntax node)
-            {
-                if (!node.Left.IsKind(SyntaxKind.NullLiteralExpression) && !node.Right.IsKind(SyntaxKind.NullLiteralExpression))
-                    return base.VisitBinaryExpression(node);
-
-                var typeInfoR = SemanticModel.GetTypeInfo(node.Right);
-                var typeInfoL = SemanticModel.GetTypeInfo(node.Left);
-
-                ITypeSymbol? innerTypeR = null;
-                ITypeSymbol? innerTypeL = null;
-                int depthR = 0;
-                int depthL = 0;
-
-                if ((typeInfoR.Type is null || (depthR = GetPointerDepth(typeInfoR.Type, out innerTypeR)) > 1)&&
-                    (typeInfoL.Type is null || (depthL = GetPointerDepth(typeInfoL.Type, out innerTypeL)) > 1))
-                    return base.VisitBinaryExpression(node);
-
-                var nameR = GetTypeName(innerTypeR?.ToString() ?? string.Empty);
-                var nameL = GetTypeName(innerTypeL?.ToString() ?? string.Empty);
-
-                if (node.Left.IsKind(SyntaxKind.NullLiteralExpression))
-                {
-                    // Check if the type is a ComType
-                    if (depthR <= 1 && typeInfoR.Type != null && ComTypes.ContainsKey(nameR))
-                    {
-                        return BinaryExpression(node.Kind(), node.Left, IdentifierName($"{node.Right.ToFullString()}.lpVtbl"));
-                    }
-                }
-                else
-                {
-                    // Check if the type is a ComType
-                    if (depthL <= 1 && typeInfoL.Type != null && ComTypes.ContainsKey(nameL))
-                    {
-                        return BinaryExpression(node.Kind(), IdentifierName($"{node.Left.ToFullString()}.lpVtbl"), node.Right);
-                    }
-                }
-
-                return base.VisitBinaryExpression(node);
-            }
-
-            public override SyntaxNode? VisitVariableDeclaration(VariableDeclarationSyntax node)
-            {
-                if (!node.Variables.Any(var => var.Initializer is not null && var.Initializer.Value is LiteralExpressionSyntax lit && lit.IsKind(SyntaxKind.NullLiteralExpression)))
-                    return base.VisitVariableDeclaration(node);
-
-                // Get the corresponding parameter type
-                var variableType = node.Type;
-                if (variableType is null || GetPointerDepth(variableType, out var innerType) > 1)
-                    return base.VisitVariableDeclaration(node);
-                var name = GetTypeName(innerType.ToString() ?? string.Empty);
-
-                // Check if the parameter type is ComType
-                if (!ComTypes.ContainsKey(name))
-                {
-                    return base.VisitVariableDeclaration(node);
-                }
-
-                var newInstantiation = node;
-                var variables = node.Variables;
-                for (int i = 0; i < variables.Count; i++)
-                {
-                    var variableExpression = variables[i].Initializer?.Value as LiteralExpressionSyntax;
-                    // Check if the variable is instantiated to a null literal
-                    if (variableExpression is not null && variableExpression.IsKind(SyntaxKind.NullLiteralExpression))
-                    {
-                        var newDefaultArg = LiteralExpression(SyntaxKind.DefaultLiteralExpression);
-                        newInstantiation = newInstantiation.ReplaceNode(variableExpression, newDefaultArg);
-                    }
-                }
-                return newInstantiation;
-            }
-
-            public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
-            {
-                var orig = node;
-                if (node.Modifiers.Any(token => token.IsKind(SyntaxKind.ExternKeyword)))
-                {
-                    var pointerDepth = GetPointerDepth(node.ReturnType, out var innerType);
-                    var name = innerType.ToString();
-                    var shouldEditReturnType = ComTypes.ContainsKey(name);
-                    if (shouldEditReturnType || node.ParameterList.Parameters.Any(param => {
-                        if (param.Type is null)
-                            return false;
-                        pointerDepth = GetPointerDepth(param.Type, out var innerType);
-                        name = innerType.ToString();
-                        return ComTypes.ContainsKey(name);
-                    }))
-                    {
-                        var returnType = shouldEditReturnType ? PointerType(ParseTypeName("Ptr2D")) : orig.ReturnType;
-                        if (shouldEditReturnType)
-                        {
-                            pointerDepth = GetPointerDepth(node.ReturnType, out _);
-                            
-                            for (pointerDepth--; pointerDepth > 0; pointerDepth--)
-                            {
-                                returnType = PointerType(returnType);
-                            }
-                        }
-
-                        node = node.WithIdentifier(Identifier($"_{node.Identifier}")).
-                            WithReturnType(returnType).
-                            WithModifiers(TokenList(node.Modifiers.Where(modifier => !modifier.IsKind(SyntaxKind.PublicKeyword)))).
-                            AddModifiers(Token(SyntaxKind.PrivateKeyword).WithLeadingTrivia());
-
-                        var InvocationExp = InvocationExpression(
-                                            IdentifierName(node.Identifier.Text),
-                                            ArgumentList(
-                                                SeparatedList(node.ParameterList.Parameters.Select(param => Argument(IdentifierName(param.Identifier.Text))))));
-
-                        _newMethods.Add(MethodDeclaration(orig.ReturnType, orig.Identifier).
-                            WithParameterList(orig.ParameterList).
-                            WithModifiers(
-                                TokenList(orig.Modifiers.Where(modifier => !modifier.IsKind(SyntaxKind.ExternKeyword)))).
-                            WithExpressionBody(
-                                ArrowExpressionClause( shouldEditReturnType ? 
-                                    CastExpression(orig.ReturnType, InvocationExp ) : InvocationExp)).
-                            WithSemicolonToken(
-                                Token(SyntaxKind.SemicolonToken)));
-                    }
-                }
-
-                return base.VisitMethodDeclaration(node);
-            }
-
-            public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
-            {
-                if (node.Type is FunctionPointerTypeSyntax funcPtrType && node.ExpressionBody is not null &&
-                    node.ExpressionBody.Expression is PrefixUnaryExpressionSyntax pues &&
-                    funcPtrType.ParameterList.Parameters.Any(param => {
-                        var pointerDepth = GetPointerDepth(param.Type, out var innerType);
-                        var name = innerType.ToString();
-                        return ComTypes.ContainsKey(name);
-                    }))
-                {
-                    node = node.WithExpressionBody(
-                            ArrowExpressionClause(
-                                PrefixUnaryExpression(SyntaxKind.AddressOfExpression, IdentifierName($"_{pues.Operand.ToString()}"))));
-                }
-                return base.VisitPropertyDeclaration(node);
-            }
-
-            public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node) => MethodAddDeclaration(() => base.VisitStructDeclaration(node));
-
-            public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node) => MethodAddDeclaration(() => base.VisitClassDeclaration(node));
-
-            private SyntaxNode? MethodAddDeclaration(Func<SyntaxNode?> typeVisit)
-            {
-                var parentNewMehods = _newMethods;
-                _newMethods = _newMethods.Count > 0 ? [] : _newMethods;
-                var newNode = typeVisit();
-
-                if (newNode is not TypeDeclarationSyntax typeNode)
-                    return newNode;
-                if (_newMethods.Count > 0)
-                    typeNode = typeNode.AddMembers(_newMethods.ToArray());
-                _newMethods.Clear();
-                _newMethods = parentNewMehods;
-
-                return typeNode;
-            }
-
-            private string GetTypeName(string fullTypeName)
-            {
-                int dot = fullTypeName.LastIndexOf('.');
-
-                if (dot != -1)
-                {
-                    return fullTypeName.Substring(dot + 1);
-                }
-
-                return fullTypeName;
-            }
-        }
-
-        class Rewriter(Dictionary<string, (bool, KeyedStringTree?)> ComTypes)
-            : CSharpSyntaxRewriter
-        {
-            bool isInComType = false;
-            public override SyntaxNode? VisitPointerType(PointerTypeSyntax node)
-            {
-                var name = node.ElementType.ToString();
-                return ComTypes.TryGetValue(name, out _) ? IdentifierName(name) : base.VisitPointerType(node);
-            }
-
-            public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
-            {
-                if (isInComType && node.Identifier.ToString() == "lpVtbl" && node.Parent is not MemberAccessExpressionSyntax)
-                {
-                    return ParenthesizedExpression(PrefixUnaryExpression(SyntaxKind.PointerIndirectionExpression, node));
-                }
-
-                return base.VisitIdentifierName(node);
-            }
-
-            public override SyntaxNode? VisitVariableDeclaration(VariableDeclarationSyntax node)
-            {
-                if (isInComType && node.Type.ToString() == "void**" && node.Variables.First().Identifier.ToString() == "lpVtbl")
-                {
-                    return VariableDeclaration((PointerType(IdentifierName("Ptr2D"))))
-                        .AddVariables(VariableDeclarator("lpVtbl"));
-                }
-
-                return base.VisitVariableDeclaration(node);
-            }
-
-            //public override SyntaxNode? VisitInterfaceDeclaration(InterfaceDeclarationSyntax node)
-            //{
-            //    var ret = base.VisitInterfaceDeclaration(node);
-
-            //    if (ret is InterfaceDeclarationSyntax inter && inter.BaseList is not null && inter.BaseList.Types.Any(baseType => baseType.Type.ToString().EndsWith(".Interface")))
-            //    {
-            //        List<BaseTypeSyntax> baseTypes = [];
-            //        foreach (BaseTypeSyntax baseType in inter.BaseList.Types)
-            //        {
-            //            if (ComTypes.Any(com => $"{com.Key}.Interface" == baseType.Type.ToString()))
-            //            {
-            //                baseTypes.Add(SimpleBaseType(IdentifierName(baseType.Type.ToString())));
-            //            }
-            //            else
-            //            {
-            //                baseTypes.Add(baseType);
-            //            }
-            //        }
-
-            //        ret = inter.WithBaseList(BaseList(SeparatedList(baseTypes)));
-            //    }
-
-            //    return ret;
-            //}
-
-            public override SyntaxNode? VisitCastExpression(CastExpressionSyntax node)
-            {
-                int depth = GetPointerDepth(node.Type, out var innerType);
-                var castType = innerType.ToString();
-
-                var expression = node.Expression.ToString();
-
-                if (node.Type is not PointerTypeSyntax || expression != "Unsafe.AsPointer(ref this)" ||
-                    !ComTypes.ContainsKey(castType))
-                {
-                    return base.VisitCastExpression(node);
-                }
-
-                return node.Parent is MemberAccessExpressionSyntax ? ThisExpression() :
-                            MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, ThisExpression(), IdentifierName("lpVtbl"));
-            }
-
-            public override SyntaxNode? VisitParameter(ParameterSyntax node)
-            {
-                var visited = base.VisitParameter(node);
-                var visitedParameter = visited as ParameterSyntax;
-                if (visitedParameter is null || visitedParameter.Default is null || visitedParameter.Type is null ||
-                    !visitedParameter.Default.Value.IsKind(SyntaxKind.NullLiteralExpression) ||
-                    !ComTypes.ContainsKey(visitedParameter.Type?.ToString() ?? string.Empty))
-                {
-                    return visited;
-                }
-
-                return Parameter(visitedParameter.AttributeLists, visitedParameter.Modifiers, visitedParameter.Type, visitedParameter.Identifier, EqualsValueClause(LiteralExpression(SyntaxKind.DefaultLiteralExpression)));
-            }
-
-            public override SyntaxNode? VisitFunctionPointerType(FunctionPointerTypeSyntax node)
-            {
-                var parameters = node.ParameterList.Parameters;
-                var newParamType = PointerType(IdentifierName("Ptr2D"));
-                List<FunctionPointerParameterSyntax> newParams = [];
-                for (var j = 0; j < parameters.Count; j++)
-                {
-                    var param = parameters[j];
-                    int depth = GetPointerDepth(param.Type, out var innerType);
-                    var type = innerType.ToString();
-                    if (param.Type is not PointerTypeSyntax ||
-                        !ComTypes.ContainsKey(type))
-                    {
-                        newParams.Add(param);
-                        continue;
-                    }
-
-                    var paramType = newParamType;
-                    for (depth--; depth > 0; depth--)
-                    {
-                        paramType = PointerType(paramType);
-                    }
-
-                    newParams.Add(FunctionPointerParameter(paramType));
-                }
-                node = node.ReplaceNode(node.ParameterList, FunctionPointerParameterList(SeparatedList(newParams)));
-                return base.VisitFunctionPointerType(node);
-            }
+            bool isInCom = false;
+            bool disposeFound = false;
+            List<MethodDeclarationSyntax> addedMethods = [];
 
             public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
             {
                 string name = node.Identifier.ToString();
+                List<MethodDeclarationSyntax> parentMethods = addedMethods;
+                addedMethods = addedMethods.Count > 0 ? [] : addedMethods;
 
-                if (ComTypes.TryGetValue(name, out var Value) && Value.Item2 is not null && Value.Item2.FindNode(name, out KeyedStringTree.Node? treeNode) && treeNode.Parent is not null)
+                if (
+                    ComTypes.TryGetValue(name, out var Value)
+                    && Value.Item2 is not null
+                    && Value.Item2.FindNode(name, out KeyedStringTree.Node? treeNode)
+                    && treeNode.Parent is not null
+                )
                 {
-                    isInComType = true;
+                    bool parentIsCom = isInCom;
+                    bool parentDispose = disposeFound;
+                    isInCom = true;
+                    disposeFound = false;
                     //visit and modify ComType Variables and internal usages first
                     node = (base.VisitStructDeclaration(node) as StructDeclarationSyntax)!;
+                    node = node.RemoveNodes(
+                                node.BaseList?.Types.Where(bas =>
+                                    bas.Type.ToString() == "INativeGuid"
+                                ) ?? [],
+                                SyntaxRemoveOptions.KeepNoTrivia
+                            )!
+                        .AddBaseListTypes(SimpleBaseType(ParseTypeName("IDisposable")))
+                        .AddMembers(addedMethods.ToArray());
+
+                    if (!disposeFound)
+                    {
+                        node = node.AddMembers(
+                                MethodDeclaration(ParseTypeName("void"), "Dispose")
+                                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                                    .WithExpressionBody(
+                                        ArrowExpressionClause(
+                                            InvocationExpression(IdentifierName("Release"))
+                                        )
+                                    )
+                                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                            )
+                            .WithLeadingTrivia(
+                                Trivia(
+                                    DocumentationCommentTrivia(
+                                        SyntaxKind.SingleLineDocumentationCommentTrivia,
+                                        List(
+                                            new XmlNodeSyntax[]
+                                            {
+                                                XmlText("/// "),
+                                                XmlElement(
+                                                    XmlElementStartTag(XmlName("inheritdoc"))
+                                                        .WithAttributes(
+                                                            SingletonList<XmlAttributeSyntax>(
+                                                                XmlCrefAttribute(
+                                                                    NameMemberCref(
+                                                                        IdentifierName(
+                                                                            "IDisposable.Dispose"
+                                                                        )
+                                                                    )
+                                                                )
+                                                            )
+                                                        ),
+                                                    XmlElementEndTag(XmlName("inheritdoc"))
+                                                ),
+                                                XmlText("\n\t"),
+                                            }
+                                        )
+                                    )
+                                )
+                            );
+                    }
 
                     //Correct to the .Interface version which will always be our parent
                     treeNode = treeNode.Parent;
-
-                    //Add vtbl constructor to ComType
-                    node = node.AddMembers(
-                                        ConstructorDeclaration(name).
-                                           WithModifiers(
-                                            TokenList(
-                                                Token(SyntaxKind.PublicKeyword))).
-                                           WithParameterList(
-                                            ParameterList(
-                                                SingletonSeparatedList(
-                                                    Parameter(
-                                                        Identifier("vtbl")).
-                                                    WithType(
-                                                        PointerType(ParseTypeName("Ptr2D")))))).
-                                           WithExpressionBody(
-                                            ArrowExpressionClause(
-                                                AssignmentExpression(
-                                                    SyntaxKind.SimpleAssignmentExpression,
-                                                    IdentifierName("lpVtbl"),
-                                                    IdentifierName("vtbl")))).
-                                           WithSemicolonToken(
-                                            Token(SyntaxKind.SemicolonToken)).
-                                           WithLeadingTrivia(
-                                            TriviaList(
-                                                Trivia(
-                                                    DocumentationCommentTrivia(
-                                                        SyntaxKind.SingleLineDocumentationCommentTrivia)
-                                                    .WithContent(
-                                                        List(
-                                                            new XmlNodeSyntax[]
-                                                            {
-                                                                    XmlText().WithTextTokens(
-                                                                        TokenList(
-                                                                            XmlTextLiteral(
-                                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
-                                                                    XmlElement(
-                                                                        XmlElementStartTag(
-                                                                            XmlName("summary")),
-                                                                        List(new XmlNodeSyntax[]
-                                                                        {
-                                                                            XmlText("Initializes a new instance of the "),
-                                                                            XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(name))) })),
-                                                                            XmlText(" struct with the specified virtual table pointer.")
-                                                                        }),
-                                                                        XmlElementEndTag(
-                                                                            XmlName("summary"))),
-                                                                    XmlText().WithTextTokens(
-                                                                        TokenList(
-                                                                            XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList()))),
-                                                                    XmlText().WithTextTokens(
-                                                                        TokenList(
-                                                                            XmlTextLiteral(
-                                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
-                                                                    XmlElement(
-                                                                        XmlElementStartTag(
-                                                                            XmlName("param")).WithAttributes(
-                                                                                SingletonList<XmlAttributeSyntax>(
-                                                                                    XmlNameAttribute(
-                                                                                        XmlName("name"),
-                                                                                        Token(SyntaxKind.DoubleQuoteToken),
-                                                                                        IdentifierName("vtbl"),
-                                                                                        Token(SyntaxKind.DoubleQuoteToken)))),
-                                                                        SingletonList<XmlNodeSyntax>(
-                                                                            XmlText("The pointer to virtual table.")),
-                                                                        XmlElementEndTag(
-                                                                            XmlName("param"))),
-                                                                    XmlText().WithTextTokens(
-                                                                        TokenList(
-                                                                            XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList())))
-                                                            }))))));
-                    //add Ptr2D* casts
-                    node = node.AddMembers(
-                        ConversionOperatorDeclaration(Token(SyntaxKind.ExplicitKeyword),
-                            ParseTypeName(name)).
-                        WithModifiers(
-                            TokenList(
-                                Token(SyntaxKind.PublicKeyword),
-                                Token(SyntaxKind.StaticKeyword))).
-                        WithParameterList(
-                            ParameterList(
-                                SingletonSeparatedList(
-                                    Parameter(Identifier("value")).
-                                    WithType(PointerType(ParseTypeName("Ptr2D")))))).
-                        WithExpressionBody(
-                            ArrowExpressionClause(
-                                        ObjectCreationExpression(
-                                            IdentifierName(name)).
-                                        WithArgumentList(
-                                            ArgumentList(
-                                                SingletonSeparatedList(
-                                                    Argument(
-                                                        IdentifierName("value"))))))).
-                        WithSemicolonToken(
-                            Token(SyntaxKind.SemicolonToken)).
-                        WithLeadingTrivia(
-                            TriviaList(
-                                Trivia(
-                                    DocumentationCommentTrivia(
-                                        SyntaxKind.SingleLineDocumentationCommentTrivia)
-                                    .WithContent(
-                                        List(
-                                            new XmlNodeSyntax[]
-                                            {
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextLiteral(
-                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
-                                                    XmlElement(
-                                                        XmlElementStartTag(
-                                                            XmlName("summary")),
-                                                        List(new XmlNodeSyntax[]
-                                                        {
-                                                            XmlText("casts "),
-                                                            XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(ParseTypeName("Ptr2D"))) })),
-                                                            XmlText(" to "),
-                                                            XmlEmptyElement(XmlName("see"), List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(name))) })),
-                                                            XmlText(".")
-                                                        }),
-                                                        XmlElementEndTag(
-                                                            XmlName("summary"))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList()))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextLiteral(
-                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
-                                                    XmlElement(
-                                                        XmlElementStartTag(
-                                                            XmlName("param")).WithAttributes(
-                                                                SingletonList<XmlAttributeSyntax>(
-                                                                    XmlNameAttribute(
-                                                                        XmlName("name"),
-                                                                        Token(SyntaxKind.DoubleQuoteToken),
-                                                                        IdentifierName("value"),
-                                                                        Token(SyntaxKind.DoubleQuoteToken)))),
-                                                        List(new XmlNodeSyntax[]
-                                                        {
-                                                            XmlText("The "),
-                                                            XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(ParseTypeName("Ptr2D"))) })),
-                                                            XmlText(" instance to be converted ")
-                                                        }),
-                                                        XmlElementEndTag(
-                                                            XmlName("param"))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList())))
-                                            }))))),
-                        ConversionOperatorDeclaration(Token(SyntaxKind.ImplicitKeyword),
-                            PointerType(ParseTypeName("Ptr2D"))).
-                        WithModifiers(
-                            TokenList(
-                                Token(SyntaxKind.PublicKeyword),
-                                Token(SyntaxKind.StaticKeyword))).
-                        WithParameterList(
-                            ParameterList(
-                                SingletonSeparatedList(
-                                    Parameter(Identifier("value")).
-                                    WithType(IdentifierName(name))))).
-                        WithExpressionBody(
-                            ArrowExpressionClause(
-                                MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, IdentifierName("value"), IdentifierName("lpVtbl")))).
-                        WithSemicolonToken(
-                            Token(SyntaxKind.SemicolonToken)).
-                        WithLeadingTrivia(
-                            TriviaList(
-                                Trivia(
-                                    DocumentationCommentTrivia(
-                                        SyntaxKind.SingleLineDocumentationCommentTrivia)
-                                    .WithContent(
-                                        List(
-                                            new XmlNodeSyntax[]
-                                            {
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextLiteral(
-                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
-                                                    XmlElement(
-                                                        XmlElementStartTag(
-                                                            XmlName("summary")),
-                                                        List(new XmlNodeSyntax[]
-                                                        {
-                                                            XmlText("casts "),
-                                                            XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(name))) })),
-                                                            XmlText(" to "),
-                                                            XmlEmptyElement(XmlName("see"), List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(ParseTypeName("Ptr2D"))) })),
-                                                            XmlText(" pointer.")
-                                                        }),
-                                                        XmlElementEndTag(
-                                                            XmlName("summary"))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList()))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextLiteral(
-                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
-                                                    XmlElement(
-                                                        XmlElementStartTag(
-                                                            XmlName("param")).WithAttributes(
-                                                                SingletonList<XmlAttributeSyntax>(
-                                                                    XmlNameAttribute(
-                                                                        XmlName("name"),
-                                                                        Token(SyntaxKind.DoubleQuoteToken),
-                                                                        IdentifierName("value"),
-                                                                        Token(SyntaxKind.DoubleQuoteToken)))),
-                                                        List(new XmlNodeSyntax[]
-                                                        {
-                                                            XmlText("The "),
-                                                            XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(name))) })),
-                                                            XmlText(" instance to be converted ")
-                                                        }),
-                                                        XmlElementEndTag(
-                                                            XmlName("param"))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList())))
-                                            }))))));
-                    //Add void*** conversion
-                    node = node.AddMembers(
-                    ConversionOperatorDeclaration(Token(SyntaxKind.ExplicitKeyword),
-                            ParseTypeName(name)).
-                        WithModifiers(
-                            TokenList(
-                                Token(SyntaxKind.PublicKeyword),
-                                Token(SyntaxKind.StaticKeyword))).
-                        WithParameterList(
-                            ParameterList(
-                                SingletonSeparatedList(
-                                    Parameter(Identifier("value")).
-                                    WithType(PointerType(PointerType(PointerType(ParseTypeName("void")))))))).
-                        WithExpressionBody(
-                            ArrowExpressionClause(
-                                        ObjectCreationExpression(
-                                            IdentifierName(name)).
-                                        WithArgumentList(
-                                            ArgumentList(
-                                                SingletonSeparatedList(
-                                                    Argument(
-                                                        CastExpression(
-                                                            PointerType(ParseTypeName("Ptr2D")),
-                                                            IdentifierName("value")))))))).
-                        WithSemicolonToken(
-                            Token(SyntaxKind.SemicolonToken)).
-                        WithLeadingTrivia(
-                            TriviaList(
-                                Trivia(
-                                    DocumentationCommentTrivia(
-                                        SyntaxKind.SingleLineDocumentationCommentTrivia)
-                                    .WithContent(
-                                        List(
-                                            new XmlNodeSyntax[]
-                                            {
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextLiteral(
-                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
-                                                    XmlElement(
-                                                        XmlElementStartTag(
-                                                            XmlName("summary")),
-                                                        List(new XmlNodeSyntax[]
-                                                        {
-                                                            XmlText("casts void*** pointer to "),
-                                                            XmlEmptyElement(XmlName("see"), List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(name))) })),
-                                                            XmlText(".")
-                                                        }),
-                                                        XmlElementEndTag(
-                                                            XmlName("summary"))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList()))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextLiteral(
-                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
-                                                    XmlElement(
-                                                        XmlElementStartTag(
-                                                            XmlName("param")).WithAttributes(
-                                                                SingletonList<XmlAttributeSyntax>(
-                                                                    XmlNameAttribute(
-                                                                        XmlName("name"),
-                                                                        Token(SyntaxKind.DoubleQuoteToken),
-                                                                        IdentifierName("value"),
-                                                                        Token(SyntaxKind.DoubleQuoteToken)))),
-                                                        List(new XmlNodeSyntax[]
-                                                        {
-                                                            XmlText("The void*** instance to be converted")
-                                                        }),
-                                                        XmlElementEndTag(
-                                                            XmlName("param"))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList())))
-                                            }))))),
-                        ConversionOperatorDeclaration(Token(SyntaxKind.ImplicitKeyword),
-                            PointerType(PointerType(PointerType(ParseTypeName("void"))))).
-                        WithModifiers(
-                            TokenList(
-                                Token(SyntaxKind.PublicKeyword),
-                                Token(SyntaxKind.StaticKeyword))).
-                        WithParameterList(
-                            ParameterList(
-                                SingletonSeparatedList(
-                                    Parameter(Identifier("value")).
-                                    WithType(IdentifierName(name))))).
-                        WithExpressionBody(
-                            ArrowExpressionClause(
-                                CastExpression(
-                                    PointerType(PointerType(PointerType(ParseTypeName("void")))),
-                                    MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, IdentifierName("value"), IdentifierName("lpVtbl"))))).
-                        WithSemicolonToken(
-                            Token(SyntaxKind.SemicolonToken)).
-                        WithLeadingTrivia(
-                            TriviaList(
-                                Trivia(
-                                    DocumentationCommentTrivia(
-                                        SyntaxKind.SingleLineDocumentationCommentTrivia)
-                                    .WithContent(
-                                        List(
-                                            new XmlNodeSyntax[]
-                                            {
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextLiteral(
-                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
-                                                    XmlElement(
-                                                        XmlElementStartTag(
-                                                            XmlName("summary")),
-                                                        List(new XmlNodeSyntax[]
-                                                        {
-                                                            XmlText("casts "),
-                                                            XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(name))) })),
-                                                            XmlText(" to void*** pointer")
-                                                        }),
-                                                        XmlElementEndTag(
-                                                            XmlName("summary"))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList()))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextLiteral(
-                                                                TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
-                                                    XmlElement(
-                                                        XmlElementStartTag(
-                                                            XmlName("param")).WithAttributes(
-                                                                SingletonList<XmlAttributeSyntax>(
-                                                                    XmlNameAttribute(
-                                                                        XmlName("name"),
-                                                                        Token(SyntaxKind.DoubleQuoteToken),
-                                                                        IdentifierName("value"),
-                                                                        Token(SyntaxKind.DoubleQuoteToken)))),
-                                                        List(new XmlNodeSyntax[]
-                                                        {
-                                                            XmlText("The "),
-                                                            XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(name))) })),
-                                                            XmlText(" instance to be converted ")
-                                                        }),
-                                                        XmlElementEndTag(
-                                                            XmlName("param"))),
-                                                    XmlText().WithTextTokens(
-                                                        TokenList(
-                                                            XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList())))
-                                            }))))));
 
                     if (treeNode.Parent is not null)
                     {
                         node = generateUpcasts(node, name, treeNode.Parent);
                     }
 
-                    isInComType = false;
-                    return node;
+                    isInCom = parentIsCom;
+                    disposeFound = parentDispose;
+                }
+                else
+                {
+                    node = (base.VisitStructDeclaration(node) as StructDeclarationSyntax)!;
+                    node = node.AddMembers(addedMethods.ToArray());
                 }
 
-                return base.VisitStructDeclaration(node);
+                addedMethods.Clear();
+                addedMethods = parentMethods;
+                return node;
             }
 
-            private StructDeclarationSyntax generateUpcasts(StructDeclarationSyntax node, string className, KeyedStringTree.Node treeNode)
+            public override SyntaxNode? VisitSimpleBaseType(SimpleBaseTypeSyntax node)
+            {
+                return isInCom && node.Type.ToString() == "INativeInterface"
+                    ? SimpleBaseType(ParseTypeName("IComInterface"))
+                    : base.VisitSimpleBaseType(node);
+            }
+
+            public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
+            {
+                if (
+                    isInCom
+                    && node.Identifier.Text == "Dispose"
+                    && node.ParameterList.Parameters.Count == 0
+                )
+                {
+                    if (node.ExpressionBody is not null)
+                    {
+                        node = node.WithBody(
+                                Block(
+                                    ExpressionStatement(node.ExpressionBody.Expression),
+                                    ExpressionStatement(
+                                        InvocationExpression(IdentifierName("Release"))
+                                    )
+                                )
+                            )
+                            .WithExpressionBody(null);
+                    }
+                    else if (node.Body is not null)
+                    {
+                        node = node.WithBody(
+                            Block(
+                                node.Body.Statements.Append(
+                                    ExpressionStatement(
+                                        InvocationExpression(IdentifierName("Release"))
+                                    )
+                                )
+                            )
+                        );
+                    }
+
+                    node = node.WithLeadingTrivia(
+                        Trivia(
+                            DocumentationCommentTrivia(
+                                SyntaxKind.SingleLineDocumentationCommentTrivia,
+                                List(
+                                    new XmlNodeSyntax[]
+                                    {
+                                        XmlText("/// "),
+                                        XmlElement(
+                                            XmlElementStartTag(XmlName("inheritdoc"))
+                                                .WithAttributes(
+                                                    SingletonList<XmlAttributeSyntax>(
+                                                        XmlCrefAttribute(
+                                                            NameMemberCref(
+                                                                IdentifierName(
+                                                                    "IDisposable.Dispose"
+                                                                )
+                                                            )
+                                                        )
+                                                    )
+                                                ),
+                                            XmlElementEndTag(XmlName("inheritdoc"))
+                                        ),
+                                        XmlText("\n\t"),
+                                    }
+                                )
+                            )
+                        )
+                    );
+                }
+                else if (node.Modifiers.Any(mod => mod.IsKind(SyntaxKind.PublicKeyword)))
+                {
+                    int guidPtrIndex = -1;
+                    int voidPtrIndex = -1;
+
+                    List<ParameterSyntax> paramList = [];
+                    List<ArgumentSyntax> argList = [];
+                    AssignmentExpressionSyntax? assignment = null;
+
+                    for (var i = 0; i < node.ParameterList.Parameters.Count; i++)
+                    {
+                        var param = node.ParameterList.Parameters[i];
+
+                        if (voidPtrIndex == -1)
+                        {
+                            if (param.Type?.ToString() == "Guid*")
+                            {
+                                guidPtrIndex = i;
+                            }
+                            else if (guidPtrIndex != -1 && param.Type?.ToString() == "void**")
+                            {
+                                voidPtrIndex = i;
+
+                                paramList.RemoveAt(guidPtrIndex);
+                                argList[guidPtrIndex] = Argument(
+                                    MemberAccessExpression(
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        IdentifierName("TCom"),
+                                        IdentifierName("NativeGuid")
+                                    )
+                                );
+
+                                paramList.Add(
+                                    Parameter(
+                                            param.AttributeLists,
+                                            param.Modifiers,
+                                            ParseTypeName("TCom"),
+                                            param.Identifier,
+                                            null
+                                        )
+                                        .AddModifiers(Token(SyntaxKind.OutKeyword))
+                                );
+                                argList.Add(
+                                    Argument(
+                                        InvocationExpression(
+                                            MemberAccessExpression(
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                IdentifierName(param.Identifier),
+                                                IdentifierName("GetAddressOf")
+                                            )
+                                        )
+                                    )
+                                );
+                                assignment = AssignmentExpression(
+                                    SyntaxKind.SimpleAssignmentExpression,
+                                    IdentifierName(param.Identifier),
+                                    DefaultExpression(ParseTypeName("TCom"))
+                                );
+                                continue;
+                            }
+                        }
+                        argList.Add(Argument(IdentifierName(param.Identifier.Text)));
+                        paramList.Add(param);
+                    }
+
+                    if (assignment is not null)
+                    {
+                        addedMethods.Add(
+                            node.AddTypeParameterListParameters(TypeParameter("TCom"))
+                                .AddConstraintClauses(
+                                    TypeParameterConstraintClause(
+                                        IdentifierName("TCom"),
+                                        SeparatedList<TypeParameterConstraintSyntax>(
+                                            [
+                                                TypeConstraint(IdentifierName("unmanaged")),
+                                                TypeConstraint(IdentifierName("IComInterface")),
+                                            ]
+                                        )
+                                    )
+                                )
+                                .WithParameterList(ParameterList(SeparatedList(paramList)))
+                                .WithExpressionBody(null)
+                                .WithSemicolonToken(Token(SyntaxKind.None))
+                                .WithBody(
+                                    Block(
+                                        ExpressionStatement(assignment),
+                                        ReturnStatement(
+                                            InvocationExpression(
+                                                IdentifierName(node.Identifier),
+                                                ArgumentList(SeparatedList(argList))
+                                            )
+                                        )
+                                    )
+                                )
+                        );
+                    }
+                }
+
+                return base.VisitMethodDeclaration(node);
+            }
+
+            private StructDeclarationSyntax generateUpcasts(
+                StructDeclarationSyntax node,
+                string className,
+                KeyedStringTree.Node treeNode
+            )
             {
                 string castName = InterfaceNameToStructName(treeNode.Value);
 
@@ -1194,111 +657,206 @@ namespace Silk.NET.SilkTouch.Mods
                 return node;
             }
 
-            private string InterfaceNameToStructName(string interfaceName) => interfaceName.EndsWith(".Interface") ? interfaceName.Remove(interfaceName.Length - 10) : interfaceName;
+            private string InterfaceNameToStructName(string interfaceName) =>
+                interfaceName.EndsWith(".Native.Interface")
+                    ? interfaceName.Remove(interfaceName.Length - 17)
+                    : interfaceName;
 
-            private ConversionOperatorDeclarationSyntax GenerateCastDefinition(string className, string castName, bool implicitCast = true)
+            private ConversionOperatorDeclarationSyntax GenerateCastDefinition(
+                string className,
+                string castName,
+                bool implicitCast = true
+            )
             {
-                return ConversionOperatorDeclaration(Token(implicitCast ? SyntaxKind.ImplicitKeyword : SyntaxKind.ExplicitKeyword),
-                            ParseTypeName(className)).
-                        WithModifiers(
-                            TokenList(
-                                Token(SyntaxKind.PublicKeyword),
-                                Token(SyntaxKind.StaticKeyword))).
-                        WithParameterList(
-                            ParameterList(
-                                SingletonSeparatedList(
-                                    Parameter(Identifier("value")).
-                                    WithType(ParseTypeName(castName))))).
-                        WithExpressionBody(
-                            ArrowExpressionClause(
-                                        ObjectCreationExpression(
-                                            IdentifierName(className)).
-                                        WithArgumentList(
-                                            ArgumentList(
-                                                SingletonSeparatedList(
-                                                    Argument(
-                                                        IdentifierName("value.lpVtbl"))))))).
-                        WithSemicolonToken(
-                            Token(SyntaxKind.SemicolonToken)).
-                        WithLeadingTrivia(
-                            TriviaList(
-                                Trivia(
-                                    DocumentationCommentTrivia(
-                                        SyntaxKind.SingleLineDocumentationCommentTrivia)
+                return ConversionOperatorDeclaration(
+                        Token(
+                            implicitCast ? SyntaxKind.ImplicitKeyword : SyntaxKind.ExplicitKeyword
+                        ),
+                        ParseTypeName(className)
+                    )
+                    .WithModifiers(
+                        TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
+                    )
+                    .WithParameterList(
+                        ParameterList(
+                            SingletonSeparatedList(
+                                Parameter(Identifier("value")).WithType(ParseTypeName(castName))
+                            )
+                        )
+                    )
+                    .WithExpressionBody(
+                        ArrowExpressionClause(
+                            ObjectCreationExpression(IdentifierName(className))
+                                .WithArgumentList(
+                                    ArgumentList(
+                                        SingletonSeparatedList(
+                                            Argument(
+                                                CastExpression(
+                                                    PointerType(
+                                                        ParseTypeName($"{className}.Native")
+                                                    ),
+                                                    IdentifierName("value.lpVtbl")
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                        )
+                    )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                    .WithLeadingTrivia(
+                        TriviaList(
+                            Trivia(
+                                DocumentationCommentTrivia(
+                                        SyntaxKind.SingleLineDocumentationCommentTrivia
+                                    )
                                     .WithContent(
                                         List(
                                             new XmlNodeSyntax[]
                                             {
-                                                XmlText().WithTextTokens(
-                                                    TokenList(
-                                                        XmlTextLiteral(
-                                                            TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
+                                                XmlText()
+                                                    .WithTextTokens(
+                                                        TokenList(
+                                                            XmlTextLiteral(
+                                                                TriviaList(
+                                                                    DocumentationCommentExterior(
+                                                                        "/// "
+                                                                    )
+                                                                ),
+                                                                " ",
+                                                                " ",
+                                                                TriviaList()
+                                                            )
+                                                        )
+                                                    ),
                                                 XmlElement(
-                                                    XmlElementStartTag(
-                                                        XmlName("summary")),
-                                                    List(new XmlNodeSyntax[]
-                                                    {
-                                                        XmlText($"{(implicitCast ? "Up" : "Down")}casts "),
-                                                        XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(castName))) })),
-                                                        XmlText(" to "),
-                                                        XmlEmptyElement(XmlName("see"), List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(className))) })),
-                                                        XmlText(".")
-                                                    }),
-                                                    XmlElementEndTag(
-                                                        XmlName("summary"))),
-                                                XmlText().WithTextTokens(
-                                                    TokenList(
-                                                        XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList()))),
-                                                XmlText().WithTextTokens(
-                                                    TokenList(
-                                                        XmlTextLiteral(
-                                                            TriviaList(DocumentationCommentExterior("/// ")), " ", " ", TriviaList()))),
+                                                    XmlElementStartTag(XmlName("summary")),
+                                                    List(
+                                                        new XmlNodeSyntax[]
+                                                        {
+                                                            XmlText(
+                                                                $"{(implicitCast ? "Up" : "Down")}casts "
+                                                            ),
+                                                            XmlEmptyElement(
+                                                                XmlName("see"),
+                                                                List<XmlAttributeSyntax>(
+                                                                    new[]
+                                                                    {
+                                                                        XmlCrefAttribute(
+                                                                            NameMemberCref(
+                                                                                IdentifierName(
+                                                                                    castName
+                                                                                )
+                                                                            )
+                                                                        ),
+                                                                    }
+                                                                )
+                                                            ),
+                                                            XmlText(" to "),
+                                                            XmlEmptyElement(
+                                                                XmlName("see"),
+                                                                List<XmlAttributeSyntax>(
+                                                                    new[]
+                                                                    {
+                                                                        XmlCrefAttribute(
+                                                                            NameMemberCref(
+                                                                                IdentifierName(
+                                                                                    className
+                                                                                )
+                                                                            )
+                                                                        ),
+                                                                    }
+                                                                )
+                                                            ),
+                                                            XmlText("."),
+                                                        }
+                                                    ),
+                                                    XmlElementEndTag(XmlName("summary"))
+                                                ),
+                                                XmlText()
+                                                    .WithTextTokens(
+                                                        TokenList(
+                                                            XmlTextNewLine(
+                                                                TriviaList(),
+                                                                "\n",
+                                                                "\n",
+                                                                TriviaList()
+                                                            )
+                                                        )
+                                                    ),
+                                                XmlText()
+                                                    .WithTextTokens(
+                                                        TokenList(
+                                                            XmlTextLiteral(
+                                                                TriviaList(
+                                                                    DocumentationCommentExterior(
+                                                                        "/// "
+                                                                    )
+                                                                ),
+                                                                " ",
+                                                                " ",
+                                                                TriviaList()
+                                                            )
+                                                        )
+                                                    ),
                                                 XmlElement(
-                                                    XmlElementStartTag(
-                                                        XmlName("param")).WithAttributes(
+                                                    XmlElementStartTag(XmlName("param"))
+                                                        .WithAttributes(
                                                             SingletonList<XmlAttributeSyntax>(
                                                                 XmlNameAttribute(
                                                                     XmlName("name"),
-                                                                    Token(SyntaxKind.DoubleQuoteToken),
+                                                                    Token(
+                                                                        SyntaxKind.DoubleQuoteToken
+                                                                    ),
                                                                     IdentifierName("value"),
-                                                                    Token(SyntaxKind.DoubleQuoteToken)))),
-                                                    List(new XmlNodeSyntax[]
-                                                    {
-                                                        XmlText("The "),
-                                                        XmlEmptyElement(XmlName("see"),  List<XmlAttributeSyntax>(new [] { XmlCrefAttribute(NameMemberCref(IdentifierName(castName))) })),
-                                                        XmlText(" instance to be converted ")
-                                                    }),
-                                                    XmlElementEndTag(
-                                                        XmlName("param"))),
-                                                XmlText().WithTextTokens(
-                                                    TokenList(
-                                                        XmlTextNewLine(TriviaList(), "\n", "\n", TriviaList())))
-                                            })))));
+                                                                    Token(
+                                                                        SyntaxKind.DoubleQuoteToken
+                                                                    )
+                                                                )
+                                                            )
+                                                        ),
+                                                    List(
+                                                        new XmlNodeSyntax[]
+                                                        {
+                                                            XmlText("The "),
+                                                            XmlEmptyElement(
+                                                                XmlName("see"),
+                                                                List<XmlAttributeSyntax>(
+                                                                    new[]
+                                                                    {
+                                                                        XmlCrefAttribute(
+                                                                            NameMemberCref(
+                                                                                IdentifierName(
+                                                                                    castName
+                                                                                )
+                                                                            )
+                                                                        ),
+                                                                    }
+                                                                )
+                                                            ),
+                                                            XmlText(" instance to be converted "),
+                                                        }
+                                                    ),
+                                                    XmlElementEndTag(XmlName("param"))
+                                                ),
+                                                XmlText()
+                                                    .WithTextTokens(
+                                                        TokenList(
+                                                            XmlTextNewLine(
+                                                                TriviaList(),
+                                                                "\n",
+                                                                "\n",
+                                                                TriviaList()
+                                                            )
+                                                        )
+                                                    ),
+                                            }
+                                        )
+                                    )
+                            )
+                        )
+                    );
             }
-        }
-
-        private static int GetPointerDepth(TypeSyntax type, out TypeSyntax innerMost)
-        {
-            int depth = 0;
-            innerMost = type;
-            while (innerMost is PointerTypeSyntax pointerType)
-            {
-                depth++;
-                innerMost = pointerType.ElementType;
-            }
-            return depth;
-        }
-
-        private static int GetPointerDepth(ITypeSymbol type, out ITypeSymbol innerMost)
-        {
-            int depth = 0;
-            innerMost = type;
-            while (innerMost is IPointerTypeSymbol pointerType)
-            {
-                depth++;
-                innerMost = pointerType.PointedAtType;
-            }
-            return depth;
         }
     }
 }

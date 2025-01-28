@@ -29,6 +29,7 @@ public class ModLoader
             nameof(ExtractNestedTyping) => typeof(ExtractNestedTyping),
             nameof(TransformProperties) => typeof(TransformProperties),
             nameof(ClangScraper) => typeof(ClangScraper),
+            nameof(TransformInterfaces) => typeof(TransformInterfaces),
             nameof(TransformCOM) => typeof(TransformCOM),
             nameof(DisableWarnings) => typeof(DisableWarnings),
             _ => null,

@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.DirectX;
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
-namespace Silk.NET.Windows;
+namespace Silk.NET.Win32;
 
 public static partial class IID
 {

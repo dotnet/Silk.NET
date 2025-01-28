@@ -5,7 +5,7 @@
 
 using System.Runtime.CompilerServices;
 
-namespace Silk.NET.Windows;
+namespace Silk.NET.Win32;
 
 public unsafe partial struct KSJACK_SINK_INFORMATION
 {

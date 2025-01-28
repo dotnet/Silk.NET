@@ -3,7 +3,7 @@
 // Ported from um/gdiplusmetaheader.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using Silk.NET.Windows;
+using Silk.NET.Win32;
 using static Silk.NET.Gdiplus.MetafileType;
 
 namespace Silk.NET.Gdiplus;

@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Silk.NET.Windows;
+using Silk.NET.Win32;
 using static Silk.NET.DirectX.D3D_FEATURE_LEVEL;
 using static Silk.NET.DirectX.D3D_FORMAT_COMPONENT_INTERPRETATION;
 using static Silk.NET.DirectX.D3D_FORMAT_COMPONENT_NAME;
@@ -19,9 +19,9 @@ using static Silk.NET.DirectX.D3D12;
 using static Silk.NET.DirectX.D3D12_RESOURCE_DIMENSION;
 using static Silk.NET.DirectX.DirectX;
 using static Silk.NET.DirectX.DXGI_FORMAT;
-using static Silk.NET.Windows.E;
-using static Silk.NET.Windows.S;
-using static Silk.NET.Windows.Windows;
+using static Silk.NET.Win32.E;
+using static Silk.NET.Win32.S;
+using static Silk.NET.Win32.Windows;
 
 namespace Silk.NET.DirectX;
 
