@@ -1,0 +1,186 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+p {
+  text-align: justify;
+}
+
+
+.heroBanner {
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcaseContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.heroWords {
+  width: 40%;
+  align-content: center;
+}
+
+.heroWords h1 {
+  background: linear-gradient(128.87deg,#512bd4 14.05%,#0b6cff 89.3%);
+  background-clip: text;
+  color: transparent;
+}
+
+[data-theme='dark'] .heroWords h1 {
+  background: linear-gradient(128.87deg,#9780e5 14.05%,#53ceda 89.3%);
+  background-clip: text;
+  color: transparent;
+}
+
+@media (min-width:540px) {
+  .heroWords h1 {
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: none;
+  }
+}
+
+@media (min-width:1248px) {
+  .heroWords h1 {
+    font-size: 4.25rem;
+    line-height: 4.625rem;
+  }
+
+  .heroSubtitle {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.5rem;
+    text-transform: none;
+  }
+}
+
+.heroButtons a {
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.silkDnfLogo {
+  height: 48px;
+}
+
+[data-theme="dark"] .silkDnfLogo {
+  filter: grayscale(1) invert(1) brightness(2);
+}
+
+.silkDnfText {
+  display: flex;
+  align-items: center;
+}
+
+.silkDnfText span {
+  text-wrap: nowrap;
+}
+
+.silkDnfText img {
+  margin-top: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.ytEmbed {
+  width: 50%;
+  aspect-ratio: 1.78;
+  border-radius: 1rem;
+}
+
+.silkRhs {
+  align-content: center;
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  width: 50%;
+}
+
+.silkBtn {
+  margin: 0.5rem 0.25rem 0;
+}
+
+.otherMoreDifferentSection {
+  background: var(--ifm-color-emphasis-100);
+  padding: 1.5rem;
+  width: 100%;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.carouselImage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.otherMoreDifferentSection > div {
+  width: 50%;
+  align-content: center;
+}
+
+.supportedIcons {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 2rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.supportedIcon {
+  width: 20%;
+  padding: 1.5rem;
+  height: auto;
+  align-content: center;
+}
+
+.communityIcon {
+  width: 10%;
+  padding: 1.5rem;
+  height: auto;
+  align-content: center;
+}
+
+[data-theme='dark'] .invertOnDark {
+  filter: invert(1);
+}
+
+.centerText {
+  text-align: center;
+}
+
+.strideSection {
+  background: linear-gradient(128.87deg,#d600aa 14.05%,#f65163 89.3%);
+  padding: 1.5rem;
+  width: 100%;
+  border-radius: 2rem;
+  color: white;
+}
+
+.strideSection h2 {
+  color: white;
+}

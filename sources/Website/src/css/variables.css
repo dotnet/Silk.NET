@@ -1,0 +1,177 @@
+:root {
+    --ifm-color-primary: #14cabf;
+    --ifm-color-primary-dark: #10a299;
+    --ifm-color-primary-darker: #0c7973;
+    --ifm-color-primary-darkest: #08514c;
+    --ifm-color-primary-light: #21e9dd;
+    --ifm-color-primary-lighter: #4aede3;
+    --ifm-color-primary-lightest: #72f1e9;
+
+    --ifm-color-gray-0: hsl(220, 100%, 100%);
+    --ifm-color-gray-100: hsl(220, 65%, 98%);
+    --ifm-color-gray-200: hsl(220, 60%, 94%);
+    --ifm-color-gray-300: hsl(220, 55%, 90%);
+    --ifm-color-gray-400: hsl(220, 35%, 75%);
+    --ifm-color-gray-500: hsl(220, 25%, 65%);
+    --ifm-color-gray-600: hsl(220, 15%, 50%);
+    --ifm-color-gray-700: hsl(220, 25%, 35%);
+    --ifm-color-gray-800: hsl(220, 35%, 25%);
+    --ifm-color-gray-900: hsl(220, 55%, 15%);
+    --ifm-color-gray-1000: hsl(220, 60%, 10%);
+
+    --ifm-background-color: var(--ifm-color-emphasis-0);
+    --ifm-background-surface-color: var(--ifm-color-emphasis-0);
+
+    --ifm-card-background-color: var(--ifm-color-emphasis-0);
+
+    --ifm-color-content: var(--ifm-color-emphasis-700);
+    --ifm-color-content-inverse: var(--ifm-color-emphasis-0);
+
+    --ifm-dropdown-link-color: var(--ifm-color-emphasis-900);
+
+    --ifm-font-family-base: "Open Sans", sans-serif;
+
+    --ifm-footer-background-color: var(--ifm-color-gray-900);
+    --ifm-footer-color: var(--ifm-color-gray-300);
+    --ifm-footer-link-color: var(--ifm-color-gray-300);
+    --ifm-footer-link-hover-color: var(--ifm-color-gray-0);
+    --ifm-footer-title-color: var(--ifm-menu-color);
+
+    --ifm-global-border-width: 1px;
+    --ifm-global-radius: 0.5rem;
+
+    --ifm-font-color-base: var(--ifm-color-emphasis-900);
+    --ifm-heading-color: var(--ifm-color-emphasis-900);
+    --ifm-heading-font-family: "Space Grotesk", sans-serif;
+    --ifm-heading-font-weight: var(--ifm-font-weight-bold);
+
+    --ifm-hero-background-color: var(--ifm-color-emphasis-100);
+
+    --ifm-hover-overlay: var(--ifm-color-emphasis-100);
+
+    --ifm-hr-border-color: var(--ifm-color-emphasis-200);
+    --ifm-hr-border-width: var(--ifm-global-border-width);
+
+    --ifm-link-hover-decoration: underline;
+
+    --ifm-menu-color: var(--ifm-color-emphasis-800);
+    --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
+
+    --ifm-navbar-item-padding-horizontal: 1.5rem;
+    --ifm-navbar-link-color: var(--ifm-color-emphasis-800);
+    --ifm-navbar-link-hover-color: var(--ifm-menu-color-active);
+    --ifm-navbar-padding-horizontal: 1.5rem;
+    --ifm-navbar-shadow: none;
+
+    --ifm-scrollbar-track-background-color: transparent;
+    --ifm-scrollbar-thumb-background-color: var(--ifm-color-emphasis-300);
+    --ifm-scrollbar-thumb-hover-background-color: var(--ifm-color-emphasis-400);
+
+    --ifm-toc-border-color: var(--ifm-color-emphasis-200);
+    --ifm-toc-link-color: var(--ifm-menu-color);
+    --ifm-toc-padding-vertical: 0.25rem;
+    --ifm-toc-padding-horizontal: 1rem;
+
+    --site-color-favorite-background: var(--ifm-color-emphasis-100);
+    --site-color-tooltip: #fff;
+    --site-color-tooltip-background: #353738;
+    --site-color-svg-icon-favorite: #e9669e;
+    --site-color-checkbox-checked-bg: hsl(167deg 56% 73% / 25%);
+}
+
+:root[data-theme='dark'] {
+    --ifm-color-content: var(--ifm-color-emphasis-900);
+    --ifm-color-content-inverse: var(--ifm-color-emphasis-900);
+
+    --ifm-background-color: var(--ifm-color-emphasis-0);
+    --ifm-background-surface-color: var(--ifm-color-emphasis-0);
+
+    --ifm-card-background-color: var(--ifm-color-emphasis-100);
+
+    --ifm-hero-background-color: var(--ifm-color-emphasis-0);
+
+    --ifm-hover-overlay: var(--ifm-color-emphasis-100);
+
+    --ifm-scrollbar-track-background-color: transparent;
+    --ifm-scrollbar-thumb-background-color: var(--ifm-color-emphasis-300);
+    --ifm-scrollbar-thumb-hover-background-color: var(--ifm-color-emphasis-400);
+}
+
+:root .DocSearch {
+    --docsearch-primary-color: var(--ifm-color-content);
+    --docsearch-text-color: var(--ifm-color-content);
+    --docsearch-spacing: 1.2rem;
+    --docsearch-icon-stroke-width: 1.5px;
+    --docsearch-highlight-color: var(--ifm-color-primary);
+    --docsearch-muted-color: var(--ifm-color-emphasis-400);
+    --docsearch-container-background: rgba(0, 0, 0, 0.6);
+    --docsearch-logo-color: var(--docsearch-primary-color);
+
+    /* modal */
+    --docsearch-modal-width: 70vw;
+    --docsearch-modal-height: 80vh;
+    --docsearch-modal-background: var(--ifm-background-surface-color);
+    --docsearch-modal-shadow: none;
+
+    /* searchbox */
+    --docsearch-searchbox-height: 3rem;
+    --docsearch-searchbox-background: transparent;
+    --docsearch-searchbox-focus-background: transparent;
+    --docsearch-searchbox-shadow: none;
+
+    /* hit */
+    --docsearch-hit-color: var(--ifm-menu-color-active);
+    --docsearch-hit-active-color: var(--ifm-menu-color-active);
+    --docsearch-hit-background: none;
+    --docsearch-hit-shadow: none;
+
+    /* key */
+    --docsearch-key-gradient: none;
+    --docsearch-key-shadow: none;
+
+    /* footer */
+    --docsearch-footer-height: 2rem;
+    --docsearch-footer-background: none;
+    --docsearch-footer-shadow: none;
+}
+
+/* Darkmode */
+
+html[data-theme='dark'] .DocSearch {
+    --docsearch-text-color: var(--ifm-color-content);
+    --docsearch-container-background: rgba(0, 0, 0, 0.6);
+    --docsearch-modal-background: var(--ifm-background-surface-color);
+    --docsearch-modal-shadow: none;
+
+    --docsearch-searchbox-background: transparent;
+    --docsearch-searchbox-focus-background: transparent;
+    --docsearch-hit-color: var(--ifm-menu-color-active);
+    --docsearch-hit-shadow: none;
+    --docsearch-hit-background: none;
+    --docsearch-key-gradient: none;
+    --docsearch-key-shadow: none;
+    --docsearch-footer-background: none;
+    --docsearch-footer-shadow: none;
+    --docsearch-logo-color: var(--docsearch-muted-color);
+    --docsearch-muted-color: var(--ifm-color-emphasis-400);
+}
+
+[data-theme='dark'] {
+    --ifm-color-primary: #b9aaee;
+    --ifm-color-primary-dark: #9d88e7;
+    --ifm-color-primary-darker: #8f77e4;
+    --ifm-color-primary-darkest: #8f77e4;
+    --ifm-color-primary-light: #d5ccf5;
+    --ifm-color-primary-lighter: #e3ddf8;
+    --ifm-color-primary-lightest: #e3ddf8;
+    --ifm-background-color: #0a1429;
+}
+:root {
+    --ifm-color-primary: #512bd4;
+    --ifm-color-primary-dark: #4927bf;
+    --ifm-color-primary-darker: #4525b4;
+    --ifm-color-primary-darkest: #3d209f;
+    --ifm-color-primary-light: #6240d8;
+    --ifm-color-primary-lighter: #6b4bda;
+    --ifm-color-primary-lightest: #7c60df;
+}
