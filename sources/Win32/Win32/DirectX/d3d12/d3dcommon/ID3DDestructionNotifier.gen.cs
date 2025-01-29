@@ -1,9 +1,9 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
+using System.Runtime.CompilerServices;
 using Silk.NET.Win32;
 using System;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static Silk.NET.Win32.IID;
 
@@ -18,28 +18,6 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.N
     public Native* lpVtbl;
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3DDestructionNotifier));
 
-    /// <inheritdoc cref = "IUnknown.QueryInterface"/>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(0)]
-    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject) => lpVtbl->QueryInterface(riid, ppvObject);
-    /// <inheritdoc cref = "IUnknown.AddRef"/>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(1)]
-    [return: NativeTypeName("ULONG")]
-    public uint AddRef() => lpVtbl->AddRef();
-    /// <inheritdoc cref = "IUnknown.Release"/>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(2)]
-    [return: NativeTypeName("ULONG")]
-    public uint Release() => lpVtbl->Release();
-    /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.RegisterDestructionCallback"]/*'/>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(3)]
-    public HRESULT RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* unmanaged<void*, void> callbackFn, void* pData, uint* pCallbackID) => lpVtbl->RegisterDestructionCallback(callbackFn, pData, pCallbackID);
-    /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.UnregisterDestructionCallback"]/*'/>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(4)]
-    public HRESULT UnregisterDestructionCallback(uint callbackID) => lpVtbl->UnregisterDestructionCallback(callbackID);
     /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier"]/*'/>
     [Guid("A06EB39A-50DA-425B-8C31-4EECD6C270F3")]
     [NativeTypeName("struct ID3DDestructionNotifier : IUnknown")]
@@ -49,48 +27,6 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.N
         static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3DDestructionNotifier));
 
         public void** lpVtbl;
-        /// <inheritdoc cref = "IUnknown.QueryInterface"/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, Guid*, void**, int> )(lpVtbl[0]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
-
-        /// <inheritdoc cref = "IUnknown.AddRef"/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, uint> )(lpVtbl[1]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this));
-        }
-
-        /// <inheritdoc cref = "IUnknown.Release"/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, uint> )(lpVtbl[2]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this));
-        }
-
-        /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.RegisterDestructionCallback"]/*'/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* unmanaged<void*, void> callbackFn, void* pData, uint* pCallbackID)
-        {
-            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, delegate* unmanaged<void*, void> , void*, uint*, int> )(lpVtbl[3]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this), callbackFn, pData, pCallbackID);
-        }
-
-        /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.UnregisterDestructionCallback"]/*'/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT UnregisterDestructionCallback(uint callbackID)
-        {
-            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, uint, int> )(lpVtbl[4]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this), callbackID);
-        }
-
         public interface Interface : IUnknown.Native.Interface
         {
             [VtblIndex(4)]
@@ -112,6 +48,35 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.N
             public delegate* unmanaged<TSelf*, uint, int> UnregisterDestructionCallback;
         }
 
+        /// <inheritdoc cref = "IUnknown.AddRef"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, uint> )(lpVtbl[1]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this));
+        }
+
+        /// <inheritdoc cref = "IUnknown.QueryInterface"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        {
+            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, Guid*, void**, int> )(lpVtbl[0]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        [VtblIndex(0)]
+        [Transformed]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid, Ref2D ppvObject)
+        {
+            fixed (void** __dsl_ppvObject = ppvObject)
+            fixed (Guid* __dsl_riid = riid)
+            {
+                return (HRESULT)QueryInterface(__dsl_riid, __dsl_ppvObject);
+            }
+        }
+
         /// <inheritdoc cref = "IUnknown.QueryInterface"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
@@ -121,6 +86,43 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.N
             ppvObject = default(TCom);
             return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
         }
+
+        /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.RegisterDestructionCallback"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
+        public HRESULT RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* unmanaged<void*, void> callbackFn, void* pData, uint* pCallbackID)
+        {
+            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, delegate* unmanaged<void*, void> , void*, uint*, int> )(lpVtbl[3]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this), callbackFn, pData, pCallbackID);
+        }
+
+        [VtblIndex(3)]
+        [Transformed]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        public HRESULT RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* unmanaged<void*, void> callbackFn, Ref pData, Ref<uint> pCallbackID)
+        {
+            fixed (uint* __dsl_pCallbackID = pCallbackID)
+            fixed (void* __dsl_pData = pData)
+            {
+                return (HRESULT)RegisterDestructionCallback(callbackFn, __dsl_pData, __dsl_pCallbackID);
+            }
+        }
+
+        /// <inheritdoc cref = "IUnknown.Release"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, uint> )(lpVtbl[2]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this));
+        }
+
+        /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.UnregisterDestructionCallback"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
+        public HRESULT UnregisterDestructionCallback(uint callbackID)
+        {
+            return ((delegate* unmanaged<ID3DDestructionNotifier.Native*, uint, int> )(lpVtbl[4]))((ID3DDestructionNotifier.Native*)Unsafe.AsPointer(ref this), callbackID);
+        }
     }
 
     /// <summary>Initializes a new instance of the <see cref = "ID3DDestructionNotifier"/> struct with the specified virtual table pointer.</summary>
@@ -129,11 +131,6 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.N
     /// <summary>Initializes a new instance of the <see cref = "ID3DDestructionNotifier"/> struct with the specified virtual table pointer.</summary>
     /// <param name = "vtbl">The pointer to virtual table.</param>
     public ID3DDestructionNotifier(ID3DDestructionNotifier.Native* vtbl) => lpVtbl = vtbl;
-    /// <inheritdoc cref = "INativeInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
-	public readonly TNativeInterface** GetAddressOf<TNativeInterface>()
-        where TNativeInterface : unmanaged => (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-    /// <inheritdoc cref = "INativeInterface.GetAddressOf()"></inheritdoc>
-	public readonly void** GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
     /// <summary>casts <see cref = "ID3DDestructionNotifier.Native"/> to <see cref = "ID3DDestructionNotifier"/>.</summary>
     /// <param name = "value">The <see cref = "ID3DDestructionNotifier.Native"/> instance to be converted </param>
     public static implicit operator ID3DDestructionNotifier(ID3DDestructionNotifier.Native* value) => new ID3DDestructionNotifier(value);
@@ -158,6 +155,48 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.N
     /// <summary>casts <see cref = "ID3DDestructionNotifier"/> to nuint</summary>
     /// <param name = "value">The <see cref = "ID3DDestructionNotifier"/> instance to be converted </param>
     public static implicit operator nuint(ID3DDestructionNotifier value) => (nuint)value.lpVtbl;
+    /// <summary>Downcasts <see cref = "Silk.NET.Win32.IUnknown"/> to <see cref = "ID3DDestructionNotifier"/>.</summary>
+    /// <param name = "value">The <see cref = "Silk.NET.Win32.IUnknown"/> instance to be converted </param>
+    public static explicit operator ID3DDestructionNotifier(Silk.NET.Win32.IUnknown value) => new ID3DDestructionNotifier((ID3DDestructionNotifier.Native*)value.lpVtbl);
+    /// <summary>Upcasts <see cref = "ID3DDestructionNotifier"/> to <see cref = "Silk.NET.Win32.IUnknown"/>.</summary>
+    /// <param name = "value">The <see cref = "ID3DDestructionNotifier"/> instance to be converted </param>
+    public static implicit operator Silk.NET.Win32.IUnknown(ID3DDestructionNotifier value) => new Silk.NET.Win32.IUnknown((Silk.NET.Win32.IUnknown.Native*)value.lpVtbl);
+    /// <inheritdoc cref = "IUnknown.AddRef"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef() => lpVtbl->AddRef();
+    public void Dispose() => Release();
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    /// <inheritdoc cref = "INativeInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
+	public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
+        where TNativeInterface : unmanaged => (TNativeInterface**)GetAddressOfRaw();
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    /// <inheritdoc cref = "INativeInterface.GetAddressOf()"></inheritdoc>
+	public readonly Ptr2D GetAddressOf() => (void**)GetAddressOfRaw();
+    /// <inheritdoc cref = "INativeInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
+	public readonly TNativeInterface** GetAddressOfRaw<TNativeInterface>()
+        where TNativeInterface : unmanaged => (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+    /// <inheritdoc cref = "INativeInterface.GetAddressOf()"></inheritdoc>
+	public readonly void** GetAddressOfRaw() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+    /// <inheritdoc cref = "IUnknown.QueryInterface"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject) => lpVtbl->QueryInterface(riid, ppvObject);
+    [VtblIndex(0)]
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid, Ref2D ppvObject)
+    {
+        fixed (void** __dsl_ppvObject = ppvObject)
+        fixed (Guid* __dsl_riid = riid)
+        {
+            return (HRESULT)QueryInterface(__dsl_riid, __dsl_ppvObject);
+        }
+    }
+
     /// <inheritdoc cref = "IUnknown.QueryInterface"/>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
@@ -168,11 +207,29 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.N
         return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
     }
 
-    public void Dispose() => Release();
-    /// <summary>Downcasts <see cref = "Silk.NET.Win32.IUnknown"/> to <see cref = "ID3DDestructionNotifier"/>.</summary>
-    /// <param name = "value">The <see cref = "Silk.NET.Win32.IUnknown"/> instance to be converted </param>
-    public static explicit operator ID3DDestructionNotifier(Silk.NET.Win32.IUnknown value) => new ID3DDestructionNotifier((ID3DDestructionNotifier.Native*)value.lpVtbl);
-    /// <summary>Upcasts <see cref = "ID3DDestructionNotifier"/> to <see cref = "Silk.NET.Win32.IUnknown"/>.</summary>
-    /// <param name = "value">The <see cref = "ID3DDestructionNotifier"/> instance to be converted </param>
-    public static implicit operator Silk.NET.Win32.IUnknown(ID3DDestructionNotifier value) => new Silk.NET.Win32.IUnknown((Silk.NET.Win32.IUnknown.Native*)value.lpVtbl);
+    /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.RegisterDestructionCallback"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* unmanaged<void*, void> callbackFn, void* pData, uint* pCallbackID) => lpVtbl->RegisterDestructionCallback(callbackFn, pData, pCallbackID);
+    [VtblIndex(3)]
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public HRESULT RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* unmanaged<void*, void> callbackFn, Ref pData, Ref<uint> pCallbackID)
+    {
+        fixed (uint* __dsl_pCallbackID = pCallbackID)
+        fixed (void* __dsl_pData = pData)
+        {
+            return (HRESULT)RegisterDestructionCallback(callbackFn, __dsl_pData, __dsl_pCallbackID);
+        }
+    }
+
+    /// <inheritdoc cref = "IUnknown.Release"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release() => lpVtbl->Release();
+    /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.UnregisterDestructionCallback"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT UnregisterDestructionCallback(uint callbackID) => lpVtbl->UnregisterDestructionCallback(callbackID);
 }

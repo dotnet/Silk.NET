@@ -153,7 +153,8 @@ public class FunctionTransformer(
             }
 
             ctx.Original = function;
-            if (TransformFunctions(function, transform) is not null && includeOriginal)
+            MethodDeclarationSyntax? transformedFunc = TransformFunctions(function, transform);
+            if (transformedFunc is not null && includeOriginal)
             {
                 // Try to add the original function as-is
                 if (discrims.Add(discrim))
@@ -192,6 +193,10 @@ public class FunctionTransformer(
                         ret.Insert(idx, newFun);
                     }
                 }
+            }
+            else if (transformedFunc is null)
+            {
+                ret.Add(function);
             }
 
             ctx.Original = null;

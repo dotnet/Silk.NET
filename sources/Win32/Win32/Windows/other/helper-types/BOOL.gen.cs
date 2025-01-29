@@ -86,9 +86,15 @@ public readonly partial struct BOOL : IComparable, IComparable<BOOL>, IEquatable
 
     public int CompareTo(BOOL other) => Value.CompareTo(other.Value);
 
+    [Transformed]
+    public int CompareTo(MaybeBool<BOOL> other) => (int)CompareTo((BOOL)other);
+
     public override bool Equals(object? obj) => (obj is BOOL other) && Equals(other);
 
     public bool Equals(BOOL other) => Value.Equals(other.Value);
+
+    [Transformed]
+    public bool Equals(MaybeBool<BOOL> other) => (bool)Equals((BOOL)other);
 
     public override int GetHashCode() => Value.GetHashCode();
 
