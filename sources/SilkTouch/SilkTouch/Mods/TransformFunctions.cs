@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -56,6 +57,7 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
+            UsingsToAdd.Clear();
             var doc =
                 proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             if (await doc.GetSyntaxRootAsync(ct) is { } root)
@@ -63,13 +65,30 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
                 proj = doc.WithSyntaxRoot(Visit(root).NormalizeWhitespace()).Project;
             }
         }
-
         ctx.SourceProject = proj;
     }
 
     /// <inheritdoc />
     public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node) =>
         base.VisitClassDeclaration(node) is ClassDeclarationSyntax cd
+            ? cd.WithMembers(
+                List(
+                    cd.Members.Where(x => x is not MethodDeclarationSyntax)
+                        .Concat(
+                            ft.GetTransformedFunctions(
+                                    _jobKey.Value,
+                                    cd.Members.OfType<MethodDeclarationSyntax>(),
+                                    this
+                                )
+                                .OrderBy(x => x.Identifier.ToString())
+                        )
+                )
+            )
+            : node;
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node) =>
+        base.VisitStructDeclaration(node) is StructDeclarationSyntax cd
             ? cd.WithMembers(
                 List(
                     cd.Members.Where(x => x is not MethodDeclarationSyntax)

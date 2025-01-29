@@ -1,8 +1,8 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
-using Silk.NET.Win32;
 using System.Runtime.CompilerServices;
+using Silk.NET.Win32;
 
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.DirectX;
@@ -10,40 +10,16 @@ namespace Silk.NET.DirectX;
 public unsafe partial struct ID3DInclude : ID3DInclude.Native.Interface, INativeInterface
 {
     public Native* lpVtbl;
-    /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Open"]/*'/>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(0)]
-    public HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, uint* pBytes) => lpVtbl->Open(IncludeType, pFileName, pParentData, ppData, pBytes);
-    /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Close"]/*'/>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(1)]
-    public HRESULT Close([NativeTypeName("LPCVOID")] void* pData) => lpVtbl->Close(pData);
     /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude"]/*'/>
     public unsafe partial struct Native : ID3DInclude.Native.Interface
     {
         public void** lpVtbl;
-        /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Open"]/*'/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, uint* pBytes)
-        {
-            return ((delegate* unmanaged<ID3DInclude.Native*, D3D_INCLUDE_TYPE, sbyte*, void*, void**, uint*, int> )(lpVtbl[0]))((ID3DInclude.Native*)Unsafe.AsPointer(ref this), IncludeType, pFileName, pParentData, ppData, pBytes);
-        }
-
-        /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Close"]/*'/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        public HRESULT Close([NativeTypeName("LPCVOID")] void* pData)
-        {
-            return ((delegate* unmanaged<ID3DInclude.Native*, void*, int> )(lpVtbl[1]))((ID3DInclude.Native*)Unsafe.AsPointer(ref this), pData);
-        }
-
         public interface Interface
         {
-            [VtblIndex(0)]
-            HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, uint* pBytes);
             [VtblIndex(1)]
             HRESULT Close([NativeTypeName("LPCVOID")] void* pData);
+            [VtblIndex(0)]
+            HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, uint* pBytes);
         }
 
         public partial struct Vtbl<TSelf>
@@ -54,6 +30,47 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Native.Interface, INative
             [NativeTypeName("HRESULT (LPCVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
             public delegate* unmanaged<TSelf*, void*, int> Close;
         }
+
+        /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Close"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
+        public HRESULT Close([NativeTypeName("LPCVOID")] void* pData)
+        {
+            return ((delegate* unmanaged<ID3DInclude.Native*, void*, int> )(lpVtbl[1]))((ID3DInclude.Native*)Unsafe.AsPointer(ref this), pData);
+        }
+
+        [VtblIndex(1)]
+        [Transformed]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        public HRESULT Close([NativeTypeName("LPCVOID")] Ref pData)
+        {
+            fixed (void* __dsl_pData = pData)
+            {
+                return (HRESULT)Close(__dsl_pData);
+            }
+        }
+
+        /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Open"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
+        public HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, uint* pBytes)
+        {
+            return ((delegate* unmanaged<ID3DInclude.Native*, D3D_INCLUDE_TYPE, sbyte*, void*, void**, uint*, int> )(lpVtbl[0]))((ID3DInclude.Native*)Unsafe.AsPointer(ref this), IncludeType, pFileName, pParentData, ppData, pBytes);
+        }
+
+        [VtblIndex(0)]
+        [Transformed]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        public HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] Ref<sbyte> pFileName, [NativeTypeName("LPCVOID")] Ref pParentData, [NativeTypeName("LPCVOID *")] Ref2D ppData, Ref<uint> pBytes)
+        {
+            fixed (uint* __dsl_pBytes = pBytes)
+            fixed (void** __dsl_ppData = ppData)
+            fixed (void* __dsl_pParentData = pParentData)
+            fixed (sbyte* __dsl_pFileName = pFileName)
+            {
+                return (HRESULT)Open(IncludeType, __dsl_pFileName, __dsl_pParentData, __dsl_ppData, __dsl_pBytes);
+            }
+        }
     }
 
     /// <summary>Initializes a new instance of the <see cref = "ID3DInclude"/> struct with the specified virtual table pointer.</summary>
@@ -62,11 +79,6 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Native.Interface, INative
     /// <summary>Initializes a new instance of the <see cref = "ID3DInclude"/> struct with the specified virtual table pointer.</summary>
     /// <param name = "vtbl">The pointer to virtual table.</param>
     public ID3DInclude(ID3DInclude.Native* vtbl) => lpVtbl = vtbl;
-    /// <inheritdoc cref = "INativeInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
-	public readonly TNativeInterface** GetAddressOf<TNativeInterface>()
-        where TNativeInterface : unmanaged => (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-    /// <inheritdoc cref = "INativeInterface.GetAddressOf()"></inheritdoc>
-	public readonly void** GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
     /// <summary>casts <see cref = "ID3DInclude.Native"/> to <see cref = "ID3DInclude"/>.</summary>
     /// <param name = "value">The <see cref = "ID3DInclude.Native"/> instance to be converted </param>
     public static implicit operator ID3DInclude(ID3DInclude.Native* value) => new ID3DInclude(value);
@@ -91,4 +103,50 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Native.Interface, INative
     /// <summary>casts <see cref = "ID3DInclude"/> to nuint</summary>
     /// <param name = "value">The <see cref = "ID3DInclude"/> instance to be converted </param>
     public static implicit operator nuint(ID3DInclude value) => (nuint)value.lpVtbl;
+    /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Close"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    public HRESULT Close([NativeTypeName("LPCVOID")] void* pData) => lpVtbl->Close(pData);
+    [VtblIndex(1)]
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public HRESULT Close([NativeTypeName("LPCVOID")] Ref pData)
+    {
+        fixed (void* __dsl_pData = pData)
+        {
+            return (HRESULT)Close(__dsl_pData);
+        }
+    }
+
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    /// <inheritdoc cref = "INativeInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
+	public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
+        where TNativeInterface : unmanaged => (TNativeInterface**)GetAddressOfRaw();
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    /// <inheritdoc cref = "INativeInterface.GetAddressOf()"></inheritdoc>
+	public readonly Ptr2D GetAddressOf() => (void**)GetAddressOfRaw();
+    /// <inheritdoc cref = "INativeInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
+	public readonly TNativeInterface** GetAddressOfRaw<TNativeInterface>()
+        where TNativeInterface : unmanaged => (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+    /// <inheritdoc cref = "INativeInterface.GetAddressOf()"></inheritdoc>
+	public readonly void** GetAddressOfRaw() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+    /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Open"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, uint* pBytes) => lpVtbl->Open(IncludeType, pFileName, pParentData, ppData, pBytes);
+    [VtblIndex(0)]
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] Ref<sbyte> pFileName, [NativeTypeName("LPCVOID")] Ref pParentData, [NativeTypeName("LPCVOID *")] Ref2D ppData, Ref<uint> pBytes)
+    {
+        fixed (uint* __dsl_pBytes = pBytes)
+        fixed (void** __dsl_ppData = ppData)
+        fixed (void* __dsl_pParentData = pParentData)
+        fixed (sbyte* __dsl_pFileName = pFileName)
+        {
+            return (HRESULT)Open(IncludeType, __dsl_pFileName, __dsl_pParentData, __dsl_ppData, __dsl_pBytes);
+        }
+    }
 }

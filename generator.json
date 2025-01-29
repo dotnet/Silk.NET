@@ -10,7 +10,8 @@
         "ChangeNamespace",
         "TransformInterfaces",
         "TransformCOM",
-        "DisableWarnings"
+        "DisableWarnings",
+        "TransformFunctions"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -75,8 +76,13 @@
           "CS1589", //XML Comments missing (due to missing docs)
           "CS0419", //Inheritdoc issue (due to bug)
           "CA1416", //Function available outside of target os (intended)
-          "CS0618" //Obsolete Warnings
+          "CS0618" //Obsolete Warnings (intended)
         ]
+      },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "BOOL": null
+        }
       }
     },
     "SDL": {
