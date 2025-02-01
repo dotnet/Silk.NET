@@ -201,13 +201,13 @@ public enum AxisTrait : ulong
     // The same default behavior will apply to any axis being treated as a Binary input, whether or not it has this trait.
     Binary = 1 << 1,
 
-    // an analog axis that explicitly does not return to center or zero like a joystick or trigger
-    // things like touch-pads, mice, or world-space positions
-    Point = 1 << 8 | Analog | HasRawValue,
+    // an analog axis that explicitly does not return to center or zero
+    // things like touch-pads, mice, or world-space positions - NOT joysticks or triggers, as those would simply be marked as `Analog`
+    Point = 1 << 2 | Analog | HasRawValue,
 
     // ---- Physical orientation ----
-    Orientation = 1 << 2 | Analog,
-    Rotation = 1 << 3 | Orientation,
+    Orientation = 1 << 2 | Analog, // indicates that this axis pertains to a real-world orientation of a device or tracked object
+    Rotation = 1 << 3 | Orientation, // indicates that this axis pertains to a real-world rotation of a device or tracked object
 
     /// <summary>
     /// Indicates that this axis is a component of a euler angle in radians
@@ -232,13 +232,28 @@ public enum AxisTrait : ulong
     /// </summary>
     Position = 1 << 7 | Orientation | Point,
     // -----------------------------
+  
 
     /// <summary>
+    /// Used for axes that are on the left side of a device from the user's perspective.
+    /// Useful for left/right handedness accommodation and various symmetrical devices. <br/><br/>
+    /// For example: a left stick on a gamepad, a left trigger, a left shoulder button, the DPad on a gamepad, etc
+    /// </summary>
+    LeftSide = 1 << 12,
+
+    /// <summary>
+    /// Used for axes that are on the right side of a device from the user's perspective.
+    /// Useful for left/right handedness accommodation and various symmetrical devices. <br/><br/>
+    /// For example: a right stick on a gamepad, a right trigger, a right shoulder button, the face buttons on a gamepad, etc
+    /// </summary>
+    RightSide = 1 << 13,
+
+  /// <summary>
     /// Indicates that the raw value provided for this axis is not the same as the normalized value. <br/>
     /// If this flag is signaled on an axis, it is highly recommended that the bounds are provided as well, even if they are infinite
     /// This can be useful for things like euler angle components, where single axes 0-360 degrees (or 0-2pi radians? do we want to standardize which?) can be useful by themselves
     /// </summary>
-    HasRawValue = 1 << 24 | Analog,
+    HasRawValue = 1 << 58 | Analog,
 
     /// <summary>
     /// Indicates that there is no one-size-fits-all way to normalize this axis, and must be handled in a case-by-case basis <br/>
@@ -249,12 +264,12 @@ public enum AxisTrait : ulong
     /// <br/>
     /// If this is set, it is expected that the axis is NOT provided any raw value constraints
     /// </summary>
-    RawValueOnly = 1 << 25 | HasRawValue,
+    RawValueOnly = 1 << 59 | HasRawValue,
 
     /// <summary>
     /// Things like a mouse movement, trackpad, etc
     /// </summary>
-    Delta = 1 << 26 | HasRawValue,
+    Delta = 1 << 60 | HasRawValue,
 
     /// <summary>
     /// Indicates that there is no one-size-fits-all way to normalize this axis, and must be handled in a case-by-case basis <br/>
@@ -262,7 +277,10 @@ public enum AxisTrait : ulong
     /// - Mouse position <br/>
     /// - Trackpad without an API for "absolute" position
     /// </summary>
-    DeltaOnly = 1 << 27 | Delta | RawValueOnly,
+    DeltaOnly = 1 << 61 | Delta | RawValueOnly,
+
+    DeviceInformation = 1u << 62, // battery level, microphone level, etc
+
 
     /// <summary>
     /// Indicates that this axis has been added at runtime, and requires validation at first sight.
@@ -275,21 +293,7 @@ public enum AxisTrait : ulong
     ///     i is an X component, i + 1 is a Y component, and i + 2 is a pressure component,
     ///     Finger 2 begins at i + 3 following the same pattern
     /// </summary>
-    Dynamic = 1 << 28u,
-
-    /// <summary>
-    /// Used for axes that are on the left side of a device from the user's perspective.
-    /// Useful for left/right handedness accommodation and various symmetrical devices. <br/><br/>
-    /// For example: a left stick on a gamepad, a left trigger, a left shoulder button, the DPad on a gamepad, etc
-    /// </summary>
-    LeftSide = 1 << 30,
-
-    /// <summary>
-    /// Used for axes that are on the right side of a device from the user's perspective.
-    /// Useful for left/right handedness accommodation and various symmetrical devices. <br/><br/>
-    /// For example: a right stick on a gamepad, a right trigger, a right shoulder button, the face buttons on a gamepad, etc
-    /// </summary>
-    RightSide = 1 << 31,
+    Dynamic = 1u << 63u,
 }
 ```
 
@@ -431,19 +435,23 @@ public enum AxisGroupType : ulong
 
     // (West, East, South, North) / (Left, Right, Down, Up) / (X, B, A, Y) - xbox / (square, circle, cross, triangle) - playstation
     // 4 independent axes using the ordering convention above
-    FourFaceButtons = 1u << 1,
+    DiamondActionButtons = 1u << 1,
 
-    // Specified in addition to FourFaceButtons due to the constraints often placed on DPad axes from a hardware level
+    // Two buttons standardly used as confirmation or rejection of a given selection
+    // things like A & B buttons, X & circle buttons, Enter and Backspace/ESC, etc
+    ConfirmReject = 1 << 2
+
+    // Specified in addition to DiamondActionButtons due to the constraints often placed on DPad axes from a hardware level
     // 2 Axes, (X, Y) (-1, 1)
     // made of 4 physical axes, (X-, X+, Y-, Y+)
-    DPad = 1u << 2 | FourFaceButtons,
-    
+    DPad = 1u << 3 | DiamondActionButtons,
+
     /// <summary>
-    /// 1D joystick, 1 logical axis, (-1, 1)
+    /// 1D joystick, 1 logical axis, (-1, 1) - intended to allow mapping to a particular physical axis (XYZ) of a 2D+ joystick, or to represent a 1-dimensional input stick
     /// made of 2 physical axes, (X-, X+)
-    /// More physically resembling a "lever" than a joystick
+    /// More physically resembling a "lever" than a joystick if not a component of a 2D+ joystick
     /// </summary>
-    Joystick1D = 1u << 3 | DPad,
+    JoystickAxis = 1u << 4 | DPad,
 
     /// <summary>
     /// 2D joystick, 2 logical axes, (X, Y) (-1, 1)
@@ -451,7 +459,7 @@ public enum AxisGroupType : ulong
     /// If constructed with 5 axes, the 5th axis is the "pressure" axis for a pointer
     /// More abstractly, this is a Position2D that returns to 0,0 when released
     /// </summary>
-    Joystick2D = 1u << 4 | Position2D | DPad,
+    Joystick2D = 1u << 5 | Position2D | DPad,
 
     /// <summary>
     /// 3D joystick
@@ -461,16 +469,15 @@ public enum AxisGroupType : ulong
     /// Can be used for analog stick with a press-in button, or a 3D mouse, etc
     /// More abstractly, this is a Position3D that returns to 0,0,0 when released
     /// </summary>
-    Joystick3D = 1u << 5 | Position3D,
+    Joystick3D = 1u << 6 | Position3D,
     
     /// <summary>
-    /// 1D touch surface or tracker
+    /// 1D touch surface or tracker axis - intended to allow mapping to an individual axis of a 2D+ position surface, or to represent a 1D touch strip, trackball, & similar
     /// 1 logical axis, (-1, 1)
     /// made of 2 physical axes, (-X, +X).
     /// If constructed with 3 axes, the 3rd axis is the "pressure" axis for a pointer
-    /// Physically, this can be a represented as a touch strip
     /// </summary>
-    Position1D = 1u << 6,
+    PositionAxis = 1u << 7,
 
     /// <summary>
     /// 2D touch surface or tracker
@@ -480,7 +487,7 @@ public enum AxisGroupType : ulong
     /// * Request for feedback: do we want to allow this to be defined with 2 "physical" axes as well?
     /// Wherein if it is provided with 3 "physical" axes, the 3rd is the "pressure" axis
     /// </summary>
-    Position2D = 1u << 7,
+    Position2D = 1u << 8,
 
     /// <summary>
     /// 3D touch surface or tracker, 3 logical axes, (X, Y, Z)
@@ -489,32 +496,30 @@ public enum AxisGroupType : ulong
     /// * Request for feedback: do we want to allow this to be defined with 3 "physical" axes as well?
     /// Wherein if it is provided with 4 "physical" axes, the 4th is the "pressure" axis
     /// </summary>
-    Position3D = 1u << 8,
+    Position3D = 1u << 9,
 
     // XYZ order, aka (pitch, yaw, roll)
-    RotationEuler = 1u << 9, // gyroscope, gyroscope + magnetomete, VR peripheral rotation - requires 3 axes, XYZ order
+    RotationEuler = 1u << 10, // gyroscope, gyroscope + magnetomete, VR peripheral rotation - requires 3 axes, XYZ order
 
     RotationQuaternion =
-        1u << 10, // gyroscope, gyroscope + magnetomete, VR peripheral rotation - requires 4 axes, XYZW order
+        1u << 11, // gyroscope, gyroscope + magnetomete, VR peripheral rotation - requires 4 axes, XYZW order
 
-    Accelerometer = 1u << 11, // 3D accelerometer, requires 3 axes, XYZ order
+    Accelerometer = 1u << 12, // 3D accelerometer, requires 3 axes, XYZ order
 
-    DeviceInformation = 1u << 24, // battery level, microphone level, etc
+    LeftHanded = 1u << 13, // allowing for left/right swap of symmetrical devices and labeling left/right buttons
+    RightHanded = 1u << 14, // allowing for left/right swap of symmetrical devices
 
     /// <summary>
     /// Indicates that this axis has been added at runtime, and requires validation at first sight.
     /// Example use cases: touch pads and touch screens, the results of object sensors, etc
     /// As a result of being added at runtime, groups marked with this flag must not precede any groups not marked with this flag.
     /// </summary>
-    Dynamic = 1u << 28,
-
-    LeftHanded = 1u << 30, // allowing for left/right swap of symmetrical devices and labeling left/right buttons
-    RightHanded = 1u << 31, // allowing for left/right swap of symmetrical devices
+    Dynamic = 1u << 63,
 }
 ```
 
 ### Axis Group Directional Convention
-This pertains to `AxisGroupType`s that suggest positional input - i.e. `FourFaceButtons`, `DPad`, `Joystick1D`, `Joystick2D`, `Joystick3D`, `Position1D`, `Position2D`, `Position3D`, `RotationEuler`, `RotationQuaternion`, and `Accelerometer`. The convention is as follows:
+This pertains to `AxisGroupType`s that suggest positional input - i.e. `DiamondActionButtons`, `DPad`, `Joystick1D`, `Joystick2D`, `Joystick3D`, `Position1D`, `Position2D`, `Position3D`, `RotationEuler`, `RotationQuaternion`, and `Accelerometer`. The convention is as follows:
 
 Note that `AxisGroup` sets a standard for dealing with multi-dimensional axes, which dictates the order in which `AxisGroup.Axes` is populated by `AxisDescription` indices. The convention to be followed by all comparable axis groups is as follows:
 
@@ -534,7 +539,7 @@ The following is a chart laying out example orderings for different axis groups.
 | ![playstation face buttons](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/PlayStation_original_controller_face_buttons.jpg/684px-PlayStation_original_controller_face_buttons.jpg) | (Square, Circle, Cross, Triangle)                                                                                                                                                                                                                                                                                |
 | ![N64 face buttons](https://upload.wikimedia.org/wikipedia/commons/4/48/Nintendo_64_controller_face_buttons.jpg)                                                                               | Primary - (C Left, C Right, C Down, C Up)<br/><br/>Secondary - (B, C down, A, C left)                                                                                                                                                                                                                            |
 | ![WASD keys](https://upload.wikimedia.org/wikipedia/commons/0/05/Cursor_keys--WASD.svg)                                                                                                        | (A, D, S, W)<br/> Arrow keys would be (left, right, down, up of course)<br/>(J, L, K, I), etc                                                                                                                                                                                                                    |
-| ![Fight stick](https://upload.wikimedia.org/wikipedia/commons/8/8f/Wii_Arcade_Stick.png?20200918233300)                                                                                        | The "face" buttons are not a candidate for `AxisGroupType.FourFaceButtons` designation due to their layout, so fight sticks and some other retro controllers would likely exclude their face buttons from any particular axis group<br/><br/>The joystick would of course be (-X Left, +X Right, -Y Down, +Y Up) |
+| ![Fight stick](https://upload.wikimedia.org/wikipedia/commons/8/8f/Wii_Arcade_Stick.png?20200918233300)                                                                                        | The "face" buttons are not a candidate for `AxisGroupType.DiamondActionButtons` designation due to their layout, so fight sticks and some other retro controllers would likely exclude their face buttons from any particular axis group<br/><br/>The joystick would of course be (-X Left, +X Right, -Y Down, +Y Up) |
 | ![Accelerometer](https://cdn.phidgets.com/docs/images/9/96/Accelerometer_Intro.jpg) | (X, Y, Z)                                                                                                                                                                                                                                                                                                        |
 | ![Gyroscope](https://upload.wikimedia.org/wikipedia/commons/b/b8/Roll_Pitch_Yaw.JPG) | Euler representation: (pitch, yaw, roll)<br/><br/>Quaternion representation: (X, Y, Z, W)                                                                                                                                                                                                                        |
 
@@ -549,13 +554,13 @@ In general, the larger order of axis groups is not significant except for the fo
 Though it is possible (and often recommended) to use `AxisGroupType` as flags, including every supported `AxisGroupType` associated with a set of axes, doing so is not required. It may be advantageous to utilize the above ordering constraint in order to define a preference for a particular set of axes to be used as a specific `AxisGroupType`. For example, defining a D-Pad on a controller that could be defined as:
 
 ```csharp
-new(3, AxisGroupType.DPad | AxisGroupType.FourFaceButtons | AxisGroupType.LeftHanded, [14, 15, 16, 17], 6, "D-Pad"),
+new(3, AxisGroupType.DPad | AxisGroupType.DiamondActionButtons | AxisGroupType.LeftHanded, [14, 15, 16, 17], 6, "D-Pad"),
 ```
 
 could instead be defined as:
 ```csharp
 new(3, AxisGroupType.DPad | AxisGroupType.LeftHanded, [14, 15, 16, 17], 6, "D-Pad"),
-new(4, AxisGroupType.FourFaceButtons | AxisGroupType.LeftHanded, [14, 15, 16, 17], 6, "D-Pad"),
+new(4, AxisGroupType.DiamondActionButtons | AxisGroupType.LeftHanded, [14, 15, 16, 17], 6, "D-Pad"),
 ```
 As previously stated, the latter grants you the benefit of having a defined order of primacy for the axes in the D-Pad group, which can be useful for certain implementations.
 
@@ -572,8 +577,8 @@ private static readonly IReadOnlyList<AxisGroup> Groups =
 [
     new(0, AxisGroupType.Joystick2D | AxisGroupType.LeftHanded, [0, 1, 2, 3], 1, "Left Joystick"),
     new(1, AxisGroupType.Joystick2D | AxisGroupType.RightHanded, [4, 5, 6, 7], 0, "Right Joystick"),
-    new(3, AxisGroupType.DPad | AxisGroupType.FourFaceButtons | AxisGroupType.LeftHanded, [14, 15, 16, 17], 6, "D-Pad"),
-    new(4, AxisGroupType.FourFaceButtons | AxisGroupType.RightHanded, [30, 31, 32, 33], 5, "Face     Buttons"),
+    new(3, AxisGroupType.DPad | AxisGroupType.DiamondActionButtons | AxisGroupType.LeftHanded, [14, 15, 16, 17], 6, "D-Pad"),
+    new(4, AxisGroupType.DiamondActionButtons | AxisGroupType.RightHanded, [30, 31, 32, 33], 5, "Face     Buttons"),
     new(5, AxisGroupType.Position2D, [18, 19], null, "Touchpad"),
     new(6, AxisGroupType.Unknown, [20, 21], null, "Unknown")
 ];
