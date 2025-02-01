@@ -212,10 +212,9 @@ public enum AxisTrait : ulong
     /// <summary>
     /// Indicates that this axis is a component of a euler angle in radians
     /// It is required you do NOT set <see cref="AxisDescription.RawValueBounds"/>, as it will be assumed to be *-pi, pi) The raw value must be pre-wrapped within range.
+    /// this is specified because single axes of euler angle components can be useful by themselves,
+    /// whereas anything shorter than 3 or 4 axes is not useful for quaternion rotation components
     /// </summary>
-
-    // this is specified because single axes of euler angle components can be useful by themselves,
-    // whereas anything shorter than 3 or 4 axes is not useful for quaternion rotation components
     EulerAngleComponent = 1 << 4 | Rotation | HasRawValue,
 
     /// <summary>
