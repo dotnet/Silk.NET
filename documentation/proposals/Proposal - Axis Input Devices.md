@@ -777,14 +777,15 @@ public enum OutputGroupType : ulong
     Haptics = 1u << 1,
     Vibration = 1u << 2 | Haptics
 
+
+    LeftSide = AxisGroupType.LeftHanded, // allowing for left/right swap of symmetrical devices
+    RightSide = AxisGroupType.RightHanded, // allowing for left/right swap of symmetrical devices
+
     /// <summary>
     /// Indicates that this axis has been added at runtime, and requires validation at first sight.
     /// Example use cases: touch pads and touch screens, the results of object sensors, etc
     /// As a result of being added at runtime, groups marked with this flag must not precede any groups not marked with this flag.
     /// </summary>
-    Dynamic = 1u << 28,
-
-    LeftSide = AxisGroupType.LeftHanded, // allowing for left/right swap of symmetrical devices
-    RightSide = AxisGroupType.RightHanded, // allowing for left/right swap of symmetrical devices
+    Dynamic = AxisGroupType.Dynamic,
 }
 ```
