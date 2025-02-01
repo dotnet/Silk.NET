@@ -175,15 +175,6 @@ public readonly record struct AxisDescription(
 {
     public static implicit operator int(in AxisDescription description) => description.Index;
 }
-
-public static class AxisDescriptionExtensions
-{
-    /// <summary>
-    /// Creates a copy of the given axis description with a modified <see cref="IsAvailable"/> value.
-    /// </summary>
-    /// <remarks>Request for feedback: naming?</remarks>
-    public static AxisDescription AsAvailable(this AxisDescription description, bool available);
-}
 ```
 
 ### Axis Traits
@@ -219,9 +210,8 @@ public enum AxisTrait : ulong
     Rotation = 1 << 3 | Orientation,
 
     /// <summary>
-    /// Indicates that this axis is a component of a euler angle (do we want this to be in degrees or radians?)
-    /// If this flag is set, the axis is expected to be normalized between 0-360 degrees, with wrapping applied
-    /// It is required you do NOT set <see cref="AxisDescription.RawValueBounds"/>, as it will be assumed to be (0, 360/2pi).
+    /// Indicates that this axis is a component of a euler angle in radians
+    /// It is required you do NOT set <see cref="AxisDescription.RawValueBounds"/>, as it will be assumed to be *-pi, pi) The raw value must be pre-wrapped within range.
     /// </summary>
 
     // this is specified because single axes of euler angle components can be useful by themselves,
@@ -501,7 +491,7 @@ public enum AxisGroupType : ulong
     /// </summary>
     Position3D = 1u << 8,
 
-    // should this be 6 and 8 axes, similar to how a 2d joystick is defined by 4 axes?
+    // XYZ order, aka (pitch, yaw, roll)
     RotationEuler = 1u << 9, // gyroscope, gyroscope + magnetomete, VR peripheral rotation - requires 3 axes, XYZ order
 
     RotationQuaternion =
@@ -546,7 +536,7 @@ The following is a chart laying out example orderings for different axis groups.
 | ![WASD keys](https://upload.wikimedia.org/wikipedia/commons/0/05/Cursor_keys--WASD.svg)                                                                                                        | (A, D, S, W)<br/> Arrow keys would be (left, right, down, up of course)<br/>(J, L, K, I), etc                                                                                                                                                                                                                    |
 | ![Fight stick](https://upload.wikimedia.org/wikipedia/commons/8/8f/Wii_Arcade_Stick.png?20200918233300)                                                                                        | The "face" buttons are not a candidate for `AxisGroupType.FourFaceButtons` designation due to their layout, so fight sticks and some other retro controllers would likely exclude their face buttons from any particular axis group<br/><br/>The joystick would of course be (-X Left, +X Right, -Y Down, +Y Up) |
 | ![Accelerometer](https://cdn.phidgets.com/docs/images/9/96/Accelerometer_Intro.jpg) | (X, Y, Z)                                                                                                                                                                                                                                                                                                        |
-| ![Gyroscope](https://upload.wikimedia.org/wikipedia/commons/b/b8/Roll_Pitch_Yaw.JPG) | Euler representation: (yaw, pitch, roll)<br/><br/>Quaternion representation: (X, Y, Z, W)                                                                                                                                                                                                                        |
+| ![Gyroscope](https://upload.wikimedia.org/wikipedia/commons/b/b8/Roll_Pitch_Yaw.JPG) | Euler representation: (pitch, yaw, roll)<br/><br/>Quaternion representation: (X, Y, Z, W)                                                                                                                                                                                                                        |
 
 As you may have gathered, a single axis can be assigned multiple axis groups. This is perfectly legal and *encouraged*. However, the ordering of such groups can become significant to users of the device.
 
