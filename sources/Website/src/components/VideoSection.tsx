@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import styles from './styles.module.css';
 import Link from "@docusaurus/Link";
 
 export function VideoSection({ children }): JSX.Element {

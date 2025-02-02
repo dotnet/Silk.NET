@@ -83,6 +83,8 @@
     --ifm-color-content: var(--ifm-color-emphasis-900);
     --ifm-color-content-inverse: var(--ifm-color-emphasis-900);
 
+    --ifm-button-color: var(--ifm-color-gray-900);
+
     --ifm-background-color: var(--ifm-color-emphasis-0);
     --ifm-background-surface-color: var(--ifm-color-emphasis-0);
 
