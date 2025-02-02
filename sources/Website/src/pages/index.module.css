@@ -32,8 +32,30 @@ p {
 }
 
 .heroWords {
-  width: 40%;
+  width: 100%;
   align-content: center;
+}
+
+.heroCarousel {
+  width: 100%;
+}
+
+.heroRow {
+    flex-flow: wrap-reverse;
+}
+
+@media (min-width: 940px) {
+    .heroWords {
+        width: 40%;
+    }
+
+    .heroCarousel {
+        width: 60%;
+    }
+
+    .heroRow {
+        flex-flow: initial;
+    }
 }
 
 .heroWords h1 {
@@ -48,7 +70,7 @@ p {
   color: transparent;
 }
 
-@media (min-width:540px) {
+/*@media (min-width:540px) {
   .heroWords h1 {
     font-size: 2.5rem;
     line-height: 3.25rem;
@@ -64,7 +86,7 @@ p {
   }
 }
 
-@media (min-width:1248px) {
+@media (min-width:1248px) {*/
   .heroWords h1 {
     font-size: 4.25rem;
     line-height: 4.625rem;
@@ -78,11 +100,23 @@ p {
     line-height: 2.5rem;
     text-transform: none;
   }
+/*}*/
+
+.heroButtons {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .heroButtons a {
   margin-right: 1rem;
   margin-top: 1rem;
+    flex-grow: 1;
+}
+
+@media (min-width: 720px) {
+    .heroButtons a {
+        flex-grow: unset;
+    }
 }
 
 .silkDnfLogo {
@@ -137,6 +171,11 @@ p {
   height: 100%;
   border-radius: 1rem;
   object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0.1rem 0.5rem;
+}
+
+.carouselImage {
+    padding: 0.5rem;
 }
 
 .otherMoreDifferentSection > div {
@@ -144,22 +183,52 @@ p {
   align-content: center;
 }
 
+.technologiesSection {
+    background: var(--ifm-color-emphasis-100);
+    padding: 1.5rem;
+    width: 100%;
+    border-radius: 2rem;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 720px) {
+    .technologiesSection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.technologiesSection > div {
+    /*display: grid;*/
+    /*grid-template-columns: subgrid;*/
+    /*grid-template-rows: subgrid;*/
+}
+
+.technologiesSection > div > h1 {
+    align-self: center;
+}
+
 .supportedIcons {
   display: flex;
   justify-content: center;
   margin: 2rem 2rem 0 2rem;
   flex-wrap: wrap;
+  gap: max(1.5rem, 5%);
 }
 
 .supportedIcon {
-  width: 20%;
-  padding: 1.5rem;
+  width: max(5rem, 10%);
+  min-width: 4rem;
+  max-width: 8rem;
   height: auto;
   align-content: center;
+  list-style: none;
 }
 
 .communityIcon {
-  width: 10%;
+  width: max(6rem, 10%);
   padding: 1.5rem;
   height: auto;
   align-content: center;
@@ -183,4 +252,38 @@ p {
 
 .strideSection h2 {
   color: white;
+}
+
+.homeContainer {
+    margin: 2rem auto;
+    max-width: 1140px;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.homeContainer > .homeRow {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 1440px) {
+    .homeContainer {
+        max-width: 1320px;
+    }
+}
+
+.contactUs {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+.contactUs > p {
+    text-align: center;
+}
+
+@media (min-width: 720px) {
+    .contactUs {
+        width: 50%;
+    }
 }
