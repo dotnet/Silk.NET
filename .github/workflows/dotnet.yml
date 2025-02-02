@@ -44,11 +44,19 @@ jobs:
                 path: "artifacts/**/*nupkg"
                 if-no-files-found: warn
                 retention-days: 1
+            - name: Determine whether we should push to experimental feed.
+              id: check_token
+              run: |
+                if [ -z "${{ secrets.EXP_NUGET_PASSWORD }}" ]; then
+                  echo "push=false" >> $GITHUB_OUTPUT
+                else
+                  echo "push=true" >> $GITHUB_OUTPUT
+                fi
             - name: Push to Experimental Feed
-              if: ${{ secrets.EXP_NUGET_PASSWORD != '' }}
+              if: ${{ steps.check_token.outputs.push == 'true' }}
               run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://dotnet.github.io/Silk.NET/nuget/experimental/index.json --nuget-username ${{ secrets.EXP_NUGET_USERNAME }} --nuget-password ${{ secrets.EXP_NUGET_PASSWORD }} --nuget-api-key ${{ secrets.EXP_NUGET_PASSWORD }}
             - name: Push to GitHub Packages
-              if: ${{ secrets.EXP_NUGET_PASSWORD != '' }}  # ik it's irrelevant but it tells if we likely have perms
+              if: ${{ steps.check_token.outputs.push == 'true' }}
               run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
     Test:
         strategy:
