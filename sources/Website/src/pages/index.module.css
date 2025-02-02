@@ -32,8 +32,30 @@ p {
 }
 
 .heroWords {
-  width: 40%;
+  width: 100%;
   align-content: center;
+}
+
+.heroCarousel {
+  width: 100%;
+}
+
+.heroRow {
+    flex-flow: wrap-reverse;
+}
+
+@media (min-width: 940px) {
+    .heroWords {
+        width: 40%;
+    }
+
+    .heroCarousel {
+        width: 60%;
+    }
+
+    .heroRow {
+        flex-flow: initial;
+    }
 }
 
 .heroWords h1 {
@@ -48,7 +70,7 @@ p {
   color: transparent;
 }
 
-@media (min-width:540px) {
+/*@media (min-width:540px) {
   .heroWords h1 {
     font-size: 2.5rem;
     line-height: 3.25rem;
@@ -64,7 +86,7 @@ p {
   }
 }
 
-@media (min-width:1248px) {
+@media (min-width:1248px) {*/
   .heroWords h1 {
     font-size: 4.25rem;
     line-height: 4.625rem;
@@ -78,7 +100,7 @@ p {
     line-height: 2.5rem;
     text-transform: none;
   }
-}
+/*}*/
 
 .heroButtons {
     display: flex;
@@ -149,6 +171,11 @@ p {
   height: 100%;
   border-radius: 1rem;
   object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0.1rem 0.5rem;
+}
+
+.carouselImage {
+    padding: 0.5rem;
 }
 
 .otherMoreDifferentSection > div {

@@ -9,27 +9,14 @@ import styles from './index.module.css';
 import {Carousel} from "react-responsive-3d-carousel";
 import 'react-responsive-3d-carousel/dist/styles.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import BrowserOnly from "@docusaurus/core/lib/client/exports/BrowserOnly";
 
 function HomepageHeader() {
     const {siteConfig} = useDocusaurusContext();
-    const items = [
-        <span className={clsx(styles.carouselImage)}>
-            <img src={useBaseUrl("/img/home/hedra.gif")} alt="Hedra preview"/>
-        </span>,
-        <span className={clsx(styles.carouselImage)}>
-            <img src={useBaseUrl("/img/home/platformer.gif")} alt="Platformer preview"/>
-        </span>,
-        <span className={clsx(styles.carouselImage)}>
-            <img src={useBaseUrl("/img/home/cat.gif")} alt="Cat preview"/>
-        </span>,
-        <span className={clsx(styles.carouselImage)}>
-            <img src={useBaseUrl("/img/home/cubes.gif")} alt="Cubes demo preview"/>
-        </span>,
-    ];
     return (
         <header className={clsx('hero', styles.heroBanner)}>
             <div className={clsx('container')}>
-                <div className={clsx('row')}>
+                <div className={clsx('row', styles.heroRow)}>
                     <div className={clsx(styles.heroWords)}>
                         <Heading as="h1">
                             {siteConfig.title}
@@ -64,21 +51,42 @@ function HomepageHeader() {
                             <span>project</span>
                         </div>
                     </div>
-                    <Carousel
-                        items={items}
-                        startIndex={0}
-                        containerWidth={"60%"}
-                        containerHeight={"auto"}
-                        width={"80%"}
-                        height={"auto"}
-                        aspectRatio={1.78}
-                        showArrows={false}
-                        showStatus={false}
-                        showIndicators={false}
-                        sizeDuration={5000}
-                        defaultOption={{angleFactor: 0, depthFactor: 1, widthFactor: 1.25}}
-                        transformDuration={250}
-                    />
+                    <div className={clsx(styles.heroCarousel)}>
+                        <BrowserOnly>
+                            {() => {
+                                const items = [
+                                    <span className={clsx(styles.carouselImage)}>
+                                        <img src={useBaseUrl("/img/home/hedra.gif")} alt="Hedra preview"/>
+                                    </span>,
+                                                                <span className={clsx(styles.carouselImage)}>
+                                        <img src={useBaseUrl("/img/home/platformer.gif")} alt="Platformer preview"/>
+                                    </span>,
+                                                                <span className={clsx(styles.carouselImage)}>
+                                        <img src={useBaseUrl("/img/home/cat.gif")} alt="Cat preview"/>
+                                    </span>,
+                                                                <span className={clsx(styles.carouselImage)}>
+                                        <img src={useBaseUrl("/img/home/cubes.gif")} alt="Cubes demo preview"/>
+                                    </span>,
+                                ];
+                                return <Carousel
+                                    items={items}
+                                    startIndex={0}
+                                    containerWidth={"100%"}
+                                    containerHeight={"auto"}
+                                    width={"80%"}
+                                    height={"auto"}
+                                    boxShadow={"none"}
+                                    aspectRatio={1.78}
+                                    showArrows={false}
+                                    showStatus={false}
+                                    showIndicators={false}
+                                    sizeDuration={5000}
+                                    defaultOption={{angleFactor: 0, depthFactor: 1, widthFactor: 1.25}}
+                                    transformDuration={250}
+                                />;
+                            }}
+                        </BrowserOnly>
+                    </div>
                 </div>
             </div>
         </header>
@@ -190,7 +198,11 @@ export default function Home(): JSX.Element {
                         </div>
                         <div className={clsx('col col--3')} style={{alignContent: 'center'}}>
                             <img src={useBaseUrl("/img/home/stride.svg")}
-                                 style={{filter: "invert(1)", padding: "var(--ifm-spacing-horizontal)", width: "min(15rem, 100%)"}}/>
+                                 style={{
+                                     filter: "invert(1)",
+                                     padding: "var(--ifm-spacing-horizontal)",
+                                     width: "min(15rem, 100%)"
+                                 }}/>
                             <br/>
                             <Link
                                 className={clsx('button button--secondary button--lg', styles.silkBtn)}
