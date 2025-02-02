@@ -45,10 +45,10 @@ jobs:
                 if-no-files-found: warn
                 retention-days: 1
             - name: Push to Experimental Feed
-              if: ${{ github.repository == 'dotnet/Silk.NET' }}
+              if: ${{ secrets.EXP_NUGET_PASSWORD != '' }}
               run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://dotnet.github.io/Silk.NET/nuget/experimental/index.json --nuget-username ${{ secrets.EXP_NUGET_USERNAME }} --nuget-password ${{ secrets.EXP_NUGET_PASSWORD }} --nuget-api-key ${{ secrets.EXP_NUGET_PASSWORD }}
             - name: Push to GitHub Packages
-              if: ${{ github.repository == 'dotnet/Silk.NET' }}
+              if: ${{ secrets.EXP_NUGET_PASSWORD != '' }}  # ik it's irrelevant but it tells if we likely have perms
               run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
     Test:
         strategy:
@@ -78,13 +78,14 @@ jobs:
               run: dotnet restore --runtime ${{ matrix.rid }}
             - name: Test
               run: dotnet test -c Release --no-restore --runtime ${{ matrix.rid }} --collect:"XPlat Code Coverage" --results-directory ./coverage --logger:"trx"
-            - name: Test Report
-              uses: dorny/test-reporter@v1
-              if: success() || failure()
-              with:
-                name: .NET Test Report (${{ matrix.rid }})
-                path: ./coverage/**/*.trx
-                reporter: dotnet-trx
+            # TODO: https://github.com/dorny/test-reporter?tab=readme-ov-file#recommended-setup-for-public-repositories
+            #- name: Test Report
+            #  uses: dorny/test-reporter@v1
+            #  if: success() || failure()
+            #  with:
+            #    name: .NET Test Report (${{ matrix.rid }})
+            #    path: ./coverage/**/*.trx
+            #    reporter: dotnet-trx
             - name: Upload Coverage Results
               uses: actions/upload-artifact@v4
               with:
