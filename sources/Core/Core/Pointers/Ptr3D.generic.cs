@@ -535,13 +535,28 @@ namespace Silk.NET.Core
         public static implicit operator Ref3D<T>(Ptr3D<T> ptr) => ptr.Native;
 
         /// <summary>
-        /// Creates a <see cref="Ref"/> from a <see cref="Ptr3D{T}"/>
+        /// Expresses this <see cref="Ptr3D{T}" /> as a <see cref="Ref"/>. Note that this does not index the
+        /// <see cref="Ptr3D{T}"/>'s dimensions, and is effectively equivalent to converting a <c>void***</c> to a
+        /// <c>void*</c>.
         /// </summary>
-        /// <param name="ptr"></param>
+        /// <param name="ptr">The <see cref="Ptr3D{T}"/>.</param>
+        /// <returns>The <see cref="Ref"/>.</returns>
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static implicit operator Ptr3D<T>(Ref3D ptr) => (void***)ptr;
+        public static implicit operator Ref(Ptr3D<T> ptr) => ptr.Native;
+
+        /// <summary>
+        /// Expresses this <see cref="Ptr3D{T}" /> as a <see cref="Ptr"/>. Note that this does not index the
+        /// <see cref="Ptr3D{T}"/>'s dimensions, and is effectively equivalent to converting a <c>void***</c> to a
+        /// <c>void*</c>.
+        /// </summary>
+        /// <param name="ptr">The <see cref="Ptr3D{T}"/>.</param>
+        /// <returns>The <see cref="Ptr"/>.</returns>
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static implicit operator Ptr(Ptr3D<T> ptr) => ptr.Native;
 
         /// <summary>
         /// Creates a <see cref="Ref"/> from a <see cref="Ptr3D{T}"/>
@@ -550,7 +565,18 @@ namespace Silk.NET.Core
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static implicit operator Ptr3D<T>(Ref3D<T> ptr) => (T***)ptr;
+        // TODO analyzer to ensure ptr is on stack or otherwise pinned
+        public static explicit operator Ptr3D<T>(Ref3D ptr) => (void***)ptr;
+
+        /// <summary>
+        /// Creates a <see cref="Ref"/> from a <see cref="Ptr3D{T}"/>
+        /// </summary>
+        /// <param name="ptr"></param>
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        // TODO analyzer to ensure ptr is on stack or otherwise pinned
+        public static explicit operator Ptr3D<T>(Ref3D<T> ptr) => (T***)ptr;
 
         /// <summary>
         /// Creates a <see cref="Ptr"/> from a <see cref="Ptr3D{T}"/>

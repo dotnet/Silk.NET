@@ -143,7 +143,7 @@ public readonly ref struct Ref<T>
     /// </summary>
     /// <param name="span">The span to create the ref from.</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    // TODO const correctness analyzers
+    // TODO annotate requires readonly dest - const correctness etc
     public static implicit operator Ref<T>(ReadOnlySpan<T> span) =>
         new(ref Unsafe.AsRef(in span.GetPinnableReference()));
 
@@ -244,11 +244,15 @@ public readonly ref struct Ref<T>
     /// Creates a <see cref="Ref{T}"/> from a string
     /// </summary>
     /// <param name="str"></param>
-    public static implicit operator Ref<T>(string str)
+    public static implicit operator Ref<T>(string? str)
     {
         if (typeof(T) == typeof(char) || typeof(T) == typeof(ushort) || typeof(T) == typeof(short))
         {
-            return new(ref Unsafe.As<char, T>(ref Unsafe.AsRef(in str.GetPinnableReference())));
+            return str is not null
+                ? new Ref<T>(
+                    ref Unsafe.As<char, T>(ref Unsafe.AsRef(in str.GetPinnableReference()))
+                )
+                : nullptr;
         }
 
         if (typeof(T) == typeof(byte) || typeof(T) == typeof(sbyte))

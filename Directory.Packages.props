@@ -19,6 +19,9 @@
     <PackageVersion Include="Fody" Version="6.8.2" PrivateAssets="all" />
     <PackageVersion Include="InlineIL.Fody" Version="1.9.0" PrivateAssets="all" />
 
+    <!-- Analyzers -->
+    <PackageVersion Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" />
+
     <!-- SilkTouch -->
     <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="18.1.0.2" />
     <PackageVersion Include="CSharpier.Core" Version="0.30.2" />

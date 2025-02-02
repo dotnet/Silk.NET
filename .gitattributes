@@ -23,6 +23,7 @@
 *.sln       text        eol=lf
 *.targets   text        eol=lf
 *.yml       text        eol=lf
+*.hlsl      text        eof=lf
 
 ###############################################################################
 # Set explicit file behavior to:
@@ -53,10 +54,35 @@
 *.7z binary
 *.ttf binary
 *.stout binary
+*.p7s binary
+*.sample binary
+*.nupkg binary
+*.exe binary
+*.idx binary
+*.pack binary
+*.spv binary
+*.lib binary
+*.dylib binary
 *.so binary
 *.dll binary
-*.dylib binary
+*.xcscheme binary
+*.xcworkspacedata binary
+*.pdf binary
+*.pfx binary
+*.metal binary
 *.jar binary
+*.apk binary
+*.aar binary
+*.aidl binary
+*.flata binary
+*.metallib binary
+*.items binary
+*.stamp binary
+*.icns binary
+*.mdb binary
+*.pdb binary
+*.bmp binary
+*.dat binary
 
 # Verify
 *.verified.txt text eol=lf working-tree-encoding=UTF-8

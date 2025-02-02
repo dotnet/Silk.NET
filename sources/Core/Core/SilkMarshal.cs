@@ -167,7 +167,7 @@ public static unsafe class SilkMarshal
     /// <param name="charSize">The character size of the marshalled strings.</param>
     /// <returns></returns>
     /// <exception cref="InvalidOperationException">A GC exception occurred.</exception>
-    public static byte[]? StringArrayToArray(ReadOnlySpan<string> strs, nint charSize = 1)
+    public static byte[]? StringArrayToArray(ReadOnlySpan<string?> strs, nint charSize = 1)
     {
         var ret = new byte[strs.Length * sizeof(nint)];
         var span = MemoryMarshal.Cast<byte, nint>(ret);
@@ -198,7 +198,7 @@ public static unsafe class SilkMarshal
     /// <param name="charSize">The character size of the marshalled strings.</param>
     /// <returns>The reference.</returns>
     /// <exception cref="InvalidOperationException">A GC exception occurred.</exception>
-    public static ref byte StringArrayToNative(ReadOnlySpan<string> strs, nint charSize = 1)
+    public static ref byte StringArrayToNative(ReadOnlySpan<string?> strs, nint charSize = 1)
     {
         var ret = StringArrayToArray(strs, charSize);
         if (ret is null)
@@ -217,7 +217,7 @@ public static unsafe class SilkMarshal
     /// <returns>The reference.</returns>
     /// <exception cref="InvalidOperationException">A GC exception occurred.</exception>
     // TODO analyzer to clarify that this only works if the inner array is const.
-    public static ref byte StringArrayToNative(ReadOnlySpan<string[]> strs, nint charSize = 1)
+    public static ref byte StringArrayToNative(ReadOnlySpan<string?[]> strs, nint charSize = 1)
     {
         var ret = new byte[strs.Length * sizeof(nint)];
         var span = MemoryMarshal.Cast<byte, nint>(ret);
