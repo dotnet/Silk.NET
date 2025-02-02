@@ -26,11 +26,9 @@ jobs:
               uses: actions/setup-dotnet@v3
               with:
                 dotnet-version: '9.0.x'
-                #dotnet-quality: 'preview'
+                dotnet-quality: 'preview'
             - name: Install Workloads
-              run: |
-                dotnet workload restore
-                dotnet nuget locals all --clear
+              run: dotnet workload restore
             - name: Pack
               # TODO decide whether we want experimental builds to use Debug or Release - using Release for now...
               run: >-
@@ -80,12 +78,10 @@ jobs:
             - name: Setup .NET
               uses: actions/setup-dotnet@v3
               with:
-                dotnet-version: '9.0.102'
-                #dotnet-quality: 'preview'
+                dotnet-version: '8.0.x'
+                dotnet-quality: 'preview'
             - name: Install Workloads
-              run: |
-                dotnet workload restore
-                dotnet nuget locals all --clear
+              run: dotnet workload restore
             - name: Restore
               run: dotnet restore --runtime ${{ matrix.rid }}
             - name: Test

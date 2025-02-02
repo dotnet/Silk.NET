@@ -9,12 +9,6 @@ determined that this work was simply out-of-scope for the initial 3.0 release as
 from having a lower-level API was determined to not be a requirement for the initial release, and was not included in
 the original Working Group approved software development plan.
 
-To ensure that such a lower-level API could be developed in the future, the `ISurfaceProvider` interface has been added,
-the idea being that this would be implemented (possible by a default interface method) by the low-level API and there
-would just be a common `Surface<TBackend>` returned by `ISurfaceProvider.Create` where `TBackend` is an implementation
-of the low-level API. The `ITypeChain` type was also introduced to ensure we could have extensible configuration for
-this model as well, so everything should be in place for us to investigate this in a minor release.
-
 We're well aware this sounds very similar to what our friends at OpenTK are planning for 5.0, for much of the same
 reasons. Indeed we still have community members who are also OpenTK community members that were advocating for it for
 this reason. It's great to consider this sort of prior art, the sharing of insights and lifting eachother up is what

@@ -6,7 +6,6 @@
         <TargetFrameworks Condition="'$(SilkiOSDisabled)' != 'true'">$(TargetFrameworks);net8.0-ios;net9.0-ios</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <NoWarn>0067</NoWarn> <!-- TODO -->
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,10 +13,6 @@
       <ProjectReference Include="..\..\Maths\Maths\Silk.NET.Maths.csproj" />
       <ProjectReference Include="..\..\SDL\SDL\Silk.NET.SDL.csproj" />
     </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Core\Analyzers\Silk.NET.Core.Analyzers.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-  </ItemGroup>
   <Import Project="..\..\Core\Core\Silk.NET.Core.targets" />
 
 </Project>

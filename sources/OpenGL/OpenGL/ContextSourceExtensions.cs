@@ -1,10 +1,14 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Runtime.CompilerServices;
+
 namespace Silk.NET.OpenGL;
 
 public static class ContextSourceExtensions
 {
+    private static ConditionalWeakTable<IGLContext, IGL> _cwt = new();
+
     public static IGL CreateOpenGL(this IGLContextSource src)
     {
         if (src.GLContext is not { } ctx)
@@ -20,9 +24,8 @@ public static class ContextSourceExtensions
 
     public static IGL CreateOpenGL(this IGLContext ctx) => GL.Create(ctx);
 
-    public static void MakeCurrent(this IGLContextSource src) =>
-        GL.ThisThread.MakeCurrent(src.CreateOpenGL());
+    public static void MakeCurrent(this IGLContextSource src) => src.GLContext?.MakeCurrent();
 
     public static void MakeCurrent(this IGLContext ctx) =>
-        GL.ThisThread.MakeCurrent(ctx.CreateOpenGL());
+        GL.ThisThread.MakeCurrent(_cwt.GetValue(ctx, c => c.CreateOpenGL()));
 }

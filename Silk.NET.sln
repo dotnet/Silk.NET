@@ -102,8 +102,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windowing", "Windowing", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing", "sources\Windowing\Windowing\Silk.NET.Windowing.csproj", "{EF07CBB5-D253-4CA9-A5DA-8B3DF2B0DF8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core.Analyzers", "sources\Core\Analyzers\Silk.NET.Core.Analyzers.csproj", "{D672DD5F-6A43-421B-92EB-1D1FFB7C1FFC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -170,10 +168,6 @@ Global
 		{EF07CBB5-D253-4CA9-A5DA-8B3DF2B0DF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF07CBB5-D253-4CA9-A5DA-8B3DF2B0DF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF07CBB5-D253-4CA9-A5DA-8B3DF2B0DF8E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D672DD5F-6A43-421B-92EB-1D1FFB7C1FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D672DD5F-6A43-421B-92EB-1D1FFB7C1FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D672DD5F-6A43-421B-92EB-1D1FFB7C1FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D672DD5F-6A43-421B-92EB-1D1FFB7C1FFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -206,7 +200,6 @@ Global
 		{F16C0AB9-DE7E-4C09-9EE9-DAA8B8E935A6} = {EC4D7B06-D277-4411-BD7B-71A6D37683F0}
 		{FE4414F8-5370-445D-9F24-C3AD3223F299} = {DD29EA8F-B1A6-45AA-8D2E-B38DA56D9EF6}
 		{EF07CBB5-D253-4CA9-A5DA-8B3DF2B0DF8E} = {FE4414F8-5370-445D-9F24-C3AD3223F299}
-		{D672DD5F-6A43-421B-92EB-1D1FFB7C1FFC} = {5CD096DB-6C44-48F1-9093-AD4C84B6B7EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {78D2CF6A-60A1-43E3-837B-00B73C9DA384}
