@@ -67,6 +67,7 @@
     <PackageVersionDependsOn>SilkShippingControl;$(PackageVersionDependsOn)</PackageVersionDependsOn>
     <TargetsForTfmSpecificContentInPackage>SilkNativePackaging;$(TargetsForTfmSpecificContentInPackage)</TargetsForTfmSpecificContentInPackage>
     <GenerateNuspecDependsOn>SilkShippingControl;$(GenerateNuspecDependsOn)</GenerateNuspecDependsOn>
+    <UseMonoRuntime>false</UseMonoRuntime>
   </PropertyGroup>
 
   <!-- SourceLink -->
