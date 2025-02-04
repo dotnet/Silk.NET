@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
 using Silk.NET.SilkTouch;
 using Silk.NET.SilkTouch.Caching;
+using Silk.NET.SilkTouch.Utility;
 
 var logging = new Option<LogLevel>(new[] { "--log-level", "-l" }, () => LogLevel.Information);
 var skip = new Option<string[]>(
@@ -77,7 +78,7 @@ rootCommand.SetHandler(async ctx => {
                     : LoggerColorBehavior.Default;
                 opts.IncludeScopes = false;
             });
-            builder.SetMinimumLevel(ctx.ParseResult.GetValueForOption(logging));
+            builder.SetMinimumLevel(ProgressBarUtility.CurrentLogLevel = ctx.ParseResult.GetValueForOption(logging));
         })
         .AddOptions()
         .AddSilkTouch(config)

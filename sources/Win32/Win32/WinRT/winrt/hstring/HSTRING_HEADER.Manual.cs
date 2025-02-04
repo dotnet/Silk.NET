@@ -1,16 +1,16 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
-
 // Ported from winrt/hstring.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
-
 using System;
 using System.Runtime.InteropServices;
-
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.WinRT;
 
 public partial struct HSTRING_HEADER
 {
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/hstring.h:80:5)")]
+    [NativeTypeName(
+        "union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/hstring.h:80:5)"
+    )]
     public _Reserved_e__Union Reserved;
 
     // The definition of this anonymous union in hstring.h is different on 64 bit compared to 32 bit.
@@ -22,8 +22,9 @@ public partial struct HSTRING_HEADER
     {
         internal fixed byte Reserved1_0[16];
         internal nuint Reserved1_1;
-
         public ref byte this[int index] => ref AsSpan()[index];
-        public Span<byte> AsSpan() => MemoryMarshal.CreateSpan(ref Reserved1_0[0], sizeof(_Reserved_e__Union));
+
+        public Span<byte> AsSpan() =>
+            MemoryMarshal.CreateSpan(ref Reserved1_0[0], sizeof(_Reserved_e__Union));
     }
 }

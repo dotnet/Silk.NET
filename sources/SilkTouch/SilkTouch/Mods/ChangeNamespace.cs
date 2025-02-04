@@ -10,7 +10,9 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -45,6 +47,8 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             config.Get(key).Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray()
             ?? Array.Empty<(Regex, string)>();
         var tmp = Path.GetTempFileName();
+        ProgressBarUtility.SetPercentage(0);
+        ProgressBarUtility.Show(LogLevel.Information);
         for (var i = 0; i < rsps.Count; i++)
         {
             var rsp = rsps[i];
@@ -97,8 +101,10 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
                     WithPackings = rsp.GeneratorConfiguration.WithPackings,
                 }
             };
-        }
 
+            ProgressBarUtility.SetPercentage(i / (float)rsps.Count);
+        }
+        ProgressBarUtility.Hide(LogLevel.Information);
         _jobs[key] = (
             rsps.Select(x => x.GeneratorConfiguration.DefaultNamespace)
                 .Concat(

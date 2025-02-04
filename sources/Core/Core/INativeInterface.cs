@@ -13,11 +13,11 @@ namespace Silk.NET.Core
         /// </summary>
         /// <typeparam name="TNativeInterface">The native interface object type</typeparam>
         /// <returns>pointer to interface object address </returns>
-        TNativeInterface** GetAddressOf<TNativeInterface>() where TNativeInterface : unmanaged;
+        Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>() where TNativeInterface : unmanaged;
         /// <summary>
         /// Gets the address of  the pointer to the interface object address
         /// </summary>
         /// <returns>pointer to interface object address </returns>
-        void** GetAddressOf();
+        Ptr2D GetAddressOf();
     }
 }

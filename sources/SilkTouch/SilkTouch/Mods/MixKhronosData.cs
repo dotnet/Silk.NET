@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -22,6 +22,7 @@ using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
+using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -1467,16 +1468,16 @@ public partial class MixKhronosData(
     }
 
     /// <inheritdoc />
-    public void Transform(
+    public MethodDeclarationSyntax Transform(
         MethodDeclarationSyntax current,
+        bool isInInterface,
         ITransformationContext ctx,
-        Action<MethodDeclarationSyntax> next
+        Func<MethodDeclarationSyntax, bool, MethodDeclarationSyntax> next
     )
     {
         if (ctx.JobKey is null)
         {
-            next(current);
-            return;
+            return next(current, isInInterface);
         }
 
         current.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);
@@ -1484,8 +1485,10 @@ public partial class MixKhronosData(
         foreach (var meth in TransformToConstants(current, ctx, entryPoint))
         {
             // TODO more transformations
-            next(meth);
+            next(meth, isInInterface);
         }
+
+        return current;
     }
 
     private IEnumerable<MethodDeclarationSyntax> TransformToConstants(
@@ -1644,6 +1647,7 @@ public partial class MixKhronosData(
             {
                 if (paramName == ":return" && pass > 0 && !anyNonTrivialParams)
                 {
+                    ProgressBarUtility.Hide(LogLevel.Information);
                     logger.LogWarning(
                         "Cannot transform return type for \"{}\" as it is a pointer, and there are no "
                             + "other \"group pointer\" transformations to be made meaning that the return type would "
@@ -1651,6 +1655,7 @@ public partial class MixKhronosData(
                             + "shall be applied to the return type for this function.",
                         symbolName
                     );
+                    ProgressBarUtility.Show(LogLevel.Information);
                     return null;
                 }
 

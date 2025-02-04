@@ -12,6 +12,7 @@ using ClangSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -63,7 +64,7 @@ namespace Silk.NET.SilkTouch.Mods
                 return;
             }
 
-            logger.LogInformation("Starting Interface discovery");
+            logger.LogInformation("Starting Interface Discovery");
 
             //setup matcher
             var includes = (cfg.IncludeList ?? ["**"]).Select(type => type.Replace(".", "/"));
@@ -78,9 +79,16 @@ namespace Silk.NET.SilkTouch.Mods
                     .Select(ResponseFileHandler.PathFixup)
             );
 
+            int count = proj?.DocumentIds.Count ?? 0;
+            int index = 0;
+
+            ProgressBarUtility.SetPercentage(0);
+            ProgressBarUtility.Show(LogLevel.Information);
             var firstPass = new TypeDiscoverer(matcher);
             foreach (var docId in proj?.DocumentIds ?? [])
             {
+                index++;
+
                 var doc =
                     proj?.GetDocument(docId)
                     ?? throw new InvalidOperationException("Document missing");
@@ -90,6 +98,8 @@ namespace Silk.NET.SilkTouch.Mods
                 }
 
                 firstPass.Visit(root);
+
+                ProgressBarUtility.SetPercentage((float)index / count);
             }
 
             if (cfg.AdditionalInterfaces is not null)
@@ -101,7 +111,8 @@ namespace Silk.NET.SilkTouch.Mods
                 }
             }
 
-            logger.LogInformation("Starting Project Compilation");
+            ProgressBarUtility.Hide(LogLevel.Information);
+            logger.LogInformation("Starting Object Usage Update");
             var compilation = await proj!.GetCompilationAsync();
             if (compilation is null)
             {
@@ -110,10 +121,10 @@ namespace Silk.NET.SilkTouch.Mods
                 );
             }
 
-            int count = proj?.DocumentIds.Count ?? 0;
-            int index = 0;
+            index = 0;
+            ProgressBarUtility.SetPercentage(0);
+            ProgressBarUtility.Show(LogLevel.Information);
 
-            logger.LogInformation("Starting Object Usage Update");
             UsageUpdater updater = new(firstPass.FoundTypes);
             foreach (var docId in proj?.DocumentIds ?? [])
             {
@@ -129,7 +140,9 @@ namespace Silk.NET.SilkTouch.Mods
                 var syntaxTree = await doc.GetSyntaxTreeAsync();
                 if (syntaxTree is null)
                 {
+                    ProgressBarUtility.Hide(LogLevel.Information);
                     logger.LogWarning("unable to retrieve Semantic Model for {}", doc.Name);
+                    ProgressBarUtility.Show(LogLevel.Information);
                     continue;
                 }
                 updater.SemanticModel = compilation is not null
@@ -140,17 +153,22 @@ namespace Silk.NET.SilkTouch.Mods
 
                 proj = doc.Project;
 
-                logger.LogInformation(
+                logger.LogDebug(
                     "Interface Object Usage Update for {0} Complete ({1}/{2})",
                     doc.Name,
                     index,
                     count
                 );
+                ProgressBarUtility.SetPercentage((float)index / count);
             }
+
+            ProgressBarUtility.Hide(LogLevel.Information);
 
             index = 0;
             var rewriter = new Rewriter(firstPass.FoundTypes);
-            logger.LogInformation("Starting COM Object Rewrite");
+            logger.LogInformation("Starting Interface Object Rewrite");
+            ProgressBarUtility.SetPercentage(0);
+            ProgressBarUtility.Show(LogLevel.Information);
             foreach (var docId in proj?.DocumentIds ?? [])
             {
                 index++;
@@ -166,14 +184,16 @@ namespace Silk.NET.SilkTouch.Mods
 
                 proj = doc.Project;
 
-                logger.LogInformation(
+                logger.LogDebug(
                     "Interface Object Rewrite for {0} Complete ({1}/{2})",
                     doc.Name,
                     index,
                     count
                 );
+                ProgressBarUtility.SetPercentage((float)index / count);
             }
 
+            ProgressBarUtility.Hide(LogLevel.Information);
             ctx.SourceProject = proj;
         }
 
@@ -292,12 +312,12 @@ namespace Silk.NET.SilkTouch.Mods
 
                 var name = GetTypeName(innerType.ToString() ?? string.Empty);
                 // Check if the type is a ComType
-                if (typeInfo.Type != null && InterfaceTypes.ContainsKey(name))
+                if (typeInfo.Type is not null && InterfaceTypes.ContainsKey(name))
                 {
                     return AssignmentExpression(
                         node.Kind(),
                         node.Left,
-                        LiteralExpression(SyntaxKind.DefaultExpression)
+                        LiteralExpression(SyntaxKind.DefaultLiteralExpression)
                     );
                 }
                 return base.VisitAssignmentExpression(node);
@@ -1305,7 +1325,7 @@ namespace Silk.NET.SilkTouch.Mods
 
                     parentNode = parentNode.AddMembers(
                         MethodDeclaration(
-                                PointerType(PointerType(ParseTypeName("TNativeInterface"))),
+                                GenericName("Ptr2D").WithTypeArgumentList(TypeArgumentList(SingletonSeparatedList(ParseTypeName("TNativeInterface")))),
                                 "GetAddressOf"
                             )
                             .WithModifiers(
@@ -1401,7 +1421,7 @@ namespace Silk.NET.SilkTouch.Mods
                                 )
                             ),
                         MethodDeclaration(
-                                PointerType(PointerType(ParseTypeName("void"))),
+                                ParseTypeName("Ptr2D"),
                                 "GetAddressOf"
                             )
                             .WithModifiers(
@@ -1483,6 +1503,7 @@ namespace Silk.NET.SilkTouch.Mods
 
                     parentNode = generateCasts(parentNode, name, nativeName, false, true);
                     parentNode = generateCasts(parentNode, name, "Ptr2D");
+                    parentNode = generateCasts(parentNode, name, $"Ptr<{nativeName}>", pointerCast:false, castXmlName: $"Ptr<T>");
 
                     parentNode = parentNode.AddMembers(
                         ConversionOperatorDeclaration(
@@ -2162,12 +2183,17 @@ namespace Silk.NET.SilkTouch.Mods
                 string name,
                 string castName,
                 bool castTo = true,
-                bool implicitTo = false
+                bool implicitTo = false,
+                bool pointerCast = true,
+                string? castXmlName = null
             )
             {
+                var castType = pointerCast ? PointerType(ParseTypeName(castName)) : ParseTypeName(castName);
+                var castXmlType = castXmlName is not null ? ParseTypeName(castXmlName) : ParseTypeName(castName);
+
                 ExpressionSyntax expression = castTo
                     ? CastExpression(
-                        PointerType(ParseTypeName(castName)),
+                        castType,
                         MemberAccessExpression(
                             SyntaxKind.SimpleMemberAccessExpression,
                             IdentifierName("value"),
@@ -2197,7 +2223,7 @@ namespace Silk.NET.SilkTouch.Mods
                             ParameterList(
                                 SingletonSeparatedList(
                                     Parameter(Identifier("value"))
-                                        .WithType(PointerType(ParseTypeName(castName)))
+                                        .WithType(castType)
                                 )
                             )
                         )
@@ -2252,9 +2278,7 @@ namespace Silk.NET.SilkTouch.Mods
                                                                         {
                                                                             XmlCrefAttribute(
                                                                                 NameMemberCref(
-                                                                                    ParseTypeName(
-                                                                                        castName
-                                                                                    )
+                                                                                    castXmlType
                                                                                 )
                                                                             ),
                                                                         }
@@ -2334,9 +2358,7 @@ namespace Silk.NET.SilkTouch.Mods
                                                                         {
                                                                             XmlCrefAttribute(
                                                                                 NameMemberCref(
-                                                                                    ParseTypeName(
-                                                                                        castName
-                                                                                    )
+                                                                                    castXmlType
                                                                                 )
                                                                             ),
                                                                         }
@@ -2368,7 +2390,7 @@ namespace Silk.NET.SilkTouch.Mods
                         ),
                     ConversionOperatorDeclaration(
                             Token(SyntaxKind.ImplicitKeyword),
-                            PointerType(ParseTypeName(castName))
+                            castType
                         )
                         .WithModifiers(
                             TokenList(
@@ -2439,15 +2461,13 @@ namespace Silk.NET.SilkTouch.Mods
                                                                         {
                                                                             XmlCrefAttribute(
                                                                                 NameMemberCref(
-                                                                                    ParseTypeName(
-                                                                                        castName
-                                                                                    )
+                                                                                    castXmlType
                                                                                 )
                                                                             ),
                                                                         }
                                                                     )
                                                                 ),
-                                                                XmlText(" pointer."),
+                                                                XmlText($" {(pointerCast? "pointer" : "")}."),
                                                             }
                                                         ),
                                                         XmlElementEndTag(XmlName("summary"))
