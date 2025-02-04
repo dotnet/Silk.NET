@@ -11,6 +11,7 @@ using System.Text;
 using ClangSharp;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Utility;
 using static ClangSharp.Interop.CXTranslationUnit_Flags;
 
 namespace Silk.NET.SilkTouch.Clang;
@@ -1355,6 +1356,7 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
         {
             foreach (var error in errorList)
             {
+                ProgressBarUtility.Hide(LogLevel.Information);
                 logger.LogError($"Error in args for '{files.FirstOrDefault()}': {error}");
             }
         }
@@ -1492,18 +1494,28 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
             directory,
             Environment.CurrentDirectory
         );
-        foreach (var rsp in Glob(globs))
+        IEnumerable<string> rsps = Glob(globs);
+        int index = 0;
+        int count = rsps.Count();
+        ProgressBarUtility.SetPercentage(0);
+        ProgressBarUtility.Show(LogLevel.Information);
+        foreach (var rsp in rsps)
         {
+            index++;
             logger.LogDebug("Reading found file: {0}", rsp);
             var dir =
                 Path.GetDirectoryName(rsp)
                 ?? throw new InvalidOperationException("Couldn't get directory name of path");
             var read = ReadResponseFile(RspRelativeTo(dir, rsp).ToArray(), dir, rsp);
+
+            ProgressBarUtility.SetPercentage(index / (float)count);
             yield return read with
             {
                 FileDirectory = dir,
             };
         }
+
+        ProgressBarUtility.Hide(LogLevel.Information);
     }
 
     private IEnumerable<string> RspRelativeTo(string directory, string fullPath)
@@ -1545,12 +1557,7 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
     internal static IEnumerable<string> Glob(IReadOnlyCollection<string> paths, string? cd = null)
     {
         cd ??= Environment.CurrentDirectory;
-        var matcher = new Matcher();
-        
-        matcher.AddIncludePatterns(paths.Where(x => !x.StartsWith("!")).Select(PathFixup));
-        matcher.AddExcludePatterns(
-            paths.Where(x => x.StartsWith("!")).Select(x => x[1..]).Select(PathFixup)
-        );
+        var matcher = GetGlobMatcher(paths);
 
         return matcher
             .GetResultsInFullPath(cd)
@@ -1567,5 +1574,17 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
             .Select(x => Path.GetFullPath(x).Replace('\\', '/'))
             .Distinct()
             .ToArray();
+    }
+
+    internal static Matcher GetGlobMatcher(IReadOnlyCollection<string> paths)
+    {
+        var matcher = new Matcher();
+
+        matcher.AddIncludePatterns(paths.Where(x => !x.StartsWith("!")).Select(PathFixup));
+        matcher.AddExcludePatterns(
+            paths.Where(x => x.StartsWith("!")).Select(x => x[1..]).Select(PathFixup)
+        );
+
+        return matcher;
     }
 }

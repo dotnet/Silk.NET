@@ -9,6 +9,7 @@ using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -18,25 +19,28 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 /// <summary>
 /// Transforms functions with exactly one pointer parameter with an element count determined from another parameter.
 /// </summary>
-public class ArrayParameterTransformer : IFunctionTransformer
+public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Configuration>? options) : IFunctionTransformer
 {
     /// <inheritdoc />
-    public void Transform(
+    public MethodDeclarationSyntax Transform(
         MethodDeclarationSyntax decl,
+        bool isInInterface,
         ITransformationContext ctx,
-        Action<MethodDeclarationSyntax> next
+        Func<MethodDeclarationSyntax, bool, MethodDeclarationSyntax> next
     )
     {
         // Ported from https://github.com/dotnet/Silk.NET/blob/0e8e0398/src/Core/Silk.NET.BuildTools/Overloading/Complex/ArrayParameterOverloader.cs#L32
         // Modified heavily to use count metadata instead of function signature styles. This allowed us to also coalesce
         // the ReturnTypeOverloader and NonKhrReturnTypeOverloader into this single transformer.
 
+        var cfg = options?.Get(ctx.JobKey);
+
         // Keep the original in the loop:
-        next(decl);
+        decl = next(decl, isInInterface);
 
         if (ctx.Transformers is null)
         {
-            return;
+            return decl;
         }
 
         decl.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);
@@ -67,7 +71,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
             )
         )
         {
-            return;
+            return decl;
         }
 
         // has a single pointer parameter that has either:
@@ -120,7 +124,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
         if (ptrCount?.CommonUsage is { IsIn: true, IsOut: true } or { IsCountBytes: true })
         {
             // Flow isn't compatible with either of our signatures.
-            return;
+            return decl;
         }
 
         // Get information from the function name for benefit-of-doubt overloading i.e. if the function matches a very
@@ -129,7 +133,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
         var verb = epSpan[int.Max(epSpan.IndexOfAny(NameUtils.Uppercase), 0)..];
         verb = verb[..(verb[1..].IndexOfAny(NameUtils.Uppercase) + 1)];
         var benefitOfDoubt = false;
-        if (
+        if ((cfg?.BenefitOfTheDoubtArrayTransformation ?? false) &&
             countParam is null
             && ptrParam is null
             && verb is "Get" or "Gen" or "Create" or "New" or "Delete"
@@ -159,7 +163,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
             ) // the pointer must not be a void pointer
         )
         {
-            return;
+            return decl;
         }
 
         // Get the type information to verify that the usage constraints match the type info (if applicable, if not
@@ -167,7 +171,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
         // doubt in lieu of proper constraint info)
         if (ptrParam.GetNativeTypeName() is not { } nativeType)
         {
-            return;
+            return decl;
         }
 
         Span<bool> mutability = stackalloc bool[nativeType.AsSpan().GetIndirectionLevels() + 1];
@@ -197,7 +201,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
         )
         {
             // Discrepancy between the type signature and recorded count.
-            return;
+            return decl;
         }
 
         // Determine whether this is an outputting function. If it is, we need to transform the method to have the
@@ -219,7 +223,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
             isOutput.Value,
             isHr
         );
-        next(rw.Visit(decl) as MethodDeclarationSyntax ?? decl);
+        return next(rw.Visit(decl) as MethodDeclarationSyntax ?? decl, isInInterface);
     }
 
     class TransformArrayParameterRewriter(

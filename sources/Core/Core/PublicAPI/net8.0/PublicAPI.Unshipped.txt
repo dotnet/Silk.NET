@@ -107,8 +107,8 @@ Silk.NET.Core.INativeWindow.TryGetPlatformInfo<TPlatformInfo>(out TPlatformInfo?
 Silk.NET.Core.INativeGuid
 Silk.NET.Core.INativeGuid.NativeGuid.get -> System.Guid*
 Silk.NET.Core.INativeInterface
-Silk.NET.Core.INativeInterface.GetAddressOf() -> void**
-Silk.NET.Core.INativeInterface.GetAddressOf<TNativeInterface>() -> TNativeInterface**
+Silk.NET.Core.INativeInterface.GetAddressOf() -> Silk.NET.Core.Ptr2D
+Silk.NET.Core.INativeInterface.GetAddressOf<TNativeInterface>() -> Silk.NET.Core.Ptr2D<TNativeInterface>
 Silk.NET.Core.Loader.DefaultNativeContext
 Silk.NET.Core.Loader.DefaultNativeContext.DefaultNativeContext() -> void
 Silk.NET.Core.Loader.DefaultNativeContext.Dispose() -> void
@@ -363,6 +363,10 @@ static Silk.NET.Core.MaybeBool<T>.implicit operator bool(Silk.NET.Core.MaybeBool
 static Silk.NET.Core.MaybeBool<T>.implicit operator Silk.NET.Core.MaybeBool<T>(bool value) -> Silk.NET.Core.MaybeBool<T>
 static Silk.NET.Core.MaybeBool<T>.implicit operator Silk.NET.Core.MaybeBool<T>(T Value) -> Silk.NET.Core.MaybeBool<T>
 static Silk.NET.Core.MaybeBool<T>.implicit operator T(Silk.NET.Core.MaybeBool<T> value) -> T
+static Silk.NET.Core.MaybeBool<T>.operator !=(int lh, Silk.NET.Core.MaybeBool<T> rh) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator !=(Silk.NET.Core.MaybeBool<T> lh, int rh) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator ==(int lh, Silk.NET.Core.MaybeBool<T> rh) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator ==(Silk.NET.Core.MaybeBool<T> lh, int rh) -> bool
 static Silk.NET.Core.NullPtr.implicit operator void*(Silk.NET.Core.NullPtr _) -> void*
 static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<byte> this) -> string!
 static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<byte> this, int length) -> string!
@@ -424,6 +428,10 @@ static Silk.NET.Core.Ptr.explicit operator nint(Silk.NET.Core.Ptr ptr) -> nint
 static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(nint ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ref ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.explicit operator string!(Silk.NET.Core.Ptr ptr) -> string!
+static Silk.NET.Core.Ptr.implicit operator nint(Silk.NET.Core.Ptr ptr) -> nint
+static Silk.NET.Core.Ptr.implicit operator nuint(Silk.NET.Core.Ptr ptr) -> nuint
+static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(nint ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(nuint ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(void* ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr ptr) -> Silk.NET.Core.Ref
@@ -599,7 +607,11 @@ static Silk.NET.Core.Ptr3D<T>.operator ==(void* lh, Silk.NET.Core.Ptr3D<T> rh) -
 static Silk.NET.Core.Ptr3D<T>.operator ==(void** lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
 static Silk.NET.Core.Ptr<T>.explicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.Ref<T> ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.explicit operator string!(Silk.NET.Core.Ptr<T> ptr) -> string!
+static Silk.NET.Core.Ptr<T>.implicit operator nint(Silk.NET.Core.Ptr<T> ptr) -> nint
+static Silk.NET.Core.Ptr<T>.implicit operator nuint(Silk.NET.Core.Ptr<T> ptr) -> nuint
 static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr<T> ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(nint ptr) -> Silk.NET.Core.Ptr<T>
+static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(nuint ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.Ptr ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(T* ptr) -> Silk.NET.Core.Ptr<T>

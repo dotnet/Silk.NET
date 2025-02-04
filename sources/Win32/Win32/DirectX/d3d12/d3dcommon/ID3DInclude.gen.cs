@@ -18,8 +18,14 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Native.Interface, INative
         {
             [VtblIndex(1)]
             HRESULT Close([NativeTypeName("LPCVOID")] void* pData);
+            [VtblIndex(1)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            HRESULT Close([NativeTypeName("LPCVOID")] Ref pData);
             [VtblIndex(0)]
             HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, uint* pBytes);
+            [VtblIndex(0)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] Ref<sbyte> pFileName, [NativeTypeName("LPCVOID")] Ref pParentData, [NativeTypeName("LPCVOID *")] Ref2D ppData, Ref<uint> pBytes);
         }
 
         public partial struct Vtbl<TSelf>
@@ -91,6 +97,12 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Native.Interface, INative
     /// <summary>casts <see cref = "ID3DInclude"/> to <see cref = "Ptr2D"/> pointer.</summary>
     /// <param name = "value">The <see cref = "ID3DInclude"/> instance to be converted </param>
     public static implicit operator Ptr2D*(ID3DInclude value) => (Ptr2D*)value.lpVtbl;
+    /// <summary>casts <see cref = "Ptr{T}"/> to <see cref = "ID3DInclude"/>.</summary>
+    /// <param name = "value">The <see cref = "Ptr{T}"/> instance to be converted </param>
+    public static explicit operator ID3DInclude(Ptr<ID3DInclude.Native> value) => new ID3DInclude(value);
+    /// <summary>casts <see cref = "ID3DInclude"/> to <see cref = "Ptr{T}"/> .</summary>
+    /// <param name = "value">The <see cref = "ID3DInclude"/> instance to be converted </param>
+    public static implicit operator Ptr<ID3DInclude.Native>(ID3DInclude value) => (Ptr<ID3DInclude.Native>)value.lpVtbl;
     /// <summary>casts void*** pointer to <see cref = "ID3DInclude"/>.</summary>
     /// <param name = "value">The void*** instance to be converted</param>
     public static explicit operator ID3DInclude(void*** value) => new ID3DInclude((Native*)value);
@@ -118,20 +130,11 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Native.Interface, INative
         }
     }
 
-    [Transformed]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     /// <inheritdoc cref = "INativeInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
 	public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
-        where TNativeInterface : unmanaged => (TNativeInterface**)GetAddressOfRaw();
-    [Transformed]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    /// <inheritdoc cref = "INativeInterface.GetAddressOf()"></inheritdoc>
-	public readonly Ptr2D GetAddressOf() => (void**)GetAddressOfRaw();
-    /// <inheritdoc cref = "INativeInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
-	public readonly TNativeInterface** GetAddressOfRaw<TNativeInterface>()
         where TNativeInterface : unmanaged => (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
     /// <inheritdoc cref = "INativeInterface.GetAddressOf()"></inheritdoc>
-	public readonly void** GetAddressOfRaw() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+	public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
     /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Open"]/*'/>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]

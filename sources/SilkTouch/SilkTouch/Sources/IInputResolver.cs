@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ClangSharp;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Utility;
 
 namespace Silk.NET.SilkTouch.Sources;
 
@@ -36,6 +37,8 @@ public interface IInputResolver
     /// <returns>An asynchronous task.</returns>
     async Task ResolveInPlace(IList<ResponseFile> rsps)
     {
+        ProgressBarUtility.SetPercentage(0);
+        ProgressBarUtility.Show(Microsoft.Extensions.Logging.LogLevel.Information);
         // Resolve any foreign paths
         for (var i = 0; i < rsps.Count; i++)
         {
@@ -130,7 +133,9 @@ public interface IInputResolver
                     )
                 }
             };
+            ProgressBarUtility.SetPercentage(i / (float)rsps.Count);
         }
+        ProgressBarUtility.Hide(Microsoft.Extensions.Logging.LogLevel.Information);
     }
 
     /// <summary>

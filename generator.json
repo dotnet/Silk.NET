@@ -7,6 +7,7 @@
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "ClangScraper",
+        "ManualFileImporter",
         "ChangeNamespace",
         "TransformInterfaces",
         "TransformCOM",
@@ -25,8 +26,8 @@
           "sources/Windows/um/httpserv/IHttpResponse4.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/IHttpResponse4.cs",
           "sources/Windows/um/httpserv/IHttpTraceContext.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/IHttpTraceContext.cs",
           "sources/Windows/um/httpserv/CHttpModule.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/CHttpModule.cs",
-          "sources/Windows/um/winioctl/TXFS_READ_BACKUP_INFORMATION_OUT.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/winioctl/TXFS_READ_BACKUP_INFORMATION_OUT.cs",
           "sources/Windows/um/winioctl/STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/winioctl/STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.cs",
+          "sources/Windows/um/winioctl/TXFS_READ_BACKUP_INFORMATION_OUT.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/winioctl/TXFS_READ_BACKUP_INFORMATION_OUT.cs",
           "sources/Windows/um/WinUser/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/WinUser/Windows.cs",
           "sources/Windows/shared/strsafe/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/strsafe/Windows.cs",
           "sources/Windows/shared/ws2ipdef/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/ws2ipdef/Windows.cs",
@@ -47,6 +48,34 @@
           "tests/DirectX/d3dx12/d3dx12_core/**.cs",
           "tests/DirectX/d3dx12/d3dx12_barriers/**.cs"
         ]
+      },
+      "ManualFileImporter": {
+        "ManualImports": {
+          "sources/**.Manual.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/**.Manual.cs",
+          "!sources/**/INativeGuid.Manual.cs": "!**/INativeGuid.Manual.cs",
+          "!sources/**/ID2D1*.Manual.cs": "!**/ID2D1*.Manual.cs",
+          "!sources/**/d2d1_1helper/DirectX.Manual.cs": "!**/d2d1_1helper/DirectX.Manual.cs",
+          "!sources/**/DirectXHelpers/DirectX.Manual.cs": "!**/DirectXHelpers/DirectX.Manual.cs",
+          "!sources/**/d2d1/DirectX.Manual.cs": "!**/d2d1/DirectX.Manual.cs",
+          "!sources/**/IWeakReference.Manual.cs": "!**/IWeakReference.Manual.cs",
+          "!sources/**/IDispatchEx.Manual.cs": "!**/IDispatchEx.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM1_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM1_PARSE_HELPER.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM2_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM2_PARSE_HELPER.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM3_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM3_PARSE_HELPER.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM4_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM4_PARSE_HELPER.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM5_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM5_PARSE_HELPER.Manual.cs",
+          "!sources/**/ShObjIdl_core/Windows.Manual.cs": "!**/ShObjIdl_core/Windows.Manual.cs",
+          "!sources/**/propvarutil/Windows.Manual.cs": "!**/propvarutil/Windows.Manual.cs",
+          "!sources/**/uuids/Windows.Manual.cs": "!**/uuids/Windows.Manual.cs",
+          "!sources/**/gdipluscolor/Color.Manual.cs": "!**/gdipluscolor/Color.Manual.cs",
+          "!sources/**/windows.ui.input/IID.Manual.cs": "!**/windows.ui.input/IID.Manual.cs",
+          "!sources/**/windows.security.authentication.web.core/IID.Manual.cs": "!**/windows.security.authentication.web.core/IID.Manual.cs",
+          "!sources/**/roapi/WinRT.Manual.cs": "!**/roapi/WinRT.Manual.cs",
+          "!sources/**/windows.graphics.directx.direct3d11.interop/WinRT.Manual.cs": "!**/windows.graphics.directx.direct3d11.interop/WinRT.Manual.cs",
+          "!sources/**/roparameterizediid/**.Manual.cs": "!**/roparameterizediid/**.Manual.cs",
+          "!sources/**/d2d1_1/D2D1_**.Manual.cs": "!**/d2d1_1/D2D1_**.Manual.cs"
+        }
       },
       "ChangeNamespace": {
         "Mappings": {

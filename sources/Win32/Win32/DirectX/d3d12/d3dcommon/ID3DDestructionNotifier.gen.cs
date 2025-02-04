@@ -83,7 +83,7 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.N
         public HRESULT QueryInterface<TCom>(out TCom ppvObject)
             where TCom : unmanaged, IComInterface
         {
-            ppvObject = default(TCom);
+            ppvObject = default;
             return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
         }
 
@@ -143,6 +143,12 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.N
     /// <summary>casts <see cref = "ID3DDestructionNotifier"/> to <see cref = "Ptr2D"/> pointer.</summary>
     /// <param name = "value">The <see cref = "ID3DDestructionNotifier"/> instance to be converted </param>
     public static implicit operator Ptr2D*(ID3DDestructionNotifier value) => (Ptr2D*)value.lpVtbl;
+    /// <summary>casts <see cref = "Ptr{T}"/> to <see cref = "ID3DDestructionNotifier"/>.</summary>
+    /// <param name = "value">The <see cref = "Ptr{T}"/> instance to be converted </param>
+    public static explicit operator ID3DDestructionNotifier(Ptr<ID3DDestructionNotifier.Native> value) => new ID3DDestructionNotifier(value);
+    /// <summary>casts <see cref = "ID3DDestructionNotifier"/> to <see cref = "Ptr{T}"/> .</summary>
+    /// <param name = "value">The <see cref = "ID3DDestructionNotifier"/> instance to be converted </param>
+    public static implicit operator Ptr<ID3DDestructionNotifier.Native>(ID3DDestructionNotifier value) => (Ptr<ID3DDestructionNotifier.Native>)value.lpVtbl;
     /// <summary>casts void*** pointer to <see cref = "ID3DDestructionNotifier"/>.</summary>
     /// <param name = "value">The void*** instance to be converted</param>
     public static explicit operator ID3DDestructionNotifier(void*** value) => new ID3DDestructionNotifier((Native*)value);
@@ -167,20 +173,11 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.N
     [return: NativeTypeName("ULONG")]
     public uint AddRef() => lpVtbl->AddRef();
     public void Dispose() => Release();
-    [Transformed]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     /// <inheritdoc cref = "INativeInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
 	public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
-        where TNativeInterface : unmanaged => (TNativeInterface**)GetAddressOfRaw();
-    [Transformed]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    /// <inheritdoc cref = "INativeInterface.GetAddressOf()"></inheritdoc>
-	public readonly Ptr2D GetAddressOf() => (void**)GetAddressOfRaw();
-    /// <inheritdoc cref = "INativeInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
-	public readonly TNativeInterface** GetAddressOfRaw<TNativeInterface>()
         where TNativeInterface : unmanaged => (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
     /// <inheritdoc cref = "INativeInterface.GetAddressOf()"></inheritdoc>
-	public readonly void** GetAddressOfRaw() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+	public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
     /// <inheritdoc cref = "IUnknown.QueryInterface"/>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
@@ -203,7 +200,7 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.N
     public HRESULT QueryInterface<TCom>(out TCom ppvObject)
         where TCom : unmanaged, IComInterface
     {
-        ppvObject = default(TCom);
+        ppvObject = default;
         return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
     }
 

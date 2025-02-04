@@ -1,17 +1,15 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
-
 // Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
-
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.Win32;
 
 [StructLayout(LayoutKind.Sequential, Pack = 4)]
-public unsafe struct HIDP_EXTENDED_ATTRIBUTES
+public unsafe partial struct HIDP_EXTENDED_ATTRIBUTES
 {
     [NativeTypeName("UCHAR")]
     public byte NumGlobalUnknowns;
@@ -39,10 +37,7 @@ public unsafe struct HIDP_EXTENDED_ATTRIBUTES
         public ref uint this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref Unsafe.Add(ref e0, index);
-            }
+            get { return ref Unsafe.Add(ref e0, index); }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

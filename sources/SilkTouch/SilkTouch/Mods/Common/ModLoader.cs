@@ -32,6 +32,7 @@ public class ModLoader
             nameof(TransformInterfaces) => typeof(TransformInterfaces),
             nameof(TransformCOM) => typeof(TransformCOM),
             nameof(DisableWarnings) => typeof(DisableWarnings),
+            nameof(ManualFileImporter) => typeof(ManualFileImporter),
             _ => null,
         };
 }

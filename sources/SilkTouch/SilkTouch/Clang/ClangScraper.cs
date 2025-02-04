@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Hashing;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -23,6 +24,7 @@ using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Sources;
+using Silk.NET.SilkTouch.Utility;
 using static ClangSharp.Interop.CXDiagnosticSeverity;
 using static ClangSharp.Interop.CXErrorCode;
 
@@ -160,7 +162,9 @@ public sealed class ClangScraper(
             if (translationUnitError != CXError_Success)
             {
                 var msg = $"Parsing failed for '{fileName}' due to '{translationUnitError}'.";
+
                 logger.LogError(msg);
+
                 skipProcessing = true;
             }
             else if (handle.NumDiagnostics != 0)
@@ -172,8 +176,7 @@ public sealed class ClangScraper(
                     using var diagnostic = handle.GetDiagnostic(i);
 
                     logger.Log(
-                        diagnostic.Severity switch
-                        {
+                        diagnostic.Severity switch {
                             CXDiagnostic_Ignored => LogLevel.Trace,
                             CXDiagnostic_Note => LogLevel.Debug,
                             CXDiagnostic_Warning => LogLevel.Warning,
@@ -210,6 +213,7 @@ public sealed class ClangScraper(
                     rspIndex,
                     rspCount
                 );
+
                 pinvokeGenerator.GenerateBindings(
                     translationUnit,
                     filePath,

@@ -5,7 +5,9 @@ using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.Transformation;
@@ -27,12 +29,16 @@ public class FunctionTransformer(
     /// <param name="key">The job key.</param>
     /// <param name="functions">The functions.</param>
     /// <param name="ctx">The wider context for this function transformation operation.</param>
+    /// <param name="typeName">Name of containing type</param>
+    /// <param name="toRename">list of symbols to rename</param>
     /// <param name="includeOriginal">
     /// Whether to include the original function in the outputs before the transformed ones.
     /// </param>
     /// <returns>The transformed (and optionally original) functions.</returns>
     public IEnumerable<MethodDeclarationSyntax> GetTransformedFunctions(
         string? key,
+        string typeName,
+        Dictionary<string, string> toRename,
         IEnumerable<MethodDeclarationSyntax> functions,
         ITransformationContext ctx,
         bool includeOriginal = true
@@ -47,9 +53,9 @@ public class FunctionTransformer(
         ctx.Transformers = transformers.SelectMany(x => x.Get(key)).ToArray();
         var transform = ctx.Transformers.Aggregate<
             IFunctionTransformer,
-            Action<MethodDeclarationSyntax>
+            Func<MethodDeclarationSyntax, bool, MethodDeclarationSyntax>
         >(
-            meth =>
+            (meth, isInInterface) =>
             {
                 // Get the discriminator string to determine whether it conflicts. Note that we set the return type
                 // to null as overloads that differ only by return type aren't acceptable. However, we do need a
@@ -73,8 +79,12 @@ public class FunctionTransformer(
                 // Only add it if it's an overload that does not conflict.
                 if (discrims.Add(discrimWithRet) && discrims.Add(discrim))
                 {
+                    if (isInInterface)
+                    {
+                        meth = meth.WithBody(null).WithExpressionBody(null).WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+                    }
                     // Small fixup to convert to use expression bodies where possible
-                    if (
+                    else if (
                         meth.ExpressionBody is null
                         && meth.Body?.Statements.Count == 1
                         && (
@@ -97,9 +107,11 @@ public class FunctionTransformer(
                     }
                     ret.Add(meth);
                 }
+
+                return meth;
                 // TODO else warn maybe?
             },
-            (c, t) => meth => t.Transform(meth, ctx, c)
+            (c, t) => ((meth, isInInterface) => t.Transform(meth, isInInterface, ctx, c))
         );
         foreach (var function in functions)
         {
@@ -110,6 +122,7 @@ public class FunctionTransformer(
                 )
             )
             {
+                ProgressBarUtility.Hide(LogLevel.Information);
                 logger.LogWarning(
                     "Varargs are not supported yet, excluding function: {}",
                     function
@@ -119,6 +132,7 @@ public class FunctionTransformer(
                         .NormalizeWhitespace(eol: "\n")
                         .ToFullString()
                 );
+                ProgressBarUtility.Show(LogLevel.Information);
                 continue;
             }
 
@@ -146,10 +160,12 @@ public class FunctionTransformer(
             // ones. We might remove it later.
             if (!discrims.Add(discrimWithRet))
             {
+                ProgressBarUtility.Hide(LogLevel.Information);
                 logger.LogWarning(
                     "Failed to add discriminator for original function \"{}\" because a previous transformed or original function conflicts with it. This may cause inconsistencies in outputs.",
                     discrim
                 );
+                ProgressBarUtility.Show(LogLevel.Information);
             }
 
             ctx.Original = function;
@@ -159,13 +175,36 @@ public class FunctionTransformer(
                 // Try to add the original function as-is
                 if (discrims.Add(discrim))
                 {
-                    ret.Insert(idx, function);
+                    ret.Insert(idx, function
+                        .WithAttributeLists(List(
+                        function
+                        .AttributeLists.Select(x =>
+                            x.WithAttributes(
+                                SeparatedList(
+                                    x.Attributes.Where(y =>
+                                        !y.IsAttribute("System.Runtime.InteropServices.UnmanagedCallersOnly")
+                                    )
+                                )
+                            )
+                        )
+                        .Where(x => x.Attributes.Count > 0)
+                        )));
                 }
                 else
                 {
                     // Sometimes when functions are transformed they only differ by return type. C# doesn't allow
                     // this, so we add a suffix to the original function to differentiate them.
                     var newIden = $"{function.Identifier}Raw";
+
+                    var transformedDiscrimWithRet = typeName + ":" + ModUtils.DiscrimStr(
+                        transformedFunc.Modifiers,
+                        transformedFunc.TypeParameterList,
+                        transformedFunc.Identifier.ToString(),
+                        transformedFunc.ParameterList,
+                        transformedFunc.ReturnType
+                    );
+                    toRename.Add(transformedDiscrimWithRet, newIden);
+
                     var rep = new Dictionary<string, string>
                     {
                         { function.Identifier.ToString(), newIden }
@@ -180,7 +219,20 @@ public class FunctionTransformer(
                     // Add the suffixed function
                     var newFun = function
                         .WithRenameSafeAttributeLists()
-                        .WithIdentifier(Identifier(newIden));
+                        .WithIdentifier(Identifier(newIden))
+                        .WithAttributeLists(List(
+                        function
+                        .AttributeLists.Select(x =>
+                            x.WithAttributes(
+                                SeparatedList(
+                                    x.Attributes.Where(y =>
+                                        !y.IsAttribute("System.Runtime.InteropServices.UnmanagedCallersOnly")
+                                    )
+                                )
+                            )
+                        )
+                        .Where(x => x.Attributes.Count > 0)
+                        ));
                     discrim = ModUtils.DiscrimStr(
                         function.Modifiers,
                         function.TypeParameterList,
@@ -208,7 +260,7 @@ public class FunctionTransformer(
 
     private MethodDeclarationSyntax? TransformFunctions(
         MethodDeclarationSyntax function,
-        Action<MethodDeclarationSyntax> transform
+        Func<MethodDeclarationSyntax, bool, MethodDeclarationSyntax> transform
     )
     {
         if (function.ExplicitInterfaceSpecifier is not null)
@@ -218,10 +270,17 @@ public class FunctionTransformer(
 
         var declTy = function.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>();
 
+        bool isInInterface = declTy is InterfaceDeclarationSyntax;
         // The Silk DSL can be applied to static and non-static methods in a class or a struct.
-        if (declTy is not (ClassDeclarationSyntax or StructDeclarationSyntax))
+        if (declTy is not (ClassDeclarationSyntax or StructDeclarationSyntax) && !isInInterface)
         {
             return null;
+        }
+
+        if (isInInterface)
+        {
+            transform(function, true);
+            return function;
         }
 
         StatementSyntax impl = ExpressionStatement(
@@ -230,7 +289,9 @@ public class FunctionTransformer(
                 ArgumentList(
                     SeparatedList(
                         function.ParameterList.Parameters.Select(x =>
-                            Argument(IdentifierName(x.Identifier))
+                            Argument(null,
+                            x.Modifiers.Where(mod => mod.IsKind(SyntaxKind.RefKeyword) || mod.IsKind(SyntaxKind.InKeyword) || mod.IsKind(SyntaxKind.OutKeyword)).FirstOrDefault(),
+                            IdentifierName(x.Identifier.Text == function.Identifier.Text ? $"_{x.Identifier.Text}" : x.Identifier.Text))
                         )
                     )
                 )
@@ -244,7 +305,18 @@ public class FunctionTransformer(
             );
         }
 
+        // Fix for some malformed trivia
         var originalFunction = function;
+
+        if (function.HasLeadingTrivia)
+        {
+            function = function
+                    .WithLeadingTrivia(
+                    function.GetLeadingTrivia()
+                        .Where(trivia => !trivia.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia))
+                        .ToSyntaxTriviaList());
+        }
+
         function = function
             .WithBody(Block(impl))
             .WithAttributeLists(
@@ -277,11 +349,12 @@ public class FunctionTransformer(
             .AddNativeFunction(originalFunction)
             .WithExpressionBody(null)
             .WithSemicolonToken(default)
+            .WithParameterList(ParameterList(SeparatedList(function.ParameterList.Parameters.Select(param => param.Identifier.Text == function.Identifier.Text ? param.WithIdentifier(Identifier($"_{param.Identifier.Text}")) : param))))
             .WithModifiers(
                 TokenList(function.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
-            );
-
-        transform(function);
-        return function;
+            )
+            .WithoutLeadingTrivia();
+        
+        return transform(function, false);
     }
 }
