@@ -189,19 +189,23 @@ public sealed partial class PtrRefTransformer()
                     )
                 )
             )
-            .WithAttributeLists(List(
+            .WithAttributeLists(
+                List(
                     methWithReplacementsButNoFixed
                         .AttributeLists.Select(x =>
                             x.WithAttributes(
                                 SeparatedList(
                                     x.Attributes.Where(y =>
-                                        !y.IsAttribute("System.Runtime.InteropServices.UnmanagedCallersOnly")
+                                        !y.IsAttribute(
+                                            "System.Runtime.InteropServices.UnmanagedCallersOnly"
+                                        )
                                     )
                                 )
                             )
                         )
                         .Where(x => x.Attributes.Count > 0)
-                ))
+                )
+            )
             .AddMaxOpt();
         _ctx.Value?.AddUsing("System.Runtime.CompilerServices");
 
@@ -271,7 +275,14 @@ public sealed partial class PtrRefTransformer()
             // Are we converting *to* a DSL type?
             if (toDsl)
             {
-                return ret.WithType(GetDSLType(ret.Type, node.AttributeLists, null)).WithDefault(node.Default is not null && node.Default.Value.ToString() == "null" ? EqualsValueClause(LiteralExpression(SyntaxKind.DefaultLiteralExpression)) : node.Default);
+                return ret.WithType(GetDSLType(ret.Type, node.AttributeLists, null))
+                    .WithDefault(
+                        node.Default is not null && node.Default.Value.ToString() == "null"
+                            ? EqualsValueClause(
+                                LiteralExpression(SyntaxKind.DefaultLiteralExpression)
+                            )
+                            : node.Default
+                    );
             }
 
             // Are we converting *from* a DSL type?

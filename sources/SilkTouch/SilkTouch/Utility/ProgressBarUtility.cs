@@ -18,7 +18,8 @@ namespace Silk.NET.SilkTouch.Utility
         /// <summary>
         /// Are these Presentation commands not functional on this system
         /// </summary>
-        public static bool IsNotAvailable => Console.IsOutputRedirected || Console.IsErrorRedirected;
+        public static bool IsNotAvailable =>
+            Console.IsOutputRedirected || Console.IsErrorRedirected;
 
         /// <summary>
         /// The Generators current log level
@@ -92,9 +93,12 @@ namespace Silk.NET.SilkTouch.Utility
         private static void rewrite()
         {
             Console.SetCursorPosition(0, Console.GetCursorPosition().Top);
-            Console.Write($"({GetProgressBarByPercent(currentPercentage)}) ({(currentPercentage * 100).ToString("F2")}%)");
+            Console.Write(
+                $"({GetProgressBarByPercent(currentPercentage)}) ({(currentPercentage * 100).ToString("F2")}%)"
+            );
         }
 
-        private static string GetProgressBarByPercent(float percent) => new string('|', (int)(percent * 25)) + new string('-', 25 - (int)(percent * 25));
+        private static string GetProgressBarByPercent(float percent) =>
+            new string('|', (int)(percent * 25)) + new string('-', 25 - (int)(percent * 25));
     }
 }

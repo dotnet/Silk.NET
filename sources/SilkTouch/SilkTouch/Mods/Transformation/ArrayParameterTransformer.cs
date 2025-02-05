@@ -19,7 +19,8 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 /// <summary>
 /// Transforms functions with exactly one pointer parameter with an element count determined from another parameter.
 /// </summary>
-public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Configuration>? options) : IFunctionTransformer
+public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Configuration>? options)
+    : IFunctionTransformer
 {
     /// <inheritdoc />
     public MethodDeclarationSyntax Transform(
@@ -91,8 +92,8 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
                         x.CountParamIdx,
                         // 2. Select only the last parameter this count parameter is associated with
                         ParamForCount: x.ParamsForCount.Select(
-                            (y, j) => (PtrParamInfo: y, ParamForCountIdx: j)
-                        )
+                                (y, j) => (PtrParamInfo: y, ParamForCountIdx: j)
+                            )
                             .LastOrDefault()
                     )
                 )
@@ -133,8 +134,9 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
         var verb = epSpan[int.Max(epSpan.IndexOfAny(NameUtils.Uppercase), 0)..];
         verb = verb[..(verb[1..].IndexOfAny(NameUtils.Uppercase) + 1)];
         var benefitOfDoubt = false;
-        if ((cfg?.BenefitOfTheDoubtArrayTransformation ?? false) &&
-            countParam is null
+        if (
+            (cfg?.BenefitOfTheDoubtArrayTransformation ?? false)
+            && countParam is null
             && ptrParam is null
             && verb is "Get" or "Gen" or "Create" or "New" or "Delete"
             && decl.ParameterList.Parameters.Count == 2 // Type checking is done in the next if.
@@ -257,7 +259,6 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
                             // call.
                             ? Block(
                                 (StatementSyntax[])
-
                                     [
                                         LocalDeclarationStatement(
                                             VariableDeclaration(
@@ -275,7 +276,7 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
                                             )
                                         ),
                                         .. blk.Statements,
-                                        ReturnStatement(IdentifierName(ptrParam))
+                                        ReturnStatement(IdentifierName(ptrParam)),
                                     ]
                             )
                             : blk
@@ -313,15 +314,15 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
                 ? syn.WithParameters(
                     SeparatedList(
                         syn.Parameters.Select(x =>
-                            x.Identifier.ToString() == countParam
-                            || (isOutput && x.Identifier.ToString() == ptrParam)
-                                ? null
+                                x.Identifier.ToString() == countParam
+                                || (isOutput && x.Identifier.ToString() == ptrParam)
+                                    ? null
                                 : base.VisitParameter(x) is ParameterSyntax p
                                     ? p.Identifier.ToString() == ptrParam
-                                        ? p.WithType(ptrElementType)
+                                            ? p.WithType(ptrElementType)
                                         : p
-                                    : null
-                        )
+                                : null
+                            )
                             .OfType<ParameterSyntax>()
                     )
                 )

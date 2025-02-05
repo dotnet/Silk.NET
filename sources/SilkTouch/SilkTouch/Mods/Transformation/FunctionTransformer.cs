@@ -81,7 +81,9 @@ public class FunctionTransformer(
                 {
                     if (isInInterface)
                     {
-                        meth = meth.WithBody(null).WithExpressionBody(null).WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+                        meth = meth.WithBody(null)
+                            .WithExpressionBody(null)
+                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
                     }
                     // Small fixup to convert to use expression bodies where possible
                     else if (
@@ -175,20 +177,26 @@ public class FunctionTransformer(
                 // Try to add the original function as-is
                 if (discrims.Add(discrim))
                 {
-                    ret.Insert(idx, function
-                        .WithAttributeLists(List(
-                        function
-                        .AttributeLists.Select(x =>
-                            x.WithAttributes(
-                                SeparatedList(
-                                    x.Attributes.Where(y =>
-                                        !y.IsAttribute("System.Runtime.InteropServices.UnmanagedCallersOnly")
+                    ret.Insert(
+                        idx,
+                        function.WithAttributeLists(
+                            List(
+                                function
+                                    .AttributeLists.Select(x =>
+                                        x.WithAttributes(
+                                            SeparatedList(
+                                                x.Attributes.Where(y =>
+                                                    !y.IsAttribute(
+                                                        "System.Runtime.InteropServices.UnmanagedCallersOnly"
+                                                    )
+                                                )
+                                            )
+                                        )
                                     )
-                                )
+                                    .Where(x => x.Attributes.Count > 0)
                             )
                         )
-                        .Where(x => x.Attributes.Count > 0)
-                        )));
+                    );
                 }
                 else
                 {
@@ -196,18 +204,21 @@ public class FunctionTransformer(
                     // this, so we add a suffix to the original function to differentiate them.
                     var newIden = $"{function.Identifier}Raw";
 
-                    var transformedDiscrimWithRet = typeName + ":" + ModUtils.DiscrimStr(
-                        transformedFunc.Modifiers,
-                        transformedFunc.TypeParameterList,
-                        transformedFunc.Identifier.ToString(),
-                        transformedFunc.ParameterList,
-                        transformedFunc.ReturnType
-                    );
+                    var transformedDiscrimWithRet =
+                        typeName
+                        + ":"
+                        + ModUtils.DiscrimStr(
+                            transformedFunc.Modifiers,
+                            transformedFunc.TypeParameterList,
+                            transformedFunc.Identifier.ToString(),
+                            transformedFunc.ParameterList,
+                            transformedFunc.ReturnType
+                        );
                     toRename.Add(transformedDiscrimWithRet, newIden);
 
                     var rep = new Dictionary<string, string>
                     {
-                        { function.Identifier.ToString(), newIden }
+                        { function.Identifier.ToString(), newIden },
                     };
 
                     // Any reference to the original function needs to be replaced as well.
@@ -220,19 +231,23 @@ public class FunctionTransformer(
                     var newFun = function
                         .WithRenameSafeAttributeLists()
                         .WithIdentifier(Identifier(newIden))
-                        .WithAttributeLists(List(
-                        function
-                        .AttributeLists.Select(x =>
-                            x.WithAttributes(
-                                SeparatedList(
-                                    x.Attributes.Where(y =>
-                                        !y.IsAttribute("System.Runtime.InteropServices.UnmanagedCallersOnly")
+                        .WithAttributeLists(
+                            List(
+                                function
+                                    .AttributeLists.Select(x =>
+                                        x.WithAttributes(
+                                            SeparatedList(
+                                                x.Attributes.Where(y =>
+                                                    !y.IsAttribute(
+                                                        "System.Runtime.InteropServices.UnmanagedCallersOnly"
+                                                    )
+                                                )
+                                            )
+                                        )
                                     )
-                                )
+                                    .Where(x => x.Attributes.Count > 0)
                             )
-                        )
-                        .Where(x => x.Attributes.Count > 0)
-                        ));
+                        );
                     discrim = ModUtils.DiscrimStr(
                         function.Modifiers,
                         function.TypeParameterList,
@@ -289,9 +304,20 @@ public class FunctionTransformer(
                 ArgumentList(
                     SeparatedList(
                         function.ParameterList.Parameters.Select(x =>
-                            Argument(null,
-                            x.Modifiers.Where(mod => mod.IsKind(SyntaxKind.RefKeyword) || mod.IsKind(SyntaxKind.InKeyword) || mod.IsKind(SyntaxKind.OutKeyword)).FirstOrDefault(),
-                            IdentifierName(x.Identifier.Text == function.Identifier.Text ? $"_{x.Identifier.Text}" : x.Identifier.Text))
+                            Argument(
+                                null,
+                                x.Modifiers.Where(mod =>
+                                        mod.IsKind(SyntaxKind.RefKeyword)
+                                        || mod.IsKind(SyntaxKind.InKeyword)
+                                        || mod.IsKind(SyntaxKind.OutKeyword)
+                                    )
+                                    .FirstOrDefault(),
+                                IdentifierName(
+                                    x.Identifier.Text == function.Identifier.Text
+                                        ? $"_{x.Identifier.Text}"
+                                        : x.Identifier.Text
+                                )
+                            )
                         )
                     )
                 )
@@ -310,11 +336,14 @@ public class FunctionTransformer(
 
         if (function.HasLeadingTrivia)
         {
-            function = function
-                    .WithLeadingTrivia(
-                    function.GetLeadingTrivia()
-                        .Where(trivia => !trivia.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia))
-                        .ToSyntaxTriviaList());
+            function = function.WithLeadingTrivia(
+                function
+                    .GetLeadingTrivia()
+                    .Where(trivia =>
+                        !trivia.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia)
+                    )
+                    .ToSyntaxTriviaList()
+            );
         }
 
         function = function
@@ -349,12 +378,22 @@ public class FunctionTransformer(
             .AddNativeFunction(originalFunction)
             .WithExpressionBody(null)
             .WithSemicolonToken(default)
-            .WithParameterList(ParameterList(SeparatedList(function.ParameterList.Parameters.Select(param => param.Identifier.Text == function.Identifier.Text ? param.WithIdentifier(Identifier($"_{param.Identifier.Text}")) : param))))
+            .WithParameterList(
+                ParameterList(
+                    SeparatedList(
+                        function.ParameterList.Parameters.Select(param =>
+                            param.Identifier.Text == function.Identifier.Text
+                                ? param.WithIdentifier(Identifier($"_{param.Identifier.Text}"))
+                                : param
+                        )
+                    )
+                )
+            )
             .WithModifiers(
                 TokenList(function.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
             )
             .WithoutLeadingTrivia();
-        
+
         return transform(function, false);
     }
 }

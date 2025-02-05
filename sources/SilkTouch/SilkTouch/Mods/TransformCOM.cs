@@ -128,12 +128,7 @@ namespace Silk.NET.SilkTouch.Mods
 
                 proj = doc.Project;
 
-                logger.LogDebug(
-                    "COM Rewrite for {0} Complete ({1}/{2})",
-                    doc.Name,
-                    index,
-                    count
-                );
+                logger.LogDebug("COM Rewrite for {0} Complete ({1}/{2})", doc.Name, index, count);
                 ProgressBarUtility.SetPercentage((float)index / count);
             }
 

@@ -1325,7 +1325,14 @@ namespace Silk.NET.SilkTouch.Mods
 
                     parentNode = parentNode.AddMembers(
                         MethodDeclaration(
-                                GenericName("Ptr2D").WithTypeArgumentList(TypeArgumentList(SingletonSeparatedList(ParseTypeName("TNativeInterface")))),
+                                GenericName("Ptr2D")
+                                    .WithTypeArgumentList(
+                                        TypeArgumentList(
+                                            SingletonSeparatedList(
+                                                ParseTypeName("TNativeInterface")
+                                            )
+                                        )
+                                    ),
                                 "GetAddressOf"
                             )
                             .WithModifiers(
@@ -1420,10 +1427,7 @@ namespace Silk.NET.SilkTouch.Mods
                                     )
                                 )
                             ),
-                        MethodDeclaration(
-                                ParseTypeName("Ptr2D"),
-                                "GetAddressOf"
-                            )
+                        MethodDeclaration(ParseTypeName("Ptr2D"), "GetAddressOf")
                             .WithModifiers(
                                 TokenList(
                                     Token(SyntaxKind.PublicKeyword),
@@ -1503,7 +1507,13 @@ namespace Silk.NET.SilkTouch.Mods
 
                     parentNode = generateCasts(parentNode, name, nativeName, false, true);
                     parentNode = generateCasts(parentNode, name, "Ptr2D");
-                    parentNode = generateCasts(parentNode, name, $"Ptr<{nativeName}>", pointerCast:false, castXmlName: $"Ptr<T>");
+                    parentNode = generateCasts(
+                        parentNode,
+                        name,
+                        $"Ptr<{nativeName}>",
+                        pointerCast: false,
+                        castXmlName: $"Ptr<T>"
+                    );
 
                     parentNode = parentNode.AddMembers(
                         ConversionOperatorDeclaration(
@@ -2188,8 +2198,12 @@ namespace Silk.NET.SilkTouch.Mods
                 string? castXmlName = null
             )
             {
-                var castType = pointerCast ? PointerType(ParseTypeName(castName)) : ParseTypeName(castName);
-                var castXmlType = castXmlName is not null ? ParseTypeName(castXmlName) : ParseTypeName(castName);
+                var castType = pointerCast
+                    ? PointerType(ParseTypeName(castName))
+                    : ParseTypeName(castName);
+                var castXmlType = castXmlName is not null
+                    ? ParseTypeName(castXmlName)
+                    : ParseTypeName(castName);
 
                 ExpressionSyntax expression = castTo
                     ? CastExpression(
@@ -2222,8 +2236,7 @@ namespace Silk.NET.SilkTouch.Mods
                         .WithParameterList(
                             ParameterList(
                                 SingletonSeparatedList(
-                                    Parameter(Identifier("value"))
-                                        .WithType(castType)
+                                    Parameter(Identifier("value")).WithType(castType)
                                 )
                             )
                         )
@@ -2388,10 +2401,7 @@ namespace Silk.NET.SilkTouch.Mods
                                 )
                             )
                         ),
-                    ConversionOperatorDeclaration(
-                            Token(SyntaxKind.ImplicitKeyword),
-                            castType
-                        )
+                    ConversionOperatorDeclaration(Token(SyntaxKind.ImplicitKeyword), castType)
                         .WithModifiers(
                             TokenList(
                                 Token(SyntaxKind.PublicKeyword),
@@ -2467,7 +2477,9 @@ namespace Silk.NET.SilkTouch.Mods
                                                                         }
                                                                     )
                                                                 ),
-                                                                XmlText($" {(pointerCast? "pointer" : "")}."),
+                                                                XmlText(
+                                                                    $" {(pointerCast ? "pointer" : "")}."
+                                                                ),
                                                             }
                                                         ),
                                                         XmlElementEndTag(XmlName("summary"))

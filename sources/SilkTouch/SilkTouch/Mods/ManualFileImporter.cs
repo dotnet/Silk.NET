@@ -82,18 +82,20 @@ namespace Silk.NET.SilkTouch.Mods
                     {
                         string outputLocation = regex.Key.Replace(file, regex.Value);
                         bool isTest = outputLocation.StartsWith("tests/");
-                        outputLocation = outputLocation.Remove(0, outputLocation.IndexOf(isTest ? "tests/" : "sources/"));
+                        outputLocation = outputLocation.Remove(
+                            0,
+                            outputLocation.IndexOf(isTest ? "tests/" : "sources/")
+                        );
                         string relativeKey = outputLocation.Remove(0, isTest ? 6 : 8);
                         if (
-                                    !(isTest ? aggregatedTests : aggregatedSources).TryAdd(
-                                        relativeKey,
-                                        CSharpSyntaxTree.ParseText(
-                                            SourceText.From(
-                                                File.OpenRead(file)),
-                                            path: relativeKey
-                                        )
-                                    )
+                            !(isTest ? aggregatedTests : aggregatedSources).TryAdd(
+                                relativeKey,
+                                CSharpSyntaxTree.ParseText(
+                                    SourceText.From(File.OpenRead(file)),
+                                    path: relativeKey
                                 )
+                            )
+                        )
                         {
                             logger.LogError(
                                 "Failed to add {0} - are the response file outputs conflicting?",
@@ -145,7 +147,9 @@ namespace Silk.NET.SilkTouch.Mods
         private string GlobToRegexOutput(string glob)
         {
             int index = 1;
-            return glob.Split("**").SelectMany(split => split.Split('*')).Aggregate((s1, s2) => $"{s1}${index++}{s2}");
+            return glob.Split("**")
+                .SelectMany(split => split.Split('*'))
+                .Aggregate((s1, s2) => $"{s1}${index++}{s2}");
         }
     }
 }
