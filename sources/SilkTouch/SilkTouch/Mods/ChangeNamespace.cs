@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,8 +9,10 @@ using ClangSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -45,6 +47,8 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             config.Get(key).Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray()
             ?? Array.Empty<(Regex, string)>();
         var tmp = Path.GetTempFileName();
+        ProgressBarUtility.SetPercentage(0);
+        ProgressBarUtility.Show(LogLevel.Information);
         for (var i = 0; i < rsps.Count; i++)
         {
             var rsp = rsps[i];
@@ -95,10 +99,12 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
                     WithTypes = rsp.GeneratorConfiguration.WithTypes,
                     WithUsings = rsp.GeneratorConfiguration.WithUsings,
                     WithPackings = rsp.GeneratorConfiguration.WithPackings,
-                }
+                },
             };
-        }
 
+            ProgressBarUtility.SetPercentage(i / (float)rsps.Count);
+        }
+        ProgressBarUtility.Hide(LogLevel.Information);
         _jobs[key] = (
             rsps.Select(x => x.GeneratorConfiguration.DefaultNamespace)
                 .Concat(
@@ -150,17 +156,16 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             _usingsToAdd.Clear();
             return base.VisitCompilationUnit(node) switch
             {
-                CompilationUnitSyntax syntax
-                    => syntax.AddUsings(
-                        _usingsToAdd
-                            .Select(x => UsingDirective(ModUtils.NamespaceIntoIdentifierName(x)))
-                            .Where(x =>
-                                syntax.Usings.All(y => x.Name?.ToString() != y.Name?.ToString())
-                            )
-                            .ToArray()
-                    ),
+                CompilationUnitSyntax syntax => syntax.AddUsings(
+                    _usingsToAdd
+                        .Select(x => UsingDirective(ModUtils.NamespaceIntoIdentifierName(x)))
+                        .Where(x =>
+                            syntax.Usings.All(y => x.Name?.ToString() != y.Name?.ToString())
+                        )
+                        .ToArray()
+                ),
                 { } ret => ret,
-                null => null
+                null => null,
             };
         }
 
@@ -174,10 +179,11 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             }
             return base.VisitNamespaceDeclaration(node) switch
             {
-                NamespaceDeclarationSyntax syntax
-                    => syntax.WithName(ModUtils.NamespaceIntoIdentifierName(newNs)),
+                NamespaceDeclarationSyntax syntax => syntax.WithName(
+                    ModUtils.NamespaceIntoIdentifierName(newNs)
+                ),
                 { } ret => ret,
-                null => null
+                null => null,
             };
         }
 
@@ -193,10 +199,29 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             }
             return base.VisitFileScopedNamespaceDeclaration(node) switch
             {
-                FileScopedNamespaceDeclarationSyntax syntax
-                    => syntax.WithName(ModUtils.NamespaceIntoIdentifierName(newNs)),
+                FileScopedNamespaceDeclarationSyntax syntax => syntax.WithName(
+                    ModUtils.NamespaceIntoIdentifierName(newNs)
+                ),
                 { } ret => ret,
-                null => null
+                null => null,
+            };
+        }
+
+        public override SyntaxNode? VisitUsingDirective(UsingDirectiveSyntax node)
+        {
+            var oldNs = node.Name?.ToString() ?? string.Empty;
+            var newNs = ModUtils.GroupedRegexReplace(_regexes, oldNs);
+            if (oldNs != newNs && _allNamespaces.Contains(oldNs))
+            {
+                _usingsToAdd.Add(oldNs);
+            }
+            return base.VisitUsingDirective(node) switch
+            {
+                UsingDirectiveSyntax syntax => syntax.WithName(
+                    ModUtils.NamespaceIntoIdentifierName(newNs)
+                ),
+                { } ret => ret,
+                null => null,
             };
         }
     }
