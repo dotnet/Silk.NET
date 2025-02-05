@@ -70,15 +70,34 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
                 )
             )
             {
-                var defaultAttr = param.AttributeLists.Select(attrList => attrList.Attributes.FirstOrDefault(attr => attr.IsAttribute("System.Runtime.InteropServices.DefaultParameterValue"))).FirstOrDefault();
+                var defaultAttr = param
+                    .AttributeLists.Select(attrList =>
+                        attrList.Attributes.FirstOrDefault(attr =>
+                            attr.IsAttribute("System.Runtime.InteropServices.DefaultParameterValue")
+                        )
+                    )
+                    .FirstOrDefault();
 
                 if (defaultAttr is not null && defaultAttr.ArgumentList?.Arguments.Count > 0)
                 {
-                    string argValue = defaultAttr.ArgumentList?.Arguments[0].Expression.ToString() ?? string.Empty;
+                    string argValue =
+                        defaultAttr.ArgumentList?.Arguments[0].Expression.ToString()
+                        ?? string.Empty;
 
                     if (argValue != string.Empty && argValue != "true" && argValue != "false")
                     {
-                        param = param.ReplaceNode(defaultAttr, defaultAttr.WithArgumentList(AttributeArgumentList(SingletonSeparatedList(AttributeArgument(IdentifierName(argValue == "0" ? "false" : "true"))))));
+                        param = param.ReplaceNode(
+                            defaultAttr,
+                            defaultAttr.WithArgumentList(
+                                AttributeArgumentList(
+                                    SingletonSeparatedList(
+                                        AttributeArgument(
+                                            IdentifierName(argValue == "0" ? "false" : "true")
+                                        )
+                                    )
+                                )
+                            )
+                        );
                     }
                 }
 

@@ -21,8 +21,9 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Mods the bindings to use the Silk.NET.Core pointer types.
 /// </summary>
 [ModConfiguration<Configuration>]
-public class TransformFunctions(FunctionTransformer ft,
-    ILogger<TransformFunctions> logger) : ModCSharpSyntaxRewriter, IMod
+public class TransformFunctions(FunctionTransformer ft, ILogger<TransformFunctions> logger)
+    : ModCSharpSyntaxRewriter,
+        IMod
 {
     private ThreadLocal<string> _jobKey = new();
 
@@ -120,9 +121,10 @@ public class TransformFunctions(FunctionTransformer ft,
             if (await doc.GetSyntaxRootAsync(ct) is { } root)
             {
                 var syntaxTree = await doc.GetSyntaxTreeAsync();
-                _semanticModel = compilation is not null && syntaxTree is not null
-                    ? compilation.GetSemanticModel(syntaxTree!)
-                    : await doc.GetSemanticModelAsync();
+                _semanticModel =
+                    compilation is not null && syntaxTree is not null
+                        ? compilation.GetSemanticModel(syntaxTree!)
+                        : await doc.GetSemanticModelAsync();
 
                 visitor.SemanticModel = _semanticModel;
                 visitor.Visit(root);
@@ -215,8 +217,11 @@ public class TransformFunctions(FunctionTransformer ft,
         return ret;
     }
 
-
-    private class Visitor(Dictionary<string, string> toRename, List<(ISymbol, string)> toRenameSymbols, ILogger logger) : CSharpSyntaxWalker
+    private class Visitor(
+        Dictionary<string, string> toRename,
+        List<(ISymbol, string)> toRenameSymbols,
+        ILogger logger
+    ) : CSharpSyntaxWalker
     {
         public SemanticModel? SemanticModel;
 
@@ -250,13 +255,16 @@ public class TransformFunctions(FunctionTransformer ft,
         {
             base.VisitMethodDeclaration(node);
 
-            var discrimWithRet = _typeName + ":" + ModUtils.DiscrimStr(
-                        node.Modifiers,
-                        node.TypeParameterList,
-                        node.Identifier.ToString(),
-                        node.ParameterList,
-                        node.ReturnType
-                    );
+            var discrimWithRet =
+                _typeName
+                + ":"
+                + ModUtils.DiscrimStr(
+                    node.Modifiers,
+                    node.TypeParameterList,
+                    node.Identifier.ToString(),
+                    node.ParameterList,
+                    node.ReturnType
+                );
 
             if (!toRename.TryGetValue(discrimWithRet, out string? newName))
             {

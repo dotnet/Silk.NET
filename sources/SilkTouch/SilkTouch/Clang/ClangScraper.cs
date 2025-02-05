@@ -176,7 +176,8 @@ public sealed class ClangScraper(
                     using var diagnostic = handle.GetDiagnostic(i);
 
                     logger.Log(
-                        diagnostic.Severity switch {
+                        diagnostic.Severity switch
+                        {
                             CXDiagnostic_Ignored => LogLevel.Trace,
                             CXDiagnostic_Note => LogLevel.Debug,
                             CXDiagnostic_Warning => LogLevel.Warning,
