@@ -27,7 +27,7 @@
 
     <!-- Android Specific Files -->
     <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
-        <AndroidLibrary Update="Android\app-release.aar" Bind="true" />
+        <AndroidLibrary Update="Android\app-release.aar" Bind="true" Pack="false" />
         <TransformFile Include="Android/Metadata.xml" />
         <TransformFile Include="Android/EnumFields.xml" />
         <TransformFile Include="Android/EnumMethods.xml" />
