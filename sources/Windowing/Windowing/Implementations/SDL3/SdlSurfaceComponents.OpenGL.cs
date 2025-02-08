@@ -230,7 +230,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         )
         {
             // Guess OpenGL isn't supported after all...
-            Sdl.ClearError();
+            ClearErrorIf(!isInitializing);
             return false;
         }
 
