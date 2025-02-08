@@ -214,25 +214,24 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
             currentWindow = Sdl.GLGetCurrentWindow();
         }
 
-        if (Handle == nullptr)
+        if (Handle == nullptr && isInitializing)
         {
-            if (isInitializing)
-            {
-                throw new InvalidOperationException(
-                    "Attempted to initialize OpenGL context before window initialization - this should not be possible "
-                        + "with normal usage. Please report this at https://github.com/dotnet/Silk.NET"
-                );
-            }
+            throw new InvalidOperationException(
+                "Attempted to initialize OpenGL context before window initialization - this should not be possible "
+                    + "with normal usage. Please report this at https://github.com/dotnet/Silk.NET"
+            );
+        }
 
-            // We need to create a dummy window if we haven't already (InitializePlatform does this, but it's only made
-            // available to the first Surface).
-            var props = CreateDummyWindowProps();
-            Handle = Sdl.CreateWindowWithProperties(props);
-            Sdl.DestroyProperties(props);
-            if (Handle == nullptr)
-            {
-                Sdl.ThrowError();
-            }
+        // We need to create a dummy window if we haven't already (InitializePlatform does this, but it's only made
+        // available to the first Surface). This is assigned to Handle if successful.
+        if (
+            !isInitializing
+            && GetDummyWindow(Sdl.WindowOpengl, nFlags: Sdl.WindowVulkan) == nullptr
+        )
+        {
+            // Guess OpenGL isn't supported after all...
+            Sdl.ClearError();
+            return false;
         }
 
         // Get the shared context we need to make current before creating the context

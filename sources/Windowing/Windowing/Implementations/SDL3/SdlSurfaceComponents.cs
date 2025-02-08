@@ -88,17 +88,15 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
         DebugPrintWithError(IsVulkanEnabled ? "Vulkan support enabled" : "Vulkan support disabled");
         Sdl.ClearError();
 
-        var props = CreateDummyWindowProps();
-        var tempWindow = Sdl.CreateWindowWithProperties(props);
+        var tempWindow = Sdl.CreateWindow("Dummy Window", 1, 1, Sdl.WindowHidden);
         if (tempWindow == nullptr)
         {
             // Should be able to at least create a window.
-            Sdl.DestroyProperties(props);
             Sdl.ThrowError();
             return nullptr;
         }
 
-        var tempChildWindow = Sdl.CreateWindowWithProperties(props);
+        var tempChildWindow = Sdl.CreateWindow("Dummy Window 2", 1, 1, Sdl.WindowHidden);
         if (tempChildWindow != nullptr)
         {
             IsChildrenEnabled = true;
@@ -111,15 +109,38 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
         IsWindowEnabled = Sdl.SetWindowPosition(tempWindow, 1, 1);
         DebugPrintWithError($"Window decoration {(IsWindowEnabled ? "supported" : "unsupported")}");
         Sdl.ClearError();
-        Sdl.DestroyProperties(props);
         return tempWindow;
     }
 
-    private static uint CreateDummyWindowProps()
+    private WindowHandle GetDummyWindow(ulong flags = 0, ulong nFlags = 0)
     {
-        var props = Sdl.CreateProperties();
-        Sdl.SetBooleanProperty(props, Sdl.PropWindowCreateHiddenBoolean, true);
-        return props;
+        flags |= Sdl.WindowHidden;
+        ulong originalFlags = 0;
+        if (
+            Handle != nullptr
+            && flags == (flags & (flags |= (originalFlags = Sdl.GetWindowFlags(Handle))))
+        )
+        {
+            return Handle;
+        }
+
+        flags &= ~nFlags;
+        Sdl.DestroyWindow(Handle); // so we don't get errors pertaining to multi-window on single-window platforms
+        var ret = Sdl.CreateWindow("Dummy Window", 1, 1, flags);
+        if (ret == nullptr)
+        {
+            if (originalFlags != 0)
+            {
+                // Recreate the old dummy window.
+                Handle = Sdl.CreateWindow("Dummy Window", 1, 1, originalFlags);
+            }
+        }
+        else
+        {
+            Handle = ret;
+        }
+
+        return ret;
     }
 
     public void PreInitializeSurface()
