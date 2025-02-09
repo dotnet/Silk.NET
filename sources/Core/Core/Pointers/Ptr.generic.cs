@@ -327,6 +327,7 @@ namespace Silk.NET.Core
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
+        // TODO analyzer to ensure ptr is on stack or otherwise pinned
         public static explicit operator Ptr<T>(Ref<T> ptr) => (T*)ptr;
 
         /// <summary>
@@ -337,6 +338,15 @@ namespace Silk.NET.Core
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static implicit operator Ptr(Ptr<T> ptr) => new Ptr(ptr.Native);
+
+        /// <summary>
+        /// Creates a <see cref="Ref"/> from a <see cref="Ptr{T}"/>
+        /// </summary>
+        /// <param name="ptr"></param>
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static implicit operator Ref(Ptr<T> ptr) => ptr.Native;
 
         /// <summary>
         /// Creates a <see cref="Ptr{T}"/> from a <see cref="Ptr"/>

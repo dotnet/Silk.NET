@@ -9,6 +9,9 @@ SDL_memmove
 SDL_memset
 SDL_BeginThreadFunction
 SDL_EndThreadFunction
+SDL_fabsf
+SDL_size_add_check_overflow_builtin
+SDL_size_mul_check_overflow_builtin
 --file
 sdl-SDL.h
 --methodClassName
@@ -32,6 +35,7 @@ Silk.NET.SDL
 ../../../submodules/sdl/include/SDL3/SDL_events.h
 ../../../submodules/sdl/include/SDL3/SDL_filesystem.h
 ../../../submodules/sdl/include/SDL3/SDL_gamepad.h
+../../../submodules/sdl/include/SDL3/SDL_gpu.h
 ../../../submodules/sdl/include/SDL3/SDL_guid.h
 ../../../submodules/sdl/include/SDL3/SDL_haptic.h
 ../../../submodules/sdl/include/SDL3/SDL_hidapi.h
@@ -45,6 +49,7 @@ Silk.NET.SDL
 ../../../submodules/sdl/include/SDL3/SDL_locale.h
 ../../../submodules/sdl/include/SDL3/SDL_log.h
 ../../../submodules/sdl/include/SDL3/SDL_messagebox.h
+../../../submodules/sdl/include/SDL3/SDL_main.h
 ../../../submodules/sdl/include/SDL3/SDL_metal.h
 ../../../submodules/sdl/include/SDL3/SDL_misc.h
 ../../../submodules/sdl/include/SDL3/SDL_mouse.h
@@ -53,11 +58,13 @@ Silk.NET.SDL
 ../../../submodules/sdl/include/SDL3/SDL_pixels.h
 ../../../submodules/sdl/include/SDL3/SDL_platform.h
 ../../../submodules/sdl/include/SDL3/SDL_power.h
+../../../submodules/sdl/include/SDL3/SDL_process.h
 ../../../submodules/sdl/include/SDL3/SDL_properties.h
 ../../../submodules/sdl/include/SDL3/SDL_rect.h
 ../../../submodules/sdl/include/SDL3/SDL_render.h
 ../../../submodules/sdl/include/SDL3/SDL_scancode.h
 ../../../submodules/sdl/include/SDL3/SDL_sensor.h
+../../../submodules/sdl/include/SDL3/SDL_stdinc.h
 ../../../submodules/sdl/include/SDL3/SDL_storage.h
 ../../../submodules/sdl/include/SDL3/SDL_surface.h
 ../../../submodules/sdl/include/SDL3/SDL_system.h
@@ -67,3 +74,4 @@ Silk.NET.SDL
 ../../../submodules/sdl/include/SDL3/SDL_touch.h
 ../../../submodules/sdl/include/SDL3/SDL_version.h
 ../../../submodules/sdl/include/SDL3/SDL_video.h
+../../../submodules/sdl/include/SDL3/SDL_vulkan.h

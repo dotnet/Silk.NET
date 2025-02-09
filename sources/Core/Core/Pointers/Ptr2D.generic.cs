@@ -515,7 +515,8 @@ namespace Silk.NET.Core
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static implicit operator Ptr2D<T>(Ref2D ptr) => (void**)ptr;
+        // TODO analyzer to ensure ptr is on stack or otherwise pinned
+        public static explicit operator Ptr2D<T>(Ref2D ptr) => (void**)ptr;
 
         /// <summary>
         /// Creates a <see cref="Ref"/> from a <see cref="Ptr2D{T}"/>
@@ -524,7 +525,32 @@ namespace Silk.NET.Core
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static implicit operator Ptr2D<T>(Ref2D<T> ptr) => (T**)ptr;
+        // TODO analyzer to ensure ptr is on stack or otherwise pinned
+        public static explicit operator Ptr2D<T>(Ref2D<T> ptr) => (T**)ptr;
+
+        /// <summary>
+        /// Expresses this <see cref="Ptr2D{T}" /> as a <see cref="Ref"/>. Note that this does not index the
+        /// <see cref="Ptr2D{T}"/>'s dimensions, and is effectively equivalent to converting a <c>void**</c> to a
+        /// <c>void*</c>.
+        /// </summary>
+        /// <param name="ptr">The <see cref="Ptr2D{T}"/>.</param>
+        /// <returns>The <see cref="Ref"/>.</returns>
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static implicit operator Ref(Ptr2D<T> ptr) => ptr.Native;
+
+        /// <summary>
+        /// Expresses this <see cref="Ptr2D{T}" /> as a <see cref="Ptr"/>. Note that this does not index the
+        /// <see cref="Ptr2D{T}"/>'s dimensions, and is effectively equivalent to converting a <c>void**</c> to a
+        /// <c>void*</c>.
+        /// </summary>
+        /// <param name="ptr">The <see cref="Ptr2D{T}"/>.</param>
+        /// <returns>The <see cref="Ptr"/>.</returns>
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static implicit operator Ptr(Ptr2D<T> ptr) => ptr.Native;
 
         /// <summary>
         /// Creates a <see cref="Ptr"/> from a <see cref="Ptr2D{T}"/>

@@ -96,24 +96,40 @@ public class SdlContext : IGLContext
     }
 
     /// <inheritdoc />
-    public bool IsCurrent => Api.GLGetCurrentContext() == Context;
+    public bool IsCurrent
+    {
+        get => Api.GLGetCurrentContext() == Context;
+        set
+        {
+            if (value)
+            {
+                Expect(Api.GLMakeCurrent(Window, Context), "make context current");
+            }
+            else
+            {
+                Expect(Api.GLMakeCurrent(Window, nullptr), "clear current context");
+            }
+        }
+    }
 
     /// <inheritdoc />
-    public void SwapInterval(int interval) =>
-        Expect(Api.GLSetSwapInterval(interval), "set swap interval");
+    public int SwapInterval
+    {
+        get
+        {
+            var interval = 0;
+            Expect(Api.GLGetSwapInterval(interval.AsRef()), "get swap interval");
+            return interval;
+        }
+        set => Expect(Api.GLSetSwapInterval(value), "set swap interval");
+    }
 
     /// <inheritdoc />
     public void SwapBuffers() => Expect(Api.GLSwapWindow(Window), "swap buffers");
 
-    /// <inheritdoc />
-    public void MakeCurrent() => Expect(Api.GLMakeCurrent(Window, Context), "make context current");
-
-    /// <inheritdoc />
-    public void Clear() => Expect(Api.GLMakeCurrent(Window, nullptr), "clear current context");
-
-    private void Expect(int ec, string action)
+    private void Expect(bool ec, string action)
     {
-        if (ec is 1)
+        if (ec)
         {
             return;
         }
