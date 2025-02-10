@@ -27,9 +27,9 @@ namespace Silk.NET.SilkTouch.Mods
     /// <param name="logger">The logger to use.</param>
     /// <param name="config">The configuration to use.</param>
     [ModConfiguration<Configuration>]
-    internal class ManualFileImporter(
-        ILogger<ManualFileImporter> logger,
-        IOptionsSnapshot<ManualFileImporter.Configuration> config
+    public class ImportManualFiles(
+        ILogger<ImportManualFiles> logger,
+        IOptionsSnapshot<ImportManualFiles.Configuration> config
     ) : Mod
     {
         /// <summary>

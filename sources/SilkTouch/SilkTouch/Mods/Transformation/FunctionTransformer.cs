@@ -391,8 +391,7 @@ public class FunctionTransformer(
             )
             .WithModifiers(
                 TokenList(function.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
-            )
-            .WithoutLeadingTrivia();
+            );
 
         return transform(function, false);
     }

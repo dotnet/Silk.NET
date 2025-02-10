@@ -193,7 +193,7 @@ namespace Silk.NET.SilkTouch.Mods
             {
                 _ObjectNames.Add(node.Identifier.Text);
                 base.VisitStructDeclaration(node);
-                _ObjectNames.RemoveAt(_Namespace.Count - 1);
+                _ObjectNames.RemoveAt(_ObjectNames.Count - 1);
 
                 if (node.Identifier.Text == "Native")
                     return;
@@ -702,9 +702,8 @@ namespace Silk.NET.SilkTouch.Mods
                                         SingletonSeparatedList(
                                             Argument(
                                                 CastExpression(
-                                                    PointerType(
-                                                        ParseTypeName($"{className}.Native")
-                                                    ),
+                                                    ParseTypeName($"Ptr<{className}.Native>")
+                                                    ,
                                                     IdentifierName("value.lpVtbl")
                                                 )
                                             )

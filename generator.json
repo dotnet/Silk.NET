@@ -7,7 +7,7 @@
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "ClangScraper",
-        "ManualFileImporter",
+        "ImportManualFiles",
         "ChangeNamespace",
         "TransformInterfaces",
         "TransformCOM",
@@ -49,7 +49,7 @@
           "tests/DirectX/d3dx12/d3dx12_barriers/**.cs"
         ]
       },
-      "ManualFileImporter": {
+      "ImportManualFiles": {
         "ManualImports": {
           "sources/**.Manual.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/**.Manual.cs",
           "!sources/**/INativeGuid.Manual.cs": "!**/INativeGuid.Manual.cs",

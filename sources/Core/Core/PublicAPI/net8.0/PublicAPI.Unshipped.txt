@@ -454,7 +454,7 @@ static Silk.NET.Core.Ptr2D.explicit operator Silk.NET.Core.Ptr2D(Silk.NET.Core.R
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr2D
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(Silk.NET.Core.Ptr* ptr) -> Silk.NET.Core.Ptr2D
-static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(void* ptr) -> Silk.NET.Core.Ptr2D
+static Silk.NET.Core.Ptr2D.explicit operator Silk.NET.Core.Ptr2D(void* ptr) -> Silk.NET.Core.Ptr2D
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(void** ptr) -> Silk.NET.Core.Ptr2D
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ref
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ref2D(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ref2D
@@ -486,7 +486,7 @@ static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(Silk.NET.
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ptr2D<T>
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(Silk.NET.Core.Ptr<T>* ptr) -> Silk.NET.Core.Ptr2D<T>
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(T** ptr) -> Silk.NET.Core.Ptr2D<T>
-static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(void* ptr) -> Silk.NET.Core.Ptr2D<T>
+static Silk.NET.Core.Ptr2D<T>.explicit operator Silk.NET.Core.Ptr2D<T>(void* ptr) -> Silk.NET.Core.Ptr2D<T>
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(void** ptr) -> Silk.NET.Core.Ptr2D<T>
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr2D<T> ptr) -> Silk.NET.Core.Ref
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ref2D(Silk.NET.Core.Ptr2D<T> ptr) -> Silk.NET.Core.Ref2D
@@ -529,8 +529,8 @@ static Silk.NET.Core.Ptr3D.explicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.R
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr3D
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.Ptr2D* ptr) -> Silk.NET.Core.Ptr3D
-static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(void* ptr) -> Silk.NET.Core.Ptr3D
-static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(void** ptr) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.Ptr3D.explicit operator Silk.NET.Core.Ptr3D(void* ptr) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.Ptr3D.explicit operator Silk.NET.Core.Ptr3D(void** ptr) -> Silk.NET.Core.Ptr3D
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(void*** ptr) -> Silk.NET.Core.Ptr3D
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ref
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ref3D(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ref3D
@@ -563,8 +563,8 @@ static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(Silk.NET.
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(Silk.NET.Core.Ptr2D<T>* ptr) -> Silk.NET.Core.Ptr3D<T>
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ptr3D<T>
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(T*** ptr) -> Silk.NET.Core.Ptr3D<T>
-static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(void* ptr) -> Silk.NET.Core.Ptr3D<T>
-static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(void** ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.explicit operator Silk.NET.Core.Ptr3D<T>(void* ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.explicit operator Silk.NET.Core.Ptr3D<T>(void** ptr) -> Silk.NET.Core.Ptr3D<T>
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(void*** ptr) -> Silk.NET.Core.Ptr3D<T>
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr3D<T> ptr) -> Silk.NET.Core.Ref
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ref3D(Silk.NET.Core.Ptr3D<T> ptr) -> Silk.NET.Core.Ref3D

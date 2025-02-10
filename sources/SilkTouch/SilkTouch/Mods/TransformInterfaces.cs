@@ -1042,7 +1042,7 @@ namespace Silk.NET.SilkTouch.Mods
                                 ParameterList(
                                     SingletonSeparatedList(
                                         Parameter(Identifier("vtbl"))
-                                            .WithType(PointerType(ParseTypeName("Ptr2D")))
+                                            .WithType(ParseTypeName("Ptr3D"))
                                     )
                                 )
                             )
@@ -1186,7 +1186,7 @@ namespace Silk.NET.SilkTouch.Mods
                                 ParameterList(
                                     SingletonSeparatedList(
                                         Parameter(Identifier("vtbl"))
-                                            .WithType(PointerType(ParseTypeName(nativeName)))
+                                            .WithType(ParseTypeName($"Ptr<{nativeName}>"))
                                     )
                                 )
                             )
@@ -1505,681 +1505,41 @@ namespace Silk.NET.SilkTouch.Mods
                             )
                     );
 
-                    parentNode = generateCasts(parentNode, name, nativeName, false, true);
-                    parentNode = generateCasts(parentNode, name, "Ptr2D");
+                    parentNode = generateCasts(parentNode, name, PointerType(ParseTypeName(nativeName)),  nativeName, CastExpression(ParseTypeName("Ptr<Native>"), IdentifierName("value")), false, true);
+                    parentNode = generateCasts(parentNode, name, ParseTypeName("Ptr3D"), "Ptr3D", IdentifierName("value"), pointerCast: false);
                     parentNode = generateCasts(
                         parentNode,
                         name,
-                        $"Ptr<{nativeName}>",
-                        pointerCast: false,
-                        castXmlName: $"Ptr<T>"
+                        ParseTypeName($"Ptr<{nativeName}>"),
+                        $"Ptr<T>",
+                        IdentifierName("value"),
+                        pointerCast: false
                     );
+                    parentNode = generateCasts(
+                        parentNode,
+                        name,
+                        PointerType(PointerType(PointerType(ParseTypeName("void")))),
+                        "void***",
+                        CastExpression(ParseTypeName("Ptr<Native>"),IdentifierName("value")),
+                        castSeeTag: false
+                        );
 
-                    parentNode = parentNode.AddMembers(
-                        ConversionOperatorDeclaration(
-                                Token(SyntaxKind.ExplicitKeyword),
-                                ParseTypeName(name)
-                            )
-                            .WithModifiers(
-                                TokenList(
-                                    Token(SyntaxKind.PublicKeyword),
-                                    Token(SyntaxKind.StaticKeyword)
+                    parentNode = generateCasts(
+                        parentNode,
+                        name,
+                        ParseTypeName("nuint"),
+                        "nuint",
+                        CastExpression(ParseTypeName("Ptr<Native>"),
+                            InvocationExpression(
+                                MemberAccessExpression(
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    IdentifierName("value"),
+                                    IdentifierName("ToPointer")
                                 )
                             )
-                            .WithParameterList(
-                                ParameterList(
-                                    SingletonSeparatedList(
-                                        Parameter(Identifier("value"))
-                                            .WithType(
-                                                PointerType(
-                                                    PointerType(PointerType(ParseTypeName("void")))
-                                                )
-                                            )
-                                    )
-                                )
-                            )
-                            .WithExpressionBody(
-                                ArrowExpressionClause(
-                                    ObjectCreationExpression(IdentifierName(name))
-                                        .WithArgumentList(
-                                            ArgumentList(
-                                                SingletonSeparatedList(
-                                                    Argument(
-                                                        CastExpression(
-                                                            PointerType(ParseTypeName("Native")),
-                                                            IdentifierName("value")
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                )
-                            )
-                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                            .WithLeadingTrivia(
-                                TriviaList(
-                                    Trivia(
-                                        DocumentationCommentTrivia(
-                                                SyntaxKind.SingleLineDocumentationCommentTrivia
-                                            )
-                                            .WithContent(
-                                                List(
-                                                    new XmlNodeSyntax[]
-                                                    {
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextLiteral(
-                                                                        TriviaList(
-                                                                            DocumentationCommentExterior(
-                                                                                "/// "
-                                                                            )
-                                                                        ),
-                                                                        " ",
-                                                                        " ",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlElement(
-                                                            XmlElementStartTag(XmlName("summary")),
-                                                            List(
-                                                                new XmlNodeSyntax[]
-                                                                {
-                                                                    XmlText(
-                                                                        "casts void*** pointer to "
-                                                                    ),
-                                                                    XmlEmptyElement(
-                                                                        XmlName("see"),
-                                                                        List<XmlAttributeSyntax>(
-                                                                            new[]
-                                                                            {
-                                                                                XmlCrefAttribute(
-                                                                                    NameMemberCref(
-                                                                                        IdentifierName(
-                                                                                            name
-                                                                                        )
-                                                                                    )
-                                                                                ),
-                                                                            }
-                                                                        )
-                                                                    ),
-                                                                    XmlText("."),
-                                                                }
-                                                            ),
-                                                            XmlElementEndTag(XmlName("summary"))
-                                                        ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextNewLine(
-                                                                        TriviaList(),
-                                                                        "\n",
-                                                                        "\n",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextLiteral(
-                                                                        TriviaList(
-                                                                            DocumentationCommentExterior(
-                                                                                "/// "
-                                                                            )
-                                                                        ),
-                                                                        " ",
-                                                                        " ",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlElement(
-                                                            XmlElementStartTag(XmlName("param"))
-                                                                .WithAttributes(
-                                                                    SingletonList<XmlAttributeSyntax>(
-                                                                        XmlNameAttribute(
-                                                                            XmlName("name"),
-                                                                            Token(
-                                                                                SyntaxKind.DoubleQuoteToken
-                                                                            ),
-                                                                            IdentifierName("value"),
-                                                                            Token(
-                                                                                SyntaxKind.DoubleQuoteToken
-                                                                            )
-                                                                        )
-                                                                    )
-                                                                ),
-                                                            List(
-                                                                new XmlNodeSyntax[]
-                                                                {
-                                                                    XmlText(
-                                                                        "The void*** instance to be converted"
-                                                                    ),
-                                                                }
-                                                            ),
-                                                            XmlElementEndTag(XmlName("param"))
-                                                        ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextNewLine(
-                                                                        TriviaList(),
-                                                                        "\n",
-                                                                        "\n",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                    }
-                                                )
-                                            )
-                                    )
-                                )
-                            ),
-                        ConversionOperatorDeclaration(
-                                Token(SyntaxKind.ImplicitKeyword),
-                                PointerType(PointerType(PointerType(ParseTypeName("void"))))
-                            )
-                            .WithModifiers(
-                                TokenList(
-                                    Token(SyntaxKind.PublicKeyword),
-                                    Token(SyntaxKind.StaticKeyword)
-                                )
-                            )
-                            .WithParameterList(
-                                ParameterList(
-                                    SingletonSeparatedList(
-                                        Parameter(Identifier("value"))
-                                            .WithType(IdentifierName(name))
-                                    )
-                                )
-                            )
-                            .WithExpressionBody(
-                                ArrowExpressionClause(
-                                    CastExpression(
-                                        PointerType(
-                                            PointerType(PointerType(ParseTypeName("void")))
-                                        ),
-                                        MemberAccessExpression(
-                                            SyntaxKind.SimpleMemberAccessExpression,
-                                            IdentifierName("value"),
-                                            IdentifierName("lpVtbl")
-                                        )
-                                    )
-                                )
-                            )
-                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                            .WithLeadingTrivia(
-                                TriviaList(
-                                    Trivia(
-                                        DocumentationCommentTrivia(
-                                                SyntaxKind.SingleLineDocumentationCommentTrivia
-                                            )
-                                            .WithContent(
-                                                List(
-                                                    new XmlNodeSyntax[]
-                                                    {
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextLiteral(
-                                                                        TriviaList(
-                                                                            DocumentationCommentExterior(
-                                                                                "/// "
-                                                                            )
-                                                                        ),
-                                                                        " ",
-                                                                        " ",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlElement(
-                                                            XmlElementStartTag(XmlName("summary")),
-                                                            List(
-                                                                new XmlNodeSyntax[]
-                                                                {
-                                                                    XmlText("casts "),
-                                                                    XmlEmptyElement(
-                                                                        XmlName("see"),
-                                                                        List<XmlAttributeSyntax>(
-                                                                            new[]
-                                                                            {
-                                                                                XmlCrefAttribute(
-                                                                                    NameMemberCref(
-                                                                                        IdentifierName(
-                                                                                            name
-                                                                                        )
-                                                                                    )
-                                                                                ),
-                                                                            }
-                                                                        )
-                                                                    ),
-                                                                    XmlText(" to void*** pointer"),
-                                                                }
-                                                            ),
-                                                            XmlElementEndTag(XmlName("summary"))
-                                                        ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextNewLine(
-                                                                        TriviaList(),
-                                                                        "\n",
-                                                                        "\n",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextLiteral(
-                                                                        TriviaList(
-                                                                            DocumentationCommentExterior(
-                                                                                "/// "
-                                                                            )
-                                                                        ),
-                                                                        " ",
-                                                                        " ",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlElement(
-                                                            XmlElementStartTag(XmlName("param"))
-                                                                .WithAttributes(
-                                                                    SingletonList<XmlAttributeSyntax>(
-                                                                        XmlNameAttribute(
-                                                                            XmlName("name"),
-                                                                            Token(
-                                                                                SyntaxKind.DoubleQuoteToken
-                                                                            ),
-                                                                            IdentifierName("value"),
-                                                                            Token(
-                                                                                SyntaxKind.DoubleQuoteToken
-                                                                            )
-                                                                        )
-                                                                    )
-                                                                ),
-                                                            List(
-                                                                new XmlNodeSyntax[]
-                                                                {
-                                                                    XmlText("The "),
-                                                                    XmlEmptyElement(
-                                                                        XmlName("see"),
-                                                                        List<XmlAttributeSyntax>(
-                                                                            new[]
-                                                                            {
-                                                                                XmlCrefAttribute(
-                                                                                    NameMemberCref(
-                                                                                        IdentifierName(
-                                                                                            name
-                                                                                        )
-                                                                                    )
-                                                                                ),
-                                                                            }
-                                                                        )
-                                                                    ),
-                                                                    XmlText(
-                                                                        " instance to be converted "
-                                                                    ),
-                                                                }
-                                                            ),
-                                                            XmlElementEndTag(XmlName("param"))
-                                                        ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextNewLine(
-                                                                        TriviaList(),
-                                                                        "\n",
-                                                                        "\n",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                    }
-                                                )
-                                            )
-                                    )
-                                )
-                            )
-                    );
-
-                    parentNode = parentNode.AddMembers(
-                        ConversionOperatorDeclaration(
-                                Token(SyntaxKind.ExplicitKeyword),
-                                ParseTypeName(name)
-                            )
-                            .WithModifiers(
-                                TokenList(
-                                    Token(SyntaxKind.PublicKeyword),
-                                    Token(SyntaxKind.StaticKeyword)
-                                )
-                            )
-                            .WithParameterList(
-                                ParameterList(
-                                    SingletonSeparatedList(
-                                        Parameter(Identifier("value"))
-                                            .WithType(ParseTypeName("nuint"))
-                                    )
-                                )
-                            )
-                            .WithExpressionBody(
-                                ArrowExpressionClause(
-                                    ObjectCreationExpression(IdentifierName(name))
-                                        .WithArgumentList(
-                                            ArgumentList(
-                                                SingletonSeparatedList(
-                                                    Argument(
-                                                        CastExpression(
-                                                            PointerType(ParseTypeName("Native")),
-                                                            InvocationExpression(
-                                                                MemberAccessExpression(
-                                                                    SyntaxKind.SimpleMemberAccessExpression,
-                                                                    IdentifierName("value"),
-                                                                    IdentifierName("ToPointer")
-                                                                )
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                )
-                            )
-                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                            .WithLeadingTrivia(
-                                TriviaList(
-                                    Trivia(
-                                        DocumentationCommentTrivia(
-                                                SyntaxKind.SingleLineDocumentationCommentTrivia
-                                            )
-                                            .WithContent(
-                                                List(
-                                                    new XmlNodeSyntax[]
-                                                    {
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextLiteral(
-                                                                        TriviaList(
-                                                                            DocumentationCommentExterior(
-                                                                                "/// "
-                                                                            )
-                                                                        ),
-                                                                        " ",
-                                                                        " ",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlElement(
-                                                            XmlElementStartTag(XmlName("summary")),
-                                                            List(
-                                                                new XmlNodeSyntax[]
-                                                                {
-                                                                    XmlText("casts nuint to "),
-                                                                    XmlEmptyElement(
-                                                                        XmlName("see"),
-                                                                        List<XmlAttributeSyntax>(
-                                                                            new[]
-                                                                            {
-                                                                                XmlCrefAttribute(
-                                                                                    NameMemberCref(
-                                                                                        IdentifierName(
-                                                                                            name
-                                                                                        )
-                                                                                    )
-                                                                                ),
-                                                                            }
-                                                                        )
-                                                                    ),
-                                                                    XmlText("."),
-                                                                }
-                                                            ),
-                                                            XmlElementEndTag(XmlName("summary"))
-                                                        ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextNewLine(
-                                                                        TriviaList(),
-                                                                        "\n",
-                                                                        "\n",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextLiteral(
-                                                                        TriviaList(
-                                                                            DocumentationCommentExterior(
-                                                                                "/// "
-                                                                            )
-                                                                        ),
-                                                                        " ",
-                                                                        " ",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlElement(
-                                                            XmlElementStartTag(XmlName("param"))
-                                                                .WithAttributes(
-                                                                    SingletonList<XmlAttributeSyntax>(
-                                                                        XmlNameAttribute(
-                                                                            XmlName("name"),
-                                                                            Token(
-                                                                                SyntaxKind.DoubleQuoteToken
-                                                                            ),
-                                                                            IdentifierName("value"),
-                                                                            Token(
-                                                                                SyntaxKind.DoubleQuoteToken
-                                                                            )
-                                                                        )
-                                                                    )
-                                                                ),
-                                                            List(
-                                                                new XmlNodeSyntax[]
-                                                                {
-                                                                    XmlText(
-                                                                        "The nuint instance to be converted"
-                                                                    ),
-                                                                }
-                                                            ),
-                                                            XmlElementEndTag(XmlName("param"))
-                                                        ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextNewLine(
-                                                                        TriviaList(),
-                                                                        "\n",
-                                                                        "\n",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                    }
-                                                )
-                                            )
-                                    )
-                                )
-                            ),
-                        ConversionOperatorDeclaration(
-                                Token(SyntaxKind.ImplicitKeyword),
-                                ParseTypeName("nuint")
-                            )
-                            .WithModifiers(
-                                TokenList(
-                                    Token(SyntaxKind.PublicKeyword),
-                                    Token(SyntaxKind.StaticKeyword)
-                                )
-                            )
-                            .WithParameterList(
-                                ParameterList(
-                                    SingletonSeparatedList(
-                                        Parameter(Identifier("value"))
-                                            .WithType(IdentifierName(name))
-                                    )
-                                )
-                            )
-                            .WithExpressionBody(
-                                ArrowExpressionClause(
-                                    CastExpression(
-                                        ParseTypeName("nuint"),
-                                        MemberAccessExpression(
-                                            SyntaxKind.SimpleMemberAccessExpression,
-                                            IdentifierName("value"),
-                                            IdentifierName("lpVtbl")
-                                        )
-                                    )
-                                )
-                            )
-                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                            .WithLeadingTrivia(
-                                TriviaList(
-                                    Trivia(
-                                        DocumentationCommentTrivia(
-                                                SyntaxKind.SingleLineDocumentationCommentTrivia
-                                            )
-                                            .WithContent(
-                                                List(
-                                                    new XmlNodeSyntax[]
-                                                    {
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextLiteral(
-                                                                        TriviaList(
-                                                                            DocumentationCommentExterior(
-                                                                                "/// "
-                                                                            )
-                                                                        ),
-                                                                        " ",
-                                                                        " ",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlElement(
-                                                            XmlElementStartTag(XmlName("summary")),
-                                                            List(
-                                                                new XmlNodeSyntax[]
-                                                                {
-                                                                    XmlText("casts "),
-                                                                    XmlEmptyElement(
-                                                                        XmlName("see"),
-                                                                        List<XmlAttributeSyntax>(
-                                                                            new[]
-                                                                            {
-                                                                                XmlCrefAttribute(
-                                                                                    NameMemberCref(
-                                                                                        IdentifierName(
-                                                                                            name
-                                                                                        )
-                                                                                    )
-                                                                                ),
-                                                                            }
-                                                                        )
-                                                                    ),
-                                                                    XmlText(" to nuint"),
-                                                                }
-                                                            ),
-                                                            XmlElementEndTag(XmlName("summary"))
-                                                        ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextNewLine(
-                                                                        TriviaList(),
-                                                                        "\n",
-                                                                        "\n",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextLiteral(
-                                                                        TriviaList(
-                                                                            DocumentationCommentExterior(
-                                                                                "/// "
-                                                                            )
-                                                                        ),
-                                                                        " ",
-                                                                        " ",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                        XmlElement(
-                                                            XmlElementStartTag(XmlName("param"))
-                                                                .WithAttributes(
-                                                                    SingletonList<XmlAttributeSyntax>(
-                                                                        XmlNameAttribute(
-                                                                            XmlName("name"),
-                                                                            Token(
-                                                                                SyntaxKind.DoubleQuoteToken
-                                                                            ),
-                                                                            IdentifierName("value"),
-                                                                            Token(
-                                                                                SyntaxKind.DoubleQuoteToken
-                                                                            )
-                                                                        )
-                                                                    )
-                                                                ),
-                                                            List(
-                                                                new XmlNodeSyntax[]
-                                                                {
-                                                                    XmlText("The "),
-                                                                    XmlEmptyElement(
-                                                                        XmlName("see"),
-                                                                        List<XmlAttributeSyntax>(
-                                                                            new[]
-                                                                            {
-                                                                                XmlCrefAttribute(
-                                                                                    NameMemberCref(
-                                                                                        IdentifierName(
-                                                                                            name
-                                                                                        )
-                                                                                    )
-                                                                                ),
-                                                                            }
-                                                                        )
-                                                                    ),
-                                                                    XmlText(
-                                                                        " instance to be converted "
-                                                                    ),
-                                                                }
-                                                            ),
-                                                            XmlElementEndTag(XmlName("param"))
-                                                        ),
-                                                        XmlText()
-                                                            .WithTextTokens(
-                                                                TokenList(
-                                                                    XmlTextNewLine(
-                                                                        TriviaList(),
-                                                                        "\n",
-                                                                        "\n",
-                                                                        TriviaList()
-                                                                    )
-                                                                )
-                                                            ),
-                                                    }
-                                                )
-                                            )
-                                    )
-                                )
-                            )
-                    );
+                        ),
+                        pointerCast: false
+                        );
 
                     currentType = "";
                     return parentNode;
@@ -2191,19 +1551,16 @@ namespace Silk.NET.SilkTouch.Mods
             private StructDeclarationSyntax generateCasts(
                 StructDeclarationSyntax node,
                 string name,
-                string castName,
+                TypeSyntax castType,
+                string castXmlName,
+                ExpressionSyntax constructorArgExpression,
                 bool castTo = true,
                 bool implicitTo = false,
                 bool pointerCast = true,
-                string? castXmlName = null
+                bool castSeeTag = true
             )
             {
-                var castType = pointerCast
-                    ? PointerType(ParseTypeName(castName))
-                    : ParseTypeName(castName);
-                var castXmlType = castXmlName is not null
-                    ? ParseTypeName(castXmlName)
-                    : ParseTypeName(castName);
+                var castXmlType = ParseTypeName(castXmlName);
 
                 ExpressionSyntax expression = castTo
                     ? CastExpression(
@@ -2219,6 +1576,21 @@ namespace Silk.NET.SilkTouch.Mods
                         IdentifierName("value"),
                         IdentifierName("lpVtbl")
                     );
+
+                XmlNodeSyntax castXmlTag = castSeeTag ?
+                    XmlEmptyElement(
+                        XmlName("see"),
+                        List<XmlAttributeSyntax>(
+                            new[]
+                            {
+                                XmlCrefAttribute(
+                                    NameMemberCref(
+                                        castXmlType
+                                    )
+                                ),
+                            }
+                        )
+                    ) : XmlText(castXmlName);
 
                 return node.AddMembers(
                     ConversionOperatorDeclaration(
@@ -2246,7 +1618,7 @@ namespace Silk.NET.SilkTouch.Mods
                                     .WithArgumentList(
                                         ArgumentList(
                                             SingletonSeparatedList(
-                                                Argument(IdentifierName("value"))
+                                                Argument(constructorArgExpression)
                                             )
                                         )
                                     )
@@ -2284,19 +1656,7 @@ namespace Silk.NET.SilkTouch.Mods
                                                             new XmlNodeSyntax[]
                                                             {
                                                                 XmlText("casts "),
-                                                                XmlEmptyElement(
-                                                                    XmlName("see"),
-                                                                    List<XmlAttributeSyntax>(
-                                                                        new[]
-                                                                        {
-                                                                            XmlCrefAttribute(
-                                                                                NameMemberCref(
-                                                                                    castXmlType
-                                                                                )
-                                                                            ),
-                                                                        }
-                                                                    )
-                                                                ),
+                                                                castXmlTag,
                                                                 XmlText(" to "),
                                                                 XmlEmptyElement(
                                                                     XmlName("see"),
@@ -2364,19 +1724,7 @@ namespace Silk.NET.SilkTouch.Mods
                                                             new XmlNodeSyntax[]
                                                             {
                                                                 XmlText("The "),
-                                                                XmlEmptyElement(
-                                                                    XmlName("see"),
-                                                                    List<XmlAttributeSyntax>(
-                                                                        new[]
-                                                                        {
-                                                                            XmlCrefAttribute(
-                                                                                NameMemberCref(
-                                                                                    castXmlType
-                                                                                )
-                                                                            ),
-                                                                        }
-                                                                    )
-                                                                ),
+                                                                castXmlTag,
                                                                 XmlText(
                                                                     " instance to be converted "
                                                                 ),
@@ -2464,19 +1812,7 @@ namespace Silk.NET.SilkTouch.Mods
                                                                     )
                                                                 ),
                                                                 XmlText(" to "),
-                                                                XmlEmptyElement(
-                                                                    XmlName("see"),
-                                                                    List<XmlAttributeSyntax>(
-                                                                        new[]
-                                                                        {
-                                                                            XmlCrefAttribute(
-                                                                                NameMemberCref(
-                                                                                    castXmlType
-                                                                                )
-                                                                            ),
-                                                                        }
-                                                                    )
-                                                                ),
+                                                                castXmlTag,
                                                                 XmlText(
                                                                     $" {(pointerCast ? "pointer" : "")}."
                                                                 ),
