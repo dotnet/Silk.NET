@@ -117,6 +117,9 @@ public partial struct Event
     public PenAxisEvent Paxis;
 
     [FieldOffset(0)]
+    public RenderEvent Render;
+
+    [FieldOffset(0)]
     public DropEvent Drop;
 
     [FieldOffset(0)]

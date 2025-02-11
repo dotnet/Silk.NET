@@ -11,10 +11,10 @@ public partial struct GamepadBinding
 {
     public GamepadBindingType InputType;
 
-    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L247_C5")]
+    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L265_C5")]
     public GamepadBindingInput Input;
     public GamepadBindingType OutputType;
 
-    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L267_C5")]
+    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L285_C5")]
     public GamepadBindingOutput Output;
 }

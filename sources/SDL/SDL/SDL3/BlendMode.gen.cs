@@ -17,5 +17,5 @@ public enum BlendMode : uint
     AddPremultiplied = 0x00000020U,
     Mod = 0x00000004U,
     Mul = 0x00000008U,
-    Invalid = 0x7FFFFFFFU
+    Invalid = 0x7FFFFFFFU,
 }
