@@ -13,5 +13,5 @@ public enum GPUSwapchainComposition : uint
     Sdr,
     SdrLinear,
     HdrExtendedLinear,
-    Hdr10St2048,
+    Hdr10St2084,
 }

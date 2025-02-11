@@ -21,7 +21,7 @@ public unsafe partial struct ClipboardEvent
     public byte Owner;
 
     [NativeTypeName("Sint32")]
-    public int NMimeTypes;
+    public int NumMimeTypes;
 
     [NativeTypeName("const char **")]
     public sbyte** MimeTypes;

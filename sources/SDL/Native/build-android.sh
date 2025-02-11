@@ -9,6 +9,8 @@ if [ ! -z "$GITHUB_ACTIONS" ]; then
   # NDK already installed: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
   sdkmanager=( /usr/local/lib/android/sdk/cmdline-tools/*/bin/sdkmanager )
   ${sdkmanager[-1]} --install "platforms;android-19"
+  sudo add-apt-repository ppa:deadsnakes/ppa
+  sudo apt update
   sudo apt install python3.11 ninja-build
   python="python3.11"
 fi

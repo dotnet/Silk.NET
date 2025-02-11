@@ -94,6 +94,7 @@ public enum EventType : uint
     FingerDown = 0x700,
     FingerUp,
     FingerMotion,
+    FingerCanceled,
     ClipboardUpdate = 0x900,
     DropFile = 0x1000,
     DropText,

@@ -15,10 +15,10 @@ public partial struct GamepadBindingInput
     public int Button;
 
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L251_C9")]
+    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L269_C9")]
     public GamepadBindingInputAxis Axis;
 
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L258_C9")]
+    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L276_C9")]
     public GamepadBindingInputHat Hat;
 }
