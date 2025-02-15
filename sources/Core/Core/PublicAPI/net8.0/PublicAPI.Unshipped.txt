@@ -425,13 +425,11 @@ static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3
 static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<uint> this, int length, int[]! lengths) -> string?[]?[]?
 static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<ushort> this, int length, int[]! lengths) -> string?[]?[]?
 static Silk.NET.Core.Ptr.explicit operator nint(Silk.NET.Core.Ptr ptr) -> nint
+static Silk.NET.Core.Ptr.explicit operator nuint(Silk.NET.Core.Ptr ptr) -> nuint
 static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(nint ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(nuint ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ref ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.explicit operator string!(Silk.NET.Core.Ptr ptr) -> string!
-static Silk.NET.Core.Ptr.implicit operator nint(Silk.NET.Core.Ptr ptr) -> nint
-static Silk.NET.Core.Ptr.implicit operator nuint(Silk.NET.Core.Ptr ptr) -> nuint
-static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(nint ptr) -> Silk.NET.Core.Ptr
-static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(nuint ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(void* ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr ptr) -> Silk.NET.Core.Ref
