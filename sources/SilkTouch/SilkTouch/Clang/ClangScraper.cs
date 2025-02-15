@@ -22,6 +22,7 @@ using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
+using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Sources;
 using Silk.NET.SilkTouch.Utility;
@@ -41,12 +42,14 @@ namespace Silk.NET.SilkTouch.Clang;
 /// <param name="inputResolver">The input resolver to use.</param>
 /// <param name="cacheProvider">The cache provider into which ClangSharp outputs are cached.</param>
 /// <param name="responseFileMods">The mods that modify response files before they are fed to ClangSharp.</param>
+/// <param name="progressService">the progress service to use</param>
 [ModConfiguration<Configuration>]
 public sealed class ClangScraper(
     ResponseFileHandler rspHandler,
     IOptionsSnapshot<ClangScraper.Configuration> config,
     ILogger<ClangScraper> logger,
     IInputResolver inputResolver,
+    IProgressService progressService,
     ICacheProvider? cacheProvider = null,
     IEnumerable<IJobDependency<IResponseFileMod>>? responseFileMods = null
 ) : IMod
@@ -549,7 +552,7 @@ public sealed class ClangScraper(
         );
 
         // Resolve any foreign paths referenced in the response files
-        await inputResolver.ResolveInPlace(rsps);
+        await inputResolver.ResolveInPlace(rsps, progressService);
 
         // Should we completely skip running ClangSharp (e.g. we can't get Windows SDK bindings on macOS)
         var skip = (cfg.SkipScrapeIf?.Any(applicableSkipIfs.Contains)).GetValueOrDefault();

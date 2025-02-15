@@ -1646,7 +1646,6 @@ public partial class MixKhronosData(
             {
                 if (paramName == ":return" && pass > 0 && !anyNonTrivialParams)
                 {
-                    ProgressBarUtility.Hide(LogLevel.Information);
                     logger.LogWarning(
                         "Cannot transform return type for \"{}\" as it is a pointer, and there are no "
                             + "other \"group pointer\" transformations to be made meaning that the return type would "
@@ -1654,7 +1653,6 @@ public partial class MixKhronosData(
                             + "shall be applied to the return type for this function.",
                         symbolName
                     );
-                    ProgressBarUtility.Show(LogLevel.Information);
                     return null;
                 }
 

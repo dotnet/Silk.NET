@@ -52,6 +52,8 @@ public class SilkTouchGenerator(
         CancellationToken ct = default
     )
     {
+        using var scope = logger.BeginScope("{} >", key);
+
         var sw = Stopwatch.StartNew();
         var job =
             jobConfig.Get<SilkTouchConfiguration>()

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
 using Silk.NET.SilkTouch;
 using Silk.NET.SilkTouch.Caching;
+using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Utility;
 
 var logging = new Option<LogLevel>(new[] { "--log-level", "-l" }, () => LogLevel.Information);
@@ -69,26 +70,44 @@ rootCommand.SetHandler(async ctx => {
     // Register MSBuild
     MSBuildLocator.RegisterDefaults();
 
+    JobContext jobContext = new();
+
     var sp = new ServiceCollection()
+        .AddSingleton(jobContext)
+        .AddSingleton<IProgressService, ProgressService>()
         .AddLogging(builder => {
+            builder.ClearProviders();
             builder.AddSimpleConsole(opts => {
                 opts.SingleLine = true;
                 opts.ColorBehavior = Console.IsOutputRedirected
                     ? LoggerColorBehavior.Disabled
                     : LoggerColorBehavior.Default;
-                opts.IncludeScopes = false;
+                opts.IncludeScopes = true;
             });
-            builder.SetMinimumLevel(ProgressBarUtility.CurrentLogLevel = ctx.ParseResult.GetValueForOption(logging));
+
+            var loggerFactory = LoggerFactory.Create(builder =>
+            {
+                builder.AddConsole();
+            });
+
+            builder.SetMinimumLevel(ctx.ParseResult.GetValueForOption(logging));
+
+            builder.Services.AddSingleton(typeof(ILogger<>), typeof(SilkLogger<>));
         })
+        .AddSingleton<ConsoleRenderer>()
         .AddOptions()
         .AddSilkTouch(config)
         .BuildServiceProvider();
+
+    // Start the console renderer
+    var consoleRenderer = sp.GetService<ConsoleRenderer>();
 
     var logger = sp.GetRequiredService<ILogger<Program>>();
     var skipped = SeparateCSV(ctx.ParseResult.GetValueForOption(skip));
     var jobsToRun = SeparateCSV(ctx.ParseResult.GetValueForOption(only));
 
     var generator = sp.GetRequiredService<SilkTouchGenerator>();
+    var progressService = sp.GetRequiredService<IProgressService>();
 
     await Parallel.ForEachAsync(
         config
@@ -99,6 +118,7 @@ rootCommand.SetHandler(async ctx => {
                 (jobsToRun is null || jobsToRun.Count == 0 || jobsToRun.Any(y => x.Key.Equals(y, StringComparison.OrdinalIgnoreCase)))
             ),
         async (job, ct) => {
+            jobContext.JobKey = job.Key;
             await generator.RunAsync(
                 job.Key,
                 job,
@@ -106,8 +126,13 @@ rootCommand.SetHandler(async ctx => {
                 // ctx.ParseResult.GetValueForOption(jobs),
                 ct
             );
+            progressService.RemoveProgress();
         }
     );
+
+    // Stop the renderer gracefully
+    consoleRenderer?.Stop();
+
     // workaround for dangling logging/socket engine threads
     Environment.Exit(0);
 });

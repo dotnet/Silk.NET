@@ -11,6 +11,7 @@ using System.Text;
 using ClangSharp;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Utility;
 using static ClangSharp.Interop.CXTranslationUnit_Flags;
 
@@ -20,7 +21,7 @@ namespace Silk.NET.SilkTouch.Clang;
 /// Reads a response file (rsp) containing ClangSharpPInvokeGenerator command line arguments.
 /// </summary>
 [SuppressMessage("ReSharper", "InconsistentNaming")]
-public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
+public class ResponseFileHandler(ILogger<ResponseFileHandler> logger, IProgressService progressService)
 {
     // Begin verbatim ClangSharp code
     private static readonly string[] s_additionalOptionAliases = ["--additional", "-a"];
@@ -1356,7 +1357,6 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
         {
             foreach (var error in errorList)
             {
-                ProgressBarUtility.Hide(LogLevel.Information);
                 logger.LogError($"Error in args for '{files.FirstOrDefault()}': {error}");
             }
         }
@@ -1497,8 +1497,7 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
         IEnumerable<string> rsps = Glob(globs);
         int index = 0;
         int count = rsps.Count();
-        ProgressBarUtility.SetPercentage(0);
-        ProgressBarUtility.Show(LogLevel.Information);
+        progressService.SetTask("Reading ResponseFiles");
         foreach (var rsp in rsps)
         {
             index++;
@@ -1508,14 +1507,12 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
                 ?? throw new InvalidOperationException("Couldn't get directory name of path");
             var read = ReadResponseFile(RspRelativeTo(dir, rsp).ToArray(), dir, rsp);
 
-            ProgressBarUtility.SetPercentage(index / (float)count);
+            progressService.SetProgress(index / (float)count);
             yield return read with
             {
                 FileDirectory = dir,
             };
         }
-
-        ProgressBarUtility.Hide(LogLevel.Information);
     }
 
     private IEnumerable<string> RspRelativeTo(string directory, string fullPath)

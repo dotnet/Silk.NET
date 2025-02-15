@@ -9,6 +9,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using Silk.NET.SilkTouch.Utility;
@@ -21,7 +22,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Mods the bindings to use the Silk.NET.Core pointer types.
 /// </summary>
 [ModConfiguration<Configuration>]
-public class TransformFunctions(FunctionTransformer ft, ILogger<TransformFunctions> logger)
+public class TransformFunctions(FunctionTransformer ft, ILogger<TransformFunctions> logger, IProgressService progressService)
     : ModCSharpSyntaxRewriter,
         IMod
 {
@@ -75,10 +76,7 @@ public class TransformFunctions(FunctionTransformer ft, ILogger<TransformFunctio
         int count = proj?.DocumentIds.Count ?? 0;
         int index = 0;
 
-        logger.LogInformation("Starting Function Transformation");
-
-        ProgressBarUtility.SetPercentage(0);
-        ProgressBarUtility.Show(LogLevel.Information);
+        progressService.SetTask("Transforming Functions");
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
             index++;
@@ -91,9 +89,8 @@ public class TransformFunctions(FunctionTransformer ft, ILogger<TransformFunctio
                 proj = doc.WithSyntaxRoot(Visit(root).NormalizeWhitespace()).Project;
             }
 
-            ProgressBarUtility.SetPercentage((float)index / count);
+            progressService.SetProgress((float)index / count);
         }
-        ProgressBarUtility.Hide(LogLevel.Information);
 
         logger.LogInformation("Getting Project Compilation");
         var compilation = await proj!.GetCompilationAsync();
@@ -109,10 +106,7 @@ public class TransformFunctions(FunctionTransformer ft, ILogger<TransformFunctio
 
         index = 0;
 
-        logger.LogInformation("Starting Symbol Gathering");
-
-        ProgressBarUtility.SetPercentage(0);
-        ProgressBarUtility.Show(LogLevel.Information);
+        progressService.SetTask("Gathering Symbols");
         foreach (var docId in proj.DocumentIds ?? [])
         {
             index++;
@@ -129,13 +123,11 @@ public class TransformFunctions(FunctionTransformer ft, ILogger<TransformFunctio
                 visitor.SemanticModel = _semanticModel;
                 visitor.Visit(root);
             }
-            ProgressBarUtility.SetPercentage((float)index / count);
+            progressService.SetProgress((float)index / count);
         }
-        ProgressBarUtility.Hide(LogLevel.Information);
 
         ctx.SourceProject = proj;
 
-        logger.LogInformation("Renaming Function Symbols");
         await NameUtils.RenameAllAsync(ctx, logger, toRenameSymbols, ct, false, true);
     }
 
@@ -279,7 +271,6 @@ public class TransformFunctions(FunctionTransformer ft, ILogger<TransformFunctio
             }
             else
             {
-                ProgressBarUtility.Hide(LogLevel.Information);
                 logger.LogError("Unable to retrieve symbol for {}", discrimWithRet);
             }
         }

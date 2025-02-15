@@ -124,7 +124,6 @@ public class FunctionTransformer(
                 )
             )
             {
-                ProgressBarUtility.Hide(LogLevel.Information);
                 logger.LogWarning(
                     "Varargs are not supported yet, excluding function: {}",
                     function
@@ -134,7 +133,6 @@ public class FunctionTransformer(
                         .NormalizeWhitespace(eol: "\n")
                         .ToFullString()
                 );
-                ProgressBarUtility.Show(LogLevel.Information);
                 continue;
             }
 
@@ -162,12 +160,10 @@ public class FunctionTransformer(
             // ones. We might remove it later.
             if (!discrims.Add(discrimWithRet))
             {
-                ProgressBarUtility.Hide(LogLevel.Information);
                 logger.LogWarning(
                     "Failed to add discriminator for original function \"{}\" because a previous transformed or original function conflicts with it. This may cause inconsistencies in outputs.",
                     discrim
                 );
-                ProgressBarUtility.Show(LogLevel.Information);
             }
 
             ctx.Original = function;

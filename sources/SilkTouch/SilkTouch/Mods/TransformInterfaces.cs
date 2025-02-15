@@ -17,6 +17,7 @@ using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 using static Silk.NET.SilkTouch.Utility.KeyedStringTree;
@@ -28,10 +29,12 @@ namespace Silk.NET.SilkTouch.Mods
     /// </summary>
     /// <param name="logger">The logger to use.</param>
     /// <param name="config">The configuration to use.</param>
+    /// <param name="progressService">The progress service to use</param>
     [ModConfiguration<Configuration>]
     public class TransformInterfaces(
         ILogger<TransformInterfaces> logger,
-        IOptionsSnapshot<TransformInterfaces.Configuration> config
+        IOptionsSnapshot<TransformInterfaces.Configuration> config,
+        IProgressService progressService
     ) : Mod
     {
         /// <summary>
@@ -64,8 +67,6 @@ namespace Silk.NET.SilkTouch.Mods
                 return;
             }
 
-            logger.LogInformation("Starting Interface Discovery");
-
             //setup matcher
             var includes = (cfg.IncludeList ?? ["**"]).Select(type => type.Replace(".", "/"));
             Matcher matcher = new Matcher();
@@ -82,8 +83,7 @@ namespace Silk.NET.SilkTouch.Mods
             int count = proj?.DocumentIds.Count ?? 0;
             int index = 0;
 
-            ProgressBarUtility.SetPercentage(0);
-            ProgressBarUtility.Show(LogLevel.Information);
+            progressService.SetTask("Interface Discovery");
             var firstPass = new TypeDiscoverer(matcher);
             foreach (var docId in proj?.DocumentIds ?? [])
             {
@@ -99,7 +99,7 @@ namespace Silk.NET.SilkTouch.Mods
 
                 firstPass.Visit(root);
 
-                ProgressBarUtility.SetPercentage((float)index / count);
+                progressService.SetProgress((float)index / count);
             }
 
             if (cfg.AdditionalInterfaces is not null)
@@ -111,8 +111,6 @@ namespace Silk.NET.SilkTouch.Mods
                 }
             }
 
-            ProgressBarUtility.Hide(LogLevel.Information);
-            logger.LogInformation("Starting Object Usage Update");
             var compilation = await proj!.GetCompilationAsync();
             if (compilation is null)
             {
@@ -122,8 +120,7 @@ namespace Silk.NET.SilkTouch.Mods
             }
 
             index = 0;
-            ProgressBarUtility.SetPercentage(0);
-            ProgressBarUtility.Show(LogLevel.Information);
+            progressService.SetTask("Interface Object Usage Update");
 
             UsageUpdater updater = new(firstPass.FoundTypes);
             foreach (var docId in proj?.DocumentIds ?? [])
@@ -140,9 +137,7 @@ namespace Silk.NET.SilkTouch.Mods
                 var syntaxTree = await doc.GetSyntaxTreeAsync();
                 if (syntaxTree is null)
                 {
-                    ProgressBarUtility.Hide(LogLevel.Information);
                     logger.LogWarning("unable to retrieve Semantic Model for {}", doc.Name);
-                    ProgressBarUtility.Show(LogLevel.Information);
                     continue;
                 }
                 updater.SemanticModel = compilation is not null
@@ -159,16 +154,12 @@ namespace Silk.NET.SilkTouch.Mods
                     index,
                     count
                 );
-                ProgressBarUtility.SetPercentage((float)index / count);
+                progressService.SetProgress((float)index / count);
             }
-
-            ProgressBarUtility.Hide(LogLevel.Information);
 
             index = 0;
             var rewriter = new Rewriter(firstPass.FoundTypes);
-            logger.LogInformation("Starting Interface Object Rewrite");
-            ProgressBarUtility.SetPercentage(0);
-            ProgressBarUtility.Show(LogLevel.Information);
+            progressService.SetTask("Interface Object Usage Rewrite");
             foreach (var docId in proj?.DocumentIds ?? [])
             {
                 index++;
@@ -190,10 +181,8 @@ namespace Silk.NET.SilkTouch.Mods
                     index,
                     count
                 );
-                ProgressBarUtility.SetPercentage((float)index / count);
+                progressService.SetProgress((float)index / count);
             }
-
-            ProgressBarUtility.Hide(LogLevel.Information);
             ctx.SourceProject = proj;
         }
 

@@ -15,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.Core;
+using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Sources;
 using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -26,10 +27,12 @@ namespace Silk.NET.SilkTouch.Mods
     /// </summary>
     /// <param name="logger">The logger to use.</param>
     /// <param name="config">The configuration to use.</param>
+    /// <param name="progressService">the progress service to use</param>
     [ModConfiguration<Configuration>]
     public class TransformCOM(
         ILogger<TransformCOM> logger,
-        IOptionsSnapshot<TransformCOM.Configuration> config
+        IOptionsSnapshot<TransformCOM.Configuration> config,
+        IProgressService progressService
     ) : Mod
     {
         /// <summary>
@@ -66,10 +69,7 @@ namespace Silk.NET.SilkTouch.Mods
             int count = proj?.DocumentIds.Count ?? 0;
             int index = 0;
 
-            logger.LogInformation("Starting COM Object Discovery");
-
-            ProgressBarUtility.SetPercentage(0);
-            ProgressBarUtility.Show(LogLevel.Information);
+            progressService.SetTask("COM Object Discovery");
             var firstPass = new TypeDiscoverer(
                 cfg.BaseTypes
                     ?? new() { { "IUnknown.Interface", "Silk.NET.Windows.IUnknown.Interface" } },
@@ -97,7 +97,7 @@ namespace Silk.NET.SilkTouch.Mods
                 }
 
                 firstPass.Visit(root);
-                ProgressBarUtility.SetPercentage((float)index / count);
+                progressService.SetProgress((float)index / count);
             }
 
             //Cleanup our lists
@@ -106,13 +106,9 @@ namespace Silk.NET.SilkTouch.Mods
                 .ToDictionary();
 
             index = 0;
-            ProgressBarUtility.Hide(LogLevel.Information);
-
             var rewriter = new Rewriter(firstPass.FoundCOMTypes);
-            logger.LogInformation("Starting COM Object Rewrite");
 
-            ProgressBarUtility.SetPercentage(0);
-            ProgressBarUtility.Show(LogLevel.Information);
+            progressService.SetTask("COM Object Rewrite");
             foreach (var docId in proj?.DocumentIds ?? [])
             {
                 index++;
@@ -129,10 +125,8 @@ namespace Silk.NET.SilkTouch.Mods
                 proj = doc.Project;
 
                 logger.LogDebug("COM Rewrite for {0} Complete ({1}/{2})", doc.Name, index, count);
-                ProgressBarUtility.SetPercentage((float)index / count);
+                progressService.SetProgress((float)index / count);
             }
-
-            ProgressBarUtility.Hide(LogLevel.Information);
             ctx.SourceProject = proj;
         }
 
@@ -350,12 +344,10 @@ namespace Silk.NET.SilkTouch.Mods
                     ?? true
                 )
                 {
-                    ProgressBarUtility.Hide(LogLevel.Information);
                     _logger.LogWarning(
                         "Failed to add {} to its Inheritence tree, casts will not generate properly",
                         typeName
                     );
-                    ProgressBarUtility.Show(LogLevel.Information);
                 }
 
                 if (

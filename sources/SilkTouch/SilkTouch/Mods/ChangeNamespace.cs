@@ -12,6 +12,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -22,7 +23,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// regards to namespaces.
 /// </summary>
 [ModConfiguration<Configuration>]
-public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> config)
+public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> config, IProgressService progressService)
     : IMod,
         IResponseFileMod
 {
@@ -47,8 +48,7 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             config.Get(key).Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray()
             ?? Array.Empty<(Regex, string)>();
         var tmp = Path.GetTempFileName();
-        ProgressBarUtility.SetPercentage(0);
-        ProgressBarUtility.Show(LogLevel.Information);
+        progressService.SetTask("Change Namespace Init");
         for (var i = 0; i < rsps.Count; i++)
         {
             var rsp = rsps[i];
@@ -102,9 +102,8 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
                 },
             };
 
-            ProgressBarUtility.SetPercentage(i / (float)rsps.Count);
+            progressService.SetProgress(i / (float)rsps.Count);
         }
-        ProgressBarUtility.Hide(LogLevel.Information);
         _jobs[key] = (
             rsps.Select(x => x.GeneratorConfiguration.DefaultNamespace)
                 .Concat(
