@@ -107,10 +107,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Win32", "Win32", "{BA20152E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Win32.UnitTests", "tests\Win32\Win32\Silk.NET.Win32.UnitTests.csproj", "{C8F32825-1F93-44F0-AB88-26167C21CADF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Input", "Input", "{33ED9765-8C36-4A9D-95E8-AF037FE104B3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Input", "sources\Input\Input\Silk.NET.Input.csproj", "{49A42CE3-94C5-4239-B0FC-F1FF8D7AAADA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
