@@ -86,6 +86,7 @@
 *.a binary
 *.o binary
 
+
 # Verify
 *.verified.txt text eol=lf working-tree-encoding=UTF-8
 *.verified.xml text eol=lf working-tree-encoding=UTF-8
