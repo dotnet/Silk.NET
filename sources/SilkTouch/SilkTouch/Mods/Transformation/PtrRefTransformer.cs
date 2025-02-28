@@ -21,31 +21,25 @@ public sealed partial class PtrRefTransformer()
 {
     private const int MaxIndirections = 3;
     private ThreadLocal<ITransformationContext?> _ctx = new();
-    private bool isInInterface = false;
 
     /// <inheritdoc />
-    public MethodDeclarationSyntax Transform(
+    public void Transform(
         MethodDeclarationSyntax current,
-        bool isInInterface,
         ITransformationContext ctx,
-        Func<MethodDeclarationSyntax, bool, MethodDeclarationSyntax> next
+        Action<MethodDeclarationSyntax> next
     )
     {
-        this.isInInterface = isInInterface;
         _ctx.Value = ctx;
-        MethodDeclarationSyntax ret;
         if (Visit(current) is MethodDeclarationSyntax modded)
         {
-            ret = next(modded, isInInterface);
+            next(modded);
         }
         else
         {
-            ret = next(current, isInInterface);
+            next(current);
         }
 
         _ctx.Value = null;
-        isInInterface = false;
-        return ret;
     }
 
     private static bool ShouldConvertToDSL(TypeSyntax syn) =>
@@ -174,11 +168,6 @@ public sealed partial class PtrRefTransformer()
 
         // Defensive check, the transformer should always make the initial body for us.
         var body = methWithReplacementsButNoFixed.Body;
-        if (body is null && !isInInterface)
-        {
-            _parameterIdentifiers = null;
-            return node;
-        }
 
         // Remove the extern keyword from the outer method
         methWithReplacementsButNoFixed = methWithReplacementsButNoFixed
@@ -218,7 +207,7 @@ public sealed partial class PtrRefTransformer()
             );
         }
 
-        if (isInInterface)
+        if (body is null)
         {
             _parameterIdentifiers = null;
             return methWithReplacementsButNoFixed;

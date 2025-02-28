@@ -39,7 +39,13 @@ namespace Silk.NET.SilkTouch.Logging
         public bool IsEnabled(LogLevel logLevel) => _innerLogger.IsEnabled(logLevel);
 
         /// <inheritdoc/>
-        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
+        public void Log<TState>(
+            LogLevel logLevel,
+            EventId eventId,
+            TState state,
+            Exception? exception,
+            Func<TState, Exception?, string> formatter
+        )
         {
             if (!IsEnabled(logLevel))
                 return;
@@ -55,13 +61,18 @@ namespace Silk.NET.SilkTouch.Logging
                     if (File.Exists(logFilePath))
                         File.Delete(logFilePath);
 
-                    _jobContext.LogWriters[logFilePath] = new StreamWriter(logFilePath, true) { AutoFlush = true };
+                    _jobContext.LogWriters[logFilePath] = new StreamWriter(logFilePath, true)
+                    {
+                        AutoFlush = true,
+                    };
                 }
 
                 var writer = _jobContext.LogWriters[logFilePath];
                 lock (writer)
                 {
-                    writer.WriteLine($"{GetLogLevelString(logLevel)}: {typeof(T).FullName}[{eventId.Id}] => {message}");
+                    writer.WriteLine(
+                        $"{GetLogLevelString(logLevel)}: {typeof(T).FullName}[{eventId.Id}] => {message}"
+                    );
                     if (exception != null)
                     {
                         writer.WriteLine(exception.ToString());
@@ -74,14 +85,15 @@ namespace Silk.NET.SilkTouch.Logging
 
         private static string GetLogLevelString(LogLevel logLevel)
         {
-            return logLevel switch {
+            return logLevel switch
+            {
                 LogLevel.Trace => "trce",
                 LogLevel.Debug => "dbug",
                 LogLevel.Information => "info",
                 LogLevel.Warning => "warn",
                 LogLevel.Error => "fail",
                 LogLevel.Critical => "crit",
-                _ => throw new ArgumentOutOfRangeException(nameof(logLevel))
+                _ => throw new ArgumentOutOfRangeException(nameof(logLevel)),
             };
         }
     }

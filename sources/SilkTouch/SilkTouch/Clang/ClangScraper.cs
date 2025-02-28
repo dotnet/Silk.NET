@@ -305,6 +305,8 @@ public sealed class ClangScraper(
         var aggregatedTests = new ConcurrentDictionary<string, SyntaxTree>();
         int rspIndex = 0;
         int rspCount = rsps.Count;
+        int completionIndex = 0;
+        progressService.SetTask("Generating Raw Bindings");
         try
         {
             await Parallel.ForEachAsync(
@@ -409,6 +411,9 @@ public sealed class ClangScraper(
                                     logger.LogTrace("ClangSharp generated {0}", relativeKey);
                                 }
                             }
+
+                            Interlocked.Increment(ref completionIndex);
+                            progressService.SetProgress(completionIndex / (float)rspCount);
                         },
                         innerCt
                     )

@@ -18,11 +18,10 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
     : IFunctionTransformer
 {
     /// <inheritdoc />
-    public MethodDeclarationSyntax Transform(
+    public void Transform(
         MethodDeclarationSyntax current,
-        bool isInInterface,
         ITransformationContext ctx,
-        Func<MethodDeclarationSyntax, bool, MethodDeclarationSyntax> next
+        Action<MethodDeclarationSyntax> next
     )
     {
         var ogCurrent = current;
@@ -139,6 +138,6 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
                 ?? current;
         }
 
-        return next(current, isInInterface);
+        next(current);
     }
 }

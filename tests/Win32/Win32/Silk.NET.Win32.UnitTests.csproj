@@ -16,4 +16,11 @@
       </Compile>
     </ItemGroup>
 
+    <ItemGroup>
+      <Using Include="Silk.NET.Core" />
+      <Using Include="Silk.NET.Core.IID">
+        <Static>True</Static>
+      </Using>
+    </ItemGroup>
+
 </Project>

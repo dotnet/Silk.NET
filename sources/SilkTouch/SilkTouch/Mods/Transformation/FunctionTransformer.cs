@@ -8,9 +8,22 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Utility;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.Transformation;
+
+/// <summary>
+/// An output function from <see cref="FunctionTransformer"/>
+/// </summary>
+/// <param name="Function">Function syntax</param>
+/// <param name="HasConflictingSignature">Is there another function which will have a conflicting syntax</param>
+/// <param name="IsOriginal">Is this the original function syntax</param>
+public record TransformedFunction(
+    MethodDeclarationSyntax Function,
+    bool HasConflictingSignature,
+    bool IsOriginal
+);
 
 /// <summary>
 /// Contains utilities for actioning <see cref="IFunctionTransformer"/>s.
@@ -29,23 +42,19 @@ public class FunctionTransformer(
     /// <param name="key">The job key.</param>
     /// <param name="functions">The functions.</param>
     /// <param name="ctx">The wider context for this function transformation operation.</param>
-    /// <param name="typeName">Name of containing type</param>
-    /// <param name="toRename">list of symbols to rename</param>
     /// <param name="includeOriginal">
     /// Whether to include the original function in the outputs before the transformed ones.
     /// </param>
     /// <returns>The transformed (and optionally original) functions.</returns>
-    public IEnumerable<MethodDeclarationSyntax> GetTransformedFunctions(
+    public IEnumerable<TransformedFunction> GetTransformedFunctions(
         string? key,
-        string typeName,
-        Dictionary<string, string> toRename,
         IEnumerable<MethodDeclarationSyntax> functions,
         ITransformationContext ctx,
         bool includeOriginal = true
     )
     {
         var ret = functions is IReadOnlyCollection<MethodDeclarationSyntax> coll
-            ? new List<MethodDeclarationSyntax>(coll.Count)
+            ? new List<TransformedFunction>(coll.Count)
             : [];
         var discrims = new HashSet<string>();
 
@@ -53,9 +62,9 @@ public class FunctionTransformer(
         ctx.Transformers = transformers.SelectMany(x => x.Get(key)).ToArray();
         var transform = ctx.Transformers.Aggregate<
             IFunctionTransformer,
-            Func<MethodDeclarationSyntax, bool, MethodDeclarationSyntax>
+            Action<MethodDeclarationSyntax>
         >(
-            (meth, isInInterface) =>
+            (meth) =>
             {
                 // Get the discriminator string to determine whether it conflicts. Note that we set the return type
                 // to null as overloads that differ only by return type aren't acceptable. However, we do need a
@@ -75,6 +84,25 @@ public class FunctionTransformer(
                     meth.ParameterList,
                     meth.ReturnType
                 );
+
+                bool hasConflictingSignature = false;
+
+                if (ctx.Original is not null && includeOriginal)
+                {
+                    var origDiscrim = ModUtils.DiscrimStr(
+                        ctx.Original.Modifiers,
+                        ctx.Original.TypeParameterList,
+                        ctx.Original.Identifier.ToString(),
+                        ctx.Original.ParameterList,
+                        returnType: null
+                    );
+
+                    hasConflictingSignature = origDiscrim == discrim;
+                }
+
+                var declTy = ctx.Original?.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>();
+
+                bool isInInterface = declTy is InterfaceDeclarationSyntax;
 
                 // Only add it if it's an overload that does not conflict.
                 if (discrims.Add(discrimWithRet) && discrims.Add(discrim))
@@ -107,13 +135,11 @@ public class FunctionTransformer(
                             .WithExpressionBody(ArrowExpressionClause(expr))
                             .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
                     }
-                    ret.Add(meth);
+                    ret.Add(new(meth, hasConflictingSignature, false));
                 }
-
-                return meth;
                 // TODO else warn maybe?
             },
-            (c, t) => ((meth, isInInterface) => t.Transform(meth, isInInterface, ctx, c))
+            (c, t) => meth => t.Transform(meth, ctx, c)
         );
         foreach (var function in functions)
         {
@@ -167,14 +193,13 @@ public class FunctionTransformer(
             }
 
             ctx.Original = function;
-            MethodDeclarationSyntax? transformedFunc = TransformFunctions(function, transform);
-            if (transformedFunc is not null && includeOriginal)
+            TransformFunctions(function, transform);
+            if (includeOriginal)
             {
                 // Try to add the original function as-is
-                if (discrims.Add(discrim))
-                {
-                    ret.Insert(
-                        idx,
+                ret.Insert(
+                    idx,
+                    new(
                         function.WithAttributeLists(
                             List(
                                 function
@@ -191,75 +216,11 @@ public class FunctionTransformer(
                                     )
                                     .Where(x => x.Attributes.Count > 0)
                             )
-                        )
-                    );
-                }
-                else
-                {
-                    // Sometimes when functions are transformed they only differ by return type. C# doesn't allow
-                    // this, so we add a suffix to the original function to differentiate them.
-                    var newIden = $"{function.Identifier}Raw";
-
-                    var transformedDiscrimWithRet =
-                        typeName
-                        + ":"
-                        + ModUtils.DiscrimStr(
-                            transformedFunc.Modifiers,
-                            transformedFunc.TypeParameterList,
-                            transformedFunc.Identifier.ToString(),
-                            transformedFunc.ParameterList,
-                            transformedFunc.ReturnType
-                        );
-                    toRename.Add(transformedDiscrimWithRet, newIden);
-
-                    var rep = new Dictionary<string, string>
-                    {
-                        { function.Identifier.ToString(), newIden },
-                    };
-
-                    // Any reference to the original function needs to be replaced as well.
-                    foreach (ref var added in CollectionsMarshal.AsSpan(ret)[idx..])
-                    {
-                        added = (MethodDeclarationSyntax)added.ReplaceIdentifiers(rep);
-                    }
-
-                    // Add the suffixed function
-                    var newFun = function
-                        .WithRenameSafeAttributeLists()
-                        .WithIdentifier(Identifier(newIden))
-                        .WithAttributeLists(
-                            List(
-                                function
-                                    .AttributeLists.Select(x =>
-                                        x.WithAttributes(
-                                            SeparatedList(
-                                                x.Attributes.Where(y =>
-                                                    !y.IsAttribute(
-                                                        "System.Runtime.InteropServices.UnmanagedCallersOnly"
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                                    .Where(x => x.Attributes.Count > 0)
-                            )
-                        );
-                    discrim = ModUtils.DiscrimStr(
-                        function.Modifiers,
-                        function.TypeParameterList,
-                        newIden,
-                        function.ParameterList,
-                        returnType: null
-                    );
-                    if (discrims.Add(discrim))
-                    {
-                        ret.Insert(idx, newFun);
-                    }
-                }
-            }
-            else if (transformedFunc is null)
-            {
-                ret.Add(function);
+                        ),
+                        !discrims.Add(discrim),
+                        true
+                    )
+                );
             }
 
             ctx.Original = null;
@@ -269,29 +230,30 @@ public class FunctionTransformer(
         return ret;
     }
 
-    private MethodDeclarationSyntax? TransformFunctions(
+    private void TransformFunctions(
         MethodDeclarationSyntax function,
-        Func<MethodDeclarationSyntax, bool, MethodDeclarationSyntax> transform
+        Action<MethodDeclarationSyntax> transform
     )
     {
         if (function.ExplicitInterfaceSpecifier is not null)
         {
-            return null;
+            return;
         }
 
         var declTy = function.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>();
 
         bool isInInterface = declTy is InterfaceDeclarationSyntax;
+
         // The Silk DSL can be applied to static and non-static methods in a class or a struct.
         if (declTy is not (ClassDeclarationSyntax or StructDeclarationSyntax) && !isInInterface)
         {
-            return null;
+            return;
         }
 
         if (isInInterface)
         {
-            transform(function, true);
-            return function;
+            transform(function);
+            return;
         }
 
         StatementSyntax impl = ExpressionStatement(
@@ -389,6 +351,6 @@ public class FunctionTransformer(
                 TokenList(function.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
             );
 
-        return transform(function, false);
+        transform(function);
     }
 }

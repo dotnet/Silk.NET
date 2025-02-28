@@ -17,7 +17,8 @@ namespace Silk.NET.SilkTouch.Logging
     /// </summary>
     public class ProgressService : IProgressService
     {
-        private ConcurrentDictionary<string, (string, float)> Progress = new ConcurrentDictionary<string, (string, float)>();
+        private ConcurrentDictionary<string, (string, float)> Progress =
+            new ConcurrentDictionary<string, (string, float)>();
         private JobContext _jobContext;
 
         /// <summary>
@@ -31,10 +32,17 @@ namespace Silk.NET.SilkTouch.Logging
 
         /// <inheritdoc/>
         public IEnumerable<KeyValuePair<string, (string, float)>> GetAllProgress() => Progress;
+
         /// <inheritdoc/>
-        public (string, float) GetCurrentTaskAndProgress() => Progress.TryGetValue(_jobContext.JobKey ?? string.Empty, out var value) ? value : (string.Empty, 0);
+        public (string, float) GetCurrentTaskAndProgress() =>
+            Progress.TryGetValue(_jobContext.JobKey ?? string.Empty, out var value)
+                ? value
+                : (string.Empty, 0);
+
         /// <inheritdoc/>
-        public void RemoveProgress() => Progress.TryRemove(_jobContext.JobKey ?? string.Empty, out _);
+        public void RemoveProgress() =>
+            Progress.TryRemove(_jobContext.JobKey ?? string.Empty, out _);
+
         /// <inheritdoc/>
         public void SetProgress(float progress)
         {
@@ -50,6 +58,7 @@ namespace Silk.NET.SilkTouch.Logging
 
             Progress[_jobContext.JobKey] = (value.Item1, progress);
         }
+
         /// <inheritdoc/>
         public void SetTask(string task)
         {

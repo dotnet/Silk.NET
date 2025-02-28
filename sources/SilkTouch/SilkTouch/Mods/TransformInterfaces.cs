@@ -193,29 +193,11 @@ namespace Silk.NET.SilkTouch.Mods
             /// </summary>
             public Dictionary<string, string> FoundTypes = [];
 
-            private List<string> _namespace = [];
-
             private Matcher _matcher;
 
             public TypeDiscoverer(Matcher matcher)
             {
                 _matcher = matcher;
-            }
-
-            public override void VisitNamespaceDeclaration(NamespaceDeclarationSyntax node)
-            {
-                _namespace.Add(node.Name.ToString());
-                base.VisitNamespaceDeclaration(node);
-                _namespace.RemoveAt(_namespace.Count - 1);
-            }
-
-            public override void VisitFileScopedNamespaceDeclaration(
-                FileScopedNamespaceDeclarationSyntax node
-            )
-            {
-                _namespace.Add(node.Name.ToString());
-                base.VisitFileScopedNamespaceDeclaration(node);
-                _namespace.RemoveAt(_namespace.Count - 1);
             }
 
             public override void VisitStructDeclaration(StructDeclarationSyntax node)
@@ -225,7 +207,7 @@ namespace Silk.NET.SilkTouch.Mods
                 var fields = node.DescendantNodes().OfType<FieldDeclarationSyntax>();
 
                 string matchString =
-                    $"{string.Join('/', _namespace.Select(ns => ns.Replace('.', '/')))}/{node.Identifier.Text}";
+                    $"{node.NamespaceFromSyntaxNode().Replace('.', '/')}/{node.Identifier.Text}";
 
                 if (
                     node.Identifier.Text == "Vtbl"
@@ -438,7 +420,7 @@ namespace Silk.NET.SilkTouch.Mods
 
                 if (node.Left.IsKind(SyntaxKind.NullLiteralExpression))
                 {
-                    // Check if the type is a ComType
+                    // Check if the type is an interface Type
                     if (depthR <= 1 && typeInfoR.Type != null && InterfaceTypes.ContainsKey(nameR))
                     {
                         return BinaryExpression(
@@ -450,7 +432,7 @@ namespace Silk.NET.SilkTouch.Mods
                 }
                 else
                 {
-                    // Check if the type is a ComType
+                    // Check if the type is an interface Type
                     if (depthL <= 1 && typeInfoL.Type != null && InterfaceTypes.ContainsKey(nameL))
                     {
                         return BinaryExpression(
@@ -830,6 +812,10 @@ namespace Silk.NET.SilkTouch.Mods
                 );
             }
 
+            public override SyntaxNode? VisitSimpleBaseType(SimpleBaseTypeSyntax node) => node;
+
+            public override SyntaxNode? VisitTypeConstraint(TypeConstraintSyntax node) => node;
+
             const string NATIVE_VARIABLE_NAME = "lpVtbl";
 
             public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
@@ -849,6 +835,27 @@ namespace Silk.NET.SilkTouch.Mods
                             .Select(cons => cons.WithIdentifier(Identifier("Native")))
                             .ToArray()
                     );
+
+                    var originalBaseList = node.BaseList;
+                    var fullNameBase = node
+                        .BaseList?.DescendantNodes()
+                        .OfType<BaseTypeSyntax>()
+                        .Where(baseType => baseType.Type.ToString() == $"{name}.Interface")
+                        .FirstOrDefault();
+
+                    if (fullNameBase is not null)
+                        node = node.ReplaceNode(
+                            fullNameBase,
+                            SimpleBaseType(ParseTypeName("Interface"))
+                        );
+
+                    var interfaceNodes = node
+                        .Members.OfType<InterfaceDeclarationSyntax>()
+                        .Where(inter => inter.Identifier.Text == "Interface");
+
+                    node =
+                        node.RemoveNodes(interfaceNodes ?? [], SyntaxRemoveOptions.KeepNoTrivia)
+                        ?? node;
 
                     var nativeName = $"{name}.Native";
 
@@ -1018,10 +1025,10 @@ namespace Silk.NET.SilkTouch.Mods
                                 })
                                 .ToArray()
                         )
+                        .AddMembers(interfaceNodes?.ToArray() ?? [])
                         .AddMembers([node.WithIdentifier(Identifier("Native"))])
                         .WithLeadingTrivia(node.GetLeadingTrivia())
-                        .WithBaseList(node.BaseList)
-                        .AddBaseListTypes(SimpleBaseType(ParseTypeName("INativeInterface")));
+                        .WithBaseList(originalBaseList);
 
                     //Add vtbl constructor to ComType
                     parentNode = parentNode.AddMembers(
@@ -1312,190 +1319,23 @@ namespace Silk.NET.SilkTouch.Mods
                             )
                     );
 
-                    parentNode = parentNode.AddMembers(
-                        MethodDeclaration(
-                                GenericName("Ptr2D")
-                                    .WithTypeArgumentList(
-                                        TypeArgumentList(
-                                            SingletonSeparatedList(
-                                                ParseTypeName("TNativeInterface")
-                                            )
-                                        )
-                                    ),
-                                "GetAddressOf"
-                            )
-                            .WithModifiers(
-                                TokenList(
-                                    Token(SyntaxKind.PublicKeyword),
-                                    Token(SyntaxKind.ReadOnlyKeyword)
-                                )
-                            )
-                            .WithTypeParameterList(
-                                TypeParameterList(
-                                    SingletonSeparatedList(TypeParameter("TNativeInterface"))
-                                )
-                            )
-                            .WithConstraintClauses(
-                                List(
-                                    [
-                                        TypeParameterConstraintClause(
-                                            IdentifierName("TNativeInterface"),
-                                            SingletonSeparatedList<TypeParameterConstraintSyntax>(
-                                                TypeConstraint(IdentifierName("unmanaged"))
-                                            )
-                                        ),
-                                    ]
-                                )
-                            )
-                            .WithExpressionBody(
-                                ArrowExpressionClause(
-                                    CastExpression(
-                                        PointerType(PointerType(ParseTypeName("TNativeInterface"))),
-                                        InvocationExpression(
-                                            MemberAccessExpression(
-                                                SyntaxKind.SimpleMemberAccessExpression,
-                                                IdentifierName("Unsafe"),
-                                                IdentifierName("AsPointer")
-                                            ),
-                                            ArgumentList(
-                                                SingletonSeparatedList(
-                                                    Argument(
-                                                        RefExpression(
-                                                            InvocationExpression(
-                                                                MemberAccessExpression(
-                                                                    SyntaxKind.SimpleMemberAccessExpression,
-                                                                    IdentifierName("Unsafe"),
-                                                                    IdentifierName("AsRef")
-                                                                ),
-                                                                ArgumentList(
-                                                                    SingletonSeparatedList(
-                                                                        Argument(ThisExpression())
-                                                                            .WithRefKindKeyword(
-                                                                                Token(
-                                                                                    SyntaxKind.InKeyword
-                                                                                )
-                                                                            )
-                                                                    )
-                                                                )
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                            .WithLeadingTrivia(
-                                Trivia(
-                                    DocumentationCommentTrivia(
-                                        SyntaxKind.SingleLineDocumentationCommentTrivia,
-                                        List(
-                                            new XmlNodeSyntax[]
-                                            {
-                                                XmlText("/// "),
-                                                XmlElement(
-                                                    XmlElementStartTag(XmlName("inheritdoc"))
-                                                        .WithAttributes(
-                                                            SingletonList<XmlAttributeSyntax>(
-                                                                XmlCrefAttribute(
-                                                                    NameMemberCref(
-                                                                        IdentifierName(
-                                                                            "INativeInterface.GetAddressOf{TNativeInterface}()"
-                                                                        )
-                                                                    )
-                                                                )
-                                                            )
-                                                        ),
-                                                    XmlElementEndTag(XmlName("inheritdoc"))
-                                                ),
-                                                XmlText("\n\t"),
-                                            }
-                                        )
-                                    )
-                                )
-                            ),
-                        MethodDeclaration(ParseTypeName("Ptr2D"), "GetAddressOf")
-                            .WithModifiers(
-                                TokenList(
-                                    Token(SyntaxKind.PublicKeyword),
-                                    Token(SyntaxKind.ReadOnlyKeyword)
-                                )
-                            )
-                            .WithExpressionBody(
-                                ArrowExpressionClause(
-                                    CastExpression(
-                                        PointerType(PointerType(ParseTypeName("void"))),
-                                        InvocationExpression(
-                                            MemberAccessExpression(
-                                                SyntaxKind.SimpleMemberAccessExpression,
-                                                IdentifierName("Unsafe"),
-                                                IdentifierName("AsPointer")
-                                            ),
-                                            ArgumentList(
-                                                SingletonSeparatedList(
-                                                    Argument(
-                                                        RefExpression(
-                                                            InvocationExpression(
-                                                                MemberAccessExpression(
-                                                                    SyntaxKind.SimpleMemberAccessExpression,
-                                                                    IdentifierName("Unsafe"),
-                                                                    IdentifierName("AsRef")
-                                                                ),
-                                                                ArgumentList(
-                                                                    SingletonSeparatedList(
-                                                                        Argument(ThisExpression())
-                                                                            .WithRefKindKeyword(
-                                                                                Token(
-                                                                                    SyntaxKind.InKeyword
-                                                                                )
-                                                                            )
-                                                                    )
-                                                                )
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                            .WithLeadingTrivia(
-                                Trivia(
-                                    DocumentationCommentTrivia(
-                                        SyntaxKind.SingleLineDocumentationCommentTrivia,
-                                        List(
-                                            new XmlNodeSyntax[]
-                                            {
-                                                XmlText("/// "),
-                                                XmlElement(
-                                                    XmlElementStartTag(XmlName("inheritdoc"))
-                                                        .WithAttributes(
-                                                            SingletonList<XmlAttributeSyntax>(
-                                                                XmlCrefAttribute(
-                                                                    NameMemberCref(
-                                                                        IdentifierName(
-                                                                            "INativeInterface.GetAddressOf()"
-                                                                        )
-                                                                    )
-                                                                )
-                                                            )
-                                                        ),
-                                                    XmlElementEndTag(XmlName("inheritdoc"))
-                                                ),
-                                                XmlText("\n\t"),
-                                            }
-                                        )
-                                    )
-                                )
-                            )
+                    parentNode = generateCasts(
+                        parentNode,
+                        name,
+                        PointerType(ParseTypeName(nativeName)),
+                        nativeName,
+                        CastExpression(ParseTypeName("Ptr<Native>"), IdentifierName("value")),
+                        false,
+                        true
                     );
-
-                    parentNode = generateCasts(parentNode, name, PointerType(ParseTypeName(nativeName)),  nativeName, CastExpression(ParseTypeName("Ptr<Native>"), IdentifierName("value")), false, true);
-                    parentNode = generateCasts(parentNode, name, ParseTypeName("Ptr3D"), "Ptr3D", IdentifierName("value"), pointerCast: false);
+                    parentNode = generateCasts(
+                        parentNode,
+                        name,
+                        ParseTypeName("Ptr3D"),
+                        "Ptr3D",
+                        IdentifierName("value"),
+                        pointerCast: false
+                    );
                     parentNode = generateCasts(
                         parentNode,
                         name,
@@ -1509,16 +1349,17 @@ namespace Silk.NET.SilkTouch.Mods
                         name,
                         PointerType(PointerType(PointerType(ParseTypeName("void")))),
                         "void***",
-                        CastExpression(ParseTypeName("Ptr<Native>"),IdentifierName("value")),
+                        CastExpression(ParseTypeName("Ptr<Native>"), IdentifierName("value")),
                         castSeeTag: false
-                        );
+                    );
 
                     parentNode = generateCasts(
                         parentNode,
                         name,
                         ParseTypeName("nuint"),
                         "nuint",
-                        CastExpression(ParseTypeName("Ptr<Native>"),
+                        CastExpression(
+                            ParseTypeName("Ptr<Native>"),
                             InvocationExpression(
                                 MemberAccessExpression(
                                     SyntaxKind.SimpleMemberAccessExpression,
@@ -1528,7 +1369,7 @@ namespace Silk.NET.SilkTouch.Mods
                             )
                         ),
                         pointerCast: false
-                        );
+                    );
 
                     currentType = "";
                     return parentNode;
@@ -1566,20 +1407,14 @@ namespace Silk.NET.SilkTouch.Mods
                         IdentifierName("lpVtbl")
                     );
 
-                XmlNodeSyntax castXmlTag = castSeeTag ?
-                    XmlEmptyElement(
+                XmlNodeSyntax castXmlTag = castSeeTag
+                    ? XmlEmptyElement(
                         XmlName("see"),
                         List<XmlAttributeSyntax>(
-                            new[]
-                            {
-                                XmlCrefAttribute(
-                                    NameMemberCref(
-                                        castXmlType
-                                    )
-                                ),
-                            }
+                            new[] { XmlCrefAttribute(NameMemberCref(castXmlType)) }
                         )
-                    ) : XmlText(castXmlName);
+                    )
+                    : XmlText(castXmlName);
 
                 return node.AddMembers(
                     ConversionOperatorDeclaration(

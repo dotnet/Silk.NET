@@ -102,8 +102,16 @@ public class SilkTouchGenerator(
         // Manually dispose so that we don't do this when generation fails (await using is too clever).
         await ctx.DisposeAsync();
 
-        logger.LogInformation("Job Mod Performance Data for {} \n{}", key,
-            string.Join("\n", modPerf.Select(kvp => $"{kvp.Key.GetType().Name} : {kvp.Value.Elapsed.TotalSeconds} seconds")));
+        logger.LogInformation(
+            "Job Mod Performance Data for {} \n{}",
+            key,
+            string.Join(
+                "\n",
+                modPerf.Select(kvp =>
+                    $"{kvp.Key.GetType().Name} : {kvp.Value.Elapsed.TotalSeconds} seconds"
+                )
+            )
+        );
 
         // Output the generated bindings
         logger.LogInformation(

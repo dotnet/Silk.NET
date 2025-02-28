@@ -1466,16 +1466,15 @@ public partial class MixKhronosData(
     }
 
     /// <inheritdoc />
-    public MethodDeclarationSyntax Transform(
+    public void Transform(
         MethodDeclarationSyntax current,
-        bool isInInterface,
         ITransformationContext ctx,
-        Func<MethodDeclarationSyntax, bool, MethodDeclarationSyntax> next
+        Action<MethodDeclarationSyntax> next
     )
     {
         if (ctx.JobKey is null)
         {
-            return next(current, isInInterface);
+            next(current);
         }
 
         current.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);
@@ -1483,10 +1482,8 @@ public partial class MixKhronosData(
         foreach (var meth in TransformToConstants(current, ctx, entryPoint))
         {
             // TODO more transformations
-            next(meth, isInInterface);
+            next(meth);
         }
-
-        return current;
     }
 
     private IEnumerable<MethodDeclarationSyntax> TransformToConstants(

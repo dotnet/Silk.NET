@@ -29,6 +29,7 @@ namespace Silk.NET.SilkTouch
         /// <summary>
         /// A dictionary of all current open log file writers
         /// </summary>
-        public readonly ConcurrentDictionary<string, StreamWriter> LogWriters = new ConcurrentDictionary<string, StreamWriter>();
+        public readonly ConcurrentDictionary<string, StreamWriter> LogWriters =
+            new ConcurrentDictionary<string, StreamWriter>();
     }
 }

@@ -22,18 +22,19 @@ var skip = new Option<string[]>(
     "A list of job names to skip. Takes precendence over --only."
 )
 {
-    Arity = ArgumentArity.ZeroOrMore
+    Arity = ArgumentArity.ZeroOrMore,
 };
 var only = new Option<string[]>(
     new[] { "--only", "-o" },
     Array.Empty<string>,
     "A list of job names to run."
-) {
-    Arity = ArgumentArity.ZeroOrMore
+)
+{
+    Arity = ArgumentArity.ZeroOrMore,
 };
 var configs = new Argument<string[]>("configs", "Path(s) to JSON SilkTouch configuration(s)")
 {
-    Arity = ArgumentArity.OneOrMore
+    Arity = ArgumentArity.OneOrMore,
 };
 var configOverrides = new Argument<string[]>(
     "overrides",
@@ -41,7 +42,7 @@ var configOverrides = new Argument<string[]>(
     "Arguments recognisable by Microsoft.Extensions.Configuration.CommandLine to override JSON configuration items."
 )
 {
-    Arity = ArgumentArity.ZeroOrMore
+    Arity = ArgumentArity.ZeroOrMore,
 };
 var jobs = new Option<int>(
     new[] { "--max-jobs", "-j" },
@@ -49,7 +50,8 @@ var jobs = new Option<int>(
     "Maximum number of parallel ClangSharp executions."
 );
 var rootCommand = new RootCommand { logging, skip, only, configs, configOverrides, jobs };
-rootCommand.SetHandler(async ctx => {
+rootCommand.SetHandler(async ctx =>
+{
     // Create the ConfigurationBuilder with support for env var & command line overrides
     var cb = new ConfigurationBuilder()
         .AddEnvironmentVariables(source => source.Prefix = "SILKDOTNET_")
@@ -75,9 +77,11 @@ rootCommand.SetHandler(async ctx => {
     var sp = new ServiceCollection()
         .AddSingleton(jobContext)
         .AddSingleton<IProgressService, ProgressService>()
-        .AddLogging(builder => {
+        .AddLogging(builder =>
+        {
             builder.ClearProviders();
-            builder.AddSimpleConsole(opts => {
+            builder.AddSimpleConsole(opts =>
+            {
                 opts.SingleLine = true;
                 opts.ColorBehavior = Console.IsOutputRedirected
                     ? LoggerColorBehavior.Disabled
@@ -114,10 +118,15 @@ rootCommand.SetHandler(async ctx => {
             .GetSection("Jobs")
             .GetChildren()
             .Where(x =>
-                (skipped?.All(y => !x.Key.Equals(y, StringComparison.OrdinalIgnoreCase)) ?? true) &&
-                (jobsToRun is null || jobsToRun.Count == 0 || jobsToRun.Any(y => x.Key.Equals(y, StringComparison.OrdinalIgnoreCase)))
+                (skipped?.All(y => !x.Key.Equals(y, StringComparison.OrdinalIgnoreCase)) ?? true)
+                && (
+                    jobsToRun is null
+                    || jobsToRun.Count == 0
+                    || jobsToRun.Any(y => x.Key.Equals(y, StringComparison.OrdinalIgnoreCase))
+                )
             ),
-        async (job, ct) => {
+        async (job, ct) =>
+        {
             jobContext.JobKey = job.Key;
             await generator.RunAsync(
                 job.Key,

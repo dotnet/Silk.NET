@@ -272,7 +272,7 @@ public unsafe partial struct IAsyncOperationWithProgress<TResult, TProgress>
         }
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [Transformed]
     public HRESULT QueryInterface<TCom>([NativeTypeName("void **")] out TCom ppvObject)
         where TCom : unmanaged, IComInterface
     {

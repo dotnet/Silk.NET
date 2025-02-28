@@ -8,8 +8,10 @@ using static Silk.NET.Win32.IID;
 
 namespace Silk.NET.Win32;
 
-public unsafe partial struct IImageList : IImageList.Native.Interface, INativeGuid
+public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
 {
     public static explicit operator HIMAGELIST(IImageList imageList) => new(imageList.lpVtbl);
-    public static explicit operator IImageList(HIMAGELIST imageList) => new() { lpVtbl = (Native*)imageList.Value };
+
+    public static explicit operator IImageList(HIMAGELIST imageList) =>
+        new() { lpVtbl = (Native*)imageList.Value };
 }

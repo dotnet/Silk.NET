@@ -19,23 +19,27 @@ namespace Silk.NET.SilkTouch.Logging
         /// </summary>
         /// <returns></returns>
         IEnumerable<KeyValuePair<string, (string, float)>> GetAllProgress();
+
         /// <summary>
         /// Get the current task and progress for this job
         /// </summary>
         /// <returns>current task and progress for this job</returns>
         (string, float) GetCurrentTaskAndProgress();
+
         /// <summary>
         /// Set the name of the task for this job
         /// Resets the progress to 0
         /// </summary>
         /// <param name="task">name of the current task</param>
         void SetTask(string task);
+
         /// <summary>
         /// Sets the progress of the current job's task
         /// Values are expected between 0 and 1
         /// </summary>
         /// <param name="progress">current progress value</param>
         void SetProgress(float progress);
+
         /// <summary>
         /// Remove the current job from the progress service
         /// </summary>

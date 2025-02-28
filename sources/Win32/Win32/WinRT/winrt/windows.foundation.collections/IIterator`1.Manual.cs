@@ -202,7 +202,7 @@ public unsafe partial struct IIterator<T>
         }
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [Transformed]
     public HRESULT QueryInterface<TCom>([NativeTypeName("void **")] out TCom ppvObject)
         where TCom : unmanaged, IComInterface
     {

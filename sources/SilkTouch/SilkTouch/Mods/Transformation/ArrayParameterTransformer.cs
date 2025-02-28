@@ -23,11 +23,10 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
     : IFunctionTransformer
 {
     /// <inheritdoc />
-    public MethodDeclarationSyntax Transform(
+    public void Transform(
         MethodDeclarationSyntax decl,
-        bool isInInterface,
         ITransformationContext ctx,
-        Func<MethodDeclarationSyntax, bool, MethodDeclarationSyntax> next
+        Action<MethodDeclarationSyntax> next
     )
     {
         // Ported from https://github.com/dotnet/Silk.NET/blob/0e8e0398/src/Core/Silk.NET.BuildTools/Overloading/Complex/ArrayParameterOverloader.cs#L32
@@ -37,11 +36,11 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
         var cfg = options?.Get(ctx.JobKey);
 
         // Keep the original in the loop:
-        decl = next(decl, isInInterface);
+        next(decl);
 
         if (ctx.Transformers is null)
         {
-            return decl;
+            return;
         }
 
         decl.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);
@@ -72,7 +71,7 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
             )
         )
         {
-            return decl;
+            return;
         }
 
         // has a single pointer parameter that has either:
@@ -125,7 +124,7 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
         if (ptrCount?.CommonUsage is { IsIn: true, IsOut: true } or { IsCountBytes: true })
         {
             // Flow isn't compatible with either of our signatures.
-            return decl;
+            return;
         }
 
         // Get information from the function name for benefit-of-doubt overloading i.e. if the function matches a very
@@ -165,7 +164,7 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
             ) // the pointer must not be a void pointer
         )
         {
-            return decl;
+            return;
         }
 
         // Get the type information to verify that the usage constraints match the type info (if applicable, if not
@@ -173,7 +172,7 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
         // doubt in lieu of proper constraint info)
         if (ptrParam.GetNativeTypeName() is not { } nativeType)
         {
-            return decl;
+            return;
         }
 
         Span<bool> mutability = stackalloc bool[nativeType.AsSpan().GetIndirectionLevels() + 1];
@@ -203,7 +202,7 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
         )
         {
             // Discrepancy between the type signature and recorded count.
-            return decl;
+            return;
         }
 
         // Determine whether this is an outputting function. If it is, we need to transform the method to have the
@@ -225,7 +224,7 @@ public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Confi
             isOutput.Value,
             isHr
         );
-        return next(rw.Visit(decl) as MethodDeclarationSyntax ?? decl, isInInterface);
+        next(rw.Visit(decl) as MethodDeclarationSyntax ?? decl);
     }
 
     class TransformArrayParameterRewriter(

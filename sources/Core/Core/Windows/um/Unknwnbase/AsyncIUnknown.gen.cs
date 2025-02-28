@@ -1,0 +1,417 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/Unknwnbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using static Silk.NET.Core.IID;
+
+#pragma warning disable CS1589, CS1591, CS0419, CA1416, CS0618
+namespace Silk.NET.Core;
+
+/// <inheritdoc cref = "IDisposable.Dispose"></inheritdoc>
+[Guid("000E0000-0000-0000-C000-000000000046")]
+[NativeTypeName("struct AsyncIUnknown : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, IComInterface, IDisposable
+{
+    public Native* lpVtbl;
+    static Guid* INativeGuid.NativeGuid =>
+        (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_AsyncIUnknown));
+
+    public interface Interface : IUnknown.Interface
+    {
+        [VtblIndex(5)]
+        HRESULT Begin_AddRef();
+
+        [VtblIndex(3)]
+        HRESULT Begin_QueryInterface([NativeTypeName("const IID &")] Guid* riid);
+
+        [VtblIndex(3)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        HRESULT Begin_QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid);
+
+        [VtblIndex(7)]
+        HRESULT Begin_Release();
+
+        [VtblIndex(6)]
+        [return: NativeTypeName("ULONG")]
+        uint Finish_AddRef();
+
+        [VtblIndex(4)]
+        HRESULT Finish_QueryInterface(void** ppvObject);
+
+        [VtblIndex(4)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        HRESULT Finish_QueryInterface(Ref2D ppvObject);
+
+        [VtblIndex(8)]
+        [return: NativeTypeName("ULONG")]
+        uint Finish_Release();
+    }
+
+    /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown"]/*'/>
+    [Guid("000E0000-0000-0000-C000-000000000046")]
+    [NativeTypeName("struct AsyncIUnknown : IUnknown")]
+    [NativeInheritance("IUnknown")]
+    public unsafe partial struct Native : Interface, INativeGuid
+    {
+        static Guid* INativeGuid.NativeGuid =>
+            (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_AsyncIUnknown));
+
+        public void** lpVtbl;
+
+        public partial struct Vtbl<TSelf>
+            where TSelf : unmanaged, Interface
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, Guid*, int> Begin_QueryInterface;
+
+            [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, void**, int> Finish_QueryInterface;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, int> Begin_AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, uint> Finish_AddRef;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, int> Begin_Release;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, uint> Finish_Release;
+        }
+
+        /// <inheritdoc cref = "IUnknown.AddRef"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, uint>)(lpVtbl[1]))(
+                (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this)
+            );
+        }
+
+        /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Begin_AddRef"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
+        public HRESULT Begin_AddRef()
+        {
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, int>)(lpVtbl[5]))(
+                (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this)
+            );
+        }
+
+        /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Begin_QueryInterface"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
+        public HRESULT Begin_QueryInterface([NativeTypeName("const IID &")] Guid* riid)
+        {
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, Guid*, int>)(lpVtbl[3]))(
+                (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this),
+                riid
+            );
+        }
+
+        [VtblIndex(3)]
+        [Transformed]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public HRESULT Begin_QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid)
+        {
+            fixed (Guid* __dsl_riid = riid)
+            {
+                return (HRESULT)Begin_QueryInterface(__dsl_riid);
+            }
+        }
+
+        /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Begin_Release"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
+        public HRESULT Begin_Release()
+        {
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, int>)(lpVtbl[7]))(
+                (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this)
+            );
+        }
+
+        /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Finish_AddRef"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
+        [return: NativeTypeName("ULONG")]
+        public uint Finish_AddRef()
+        {
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, uint>)(lpVtbl[6]))(
+                (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this)
+            );
+        }
+
+        /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Finish_QueryInterface"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
+        public HRESULT Finish_QueryInterface(void** ppvObject)
+        {
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, void**, int>)(lpVtbl[4]))(
+                (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this),
+                ppvObject
+            );
+        }
+
+        [VtblIndex(4)]
+        [Transformed]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public HRESULT Finish_QueryInterface(Ref2D ppvObject)
+        {
+            fixed (void** __dsl_ppvObject = ppvObject)
+            {
+                return (HRESULT)Finish_QueryInterface(__dsl_ppvObject);
+            }
+        }
+
+        /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Finish_Release"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
+        [return: NativeTypeName("ULONG")]
+        public uint Finish_Release()
+        {
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, uint>)(lpVtbl[8]))(
+                (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this)
+            );
+        }
+
+        /// <inheritdoc cref = "IUnknown.QueryInterface"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        {
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, Guid*, void**, int>)(lpVtbl[0]))(
+                (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this),
+                riid,
+                ppvObject
+            );
+        }
+
+        [VtblIndex(0)]
+        [Transformed]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public HRESULT QueryInterface(
+            [NativeTypeName("const IID &")] Ref<Guid> riid,
+            Ref2D ppvObject
+        )
+        {
+            fixed (void** __dsl_ppvObject = ppvObject)
+            fixed (Guid* __dsl_riid = riid)
+            {
+                return (HRESULT)QueryInterface(__dsl_riid, __dsl_ppvObject);
+            }
+        }
+
+        [VtblIndex(0)]
+        [Transformed]
+        public HRESULT QueryInterface<TCom>(out TCom ppvObject)
+            where TCom : unmanaged, IComInterface
+        {
+            ppvObject = default;
+            return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
+        }
+
+        /// <inheritdoc cref = "IUnknown.Release"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, uint>)(lpVtbl[2]))(
+                (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this)
+            );
+        }
+    }
+
+    /// <summary>Initializes a new instance of the <see cref = "AsyncIUnknown"/> struct with the specified virtual table pointer.</summary>
+    /// <param name = "vtbl">The pointer to virtual table.</param>
+    public AsyncIUnknown(Ptr3D vtbl) => lpVtbl = (AsyncIUnknown.Native*)vtbl;
+
+    /// <summary>Initializes a new instance of the <see cref = "AsyncIUnknown"/> struct with the specified virtual table pointer.</summary>
+    /// <param name = "vtbl">The pointer to virtual table.</param>
+    public AsyncIUnknown(Ptr<AsyncIUnknown.Native> vtbl) => lpVtbl = vtbl;
+
+    /// <summary>casts <see cref = "AsyncIUnknown.Native"/> to <see cref = "AsyncIUnknown"/>.</summary>
+    /// <param name = "value">The <see cref = "AsyncIUnknown.Native"/> instance to be converted </param>
+    public static implicit operator AsyncIUnknown(AsyncIUnknown.Native* value) =>
+        new AsyncIUnknown((Ptr<Native>)value);
+
+    /// <summary>casts <see cref = "AsyncIUnknown"/> to <see cref = "AsyncIUnknown.Native"/> pointer.</summary>
+    /// <param name = "value">The <see cref = "AsyncIUnknown"/> instance to be converted </param>
+    public static implicit operator AsyncIUnknown.Native*(AsyncIUnknown value) => value.lpVtbl;
+
+    /// <summary>casts <see cref = "Ptr3D"/> to <see cref = "AsyncIUnknown"/>.</summary>
+    /// <param name = "value">The <see cref = "Ptr3D"/> instance to be converted </param>
+    public static explicit operator AsyncIUnknown(Ptr3D value) => new AsyncIUnknown(value);
+
+    /// <summary>casts <see cref = "AsyncIUnknown"/> to <see cref = "Ptr3D"/> .</summary>
+    /// <param name = "value">The <see cref = "AsyncIUnknown"/> instance to be converted </param>
+    public static implicit operator Ptr3D(AsyncIUnknown value) => (Ptr3D)value.lpVtbl;
+
+    /// <summary>casts <see cref = "Ptr{T}"/> to <see cref = "AsyncIUnknown"/>.</summary>
+    /// <param name = "value">The <see cref = "Ptr{T}"/> instance to be converted </param>
+    public static explicit operator AsyncIUnknown(Ptr<AsyncIUnknown.Native> value) =>
+        new AsyncIUnknown(value);
+
+    /// <summary>casts <see cref = "AsyncIUnknown"/> to <see cref = "Ptr{T}"/> .</summary>
+    /// <param name = "value">The <see cref = "AsyncIUnknown"/> instance to be converted </param>
+    public static implicit operator Ptr<AsyncIUnknown.Native>(AsyncIUnknown value) =>
+        (Ptr<AsyncIUnknown.Native>)value.lpVtbl;
+
+    /// <summary>casts void*** to <see cref = "AsyncIUnknown"/>.</summary>
+    /// <param name = "value">The void*** instance to be converted </param>
+    public static explicit operator AsyncIUnknown(void*** value) =>
+        new AsyncIUnknown((Ptr<Native>)value);
+
+    /// <summary>casts <see cref = "AsyncIUnknown"/> to void*** pointer.</summary>
+    /// <param name = "value">The <see cref = "AsyncIUnknown"/> instance to be converted </param>
+    public static implicit operator void***(AsyncIUnknown value) => (void***)value.lpVtbl;
+
+    /// <summary>casts <see cref = "nuint"/> to <see cref = "AsyncIUnknown"/>.</summary>
+    /// <param name = "value">The <see cref = "nuint"/> instance to be converted </param>
+    public static explicit operator AsyncIUnknown(nuint value) =>
+        new AsyncIUnknown((Ptr<Native>)value.ToPointer());
+
+    /// <summary>casts <see cref = "AsyncIUnknown"/> to <see cref = "nuint"/> .</summary>
+    /// <param name = "value">The <see cref = "AsyncIUnknown"/> instance to be converted </param>
+    public static implicit operator nuint(AsyncIUnknown value) => (nuint)value.lpVtbl;
+
+    /// <summary>Downcasts <see cref = "Silk.NET.Core.IUnknown"/> to <see cref = "AsyncIUnknown"/>.</summary>
+    /// <param name = "value">The <see cref = "Silk.NET.Core.IUnknown"/> instance to be converted </param>
+    public static explicit operator AsyncIUnknown(Silk.NET.Core.IUnknown value) =>
+        new AsyncIUnknown((Ptr<AsyncIUnknown.Native>)value.lpVtbl);
+
+    /// <summary>Upcasts <see cref = "AsyncIUnknown"/> to <see cref = "Silk.NET.Core.IUnknown"/>.</summary>
+    /// <param name = "value">The <see cref = "AsyncIUnknown"/> instance to be converted </param>
+    public static implicit operator Silk.NET.Core.IUnknown(AsyncIUnknown value) =>
+        new Silk.NET.Core.IUnknown((Ptr<Silk.NET.Core.IUnknown.Native>)value.lpVtbl);
+
+    /// <inheritdoc cref = "IUnknown.AddRef"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef() => lpVtbl->AddRef();
+
+    /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Begin_AddRef"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Begin_AddRef() => lpVtbl->Begin_AddRef();
+
+    /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Begin_QueryInterface"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Begin_QueryInterface([NativeTypeName("const IID &")] Guid* riid) =>
+        lpVtbl->Begin_QueryInterface(riid);
+
+    [VtblIndex(3)]
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public HRESULT Begin_QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid)
+    {
+        fixed (Guid* __dsl_riid = riid)
+        {
+            return (HRESULT)Begin_QueryInterface(__dsl_riid);
+        }
+    }
+
+    /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Begin_Release"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT Begin_Release() => lpVtbl->Begin_Release();
+
+    public void Dispose() => Release();
+
+    /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Finish_AddRef"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    [return: NativeTypeName("ULONG")]
+    public uint Finish_AddRef() => lpVtbl->Finish_AddRef();
+
+    /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Finish_QueryInterface"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Finish_QueryInterface(void** ppvObject) =>
+        lpVtbl->Finish_QueryInterface(ppvObject);
+
+    [VtblIndex(4)]
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public HRESULT Finish_QueryInterface(Ref2D ppvObject)
+    {
+        fixed (void** __dsl_ppvObject = ppvObject)
+        {
+            return (HRESULT)Finish_QueryInterface(__dsl_ppvObject);
+        }
+    }
+
+    /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Finish_Release"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    [return: NativeTypeName("ULONG")]
+    public uint Finish_Release() => lpVtbl->Finish_Release();
+
+    /// <inheritdoc cref = "IComInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
+    public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
+        where TNativeInterface : unmanaged =>
+        (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
+    /// <inheritdoc cref = "IComInterface.GetAddressOf()"></inheritdoc>
+    public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
+    /// <inheritdoc cref = "IUnknown.QueryInterface"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject) =>
+        lpVtbl->QueryInterface(riid, ppvObject);
+
+    [VtblIndex(0)]
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid, Ref2D ppvObject)
+    {
+        fixed (void** __dsl_ppvObject = ppvObject)
+        fixed (Guid* __dsl_riid = riid)
+        {
+            return (HRESULT)QueryInterface(__dsl_riid, __dsl_ppvObject);
+        }
+    }
+
+    [VtblIndex(0)]
+    [Transformed]
+    public HRESULT QueryInterface<TCom>(out TCom ppvObject)
+        where TCom : unmanaged, IComInterface
+    {
+        ppvObject = default;
+        return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
+    }
+
+    /// <inheritdoc cref = "IUnknown.Release"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release() => lpVtbl->Release();
+}

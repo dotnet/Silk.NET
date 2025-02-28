@@ -17,7 +17,9 @@
       "ClangScraper": {
         "ClangSharpResponseFiles": [
           "eng/submodules/terrafx.interop.windows/generation/**/generate.rsp",
-          "!eng/submodules/terrafx.interop.windows/generation/DirectX/d3dx12/d3dx12_state_object/generate.rsp"
+          "!eng/submodules/terrafx.interop.windows/generation/DirectX/d3dx12/d3dx12_state_object/generate.rsp",
+          "!eng/submodules/terrafx.interop.windows/generation/Windows/um/Unknwnbase/generate.rsp",
+          "!eng/submodules/terrafx.interop.windows/generation/WinRT/winrt/inspectable/generate.rsp",
         ],
         "ManualOverrides": {
           "sources/Windows/um/httpserv/IHttpResponse.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/IHttpResponse.cs",
@@ -46,13 +48,20 @@
         "CacheOutput": false,
         "GeneratedToRemove": [
           "tests/DirectX/d3dx12/d3dx12_core/**.cs",
-          "tests/DirectX/d3dx12/d3dx12_barriers/**.cs"
-        ]
+          "tests/DirectX/d3dx12/d3dx12_barriers/**.cs",
+          "sources/**/HANDLE.gen.cs",
+          "sources/**/helper-types/*Attribute.gen.cs",
+          "sources/**/helper-types/HRESULT.gen.cs",
+          "sources/**/helper-types/BOOL.gen.cs",
+          "sources/**/helper-types/HSTRING.gen.cs",
+        ],
       },
       "ImportManualFiles": {
         "ManualImports": {
           "sources/**.Manual.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/**.Manual.cs",
           "!sources/**/INativeGuid.Manual.cs": "!**/INativeGuid.Manual.cs",
+          "!sources/**/HWND.Manual.cs": "!**/HWND.Manual.cs",
+          "!sources/**/HRESULT.Manual.cs": "!**/HRESULT.Manual.cs",
           "!sources/**/ID2D1*.Manual.cs": "!**/ID2D1*.Manual.cs",
           "!sources/**/d2d1_1helper/DirectX.Manual.cs": "!**/d2d1_1helper/DirectX.Manual.cs",
           "!sources/**/DirectXHelpers/DirectX.Manual.cs": "!**/DirectXHelpers/DirectX.Manual.cs",
@@ -85,24 +94,103 @@
       },
       "TransformInterfaces": {
         "AdditionalInterfaces": [
-          "IDispatchEx"
+          "IDispatchEx",
+          "IUnknown",
+          "IInspectable",
+          "IClassFactory",
+          "AsyncIUknown"
         ]
       },
       "TransformCOM": {
         "BaseTypes": {
-          "IUnknown.Native.Interface": "Silk.NET.Win32.IUnknown.Native.Interface"
+          "IUnknown.Interface": "Silk.NET.Core.IUnknown.Interface"
         },
         "AdditionalCOMTypes": {
-          "IDispatchEx.Native.Interface": {
+          "IDispatchEx.Interface": {
             "Namespace": "Silk.NET.Win32",
-            "Parent": "IDispatch.Native.Interface"
-
+            "Parent": "IDispatch.Interface"
+          },
+          "IInspectable.Interface": {
+            "Namespace": "Silk.NET.Core",
+            "Parent": "IUnknown.Interface"
+          },
+          "IClassFactory.Interface": {
+            "Namespace": "Silk.NET.Core",
+            "Parent": "IUnknown.Interface"
+          },
+          "AsyncIUnknown.Interface": {
+            "Namespace": "Silk.NET.Core",
+            "Parent": "IUnknown.Interface"
+          },
+          "IUnknown.Interface": {
+            "Namespace": "Silk.NET.Core",
+            "Parent": ""
           }
         }
       },
       "DisableWarnings": {
         "WarningCodes": [
           "CS1589", //XML Comments missing (due to missing docs)
+          "CS0419", //Inheritdoc issue (due to bug)
+          "CA1416", //Function available outside of target os (intended)
+          "CS0618" //Obsolete Warnings (intended)
+        ]
+      },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "BOOL": null
+        }
+      }
+    },
+    "Core": {
+      "Solution": "Silk.NET.sln",
+      "SourceProject": "sources/Core/Core/Silk.NET.Core.csproj",
+      "TestProject": "tests/Core/Core/Silk.NET.Core.UnitTests.csproj",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
+      "Mods": [
+        "ClangScraper",
+        "ChangeNamespace",
+        "TransformInterfaces",
+        "TransformCOM",
+        "DisableWarnings",
+        "TransformFunctions"
+      ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/submodules/terrafx.interop.windows/generation/Windows/um/Unknwnbase/generate.rsp",
+          "eng/submodules/terrafx.interop.windows/generation/WinRT/winrt/inspectable/generate.rsp",
+          "eng/submodules/terrafx.interop.windows/generation/Windows/other/helper-types/generate.rsp"
+        ],
+        "InputSourceRoot": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
+        "InputTestRoot": "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
+        "SkipScrapeIf": [
+          "!win"
+        ],
+        "CacheOutput": false,
+        "GeneratedToRemove": [
+          "sources/**/helper-types/*.gen.cs",
+          "!sources/**/helper-types/HRESULT.gen.cs",
+          "!sources/**/helper-types/BOOL.gen.cs",
+          "!sources/**/helper-types/HSTRING.gen.cs",
+          "!sources/**/helper-types/HANDLE.gen.cs"
+        ]
+      },
+      "ChangeNamespace": {
+        "Mappings": {
+          "TerraFX.Interop(.*)": "Silk.NET.Core",
+        }
+      },
+      "TransformInterfaces": {
+      },
+      "TransformCOM": {
+        "BaseTypes": {
+          "IUnknown.Interface": "Silk.NET.Core.IUnknown.Interface"
+        }
+      },
+      "DisableWarnings": {
+        "WarningCodes": [
+          "CS1589", //XML Comments missing (due to missing docs)
+          "CS1591", //Missing Summaries
           "CS0419", //Inheritdoc issue (due to bug)
           "CA1416", //Function available outside of target os (intended)
           "CS0618" //Obsolete Warnings (intended)

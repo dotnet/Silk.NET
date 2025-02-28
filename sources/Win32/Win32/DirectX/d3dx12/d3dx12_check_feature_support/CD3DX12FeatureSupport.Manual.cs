@@ -1083,6 +1083,7 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
     public readonly uint ProtectedResourceSessionTypeCount(uint NodeIndex = 0) =>
         m_dProtectedResourceSessionTypeCount[NodeIndex].Count;
 
+    // PROTECTED_RESOURCE_SESSION_TYPES
     [return: NativeTypeName("std::vector<GUID>")]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]

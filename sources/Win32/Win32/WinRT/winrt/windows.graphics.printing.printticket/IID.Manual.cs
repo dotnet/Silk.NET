@@ -17,10 +17,16 @@ public static unsafe partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = [
-                0x8B, 0x50, 0x45, 0x8C,
-                0xDC, 0xBB,
-                0x56, 0x42,
+            ReadOnlySpan<byte> data =
+            [
+                0x8B,
+                0x50,
+                0x45,
+                0x8C,
+                0xDC,
+                0xBB,
+                0x56,
+                0x42,
                 0xA1,
                 0x42,
                 0x2F,
@@ -28,7 +34,7 @@ public static unsafe partial class IID
                 0x15,
                 0xEC,
                 0xB4,
-                0x16
+                0x16,
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -40,10 +46,16 @@ public static unsafe partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = [
-                0x6A, 0x7D, 0x60, 0xE7,
-                0xF5, 0x59,
-                0x03, 0x41,
+            ReadOnlySpan<byte> data =
+            [
+                0x6A,
+                0x7D,
+                0x60,
+                0xE7,
+                0xF5,
+                0x59,
+                0x03,
+                0x41,
                 0x88,
                 0x58,
                 0xB9,
@@ -51,7 +63,7 @@ public static unsafe partial class IID
                 0x10,
                 0x96,
                 0x3D,
-                0x39
+                0x39,
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -63,10 +75,16 @@ public static unsafe partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = [
-                0x90, 0xCF, 0x86, 0xB0,
-                0x67, 0xB3,
-                0x4B, 0x4E,
+            ReadOnlySpan<byte> data =
+            [
+                0x90,
+                0xCF,
+                0x86,
+                0xB0,
+                0x67,
+                0xB3,
+                0x4B,
+                0x4E,
                 0xBD,
                 0x48,
                 0x9C,
@@ -74,7 +92,7 @@ public static unsafe partial class IID
                 0xA0,
                 0xBB,
                 0x31,
-                0xCE
+                0xCE,
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -86,10 +104,16 @@ public static unsafe partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = [
-                0xE4, 0xB4, 0xBA, 0xD6,
-                0x62, 0x29,
-                0x01, 0x4C,
+            ReadOnlySpan<byte> data =
+            [
+                0xE4,
+                0xB4,
+                0xBA,
+                0xD6,
+                0x62,
+                0x29,
+                0x01,
+                0x4C,
                 0xB7,
                 0xF3,
                 0x9A,
@@ -97,7 +121,7 @@ public static unsafe partial class IID
                 0x94,
                 0xEB,
                 0x83,
-                0x35
+                0x35,
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -109,10 +133,16 @@ public static unsafe partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = [
-                0xBB, 0x35, 0x33, 0x5E,
-                0xA5, 0xA0,
-                0xB1, 0x48,
+            ReadOnlySpan<byte> data =
+            [
+                0xBB,
+                0x35,
+                0x33,
+                0x5E,
+                0xA5,
+                0xA0,
+                0xB1,
+                0x48,
                 0x9D,
                 0x5C,
                 0x07,
@@ -120,7 +150,7 @@ public static unsafe partial class IID
                 0x6D,
                 0xDC,
                 0x59,
-                0x7A
+                0x7A,
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -132,10 +162,16 @@ public static unsafe partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = [
-                0x32, 0x0A, 0xB3, 0x66,
-                0x4D, 0x24,
-                0x22, 0x4E,
+            ReadOnlySpan<byte> data =
+            [
+                0x32,
+                0x0A,
+                0xB3,
+                0x66,
+                0x4D,
+                0x24,
+                0x22,
+                0x4E,
                 0xA9,
                 0x8B,
                 0xBB,
@@ -143,7 +179,7 @@ public static unsafe partial class IID
                 0xF1,
                 0xF2,
                 0xDD,
-                0x91
+                0x91,
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -155,10 +191,16 @@ public static unsafe partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = [
-                0x85, 0x22, 0xD5, 0x41,
-                0xE8, 0x35,
-                0x8E, 0x44,
+            ReadOnlySpan<byte> data =
+            [
+                0x85,
+                0x22,
+                0xD5,
+                0x41,
+                0xE8,
+                0x35,
+                0x8E,
+                0x44,
                 0xA8,
                 0xC5,
                 0xE4,
@@ -166,7 +208,7 @@ public static unsafe partial class IID
                 0xA2,
                 0xCF,
                 0x82,
-                0x6C
+                0x6C,
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -178,10 +220,16 @@ public static unsafe partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = [
-                0x92, 0xF3, 0xD1, 0x0A,
-                0x7B, 0xDA,
-                0x36, 0x4A,
+            ReadOnlySpan<byte> data =
+            [
+                0x92,
+                0xF3,
+                0xD1,
+                0x0A,
+                0x7B,
+                0xDA,
+                0x36,
+                0x4A,
                 0xBF,
                 0x36,
                 0x6A,
@@ -189,7 +237,7 @@ public static unsafe partial class IID
                 0xA6,
                 0x2E,
                 0x20,
-                0x59
+                0x59,
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

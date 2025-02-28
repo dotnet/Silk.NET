@@ -160,7 +160,7 @@ public static unsafe partial class DirectX
         (x << unchecked((int)D3D12_SHADING_RATE_X_AXIS_SHIFT)) | y;
 
     public static HRESULT D3D12_SET_OBJECT_NAME_A<TD3D12Object>(TD3D12Object* pObject, sbyte* pName)
-        where TD3D12Object : unmanaged, ID3D12Object.Native.Interface
+        where TD3D12Object : unmanaged, ID3D12Object.Interface
     {
         return D3D12_SET_OBJECT_NAME_N_A(pObject, (uint)lstrlenA(pName), pName);
     }
@@ -171,7 +171,7 @@ public static unsafe partial class DirectX
         Ref<TD3D12Object> pObject,
         Ref<sbyte> pName
     )
-        where TD3D12Object : unmanaged, ID3D12Object.Native.Interface
+        where TD3D12Object : unmanaged, ID3D12Object.Interface
     {
         fixed (sbyte* __dsl_pName = pName)
         fixed (TD3D12Object* __dsl_pObject = pObject)
@@ -185,7 +185,7 @@ public static unsafe partial class DirectX
         uint Chars,
         sbyte* pName
     )
-        where TD3D12Object : unmanaged, ID3D12Object.Native.Interface
+        where TD3D12Object : unmanaged, ID3D12Object.Interface
     {
         var guid = WKPDID_D3DDebugObjectName;
         return pObject->SetPrivateData(&guid, Chars, pName);
@@ -198,7 +198,7 @@ public static unsafe partial class DirectX
         uint Chars,
         Ref<sbyte> pName
     )
-        where TD3D12Object : unmanaged, ID3D12Object.Native.Interface
+        where TD3D12Object : unmanaged, ID3D12Object.Interface
     {
         fixed (sbyte* __dsl_pName = pName)
         fixed (TD3D12Object* __dsl_pObject = pObject)
@@ -212,7 +212,7 @@ public static unsafe partial class DirectX
         uint Chars,
         char* pName
     )
-        where TD3D12Object : unmanaged, ID3D12Object.Native.Interface
+        where TD3D12Object : unmanaged, ID3D12Object.Interface
     {
         var guid = WKPDID_D3DDebugObjectNameW;
         return pObject->SetPrivateData(&guid, Chars * 2, pName);
@@ -225,7 +225,7 @@ public static unsafe partial class DirectX
         uint Chars,
         Ref<char> pName
     )
-        where TD3D12Object : unmanaged, ID3D12Object.Native.Interface
+        where TD3D12Object : unmanaged, ID3D12Object.Interface
     {
         fixed (char* __dsl_pName = pName)
         fixed (TD3D12Object* __dsl_pObject = pObject)
@@ -235,7 +235,7 @@ public static unsafe partial class DirectX
     }
 
     public static HRESULT D3D12_SET_OBJECT_NAME_W<TD3D12Object>(TD3D12Object* pObject, char* pName)
-        where TD3D12Object : unmanaged, ID3D12Object.Native.Interface
+        where TD3D12Object : unmanaged, ID3D12Object.Interface
     {
         return D3D12_SET_OBJECT_NAME_N_W(pObject, (uint)lstrlenW(pName), pName);
     }
@@ -246,7 +246,7 @@ public static unsafe partial class DirectX
         Ref<TD3D12Object> pObject,
         Ref<char> pName
     )
-        where TD3D12Object : unmanaged, ID3D12Object.Native.Interface
+        where TD3D12Object : unmanaged, ID3D12Object.Interface
     {
         fixed (char* __dsl_pName = pName)
         fixed (TD3D12Object* __dsl_pObject = pObject)

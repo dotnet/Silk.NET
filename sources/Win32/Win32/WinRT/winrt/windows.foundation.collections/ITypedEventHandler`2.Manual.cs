@@ -64,7 +64,7 @@ public unsafe partial struct ITypedEventHandler<TSender, TArgs>
         }
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [Transformed]
     public HRESULT QueryInterface<TCom>([NativeTypeName("void **")] out TCom ppvObject)
         where TCom : unmanaged, IComInterface
     {

@@ -311,7 +311,6 @@ namespace Silk.NET.Core
         /// <param name="ptr"></param>
         public static implicit operator T*(Ptr<T> ptr) => ptr.Native;
 
-
         /// <summary>
         /// Creates a <see cref="nuint"/> from a <see cref="Ptr{T}"/>
         /// </summary>

@@ -10,7 +10,7 @@ namespace Silk.NET.DirectX;
 public static unsafe partial class DirectX
 {
     public static HRESULT D3D_SET_OBJECT_NAME_A<TDXGIObject>(TDXGIObject* pObject, sbyte* pName)
-        where TDXGIObject : unmanaged, IDXGIObject.Native.Interface
+        where TDXGIObject : unmanaged, IDXGIObject.Interface
     {
         return D3D_SET_OBJECT_NAME_N_A(pObject, (uint)lstrlenA(pName), pName);
     }
@@ -21,7 +21,7 @@ public static unsafe partial class DirectX
         Ref<TDXGIObject> pObject,
         Ref<sbyte> pName
     )
-        where TDXGIObject : unmanaged, IDXGIObject.Native.Interface
+        where TDXGIObject : unmanaged, IDXGIObject.Interface
     {
         fixed (sbyte* __dsl_pName = pName)
         fixed (TDXGIObject* __dsl_pObject = pObject)
@@ -35,7 +35,7 @@ public static unsafe partial class DirectX
         uint Chars,
         sbyte* pName
     )
-        where TDXGIObject : unmanaged, IDXGIObject.Native.Interface
+        where TDXGIObject : unmanaged, IDXGIObject.Interface
     {
         var guid = WKPDID_D3DDebugObjectName;
         return pObject->SetPrivateData(&guid, Chars, pName);
@@ -48,7 +48,7 @@ public static unsafe partial class DirectX
         uint Chars,
         Ref<sbyte> pName
     )
-        where TDXGIObject : unmanaged, IDXGIObject.Native.Interface
+        where TDXGIObject : unmanaged, IDXGIObject.Interface
     {
         fixed (sbyte* __dsl_pName = pName)
         fixed (TDXGIObject* __dsl_pObject = pObject)
@@ -62,7 +62,7 @@ public static unsafe partial class DirectX
         uint Chars,
         char* pName
     )
-        where TDXGIObject : unmanaged, IDXGIObject.Native.Interface
+        where TDXGIObject : unmanaged, IDXGIObject.Interface
     {
         var guid = WKPDID_D3DDebugObjectNameW;
         return pObject->SetPrivateData(&guid, Chars * 2, pName);
@@ -75,7 +75,7 @@ public static unsafe partial class DirectX
         uint Chars,
         Ref<char> pName
     )
-        where TDXGIObject : unmanaged, IDXGIObject.Native.Interface
+        where TDXGIObject : unmanaged, IDXGIObject.Interface
     {
         fixed (char* __dsl_pName = pName)
         fixed (TDXGIObject* __dsl_pObject = pObject)
@@ -85,7 +85,7 @@ public static unsafe partial class DirectX
     }
 
     public static HRESULT D3D_SET_OBJECT_NAME_W<TDXGIObject>(TDXGIObject* pObject, char* pName)
-        where TDXGIObject : unmanaged, IDXGIObject.Native.Interface
+        where TDXGIObject : unmanaged, IDXGIObject.Interface
     {
         return D3D_SET_OBJECT_NAME_N_W(pObject, (uint)lstrlenW(pName), pName);
     }
@@ -96,7 +96,7 @@ public static unsafe partial class DirectX
         Ref<TDXGIObject> pObject,
         Ref<char> pName
     )
-        where TDXGIObject : unmanaged, IDXGIObject.Native.Interface
+        where TDXGIObject : unmanaged, IDXGIObject.Interface
     {
         fixed (char* __dsl_pName = pName)
         fixed (TDXGIObject* __dsl_pObject = pObject)

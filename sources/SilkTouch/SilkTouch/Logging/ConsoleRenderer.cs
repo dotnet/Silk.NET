@@ -43,27 +43,28 @@ namespace Silk.NET.SilkTouch.Logging
         {
             _isRunning = false;
             _timer.Dispose();
+
+            ClearProgressBars();
+
+            //Write out one fineal time before restoring output
+            var output = _consoleOutput.GetStringBuilder().ToString();
+            if (!string.IsNullOrWhiteSpace(output))
+            {
+                _originalOut.Write(output);
+                _consoleOutput.GetStringBuilder().Clear();
+            }
+
             Console.SetOut(_originalOut); // Restore original output
         }
 
         private void Render(object? state)
         {
-            if (!_isRunning && _consoleOutput.GetStringBuilder().Length > 0)
+            if (!_isRunning)
                 return;
 
             lock (_lockObject)
             {
-                // Clear the progress bars by moving the cursor and overwriting with spaces
-                if (_progressBarCount > 0)
-                {
-                    int currentTop = Console.CursorTop;
-                    Console.SetCursorPosition(0, currentTop - _progressBarCount);
-                    for (int i = 0; i < _progressBarCount; i++)
-                    {
-                        _originalOut.Write(new string(' ', Console.WindowWidth));
-                    }
-                    Console.SetCursorPosition(0, currentTop - _progressBarCount);
-                }
+                ClearProgressBars();
 
                 var progressDictionary = _progressService.GetAllProgress();
                 _progressBarCount = progressDictionary.Count();
@@ -78,9 +79,28 @@ namespace Silk.NET.SilkTouch.Logging
 
                 foreach (var kvp in progressDictionary)
                 {
-                    string task = string.IsNullOrWhiteSpace(kvp.Value.Item1) ? string.Empty : $" - {kvp.Value.Item1}";
-                    _originalOut.WriteLine($"{kvp.Key}{task}: ({new string('|', (int)(kvp.Value.Item2 * 20))}{new string('-', 20 - (int)(kvp.Value.Item2 * 20))}) ({(kvp.Value.Item2 * 100):F2}%)");
+                    string task = string.IsNullOrWhiteSpace(kvp.Value.Item1)
+                        ? string.Empty
+                        : $" - {kvp.Value.Item1}";
+                    _originalOut.WriteLine(
+                        $"{kvp.Key}{task}: ({new string('|', (int)(kvp.Value.Item2 * 20))}{new string('-', 20 - (int)(kvp.Value.Item2 * 20))}) ({(kvp.Value.Item2 * 100):F2}%)"
+                    );
                 }
+            }
+        }
+
+        private void ClearProgressBars()
+        {
+            // Clear the progress bars by moving the cursor and overwriting with spaces
+            if (_progressBarCount > 0)
+            {
+                int currentTop = Console.CursorTop;
+                Console.SetCursorPosition(0, currentTop - _progressBarCount);
+                for (int i = 0; i < _progressBarCount; i++)
+                {
+                    _originalOut.Write(new string(' ', Console.WindowWidth));
+                }
+                Console.SetCursorPosition(0, currentTop - _progressBarCount);
             }
         }
     }

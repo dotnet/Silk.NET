@@ -16,9 +16,11 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.Core;
 using Silk.NET.SilkTouch.Logging;
+using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Sources;
 using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.Utility.KeyedStringTree;
 
 namespace Silk.NET.SilkTouch.Mods
 {
@@ -33,7 +35,7 @@ namespace Silk.NET.SilkTouch.Mods
         ILogger<TransformCOM> logger,
         IOptionsSnapshot<TransformCOM.Configuration> config,
         IProgressService progressService
-    ) : Mod
+    ) : Mod, IFunctionTransformer
     {
         /// <summary>
         /// The configuration for the <see cref="TransformCOM"/> mod.
@@ -130,6 +132,118 @@ namespace Silk.NET.SilkTouch.Mods
             ctx.SourceProject = proj;
         }
 
+        /// <inheritdoc/>
+        public void Transform(
+            MethodDeclarationSyntax current,
+            ITransformationContext ctx,
+            Action<MethodDeclarationSyntax> next
+        )
+        {
+            //pass along the original method
+            next(current);
+
+            if (current.Modifiers.Any(mod => mod.IsKind(SyntaxKind.PublicKeyword)))
+            {
+                int guidPtrIndex = -1;
+                int voidPtrIndex = -1;
+
+                List<ParameterSyntax> paramList = [];
+                List<ArgumentSyntax> argList = [];
+                AssignmentExpressionSyntax? assignment = null;
+
+                //look for guid and void ptr
+                for (var i = 0; i < current.ParameterList.Parameters.Count; i++)
+                {
+                    var param = current.ParameterList.Parameters[i];
+
+                    if (voidPtrIndex == -1)
+                    {
+                        if (param.Type?.ToString() == "Guid*")
+                        {
+                            guidPtrIndex = i;
+                        }
+                        else if (guidPtrIndex != -1 && param.Type?.ToString() == "void**")
+                        {
+                            voidPtrIndex = i;
+
+                            paramList.RemoveAt(guidPtrIndex);
+                            argList[guidPtrIndex] = Argument(
+                                MemberAccessExpression(
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    IdentifierName("TCom"),
+                                    IdentifierName("NativeGuid")
+                                )
+                            );
+
+                            paramList.Add(
+                                Parameter(
+                                        param.AttributeLists,
+                                        param.Modifiers,
+                                        ParseTypeName("TCom"),
+                                        param.Identifier,
+                                        null
+                                    )
+                                    .AddModifiers(Token(SyntaxKind.OutKeyword))
+                            );
+                            argList.Add(
+                                Argument(
+                                    InvocationExpression(
+                                        MemberAccessExpression(
+                                            SyntaxKind.SimpleMemberAccessExpression,
+                                            IdentifierName(param.Identifier),
+                                            IdentifierName("GetAddressOf")
+                                        )
+                                    )
+                                )
+                            );
+                            assignment = AssignmentExpression(
+                                SyntaxKind.SimpleAssignmentExpression,
+                                IdentifierName(param.Identifier),
+                                LiteralExpression(SyntaxKind.DefaultLiteralExpression)
+                            );
+                            continue;
+                        }
+                    }
+                    argList.Add(Argument(IdentifierName(param.Identifier.Text)));
+                    paramList.Add(param);
+                }
+
+                //if we found an available method we will have an assignment and should include that
+                if (assignment is not null)
+                {
+                    next(
+                        current
+                            .AddTypeParameterListParameters(TypeParameter("TCom"))
+                            .AddConstraintClauses(
+                                TypeParameterConstraintClause(
+                                    IdentifierName("TCom"),
+                                    SeparatedList<TypeParameterConstraintSyntax>(
+                                        [
+                                            TypeConstraint(IdentifierName("unmanaged")),
+                                            TypeConstraint(IdentifierName("IComInterface")),
+                                        ]
+                                    )
+                                )
+                            )
+                            .WithParameterList(ParameterList(SeparatedList(paramList)))
+                            .WithExpressionBody(null)
+                            .WithSemicolonToken(Token(SyntaxKind.None))
+                            .WithBody(
+                                Block(
+                                    ExpressionStatement(assignment),
+                                    ReturnStatement(
+                                        InvocationExpression(
+                                            IdentifierName(current.Identifier),
+                                            ArgumentList(SeparatedList(argList))
+                                        )
+                                    )
+                                )
+                            )
+                    );
+                }
+            }
+        }
+
         class TypeDiscoverer : CSharpSyntaxWalker
         {
             private Dictionary<string, List<(string, bool, string)>> _interfaceParenting =
@@ -143,8 +257,6 @@ namespace Silk.NET.SilkTouch.Mods
 
             private readonly Dictionary<string, string> _baseTypes;
             private ILogger<TransformCOM> _logger;
-
-            private List<string> _Namespace = [];
 
             private List<string> _ObjectNames = [];
 
@@ -166,22 +278,6 @@ namespace Silk.NET.SilkTouch.Mods
             }
 
             public KeyedStringTree[] InheritanceTrees;
-
-            public override void VisitNamespaceDeclaration(NamespaceDeclarationSyntax node)
-            {
-                _Namespace.Add(node.Name.ToString());
-                base.VisitNamespaceDeclaration(node);
-                _Namespace.RemoveAt(_Namespace.Count - 1);
-            }
-
-            public override void VisitFileScopedNamespaceDeclaration(
-                FileScopedNamespaceDeclarationSyntax node
-            )
-            {
-                _Namespace.Add(node.Name.ToString());
-                base.VisitFileScopedNamespaceDeclaration(node);
-                _Namespace.RemoveAt(_Namespace.Count - 1);
-            }
 
             public override void VisitStructDeclaration(StructDeclarationSyntax node)
             {
@@ -218,7 +314,7 @@ namespace Silk.NET.SilkTouch.Mods
                 if (_ObjectNames.Count > 0)
                     typeName = $"{string.Join('.', _ObjectNames)}.{typeName}";
 
-                CheckBases((typeName, true, string.Join('.', _Namespace)), bases);
+                CheckBases((typeName, true, node.NamespaceFromSyntaxNode()), bases);
             }
 
             public override void VisitInterfaceDeclaration(InterfaceDeclarationSyntax node)
@@ -237,7 +333,7 @@ namespace Silk.NET.SilkTouch.Mods
                 if (_ObjectNames.Count > 0)
                     typeName = $"{string.Join('.', _ObjectNames)}.{typeName}";
 
-                CheckBases((typeName, false, string.Join('.', _Namespace)), bases);
+                CheckBases((typeName, false, node.NamespaceFromSyntaxNode()), bases);
             }
 
             public void AddInitialType(string typeName, string _namespace, string? parentName)
@@ -334,11 +430,6 @@ namespace Silk.NET.SilkTouch.Mods
 
                 FoundCOMTypes.Add(typeName, value);
 
-                if (_namespace is null)
-                {
-                    _namespace = string.Join('.', _Namespace);
-                }
-
                 if (
                     !value.Item2?.TryAddNode(parentName, typeName, $"{_namespace}.{typeName}")
                     ?? true
@@ -374,13 +465,11 @@ namespace Silk.NET.SilkTouch.Mods
         {
             bool isInCom = false;
             bool disposeFound = false;
-            List<MethodDeclarationSyntax> addedMethods = [];
 
             public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
             {
                 string name = node.Identifier.ToString();
-                List<MethodDeclarationSyntax> parentMethods = addedMethods;
-                addedMethods = addedMethods.Count > 0 ? [] : addedMethods;
+                bool parentIsCom = isInCom;
 
                 if (
                     ComTypes.TryGetValue(name, out var Value)
@@ -389,20 +478,12 @@ namespace Silk.NET.SilkTouch.Mods
                     && treeNode.Parent is not null
                 )
                 {
-                    bool parentIsCom = isInCom;
                     bool parentDispose = disposeFound;
                     isInCom = true;
                     disposeFound = false;
                     //visit and modify ComType Variables and internal usages first
                     node = (base.VisitStructDeclaration(node) as StructDeclarationSyntax)!;
-                    node = node.RemoveNodes(
-                                node.BaseList?.Types.Where(bas =>
-                                    bas.Type.ToString() == "INativeGuid"
-                                ) ?? [],
-                                SyntaxRemoveOptions.KeepNoTrivia
-                            )!
-                        .AddBaseListTypes(SimpleBaseType(ParseTypeName("IDisposable")))
-                        .AddMembers(addedMethods.ToArray());
+                    node = node.AddBaseListTypes(SimpleBaseType(ParseTypeName("IDisposable")));
 
                     if (!disposeFound)
                     {
@@ -447,6 +528,188 @@ namespace Silk.NET.SilkTouch.Mods
                             );
                     }
 
+                    node = node.AddMembers(
+                        MethodDeclaration(
+                                GenericName("Ptr2D")
+                                    .WithTypeArgumentList(
+                                        TypeArgumentList(
+                                            SingletonSeparatedList(
+                                                ParseTypeName("TNativeInterface")
+                                            )
+                                        )
+                                    ),
+                                "GetAddressOf"
+                            )
+                            .WithModifiers(
+                                TokenList(
+                                    Token(SyntaxKind.PublicKeyword),
+                                    Token(SyntaxKind.ReadOnlyKeyword)
+                                )
+                            )
+                            .WithTypeParameterList(
+                                TypeParameterList(
+                                    SingletonSeparatedList(TypeParameter("TNativeInterface"))
+                                )
+                            )
+                            .WithConstraintClauses(
+                                List(
+                                    [
+                                        TypeParameterConstraintClause(
+                                            IdentifierName("TNativeInterface"),
+                                            SingletonSeparatedList<TypeParameterConstraintSyntax>(
+                                                TypeConstraint(IdentifierName("unmanaged"))
+                                            )
+                                        ),
+                                    ]
+                                )
+                            )
+                            .WithExpressionBody(
+                                ArrowExpressionClause(
+                                    CastExpression(
+                                        PointerType(PointerType(ParseTypeName("TNativeInterface"))),
+                                        InvocationExpression(
+                                            MemberAccessExpression(
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                IdentifierName("Unsafe"),
+                                                IdentifierName("AsPointer")
+                                            ),
+                                            ArgumentList(
+                                                SingletonSeparatedList(
+                                                    Argument(
+                                                        RefExpression(
+                                                            InvocationExpression(
+                                                                MemberAccessExpression(
+                                                                    SyntaxKind.SimpleMemberAccessExpression,
+                                                                    IdentifierName("Unsafe"),
+                                                                    IdentifierName("AsRef")
+                                                                ),
+                                                                ArgumentList(
+                                                                    SingletonSeparatedList(
+                                                                        Argument(ThisExpression())
+                                                                            .WithRefKindKeyword(
+                                                                                Token(
+                                                                                    SyntaxKind.InKeyword
+                                                                                )
+                                                                            )
+                                                                    )
+                                                                )
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                            .WithLeadingTrivia(
+                                Trivia(
+                                    DocumentationCommentTrivia(
+                                        SyntaxKind.SingleLineDocumentationCommentTrivia,
+                                        List(
+                                            new XmlNodeSyntax[]
+                                            {
+                                                XmlText("/// "),
+                                                XmlElement(
+                                                    XmlElementStartTag(XmlName("inheritdoc"))
+                                                        .WithAttributes(
+                                                            SingletonList<XmlAttributeSyntax>(
+                                                                XmlCrefAttribute(
+                                                                    NameMemberCref(
+                                                                        IdentifierName(
+                                                                            "IComInterface.GetAddressOf{TNativeInterface}()"
+                                                                        )
+                                                                    )
+                                                                )
+                                                            )
+                                                        ),
+                                                    XmlElementEndTag(XmlName("inheritdoc"))
+                                                ),
+                                                XmlText("\n\t"),
+                                            }
+                                        )
+                                    )
+                                )
+                            ),
+                        MethodDeclaration(ParseTypeName("Ptr2D"), "GetAddressOf")
+                            .WithModifiers(
+                                TokenList(
+                                    Token(SyntaxKind.PublicKeyword),
+                                    Token(SyntaxKind.ReadOnlyKeyword)
+                                )
+                            )
+                            .WithExpressionBody(
+                                ArrowExpressionClause(
+                                    CastExpression(
+                                        PointerType(PointerType(ParseTypeName("void"))),
+                                        InvocationExpression(
+                                            MemberAccessExpression(
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                IdentifierName("Unsafe"),
+                                                IdentifierName("AsPointer")
+                                            ),
+                                            ArgumentList(
+                                                SingletonSeparatedList(
+                                                    Argument(
+                                                        RefExpression(
+                                                            InvocationExpression(
+                                                                MemberAccessExpression(
+                                                                    SyntaxKind.SimpleMemberAccessExpression,
+                                                                    IdentifierName("Unsafe"),
+                                                                    IdentifierName("AsRef")
+                                                                ),
+                                                                ArgumentList(
+                                                                    SingletonSeparatedList(
+                                                                        Argument(ThisExpression())
+                                                                            .WithRefKindKeyword(
+                                                                                Token(
+                                                                                    SyntaxKind.InKeyword
+                                                                                )
+                                                                            )
+                                                                    )
+                                                                )
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                            .WithLeadingTrivia(
+                                Trivia(
+                                    DocumentationCommentTrivia(
+                                        SyntaxKind.SingleLineDocumentationCommentTrivia,
+                                        List(
+                                            new XmlNodeSyntax[]
+                                            {
+                                                XmlText("/// "),
+                                                XmlElement(
+                                                    XmlElementStartTag(XmlName("inheritdoc"))
+                                                        .WithAttributes(
+                                                            SingletonList<XmlAttributeSyntax>(
+                                                                XmlCrefAttribute(
+                                                                    NameMemberCref(
+                                                                        IdentifierName(
+                                                                            "IComInterface.GetAddressOf()"
+                                                                        )
+                                                                    )
+                                                                )
+                                                            )
+                                                        ),
+                                                    XmlElementEndTag(XmlName("inheritdoc"))
+                                                ),
+                                                XmlText("\n\t"),
+                                            }
+                                        )
+                                    )
+                                )
+                            )
+                    );
+
                     //Correct to the .Interface version which will always be our parent
                     treeNode = treeNode.Parent;
 
@@ -455,23 +718,22 @@ namespace Silk.NET.SilkTouch.Mods
                         node = generateUpcasts(node, name, treeNode.Parent);
                     }
 
-                    isInCom = parentIsCom;
                     disposeFound = parentDispose;
                 }
                 else
                 {
+                    isInCom = false;
                     node = (base.VisitStructDeclaration(node) as StructDeclarationSyntax)!;
-                    node = node.AddMembers(addedMethods.ToArray());
                 }
 
-                addedMethods.Clear();
-                addedMethods = parentMethods;
+                isInCom = parentIsCom;
+
                 return node;
             }
 
             public override SyntaxNode? VisitSimpleBaseType(SimpleBaseTypeSyntax node)
             {
-                return isInCom && node.Type.ToString() == "INativeInterface"
+                return isInCom && node.Type.ToString() == "INativeGuid"
                     ? SimpleBaseType(ParseTypeName("IComInterface"))
                     : base.VisitSimpleBaseType(node);
             }
@@ -539,103 +801,6 @@ namespace Silk.NET.SilkTouch.Mods
                         )
                     );
                 }
-                else if (node.Modifiers.Any(mod => mod.IsKind(SyntaxKind.PublicKeyword)))
-                {
-                    int guidPtrIndex = -1;
-                    int voidPtrIndex = -1;
-
-                    List<ParameterSyntax> paramList = [];
-                    List<ArgumentSyntax> argList = [];
-                    AssignmentExpressionSyntax? assignment = null;
-
-                    for (var i = 0; i < node.ParameterList.Parameters.Count; i++)
-                    {
-                        var param = node.ParameterList.Parameters[i];
-
-                        if (voidPtrIndex == -1)
-                        {
-                            if (param.Type?.ToString() == "Guid*")
-                            {
-                                guidPtrIndex = i;
-                            }
-                            else if (guidPtrIndex != -1 && param.Type?.ToString() == "void**")
-                            {
-                                voidPtrIndex = i;
-
-                                paramList.RemoveAt(guidPtrIndex);
-                                argList[guidPtrIndex] = Argument(
-                                    MemberAccessExpression(
-                                        SyntaxKind.SimpleMemberAccessExpression,
-                                        IdentifierName("TCom"),
-                                        IdentifierName("NativeGuid")
-                                    )
-                                );
-
-                                paramList.Add(
-                                    Parameter(
-                                            param.AttributeLists,
-                                            param.Modifiers,
-                                            ParseTypeName("TCom"),
-                                            param.Identifier,
-                                            null
-                                        )
-                                        .AddModifiers(Token(SyntaxKind.OutKeyword))
-                                );
-                                argList.Add(
-                                    Argument(
-                                        InvocationExpression(
-                                            MemberAccessExpression(
-                                                SyntaxKind.SimpleMemberAccessExpression,
-                                                IdentifierName(param.Identifier),
-                                                IdentifierName("GetAddressOf")
-                                            )
-                                        )
-                                    )
-                                );
-                                assignment = AssignmentExpression(
-                                    SyntaxKind.SimpleAssignmentExpression,
-                                    IdentifierName(param.Identifier),
-                                    LiteralExpression(SyntaxKind.DefaultLiteralExpression)
-                                );
-                                continue;
-                            }
-                        }
-                        argList.Add(Argument(IdentifierName(param.Identifier.Text)));
-                        paramList.Add(param);
-                    }
-
-                    if (assignment is not null)
-                    {
-                        addedMethods.Add(
-                            node.AddTypeParameterListParameters(TypeParameter("TCom"))
-                                .AddConstraintClauses(
-                                    TypeParameterConstraintClause(
-                                        IdentifierName("TCom"),
-                                        SeparatedList<TypeParameterConstraintSyntax>(
-                                            [
-                                                TypeConstraint(IdentifierName("unmanaged")),
-                                                TypeConstraint(IdentifierName("IComInterface")),
-                                            ]
-                                        )
-                                    )
-                                )
-                                .WithParameterList(ParameterList(SeparatedList(paramList)))
-                                .WithExpressionBody(null)
-                                .WithSemicolonToken(Token(SyntaxKind.None))
-                                .WithBody(
-                                    Block(
-                                        ExpressionStatement(assignment),
-                                        ReturnStatement(
-                                            InvocationExpression(
-                                                IdentifierName(node.Identifier),
-                                                ArgumentList(SeparatedList(argList))
-                                            )
-                                        )
-                                    )
-                                )
-                        );
-                    }
-                }
 
                 return base.VisitMethodDeclaration(node);
             }
@@ -660,8 +825,8 @@ namespace Silk.NET.SilkTouch.Mods
             }
 
             private string InterfaceNameToStructName(string interfaceName) =>
-                interfaceName.EndsWith(".Native.Interface")
-                    ? interfaceName.Remove(interfaceName.Length - 17)
+                interfaceName.EndsWith(".Interface")
+                    ? interfaceName.Remove(interfaceName.Length - 10)
                     : interfaceName;
 
             private ConversionOperatorDeclarationSyntax GenerateCastDefinition(
@@ -694,8 +859,7 @@ namespace Silk.NET.SilkTouch.Mods
                                         SingletonSeparatedList(
                                             Argument(
                                                 CastExpression(
-                                                    ParseTypeName($"Ptr<{className}.Native>")
-                                                    ,
+                                                    ParseTypeName($"Ptr<{className}.Native>"),
                                                     IdentifierName("value.lpVtbl")
                                                 )
                                             )

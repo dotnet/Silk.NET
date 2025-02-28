@@ -1,6 +1,8 @@
 using System;
 using System.Buffers;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
@@ -8,16 +10,14 @@ using System.Text.RegularExpressions;
 using Humanizer;
 using Microsoft.Build.Evaluation;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Editing;
 using Microsoft.CodeAnalysis.FindSymbols;
-
-using Project = Microsoft.CodeAnalysis.Project;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
-using System.Collections.Concurrent;
 using Silk.NET.SilkTouch.Utility;
+using Project = Microsoft.CodeAnalysis.Project;
 
 namespace Silk.NET.SilkTouch.Naming;
 
@@ -305,7 +305,8 @@ public static partial class NameUtils
     }
 
     private static Location? IdentifierLocation(SyntaxNode? node) =>
-        node switch {
+        node switch
+        {
             BaseTypeDeclarationSyntax bt => bt.Identifier.GetLocation(),
             DelegateDeclarationSyntax d => d.Identifier.GetLocation(),
             EnumMemberDeclarationSyntax em => em.Identifier.GetLocation(),
@@ -315,7 +316,7 @@ public static partial class NameUtils
             VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
             ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
             DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
-            _ => null
+            _ => null,
         };
 
     /// <summary>
@@ -329,15 +330,16 @@ public static partial class NameUtils
     /// <param name="includeCandidateLocations">should candidate references or implicit references be included</param>
     /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
-    public static async Task RenameAllAsync<T>(
+    public static async Task RenameAllAsync(
         IModContext ctx,
-        ILogger<T> logger,
+        ILogger logger,
         IEnumerable<(ISymbol Symbol, string NewName)> toRename,
         CancellationToken ct = default,
         bool includeDeclarations = true,
         bool includeCandidateLocations = false
     )
     {
+        Stopwatch watch = Stopwatch.StartNew();
         if (ctx.SourceProject is null)
         {
             return;
@@ -348,14 +350,17 @@ public static partial class NameUtils
         await Parallel.ForEachAsync(
             toRename,
             ct,
-            async (tuple, _) => {
+            async (tuple, _) =>
+            {
                 // First, let's add all of the locations of the declaration identifiers.
                 var (symbol, newName) = tuple;
                 if (includeDeclarations)
                 {
                     foreach (var syntaxRef in symbol.DeclaringSyntaxReferences)
                     {
-                        var identifierLocation = IdentifierLocation(await syntaxRef.GetSyntaxAsync(ct));
+                        var identifierLocation = IdentifierLocation(
+                            await syntaxRef.GetSyntaxAsync(ct)
+                        );
                         if (identifierLocation is not null)
                         {
                             locations.TryAdd(identifierLocation, newName);
@@ -375,9 +380,12 @@ public static partial class NameUtils
                 {
                     foreach (var referencedSymbolLocation in referencedSymbol.Locations)
                     {
-                        if (!includeCandidateLocations &&
-                            (referencedSymbolLocation.IsCandidateLocation
-                            || referencedSymbolLocation.IsImplicit)
+                        if (
+                            !includeCandidateLocations
+                            && (
+                                referencedSymbolLocation.IsCandidateLocation
+                                || referencedSymbolLocation.IsImplicit
+                            )
                         )
                         {
                             continue;
@@ -390,6 +398,10 @@ public static partial class NameUtils
         );
 
         logger.LogDebug("{} referencing locations for renames for {}", locations.Count, ctx.JobKey);
+
+        watch.Stop();
+        logger.LogInformation("Time to collect Symbol Reference Locations : {}", watch.Elapsed);
+        watch.Restart();
 
         // Now it's just a simple find and replace.
         var sln = ctx.SourceProject.Solution;
@@ -443,5 +455,8 @@ public static partial class NameUtils
         }
 
         ctx.SourceProject = sln.GetProject(srcProjId);
+
+        watch.Stop();
+        logger.LogInformation("Time to Replace Symbols : {}", watch.Elapsed);
     }
 }

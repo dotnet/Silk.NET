@@ -200,7 +200,7 @@ public class ArrayParameterTransformerTests
             ?? throw new InvalidOperationException("failed to cast original");
         var uut = new ArrayParameterTransformer(null);
         var result = og;
-        uut.Transform(og, false, new TestApiMetadata { Original = og }, (x, isInInterface) => result = x);
+        uut.Transform(og, new TestApiMetadata { Original = og }, (x) => result = x);
         Assert.That(
             result.NormalizeWhitespace().ToFullString().ReplaceLineEndings(),
             Is.EqualTo(expectedMethod.ReplaceLineEndings())
@@ -214,11 +214,10 @@ public class ArrayParameterTransformerTests
     {
         public TestApiMetadata() => Transformers = [this];
 
-        public MethodDeclarationSyntax Transform(
+        public void Transform(
             MethodDeclarationSyntax current,
-            bool isInInterface,
             ITransformationContext ctx,
-            Func<MethodDeclarationSyntax, bool, MethodDeclarationSyntax> next
+            Action<MethodDeclarationSyntax> next
         ) => throw new NotImplementedException();
 
         public string? JobKey { get; set; }

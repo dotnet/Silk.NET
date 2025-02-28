@@ -98,7 +98,7 @@ public unsafe partial struct IAsyncOperationWithProgressCompletedHandler<TResult
         }
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [Transformed]
     public HRESULT QueryInterface<TCom>([NativeTypeName("void **")] out TCom ppvObject)
         where TCom : unmanaged, IComInterface
     {

@@ -48,7 +48,7 @@ public static unsafe partial class WinRT
 
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static HRESULT GetDXGIInterfaceFromObject<TCom>(IInspectable @object, out TCom p)
-        where TCom: unmanaged, IComInterface
+        where TCom : unmanaged, IComInterface
     {
         p = default;
         IDirect3DDxgiInterfaceAccess dxgiInterfaceAccess;

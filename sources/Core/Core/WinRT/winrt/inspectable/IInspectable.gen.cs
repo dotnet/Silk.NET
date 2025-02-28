@@ -1,0 +1,402 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from winrt/inspectable.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using static Silk.NET.Core.IID;
+
+#pragma warning disable CS1589, CS1591, CS0419, CA1416, CS0618
+namespace Silk.NET.Core;
+
+/// <inheritdoc cref = "IDisposable.Dispose"></inheritdoc>
+[Guid("AF86E2E0-B12D-4C6A-9C5A-D7AA65101E90")]
+[NativeTypeName("struct IInspectable : IUnknown")]
+[NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows6.2")]
+public unsafe partial struct IInspectable : IInspectable.Interface, IComInterface, IDisposable
+{
+    public Native* lpVtbl;
+    static Guid* INativeGuid.NativeGuid =>
+        (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInspectable));
+
+    public interface Interface : IUnknown.Interface
+    {
+        [VtblIndex(3)]
+        HRESULT GetIids(
+            [NativeTypeName("ULONG *")] uint* iidCount,
+            [NativeTypeName("IID **")] Guid** iids
+        );
+
+        [VtblIndex(3)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        HRESULT GetIids(
+            [NativeTypeName("ULONG *")] Ref<uint> iidCount,
+            [NativeTypeName("IID **")] Ref2D<Guid> iids
+        );
+
+        [VtblIndex(4)]
+        HRESULT GetRuntimeClassName(HSTRING* className);
+
+        [VtblIndex(4)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        HRESULT GetRuntimeClassName(Ref<HSTRING> className);
+
+        [VtblIndex(5)]
+        HRESULT GetTrustLevel(TrustLevel* trustLevel);
+
+        [VtblIndex(5)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        HRESULT GetTrustLevel(Ref<TrustLevel> trustLevel);
+    }
+
+    /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable"]/*'/>
+    [Guid("AF86E2E0-B12D-4C6A-9C5A-D7AA65101E90")]
+    [NativeTypeName("struct IInspectable : IUnknown")]
+    [NativeInheritance("IUnknown")]
+    [SupportedOSPlatform("windows6.2")]
+    public unsafe partial struct Native : Interface, INativeGuid
+    {
+        static Guid* INativeGuid.NativeGuid =>
+            (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInspectable));
+
+        public void** lpVtbl;
+
+        public partial struct Vtbl<TSelf>
+            where TSelf : unmanaged, Interface
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        }
+
+        /// <inheritdoc cref = "IUnknown.AddRef"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* unmanaged<IInspectable.Native*, uint>)(lpVtbl[1]))(
+                (IInspectable.Native*)Unsafe.AsPointer(ref this)
+            );
+        }
+
+        /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable.GetIids"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
+        public HRESULT GetIids(
+            [NativeTypeName("ULONG *")] uint* iidCount,
+            [NativeTypeName("IID **")] Guid** iids
+        )
+        {
+            return ((delegate* unmanaged<IInspectable.Native*, uint*, Guid**, int>)(lpVtbl[3]))(
+                (IInspectable.Native*)Unsafe.AsPointer(ref this),
+                iidCount,
+                iids
+            );
+        }
+
+        [VtblIndex(3)]
+        [Transformed]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public HRESULT GetIids(
+            [NativeTypeName("ULONG *")] Ref<uint> iidCount,
+            [NativeTypeName("IID **")] Ref2D<Guid> iids
+        )
+        {
+            fixed (Guid** __dsl_iids = iids)
+            fixed (uint* __dsl_iidCount = iidCount)
+            {
+                return (HRESULT)GetIids(__dsl_iidCount, __dsl_iids);
+            }
+        }
+
+        /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable.GetRuntimeClassName"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
+        public HRESULT GetRuntimeClassName(HSTRING* className)
+        {
+            return ((delegate* unmanaged<IInspectable.Native*, HSTRING*, int>)(lpVtbl[4]))(
+                (IInspectable.Native*)Unsafe.AsPointer(ref this),
+                className
+            );
+        }
+
+        [VtblIndex(4)]
+        [Transformed]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public HRESULT GetRuntimeClassName(Ref<HSTRING> className)
+        {
+            fixed (HSTRING* __dsl_className = className)
+            {
+                return (HRESULT)GetRuntimeClassName(__dsl_className);
+            }
+        }
+
+        /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable.GetTrustLevel"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
+        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
+        {
+            return ((delegate* unmanaged<IInspectable.Native*, TrustLevel*, int>)(lpVtbl[5]))(
+                (IInspectable.Native*)Unsafe.AsPointer(ref this),
+                trustLevel
+            );
+        }
+
+        [VtblIndex(5)]
+        [Transformed]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public HRESULT GetTrustLevel(Ref<TrustLevel> trustLevel)
+        {
+            fixed (TrustLevel* __dsl_trustLevel = trustLevel)
+            {
+                return (HRESULT)GetTrustLevel(__dsl_trustLevel);
+            }
+        }
+
+        /// <inheritdoc cref = "IUnknown.QueryInterface"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        {
+            return ((delegate* unmanaged<IInspectable.Native*, Guid*, void**, int>)(lpVtbl[0]))(
+                (IInspectable.Native*)Unsafe.AsPointer(ref this),
+                riid,
+                ppvObject
+            );
+        }
+
+        [VtblIndex(0)]
+        [Transformed]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public HRESULT QueryInterface(
+            [NativeTypeName("const IID &")] Ref<Guid> riid,
+            Ref2D ppvObject
+        )
+        {
+            fixed (void** __dsl_ppvObject = ppvObject)
+            fixed (Guid* __dsl_riid = riid)
+            {
+                return (HRESULT)QueryInterface(__dsl_riid, __dsl_ppvObject);
+            }
+        }
+
+        [VtblIndex(0)]
+        [Transformed]
+        public HRESULT QueryInterface<TCom>(out TCom ppvObject)
+            where TCom : unmanaged, IComInterface
+        {
+            ppvObject = default;
+            return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
+        }
+
+        /// <inheritdoc cref = "IUnknown.Release"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* unmanaged<IInspectable.Native*, uint>)(lpVtbl[2]))(
+                (IInspectable.Native*)Unsafe.AsPointer(ref this)
+            );
+        }
+    }
+
+    /// <summary>Initializes a new instance of the <see cref = "IInspectable"/> struct with the specified virtual table pointer.</summary>
+    /// <param name = "vtbl">The pointer to virtual table.</param>
+    public IInspectable(Ptr3D vtbl) => lpVtbl = (IInspectable.Native*)vtbl;
+
+    /// <summary>Initializes a new instance of the <see cref = "IInspectable"/> struct with the specified virtual table pointer.</summary>
+    /// <param name = "vtbl">The pointer to virtual table.</param>
+    public IInspectable(Ptr<IInspectable.Native> vtbl) => lpVtbl = vtbl;
+
+    /// <summary>casts <see cref = "IInspectable.Native"/> to <see cref = "IInspectable"/>.</summary>
+    /// <param name = "value">The <see cref = "IInspectable.Native"/> instance to be converted </param>
+    public static implicit operator IInspectable(IInspectable.Native* value) =>
+        new IInspectable((Ptr<Native>)value);
+
+    /// <summary>casts <see cref = "IInspectable"/> to <see cref = "IInspectable.Native"/> pointer.</summary>
+    /// <param name = "value">The <see cref = "IInspectable"/> instance to be converted </param>
+    public static implicit operator IInspectable.Native*(IInspectable value) => value.lpVtbl;
+
+    /// <summary>casts <see cref = "Ptr3D"/> to <see cref = "IInspectable"/>.</summary>
+    /// <param name = "value">The <see cref = "Ptr3D"/> instance to be converted </param>
+    public static explicit operator IInspectable(Ptr3D value) => new IInspectable(value);
+
+    /// <summary>casts <see cref = "IInspectable"/> to <see cref = "Ptr3D"/> .</summary>
+    /// <param name = "value">The <see cref = "IInspectable"/> instance to be converted </param>
+    public static implicit operator Ptr3D(IInspectable value) => (Ptr3D)value.lpVtbl;
+
+    /// <summary>casts <see cref = "Ptr{T}"/> to <see cref = "IInspectable"/>.</summary>
+    /// <param name = "value">The <see cref = "Ptr{T}"/> instance to be converted </param>
+    public static explicit operator IInspectable(Ptr<IInspectable.Native> value) =>
+        new IInspectable(value);
+
+    /// <summary>casts <see cref = "IInspectable"/> to <see cref = "Ptr{T}"/> .</summary>
+    /// <param name = "value">The <see cref = "IInspectable"/> instance to be converted </param>
+    public static implicit operator Ptr<IInspectable.Native>(IInspectable value) =>
+        (Ptr<IInspectable.Native>)value.lpVtbl;
+
+    /// <summary>casts void*** to <see cref = "IInspectable"/>.</summary>
+    /// <param name = "value">The void*** instance to be converted </param>
+    public static explicit operator IInspectable(void*** value) =>
+        new IInspectable((Ptr<Native>)value);
+
+    /// <summary>casts <see cref = "IInspectable"/> to void*** pointer.</summary>
+    /// <param name = "value">The <see cref = "IInspectable"/> instance to be converted </param>
+    public static implicit operator void***(IInspectable value) => (void***)value.lpVtbl;
+
+    /// <summary>casts <see cref = "nuint"/> to <see cref = "IInspectable"/>.</summary>
+    /// <param name = "value">The <see cref = "nuint"/> instance to be converted </param>
+    public static explicit operator IInspectable(nuint value) =>
+        new IInspectable((Ptr<Native>)value.ToPointer());
+
+    /// <summary>casts <see cref = "IInspectable"/> to <see cref = "nuint"/> .</summary>
+    /// <param name = "value">The <see cref = "IInspectable"/> instance to be converted </param>
+    public static implicit operator nuint(IInspectable value) => (nuint)value.lpVtbl;
+
+    /// <summary>Downcasts <see cref = "Silk.NET.Core.IUnknown"/> to <see cref = "IInspectable"/>.</summary>
+    /// <param name = "value">The <see cref = "Silk.NET.Core.IUnknown"/> instance to be converted </param>
+    public static explicit operator IInspectable(Silk.NET.Core.IUnknown value) =>
+        new IInspectable((Ptr<IInspectable.Native>)value.lpVtbl);
+
+    /// <summary>Upcasts <see cref = "IInspectable"/> to <see cref = "Silk.NET.Core.IUnknown"/>.</summary>
+    /// <param name = "value">The <see cref = "IInspectable"/> instance to be converted </param>
+    public static implicit operator Silk.NET.Core.IUnknown(IInspectable value) =>
+        new Silk.NET.Core.IUnknown((Ptr<Silk.NET.Core.IUnknown.Native>)value.lpVtbl);
+
+    /// <inheritdoc cref = "IUnknown.AddRef"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef() => lpVtbl->AddRef();
+
+    public void Dispose() => Release();
+
+    /// <inheritdoc cref = "IComInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
+    public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
+        where TNativeInterface : unmanaged =>
+        (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
+    /// <inheritdoc cref = "IComInterface.GetAddressOf()"></inheritdoc>
+    public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
+    /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable.GetIids"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetIids(
+        [NativeTypeName("ULONG *")] uint* iidCount,
+        [NativeTypeName("IID **")] Guid** iids
+    ) => lpVtbl->GetIids(iidCount, iids);
+
+    [VtblIndex(3)]
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public HRESULT GetIids(
+        [NativeTypeName("ULONG *")] Ref<uint> iidCount,
+        [NativeTypeName("IID **")] Ref2D<Guid> iids
+    )
+    {
+        fixed (Guid** __dsl_iids = iids)
+        fixed (uint* __dsl_iidCount = iidCount)
+        {
+            return (HRESULT)GetIids(__dsl_iidCount, __dsl_iids);
+        }
+    }
+
+    /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable.GetRuntimeClassName"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetRuntimeClassName(HSTRING* className) =>
+        lpVtbl->GetRuntimeClassName(className);
+
+    [VtblIndex(4)]
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public HRESULT GetRuntimeClassName(Ref<HSTRING> className)
+    {
+        fixed (HSTRING* __dsl_className = className)
+        {
+            return (HRESULT)GetRuntimeClassName(__dsl_className);
+        }
+    }
+
+    /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable.GetTrustLevel"]/*'/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetTrustLevel(TrustLevel* trustLevel) => lpVtbl->GetTrustLevel(trustLevel);
+
+    [VtblIndex(5)]
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public HRESULT GetTrustLevel(Ref<TrustLevel> trustLevel)
+    {
+        fixed (TrustLevel* __dsl_trustLevel = trustLevel)
+        {
+            return (HRESULT)GetTrustLevel(__dsl_trustLevel);
+        }
+    }
+
+    /// <inheritdoc cref = "IUnknown.QueryInterface"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject) =>
+        lpVtbl->QueryInterface(riid, ppvObject);
+
+    [VtblIndex(0)]
+    [Transformed]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid, Ref2D ppvObject)
+    {
+        fixed (void** __dsl_ppvObject = ppvObject)
+        fixed (Guid* __dsl_riid = riid)
+        {
+            return (HRESULT)QueryInterface(__dsl_riid, __dsl_ppvObject);
+        }
+    }
+
+    [VtblIndex(0)]
+    [Transformed]
+    public HRESULT QueryInterface<TCom>(out TCom ppvObject)
+        where TCom : unmanaged, IComInterface
+    {
+        ppvObject = default;
+        return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
+    }
+
+    /// <inheritdoc cref = "IUnknown.Release"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release() => lpVtbl->Release();
+}
