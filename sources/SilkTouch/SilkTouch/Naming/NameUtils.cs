@@ -339,7 +339,6 @@ public static partial class NameUtils
         bool includeCandidateLocations = false
     )
     {
-        Stopwatch watch = Stopwatch.StartNew();
         if (ctx.SourceProject is null)
         {
             return;
@@ -399,10 +398,6 @@ public static partial class NameUtils
 
         logger.LogDebug("{} referencing locations for renames for {}", locations.Count, ctx.JobKey);
 
-        watch.Stop();
-        logger.LogInformation("Time to collect Symbol Reference Locations : {}", watch.Elapsed);
-        watch.Restart();
-
         // Now it's just a simple find and replace.
         var sln = ctx.SourceProject.Solution;
         var srcProjId = ctx.SourceProject.Id;
@@ -455,8 +450,5 @@ public static partial class NameUtils
         }
 
         ctx.SourceProject = sln.GetProject(srcProjId);
-
-        watch.Stop();
-        logger.LogInformation("Time to Replace Symbols : {}", watch.Elapsed);
     }
 }
