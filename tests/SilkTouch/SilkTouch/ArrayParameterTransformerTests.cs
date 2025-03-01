@@ -6,7 +6,9 @@ using System.Diagnostics.CodeAnalysis;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.Options;
 using NUnit.Framework;
+using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
 
@@ -15,6 +17,13 @@ namespace Silk.NET.SilkTouch.UnitTests;
 [TestFixture]
 public class ArrayParameterTransformerTests
 {
+    struct Options : IOptionsSnapshot<TransformFunctions.Configuration>
+    {
+        public required TransformFunctions.Configuration Value { get; init; }
+
+        public TransformFunctions.Configuration Get(string? name) => Value;
+    }
+
     [
         Test,
         TestCase(
@@ -198,7 +207,7 @@ public class ArrayParameterTransformerTests
         var og =
             SyntaxFactory.ParseMemberDeclaration(originalMethod) as MethodDeclarationSyntax
             ?? throw new InvalidOperationException("failed to cast original");
-        var uut = new ArrayParameterTransformer(null);
+        var uut = new ArrayParameterTransformer(new Options() { Value = new() { IntReturnsMaybeBool = false, BenefitOfTheDoubtArrayTransformation = true } });
         var result = og;
         uut.Transform(og, new TestApiMetadata { Original = og }, (x) => result = x);
         Assert.That(
