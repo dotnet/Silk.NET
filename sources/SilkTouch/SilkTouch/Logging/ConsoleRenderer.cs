@@ -16,7 +16,7 @@ namespace Silk.NET.SilkTouch.Logging
     {
         private readonly IProgressService _progressService;
         private readonly TextWriter _originalOut;
-        private readonly StringWriter _consoleOutput;
+        private readonly ConcurrentStringWriter _consoleOutput;
         private readonly Timer _timer;
         private bool _isRunning = true;
         private int _progressBarCount;
@@ -30,7 +30,7 @@ namespace Silk.NET.SilkTouch.Logging
         {
             _progressService = progressService;
             _originalOut = Console.Out;
-            _consoleOutput = new StringWriter();
+            _consoleOutput = new ConcurrentStringWriter();
             Console.SetOut(_consoleOutput); // Redirect console output
 
             _timer = new Timer(Render, null, 0, 500);
@@ -47,12 +47,8 @@ namespace Silk.NET.SilkTouch.Logging
             ClearProgressBars();
 
             //Write out one fineal time before restoring output
-            var output = _consoleOutput.GetStringBuilder().ToString();
-            if (!string.IsNullOrWhiteSpace(output))
-            {
-                _originalOut.Write(output);
-                _consoleOutput.GetStringBuilder().Clear();
-            }
+            var output = _consoleOutput.FlushText();
+            _originalOut.Write(output);
 
             Console.SetOut(_originalOut); // Restore original output
         }
@@ -70,12 +66,8 @@ namespace Silk.NET.SilkTouch.Logging
                 _progressBarCount = progressDictionary.Count();
 
                 // Write all console output captured since the last render
-                var output = _consoleOutput.GetStringBuilder().ToString();
-                if (!string.IsNullOrWhiteSpace(output))
-                {
-                    _originalOut.Write(output);
-                    _consoleOutput.GetStringBuilder().Clear();
-                }
+                var output = _consoleOutput.FlushText();
+                _originalOut.Write(output);
 
                 foreach (var kvp in progressDictionary)
                 {
