@@ -22,11 +22,6 @@
   <!-- Public API Tracking -->
   <PropertyGroup>
     <SilkTrackPublicAPI>true</SilkTrackPublicAPI>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' != ''">
