@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -5,11 +7,26 @@ namespace Silk.NET.Input;
 /// type specified by <typeparamref name="T"/> using the most memory-efficient mechanism available.
 /// </summary>
 /// <typeparam name="T">The <c>Silk.NET.Input</c> type to store.</typeparam>
-public struct InputReadOnlyList<T> : IReadOnlyList<T>
+public readonly struct InputReadOnlyList<T> : IReadOnlyList<T>
 {
+    internal object Data { get; }
+
+    internal InputReadOnlyList(object data) => Data = data;
+
     /// <summary>
     /// Creates an <see cref="InputReadOnlyList{T}"/> from a <see cref="IReadOnlyList{T}"/>.
     /// </summary>
     /// <param name="other">The list to copy.</param>
-    public InputReadOnlyList(IReadOnlyList<T> other);
+    public InputReadOnlyList(IReadOnlyList<T> other) => this = InputMarshal.Clone(other).List;
+
+    /// <inheritdoc />
+    public IEnumerator<T> GetEnumerator() => InputMarshal.EnumerateList(this);
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+    /// <inheritdoc />
+    public int Count => InputMarshal.GetListCount(this);
+
+    /// <inheritdoc />
+    public T this[int index] => InputMarshal.ElementAt(this, index);
 }

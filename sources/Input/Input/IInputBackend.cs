@@ -8,7 +8,7 @@ namespace Silk.NET.Input;
 /// In addition, certain backends may have (unavoidable) restrictions on what thread <see cref="Update"/> can be called
 /// on - the user is responsible for respecting these threading rules as well.
 /// </remarks>
-public interface IInputBackend
+public interface IInputBackend : IDisposable
 {
     /// <summary>
     /// Gets a rough human-readable description of the input backend. Its value is not intrinsically meaningful.

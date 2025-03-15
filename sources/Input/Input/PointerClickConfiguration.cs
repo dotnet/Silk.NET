@@ -10,4 +10,10 @@ namespace Silk.NET.Input;
 /// <param name="DoubleClickRange">
 /// The maximum distance in pixels between two consecutive clicks to count as a double click.
 /// </param>
-public record struct PointerClickConfiguration(int DoubleClickTime, float DoubleClickRange);
+public record struct PointerClickConfiguration(int DoubleClickTime, float DoubleClickRange)
+{
+    /// <summary>
+    /// Gets the default configuration.
+    /// </summary>
+    public static PointerClickConfiguration Default => new(500, 4);
+}

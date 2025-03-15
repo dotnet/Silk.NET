@@ -12,4 +12,10 @@ namespace Silk.NET.Input;
 /// <param name="Button">The new state of the button being pressed or depressed.</param>
 /// <param name="Previous">The previous state of the button.</param>
 /// <typeparam name="T">The button type e.g. <see cref="JoystickButton"/>, <see cref="PointerButton"/>, etc.</typeparam>
-public readonly record struct ButtonChangedEvent<T>(IButtonDevice<T> Device, long Timestamp, Button<T> Button, Button<T> Previous) where T : struct, Enum;
+public readonly record struct ButtonChangedEvent<T>(
+    IButtonDevice<T> Device,
+    long Timestamp,
+    Button<T> Button,
+    Button<T> Previous
+)
+    where T : unmanaged, Enum;

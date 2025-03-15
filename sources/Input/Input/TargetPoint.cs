@@ -10,8 +10,10 @@ namespace Silk.NET.Input;
 /// <param name="Id">
 /// An integral identifier for the point. This point must be the only point for the device currently pointing at a
 /// target with this identifier at any given time. If this point ceases to point at the target, then the identifier
-/// becomes free for another device point. This means that this identifier can just be an index, but may be globally
-/// unique depending on the backend's capabilities.
+/// becomes free for another device point. This means that this identifier can just be a counter, but may be globally
+/// unique depending on the backend's capabilities. If an index is used, points with greater indices should not be
+/// "moved" into this point's place should it no longer point at the target. This is to allow applications to track
+/// distinct points.
 /// </param>
 /// <param name="Flags">Flags describing the state of the point.</param>
 /// <param name="Position">The absolute position on the target at which the pointer is pointing.</param>
@@ -40,11 +42,13 @@ public readonly record struct TargetPoint(
     Ray3D<float> Pointer,
     float Pressure,
     IPointerTarget? Target
-) {
+)
+{
     /// <summary>
     /// Gets a value indicating whether this <see cref="TargetPoint"/> is a valid instance of a point on a
     /// <see cref="Target"/> that the user is pointing at using their pointer device.
     /// </summary>
     [MemberNotNullWhen(true, nameof(Target))]
-    public bool IsValid => (Flags & TargetPointFlags.PointingAtTarget) != TargetPointFlags.NotPointingAtTarget;
+    public bool IsValid =>
+        (Flags & TargetPointFlags.PointingAtTarget) != TargetPointFlags.NotPointingAtTarget;
 }

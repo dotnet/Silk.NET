@@ -12,7 +12,8 @@ namespace Silk.NET.Input;
 /// <typeparam name="T">
 /// The button type (e.g. <see cref="JoystickButton"/>, <see cref="PointerButton"/>, etc).
 /// </typeparam>
-public readonly record struct Button<T>(T Name, bool IsDown, float Pressure) where T : struct, Enum
+public readonly record struct Button<T>(T Name, bool IsDown, float Pressure)
+    where T : unmanaged, Enum
 {
     /// <summary>
     /// Collapses this <see cref="Button{T}"/> struct into just its <see cref="IsDown"/> value.

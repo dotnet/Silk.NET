@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -8,17 +10,34 @@ namespace Silk.NET.Input;
 /// <typeparam name="T">
 /// The button type (e.g. <see cref="JoystickButton"/>, <see cref="PointerButton"/>, etc).
 /// </typeparam>
-public struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>> where T : struct, Enum
+public struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
+    where T : unmanaged, Enum
 {
+    private InputReadOnlyList<Button<T>> _list;
+
+    internal ButtonReadOnlyList(InputReadOnlyList<Button<T>> list) => _list = list;
+
     /// <summary>
     /// Creates an <see cref="ButtonReadOnlyList{T}"/> from a <see cref="IReadOnlyList{T}"/>.
     /// </summary>
     /// <param name="other">The list to copy.</param>
-    public ButtonReadOnlyList(IReadOnlyList<Button<T>> other);
+    public ButtonReadOnlyList(IReadOnlyList<Button<T>> other) =>
+        InputMarshal.Clone(other).List.AsButtonList();
 
     /// <summary>
     /// Gets the state for the button with the given name.
     /// </summary>
     /// <param name="name">The button name.</param>
-    public Button<T> this[T name] { get; }
+    public Button<T> this[T name] => InputMarshal.GetButtonState(_list, name);
+
+    /// <inheritdoc />
+    public IEnumerator<Button<T>> GetEnumerator() => _list.GetEnumerator();
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+    /// <inheritdoc />
+    public int Count => _list.Count;
+
+    /// <inheritdoc />
+    public Button<T> this[int index] => _list[index];
 }

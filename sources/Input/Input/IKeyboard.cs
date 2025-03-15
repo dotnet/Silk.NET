@@ -47,5 +47,5 @@ public interface IKeyboard : IButtonDevice<KeyName>
     /// <see cref="BeginInput"/> when you'd like to capture text input (e.g. in a text box), followed by
     /// <see cref="EndInput"/> when you have completed collecting such input.
     /// </summary>
-    void EndInput();
+    string? EndInput();
 }

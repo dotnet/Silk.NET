@@ -3,8 +3,11 @@ namespace Silk.NET.Input;
 /// <summary>
 /// Represents a collection of <see cref="IJoystick"/>s from which input events can be received.
 /// </summary>
-public partial class Joysticks : IReadOnlyList<IJoystick>
+public sealed class Joysticks : InputContextDeviceList<IJoystick>, IJoystickInputHandler
 {
+    internal Joysticks(InputContext ctx)
+        : base(ctx) { }
+
     /// <summary>
     /// Raised when state pertaining to a pushable button on the joystick changes (e.g. button up, button down).
     /// </summary>
@@ -19,4 +22,20 @@ public partial class Joysticks : IReadOnlyList<IJoystick>
     /// Raised when a joystick hat moves.
     /// </summary>
     public event Action<JoystickHatMoveEvent>? HatMove;
+
+    internal void HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event) =>
+        ButtonChanged?.Invoke(@event);
+
+    void IButtonInputHandler<JoystickButton>.HandleButtonChanged(
+        ButtonChangedEvent<JoystickButton> @event
+    ) => HandleButtonChanged(@event);
+
+    internal void HandleAxisMove(JoystickAxisMoveEvent @event) => AxisMove?.Invoke(@event);
+
+    void IJoystickInputHandler.HandleAxisMove(JoystickAxisMoveEvent @event) =>
+        HandleAxisMove(@event);
+
+    internal void HandleHatMove(JoystickHatMoveEvent @event) => HatMove?.Invoke(@event);
+
+    void IJoystickInputHandler.HandleHatMove(JoystickHatMoveEvent @event) => HandleHatMove(@event);
 }

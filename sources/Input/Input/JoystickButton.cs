@@ -103,5 +103,7 @@ public enum JoystickButton
     /// <summary>
     /// The leftmost button of the D-Pad button cluster.
     /// </summary>
-    DPadLeft
+    DPadLeft,
+
+    // BEFORE ADDING A NEW ITEM MAKE SURE YOU CHANGE LastJoystickButton IN InputMarshal
 }

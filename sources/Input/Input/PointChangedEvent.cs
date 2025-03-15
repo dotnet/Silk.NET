@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Silk.NET.Input;
 
@@ -17,4 +18,9 @@ namespace Silk.NET.Input;
 /// The new state for this <see cref="TargetPoint"/>. If the point is no longer valid (e.g. a finger is no longer
 /// touching a touch screen), this shall be <c>null</c>.
 /// </param>
-public readonly record struct PointChangedEvent(IPointerDevice Pointer, long Timestamp, TargetPoint? OldPoint, TargetPoint? NewPoint);
+public readonly record struct PointChangedEvent(
+    IPointerDevice Pointer,
+    long Timestamp,
+    TargetPoint? OldPoint,
+    TargetPoint? NewPoint
+);

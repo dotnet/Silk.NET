@@ -6,6 +6,11 @@ namespace Silk.NET.Input;
 public enum PointerButton
 {
     /// <summary>
+    /// An unrecognised button.
+    /// </summary>
+    Unknown,
+
+    /// <summary>
     /// The primary button e.g. left click.
     /// </summary>
     Primary,
@@ -24,6 +29,7 @@ public enum PointerButton
     /// The middle button i.e. clicking the scroll wheel down. This acts as the third button.
     /// </summary>
     MiddleButton = Button3,
+
     /// <summary>
     /// The fourth button.
     /// </summary>
@@ -173,4 +179,6 @@ public enum PointerButton
     /// The thirty-second button.
     /// </summary>
     Button32,
+
+    // BEFORE ADDING MORE BUTTONS, ENSURE YOU CHANGE InputMarshal TO ACCOUNT FOR THE NEW MAX
 }

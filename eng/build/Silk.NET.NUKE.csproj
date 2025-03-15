@@ -18,4 +18,10 @@
     <PackageReference Include="Octokit" Version="13.0.1" />
     <PackageReference Include="System.Linq.Async" Version="6.0.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\tests\Input\Input\Silk.NET.Input.UnitTests.csproj">
+      <Link>Directory.Build\tests\Input\Input\Silk.NET.Input.UnitTests.csproj</Link>
+    </Content>
+  </ItemGroup>
 </Project>
