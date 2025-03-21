@@ -83,9 +83,8 @@ Silk.NET caters for anything you could need in swift development of multimedia, 
 <h1 align="center">The team</h1>
 
 We currently have the following maintainers:
-- [Kai Jellinghaus](https://github.com/HurricanKai) [<img src="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico" alt="Follow Kai on Twitter" width="16" />](https://twitter.com/intent/follow?screen_name=KJellinghaus)
-- [Thomas Mizrahi](https://github.com/ThomasMiz)
-- [Beyley Thomas](https://github.com/Beyley)
+- [Andrew Davis](https://github.com/curin) (3.0)
+- [Beyley Thomas](https://github.com/Beyley) (2.X)
 
 In addition, the Silk.NET working group help drive larger user-facing changes providing key consultation from the perspective of dedicated users and professionals.
 
