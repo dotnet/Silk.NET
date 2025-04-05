@@ -2,6 +2,10 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 // ReSharper disable CheckNamespace
+
+using Silk.NET.Input.SDL3;
+using Silk.NET.SDL;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -11,6 +15,14 @@ public static partial class InputWindowExtensions
 {
     public static partial IInputBackend CreateInputBackend(this INativeWindow window)
     {
-        throw new NotImplementedException();
+        if (!window.TryGetPlatformInfo(out SdlPlatformInfo info))
+        {
+            throw new ArgumentException(
+                "When using the Silk.NET.Input reference implementation, a native window compatible with that "
+                    + "implementation (such as those sourced from Silk.NET.Windowing) must be used."
+            );
+        }
+
+        return new SdlInputBackend(window, info);
     }
 }
