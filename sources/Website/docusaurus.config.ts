@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type { PluginOptions } from '@docusaurus/plugin-content-docs';
 
 import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-directives";
 import { visit } from 'unist-util-visit';
@@ -16,13 +17,37 @@ function isAbsolute(url) {
 }
 
 const rewriteSourceLinks = (options) => {
+    let versions = {};
+    let repoRoot = path.resolve("../../");
+    let docsRoot = path.join(repoRoot, "docs");
+    let versionedRoot = path.resolve("versioned_docs");
+    if (existsSync("silkversions.json")) {
+        versions = JSON.parse(readFileSync("silkversions.json", "utf8"))["versions"];
+    }
+    let versionNames = Object.keys(versions);
     const transformer = async (ast, vfile) => {
         let fileDirPath = path.resolve(path.dirname(vfile.path));
-        let repoRoot = path.resolve("../../");
-        let docsRoot = path.join(repoRoot, "docs");
-        let silk2Src = path.join(repoRoot, "src");
         visit(ast, 'link', (node) => {
             if (isAbsolute(node.url)) {
+                return;
+            }
+            let versionRoot = null;
+            let current = 0;
+            for (var versionName in versionNames) {
+                let candidate = path.join(versionedRoot, `version-${versionName}`);
+                if (!path.relative(candidate, path.resolve(vfile.path)).startsWith("..")) {
+                    versionRoot = candidate;
+                    break;
+                }
+                current++;
+                if (current == versionNames.length) {
+                    if (!path.relative(docsRoot, path.resolve(vfile.path)).startsWith("..")) {
+                        versionRoot = docsRoot;
+                        break;
+                    }
+                }
+            }
+            if (versionRoot == null) {
                 return;
             }
             let url = node.url;
@@ -31,16 +56,20 @@ const rewriteSourceLinks = (options) => {
                 url = url.substring(0, hashtag);
             }
             let resolvedUrlPath = path.join(fileDirPath, node.url);
-            if (!path.relative(docsRoot, resolvedUrlPath).startsWith("..")) {
+            if (!path.relative(versionRoot, resolvedUrlPath).startsWith("..") ||
+                existsSync(resolvedUrlPath))
+            {
                 return;
             }
             // console.log(resolvedUrlPath + " - " + node.url + " - " + fileDirPath + " - " + path.relative(docsRoot, resolvedUrlPath));
+            let silk2Src = path.join(versionRoot, "..", "src");
             let silk2Rel = path.relative(silk2Src, resolvedUrlPath);
             if (!silk2Rel.startsWith("..")) {
                 // console.log(`replaced ${silk2Rel}`);
                 node.url = `https://github.com/dotnet/Silk.NET/blob/main/src/${silk2Rel}`
             }
-            let silk3Rel = path.relative(repoRoot, resolvedUrlPath);
+            let silk3Root = path.join(versionRoot, "..");
+            let silk3Rel = path.relative(silk3Root, resolvedUrlPath);
             if (!silk3Rel.startsWith("..")) {
                 // console.log(`replaced ${silk3Rel}`);
                 node.url = `https://github.com/dotnet/Silk.NET/blob/develop/3.0/${silk3Rel}`
@@ -51,11 +80,31 @@ const rewriteSourceLinks = (options) => {
 };
 
 // Used in the NUKE workflow
-function addSilkVersionsJson(dict: object): object {
+function addSilkVersionsJson(dict: PluginOptions): PluginOptions {
     if (existsSync("silkversions.json")) {
-        for (const [key, value] of Object.entries(JSON.parse(readFileSync("silkversions.json", "utf8")))) {
-            dict[key] = value;
+        let silkVersions = JSON.parse(readFileSync("silkversions.json", "utf8"));
+        for (const [key, value] of Object.entries(silkVersions["versions"])) {
+            dict.versions[key] = value;
         }
+        if (typeof silkVersions["lastVersion"] === 'string') {
+            dict.lastVersion = silkVersions["lastVersion"];
+        }
+        dict.editUrl = x => {
+            if (typeof x.version !== "string") {
+                return undefined;
+            }
+            if (x.version == dict["lastVersion"]) {
+                // TODO this won't work if we do versioning outside of /docs (e.g. /api)
+                if (x.version == "v2") {
+                    return `https://github.com/dotnet/Silk.NET/edit/main/documentation/${x.docPath}`;
+                } else {
+                    return `https://github.com/dotnet/Silk.NET/edit/main/docs/${x.docPath}`;
+                }
+            } else if (x.version == silkVersions["nextVersion"]) {
+                return `https://github.com/dotnet/Silk.NET/edit/develop/${dict.versions[x.version].path.substring(1)}.0/docs/${x.docPath}`;
+            }
+            return undefined;
+        };
     }
     return dict;
 }
@@ -90,7 +139,7 @@ const config: Config = {
         locales: ['en'],
     },
 
-    staticDirectories: ["static", "../../eng/submodules/silk.net-2.x/documentation/images"],
+    staticDirectories: ["static"],
 
     plugins: [
         tailwindPlugin
@@ -100,33 +149,19 @@ const config: Config = {
         [
             'classic',
             {
-                docs: {
+                docs: addSilkVersionsJson({
                     sidebarPath: '../../docs/sidebars.ts',
                     path: "../../docs",
                     routeBasePath: "docs",
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    // editUrl:
-                    //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-                    editUrl: x => {
-                        // TODO basically change everything here once 3.0 is releasing
-                        if (x.version == "v2") {
-                            // TODO once v2 is no longer maintained, remove this.
-                            return `https://github.com/dotnet/Silk.NET/edit/main/documentation/${x.docPath}`
-                        }
-                        // TODO handle more than 3.0
-                        return `https://github.com/dotnet/Silk.NET/edit/develop/${x.version[1]}.0/docs/${x.docPath}`;
-                    },
                     exclude: ["README.md"],
                     beforeDefaultRemarkPlugins: [
                         remarkGithubAdmonitionsToDirectives,
                         rewriteSourceLinks
                     ],
-                    // TODO uncomment when v3 is released
+                    // These properties are populated by addSilkVersionsJson
                     // lastVersion: "current",
-                    // @ts-ignore
-                    versions: addSilkVersionsJson({}),
-                },
+                    versions: {},
+                }),
                 blog: {
                     showReadingTime: true,
                     feedOptions: {
@@ -137,6 +172,8 @@ const config: Config = {
                     onInlineTags: 'throw',
                     onInlineAuthors: 'throw',
                     onUntruncatedBlogPosts: 'throw',
+                    blogSidebarTitle: 'All posts',
+                    blogSidebarCount: 'ALL',
                 },
                 theme: {
                     customCss: './src/css/custom.css',
