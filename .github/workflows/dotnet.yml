@@ -67,7 +67,7 @@ jobs:
                       os: windows-latest
                       name: win-x64
                     - rid: linux-x64
-                      os: ubuntu-20.04
+                      os: ubuntu-22.04
                       name: linux-x64
                     - rid: osx-arm64
                       os: macos-latest

@@ -174,9 +174,11 @@ partial class Build
     {
         if (!SkipContributorsScrape)
         {
+            var authors = await GetAuthorsContents().ToListAsync();
+            Log.Information("Result: {}", string.Join(' ', authors));
             await File.WriteAllLinesAsync(
                 RootDirectory / "sources" / "Website" / "blog" / "authors.yml",
-                await GetAuthorsContents().ToListAsync()
+                authors
             );
         }
 
