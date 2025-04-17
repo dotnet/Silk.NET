@@ -139,7 +139,7 @@ const config: Config = {
         locales: ['en'],
     },
 
-    staticDirectories: ["static", "../../eng/submodules/silk.net-2.x/documentation/images"],
+    staticDirectories: ["static"],
 
     plugins: [
         tailwindPlugin

@@ -175,7 +175,7 @@ partial class Build
         if (!SkipContributorsScrape)
         {
             var authors = await GetAuthorsContents().ToListAsync();
-            Log.Information("Result: {}", string.Join(' ', authors));
+            Log.Information("Result: {0}", string.Join(' ', authors));
             await File.WriteAllLinesAsync(
                 RootDirectory / "sources" / "Website" / "blog" / "authors.yml",
                 authors
@@ -217,6 +217,18 @@ partial class Build
                     RootDirectory / "sources" / "Website" / "static",
                     ExistsPolicy.MergeAndOverwriteIfNewer
                 );
+
+                // HACK: 2.X made an incorrect interpretation on the above, so we fix it up here in lieu of it changing
+                // there (if ever). Didn't feel like breaking things here.
+                if (version.StaticPath.Name == "images")
+                {
+                    (
+                        version.StaticPath / "opengl" / "chapter1" / "final-result-t2.png"
+                    ).CopyToDirectory(
+                        RootDirectory / "sources" / "Website" / "static" / "opengl" / "chapter1",
+                        ExistsPolicy.MergeAndOverwriteIfNewer
+                    );
+                }
 
                 if (i != versions.Length - 1)
                 {
