@@ -3,7 +3,7 @@
   "isRoot": true,
   "tools": {
     "csharpier": {
-      "version": "0.29.2",
+      "version": "1.0.0",
       "commands": [
         "dotnet-csharpier"
       ]
