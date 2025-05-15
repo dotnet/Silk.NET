@@ -120,7 +120,7 @@ public static unsafe class SilkMarshal
                 var utf16 = new byte[(str.Length + 1) * 2];
                 MemoryMarshal
                     .CreateReadOnlySpan(ref Unsafe.AsRef(in str[0]), str.Length + 1)
-                    .CopyTo(MemoryMarshal.Cast<byte, char>(utf16));
+                    .CopyTo(MemoryMarshal.Cast<byte, char>(utf16.AsSpan()));
                 return utf16;
             }
             case 4:
@@ -170,7 +170,7 @@ public static unsafe class SilkMarshal
     public static byte[]? StringArrayToArray(ReadOnlySpan<string?> strs, nint charSize = 1)
     {
         var ret = new byte[strs.Length * sizeof(nint)];
-        var span = MemoryMarshal.Cast<byte, nint>(ret);
+        var span = MemoryMarshal.Cast<byte, nint>(ret.AsSpan());
         for (var i = 0; i < strs.Length; i++)
         {
             var native = StringToArray(strs[i], charSize);
@@ -220,7 +220,7 @@ public static unsafe class SilkMarshal
     public static ref byte StringArrayToNative(ReadOnlySpan<string?[]> strs, nint charSize = 1)
     {
         var ret = new byte[strs.Length * sizeof(nint)];
-        var span = MemoryMarshal.Cast<byte, nint>(ret);
+        var span = MemoryMarshal.Cast<byte, nint>(ret.AsSpan());
         for (var i = 0; i < strs.Length; i++)
         {
             ref var native = ref StringArrayToNative(strs[i], charSize);
@@ -241,7 +241,7 @@ public static unsafe class SilkMarshal
     public static ref byte StringArrayToNative(ReadOnlySpan<string[][]> strs, nint charSize = 1)
     {
         var ret = new byte[strs.Length * sizeof(nint)];
-        var span = MemoryMarshal.Cast<byte, nint>(ret);
+        var span = MemoryMarshal.Cast<byte, nint>(ret.AsSpan());
         for (var i = 0; i < strs.Length; i++)
         {
             ref var native = ref StringArrayToNative(strs[i], charSize);
