@@ -127,6 +127,11 @@ public static partial class NameUtils
         bool naive = false
     )
     {
+        if (names.Count == 0)
+        {
+            return "";
+        }
+
         var pos = 0;
         var foundPrefix = "";
         var minLen = names.Min(x => x.Length);
