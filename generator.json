@@ -167,6 +167,8 @@
         "AddApiProfiles",
         "BakeSourceSets",
         "MixKhronosData",
+        "TransformFunctions",
+        "PrettifyNames",
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -196,6 +198,10 @@
       "MixKhronosData": {
         "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
         "Namespace": "Silk.NET.Vulkan"
+      },
+      "PrettifyNames": {
+        "LongAcronymThreshold": 4,
+        "GlobalPrefixHint": "vk"
       },
     }
   }
