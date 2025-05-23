@@ -622,7 +622,6 @@ public partial class MixKhronosData(
                         _listSeparators,
                         StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries
                     ) ?? [];
-            Debug.Assert((depends.Length > 0) == explicitDependencies);
 
             // Evaluate all of the elements.
             for (var i = 0; i < allApis.Length; i++)
