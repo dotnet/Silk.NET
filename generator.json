@@ -156,6 +156,11 @@
           "GLboolean": null
         }
       }
+    },
+    "Vulkan": {
+      "SourceProject": "sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj",
+      "Solution": "Silk.NET.sln",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
     }
   }
 }
