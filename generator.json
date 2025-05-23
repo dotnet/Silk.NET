@@ -161,6 +161,42 @@
       "SourceProject": "sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj",
       "Solution": "Silk.NET.sln",
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
+      "Mods": [
+        "AddIncludes",
+        "ClangScraper",
+        "AddApiProfiles",
+        "BakeSourceSets",
+        "MixKhronosData",
+      ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/vulkan/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/Vulkan",
+        "InputTestRoot": "tests/Vulkan"
+      },
+      "AddApiProfiles": {
+        "Profiles": [
+          {
+            "Profile": "vulkan",
+            "SourceSubdirectory": "vulkan"
+          },
+          {
+            "Profile": "vulkansc",
+            "SourceSubdirectory": "vulkansc",
+          }
+        ]
+      },
+      "BakeSourceSets": {
+        "SourceSets": {
+          "vulkan": "vulkan",
+          "vulkansc": "vulkan",
+        }
+      },
+      "MixKhronosData": {
+        "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
+        "Namespace": "Silk.NET.Vulkan"
+      },
     }
   }
 }
