@@ -86,6 +86,11 @@ public static partial class NameUtils
         bool naive = false
     )
     {
+        if (names.Count == 0)
+        {
+            return "";
+        }
+
         if (allowFullMatch && names.Count == 1)
         {
             return names.First();
