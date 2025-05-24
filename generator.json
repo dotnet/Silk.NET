@@ -169,6 +169,7 @@
         "MixKhronosData",
         "TransformFunctions",
         "PrettifyNames",
+        "AddVTables",
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -202,6 +203,14 @@
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
         "GlobalPrefixHint": "vk"
+      },
+      "AddVTables": {
+        "VTables": [
+          {
+            "Kind": "DllImport",
+            "IsDefault": true
+          }
+        ]
       },
     }
   }
