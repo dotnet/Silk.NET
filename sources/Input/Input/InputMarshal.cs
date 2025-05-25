@@ -346,6 +346,15 @@ public static class InputMarshal
         where T : unmanaged, Enum => new(list);
 
     /// <summary>
+    /// Creates a <see cref="InputReadOnlyList{T}"/> wrapping the given <see cref="ButtonReadOnlyList{T}"/>.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <typeparam name="T">The button name type.</typeparam>
+    /// <returns>The button list.</returns>
+    public static InputReadOnlyList<Button<T>> AsInputList<T>(this ButtonReadOnlyList<T> list)
+        where T : unmanaged, Enum => new(list);
+
+    /// <summary>
     /// Creates a new <see cref="InputReadOnlyList{T}"/> for the given <typeparamref name="T" />, optionally with the
     /// given <paramref name="capacity"/> where <see cref="GetUnderlyingList{T}"/> is applicable for this
     /// <typeparamref name="T"/>.
@@ -541,6 +550,47 @@ public static class InputMarshal
         || typeof(T) == typeof(Button<JoystickButton>)
             ? null
             : Unsafe.As<List<T>>(list.List.Data);
+
+    /// <summary>
+    /// Unsafely creates a <see cref="ListOwner{T}"/> for the given list. Note that you should really only do this if
+    /// you are actually the owner of the list and are for some reason not storing the <see cref="ListOwner{T}"/>, using
+    /// this API to gain mutable access to an input list is almost always breaking assumptions throughout the input API.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <typeparam name="T">The type of the elements in the list.</typeparam>
+    /// <returns>The list owner.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static ListOwner<T> AsOwned<T>(InputReadOnlyList<T> list) => new(list);
+
+    /// <summary>
+    /// Given an owned mutable <see cref="GamepadState"/>, swaps out the value of <see cref="GamepadState.Triggers"/>.
+    /// Note that this should not be used unexpectedly, and if there are any doubts about ownership or usage then create
+    /// a new instance of <see cref="GamepadState"/> for safe mutation.
+    /// </summary>
+    /// <param name="state">The <see cref="GamepadState"/>.</param>
+    /// <param name="triggers">The new triggers.</param>
+    public static void SetTriggers(GamepadState state, DualReadOnlyList<float> triggers) =>
+        state.Triggers = triggers;
+
+    /// <summary>
+    /// Given an owned mutable <see cref="GamepadState"/>, swaps out the value of
+    /// <see cref="GamepadState.Thumbsticks"/>. Note that this should not be used unexpectedly, and if there are any
+    /// doubts about ownership or usage then create a new instance of <see cref="GamepadState"/> for safe mutation.
+    /// </summary>
+    /// <param name="state">The <see cref="GamepadState"/>.</param>
+    /// <param name="thumbsticks">The new thumbsticks.</param>
+    public static void SetThumbsticks(GamepadState state, DualReadOnlyList<Vector2> thumbsticks) =>
+        state.Thumbsticks = thumbsticks;
+
+    /// <summary>
+    /// Given an owned mutable <see cref="PointerState"/>, swaps out the value of
+    /// <see cref="PointerState.GripPressure"/>. Note that this should not be used unexpectedly, and if there are any
+    /// doubts about ownership or usage then create a new instance of <see cref="PointerState"/> for safe mutation.
+    /// </summary>
+    /// <param name="state">The <see cref="PointerState"/>.</param>
+    /// <param name="gripPressure">The new grip pressure.</param>
+    public static void SetGripPressure(PointerState state, float gripPressure) =>
+        state.GripPressure = gripPressure;
 
     // These are APIs defined on InputReadOnlyList or ButtonReadOnlyList but are implemented here to keep the
     // implementation of the backing list in one file, the hope being that this decreases the likelihood of bugs.

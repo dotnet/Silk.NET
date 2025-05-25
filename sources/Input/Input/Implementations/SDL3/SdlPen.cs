@@ -3,15 +3,19 @@
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlPen : IPointerDevice
+internal class SdlPen : SdlBoundedPointerDevice
 {
-    public bool Equals(IInputDevice? other) => throw new NotImplementedException();
+    private uint _penId;
 
-    public IntPtr Id => throw new NotImplementedException();
+    public SdlPen(SdlInputBackend backend, uint pen)
+        : base(backend)
+    {
+        _penId = pen;
+    }
 
-    public string Name => throw new NotImplementedException();
+    public override IntPtr Id => HashCode.Combine(Backend.Id, _penId);
 
-    public PointerState State => throw new NotImplementedException();
+    public override string Name => throw new NotImplementedException();
 
-    public IReadOnlyList<IPointerTarget> Targets => throw new NotImplementedException();
+    public override PointerState State => throw new NotImplementedException();
 }

@@ -5,13 +5,14 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlKeyboard : IKeyboard
+internal class SdlKeyboard : SdlDevice, IKeyboard
 {
-    public bool Equals(IInputDevice? other) => throw new NotImplementedException();
+    public SdlKeyboard(SdlInputBackend backend)
+        : base(backend) { }
 
-    public IntPtr Id => throw new NotImplementedException();
+    public override nint Id => throw new NotImplementedException();
 
-    public string Name => throw new NotImplementedException();
+    public override string Name => throw new NotImplementedException();
 
     public KeyboardState State => throw new NotImplementedException();
 

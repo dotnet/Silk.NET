@@ -17,7 +17,8 @@ public static partial class InputWindowExtensions
     /// <summary>
     /// Creates an instance of the "reference implementation" of <see cref="IInputBackend"/> for the given
     /// <see cref="INativeWindow"/>, provided that this was also sourced from the "reference implementation" of the
-    /// windowing API.
+    /// windowing API. The returned backend will capture input for the <see cref="INativeWindow"/> provided and all
+    /// descendants of that <see cref="INativeWindow"/> i.e. spawned children do not need their own backend.
     /// </summary>
     /// <remarks>
     /// Regarding the threading rules documented on <see cref="IInputBackend"/>, <see cref="IInputBackend.Update"/>
@@ -33,7 +34,9 @@ public static partial class InputWindowExtensions
     /// <summary>
     /// Creates an <see cref="InputContext"/> that uses the "reference implementation" of <see cref="IInputBackend"/>
     /// for the given <see cref="INativeWindow"/> as its only backend, provided that the <see cref="INativeWindow"/> was
-    /// also sourced from the "reference implementation" of the windowing API.
+    /// also sourced from the "reference implementation" of the windowing API. The returned backend will capture input
+    /// for the <see cref="INativeWindow"/> provided and all descendants of that <see cref="INativeWindow"/> i.e.
+    /// spawned children do not need their own backend.
     /// </summary>
     /// <remarks>
     /// Regarding the threading rules documented on <see cref="InputContext"/>, <see cref="InputContext.Update"/>

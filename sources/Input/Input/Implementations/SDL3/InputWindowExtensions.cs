@@ -23,6 +23,6 @@ public static partial class InputWindowExtensions
             );
         }
 
-        return new SdlInputBackend(window, info);
+        return new SdlInputBackend(info);
     }
 }

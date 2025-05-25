@@ -16,7 +16,7 @@ public readonly ref struct CustomCursor
     public int Height { get; init; }
 
     /// <summary>
-    /// The row-major 32-bit RGBA pixel data (i.e. 8 bytes for each colour component).
+    /// The row-major 32-bit RGBA pixel data (i.e. 8 bits for each colour component).
     /// </summary>
     public ReadOnlySpan<int> Data { get; init; } // Rgba32
 }

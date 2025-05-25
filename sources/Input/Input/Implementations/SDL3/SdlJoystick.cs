@@ -3,13 +3,14 @@
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlJoystick : IJoystick
+internal class SdlJoystick : SdlDevice, IJoystick
 {
-    public bool Equals(IInputDevice? other) => throw new NotImplementedException();
+    public SdlJoystick(SdlInputBackend backend, uint joystick)
+        : base(backend) { }
 
-    public IntPtr Id => throw new NotImplementedException();
+    public override IntPtr Id => throw new NotImplementedException();
 
-    public string Name => throw new NotImplementedException();
+    public override string Name => throw new NotImplementedException();
 
     public JoystickState State => throw new NotImplementedException();
 }

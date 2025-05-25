@@ -1,34 +1,75 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 using System.Runtime.InteropServices;
+using Silk.NET.Maths;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlInputBackend : IInputBackend
+internal class SdlInputBackend : IInputBackend, ICursorConfiguration
 {
-    public unsafe SdlInputBackend(INativeWindow window, SdlPlatformInfo info)
+    private static readonly double _ticksPerNanosecond = Stopwatch.Frequency / 10e9d;
+
+    private bool _pumped;
+    private long _epoch;
+    private List<IInputDevice> _devices = [];
+    private List<QueuedEvent> _eventQueue = [];
+    private WindowHandle _focusedWindow;
+    private ISdl _sdl;
+
+    public unsafe SdlInputBackend(SdlPlatformInfo info)
     {
+        ArgumentNullException.ThrowIfNull(info.Sdl);
+        ArgumentNullException.ThrowIfNull(info.Window.Handle);
         var ptr = new EventFilter(OnEvent);
-        Info = info;
-        Sdl.AddEventWatch(ptr, nullptr);
+        _sdl = info.Sdl;
+        _focusedWindow = info.Window;
+        // TODO overload resolution priority?
+        if (!Sdl.AddEventWatch(ptr, (Ref)nullptr))
+        {
+            Sdl.ThrowError();
+        }
+
         Id = (nint)ptr.Handle;
-        Window = window;
+
+        // The epoch deals in nanoseconds, so we take multiple measurements for the most accurate timestamps.
+        const byte epochMeasurements = 3;
+        var epoch = 0L;
+        for (byte i = 0; i < epochMeasurements; i++)
+        {
+            // We know the ticks per nanosecond, so to get the epoch timestamp we multiply the TicksNS by the ticks per
+            // nanosecond to get the number of ticks relative to SDL's epoch, and then subtract that from the timestamp
+            // now to get the timestamp of SDL's epoch. From there, when we receive an event we can just report the
+            // timestamp as _epoch + (timestamp * _ticksPerNanosecond).
+            var nowTimestamp = Stopwatch.GetTimestamp();
+            var nowTicks = Sdl.GetTicksNS();
+            epoch += unchecked(nowTimestamp - (long)(nowTicks * _ticksPerNanosecond));
+        }
+
+        _epoch = epoch / epochMeasurements;
+
         // ===============================================================================================
         // === If we ever need to share common state across window-specific "backends", use the below: ===
         // ===============================================================================================
+        // // Get the root surface - our windowing backend assumes there is only one root surface. If this is not the
+        // // case then this is undefined behaviour.
         // var rootSurface = info.Window;
         // var parent = rootSurface;
         // while ((parent = Sdl.GetWindowParent(rootSurface)) != nullptr)
         // {
         //     rootSurface = parent;
         // }
+        // // Get the surface properties.
         // var props = Sdl.GetWindowProperties(rootSurface);
         // if (props == 0)
         // {
         //     Sdl.ThrowError();
         // }
+        // // Get or create the root object.
         // Ref<sbyte> pname = "org.dotnetfoundation.silkdotnet.inputroot";
         // var root = (nint)Sdl.GetPointerProperty(props, pname, nullptr);
         // if (root != 0)
@@ -58,42 +99,143 @@ internal class SdlInputBackend : IInputBackend
         //     newHandle.Free();
         //     Sdl.ThrowError();
         // }
+        // // Register ourselves with the root.
+        // Root.Backends.Add(this, null);
+        // Id = (nint)Root.EventFilter.Handle + Root.Backends.Count() - 1;
     }
 
     // [UnmanagedCallersOnly]
-    // private static unsafe void CleanupRoot(void* _, void* value) =>
-    //    GCHandle.FromIntPtr((nint)value).Free();
-
-    public INativeWindow Window { get; }
-    public SdlPlatformInfo Info { get; }
-    public ISdl Sdl => Info.Sdl ?? SDL.Sdl.Instance;
-
+    // private static unsafe void CleanupRoot(void* _, void* value)
+    // {
+    //     var gch = GCHandle.FromIntPtr((nint)value);
+    //     (gch.Target as SdlBackendRoot)?.Dispose();
+    //     gch.Free();
+    // }
     // public SdlBackendRoot Root { get; }
+
+    // NOTE: Be careful where these are used!
+    public SdlPlatformInfo Info { get; }
+
+    [field: MaybeNull]
+    public SdlBoundedPointerTarget BoundedPointerTarget =>
+        field ??= new SdlBoundedPointerTarget(this);
+
+    [field: MaybeNull]
+    public SdlUnboundedPointerTarget UnboundedPointerTarget =>
+        field ??= new SdlUnboundedPointerTarget(this);
+
+    public ISdl Sdl => Info.Sdl ?? SDL.Sdl.Instance;
 
     public string Name =>
         $"Silk.NET.Input Reference Implementation using SDL3 ({Sdl.GetPlatform().ReadToString()})";
 
     public nint Id { get; }
 
-    public IReadOnlyList<IInputDevice> Devices => throw new NotImplementedException();
+    public IReadOnlyList<IInputDevice> Devices => _devices;
 
-    public void Update(IInputHandler? handler = null) => throw new NotImplementedException();
+    // TODO we can't query support for these modes, but should we try-it-and-see to be accurate?
+    public CursorModes SupportedModes =>
+        CursorModes.Normal | CursorModes.Confined | CursorModes.Unbounded;
 
-    public void Dispose()
+    // TODO if you're using one input context for all windows, there is no way to specify a window for grabbed cursor mode
+
+    public CursorModes Mode
     {
-        ReleaseUnmanagedResources();
-        GC.SuppressFinalize(this);
+        get => throw new NotImplementedException();
+        set => throw new NotImplementedException();
     }
+
+    public CursorStyles SupportedStyles => throw new NotImplementedException();
+
+    public CursorStyles Style
+    {
+        get => throw new NotImplementedException();
+        set => throw new NotImplementedException();
+    }
+
+    public CustomCursor Image
+    {
+        get => throw new NotImplementedException();
+        set => throw new NotImplementedException();
+    }
+
+    // This is complicated, as the input proposal mandates that nothing happens until Update is called (so the events
+    // can be received on the given actor) but to also track logical events that happen between calls (i.e. from a
+    // timestamp perspective). Compound this with the fact that the user might do something silly like make multiple
+    // input backends (which is feasible for multiple windows I guess), or not be running anything other than input
+    // (having obviously created a window beforehand but not actually polling events I guess)
+    public void Update(IInputHandler? handler = null)
+    {
+        if (!_pumped)
+        {
+            Sdl.PumpEvents();
+        }
+
+        _pumped = false;
+        throw new NotImplementedException();
+    }
+
+    private enum QueuedEventType : byte
+    {
+        /// <summary>
+        /// The mouse has exited the window and the shared point should be marked inactive until proven otherwise by
+        /// further mouse motion (indicating it has entered another window).
+        /// </summary>
+        /// <remarks>
+        /// We do not track the mouse enter events as this would cause us to fire twice for a mouse entering a window:
+        /// once for the entering, and once for new position.
+        /// </remarks>
+        MouseExitedWindow,
+
+        /// <summary>
+        /// The display bounds have been changed, meaning that <see cref="SdlBoundedPointerTarget"/>'s
+        /// <see cref="IPointerTarget.Bounds"/> will have changed.
+        /// </summary>
+        BoundedPointerTargetUpdate,
+    }
+
+    private readonly record struct QueuedEvent(
+        QueuedEventType Type,
+        ulong Timestamp,
+        Vector2 Vector0 = default,
+        Vector2 Vector1 = default
+    );
+
+    private ulong GetTimestamp(ref readonly Event @event) =>
+        unchecked((ulong)(_epoch + (@event.Common.Timestamp * _ticksPerNanosecond)));
 
     private unsafe byte OnEvent(void* arg0, Event* arg1)
     {
+        _pumped = true;
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         switch ((EventType)arg1->Common.Type)
         {
-            case EventType.WindowMouseEnter:
+            case EventType.DisplayOrientation:
+            case EventType.DisplayAdded:
+            case EventType.DisplayRemoved:
+            case EventType.DisplayMoved:
+            case EventType.DisplayDesktopModeChanged:
+            case EventType.DisplayCurrentModeChanged:
+            case EventType.DisplayContentScaleChanged:
+            {
+                var bounds = SdlBoundedPointerTarget.CalculateBounds(Sdl);
+                _eventQueue.Add(
+                    new QueuedEvent(
+                        QueuedEventType.BoundedPointerTargetUpdate,
+                        GetTimestamp(ref *arg1),
+                        bounds.Min.ToSystem(),
+                        bounds.Max.ToSystem()
+                    )
+                );
                 break;
+            }
             case EventType.WindowMouseLeave:
+            {
+                _eventQueue.Add(
+                    new QueuedEvent(QueuedEventType.MouseExitedWindow, GetTimestamp(ref *arg1))
+                );
                 break;
+            }
             case EventType.KeyDown:
                 break;
             case EventType.KeyUp:
@@ -197,60 +339,6 @@ internal class SdlInputBackend : IInputBackend
         return 1;
     }
 
-    private bool IsSupported(EventType type) =>
-        type
-            is EventType.WindowMouseEnter
-                or EventType.WindowMouseLeave
-                or EventType.KeyDown
-                or EventType.KeyUp
-                or EventType.TextEditing
-                or EventType.TextInput
-                or EventType.KeymapChanged
-                or EventType.KeyboardAdded
-                or EventType.KeyboardRemoved
-                or EventType.TextEditingCandidates
-                or EventType.MouseMotion
-                or EventType.MouseButtonDown
-                or EventType.MouseButtonUp
-                or EventType.MouseWheel
-                or EventType.MouseAdded
-                or EventType.MouseRemoved
-                or EventType.JoystickAxisMotion
-                or EventType.JoystickBallMotion
-                or EventType.JoystickHatMotion
-                or EventType.JoystickButtonDown
-                or EventType.JoystickButtonUp
-                or EventType.JoystickAdded
-                or EventType.JoystickRemoved
-                or EventType.JoystickBatteryUpdated
-                or EventType.JoystickUpdateComplete
-                or EventType.GamepadAxisMotion
-                or EventType.GamepadButtonDown
-                or EventType.GamepadButtonUp
-                or EventType.GamepadAdded
-                or EventType.GamepadRemoved
-                or EventType.GamepadRemapped
-                or EventType.GamepadTouchpadDown
-                or EventType.GamepadTouchpadMotion
-                or EventType.GamepadTouchpadUp
-                or EventType.GamepadSensorUpdate
-                or EventType.GamepadUpdateComplete
-                or EventType.GamepadSteamHandleUpdated
-                or EventType.FingerDown
-                or EventType.FingerUp
-                or EventType.FingerMotion
-                or EventType.FingerCanceled
-                or EventType.ClipboardUpdate
-                or EventType.SensorUpdate
-                or EventType.PenProximityIn
-                or EventType.PenProximityOut
-                or EventType.PenDown
-                or EventType.PenUp
-                or EventType.PenButtonDown
-                or EventType.PenButtonUp
-                or EventType.PenMotion
-                or EventType.PenAxis;
-
     private unsafe void ReleaseUnmanagedResources()
     {
         Sdl.RemoveEventWatch(
@@ -258,6 +346,12 @@ internal class SdlInputBackend : IInputBackend
             nullptr
         );
         SilkMarshal.Free((Ptr)Id);
+    }
+
+    public void Dispose()
+    {
+        ReleaseUnmanagedResources();
+        GC.SuppressFinalize(this);
     }
 
     ~SdlInputBackend() => ReleaseUnmanagedResources();

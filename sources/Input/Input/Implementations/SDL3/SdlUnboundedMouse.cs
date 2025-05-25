@@ -5,17 +5,18 @@ using System.Numerics;
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlMouse : IMouse
+internal class SdlUnboundedMouse : SdlDevice, IMouse
 {
-    public bool Equals(IInputDevice? other) => throw new NotImplementedException();
+    public SdlUnboundedMouse(SdlInputBackend backend, uint mouseId)
+        : base(backend) { }
 
-    public IntPtr Id => throw new NotImplementedException();
+    public override IntPtr Id => throw new NotImplementedException();
 
-    public string Name => throw new NotImplementedException();
+    public override string Name => throw new NotImplementedException();
 
     public MouseState State => throw new NotImplementedException();
 
-    public ICursorConfiguration Cursor => throw new NotImplementedException();
+    public ICursorConfiguration Cursor => Backend;
 
     public bool TrySetPosition(Vector2 position) => throw new NotImplementedException();
 

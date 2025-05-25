@@ -3,11 +3,11 @@
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlMotor : IMotor
+internal class SdlMotor(SdlGamepad gamepad, int freqIdx) : IMotor
 {
     public float Speed
     {
-        get => throw new NotImplementedException();
-        set => throw new NotImplementedException();
+        get => (float)gamepad.GetRumble(freqIdx) / ushort.MaxValue;
+        set => gamepad.SetRumble(freqIdx, (ushort)(value * ushort.MaxValue));
     }
 }
