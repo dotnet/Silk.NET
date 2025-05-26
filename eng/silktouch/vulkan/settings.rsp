@@ -4,7 +4,7 @@ TODO_DEFINE_MACROS=HERE
 --headerFile
 ../../header.txt
 --include-directory
-../../../submodules/vulkan/include
+../../../submodules/vulkan-headers/include
 --with-callconv
 *=Winapi
 --with-librarypath
