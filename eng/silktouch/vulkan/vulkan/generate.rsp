@@ -10,3 +10,5 @@ Silk.NET.Vulkan
 ../../../../sources/Vulkan/Vulkan
 --test-output
 ../../../../tests/Vulkan/Vulkan
+--traverse
+../../../submodules/vulkan-headers/include/vulkan/vulkan.h
