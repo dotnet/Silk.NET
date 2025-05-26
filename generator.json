@@ -183,10 +183,6 @@
           {
             "Profile": "vulkan",
             "SourceSubdirectory": "vulkan"
-          },
-          {
-            "Profile": "vulkansc",
-            "SourceSubdirectory": "vulkansc",
           }
         ]
       },
