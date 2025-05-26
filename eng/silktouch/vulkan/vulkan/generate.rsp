@@ -1,0 +1,12 @@
+@../settings.rsp
+@../remap.rsp
+--file
+vulkan-vulkan.h
+--methodClassName
+Vulkan
+--namespace
+Silk.NET.Vulkan
+--output
+../../../../sources/Vulkan/Vulkan
+--test-output
+../../../../tests/Vulkan/Vulkan
