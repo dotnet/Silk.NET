@@ -165,7 +165,6 @@
         "AddIncludes",
         "ClangScraper",
         "AddApiProfiles",
-        "BakeSourceSets",
         "MixKhronosData",
         "TransformFunctions",
         "PrettifyNames",
@@ -185,12 +184,6 @@
             "SourceSubdirectory": "vulkan"
           }
         ]
-      },
-      "BakeSourceSets": {
-        "SourceSets": {
-          "vulkan": "vulkan",
-          "vulkansc": "vulkan",
-        }
       },
       "MixKhronosData": {
         "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
