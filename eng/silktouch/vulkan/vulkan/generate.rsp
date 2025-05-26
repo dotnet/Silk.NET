@@ -12,3 +12,4 @@ Silk.NET.Vulkan
 ../../../../tests/Vulkan/Vulkan
 --traverse
 ../../../submodules/vulkan-headers/include/vulkan/vulkan.h
+../../../submodules/vulkan-headers/include/vulkan/vulkan_core.h
