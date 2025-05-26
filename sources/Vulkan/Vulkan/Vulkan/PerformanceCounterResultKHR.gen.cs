@@ -34,7 +34,7 @@ public partial struct PerformanceCounterResultKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public long Int64;
+    public nint Int64;
 
     [FieldOffset(0)]
     [NativeTypeName("uint32_t")]
@@ -58,7 +58,7 @@ public partial struct PerformanceCounterResultKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public ulong Uint64;
+    public nuint Uint64;
 
     [FieldOffset(0)]
     [SupportedApiProfile(

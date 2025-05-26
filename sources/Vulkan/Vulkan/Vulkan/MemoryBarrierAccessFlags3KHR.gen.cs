@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -19,9 +20,9 @@ public unsafe partial struct MemoryBarrierAccessFlags3KHR
 
     [NativeTypeName("VkAccessFlags3KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public ulong SrcAccessMask3;
+    public nuint SrcAccessMask3;
 
     [NativeTypeName("VkAccessFlags3KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public ulong DstAccessMask3;
+    public nuint DstAccessMask3;
 }

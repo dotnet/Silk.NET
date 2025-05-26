@@ -20,19 +20,19 @@ public unsafe partial struct BufferMemoryBarrier2
 
     [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ulong SrcStageMask;
+    public nuint SrcStageMask;
 
     [NativeTypeName("VkAccessFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ulong SrcAccessMask;
+    public nuint SrcAccessMask;
 
     [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ulong DstStageMask;
+    public nuint DstStageMask;
 
     [NativeTypeName("VkAccessFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ulong DstAccessMask;
+    public nuint DstAccessMask;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -48,9 +48,9 @@ public unsafe partial struct BufferMemoryBarrier2
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ulong Offset;
+    public nuint Offset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ulong Size;
+    public nuint Size;
 }

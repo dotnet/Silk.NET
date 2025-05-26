@@ -60,7 +60,7 @@ public partial struct ClusterAccelerationStructureInstantiateClusterInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong ClusterTemplateAddress;
+    public nuint ClusterTemplateAddress;
 
     [SupportedApiProfile(
         "vulkan",

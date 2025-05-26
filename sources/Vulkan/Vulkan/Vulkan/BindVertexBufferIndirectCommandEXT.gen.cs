@@ -3,7 +3,6 @@
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
@@ -20,7 +19,7 @@ public partial struct BindVertexBufferIndirectCommandEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong BufferAddress;
+    public nuint BufferAddress;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

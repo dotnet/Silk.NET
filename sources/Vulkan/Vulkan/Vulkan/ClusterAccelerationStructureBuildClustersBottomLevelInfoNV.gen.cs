@@ -33,5 +33,5 @@ public partial struct ClusterAccelerationStructureBuildClustersBottomLevelInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong ClusterReferences;
+    public nuint ClusterReferences;
 }

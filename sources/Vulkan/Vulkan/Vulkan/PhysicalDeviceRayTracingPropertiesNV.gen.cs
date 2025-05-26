@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -83,7 +84,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public ulong MaxGeometryCount;
+    public nuint MaxGeometryCount;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -94,7 +95,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public ulong MaxInstanceCount;
+    public nuint MaxInstanceCount;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -105,7 +106,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public ulong MaxTriangleCount;
+    public nuint MaxTriangleCount;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

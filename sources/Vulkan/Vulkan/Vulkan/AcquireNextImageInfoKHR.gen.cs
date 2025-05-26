@@ -44,7 +44,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public ulong Timeout;
+    public nuint Timeout;
 
     [NativeTypeName("VkSemaphore")]
     [SupportedApiProfile(

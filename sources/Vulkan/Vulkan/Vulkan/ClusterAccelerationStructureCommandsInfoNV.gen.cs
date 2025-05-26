@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -37,7 +38,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong DstImplicitData;
+    public nuint DstImplicitData;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -45,7 +46,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong ScratchData;
+    public nuint ScratchData;
 
     [SupportedApiProfile(
         "vulkan",
@@ -74,7 +75,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong SrcInfosCount;
+    public nuint SrcInfosCount;
 
     [NativeTypeName("VkClusterAccelerationStructureAddressResolutionFlagsNV")]
     [SupportedApiProfile(

@@ -24,7 +24,7 @@ public partial struct DrmFormatModifierProperties2EXT
             "VK_VERSION_1_2",
         ]
     )]
-    public ulong DrmFormatModifier;
+    public nuint DrmFormatModifier;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -54,5 +54,5 @@ public partial struct DrmFormatModifierProperties2EXT
             "VK_VERSION_1_2",
         ]
     )]
-    public ulong DrmFormatModifierTilingFeatures;
+    public nuint DrmFormatModifierTilingFeatures;
 }

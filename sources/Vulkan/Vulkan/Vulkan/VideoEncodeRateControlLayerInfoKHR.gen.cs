@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -40,7 +41,7 @@ public unsafe partial struct VideoEncodeRateControlLayerInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public ulong AverageBitrate;
+    public nuint AverageBitrate;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -51,7 +52,7 @@ public unsafe partial struct VideoEncodeRateControlLayerInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public ulong MaxBitrate;
+    public nuint MaxBitrate;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

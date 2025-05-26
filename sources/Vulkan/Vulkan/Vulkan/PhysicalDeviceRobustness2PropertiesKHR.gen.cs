@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -40,7 +39,7 @@ public unsafe partial struct PhysicalDeviceRobustness2PropertiesKHR
             "VK_KHR_robustness2+VK_VERSION_1_1",
         ]
     )]
-    public ulong RobustStorageBufferAccessSizeAlignment;
+    public nuint RobustStorageBufferAccessSizeAlignment;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -51,5 +50,5 @@ public unsafe partial struct PhysicalDeviceRobustness2PropertiesKHR
             "VK_KHR_robustness2+VK_VERSION_1_1",
         ]
     )]
-    public ulong RobustUniformBufferAccessSizeAlignment;
+    public nuint RobustUniformBufferAccessSizeAlignment;
 }

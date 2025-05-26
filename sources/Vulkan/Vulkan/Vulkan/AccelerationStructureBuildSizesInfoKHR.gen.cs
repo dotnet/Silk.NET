@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -40,7 +41,7 @@ public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public ulong AccelerationStructureSize;
+    public nuint AccelerationStructureSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -51,7 +52,7 @@ public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public ulong UpdateScratchSize;
+    public nuint UpdateScratchSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -62,5 +63,5 @@ public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public ulong BuildScratchSize;
+    public nuint BuildScratchSize;
 }

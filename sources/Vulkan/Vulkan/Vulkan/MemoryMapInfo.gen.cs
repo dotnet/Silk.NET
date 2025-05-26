@@ -28,9 +28,9 @@ public unsafe partial struct MemoryMapInfo
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public ulong Offset;
+    public nuint Offset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public ulong Size;
+    public nuint Size;
 }

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,7 +25,7 @@ public partial struct PastPresentationTimingGoogle
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public ulong DesiredPresentTime;
+    public nuint DesiredPresentTime;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -32,7 +33,7 @@ public partial struct PastPresentationTimingGoogle
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public ulong ActualPresentTime;
+    public nuint ActualPresentTime;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -40,7 +41,7 @@ public partial struct PastPresentationTimingGoogle
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public ulong EarliestPresentTime;
+    public nuint EarliestPresentTime;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -48,5 +49,5 @@ public partial struct PastPresentationTimingGoogle
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public ulong PresentMargin;
+    public nuint PresentMargin;
 }

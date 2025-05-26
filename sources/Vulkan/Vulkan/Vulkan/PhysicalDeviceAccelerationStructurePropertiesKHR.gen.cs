@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -39,7 +40,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public ulong MaxGeometryCount;
+    public nuint MaxGeometryCount;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -50,7 +51,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public ulong MaxInstanceCount;
+    public nuint MaxInstanceCount;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -61,7 +62,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public ulong MaxPrimitiveCount;
+    public nuint MaxPrimitiveCount;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -20,5 +20,5 @@ public unsafe partial struct PerformanceMarkerInfoIntel
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    public ulong Marker;
+    public nuint Marker;
 }

@@ -74,5 +74,5 @@ public unsafe partial struct GeometryAABBNV
             "VK_VERSION_1_1",
         ]
     )]
-    public ulong Offset;
+    public nuint Offset;
 }

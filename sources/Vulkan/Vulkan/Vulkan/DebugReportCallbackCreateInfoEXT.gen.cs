@@ -27,7 +27,7 @@ public unsafe partial struct DebugReportCallbackCreateInfoEXT
     public delegate* unmanaged<
         uint,
         DebugReportObjectTypeEXT,
-        ulong,
+        nuint,
         nuint,
         int,
         sbyte*,

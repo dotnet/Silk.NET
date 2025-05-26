@@ -21,7 +21,7 @@ public partial struct DrawIndirectCountIndirectCommandEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong BufferAddress;
+    public nuint BufferAddress;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -8,8 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ExternalMemoryFeatureFlagsNV
+public enum ExternalMemoryFeatureFlagsNV : uint
 {
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     DedicatedOnlyBitNV = 0x00000001,

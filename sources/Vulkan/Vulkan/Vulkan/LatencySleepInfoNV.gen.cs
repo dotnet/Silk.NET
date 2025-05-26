@@ -51,5 +51,5 @@ public unsafe partial struct LatencySleepInfoNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong Value;
+    public nuint Value;
 }

@@ -41,7 +41,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong PresentID;
+    public nuint PresentID;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -52,7 +52,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong InputSampleTimeUs;
+    public nuint InputSampleTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -63,7 +63,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong SimStartTimeUs;
+    public nuint SimStartTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -74,7 +74,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong SimEndTimeUs;
+    public nuint SimEndTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -85,7 +85,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong RenderSubmitStartTimeUs;
+    public nuint RenderSubmitStartTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -96,7 +96,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong RenderSubmitEndTimeUs;
+    public nuint RenderSubmitEndTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -107,7 +107,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong PresentStartTimeUs;
+    public nuint PresentStartTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -118,7 +118,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong PresentEndTimeUs;
+    public nuint PresentEndTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -129,7 +129,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong DriverStartTimeUs;
+    public nuint DriverStartTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -140,7 +140,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong DriverEndTimeUs;
+    public nuint DriverEndTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -151,7 +151,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong OsRenderQueueStartTimeUs;
+    public nuint OsRenderQueueStartTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -162,7 +162,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong OsRenderQueueEndTimeUs;
+    public nuint OsRenderQueueEndTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -173,7 +173,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong GpuRenderStartTimeUs;
+    public nuint GpuRenderStartTimeUs;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -184,5 +184,5 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public ulong GpuRenderEndTimeUs;
+    public nuint GpuRenderEndTimeUs;
 }

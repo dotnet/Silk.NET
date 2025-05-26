@@ -20,7 +20,7 @@ public unsafe partial struct PerformanceValueDataIntel
     [FieldOffset(0)]
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    public ulong Value64;
+    public nuint Value64;
 
     [FieldOffset(0)]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]

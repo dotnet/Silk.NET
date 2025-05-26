@@ -63,7 +63,7 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public ulong Offset;
+    public nuint Offset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -74,7 +74,7 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public ulong Size;
+    public nuint Size;
 
     [SupportedApiProfile(
         "vulkan",
@@ -95,5 +95,5 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public ulong DeviceAddress;
+    public nuint DeviceAddress;
 }

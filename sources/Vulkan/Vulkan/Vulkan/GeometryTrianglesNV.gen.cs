@@ -3,7 +3,6 @@
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
@@ -51,7 +50,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public ulong VertexOffset;
+    public nuint VertexOffset;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -73,7 +72,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public ulong VertexStride;
+    public nuint VertexStride;
 
     [SupportedApiProfile(
         "vulkan",
@@ -105,7 +104,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public ulong IndexOffset;
+    public nuint IndexOffset;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -148,5 +147,5 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public ulong TransformOffset;
+    public nuint TransformOffset;
 }

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,7 +21,7 @@ public partial struct CopyMemoryIndirectCommandNV
             "VK_VERSION_1_2",
         ]
     )]
-    public ulong SrcAddress;
+    public nuint SrcAddress;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -32,7 +33,7 @@ public partial struct CopyMemoryIndirectCommandNV
             "VK_VERSION_1_2",
         ]
     )]
-    public ulong DstAddress;
+    public nuint DstAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -44,5 +45,5 @@ public partial struct CopyMemoryIndirectCommandNV
             "VK_VERSION_1_2",
         ]
     )]
-    public ulong Size;
+    public nuint Size;
 }

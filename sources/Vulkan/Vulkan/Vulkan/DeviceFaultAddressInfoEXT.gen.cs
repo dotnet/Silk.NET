@@ -30,7 +30,7 @@ public partial struct DeviceFaultAddressInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public ulong ReportedAddress;
+    public nuint ReportedAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -41,5 +41,5 @@ public partial struct DeviceFaultAddressInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public ulong AddressPrecision;
+    public nuint AddressPrecision;
 }

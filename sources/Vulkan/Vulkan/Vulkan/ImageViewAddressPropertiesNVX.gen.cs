@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -18,9 +19,9 @@ public unsafe partial struct ImageViewAddressPropertiesNVX
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
-    public ulong DeviceAddress;
+    public nuint DeviceAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
-    public ulong Size;
+    public nuint Size;
 }

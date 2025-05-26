@@ -47,7 +47,7 @@ public unsafe partial struct DescriptorBufferBindingInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong Address;
+    public nuint Address;
 
     [NativeTypeName("VkBufferUsageFlags")]
     [SupportedApiProfile(

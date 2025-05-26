@@ -8,8 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DebugUtilsMessageSeverityFlagsEXT
+public enum DebugUtilsMessageSeverityFlagsEXT : uint
 {
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     VerboseBitEXT = 0x00000001,

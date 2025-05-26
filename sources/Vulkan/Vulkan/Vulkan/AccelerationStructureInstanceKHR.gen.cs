@@ -118,5 +118,5 @@ public partial struct AccelerationStructureInstanceKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public ulong AccelerationStructureReference;
+    public nuint AccelerationStructureReference;
 }

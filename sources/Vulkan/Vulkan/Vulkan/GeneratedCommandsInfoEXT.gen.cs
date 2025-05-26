@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -79,7 +80,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong IndirectAddress;
+    public nuint IndirectAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -91,7 +92,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong IndirectAddressSize;
+    public nuint IndirectAddressSize;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -103,7 +104,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong PreprocessAddress;
+    public nuint PreprocessAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -115,7 +116,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong PreprocessSize;
+    public nuint PreprocessSize;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -139,7 +140,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong SequenceCountAddress;
+    public nuint SequenceCountAddress;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

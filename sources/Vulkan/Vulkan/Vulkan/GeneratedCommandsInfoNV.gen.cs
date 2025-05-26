@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -87,7 +86,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public ulong PreprocessOffset;
+    public nuint PreprocessOffset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -95,7 +94,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public ulong PreprocessSize;
+    public nuint PreprocessSize;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
@@ -111,7 +110,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public ulong SequencesCountOffset;
+    public nuint SequencesCountOffset;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
@@ -127,5 +126,5 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public ulong SequencesIndexOffset;
+    public nuint SequencesIndexOffset;
 }

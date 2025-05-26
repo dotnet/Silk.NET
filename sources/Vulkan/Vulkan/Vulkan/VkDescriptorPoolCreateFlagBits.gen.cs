@@ -8,8 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DescriptorPoolCreateFlags
+public enum DescriptorPoolCreateFlags : uint
 {
     [SupportedApiProfile(
         "vulkan",

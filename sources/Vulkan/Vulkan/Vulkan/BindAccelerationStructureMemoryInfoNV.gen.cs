@@ -63,7 +63,7 @@ public unsafe partial struct BindAccelerationStructureMemoryInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public ulong MemoryOffset;
+    public nuint MemoryOffset;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

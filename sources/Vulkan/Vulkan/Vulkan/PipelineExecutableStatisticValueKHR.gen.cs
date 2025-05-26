@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,7 +34,7 @@ public partial struct PipelineExecutableStatisticValueKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public long I64;
+    public nint I64;
 
     [FieldOffset(0)]
     [NativeTypeName("uint64_t")]
@@ -45,7 +46,7 @@ public partial struct PipelineExecutableStatisticValueKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public ulong U64;
+    public nuint U64;
 
     [FieldOffset(0)]
     [SupportedApiProfile(

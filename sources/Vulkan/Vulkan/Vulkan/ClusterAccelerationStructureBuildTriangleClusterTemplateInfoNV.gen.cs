@@ -148,7 +148,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong IndexBuffer;
+    public nuint IndexBuffer;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -156,7 +156,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong VertexBuffer;
+    public nuint VertexBuffer;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -164,7 +164,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong GeometryIndexAndFlagsBuffer;
+    public nuint GeometryIndexAndFlagsBuffer;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -172,7 +172,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong OpacityMicromapArray;
+    public nuint OpacityMicromapArray;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -180,7 +180,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong OpacityMicromapIndexBuffer;
+    public nuint OpacityMicromapIndexBuffer;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -188,5 +188,5 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong InstantiationBoundingBoxLimit;
+    public nuint InstantiationBoundingBoxLimit;
 }

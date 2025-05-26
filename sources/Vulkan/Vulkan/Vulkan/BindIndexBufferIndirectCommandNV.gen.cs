@@ -17,7 +17,7 @@ public partial struct BindIndexBufferIndirectCommandNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public ulong BufferAddress;
+    public nuint BufferAddress;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

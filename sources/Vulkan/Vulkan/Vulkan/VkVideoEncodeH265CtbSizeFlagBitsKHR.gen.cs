@@ -8,8 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VideoEncodeH265CtbSizeFlagsKHR
+public enum VideoEncodeH265CtbSizeFlagsKHR : uint
 {
     [SupportedApiProfile(
         "vulkan",

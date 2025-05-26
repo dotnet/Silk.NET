@@ -17,7 +17,7 @@ public partial struct StridedDeviceAddressNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong StartAddress;
+    public nuint StartAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -25,5 +25,5 @@ public partial struct StridedDeviceAddressNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public ulong StrideInBytes;
+    public nuint StrideInBytes;
 }

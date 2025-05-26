@@ -85,7 +85,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong DescriptorBufferOffsetAlignment;
+    public nuint DescriptorBufferOffsetAlignment;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -410,7 +410,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong MaxSamplerDescriptorBufferRange;
+    public nuint MaxSamplerDescriptorBufferRange;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -423,7 +423,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong MaxResourceDescriptorBufferRange;
+    public nuint MaxResourceDescriptorBufferRange;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -436,7 +436,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong SamplerDescriptorBufferAddressSpaceSize;
+    public nuint SamplerDescriptorBufferAddressSpaceSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -449,7 +449,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong ResourceDescriptorBufferAddressSpaceSize;
+    public nuint ResourceDescriptorBufferAddressSpaceSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -462,5 +462,5 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ulong DescriptorBufferAddressSpaceSize;
+    public nuint DescriptorBufferAddressSpaceSize;
 }

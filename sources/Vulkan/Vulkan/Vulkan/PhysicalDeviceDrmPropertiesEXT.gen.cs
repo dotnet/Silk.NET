@@ -2,9 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
-using System;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
@@ -62,7 +60,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public long PrimaryMajor;
+    public nint PrimaryMajor;
 
     [NativeTypeName("int64_t")]
     [SupportedApiProfile(
@@ -73,7 +71,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public long PrimaryMinor;
+    public nint PrimaryMinor;
 
     [NativeTypeName("int64_t")]
     [SupportedApiProfile(
@@ -84,7 +82,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public long RenderMajor;
+    public nint RenderMajor;
 
     [NativeTypeName("int64_t")]
     [SupportedApiProfile(
@@ -95,5 +93,5 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public long RenderMinor;
+    public nint RenderMinor;
 }

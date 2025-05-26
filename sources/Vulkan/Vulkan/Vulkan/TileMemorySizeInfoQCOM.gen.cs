@@ -44,5 +44,5 @@ public unsafe partial struct TileMemorySizeInfoQCOM
         ],
         RequireAll = true
     )]
-    public ulong Size;
+    public nuint Size;
 }

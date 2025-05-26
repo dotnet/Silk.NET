@@ -20,7 +20,7 @@ public partial struct StridedDeviceAddressRegionKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public ulong DeviceAddress;
+    public nuint DeviceAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -31,7 +31,7 @@ public partial struct StridedDeviceAddressRegionKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public ulong Stride;
+    public nuint Stride;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -42,5 +42,5 @@ public partial struct StridedDeviceAddressRegionKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public ulong Size;
+    public nuint Size;
 }

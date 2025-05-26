@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -39,7 +40,7 @@ public unsafe partial struct TileMemoryRequirementsQCOM
             "VK_VERSION_1_1",
         ]
     )]
-    public ulong Size;
+    public nuint Size;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -50,5 +51,5 @@ public unsafe partial struct TileMemoryRequirementsQCOM
             "VK_VERSION_1_1",
         ]
     )]
-    public ulong Alignment;
+    public nuint Alignment;
 }

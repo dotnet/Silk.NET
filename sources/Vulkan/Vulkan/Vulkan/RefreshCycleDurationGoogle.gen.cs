@@ -17,5 +17,5 @@ public partial struct RefreshCycleDurationGoogle
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public ulong RefreshDuration;
+    public nuint RefreshDuration;
 }
