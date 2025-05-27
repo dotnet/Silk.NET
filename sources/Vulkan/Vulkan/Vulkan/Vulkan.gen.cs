@@ -28701,7 +28701,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_SURFACE_EXTENSION_NAME \"VK_KHR_surface\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    public static ReadOnlySpan<byte> KhrSurfaceExtensionName => "VK_KHR_surface"u8;
+    public static Utf8String KhrSurfaceExtensionName => "VK_KHR_surface"u8;
 
     [NativeTypeName("#define VK_KHR_SWAPCHAIN_SPEC_VERSION 70")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -28709,7 +28709,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_SWAPCHAIN_EXTENSION_NAME \"VK_KHR_swapchain\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public static ReadOnlySpan<byte> KhrSwapchainExtensionName => "VK_KHR_swapchain"u8;
+    public static Utf8String KhrSwapchainExtensionName => "VK_KHR_swapchain"u8;
 
     [NativeTypeName("#define VK_KHR_DISPLAY_SPEC_VERSION 23")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
@@ -28717,7 +28717,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_DISPLAY_EXTENSION_NAME \"VK_KHR_display\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public static ReadOnlySpan<byte> KhrDisplayExtensionName => "VK_KHR_display"u8;
+    public static Utf8String KhrDisplayExtensionName => "VK_KHR_display"u8;
 
     [NativeTypeName("#define VK_KHR_DISPLAY_SWAPCHAIN_SPEC_VERSION 10")]
     [SupportedApiProfile(
@@ -28733,8 +28733,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_display_swapchain"],
         ImpliesSets = ["VK_KHR_display", "VK_KHR_swapchain"]
     )]
-    public static ReadOnlySpan<byte> KhrDisplaySwapchainExtensionName =>
-        "VK_KHR_display_swapchain"u8;
+    public static Utf8String KhrDisplaySwapchainExtensionName => "VK_KHR_display_swapchain"u8;
 
     [NativeTypeName("#define VK_KHR_SAMPLER_MIRROR_CLAMP_TO_EDGE_SPEC_VERSION 3")]
     [SupportedApiProfile("vulkan", ["VK_KHR_sampler_mirror_clamp_to_edge"])]
@@ -28744,7 +28743,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_SAMPLER_MIRROR_CLAMP_TO_EDGE_EXTENSION_NAME \"VK_KHR_sampler_mirror_clamp_to_edge\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_sampler_mirror_clamp_to_edge"])]
-    public static ReadOnlySpan<byte> KhrSamplerMirrorClampToEdgeExtensionName =>
+    public static Utf8String KhrSamplerMirrorClampToEdgeExtensionName =>
         "VK_KHR_sampler_mirror_clamp_to_edge"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_QUEUE_SPEC_VERSION 8")]
@@ -28761,7 +28760,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public static ReadOnlySpan<byte> KhrVideoQueueExtensionName => "VK_KHR_video_queue"u8;
+    public static Utf8String KhrVideoQueueExtensionName => "VK_KHR_video_queue"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_DECODE_QUEUE_SPEC_VERSION 8")]
     [SupportedApiProfile(
@@ -28785,8 +28784,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrVideoDecodeQueueExtensionName =>
-        "VK_KHR_video_decode_queue"u8;
+    public static Utf8String KhrVideoDecodeQueueExtensionName => "VK_KHR_video_decode_queue"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_ENCODE_H264_SPEC_VERSION 14")]
     [SupportedApiProfile(
@@ -28802,8 +28800,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public static ReadOnlySpan<byte> KhrVideoEncodeH264ExtensionName =>
-        "VK_KHR_video_encode_h264"u8;
+    public static Utf8String KhrVideoEncodeH264ExtensionName => "VK_KHR_video_encode_h264"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_ENCODE_H265_SPEC_VERSION 14")]
     [SupportedApiProfile(
@@ -28819,8 +28816,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public static ReadOnlySpan<byte> KhrVideoEncodeH265ExtensionName =>
-        "VK_KHR_video_encode_h265"u8;
+    public static Utf8String KhrVideoEncodeH265ExtensionName => "VK_KHR_video_encode_h265"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_DECODE_H264_SPEC_VERSION 9")]
     [SupportedApiProfile(
@@ -28836,8 +28832,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public static ReadOnlySpan<byte> KhrVideoDecodeH264ExtensionName =>
-        "VK_KHR_video_decode_h264"u8;
+    public static Utf8String KhrVideoDecodeH264ExtensionName => "VK_KHR_video_decode_h264"u8;
 
     [NativeTypeName("#define VK_KHR_DYNAMIC_RENDERING_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -28861,8 +28856,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrDynamicRenderingExtensionName =>
-        "VK_KHR_dynamic_rendering"u8;
+    public static Utf8String KhrDynamicRenderingExtensionName => "VK_KHR_dynamic_rendering"u8;
 
     [NativeTypeName("#define VK_KHR_MULTIVIEW_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -28884,7 +28878,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_multiview+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrMultiviewExtensionName => "VK_KHR_multiview"u8;
+    public static Utf8String KhrMultiviewExtensionName => "VK_KHR_multiview"u8;
 
     [NativeTypeName("#define VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_SPEC_VERSION 2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
@@ -28894,7 +28888,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME \"VK_KHR_get_physical_device_properties2\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
-    public static ReadOnlySpan<byte> KhrGetPhysicalDeviceProperties2ExtensionName =>
+    public static Utf8String KhrGetPhysicalDeviceProperties2ExtensionName =>
         "VK_KHR_get_physical_device_properties2"u8;
 
     [NativeTypeName("#define VK_KHR_DEVICE_GROUP_SPEC_VERSION 4")]
@@ -28911,7 +28905,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    public static ReadOnlySpan<byte> KhrDeviceGroupExtensionName => "VK_KHR_device_group"u8;
+    public static Utf8String KhrDeviceGroupExtensionName => "VK_KHR_device_group"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_DRAW_PARAMETERS_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_shader_draw_parameters"])]
@@ -28921,7 +28915,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_SHADER_DRAW_PARAMETERS_EXTENSION_NAME \"VK_KHR_shader_draw_parameters\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_shader_draw_parameters"])]
-    public static ReadOnlySpan<byte> KhrShaderDrawParametersExtensionName =>
+    public static Utf8String KhrShaderDrawParametersExtensionName =>
         "VK_KHR_shader_draw_parameters"u8;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_1_SPEC_VERSION 2")]
@@ -28930,7 +28924,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_1_EXTENSION_NAME \"VK_KHR_maintenance1\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
-    public static ReadOnlySpan<byte> KhrMaintenance1ExtensionName => "VK_KHR_maintenance1"u8;
+    public static Utf8String KhrMaintenance1ExtensionName => "VK_KHR_maintenance1"u8;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE1_SPEC_VERSION VK_KHR_MAINTENANCE_1_SPEC_VERSION")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
@@ -28940,7 +28934,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_MAINTENANCE1_EXTENSION_NAME VK_KHR_MAINTENANCE_1_EXTENSION_NAME"
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
-    public static ReadOnlySpan<byte> KhrMaintenance1ExtensionName => "VK_KHR_maintenance1"u8;
+    public static Utf8String KhrMaintenance1ExtensionName => "VK_KHR_maintenance1"u8;
 
     [NativeTypeName("#define VK_KHR_DEVICE_GROUP_CREATION_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
@@ -28950,7 +28944,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_DEVICE_GROUP_CREATION_EXTENSION_NAME \"VK_KHR_device_group_creation\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
-    public static ReadOnlySpan<byte> KhrDeviceGroupCreationExtensionName =>
+    public static Utf8String KhrDeviceGroupCreationExtensionName =>
         "VK_KHR_device_group_creation"u8;
 
     [NativeTypeName("#define VK_MAX_DEVICE_GROUP_SIZE_KHR VK_MAX_DEVICE_GROUP_SIZE")]
@@ -28979,7 +28973,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrExternalMemoryCapabilitiesExtensionName =>
+    public static Utf8String KhrExternalMemoryCapabilitiesExtensionName =>
         "VK_KHR_external_memory_capabilities"u8;
 
     [NativeTypeName("#define VK_LUID_SIZE_KHR VK_LUID_SIZE")]
@@ -29013,7 +29007,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_external_memory+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrExternalMemoryExtensionName => "VK_KHR_external_memory"u8;
+    public static Utf8String KhrExternalMemoryExtensionName => "VK_KHR_external_memory"u8;
 
     [NativeTypeName("#define VK_QUEUE_FAMILY_EXTERNAL_KHR VK_QUEUE_FAMILY_EXTERNAL")]
     [SupportedApiProfile(
@@ -29048,8 +29042,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_external_memory_fd+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrExternalMemoryFdExtensionName =>
-        "VK_KHR_external_memory_fd"u8;
+    public static Utf8String KhrExternalMemoryFdExtensionName => "VK_KHR_external_memory_fd"u8;
 
     [NativeTypeName("#define VK_KHR_EXTERNAL_SEMAPHORE_CAPABILITIES_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29073,7 +29066,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrExternalSemaphoreCapabilitiesExtensionName =>
+    public static Utf8String KhrExternalSemaphoreCapabilitiesExtensionName =>
         "VK_KHR_external_semaphore_capabilities"u8;
 
     [NativeTypeName("#define VK_KHR_EXTERNAL_SEMAPHORE_SPEC_VERSION 1")]
@@ -29092,8 +29085,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_external_semaphore"],
         ImpliesSets = ["VK_KHR_external_semaphore_capabilities"]
     )]
-    public static ReadOnlySpan<byte> KhrExternalSemaphoreExtensionName =>
-        "VK_KHR_external_semaphore"u8;
+    public static Utf8String KhrExternalSemaphoreExtensionName => "VK_KHR_external_semaphore"u8;
 
     [NativeTypeName("#define VK_KHR_EXTERNAL_SEMAPHORE_FD_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29117,7 +29109,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_external_semaphore_fd+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrExternalSemaphoreFdExtensionName =>
+    public static Utf8String KhrExternalSemaphoreFdExtensionName =>
         "VK_KHR_external_semaphore_fd"u8;
 
     [NativeTypeName("#define VK_KHR_PUSH_DESCRIPTOR_SPEC_VERSION 2")]
@@ -29140,7 +29132,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_push_descriptor+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrPushDescriptorExtensionName => "VK_KHR_push_descriptor"u8;
+    public static Utf8String KhrPushDescriptorExtensionName => "VK_KHR_push_descriptor"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_FLOAT16_INT8_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29164,8 +29156,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_shader_float16_int8+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrShaderFloat16Int8ExtensionName =>
-        "VK_KHR_shader_float16_int8"u8;
+    public static Utf8String KhrShaderFloat16Int8ExtensionName => "VK_KHR_shader_float16_int8"u8;
 
     [NativeTypeName("#define VK_KHR_16BIT_STORAGE_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29187,7 +29178,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> Khr16BitStorageExtensionName => "VK_KHR_16bit_storage"u8;
+    public static Utf8String Khr16BitStorageExtensionName => "VK_KHR_16bit_storage"u8;
 
     [NativeTypeName("#define VK_KHR_INCREMENTAL_PRESENT_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -29205,8 +29196,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_incremental_present"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public static ReadOnlySpan<byte> KhrIncrementalPresentExtensionName =>
-        "VK_KHR_incremental_present"u8;
+    public static Utf8String KhrIncrementalPresentExtensionName => "VK_KHR_incremental_present"u8;
 
     [NativeTypeName("#define VK_KHR_DESCRIPTOR_UPDATE_TEMPLATE_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
@@ -29216,7 +29206,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_DESCRIPTOR_UPDATE_TEMPLATE_EXTENSION_NAME \"VK_KHR_descriptor_update_template\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
-    public static ReadOnlySpan<byte> KhrDescriptorUpdateTemplateExtensionName =>
+    public static Utf8String KhrDescriptorUpdateTemplateExtensionName =>
         "VK_KHR_descriptor_update_template"u8;
 
     [NativeTypeName("#define VK_KHR_IMAGELESS_FRAMEBUFFER_SPEC_VERSION 1")]
@@ -29243,7 +29233,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrImagelessFramebufferExtensionName =>
+    public static Utf8String KhrImagelessFramebufferExtensionName =>
         "VK_KHR_imageless_framebuffer"u8;
 
     [NativeTypeName("#define VK_KHR_CREATE_RENDERPASS_2_SPEC_VERSION 1")]
@@ -29262,8 +29252,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_create_renderpass2"],
         ImpliesSets = ["VK_KHR_multiview+VK_KHR_maintenance2", "VK_VERSION_1_1"]
     )]
-    public static ReadOnlySpan<byte> KhrCreateRenderpass2ExtensionName =>
-        "VK_KHR_create_renderpass2"u8;
+    public static Utf8String KhrCreateRenderpass2ExtensionName => "VK_KHR_create_renderpass2"u8;
 
     [NativeTypeName("#define VK_KHR_SHARED_PRESENTABLE_IMAGE_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29287,7 +29276,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_swapchain+VK_KHR_get_surface_capabilities2+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrSharedPresentableImageExtensionName =>
+    public static Utf8String KhrSharedPresentableImageExtensionName =>
         "VK_KHR_shared_presentable_image"u8;
 
     [NativeTypeName("#define VK_KHR_EXTERNAL_FENCE_CAPABILITIES_SPEC_VERSION 1")]
@@ -29312,7 +29301,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrExternalFenceCapabilitiesExtensionName =>
+    public static Utf8String KhrExternalFenceCapabilitiesExtensionName =>
         "VK_KHR_external_fence_capabilities"u8;
 
     [NativeTypeName("#define VK_KHR_EXTERNAL_FENCE_SPEC_VERSION 1")]
@@ -29329,7 +29318,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_external_fence"],
         ImpliesSets = ["VK_KHR_external_fence_capabilities"]
     )]
-    public static ReadOnlySpan<byte> KhrExternalFenceExtensionName => "VK_KHR_external_fence"u8;
+    public static Utf8String KhrExternalFenceExtensionName => "VK_KHR_external_fence"u8;
 
     [NativeTypeName("#define VK_KHR_EXTERNAL_FENCE_FD_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29351,8 +29340,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_external_fence_fd+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrExternalFenceFdExtensionName =>
-        "VK_KHR_external_fence_fd"u8;
+    public static Utf8String KhrExternalFenceFdExtensionName => "VK_KHR_external_fence_fd"u8;
 
     [NativeTypeName("#define VK_KHR_PERFORMANCE_QUERY_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29374,8 +29362,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrPerformanceQueryExtensionName =>
-        "VK_KHR_performance_query"u8;
+    public static Utf8String KhrPerformanceQueryExtensionName => "VK_KHR_performance_query"u8;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_2_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
@@ -29383,7 +29370,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_2_EXTENSION_NAME \"VK_KHR_maintenance2\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    public static ReadOnlySpan<byte> KhrMaintenance2ExtensionName => "VK_KHR_maintenance2"u8;
+    public static Utf8String KhrMaintenance2ExtensionName => "VK_KHR_maintenance2"u8;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE2_SPEC_VERSION VK_KHR_MAINTENANCE_2_SPEC_VERSION")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
@@ -29393,7 +29380,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_MAINTENANCE2_EXTENSION_NAME VK_KHR_MAINTENANCE_2_EXTENSION_NAME"
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    public static ReadOnlySpan<byte> KhrMaintenance2ExtensionName => "VK_KHR_maintenance2"u8;
+    public static Utf8String KhrMaintenance2ExtensionName => "VK_KHR_maintenance2"u8;
 
     [NativeTypeName("#define VK_KHR_GET_SURFACE_CAPABILITIES_2_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29411,7 +29398,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_get_surface_capabilities2"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    public static ReadOnlySpan<byte> KhrGetSurfaceCapabilities2ExtensionName =>
+    public static Utf8String KhrGetSurfaceCapabilities2ExtensionName =>
         "VK_KHR_get_surface_capabilities2"u8;
 
     [NativeTypeName("#define VK_KHR_VARIABLE_POINTERS_SPEC_VERSION 1")]
@@ -29434,8 +29421,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrVariablePointersExtensionName =>
-        "VK_KHR_variable_pointers"u8;
+    public static Utf8String KhrVariablePointersExtensionName => "VK_KHR_variable_pointers"u8;
 
     [NativeTypeName("#define VK_KHR_GET_DISPLAY_PROPERTIES_2_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29453,7 +29439,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_get_display_properties2"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public static ReadOnlySpan<byte> KhrGetDisplayProperties2ExtensionName =>
+    public static Utf8String KhrGetDisplayProperties2ExtensionName =>
         "VK_KHR_get_display_properties2"u8;
 
     [NativeTypeName("#define VK_KHR_DEDICATED_ALLOCATION_SPEC_VERSION 3")]
@@ -29478,8 +29464,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_dedicated_allocation+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrDedicatedAllocationExtensionName =>
-        "VK_KHR_dedicated_allocation"u8;
+    public static Utf8String KhrDedicatedAllocationExtensionName => "VK_KHR_dedicated_allocation"u8;
 
     [NativeTypeName("#define VK_KHR_STORAGE_BUFFER_STORAGE_CLASS_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_storage_buffer_storage_class"])]
@@ -29489,7 +29474,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_STORAGE_BUFFER_STORAGE_CLASS_EXTENSION_NAME \"VK_KHR_storage_buffer_storage_class\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_storage_buffer_storage_class"])]
-    public static ReadOnlySpan<byte> KhrStorageBufferStorageClassExtensionName =>
+    public static Utf8String KhrStorageBufferStorageClassExtensionName =>
         "VK_KHR_storage_buffer_storage_class"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_BFLOAT16_SPEC_VERSION 1")]
@@ -29512,7 +29497,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_shader_bfloat16+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrShaderBfloat16ExtensionName => "VK_KHR_shader_bfloat16"u8;
+    public static Utf8String KhrShaderBfloat16ExtensionName => "VK_KHR_shader_bfloat16"u8;
 
     [NativeTypeName("#define VK_KHR_RELAXED_BLOCK_LAYOUT_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_relaxed_block_layout"])]
@@ -29522,8 +29507,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_RELAXED_BLOCK_LAYOUT_EXTENSION_NAME \"VK_KHR_relaxed_block_layout\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_relaxed_block_layout"])]
-    public static ReadOnlySpan<byte> KhrRelaxedBlockLayoutExtensionName =>
-        "VK_KHR_relaxed_block_layout"u8;
+    public static Utf8String KhrRelaxedBlockLayoutExtensionName => "VK_KHR_relaxed_block_layout"u8;
 
     [NativeTypeName("#define VK_KHR_GET_MEMORY_REQUIREMENTS_2_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
@@ -29533,7 +29517,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_GET_MEMORY_REQUIREMENTS_2_EXTENSION_NAME \"VK_KHR_get_memory_requirements2\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
-    public static ReadOnlySpan<byte> KhrGetMemoryRequirements2ExtensionName =>
+    public static Utf8String KhrGetMemoryRequirements2ExtensionName =>
         "VK_KHR_get_memory_requirements2"u8;
 
     [NativeTypeName("#define VK_KHR_IMAGE_FORMAT_LIST_SPEC_VERSION 1")]
@@ -29542,8 +29526,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_IMAGE_FORMAT_LIST_EXTENSION_NAME \"VK_KHR_image_format_list\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_image_format_list"])]
-    public static ReadOnlySpan<byte> KhrImageFormatListExtensionName =>
-        "VK_KHR_image_format_list"u8;
+    public static Utf8String KhrImageFormatListExtensionName => "VK_KHR_image_format_list"u8;
 
     [NativeTypeName("#define VK_KHR_SAMPLER_YCBCR_CONVERSION_SPEC_VERSION 14")]
     [SupportedApiProfile(
@@ -29567,7 +29550,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrSamplerYcbcrConversionExtensionName =>
+    public static Utf8String KhrSamplerYcbcrConversionExtensionName =>
         "VK_KHR_sampler_ycbcr_conversion"u8;
 
     [NativeTypeName("#define VK_KHR_BIND_MEMORY_2_SPEC_VERSION 1")]
@@ -29576,7 +29559,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_BIND_MEMORY_2_EXTENSION_NAME \"VK_KHR_bind_memory2\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
-    public static ReadOnlySpan<byte> KhrBindMemory2ExtensionName => "VK_KHR_bind_memory2"u8;
+    public static Utf8String KhrBindMemory2ExtensionName => "VK_KHR_bind_memory2"u8;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_3_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29598,7 +29581,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_maintenance3+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrMaintenance3ExtensionName => "VK_KHR_maintenance3"u8;
+    public static Utf8String KhrMaintenance3ExtensionName => "VK_KHR_maintenance3"u8;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE3_SPEC_VERSION VK_KHR_MAINTENANCE_3_SPEC_VERSION")]
     [SupportedApiProfile(
@@ -29622,7 +29605,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_maintenance3+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrMaintenance3ExtensionName => "VK_KHR_maintenance3"u8;
+    public static Utf8String KhrMaintenance3ExtensionName => "VK_KHR_maintenance3"u8;
 
     [NativeTypeName("#define VK_KHR_DRAW_INDIRECT_COUNT_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
@@ -29632,8 +29615,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_DRAW_INDIRECT_COUNT_EXTENSION_NAME \"VK_KHR_draw_indirect_count\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
-    public static ReadOnlySpan<byte> KhrDrawIndirectCountExtensionName =>
-        "VK_KHR_draw_indirect_count"u8;
+    public static Utf8String KhrDrawIndirectCountExtensionName => "VK_KHR_draw_indirect_count"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_SUBGROUP_EXTENDED_TYPES_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29651,7 +29633,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_shader_subgroup_extended_types"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public static ReadOnlySpan<byte> KhrShaderSubgroupExtendedTypesExtensionName =>
+    public static Utf8String KhrShaderSubgroupExtendedTypesExtensionName =>
         "VK_KHR_shader_subgroup_extended_types"u8;
 
     [NativeTypeName("#define VK_KHR_8BIT_STORAGE_SPEC_VERSION 1")]
@@ -29674,7 +29656,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> Khr8BitStorageExtensionName => "VK_KHR_8bit_storage"u8;
+    public static Utf8String Khr8BitStorageExtensionName => "VK_KHR_8bit_storage"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_ATOMIC_INT64_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29698,8 +29680,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_shader_atomic_int64+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrShaderAtomicInt64ExtensionName =>
-        "VK_KHR_shader_atomic_int64"u8;
+    public static Utf8String KhrShaderAtomicInt64ExtensionName => "VK_KHR_shader_atomic_int64"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_CLOCK_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29721,7 +29702,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_shader_clock+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrShaderClockExtensionName => "VK_KHR_shader_clock"u8;
+    public static Utf8String KhrShaderClockExtensionName => "VK_KHR_shader_clock"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_DECODE_H265_SPEC_VERSION 8")]
     [SupportedApiProfile(
@@ -29737,8 +29718,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public static ReadOnlySpan<byte> KhrVideoDecodeH265ExtensionName =>
-        "VK_KHR_video_decode_h265"u8;
+    public static Utf8String KhrVideoDecodeH265ExtensionName => "VK_KHR_video_decode_h265"u8;
 
     [NativeTypeName("#define VK_KHR_GLOBAL_PRIORITY_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29760,7 +29740,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_global_priority+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrGlobalPriorityExtensionName => "VK_KHR_global_priority"u8;
+    public static Utf8String KhrGlobalPriorityExtensionName => "VK_KHR_global_priority"u8;
 
     [NativeTypeName("#define VK_MAX_GLOBAL_PRIORITY_SIZE_KHR VK_MAX_GLOBAL_PRIORITY_SIZE")]
     [SupportedApiProfile(
@@ -29793,8 +29773,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrDriverPropertiesExtensionName =>
-        "VK_KHR_driver_properties"u8;
+    public static Utf8String KhrDriverPropertiesExtensionName => "VK_KHR_driver_properties"u8;
 
     [NativeTypeName("#define VK_MAX_DRIVER_NAME_SIZE_KHR VK_MAX_DRIVER_NAME_SIZE")]
     [SupportedApiProfile(
@@ -29840,7 +29819,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_shader_float_controls+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrShaderFloatControlsExtensionName =>
+    public static Utf8String KhrShaderFloatControlsExtensionName =>
         "VK_KHR_shader_float_controls"u8;
 
     [NativeTypeName("#define VK_KHR_DEPTH_STENCIL_RESOLVE_SPEC_VERSION 1")]
@@ -29865,7 +29844,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrDepthStencilResolveExtensionName =>
+    public static Utf8String KhrDepthStencilResolveExtensionName =>
         "VK_KHR_depth_stencil_resolve"u8;
 
     [NativeTypeName("#define VK_KHR_SWAPCHAIN_MUTABLE_FORMAT_SPEC_VERSION 1")]
@@ -29894,7 +29873,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_swapchain+VK_VERSION_1_1+VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrSwapchainMutableFormatExtensionName =>
+    public static Utf8String KhrSwapchainMutableFormatExtensionName =>
         "VK_KHR_swapchain_mutable_format"u8;
 
     [NativeTypeName("#define VK_KHR_TIMELINE_SEMAPHORE_SPEC_VERSION 2")]
@@ -29919,8 +29898,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrTimelineSemaphoreExtensionName =>
-        "VK_KHR_timeline_semaphore"u8;
+    public static Utf8String KhrTimelineSemaphoreExtensionName => "VK_KHR_timeline_semaphore"u8;
 
     [NativeTypeName("#define VK_KHR_VULKAN_MEMORY_MODEL_SPEC_VERSION 3")]
     [SupportedApiProfile(
@@ -29944,8 +29922,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_vulkan_memory_model+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrVulkanMemoryModelExtensionName =>
-        "VK_KHR_vulkan_memory_model"u8;
+    public static Utf8String KhrVulkanMemoryModelExtensionName => "VK_KHR_vulkan_memory_model"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_TERMINATE_INVOCATION_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -29969,7 +29946,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_shader_terminate_invocation+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrShaderTerminateInvocationExtensionName =>
+    public static Utf8String KhrShaderTerminateInvocationExtensionName =>
         "VK_KHR_shader_terminate_invocation"u8;
 
     [NativeTypeName("#define VK_KHR_FRAGMENT_SHADING_RATE_SPEC_VERSION 2")]
@@ -29996,7 +29973,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrFragmentShadingRateExtensionName =>
+    public static Utf8String KhrFragmentShadingRateExtensionName =>
         "VK_KHR_fragment_shading_rate"u8;
 
     [NativeTypeName("#define VK_KHR_DYNAMIC_RENDERING_LOCAL_READ_SPEC_VERSION 1")]
@@ -30021,7 +29998,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_dynamic_rendering_local_read+VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrDynamicRenderingLocalReadExtensionName =>
+    public static Utf8String KhrDynamicRenderingLocalReadExtensionName =>
         "VK_KHR_dynamic_rendering_local_read"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_QUAD_CONTROL_SPEC_VERSION 1")]
@@ -30046,8 +30023,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrShaderQuadControlExtensionName =>
-        "VK_KHR_shader_quad_control"u8;
+    public static Utf8String KhrShaderQuadControlExtensionName => "VK_KHR_shader_quad_control"u8;
 
     [NativeTypeName("#define VK_KHR_SPIRV_1_4_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30063,7 +30039,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_spirv_1_4"],
         ImpliesSets = ["VK_KHR_shader_float_controls", "VK_VERSION_1_1"]
     )]
-    public static ReadOnlySpan<byte> KhrSpirv1X4ExtensionName => "VK_KHR_spirv_1_4"u8;
+    public static Utf8String KhrSpirv1X4ExtensionName => "VK_KHR_spirv_1_4"u8;
 
     [NativeTypeName("#define VK_KHR_SURFACE_PROTECTED_CAPABILITIES_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30081,7 +30057,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_surface_protected_capabilities"],
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_VERSION_1_1"]
     )]
-    public static ReadOnlySpan<byte> KhrSurfaceProtectedCapabilitiesExtensionName =>
+    public static Utf8String KhrSurfaceProtectedCapabilitiesExtensionName =>
         "VK_KHR_surface_protected_capabilities"u8;
 
     [NativeTypeName("#define VK_KHR_SEPARATE_DEPTH_STENCIL_LAYOUTS_SPEC_VERSION 1")]
@@ -30108,7 +30084,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrSeparateDepthStencilLayoutsExtensionName =>
+    public static Utf8String KhrSeparateDepthStencilLayoutsExtensionName =>
         "VK_KHR_separate_depth_stencil_layouts"u8;
 
     [NativeTypeName("#define VK_KHR_PRESENT_WAIT_SPEC_VERSION 1")]
@@ -30125,7 +30101,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_present_wait"],
         ImpliesSets = ["VK_KHR_present_id", "VK_KHR_swapchain"]
     )]
-    public static ReadOnlySpan<byte> KhrPresentWaitExtensionName => "VK_KHR_present_wait"u8;
+    public static Utf8String KhrPresentWaitExtensionName => "VK_KHR_present_wait"u8;
 
     [NativeTypeName("#define VK_KHR_UNIFORM_BUFFER_STANDARD_LAYOUT_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30149,7 +30125,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_uniform_buffer_standard_layout+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrUniformBufferStandardLayoutExtensionName =>
+    public static Utf8String KhrUniformBufferStandardLayoutExtensionName =>
         "VK_KHR_uniform_buffer_standard_layout"u8;
 
     [NativeTypeName("#define VK_KHR_BUFFER_DEVICE_ADDRESS_SPEC_VERSION 1")]
@@ -30174,7 +30150,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrBufferDeviceAddressExtensionName =>
+    public static Utf8String KhrBufferDeviceAddressExtensionName =>
         "VK_KHR_buffer_device_address"u8;
 
     [NativeTypeName("#define VK_KHR_DEFERRED_HOST_OPERATIONS_SPEC_VERSION 4")]
@@ -30185,7 +30161,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_DEFERRED_HOST_OPERATIONS_EXTENSION_NAME \"VK_KHR_deferred_host_operations\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
-    public static ReadOnlySpan<byte> KhrDeferredHostOperationsExtensionName =>
+    public static Utf8String KhrDeferredHostOperationsExtensionName =>
         "VK_KHR_deferred_host_operations"u8;
 
     [NativeTypeName("#define VK_KHR_PIPELINE_EXECUTABLE_PROPERTIES_SPEC_VERSION 1")]
@@ -30210,7 +30186,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrPipelineExecutablePropertiesExtensionName =>
+    public static Utf8String KhrPipelineExecutablePropertiesExtensionName =>
         "VK_KHR_pipeline_executable_properties"u8;
 
     [NativeTypeName("#define VK_KHR_MAP_MEMORY_2_SPEC_VERSION 1")]
@@ -30219,7 +30195,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_MAP_MEMORY_2_EXTENSION_NAME \"VK_KHR_map_memory2\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
-    public static ReadOnlySpan<byte> KhrMapMemory2ExtensionName => "VK_KHR_map_memory2"u8;
+    public static Utf8String KhrMapMemory2ExtensionName => "VK_KHR_map_memory2"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_INTEGER_DOT_PRODUCT_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30243,7 +30219,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_shader_integer_dot_product+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrShaderIntegerDotProductExtensionName =>
+    public static Utf8String KhrShaderIntegerDotProductExtensionName =>
         "VK_KHR_shader_integer_dot_product"u8;
 
     [NativeTypeName("#define VK_KHR_PIPELINE_LIBRARY_SPEC_VERSION 1")]
@@ -30252,7 +30228,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_PIPELINE_LIBRARY_EXTENSION_NAME \"VK_KHR_pipeline_library\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
-    public static ReadOnlySpan<byte> KhrPipelineLibraryExtensionName => "VK_KHR_pipeline_library"u8;
+    public static Utf8String KhrPipelineLibraryExtensionName => "VK_KHR_pipeline_library"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_NON_SEMANTIC_INFO_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_shader_non_semantic_info"])]
@@ -30262,7 +30238,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_SHADER_NON_SEMANTIC_INFO_EXTENSION_NAME \"VK_KHR_shader_non_semantic_info\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_shader_non_semantic_info"])]
-    public static ReadOnlySpan<byte> KhrShaderNonSemanticInfoExtensionName =>
+    public static Utf8String KhrShaderNonSemanticInfoExtensionName =>
         "VK_KHR_shader_non_semantic_info"u8;
 
     [NativeTypeName("#define VK_KHR_PRESENT_ID_SPEC_VERSION 1")]
@@ -30285,7 +30261,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrPresentIdExtensionName => "VK_KHR_present_id"u8;
+    public static Utf8String KhrPresentIdExtensionName => "VK_KHR_present_id"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_ENCODE_QUEUE_SPEC_VERSION 12")]
     [SupportedApiProfile(
@@ -30309,8 +30285,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrVideoEncodeQueueExtensionName =>
-        "VK_KHR_video_encode_queue"u8;
+    public static Utf8String KhrVideoEncodeQueueExtensionName => "VK_KHR_video_encode_queue"u8;
 
     [NativeTypeName("#define VK_KHR_SYNCHRONIZATION_2_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30332,8 +30307,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_synchronization2+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrSynchronization2ExtensionName =>
-        "VK_KHR_synchronization2"u8;
+    public static Utf8String KhrSynchronization2ExtensionName => "VK_KHR_synchronization2"u8;
 
     [NativeTypeName("#define VK_KHR_FRAGMENT_SHADER_BARYCENTRIC_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30357,7 +30331,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_fragment_shader_barycentric+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrFragmentShaderBarycentricExtensionName =>
+    public static Utf8String KhrFragmentShaderBarycentricExtensionName =>
         "VK_KHR_fragment_shader_barycentric"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_SPEC_VERSION 1")]
@@ -30376,7 +30350,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_shader_subgroup_uniform_control_flow"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public static ReadOnlySpan<byte> KhrShaderSubgroupUniformControlFlowExtensionName =>
+    public static Utf8String KhrShaderSubgroupUniformControlFlowExtensionName =>
         "VK_KHR_shader_subgroup_uniform_control_flow"u8;
 
     [NativeTypeName("#define VK_KHR_ZERO_INITIALIZE_WORKGROUP_MEMORY_SPEC_VERSION 1")]
@@ -30401,7 +30375,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_zero_initialize_workgroup_memory+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrZeroInitializeWorkgroupMemoryExtensionName =>
+    public static Utf8String KhrZeroInitializeWorkgroupMemoryExtensionName =>
         "VK_KHR_zero_initialize_workgroup_memory"u8;
 
     [NativeTypeName("#define VK_KHR_WORKGROUP_MEMORY_EXPLICIT_LAYOUT_SPEC_VERSION 1")]
@@ -30426,7 +30400,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_workgroup_memory_explicit_layout+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrWorkgroupMemoryExplicitLayoutExtensionName =>
+    public static Utf8String KhrWorkgroupMemoryExplicitLayoutExtensionName =>
         "VK_KHR_workgroup_memory_explicit_layout"u8;
 
     [NativeTypeName("#define VK_KHR_COPY_COMMANDS_2_SPEC_VERSION 1")]
@@ -30449,7 +30423,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_copy_commands2+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrCopyCommands2ExtensionName => "VK_KHR_copy_commands2"u8;
+    public static Utf8String KhrCopyCommands2ExtensionName => "VK_KHR_copy_commands2"u8;
 
     [NativeTypeName("#define VK_KHR_FORMAT_FEATURE_FLAGS_2_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -30473,7 +30447,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_format_feature_flags2+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrFormatFeatureFlags2ExtensionName =>
+    public static Utf8String KhrFormatFeatureFlags2ExtensionName =>
         "VK_KHR_format_feature_flags2"u8;
 
     [NativeTypeName("#define VK_KHR_RAY_TRACING_MAINTENANCE_1_SPEC_VERSION 1")]
@@ -30492,7 +30466,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_ray_tracing_maintenance1"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public static ReadOnlySpan<byte> KhrRayTracingMaintenance1ExtensionName =>
+    public static Utf8String KhrRayTracingMaintenance1ExtensionName =>
         "VK_KHR_ray_tracing_maintenance1"u8;
 
     [NativeTypeName("#define VK_KHR_PORTABILITY_ENUMERATION_SPEC_VERSION 1")]
@@ -30503,7 +30477,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME \"VK_KHR_portability_enumeration\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_portability_enumeration"])]
-    public static ReadOnlySpan<byte> KhrPortabilityEnumerationExtensionName =>
+    public static Utf8String KhrPortabilityEnumerationExtensionName =>
         "VK_KHR_portability_enumeration"u8;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_4_SPEC_VERSION 2")]
@@ -30512,7 +30486,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_4_EXTENSION_NAME \"VK_KHR_maintenance4\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public static ReadOnlySpan<byte> KhrMaintenance4ExtensionName => "VK_KHR_maintenance4"u8;
+    public static Utf8String KhrMaintenance4ExtensionName => "VK_KHR_maintenance4"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_SUBGROUP_ROTATE_SPEC_VERSION 2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_shader_subgroup_rotate"])]
@@ -30522,7 +30496,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_SHADER_SUBGROUP_ROTATE_EXTENSION_NAME \"VK_KHR_shader_subgroup_rotate\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_shader_subgroup_rotate"])]
-    public static ReadOnlySpan<byte> KhrShaderSubgroupRotateExtensionName =>
+    public static Utf8String KhrShaderSubgroupRotateExtensionName =>
         "VK_KHR_shader_subgroup_rotate"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_MAXIMAL_RECONVERGENCE_SPEC_VERSION 1")]
@@ -30541,7 +30515,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_shader_maximal_reconvergence"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public static ReadOnlySpan<byte> KhrShaderMaximalReconvergenceExtensionName =>
+    public static Utf8String KhrShaderMaximalReconvergenceExtensionName =>
         "VK_KHR_shader_maximal_reconvergence"u8;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_5_SPEC_VERSION 1")]
@@ -30558,7 +30532,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_maintenance5"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
     )]
-    public static ReadOnlySpan<byte> KhrMaintenance5ExtensionName => "VK_KHR_maintenance5"u8;
+    public static Utf8String KhrMaintenance5ExtensionName => "VK_KHR_maintenance5"u8;
 
     [NativeTypeName("#define VK_KHR_RAY_TRACING_POSITION_FETCH_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30576,7 +30550,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_ray_tracing_position_fetch"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public static ReadOnlySpan<byte> KhrRayTracingPositionFetchExtensionName =>
+    public static Utf8String KhrRayTracingPositionFetchExtensionName =>
         "VK_KHR_ray_tracing_position_fetch"u8;
 
     [NativeTypeName("#define VK_KHR_PIPELINE_BINARY_SPEC_VERSION 1")]
@@ -30599,7 +30573,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrPipelineBinaryExtensionName => "VK_KHR_pipeline_binary"u8;
+    public static Utf8String KhrPipelineBinaryExtensionName => "VK_KHR_pipeline_binary"u8;
 
     [NativeTypeName("#define VK_KHR_COOPERATIVE_MATRIX_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -30623,8 +30597,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrCooperativeMatrixExtensionName =>
-        "VK_KHR_cooperative_matrix"u8;
+    public static Utf8String KhrCooperativeMatrixExtensionName => "VK_KHR_cooperative_matrix"u8;
 
     [NativeTypeName("#define VK_KHR_COMPUTE_SHADER_DERIVATIVES_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30648,7 +30621,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrComputeShaderDerivativesExtensionName =>
+    public static Utf8String KhrComputeShaderDerivativesExtensionName =>
         "VK_KHR_compute_shader_derivatives"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_DECODE_AV1_SPEC_VERSION 1")]
@@ -30665,7 +30638,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_video_decode_av1"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public static ReadOnlySpan<byte> KhrVideoDecodeAv1ExtensionName => "VK_KHR_video_decode_av1"u8;
+    public static Utf8String KhrVideoDecodeAv1ExtensionName => "VK_KHR_video_decode_av1"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_ENCODE_AV1_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30681,7 +30654,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public static ReadOnlySpan<byte> KhrVideoEncodeAv1ExtensionName => "VK_KHR_video_encode_av1"u8;
+    public static Utf8String KhrVideoEncodeAv1ExtensionName => "VK_KHR_video_encode_av1"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_MAINTENANCE_1_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30699,8 +30672,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    public static ReadOnlySpan<byte> KhrVideoMaintenance1ExtensionName =>
-        "VK_KHR_video_maintenance1"u8;
+    public static Utf8String KhrVideoMaintenance1ExtensionName => "VK_KHR_video_maintenance1"u8;
 
     [NativeTypeName("#define VK_KHR_VERTEX_ATTRIBUTE_DIVISOR_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30724,7 +30696,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_vertex_attribute_divisor+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrVertexAttributeDivisorExtensionName =>
+    public static Utf8String KhrVertexAttributeDivisorExtensionName =>
         "VK_KHR_vertex_attribute_divisor"u8;
 
     [NativeTypeName("#define VK_KHR_LOAD_STORE_OP_NONE_SPEC_VERSION 1")]
@@ -30735,8 +30707,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_LOAD_STORE_OP_NONE_EXTENSION_NAME \"VK_KHR_load_store_op_none\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_load_store_op_none"])]
-    public static ReadOnlySpan<byte> KhrLoadStoreOpNoneExtensionName =>
-        "VK_KHR_load_store_op_none"u8;
+    public static Utf8String KhrLoadStoreOpNoneExtensionName => "VK_KHR_load_store_op_none"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_FLOAT_CONTROLS_2_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30754,7 +30725,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_shader_float_controls2"],
         ImpliesSets = ["VK_KHR_shader_float_controls", "VK_VERSION_1_1"]
     )]
-    public static ReadOnlySpan<byte> KhrShaderFloatControls2ExtensionName =>
+    public static Utf8String KhrShaderFloatControls2ExtensionName =>
         "VK_KHR_shader_float_controls2"u8;
 
     [NativeTypeName("#define VK_KHR_INDEX_TYPE_UINT8_SPEC_VERSION 1")]
@@ -30777,7 +30748,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_index_type_uint8+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrIndexTypeUint8ExtensionName => "VK_KHR_index_type_uint8"u8;
+    public static Utf8String KhrIndexTypeUint8ExtensionName => "VK_KHR_index_type_uint8"u8;
 
     [NativeTypeName("#define VK_KHR_LINE_RASTERIZATION_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30801,8 +30772,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrLineRasterizationExtensionName =>
-        "VK_KHR_line_rasterization"u8;
+    public static Utf8String KhrLineRasterizationExtensionName => "VK_KHR_line_rasterization"u8;
 
     [NativeTypeName("#define VK_KHR_CALIBRATED_TIMESTAMPS_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30826,7 +30796,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrCalibratedTimestampsExtensionName =>
+    public static Utf8String KhrCalibratedTimestampsExtensionName =>
         "VK_KHR_calibrated_timestamps"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_EXPECT_ASSUME_SPEC_VERSION 1")]
@@ -30851,8 +30821,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_shader_expect_assume+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrShaderExpectAssumeExtensionName =>
-        "VK_KHR_shader_expect_assume"u8;
+    public static Utf8String KhrShaderExpectAssumeExtensionName => "VK_KHR_shader_expect_assume"u8;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_6_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
@@ -30860,7 +30829,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_6_EXTENSION_NAME \"VK_KHR_maintenance6\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public static ReadOnlySpan<byte> KhrMaintenance6ExtensionName => "VK_KHR_maintenance6"u8;
+    public static Utf8String KhrMaintenance6ExtensionName => "VK_KHR_maintenance6"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_ENCODE_QUANTIZATION_MAP_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -30884,7 +30853,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrVideoEncodeQuantizationMapExtensionName =>
+    public static Utf8String KhrVideoEncodeQuantizationMapExtensionName =>
         "VK_KHR_video_encode_quantization_map"u8;
 
     [NativeTypeName("#define VK_KHR_SHADER_RELAXED_EXTENDED_INSTRUCTION_SPEC_VERSION 1")]
@@ -30895,7 +30864,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_KHR_SHADER_RELAXED_EXTENDED_INSTRUCTION_EXTENSION_NAME \"VK_KHR_shader_relaxed_extended_instruction\""
     )]
     [SupportedApiProfile("vulkan", ["VK_KHR_shader_relaxed_extended_instruction"])]
-    public static ReadOnlySpan<byte> KhrShaderRelaxedExtendedInstructionExtensionName =>
+    public static Utf8String KhrShaderRelaxedExtendedInstructionExtensionName =>
         "VK_KHR_shader_relaxed_extended_instruction"u8;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_7_SPEC_VERSION 1")]
@@ -30904,7 +30873,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_7_EXTENSION_NAME \"VK_KHR_maintenance7\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public static ReadOnlySpan<byte> KhrMaintenance7ExtensionName => "VK_KHR_maintenance7"u8;
+    public static Utf8String KhrMaintenance7ExtensionName => "VK_KHR_maintenance7"u8;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_8_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
@@ -30912,7 +30881,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_8_EXTENSION_NAME \"VK_KHR_maintenance8\"")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public static ReadOnlySpan<byte> KhrMaintenance8ExtensionName => "VK_KHR_maintenance8"u8;
+    public static Utf8String KhrMaintenance8ExtensionName => "VK_KHR_maintenance8"u8;
 
     [NativeTypeName("#define VK_KHR_VIDEO_MAINTENANCE_2_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30930,8 +30899,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_KHR_video_maintenance2"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    public static ReadOnlySpan<byte> KhrVideoMaintenance2ExtensionName =>
-        "VK_KHR_video_maintenance2"u8;
+    public static Utf8String KhrVideoMaintenance2ExtensionName => "VK_KHR_video_maintenance2"u8;
 
     [NativeTypeName("#define VK_KHR_DEPTH_CLAMP_ZERO_ONE_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30955,8 +30923,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_depth_clamp_zero_one+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrDepthClampZeroOneExtensionName =>
-        "VK_KHR_depth_clamp_zero_one"u8;
+    public static Utf8String KhrDepthClampZeroOneExtensionName => "VK_KHR_depth_clamp_zero_one"u8;
 
     [NativeTypeName("#define VK_KHR_ROBUSTNESS_2_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -30978,7 +30945,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_robustness2+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrRobustness2ExtensionName => "VK_KHR_robustness2"u8;
+    public static Utf8String KhrRobustness2ExtensionName => "VK_KHR_robustness2"u8;
 
     [NativeTypeName("#define VK_EXT_DEBUG_REPORT_SPEC_VERSION 10")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
@@ -30986,7 +30953,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_DEBUG_REPORT_EXTENSION_NAME \"VK_EXT_debug_report\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    public static ReadOnlySpan<byte> ExtDebugReportExtensionName => "VK_EXT_debug_report"u8;
+    public static Utf8String ExtDebugReportExtensionName => "VK_EXT_debug_report"u8;
 
     [NativeTypeName("#define VK_NV_GLSL_SHADER_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_NV_glsl_shader"])]
@@ -30994,7 +30961,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NV_GLSL_SHADER_EXTENSION_NAME \"VK_NV_glsl_shader\"")]
     [SupportedApiProfile("vulkan", ["VK_NV_glsl_shader"])]
-    public static ReadOnlySpan<byte> NvGlslShaderExtensionName => "VK_NV_glsl_shader"u8;
+    public static Utf8String NvGlslShaderExtensionName => "VK_NV_glsl_shader"u8;
 
     [NativeTypeName("#define VK_EXT_DEPTH_RANGE_UNRESTRICTED_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_EXT_depth_range_unrestricted"])]
@@ -31004,7 +30971,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_EXT_DEPTH_RANGE_UNRESTRICTED_EXTENSION_NAME \"VK_EXT_depth_range_unrestricted\""
     )]
     [SupportedApiProfile("vulkan", ["VK_EXT_depth_range_unrestricted"])]
-    public static ReadOnlySpan<byte> ExtDepthRangeUnrestrictedExtensionName =>
+    public static Utf8String ExtDepthRangeUnrestrictedExtensionName =>
         "VK_EXT_depth_range_unrestricted"u8;
 
     [NativeTypeName("#define VK_IMG_FILTER_CUBIC_SPEC_VERSION 1")]
@@ -31013,7 +30980,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_IMG_FILTER_CUBIC_EXTENSION_NAME \"VK_IMG_filter_cubic\"")]
     [SupportedApiProfile("vulkan", ["VK_IMG_filter_cubic"])]
-    public static ReadOnlySpan<byte> ImgFilterCubicExtensionName => "VK_IMG_filter_cubic"u8;
+    public static Utf8String ImgFilterCubicExtensionName => "VK_IMG_filter_cubic"u8;
 
     [NativeTypeName("#define VK_AMD_RASTERIZATION_ORDER_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
@@ -31023,8 +30990,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_AMD_RASTERIZATION_ORDER_EXTENSION_NAME \"VK_AMD_rasterization_order\""
     )]
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
-    public static ReadOnlySpan<byte> AmdRasterizationOrderExtensionName =>
-        "VK_AMD_rasterization_order"u8;
+    public static Utf8String AmdRasterizationOrderExtensionName => "VK_AMD_rasterization_order"u8;
 
     [NativeTypeName("#define VK_AMD_SHADER_TRINARY_MINMAX_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_trinary_minmax"])]
@@ -31034,7 +31000,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_AMD_SHADER_TRINARY_MINMAX_EXTENSION_NAME \"VK_AMD_shader_trinary_minmax\""
     )]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_trinary_minmax"])]
-    public static ReadOnlySpan<byte> AmdShaderTrinaryMinmaxExtensionName =>
+    public static Utf8String AmdShaderTrinaryMinmaxExtensionName =>
         "VK_AMD_shader_trinary_minmax"u8;
 
     [NativeTypeName("#define VK_AMD_SHADER_EXPLICIT_VERTEX_PARAMETER_SPEC_VERSION 1")]
@@ -31045,7 +31011,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_AMD_SHADER_EXPLICIT_VERTEX_PARAMETER_EXTENSION_NAME \"VK_AMD_shader_explicit_vertex_parameter\""
     )]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_explicit_vertex_parameter"])]
-    public static ReadOnlySpan<byte> AmdShaderExplicitVertexParameterExtensionName =>
+    public static Utf8String AmdShaderExplicitVertexParameterExtensionName =>
         "VK_AMD_shader_explicit_vertex_parameter"u8;
 
     [NativeTypeName("#define VK_EXT_DEBUG_MARKER_SPEC_VERSION 4")]
@@ -31054,7 +31020,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_DEBUG_MARKER_EXTENSION_NAME \"VK_EXT_debug_marker\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
-    public static ReadOnlySpan<byte> ExtDebugMarkerExtensionName => "VK_EXT_debug_marker"u8;
+    public static Utf8String ExtDebugMarkerExtensionName => "VK_EXT_debug_marker"u8;
 
     [NativeTypeName("#define VK_AMD_GCN_SHADER_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_AMD_gcn_shader"])]
@@ -31062,7 +31028,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_AMD_GCN_SHADER_EXTENSION_NAME \"VK_AMD_gcn_shader\"")]
     [SupportedApiProfile("vulkan", ["VK_AMD_gcn_shader"])]
-    public static ReadOnlySpan<byte> AmdGcnShaderExtensionName => "VK_AMD_gcn_shader"u8;
+    public static Utf8String AmdGcnShaderExtensionName => "VK_AMD_gcn_shader"u8;
 
     [NativeTypeName("#define VK_NV_DEDICATED_ALLOCATION_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
@@ -31072,8 +31038,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_DEDICATED_ALLOCATION_EXTENSION_NAME \"VK_NV_dedicated_allocation\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
-    public static ReadOnlySpan<byte> NvDedicatedAllocationExtensionName =>
-        "VK_NV_dedicated_allocation"u8;
+    public static Utf8String NvDedicatedAllocationExtensionName => "VK_NV_dedicated_allocation"u8;
 
     [NativeTypeName("#define VK_EXT_TRANSFORM_FEEDBACK_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -31097,8 +31062,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtTransformFeedbackExtensionName =>
-        "VK_EXT_transform_feedback"u8;
+    public static Utf8String ExtTransformFeedbackExtensionName => "VK_EXT_transform_feedback"u8;
 
     [NativeTypeName("#define VK_NVX_BINARY_IMPORT_SPEC_VERSION 2")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
@@ -31106,7 +31070,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NVX_BINARY_IMPORT_EXTENSION_NAME \"VK_NVX_binary_import\"")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public static ReadOnlySpan<byte> NvxBinaryImportExtensionName => "VK_NVX_binary_import"u8;
+    public static Utf8String NvxBinaryImportExtensionName => "VK_NVX_binary_import"u8;
 
     [NativeTypeName("#define VK_NVX_IMAGE_VIEW_HANDLE_SPEC_VERSION 3")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
@@ -31114,8 +31078,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NVX_IMAGE_VIEW_HANDLE_EXTENSION_NAME \"VK_NVX_image_view_handle\"")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
-    public static ReadOnlySpan<byte> NvxImageViewHandleExtensionName =>
-        "VK_NVX_image_view_handle"u8;
+    public static Utf8String NvxImageViewHandleExtensionName => "VK_NVX_image_view_handle"u8;
 
     [NativeTypeName("#define VK_AMD_DRAW_INDIRECT_COUNT_SPEC_VERSION 2")]
     [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
@@ -31125,8 +31088,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_AMD_DRAW_INDIRECT_COUNT_EXTENSION_NAME \"VK_AMD_draw_indirect_count\""
     )]
     [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
-    public static ReadOnlySpan<byte> AmdDrawIndirectCountExtensionName =>
-        "VK_AMD_draw_indirect_count"u8;
+    public static Utf8String AmdDrawIndirectCountExtensionName => "VK_AMD_draw_indirect_count"u8;
 
     [NativeTypeName("#define VK_AMD_NEGATIVE_VIEWPORT_HEIGHT_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_AMD_negative_viewport_height"])]
@@ -31136,7 +31098,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_AMD_NEGATIVE_VIEWPORT_HEIGHT_EXTENSION_NAME \"VK_AMD_negative_viewport_height\""
     )]
     [SupportedApiProfile("vulkan", ["VK_AMD_negative_viewport_height"])]
-    public static ReadOnlySpan<byte> AmdNegativeViewportHeightExtensionName =>
+    public static Utf8String AmdNegativeViewportHeightExtensionName =>
         "VK_AMD_negative_viewport_height"u8;
 
     [NativeTypeName("#define VK_AMD_GPU_SHADER_HALF_FLOAT_SPEC_VERSION 2")]
@@ -31147,8 +31109,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_AMD_GPU_SHADER_HALF_FLOAT_EXTENSION_NAME \"VK_AMD_gpu_shader_half_float\""
     )]
     [SupportedApiProfile("vulkan", ["VK_AMD_gpu_shader_half_float"])]
-    public static ReadOnlySpan<byte> AmdGpuShaderHalfFloatExtensionName =>
-        "VK_AMD_gpu_shader_half_float"u8;
+    public static Utf8String AmdGpuShaderHalfFloatExtensionName => "VK_AMD_gpu_shader_half_float"u8;
 
     [NativeTypeName("#define VK_AMD_SHADER_BALLOT_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_ballot"])]
@@ -31156,7 +31117,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_AMD_SHADER_BALLOT_EXTENSION_NAME \"VK_AMD_shader_ballot\"")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_ballot"])]
-    public static ReadOnlySpan<byte> AmdShaderBallotExtensionName => "VK_AMD_shader_ballot"u8;
+    public static Utf8String AmdShaderBallotExtensionName => "VK_AMD_shader_ballot"u8;
 
     [NativeTypeName("#define VK_AMD_TEXTURE_GATHER_BIAS_LOD_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -31180,7 +31141,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_AMD_texture_gather_bias_lod+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> AmdTextureGatherBiasLodExtensionName =>
+    public static Utf8String AmdTextureGatherBiasLodExtensionName =>
         "VK_AMD_texture_gather_bias_lod"u8;
 
     [NativeTypeName("#define VK_AMD_SHADER_INFO_SPEC_VERSION 1")]
@@ -31189,7 +31150,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_AMD_SHADER_INFO_EXTENSION_NAME \"VK_AMD_shader_info\"")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    public static ReadOnlySpan<byte> AmdShaderInfoExtensionName => "VK_AMD_shader_info"u8;
+    public static Utf8String AmdShaderInfoExtensionName => "VK_AMD_shader_info"u8;
 
     [NativeTypeName("#define VK_AMD_SHADER_IMAGE_LOAD_STORE_LOD_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_image_load_store_lod"])]
@@ -31199,7 +31160,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_AMD_SHADER_IMAGE_LOAD_STORE_LOD_EXTENSION_NAME \"VK_AMD_shader_image_load_store_lod\""
     )]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_image_load_store_lod"])]
-    public static ReadOnlySpan<byte> AmdShaderImageLoadStoreLodExtensionName =>
+    public static Utf8String AmdShaderImageLoadStoreLodExtensionName =>
         "VK_AMD_shader_image_load_store_lod"u8;
 
     [NativeTypeName("#define VK_NV_CORNER_SAMPLED_IMAGE_SPEC_VERSION 2")]
@@ -31224,8 +31185,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_corner_sampled_image+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvCornerSampledImageExtensionName =>
-        "VK_NV_corner_sampled_image"u8;
+    public static Utf8String NvCornerSampledImageExtensionName => "VK_NV_corner_sampled_image"u8;
 
     [NativeTypeName("#define VK_IMG_FORMAT_PVRTC_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
@@ -31233,7 +31193,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_IMG_FORMAT_PVRTC_EXTENSION_NAME \"VK_IMG_format_pvrtc\"")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    public static ReadOnlySpan<byte> ImgFormatPvrtcExtensionName => "VK_IMG_format_pvrtc"u8;
+    public static Utf8String ImgFormatPvrtcExtensionName => "VK_IMG_format_pvrtc"u8;
 
     [NativeTypeName("#define VK_NV_EXTERNAL_MEMORY_CAPABILITIES_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
@@ -31243,7 +31203,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_EXTERNAL_MEMORY_CAPABILITIES_EXTENSION_NAME \"VK_NV_external_memory_capabilities\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    public static ReadOnlySpan<byte> NvExternalMemoryCapabilitiesExtensionName =>
+    public static Utf8String NvExternalMemoryCapabilitiesExtensionName =>
         "VK_NV_external_memory_capabilities"u8;
 
     [NativeTypeName("#define VK_NV_EXTERNAL_MEMORY_SPEC_VERSION 1")]
@@ -31260,7 +31220,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_external_memory"],
         ImpliesSets = ["VK_NV_external_memory_capabilities"]
     )]
-    public static ReadOnlySpan<byte> NvExternalMemoryExtensionName => "VK_NV_external_memory"u8;
+    public static Utf8String NvExternalMemoryExtensionName => "VK_NV_external_memory"u8;
 
     [NativeTypeName("#define VK_EXT_VALIDATION_FLAGS_SPEC_VERSION 3")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
@@ -31268,7 +31228,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_VALIDATION_FLAGS_EXTENSION_NAME \"VK_EXT_validation_flags\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
-    public static ReadOnlySpan<byte> ExtValidationFlagsExtensionName => "VK_EXT_validation_flags"u8;
+    public static Utf8String ExtValidationFlagsExtensionName => "VK_EXT_validation_flags"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_SUBGROUP_BALLOT_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_subgroup_ballot"])]
@@ -31278,7 +31238,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_EXT_SHADER_SUBGROUP_BALLOT_EXTENSION_NAME \"VK_EXT_shader_subgroup_ballot\""
     )]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_subgroup_ballot"])]
-    public static ReadOnlySpan<byte> ExtShaderSubgroupBallotExtensionName =>
+    public static Utf8String ExtShaderSubgroupBallotExtensionName =>
         "VK_EXT_shader_subgroup_ballot"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_SUBGROUP_VOTE_SPEC_VERSION 1")]
@@ -31289,8 +31249,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_EXT_SHADER_SUBGROUP_VOTE_EXTENSION_NAME \"VK_EXT_shader_subgroup_vote\""
     )]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_subgroup_vote"])]
-    public static ReadOnlySpan<byte> ExtShaderSubgroupVoteExtensionName =>
-        "VK_EXT_shader_subgroup_vote"u8;
+    public static Utf8String ExtShaderSubgroupVoteExtensionName => "VK_EXT_shader_subgroup_vote"u8;
 
     [NativeTypeName("#define VK_EXT_TEXTURE_COMPRESSION_ASTC_HDR_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -31314,7 +31273,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtTextureCompressionAstcHdrExtensionName =>
+    public static Utf8String ExtTextureCompressionAstcHdrExtensionName =>
         "VK_EXT_texture_compression_astc_hdr"u8;
 
     [NativeTypeName("#define VK_EXT_ASTC_DECODE_MODE_SPEC_VERSION 1")]
@@ -31337,7 +31296,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_astc_decode_mode+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtAstcDecodeModeExtensionName => "VK_EXT_astc_decode_mode"u8;
+    public static Utf8String ExtAstcDecodeModeExtensionName => "VK_EXT_astc_decode_mode"u8;
 
     [NativeTypeName("#define VK_EXT_PIPELINE_ROBUSTNESS_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -31361,8 +31320,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtPipelineRobustnessExtensionName =>
-        "VK_EXT_pipeline_robustness"u8;
+    public static Utf8String ExtPipelineRobustnessExtensionName => "VK_EXT_pipeline_robustness"u8;
 
     [NativeTypeName("#define VK_EXT_CONDITIONAL_RENDERING_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -31386,7 +31344,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtConditionalRenderingExtensionName =>
+    public static Utf8String ExtConditionalRenderingExtensionName =>
         "VK_EXT_conditional_rendering"u8;
 
     [NativeTypeName("#define VK_NV_CLIP_SPACE_W_SCALING_SPEC_VERSION 1")]
@@ -31397,8 +31355,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_CLIP_SPACE_W_SCALING_EXTENSION_NAME \"VK_NV_clip_space_w_scaling\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
-    public static ReadOnlySpan<byte> NvClipSpaceWScalingExtensionName =>
-        "VK_NV_clip_space_w_scaling"u8;
+    public static Utf8String NvClipSpaceWScalingExtensionName => "VK_NV_clip_space_w_scaling"u8;
 
     [NativeTypeName("#define VK_EXT_DIRECT_MODE_DISPLAY_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -31416,8 +31373,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_direct_mode_display"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public static ReadOnlySpan<byte> ExtDirectModeDisplayExtensionName =>
-        "VK_EXT_direct_mode_display"u8;
+    public static Utf8String ExtDirectModeDisplayExtensionName => "VK_EXT_direct_mode_display"u8;
 
     [NativeTypeName("#define VK_EXT_DISPLAY_SURFACE_COUNTER_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -31435,7 +31391,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public static ReadOnlySpan<byte> ExtDisplaySurfaceCounterExtensionName =>
+    public static Utf8String ExtDisplaySurfaceCounterExtensionName =>
         "VK_EXT_display_surface_counter"u8;
 
     [NativeTypeName("#define VK_EXT_DISPLAY_CONTROL_SPEC_VERSION 1")]
@@ -31452,7 +31408,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_display_control"],
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
-    public static ReadOnlySpan<byte> ExtDisplayControlExtensionName => "VK_EXT_display_control"u8;
+    public static Utf8String ExtDisplayControlExtensionName => "VK_EXT_display_control"u8;
 
     [NativeTypeName("#define VK_GOOGLE_DISPLAY_TIMING_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -31468,8 +31424,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public static ReadOnlySpan<byte> GoogleDisplayTimingExtensionName =>
-        "VK_GOOGLE_display_timing"u8;
+    public static Utf8String GoogleDisplayTimingExtensionName => "VK_GOOGLE_display_timing"u8;
 
     [NativeTypeName("#define VK_NV_SAMPLE_MASK_OVERRIDE_COVERAGE_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_NV_sample_mask_override_coverage"])]
@@ -31479,7 +31434,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_SAMPLE_MASK_OVERRIDE_COVERAGE_EXTENSION_NAME \"VK_NV_sample_mask_override_coverage\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_sample_mask_override_coverage"])]
-    public static ReadOnlySpan<byte> NvSampleMaskOverrideCoverageExtensionName =>
+    public static Utf8String NvSampleMaskOverrideCoverageExtensionName =>
         "VK_NV_sample_mask_override_coverage"u8;
 
     [NativeTypeName("#define VK_NV_GEOMETRY_SHADER_PASSTHROUGH_SPEC_VERSION 1")]
@@ -31490,7 +31445,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_GEOMETRY_SHADER_PASSTHROUGH_EXTENSION_NAME \"VK_NV_geometry_shader_passthrough\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_geometry_shader_passthrough"])]
-    public static ReadOnlySpan<byte> NvGeometryShaderPassthroughExtensionName =>
+    public static Utf8String NvGeometryShaderPassthroughExtensionName =>
         "VK_NV_geometry_shader_passthrough"u8;
 
     [NativeTypeName("#define VK_NV_VIEWPORT_ARRAY_2_SPEC_VERSION 1")]
@@ -31499,7 +31454,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NV_VIEWPORT_ARRAY_2_EXTENSION_NAME \"VK_NV_viewport_array2\"")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_array2"])]
-    public static ReadOnlySpan<byte> NvViewportArray2ExtensionName => "VK_NV_viewport_array2"u8;
+    public static Utf8String NvViewportArray2ExtensionName => "VK_NV_viewport_array2"u8;
 
     [NativeTypeName(
         "#define VK_NV_VIEWPORT_ARRAY2_SPEC_VERSION VK_NV_VIEWPORT_ARRAY_2_SPEC_VERSION"
@@ -31511,7 +31466,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_VIEWPORT_ARRAY2_EXTENSION_NAME VK_NV_VIEWPORT_ARRAY_2_EXTENSION_NAME"
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_array2"])]
-    public static ReadOnlySpan<byte> NvViewportArray2ExtensionName => "VK_NV_viewport_array2"u8;
+    public static Utf8String NvViewportArray2ExtensionName => "VK_NV_viewport_array2"u8;
 
     [NativeTypeName("#define VK_NVX_MULTIVIEW_PER_VIEW_ATTRIBUTES_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -31535,7 +31490,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvxMultiviewPerViewAttributesExtensionName =>
+    public static Utf8String NvxMultiviewPerViewAttributesExtensionName =>
         "VK_NVX_multiview_per_view_attributes"u8;
 
     [NativeTypeName("#define VK_NV_VIEWPORT_SWIZZLE_SPEC_VERSION 1")]
@@ -31544,7 +31499,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NV_VIEWPORT_SWIZZLE_EXTENSION_NAME \"VK_NV_viewport_swizzle\"")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    public static ReadOnlySpan<byte> NvViewportSwizzleExtensionName => "VK_NV_viewport_swizzle"u8;
+    public static Utf8String NvViewportSwizzleExtensionName => "VK_NV_viewport_swizzle"u8;
 
     [NativeTypeName("#define VK_EXT_DISCARD_RECTANGLES_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -31568,8 +31523,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDiscardRectanglesExtensionName =>
-        "VK_EXT_discard_rectangles"u8;
+    public static Utf8String ExtDiscardRectanglesExtensionName => "VK_EXT_discard_rectangles"u8;
 
     [NativeTypeName("#define VK_EXT_CONSERVATIVE_RASTERIZATION_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -31593,7 +31547,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtConservativeRasterizationExtensionName =>
+    public static Utf8String ExtConservativeRasterizationExtensionName =>
         "VK_EXT_conservative_rasterization"u8;
 
     [NativeTypeName("#define VK_EXT_DEPTH_CLIP_ENABLE_SPEC_VERSION 1")]
@@ -31616,8 +31570,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_depth_clip_enable+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDepthClipEnableExtensionName =>
-        "VK_EXT_depth_clip_enable"u8;
+    public static Utf8String ExtDepthClipEnableExtensionName => "VK_EXT_depth_clip_enable"u8;
 
     [NativeTypeName("#define VK_EXT_SWAPCHAIN_COLOR_SPACE_SPEC_VERSION 5")]
     [SupportedApiProfile(
@@ -31635,8 +31588,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    public static ReadOnlySpan<byte> ExtSwapchainColorSpaceExtensionName =>
-        "VK_EXT_swapchain_colorspace"u8;
+    public static Utf8String ExtSwapchainColorSpaceExtensionName => "VK_EXT_swapchain_colorspace"u8;
 
     [NativeTypeName("#define VK_EXT_HDR_METADATA_SPEC_VERSION 3")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
@@ -31644,7 +31596,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_HDR_METADATA_EXTENSION_NAME \"VK_EXT_hdr_metadata\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public static ReadOnlySpan<byte> ExtHdrMetadataExtensionName => "VK_EXT_hdr_metadata"u8;
+    public static Utf8String ExtHdrMetadataExtensionName => "VK_EXT_hdr_metadata"u8;
 
     [NativeTypeName("#define VK_IMG_RELAXED_LINE_RASTERIZATION_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -31668,7 +31620,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_IMG_relaxed_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ImgRelaxedLineRasterizationExtensionName =>
+    public static Utf8String ImgRelaxedLineRasterizationExtensionName =>
         "VK_IMG_relaxed_line_rasterization"u8;
 
     [NativeTypeName("#define VK_EXT_EXTERNAL_MEMORY_DMA_BUF_SPEC_VERSION 1")]
@@ -31687,7 +31639,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_external_memory_dma_buf"],
         ImpliesSets = ["VK_KHR_external_memory_fd"]
     )]
-    public static ReadOnlySpan<byte> ExtExternalMemoryDmaBufExtensionName =>
+    public static Utf8String ExtExternalMemoryDmaBufExtensionName =>
         "VK_EXT_external_memory_dma_buf"u8;
 
     [NativeTypeName("#define VK_EXT_QUEUE_FAMILY_FOREIGN_SPEC_VERSION 1")]
@@ -31712,8 +31664,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtQueueFamilyForeignExtensionName =>
-        "VK_EXT_queue_family_foreign"u8;
+    public static Utf8String ExtQueueFamilyForeignExtensionName => "VK_EXT_queue_family_foreign"u8;
 
     [NativeTypeName("#define VK_EXT_DEBUG_UTILS_SPEC_VERSION 2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
@@ -31721,7 +31672,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_DEBUG_UTILS_EXTENSION_NAME \"VK_EXT_debug_utils\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public static ReadOnlySpan<byte> ExtDebugUtilsExtensionName => "VK_EXT_debug_utils"u8;
+    public static Utf8String ExtDebugUtilsExtensionName => "VK_EXT_debug_utils"u8;
 
     [NativeTypeName("#define VK_EXT_SAMPLER_FILTER_MINMAX_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -31745,7 +31696,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtSamplerFilterMinmaxExtensionName =>
+    public static Utf8String ExtSamplerFilterMinmaxExtensionName =>
         "VK_EXT_sampler_filter_minmax"u8;
 
     [NativeTypeName("#define VK_AMD_GPU_SHADER_INT16_SPEC_VERSION 2")]
@@ -31754,7 +31705,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_AMD_GPU_SHADER_INT16_EXTENSION_NAME \"VK_AMD_gpu_shader_int16\"")]
     [SupportedApiProfile("vulkan", ["VK_AMD_gpu_shader_int16"])]
-    public static ReadOnlySpan<byte> AmdGpuShaderInt16ExtensionName => "VK_AMD_gpu_shader_int16"u8;
+    public static Utf8String AmdGpuShaderInt16ExtensionName => "VK_AMD_gpu_shader_int16"u8;
 
     [NativeTypeName("#define VK_AMD_MIXED_ATTACHMENT_SAMPLES_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_AMD_mixed_attachment_samples"])]
@@ -31764,7 +31715,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_AMD_MIXED_ATTACHMENT_SAMPLES_EXTENSION_NAME \"VK_AMD_mixed_attachment_samples\""
     )]
     [SupportedApiProfile("vulkan", ["VK_AMD_mixed_attachment_samples"])]
-    public static ReadOnlySpan<byte> AmdMixedAttachmentSamplesExtensionName =>
+    public static Utf8String AmdMixedAttachmentSamplesExtensionName =>
         "VK_AMD_mixed_attachment_samples"u8;
 
     [NativeTypeName("#define VK_AMD_SHADER_FRAGMENT_MASK_SPEC_VERSION 1")]
@@ -31775,8 +31726,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_AMD_SHADER_FRAGMENT_MASK_EXTENSION_NAME \"VK_AMD_shader_fragment_mask\""
     )]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_fragment_mask"])]
-    public static ReadOnlySpan<byte> AmdShaderFragmentMaskExtensionName =>
-        "VK_AMD_shader_fragment_mask"u8;
+    public static Utf8String AmdShaderFragmentMaskExtensionName => "VK_AMD_shader_fragment_mask"u8;
 
     [NativeTypeName("#define VK_EXT_INLINE_UNIFORM_BLOCK_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -31800,8 +31750,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtInlineUniformBlockExtensionName =>
-        "VK_EXT_inline_uniform_block"u8;
+    public static Utf8String ExtInlineUniformBlockExtensionName => "VK_EXT_inline_uniform_block"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_STENCIL_EXPORT_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_stencil_export"])]
@@ -31811,7 +31760,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_EXT_SHADER_STENCIL_EXPORT_EXTENSION_NAME \"VK_EXT_shader_stencil_export\""
     )]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_stencil_export"])]
-    public static ReadOnlySpan<byte> ExtShaderStencilExportExtensionName =>
+    public static Utf8String ExtShaderStencilExportExtensionName =>
         "VK_EXT_shader_stencil_export"u8;
 
     [NativeTypeName("#define VK_EXT_SAMPLE_LOCATIONS_SPEC_VERSION 1")]
@@ -31834,7 +31783,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtSampleLocationsExtensionName => "VK_EXT_sample_locations"u8;
+    public static Utf8String ExtSampleLocationsExtensionName => "VK_EXT_sample_locations"u8;
 
     [NativeTypeName("#define VK_EXT_BLEND_OPERATION_ADVANCED_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -31858,7 +31807,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtBlendOperationAdvancedExtensionName =>
+    public static Utf8String ExtBlendOperationAdvancedExtensionName =>
         "VK_EXT_blend_operation_advanced"u8;
 
     [NativeTypeName("#define VK_NV_FRAGMENT_COVERAGE_TO_COLOR_SPEC_VERSION 1")]
@@ -31869,7 +31818,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_FRAGMENT_COVERAGE_TO_COLOR_EXTENSION_NAME \"VK_NV_fragment_coverage_to_color\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
-    public static ReadOnlySpan<byte> NvFragmentCoverageToColorExtensionName =>
+    public static Utf8String NvFragmentCoverageToColorExtensionName =>
         "VK_NV_fragment_coverage_to_color"u8;
 
     [NativeTypeName("#define VK_NV_FRAMEBUFFER_MIXED_SAMPLES_SPEC_VERSION 1")]
@@ -31880,7 +31829,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_FRAMEBUFFER_MIXED_SAMPLES_EXTENSION_NAME \"VK_NV_framebuffer_mixed_samples\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    public static ReadOnlySpan<byte> NvFramebufferMixedSamplesExtensionName =>
+    public static Utf8String NvFramebufferMixedSamplesExtensionName =>
         "VK_NV_framebuffer_mixed_samples"u8;
 
     [NativeTypeName("#define VK_NV_FILL_RECTANGLE_SPEC_VERSION 1")]
@@ -31889,7 +31838,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NV_FILL_RECTANGLE_EXTENSION_NAME \"VK_NV_fill_rectangle\"")]
     [SupportedApiProfile("vulkan", ["VK_NV_fill_rectangle"])]
-    public static ReadOnlySpan<byte> NvFillRectangleExtensionName => "VK_NV_fill_rectangle"u8;
+    public static Utf8String NvFillRectangleExtensionName => "VK_NV_fill_rectangle"u8;
 
     [NativeTypeName("#define VK_NV_SHADER_SM_BUILTINS_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_NV_shader_sm_builtins"], ImpliesSets = ["VK_VERSION_1_1"])]
@@ -31897,8 +31846,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NV_SHADER_SM_BUILTINS_EXTENSION_NAME \"VK_NV_shader_sm_builtins\"")]
     [SupportedApiProfile("vulkan", ["VK_NV_shader_sm_builtins"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public static ReadOnlySpan<byte> NvShaderSmBuiltinsExtensionName =>
-        "VK_NV_shader_sm_builtins"u8;
+    public static Utf8String NvShaderSmBuiltinsExtensionName => "VK_NV_shader_sm_builtins"u8;
 
     [NativeTypeName("#define VK_EXT_POST_DEPTH_COVERAGE_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_EXT_post_depth_coverage"])]
@@ -31908,8 +31856,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_EXT_POST_DEPTH_COVERAGE_EXTENSION_NAME \"VK_EXT_post_depth_coverage\""
     )]
     [SupportedApiProfile("vulkan", ["VK_EXT_post_depth_coverage"])]
-    public static ReadOnlySpan<byte> ExtPostDepthCoverageExtensionName =>
-        "VK_EXT_post_depth_coverage"u8;
+    public static Utf8String ExtPostDepthCoverageExtensionName => "VK_EXT_post_depth_coverage"u8;
 
     [NativeTypeName("#define VK_EXT_IMAGE_DRM_FORMAT_MODIFIER_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -31935,7 +31882,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtImageDrmFormatModifierExtensionName =>
+    public static Utf8String ExtImageDrmFormatModifierExtensionName =>
         "VK_EXT_image_drm_format_modifier"u8;
 
     [NativeTypeName("#define VK_EXT_VALIDATION_CACHE_SPEC_VERSION 1")]
@@ -31944,7 +31891,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_VALIDATION_CACHE_EXTENSION_NAME \"VK_EXT_validation_cache\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
-    public static ReadOnlySpan<byte> ExtValidationCacheExtensionName => "VK_EXT_validation_cache"u8;
+    public static Utf8String ExtValidationCacheExtensionName => "VK_EXT_validation_cache"u8;
 
     [NativeTypeName("#define VK_EXT_DESCRIPTOR_INDEXING_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -31968,8 +31915,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDescriptorIndexingExtensionName =>
-        "VK_EXT_descriptor_indexing"u8;
+    public static Utf8String ExtDescriptorIndexingExtensionName => "VK_EXT_descriptor_indexing"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_VIEWPORT_INDEX_LAYER_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_viewport_index_layer"])]
@@ -31979,7 +31925,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_EXT_SHADER_VIEWPORT_INDEX_LAYER_EXTENSION_NAME \"VK_EXT_shader_viewport_index_layer\""
     )]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_viewport_index_layer"])]
-    public static ReadOnlySpan<byte> ExtShaderViewportIndexLayerExtensionName =>
+    public static Utf8String ExtShaderViewportIndexLayerExtensionName =>
         "VK_EXT_shader_viewport_index_layer"u8;
 
     [NativeTypeName("#define VK_NV_SHADING_RATE_IMAGE_SPEC_VERSION 3")]
@@ -32002,8 +31948,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvShadingRateImageExtensionName =>
-        "VK_NV_shading_rate_image"u8;
+    public static Utf8String NvShadingRateImageExtensionName => "VK_NV_shading_rate_image"u8;
 
     [NativeTypeName("#define VK_NV_RAY_TRACING_SPEC_VERSION 3")]
     [SupportedApiProfile(
@@ -32025,7 +31970,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvRayTracingExtensionName => "VK_NV_ray_tracing"u8;
+    public static Utf8String NvRayTracingExtensionName => "VK_NV_ray_tracing"u8;
 
     [NativeTypeName("#define VK_SHADER_UNUSED_NV VK_SHADER_UNUSED_KHR")]
     [SupportedApiProfile(
@@ -32060,7 +32005,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_representative_fragment_test+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvRepresentativeFragmentTestExtensionName =>
+    public static Utf8String NvRepresentativeFragmentTestExtensionName =>
         "VK_NV_representative_fragment_test"u8;
 
     [NativeTypeName("#define VK_EXT_FILTER_CUBIC_SPEC_VERSION 3")]
@@ -32069,7 +32014,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_FILTER_CUBIC_EXTENSION_NAME \"VK_EXT_filter_cubic\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
-    public static ReadOnlySpan<byte> ExtFilterCubicExtensionName => "VK_EXT_filter_cubic"u8;
+    public static Utf8String ExtFilterCubicExtensionName => "VK_EXT_filter_cubic"u8;
 
     [NativeTypeName("#define VK_QCOM_RENDER_PASS_SHADER_RESOLVE_SPEC_VERSION 4")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
@@ -32079,7 +32024,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_QCOM_RENDER_PASS_SHADER_RESOLVE_EXTENSION_NAME \"VK_QCOM_render_pass_shader_resolve\""
     )]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
-    public static ReadOnlySpan<byte> QcomRenderPassShaderResolveExtensionName =>
+    public static Utf8String QcomRenderPassShaderResolveExtensionName =>
         "VK_QCOM_render_pass_shader_resolve"u8;
 
     [NativeTypeName("#define VK_EXT_GLOBAL_PRIORITY_SPEC_VERSION 2")]
@@ -32088,7 +32033,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_GLOBAL_PRIORITY_EXTENSION_NAME \"VK_EXT_global_priority\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    public static ReadOnlySpan<byte> ExtGlobalPriorityExtensionName => "VK_EXT_global_priority"u8;
+    public static Utf8String ExtGlobalPriorityExtensionName => "VK_EXT_global_priority"u8;
 
     [NativeTypeName("#define VK_EXT_EXTERNAL_MEMORY_HOST_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32112,8 +32057,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_external_memory_host+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtExternalMemoryHostExtensionName =>
-        "VK_EXT_external_memory_host"u8;
+    public static Utf8String ExtExternalMemoryHostExtensionName => "VK_EXT_external_memory_host"u8;
 
     [NativeTypeName("#define VK_AMD_BUFFER_MARKER_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_AMD_buffer_marker"])]
@@ -32121,7 +32065,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_AMD_BUFFER_MARKER_EXTENSION_NAME \"VK_AMD_buffer_marker\"")]
     [SupportedApiProfile("vulkan", ["VK_AMD_buffer_marker"])]
-    public static ReadOnlySpan<byte> AmdBufferMarkerExtensionName => "VK_AMD_buffer_marker"u8;
+    public static Utf8String AmdBufferMarkerExtensionName => "VK_AMD_buffer_marker"u8;
 
     [NativeTypeName("#define VK_AMD_PIPELINE_COMPILER_CONTROL_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_AMD_pipeline_compiler_control"])]
@@ -32131,7 +32075,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_AMD_PIPELINE_COMPILER_CONTROL_EXTENSION_NAME \"VK_AMD_pipeline_compiler_control\""
     )]
     [SupportedApiProfile("vulkan", ["VK_AMD_pipeline_compiler_control"])]
-    public static ReadOnlySpan<byte> AmdPipelineCompilerControlExtensionName =>
+    public static Utf8String AmdPipelineCompilerControlExtensionName =>
         "VK_AMD_pipeline_compiler_control"u8;
 
     [NativeTypeName("#define VK_EXT_CALIBRATED_TIMESTAMPS_SPEC_VERSION 2")]
@@ -32156,7 +32100,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtCalibratedTimestampsExtensionName =>
+    public static Utf8String ExtCalibratedTimestampsExtensionName =>
         "VK_EXT_calibrated_timestamps"u8;
 
     [NativeTypeName("#define VK_AMD_SHADER_CORE_PROPERTIES_SPEC_VERSION 2")]
@@ -32181,7 +32125,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_AMD_shader_core_properties+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> AmdShaderCorePropertiesExtensionName =>
+    public static Utf8String AmdShaderCorePropertiesExtensionName =>
         "VK_AMD_shader_core_properties"u8;
 
     [NativeTypeName("#define VK_AMD_MEMORY_OVERALLOCATION_BEHAVIOR_SPEC_VERSION 1")]
@@ -32192,7 +32136,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_AMD_MEMORY_OVERALLOCATION_BEHAVIOR_EXTENSION_NAME \"VK_AMD_memory_overallocation_behavior\""
     )]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
-    public static ReadOnlySpan<byte> AmdMemoryOverallocationBehaviorExtensionName =>
+    public static Utf8String AmdMemoryOverallocationBehaviorExtensionName =>
         "VK_AMD_memory_overallocation_behavior"u8;
 
     [NativeTypeName("#define VK_EXT_VERTEX_ATTRIBUTE_DIVISOR_SPEC_VERSION 3")]
@@ -32217,7 +32161,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_vertex_attribute_divisor+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtVertexAttributeDivisorExtensionName =>
+    public static Utf8String ExtVertexAttributeDivisorExtensionName =>
         "VK_EXT_vertex_attribute_divisor"u8;
 
     [NativeTypeName("#define VK_EXT_PIPELINE_CREATION_FEEDBACK_SPEC_VERSION 1")]
@@ -32228,7 +32172,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_EXT_PIPELINE_CREATION_FEEDBACK_EXTENSION_NAME \"VK_EXT_pipeline_creation_feedback\""
     )]
     [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
-    public static ReadOnlySpan<byte> ExtPipelineCreationFeedbackExtensionName =>
+    public static Utf8String ExtPipelineCreationFeedbackExtensionName =>
         "VK_EXT_pipeline_creation_feedback"u8;
 
     [NativeTypeName("#define VK_NV_SHADER_SUBGROUP_PARTITIONED_SPEC_VERSION 1")]
@@ -32247,7 +32191,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_shader_subgroup_partitioned"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public static ReadOnlySpan<byte> NvShaderSubgroupPartitionedExtensionName =>
+    public static Utf8String NvShaderSubgroupPartitionedExtensionName =>
         "VK_NV_shader_subgroup_partitioned"u8;
 
     [NativeTypeName("#define VK_NV_COMPUTE_SHADER_DERIVATIVES_SPEC_VERSION 1")]
@@ -32272,7 +32216,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_compute_shader_derivatives+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvComputeShaderDerivativesExtensionName =>
+    public static Utf8String NvComputeShaderDerivativesExtensionName =>
         "VK_NV_compute_shader_derivatives"u8;
 
     [NativeTypeName("#define VK_NV_MESH_SHADER_SPEC_VERSION 1")]
@@ -32295,7 +32239,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvMeshShaderExtensionName => "VK_NV_mesh_shader"u8;
+    public static Utf8String NvMeshShaderExtensionName => "VK_NV_mesh_shader"u8;
 
     [NativeTypeName("#define VK_NV_FRAGMENT_SHADER_BARYCENTRIC_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32319,7 +32263,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_fragment_shader_barycentric+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvFragmentShaderBarycentricExtensionName =>
+    public static Utf8String NvFragmentShaderBarycentricExtensionName =>
         "VK_NV_fragment_shader_barycentric"u8;
 
     [NativeTypeName("#define VK_NV_SHADER_IMAGE_FOOTPRINT_SPEC_VERSION 2")]
@@ -32344,7 +32288,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_shader_image_footprint+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvShaderImageFootprintExtensionName =>
+    public static Utf8String NvShaderImageFootprintExtensionName =>
         "VK_NV_shader_image_footprint"u8;
 
     [NativeTypeName("#define VK_NV_SCISSOR_EXCLUSIVE_SPEC_VERSION 2")]
@@ -32367,7 +32311,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_scissor_exclusive+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvScissorExclusiveExtensionName => "VK_NV_scissor_exclusive"u8;
+    public static Utf8String NvScissorExclusiveExtensionName => "VK_NV_scissor_exclusive"u8;
 
     [NativeTypeName("#define VK_NV_DEVICE_DIAGNOSTIC_CHECKPOINTS_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -32391,7 +32335,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvDeviceDiagnosticCheckpointsExtensionName =>
+    public static Utf8String NvDeviceDiagnosticCheckpointsExtensionName =>
         "VK_NV_device_diagnostic_checkpoints"u8;
 
     [NativeTypeName("#define VK_INTEL_SHADER_INTEGER_FUNCTIONS_2_SPEC_VERSION 1")]
@@ -32416,7 +32360,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_INTEL_shader_integer_functions2+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> IntelShaderIntegerFunctions2ExtensionName =>
+    public static Utf8String IntelShaderIntegerFunctions2ExtensionName =>
         "VK_INTEL_shader_integer_functions2"u8;
 
     [NativeTypeName("#define VK_INTEL_PERFORMANCE_QUERY_SPEC_VERSION 2")]
@@ -32427,8 +32371,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_INTEL_PERFORMANCE_QUERY_EXTENSION_NAME \"VK_INTEL_performance_query\""
     )]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    public static ReadOnlySpan<byte> IntelPerformanceQueryExtensionName =>
-        "VK_INTEL_performance_query"u8;
+    public static Utf8String IntelPerformanceQueryExtensionName => "VK_INTEL_performance_query"u8;
 
     [NativeTypeName("#define VK_EXT_PCI_BUS_INFO_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -32450,7 +32393,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_pci_bus_info+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtPciBusInfoExtensionName => "VK_EXT_pci_bus_info"u8;
+    public static Utf8String ExtPciBusInfoExtensionName => "VK_EXT_pci_bus_info"u8;
 
     [NativeTypeName("#define VK_AMD_DISPLAY_NATIVE_HDR_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32474,8 +32417,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> AmdDisplayNativeHdrExtensionName =>
-        "VK_AMD_display_native_hdr"u8;
+    public static Utf8String AmdDisplayNativeHdrExtensionName => "VK_AMD_display_native_hdr"u8;
 
     [NativeTypeName("#define VK_EXT_FRAGMENT_DENSITY_MAP_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -32499,8 +32441,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtFragmentDensityMapExtensionName =>
-        "VK_EXT_fragment_density_map"u8;
+    public static Utf8String ExtFragmentDensityMapExtensionName => "VK_EXT_fragment_density_map"u8;
 
     [NativeTypeName("#define VK_EXT_SCALAR_BLOCK_LAYOUT_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32524,8 +32465,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_scalar_block_layout+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtScalarBlockLayoutExtensionName =>
-        "VK_EXT_scalar_block_layout"u8;
+    public static Utf8String ExtScalarBlockLayoutExtensionName => "VK_EXT_scalar_block_layout"u8;
 
     [NativeTypeName("#define VK_GOOGLE_HLSL_FUNCTIONALITY_1_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_GOOGLE_hlsl_functionality1"])]
@@ -32535,7 +32475,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_GOOGLE_HLSL_FUNCTIONALITY_1_EXTENSION_NAME \"VK_GOOGLE_hlsl_functionality1\""
     )]
     [SupportedApiProfile("vulkan", ["VK_GOOGLE_hlsl_functionality1"])]
-    public static ReadOnlySpan<byte> GoogleHlslFunctionality1ExtensionName =>
+    public static Utf8String GoogleHlslFunctionality1ExtensionName =>
         "VK_GOOGLE_hlsl_functionality1"u8;
 
     [NativeTypeName(
@@ -32548,7 +32488,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_GOOGLE_HLSL_FUNCTIONALITY1_EXTENSION_NAME VK_GOOGLE_HLSL_FUNCTIONALITY_1_EXTENSION_NAME"
     )]
     [SupportedApiProfile("vulkan", ["VK_GOOGLE_hlsl_functionality1"])]
-    public static ReadOnlySpan<byte> GoogleHlslFunctionality1ExtensionName =>
+    public static Utf8String GoogleHlslFunctionality1ExtensionName =>
         "VK_GOOGLE_hlsl_functionality1"u8;
 
     [NativeTypeName("#define VK_GOOGLE_DECORATE_STRING_SPEC_VERSION 1")]
@@ -32559,8 +32499,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_GOOGLE_DECORATE_STRING_EXTENSION_NAME \"VK_GOOGLE_decorate_string\""
     )]
     [SupportedApiProfile("vulkan", ["VK_GOOGLE_decorate_string"])]
-    public static ReadOnlySpan<byte> GoogleDecorateStringExtensionName =>
-        "VK_GOOGLE_decorate_string"u8;
+    public static Utf8String GoogleDecorateStringExtensionName => "VK_GOOGLE_decorate_string"u8;
 
     [NativeTypeName("#define VK_EXT_SUBGROUP_SIZE_CONTROL_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -32578,7 +32517,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_subgroup_size_control"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public static ReadOnlySpan<byte> ExtSubgroupSizeControlExtensionName =>
+    public static Utf8String ExtSubgroupSizeControlExtensionName =>
         "VK_EXT_subgroup_size_control"u8;
 
     [NativeTypeName("#define VK_AMD_SHADER_CORE_PROPERTIES_2_SPEC_VERSION 1")]
@@ -32597,7 +32536,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_AMD_shader_core_properties2"],
         ImpliesSets = ["VK_AMD_shader_core_properties"]
     )]
-    public static ReadOnlySpan<byte> AmdShaderCoreProperties2ExtensionName =>
+    public static Utf8String AmdShaderCoreProperties2ExtensionName =>
         "VK_AMD_shader_core_properties2"u8;
 
     [NativeTypeName("#define VK_AMD_DEVICE_COHERENT_MEMORY_SPEC_VERSION 1")]
@@ -32622,7 +32561,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_AMD_device_coherent_memory+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> AmdDeviceCoherentMemoryExtensionName =>
+    public static Utf8String AmdDeviceCoherentMemoryExtensionName =>
         "VK_AMD_device_coherent_memory"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_IMAGE_ATOMIC_INT64_SPEC_VERSION 1")]
@@ -32647,7 +32586,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_shader_image_atomic_int64+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtShaderImageAtomicInt64ExtensionName =>
+    public static Utf8String ExtShaderImageAtomicInt64ExtensionName =>
         "VK_EXT_shader_image_atomic_int64"u8;
 
     [NativeTypeName("#define VK_EXT_MEMORY_BUDGET_SPEC_VERSION 1")]
@@ -32670,7 +32609,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_memory_budget+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtMemoryBudgetExtensionName => "VK_EXT_memory_budget"u8;
+    public static Utf8String ExtMemoryBudgetExtensionName => "VK_EXT_memory_budget"u8;
 
     [NativeTypeName("#define VK_EXT_MEMORY_PRIORITY_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32692,7 +32631,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_memory_priority+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtMemoryPriorityExtensionName => "VK_EXT_memory_priority"u8;
+    public static Utf8String ExtMemoryPriorityExtensionName => "VK_EXT_memory_priority"u8;
 
     [NativeTypeName("#define VK_NV_DEDICATED_ALLOCATION_IMAGE_ALIASING_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32716,7 +32655,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvDedicatedAllocationImageAliasingExtensionName =>
+    public static Utf8String NvDedicatedAllocationImageAliasingExtensionName =>
         "VK_NV_dedicated_allocation_image_aliasing"u8;
 
     [NativeTypeName("#define VK_EXT_BUFFER_DEVICE_ADDRESS_SPEC_VERSION 2")]
@@ -32741,7 +32680,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_buffer_device_address+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtBufferDeviceAddressExtensionName =>
+    public static Utf8String ExtBufferDeviceAddressExtensionName =>
         "VK_EXT_buffer_device_address"u8;
 
     [NativeTypeName("#define VK_EXT_TOOLING_INFO_SPEC_VERSION 1")]
@@ -32750,7 +32689,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_TOOLING_INFO_EXTENSION_NAME \"VK_EXT_tooling_info\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    public static ReadOnlySpan<byte> ExtToolingInfoExtensionName => "VK_EXT_tooling_info"u8;
+    public static Utf8String ExtToolingInfoExtensionName => "VK_EXT_tooling_info"u8;
 
     [NativeTypeName("#define VK_EXT_SEPARATE_STENCIL_USAGE_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_EXT_separate_stencil_usage"])]
@@ -32760,7 +32699,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_EXT_SEPARATE_STENCIL_USAGE_EXTENSION_NAME \"VK_EXT_separate_stencil_usage\""
     )]
     [SupportedApiProfile("vulkan", ["VK_EXT_separate_stencil_usage"])]
-    public static ReadOnlySpan<byte> ExtSeparateStencilUsageExtensionName =>
+    public static Utf8String ExtSeparateStencilUsageExtensionName =>
         "VK_EXT_separate_stencil_usage"u8;
 
     [NativeTypeName("#define VK_EXT_VALIDATION_FEATURES_SPEC_VERSION 6")]
@@ -32771,8 +32710,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_EXT_VALIDATION_FEATURES_EXTENSION_NAME \"VK_EXT_validation_features\""
     )]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    public static ReadOnlySpan<byte> ExtValidationFeaturesExtensionName =>
-        "VK_EXT_validation_features"u8;
+    public static Utf8String ExtValidationFeaturesExtensionName => "VK_EXT_validation_features"u8;
 
     [NativeTypeName("#define VK_NV_COOPERATIVE_MATRIX_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32794,8 +32732,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvCooperativeMatrixExtensionName =>
-        "VK_NV_cooperative_matrix"u8;
+    public static Utf8String NvCooperativeMatrixExtensionName => "VK_NV_cooperative_matrix"u8;
 
     [NativeTypeName("#define VK_NV_COVERAGE_REDUCTION_MODE_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32819,7 +32756,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvCoverageReductionModeExtensionName =>
+    public static Utf8String NvCoverageReductionModeExtensionName =>
         "VK_NV_coverage_reduction_mode"u8;
 
     [NativeTypeName("#define VK_EXT_FRAGMENT_SHADER_INTERLOCK_SPEC_VERSION 1")]
@@ -32844,7 +32781,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_fragment_shader_interlock+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtFragmentShaderInterlockExtensionName =>
+    public static Utf8String ExtFragmentShaderInterlockExtensionName =>
         "VK_EXT_fragment_shader_interlock"u8;
 
     [NativeTypeName("#define VK_EXT_YCBCR_IMAGE_ARRAYS_SPEC_VERSION 1")]
@@ -32869,8 +32806,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_ycbcr_image_arrays+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtYcbcrImageArraysExtensionName =>
-        "VK_EXT_ycbcr_image_arrays"u8;
+    public static Utf8String ExtYcbcrImageArraysExtensionName => "VK_EXT_ycbcr_image_arrays"u8;
 
     [NativeTypeName("#define VK_EXT_PROVOKING_VERTEX_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32892,7 +32828,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_provoking_vertex+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtProvokingVertexExtensionName => "VK_EXT_provoking_vertex"u8;
+    public static Utf8String ExtProvokingVertexExtensionName => "VK_EXT_provoking_vertex"u8;
 
     [NativeTypeName("#define VK_EXT_HEADLESS_SURFACE_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
@@ -32900,7 +32836,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_HEADLESS_SURFACE_EXTENSION_NAME \"VK_EXT_headless_surface\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public static ReadOnlySpan<byte> ExtHeadlessSurfaceExtensionName => "VK_EXT_headless_surface"u8;
+    public static Utf8String ExtHeadlessSurfaceExtensionName => "VK_EXT_headless_surface"u8;
 
     [NativeTypeName("#define VK_EXT_LINE_RASTERIZATION_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32924,8 +32860,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtLineRasterizationExtensionName =>
-        "VK_EXT_line_rasterization"u8;
+    public static Utf8String ExtLineRasterizationExtensionName => "VK_EXT_line_rasterization"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_ATOMIC_FLOAT_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32949,8 +32884,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtShaderAtomicFloatExtensionName =>
-        "VK_EXT_shader_atomic_float"u8;
+    public static Utf8String ExtShaderAtomicFloatExtensionName => "VK_EXT_shader_atomic_float"u8;
 
     [NativeTypeName("#define VK_EXT_HOST_QUERY_RESET_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32972,7 +32906,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_host_query_reset+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtHostQueryResetExtensionName => "VK_EXT_host_query_reset"u8;
+    public static Utf8String ExtHostQueryResetExtensionName => "VK_EXT_host_query_reset"u8;
 
     [NativeTypeName("#define VK_EXT_INDEX_TYPE_UINT8_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -32994,7 +32928,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_index_type_uint8+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtIndexTypeUint8ExtensionName => "VK_EXT_index_type_uint8"u8;
+    public static Utf8String ExtIndexTypeUint8ExtensionName => "VK_EXT_index_type_uint8"u8;
 
     [NativeTypeName("#define VK_EXT_EXTENDED_DYNAMIC_STATE_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33018,7 +32952,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtExtendedDynamicStateExtensionName =>
+    public static Utf8String ExtExtendedDynamicStateExtensionName =>
         "VK_EXT_extended_dynamic_state"u8;
 
     [NativeTypeName("#define VK_EXT_HOST_IMAGE_COPY_SPEC_VERSION 1")]
@@ -33043,7 +32977,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtHostImageCopyExtensionName => "VK_EXT_host_image_copy"u8;
+    public static Utf8String ExtHostImageCopyExtensionName => "VK_EXT_host_image_copy"u8;
 
     [NativeTypeName("#define VK_EXT_MAP_MEMORY_PLACED_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33065,8 +32999,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_map_memory_placed+VK_VERSION_1_4",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtMapMemoryPlacedExtensionName =>
-        "VK_EXT_map_memory_placed"u8;
+    public static Utf8String ExtMapMemoryPlacedExtensionName => "VK_EXT_map_memory_placed"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_ATOMIC_FLOAT_2_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33084,8 +33017,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public static ReadOnlySpan<byte> ExtShaderAtomicFloat2ExtensionName =>
-        "VK_EXT_shader_atomic_float2"u8;
+    public static Utf8String ExtShaderAtomicFloat2ExtensionName => "VK_EXT_shader_atomic_float2"u8;
 
     [NativeTypeName("#define VK_EXT_SURFACE_MAINTENANCE_1_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33103,8 +33035,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_surface_maintenance1"],
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
-    public static ReadOnlySpan<byte> ExtSurfaceMaintenance1ExtensionName =>
-        "VK_EXT_surface_maintenance1"u8;
+    public static Utf8String ExtSurfaceMaintenance1ExtensionName => "VK_EXT_surface_maintenance1"u8;
 
     [NativeTypeName("#define VK_EXT_SWAPCHAIN_MAINTENANCE_1_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33128,7 +33059,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtSwapchainMaintenance1ExtensionName =>
+    public static Utf8String ExtSwapchainMaintenance1ExtensionName =>
         "VK_EXT_swapchain_maintenance1"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_DEMOTE_TO_HELPER_INVOCATION_SPEC_VERSION 1")]
@@ -33153,7 +33084,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_shader_demote_to_helper_invocation+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtShaderDemoteToHelperInvocationExtensionName =>
+    public static Utf8String ExtShaderDemoteToHelperInvocationExtensionName =>
         "VK_EXT_shader_demote_to_helper_invocation"u8;
 
     [NativeTypeName("#define VK_NV_DEVICE_GENERATED_COMMANDS_SPEC_VERSION 3")]
@@ -33172,7 +33103,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public static ReadOnlySpan<byte> NvDeviceGeneratedCommandsExtensionName =>
+    public static Utf8String NvDeviceGeneratedCommandsExtensionName =>
         "VK_NV_device_generated_commands"u8;
 
     [NativeTypeName("#define VK_NV_INHERITED_VIEWPORT_SCISSOR_SPEC_VERSION 1")]
@@ -33197,7 +33128,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_inherited_viewport_scissor+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvInheritedViewportScissorExtensionName =>
+    public static Utf8String NvInheritedViewportScissorExtensionName =>
         "VK_NV_inherited_viewport_scissor"u8;
 
     [NativeTypeName("#define VK_EXT_TEXEL_BUFFER_ALIGNMENT_SPEC_VERSION 1")]
@@ -33222,7 +33153,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_texel_buffer_alignment+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtTexelBufferAlignmentExtensionName =>
+    public static Utf8String ExtTexelBufferAlignmentExtensionName =>
         "VK_EXT_texel_buffer_alignment"u8;
 
     [NativeTypeName("#define VK_QCOM_RENDER_PASS_TRANSFORM_SPEC_VERSION 4")]
@@ -33233,7 +33164,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_QCOM_RENDER_PASS_TRANSFORM_EXTENSION_NAME \"VK_QCOM_render_pass_transform\""
     )]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
-    public static ReadOnlySpan<byte> QcomRenderPassTransformExtensionName =>
+    public static Utf8String QcomRenderPassTransformExtensionName =>
         "VK_QCOM_render_pass_transform"u8;
 
     [NativeTypeName("#define VK_EXT_DEPTH_BIAS_CONTROL_SPEC_VERSION 1")]
@@ -33258,8 +33189,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDepthBiasControlExtensionName =>
-        "VK_EXT_depth_bias_control"u8;
+    public static Utf8String ExtDepthBiasControlExtensionName => "VK_EXT_depth_bias_control"u8;
 
     [NativeTypeName("#define VK_EXT_DEVICE_MEMORY_REPORT_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -33283,8 +33213,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDeviceMemoryReportExtensionName =>
-        "VK_EXT_device_memory_report"u8;
+    public static Utf8String ExtDeviceMemoryReportExtensionName => "VK_EXT_device_memory_report"u8;
 
     [NativeTypeName("#define VK_EXT_ACQUIRE_DRM_DISPLAY_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33302,8 +33231,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_acquire_drm_display"],
         ImpliesSets = ["VK_EXT_direct_mode_display"]
     )]
-    public static ReadOnlySpan<byte> ExtAcquireDrmDisplayExtensionName =>
-        "VK_EXT_acquire_drm_display"u8;
+    public static Utf8String ExtAcquireDrmDisplayExtensionName => "VK_EXT_acquire_drm_display"u8;
 
     [NativeTypeName("#define VK_EXT_ROBUSTNESS_2_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33325,7 +33253,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_robustness2+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtRobustness2ExtensionName => "VK_EXT_robustness2"u8;
+    public static Utf8String ExtRobustness2ExtensionName => "VK_EXT_robustness2"u8;
 
     [NativeTypeName("#define VK_EXT_CUSTOM_BORDER_COLOR_SPEC_VERSION 12")]
     [SupportedApiProfile(
@@ -33349,8 +33277,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_custom_border_color+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtCustomBorderColorExtensionName =>
-        "VK_EXT_custom_border_color"u8;
+    public static Utf8String ExtCustomBorderColorExtensionName => "VK_EXT_custom_border_color"u8;
 
     [NativeTypeName("#define VK_GOOGLE_USER_TYPE_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_GOOGLE_user_type"])]
@@ -33358,7 +33285,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_GOOGLE_USER_TYPE_EXTENSION_NAME \"VK_GOOGLE_user_type\"")]
     [SupportedApiProfile("vulkan", ["VK_GOOGLE_user_type"])]
-    public static ReadOnlySpan<byte> GoogleUserTypeExtensionName => "VK_GOOGLE_user_type"u8;
+    public static Utf8String GoogleUserTypeExtensionName => "VK_GOOGLE_user_type"u8;
 
     [NativeTypeName("#define VK_NV_PRESENT_BARRIER_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33380,7 +33307,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvPresentBarrierExtensionName => "VK_NV_present_barrier"u8;
+    public static Utf8String NvPresentBarrierExtensionName => "VK_NV_present_barrier"u8;
 
     [NativeTypeName("#define VK_EXT_PRIVATE_DATA_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33402,7 +33329,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_private_data+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtPrivateDataExtensionName => "VK_EXT_private_data"u8;
+    public static Utf8String ExtPrivateDataExtensionName => "VK_EXT_private_data"u8;
 
     [NativeTypeName("#define VK_EXT_PIPELINE_CREATION_CACHE_CONTROL_SPEC_VERSION 3")]
     [SupportedApiProfile(
@@ -33426,7 +33353,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_pipeline_creation_cache_control+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtPipelineCreationCacheControlExtensionName =>
+    public static Utf8String ExtPipelineCreationCacheControlExtensionName =>
         "VK_EXT_pipeline_creation_cache_control"u8;
 
     [NativeTypeName("#define VK_NV_DEVICE_DIAGNOSTICS_CONFIG_SPEC_VERSION 2")]
@@ -33451,7 +33378,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvDeviceDiagnosticsConfigExtensionName =>
+    public static Utf8String NvDeviceDiagnosticsConfigExtensionName =>
         "VK_NV_device_diagnostics_config"u8;
 
     [NativeTypeName("#define VK_QCOM_RENDER_PASS_STORE_OPS_SPEC_VERSION 2")]
@@ -33462,7 +33389,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_QCOM_RENDER_PASS_STORE_OPS_EXTENSION_NAME \"VK_QCOM_render_pass_store_ops\""
     )]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_store_ops"])]
-    public static ReadOnlySpan<byte> QcomRenderPassStoreOpsExtensionName =>
+    public static Utf8String QcomRenderPassStoreOpsExtensionName =>
         "VK_QCOM_render_pass_store_ops"u8;
 
     [NativeTypeName("#define VK_NV_CUDA_KERNEL_LAUNCH_SPEC_VERSION 2")]
@@ -33471,8 +33398,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NV_CUDA_KERNEL_LAUNCH_EXTENSION_NAME \"VK_NV_cuda_kernel_launch\"")]
     [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    public static ReadOnlySpan<byte> NvCudaKernelLaunchExtensionName =>
-        "VK_NV_cuda_kernel_launch"u8;
+    public static Utf8String NvCudaKernelLaunchExtensionName => "VK_NV_cuda_kernel_launch"u8;
 
     [NativeTypeName("#define VK_QCOM_TILE_SHADING_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33494,7 +33420,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public static ReadOnlySpan<byte> QcomTileShadingExtensionName => "VK_QCOM_tile_shading"u8;
+    public static Utf8String QcomTileShadingExtensionName => "VK_QCOM_tile_shading"u8;
 
     [NativeTypeName("#define VK_NV_LOW_LATENCY_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_NV_low_latency"])]
@@ -33502,7 +33428,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NV_LOW_LATENCY_EXTENSION_NAME \"VK_NV_low_latency\"")]
     [SupportedApiProfile("vulkan", ["VK_NV_low_latency"])]
-    public static ReadOnlySpan<byte> NvLowLatencyExtensionName => "VK_NV_low_latency"u8;
+    public static Utf8String NvLowLatencyExtensionName => "VK_NV_low_latency"u8;
 
     [NativeTypeName("#define VK_EXT_DESCRIPTOR_BUFFER_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33528,8 +33454,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDescriptorBufferExtensionName =>
-        "VK_EXT_descriptor_buffer"u8;
+    public static Utf8String ExtDescriptorBufferExtensionName => "VK_EXT_descriptor_buffer"u8;
 
     [NativeTypeName("#define VK_EXT_GRAPHICS_PIPELINE_LIBRARY_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33553,7 +33478,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtGraphicsPipelineLibraryExtensionName =>
+    public static Utf8String ExtGraphicsPipelineLibraryExtensionName =>
         "VK_EXT_graphics_pipeline_library"u8;
 
     [NativeTypeName("#define VK_AMD_SHADER_EARLY_AND_LATE_FRAGMENT_TESTS_SPEC_VERSION 1")]
@@ -33578,7 +33503,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_AMD_shader_early_and_late_fragment_tests+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> AmdShaderEarlyAndLateFragmentTestsExtensionName =>
+    public static Utf8String AmdShaderEarlyAndLateFragmentTestsExtensionName =>
         "VK_AMD_shader_early_and_late_fragment_tests"u8;
 
     [NativeTypeName("#define VK_NV_FRAGMENT_SHADING_RATE_ENUMS_SPEC_VERSION 1")]
@@ -33597,7 +33522,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    public static ReadOnlySpan<byte> NvFragmentShadingRateEnumsExtensionName =>
+    public static Utf8String NvFragmentShadingRateEnumsExtensionName =>
         "VK_NV_fragment_shading_rate_enums"u8;
 
     [NativeTypeName("#define VK_NV_RAY_TRACING_MOTION_BLUR_SPEC_VERSION 1")]
@@ -33616,7 +33541,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public static ReadOnlySpan<byte> NvRayTracingMotionBlurExtensionName =>
+    public static Utf8String NvRayTracingMotionBlurExtensionName =>
         "VK_NV_ray_tracing_motion_blur"u8;
 
     [NativeTypeName("#define VK_EXT_YCBCR_2PLANE_444_FORMATS_SPEC_VERSION 1")]
@@ -33641,7 +33566,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtYcbcr2Plane444FormatsExtensionName =>
+    public static Utf8String ExtYcbcr2Plane444FormatsExtensionName =>
         "VK_EXT_ycbcr_2plane_444_formats"u8;
 
     [NativeTypeName("#define VK_EXT_FRAGMENT_DENSITY_MAP_2_SPEC_VERSION 1")]
@@ -33660,7 +33585,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_fragment_density_map2"],
         ImpliesSets = ["VK_EXT_fragment_density_map"]
     )]
-    public static ReadOnlySpan<byte> ExtFragmentDensityMap2ExtensionName =>
+    public static Utf8String ExtFragmentDensityMap2ExtensionName =>
         "VK_EXT_fragment_density_map2"u8;
 
     [NativeTypeName("#define VK_QCOM_ROTATED_COPY_COMMANDS_SPEC_VERSION 2")]
@@ -33685,7 +33610,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_QCOM_rotated_copy_commands+VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> QcomRotatedCopyCommandsExtensionName =>
+    public static Utf8String QcomRotatedCopyCommandsExtensionName =>
         "VK_QCOM_rotated_copy_commands"u8;
 
     [NativeTypeName("#define VK_EXT_IMAGE_ROBUSTNESS_SPEC_VERSION 1")]
@@ -33708,7 +33633,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_image_robustness+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtImageRobustnessExtensionName => "VK_EXT_image_robustness"u8;
+    public static Utf8String ExtImageRobustnessExtensionName => "VK_EXT_image_robustness"u8;
 
     [NativeTypeName("#define VK_EXT_IMAGE_COMPRESSION_CONTROL_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33732,7 +33657,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtImageCompressionControlExtensionName =>
+    public static Utf8String ExtImageCompressionControlExtensionName =>
         "VK_EXT_image_compression_control"u8;
 
     [NativeTypeName("#define VK_EXT_ATTACHMENT_FEEDBACK_LOOP_LAYOUT_SPEC_VERSION 2")]
@@ -33757,7 +33682,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtAttachmentFeedbackLoopLayoutExtensionName =>
+    public static Utf8String ExtAttachmentFeedbackLoopLayoutExtensionName =>
         "VK_EXT_attachment_feedback_loop_layout"u8;
 
     [NativeTypeName("#define VK_EXT_4444_FORMATS_SPEC_VERSION 1")]
@@ -33780,7 +33705,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_4444_formats+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> Ext4444FormatsExtensionName => "VK_EXT_4444_formats"u8;
+    public static Utf8String Ext4444FormatsExtensionName => "VK_EXT_4444_formats"u8;
 
     [NativeTypeName("#define VK_EXT_DEVICE_FAULT_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -33802,7 +33727,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDeviceFaultExtensionName => "VK_EXT_device_fault"u8;
+    public static Utf8String ExtDeviceFaultExtensionName => "VK_EXT_device_fault"u8;
 
     [NativeTypeName("#define VK_ARM_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33826,7 +33751,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_ARM_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ArmRasterizationOrderAttachmentAccessExtensionName =>
+    public static Utf8String ArmRasterizationOrderAttachmentAccessExtensionName =>
         "VK_ARM_rasterization_order_attachment_access"u8;
 
     [NativeTypeName("#define VK_EXT_RGBA10X6_FORMATS_SPEC_VERSION 1")]
@@ -33849,7 +33774,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_rgba10x6_formats+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtRgba10X6FormatsExtensionName => "VK_EXT_rgba10x6_formats"u8;
+    public static Utf8String ExtRgba10X6FormatsExtensionName => "VK_EXT_rgba10x6_formats"u8;
 
     [NativeTypeName("#define VK_VALVE_MUTABLE_DESCRIPTOR_TYPE_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33867,7 +33792,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_VALVE_mutable_descriptor_type"],
         ImpliesSets = ["VK_KHR_maintenance3"]
     )]
-    public static ReadOnlySpan<byte> ValveMutableDescriptorTypeExtensionName =>
+    public static Utf8String ValveMutableDescriptorTypeExtensionName =>
         "VK_VALVE_mutable_descriptor_type"u8;
 
     [NativeTypeName("#define VK_EXT_VERTEX_INPUT_DYNAMIC_STATE_SPEC_VERSION 2")]
@@ -33892,7 +33817,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_vertex_input_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtVertexInputDynamicStateExtensionName =>
+    public static Utf8String ExtVertexInputDynamicStateExtensionName =>
         "VK_EXT_vertex_input_dynamic_state"u8;
 
     [NativeTypeName("#define VK_EXT_PHYSICAL_DEVICE_DRM_SPEC_VERSION 1")]
@@ -33917,8 +33842,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtPhysicalDeviceDrmExtensionName =>
-        "VK_EXT_physical_device_drm"u8;
+    public static Utf8String ExtPhysicalDeviceDrmExtensionName => "VK_EXT_physical_device_drm"u8;
 
     [NativeTypeName("#define VK_EXT_DEVICE_ADDRESS_BINDING_REPORT_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33942,7 +33866,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDeviceAddressBindingReportExtensionName =>
+    public static Utf8String ExtDeviceAddressBindingReportExtensionName =>
         "VK_EXT_device_address_binding_report"u8;
 
     [NativeTypeName("#define VK_EXT_DEPTH_CLIP_CONTROL_SPEC_VERSION 1")]
@@ -33967,8 +33891,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_depth_clip_control+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDepthClipControlExtensionName =>
-        "VK_EXT_depth_clip_control"u8;
+    public static Utf8String ExtDepthClipControlExtensionName => "VK_EXT_depth_clip_control"u8;
 
     [NativeTypeName("#define VK_EXT_PRIMITIVE_TOPOLOGY_LIST_RESTART_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -33992,7 +33915,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtPrimitiveTopologyListRestartExtensionName =>
+    public static Utf8String ExtPrimitiveTopologyListRestartExtensionName =>
         "VK_EXT_primitive_topology_list_restart"u8;
 
     [NativeTypeName("#define VK_EXT_PRESENT_MODE_FIFO_LATEST_READY_SPEC_VERSION 1")]
@@ -34011,7 +33934,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_present_mode_fifo_latest_ready"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public static ReadOnlySpan<byte> ExtPresentModeFifoLatestReadyExtensionName =>
+    public static Utf8String ExtPresentModeFifoLatestReadyExtensionName =>
         "VK_EXT_present_mode_fifo_latest_ready"u8;
 
     [NativeTypeName("#define VK_HUAWEI_SUBPASS_SHADING_SPEC_VERSION 3")]
@@ -34038,8 +33961,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> HuaweiSubpassShadingExtensionName =>
-        "VK_HUAWEI_subpass_shading"u8;
+    public static Utf8String HuaweiSubpassShadingExtensionName => "VK_HUAWEI_subpass_shading"u8;
 
     [NativeTypeName("#define VK_HUAWEI_INVOCATION_MASK_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34063,8 +33985,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> HuaweiInvocationMaskExtensionName =>
-        "VK_HUAWEI_invocation_mask"u8;
+    public static Utf8String HuaweiInvocationMaskExtensionName => "VK_HUAWEI_invocation_mask"u8;
 
     [NativeTypeName("#define VK_NV_EXTERNAL_MEMORY_RDMA_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34088,8 +34009,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_external_memory_rdma+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvExternalMemoryRdmaExtensionName =>
-        "VK_NV_external_memory_rdma"u8;
+    public static Utf8String NvExternalMemoryRdmaExtensionName => "VK_NV_external_memory_rdma"u8;
 
     [NativeTypeName("#define VK_EXT_PIPELINE_PROPERTIES_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34113,8 +34033,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_pipeline_properties+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtPipelinePropertiesExtensionName =>
-        "VK_EXT_pipeline_properties"u8;
+    public static Utf8String ExtPipelinePropertiesExtensionName => "VK_EXT_pipeline_properties"u8;
 
     [NativeTypeName("#define VK_EXT_FRAME_BOUNDARY_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
@@ -34122,7 +34041,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_FRAME_BOUNDARY_EXTENSION_NAME \"VK_EXT_frame_boundary\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
-    public static ReadOnlySpan<byte> ExtFrameBoundaryExtensionName => "VK_EXT_frame_boundary"u8;
+    public static Utf8String ExtFrameBoundaryExtensionName => "VK_EXT_frame_boundary"u8;
 
     [NativeTypeName("#define VK_EXT_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34140,7 +34059,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_multisampled_render_to_single_sampled"],
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
-    public static ReadOnlySpan<byte> ExtMultisampledRenderToSingleSampledExtensionName =>
+    public static Utf8String ExtMultisampledRenderToSingleSampledExtensionName =>
         "VK_EXT_multisampled_render_to_single_sampled"u8;
 
     [NativeTypeName("#define VK_EXT_EXTENDED_DYNAMIC_STATE_2_SPEC_VERSION 1")]
@@ -34165,7 +34084,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtExtendedDynamicState2ExtensionName =>
+    public static Utf8String ExtExtendedDynamicState2ExtensionName =>
         "VK_EXT_extended_dynamic_state2"u8;
 
     [NativeTypeName("#define VK_EXT_COLOR_WRITE_ENABLE_SPEC_VERSION 1")]
@@ -34190,8 +34109,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_color_write_enable+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtColorWriteEnableExtensionName =>
-        "VK_EXT_color_write_enable"u8;
+    public static Utf8String ExtColorWriteEnableExtensionName => "VK_EXT_color_write_enable"u8;
 
     [NativeTypeName("#define VK_EXT_PRIMITIVES_GENERATED_QUERY_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34209,7 +34127,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_primitives_generated_query"],
         ImpliesSets = ["VK_EXT_transform_feedback"]
     )]
-    public static ReadOnlySpan<byte> ExtPrimitivesGeneratedQueryExtensionName =>
+    public static Utf8String ExtPrimitivesGeneratedQueryExtensionName =>
         "VK_EXT_primitives_generated_query"u8;
 
     [NativeTypeName("#define VK_EXT_GLOBAL_PRIORITY_QUERY_SPEC_VERSION 1")]
@@ -34234,7 +34152,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_global_priority+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtGlobalPriorityQueryExtensionName =>
+    public static Utf8String ExtGlobalPriorityQueryExtensionName =>
         "VK_EXT_global_priority_query"u8;
 
     [NativeTypeName("#define VK_MAX_GLOBAL_PRIORITY_SIZE_EXT VK_MAX_GLOBAL_PRIORITY_SIZE")]
@@ -34270,8 +34188,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_image_view_min_lod+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtImageViewMinLodExtensionName =>
-        "VK_EXT_image_view_min_lod"u8;
+    public static Utf8String ExtImageViewMinLodExtensionName => "VK_EXT_image_view_min_lod"u8;
 
     [NativeTypeName("#define VK_EXT_MULTI_DRAW_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34293,7 +34210,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_multi_draw+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtMultiDrawExtensionName => "VK_EXT_multi_draw"u8;
+    public static Utf8String ExtMultiDrawExtensionName => "VK_EXT_multi_draw"u8;
 
     [NativeTypeName("#define VK_EXT_IMAGE_2D_VIEW_OF_3D_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34317,8 +34234,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtImage2DViewOf3DExtensionName =>
-        "VK_EXT_image_2d_view_of_3d"u8;
+    public static Utf8String ExtImage2DViewOf3DExtensionName => "VK_EXT_image_2d_view_of_3d"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_TILE_IMAGE_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
@@ -34326,8 +34242,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_SHADER_TILE_IMAGE_EXTENSION_NAME \"VK_EXT_shader_tile_image\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public static ReadOnlySpan<byte> ExtShaderTileImageExtensionName =>
-        "VK_EXT_shader_tile_image"u8;
+    public static Utf8String ExtShaderTileImageExtensionName => "VK_EXT_shader_tile_image"u8;
 
     [NativeTypeName("#define VK_EXT_OPACITY_MICROMAP_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -34349,7 +34264,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtOpacityMicromapExtensionName => "VK_EXT_opacity_micromap"u8;
+    public static Utf8String ExtOpacityMicromapExtensionName => "VK_EXT_opacity_micromap"u8;
 
     [NativeTypeName("#define VK_EXT_LOAD_STORE_OP_NONE_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_EXT_load_store_op_none"])]
@@ -34359,8 +34274,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_EXT_LOAD_STORE_OP_NONE_EXTENSION_NAME \"VK_EXT_load_store_op_none\""
     )]
     [SupportedApiProfile("vulkan", ["VK_EXT_load_store_op_none"])]
-    public static ReadOnlySpan<byte> ExtLoadStoreOpNoneExtensionName =>
-        "VK_EXT_load_store_op_none"u8;
+    public static Utf8String ExtLoadStoreOpNoneExtensionName => "VK_EXT_load_store_op_none"u8;
 
     [NativeTypeName("#define VK_HUAWEI_CLUSTER_CULLING_SHADER_SPEC_VERSION 3")]
     [SupportedApiProfile(
@@ -34384,7 +34298,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> HuaweiClusterCullingShaderExtensionName =>
+    public static Utf8String HuaweiClusterCullingShaderExtensionName =>
         "VK_HUAWEI_cluster_culling_shader"u8;
 
     [NativeTypeName("#define VK_EXT_BORDER_COLOR_SWIZZLE_SPEC_VERSION 1")]
@@ -34403,8 +34317,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_border_color_swizzle"],
         ImpliesSets = ["VK_EXT_custom_border_color"]
     )]
-    public static ReadOnlySpan<byte> ExtBorderColorSwizzleExtensionName =>
-        "VK_EXT_border_color_swizzle"u8;
+    public static Utf8String ExtBorderColorSwizzleExtensionName => "VK_EXT_border_color_swizzle"u8;
 
     [NativeTypeName("#define VK_EXT_PAGEABLE_DEVICE_LOCAL_MEMORY_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34422,7 +34335,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_pageable_device_local_memory"],
         ImpliesSets = ["VK_EXT_memory_priority"]
     )]
-    public static ReadOnlySpan<byte> ExtPageableDeviceLocalMemoryExtensionName =>
+    public static Utf8String ExtPageableDeviceLocalMemoryExtensionName =>
         "VK_EXT_pageable_device_local_memory"u8;
 
     [NativeTypeName("#define VK_ARM_SHADER_CORE_PROPERTIES_SPEC_VERSION 1")]
@@ -34441,7 +34354,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_ARM_shader_core_properties"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public static ReadOnlySpan<byte> ArmShaderCorePropertiesExtensionName =>
+    public static Utf8String ArmShaderCorePropertiesExtensionName =>
         "VK_ARM_shader_core_properties"u8;
 
     [NativeTypeName("#define VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION 1")]
@@ -34460,8 +34373,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_ARM_scheduling_controls"],
         ImpliesSets = ["VK_ARM_shader_core_builtins"]
     )]
-    public static ReadOnlySpan<byte> ArmSchedulingControlsExtensionName =>
-        "VK_ARM_scheduling_controls"u8;
+    public static Utf8String ArmSchedulingControlsExtensionName => "VK_ARM_scheduling_controls"u8;
 
     [NativeTypeName("#define VK_EXT_IMAGE_SLICED_VIEW_OF_3D_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34485,7 +34397,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtImageSlicedViewOf3DExtensionName =>
+    public static Utf8String ExtImageSlicedViewOf3DExtensionName =>
         "VK_EXT_image_sliced_view_of_3d"u8;
 
     [NativeTypeName("#define VK_VALVE_DESCRIPTOR_SET_HOST_MAPPING_SPEC_VERSION 1")]
@@ -34510,7 +34422,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ValveDescriptorSetHostMappingExtensionName =>
+    public static Utf8String ValveDescriptorSetHostMappingExtensionName =>
         "VK_VALVE_descriptor_set_host_mapping"u8;
 
     [NativeTypeName("#define VK_EXT_DEPTH_CLAMP_ZERO_ONE_SPEC_VERSION 1")]
@@ -34535,8 +34447,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_depth_clamp_zero_one+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDepthClampZeroOneExtensionName =>
-        "VK_EXT_depth_clamp_zero_one"u8;
+    public static Utf8String ExtDepthClampZeroOneExtensionName => "VK_EXT_depth_clamp_zero_one"u8;
 
     [NativeTypeName("#define VK_EXT_NON_SEAMLESS_CUBE_MAP_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34560,8 +34471,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_non_seamless_cube_map+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtNonSeamlessCubeMapExtensionName =>
-        "VK_EXT_non_seamless_cube_map"u8;
+    public static Utf8String ExtNonSeamlessCubeMapExtensionName => "VK_EXT_non_seamless_cube_map"u8;
 
     [NativeTypeName("#define VK_ARM_RENDER_PASS_STRIPED_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34587,8 +34497,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> ArmRenderPassStripedExtensionName =>
-        "VK_ARM_render_pass_striped"u8;
+    public static Utf8String ArmRenderPassStripedExtensionName => "VK_ARM_render_pass_striped"u8;
 
     [NativeTypeName("#define VK_QCOM_FRAGMENT_DENSITY_MAP_OFFSET_SPEC_VERSION 3")]
     [SupportedApiProfile(
@@ -34612,7 +34521,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> QcomFragmentDensityMapOffsetExtensionName =>
+    public static Utf8String QcomFragmentDensityMapOffsetExtensionName =>
         "VK_QCOM_fragment_density_map_offset"u8;
 
     [NativeTypeName("#define VK_NV_COPY_MEMORY_INDIRECT_SPEC_VERSION 1")]
@@ -34639,8 +34548,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> NvCopyMemoryIndirectExtensionName =>
-        "VK_NV_copy_memory_indirect"u8;
+    public static Utf8String NvCopyMemoryIndirectExtensionName => "VK_NV_copy_memory_indirect"u8;
 
     [NativeTypeName("#define VK_NV_MEMORY_DECOMPRESSION_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34666,8 +34574,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> NvMemoryDecompressionExtensionName =>
-        "VK_NV_memory_decompression"u8;
+    public static Utf8String NvMemoryDecompressionExtensionName => "VK_NV_memory_decompression"u8;
 
     [NativeTypeName("#define VK_NV_DEVICE_GENERATED_COMMANDS_COMPUTE_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -34685,7 +34592,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public static ReadOnlySpan<byte> NvDeviceGeneratedCommandsComputeExtensionName =>
+    public static Utf8String NvDeviceGeneratedCommandsComputeExtensionName =>
         "VK_NV_device_generated_commands_compute"u8;
 
     [NativeTypeName("#define VK_NV_RAY_TRACING_LINEAR_SWEPT_SPHERES_SPEC_VERSION 1")]
@@ -34704,7 +34611,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public static ReadOnlySpan<byte> NvRayTracingLinearSweptSpheresExtensionName =>
+    public static Utf8String NvRayTracingLinearSweptSpheresExtensionName =>
         "VK_NV_ray_tracing_linear_swept_spheres"u8;
 
     [NativeTypeName("#define VK_NV_LINEAR_COLOR_ATTACHMENT_SPEC_VERSION 1")]
@@ -34729,7 +34636,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_linear_color_attachment+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> NvLinearColorAttachmentExtensionName =>
+    public static Utf8String NvLinearColorAttachmentExtensionName =>
         "VK_NV_linear_color_attachment"u8;
 
     [NativeTypeName("#define VK_GOOGLE_SURFACELESS_QUERY_SPEC_VERSION 2")]
@@ -34748,8 +34655,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_GOOGLE_surfaceless_query"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    public static ReadOnlySpan<byte> GoogleSurfacelessQueryExtensionName =>
-        "VK_GOOGLE_surfaceless_query"u8;
+    public static Utf8String GoogleSurfacelessQueryExtensionName => "VK_GOOGLE_surfaceless_query"u8;
 
     [NativeTypeName("#define VK_EXT_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34767,7 +34673,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_image_compression_control_swapchain"],
         ImpliesSets = ["VK_EXT_image_compression_control"]
     )]
-    public static ReadOnlySpan<byte> ExtImageCompressionControlSwapchainExtensionName =>
+    public static Utf8String ExtImageCompressionControlSwapchainExtensionName =>
         "VK_EXT_image_compression_control_swapchain"u8;
 
     [NativeTypeName("#define VK_QCOM_IMAGE_PROCESSING_SPEC_VERSION 1")]
@@ -34790,8 +34696,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> QcomImageProcessingExtensionName =>
-        "VK_QCOM_image_processing"u8;
+    public static Utf8String QcomImageProcessingExtensionName => "VK_QCOM_image_processing"u8;
 
     [NativeTypeName("#define VK_EXT_NESTED_COMMAND_BUFFER_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -34815,7 +34720,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_nested_command_buffer+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtNestedCommandBufferExtensionName =>
+    public static Utf8String ExtNestedCommandBufferExtensionName =>
         "VK_EXT_nested_command_buffer"u8;
 
     [NativeTypeName("#define VK_EXT_EXTERNAL_MEMORY_ACQUIRE_UNMODIFIED_SPEC_VERSION 1")]
@@ -34840,7 +34745,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_external_memory_acquire_unmodified+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtExternalMemoryAcquireUnmodifiedExtensionName =>
+    public static Utf8String ExtExternalMemoryAcquireUnmodifiedExtensionName =>
         "VK_EXT_external_memory_acquire_unmodified"u8;
 
     [NativeTypeName("#define VK_EXT_EXTENDED_DYNAMIC_STATE_3_SPEC_VERSION 2")]
@@ -34865,7 +34770,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtExtendedDynamicState3ExtensionName =>
+    public static Utf8String ExtExtendedDynamicState3ExtensionName =>
         "VK_EXT_extended_dynamic_state3"u8;
 
     [NativeTypeName("#define VK_EXT_SUBPASS_MERGE_FEEDBACK_SPEC_VERSION 2")]
@@ -34890,7 +34795,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtSubpassMergeFeedbackExtensionName =>
+    public static Utf8String ExtSubpassMergeFeedbackExtensionName =>
         "VK_EXT_subpass_merge_feedback"u8;
 
     [NativeTypeName("#define VK_LUNARG_DIRECT_DRIVER_LOADING_SPEC_VERSION 1")]
@@ -34901,7 +34806,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_LUNARG_DIRECT_DRIVER_LOADING_EXTENSION_NAME \"VK_LUNARG_direct_driver_loading\""
     )]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
-    public static ReadOnlySpan<byte> LunargDirectDriverLoadingExtensionName =>
+    public static Utf8String LunargDirectDriverLoadingExtensionName =>
         "VK_LUNARG_direct_driver_loading"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_MODULE_IDENTIFIER_SPEC_VERSION 1")]
@@ -34928,7 +34833,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtShaderModuleIdentifierExtensionName =>
+    public static Utf8String ExtShaderModuleIdentifierExtensionName =>
         "VK_EXT_shader_module_identifier"u8;
 
     [NativeTypeName("#define VK_EXT_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_SPEC_VERSION 1")]
@@ -34953,7 +34858,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtRasterizationOrderAttachmentAccessExtensionName =>
+    public static Utf8String ExtRasterizationOrderAttachmentAccessExtensionName =>
         "VK_EXT_rasterization_order_attachment_access"u8;
 
     [NativeTypeName("#define VK_NV_OPTICAL_FLOW_SPEC_VERSION 1")]
@@ -34978,7 +34883,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> NvOpticalFlowExtensionName => "VK_NV_optical_flow"u8;
+    public static Utf8String NvOpticalFlowExtensionName => "VK_NV_optical_flow"u8;
 
     [NativeTypeName("#define VK_EXT_LEGACY_DITHERING_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -35000,7 +34905,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_legacy_dithering+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtLegacyDitheringExtensionName => "VK_EXT_legacy_dithering"u8;
+    public static Utf8String ExtLegacyDitheringExtensionName => "VK_EXT_legacy_dithering"u8;
 
     [NativeTypeName("#define VK_EXT_PIPELINE_PROTECTED_ACCESS_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35024,7 +34929,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_pipeline_protected_access+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtPipelineProtectedAccessExtensionName =>
+    public static Utf8String ExtPipelineProtectedAccessExtensionName =>
         "VK_EXT_pipeline_protected_access"u8;
 
     [NativeTypeName("#define VK_AMD_ANTI_LAG_SPEC_VERSION 1")]
@@ -35033,7 +34938,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_AMD_ANTI_LAG_EXTENSION_NAME \"VK_AMD_anti_lag\"")]
     [SupportedApiProfile("vulkan", ["VK_AMD_anti_lag"])]
-    public static ReadOnlySpan<byte> AmdAntiLagExtensionName => "VK_AMD_anti_lag"u8;
+    public static Utf8String AmdAntiLagExtensionName => "VK_AMD_anti_lag"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_OBJECT_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35057,7 +34962,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtShaderObjectExtensionName => "VK_EXT_shader_object"u8;
+    public static Utf8String ExtShaderObjectExtensionName => "VK_EXT_shader_object"u8;
 
     [NativeTypeName("#define VK_QCOM_TILE_PROPERTIES_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35079,7 +34984,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_QCOM_tile_properties+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> QcomTilePropertiesExtensionName => "VK_QCOM_tile_properties"u8;
+    public static Utf8String QcomTilePropertiesExtensionName => "VK_QCOM_tile_properties"u8;
 
     [NativeTypeName("#define VK_SEC_AMIGO_PROFILING_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35101,7 +35006,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_SEC_amigo_profiling+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> SecAmigoProfilingExtensionName => "VK_SEC_amigo_profiling"u8;
+    public static Utf8String SecAmigoProfilingExtensionName => "VK_SEC_amigo_profiling"u8;
 
     [NativeTypeName("#define VK_QCOM_MULTIVIEW_PER_VIEW_VIEWPORTS_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35125,7 +35030,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_QCOM_multiview_per_view_viewports+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> QcomMultiviewPerViewViewportsExtensionName =>
+    public static Utf8String QcomMultiviewPerViewViewportsExtensionName =>
         "VK_QCOM_multiview_per_view_viewports"u8;
 
     [NativeTypeName("#define VK_NV_RAY_TRACING_INVOCATION_REORDER_SPEC_VERSION 1")]
@@ -35144,7 +35049,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_ray_tracing_invocation_reorder"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public static ReadOnlySpan<byte> NvRayTracingInvocationReorderExtensionName =>
+    public static Utf8String NvRayTracingInvocationReorderExtensionName =>
         "VK_NV_ray_tracing_invocation_reorder"u8;
 
     [NativeTypeName("#define VK_NV_COOPERATIVE_VECTOR_SPEC_VERSION 4")]
@@ -35153,8 +35058,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NV_COOPERATIVE_VECTOR_EXTENSION_NAME \"VK_NV_cooperative_vector\"")]
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
-    public static ReadOnlySpan<byte> NvCooperativeVectorExtensionName =>
-        "VK_NV_cooperative_vector"u8;
+    public static Utf8String NvCooperativeVectorExtensionName => "VK_NV_cooperative_vector"u8;
 
     [NativeTypeName("#define VK_NV_EXTENDED_SPARSE_ADDRESS_SPACE_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]
@@ -35164,7 +35068,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_EXTENDED_SPARSE_ADDRESS_SPACE_EXTENSION_NAME \"VK_NV_extended_sparse_address_space\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]
-    public static ReadOnlySpan<byte> NvExtendedSparseAddressSpaceExtensionName =>
+    public static Utf8String NvExtendedSparseAddressSpaceExtensionName =>
         "VK_NV_extended_sparse_address_space"u8;
 
     [NativeTypeName("#define VK_EXT_MUTABLE_DESCRIPTOR_TYPE_SPEC_VERSION 1")]
@@ -35189,7 +35093,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtMutableDescriptorTypeExtensionName =>
+    public static Utf8String ExtMutableDescriptorTypeExtensionName =>
         "VK_EXT_mutable_descriptor_type"u8;
 
     [NativeTypeName("#define VK_EXT_LEGACY_VERTEX_ATTRIBUTES_SPEC_VERSION 1")]
@@ -35208,7 +35112,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_legacy_vertex_attributes"],
         ImpliesSets = ["VK_EXT_vertex_input_dynamic_state"]
     )]
-    public static ReadOnlySpan<byte> ExtLegacyVertexAttributesExtensionName =>
+    public static Utf8String ExtLegacyVertexAttributesExtensionName =>
         "VK_EXT_legacy_vertex_attributes"u8;
 
     [NativeTypeName("#define VK_EXT_LAYER_SETTINGS_SPEC_VERSION 2")]
@@ -35217,7 +35121,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_EXT_LAYER_SETTINGS_EXTENSION_NAME \"VK_EXT_layer_settings\"")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
-    public static ReadOnlySpan<byte> ExtLayerSettingsExtensionName => "VK_EXT_layer_settings"u8;
+    public static Utf8String ExtLayerSettingsExtensionName => "VK_EXT_layer_settings"u8;
 
     [NativeTypeName("#define VK_ARM_SHADER_CORE_BUILTINS_SPEC_VERSION 2")]
     [SupportedApiProfile(
@@ -35241,8 +35145,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_ARM_shader_core_builtins+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ArmShaderCoreBuiltinsExtensionName =>
-        "VK_ARM_shader_core_builtins"u8;
+    public static Utf8String ArmShaderCoreBuiltinsExtensionName => "VK_ARM_shader_core_builtins"u8;
 
     [NativeTypeName("#define VK_EXT_PIPELINE_LIBRARY_GROUP_HANDLES_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35260,7 +35163,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_pipeline_library_group_handles"],
         ImpliesSets = ["VK_KHR_pipeline_library", "VK_KHR_ray_tracing_pipeline"]
     )]
-    public static ReadOnlySpan<byte> ExtPipelineLibraryGroupHandlesExtensionName =>
+    public static Utf8String ExtPipelineLibraryGroupHandlesExtensionName =>
         "VK_EXT_pipeline_library_group_handles"u8;
 
     [NativeTypeName("#define VK_EXT_DYNAMIC_RENDERING_UNUSED_ATTACHMENTS_SPEC_VERSION 1")]
@@ -35287,7 +35190,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDynamicRenderingUnusedAttachmentsExtensionName =>
+    public static Utf8String ExtDynamicRenderingUnusedAttachmentsExtensionName =>
         "VK_EXT_dynamic_rendering_unused_attachments"u8;
 
     [NativeTypeName("#define VK_NV_LOW_LATENCY_2_SPEC_VERSION 2")]
@@ -35310,7 +35213,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> NvLowLatency2ExtensionName => "VK_NV_low_latency2"u8;
+    public static Utf8String NvLowLatency2ExtensionName => "VK_NV_low_latency2"u8;
 
     [NativeTypeName("#define VK_QCOM_MULTIVIEW_PER_VIEW_RENDER_AREAS_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_multiview_per_view_render_areas"])]
@@ -35320,7 +35223,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_QCOM_MULTIVIEW_PER_VIEW_RENDER_AREAS_EXTENSION_NAME \"VK_QCOM_multiview_per_view_render_areas\""
     )]
     [SupportedApiProfile("vulkan", ["VK_QCOM_multiview_per_view_render_areas"])]
-    public static ReadOnlySpan<byte> QcomMultiviewPerViewRenderAreasExtensionName =>
+    public static Utf8String QcomMultiviewPerViewRenderAreasExtensionName =>
         "VK_QCOM_multiview_per_view_render_areas"u8;
 
     [NativeTypeName("#define VK_NV_PER_STAGE_DESCRIPTOR_SET_SPEC_VERSION 1")]
@@ -35345,7 +35248,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_NV_per_stage_descriptor_set+VK_VERSION_1_4",
         ]
     )]
-    public static ReadOnlySpan<byte> NvPerStageDescriptorSetExtensionName =>
+    public static Utf8String NvPerStageDescriptorSetExtensionName =>
         "VK_NV_per_stage_descriptor_set"u8;
 
     [NativeTypeName("#define VK_QCOM_IMAGE_PROCESSING_2_SPEC_VERSION 1")]
@@ -35364,8 +35267,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_QCOM_image_processing2"],
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
-    public static ReadOnlySpan<byte> QcomImageProcessing2ExtensionName =>
-        "VK_QCOM_image_processing2"u8;
+    public static Utf8String QcomImageProcessing2ExtensionName => "VK_QCOM_image_processing2"u8;
 
     [NativeTypeName("#define VK_QCOM_FILTER_CUBIC_WEIGHTS_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35383,7 +35285,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_QCOM_filter_cubic_weights"],
         ImpliesSets = ["VK_EXT_filter_cubic"]
     )]
-    public static ReadOnlySpan<byte> QcomFilterCubicWeightsExtensionName =>
+    public static Utf8String QcomFilterCubicWeightsExtensionName =>
         "VK_QCOM_filter_cubic_weights"u8;
 
     [NativeTypeName("#define VK_QCOM_YCBCR_DEGAMMA_SPEC_VERSION 1")]
@@ -35392,7 +35294,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_QCOM_YCBCR_DEGAMMA_EXTENSION_NAME \"VK_QCOM_ycbcr_degamma\"")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_ycbcr_degamma"])]
-    public static ReadOnlySpan<byte> QcomYcbcrDegammaExtensionName => "VK_QCOM_ycbcr_degamma"u8;
+    public static Utf8String QcomYcbcrDegammaExtensionName => "VK_QCOM_ycbcr_degamma"u8;
 
     [NativeTypeName("#define VK_QCOM_FILTER_CUBIC_CLAMP_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35416,8 +35318,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_filter_cubic+VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> QcomFilterCubicClampExtensionName =>
-        "VK_QCOM_filter_cubic_clamp"u8;
+    public static Utf8String QcomFilterCubicClampExtensionName => "VK_QCOM_filter_cubic_clamp"u8;
 
     [NativeTypeName("#define VK_EXT_ATTACHMENT_FEEDBACK_LOOP_DYNAMIC_STATE_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35441,7 +35342,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtAttachmentFeedbackLoopDynamicStateExtensionName =>
+    public static Utf8String ExtAttachmentFeedbackLoopDynamicStateExtensionName =>
         "VK_EXT_attachment_feedback_loop_dynamic_state"u8;
 
     [NativeTypeName("#define VK_MSFT_LAYERED_DRIVER_SPEC_VERSION 1")]
@@ -35464,7 +35365,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_MSFT_layered_driver+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> MsftLayeredDriverExtensionName => "VK_MSFT_layered_driver"u8;
+    public static Utf8String MsftLayeredDriverExtensionName => "VK_MSFT_layered_driver"u8;
 
     [NativeTypeName("#define VK_NV_DESCRIPTOR_POOL_OVERALLOCATION_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35482,7 +35383,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_descriptor_pool_overallocation"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public static ReadOnlySpan<byte> NvDescriptorPoolOverallocationExtensionName =>
+    public static Utf8String NvDescriptorPoolOverallocationExtensionName =>
         "VK_NV_descriptor_pool_overallocation"u8;
 
     [NativeTypeName("#define VK_QCOM_TILE_MEMORY_HEAP_SPEC_VERSION 1")]
@@ -35505,8 +35406,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> QcomTileMemoryHeapExtensionName =>
-        "VK_QCOM_tile_memory_heap"u8;
+    public static Utf8String QcomTileMemoryHeapExtensionName => "VK_QCOM_tile_memory_heap"u8;
 
     [NativeTypeName("#define VK_NV_DISPLAY_STEREO_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35522,7 +35422,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_display_stereo"],
         ImpliesSets = ["VK_KHR_display", "VK_KHR_get_display_properties2"]
     )]
-    public static ReadOnlySpan<byte> NvDisplayStereoExtensionName => "VK_NV_display_stereo"u8;
+    public static Utf8String NvDisplayStereoExtensionName => "VK_NV_display_stereo"u8;
 
     [NativeTypeName("#define VK_NV_RAW_ACCESS_CHAINS_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_NV_raw_access_chains"])]
@@ -35530,7 +35430,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NV_RAW_ACCESS_CHAINS_EXTENSION_NAME \"VK_NV_raw_access_chains\"")]
     [SupportedApiProfile("vulkan", ["VK_NV_raw_access_chains"])]
-    public static ReadOnlySpan<byte> NvRawAccessChainsExtensionName => "VK_NV_raw_access_chains"u8;
+    public static Utf8String NvRawAccessChainsExtensionName => "VK_NV_raw_access_chains"u8;
 
     [NativeTypeName("#define VK_NV_EXTERNAL_COMPUTE_QUEUE_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
@@ -35540,7 +35440,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_EXTERNAL_COMPUTE_QUEUE_EXTENSION_NAME \"VK_NV_external_compute_queue\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
-    public static ReadOnlySpan<byte> NvExternalComputeQueueExtensionName =>
+    public static Utf8String NvExternalComputeQueueExtensionName =>
         "VK_NV_external_compute_queue"u8;
 
     [NativeTypeName("#define VK_NV_COMMAND_BUFFER_INHERITANCE_SPEC_VERSION 1")]
@@ -35551,7 +35451,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_COMMAND_BUFFER_INHERITANCE_EXTENSION_NAME \"VK_NV_command_buffer_inheritance\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_command_buffer_inheritance"])]
-    public static ReadOnlySpan<byte> NvCommandBufferInheritanceExtensionName =>
+    public static Utf8String NvCommandBufferInheritanceExtensionName =>
         "VK_NV_command_buffer_inheritance"u8;
 
     [NativeTypeName("#define VK_NV_SHADER_ATOMIC_FLOAT16_VECTOR_SPEC_VERSION 1")]
@@ -35562,7 +35462,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_SHADER_ATOMIC_FLOAT16_VECTOR_EXTENSION_NAME \"VK_NV_shader_atomic_float16_vector\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_shader_atomic_float16_vector"])]
-    public static ReadOnlySpan<byte> NvShaderAtomicFloat16VectorExtensionName =>
+    public static Utf8String NvShaderAtomicFloat16VectorExtensionName =>
         "VK_NV_shader_atomic_float16_vector"u8;
 
     [NativeTypeName("#define VK_EXT_SHADER_REPLICATED_COMPOSITES_SPEC_VERSION 1")]
@@ -35573,7 +35473,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_EXT_SHADER_REPLICATED_COMPOSITES_EXTENSION_NAME \"VK_EXT_shader_replicated_composites\""
     )]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_replicated_composites"])]
-    public static ReadOnlySpan<byte> ExtShaderReplicatedCompositesExtensionName =>
+    public static Utf8String ExtShaderReplicatedCompositesExtensionName =>
         "VK_EXT_shader_replicated_composites"u8;
 
     [NativeTypeName("#define VK_NV_RAY_TRACING_VALIDATION_SPEC_VERSION 1")]
@@ -35584,7 +35484,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         "#define VK_NV_RAY_TRACING_VALIDATION_EXTENSION_NAME \"VK_NV_ray_tracing_validation\""
     )]
     [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing_validation"])]
-    public static ReadOnlySpan<byte> NvRayTracingValidationExtensionName =>
+    public static Utf8String NvRayTracingValidationExtensionName =>
         "VK_NV_ray_tracing_validation"u8;
 
     [NativeTypeName("#define VK_NV_CLUSTER_ACCELERATION_STRUCTURE_SPEC_VERSION 2")]
@@ -35603,7 +35503,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public static ReadOnlySpan<byte> NvClusterAccelerationStructureExtensionName =>
+    public static Utf8String NvClusterAccelerationStructureExtensionName =>
         "VK_NV_cluster_acceleration_structure"u8;
 
     [NativeTypeName("#define VK_NV_PARTITIONED_ACCELERATION_STRUCTURE_SPEC_VERSION 1")]
@@ -35622,7 +35522,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public static ReadOnlySpan<byte> NvPartitionedAccelerationStructureExtensionName =>
+    public static Utf8String NvPartitionedAccelerationStructureExtensionName =>
         "VK_NV_partitioned_acceleration_structure"u8;
 
     [NativeTypeName("#define VK_EXT_DEVICE_GENERATED_COMMANDS_SPEC_VERSION 1")]
@@ -35649,7 +35549,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDeviceGeneratedCommandsExtensionName =>
+    public static Utf8String ExtDeviceGeneratedCommandsExtensionName =>
         "VK_EXT_device_generated_commands"u8;
 
     [NativeTypeName("#define VK_MESA_IMAGE_ALIGNMENT_CONTROL_SPEC_VERSION 1")]
@@ -35674,7 +35574,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_MESA_image_alignment_control+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> MesaImageAlignmentControlExtensionName =>
+    public static Utf8String MesaImageAlignmentControlExtensionName =>
         "VK_MESA_image_alignment_control"u8;
 
     [NativeTypeName("#define VK_EXT_DEPTH_CLAMP_CONTROL_SPEC_VERSION 1")]
@@ -35699,8 +35599,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_depth_clamp_control+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtDepthClampControlExtensionName =>
-        "VK_EXT_depth_clamp_control"u8;
+    public static Utf8String ExtDepthClampControlExtensionName => "VK_EXT_depth_clamp_control"u8;
 
     [NativeTypeName("#define VK_HUAWEI_HDR_VIVID_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35722,7 +35621,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_swapchain+VK_EXT_hdr_metadata+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> HuaweiHdrVividExtensionName => "VK_HUAWEI_hdr_vivid"u8;
+    public static Utf8String HuaweiHdrVividExtensionName => "VK_HUAWEI_hdr_vivid"u8;
 
     [NativeTypeName("#define VK_NV_COOPERATIVE_MATRIX_2_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35740,8 +35639,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public static ReadOnlySpan<byte> NvCooperativeMatrix2ExtensionName =>
-        "VK_NV_cooperative_matrix2"u8;
+    public static Utf8String NvCooperativeMatrix2ExtensionName => "VK_NV_cooperative_matrix2"u8;
 
     [NativeTypeName("#define VK_ARM_PIPELINE_OPACITY_MICROMAP_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35759,7 +35657,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_ARM_pipeline_opacity_micromap"],
         ImpliesSets = ["VK_EXT_opacity_micromap"]
     )]
-    public static ReadOnlySpan<byte> ArmPipelineOpacityMicromapExtensionName =>
+    public static Utf8String ArmPipelineOpacityMicromapExtensionName =>
         "VK_ARM_pipeline_opacity_micromap"u8;
 
     [NativeTypeName("#define VK_EXT_VERTEX_ATTRIBUTE_ROBUSTNESS_SPEC_VERSION 1")]
@@ -35784,7 +35682,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_vertex_attribute_robustness+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtVertexAttributeRobustnessExtensionName =>
+    public static Utf8String ExtVertexAttributeRobustnessExtensionName =>
         "VK_EXT_vertex_attribute_robustness"u8;
 
     [NativeTypeName("#define VK_NV_PRESENT_METERING_SPEC_VERSION 1")]
@@ -35793,7 +35691,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("#define VK_NV_PRESENT_METERING_EXTENSION_NAME \"VK_NV_present_metering\"")]
     [SupportedApiProfile("vulkan", ["VK_NV_present_metering"])]
-    public static ReadOnlySpan<byte> NvPresentMeteringExtensionName => "VK_NV_present_metering"u8;
+    public static Utf8String NvPresentMeteringExtensionName => "VK_NV_present_metering"u8;
 
     [NativeTypeName("#define VK_EXT_FRAGMENT_DENSITY_MAP_OFFSET_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35829,7 +35727,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_VERSION_1_3",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtFragmentDensityMapOffsetExtensionName =>
+    public static Utf8String ExtFragmentDensityMapOffsetExtensionName =>
         "VK_EXT_fragment_density_map_offset"u8;
 
     [NativeTypeName("#define VK_EXT_ZERO_INITIALIZE_DEVICE_MEMORY_SPEC_VERSION 1")]
@@ -35854,7 +35752,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
         ]
     )]
-    public static ReadOnlySpan<byte> ExtZeroInitializeDeviceMemoryExtensionName =>
+    public static Utf8String ExtZeroInitializeDeviceMemoryExtensionName =>
         "VK_EXT_zero_initialize_device_memory"u8;
 
     [NativeTypeName("#define VK_KHR_ACCELERATION_STRUCTURE_SPEC_VERSION 13")]
@@ -35879,7 +35777,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrAccelerationStructureExtensionName =>
+    public static Utf8String KhrAccelerationStructureExtensionName =>
         "VK_KHR_acceleration_structure"u8;
 
     [NativeTypeName("#define VK_KHR_RAY_TRACING_PIPELINE_SPEC_VERSION 1")]
@@ -35904,8 +35802,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrRayTracingPipelineExtensionName =>
-        "VK_KHR_ray_tracing_pipeline"u8;
+    public static Utf8String KhrRayTracingPipelineExtensionName => "VK_KHR_ray_tracing_pipeline"u8;
 
     [NativeTypeName("#define VK_KHR_RAY_QUERY_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35927,7 +35824,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public static ReadOnlySpan<byte> KhrRayQueryExtensionName => "VK_KHR_ray_query"u8;
+    public static Utf8String KhrRayQueryExtensionName => "VK_KHR_ray_query"u8;
 
     [NativeTypeName("#define VK_EXT_MESH_SHADER_SPEC_VERSION 1")]
     [SupportedApiProfile(
@@ -35943,7 +35840,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public static ReadOnlySpan<byte> ExtMeshShaderExtensionName => "VK_EXT_mesh_shader"u8;
+    public static Utf8String ExtMeshShaderExtensionName => "VK_EXT_mesh_shader"u8;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.AcquireDrmDisplayEXT(
