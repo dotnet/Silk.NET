@@ -1467,10 +1467,9 @@ public partial class MixKhronosData(
         // Trim _T from _THandle names
         foreach (var (original, (current, previous)) in names)
         {
-            if (current.Contains("_THandle"))
+            var newPrim = current.Replace("_THandle", "_Handle");
+            if (current != newPrim)
             {
-                var newPrim = current.Replace("_THandle", "_Handle");
-
                 var newPrev = previous ?? [];
                 newPrev.Add(current);
 
@@ -1483,10 +1482,9 @@ public partial class MixKhronosData(
         {
             foreach (var (original, (current, previous)) in names)
             {
-                if (current.Contains("FlagBits"))
+                var newPrim = current.Replace("FlagBits", "Flags");
+                if (current != newPrim)
                 {
-                    var newPrim = current.Replace("FlagBits", "Flags");
-
                     var newPrev = previous ?? [];
                     newPrev.Add(current);
 
