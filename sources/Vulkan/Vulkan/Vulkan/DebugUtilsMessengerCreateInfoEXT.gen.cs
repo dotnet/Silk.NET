@@ -31,12 +31,7 @@ public unsafe partial struct DebugUtilsMessengerCreateInfoEXT
 
     [NativeTypeName("PFN_vkDebugUtilsMessengerCallbackEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public delegate* unmanaged<
-        VkDebugUtilsMessageSeverityFlagBitsEXT,
-        uint,
-        DebugUtilsMessengerCallbackDataEXT*,
-        void*,
-        uint> PfnUserCallback;
+    public PFNVkDebugUtilsMessengerCallbackEXT PfnUserCallback;
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public void* PUserData;

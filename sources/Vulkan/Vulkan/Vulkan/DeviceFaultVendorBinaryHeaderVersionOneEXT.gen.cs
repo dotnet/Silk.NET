@@ -74,7 +74,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public _pipelineCacheUUID_e__FixedBuffer PipelineCacheUUID;
+    public DeviceFaultVendorBinaryHeaderVersionOneEXTPipelineCacheUUID PipelineCacheUUID;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -130,19 +130,4 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
         ]
     )]
     public uint ApiVersion;
-
-    [InlineArray(16)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_device_fault"],
-        ImpliesSets = [
-            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_device_fault+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _pipelineCacheUUID_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public byte e0;
-    }
 }

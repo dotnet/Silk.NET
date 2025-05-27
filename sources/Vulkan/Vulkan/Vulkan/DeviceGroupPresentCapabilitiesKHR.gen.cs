@@ -34,7 +34,7 @@ public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public _presentMask_e__FixedBuffer PresentMask;
+    public DeviceGroupPresentCapabilitiesKHRPresentMask PresentMask;
 
     [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR")]
     [SupportedApiProfile(
@@ -44,17 +44,4 @@ public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
         RequireAll = true
     )]
     public uint Modes;
-
-    [InlineArray(32)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
-        ImpliesSets = ["VK_KHR_surface"],
-        RequireAll = true
-    )]
-    public partial struct _presentMask_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public uint e0;
-    }
 }

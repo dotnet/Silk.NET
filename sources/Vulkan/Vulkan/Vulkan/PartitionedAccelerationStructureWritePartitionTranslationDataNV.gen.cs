@@ -25,17 +25,5 @@ public partial struct PartitionedAccelerationStructureWritePartitionTranslationD
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public _partitionTranslation_e__FixedBuffer PartitionTranslation;
-
-    [InlineArray(3)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_partitioned_acceleration_structure"],
-        ImpliesSets = ["VK_KHR_acceleration_structure"]
-    )]
-    public partial struct _partitionTranslation_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public float e0;
-    }
+    public PartitionedAccelerationStructureWritePartitionTranslationDataNVPartitionTranslation PartitionTranslation;
 }

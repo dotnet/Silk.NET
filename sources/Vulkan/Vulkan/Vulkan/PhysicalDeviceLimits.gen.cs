@@ -433,7 +433,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _maxComputeWorkGroupCount_e__FixedBuffer MaxComputeWorkGroupCount;
+    public PhysicalDeviceLimitsMaxComputeWorkGroupCount MaxComputeWorkGroupCount;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -449,7 +449,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _maxComputeWorkGroupSize_e__FixedBuffer MaxComputeWorkGroupSize;
+    public PhysicalDeviceLimitsMaxComputeWorkGroupSize MaxComputeWorkGroupSize;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -519,7 +519,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _maxViewportDimensions_e__FixedBuffer MaxViewportDimensions;
+    public PhysicalDeviceLimitsMaxViewportDimensions MaxViewportDimensions;
 
     [NativeTypeName("float[2]")]
     [SupportedApiProfile(
@@ -527,7 +527,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _viewportBoundsRange_e__FixedBuffer ViewportBoundsRange;
+    public PhysicalDeviceLimitsViewportBoundsRange ViewportBoundsRange;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -788,7 +788,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _pointSizeRange_e__FixedBuffer PointSizeRange;
+    public PhysicalDeviceLimitsPointSizeRange PointSizeRange;
 
     [NativeTypeName("float[2]")]
     [SupportedApiProfile(
@@ -796,7 +796,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _lineWidthRange_e__FixedBuffer LineWidthRange;
+    public PhysicalDeviceLimitsLineWidthRange LineWidthRange;
 
     [SupportedApiProfile(
         "vulkan",
@@ -851,76 +851,4 @@ public partial struct PhysicalDeviceLimits
         MinVersion = "1.0"
     )]
     public ulong NonCoherentAtomSize;
-
-    [InlineArray(3)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _maxComputeWorkGroupCount_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public uint e0;
-    }
-
-    [InlineArray(3)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _maxComputeWorkGroupSize_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public uint e0;
-    }
-
-    [InlineArray(2)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _maxViewportDimensions_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public uint e0;
-    }
-
-    [InlineArray(2)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _viewportBoundsRange_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public float e0;
-    }
-
-    [InlineArray(2)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _pointSizeRange_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public float e0;
-    }
-
-    [InlineArray(2)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _lineWidthRange_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public float e0;
-    }
 }

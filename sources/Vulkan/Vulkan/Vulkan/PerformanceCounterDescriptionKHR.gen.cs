@@ -51,7 +51,7 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public _name_e__FixedBuffer Name;
+    public PerformanceCounterDescriptionKHRName Name;
 
     [NativeTypeName("char[256]")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public _category_e__FixedBuffer Category;
+    public PerformanceCounterDescriptionKHRCategory Category;
 
     [NativeTypeName("char[256]")]
     [SupportedApiProfile(
@@ -73,50 +73,5 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public _description_e__FixedBuffer Description;
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_performance_query"],
-        ImpliesSets = [
-            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_performance_query+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _name_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_performance_query"],
-        ImpliesSets = [
-            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_performance_query+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _category_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_performance_query"],
-        ImpliesSets = [
-            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_performance_query+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _description_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
+    public PerformanceCounterDescriptionKHRDescription Description;
 }

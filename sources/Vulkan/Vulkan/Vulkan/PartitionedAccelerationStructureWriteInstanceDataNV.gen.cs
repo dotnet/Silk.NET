@@ -24,7 +24,7 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public _explicitAABB_e__FixedBuffer ExplicitAABB;
+    public PartitionedAccelerationStructureWriteInstanceDataNVExplicitAABB ExplicitAABB;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -84,16 +84,4 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
         ]
     )]
     public ulong AccelerationStructure;
-
-    [InlineArray(6)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_partitioned_acceleration_structure"],
-        ImpliesSets = ["VK_KHR_acceleration_structure"]
-    )]
-    public partial struct _explicitAABB_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public float e0;
-    }
 }

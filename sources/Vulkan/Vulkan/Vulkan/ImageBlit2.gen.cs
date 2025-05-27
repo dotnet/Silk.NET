@@ -23,28 +23,12 @@ public unsafe partial struct ImageBlit2
 
     [NativeTypeName("VkOffset3D[2]")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public _srcOffsets_e__FixedBuffer SrcOffsets;
+    public ImageBlit2SrcOffsets SrcOffsets;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public ImageSubresourceLayers DstSubresource;
 
     [NativeTypeName("VkOffset3D[2]")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public _dstOffsets_e__FixedBuffer DstOffsets;
-
-    [InlineArray(2)]
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public partial struct _srcOffsets_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public Offset3D e0;
-    }
-
-    [InlineArray(2)]
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public partial struct _dstOffsets_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public Offset3D e0;
-    }
+    public ImageBlit2DstOffsets DstOffsets;
 }

@@ -30,13 +30,5 @@ public unsafe partial struct PhysicalDeviceLayeredApiPropertiesKHR
 
     [NativeTypeName("char[256]")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public _deviceName_e__FixedBuffer DeviceName;
-
-    [InlineArray(256)]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public partial struct _deviceName_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
+    public PhysicalDeviceLayeredApiPropertiesKHRDeviceName DeviceName;
 }

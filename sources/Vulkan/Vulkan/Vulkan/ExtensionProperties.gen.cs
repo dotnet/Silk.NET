@@ -17,7 +17,7 @@ public partial struct ExtensionProperties
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _extensionName_e__FixedBuffer ExtensionName;
+    public ExtensionPropertiesExtensionName ExtensionName;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -26,16 +26,4 @@ public partial struct ExtensionProperties
         MinVersion = "1.0"
     )]
     public uint SpecVersion;
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _extensionName_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
 }

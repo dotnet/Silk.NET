@@ -20,7 +20,7 @@ public partial struct DeviceFaultVendorInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public _description_e__FixedBuffer Description;
+    public DeviceFaultVendorInfoEXTDescription Description;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -43,19 +43,4 @@ public partial struct DeviceFaultVendorInfoEXT
         ]
     )]
     public ulong VendorFaultData;
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_device_fault"],
-        ImpliesSets = [
-            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_device_fault+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _description_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
 }

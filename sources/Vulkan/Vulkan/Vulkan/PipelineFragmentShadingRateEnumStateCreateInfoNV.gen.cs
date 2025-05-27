@@ -46,17 +46,5 @@ public unsafe partial struct PipelineFragmentShadingRateEnumStateCreateInfoNV
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    public _combinerOps_e__FixedBuffer CombinerOps;
-
-    [InlineArray(2)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_fragment_shading_rate_enums"],
-        ImpliesSets = ["VK_KHR_fragment_shading_rate"]
-    )]
-    public partial struct _combinerOps_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public FragmentShadingRateCombinerOpKHR e0;
-    }
+    public PipelineFragmentShadingRateEnumStateCreateInfoNVCombinerOps CombinerOps;
 }

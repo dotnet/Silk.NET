@@ -30,7 +30,7 @@ public partial struct RenderPassSubpassFeedbackInfoEXT
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    public _description_e__FixedBuffer Description;
+    public RenderPassSubpassFeedbackInfoEXTDescription Description;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -42,19 +42,4 @@ public partial struct RenderPassSubpassFeedbackInfoEXT
         ]
     )]
     public uint PostMergeIndex;
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_subpass_merge_feedback"],
-        ImpliesSets = [
-            "VK_EXT_subpass_merge_feedback+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _description_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
 }

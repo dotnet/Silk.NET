@@ -24,7 +24,7 @@ public unsafe partial struct AllocationCallbacks
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public delegate* unmanaged<void*, nuint, nuint, SystemAllocationScope, void*> PfnAllocation;
+    public PFNVkAllocationFunction PfnAllocation;
 
     [NativeTypeName("PFN_vkReallocationFunction")]
     [SupportedApiProfile(
@@ -32,13 +32,7 @@ public unsafe partial struct AllocationCallbacks
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public delegate* unmanaged<
-        void*,
-        void*,
-        nuint,
-        nuint,
-        SystemAllocationScope,
-        void*> PfnReallocation;
+    public PFNVkReallocationFunction PfnReallocation;
 
     [NativeTypeName("PFN_vkFreeFunction")]
     [SupportedApiProfile(
@@ -46,7 +40,7 @@ public unsafe partial struct AllocationCallbacks
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public delegate* unmanaged<void*, void*, void> PfnFree;
+    public PFNVkFreeFunction PfnFree;
 
     [NativeTypeName("PFN_vkInternalAllocationNotification")]
     [SupportedApiProfile(
@@ -54,12 +48,7 @@ public unsafe partial struct AllocationCallbacks
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public delegate* unmanaged<
-        void*,
-        nuint,
-        InternalAllocationType,
-        SystemAllocationScope,
-        void> PfnInternalAllocation;
+    public PFNVkInternalAllocationNotification PfnInternalAllocation;
 
     [NativeTypeName("PFN_vkInternalFreeNotification")]
     [SupportedApiProfile(
@@ -67,10 +56,5 @@ public unsafe partial struct AllocationCallbacks
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public delegate* unmanaged<
-        void*,
-        nuint,
-        InternalAllocationType,
-        SystemAllocationScope,
-        void> PfnInternalFree;
+    public PFNVkInternalFreeNotification PfnInternalFree;
 }

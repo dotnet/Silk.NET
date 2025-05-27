@@ -56,7 +56,7 @@ public partial struct PhysicalDeviceProperties
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _deviceName_e__FixedBuffer DeviceName;
+    public PhysicalDevicePropertiesDeviceName DeviceName;
 
     [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile(
@@ -64,7 +64,7 @@ public partial struct PhysicalDeviceProperties
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _pipelineCacheUUID_e__FixedBuffer PipelineCacheUUID;
+    public PhysicalDevicePropertiesPipelineCacheUUID PipelineCacheUUID;
 
     [SupportedApiProfile(
         "vulkan",
@@ -79,28 +79,4 @@ public partial struct PhysicalDeviceProperties
         MinVersion = "1.0"
     )]
     public PhysicalDeviceSparseProperties SparseProperties;
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _deviceName_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
-
-    [InlineArray(16)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _pipelineCacheUUID_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public byte e0;
-    }
 }

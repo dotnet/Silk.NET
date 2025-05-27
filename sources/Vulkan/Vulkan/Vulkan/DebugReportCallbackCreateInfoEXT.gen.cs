@@ -24,16 +24,7 @@ public unsafe partial struct DebugReportCallbackCreateInfoEXT
 
     [NativeTypeName("PFN_vkDebugReportCallbackEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    public delegate* unmanaged<
-        uint,
-        DebugReportObjectTypeEXT,
-        ulong,
-        nuint,
-        int,
-        sbyte*,
-        sbyte*,
-        void*,
-        uint> PfnCallback;
+    public PFNVkDebugReportCallbackEXT PfnCallback;
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     public void* PUserData;

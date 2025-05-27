@@ -24,7 +24,7 @@ public partial struct ImageBlit
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _srcOffsets_e__FixedBuffer SrcOffsets;
+    public ImageBlitSrcOffsets SrcOffsets;
 
     [SupportedApiProfile(
         "vulkan",
@@ -39,29 +39,5 @@ public partial struct ImageBlit
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _dstOffsets_e__FixedBuffer DstOffsets;
-
-    [InlineArray(2)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _srcOffsets_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public Offset3D e0;
-    }
-
-    [InlineArray(2)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _dstOffsets_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public Offset3D e0;
-    }
+    public ImageBlitDstOffsets DstOffsets;
 }

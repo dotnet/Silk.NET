@@ -38,7 +38,7 @@ public unsafe partial struct DeviceFaultInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public _description_e__FixedBuffer Description;
+    public DeviceFaultInfoEXTDescription Description;
 
     [SupportedApiProfile(
         "vulkan",
@@ -69,19 +69,4 @@ public unsafe partial struct DeviceFaultInfoEXT
         ]
     )]
     public void* PVendorBinaryData;
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_device_fault"],
-        ImpliesSets = [
-            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_device_fault+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _description_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
 }

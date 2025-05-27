@@ -166,6 +166,7 @@
         "ClangScraper",
         "AddApiProfiles",
         "MixKhronosData",
+        "ExtractNestedTyping",
         "TransformHandles",
         "TransformFunctions",
         "TransformProperties",

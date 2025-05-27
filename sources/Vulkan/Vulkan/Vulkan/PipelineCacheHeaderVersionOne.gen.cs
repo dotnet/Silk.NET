@@ -48,17 +48,5 @@ public partial struct PipelineCacheHeaderVersionOne
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _pipelineCacheUUID_e__FixedBuffer PipelineCacheUUID;
-
-    [InlineArray(16)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _pipelineCacheUUID_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public byte e0;
-    }
+    public PipelineCacheHeaderVersionOnePipelineCacheUUID PipelineCacheUUID;
 }

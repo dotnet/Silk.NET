@@ -17807,7 +17807,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             ],
             MinVersion = "1.0"
         )]
-        public static extern delegate* unmanaged<void> GetDeviceProcAddr(
+        public static extern PFNVkVoidFunction GetDeviceProcAddr(
             [NativeTypeName("VkDevice")] DeviceTHandle device,
             [NativeTypeName("const char *")] sbyte* pName
         );
@@ -17829,14 +17829,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<void> GetDeviceProcAddr(
+        public static PFNVkVoidFunction GetDeviceProcAddr(
             [NativeTypeName("VkDevice")] DeviceTHandle device,
             [NativeTypeName("const char *")] Ref<sbyte> pName
         )
         {
             fixed (sbyte* __dsl_pName = pName)
             {
-                return (delegate* unmanaged<void>)GetDeviceProcAddr(device, __dsl_pName);
+                return (PFNVkVoidFunction)GetDeviceProcAddr(device, __dsl_pName);
             }
         }
 
@@ -19246,7 +19246,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             ],
             MinVersion = "1.0"
         )]
-        public static extern delegate* unmanaged<void> GetInstanceProcAddr(
+        public static extern PFNVkVoidFunction GetInstanceProcAddr(
             [NativeTypeName("VkInstance")] InstanceTHandle instance,
             [NativeTypeName("const char *")] sbyte* pName
         );
@@ -19268,14 +19268,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<void> GetInstanceProcAddr(
+        public static PFNVkVoidFunction GetInstanceProcAddr(
             [NativeTypeName("VkInstance")] InstanceTHandle instance,
             [NativeTypeName("const char *")] Ref<sbyte> pName
         )
         {
             fixed (sbyte* __dsl_pName = pName)
             {
-                return (delegate* unmanaged<void>)GetInstanceProcAddr(instance, __dsl_pName);
+                return (PFNVkVoidFunction)GetInstanceProcAddr(instance, __dsl_pName);
             }
         }
 
@@ -65518,12 +65518,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceMicromapCompatibilityEXT(device, pVersionInfo, pCompatibility);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<void> IVulkan.GetDeviceProcAddr(
+    PFNVkVoidFunction IVulkan.GetDeviceProcAddr(
         [NativeTypeName("VkDevice")] DeviceTHandle device,
         [NativeTypeName("const char *")] sbyte* pName
     ) =>
         (
-            (delegate* unmanaged<DeviceTHandle, sbyte*, delegate* unmanaged<void>>)(
+            (delegate* unmanaged<DeviceTHandle, sbyte*, PFNVkVoidFunction>)(
                 _slots[474] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[474] = nativeContext.LoadFunction("vkGetDeviceProcAddr", "vulkan")
@@ -65538,21 +65538,20 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceProcAddr")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<void> GetDeviceProcAddr(
+    public static PFNVkVoidFunction GetDeviceProcAddr(
         [NativeTypeName("VkDevice")] DeviceTHandle device,
         [NativeTypeName("const char *")] sbyte* pName
     ) => DllImport.GetDeviceProcAddr(device, pName);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<void> IVulkan.GetDeviceProcAddr(
+    PFNVkVoidFunction IVulkan.GetDeviceProcAddr(
         [NativeTypeName("VkDevice")] DeviceTHandle device,
         [NativeTypeName("const char *")] Ref<sbyte> pName
     )
     {
         fixed (sbyte* __dsl_pName = pName)
         {
-            return (delegate* unmanaged<void>)
-                ((IVulkan)this).GetDeviceProcAddr(device, __dsl_pName);
+            return (PFNVkVoidFunction)((IVulkan)this).GetDeviceProcAddr(device, __dsl_pName);
         }
     }
 
@@ -65565,7 +65564,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceProcAddr")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<void> GetDeviceProcAddr(
+    public static PFNVkVoidFunction GetDeviceProcAddr(
         [NativeTypeName("VkDevice")] DeviceTHandle device,
         [NativeTypeName("const char *")] Ref<sbyte> pName
     ) => DllImport.GetDeviceProcAddr(device, pName);
@@ -67877,12 +67876,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageViewOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<void> IVulkan.GetInstanceProcAddr(
+    PFNVkVoidFunction IVulkan.GetInstanceProcAddr(
         [NativeTypeName("VkInstance")] InstanceTHandle instance,
         [NativeTypeName("const char *")] sbyte* pName
     ) =>
         (
-            (delegate* unmanaged<InstanceTHandle, sbyte*, delegate* unmanaged<void>>)(
+            (delegate* unmanaged<InstanceTHandle, sbyte*, PFNVkVoidFunction>)(
                 _slots[509] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[509] = nativeContext.LoadFunction("vkGetInstanceProcAddr", "vulkan")
@@ -67897,21 +67896,20 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetInstanceProcAddr")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<void> GetInstanceProcAddr(
+    public static PFNVkVoidFunction GetInstanceProcAddr(
         [NativeTypeName("VkInstance")] InstanceTHandle instance,
         [NativeTypeName("const char *")] sbyte* pName
     ) => DllImport.GetInstanceProcAddr(instance, pName);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<void> IVulkan.GetInstanceProcAddr(
+    PFNVkVoidFunction IVulkan.GetInstanceProcAddr(
         [NativeTypeName("VkInstance")] InstanceTHandle instance,
         [NativeTypeName("const char *")] Ref<sbyte> pName
     )
     {
         fixed (sbyte* __dsl_pName = pName)
         {
-            return (delegate* unmanaged<void>)
-                ((IVulkan)this).GetInstanceProcAddr(instance, __dsl_pName);
+            return (PFNVkVoidFunction)((IVulkan)this).GetInstanceProcAddr(instance, __dsl_pName);
         }
     }
 
@@ -67924,7 +67922,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetInstanceProcAddr")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<void> GetInstanceProcAddr(
+    public static PFNVkVoidFunction GetInstanceProcAddr(
         [NativeTypeName("VkInstance")] InstanceTHandle instance,
         [NativeTypeName("const char *")] Ref<sbyte> pName
     ) => DllImport.GetInstanceProcAddr(instance, pName);

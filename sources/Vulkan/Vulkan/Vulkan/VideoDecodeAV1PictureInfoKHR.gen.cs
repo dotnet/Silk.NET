@@ -39,7 +39,7 @@ public unsafe partial struct VideoDecodeAV1PictureInfoKHR
         ["VK_KHR_video_decode_av1"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public _referenceNameSlotIndices_e__FixedBuffer ReferenceNameSlotIndices;
+    public VideoDecodeAV1PictureInfoKHRReferenceNameSlotIndices ReferenceNameSlotIndices;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -72,16 +72,4 @@ public unsafe partial struct VideoDecodeAV1PictureInfoKHR
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
     public uint* PTileSizes;
-
-    [InlineArray(7)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_decode_av1"],
-        ImpliesSets = ["VK_KHR_video_decode_queue"]
-    )]
-    public partial struct _referenceNameSlotIndices_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public int e0;
-    }
 }

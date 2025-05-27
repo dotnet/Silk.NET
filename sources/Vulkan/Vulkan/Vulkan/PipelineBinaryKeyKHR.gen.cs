@@ -51,20 +51,5 @@ public unsafe partial struct PipelineBinaryKeyKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public _key_e__FixedBuffer Key;
-
-    [InlineArray(32)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_pipeline_binary"],
-        ImpliesSets = [
-            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
-            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
-        ]
-    )]
-    public partial struct _key_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public byte e0;
-    }
+    public PipelineBinaryKeyKHRKey Key;
 }

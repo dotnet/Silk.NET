@@ -23,7 +23,7 @@ public partial struct PhysicalDeviceMemoryProperties
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _memoryTypes_e__FixedBuffer MemoryTypes;
+    public PhysicalDeviceMemoryPropertiesMemoryTypes MemoryTypes;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -39,29 +39,5 @@ public partial struct PhysicalDeviceMemoryProperties
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _memoryHeaps_e__FixedBuffer MemoryHeaps;
-
-    [InlineArray(32)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _memoryTypes_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public MemoryType e0;
-    }
-
-    [InlineArray(16)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _memoryHeaps_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public MemoryHeap e0;
-    }
+    public PhysicalDeviceMemoryPropertiesMemoryHeaps MemoryHeaps;
 }

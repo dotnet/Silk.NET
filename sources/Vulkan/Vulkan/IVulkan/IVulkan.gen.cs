@@ -13033,7 +13033,7 @@ public unsafe partial interface IVulkan
             MinVersion = "1.0"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceProcAddr")]
-        static abstract delegate* unmanaged<void> GetDeviceProcAddr(
+        static abstract PFNVkVoidFunction GetDeviceProcAddr(
             [NativeTypeName("VkDevice")] DeviceTHandle device,
             [NativeTypeName("const char *")] sbyte* pName
         );
@@ -13052,7 +13052,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceProcAddr")]
-        static abstract delegate* unmanaged<void> GetDeviceProcAddr(
+        static abstract PFNVkVoidFunction GetDeviceProcAddr(
             [NativeTypeName("VkDevice")] DeviceTHandle device,
             [NativeTypeName("const char *")] Ref<sbyte> pName
         );
@@ -14002,7 +14002,7 @@ public unsafe partial interface IVulkan
             MinVersion = "1.0"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetInstanceProcAddr")]
-        static abstract delegate* unmanaged<void> GetInstanceProcAddr(
+        static abstract PFNVkVoidFunction GetInstanceProcAddr(
             [NativeTypeName("VkInstance")] InstanceTHandle instance,
             [NativeTypeName("const char *")] sbyte* pName
         );
@@ -14021,7 +14021,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetInstanceProcAddr")]
-        static abstract delegate* unmanaged<void> GetInstanceProcAddr(
+        static abstract PFNVkVoidFunction GetInstanceProcAddr(
             [NativeTypeName("VkInstance")] InstanceTHandle instance,
             [NativeTypeName("const char *")] Ref<sbyte> pName
         );
@@ -30229,7 +30229,7 @@ public unsafe partial interface IVulkan
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceProcAddr")]
-    delegate* unmanaged<void> GetDeviceProcAddr(
+    PFNVkVoidFunction GetDeviceProcAddr(
         [NativeTypeName("VkDevice")] DeviceTHandle device,
         [NativeTypeName("const char *")] sbyte* pName
     );
@@ -30242,7 +30242,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceProcAddr")]
-    delegate* unmanaged<void> GetDeviceProcAddr(
+    PFNVkVoidFunction GetDeviceProcAddr(
         [NativeTypeName("VkDevice")] DeviceTHandle device,
         [NativeTypeName("const char *")] Ref<sbyte> pName
     );
@@ -31123,7 +31123,7 @@ public unsafe partial interface IVulkan
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetInstanceProcAddr")]
-    delegate* unmanaged<void> GetInstanceProcAddr(
+    PFNVkVoidFunction GetInstanceProcAddr(
         [NativeTypeName("VkInstance")] InstanceTHandle instance,
         [NativeTypeName("const char *")] sbyte* pName
     );
@@ -31136,7 +31136,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetInstanceProcAddr")]
-    delegate* unmanaged<void> GetInstanceProcAddr(
+    PFNVkVoidFunction GetInstanceProcAddr(
         [NativeTypeName("VkInstance")] InstanceTHandle instance,
         [NativeTypeName("const char *")] Ref<sbyte> pName
     );

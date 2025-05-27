@@ -70,20 +70,5 @@ public unsafe partial struct PerformanceCounterKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public _uuid_e__FixedBuffer Uuid;
-
-    [InlineArray(16)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_performance_query"],
-        ImpliesSets = [
-            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_performance_query+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _uuid_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public byte e0;
-    }
+    public PerformanceCounterKHRUuid Uuid;
 }

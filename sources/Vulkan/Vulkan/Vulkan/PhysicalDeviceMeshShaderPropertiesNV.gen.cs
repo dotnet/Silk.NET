@@ -62,7 +62,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    public _maxTaskWorkGroupSize_e__FixedBuffer MaxTaskWorkGroupSize;
+    public PhysicalDeviceMeshShaderPropertiesNVMaxTaskWorkGroupSize MaxTaskWorkGroupSize;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -106,7 +106,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    public _maxMeshWorkGroupSize_e__FixedBuffer MaxMeshWorkGroupSize;
+    public PhysicalDeviceMeshShaderPropertiesNVMaxMeshWorkGroupSize MaxMeshWorkGroupSize;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -173,34 +173,4 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
         ]
     )]
     public uint MeshOutputPerPrimitiveGranularity;
-
-    [InlineArray(3)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_mesh_shader"],
-        ImpliesSets = [
-            "VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2",
-            "VK_NV_mesh_shader+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _maxTaskWorkGroupSize_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public uint e0;
-    }
-
-    [InlineArray(3)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_mesh_shader"],
-        ImpliesSets = [
-            "VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2",
-            "VK_NV_mesh_shader+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _maxMeshWorkGroupSize_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public uint e0;
-    }
 }

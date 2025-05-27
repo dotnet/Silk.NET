@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHuawei
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public _maxWorkGroupCount_e__FixedBuffer MaxWorkGroupCount;
+    public PhysicalDeviceClusterCullingShaderPropertiesHuaweiMaxWorkGroupCount MaxWorkGroupCount;
 
     [NativeTypeName("uint32_t[3]")]
     [SupportedApiProfile(
@@ -51,7 +51,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHuawei
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public _maxWorkGroupSize_e__FixedBuffer MaxWorkGroupSize;
+    public PhysicalDeviceClusterCullingShaderPropertiesHuaweiMaxWorkGroupSize MaxWorkGroupSize;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -74,34 +74,4 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHuawei
         ]
     )]
     public ulong IndirectBufferOffsetAlignment;
-
-    [InlineArray(3)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_HUAWEI_cluster_culling_shader"],
-        ImpliesSets = [
-            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
-            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _maxWorkGroupCount_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public uint e0;
-    }
-
-    [InlineArray(3)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_HUAWEI_cluster_culling_shader"],
-        ImpliesSets = [
-            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
-            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _maxWorkGroupSize_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public uint e0;
-    }
 }

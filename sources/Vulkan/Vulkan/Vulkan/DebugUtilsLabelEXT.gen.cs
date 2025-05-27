@@ -24,13 +24,5 @@ public unsafe partial struct DebugUtilsLabelEXT
 
     [NativeTypeName("float[4]")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public _color_e__FixedBuffer Color;
-
-    [InlineArray(4)]
-    [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public partial struct _color_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public float e0;
-    }
+    public DebugUtilsLabelEXTColor Color;
 }

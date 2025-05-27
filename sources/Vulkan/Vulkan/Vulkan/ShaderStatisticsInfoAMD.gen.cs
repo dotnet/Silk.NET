@@ -36,13 +36,5 @@ public partial struct ShaderStatisticsInfoAMD
 
     [NativeTypeName("uint32_t[3]")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    public _computeWorkGroupSize_e__FixedBuffer ComputeWorkGroupSize;
-
-    [InlineArray(3)]
-    [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    public partial struct _computeWorkGroupSize_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public uint e0;
-    }
+    public ShaderStatisticsInfoAMDComputeWorkGroupSize ComputeWorkGroupSize;
 }

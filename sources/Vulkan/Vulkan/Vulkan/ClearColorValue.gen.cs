@@ -18,7 +18,7 @@ public partial struct ClearColorValue
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _float32_e__FixedBuffer Float32;
+    public ClearColorValueFloat32 Float32;
 
     [FieldOffset(0)]
     [NativeTypeName("int32_t[4]")]
@@ -27,7 +27,7 @@ public partial struct ClearColorValue
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _int32_e__FixedBuffer Int32;
+    public ClearColorValueInt32 Int32;
 
     [FieldOffset(0)]
     [NativeTypeName("uint32_t[4]")]
@@ -36,41 +36,5 @@ public partial struct ClearColorValue
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public _uint32_e__FixedBuffer Uint32;
-
-    [InlineArray(4)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _float32_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public float e0;
-    }
-
-    [InlineArray(4)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _int32_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public int e0;
-    }
-
-    [InlineArray(4)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    public partial struct _uint32_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public uint e0;
-    }
+    public ClearColorValueUint32 Uint32;
 }

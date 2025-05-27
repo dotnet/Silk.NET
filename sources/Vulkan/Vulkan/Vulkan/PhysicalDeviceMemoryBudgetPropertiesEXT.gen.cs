@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
             "VK_EXT_memory_budget+VK_VERSION_1_1",
         ]
     )]
-    public _heapBudget_e__FixedBuffer HeapBudget;
+    public PhysicalDeviceMemoryBudgetPropertiesEXTHeapBudget HeapBudget;
 
     [NativeTypeName("VkDeviceSize[16]")]
     [SupportedApiProfile(
@@ -51,35 +51,5 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
             "VK_EXT_memory_budget+VK_VERSION_1_1",
         ]
     )]
-    public _heapUsage_e__FixedBuffer HeapUsage;
-
-    [InlineArray(16)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_memory_budget"],
-        ImpliesSets = [
-            "VK_EXT_memory_budget+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_memory_budget+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _heapBudget_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public ulong e0;
-    }
-
-    [InlineArray(16)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_memory_budget"],
-        ImpliesSets = [
-            "VK_EXT_memory_budget+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_memory_budget+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _heapUsage_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public ulong e0;
-    }
+    public PhysicalDeviceMemoryBudgetPropertiesEXTHeapUsage HeapUsage;
 }

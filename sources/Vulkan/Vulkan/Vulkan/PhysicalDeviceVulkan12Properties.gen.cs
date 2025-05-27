@@ -38,7 +38,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public _driverName_e__FixedBuffer DriverName;
+    public PhysicalDeviceVulkan12PropertiesDriverName DriverName;
 
     [NativeTypeName("char[256]")]
     [SupportedApiProfile(
@@ -46,7 +46,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public _driverInfo_e__FixedBuffer DriverInfo;
+    public PhysicalDeviceVulkan12PropertiesDriverInfo DriverInfo;
 
     [SupportedApiProfile(
         "vulkan",
@@ -436,28 +436,4 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         MinVersion = "1.2"
     )]
     public uint FramebufferIntegerColorSampleCounts;
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.2"
-    )]
-    public partial struct _driverName_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.2"
-    )]
-    public partial struct _driverInfo_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
 }

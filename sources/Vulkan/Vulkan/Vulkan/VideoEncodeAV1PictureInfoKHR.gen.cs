@@ -62,7 +62,7 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public _referenceNameSlotIndices_e__FixedBuffer ReferenceNameSlotIndices;
+    public VideoEncodeAV1PictureInfoKHRReferenceNameSlotIndices ReferenceNameSlotIndices;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -79,16 +79,4 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     public uint GenerateObuExtensionHeader;
-
-    [InlineArray(7)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_av1"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    public partial struct _referenceNameSlotIndices_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public int e0;
-    }
 }

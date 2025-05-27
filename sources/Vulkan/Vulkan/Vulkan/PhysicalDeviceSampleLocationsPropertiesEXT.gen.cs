@@ -61,7 +61,7 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public _sampleLocationCoordinateRange_e__FixedBuffer SampleLocationCoordinateRange;
+    public PhysicalDeviceSampleLocationsPropertiesEXTSampleLocationCoordinateRange SampleLocationCoordinateRange;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -84,19 +84,4 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
         ]
     )]
     public uint VariableSampleLocations;
-
-    [InlineArray(2)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_sample_locations"],
-        ImpliesSets = [
-            "VK_EXT_sample_locations+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_sample_locations+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _sampleLocationCoordinateRange_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public float e0;
-    }
 }

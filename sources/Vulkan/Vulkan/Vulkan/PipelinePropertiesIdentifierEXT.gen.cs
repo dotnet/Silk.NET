@@ -40,20 +40,5 @@ public unsafe partial struct PipelinePropertiesIdentifierEXT
             "VK_EXT_pipeline_properties+VK_VERSION_1_1",
         ]
     )]
-    public _pipelineIdentifier_e__FixedBuffer PipelineIdentifier;
-
-    [InlineArray(16)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_properties"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_properties+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_properties+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _pipelineIdentifier_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public byte e0;
-    }
+    public PipelinePropertiesIdentifierEXTPipelineIdentifier PipelineIdentifier;
 }

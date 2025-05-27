@@ -103,17 +103,9 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
 
     [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public _optimalTilingLayoutUUID_e__FixedBuffer OptimalTilingLayoutUUID;
+    public PhysicalDeviceVulkan14PropertiesOptimalTilingLayoutUUID OptimalTilingLayoutUUID;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint IdenticalMemoryTypeRequirements;
-
-    [InlineArray(16)]
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public partial struct _optimalTilingLayoutUUID_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public byte e0;
-    }
 }

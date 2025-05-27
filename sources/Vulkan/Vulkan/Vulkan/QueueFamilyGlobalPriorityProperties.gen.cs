@@ -23,13 +23,5 @@ public unsafe partial struct QueueFamilyGlobalPriorityProperties
 
     [NativeTypeName("VkQueueGlobalPriority[16]")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public _priorities_e__FixedBuffer Priorities;
-
-    [InlineArray(16)]
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public partial struct _priorities_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public QueueGlobalPriority e0;
-    }
+    public QueueFamilyGlobalPriorityPropertiesPriorities Priorities;
 }

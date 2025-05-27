@@ -31,7 +31,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public _deviceUUID_e__FixedBuffer DeviceUUID;
+    public PhysicalDeviceVulkan11PropertiesDeviceUUID DeviceUUID;
 
     [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile(
@@ -39,7 +39,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public _driverUUID_e__FixedBuffer DriverUUID;
+    public PhysicalDeviceVulkan11PropertiesDriverUUID DriverUUID;
 
     [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile(
@@ -47,7 +47,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public _deviceLUID_e__FixedBuffer DeviceLUID;
+    public PhysicalDeviceVulkan11PropertiesDeviceLUID DeviceLUID;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -143,40 +143,4 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         MinVersion = "1.2"
     )]
     public ulong MaxMemoryAllocationSize;
-
-    [InlineArray(16)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.2"
-    )]
-    public partial struct _deviceUUID_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public byte e0;
-    }
-
-    [InlineArray(16)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.2"
-    )]
-    public partial struct _driverUUID_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public byte e0;
-    }
-
-    [InlineArray(8)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.2"
-    )]
-    public partial struct _deviceLUID_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public byte e0;
-    }
 }

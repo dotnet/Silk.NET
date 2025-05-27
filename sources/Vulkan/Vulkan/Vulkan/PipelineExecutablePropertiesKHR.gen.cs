@@ -51,7 +51,7 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public _name_e__FixedBuffer Name;
+    public PipelineExecutablePropertiesKHRName Name;
 
     [NativeTypeName("char[256]")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public _description_e__FixedBuffer Description;
+    public PipelineExecutablePropertiesKHRDescription Description;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -74,34 +74,4 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
         ]
     )]
     public uint SubgroupSize;
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_pipeline_executable_properties"],
-        ImpliesSets = [
-            "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _name_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
-
-    [InlineArray(256)]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_pipeline_executable_properties"],
-        ImpliesSets = [
-            "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
-        ]
-    )]
-    public partial struct _description_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
 }

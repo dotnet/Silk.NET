@@ -19,11 +19,11 @@ public unsafe partial struct PhysicalDeviceToolProperties
 
     [NativeTypeName("char[256]")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public _name_e__FixedBuffer Name;
+    public PhysicalDeviceToolPropertiesName Name;
 
     [NativeTypeName("char[256]")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public _version_e__FixedBuffer Version;
+    public PhysicalDeviceToolPropertiesVersion Version;
 
     [NativeTypeName("VkToolPurposeFlags")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -31,41 +31,9 @@ public unsafe partial struct PhysicalDeviceToolProperties
 
     [NativeTypeName("char[256]")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public _description_e__FixedBuffer Description;
+    public PhysicalDeviceToolPropertiesDescription Description;
 
     [NativeTypeName("char[256]")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public _layer_e__FixedBuffer Layer;
-
-    [InlineArray(256)]
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public partial struct _name_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
-
-    [InlineArray(256)]
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public partial struct _version_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
-
-    [InlineArray(256)]
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public partial struct _description_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
-
-    [InlineArray(256)]
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public partial struct _layer_e__FixedBuffer
-    {
-        [SupportedApiProfile("vulkan")]
-        public sbyte e0;
-    }
+    public PhysicalDeviceToolPropertiesLayer Layer;
 }

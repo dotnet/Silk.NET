@@ -23,8 +23,5 @@ public unsafe partial struct DirectDriverLoadingInfoLunarg
 
     [NativeTypeName("PFN_vkGetInstanceProcAddrLUNARG")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
-    public delegate* unmanaged<
-        InstanceTHandle,
-        sbyte*,
-        delegate* unmanaged<void>> PfnGetInstanceProcAddr;
+    public PFNVkGetInstanceProcAddrLunarg PfnGetInstanceProcAddr;
 }
