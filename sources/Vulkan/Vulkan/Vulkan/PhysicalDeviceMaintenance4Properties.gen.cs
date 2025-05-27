@@ -19,5 +19,5 @@ public unsafe partial struct PhysicalDeviceMaintenance4Properties
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint MaxBufferSize;
+    public ulong MaxBufferSize;
 }

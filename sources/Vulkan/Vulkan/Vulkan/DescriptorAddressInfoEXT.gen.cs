@@ -42,7 +42,7 @@ public unsafe partial struct DescriptorAddressInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public nuint Address;
+    public ulong Address;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -55,7 +55,7 @@ public unsafe partial struct DescriptorAddressInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public nuint Range;
+    public ulong Range;
 
     [SupportedApiProfile(
         "vulkan",

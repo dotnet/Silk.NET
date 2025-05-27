@@ -17,5 +17,5 @@ public partial struct BindPipelineIndirectCommandNV
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public nuint PipelineAddress;
+    public ulong PipelineAddress;
 }

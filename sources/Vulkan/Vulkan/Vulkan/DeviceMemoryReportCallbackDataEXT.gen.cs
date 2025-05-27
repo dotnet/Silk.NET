@@ -61,7 +61,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public nuint MemoryObjectId;
+    public ulong MemoryObjectId;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -72,7 +72,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public nuint Size;
+    public ulong Size;
 
     [SupportedApiProfile(
         "vulkan",
@@ -93,7 +93,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public nuint ObjectHandle;
+    public ulong ObjectHandle;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

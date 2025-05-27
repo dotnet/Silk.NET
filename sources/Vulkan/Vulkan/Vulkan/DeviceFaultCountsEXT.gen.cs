@@ -62,5 +62,5 @@ public unsafe partial struct DeviceFaultCountsEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public nuint VendorBinarySize;
+    public ulong VendorBinarySize;
 }

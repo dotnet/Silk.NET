@@ -39,7 +39,7 @@ public unsafe partial struct VideoCapabilitiesKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public nuint MinBitstreamBufferOffsetAlignment;
+    public ulong MinBitstreamBufferOffsetAlignment;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -47,7 +47,7 @@ public unsafe partial struct VideoCapabilitiesKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public nuint MinBitstreamBufferSizeAlignment;
+    public ulong MinBitstreamBufferSizeAlignment;
 
     [SupportedApiProfile(
         "vulkan",

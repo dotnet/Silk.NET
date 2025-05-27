@@ -179,7 +179,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint StorageTexelBufferOffsetAlignmentBytes;
+    public ulong StorageTexelBufferOffsetAlignmentBytes;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -187,7 +187,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint UniformTexelBufferOffsetAlignmentBytes;
+    public ulong UniformTexelBufferOffsetAlignmentBytes;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -195,5 +195,5 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint MaxBufferSize;
+    public ulong MaxBufferSize;
 }

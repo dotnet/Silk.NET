@@ -20,7 +20,7 @@ public partial struct CopyMemoryToImageIndirectCommandNV
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint SrcAddress;
+    public ulong SrcAddress;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

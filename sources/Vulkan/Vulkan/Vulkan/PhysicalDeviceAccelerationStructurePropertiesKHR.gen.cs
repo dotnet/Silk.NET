@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public nuint MaxGeometryCount;
+    public ulong MaxGeometryCount;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -51,7 +51,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public nuint MaxInstanceCount;
+    public ulong MaxInstanceCount;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public nuint MaxPrimitiveCount;
+    public ulong MaxPrimitiveCount;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

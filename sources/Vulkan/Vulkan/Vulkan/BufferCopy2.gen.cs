@@ -20,13 +20,13 @@ public unsafe partial struct BufferCopy2
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint SrcOffset;
+    public ulong SrcOffset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint DstOffset;
+    public ulong DstOffset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint Size;
+    public ulong Size;
 }

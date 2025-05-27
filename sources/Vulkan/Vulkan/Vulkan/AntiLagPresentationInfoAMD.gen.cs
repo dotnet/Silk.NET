@@ -22,5 +22,5 @@ public unsafe partial struct AntiLagPresentationInfoAMD
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_AMD_anti_lag"])]
-    public nuint FrameIndex;
+    public ulong FrameIndex;
 }

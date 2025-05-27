@@ -51,5 +51,5 @@ public unsafe partial struct AccelerationStructureGeometryAabbsDataKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public nuint Stride;
+    public ulong Stride;
 }

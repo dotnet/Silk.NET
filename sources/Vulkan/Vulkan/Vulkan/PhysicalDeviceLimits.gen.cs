@@ -105,7 +105,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint BufferImageGranularity;
+    public ulong BufferImageGranularity;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -113,7 +113,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint SparseAddressSpaceSize;
+    public ulong SparseAddressSpaceSize;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -551,7 +551,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint MinTexelBufferOffsetAlignment;
+    public ulong MinTexelBufferOffsetAlignment;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -559,7 +559,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint MinUniformBufferOffsetAlignment;
+    public ulong MinUniformBufferOffsetAlignment;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -567,7 +567,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint MinStorageBufferOffsetAlignment;
+    public ulong MinStorageBufferOffsetAlignment;
 
     [NativeTypeName("int32_t")]
     [SupportedApiProfile(
@@ -834,7 +834,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint OptimalBufferCopyOffsetAlignment;
+    public ulong OptimalBufferCopyOffsetAlignment;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -842,7 +842,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint OptimalBufferCopyRowPitchAlignment;
+    public ulong OptimalBufferCopyRowPitchAlignment;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -850,7 +850,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint NonCoherentAtomSize;
+    public ulong NonCoherentAtomSize;
 
     [InlineArray(3)]
     [SupportedApiProfile(

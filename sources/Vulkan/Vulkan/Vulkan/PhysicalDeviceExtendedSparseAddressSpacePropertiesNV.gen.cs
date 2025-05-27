@@ -19,7 +19,7 @@ public unsafe partial struct PhysicalDeviceExtendedSparseAddressSpacePropertiesN
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]
-    public nuint ExtendedSparseAddressSpaceSize;
+    public ulong ExtendedSparseAddressSpaceSize;
 
     [NativeTypeName("VkImageUsageFlags")]
     [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]

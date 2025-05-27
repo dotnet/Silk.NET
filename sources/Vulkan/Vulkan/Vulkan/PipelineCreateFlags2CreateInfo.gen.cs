@@ -18,5 +18,5 @@ public unsafe partial struct PipelineCreateFlags2CreateInfo
 
     [NativeTypeName("VkPipelineCreateFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public nuint Flags;
+    public ulong Flags;
 }

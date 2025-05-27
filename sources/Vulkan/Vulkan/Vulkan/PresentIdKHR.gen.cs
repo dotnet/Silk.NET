@@ -52,5 +52,5 @@ public unsafe partial struct PresentIdKHR
             "VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public nuint* PPresentIds;
+    public ulong* PPresentIds;
 }

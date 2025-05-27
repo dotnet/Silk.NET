@@ -61,7 +61,7 @@ public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public nuint VertexStride;
+    public ulong VertexStride;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

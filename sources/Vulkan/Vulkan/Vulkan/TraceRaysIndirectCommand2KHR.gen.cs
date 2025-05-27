@@ -18,7 +18,7 @@ public partial struct TraceRaysIndirectCommand2KHR
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public nuint RaygenShaderRecordAddress;
+    public ulong RaygenShaderRecordAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -27,7 +27,7 @@ public partial struct TraceRaysIndirectCommand2KHR
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public nuint RaygenShaderRecordSize;
+    public ulong RaygenShaderRecordSize;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -36,7 +36,7 @@ public partial struct TraceRaysIndirectCommand2KHR
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public nuint MissShaderBindingTableAddress;
+    public ulong MissShaderBindingTableAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -45,7 +45,7 @@ public partial struct TraceRaysIndirectCommand2KHR
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public nuint MissShaderBindingTableSize;
+    public ulong MissShaderBindingTableSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public partial struct TraceRaysIndirectCommand2KHR
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public nuint MissShaderBindingTableStride;
+    public ulong MissShaderBindingTableStride;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -63,7 +63,7 @@ public partial struct TraceRaysIndirectCommand2KHR
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public nuint HitShaderBindingTableAddress;
+    public ulong HitShaderBindingTableAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -72,7 +72,7 @@ public partial struct TraceRaysIndirectCommand2KHR
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public nuint HitShaderBindingTableSize;
+    public ulong HitShaderBindingTableSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -81,7 +81,7 @@ public partial struct TraceRaysIndirectCommand2KHR
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public nuint HitShaderBindingTableStride;
+    public ulong HitShaderBindingTableStride;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -90,7 +90,7 @@ public partial struct TraceRaysIndirectCommand2KHR
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public nuint CallableShaderBindingTableAddress;
+    public ulong CallableShaderBindingTableAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -99,7 +99,7 @@ public partial struct TraceRaysIndirectCommand2KHR
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public nuint CallableShaderBindingTableSize;
+    public ulong CallableShaderBindingTableSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -108,7 +108,7 @@ public partial struct TraceRaysIndirectCommand2KHR
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public nuint CallableShaderBindingTableStride;
+    public ulong CallableShaderBindingTableStride;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

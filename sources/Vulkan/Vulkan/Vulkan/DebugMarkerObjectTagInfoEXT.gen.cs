@@ -23,11 +23,11 @@ public unsafe partial struct DebugMarkerObjectTagInfoEXT
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
-    public nuint @object;
+    public ulong @object;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
-    public nuint TagName;
+    public ulong TagName;
 
     [NativeTypeName("size_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]

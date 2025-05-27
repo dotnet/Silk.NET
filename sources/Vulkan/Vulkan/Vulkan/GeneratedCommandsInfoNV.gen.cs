@@ -86,7 +86,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public nuint PreprocessOffset;
+    public ulong PreprocessOffset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -94,7 +94,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public nuint PreprocessSize;
+    public ulong PreprocessSize;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
@@ -110,7 +110,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public nuint SequencesCountOffset;
+    public ulong SequencesCountOffset;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
@@ -126,5 +126,5 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public nuint SequencesIndexOffset;
+    public ulong SequencesIndexOffset;
 }

@@ -40,7 +40,7 @@ public unsafe partial struct TimelineSemaphoreSubmitInfo
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public nuint* PWaitSemaphoreValues;
+    public ulong* PWaitSemaphoreValues;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -56,5 +56,5 @@ public unsafe partial struct TimelineSemaphoreSubmitInfo
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public nuint* PSignalSemaphoreValues;
+    public ulong* PSignalSemaphoreValues;
 }

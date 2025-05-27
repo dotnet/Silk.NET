@@ -84,7 +84,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public nuint MaxGeometryCount;
+    public ulong MaxGeometryCount;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -95,7 +95,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public nuint MaxInstanceCount;
+    public ulong MaxInstanceCount;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -106,7 +106,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public nuint MaxTriangleCount;
+    public ulong MaxTriangleCount;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

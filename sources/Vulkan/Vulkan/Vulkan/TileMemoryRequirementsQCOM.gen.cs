@@ -40,7 +40,7 @@ public unsafe partial struct TileMemoryRequirementsQCOM
             "VK_VERSION_1_1",
         ]
     )]
-    public nuint Size;
+    public ulong Size;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct TileMemoryRequirementsQCOM
             "VK_VERSION_1_1",
         ]
     )]
-    public nuint Alignment;
+    public ulong Alignment;
 }

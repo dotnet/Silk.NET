@@ -101,5 +101,5 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public nuint AccelerationStructureReference;
+    public ulong AccelerationStructureReference;
 }

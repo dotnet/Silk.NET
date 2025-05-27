@@ -72,7 +72,7 @@ public unsafe partial struct BufferMemoryBarrier
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint Offset;
+    public ulong Offset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -80,5 +80,5 @@ public unsafe partial struct BufferMemoryBarrier
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint Size;
+    public ulong Size;
 }

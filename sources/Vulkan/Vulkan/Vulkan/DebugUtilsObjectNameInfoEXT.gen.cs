@@ -23,7 +23,7 @@ public unsafe partial struct DebugUtilsObjectNameInfoEXT
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public nuint ObjectHandle;
+    public ulong ObjectHandle;
 
     [NativeTypeName("const char *")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]

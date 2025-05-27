@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceShaderCoreBuiltinsPropertiesARM
             "VK_ARM_shader_core_builtins+VK_VERSION_1_1",
         ]
     )]
-    public nuint ShaderCoreMask;
+    public ulong ShaderCoreMask;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

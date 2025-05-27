@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceExternalMemoryHostPropertiesEXT
             "VK_EXT_external_memory_host+VK_VERSION_1_1",
         ]
     )]
-    public nuint MinImportedHostPointerAlignment;
+    public ulong MinImportedHostPointerAlignment;
 }

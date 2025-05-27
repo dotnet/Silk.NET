@@ -60,7 +60,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public nint PrimaryMajor;
+    public long PrimaryMajor;
 
     [NativeTypeName("int64_t")]
     [SupportedApiProfile(
@@ -71,7 +71,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public nint PrimaryMinor;
+    public long PrimaryMinor;
 
     [NativeTypeName("int64_t")]
     [SupportedApiProfile(
@@ -82,7 +82,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public nint RenderMajor;
+    public long RenderMajor;
 
     [NativeTypeName("int64_t")]
     [SupportedApiProfile(
@@ -93,5 +93,5 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public nint RenderMinor;
+    public long RenderMinor;
 }

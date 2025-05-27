@@ -41,7 +41,7 @@ public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public nuint AccelerationStructureSize;
+    public ulong AccelerationStructureSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -52,7 +52,7 @@ public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public nuint UpdateScratchSize;
+    public ulong UpdateScratchSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -63,5 +63,5 @@ public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public nuint BuildScratchSize;
+    public ulong BuildScratchSize;
 }

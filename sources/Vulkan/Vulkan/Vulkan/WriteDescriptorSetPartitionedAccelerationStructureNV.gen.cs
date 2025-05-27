@@ -39,5 +39,5 @@ public unsafe partial struct WriteDescriptorSetPartitionedAccelerationStructureN
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public nuint* PAccelerationStructures;
+    public ulong* PAccelerationStructures;
 }

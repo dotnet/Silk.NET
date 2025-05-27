@@ -63,7 +63,7 @@ public unsafe partial struct VideoEncodeInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public nuint DstBufferOffset;
+    public ulong DstBufferOffset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -74,7 +74,7 @@ public unsafe partial struct VideoEncodeInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public nuint DstBufferRange;
+    public ulong DstBufferRange;
 
     [SupportedApiProfile(
         "vulkan",

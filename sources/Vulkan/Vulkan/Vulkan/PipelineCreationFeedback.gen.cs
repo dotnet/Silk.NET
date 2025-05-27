@@ -17,5 +17,5 @@ public partial struct PipelineCreationFeedback
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint Duration;
+    public ulong Duration;
 }

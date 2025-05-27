@@ -80,7 +80,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public nuint IndirectAddress;
+    public ulong IndirectAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -92,7 +92,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public nuint IndirectAddressSize;
+    public ulong IndirectAddressSize;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -104,7 +104,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public nuint PreprocessAddress;
+    public ulong PreprocessAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -116,7 +116,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public nuint PreprocessSize;
+    public ulong PreprocessSize;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -140,7 +140,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public nuint SequenceCountAddress;
+    public ulong SequenceCountAddress;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

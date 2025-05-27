@@ -41,7 +41,7 @@ public unsafe partial struct MicromapBuildSizesInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public nuint MicromapSize;
+    public ulong MicromapSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -52,7 +52,7 @@ public unsafe partial struct MicromapBuildSizesInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public nuint BuildScratchSize;
+    public ulong BuildScratchSize;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(

@@ -38,7 +38,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public nuint SrcAccelerationStructureData;
+    public ulong SrcAccelerationStructureData;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -46,7 +46,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public nuint DstAccelerationStructureData;
+    public ulong DstAccelerationStructureData;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public nuint ScratchData;
+    public ulong ScratchData;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public nuint SrcInfos;
+    public ulong SrcInfos;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -70,5 +70,5 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public nuint SrcInfosCount;
+    public ulong SrcInfosCount;
 }

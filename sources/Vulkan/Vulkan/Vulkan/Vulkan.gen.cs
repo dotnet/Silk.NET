@@ -47,12 +47,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkAcquireNextImageKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-        public static extern Result AcquireNextImageKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] nuint timeout, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("VkFence")] VkFence_T* fence, [NativeTypeName("uint32_t *")] uint* pImageIndex);
+        public static extern Result AcquireNextImageKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] ulong timeout, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("VkFence")] VkFence_T* fence, [NativeTypeName("uint32_t *")] uint* pImageIndex);
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImageKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result AcquireNextImageKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] nuint timeout, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("VkFence")] Ref<VkFence_T> fence, [NativeTypeName("uint32_t *")] Ref<uint> pImageIndex)
+        public static Result AcquireNextImageKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] ulong timeout, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("VkFence")] Ref<VkFence_T> fence, [NativeTypeName("uint32_t *")] Ref<uint> pImageIndex)
         {
             fixed (uint* __dsl_pImageIndex = pImageIndex)
             fixed (VkFence_T* __dsl_fence = fence)
@@ -199,12 +199,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkBindBufferMemory")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern Result BindBufferMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset);
+        public static extern Result BindBufferMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkBindBufferMemory")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result BindBufferMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset)
+        public static Result BindBufferMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset)
         {
             fixed (VkDeviceMemory_T* __dsl_memory = memory)
             fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -248,12 +248,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkBindImageMemory")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern Result BindImageMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkImage")] VkImage_T* image, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset);
+        public static extern Result BindImageMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkImage")] VkImage_T* image, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkBindImageMemory")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result BindImageMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkImage")] Ref<VkImage_T> image, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset)
+        public static Result BindImageMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkImage")] Ref<VkImage_T> image, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset)
         {
             fixed (VkDeviceMemory_T* __dsl_memory = memory)
             fixed (VkImage_T* __dsl_image = image)
@@ -528,14 +528,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdBeginTransformFeedbackEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
-        public static extern void CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pCounterBufferOffsets);
+        public static extern void CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pCounterBufferOffsets);
         [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginTransformFeedbackEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pCounterBufferOffsets)
+        public static void CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pCounterBufferOffsets)
         {
-            fixed (nuint* __dsl_pCounterBufferOffsets = pCounterBufferOffsets)
+            fixed (ulong* __dsl_pCounterBufferOffsets = pCounterBufferOffsets)
             fixed (VkBuffer_T** __dsl_pCounterBuffers = pCounterBuffers)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
             {
@@ -671,12 +671,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdBindIndexBuffer")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern void CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, IndexType indexType);
+        public static extern void CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, IndexType indexType);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, IndexType indexType)
+        public static void CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, IndexType indexType)
         {
             fixed (VkBuffer_T* __dsl_buffer = buffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -687,12 +687,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdBindIndexBuffer2")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-        public static extern void CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType);
+        public static extern void CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer2")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType)
+        public static void CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType)
         {
             fixed (VkBuffer_T* __dsl_buffer = buffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -703,12 +703,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdBindIndexBuffer2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-        public static extern void CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType);
+        public static extern void CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType);
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer2KHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType)
+        public static void CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType)
         {
             fixed (VkBuffer_T* __dsl_buffer = buffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -816,15 +816,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
-        public static extern void CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets, [NativeTypeName("const VkDeviceSize *")] nuint* pSizes);
+        public static extern void CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets, [NativeTypeName("const VkDeviceSize *")] ulong* pSizes);
         [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes)
+        public static void CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes)
         {
-            fixed (nuint* __dsl_pSizes = pSizes)
-            fixed (nuint* __dsl_pOffsets = pOffsets)
+            fixed (ulong* __dsl_pSizes = pSizes)
+            fixed (ulong* __dsl_pOffsets = pOffsets)
             fixed (VkBuffer_T** __dsl_pBuffers = pBuffers)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
             {
@@ -834,14 +834,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdBindVertexBuffers")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern void CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets);
+        public static extern void CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets)
+        public static void CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets)
         {
-            fixed (nuint* __dsl_pOffsets = pOffsets)
+            fixed (ulong* __dsl_pOffsets = pOffsets)
             fixed (VkBuffer_T** __dsl_pBuffers = pBuffers)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
             {
@@ -851,16 +851,16 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdBindVertexBuffers2")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-        public static extern void CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets, [NativeTypeName("const VkDeviceSize *")] nuint* pSizes, [NativeTypeName("const VkDeviceSize *")] nuint* pStrides);
+        public static extern void CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets, [NativeTypeName("const VkDeviceSize *")] ulong* pSizes, [NativeTypeName("const VkDeviceSize *")] ulong* pStrides);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers2")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pStrides)
+        public static void CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pStrides)
         {
-            fixed (nuint* __dsl_pStrides = pStrides)
-            fixed (nuint* __dsl_pSizes = pSizes)
-            fixed (nuint* __dsl_pOffsets = pOffsets)
+            fixed (ulong* __dsl_pStrides = pStrides)
+            fixed (ulong* __dsl_pSizes = pSizes)
+            fixed (ulong* __dsl_pOffsets = pOffsets)
             fixed (VkBuffer_T** __dsl_pBuffers = pBuffers)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
             {
@@ -870,16 +870,16 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdBindVertexBuffers2EXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_extended_dynamic_state"], ImpliesSets = ["VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2", "VK_EXT_extended_dynamic_state+VK_VERSION_1_1"])]
-        public static extern void CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets, [NativeTypeName("const VkDeviceSize *")] nuint* pSizes, [NativeTypeName("const VkDeviceSize *")] nuint* pStrides);
+        public static extern void CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets, [NativeTypeName("const VkDeviceSize *")] ulong* pSizes, [NativeTypeName("const VkDeviceSize *")] ulong* pStrides);
         [SupportedApiProfile("vulkan", ["VK_EXT_extended_dynamic_state"], ImpliesSets = ["VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2", "VK_EXT_extended_dynamic_state+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers2EXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pStrides)
+        public static void CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pStrides)
         {
-            fixed (nuint* __dsl_pStrides = pStrides)
-            fixed (nuint* __dsl_pSizes = pSizes)
-            fixed (nuint* __dsl_pOffsets = pOffsets)
+            fixed (ulong* __dsl_pStrides = pStrides)
+            fixed (ulong* __dsl_pSizes = pSizes)
+            fixed (ulong* __dsl_pOffsets = pOffsets)
             fixed (VkBuffer_T** __dsl_pBuffers = pBuffers)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
             {
@@ -953,12 +953,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdBuildAccelerationStructureNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2", "VK_VERSION_1_1"])]
-        public static extern void CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] AccelerationStructureInfoNV* pInfo, [NativeTypeName("VkBuffer")] VkBuffer_T* instanceData, [NativeTypeName("VkDeviceSize")] nuint instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* dst, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* src, [NativeTypeName("VkBuffer")] VkBuffer_T* scratch, [NativeTypeName("VkDeviceSize")] nuint scratchOffset);
+        public static extern void CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] AccelerationStructureInfoNV* pInfo, [NativeTypeName("VkBuffer")] VkBuffer_T* instanceData, [NativeTypeName("VkDeviceSize")] ulong instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* dst, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* src, [NativeTypeName("VkBuffer")] VkBuffer_T* scratch, [NativeTypeName("VkDeviceSize")] ulong scratchOffset);
         [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2", "VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBuildAccelerationStructureNV")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] Ref<AccelerationStructureInfoNV> pInfo, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> instanceData, [NativeTypeName("VkDeviceSize")] nuint instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> dst, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> src, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> scratch, [NativeTypeName("VkDeviceSize")] nuint scratchOffset)
+        public static void CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] Ref<AccelerationStructureInfoNV> pInfo, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> instanceData, [NativeTypeName("VkDeviceSize")] ulong instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> dst, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> src, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> scratch, [NativeTypeName("VkDeviceSize")] ulong scratchOffset)
         {
             fixed (VkBuffer_T* __dsl_scratch = scratch)
             fixed (VkAccelerationStructureNV_T* __dsl_src = src)
@@ -973,16 +973,16 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure"], ImpliesSets = ["VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address", "VK_KHR_deferred_host_operations+VK_VERSION_1_2"])]
-        public static extern void CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] AccelerationStructureBuildGeometryInfoKHR* pInfos, [NativeTypeName("const VkDeviceAddress *")] nuint* pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] uint* pIndirectStrides, [NativeTypeName("const uint32_t *const *")] uint** ppMaxPrimitiveCounts);
+        public static extern void CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] AccelerationStructureBuildGeometryInfoKHR* pInfos, [NativeTypeName("const VkDeviceAddress *")] ulong* pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] uint* pIndirectStrides, [NativeTypeName("const uint32_t *const *")] uint** ppMaxPrimitiveCounts);
         [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure"], ImpliesSets = ["VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address", "VK_KHR_deferred_host_operations+VK_VERSION_1_2"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos, [NativeTypeName("const VkDeviceAddress *")] Ref<nuint> pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] Ref<uint> pIndirectStrides, [NativeTypeName("const uint32_t *const *")] Ref2D<uint> ppMaxPrimitiveCounts)
+        public static void CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos, [NativeTypeName("const VkDeviceAddress *")] Ref<ulong> pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] Ref<uint> pIndirectStrides, [NativeTypeName("const uint32_t *const *")] Ref2D<uint> ppMaxPrimitiveCounts)
         {
             fixed (uint** __dsl_ppMaxPrimitiveCounts = ppMaxPrimitiveCounts)
             fixed (uint* __dsl_pIndirectStrides = pIndirectStrides)
-            fixed (nuint* __dsl_pIndirectDeviceAddresses = pIndirectDeviceAddresses)
+            fixed (ulong* __dsl_pIndirectDeviceAddresses = pIndirectDeviceAddresses)
             fixed (AccelerationStructureBuildGeometryInfoKHR* __dsl_pInfos = pInfos)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
             {
@@ -1499,12 +1499,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdCopyMemoryIndirectNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_copy_memory_indirect"], ImpliesSets = ["VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_KHR_buffer_device_address+VK_VERSION_1_1", "VK_VERSION_1_2"])]
-        public static extern void CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_NV_copy_memory_indirect"], ImpliesSets = ["VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_KHR_buffer_device_address+VK_VERSION_1_1", "VK_VERSION_1_2"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectNV")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
             {
@@ -1530,12 +1530,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_copy_memory_indirect"], ImpliesSets = ["VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_KHR_buffer_device_address+VK_VERSION_1_1", "VK_VERSION_1_2"])]
-        public static extern void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] VkImage_T* dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers* pImageSubresources);
+        public static extern void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] VkImage_T* dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers* pImageSubresources);
         [SupportedApiProfile("vulkan", ["VK_NV_copy_memory_indirect"], ImpliesSets = ["VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_KHR_buffer_device_address+VK_VERSION_1_1", "VK_VERSION_1_2"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] Ref<ImageSubresourceLayers> pImageSubresources)
+        public static void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] Ref<ImageSubresourceLayers> pImageSubresources)
         {
             fixed (ImageSubresourceLayers* __dsl_pImageSubresources = pImageSubresources)
             fixed (VkImage_T* __dsl_dstImage = dstImage)
@@ -1549,7 +1549,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers pImageSubresources)
+        public static void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers pImageSubresources)
         {
             fixed (VkImage_T* __dsl_dstImage = dstImage)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -1608,12 +1608,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdCopyQueryPoolResults")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern void CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags);
+        public static extern void CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyQueryPoolResults")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags)
+        public static void CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags)
         {
             fixed (VkBuffer_T* __dsl_dstBuffer = dstBuffer)
             fixed (VkQueryPool_T* __dsl_queryPool = queryPool)
@@ -1720,12 +1720,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDecompressMemoryIndirectCountNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_memory_decompression"], ImpliesSets = ["VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_KHR_buffer_device_address+VK_VERSION_1_1", "VK_VERSION_1_2"])]
-        public static extern void CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_NV_memory_decompression"], ImpliesSets = ["VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_KHR_buffer_device_address+VK_VERSION_1_1", "VK_VERSION_1_2"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountNV")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
             {
@@ -1808,12 +1808,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDispatchIndirect")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern void CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset);
+        public static extern void CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchIndirect")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset)
+        public static void CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset)
         {
             fixed (VkBuffer_T* __dsl_buffer = buffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -1869,12 +1869,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawClusterIndirectHUAWEI")]
         [SupportedApiProfile("vulkan", ["VK_HUAWEI_cluster_culling_shader"], ImpliesSets = ["VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2", "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1"])]
-        public static extern void CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset);
+        public static extern void CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset);
         [SupportedApiProfile("vulkan", ["VK_HUAWEI_cluster_culling_shader"], ImpliesSets = ["VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2", "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawClusterIndirectHUAWEI")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset)
+        public static void CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset)
         {
             fixed (VkBuffer_T* __dsl_buffer = buffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -1900,12 +1900,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawIndexedIndirect")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern void CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirect")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_buffer = buffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -1916,12 +1916,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawIndexedIndirectCount")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
-        public static extern void CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCount")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
             fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -1933,12 +1933,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawIndexedIndirectCountAMD")]
         [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
-        public static extern void CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCountAMD")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
             fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -1950,12 +1950,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawIndexedIndirectCountKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
-        public static extern void CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCountKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
             fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -1967,12 +1967,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawIndirect")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern void CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirect")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_buffer = buffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -1983,12 +1983,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawIndirectByteCountEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
-        public static extern void CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] VkBuffer_T* counterBuffer, [NativeTypeName("VkDeviceSize")] nuint counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride);
+        public static extern void CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] VkBuffer_T* counterBuffer, [NativeTypeName("VkDeviceSize")] ulong counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride);
         [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectByteCountEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> counterBuffer, [NativeTypeName("VkDeviceSize")] nuint counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride)
+        public static void CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> counterBuffer, [NativeTypeName("VkDeviceSize")] ulong counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride)
         {
             fixed (VkBuffer_T* __dsl_counterBuffer = counterBuffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -1999,12 +1999,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawIndirectCount")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
-        public static extern void CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCount")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
             fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -2016,12 +2016,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawIndirectCountAMD")]
         [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
-        public static extern void CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCountAMD")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
             fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -2033,12 +2033,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawIndirectCountKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
-        public static extern void CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCountKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
             fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -2065,12 +2065,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawMeshTasksIndirectCountEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_mesh_shader+VK_KHR_draw_indirect_count", "VK_EXT_mesh_shader+VK_VERSION_1_2"], ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"])]
-        public static extern void CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_EXT_mesh_shader+VK_KHR_draw_indirect_count", "VK_EXT_mesh_shader+VK_VERSION_1_2"], ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectCountEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
             fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -2082,12 +2082,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawMeshTasksIndirectCountNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_mesh_shader+VK_KHR_draw_indirect_count", "VK_NV_mesh_shader+VK_VERSION_1_2"], ImpliesSets = ["VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2", "VK_NV_mesh_shader+VK_VERSION_1_1"])]
-        public static extern void CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_NV_mesh_shader+VK_KHR_draw_indirect_count", "VK_NV_mesh_shader+VK_VERSION_1_2"], ImpliesSets = ["VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2", "VK_NV_mesh_shader+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectCountNV")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
             fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -2099,12 +2099,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawMeshTasksIndirectEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_mesh_shader"], ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"])]
-        public static extern void CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_EXT_mesh_shader"], ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_buffer = buffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -2115,12 +2115,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdDrawMeshTasksIndirectNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_mesh_shader"], ImpliesSets = ["VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2", "VK_NV_mesh_shader+VK_VERSION_1_1"])]
-        public static extern void CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride);
+        public static extern void CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride);
         [SupportedApiProfile("vulkan", ["VK_NV_mesh_shader"], ImpliesSets = ["VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2", "VK_NV_mesh_shader+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectNV")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
+        public static void CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
         {
             fixed (VkBuffer_T* __dsl_buffer = buffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -2391,14 +2391,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdEndTransformFeedbackEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
-        public static extern void CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pCounterBufferOffsets);
+        public static extern void CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pCounterBufferOffsets);
         [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndTransformFeedbackEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pCounterBufferOffsets)
+        public static void CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pCounterBufferOffsets)
         {
-            fixed (nuint* __dsl_pCounterBufferOffsets = pCounterBufferOffsets)
+            fixed (ulong* __dsl_pCounterBufferOffsets = pCounterBufferOffsets)
             fixed (VkBuffer_T** __dsl_pCounterBuffers = pCounterBuffers)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
             {
@@ -2485,12 +2485,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdFillBuffer")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern void CmdFillBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("uint32_t")] uint data);
+        public static extern void CmdFillBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("uint32_t")] uint data);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdFillBuffer")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdFillBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("uint32_t")] uint data)
+        public static void CmdFillBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("uint32_t")] uint data)
         {
             fixed (VkBuffer_T* __dsl_dstBuffer = dstBuffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -2891,12 +2891,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdResetEvent2")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-        public static extern void CmdResetEvent2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask);
+        public static extern void CmdResetEvent2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdResetEvent2")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdResetEvent2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask)
+        public static void CmdResetEvent2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask)
         {
             fixed (VkEvent_T* __dsl_event = @event)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -2907,12 +2907,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdResetEvent2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-        public static extern void CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask);
+        public static extern void CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask);
         [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdResetEvent2KHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask)
+        public static void CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask)
         {
             fixed (VkEvent_T* __dsl_event = @event)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -3669,14 +3669,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdSetDescriptorBufferOffsetsEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
-        public static extern void CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] VkPipelineLayout_T* layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] uint* pBufferIndices, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets);
+        public static extern void CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] VkPipelineLayout_T* layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] uint* pBufferIndices, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets);
         [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDescriptorBufferOffsetsEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] Ref<VkPipelineLayout_T> layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] Ref<uint> pBufferIndices, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets)
+        public static void CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] Ref<VkPipelineLayout_T> layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] Ref<uint> pBufferIndices, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets)
         {
-            fixed (nuint* __dsl_pOffsets = pOffsets)
+            fixed (ulong* __dsl_pOffsets = pOffsets)
             fixed (uint* __dsl_pBufferIndices = pBufferIndices)
             fixed (VkPipelineLayout_T* __dsl_layout = layout)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -4867,12 +4867,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdTraceRaysIndirect2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_KHR_acceleration_structure"], RequireAll = true)]
-        public static extern void CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress);
+        public static extern void CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress);
         [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_KHR_acceleration_structure"], RequireAll = true)]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysIndirect2KHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress)
+        public static void CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress)
         {
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
             {
@@ -4882,12 +4882,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdTraceRaysIndirectKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_spirv_1_4", "VK_KHR_acceleration_structure+VK_VERSION_1_2"])]
-        public static extern void CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress);
+        public static extern void CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress);
         [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_spirv_1_4", "VK_KHR_acceleration_structure+VK_VERSION_1_2"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysIndirectKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress)
+        public static void CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress)
         {
             fixed (StridedDeviceAddressRegionKHR* __dsl_pCallableShaderBindingTable = pCallableShaderBindingTable)
             fixed (StridedDeviceAddressRegionKHR* __dsl_pHitShaderBindingTable = pHitShaderBindingTable)
@@ -4920,12 +4920,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdTraceRaysNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2", "VK_VERSION_1_1"])]
-        public static extern void CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] VkBuffer_T* missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth);
+        public static extern void CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] VkBuffer_T* missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth);
         [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2", "VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysNV")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth)
+        public static void CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth)
         {
             fixed (VkBuffer_T* __dsl_callableShaderBindingTableBuffer = callableShaderBindingTableBuffer)
             fixed (VkBuffer_T* __dsl_hitShaderBindingTableBuffer = hitShaderBindingTableBuffer)
@@ -4939,12 +4939,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdUpdateBuffer")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern void CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint dataSize, [NativeTypeName("const void *")] void* pData);
+        public static extern void CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong dataSize, [NativeTypeName("const void *")] void* pData);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdUpdateBuffer")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint dataSize, [NativeTypeName("const void *")] Ref pData)
+        public static void CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong dataSize, [NativeTypeName("const void *")] Ref pData)
         {
             fixed (void* __dsl_pData = pData)
             fixed (VkBuffer_T* __dsl_dstBuffer = dstBuffer)
@@ -5087,12 +5087,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdWriteBufferMarker2AMD")]
         [SupportedApiProfile("vulkan", ["VK_AMD_buffer_marker+VK_KHR_synchronization2", "VK_AMD_buffer_marker+VK_VERSION_1_3"])]
-        public static extern void CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker);
+        public static extern void CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker);
         [SupportedApiProfile("vulkan", ["VK_AMD_buffer_marker+VK_KHR_synchronization2", "VK_AMD_buffer_marker+VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarker2AMD")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker)
+        public static void CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker)
         {
             fixed (VkBuffer_T* __dsl_dstBuffer = dstBuffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -5103,12 +5103,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdWriteBufferMarkerAMD")]
         [SupportedApiProfile("vulkan", ["VK_AMD_buffer_marker"])]
-        public static extern void CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker);
+        public static extern void CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker);
         [SupportedApiProfile("vulkan", ["VK_AMD_buffer_marker"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarkerAMD")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker)
+        public static void CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker)
         {
             fixed (VkBuffer_T* __dsl_dstBuffer = dstBuffer)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -5166,12 +5166,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdWriteTimestamp2")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-        public static extern void CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query);
+        public static extern void CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query)
+        public static void CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query)
         {
             fixed (VkQueryPool_T* __dsl_queryPool = queryPool)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -5182,12 +5182,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdWriteTimestamp2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-        public static extern void CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query);
+        public static extern void CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query);
         [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2KHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query)
+        public static void CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query)
         {
             fixed (VkQueryPool_T* __dsl_queryPool = queryPool)
             fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -6472,12 +6472,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkDebugReportMessageEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-        public static extern void DebugReportMessageEXT([NativeTypeName("VkInstance")] VkInstance_T* instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] nuint @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] sbyte* pLayerPrefix, [NativeTypeName("const char *")] sbyte* pMessage);
+        public static extern void DebugReportMessageEXT([NativeTypeName("VkInstance")] VkInstance_T* instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] ulong @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] sbyte* pLayerPrefix, [NativeTypeName("const char *")] sbyte* pMessage);
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void DebugReportMessageEXT([NativeTypeName("VkInstance")] Ref<VkInstance_T> instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] nuint @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] Ref<sbyte> pLayerPrefix, [NativeTypeName("const char *")] Ref<sbyte> pMessage)
+        public static void DebugReportMessageEXT([NativeTypeName("VkInstance")] Ref<VkInstance_T> instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] ulong @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] Ref<sbyte> pLayerPrefix, [NativeTypeName("const char *")] Ref<sbyte> pMessage)
         {
             fixed (sbyte* __dsl_pMessage = pMessage)
             fixed (sbyte* __dsl_pLayerPrefix = pLayerPrefix)
@@ -7618,18 +7618,18 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure"], ImpliesSets = ["VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address", "VK_KHR_deferred_host_operations+VK_VERSION_1_2"])]
-        public static extern nuint GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] AccelerationStructureDeviceAddressInfoKHR* pInfo);
+        public static extern ulong GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] AccelerationStructureDeviceAddressInfoKHR* pInfo);
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure"], ImpliesSets = ["VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address", "VK_KHR_deferred_host_operations+VK_VERSION_1_2"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static nuint GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo)
+        public static ulong GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo)
         {
             fixed (AccelerationStructureDeviceAddressInfoKHR* __dsl_pInfo = pInfo)
             fixed (VkDevice_T* __dsl_device = device)
             {
-                return (nuint)GetAccelerationStructureDeviceAddressKHR(__dsl_device, __dsl_pInfo);
+                return (ulong)GetAccelerationStructureDeviceAddressKHR(__dsl_device, __dsl_pInfo);
             }
         }
 
@@ -7687,54 +7687,54 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetBufferDeviceAddress")]
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
-        public static extern nuint GetBufferDeviceAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo);
+        public static extern ulong GetBufferDeviceAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo);
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddress")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static nuint GetBufferDeviceAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
+        public static ulong GetBufferDeviceAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
         {
             fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
             fixed (VkDevice_T* __dsl_device = device)
             {
-                return (nuint)GetBufferDeviceAddress(__dsl_device, __dsl_pInfo);
+                return (ulong)GetBufferDeviceAddress(__dsl_device, __dsl_pInfo);
             }
         }
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetBufferDeviceAddressEXT")]
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile("vulkan", ["VK_EXT_buffer_device_address"], ImpliesSets = ["VK_EXT_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_EXT_buffer_device_address+VK_VERSION_1_1"])]
-        public static extern nuint GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo);
+        public static extern ulong GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo);
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile("vulkan", ["VK_EXT_buffer_device_address"], ImpliesSets = ["VK_EXT_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_EXT_buffer_device_address+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static nuint GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
+        public static ulong GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
         {
             fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
             fixed (VkDevice_T* __dsl_device = device)
             {
-                return (nuint)GetBufferDeviceAddressEXT(__dsl_device, __dsl_pInfo);
+                return (ulong)GetBufferDeviceAddressEXT(__dsl_device, __dsl_pInfo);
             }
         }
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetBufferDeviceAddressKHR")]
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile("vulkan", ["VK_KHR_buffer_device_address"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_device_group", "VK_VERSION_1_1"])]
-        public static extern nuint GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo);
+        public static extern ulong GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo);
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile("vulkan", ["VK_KHR_buffer_device_address"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_device_group", "VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static nuint GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
+        public static ulong GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
         {
             fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
             fixed (VkDevice_T* __dsl_device = device)
             {
-                return (nuint)GetBufferDeviceAddressKHR(__dsl_device, __dsl_pInfo);
+                return (ulong)GetBufferDeviceAddressKHR(__dsl_device, __dsl_pInfo);
             }
         }
 
@@ -7792,36 +7792,36 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
-        public static extern nuint GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo);
+        public static extern ulong GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo);
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static nuint GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
+        public static ulong GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
         {
             fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
             fixed (VkDevice_T* __dsl_device = device)
             {
-                return (nuint)GetBufferOpaqueCaptureAddress(__dsl_device, __dsl_pInfo);
+                return (ulong)GetBufferOpaqueCaptureAddress(__dsl_device, __dsl_pInfo);
             }
         }
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile("vulkan", ["VK_KHR_buffer_device_address"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_device_group", "VK_VERSION_1_1"])]
-        public static extern nuint GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo);
+        public static extern ulong GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo);
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile("vulkan", ["VK_KHR_buffer_device_address"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_device_group", "VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static nuint GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
+        public static ulong GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
         {
             fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
             fixed (VkDevice_T* __dsl_device = device)
             {
-                return (nuint)GetBufferOpaqueCaptureAddressKHR(__dsl_device, __dsl_pInfo);
+                return (ulong)GetBufferOpaqueCaptureAddressKHR(__dsl_device, __dsl_pInfo);
             }
         }
 
@@ -7844,15 +7844,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetCalibratedTimestampsEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_calibrated_timestamps"], ImpliesSets = ["VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2", "VK_EXT_calibrated_timestamps+VK_VERSION_1_1"])]
-        public static extern Result GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] nuint* pTimestamps, [NativeTypeName("uint64_t *")] nuint* pMaxDeviation);
+        public static extern Result GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] ulong* pTimestamps, [NativeTypeName("uint64_t *")] ulong* pMaxDeviation);
         [SupportedApiProfile("vulkan", ["VK_EXT_calibrated_timestamps"], ImpliesSets = ["VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2", "VK_EXT_calibrated_timestamps+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetCalibratedTimestampsEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<nuint> pTimestamps, [NativeTypeName("uint64_t *")] Ref<nuint> pMaxDeviation)
+        public static Result GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<ulong> pTimestamps, [NativeTypeName("uint64_t *")] Ref<ulong> pMaxDeviation)
         {
-            fixed (nuint* __dsl_pMaxDeviation = pMaxDeviation)
-            fixed (nuint* __dsl_pTimestamps = pTimestamps)
+            fixed (ulong* __dsl_pMaxDeviation = pMaxDeviation)
+            fixed (ulong* __dsl_pTimestamps = pTimestamps)
             fixed (CalibratedTimestampInfoKHR* __dsl_pTimestampInfos = pTimestampInfos)
             fixed (VkDevice_T* __dsl_device = device)
             {
@@ -7862,15 +7862,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetCalibratedTimestampsKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_calibrated_timestamps"], ImpliesSets = ["VK_KHR_calibrated_timestamps+VK_KHR_get_physical_device_properties2", "VK_KHR_calibrated_timestamps+VK_VERSION_1_1"])]
-        public static extern Result GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] nuint* pTimestamps, [NativeTypeName("uint64_t *")] nuint* pMaxDeviation);
+        public static extern Result GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] ulong* pTimestamps, [NativeTypeName("uint64_t *")] ulong* pMaxDeviation);
         [SupportedApiProfile("vulkan", ["VK_KHR_calibrated_timestamps"], ImpliesSets = ["VK_KHR_calibrated_timestamps+VK_KHR_get_physical_device_properties2", "VK_KHR_calibrated_timestamps+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetCalibratedTimestampsKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<nuint> pTimestamps, [NativeTypeName("uint64_t *")] Ref<nuint> pMaxDeviation)
+        public static Result GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<ulong> pTimestamps, [NativeTypeName("uint64_t *")] Ref<ulong> pMaxDeviation)
         {
-            fixed (nuint* __dsl_pMaxDeviation = pMaxDeviation)
-            fixed (nuint* __dsl_pTimestamps = pTimestamps)
+            fixed (ulong* __dsl_pMaxDeviation = pMaxDeviation)
+            fixed (ulong* __dsl_pTimestamps = pTimestamps)
             fixed (CalibratedTimestampInfoKHR* __dsl_pTimestampInfos = pTimestampInfos)
             fixed (VkDevice_T* __dsl_device = device)
             {
@@ -7983,14 +7983,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetDescriptorSetLayoutBindingOffsetEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
-        public static extern void GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] nuint* pOffset);
+        public static extern void GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] ulong* pOffset);
         [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorSetLayoutBindingOffsetEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] Ref<nuint> pOffset)
+        public static void GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] Ref<ulong> pOffset)
         {
-            fixed (nuint* __dsl_pOffset = pOffset)
+            fixed (ulong* __dsl_pOffset = pOffset)
             fixed (VkDescriptorSetLayout_T* __dsl_layout = layout)
             fixed (VkDevice_T* __dsl_device = device)
             {
@@ -8017,14 +8017,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetDescriptorSetLayoutSizeEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
-        public static extern void GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("VkDeviceSize *")] nuint* pLayoutSizeInBytes);
+        public static extern void GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("VkDeviceSize *")] ulong* pLayoutSizeInBytes);
         [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorSetLayoutSizeEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("VkDeviceSize *")] Ref<nuint> pLayoutSizeInBytes)
+        public static void GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("VkDeviceSize *")] Ref<ulong> pLayoutSizeInBytes)
         {
-            fixed (nuint* __dsl_pLayoutSizeInBytes = pLayoutSizeInBytes)
+            fixed (ulong* __dsl_pLayoutSizeInBytes = pLayoutSizeInBytes)
             fixed (VkDescriptorSetLayout_T* __dsl_layout = layout)
             fixed (VkDevice_T* __dsl_device = device)
             {
@@ -8305,14 +8305,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetDeviceMemoryCommitment")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern void GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize *")] nuint* pCommittedMemoryInBytes);
+        public static extern void GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize *")] ulong* pCommittedMemoryInBytes);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryCommitment")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize *")] Ref<nuint> pCommittedMemoryInBytes)
+        public static void GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize *")] Ref<ulong> pCommittedMemoryInBytes)
         {
-            fixed (nuint* __dsl_pCommittedMemoryInBytes = pCommittedMemoryInBytes)
+            fixed (ulong* __dsl_pCommittedMemoryInBytes = pCommittedMemoryInBytes)
             fixed (VkDeviceMemory_T* __dsl_memory = memory)
             fixed (VkDevice_T* __dsl_device = device)
             {
@@ -8323,36 +8323,36 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
-        public static extern nuint GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
+        public static extern ulong GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static nuint GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
+        public static ulong GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
         {
             fixed (DeviceMemoryOpaqueCaptureAddressInfo* __dsl_pInfo = pInfo)
             fixed (VkDevice_T* __dsl_device = device)
             {
-                return (nuint)GetDeviceMemoryOpaqueCaptureAddress(__dsl_device, __dsl_pInfo);
+                return (ulong)GetDeviceMemoryOpaqueCaptureAddress(__dsl_device, __dsl_pInfo);
             }
         }
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile("vulkan", ["VK_KHR_buffer_device_address"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_device_group", "VK_VERSION_1_1"])]
-        public static extern nuint GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
+        public static extern ulong GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile("vulkan", ["VK_KHR_buffer_device_address"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_device_group", "VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static nuint GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
+        public static ulong GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
         {
             fixed (DeviceMemoryOpaqueCaptureAddressInfo* __dsl_pInfo = pInfo)
             fixed (VkDevice_T* __dsl_device = device)
             {
-                return (nuint)GetDeviceMemoryOpaqueCaptureAddressKHR(__dsl_device, __dsl_pInfo);
+                return (ulong)GetDeviceMemoryOpaqueCaptureAddressKHR(__dsl_device, __dsl_pInfo);
             }
         }
 
@@ -8929,18 +8929,18 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetImageViewHandle64NVX")]
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
-        public static extern nuint GetImageViewHandle64NVX([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] ImageViewHandleInfoNVX* pInfo);
+        public static extern ulong GetImageViewHandle64NVX([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] ImageViewHandleInfoNVX* pInfo);
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static nuint GetImageViewHandle64NVX([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] Ref<ImageViewHandleInfoNVX> pInfo)
+        public static ulong GetImageViewHandle64NVX([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] Ref<ImageViewHandleInfoNVX> pInfo)
         {
             fixed (ImageViewHandleInfoNVX* __dsl_pInfo = pInfo)
             fixed (VkDevice_T* __dsl_device = device)
             {
-                return (nuint)GetImageViewHandle64NVX(__dsl_device, __dsl_pInfo);
+                return (ulong)GetImageViewHandle64NVX(__dsl_device, __dsl_pInfo);
             }
         }
 
@@ -10188,18 +10188,18 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile("vulkan", ["VK_NV_device_generated_commands_compute"], ImpliesSets = ["VK_NV_device_generated_commands"])]
-        public static extern nuint GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] PipelineIndirectDeviceAddressInfoNV* pInfo);
+        public static extern ulong GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] PipelineIndirectDeviceAddressInfoNV* pInfo);
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile("vulkan", ["VK_NV_device_generated_commands_compute"], ImpliesSets = ["VK_NV_device_generated_commands"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static nuint GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] Ref<PipelineIndirectDeviceAddressInfoNV> pInfo)
+        public static ulong GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] Ref<PipelineIndirectDeviceAddressInfoNV> pInfo)
         {
             fixed (PipelineIndirectDeviceAddressInfoNV* __dsl_pInfo = pInfo)
             fixed (VkDevice_T* __dsl_device = device)
             {
-                return (nuint)GetPipelineIndirectDeviceAddressNV(__dsl_device, __dsl_pInfo);
+                return (ulong)GetPipelineIndirectDeviceAddressNV(__dsl_device, __dsl_pInfo);
             }
         }
 
@@ -10256,14 +10256,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetPrivateData")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-        public static extern void GetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] nuint* pData);
+        public static extern void GetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] ulong* pData);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetPrivateData")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void GetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<nuint> pData)
+        public static void GetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<ulong> pData)
         {
-            fixed (nuint* __dsl_pData = pData)
+            fixed (ulong* __dsl_pData = pData)
             fixed (VkPrivateDataSlot_T* __dsl_privateDataSlot = privateDataSlot)
             fixed (VkDevice_T* __dsl_device = device)
             {
@@ -10273,14 +10273,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetPrivateDataEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_private_data"], ImpliesSets = ["VK_EXT_private_data+VK_KHR_get_physical_device_properties2", "VK_EXT_private_data+VK_VERSION_1_1"])]
-        public static extern void GetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] nuint* pData);
+        public static extern void GetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] ulong* pData);
         [SupportedApiProfile("vulkan", ["VK_EXT_private_data"], ImpliesSets = ["VK_EXT_private_data+VK_KHR_get_physical_device_properties2", "VK_EXT_private_data+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetPrivateDataEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void GetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<nuint> pData)
+        public static void GetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<ulong> pData)
         {
-            fixed (nuint* __dsl_pData = pData)
+            fixed (ulong* __dsl_pData = pData)
             fixed (VkPrivateDataSlot_T* __dsl_privateDataSlot = privateDataSlot)
             fixed (VkDevice_T* __dsl_device = device)
             {
@@ -10290,12 +10290,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetQueryPoolResults")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern Result GetQueryPoolResults([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, void* pData, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags);
+        public static extern Result GetQueryPoolResults([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, void* pData, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetQueryPoolResults")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result GetQueryPoolResults([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, Ref pData, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags)
+        public static Result GetQueryPoolResults([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, Ref pData, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags)
         {
             fixed (void* __dsl_pData = pData)
             fixed (VkQueryPool_T* __dsl_queryPool = queryPool)
@@ -10393,18 +10393,18 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetRayTracingShaderGroupStackSizeKHR")]
         [return: NativeTypeName("VkDeviceSize")]
         [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_spirv_1_4", "VK_KHR_acceleration_structure+VK_VERSION_1_2"])]
-        public static extern nuint GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkPipeline")] VkPipeline_T* pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader);
+        public static extern ulong GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkPipeline")] VkPipeline_T* pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader);
         [return: NativeTypeName("VkDeviceSize")]
         [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_spirv_1_4", "VK_KHR_acceleration_structure+VK_VERSION_1_2"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetRayTracingShaderGroupStackSizeKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static nuint GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkPipeline")] Ref<VkPipeline_T> pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader)
+        public static ulong GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkPipeline")] Ref<VkPipeline_T> pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader)
         {
             fixed (VkPipeline_T* __dsl_pipeline = pipeline)
             fixed (VkDevice_T* __dsl_device = device)
             {
-                return (nuint)GetRayTracingShaderGroupStackSizeKHR(__dsl_device, __dsl_pipeline, group, groupShader);
+                return (ulong)GetRayTracingShaderGroupStackSizeKHR(__dsl_device, __dsl_pipeline, group, groupShader);
             }
         }
 
@@ -10495,14 +10495,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetSemaphoreCounterValue")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
-        public static extern Result GetSemaphoreCounterValue([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] nuint* pValue);
+        public static extern Result GetSemaphoreCounterValue([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] ulong* pValue);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreCounterValue")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result GetSemaphoreCounterValue([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<nuint> pValue)
+        public static Result GetSemaphoreCounterValue([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<ulong> pValue)
         {
-            fixed (nuint* __dsl_pValue = pValue)
+            fixed (ulong* __dsl_pValue = pValue)
             fixed (VkSemaphore_T* __dsl_semaphore = semaphore)
             fixed (VkDevice_T* __dsl_device = device)
             {
@@ -10512,14 +10512,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetSemaphoreCounterValueKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_timeline_semaphore"], ImpliesSets = ["VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2", "VK_KHR_timeline_semaphore+VK_VERSION_1_1"])]
-        public static extern Result GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] nuint* pValue);
+        public static extern Result GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] ulong* pValue);
         [SupportedApiProfile("vulkan", ["VK_KHR_timeline_semaphore"], ImpliesSets = ["VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2", "VK_KHR_timeline_semaphore+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreCounterValueKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<nuint> pValue)
+        public static Result GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<ulong> pValue)
         {
-            fixed (nuint* __dsl_pValue = pValue)
+            fixed (ulong* __dsl_pValue = pValue)
             fixed (VkSemaphore_T* __dsl_semaphore = semaphore)
             fixed (VkDevice_T* __dsl_device = device)
             {
@@ -10616,14 +10616,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkGetSwapchainCounterEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_display_control"], ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"])]
-        public static extern Result GetSwapchainCounterEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] nuint* pCounterValue);
+        public static extern Result GetSwapchainCounterEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] ulong* pCounterValue);
         [SupportedApiProfile("vulkan", ["VK_EXT_display_control"], ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainCounterEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result GetSwapchainCounterEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] Ref<nuint> pCounterValue)
+        public static Result GetSwapchainCounterEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] Ref<ulong> pCounterValue)
         {
-            fixed (nuint* __dsl_pCounterValue = pCounterValue)
+            fixed (ulong* __dsl_pCounterValue = pCounterValue)
             fixed (VkSwapchainKHR_T* __dsl_swapchain = swapchain)
             fixed (VkDevice_T* __dsl_device = device)
             {
@@ -10784,12 +10784,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkMapMemory")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern Result MapMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("VkMemoryMapFlags")] uint flags, void** ppData);
+        public static extern Result MapMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("VkMemoryMapFlags")] uint flags, void** ppData);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkMapMemory")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result MapMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("VkMemoryMapFlags")] uint flags, Ref2D ppData)
+        public static Result MapMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("VkMemoryMapFlags")] uint flags, Ref2D ppData)
         {
             fixed (void** __dsl_ppData = ppData)
             fixed (VkDeviceMemory_T* __dsl_memory = memory)
@@ -11406,12 +11406,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkSetPrivateData")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-        public static extern Result SetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] nuint data);
+        public static extern Result SetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] ulong data);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkSetPrivateData")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result SetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] nuint data)
+        public static Result SetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] ulong data)
         {
             fixed (VkPrivateDataSlot_T* __dsl_privateDataSlot = privateDataSlot)
             fixed (VkDevice_T* __dsl_device = device)
@@ -11422,12 +11422,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkSetPrivateDataEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_private_data"], ImpliesSets = ["VK_EXT_private_data+VK_KHR_get_physical_device_properties2", "VK_EXT_private_data+VK_VERSION_1_1"])]
-        public static extern Result SetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] nuint data);
+        public static extern Result SetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] ulong data);
         [SupportedApiProfile("vulkan", ["VK_EXT_private_data"], ImpliesSets = ["VK_EXT_private_data+VK_KHR_get_physical_device_properties2", "VK_EXT_private_data+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkSetPrivateDataEXT")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result SetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] nuint data)
+        public static Result SetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] ulong data)
         {
             fixed (VkPrivateDataSlot_T* __dsl_privateDataSlot = privateDataSlot)
             fixed (VkDevice_T* __dsl_device = device)
@@ -11743,12 +11743,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkWaitForFences")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
-        public static extern Result WaitForFences([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] VkFence_T** pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] nuint timeout);
+        public static extern Result WaitForFences([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] VkFence_T** pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] ulong timeout);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkWaitForFences")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result WaitForFences([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] Ref2D<VkFence_T> pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] nuint timeout)
+        public static Result WaitForFences([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] Ref2D<VkFence_T> pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] ulong timeout)
         {
             fixed (VkFence_T** __dsl_pFences = pFences)
             fixed (VkDevice_T* __dsl_device = device)
@@ -11759,12 +11759,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkWaitForPresentKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_present_wait"], ImpliesSets = ["VK_KHR_present_id", "VK_KHR_swapchain"])]
-        public static extern Result WaitForPresentKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] nuint presentId, [NativeTypeName("uint64_t")] nuint timeout);
+        public static extern Result WaitForPresentKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] ulong presentId, [NativeTypeName("uint64_t")] ulong timeout);
         [SupportedApiProfile("vulkan", ["VK_KHR_present_wait"], ImpliesSets = ["VK_KHR_present_id", "VK_KHR_swapchain"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkWaitForPresentKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result WaitForPresentKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] nuint presentId, [NativeTypeName("uint64_t")] nuint timeout)
+        public static Result WaitForPresentKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] ulong presentId, [NativeTypeName("uint64_t")] ulong timeout)
         {
             fixed (VkSwapchainKHR_T* __dsl_swapchain = swapchain)
             fixed (VkDevice_T* __dsl_device = device)
@@ -11775,12 +11775,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkWaitSemaphores")]
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
-        public static extern Result WaitSemaphores([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout);
+        public static extern Result WaitSemaphores([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout);
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkWaitSemaphores")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result WaitSemaphores([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout)
+        public static Result WaitSemaphores([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout)
         {
             fixed (SemaphoreWaitInfo* __dsl_pWaitInfo = pWaitInfo)
             fixed (VkDevice_T* __dsl_device = device)
@@ -11791,12 +11791,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkWaitSemaphoresKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_timeline_semaphore"], ImpliesSets = ["VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2", "VK_KHR_timeline_semaphore+VK_VERSION_1_1"])]
-        public static extern Result WaitSemaphoresKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout);
+        public static extern Result WaitSemaphoresKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout);
         [SupportedApiProfile("vulkan", ["VK_KHR_timeline_semaphore"], ImpliesSets = ["VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2", "VK_KHR_timeline_semaphore+VK_VERSION_1_1"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkWaitSemaphoresKHR")]
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static Result WaitSemaphoresKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout)
+        public static Result WaitSemaphoresKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout)
         {
             fixed (SemaphoreWaitInfo* __dsl_pWaitInfo = pWaitInfo)
             fixed (VkDevice_T* __dsl_device = device)
@@ -11842,931 +11842,931 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2None = 0UL;
+    public const ulong PipelineStage2None = 0UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2TopOfPipeBit = 0x00000001UL;
+    public const ulong PipelineStage2TopOfPipeBit = 0x00000001UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2DrawIndirectBit = 0x00000002UL;
+    public const ulong PipelineStage2DrawIndirectBit = 0x00000002UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2VertexInputBit = 0x00000004UL;
+    public const ulong PipelineStage2VertexInputBit = 0x00000004UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2VertexShaderBit = 0x00000008UL;
+    public const ulong PipelineStage2VertexShaderBit = 0x00000008UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2TessellationControlShaderBit = 0x00000010UL;
+    public const ulong PipelineStage2TessellationControlShaderBit = 0x00000010UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2TessellationEvaluationShaderBit = 0x00000020UL;
+    public const ulong PipelineStage2TessellationEvaluationShaderBit = 0x00000020UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2GeometryShaderBit = 0x00000040UL;
+    public const ulong PipelineStage2GeometryShaderBit = 0x00000040UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2FragmentShaderBit = 0x00000080UL;
+    public const ulong PipelineStage2FragmentShaderBit = 0x00000080UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2EarlyFragmentTestsBit = 0x00000100UL;
+    public const ulong PipelineStage2EarlyFragmentTestsBit = 0x00000100UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2LateFragmentTestsBit = 0x00000200UL;
+    public const ulong PipelineStage2LateFragmentTestsBit = 0x00000200UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2ColorAttachmentOutputBit = 0x00000400UL;
+    public const ulong PipelineStage2ColorAttachmentOutputBit = 0x00000400UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2ComputeShaderBit = 0x00000800UL;
+    public const ulong PipelineStage2ComputeShaderBit = 0x00000800UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2AllTransferBit = 0x00001000UL;
+    public const ulong PipelineStage2AllTransferBit = 0x00001000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2TransferBit = 0x00001000UL;
+    public const ulong PipelineStage2TransferBit = 0x00001000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2BottomOfPipeBit = 0x00002000UL;
+    public const ulong PipelineStage2BottomOfPipeBit = 0x00002000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2HostBit = 0x00004000UL;
+    public const ulong PipelineStage2HostBit = 0x00004000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2AllGraphicsBit = 0x00008000UL;
+    public const ulong PipelineStage2AllGraphicsBit = 0x00008000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2AllCommandsBit = 0x00010000UL;
+    public const ulong PipelineStage2AllCommandsBit = 0x00010000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2CopyBit = 0x100000000UL;
+    public const ulong PipelineStage2CopyBit = 0x100000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2ResolveBit = 0x200000000UL;
+    public const ulong PipelineStage2ResolveBit = 0x200000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2BlitBit = 0x400000000UL;
+    public const ulong PipelineStage2BlitBit = 0x400000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2ClearBit = 0x800000000UL;
+    public const ulong PipelineStage2ClearBit = 0x800000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2IndexInputBit = 0x1000000000UL;
+    public const ulong PipelineStage2IndexInputBit = 0x1000000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2VertexAttributeInputBit = 0x2000000000UL;
+    public const ulong PipelineStage2VertexAttributeInputBit = 0x2000000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineStage2PreRasterizationShadersBit = 0x4000000000UL;
+    public const ulong PipelineStage2PreRasterizationShadersBit = 0x4000000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_decode_queue"], ImpliesSets = ["VK_KHR_video_queue+VK_KHR_synchronization2", "VK_KHR_video_queue+VK_VERSION_1_3"])]
-    public const nuint PipelineStage2VideoDecodeBitKHR = 0x04000000UL;
+    public const ulong PipelineStage2VideoDecodeBitKHR = 0x04000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_encode_queue"], ImpliesSets = ["VK_KHR_video_queue+VK_KHR_synchronization2", "VK_KHR_video_queue+VK_VERSION_1_3"])]
-    public const nuint PipelineStage2VideoEncodeBitKHR = 0x08000000UL;
+    public const ulong PipelineStage2VideoEncodeBitKHR = 0x08000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2NoneKHR = 0UL;
+    public const ulong PipelineStage2NoneKHR = 0UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2TopOfPipeBitKHR = 0x00000001UL;
+    public const ulong PipelineStage2TopOfPipeBitKHR = 0x00000001UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2DrawIndirectBitKHR = 0x00000002UL;
+    public const ulong PipelineStage2DrawIndirectBitKHR = 0x00000002UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2VertexInputBitKHR = 0x00000004UL;
+    public const ulong PipelineStage2VertexInputBitKHR = 0x00000004UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2VertexShaderBitKHR = 0x00000008UL;
+    public const ulong PipelineStage2VertexShaderBitKHR = 0x00000008UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2TessellationControlShaderBitKHR = 0x00000010UL;
+    public const ulong PipelineStage2TessellationControlShaderBitKHR = 0x00000010UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2TessellationEvaluationShaderBitKHR = 0x00000020UL;
+    public const ulong PipelineStage2TessellationEvaluationShaderBitKHR = 0x00000020UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2GeometryShaderBitKHR = 0x00000040UL;
+    public const ulong PipelineStage2GeometryShaderBitKHR = 0x00000040UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2FragmentShaderBitKHR = 0x00000080UL;
+    public const ulong PipelineStage2FragmentShaderBitKHR = 0x00000080UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2EarlyFragmentTestsBitKHR = 0x00000100UL;
+    public const ulong PipelineStage2EarlyFragmentTestsBitKHR = 0x00000100UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2LateFragmentTestsBitKHR = 0x00000200UL;
+    public const ulong PipelineStage2LateFragmentTestsBitKHR = 0x00000200UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2ColorAttachmentOutputBitKHR = 0x00000400UL;
+    public const ulong PipelineStage2ColorAttachmentOutputBitKHR = 0x00000400UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2ComputeShaderBitKHR = 0x00000800UL;
+    public const ulong PipelineStage2ComputeShaderBitKHR = 0x00000800UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2AllTransferBitKHR = 0x00001000UL;
+    public const ulong PipelineStage2AllTransferBitKHR = 0x00001000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2TransferBitKHR = 0x00001000UL;
+    public const ulong PipelineStage2TransferBitKHR = 0x00001000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2BottomOfPipeBitKHR = 0x00002000UL;
+    public const ulong PipelineStage2BottomOfPipeBitKHR = 0x00002000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2HostBitKHR = 0x00004000UL;
+    public const ulong PipelineStage2HostBitKHR = 0x00004000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2AllGraphicsBitKHR = 0x00008000UL;
+    public const ulong PipelineStage2AllGraphicsBitKHR = 0x00008000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2AllCommandsBitKHR = 0x00010000UL;
+    public const ulong PipelineStage2AllCommandsBitKHR = 0x00010000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2CopyBitKHR = 0x100000000UL;
+    public const ulong PipelineStage2CopyBitKHR = 0x100000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2ResolveBitKHR = 0x200000000UL;
+    public const ulong PipelineStage2ResolveBitKHR = 0x200000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2BlitBitKHR = 0x400000000UL;
+    public const ulong PipelineStage2BlitBitKHR = 0x400000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2ClearBitKHR = 0x800000000UL;
+    public const ulong PipelineStage2ClearBitKHR = 0x800000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2IndexInputBitKHR = 0x1000000000UL;
+    public const ulong PipelineStage2IndexInputBitKHR = 0x1000000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2VertexAttributeInputBitKHR = 0x2000000000UL;
+    public const ulong PipelineStage2VertexAttributeInputBitKHR = 0x2000000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2PreRasterizationShadersBitKHR = 0x4000000000UL;
+    public const ulong PipelineStage2PreRasterizationShadersBitKHR = 0x4000000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2TransformFeedbackBitEXT = 0x01000000UL;
+    public const ulong PipelineStage2TransformFeedbackBitEXT = 0x01000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_conditional_rendering", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2ConditionalRenderingBitEXT = 0x00040000UL;
+    public const ulong PipelineStage2ConditionalRenderingBitEXT = 0x00040000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2", "VK_NV_device_generated_commands"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2CommandPreprocessBitNV = 0x00020000UL;
+    public const ulong PipelineStage2CommandPreprocessBitNV = 0x00020000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_device_generated_commands", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2CommandPreprocessBitEXT = 0x00020000UL;
+    public const ulong PipelineStage2CommandPreprocessBitEXT = 0x00020000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_fragment_shading_rate", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2FragmentShadingRateAttachmentBitKHR = 0x00400000UL;
+    public const ulong PipelineStage2FragmentShadingRateAttachmentBitKHR = 0x00400000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2", "VK_NV_shading_rate_image"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2ShadingRateImageBitNV = 0x00400000UL;
+    public const ulong PipelineStage2ShadingRateImageBitNV = 0x00400000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2AccelerationStructureBuildBitKHR = 0x02000000UL;
+    public const ulong PipelineStage2AccelerationStructureBuildBitKHR = 0x02000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_pipeline", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2RayTracingShaderBitKHR = 0x00200000UL;
+    public const ulong PipelineStage2RayTracingShaderBitKHR = 0x00200000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2", "VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2RayTracingShaderBitNV = 0x00200000UL;
+    public const ulong PipelineStage2RayTracingShaderBitNV = 0x00200000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2", "VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2AccelerationStructureBuildBitNV = 0x02000000UL;
+    public const ulong PipelineStage2AccelerationStructureBuildBitNV = 0x02000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_fragment_density_map", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2FragmentDensityProcessBitEXT = 0x00800000UL;
+    public const ulong PipelineStage2FragmentDensityProcessBitEXT = 0x00800000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2", "VK_NV_mesh_shader"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2TaskShaderBitNV = 0x00080000UL;
+    public const ulong PipelineStage2TaskShaderBitNV = 0x00080000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2", "VK_NV_mesh_shader"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2MeshShaderBitNV = 0x00100000UL;
+    public const ulong PipelineStage2MeshShaderBitNV = 0x00100000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_mesh_shader", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2TaskShaderBitEXT = 0x00080000UL;
+    public const ulong PipelineStage2TaskShaderBitEXT = 0x00080000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_mesh_shader", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint PipelineStage2MeshShaderBitEXT = 0x00100000UL;
+    public const ulong PipelineStage2MeshShaderBitEXT = 0x00100000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_HUAWEI_subpass_shading"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_create_renderpass2", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
-    public const nuint PipelineStage2SubpassShaderBitHuawei = 0x8000000000UL;
+    public const ulong PipelineStage2SubpassShaderBitHuawei = 0x8000000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_HUAWEI_subpass_shading"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_create_renderpass2", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
-    public const nuint PipelineStage2SubpassShadingBitHuawei = 0x8000000000UL;
+    public const ulong PipelineStage2SubpassShadingBitHuawei = 0x8000000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_HUAWEI_invocation_mask"], ImpliesSets = ["VK_KHR_ray_tracing_pipeline+VK_KHR_synchronization2", "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3"])]
-    public const nuint PipelineStage2InvocationMaskBitHuawei = 0x10000000000UL;
+    public const ulong PipelineStage2InvocationMaskBitHuawei = 0x10000000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_maintenance1+VK_KHR_synchronization2", "VK_KHR_ray_tracing_maintenance1+VK_VERSION_1_3"], ImpliesSets = ["VK_KHR_acceleration_structure"])]
-    public const nuint PipelineStage2AccelerationStructureCopyBitKHR = 0x10000000UL;
+    public const ulong PipelineStage2AccelerationStructureCopyBitKHR = 0x10000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_opacity_micromap"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_synchronization2", "VK_KHR_acceleration_structure+VK_VERSION_1_3"])]
-    public const nuint PipelineStage2MicromapBuildBitEXT = 0x40000000UL;
+    public const ulong PipelineStage2MicromapBuildBitEXT = 0x40000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_HUAWEI_cluster_culling_shader"], ImpliesSets = ["VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2", "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1"])]
-    public const nuint PipelineStage2ClusterCullingShaderBitHuawei = 0x20000000000UL;
+    public const ulong PipelineStage2ClusterCullingShaderBitHuawei = 0x20000000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_NV_optical_flow"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_VERSION_1_1", "VK_VERSION_1_3"])]
-    public const nuint PipelineStage2OpticalFlowBitNV = 0x20000000UL;
+    public const ulong PipelineStage2OpticalFlowBitNV = 0x20000000UL;
     [NativeTypeName("const VkPipelineStageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
-    public const nuint PipelineStage2ConvertCooperativeVectorMatrixBitNV = 0x100000000000UL;
+    public const ulong PipelineStage2ConvertCooperativeVectorMatrixBitNV = 0x100000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2None = 0UL;
+    public const ulong Access2None = 0UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2IndirectCommandReadBit = 0x00000001UL;
+    public const ulong Access2IndirectCommandReadBit = 0x00000001UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2IndexReadBit = 0x00000002UL;
+    public const ulong Access2IndexReadBit = 0x00000002UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2VertexAttributeReadBit = 0x00000004UL;
+    public const ulong Access2VertexAttributeReadBit = 0x00000004UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2UniformReadBit = 0x00000008UL;
+    public const ulong Access2UniformReadBit = 0x00000008UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2InputAttachmentReadBit = 0x00000010UL;
+    public const ulong Access2InputAttachmentReadBit = 0x00000010UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2ShaderReadBit = 0x00000020UL;
+    public const ulong Access2ShaderReadBit = 0x00000020UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2ShaderWriteBit = 0x00000040UL;
+    public const ulong Access2ShaderWriteBit = 0x00000040UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2ColorAttachmentReadBit = 0x00000080UL;
+    public const ulong Access2ColorAttachmentReadBit = 0x00000080UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2ColorAttachmentWriteBit = 0x00000100UL;
+    public const ulong Access2ColorAttachmentWriteBit = 0x00000100UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2DepthStencilAttachmentReadBit = 0x00000200UL;
+    public const ulong Access2DepthStencilAttachmentReadBit = 0x00000200UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2DepthStencilAttachmentWriteBit = 0x00000400UL;
+    public const ulong Access2DepthStencilAttachmentWriteBit = 0x00000400UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2TransferReadBit = 0x00000800UL;
+    public const ulong Access2TransferReadBit = 0x00000800UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2TransferWriteBit = 0x00001000UL;
+    public const ulong Access2TransferWriteBit = 0x00001000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2HostReadBit = 0x00002000UL;
+    public const ulong Access2HostReadBit = 0x00002000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2HostWriteBit = 0x00004000UL;
+    public const ulong Access2HostWriteBit = 0x00004000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2MemoryReadBit = 0x00008000UL;
+    public const ulong Access2MemoryReadBit = 0x00008000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2MemoryWriteBit = 0x00010000UL;
+    public const ulong Access2MemoryWriteBit = 0x00010000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2ShaderSampledReadBit = 0x100000000UL;
+    public const ulong Access2ShaderSampledReadBit = 0x100000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2ShaderStorageReadBit = 0x200000000UL;
+    public const ulong Access2ShaderStorageReadBit = 0x200000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access2ShaderStorageWriteBit = 0x400000000UL;
+    public const ulong Access2ShaderStorageWriteBit = 0x400000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_decode_queue"], ImpliesSets = ["VK_KHR_video_queue+VK_KHR_synchronization2", "VK_KHR_video_queue+VK_VERSION_1_3"])]
-    public const nuint Access2VideoDecodeReadBitKHR = 0x800000000UL;
+    public const ulong Access2VideoDecodeReadBitKHR = 0x800000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_decode_queue"], ImpliesSets = ["VK_KHR_video_queue+VK_KHR_synchronization2", "VK_KHR_video_queue+VK_VERSION_1_3"])]
-    public const nuint Access2VideoDecodeWriteBitKHR = 0x1000000000UL;
+    public const ulong Access2VideoDecodeWriteBitKHR = 0x1000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_encode_queue"], ImpliesSets = ["VK_KHR_video_queue+VK_KHR_synchronization2", "VK_KHR_video_queue+VK_VERSION_1_3"])]
-    public const nuint Access2VideoEncodeReadBitKHR = 0x2000000000UL;
+    public const ulong Access2VideoEncodeReadBitKHR = 0x2000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_encode_queue"], ImpliesSets = ["VK_KHR_video_queue+VK_KHR_synchronization2", "VK_KHR_video_queue+VK_VERSION_1_3"])]
-    public const nuint Access2VideoEncodeWriteBitKHR = 0x4000000000UL;
+    public const ulong Access2VideoEncodeWriteBitKHR = 0x4000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_tile_shading"], ImpliesSets = ["VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2", "VK_QCOM_tile_shading+VK_QCOM_tile_properties"])]
-    public const nuint Access2ShaderTileAttachmentReadBitQCOM = 0x8000000000000UL;
+    public const ulong Access2ShaderTileAttachmentReadBitQCOM = 0x8000000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_tile_shading"], ImpliesSets = ["VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2", "VK_QCOM_tile_shading+VK_QCOM_tile_properties"])]
-    public const nuint Access2ShaderTileAttachmentWriteBitQCOM = 0x10000000000000UL;
+    public const ulong Access2ShaderTileAttachmentWriteBitQCOM = 0x10000000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2NoneKHR = 0UL;
+    public const ulong Access2NoneKHR = 0UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2IndirectCommandReadBitKHR = 0x00000001UL;
+    public const ulong Access2IndirectCommandReadBitKHR = 0x00000001UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2IndexReadBitKHR = 0x00000002UL;
+    public const ulong Access2IndexReadBitKHR = 0x00000002UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2VertexAttributeReadBitKHR = 0x00000004UL;
+    public const ulong Access2VertexAttributeReadBitKHR = 0x00000004UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2UniformReadBitKHR = 0x00000008UL;
+    public const ulong Access2UniformReadBitKHR = 0x00000008UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2InputAttachmentReadBitKHR = 0x00000010UL;
+    public const ulong Access2InputAttachmentReadBitKHR = 0x00000010UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2ShaderReadBitKHR = 0x00000020UL;
+    public const ulong Access2ShaderReadBitKHR = 0x00000020UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2ShaderWriteBitKHR = 0x00000040UL;
+    public const ulong Access2ShaderWriteBitKHR = 0x00000040UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2ColorAttachmentReadBitKHR = 0x00000080UL;
+    public const ulong Access2ColorAttachmentReadBitKHR = 0x00000080UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2ColorAttachmentWriteBitKHR = 0x00000100UL;
+    public const ulong Access2ColorAttachmentWriteBitKHR = 0x00000100UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2DepthStencilAttachmentReadBitKHR = 0x00000200UL;
+    public const ulong Access2DepthStencilAttachmentReadBitKHR = 0x00000200UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2DepthStencilAttachmentWriteBitKHR = 0x00000400UL;
+    public const ulong Access2DepthStencilAttachmentWriteBitKHR = 0x00000400UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2TransferReadBitKHR = 0x00000800UL;
+    public const ulong Access2TransferReadBitKHR = 0x00000800UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2TransferWriteBitKHR = 0x00001000UL;
+    public const ulong Access2TransferWriteBitKHR = 0x00001000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2HostReadBitKHR = 0x00002000UL;
+    public const ulong Access2HostReadBitKHR = 0x00002000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2HostWriteBitKHR = 0x00004000UL;
+    public const ulong Access2HostWriteBitKHR = 0x00004000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2MemoryReadBitKHR = 0x00008000UL;
+    public const ulong Access2MemoryReadBitKHR = 0x00008000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2MemoryWriteBitKHR = 0x00010000UL;
+    public const ulong Access2MemoryWriteBitKHR = 0x00010000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2ShaderSampledReadBitKHR = 0x100000000UL;
+    public const ulong Access2ShaderSampledReadBitKHR = 0x100000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2ShaderStorageReadBitKHR = 0x200000000UL;
+    public const ulong Access2ShaderStorageReadBitKHR = 0x200000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
-    public const nuint Access2ShaderStorageWriteBitKHR = 0x400000000UL;
+    public const ulong Access2ShaderStorageWriteBitKHR = 0x400000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2TransformFeedbackWriteBitEXT = 0x02000000UL;
+    public const ulong Access2TransformFeedbackWriteBitEXT = 0x02000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2TransformFeedbackCounterReadBitEXT = 0x04000000UL;
+    public const ulong Access2TransformFeedbackCounterReadBitEXT = 0x04000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2TransformFeedbackCounterWriteBitEXT = 0x08000000UL;
+    public const ulong Access2TransformFeedbackCounterWriteBitEXT = 0x08000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_conditional_rendering", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2ConditionalRenderingReadBitEXT = 0x00100000UL;
+    public const ulong Access2ConditionalRenderingReadBitEXT = 0x00100000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2", "VK_NV_device_generated_commands"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2CommandPreprocessReadBitNV = 0x00020000UL;
+    public const ulong Access2CommandPreprocessReadBitNV = 0x00020000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2", "VK_NV_device_generated_commands"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2CommandPreprocessWriteBitNV = 0x00040000UL;
+    public const ulong Access2CommandPreprocessWriteBitNV = 0x00040000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_device_generated_commands", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2CommandPreprocessReadBitEXT = 0x00020000UL;
+    public const ulong Access2CommandPreprocessReadBitEXT = 0x00020000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_device_generated_commands", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2CommandPreprocessWriteBitEXT = 0x00040000UL;
+    public const ulong Access2CommandPreprocessWriteBitEXT = 0x00040000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_fragment_shading_rate", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2FragmentShadingRateAttachmentReadBitKHR = 0x00800000UL;
+    public const ulong Access2FragmentShadingRateAttachmentReadBitKHR = 0x00800000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2", "VK_NV_shading_rate_image"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2ShadingRateImageReadBitNV = 0x00800000UL;
+    public const ulong Access2ShadingRateImageReadBitNV = 0x00800000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2AccelerationStructureReadBitKHR = 0x00200000UL;
+    public const ulong Access2AccelerationStructureReadBitKHR = 0x00200000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2AccelerationStructureWriteBitKHR = 0x00400000UL;
+    public const ulong Access2AccelerationStructureWriteBitKHR = 0x00400000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2", "VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2AccelerationStructureReadBitNV = 0x00200000UL;
+    public const ulong Access2AccelerationStructureReadBitNV = 0x00200000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2", "VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2AccelerationStructureWriteBitNV = 0x00400000UL;
+    public const ulong Access2AccelerationStructureWriteBitNV = 0x00400000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_fragment_density_map", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2FragmentDensityMapReadBitEXT = 0x01000000UL;
+    public const ulong Access2FragmentDensityMapReadBitEXT = 0x01000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_blend_operation_advanced", "VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"], RequireAll = true)]
-    public const nuint Access2ColorAttachmentReadNoncoherentBitEXT = 0x00080000UL;
+    public const ulong Access2ColorAttachmentReadNoncoherentBitEXT = 0x00080000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
-    public const nuint Access2DescriptorBufferReadBitEXT = 0x20000000000UL;
+    public const ulong Access2DescriptorBufferReadBitEXT = 0x20000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_HUAWEI_invocation_mask"], ImpliesSets = ["VK_KHR_ray_tracing_pipeline+VK_KHR_synchronization2", "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3"])]
-    public const nuint Access2InvocationMaskReadBitHuawei = 0x8000000000UL;
+    public const ulong Access2InvocationMaskReadBitHuawei = 0x8000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_maintenance1+VK_KHR_ray_tracing_pipeline+VK_KHR_synchronization2", "VK_KHR_ray_tracing_maintenance1+VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3"], ImpliesSets = ["VK_KHR_acceleration_structure"])]
-    public const nuint Access2ShaderBindingTableReadBitKHR = 0x10000000000UL;
+    public const ulong Access2ShaderBindingTableReadBitKHR = 0x10000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_opacity_micromap"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_synchronization2", "VK_KHR_acceleration_structure+VK_VERSION_1_3"])]
-    public const nuint Access2MicromapReadBitEXT = 0x100000000000UL;
+    public const ulong Access2MicromapReadBitEXT = 0x100000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_opacity_micromap"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_synchronization2", "VK_KHR_acceleration_structure+VK_VERSION_1_3"])]
-    public const nuint Access2MicromapWriteBitEXT = 0x200000000000UL;
+    public const ulong Access2MicromapWriteBitEXT = 0x200000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_NV_optical_flow"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_VERSION_1_1", "VK_VERSION_1_3"])]
-    public const nuint Access2OpticalFlowReadBitNV = 0x40000000000UL;
+    public const ulong Access2OpticalFlowReadBitNV = 0x40000000000UL;
     [NativeTypeName("const VkAccessFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_NV_optical_flow"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_VERSION_1_1", "VK_VERSION_1_3"])]
-    public const nuint Access2OpticalFlowWriteBitNV = 0x80000000000UL;
+    public const ulong Access2OpticalFlowWriteBitNV = 0x80000000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2SampledImageBit = 0x00000001UL;
+    public const ulong FormatFeature2SampledImageBit = 0x00000001UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2StorageImageBit = 0x00000002UL;
+    public const ulong FormatFeature2StorageImageBit = 0x00000002UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2StorageImageAtomicBit = 0x00000004UL;
+    public const ulong FormatFeature2StorageImageAtomicBit = 0x00000004UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2UniformTexelBufferBit = 0x00000008UL;
+    public const ulong FormatFeature2UniformTexelBufferBit = 0x00000008UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2StorageTexelBufferBit = 0x00000010UL;
+    public const ulong FormatFeature2StorageTexelBufferBit = 0x00000010UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2StorageTexelBufferAtomicBit = 0x00000020UL;
+    public const ulong FormatFeature2StorageTexelBufferAtomicBit = 0x00000020UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2VertexBufferBit = 0x00000040UL;
+    public const ulong FormatFeature2VertexBufferBit = 0x00000040UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2ColorAttachmentBit = 0x00000080UL;
+    public const ulong FormatFeature2ColorAttachmentBit = 0x00000080UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2ColorAttachmentBlendBit = 0x00000100UL;
+    public const ulong FormatFeature2ColorAttachmentBlendBit = 0x00000100UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2DepthStencilAttachmentBit = 0x00000200UL;
+    public const ulong FormatFeature2DepthStencilAttachmentBit = 0x00000200UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2BlitSrcBit = 0x00000400UL;
+    public const ulong FormatFeature2BlitSrcBit = 0x00000400UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2BlitDstBit = 0x00000800UL;
+    public const ulong FormatFeature2BlitDstBit = 0x00000800UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2SampledImageFilterLinearBit = 0x00001000UL;
+    public const ulong FormatFeature2SampledImageFilterLinearBit = 0x00001000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2TransferSrcBit = 0x00004000UL;
+    public const ulong FormatFeature2TransferSrcBit = 0x00004000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2TransferDstBit = 0x00008000UL;
+    public const ulong FormatFeature2TransferDstBit = 0x00008000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2SampledImageFilterMinmaxBit = 0x00010000UL;
+    public const ulong FormatFeature2SampledImageFilterMinmaxBit = 0x00010000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2MidpointChromaSamplesBit = 0x00020000UL;
+    public const ulong FormatFeature2MidpointChromaSamplesBit = 0x00020000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2SampledImageYcbcrConversionLinearFilterBit = 0x00040000UL;
+    public const ulong FormatFeature2SampledImageYcbcrConversionLinearFilterBit = 0x00040000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2SampledImageYcbcrConversionSeparateReconstructionFilterBit = 0x00080000UL;
+    public const ulong FormatFeature2SampledImageYcbcrConversionSeparateReconstructionFilterBit = 0x00080000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2SampledImageYcbcrConversionChromaReconstructionExplicitBit = 0x00100000UL;
+    public const ulong FormatFeature2SampledImageYcbcrConversionChromaReconstructionExplicitBit = 0x00100000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2SampledImageYcbcrConversionChromaReconstructionExplicitForceableBit = 0x00200000UL;
+    public const ulong FormatFeature2SampledImageYcbcrConversionChromaReconstructionExplicitForceableBit = 0x00200000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2DisjointBit = 0x00400000UL;
+    public const ulong FormatFeature2DisjointBit = 0x00400000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2CositedChromaSamplesBit = 0x00800000UL;
+    public const ulong FormatFeature2CositedChromaSamplesBit = 0x00800000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2StorageReadWithoutFormatBit = 0x80000000UL;
+    public const ulong FormatFeature2StorageReadWithoutFormatBit = 0x80000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2StorageWriteWithoutFormatBit = 0x100000000UL;
+    public const ulong FormatFeature2StorageWriteWithoutFormatBit = 0x100000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint FormatFeature2SampledImageDepthComparisonBit = 0x200000000UL;
+    public const ulong FormatFeature2SampledImageDepthComparisonBit = 0x200000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public const nuint FormatFeature2SampledImageFilterCubicBit = 0x00002000UL;
+    public const ulong FormatFeature2SampledImageFilterCubicBit = 0x00002000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public const nuint FormatFeature2HostImageTransferBit = 0x400000000000UL;
+    public const ulong FormatFeature2HostImageTransferBit = 0x400000000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_decode_queue+VK_KHR_format_feature_flags2", "VK_KHR_video_decode_queue+VK_VERSION_1_3"], ImpliesSets = ["VK_KHR_video_queue+VK_KHR_synchronization2", "VK_KHR_video_queue+VK_VERSION_1_3"])]
-    public const nuint FormatFeature2VideoDecodeOutputBitKHR = 0x02000000UL;
+    public const ulong FormatFeature2VideoDecodeOutputBitKHR = 0x02000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_decode_queue+VK_KHR_format_feature_flags2", "VK_KHR_video_decode_queue+VK_VERSION_1_3"], ImpliesSets = ["VK_KHR_video_queue+VK_KHR_synchronization2", "VK_KHR_video_queue+VK_VERSION_1_3"])]
-    public const nuint FormatFeature2VideoDecodeDpbBitKHR = 0x04000000UL;
+    public const ulong FormatFeature2VideoDecodeDpbBitKHR = 0x04000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure+VK_KHR_format_feature_flags2", "VK_KHR_acceleration_structure+VK_VERSION_1_3"], ImpliesSets = ["VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address", "VK_KHR_deferred_host_operations+VK_VERSION_1_2"])]
-    public const nuint FormatFeature2AccelerationStructureVertexBufferBitKHR = 0x20000000UL;
+    public const ulong FormatFeature2AccelerationStructureVertexBufferBitKHR = 0x20000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_fragment_density_map+VK_KHR_format_feature_flags2", "VK_EXT_fragment_density_map+VK_VERSION_1_3"], ImpliesSets = ["VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2", "VK_EXT_fragment_density_map+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2FragmentDensityMapBitEXT = 0x01000000UL;
+    public const ulong FormatFeature2FragmentDensityMapBitEXT = 0x01000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_fragment_shading_rate+VK_KHR_format_feature_flags2", "VK_KHR_fragment_shading_rate+VK_VERSION_1_3"], ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2", "VK_KHR_create_renderpass2+VK_VERSION_1_1", "VK_VERSION_1_2"])]
-    public const nuint FormatFeature2FragmentShadingRateAttachmentBitKHR = 0x40000000UL;
+    public const ulong FormatFeature2FragmentShadingRateAttachmentBitKHR = 0x40000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_host_image_copy"], ImpliesSets = ["VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_copy_commands2+VK_KHR_format_feature_flags2+VK_VERSION_1_1", "VK_VERSION_1_3"])]
-    public const nuint FormatFeature2HostImageTransferBitEXT = 0x400000000000UL;
+    public const ulong FormatFeature2HostImageTransferBitEXT = 0x400000000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2", "VK_KHR_video_encode_queue+VK_VERSION_1_3"], ImpliesSets = ["VK_KHR_video_queue+VK_KHR_synchronization2", "VK_KHR_video_queue+VK_VERSION_1_3"])]
-    public const nuint FormatFeature2VideoEncodeInputBitKHR = 0x08000000UL;
+    public const ulong FormatFeature2VideoEncodeInputBitKHR = 0x08000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2", "VK_KHR_video_encode_queue+VK_VERSION_1_3"], ImpliesSets = ["VK_KHR_video_queue+VK_KHR_synchronization2", "VK_KHR_video_queue+VK_VERSION_1_3"])]
-    public const nuint FormatFeature2VideoEncodeDpbBitKHR = 0x10000000UL;
+    public const ulong FormatFeature2VideoEncodeDpbBitKHR = 0x10000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2SampledImageBitKHR = 0x00000001UL;
+    public const ulong FormatFeature2SampledImageBitKHR = 0x00000001UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2StorageImageBitKHR = 0x00000002UL;
+    public const ulong FormatFeature2StorageImageBitKHR = 0x00000002UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2StorageImageAtomicBitKHR = 0x00000004UL;
+    public const ulong FormatFeature2StorageImageAtomicBitKHR = 0x00000004UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2UniformTexelBufferBitKHR = 0x00000008UL;
+    public const ulong FormatFeature2UniformTexelBufferBitKHR = 0x00000008UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2StorageTexelBufferBitKHR = 0x00000010UL;
+    public const ulong FormatFeature2StorageTexelBufferBitKHR = 0x00000010UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2StorageTexelBufferAtomicBitKHR = 0x00000020UL;
+    public const ulong FormatFeature2StorageTexelBufferAtomicBitKHR = 0x00000020UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2VertexBufferBitKHR = 0x00000040UL;
+    public const ulong FormatFeature2VertexBufferBitKHR = 0x00000040UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2ColorAttachmentBitKHR = 0x00000080UL;
+    public const ulong FormatFeature2ColorAttachmentBitKHR = 0x00000080UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2ColorAttachmentBlendBitKHR = 0x00000100UL;
+    public const ulong FormatFeature2ColorAttachmentBlendBitKHR = 0x00000100UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2DepthStencilAttachmentBitKHR = 0x00000200UL;
+    public const ulong FormatFeature2DepthStencilAttachmentBitKHR = 0x00000200UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2BlitSrcBitKHR = 0x00000400UL;
+    public const ulong FormatFeature2BlitSrcBitKHR = 0x00000400UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2BlitDstBitKHR = 0x00000800UL;
+    public const ulong FormatFeature2BlitDstBitKHR = 0x00000800UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2SampledImageFilterLinearBitKHR = 0x00001000UL;
+    public const ulong FormatFeature2SampledImageFilterLinearBitKHR = 0x00001000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2TransferSrcBitKHR = 0x00004000UL;
+    public const ulong FormatFeature2TransferSrcBitKHR = 0x00004000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2TransferDstBitKHR = 0x00008000UL;
+    public const ulong FormatFeature2TransferDstBitKHR = 0x00008000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2MidpointChromaSamplesBitKHR = 0x00020000UL;
+    public const ulong FormatFeature2MidpointChromaSamplesBitKHR = 0x00020000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2SampledImageYcbcrConversionLinearFilterBitKHR = 0x00040000UL;
+    public const ulong FormatFeature2SampledImageYcbcrConversionLinearFilterBitKHR = 0x00040000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2SampledImageYcbcrConversionSeparateReconstructionFilterBitKHR = 0x00080000UL;
+    public const ulong FormatFeature2SampledImageYcbcrConversionSeparateReconstructionFilterBitKHR = 0x00080000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2SampledImageYcbcrConversionChromaReconstructionExplicitBitKHR = 0x00100000UL;
+    public const ulong FormatFeature2SampledImageYcbcrConversionChromaReconstructionExplicitBitKHR = 0x00100000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2SampledImageYcbcrConversionChromaReconstructionExplicitForceableBitKHR = 0x00200000UL;
+    public const ulong FormatFeature2SampledImageYcbcrConversionChromaReconstructionExplicitForceableBitKHR = 0x00200000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2DisjointBitKHR = 0x00400000UL;
+    public const ulong FormatFeature2DisjointBitKHR = 0x00400000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2CositedChromaSamplesBitKHR = 0x00800000UL;
+    public const ulong FormatFeature2CositedChromaSamplesBitKHR = 0x00800000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2StorageReadWithoutFormatBitKHR = 0x80000000UL;
+    public const ulong FormatFeature2StorageReadWithoutFormatBitKHR = 0x80000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2StorageWriteWithoutFormatBitKHR = 0x100000000UL;
+    public const ulong FormatFeature2StorageWriteWithoutFormatBitKHR = 0x100000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2SampledImageDepthComparisonBitKHR = 0x200000000UL;
+    public const ulong FormatFeature2SampledImageDepthComparisonBitKHR = 0x200000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2+VK_EXT_sampler_filter_minmax", "VK_KHR_format_feature_flags2+VK_VERSION_1_2"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2SampledImageFilterMinmaxBitKHR = 0x00010000UL;
+    public const ulong FormatFeature2SampledImageFilterMinmaxBitKHR = 0x00010000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_format_feature_flags2+VK_EXT_filter_cubic", "VK_KHR_format_feature_flags2+VK_IMG_filter_cubic"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2SampledImageFilterCubicBitEXT = 0x00002000UL;
+    public const ulong FormatFeature2SampledImageFilterCubicBitEXT = 0x00002000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing_linear_swept_spheres"], ImpliesSets = ["VK_KHR_ray_tracing_pipeline"])]
-    public const nuint FormatFeature2AccelerationStructureRadiusBufferBitNV = 0x8000000000000UL;
+    public const ulong FormatFeature2AccelerationStructureRadiusBufferBitNV = 0x8000000000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_NV_linear_color_attachment+VK_KHR_format_feature_flags2", "VK_NV_linear_color_attachment+VK_VERSION_1_3"], ImpliesSets = ["VK_NV_linear_color_attachment+VK_KHR_get_physical_device_properties2", "VK_NV_linear_color_attachment+VK_VERSION_1_1"])]
-    public const nuint FormatFeature2LinearColorAttachmentBitNV = 0x4000000000UL;
+    public const ulong FormatFeature2LinearColorAttachmentBitNV = 0x4000000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_image_processing+VK_KHR_format_feature_flags2", "VK_QCOM_image_processing+VK_VERSION_1_3"], ImpliesSets = ["VK_QCOM_image_processing+VK_KHR_format_feature_flags2", "VK_QCOM_image_processing+VK_VERSION_1_3"])]
-    public const nuint FormatFeature2WeightImageBitQCOM = 0x400000000UL;
+    public const ulong FormatFeature2WeightImageBitQCOM = 0x400000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_image_processing+VK_KHR_format_feature_flags2", "VK_QCOM_image_processing+VK_VERSION_1_3"], ImpliesSets = ["VK_QCOM_image_processing+VK_KHR_format_feature_flags2", "VK_QCOM_image_processing+VK_VERSION_1_3"])]
-    public const nuint FormatFeature2WeightSampledImageBitQCOM = 0x800000000UL;
+    public const ulong FormatFeature2WeightSampledImageBitQCOM = 0x800000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_image_processing+VK_KHR_format_feature_flags2", "VK_QCOM_image_processing+VK_VERSION_1_3"], ImpliesSets = ["VK_QCOM_image_processing+VK_KHR_format_feature_flags2", "VK_QCOM_image_processing+VK_VERSION_1_3"])]
-    public const nuint FormatFeature2BlockMatchingBitQCOM = 0x1000000000UL;
+    public const ulong FormatFeature2BlockMatchingBitQCOM = 0x1000000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_image_processing+VK_KHR_format_feature_flags2", "VK_QCOM_image_processing+VK_VERSION_1_3"], ImpliesSets = ["VK_QCOM_image_processing+VK_KHR_format_feature_flags2", "VK_QCOM_image_processing+VK_VERSION_1_3"])]
-    public const nuint FormatFeature2BoxFilterSampledBitQCOM = 0x2000000000UL;
+    public const ulong FormatFeature2BoxFilterSampledBitQCOM = 0x2000000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_NV_optical_flow"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_VERSION_1_1", "VK_VERSION_1_3"])]
-    public const nuint FormatFeature2OpticalFlowImageBitNV = 0x10000000000UL;
+    public const ulong FormatFeature2OpticalFlowImageBitNV = 0x10000000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_NV_optical_flow"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_VERSION_1_1", "VK_VERSION_1_3"])]
-    public const nuint FormatFeature2OpticalFlowVectorBitNV = 0x20000000000UL;
+    public const ulong FormatFeature2OpticalFlowVectorBitNV = 0x20000000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_NV_optical_flow"], ImpliesSets = ["VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_VERSION_1_1", "VK_VERSION_1_3"])]
-    public const nuint FormatFeature2OpticalFlowCostBitNV = 0x40000000000UL;
+    public const ulong FormatFeature2OpticalFlowCostBitNV = 0x40000000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_encode_quantization_map"], ImpliesSets = ["VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2", "VK_KHR_video_encode_queue+VK_VERSION_1_3"])]
-    public const nuint FormatFeature2VideoEncodeQuantizationDeltaMapBitKHR = 0x2000000000000UL;
+    public const ulong FormatFeature2VideoEncodeQuantizationDeltaMapBitKHR = 0x2000000000000UL;
     [NativeTypeName("const VkFormatFeatureFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_video_encode_quantization_map"], ImpliesSets = ["VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2", "VK_KHR_video_encode_queue+VK_VERSION_1_3"])]
-    public const nuint FormatFeature2VideoEncodeEmphasisMapBitKHR = 0x4000000000000UL;
+    public const ulong FormatFeature2VideoEncodeEmphasisMapBitKHR = 0x4000000000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineCreate2DisableOptimizationBit = 0x00000001UL;
+    public const ulong PipelineCreate2DisableOptimizationBit = 0x00000001UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineCreate2AllowDerivativesBit = 0x00000002UL;
+    public const ulong PipelineCreate2AllowDerivativesBit = 0x00000002UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineCreate2DerivativeBit = 0x00000004UL;
+    public const ulong PipelineCreate2DerivativeBit = 0x00000004UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineCreate2ViewIndexFromDeviceIndexBit = 0x00000008UL;
+    public const ulong PipelineCreate2ViewIndexFromDeviceIndexBit = 0x00000008UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineCreate2DispatchBaseBit = 0x00000010UL;
+    public const ulong PipelineCreate2DispatchBaseBit = 0x00000010UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineCreate2FailOnPipelineCompileRequiredBit = 0x00000100UL;
+    public const ulong PipelineCreate2FailOnPipelineCompileRequiredBit = 0x00000100UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineCreate2EarlyReturnOnFailureBit = 0x00000200UL;
+    public const ulong PipelineCreate2EarlyReturnOnFailureBit = 0x00000200UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineCreate2NoProtectedAccessBit = 0x08000000UL;
+    public const ulong PipelineCreate2NoProtectedAccessBit = 0x08000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PipelineCreate2ProtectedAccessOnlyBit = 0x40000000UL;
+    public const ulong PipelineCreate2ProtectedAccessOnlyBit = 0x40000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_spirv_1_4", "VK_KHR_acceleration_structure+VK_VERSION_1_2"])]
-    public const nuint PipelineCreate2RayTracingSkipBuiltInPrimitivesBitKHR = 0x00001000UL;
+    public const ulong PipelineCreate2RayTracingSkipBuiltInPrimitivesBitKHR = 0x00001000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing_linear_swept_spheres"], ImpliesSets = ["VK_KHR_ray_tracing_pipeline"])]
-    public const nuint PipelineCreate2RayTracingAllowSpheresAndLinearSweptSpheresBitNV = 0x200000000UL;
+    public const ulong PipelineCreate2RayTracingAllowSpheresAndLinearSweptSpheresBitNV = 0x200000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_legacy_dithering+VK_KHR_dynamic_rendering+VK_KHR_maintenance5", "VK_EXT_legacy_dithering+VK_KHR_dynamic_rendering+VK_VERSION_1_4", "VK_EXT_legacy_dithering+VK_VERSION_1_3+VK_KHR_maintenance5", "VK_EXT_legacy_dithering+VK_VERSION_1_3+VK_VERSION_1_4"], ImpliesSets = ["VK_EXT_legacy_dithering+VK_KHR_get_physical_device_properties2", "VK_EXT_legacy_dithering+VK_VERSION_1_1"])]
-    public const nuint PipelineCreate2EnableLegacyDitheringBitEXT = 0x400000000UL;
+    public const ulong PipelineCreate2EnableLegacyDitheringBitEXT = 0x400000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2DisableOptimizationBitKHR = 0x00000001UL;
+    public const ulong PipelineCreate2DisableOptimizationBitKHR = 0x00000001UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2AllowDerivativesBitKHR = 0x00000002UL;
+    public const ulong PipelineCreate2AllowDerivativesBitKHR = 0x00000002UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2DerivativeBitKHR = 0x00000004UL;
+    public const ulong PipelineCreate2DerivativeBitKHR = 0x00000004UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2ViewIndexFromDeviceIndexBitKHR = 0x00000008UL;
+    public const ulong PipelineCreate2ViewIndexFromDeviceIndexBitKHR = 0x00000008UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2DispatchBaseBitKHR = 0x00000010UL;
+    public const ulong PipelineCreate2DispatchBaseBitKHR = 0x00000010UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_NV_ray_tracing"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2DeferCompileBitNV = 0x00000020UL;
+    public const ulong PipelineCreate2DeferCompileBitNV = 0x00000020UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_pipeline_executable_properties"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2CaptureStatisticsBitKHR = 0x00000040UL;
+    public const ulong PipelineCreate2CaptureStatisticsBitKHR = 0x00000040UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_pipeline_executable_properties"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2CaptureInternalRepresentationsBitKHR = 0x00000080UL;
+    public const ulong PipelineCreate2CaptureInternalRepresentationsBitKHR = 0x00000080UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5+VK_EXT_pipeline_creation_cache_control", "VK_KHR_maintenance5+VK_VERSION_1_3"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2FailOnPipelineCompileRequiredBitKHR = 0x00000100UL;
+    public const ulong PipelineCreate2FailOnPipelineCompileRequiredBitKHR = 0x00000100UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5+VK_EXT_pipeline_creation_cache_control", "VK_KHR_maintenance5+VK_VERSION_1_3"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2EarlyReturnOnFailureBitKHR = 0x00000200UL;
+    public const ulong PipelineCreate2EarlyReturnOnFailureBitKHR = 0x00000200UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_graphics_pipeline_library", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2LinkTimeOptimizationBitEXT = 0x00000400UL;
+    public const ulong PipelineCreate2LinkTimeOptimizationBitEXT = 0x00000400UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_graphics_pipeline_library", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2RetainLinkTimeOptimizationInfoBitEXT = 0x00800000UL;
+    public const ulong PipelineCreate2RetainLinkTimeOptimizationInfoBitEXT = 0x00800000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_pipeline_library"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2LibraryBitKHR = 0x00000800UL;
+    public const ulong PipelineCreate2LibraryBitKHR = 0x00000800UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2RayTracingSkipTrianglesBitKHR = 0x00001000UL;
+    public const ulong PipelineCreate2RayTracingSkipTrianglesBitKHR = 0x00001000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2RayTracingSkipAabbsBitKHR = 0x00002000UL;
+    public const ulong PipelineCreate2RayTracingSkipAabbsBitKHR = 0x00002000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2RayTracingNoNullAnyHitShadersBitKHR = 0x00004000UL;
+    public const ulong PipelineCreate2RayTracingNoNullAnyHitShadersBitKHR = 0x00004000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2RayTracingNoNullClosestHitShadersBitKHR = 0x00008000UL;
+    public const ulong PipelineCreate2RayTracingNoNullClosestHitShadersBitKHR = 0x00008000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2RayTracingNoNullMissShadersBitKHR = 0x00010000UL;
+    public const ulong PipelineCreate2RayTracingNoNullMissShadersBitKHR = 0x00010000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2RayTracingNoNullIntersectionShadersBitKHR = 0x00020000UL;
+    public const ulong PipelineCreate2RayTracingNoNullIntersectionShadersBitKHR = 0x00020000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2RayTracingShaderGroupHandleCaptureReplayBitKHR = 0x00080000UL;
+    public const ulong PipelineCreate2RayTracingShaderGroupHandleCaptureReplayBitKHR = 0x00080000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_NV_device_generated_commands"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2IndirectBindableBitNV = 0x00040000UL;
+    public const ulong PipelineCreate2IndirectBindableBitNV = 0x00040000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_NV_ray_tracing_motion_blur"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2RayTracingAllowMotionBitNV = 0x00100000UL;
+    public const ulong PipelineCreate2RayTracingAllowMotionBitNV = 0x00100000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5+VK_KHR_fragment_shading_rate+VK_KHR_dynamic_rendering", "VK_KHR_maintenance5+VK_KHR_fragment_shading_rate+VK_VERSION_1_3"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2RenderingFragmentShadingRateAttachmentBitKHR = 0x00200000UL;
+    public const ulong PipelineCreate2RenderingFragmentShadingRateAttachmentBitKHR = 0x00200000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5+VK_EXT_fragment_density_map+VK_KHR_dynamic_rendering", "VK_KHR_maintenance5+VK_EXT_fragment_density_map+VK_VERSION_1_3"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2RenderingFragmentDensityMapAttachmentBitEXT = 0x00400000UL;
+    public const ulong PipelineCreate2RenderingFragmentDensityMapAttachmentBitEXT = 0x00400000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_opacity_micromap", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2RayTracingOpacityMicromapBitEXT = 0x01000000UL;
+    public const ulong PipelineCreate2RayTracingOpacityMicromapBitEXT = 0x01000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_attachment_feedback_loop_layout", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2ColorAttachmentFeedbackLoopBitEXT = 0x02000000UL;
+    public const ulong PipelineCreate2ColorAttachmentFeedbackLoopBitEXT = 0x02000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_attachment_feedback_loop_layout", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2DepthStencilAttachmentFeedbackLoopBitEXT = 0x04000000UL;
+    public const ulong PipelineCreate2DepthStencilAttachmentFeedbackLoopBitEXT = 0x04000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5+VK_EXT_pipeline_protected_access", "VK_KHR_maintenance5+VK_VERSION_1_4"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2NoProtectedAccessBitEXT = 0x08000000UL;
+    public const ulong PipelineCreate2NoProtectedAccessBitEXT = 0x08000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5+VK_EXT_pipeline_protected_access", "VK_KHR_maintenance5+VK_VERSION_1_4"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2ProtectedAccessOnlyBitEXT = 0x40000000UL;
+    public const ulong PipelineCreate2ProtectedAccessOnlyBitEXT = 0x40000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_NV_displacement_micromap"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2RayTracingDisplacementMicromapBitNV = 0x10000000UL;
+    public const ulong PipelineCreate2RayTracingDisplacementMicromapBitNV = 0x10000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2DescriptorBufferBitEXT = 0x20000000UL;
+    public const ulong PipelineCreate2DescriptorBufferBitEXT = 0x20000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_ARM_pipeline_opacity_micromap", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint PipelineCreate2DisallowOpacityMicromapBitARM = 0x2000000000UL;
+    public const ulong PipelineCreate2DisallowOpacityMicromapBitARM = 0x2000000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_binary"], ImpliesSets = ["VK_KHR_pipeline_binary+VK_KHR_maintenance5", "VK_KHR_pipeline_binary+VK_VERSION_1_4"])]
-    public const nuint PipelineCreate2CaptureDataBitKHR = 0x80000000UL;
+    public const ulong PipelineCreate2CaptureDataBitKHR = 0x80000000UL;
     [NativeTypeName("const VkPipelineCreateFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_device_generated_commands"], ImpliesSets = ["VK_KHR_maintenance5+VK_KHR_buffer_device_address", "VK_KHR_maintenance5+VK_VERSION_1_2", "VK_VERSION_1_3"])]
-    public const nuint PipelineCreate2IndirectBindableBitEXT = 0x4000000000UL;
+    public const ulong PipelineCreate2IndirectBindableBitEXT = 0x4000000000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint BufferUsage2TransferSrcBit = 0x00000001UL;
+    public const ulong BufferUsage2TransferSrcBit = 0x00000001UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint BufferUsage2TransferDstBit = 0x00000002UL;
+    public const ulong BufferUsage2TransferDstBit = 0x00000002UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint BufferUsage2UniformTexelBufferBit = 0x00000004UL;
+    public const ulong BufferUsage2UniformTexelBufferBit = 0x00000004UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint BufferUsage2StorageTexelBufferBit = 0x00000008UL;
+    public const ulong BufferUsage2StorageTexelBufferBit = 0x00000008UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint BufferUsage2UniformBufferBit = 0x00000010UL;
+    public const ulong BufferUsage2UniformBufferBit = 0x00000010UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint BufferUsage2StorageBufferBit = 0x00000020UL;
+    public const ulong BufferUsage2StorageBufferBit = 0x00000020UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint BufferUsage2IndexBufferBit = 0x00000040UL;
+    public const ulong BufferUsage2IndexBufferBit = 0x00000040UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint BufferUsage2VertexBufferBit = 0x00000080UL;
+    public const ulong BufferUsage2VertexBufferBit = 0x00000080UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan")]
-    public const nuint BufferUsage2IndirectBufferBit = 0x00000100UL;
+    public const ulong BufferUsage2IndirectBufferBit = 0x00000100UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public const nuint BufferUsage2ShaderDeviceAddressBit = 0x00020000UL;
+    public const ulong BufferUsage2ShaderDeviceAddressBit = 0x00020000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint BufferUsage2TransferSrcBitKHR = 0x00000001UL;
+    public const ulong BufferUsage2TransferSrcBitKHR = 0x00000001UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint BufferUsage2TransferDstBitKHR = 0x00000002UL;
+    public const ulong BufferUsage2TransferDstBitKHR = 0x00000002UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint BufferUsage2UniformTexelBufferBitKHR = 0x00000004UL;
+    public const ulong BufferUsage2UniformTexelBufferBitKHR = 0x00000004UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint BufferUsage2StorageTexelBufferBitKHR = 0x00000008UL;
+    public const ulong BufferUsage2StorageTexelBufferBitKHR = 0x00000008UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint BufferUsage2UniformBufferBitKHR = 0x00000010UL;
+    public const ulong BufferUsage2UniformBufferBitKHR = 0x00000010UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint BufferUsage2StorageBufferBitKHR = 0x00000020UL;
+    public const ulong BufferUsage2StorageBufferBitKHR = 0x00000020UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint BufferUsage2IndexBufferBitKHR = 0x00000040UL;
+    public const ulong BufferUsage2IndexBufferBitKHR = 0x00000040UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint BufferUsage2VertexBufferBitKHR = 0x00000080UL;
+    public const ulong BufferUsage2VertexBufferBitKHR = 0x00000080UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint BufferUsage2IndirectBufferBitKHR = 0x00000100UL;
+    public const ulong BufferUsage2IndirectBufferBitKHR = 0x00000100UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_conditional_rendering", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2ConditionalRenderingBitEXT = 0x00000200UL;
+    public const ulong BufferUsage2ConditionalRenderingBitEXT = 0x00000200UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2ShaderBindingTableBitKHR = 0x00000400UL;
+    public const ulong BufferUsage2ShaderBindingTableBitKHR = 0x00000400UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_NV_ray_tracing"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2RayTracingBitNV = 0x00000400UL;
+    public const ulong BufferUsage2RayTracingBitNV = 0x00000400UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2TransformFeedbackBufferBitEXT = 0x00000800UL;
+    public const ulong BufferUsage2TransformFeedbackBufferBitEXT = 0x00000800UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2TransformFeedbackCounterBufferBitEXT = 0x00001000UL;
+    public const ulong BufferUsage2TransformFeedbackCounterBufferBitEXT = 0x00001000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_video_decode_queue"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2VideoDecodeSrcBitKHR = 0x00002000UL;
+    public const ulong BufferUsage2VideoDecodeSrcBitKHR = 0x00002000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_video_decode_queue"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2VideoDecodeDstBitKHR = 0x00004000UL;
+    public const ulong BufferUsage2VideoDecodeDstBitKHR = 0x00004000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_video_encode_queue"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2VideoEncodeDstBitKHR = 0x00008000UL;
+    public const ulong BufferUsage2VideoEncodeDstBitKHR = 0x00008000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5", "VK_KHR_video_encode_queue"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2VideoEncodeSrcBitKHR = 0x00010000UL;
+    public const ulong BufferUsage2VideoEncodeSrcBitKHR = 0x00010000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5+VK_EXT_buffer_device_address", "VK_KHR_maintenance5+VK_KHR_buffer_device_address", "VK_KHR_maintenance5+VK_VERSION_1_2"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
-    public const nuint BufferUsage2ShaderDeviceAddressBitKHR = 0x00020000UL;
+    public const ulong BufferUsage2ShaderDeviceAddressBitKHR = 0x00020000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2AccelerationStructureBuildInputReadOnlyBitKHR = 0x00080000UL;
+    public const ulong BufferUsage2AccelerationStructureBuildInputReadOnlyBitKHR = 0x00080000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2AccelerationStructureStorageBitKHR = 0x00100000UL;
+    public const ulong BufferUsage2AccelerationStructureStorageBitKHR = 0x00100000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2SamplerDescriptorBufferBitEXT = 0x00200000UL;
+    public const ulong BufferUsage2SamplerDescriptorBufferBitEXT = 0x00200000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2ResourceDescriptorBufferBitEXT = 0x00400000UL;
+    public const ulong BufferUsage2ResourceDescriptorBufferBitEXT = 0x00400000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2PushDescriptorsDescriptorBufferBitEXT = 0x04000000UL;
+    public const ulong BufferUsage2PushDescriptorsDescriptorBufferBitEXT = 0x04000000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_opacity_micromap", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2MicromapBuildInputReadOnlyBitEXT = 0x00800000UL;
+    public const ulong BufferUsage2MicromapBuildInputReadOnlyBitEXT = 0x00800000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_opacity_micromap", "VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"], RequireAll = true)]
-    public const nuint BufferUsage2MicromapStorageBitEXT = 0x01000000UL;
+    public const ulong BufferUsage2MicromapStorageBitEXT = 0x01000000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_tile_memory_heap"], ImpliesSets = ["VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2", "VK_VERSION_1_1"])]
-    public const nuint BufferUsage2TileMemoryBitQCOM = 0x08000000UL;
+    public const ulong BufferUsage2TileMemoryBitQCOM = 0x08000000UL;
     [NativeTypeName("const VkBufferUsageFlagBits2")]
     [SupportedApiProfile("vulkan", ["VK_EXT_device_generated_commands"], ImpliesSets = ["VK_KHR_maintenance5+VK_KHR_buffer_device_address", "VK_KHR_maintenance5+VK_VERSION_1_2", "VK_VERSION_1_3"])]
-    public const nuint BufferUsage2PreprocessBufferBitEXT = 0x80000000UL;
+    public const ulong BufferUsage2PreprocessBufferBitEXT = 0x80000000UL;
     [NativeTypeName("const VkAccessFlagBits3KHR")]
     [SupportedApiProfile("vulkan")]
-    public const nuint Access3NoneKHR = 0UL;
+    public const ulong Access3NoneKHR = 0UL;
     [NativeTypeName("const VkPhysicalDeviceSchedulingControlsFlagBitsARM")]
     [SupportedApiProfile("vulkan")]
-    public const nuint PhysicalDeviceSchedulingControlsShaderCoreCountARM = 0x00000001UL;
+    public const ulong PhysicalDeviceSchedulingControlsShaderCoreCountARM = 0x00000001UL;
     [NativeTypeName("const VkMemoryDecompressionMethodFlagBitsNV")]
     [SupportedApiProfile("vulkan")]
-    public const nuint MemoryDecompressionMethodGdeflate1X0BitNV = 0x00000001UL;
+    public const ulong MemoryDecompressionMethodGdeflate1X0BitNV = 0x00000001UL;
     [NativeTypeName("#define VULKAN_H_ 1")]
     [SupportedApiProfile("vulkan")]
     public const int VulkanH = 1;
@@ -12824,13 +12824,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result AcquireNextImage2KHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkAcquireNextImageInfoKHR *")] Ref<AcquireNextImageInfoKHR> pAcquireInfo, [NativeTypeName("uint32_t *")] Ref<uint> pImageIndex) => DllImport.AcquireNextImage2KHR(device, pAcquireInfo, pImageIndex);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AcquireNextImageKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] nuint timeout, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("VkFence")] VkFence_T* fence, [NativeTypeName("uint32_t *")] uint* pImageIndex) => ((delegate* unmanaged<VkDevice_T*, VkSwapchainKHR_T*, nuint, VkSemaphore_T*, VkFence_T*, uint*, Result> )(_slots[2] is not null and var loadedFnPtr ? loadedFnPtr : _slots[2] = nativeContext.LoadFunction("vkAcquireNextImageKHR", "vulkan")))(device, swapchain, timeout, semaphore, fence, pImageIndex);
+    Result IVulkan.AcquireNextImageKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] ulong timeout, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("VkFence")] VkFence_T* fence, [NativeTypeName("uint32_t *")] uint* pImageIndex) => ((delegate* unmanaged<VkDevice_T*, VkSwapchainKHR_T*, ulong, VkSemaphore_T*, VkFence_T*, uint*, Result> )(_slots[2] is not null and var loadedFnPtr ? loadedFnPtr : _slots[2] = nativeContext.LoadFunction("vkAcquireNextImageKHR", "vulkan")))(device, swapchain, timeout, semaphore, fence, pImageIndex);
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImageKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result AcquireNextImageKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] nuint timeout, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("VkFence")] VkFence_T* fence, [NativeTypeName("uint32_t *")] uint* pImageIndex) => DllImport.AcquireNextImageKHR(device, swapchain, timeout, semaphore, fence, pImageIndex);
+    public static Result AcquireNextImageKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] ulong timeout, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("VkFence")] VkFence_T* fence, [NativeTypeName("uint32_t *")] uint* pImageIndex) => DllImport.AcquireNextImageKHR(device, swapchain, timeout, semaphore, fence, pImageIndex);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AcquireNextImageKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] nuint timeout, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("VkFence")] Ref<VkFence_T> fence, [NativeTypeName("uint32_t *")] Ref<uint> pImageIndex)
+    Result IVulkan.AcquireNextImageKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] ulong timeout, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("VkFence")] Ref<VkFence_T> fence, [NativeTypeName("uint32_t *")] Ref<uint> pImageIndex)
     {
         fixed (uint* __dsl_pImageIndex = pImageIndex)
         fixed (VkFence_T* __dsl_fence = fence)
@@ -12846,7 +12846,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImageKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result AcquireNextImageKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] nuint timeout, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("VkFence")] Ref<VkFence_T> fence, [NativeTypeName("uint32_t *")] Ref<uint> pImageIndex) => DllImport.AcquireNextImageKHR(device, swapchain, timeout, semaphore, fence, pImageIndex);
+    public static Result AcquireNextImageKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] ulong timeout, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("VkFence")] Ref<VkFence_T> fence, [NativeTypeName("uint32_t *")] Ref<uint> pImageIndex) => DllImport.AcquireNextImageKHR(device, swapchain, timeout, semaphore, fence, pImageIndex);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.AcquirePerformanceConfigurationIntel([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkPerformanceConfigurationAcquireInfoINTEL *")] PerformanceConfigurationAcquireInfoIntel* pAcquireInfo, [NativeTypeName("VkPerformanceConfigurationINTEL *")] VkPerformanceConfigurationINTEL_T** pConfiguration) => ((delegate* unmanaged<VkDevice_T*, PerformanceConfigurationAcquireInfoIntel*, VkPerformanceConfigurationINTEL_T**, Result> )(_slots[3] is not null and var loadedFnPtr ? loadedFnPtr : _slots[3] = nativeContext.LoadFunction("vkAcquirePerformanceConfigurationINTEL", "vulkan")))(device, pAcquireInfo, pConfiguration);
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
@@ -13021,13 +13021,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result BindAccelerationStructureMemoryNV([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint bindInfoCount, [NativeTypeName("const VkBindAccelerationStructureMemoryInfoNV *")] Ref<BindAccelerationStructureMemoryInfoNV> pBindInfos) => DllImport.BindAccelerationStructureMemoryNV(device, bindInfoCount, pBindInfos);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindBufferMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset) => ((delegate* unmanaged<VkDevice_T*, VkBuffer_T*, VkDeviceMemory_T*, nuint, Result> )(_slots[11] is not null and var loadedFnPtr ? loadedFnPtr : _slots[11] = nativeContext.LoadFunction("vkBindBufferMemory", "vulkan")))(device, buffer, memory, memoryOffset);
+    Result IVulkan.BindBufferMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset) => ((delegate* unmanaged<VkDevice_T*, VkBuffer_T*, VkDeviceMemory_T*, ulong, Result> )(_slots[11] is not null and var loadedFnPtr ? loadedFnPtr : _slots[11] = nativeContext.LoadFunction("vkBindBufferMemory", "vulkan")))(device, buffer, memory, memoryOffset);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkBindBufferMemory")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result BindBufferMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset) => DllImport.BindBufferMemory(device, buffer, memory, memoryOffset);
+    public static Result BindBufferMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset) => DllImport.BindBufferMemory(device, buffer, memory, memoryOffset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindBufferMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset)
+    Result IVulkan.BindBufferMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset)
     {
         fixed (VkDeviceMemory_T* __dsl_memory = memory)
         fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -13041,7 +13041,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkBindBufferMemory")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result BindBufferMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset) => DllImport.BindBufferMemory(device, buffer, memory, memoryOffset);
+    public static Result BindBufferMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset) => DllImport.BindBufferMemory(device, buffer, memory, memoryOffset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.BindBufferMemory2([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint bindInfoCount, [NativeTypeName("const VkBindBufferMemoryInfo *")] BindBufferMemoryInfo* pBindInfos) => ((delegate* unmanaged<VkDevice_T*, uint, BindBufferMemoryInfo*, Result> )(_slots[12] is not null and var loadedFnPtr ? loadedFnPtr : _slots[12] = nativeContext.LoadFunction("vkBindBufferMemory2", "vulkan")))(device, bindInfoCount, pBindInfos);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.1")]
@@ -13085,13 +13085,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result BindBufferMemory2KHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint bindInfoCount, [NativeTypeName("const VkBindBufferMemoryInfo *")] Ref<BindBufferMemoryInfo> pBindInfos) => DllImport.BindBufferMemory2KHR(device, bindInfoCount, pBindInfos);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindImageMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkImage")] VkImage_T* image, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset) => ((delegate* unmanaged<VkDevice_T*, VkImage_T*, VkDeviceMemory_T*, nuint, Result> )(_slots[14] is not null and var loadedFnPtr ? loadedFnPtr : _slots[14] = nativeContext.LoadFunction("vkBindImageMemory", "vulkan")))(device, image, memory, memoryOffset);
+    Result IVulkan.BindImageMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkImage")] VkImage_T* image, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset) => ((delegate* unmanaged<VkDevice_T*, VkImage_T*, VkDeviceMemory_T*, ulong, Result> )(_slots[14] is not null and var loadedFnPtr ? loadedFnPtr : _slots[14] = nativeContext.LoadFunction("vkBindImageMemory", "vulkan")))(device, image, memory, memoryOffset);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkBindImageMemory")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result BindImageMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkImage")] VkImage_T* image, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset) => DllImport.BindImageMemory(device, image, memory, memoryOffset);
+    public static Result BindImageMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkImage")] VkImage_T* image, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset) => DllImport.BindImageMemory(device, image, memory, memoryOffset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindImageMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkImage")] Ref<VkImage_T> image, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset)
+    Result IVulkan.BindImageMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkImage")] Ref<VkImage_T> image, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset)
     {
         fixed (VkDeviceMemory_T* __dsl_memory = memory)
         fixed (VkImage_T* __dsl_image = image)
@@ -13105,7 +13105,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkBindImageMemory")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result BindImageMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkImage")] Ref<VkImage_T> image, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] nuint memoryOffset) => DllImport.BindImageMemory(device, image, memory, memoryOffset);
+    public static Result BindImageMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkImage")] Ref<VkImage_T> image, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] ulong memoryOffset) => DllImport.BindImageMemory(device, image, memory, memoryOffset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.BindImageMemory2([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint bindInfoCount, [NativeTypeName("const VkBindImageMemoryInfo *")] BindImageMemoryInfo* pBindInfos) => ((delegate* unmanaged<VkDevice_T*, uint, BindImageMemoryInfo*, Result> )(_slots[15] is not null and var loadedFnPtr ? loadedFnPtr : _slots[15] = nativeContext.LoadFunction("vkBindImageMemory2", "vulkan")))(device, bindInfoCount, pBindInfos);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.1")]
@@ -13450,15 +13450,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdBeginRenderPass2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkRenderPassBeginInfo *")] Ref<RenderPassBeginInfo> pRenderPassBegin, [NativeTypeName("const VkSubpassBeginInfo *")] Ref<SubpassBeginInfo> pSubpassBeginInfo) => DllImport.CmdBeginRenderPass2KHR(commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pCounterBufferOffsets) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, nuint*, void> )(_slots[31] is not null and var loadedFnPtr ? loadedFnPtr : _slots[31] = nativeContext.LoadFunction("vkCmdBeginTransformFeedbackEXT", "vulkan")))(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
+    void IVulkan.CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pCounterBufferOffsets) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, ulong*, void> )(_slots[31] is not null and var loadedFnPtr ? loadedFnPtr : _slots[31] = nativeContext.LoadFunction("vkCmdBeginTransformFeedbackEXT", "vulkan")))(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
     [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginTransformFeedbackEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pCounterBufferOffsets) => DllImport.CmdBeginTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
+    public static void CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pCounterBufferOffsets) => DllImport.CmdBeginTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pCounterBufferOffsets)
+    void IVulkan.CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pCounterBufferOffsets)
     {
-        fixed (nuint* __dsl_pCounterBufferOffsets = pCounterBufferOffsets)
+        fixed (ulong* __dsl_pCounterBufferOffsets = pCounterBufferOffsets)
         fixed (VkBuffer_T** __dsl_pCounterBuffers = pCounterBuffers)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
         {
@@ -13470,7 +13470,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginTransformFeedbackEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pCounterBufferOffsets) => DllImport.CmdBeginTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
+    public static void CmdBeginTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pCounterBufferOffsets) => DllImport.CmdBeginTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdBeginVideoCodingKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkVideoBeginCodingInfoKHR *")] VideoBeginCodingInfoKHR* pBeginInfo) => ((delegate* unmanaged<VkCommandBuffer_T*, VideoBeginCodingInfoKHR*, void> )(_slots[32] is not null and var loadedFnPtr ? loadedFnPtr : _slots[32] = nativeContext.LoadFunction("vkCmdBeginVideoCodingKHR", "vulkan")))(commandBuffer, pBeginInfo);
     [SupportedApiProfile("vulkan", ["VK_KHR_video_queue"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"])]
@@ -13635,13 +13635,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdBindDescriptorSets2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkBindDescriptorSetsInfo *")] Ref<BindDescriptorSetsInfo> pBindDescriptorSetsInfo) => DllImport.CmdBindDescriptorSets2KHR(commandBuffer, pBindDescriptorSetsInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, IndexType indexType) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, IndexType, void> )(_slots[39] is not null and var loadedFnPtr ? loadedFnPtr : _slots[39] = nativeContext.LoadFunction("vkCmdBindIndexBuffer", "vulkan")))(commandBuffer, buffer, offset, indexType);
+    void IVulkan.CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, IndexType indexType) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, IndexType, void> )(_slots[39] is not null and var loadedFnPtr ? loadedFnPtr : _slots[39] = nativeContext.LoadFunction("vkCmdBindIndexBuffer", "vulkan")))(commandBuffer, buffer, offset, indexType);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, IndexType indexType) => DllImport.CmdBindIndexBuffer(commandBuffer, buffer, offset, indexType);
+    public static void CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, IndexType indexType) => DllImport.CmdBindIndexBuffer(commandBuffer, buffer, offset, indexType);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, IndexType indexType)
+    void IVulkan.CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, IndexType indexType)
     {
         fixed (VkBuffer_T* __dsl_buffer = buffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -13654,15 +13654,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, IndexType indexType) => DllImport.CmdBindIndexBuffer(commandBuffer, buffer, offset, indexType);
+    public static void CmdBindIndexBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, IndexType indexType) => DllImport.CmdBindIndexBuffer(commandBuffer, buffer, offset, indexType);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, nuint, IndexType, void> )(_slots[40] is not null and var loadedFnPtr ? loadedFnPtr : _slots[40] = nativeContext.LoadFunction("vkCmdBindIndexBuffer2", "vulkan")))(commandBuffer, buffer, offset, size, indexType);
+    void IVulkan.CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, ulong, IndexType, void> )(_slots[40] is not null and var loadedFnPtr ? loadedFnPtr : _slots[40] = nativeContext.LoadFunction("vkCmdBindIndexBuffer2", "vulkan")))(commandBuffer, buffer, offset, size, indexType);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType) => DllImport.CmdBindIndexBuffer2(commandBuffer, buffer, offset, size, indexType);
+    public static void CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType) => DllImport.CmdBindIndexBuffer2(commandBuffer, buffer, offset, size, indexType);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType)
+    void IVulkan.CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType)
     {
         fixed (VkBuffer_T* __dsl_buffer = buffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -13675,15 +13675,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType) => DllImport.CmdBindIndexBuffer2(commandBuffer, buffer, offset, size, indexType);
+    public static void CmdBindIndexBuffer2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType) => DllImport.CmdBindIndexBuffer2(commandBuffer, buffer, offset, size, indexType);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, nuint, IndexType, void> )(_slots[41] is not null and var loadedFnPtr ? loadedFnPtr : _slots[41] = nativeContext.LoadFunction("vkCmdBindIndexBuffer2KHR", "vulkan")))(commandBuffer, buffer, offset, size, indexType);
+    void IVulkan.CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, ulong, IndexType, void> )(_slots[41] is not null and var loadedFnPtr ? loadedFnPtr : _slots[41] = nativeContext.LoadFunction("vkCmdBindIndexBuffer2KHR", "vulkan")))(commandBuffer, buffer, offset, size, indexType);
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance5"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer2KHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType) => DllImport.CmdBindIndexBuffer2KHR(commandBuffer, buffer, offset, size, indexType);
+    public static void CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType) => DllImport.CmdBindIndexBuffer2KHR(commandBuffer, buffer, offset, size, indexType);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType)
+    void IVulkan.CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType)
     {
         fixed (VkBuffer_T* __dsl_buffer = buffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -13696,7 +13696,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer2KHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, IndexType indexType) => DllImport.CmdBindIndexBuffer2KHR(commandBuffer, buffer, offset, size, indexType);
+    public static void CmdBindIndexBuffer2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, IndexType indexType) => DllImport.CmdBindIndexBuffer2KHR(commandBuffer, buffer, offset, size, indexType);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdBindInvocationMaskHuawei([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkImageView")] VkImageView_T* imageView, ImageLayout imageLayout) => ((delegate* unmanaged<VkCommandBuffer_T*, VkImageView_T*, ImageLayout, void> )(_slots[42] is not null and var loadedFnPtr ? loadedFnPtr : _slots[42] = nativeContext.LoadFunction("vkCmdBindInvocationMaskHUAWEI", "vulkan")))(commandBuffer, imageView, imageLayout);
     [SupportedApiProfile("vulkan", ["VK_HUAWEI_invocation_mask"], ImpliesSets = ["VK_KHR_ray_tracing_pipeline+VK_KHR_synchronization2", "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3"])]
@@ -13825,16 +13825,16 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdBindTileMemoryQCOM([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkTileMemoryBindInfoQCOM *")] Ref<TileMemoryBindInfoQCOM> pTileMemoryBindInfo) => DllImport.CmdBindTileMemoryQCOM(commandBuffer, pTileMemoryBindInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets, [NativeTypeName("const VkDeviceSize *")] nuint* pSizes) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, nuint*, nuint*, void> )(_slots[48] is not null and var loadedFnPtr ? loadedFnPtr : _slots[48] = nativeContext.LoadFunction("vkCmdBindTransformFeedbackBuffersEXT", "vulkan")))(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes);
+    void IVulkan.CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets, [NativeTypeName("const VkDeviceSize *")] ulong* pSizes) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, ulong*, ulong*, void> )(_slots[48] is not null and var loadedFnPtr ? loadedFnPtr : _slots[48] = nativeContext.LoadFunction("vkCmdBindTransformFeedbackBuffersEXT", "vulkan")))(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes);
     [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets, [NativeTypeName("const VkDeviceSize *")] nuint* pSizes) => DllImport.CmdBindTransformFeedbackBuffersEXT(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes);
+    public static void CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets, [NativeTypeName("const VkDeviceSize *")] ulong* pSizes) => DllImport.CmdBindTransformFeedbackBuffersEXT(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes)
+    void IVulkan.CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes)
     {
-        fixed (nuint* __dsl_pSizes = pSizes)
-        fixed (nuint* __dsl_pOffsets = pOffsets)
+        fixed (ulong* __dsl_pSizes = pSizes)
+        fixed (ulong* __dsl_pOffsets = pOffsets)
         fixed (VkBuffer_T** __dsl_pBuffers = pBuffers)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
         {
@@ -13846,17 +13846,17 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes) => DllImport.CmdBindTransformFeedbackBuffersEXT(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes);
+    public static void CmdBindTransformFeedbackBuffersEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes) => DllImport.CmdBindTransformFeedbackBuffersEXT(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, nuint*, void> )(_slots[49] is not null and var loadedFnPtr ? loadedFnPtr : _slots[49] = nativeContext.LoadFunction("vkCmdBindVertexBuffers", "vulkan")))(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets);
+    void IVulkan.CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, ulong*, void> )(_slots[49] is not null and var loadedFnPtr ? loadedFnPtr : _slots[49] = nativeContext.LoadFunction("vkCmdBindVertexBuffers", "vulkan")))(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets) => DllImport.CmdBindVertexBuffers(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets);
+    public static void CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets) => DllImport.CmdBindVertexBuffers(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets)
+    void IVulkan.CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets)
     {
-        fixed (nuint* __dsl_pOffsets = pOffsets)
+        fixed (ulong* __dsl_pOffsets = pOffsets)
         fixed (VkBuffer_T** __dsl_pBuffers = pBuffers)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
         {
@@ -13868,19 +13868,19 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets) => DllImport.CmdBindVertexBuffers(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets);
+    public static void CmdBindVertexBuffers([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets) => DllImport.CmdBindVertexBuffers(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets, [NativeTypeName("const VkDeviceSize *")] nuint* pSizes, [NativeTypeName("const VkDeviceSize *")] nuint* pStrides) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, nuint*, nuint*, nuint*, void> )(_slots[50] is not null and var loadedFnPtr ? loadedFnPtr : _slots[50] = nativeContext.LoadFunction("vkCmdBindVertexBuffers2", "vulkan")))(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
+    void IVulkan.CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets, [NativeTypeName("const VkDeviceSize *")] ulong* pSizes, [NativeTypeName("const VkDeviceSize *")] ulong* pStrides) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, ulong*, ulong*, ulong*, void> )(_slots[50] is not null and var loadedFnPtr ? loadedFnPtr : _slots[50] = nativeContext.LoadFunction("vkCmdBindVertexBuffers2", "vulkan")))(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets, [NativeTypeName("const VkDeviceSize *")] nuint* pSizes, [NativeTypeName("const VkDeviceSize *")] nuint* pStrides) => DllImport.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
+    public static void CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets, [NativeTypeName("const VkDeviceSize *")] ulong* pSizes, [NativeTypeName("const VkDeviceSize *")] ulong* pStrides) => DllImport.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pStrides)
+    void IVulkan.CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pStrides)
     {
-        fixed (nuint* __dsl_pStrides = pStrides)
-        fixed (nuint* __dsl_pSizes = pSizes)
-        fixed (nuint* __dsl_pOffsets = pOffsets)
+        fixed (ulong* __dsl_pStrides = pStrides)
+        fixed (ulong* __dsl_pSizes = pSizes)
+        fixed (ulong* __dsl_pOffsets = pOffsets)
         fixed (VkBuffer_T** __dsl_pBuffers = pBuffers)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
         {
@@ -13892,19 +13892,19 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pStrides) => DllImport.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
+    public static void CmdBindVertexBuffers2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pStrides) => DllImport.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets, [NativeTypeName("const VkDeviceSize *")] nuint* pSizes, [NativeTypeName("const VkDeviceSize *")] nuint* pStrides) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, nuint*, nuint*, nuint*, void> )(_slots[51] is not null and var loadedFnPtr ? loadedFnPtr : _slots[51] = nativeContext.LoadFunction("vkCmdBindVertexBuffers2EXT", "vulkan")))(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
+    void IVulkan.CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets, [NativeTypeName("const VkDeviceSize *")] ulong* pSizes, [NativeTypeName("const VkDeviceSize *")] ulong* pStrides) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, ulong*, ulong*, ulong*, void> )(_slots[51] is not null and var loadedFnPtr ? loadedFnPtr : _slots[51] = nativeContext.LoadFunction("vkCmdBindVertexBuffers2EXT", "vulkan")))(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
     [SupportedApiProfile("vulkan", ["VK_EXT_extended_dynamic_state"], ImpliesSets = ["VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2", "VK_EXT_extended_dynamic_state+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers2EXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets, [NativeTypeName("const VkDeviceSize *")] nuint* pSizes, [NativeTypeName("const VkDeviceSize *")] nuint* pStrides) => DllImport.CmdBindVertexBuffers2EXT(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
+    public static void CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets, [NativeTypeName("const VkDeviceSize *")] ulong* pSizes, [NativeTypeName("const VkDeviceSize *")] ulong* pStrides) => DllImport.CmdBindVertexBuffers2EXT(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pStrides)
+    void IVulkan.CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pStrides)
     {
-        fixed (nuint* __dsl_pStrides = pStrides)
-        fixed (nuint* __dsl_pSizes = pSizes)
-        fixed (nuint* __dsl_pOffsets = pOffsets)
+        fixed (ulong* __dsl_pStrides = pStrides)
+        fixed (ulong* __dsl_pSizes = pSizes)
+        fixed (ulong* __dsl_pOffsets = pOffsets)
         fixed (VkBuffer_T** __dsl_pBuffers = pBuffers)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
         {
@@ -13916,7 +13916,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers2EXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pStrides) => DllImport.CmdBindVertexBuffers2EXT(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
+    public static void CmdBindVertexBuffers2EXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstBinding, [NativeTypeName("uint32_t")] uint bindingCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pStrides) => DllImport.CmdBindVertexBuffers2EXT(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdBlitImage([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkImage")] VkImage_T* srcImage, ImageLayout srcImageLayout, [NativeTypeName("VkImage")] VkImage_T* dstImage, ImageLayout dstImageLayout, [NativeTypeName("uint32_t")] uint regionCount, [NativeTypeName("const VkImageBlit *")] ImageBlit* pRegions, Filter filter) => ((delegate* unmanaged<VkCommandBuffer_T*, VkImage_T*, ImageLayout, VkImage_T*, ImageLayout, uint, ImageBlit*, Filter, void> )(_slots[52] is not null and var loadedFnPtr ? loadedFnPtr : _slots[52] = nativeContext.LoadFunction("vkCmdBlitImage", "vulkan")))(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, pRegions, filter);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
@@ -13999,13 +13999,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdBlitImage2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkBlitImageInfo2 *")] Ref<BlitImageInfo2> pBlitImageInfo) => DllImport.CmdBlitImage2KHR(commandBuffer, pBlitImageInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] AccelerationStructureInfoNV* pInfo, [NativeTypeName("VkBuffer")] VkBuffer_T* instanceData, [NativeTypeName("VkDeviceSize")] nuint instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* dst, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* src, [NativeTypeName("VkBuffer")] VkBuffer_T* scratch, [NativeTypeName("VkDeviceSize")] nuint scratchOffset) => ((delegate* unmanaged<VkCommandBuffer_T*, AccelerationStructureInfoNV*, VkBuffer_T*, nuint, uint, VkAccelerationStructureNV_T*, VkAccelerationStructureNV_T*, VkBuffer_T*, nuint, void> )(_slots[55] is not null and var loadedFnPtr ? loadedFnPtr : _slots[55] = nativeContext.LoadFunction("vkCmdBuildAccelerationStructureNV", "vulkan")))(commandBuffer, pInfo, instanceData, instanceOffset, update, dst, src, scratch, scratchOffset);
+    void IVulkan.CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] AccelerationStructureInfoNV* pInfo, [NativeTypeName("VkBuffer")] VkBuffer_T* instanceData, [NativeTypeName("VkDeviceSize")] ulong instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* dst, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* src, [NativeTypeName("VkBuffer")] VkBuffer_T* scratch, [NativeTypeName("VkDeviceSize")] ulong scratchOffset) => ((delegate* unmanaged<VkCommandBuffer_T*, AccelerationStructureInfoNV*, VkBuffer_T*, ulong, uint, VkAccelerationStructureNV_T*, VkAccelerationStructureNV_T*, VkBuffer_T*, ulong, void> )(_slots[55] is not null and var loadedFnPtr ? loadedFnPtr : _slots[55] = nativeContext.LoadFunction("vkCmdBuildAccelerationStructureNV", "vulkan")))(commandBuffer, pInfo, instanceData, instanceOffset, update, dst, src, scratch, scratchOffset);
     [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2", "VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildAccelerationStructureNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] AccelerationStructureInfoNV* pInfo, [NativeTypeName("VkBuffer")] VkBuffer_T* instanceData, [NativeTypeName("VkDeviceSize")] nuint instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* dst, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* src, [NativeTypeName("VkBuffer")] VkBuffer_T* scratch, [NativeTypeName("VkDeviceSize")] nuint scratchOffset) => DllImport.CmdBuildAccelerationStructureNV(commandBuffer, pInfo, instanceData, instanceOffset, update, dst, src, scratch, scratchOffset);
+    public static void CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] AccelerationStructureInfoNV* pInfo, [NativeTypeName("VkBuffer")] VkBuffer_T* instanceData, [NativeTypeName("VkDeviceSize")] ulong instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* dst, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* src, [NativeTypeName("VkBuffer")] VkBuffer_T* scratch, [NativeTypeName("VkDeviceSize")] ulong scratchOffset) => DllImport.CmdBuildAccelerationStructureNV(commandBuffer, pInfo, instanceData, instanceOffset, update, dst, src, scratch, scratchOffset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] Ref<AccelerationStructureInfoNV> pInfo, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> instanceData, [NativeTypeName("VkDeviceSize")] nuint instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> dst, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> src, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> scratch, [NativeTypeName("VkDeviceSize")] nuint scratchOffset)
+    void IVulkan.CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] Ref<AccelerationStructureInfoNV> pInfo, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> instanceData, [NativeTypeName("VkDeviceSize")] ulong instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> dst, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> src, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> scratch, [NativeTypeName("VkDeviceSize")] ulong scratchOffset)
     {
         fixed (VkBuffer_T* __dsl_scratch = scratch)
         fixed (VkAccelerationStructureNV_T* __dsl_src = src)
@@ -14022,19 +14022,19 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildAccelerationStructureNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] Ref<AccelerationStructureInfoNV> pInfo, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> instanceData, [NativeTypeName("VkDeviceSize")] nuint instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> dst, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> src, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> scratch, [NativeTypeName("VkDeviceSize")] nuint scratchOffset) => DllImport.CmdBuildAccelerationStructureNV(commandBuffer, pInfo, instanceData, instanceOffset, update, dst, src, scratch, scratchOffset);
+    public static void CmdBuildAccelerationStructureNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkAccelerationStructureInfoNV *")] Ref<AccelerationStructureInfoNV> pInfo, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> instanceData, [NativeTypeName("VkDeviceSize")] ulong instanceOffset, [NativeTypeName("VkBool32")] uint update, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> dst, [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> src, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> scratch, [NativeTypeName("VkDeviceSize")] ulong scratchOffset) => DllImport.CmdBuildAccelerationStructureNV(commandBuffer, pInfo, instanceData, instanceOffset, update, dst, src, scratch, scratchOffset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] AccelerationStructureBuildGeometryInfoKHR* pInfos, [NativeTypeName("const VkDeviceAddress *")] nuint* pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] uint* pIndirectStrides, [NativeTypeName("const uint32_t *const *")] uint** ppMaxPrimitiveCounts) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, AccelerationStructureBuildGeometryInfoKHR*, nuint*, uint*, uint**, void> )(_slots[56] is not null and var loadedFnPtr ? loadedFnPtr : _slots[56] = nativeContext.LoadFunction("vkCmdBuildAccelerationStructuresIndirectKHR", "vulkan")))(commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts);
+    void IVulkan.CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] AccelerationStructureBuildGeometryInfoKHR* pInfos, [NativeTypeName("const VkDeviceAddress *")] ulong* pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] uint* pIndirectStrides, [NativeTypeName("const uint32_t *const *")] uint** ppMaxPrimitiveCounts) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, AccelerationStructureBuildGeometryInfoKHR*, ulong*, uint*, uint**, void> )(_slots[56] is not null and var loadedFnPtr ? loadedFnPtr : _slots[56] = nativeContext.LoadFunction("vkCmdBuildAccelerationStructuresIndirectKHR", "vulkan")))(commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts);
     [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure"], ImpliesSets = ["VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address", "VK_KHR_deferred_host_operations+VK_VERSION_1_2"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] AccelerationStructureBuildGeometryInfoKHR* pInfos, [NativeTypeName("const VkDeviceAddress *")] nuint* pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] uint* pIndirectStrides, [NativeTypeName("const uint32_t *const *")] uint** ppMaxPrimitiveCounts) => DllImport.CmdBuildAccelerationStructuresIndirectKHR(commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts);
+    public static void CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] AccelerationStructureBuildGeometryInfoKHR* pInfos, [NativeTypeName("const VkDeviceAddress *")] ulong* pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] uint* pIndirectStrides, [NativeTypeName("const uint32_t *const *")] uint** ppMaxPrimitiveCounts) => DllImport.CmdBuildAccelerationStructuresIndirectKHR(commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos, [NativeTypeName("const VkDeviceAddress *")] Ref<nuint> pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] Ref<uint> pIndirectStrides, [NativeTypeName("const uint32_t *const *")] Ref2D<uint> ppMaxPrimitiveCounts)
+    void IVulkan.CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos, [NativeTypeName("const VkDeviceAddress *")] Ref<ulong> pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] Ref<uint> pIndirectStrides, [NativeTypeName("const uint32_t *const *")] Ref2D<uint> ppMaxPrimitiveCounts)
     {
         fixed (uint** __dsl_ppMaxPrimitiveCounts = ppMaxPrimitiveCounts)
         fixed (uint* __dsl_pIndirectStrides = pIndirectStrides)
-        fixed (nuint* __dsl_pIndirectDeviceAddresses = pIndirectDeviceAddresses)
+        fixed (ulong* __dsl_pIndirectDeviceAddresses = pIndirectDeviceAddresses)
         fixed (AccelerationStructureBuildGeometryInfoKHR* __dsl_pInfos = pInfos)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
         {
@@ -14046,7 +14046,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos, [NativeTypeName("const VkDeviceAddress *")] Ref<nuint> pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] Ref<uint> pIndirectStrides, [NativeTypeName("const uint32_t *const *")] Ref2D<uint> ppMaxPrimitiveCounts) => DllImport.CmdBuildAccelerationStructuresIndirectKHR(commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts);
+    public static void CmdBuildAccelerationStructuresIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos, [NativeTypeName("const VkDeviceAddress *")] Ref<ulong> pIndirectDeviceAddresses, [NativeTypeName("const uint32_t *")] Ref<uint> pIndirectStrides, [NativeTypeName("const uint32_t *const *")] Ref2D<uint> ppMaxPrimitiveCounts) => DllImport.CmdBuildAccelerationStructuresIndirectKHR(commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdBuildAccelerationStructuresKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint infoCount, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] AccelerationStructureBuildGeometryInfoKHR* pInfos, [NativeTypeName("const VkAccelerationStructureBuildRangeInfoKHR *const *")] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, AccelerationStructureBuildGeometryInfoKHR*, AccelerationStructureBuildRangeInfoKHR**, void> )(_slots[57] is not null and var loadedFnPtr ? loadedFnPtr : _slots[57] = nativeContext.LoadFunction("vkCmdBuildAccelerationStructuresKHR", "vulkan")))(commandBuffer, infoCount, pInfos, ppBuildRangeInfos);
     [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure"], ImpliesSets = ["VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address", "VK_KHR_deferred_host_operations+VK_VERSION_1_2"])]
@@ -14691,13 +14691,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdCopyImageToBuffer2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkCopyImageToBufferInfo2 *")] Ref<CopyImageToBufferInfo2> pCopyImageToBufferInfo) => DllImport.CmdCopyImageToBuffer2KHR(commandBuffer, pCopyImageToBufferInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, nuint, uint, uint, void> )(_slots[81] is not null and var loadedFnPtr ? loadedFnPtr : _slots[81] = nativeContext.LoadFunction("vkCmdCopyMemoryIndirectNV", "vulkan")))(commandBuffer, copyBufferAddress, copyCount, stride);
+    void IVulkan.CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, ulong, uint, uint, void> )(_slots[81] is not null and var loadedFnPtr ? loadedFnPtr : _slots[81] = nativeContext.LoadFunction("vkCmdCopyMemoryIndirectNV", "vulkan")))(commandBuffer, copyBufferAddress, copyCount, stride);
     [SupportedApiProfile("vulkan", ["VK_NV_copy_memory_indirect"], ImpliesSets = ["VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_KHR_buffer_device_address+VK_VERSION_1_1", "VK_VERSION_1_2"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdCopyMemoryIndirectNV(commandBuffer, copyBufferAddress, copyCount, stride);
+    public static void CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdCopyMemoryIndirectNV(commandBuffer, copyBufferAddress, copyCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
         {
@@ -14709,7 +14709,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdCopyMemoryIndirectNV(commandBuffer, copyBufferAddress, copyCount, stride);
+    public static void CmdCopyMemoryIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdCopyMemoryIndirectNV(commandBuffer, copyBufferAddress, copyCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdCopyMemoryToAccelerationStructureKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkCopyMemoryToAccelerationStructureInfoKHR *")] CopyMemoryToAccelerationStructureInfoKHR* pInfo) => ((delegate* unmanaged<VkCommandBuffer_T*, CopyMemoryToAccelerationStructureInfoKHR*, void> )(_slots[82] is not null and var loadedFnPtr ? loadedFnPtr : _slots[82] = nativeContext.LoadFunction("vkCmdCopyMemoryToAccelerationStructureKHR", "vulkan")))(commandBuffer, pInfo);
     [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure"], ImpliesSets = ["VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address", "VK_KHR_deferred_host_operations+VK_VERSION_1_2"])]
@@ -14732,13 +14732,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdCopyMemoryToAccelerationStructureKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkCopyMemoryToAccelerationStructureInfoKHR *")] Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo) => DllImport.CmdCopyMemoryToAccelerationStructureKHR(commandBuffer, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] VkImage_T* dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers* pImageSubresources) => ((delegate* unmanaged<VkCommandBuffer_T*, nuint, uint, uint, VkImage_T*, ImageLayout, ImageSubresourceLayers*, void> )(_slots[83] is not null and var loadedFnPtr ? loadedFnPtr : _slots[83] = nativeContext.LoadFunction("vkCmdCopyMemoryToImageIndirectNV", "vulkan")))(commandBuffer, copyBufferAddress, copyCount, stride, dstImage, dstImageLayout, pImageSubresources);
+    void IVulkan.CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] VkImage_T* dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers* pImageSubresources) => ((delegate* unmanaged<VkCommandBuffer_T*, ulong, uint, uint, VkImage_T*, ImageLayout, ImageSubresourceLayers*, void> )(_slots[83] is not null and var loadedFnPtr ? loadedFnPtr : _slots[83] = nativeContext.LoadFunction("vkCmdCopyMemoryToImageIndirectNV", "vulkan")))(commandBuffer, copyBufferAddress, copyCount, stride, dstImage, dstImageLayout, pImageSubresources);
     [SupportedApiProfile("vulkan", ["VK_NV_copy_memory_indirect"], ImpliesSets = ["VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_KHR_buffer_device_address+VK_VERSION_1_1", "VK_VERSION_1_2"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] VkImage_T* dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers* pImageSubresources) => DllImport.CmdCopyMemoryToImageIndirectNV(commandBuffer, copyBufferAddress, copyCount, stride, dstImage, dstImageLayout, pImageSubresources);
+    public static void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] VkImage_T* dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers* pImageSubresources) => DllImport.CmdCopyMemoryToImageIndirectNV(commandBuffer, copyBufferAddress, copyCount, stride, dstImage, dstImageLayout, pImageSubresources);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] Ref<ImageSubresourceLayers> pImageSubresources)
+    void IVulkan.CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] Ref<ImageSubresourceLayers> pImageSubresources)
     {
         fixed (ImageSubresourceLayers* __dsl_pImageSubresources = pImageSubresources)
         fixed (VkImage_T* __dsl_dstImage = dstImage)
@@ -14752,9 +14752,9 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] Ref<ImageSubresourceLayers> pImageSubresources) => DllImport.CmdCopyMemoryToImageIndirectNV(commandBuffer, copyBufferAddress, copyCount, stride, dstImage, dstImageLayout, pImageSubresources);
+    public static void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint copyCount, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] Ref<ImageSubresourceLayers> pImageSubresources) => DllImport.CmdCopyMemoryToImageIndirectNV(commandBuffer, copyBufferAddress, copyCount, stride, dstImage, dstImageLayout, pImageSubresources);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers pImageSubresources)
+    void IVulkan.CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers pImageSubresources)
     {
         fixed (VkImage_T* __dsl_dstImage = dstImage)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -14767,7 +14767,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers pImageSubresources) => DllImport.CmdCopyMemoryToImageIndirectNV(commandBuffer, copyBufferAddress, stride, dstImage, dstImageLayout, pImageSubresources);
+    public static void CmdCopyMemoryToImageIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress, [NativeTypeName("uint32_t")] uint stride, [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage, ImageLayout dstImageLayout, [NativeTypeName("const VkImageSubresourceLayers *")] ImageSubresourceLayers pImageSubresources) => DllImport.CmdCopyMemoryToImageIndirectNV(commandBuffer, copyBufferAddress, stride, dstImage, dstImageLayout, pImageSubresources);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdCopyMemoryToMicromapEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkCopyMemoryToMicromapInfoEXT *")] CopyMemoryToMicromapInfoEXT* pInfo) => ((delegate* unmanaged<VkCommandBuffer_T*, CopyMemoryToMicromapInfoEXT*, void> )(_slots[84] is not null and var loadedFnPtr ? loadedFnPtr : _slots[84] = nativeContext.LoadFunction("vkCmdCopyMemoryToMicromapEXT", "vulkan")))(commandBuffer, pInfo);
     [SupportedApiProfile("vulkan", ["VK_EXT_opacity_micromap"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_synchronization2", "VK_KHR_acceleration_structure+VK_VERSION_1_3"])]
@@ -14832,13 +14832,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdCopyMicromapToMemoryEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkCopyMicromapToMemoryInfoEXT *")] Ref<CopyMicromapToMemoryInfoEXT> pInfo) => DllImport.CmdCopyMicromapToMemoryEXT(commandBuffer, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => ((delegate* unmanaged<VkCommandBuffer_T*, VkQueryPool_T*, uint, uint, VkBuffer_T*, nuint, nuint, uint, void> )(_slots[87] is not null and var loadedFnPtr ? loadedFnPtr : _slots[87] = nativeContext.LoadFunction("vkCmdCopyQueryPoolResults", "vulkan")))(commandBuffer, queryPool, firstQuery, queryCount, dstBuffer, dstOffset, stride, flags);
+    void IVulkan.CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => ((delegate* unmanaged<VkCommandBuffer_T*, VkQueryPool_T*, uint, uint, VkBuffer_T*, ulong, ulong, uint, void> )(_slots[87] is not null and var loadedFnPtr ? loadedFnPtr : _slots[87] = nativeContext.LoadFunction("vkCmdCopyQueryPoolResults", "vulkan")))(commandBuffer, queryPool, firstQuery, queryCount, dstBuffer, dstOffset, stride, flags);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyQueryPoolResults")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => DllImport.CmdCopyQueryPoolResults(commandBuffer, queryPool, firstQuery, queryCount, dstBuffer, dstOffset, stride, flags);
+    public static void CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => DllImport.CmdCopyQueryPoolResults(commandBuffer, queryPool, firstQuery, queryCount, dstBuffer, dstOffset, stride, flags);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags)
+    void IVulkan.CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags)
     {
         fixed (VkBuffer_T* __dsl_dstBuffer = dstBuffer)
         fixed (VkQueryPool_T* __dsl_queryPool = queryPool)
@@ -14852,7 +14852,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyQueryPoolResults")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => DllImport.CmdCopyQueryPoolResults(commandBuffer, queryPool, firstQuery, queryCount, dstBuffer, dstOffset, stride, flags);
+    public static void CmdCopyQueryPoolResults([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => DllImport.CmdCopyQueryPoolResults(commandBuffer, queryPool, firstQuery, queryCount, dstBuffer, dstOffset, stride, flags);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdCudaLaunchKernelNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkCudaLaunchInfoNV *")] CudaLaunchInfoNV* pLaunchInfo) => ((delegate* unmanaged<VkCommandBuffer_T*, CudaLaunchInfoNV*, void> )(_slots[88] is not null and var loadedFnPtr ? loadedFnPtr : _slots[88] = nativeContext.LoadFunction("vkCmdCudaLaunchKernelNV", "vulkan")))(commandBuffer, pLaunchInfo);
     [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
@@ -14979,13 +14979,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdDecodeVideoKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkVideoDecodeInfoKHR *")] Ref<VideoDecodeInfoKHR> pDecodeInfo) => DllImport.CmdDecodeVideoKHR(commandBuffer, pDecodeInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, nuint, nuint, uint, void> )(_slots[94] is not null and var loadedFnPtr ? loadedFnPtr : _slots[94] = nativeContext.LoadFunction("vkCmdDecompressMemoryIndirectCountNV", "vulkan")))(commandBuffer, indirectCommandsAddress, indirectCommandsCountAddress, stride);
+    void IVulkan.CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, ulong, ulong, uint, void> )(_slots[94] is not null and var loadedFnPtr ? loadedFnPtr : _slots[94] = nativeContext.LoadFunction("vkCmdDecompressMemoryIndirectCountNV", "vulkan")))(commandBuffer, indirectCommandsAddress, indirectCommandsCountAddress, stride);
     [SupportedApiProfile("vulkan", ["VK_NV_memory_decompression"], ImpliesSets = ["VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_KHR_buffer_device_address+VK_VERSION_1_1", "VK_VERSION_1_2"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDecompressMemoryIndirectCountNV(commandBuffer, indirectCommandsAddress, indirectCommandsCountAddress, stride);
+    public static void CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDecompressMemoryIndirectCountNV(commandBuffer, indirectCommandsAddress, indirectCommandsCountAddress, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
         {
@@ -14997,7 +14997,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDecompressMemoryIndirectCountNV(commandBuffer, indirectCommandsAddress, indirectCommandsCountAddress, stride);
+    public static void CmdDecompressMemoryIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress, [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDecompressMemoryIndirectCountNV(commandBuffer, indirectCommandsAddress, indirectCommandsCountAddress, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdDecompressMemoryNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint decompressRegionCount, [NativeTypeName("const VkDecompressMemoryRegionNV *")] DecompressMemoryRegionNV* pDecompressMemoryRegions) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, DecompressMemoryRegionNV*, void> )(_slots[95] is not null and var loadedFnPtr ? loadedFnPtr : _slots[95] = nativeContext.LoadFunction("vkCmdDecompressMemoryNV", "vulkan")))(commandBuffer, decompressRegionCount, pDecompressMemoryRegions);
     [SupportedApiProfile("vulkan", ["VK_NV_memory_decompression"], ImpliesSets = ["VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_KHR_buffer_device_address+VK_VERSION_1_1", "VK_VERSION_1_2"])]
@@ -15094,13 +15094,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdDispatchBaseKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint baseGroupX, [NativeTypeName("uint32_t")] uint baseGroupY, [NativeTypeName("uint32_t")] uint baseGroupZ, [NativeTypeName("uint32_t")] uint groupCountX, [NativeTypeName("uint32_t")] uint groupCountY, [NativeTypeName("uint32_t")] uint groupCountZ) => DllImport.CmdDispatchBaseKHR(commandBuffer, baseGroupX, baseGroupY, baseGroupZ, groupCountX, groupCountY, groupCountZ);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, void> )(_slots[99] is not null and var loadedFnPtr ? loadedFnPtr : _slots[99] = nativeContext.LoadFunction("vkCmdDispatchIndirect", "vulkan")))(commandBuffer, buffer, offset);
+    void IVulkan.CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, void> )(_slots[99] is not null and var loadedFnPtr ? loadedFnPtr : _slots[99] = nativeContext.LoadFunction("vkCmdDispatchIndirect", "vulkan")))(commandBuffer, buffer, offset);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchIndirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset) => DllImport.CmdDispatchIndirect(commandBuffer, buffer, offset);
+    public static void CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset) => DllImport.CmdDispatchIndirect(commandBuffer, buffer, offset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset)
+    void IVulkan.CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset)
     {
         fixed (VkBuffer_T* __dsl_buffer = buffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -15113,7 +15113,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchIndirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset) => DllImport.CmdDispatchIndirect(commandBuffer, buffer, offset);
+    public static void CmdDispatchIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset) => DllImport.CmdDispatchIndirect(commandBuffer, buffer, offset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdDispatchTileQCOM([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer) => ((delegate* unmanaged<VkCommandBuffer_T*, void> )(_slots[100] is not null and var loadedFnPtr ? loadedFnPtr : _slots[100] = nativeContext.LoadFunction("vkCmdDispatchTileQCOM", "vulkan")))(commandBuffer);
     [SupportedApiProfile("vulkan", ["VK_QCOM_tile_shading"], ImpliesSets = ["VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2", "VK_QCOM_tile_shading+VK_QCOM_tile_properties"])]
@@ -15175,13 +15175,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdDrawClusterHuawei([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint groupCountX, [NativeTypeName("uint32_t")] uint groupCountY, [NativeTypeName("uint32_t")] uint groupCountZ) => DllImport.CmdDrawClusterHuawei(commandBuffer, groupCountX, groupCountY, groupCountZ);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, void> )(_slots[103] is not null and var loadedFnPtr ? loadedFnPtr : _slots[103] = nativeContext.LoadFunction("vkCmdDrawClusterIndirectHUAWEI", "vulkan")))(commandBuffer, buffer, offset);
+    void IVulkan.CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, void> )(_slots[103] is not null and var loadedFnPtr ? loadedFnPtr : _slots[103] = nativeContext.LoadFunction("vkCmdDrawClusterIndirectHUAWEI", "vulkan")))(commandBuffer, buffer, offset);
     [SupportedApiProfile("vulkan", ["VK_HUAWEI_cluster_culling_shader"], ImpliesSets = ["VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2", "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawClusterIndirectHUAWEI")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset) => DllImport.CmdDrawClusterIndirectHuawei(commandBuffer, buffer, offset);
+    public static void CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset) => DllImport.CmdDrawClusterIndirectHuawei(commandBuffer, buffer, offset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset)
+    void IVulkan.CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset)
     {
         fixed (VkBuffer_T* __dsl_buffer = buffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -15194,7 +15194,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawClusterIndirectHUAWEI")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset) => DllImport.CmdDrawClusterIndirectHuawei(commandBuffer, buffer, offset);
+    public static void CmdDrawClusterIndirectHuawei([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset) => DllImport.CmdDrawClusterIndirectHuawei(commandBuffer, buffer, offset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdDrawIndexed([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint indexCount, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstIndex, [NativeTypeName("int32_t")] int vertexOffset, [NativeTypeName("uint32_t")] uint firstInstance) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, uint, int, uint, void> )(_slots[104] is not null and var loadedFnPtr ? loadedFnPtr : _slots[104] = nativeContext.LoadFunction("vkCmdDrawIndexed", "vulkan")))(commandBuffer, indexCount, instanceCount, firstIndex, vertexOffset, firstInstance);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
@@ -15216,13 +15216,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdDrawIndexed([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint indexCount, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstIndex, [NativeTypeName("int32_t")] int vertexOffset, [NativeTypeName("uint32_t")] uint firstInstance) => DllImport.CmdDrawIndexed(commandBuffer, indexCount, instanceCount, firstIndex, vertexOffset, firstInstance);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, uint, uint, void> )(_slots[105] is not null and var loadedFnPtr ? loadedFnPtr : _slots[105] = nativeContext.LoadFunction("vkCmdDrawIndexedIndirect", "vulkan")))(commandBuffer, buffer, offset, drawCount, stride);
+    void IVulkan.CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, uint, uint, void> )(_slots[105] is not null and var loadedFnPtr ? loadedFnPtr : _slots[105] = nativeContext.LoadFunction("vkCmdDrawIndexedIndirect", "vulkan")))(commandBuffer, buffer, offset, drawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirect(commandBuffer, buffer, offset, drawCount, stride);
+    public static void CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirect(commandBuffer, buffer, offset, drawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_buffer = buffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -15235,15 +15235,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirect(commandBuffer, buffer, offset, drawCount, stride);
+    public static void CmdDrawIndexedIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirect(commandBuffer, buffer, offset, drawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, VkBuffer_T*, nuint, uint, uint, void> )(_slots[106] is not null and var loadedFnPtr ? loadedFnPtr : _slots[106] = nativeContext.LoadFunction("vkCmdDrawIndexedIndirectCount", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    void IVulkan.CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, VkBuffer_T*, ulong, uint, uint, void> )(_slots[106] is not null and var loadedFnPtr ? loadedFnPtr : _slots[106] = nativeContext.LoadFunction("vkCmdDrawIndexedIndirectCount", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCount")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCount(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCount(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
         fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -15257,15 +15257,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCount")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCount(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndexedIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCount(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, VkBuffer_T*, nuint, uint, uint, void> )(_slots[107] is not null and var loadedFnPtr ? loadedFnPtr : _slots[107] = nativeContext.LoadFunction("vkCmdDrawIndexedIndirectCountAMD", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    void IVulkan.CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, VkBuffer_T*, ulong, uint, uint, void> )(_slots[107] is not null and var loadedFnPtr ? loadedFnPtr : _slots[107] = nativeContext.LoadFunction("vkCmdDrawIndexedIndirectCountAMD", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCountAMD")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCountAMD(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCountAMD(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
         fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -15279,15 +15279,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCountAMD")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCountAMD(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndexedIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCountAMD(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, VkBuffer_T*, nuint, uint, uint, void> )(_slots[108] is not null and var loadedFnPtr ? loadedFnPtr : _slots[108] = nativeContext.LoadFunction("vkCmdDrawIndexedIndirectCountKHR", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    void IVulkan.CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, VkBuffer_T*, ulong, uint, uint, void> )(_slots[108] is not null and var loadedFnPtr ? loadedFnPtr : _slots[108] = nativeContext.LoadFunction("vkCmdDrawIndexedIndirectCountKHR", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCountKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCountKHR(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCountKHR(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
         fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -15301,15 +15301,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCountKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCountKHR(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndexedIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndexedIndirectCountKHR(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, uint, uint, void> )(_slots[109] is not null and var loadedFnPtr ? loadedFnPtr : _slots[109] = nativeContext.LoadFunction("vkCmdDrawIndirect", "vulkan")))(commandBuffer, buffer, offset, drawCount, stride);
+    void IVulkan.CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, uint, uint, void> )(_slots[109] is not null and var loadedFnPtr ? loadedFnPtr : _slots[109] = nativeContext.LoadFunction("vkCmdDrawIndirect", "vulkan")))(commandBuffer, buffer, offset, drawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirect(commandBuffer, buffer, offset, drawCount, stride);
+    public static void CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirect(commandBuffer, buffer, offset, drawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_buffer = buffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -15322,15 +15322,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirect(commandBuffer, buffer, offset, drawCount, stride);
+    public static void CmdDrawIndirect([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirect(commandBuffer, buffer, offset, drawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] VkBuffer_T* counterBuffer, [NativeTypeName("VkDeviceSize")] nuint counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T*, nuint, uint, uint, void> )(_slots[110] is not null and var loadedFnPtr ? loadedFnPtr : _slots[110] = nativeContext.LoadFunction("vkCmdDrawIndirectByteCountEXT", "vulkan")))(commandBuffer, instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride);
+    void IVulkan.CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] VkBuffer_T* counterBuffer, [NativeTypeName("VkDeviceSize")] ulong counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T*, ulong, uint, uint, void> )(_slots[110] is not null and var loadedFnPtr ? loadedFnPtr : _slots[110] = nativeContext.LoadFunction("vkCmdDrawIndirectByteCountEXT", "vulkan")))(commandBuffer, instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride);
     [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectByteCountEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] VkBuffer_T* counterBuffer, [NativeTypeName("VkDeviceSize")] nuint counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride) => DllImport.CmdDrawIndirectByteCountEXT(commandBuffer, instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride);
+    public static void CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] VkBuffer_T* counterBuffer, [NativeTypeName("VkDeviceSize")] ulong counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride) => DllImport.CmdDrawIndirectByteCountEXT(commandBuffer, instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> counterBuffer, [NativeTypeName("VkDeviceSize")] nuint counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride)
+    void IVulkan.CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> counterBuffer, [NativeTypeName("VkDeviceSize")] ulong counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride)
     {
         fixed (VkBuffer_T* __dsl_counterBuffer = counterBuffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -15343,15 +15343,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectByteCountEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> counterBuffer, [NativeTypeName("VkDeviceSize")] nuint counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride) => DllImport.CmdDrawIndirectByteCountEXT(commandBuffer, instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride);
+    public static void CmdDrawIndirectByteCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstInstance, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> counterBuffer, [NativeTypeName("VkDeviceSize")] ulong counterBufferOffset, [NativeTypeName("uint32_t")] uint counterOffset, [NativeTypeName("uint32_t")] uint vertexStride) => DllImport.CmdDrawIndirectByteCountEXT(commandBuffer, instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, VkBuffer_T*, nuint, uint, uint, void> )(_slots[111] is not null and var loadedFnPtr ? loadedFnPtr : _slots[111] = nativeContext.LoadFunction("vkCmdDrawIndirectCount", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    void IVulkan.CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, VkBuffer_T*, ulong, uint, uint, void> )(_slots[111] is not null and var loadedFnPtr ? loadedFnPtr : _slots[111] = nativeContext.LoadFunction("vkCmdDrawIndirectCount", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCount")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCount(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCount(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
         fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -15365,15 +15365,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCount")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCount(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndirectCount([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCount(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, VkBuffer_T*, nuint, uint, uint, void> )(_slots[112] is not null and var loadedFnPtr ? loadedFnPtr : _slots[112] = nativeContext.LoadFunction("vkCmdDrawIndirectCountAMD", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    void IVulkan.CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, VkBuffer_T*, ulong, uint, uint, void> )(_slots[112] is not null and var loadedFnPtr ? loadedFnPtr : _slots[112] = nativeContext.LoadFunction("vkCmdDrawIndirectCountAMD", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCountAMD")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCountAMD(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCountAMD(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
         fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -15387,15 +15387,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCountAMD")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCountAMD(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndirectCountAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCountAMD(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, VkBuffer_T*, nuint, uint, uint, void> )(_slots[113] is not null and var loadedFnPtr ? loadedFnPtr : _slots[113] = nativeContext.LoadFunction("vkCmdDrawIndirectCountKHR", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    void IVulkan.CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, VkBuffer_T*, ulong, uint, uint, void> )(_slots[113] is not null and var loadedFnPtr ? loadedFnPtr : _slots[113] = nativeContext.LoadFunction("vkCmdDrawIndirectCountKHR", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCountKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCountKHR(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCountKHR(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
         fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -15409,7 +15409,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCountKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCountKHR(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawIndirectCountKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawIndirectCountKHR(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdDrawMeshTasksEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint groupCountX, [NativeTypeName("uint32_t")] uint groupCountY, [NativeTypeName("uint32_t")] uint groupCountZ) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, uint, void> )(_slots[114] is not null and var loadedFnPtr ? loadedFnPtr : _slots[114] = nativeContext.LoadFunction("vkCmdDrawMeshTasksEXT", "vulkan")))(commandBuffer, groupCountX, groupCountY, groupCountZ);
     [SupportedApiProfile("vulkan", ["VK_EXT_mesh_shader"], ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"])]
@@ -15431,13 +15431,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdDrawMeshTasksEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint groupCountX, [NativeTypeName("uint32_t")] uint groupCountY, [NativeTypeName("uint32_t")] uint groupCountZ) => DllImport.CmdDrawMeshTasksEXT(commandBuffer, groupCountX, groupCountY, groupCountZ);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, VkBuffer_T*, nuint, uint, uint, void> )(_slots[115] is not null and var loadedFnPtr ? loadedFnPtr : _slots[115] = nativeContext.LoadFunction("vkCmdDrawMeshTasksIndirectCountEXT", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    void IVulkan.CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, VkBuffer_T*, ulong, uint, uint, void> )(_slots[115] is not null and var loadedFnPtr ? loadedFnPtr : _slots[115] = nativeContext.LoadFunction("vkCmdDrawMeshTasksIndirectCountEXT", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_EXT_mesh_shader+VK_KHR_draw_indirect_count", "VK_EXT_mesh_shader+VK_VERSION_1_2"], ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectCountEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectCountEXT(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectCountEXT(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
         fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -15451,15 +15451,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectCountEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectCountEXT(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawMeshTasksIndirectCountEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectCountEXT(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, VkBuffer_T*, nuint, uint, uint, void> )(_slots[116] is not null and var loadedFnPtr ? loadedFnPtr : _slots[116] = nativeContext.LoadFunction("vkCmdDrawMeshTasksIndirectCountNV", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    void IVulkan.CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, VkBuffer_T*, ulong, uint, uint, void> )(_slots[116] is not null and var loadedFnPtr ? loadedFnPtr : _slots[116] = nativeContext.LoadFunction("vkCmdDrawMeshTasksIndirectCountNV", "vulkan")))(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_NV_mesh_shader+VK_KHR_draw_indirect_count", "VK_NV_mesh_shader+VK_VERSION_1_2"], ImpliesSets = ["VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2", "VK_NV_mesh_shader+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectCountNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectCountNV(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectCountNV(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_countBuffer = countBuffer)
         fixed (VkBuffer_T* __dsl_buffer = buffer)
@@ -15473,15 +15473,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectCountNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] nuint countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectCountNV(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+    public static void CmdDrawMeshTasksIndirectCountNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer, [NativeTypeName("VkDeviceSize")] ulong countBufferOffset, [NativeTypeName("uint32_t")] uint maxDrawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectCountNV(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, uint, uint, void> )(_slots[117] is not null and var loadedFnPtr ? loadedFnPtr : _slots[117] = nativeContext.LoadFunction("vkCmdDrawMeshTasksIndirectEXT", "vulkan")))(commandBuffer, buffer, offset, drawCount, stride);
+    void IVulkan.CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, uint, uint, void> )(_slots[117] is not null and var loadedFnPtr ? loadedFnPtr : _slots[117] = nativeContext.LoadFunction("vkCmdDrawMeshTasksIndirectEXT", "vulkan")))(commandBuffer, buffer, offset, drawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_EXT_mesh_shader"], ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectEXT(commandBuffer, buffer, offset, drawCount, stride);
+    public static void CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectEXT(commandBuffer, buffer, offset, drawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_buffer = buffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -15494,15 +15494,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectEXT(commandBuffer, buffer, offset, drawCount, stride);
+    public static void CmdDrawMeshTasksIndirectEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectEXT(commandBuffer, buffer, offset, drawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, uint, uint, void> )(_slots[118] is not null and var loadedFnPtr ? loadedFnPtr : _slots[118] = nativeContext.LoadFunction("vkCmdDrawMeshTasksIndirectNV", "vulkan")))(commandBuffer, buffer, offset, drawCount, stride);
+    void IVulkan.CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, uint, uint, void> )(_slots[118] is not null and var loadedFnPtr ? loadedFnPtr : _slots[118] = nativeContext.LoadFunction("vkCmdDrawMeshTasksIndirectNV", "vulkan")))(commandBuffer, buffer, offset, drawCount, stride);
     [SupportedApiProfile("vulkan", ["VK_NV_mesh_shader"], ImpliesSets = ["VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2", "VK_NV_mesh_shader+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectNV(commandBuffer, buffer, offset, drawCount, stride);
+    public static void CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectNV(commandBuffer, buffer, offset, drawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
+    void IVulkan.CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride)
     {
         fixed (VkBuffer_T* __dsl_buffer = buffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -15515,7 +15515,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectNV(commandBuffer, buffer, offset, drawCount, stride);
+    public static void CmdDrawMeshTasksIndirectNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("uint32_t")] uint drawCount, [NativeTypeName("uint32_t")] uint stride) => DllImport.CmdDrawMeshTasksIndirectNV(commandBuffer, buffer, offset, drawCount, stride);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdDrawMeshTasksNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint taskCount, [NativeTypeName("uint32_t")] uint firstTask) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, void> )(_slots[119] is not null and var loadedFnPtr ? loadedFnPtr : _slots[119] = nativeContext.LoadFunction("vkCmdDrawMeshTasksNV", "vulkan")))(commandBuffer, taskCount, firstTask);
     [SupportedApiProfile("vulkan", ["VK_NV_mesh_shader"], ImpliesSets = ["VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2", "VK_NV_mesh_shader+VK_VERSION_1_1"])]
@@ -15856,15 +15856,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdEndRenderPass2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkSubpassEndInfo *")] Ref<SubpassEndInfo> pSubpassEndInfo) => DllImport.CmdEndRenderPass2KHR(commandBuffer, pSubpassEndInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pCounterBufferOffsets) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, nuint*, void> )(_slots[134] is not null and var loadedFnPtr ? loadedFnPtr : _slots[134] = nativeContext.LoadFunction("vkCmdEndTransformFeedbackEXT", "vulkan")))(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
+    void IVulkan.CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pCounterBufferOffsets) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, uint, VkBuffer_T**, ulong*, void> )(_slots[134] is not null and var loadedFnPtr ? loadedFnPtr : _slots[134] = nativeContext.LoadFunction("vkCmdEndTransformFeedbackEXT", "vulkan")))(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
     [SupportedApiProfile("vulkan", ["VK_EXT_transform_feedback"], ImpliesSets = ["VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2", "VK_EXT_transform_feedback+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndTransformFeedbackEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] nuint* pCounterBufferOffsets) => DllImport.CmdEndTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
+    public static void CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] ulong* pCounterBufferOffsets) => DllImport.CmdEndTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pCounterBufferOffsets)
+    void IVulkan.CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pCounterBufferOffsets)
     {
-        fixed (nuint* __dsl_pCounterBufferOffsets = pCounterBufferOffsets)
+        fixed (ulong* __dsl_pCounterBufferOffsets = pCounterBufferOffsets)
         fixed (VkBuffer_T** __dsl_pCounterBuffers = pCounterBuffers)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
         {
@@ -15876,7 +15876,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndTransformFeedbackEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pCounterBufferOffsets) => DllImport.CmdEndTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
+    public static void CmdEndTransformFeedbackEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("uint32_t")] uint firstCounterBuffer, [NativeTypeName("uint32_t")] uint counterBufferCount, [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pCounterBufferOffsets) => DllImport.CmdEndTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdEndVideoCodingKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkVideoEndCodingInfoKHR *")] VideoEndCodingInfoKHR* pEndCodingInfo) => ((delegate* unmanaged<VkCommandBuffer_T*, VideoEndCodingInfoKHR*, void> )(_slots[135] is not null and var loadedFnPtr ? loadedFnPtr : _slots[135] = nativeContext.LoadFunction("vkCmdEndVideoCodingKHR", "vulkan")))(commandBuffer, pEndCodingInfo);
     [SupportedApiProfile("vulkan", ["VK_KHR_video_queue"], ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"])]
@@ -15977,13 +15977,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdExecuteGeneratedCommandsNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBool32")] uint isPreprocessed, [NativeTypeName("const VkGeneratedCommandsInfoNV *")] Ref<GeneratedCommandsInfoNV> pGeneratedCommandsInfo) => DllImport.CmdExecuteGeneratedCommandsNV(commandBuffer, isPreprocessed, pGeneratedCommandsInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdFillBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("uint32_t")] uint data) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, nuint, uint, void> )(_slots[139] is not null and var loadedFnPtr ? loadedFnPtr : _slots[139] = nativeContext.LoadFunction("vkCmdFillBuffer", "vulkan")))(commandBuffer, dstBuffer, dstOffset, size, data);
+    void IVulkan.CmdFillBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("uint32_t")] uint data) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, ulong, uint, void> )(_slots[139] is not null and var loadedFnPtr ? loadedFnPtr : _slots[139] = nativeContext.LoadFunction("vkCmdFillBuffer", "vulkan")))(commandBuffer, dstBuffer, dstOffset, size, data);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdFillBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdFillBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("uint32_t")] uint data) => DllImport.CmdFillBuffer(commandBuffer, dstBuffer, dstOffset, size, data);
+    public static void CmdFillBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("uint32_t")] uint data) => DllImport.CmdFillBuffer(commandBuffer, dstBuffer, dstOffset, size, data);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdFillBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("uint32_t")] uint data)
+    void IVulkan.CmdFillBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("uint32_t")] uint data)
     {
         fixed (VkBuffer_T* __dsl_dstBuffer = dstBuffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -15996,7 +15996,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdFillBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdFillBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("uint32_t")] uint data) => DllImport.CmdFillBuffer(commandBuffer, dstBuffer, dstOffset, size, data);
+    public static void CmdFillBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("uint32_t")] uint data) => DllImport.CmdFillBuffer(commandBuffer, dstBuffer, dstOffset, size, data);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdInsertDebugUtilsLabelEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkDebugUtilsLabelEXT *")] DebugUtilsLabelEXT* pLabelInfo) => ((delegate* unmanaged<VkCommandBuffer_T*, DebugUtilsLabelEXT*, void> )(_slots[140] is not null and var loadedFnPtr ? loadedFnPtr : _slots[140] = nativeContext.LoadFunction("vkCmdInsertDebugUtilsLabelEXT", "vulkan")))(commandBuffer, pLabelInfo);
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
@@ -16502,13 +16502,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdResetEvent([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags")] uint stageMask) => DllImport.CmdResetEvent(commandBuffer, @event, stageMask);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResetEvent2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask) => ((delegate* unmanaged<VkCommandBuffer_T*, VkEvent_T*, nuint, void> )(_slots[162] is not null and var loadedFnPtr ? loadedFnPtr : _slots[162] = nativeContext.LoadFunction("vkCmdResetEvent2", "vulkan")))(commandBuffer, @event, stageMask);
+    void IVulkan.CmdResetEvent2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask) => ((delegate* unmanaged<VkCommandBuffer_T*, VkEvent_T*, ulong, void> )(_slots[162] is not null and var loadedFnPtr ? loadedFnPtr : _slots[162] = nativeContext.LoadFunction("vkCmdResetEvent2", "vulkan")))(commandBuffer, @event, stageMask);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdResetEvent2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdResetEvent2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask) => DllImport.CmdResetEvent2(commandBuffer, @event, stageMask);
+    public static void CmdResetEvent2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask) => DllImport.CmdResetEvent2(commandBuffer, @event, stageMask);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResetEvent2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask)
+    void IVulkan.CmdResetEvent2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask)
     {
         fixed (VkEvent_T* __dsl_event = @event)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -16521,15 +16521,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdResetEvent2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdResetEvent2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask) => DllImport.CmdResetEvent2(commandBuffer, @event, stageMask);
+    public static void CmdResetEvent2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask) => DllImport.CmdResetEvent2(commandBuffer, @event, stageMask);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask) => ((delegate* unmanaged<VkCommandBuffer_T*, VkEvent_T*, nuint, void> )(_slots[163] is not null and var loadedFnPtr ? loadedFnPtr : _slots[163] = nativeContext.LoadFunction("vkCmdResetEvent2KHR", "vulkan")))(commandBuffer, @event, stageMask);
+    void IVulkan.CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask) => ((delegate* unmanaged<VkCommandBuffer_T*, VkEvent_T*, ulong, void> )(_slots[163] is not null and var loadedFnPtr ? loadedFnPtr : _slots[163] = nativeContext.LoadFunction("vkCmdResetEvent2KHR", "vulkan")))(commandBuffer, @event, stageMask);
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdResetEvent2KHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask) => DllImport.CmdResetEvent2KHR(commandBuffer, @event, stageMask);
+    public static void CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkEvent")] VkEvent_T* @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask) => DllImport.CmdResetEvent2KHR(commandBuffer, @event, stageMask);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask)
+    void IVulkan.CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask)
     {
         fixed (VkEvent_T* __dsl_event = @event)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -16542,7 +16542,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdResetEvent2KHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask) => DllImport.CmdResetEvent2KHR(commandBuffer, @event, stageMask);
+    public static void CmdResetEvent2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event, [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask) => DllImport.CmdResetEvent2KHR(commandBuffer, @event, stageMask);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdResetQueryPool([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount) => ((delegate* unmanaged<VkCommandBuffer_T*, VkQueryPool_T*, uint, uint, void> )(_slots[164] is not null and var loadedFnPtr ? loadedFnPtr : _slots[164] = nativeContext.LoadFunction("vkCmdResetQueryPool", "vulkan")))(commandBuffer, queryPool, firstQuery, queryCount);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
@@ -17516,15 +17516,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdSetDescriptorBufferOffsets2EXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkSetDescriptorBufferOffsetsInfoEXT *")] Ref<SetDescriptorBufferOffsetsInfoEXT> pSetDescriptorBufferOffsetsInfo) => DllImport.CmdSetDescriptorBufferOffsets2EXT(commandBuffer, pSetDescriptorBufferOffsetsInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] VkPipelineLayout_T* layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] uint* pBufferIndices, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets) => ((delegate* unmanaged<VkCommandBuffer_T*, PipelineBindPoint, VkPipelineLayout_T*, uint, uint, uint*, nuint*, void> )(_slots[206] is not null and var loadedFnPtr ? loadedFnPtr : _slots[206] = nativeContext.LoadFunction("vkCmdSetDescriptorBufferOffsetsEXT", "vulkan")))(commandBuffer, pipelineBindPoint, layout, firstSet, setCount, pBufferIndices, pOffsets);
+    void IVulkan.CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] VkPipelineLayout_T* layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] uint* pBufferIndices, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets) => ((delegate* unmanaged<VkCommandBuffer_T*, PipelineBindPoint, VkPipelineLayout_T*, uint, uint, uint*, ulong*, void> )(_slots[206] is not null and var loadedFnPtr ? loadedFnPtr : _slots[206] = nativeContext.LoadFunction("vkCmdSetDescriptorBufferOffsetsEXT", "vulkan")))(commandBuffer, pipelineBindPoint, layout, firstSet, setCount, pBufferIndices, pOffsets);
     [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDescriptorBufferOffsetsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] VkPipelineLayout_T* layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] uint* pBufferIndices, [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets) => DllImport.CmdSetDescriptorBufferOffsetsEXT(commandBuffer, pipelineBindPoint, layout, firstSet, setCount, pBufferIndices, pOffsets);
+    public static void CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] VkPipelineLayout_T* layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] uint* pBufferIndices, [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets) => DllImport.CmdSetDescriptorBufferOffsetsEXT(commandBuffer, pipelineBindPoint, layout, firstSet, setCount, pBufferIndices, pOffsets);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] Ref<VkPipelineLayout_T> layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] Ref<uint> pBufferIndices, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets)
+    void IVulkan.CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] Ref<VkPipelineLayout_T> layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] Ref<uint> pBufferIndices, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets)
     {
-        fixed (nuint* __dsl_pOffsets = pOffsets)
+        fixed (ulong* __dsl_pOffsets = pOffsets)
         fixed (uint* __dsl_pBufferIndices = pBufferIndices)
         fixed (VkPipelineLayout_T* __dsl_layout = layout)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -17537,7 +17537,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDescriptorBufferOffsetsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] Ref<VkPipelineLayout_T> layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] Ref<uint> pBufferIndices, [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets) => DllImport.CmdSetDescriptorBufferOffsetsEXT(commandBuffer, pipelineBindPoint, layout, firstSet, setCount, pBufferIndices, pOffsets);
+    public static void CmdSetDescriptorBufferOffsetsEXT([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipelineLayout")] Ref<VkPipelineLayout_T> layout, [NativeTypeName("uint32_t")] uint firstSet, [NativeTypeName("uint32_t")] uint setCount, [NativeTypeName("const uint32_t *")] Ref<uint> pBufferIndices, [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets) => DllImport.CmdSetDescriptorBufferOffsetsEXT(commandBuffer, pipelineBindPoint, layout, firstSet, setCount, pBufferIndices, pOffsets);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdSetDeviceMask([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint deviceMask) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, void> )(_slots[207] is not null and var loadedFnPtr ? loadedFnPtr : _slots[207] = nativeContext.LoadFunction("vkCmdSetDeviceMask", "vulkan")))(commandBuffer, deviceMask);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.1")]
@@ -19078,13 +19078,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdSubpassShadingHuawei([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer) => DllImport.CmdSubpassShadingHuawei(commandBuffer);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress) => ((delegate* unmanaged<VkCommandBuffer_T*, nuint, void> )(_slots[274] is not null and var loadedFnPtr ? loadedFnPtr : _slots[274] = nativeContext.LoadFunction("vkCmdTraceRaysIndirect2KHR", "vulkan")))(commandBuffer, indirectDeviceAddress);
+    void IVulkan.CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress) => ((delegate* unmanaged<VkCommandBuffer_T*, ulong, void> )(_slots[274] is not null and var loadedFnPtr ? loadedFnPtr : _slots[274] = nativeContext.LoadFunction("vkCmdTraceRaysIndirect2KHR", "vulkan")))(commandBuffer, indirectDeviceAddress);
     [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_KHR_acceleration_structure"], RequireAll = true)]
     [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysIndirect2KHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress) => DllImport.CmdTraceRaysIndirect2KHR(commandBuffer, indirectDeviceAddress);
+    public static void CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress) => DllImport.CmdTraceRaysIndirect2KHR(commandBuffer, indirectDeviceAddress);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress)
+    void IVulkan.CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress)
     {
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
         {
@@ -19096,15 +19096,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysIndirect2KHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress) => DllImport.CmdTraceRaysIndirect2KHR(commandBuffer, indirectDeviceAddress);
+    public static void CmdTraceRaysIndirect2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress) => DllImport.CmdTraceRaysIndirect2KHR(commandBuffer, indirectDeviceAddress);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress) => ((delegate* unmanaged<VkCommandBuffer_T*, StridedDeviceAddressRegionKHR*, StridedDeviceAddressRegionKHR*, StridedDeviceAddressRegionKHR*, StridedDeviceAddressRegionKHR*, nuint, void> )(_slots[275] is not null and var loadedFnPtr ? loadedFnPtr : _slots[275] = nativeContext.LoadFunction("vkCmdTraceRaysIndirectKHR", "vulkan")))(commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, indirectDeviceAddress);
+    void IVulkan.CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress) => ((delegate* unmanaged<VkCommandBuffer_T*, StridedDeviceAddressRegionKHR*, StridedDeviceAddressRegionKHR*, StridedDeviceAddressRegionKHR*, StridedDeviceAddressRegionKHR*, ulong, void> )(_slots[275] is not null and var loadedFnPtr ? loadedFnPtr : _slots[275] = nativeContext.LoadFunction("vkCmdTraceRaysIndirectKHR", "vulkan")))(commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, indirectDeviceAddress);
     [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_spirv_1_4", "VK_KHR_acceleration_structure+VK_VERSION_1_2"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysIndirectKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress) => DllImport.CmdTraceRaysIndirectKHR(commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, indirectDeviceAddress);
+    public static void CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress) => DllImport.CmdTraceRaysIndirectKHR(commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, indirectDeviceAddress);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress)
+    void IVulkan.CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress)
     {
         fixed (StridedDeviceAddressRegionKHR* __dsl_pCallableShaderBindingTable = pCallableShaderBindingTable)
         fixed (StridedDeviceAddressRegionKHR* __dsl_pHitShaderBindingTable = pHitShaderBindingTable)
@@ -19120,7 +19120,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysIndirectKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress) => DllImport.CmdTraceRaysIndirectKHR(commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, indirectDeviceAddress);
+    public static void CmdTraceRaysIndirectKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable, [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress) => DllImport.CmdTraceRaysIndirectKHR(commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, indirectDeviceAddress);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdTraceRaysKHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth) => ((delegate* unmanaged<VkCommandBuffer_T*, StridedDeviceAddressRegionKHR*, StridedDeviceAddressRegionKHR*, StridedDeviceAddressRegionKHR*, StridedDeviceAddressRegionKHR*, uint, uint, uint, void> )(_slots[276] is not null and var loadedFnPtr ? loadedFnPtr : _slots[276] = nativeContext.LoadFunction("vkCmdTraceRaysKHR", "vulkan")))(commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, width, height, depth);
     [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_spirv_1_4", "VK_KHR_acceleration_structure+VK_VERSION_1_2"])]
@@ -19146,13 +19146,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdTraceRaysKHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pMissShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable, [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")] Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth) => DllImport.CmdTraceRaysKHR(commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, width, height, depth);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] VkBuffer_T* missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, VkBuffer_T*, nuint, nuint, VkBuffer_T*, nuint, nuint, VkBuffer_T*, nuint, nuint, uint, uint, uint, void> )(_slots[277] is not null and var loadedFnPtr ? loadedFnPtr : _slots[277] = nativeContext.LoadFunction("vkCmdTraceRaysNV", "vulkan")))(commandBuffer, raygenShaderBindingTableBuffer, raygenShaderBindingOffset, missShaderBindingTableBuffer, missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer, hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer, callableShaderBindingOffset, callableShaderBindingStride, width, height, depth);
+    void IVulkan.CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] VkBuffer_T* missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, VkBuffer_T*, ulong, ulong, VkBuffer_T*, ulong, ulong, VkBuffer_T*, ulong, ulong, uint, uint, uint, void> )(_slots[277] is not null and var loadedFnPtr ? loadedFnPtr : _slots[277] = nativeContext.LoadFunction("vkCmdTraceRaysNV", "vulkan")))(commandBuffer, raygenShaderBindingTableBuffer, raygenShaderBindingOffset, missShaderBindingTableBuffer, missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer, hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer, callableShaderBindingOffset, callableShaderBindingStride, width, height, depth);
     [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2", "VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] VkBuffer_T* missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth) => DllImport.CmdTraceRaysNV(commandBuffer, raygenShaderBindingTableBuffer, raygenShaderBindingOffset, missShaderBindingTableBuffer, missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer, hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer, callableShaderBindingOffset, callableShaderBindingStride, width, height, depth);
+    public static void CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] VkBuffer_T* missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingStride, [NativeTypeName("VkBuffer")] VkBuffer_T* callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth) => DllImport.CmdTraceRaysNV(commandBuffer, raygenShaderBindingTableBuffer, raygenShaderBindingOffset, missShaderBindingTableBuffer, missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer, hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer, callableShaderBindingOffset, callableShaderBindingStride, width, height, depth);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth)
+    void IVulkan.CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth)
     {
         fixed (VkBuffer_T* __dsl_callableShaderBindingTableBuffer = callableShaderBindingTableBuffer)
         fixed (VkBuffer_T* __dsl_hitShaderBindingTableBuffer = hitShaderBindingTableBuffer)
@@ -19168,15 +19168,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint missShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth) => DllImport.CmdTraceRaysNV(commandBuffer, raygenShaderBindingTableBuffer, raygenShaderBindingOffset, missShaderBindingTableBuffer, missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer, hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer, callableShaderBindingOffset, callableShaderBindingStride, width, height, depth);
+    public static void CmdTraceRaysNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> raygenShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong raygenShaderBindingOffset, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> missShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong missShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> hitShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingStride, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> callableShaderBindingTableBuffer, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingOffset, [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingStride, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height, [NativeTypeName("uint32_t")] uint depth) => DllImport.CmdTraceRaysNV(commandBuffer, raygenShaderBindingTableBuffer, raygenShaderBindingOffset, missShaderBindingTableBuffer, missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer, hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer, callableShaderBindingOffset, callableShaderBindingStride, width, height, depth);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint dataSize, [NativeTypeName("const void *")] void* pData) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, nuint, nuint, void*, void> )(_slots[278] is not null and var loadedFnPtr ? loadedFnPtr : _slots[278] = nativeContext.LoadFunction("vkCmdUpdateBuffer", "vulkan")))(commandBuffer, dstBuffer, dstOffset, dataSize, pData);
+    void IVulkan.CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong dataSize, [NativeTypeName("const void *")] void* pData) => ((delegate* unmanaged<VkCommandBuffer_T*, VkBuffer_T*, ulong, ulong, void*, void> )(_slots[278] is not null and var loadedFnPtr ? loadedFnPtr : _slots[278] = nativeContext.LoadFunction("vkCmdUpdateBuffer", "vulkan")))(commandBuffer, dstBuffer, dstOffset, dataSize, pData);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdUpdateBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint dataSize, [NativeTypeName("const void *")] void* pData) => DllImport.CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, dataSize, pData);
+    public static void CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong dataSize, [NativeTypeName("const void *")] void* pData) => DllImport.CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, dataSize, pData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint dataSize, [NativeTypeName("const void *")] Ref pData)
+    void IVulkan.CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong dataSize, [NativeTypeName("const void *")] Ref pData)
     {
         fixed (void* __dsl_pData = pData)
         fixed (VkBuffer_T* __dsl_dstBuffer = dstBuffer)
@@ -19190,7 +19190,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdUpdateBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("VkDeviceSize")] nuint dataSize, [NativeTypeName("const void *")] Ref pData) => DllImport.CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, dataSize, pData);
+    public static void CmdUpdateBuffer([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("VkDeviceSize")] ulong dataSize, [NativeTypeName("const void *")] Ref pData) => DllImport.CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, dataSize, pData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdUpdatePipelineIndirectBufferNV([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, PipelineBindPoint pipelineBindPoint, [NativeTypeName("VkPipeline")] VkPipeline_T* pipeline) => ((delegate* unmanaged<VkCommandBuffer_T*, PipelineBindPoint, VkPipeline_T*, void> )(_slots[279] is not null and var loadedFnPtr ? loadedFnPtr : _slots[279] = nativeContext.LoadFunction("vkCmdUpdatePipelineIndirectBufferNV", "vulkan")))(commandBuffer, pipelineBindPoint, pipeline);
     [SupportedApiProfile("vulkan", ["VK_NV_device_generated_commands_compute"], ImpliesSets = ["VK_NV_device_generated_commands"])]
@@ -19357,13 +19357,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdWriteAccelerationStructuresPropertiesNV([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("const VkAccelerationStructureNV *")] Ref<VkAccelerationStructureNV_T> pAccelerationStructures, QueryType queryType, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery) => DllImport.CmdWriteAccelerationStructuresPropertiesNV(commandBuffer, pAccelerationStructures, queryType, queryPool, firstQuery);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker) => ((delegate* unmanaged<VkCommandBuffer_T*, nuint, VkBuffer_T*, nuint, uint, void> )(_slots[285] is not null and var loadedFnPtr ? loadedFnPtr : _slots[285] = nativeContext.LoadFunction("vkCmdWriteBufferMarker2AMD", "vulkan")))(commandBuffer, stage, dstBuffer, dstOffset, marker);
+    void IVulkan.CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker) => ((delegate* unmanaged<VkCommandBuffer_T*, ulong, VkBuffer_T*, ulong, uint, void> )(_slots[285] is not null and var loadedFnPtr ? loadedFnPtr : _slots[285] = nativeContext.LoadFunction("vkCmdWriteBufferMarker2AMD", "vulkan")))(commandBuffer, stage, dstBuffer, dstOffset, marker);
     [SupportedApiProfile("vulkan", ["VK_AMD_buffer_marker+VK_KHR_synchronization2", "VK_AMD_buffer_marker+VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarker2AMD")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker) => DllImport.CmdWriteBufferMarker2AMD(commandBuffer, stage, dstBuffer, dstOffset, marker);
+    public static void CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker) => DllImport.CmdWriteBufferMarker2AMD(commandBuffer, stage, dstBuffer, dstOffset, marker);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker)
+    void IVulkan.CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker)
     {
         fixed (VkBuffer_T* __dsl_dstBuffer = dstBuffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -19376,15 +19376,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarker2AMD")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker) => DllImport.CmdWriteBufferMarker2AMD(commandBuffer, stage, dstBuffer, dstOffset, marker);
+    public static void CmdWriteBufferMarker2AMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker) => DllImport.CmdWriteBufferMarker2AMD(commandBuffer, stage, dstBuffer, dstOffset, marker);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker) => ((delegate* unmanaged<VkCommandBuffer_T*, VkPipelineStageFlagBits, VkBuffer_T*, nuint, uint, void> )(_slots[286] is not null and var loadedFnPtr ? loadedFnPtr : _slots[286] = nativeContext.LoadFunction("vkCmdWriteBufferMarkerAMD", "vulkan")))(commandBuffer, pipelineStage, dstBuffer, dstOffset, marker);
+    void IVulkan.CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker) => ((delegate* unmanaged<VkCommandBuffer_T*, VkPipelineStageFlagBits, VkBuffer_T*, ulong, uint, void> )(_slots[286] is not null and var loadedFnPtr ? loadedFnPtr : _slots[286] = nativeContext.LoadFunction("vkCmdWriteBufferMarkerAMD", "vulkan")))(commandBuffer, pipelineStage, dstBuffer, dstOffset, marker);
     [SupportedApiProfile("vulkan", ["VK_AMD_buffer_marker"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarkerAMD")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker) => DllImport.CmdWriteBufferMarkerAMD(commandBuffer, pipelineStage, dstBuffer, dstOffset, marker);
+    public static void CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker) => DllImport.CmdWriteBufferMarkerAMD(commandBuffer, pipelineStage, dstBuffer, dstOffset, marker);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker)
+    void IVulkan.CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker)
     {
         fixed (VkBuffer_T* __dsl_dstBuffer = dstBuffer)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -19397,7 +19397,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarkerAMD")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] nuint dstOffset, [NativeTypeName("uint32_t")] uint marker) => DllImport.CmdWriteBufferMarkerAMD(commandBuffer, pipelineStage, dstBuffer, dstOffset, marker);
+    public static void CmdWriteBufferMarkerAMD([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer, [NativeTypeName("VkDeviceSize")] ulong dstOffset, [NativeTypeName("uint32_t")] uint marker) => DllImport.CmdWriteBufferMarkerAMD(commandBuffer, pipelineStage, dstBuffer, dstOffset, marker);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdWriteMicromapsPropertiesEXT([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("uint32_t")] uint micromapCount, [NativeTypeName("const VkMicromapEXT *")] VkMicromapEXT_T** pMicromaps, QueryType queryType, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery) => ((delegate* unmanaged<VkCommandBuffer_T*, uint, VkMicromapEXT_T**, QueryType, VkQueryPool_T*, uint, void> )(_slots[287] is not null and var loadedFnPtr ? loadedFnPtr : _slots[287] = nativeContext.LoadFunction("vkCmdWriteMicromapsPropertiesEXT", "vulkan")))(commandBuffer, micromapCount, pMicromaps, queryType, queryPool, firstQuery);
     [SupportedApiProfile("vulkan", ["VK_EXT_opacity_micromap"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_synchronization2", "VK_KHR_acceleration_structure+VK_VERSION_1_3"])]
@@ -19458,13 +19458,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdWriteTimestamp([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, VkPipelineStageFlagBits pipelineStage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query) => DllImport.CmdWriteTimestamp(commandBuffer, pipelineStage, queryPool, query);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query) => ((delegate* unmanaged<VkCommandBuffer_T*, nuint, VkQueryPool_T*, uint, void> )(_slots[289] is not null and var loadedFnPtr ? loadedFnPtr : _slots[289] = nativeContext.LoadFunction("vkCmdWriteTimestamp2", "vulkan")))(commandBuffer, stage, queryPool, query);
+    void IVulkan.CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query) => ((delegate* unmanaged<VkCommandBuffer_T*, ulong, VkQueryPool_T*, uint, void> )(_slots[289] is not null and var loadedFnPtr ? loadedFnPtr : _slots[289] = nativeContext.LoadFunction("vkCmdWriteTimestamp2", "vulkan")))(commandBuffer, stage, queryPool, query);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query) => DllImport.CmdWriteTimestamp2(commandBuffer, stage, queryPool, query);
+    public static void CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query) => DllImport.CmdWriteTimestamp2(commandBuffer, stage, queryPool, query);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query)
+    void IVulkan.CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query)
     {
         fixed (VkQueryPool_T* __dsl_queryPool = queryPool)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -19477,15 +19477,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query) => DllImport.CmdWriteTimestamp2(commandBuffer, stage, queryPool, query);
+    public static void CmdWriteTimestamp2([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query) => DllImport.CmdWriteTimestamp2(commandBuffer, stage, queryPool, query);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query) => ((delegate* unmanaged<VkCommandBuffer_T*, nuint, VkQueryPool_T*, uint, void> )(_slots[290] is not null and var loadedFnPtr ? loadedFnPtr : _slots[290] = nativeContext.LoadFunction("vkCmdWriteTimestamp2KHR", "vulkan")))(commandBuffer, stage, queryPool, query);
+    void IVulkan.CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query) => ((delegate* unmanaged<VkCommandBuffer_T*, ulong, VkQueryPool_T*, uint, void> )(_slots[290] is not null and var loadedFnPtr ? loadedFnPtr : _slots[290] = nativeContext.LoadFunction("vkCmdWriteTimestamp2KHR", "vulkan")))(commandBuffer, stage, queryPool, query);
     [SupportedApiProfile("vulkan", ["VK_KHR_synchronization2"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2KHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query) => DllImport.CmdWriteTimestamp2KHR(commandBuffer, stage, queryPool, query);
+    public static void CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint query) => DllImport.CmdWriteTimestamp2KHR(commandBuffer, stage, queryPool, query);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query)
+    void IVulkan.CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query)
     {
         fixed (VkQueryPool_T* __dsl_queryPool = queryPool)
         fixed (VkCommandBuffer_T* __dsl_commandBuffer = commandBuffer)
@@ -19498,7 +19498,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2KHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] nuint stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query) => DllImport.CmdWriteTimestamp2KHR(commandBuffer, stage, queryPool, query);
+    public static void CmdWriteTimestamp2KHR([NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer, [NativeTypeName("VkPipelineStageFlags2")] ulong stage, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint query) => DllImport.CmdWriteTimestamp2KHR(commandBuffer, stage, queryPool, query);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.CompileDeferredNV([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkPipeline")] VkPipeline_T* pipeline, [NativeTypeName("uint32_t")] uint shader) => ((delegate* unmanaged<VkDevice_T*, VkPipeline_T*, uint, Result> )(_slots[291] is not null and var loadedFnPtr ? loadedFnPtr : _slots[291] = nativeContext.LoadFunction("vkCompileDeferredNV", "vulkan")))(device, pipeline, shader);
     [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2", "VK_VERSION_1_1"])]
@@ -21134,13 +21134,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result DebugMarkerSetObjectTagEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDebugMarkerObjectTagInfoEXT *")] Ref<DebugMarkerObjectTagInfoEXT> pTagInfo) => DllImport.DebugMarkerSetObjectTagEXT(device, pTagInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DebugReportMessageEXT([NativeTypeName("VkInstance")] VkInstance_T* instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] nuint @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] sbyte* pLayerPrefix, [NativeTypeName("const char *")] sbyte* pMessage) => ((delegate* unmanaged<VkInstance_T*, uint, DebugReportObjectTypeEXT, nuint, nuint, int, sbyte*, sbyte*, void> )(_slots[363] is not null and var loadedFnPtr ? loadedFnPtr : _slots[363] = nativeContext.LoadFunction("vkDebugReportMessageEXT", "vulkan")))(instance, flags, objectType, @object, location, messageCode, pLayerPrefix, pMessage);
+    void IVulkan.DebugReportMessageEXT([NativeTypeName("VkInstance")] VkInstance_T* instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] ulong @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] sbyte* pLayerPrefix, [NativeTypeName("const char *")] sbyte* pMessage) => ((delegate* unmanaged<VkInstance_T*, uint, DebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void> )(_slots[363] is not null and var loadedFnPtr ? loadedFnPtr : _slots[363] = nativeContext.LoadFunction("vkDebugReportMessageEXT", "vulkan")))(instance, flags, objectType, @object, location, messageCode, pLayerPrefix, pMessage);
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DebugReportMessageEXT([NativeTypeName("VkInstance")] VkInstance_T* instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] nuint @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] sbyte* pLayerPrefix, [NativeTypeName("const char *")] sbyte* pMessage) => DllImport.DebugReportMessageEXT(instance, flags, objectType, @object, location, messageCode, pLayerPrefix, pMessage);
+    public static void DebugReportMessageEXT([NativeTypeName("VkInstance")] VkInstance_T* instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] ulong @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] sbyte* pLayerPrefix, [NativeTypeName("const char *")] sbyte* pMessage) => DllImport.DebugReportMessageEXT(instance, flags, objectType, @object, location, messageCode, pLayerPrefix, pMessage);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DebugReportMessageEXT([NativeTypeName("VkInstance")] Ref<VkInstance_T> instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] nuint @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] Ref<sbyte> pLayerPrefix, [NativeTypeName("const char *")] Ref<sbyte> pMessage)
+    void IVulkan.DebugReportMessageEXT([NativeTypeName("VkInstance")] Ref<VkInstance_T> instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] ulong @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] Ref<sbyte> pLayerPrefix, [NativeTypeName("const char *")] Ref<sbyte> pMessage)
     {
         fixed (sbyte* __dsl_pMessage = pMessage)
         fixed (sbyte* __dsl_pLayerPrefix = pLayerPrefix)
@@ -21154,7 +21154,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DebugReportMessageEXT([NativeTypeName("VkInstance")] Ref<VkInstance_T> instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] nuint @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] Ref<sbyte> pLayerPrefix, [NativeTypeName("const char *")] Ref<sbyte> pMessage) => DllImport.DebugReportMessageEXT(instance, flags, objectType, @object, location, messageCode, pLayerPrefix, pMessage);
+    public static void DebugReportMessageEXT([NativeTypeName("VkInstance")] Ref<VkInstance_T> instance, [NativeTypeName("VkDebugReportFlagsEXT")] uint flags, DebugReportObjectTypeEXT objectType, [NativeTypeName("uint64_t")] ulong @object, [NativeTypeName("size_t")] nuint location, [NativeTypeName("int32_t")] int messageCode, [NativeTypeName("const char *")] Ref<sbyte> pLayerPrefix, [NativeTypeName("const char *")] Ref<sbyte> pMessage) => DllImport.DebugReportMessageEXT(instance, flags, objectType, @object, location, messageCode, pLayerPrefix, pMessage);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.DeferredOperationJoinKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeferredOperationKHR")] VkDeferredOperationKHR_T* operation) => ((delegate* unmanaged<VkDevice_T*, VkDeferredOperationKHR_T*, Result> )(_slots[364] is not null and var loadedFnPtr ? loadedFnPtr : _slots[364] = nativeContext.LoadFunction("vkDeferredOperationJoinKHR", "vulkan")))(device, operation);
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
@@ -22616,19 +22616,19 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetAccelerationStructureBuildSizesKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, AccelerationStructureBuildTypeKHR buildType, [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")] Ref<AccelerationStructureBuildGeometryInfoKHR> pBuildInfo, [NativeTypeName("const uint32_t *")] Ref<uint> pMaxPrimitiveCounts, Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo) => DllImport.GetAccelerationStructureBuildSizesKHR(device, buildType, pBuildInfo, pMaxPrimitiveCounts, pSizeInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] AccelerationStructureDeviceAddressInfoKHR* pInfo) => ((delegate* unmanaged<VkDevice_T*, AccelerationStructureDeviceAddressInfoKHR*, nuint> )(_slots[430] is not null and var loadedFnPtr ? loadedFnPtr : _slots[430] = nativeContext.LoadFunction("vkGetAccelerationStructureDeviceAddressKHR", "vulkan")))(device, pInfo);
+    ulong IVulkan.GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] AccelerationStructureDeviceAddressInfoKHR* pInfo) => ((delegate* unmanaged<VkDevice_T*, AccelerationStructureDeviceAddressInfoKHR*, ulong> )(_slots[430] is not null and var loadedFnPtr ? loadedFnPtr : _slots[430] = nativeContext.LoadFunction("vkGetAccelerationStructureDeviceAddressKHR", "vulkan")))(device, pInfo);
     [return: NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure"], ImpliesSets = ["VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address", "VK_KHR_deferred_host_operations+VK_VERSION_1_2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] AccelerationStructureDeviceAddressInfoKHR* pInfo) => DllImport.GetAccelerationStructureDeviceAddressKHR(device, pInfo);
+    public static ulong GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] AccelerationStructureDeviceAddressInfoKHR* pInfo) => DllImport.GetAccelerationStructureDeviceAddressKHR(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo)
+    ulong IVulkan.GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo)
     {
         fixed (AccelerationStructureDeviceAddressInfoKHR* __dsl_pInfo = pInfo)
         fixed (VkDevice_T* __dsl_device = device)
         {
-            return (nuint)((IVulkan)this).GetAccelerationStructureDeviceAddressKHR(__dsl_device, __dsl_pInfo);
+            return (ulong)((IVulkan)this).GetAccelerationStructureDeviceAddressKHR(__dsl_device, __dsl_pInfo);
         }
     }
 
@@ -22637,7 +22637,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo) => DllImport.GetAccelerationStructureDeviceAddressKHR(device, pInfo);
+    public static ulong GetAccelerationStructureDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")] Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo) => DllImport.GetAccelerationStructureDeviceAddressKHR(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.GetAccelerationStructureHandleNV([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* accelerationStructure, [NativeTypeName("size_t")] nuint dataSize, void* pData) => ((delegate* unmanaged<VkDevice_T*, VkAccelerationStructureNV_T*, nuint, void*, Result> )(_slots[431] is not null and var loadedFnPtr ? loadedFnPtr : _slots[431] = nativeContext.LoadFunction("vkGetAccelerationStructureHandleNV", "vulkan")))(device, accelerationStructure, dataSize, pData);
     [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2", "VK_VERSION_1_1"])]
@@ -22705,19 +22705,19 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetAccelerationStructureOpaqueCaptureDescriptorDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkAccelerationStructureCaptureDescriptorDataInfoEXT *")] Ref<AccelerationStructureCaptureDescriptorDataInfoEXT> pInfo, Ref pData) => DllImport.GetAccelerationStructureOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetBufferDeviceAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, BufferDeviceAddressInfo*, nuint> )(_slots[434] is not null and var loadedFnPtr ? loadedFnPtr : _slots[434] = nativeContext.LoadFunction("vkGetBufferDeviceAddress", "vulkan")))(device, pInfo);
+    ulong IVulkan.GetBufferDeviceAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, BufferDeviceAddressInfo*, ulong> )(_slots[434] is not null and var loadedFnPtr ? loadedFnPtr : _slots[434] = nativeContext.LoadFunction("vkGetBufferDeviceAddress", "vulkan")))(device, pInfo);
     [return: NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetBufferDeviceAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => DllImport.GetBufferDeviceAddress(device, pInfo);
+    public static ulong GetBufferDeviceAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => DllImport.GetBufferDeviceAddress(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetBufferDeviceAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
+    ulong IVulkan.GetBufferDeviceAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
     {
         fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
         fixed (VkDevice_T* __dsl_device = device)
         {
-            return (nuint)((IVulkan)this).GetBufferDeviceAddress(__dsl_device, __dsl_pInfo);
+            return (ulong)((IVulkan)this).GetBufferDeviceAddress(__dsl_device, __dsl_pInfo);
         }
     }
 
@@ -22726,21 +22726,21 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetBufferDeviceAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo) => DllImport.GetBufferDeviceAddress(device, pInfo);
+    public static ulong GetBufferDeviceAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo) => DllImport.GetBufferDeviceAddress(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, BufferDeviceAddressInfo*, nuint> )(_slots[435] is not null and var loadedFnPtr ? loadedFnPtr : _slots[435] = nativeContext.LoadFunction("vkGetBufferDeviceAddressEXT", "vulkan")))(device, pInfo);
+    ulong IVulkan.GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, BufferDeviceAddressInfo*, ulong> )(_slots[435] is not null and var loadedFnPtr ? loadedFnPtr : _slots[435] = nativeContext.LoadFunction("vkGetBufferDeviceAddressEXT", "vulkan")))(device, pInfo);
     [return: NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile("vulkan", ["VK_EXT_buffer_device_address"], ImpliesSets = ["VK_EXT_buffer_device_address+VK_KHR_get_physical_device_properties2", "VK_EXT_buffer_device_address+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => DllImport.GetBufferDeviceAddressEXT(device, pInfo);
+    public static ulong GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => DllImport.GetBufferDeviceAddressEXT(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
+    ulong IVulkan.GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
     {
         fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
         fixed (VkDevice_T* __dsl_device = device)
         {
-            return (nuint)((IVulkan)this).GetBufferDeviceAddressEXT(__dsl_device, __dsl_pInfo);
+            return (ulong)((IVulkan)this).GetBufferDeviceAddressEXT(__dsl_device, __dsl_pInfo);
         }
     }
 
@@ -22749,21 +22749,21 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo) => DllImport.GetBufferDeviceAddressEXT(device, pInfo);
+    public static ulong GetBufferDeviceAddressEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo) => DllImport.GetBufferDeviceAddressEXT(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, BufferDeviceAddressInfo*, nuint> )(_slots[436] is not null and var loadedFnPtr ? loadedFnPtr : _slots[436] = nativeContext.LoadFunction("vkGetBufferDeviceAddressKHR", "vulkan")))(device, pInfo);
+    ulong IVulkan.GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, BufferDeviceAddressInfo*, ulong> )(_slots[436] is not null and var loadedFnPtr ? loadedFnPtr : _slots[436] = nativeContext.LoadFunction("vkGetBufferDeviceAddressKHR", "vulkan")))(device, pInfo);
     [return: NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile("vulkan", ["VK_KHR_buffer_device_address"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_device_group", "VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => DllImport.GetBufferDeviceAddressKHR(device, pInfo);
+    public static ulong GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => DllImport.GetBufferDeviceAddressKHR(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
+    ulong IVulkan.GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
     {
         fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
         fixed (VkDevice_T* __dsl_device = device)
         {
-            return (nuint)((IVulkan)this).GetBufferDeviceAddressKHR(__dsl_device, __dsl_pInfo);
+            return (ulong)((IVulkan)this).GetBufferDeviceAddressKHR(__dsl_device, __dsl_pInfo);
         }
     }
 
@@ -22772,7 +22772,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo) => DllImport.GetBufferDeviceAddressKHR(device, pInfo);
+    public static ulong GetBufferDeviceAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo) => DllImport.GetBufferDeviceAddressKHR(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.GetBufferMemoryRequirements([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkBuffer")] VkBuffer_T* buffer, MemoryRequirements* pMemoryRequirements) => ((delegate* unmanaged<VkDevice_T*, VkBuffer_T*, MemoryRequirements*, void> )(_slots[437] is not null and var loadedFnPtr ? loadedFnPtr : _slots[437] = nativeContext.LoadFunction("vkGetBufferMemoryRequirements", "vulkan")))(device, buffer, pMemoryRequirements);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
@@ -22840,19 +22840,19 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetBufferMemoryRequirements2KHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferMemoryRequirementsInfo2 *")] Ref<BufferMemoryRequirementsInfo2> pInfo, Ref<MemoryRequirements2> pMemoryRequirements) => DllImport.GetBufferMemoryRequirements2KHR(device, pInfo, pMemoryRequirements);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, BufferDeviceAddressInfo*, nuint> )(_slots[440] is not null and var loadedFnPtr ? loadedFnPtr : _slots[440] = nativeContext.LoadFunction("vkGetBufferOpaqueCaptureAddress", "vulkan")))(device, pInfo);
+    ulong IVulkan.GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, BufferDeviceAddressInfo*, ulong> )(_slots[440] is not null and var loadedFnPtr ? loadedFnPtr : _slots[440] = nativeContext.LoadFunction("vkGetBufferOpaqueCaptureAddress", "vulkan")))(device, pInfo);
     [return: NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => DllImport.GetBufferOpaqueCaptureAddress(device, pInfo);
+    public static ulong GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => DllImport.GetBufferOpaqueCaptureAddress(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
+    ulong IVulkan.GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
     {
         fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
         fixed (VkDevice_T* __dsl_device = device)
         {
-            return (nuint)((IVulkan)this).GetBufferOpaqueCaptureAddress(__dsl_device, __dsl_pInfo);
+            return (ulong)((IVulkan)this).GetBufferOpaqueCaptureAddress(__dsl_device, __dsl_pInfo);
         }
     }
 
@@ -22861,21 +22861,21 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo) => DllImport.GetBufferOpaqueCaptureAddress(device, pInfo);
+    public static ulong GetBufferOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo) => DllImport.GetBufferOpaqueCaptureAddress(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, BufferDeviceAddressInfo*, nuint> )(_slots[441] is not null and var loadedFnPtr ? loadedFnPtr : _slots[441] = nativeContext.LoadFunction("vkGetBufferOpaqueCaptureAddressKHR", "vulkan")))(device, pInfo);
+    ulong IVulkan.GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, BufferDeviceAddressInfo*, ulong> )(_slots[441] is not null and var loadedFnPtr ? loadedFnPtr : _slots[441] = nativeContext.LoadFunction("vkGetBufferOpaqueCaptureAddressKHR", "vulkan")))(device, pInfo);
     [return: NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_buffer_device_address"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_device_group", "VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => DllImport.GetBufferOpaqueCaptureAddressKHR(device, pInfo);
+    public static ulong GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo) => DllImport.GetBufferOpaqueCaptureAddressKHR(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
+    ulong IVulkan.GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo)
     {
         fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
         fixed (VkDevice_T* __dsl_device = device)
         {
-            return (nuint)((IVulkan)this).GetBufferOpaqueCaptureAddressKHR(__dsl_device, __dsl_pInfo);
+            return (ulong)((IVulkan)this).GetBufferOpaqueCaptureAddressKHR(__dsl_device, __dsl_pInfo);
         }
     }
 
@@ -22884,7 +22884,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo) => DllImport.GetBufferOpaqueCaptureAddressKHR(device, pInfo);
+    public static ulong GetBufferOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo) => DllImport.GetBufferOpaqueCaptureAddressKHR(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.GetBufferOpaqueCaptureDescriptorDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkBufferCaptureDescriptorDataInfoEXT *")] BufferCaptureDescriptorDataInfoEXT* pInfo, void* pData) => ((delegate* unmanaged<VkDevice_T*, BufferCaptureDescriptorDataInfoEXT*, void*, Result> )(_slots[442] is not null and var loadedFnPtr ? loadedFnPtr : _slots[442] = nativeContext.LoadFunction("vkGetBufferOpaqueCaptureDescriptorDataEXT", "vulkan")))(device, pInfo, pData);
     [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
@@ -22908,16 +22908,16 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetBufferOpaqueCaptureDescriptorDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkBufferCaptureDescriptorDataInfoEXT *")] Ref<BufferCaptureDescriptorDataInfoEXT> pInfo, Ref pData) => DllImport.GetBufferOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] nuint* pTimestamps, [NativeTypeName("uint64_t *")] nuint* pMaxDeviation) => ((delegate* unmanaged<VkDevice_T*, uint, CalibratedTimestampInfoKHR*, nuint*, nuint*, Result> )(_slots[443] is not null and var loadedFnPtr ? loadedFnPtr : _slots[443] = nativeContext.LoadFunction("vkGetCalibratedTimestampsEXT", "vulkan")))(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
+    Result IVulkan.GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] ulong* pTimestamps, [NativeTypeName("uint64_t *")] ulong* pMaxDeviation) => ((delegate* unmanaged<VkDevice_T*, uint, CalibratedTimestampInfoKHR*, ulong*, ulong*, Result> )(_slots[443] is not null and var loadedFnPtr ? loadedFnPtr : _slots[443] = nativeContext.LoadFunction("vkGetCalibratedTimestampsEXT", "vulkan")))(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
     [SupportedApiProfile("vulkan", ["VK_EXT_calibrated_timestamps"], ImpliesSets = ["VK_EXT_calibrated_timestamps+VK_KHR_get_physical_device_properties2", "VK_EXT_calibrated_timestamps+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetCalibratedTimestampsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] nuint* pTimestamps, [NativeTypeName("uint64_t *")] nuint* pMaxDeviation) => DllImport.GetCalibratedTimestampsEXT(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
+    public static Result GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] ulong* pTimestamps, [NativeTypeName("uint64_t *")] ulong* pMaxDeviation) => DllImport.GetCalibratedTimestampsEXT(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<nuint> pTimestamps, [NativeTypeName("uint64_t *")] Ref<nuint> pMaxDeviation)
+    Result IVulkan.GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<ulong> pTimestamps, [NativeTypeName("uint64_t *")] Ref<ulong> pMaxDeviation)
     {
-        fixed (nuint* __dsl_pMaxDeviation = pMaxDeviation)
-        fixed (nuint* __dsl_pTimestamps = pTimestamps)
+        fixed (ulong* __dsl_pMaxDeviation = pMaxDeviation)
+        fixed (ulong* __dsl_pTimestamps = pTimestamps)
         fixed (CalibratedTimestampInfoKHR* __dsl_pTimestampInfos = pTimestampInfos)
         fixed (VkDevice_T* __dsl_device = device)
         {
@@ -22929,18 +22929,18 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetCalibratedTimestampsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<nuint> pTimestamps, [NativeTypeName("uint64_t *")] Ref<nuint> pMaxDeviation) => DllImport.GetCalibratedTimestampsEXT(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
+    public static Result GetCalibratedTimestampsEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<ulong> pTimestamps, [NativeTypeName("uint64_t *")] Ref<ulong> pMaxDeviation) => DllImport.GetCalibratedTimestampsEXT(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] nuint* pTimestamps, [NativeTypeName("uint64_t *")] nuint* pMaxDeviation) => ((delegate* unmanaged<VkDevice_T*, uint, CalibratedTimestampInfoKHR*, nuint*, nuint*, Result> )(_slots[444] is not null and var loadedFnPtr ? loadedFnPtr : _slots[444] = nativeContext.LoadFunction("vkGetCalibratedTimestampsKHR", "vulkan")))(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
+    Result IVulkan.GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] ulong* pTimestamps, [NativeTypeName("uint64_t *")] ulong* pMaxDeviation) => ((delegate* unmanaged<VkDevice_T*, uint, CalibratedTimestampInfoKHR*, ulong*, ulong*, Result> )(_slots[444] is not null and var loadedFnPtr ? loadedFnPtr : _slots[444] = nativeContext.LoadFunction("vkGetCalibratedTimestampsKHR", "vulkan")))(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
     [SupportedApiProfile("vulkan", ["VK_KHR_calibrated_timestamps"], ImpliesSets = ["VK_KHR_calibrated_timestamps+VK_KHR_get_physical_device_properties2", "VK_KHR_calibrated_timestamps+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetCalibratedTimestampsKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] nuint* pTimestamps, [NativeTypeName("uint64_t *")] nuint* pMaxDeviation) => DllImport.GetCalibratedTimestampsKHR(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
+    public static Result GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] CalibratedTimestampInfoKHR* pTimestampInfos, [NativeTypeName("uint64_t *")] ulong* pTimestamps, [NativeTypeName("uint64_t *")] ulong* pMaxDeviation) => DllImport.GetCalibratedTimestampsKHR(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<nuint> pTimestamps, [NativeTypeName("uint64_t *")] Ref<nuint> pMaxDeviation)
+    Result IVulkan.GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<ulong> pTimestamps, [NativeTypeName("uint64_t *")] Ref<ulong> pMaxDeviation)
     {
-        fixed (nuint* __dsl_pMaxDeviation = pMaxDeviation)
-        fixed (nuint* __dsl_pTimestamps = pTimestamps)
+        fixed (ulong* __dsl_pMaxDeviation = pMaxDeviation)
+        fixed (ulong* __dsl_pTimestamps = pTimestamps)
         fixed (CalibratedTimestampInfoKHR* __dsl_pTimestampInfos = pTimestampInfos)
         fixed (VkDevice_T* __dsl_device = device)
         {
@@ -22952,7 +22952,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetCalibratedTimestampsKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<nuint> pTimestamps, [NativeTypeName("uint64_t *")] Ref<nuint> pMaxDeviation) => DllImport.GetCalibratedTimestampsKHR(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
+    public static Result GetCalibratedTimestampsKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint timestampCount, [NativeTypeName("const VkCalibratedTimestampInfoKHR *")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos, [NativeTypeName("uint64_t *")] Ref<ulong> pTimestamps, [NativeTypeName("uint64_t *")] Ref<ulong> pMaxDeviation) => DllImport.GetCalibratedTimestampsKHR(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.GetClusterAccelerationStructureBuildSizesNV([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkClusterAccelerationStructureInputInfoNV *")] ClusterAccelerationStructureInputInfoNV* pInfo, AccelerationStructureBuildSizesInfoKHR* pSizeInfo) => ((delegate* unmanaged<VkDevice_T*, ClusterAccelerationStructureInputInfoNV*, AccelerationStructureBuildSizesInfoKHR*, void> )(_slots[445] is not null and var loadedFnPtr ? loadedFnPtr : _slots[445] = nativeContext.LoadFunction("vkGetClusterAccelerationStructureBuildSizesNV", "vulkan")))(device, pInfo, pSizeInfo);
     [SupportedApiProfile("vulkan", ["VK_NV_cluster_acceleration_structure"], ImpliesSets = ["VK_KHR_acceleration_structure"])]
@@ -23087,15 +23087,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetDescriptorSetHostMappingValve([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSet")] Ref<VkDescriptorSet_T> descriptorSet, Ref2D ppData) => DllImport.GetDescriptorSetHostMappingValve(device, descriptorSet, ppData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] nuint* pOffset) => ((delegate* unmanaged<VkDevice_T*, VkDescriptorSetLayout_T*, uint, nuint*, void> )(_slots[451] is not null and var loadedFnPtr ? loadedFnPtr : _slots[451] = nativeContext.LoadFunction("vkGetDescriptorSetLayoutBindingOffsetEXT", "vulkan")))(device, layout, binding, pOffset);
+    void IVulkan.GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] ulong* pOffset) => ((delegate* unmanaged<VkDevice_T*, VkDescriptorSetLayout_T*, uint, ulong*, void> )(_slots[451] is not null and var loadedFnPtr ? loadedFnPtr : _slots[451] = nativeContext.LoadFunction("vkGetDescriptorSetLayoutBindingOffsetEXT", "vulkan")))(device, layout, binding, pOffset);
     [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorSetLayoutBindingOffsetEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] nuint* pOffset) => DllImport.GetDescriptorSetLayoutBindingOffsetEXT(device, layout, binding, pOffset);
+    public static void GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] ulong* pOffset) => DllImport.GetDescriptorSetLayoutBindingOffsetEXT(device, layout, binding, pOffset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] Ref<nuint> pOffset)
+    void IVulkan.GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] Ref<ulong> pOffset)
     {
-        fixed (nuint* __dsl_pOffset = pOffset)
+        fixed (ulong* __dsl_pOffset = pOffset)
         fixed (VkDescriptorSetLayout_T* __dsl_layout = layout)
         fixed (VkDevice_T* __dsl_device = device)
         {
@@ -23107,7 +23107,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorSetLayoutBindingOffsetEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] Ref<nuint> pOffset) => DllImport.GetDescriptorSetLayoutBindingOffsetEXT(device, layout, binding, pOffset);
+    public static void GetDescriptorSetLayoutBindingOffsetEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("uint32_t")] uint binding, [NativeTypeName("VkDeviceSize *")] Ref<ulong> pOffset) => DllImport.GetDescriptorSetLayoutBindingOffsetEXT(device, layout, binding, pOffset);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.GetDescriptorSetLayoutHostMappingInfoValve([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDescriptorSetBindingReferenceVALVE *")] DescriptorSetBindingReferenceValve* pBindingReference, DescriptorSetLayoutHostMappingInfoValve* pHostMapping) => ((delegate* unmanaged<VkDevice_T*, DescriptorSetBindingReferenceValve*, DescriptorSetLayoutHostMappingInfoValve*, void> )(_slots[452] is not null and var loadedFnPtr ? loadedFnPtr : _slots[452] = nativeContext.LoadFunction("vkGetDescriptorSetLayoutHostMappingInfoVALVE", "vulkan")))(device, pBindingReference, pHostMapping);
     [SupportedApiProfile("vulkan", ["VK_VALVE_descriptor_set_host_mapping"], ImpliesSets = ["VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2", "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1"])]
@@ -23131,15 +23131,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetDescriptorSetLayoutHostMappingInfoValve([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDescriptorSetBindingReferenceVALVE *")] Ref<DescriptorSetBindingReferenceValve> pBindingReference, Ref<DescriptorSetLayoutHostMappingInfoValve> pHostMapping) => DllImport.GetDescriptorSetLayoutHostMappingInfoValve(device, pBindingReference, pHostMapping);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("VkDeviceSize *")] nuint* pLayoutSizeInBytes) => ((delegate* unmanaged<VkDevice_T*, VkDescriptorSetLayout_T*, nuint*, void> )(_slots[453] is not null and var loadedFnPtr ? loadedFnPtr : _slots[453] = nativeContext.LoadFunction("vkGetDescriptorSetLayoutSizeEXT", "vulkan")))(device, layout, pLayoutSizeInBytes);
+    void IVulkan.GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("VkDeviceSize *")] ulong* pLayoutSizeInBytes) => ((delegate* unmanaged<VkDevice_T*, VkDescriptorSetLayout_T*, ulong*, void> )(_slots[453] is not null and var loadedFnPtr ? loadedFnPtr : _slots[453] = nativeContext.LoadFunction("vkGetDescriptorSetLayoutSizeEXT", "vulkan")))(device, layout, pLayoutSizeInBytes);
     [SupportedApiProfile("vulkan", ["VK_EXT_descriptor_buffer"], ImpliesSets = ["VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2", "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1", "VK_KHR_synchronization2+VK_VERSION_1_2", "VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorSetLayoutSizeEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("VkDeviceSize *")] nuint* pLayoutSizeInBytes) => DllImport.GetDescriptorSetLayoutSizeEXT(device, layout, pLayoutSizeInBytes);
+    public static void GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout, [NativeTypeName("VkDeviceSize *")] ulong* pLayoutSizeInBytes) => DllImport.GetDescriptorSetLayoutSizeEXT(device, layout, pLayoutSizeInBytes);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("VkDeviceSize *")] Ref<nuint> pLayoutSizeInBytes)
+    void IVulkan.GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("VkDeviceSize *")] Ref<ulong> pLayoutSizeInBytes)
     {
-        fixed (nuint* __dsl_pLayoutSizeInBytes = pLayoutSizeInBytes)
+        fixed (ulong* __dsl_pLayoutSizeInBytes = pLayoutSizeInBytes)
         fixed (VkDescriptorSetLayout_T* __dsl_layout = layout)
         fixed (VkDevice_T* __dsl_device = device)
         {
@@ -23151,7 +23151,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorSetLayoutSizeEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("VkDeviceSize *")] Ref<nuint> pLayoutSizeInBytes) => DllImport.GetDescriptorSetLayoutSizeEXT(device, layout, pLayoutSizeInBytes);
+    public static void GetDescriptorSetLayoutSizeEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout, [NativeTypeName("VkDeviceSize *")] Ref<ulong> pLayoutSizeInBytes) => DllImport.GetDescriptorSetLayoutSizeEXT(device, layout, pLayoutSizeInBytes);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.GetDescriptorSetLayoutSupport([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDescriptorSetLayoutCreateInfo *")] DescriptorSetLayoutCreateInfo* pCreateInfo, DescriptorSetLayoutSupport* pSupport) => ((delegate* unmanaged<VkDevice_T*, DescriptorSetLayoutCreateInfo*, DescriptorSetLayoutSupport*, void> )(_slots[454] is not null and var loadedFnPtr ? loadedFnPtr : _slots[454] = nativeContext.LoadFunction("vkGetDescriptorSetLayoutSupport", "vulkan")))(device, pCreateInfo, pSupport);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.1")]
@@ -23504,15 +23504,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetDeviceImageSubresourceLayoutKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceImageSubresourceInfo *")] Ref<DeviceImageSubresourceInfo> pInfo, Ref<SubresourceLayout2> pLayout) => DllImport.GetDeviceImageSubresourceLayoutKHR(device, pInfo, pLayout);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize *")] nuint* pCommittedMemoryInBytes) => ((delegate* unmanaged<VkDevice_T*, VkDeviceMemory_T*, nuint*, void> )(_slots[470] is not null and var loadedFnPtr ? loadedFnPtr : _slots[470] = nativeContext.LoadFunction("vkGetDeviceMemoryCommitment", "vulkan")))(device, memory, pCommittedMemoryInBytes);
+    void IVulkan.GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize *")] ulong* pCommittedMemoryInBytes) => ((delegate* unmanaged<VkDevice_T*, VkDeviceMemory_T*, ulong*, void> )(_slots[470] is not null and var loadedFnPtr ? loadedFnPtr : _slots[470] = nativeContext.LoadFunction("vkGetDeviceMemoryCommitment", "vulkan")))(device, memory, pCommittedMemoryInBytes);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryCommitment")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize *")] nuint* pCommittedMemoryInBytes) => DllImport.GetDeviceMemoryCommitment(device, memory, pCommittedMemoryInBytes);
+    public static void GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize *")] ulong* pCommittedMemoryInBytes) => DllImport.GetDeviceMemoryCommitment(device, memory, pCommittedMemoryInBytes);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize *")] Ref<nuint> pCommittedMemoryInBytes)
+    void IVulkan.GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize *")] Ref<ulong> pCommittedMemoryInBytes)
     {
-        fixed (nuint* __dsl_pCommittedMemoryInBytes = pCommittedMemoryInBytes)
+        fixed (ulong* __dsl_pCommittedMemoryInBytes = pCommittedMemoryInBytes)
         fixed (VkDeviceMemory_T* __dsl_memory = memory)
         fixed (VkDevice_T* __dsl_device = device)
         {
@@ -23524,21 +23524,21 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryCommitment")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize *")] Ref<nuint> pCommittedMemoryInBytes) => DllImport.GetDeviceMemoryCommitment(device, memory, pCommittedMemoryInBytes);
+    public static void GetDeviceMemoryCommitment([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize *")] Ref<ulong> pCommittedMemoryInBytes) => DllImport.GetDeviceMemoryCommitment(device, memory, pCommittedMemoryInBytes);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, DeviceMemoryOpaqueCaptureAddressInfo*, nuint> )(_slots[471] is not null and var loadedFnPtr ? loadedFnPtr : _slots[471] = nativeContext.LoadFunction("vkGetDeviceMemoryOpaqueCaptureAddress", "vulkan")))(device, pInfo);
+    ulong IVulkan.GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, DeviceMemoryOpaqueCaptureAddressInfo*, ulong> )(_slots[471] is not null and var loadedFnPtr ? loadedFnPtr : _slots[471] = nativeContext.LoadFunction("vkGetDeviceMemoryOpaqueCaptureAddress", "vulkan")))(device, pInfo);
     [return: NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo) => DllImport.GetDeviceMemoryOpaqueCaptureAddress(device, pInfo);
+    public static ulong GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo) => DllImport.GetDeviceMemoryOpaqueCaptureAddress(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
+    ulong IVulkan.GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
     {
         fixed (DeviceMemoryOpaqueCaptureAddressInfo* __dsl_pInfo = pInfo)
         fixed (VkDevice_T* __dsl_device = device)
         {
-            return (nuint)((IVulkan)this).GetDeviceMemoryOpaqueCaptureAddress(__dsl_device, __dsl_pInfo);
+            return (ulong)((IVulkan)this).GetDeviceMemoryOpaqueCaptureAddress(__dsl_device, __dsl_pInfo);
         }
     }
 
@@ -23547,21 +23547,21 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo) => DllImport.GetDeviceMemoryOpaqueCaptureAddress(device, pInfo);
+    public static ulong GetDeviceMemoryOpaqueCaptureAddress([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo) => DllImport.GetDeviceMemoryOpaqueCaptureAddress(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, DeviceMemoryOpaqueCaptureAddressInfo*, nuint> )(_slots[472] is not null and var loadedFnPtr ? loadedFnPtr : _slots[472] = nativeContext.LoadFunction("vkGetDeviceMemoryOpaqueCaptureAddressKHR", "vulkan")))(device, pInfo);
+    ulong IVulkan.GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo) => ((delegate* unmanaged<VkDevice_T*, DeviceMemoryOpaqueCaptureAddressInfo*, ulong> )(_slots[472] is not null and var loadedFnPtr ? loadedFnPtr : _slots[472] = nativeContext.LoadFunction("vkGetDeviceMemoryOpaqueCaptureAddressKHR", "vulkan")))(device, pInfo);
     [return: NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_buffer_device_address"], ImpliesSets = ["VK_KHR_get_physical_device_properties2+VK_KHR_device_group", "VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo) => DllImport.GetDeviceMemoryOpaqueCaptureAddressKHR(device, pInfo);
+    public static ulong GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo) => DllImport.GetDeviceMemoryOpaqueCaptureAddressKHR(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
+    ulong IVulkan.GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
     {
         fixed (DeviceMemoryOpaqueCaptureAddressInfo* __dsl_pInfo = pInfo)
         fixed (VkDevice_T* __dsl_device = device)
         {
-            return (nuint)((IVulkan)this).GetDeviceMemoryOpaqueCaptureAddressKHR(__dsl_device, __dsl_pInfo);
+            return (ulong)((IVulkan)this).GetDeviceMemoryOpaqueCaptureAddressKHR(__dsl_device, __dsl_pInfo);
         }
     }
 
@@ -23570,7 +23570,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo) => DllImport.GetDeviceMemoryOpaqueCaptureAddressKHR(device, pInfo);
+    public static ulong GetDeviceMemoryOpaqueCaptureAddressKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo) => DllImport.GetDeviceMemoryOpaqueCaptureAddressKHR(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.GetDeviceMicromapCompatibilityEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkMicromapVersionInfoEXT *")] MicromapVersionInfoEXT* pVersionInfo, AccelerationStructureCompatibilityKHR* pCompatibility) => ((delegate* unmanaged<VkDevice_T*, MicromapVersionInfoEXT*, AccelerationStructureCompatibilityKHR*, void> )(_slots[473] is not null and var loadedFnPtr ? loadedFnPtr : _slots[473] = nativeContext.LoadFunction("vkGetDeviceMicromapCompatibilityEXT", "vulkan")))(device, pVersionInfo, pCompatibility);
     [SupportedApiProfile("vulkan", ["VK_EXT_opacity_micromap"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_synchronization2", "VK_KHR_acceleration_structure+VK_VERSION_1_3"])]
@@ -24307,19 +24307,19 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetImageViewAddressNVX([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkImageView")] Ref<VkImageView_T> imageView, Ref<ImageViewAddressPropertiesNVX> pProperties) => DllImport.GetImageViewAddressNVX(device, imageView, pProperties);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetImageViewHandle64NVX([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] ImageViewHandleInfoNVX* pInfo) => ((delegate* unmanaged<VkDevice_T*, ImageViewHandleInfoNVX*, nuint> )(_slots[506] is not null and var loadedFnPtr ? loadedFnPtr : _slots[506] = nativeContext.LoadFunction("vkGetImageViewHandle64NVX", "vulkan")))(device, pInfo);
+    ulong IVulkan.GetImageViewHandle64NVX([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] ImageViewHandleInfoNVX* pInfo) => ((delegate* unmanaged<VkDevice_T*, ImageViewHandleInfoNVX*, ulong> )(_slots[506] is not null and var loadedFnPtr ? loadedFnPtr : _slots[506] = nativeContext.LoadFunction("vkGetImageViewHandle64NVX", "vulkan")))(device, pInfo);
     [return: NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetImageViewHandle64NVX([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] ImageViewHandleInfoNVX* pInfo) => DllImport.GetImageViewHandle64NVX(device, pInfo);
+    public static ulong GetImageViewHandle64NVX([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] ImageViewHandleInfoNVX* pInfo) => DllImport.GetImageViewHandle64NVX(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetImageViewHandle64NVX([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] Ref<ImageViewHandleInfoNVX> pInfo)
+    ulong IVulkan.GetImageViewHandle64NVX([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] Ref<ImageViewHandleInfoNVX> pInfo)
     {
         fixed (ImageViewHandleInfoNVX* __dsl_pInfo = pInfo)
         fixed (VkDevice_T* __dsl_device = device)
         {
-            return (nuint)((IVulkan)this).GetImageViewHandle64NVX(__dsl_device, __dsl_pInfo);
+            return (ulong)((IVulkan)this).GetImageViewHandle64NVX(__dsl_device, __dsl_pInfo);
         }
     }
 
@@ -24328,7 +24328,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetImageViewHandle64NVX([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] Ref<ImageViewHandleInfoNVX> pInfo) => DllImport.GetImageViewHandle64NVX(device, pInfo);
+    public static ulong GetImageViewHandle64NVX([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] Ref<ImageViewHandleInfoNVX> pInfo) => DllImport.GetImageViewHandle64NVX(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IVulkan.GetImageViewHandleNVX([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkImageViewHandleInfoNVX *")] ImageViewHandleInfoNVX* pInfo) => ((delegate* unmanaged<VkDevice_T*, ImageViewHandleInfoNVX*, uint> )(_slots[507] is not null and var loadedFnPtr ? loadedFnPtr : _slots[507] = nativeContext.LoadFunction("vkGetImageViewHandleNVX", "vulkan")))(device, pInfo);
     [return: NativeTypeName("uint32_t")]
@@ -25936,19 +25936,19 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetPipelineExecutableStatisticsKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkPipelineExecutableInfoKHR *")] Ref<PipelineExecutableInfoKHR> pExecutableInfo, [NativeTypeName("uint32_t *")] Ref<uint> pStatisticCount, Ref<PipelineExecutableStatisticKHR> pStatistics) => DllImport.GetPipelineExecutableStatisticsKHR(device, pExecutableInfo, pStatisticCount, pStatistics);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] PipelineIndirectDeviceAddressInfoNV* pInfo) => ((delegate* unmanaged<VkDevice_T*, PipelineIndirectDeviceAddressInfoNV*, nuint> )(_slots[580] is not null and var loadedFnPtr ? loadedFnPtr : _slots[580] = nativeContext.LoadFunction("vkGetPipelineIndirectDeviceAddressNV", "vulkan")))(device, pInfo);
+    ulong IVulkan.GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] PipelineIndirectDeviceAddressInfoNV* pInfo) => ((delegate* unmanaged<VkDevice_T*, PipelineIndirectDeviceAddressInfoNV*, ulong> )(_slots[580] is not null and var loadedFnPtr ? loadedFnPtr : _slots[580] = nativeContext.LoadFunction("vkGetPipelineIndirectDeviceAddressNV", "vulkan")))(device, pInfo);
     [return: NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile("vulkan", ["VK_NV_device_generated_commands_compute"], ImpliesSets = ["VK_NV_device_generated_commands"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] PipelineIndirectDeviceAddressInfoNV* pInfo) => DllImport.GetPipelineIndirectDeviceAddressNV(device, pInfo);
+    public static ulong GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] PipelineIndirectDeviceAddressInfoNV* pInfo) => DllImport.GetPipelineIndirectDeviceAddressNV(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] Ref<PipelineIndirectDeviceAddressInfoNV> pInfo)
+    ulong IVulkan.GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] Ref<PipelineIndirectDeviceAddressInfoNV> pInfo)
     {
         fixed (PipelineIndirectDeviceAddressInfoNV* __dsl_pInfo = pInfo)
         fixed (VkDevice_T* __dsl_device = device)
         {
-            return (nuint)((IVulkan)this).GetPipelineIndirectDeviceAddressNV(__dsl_device, __dsl_pInfo);
+            return (ulong)((IVulkan)this).GetPipelineIndirectDeviceAddressNV(__dsl_device, __dsl_pInfo);
         }
     }
 
@@ -25957,7 +25957,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] Ref<PipelineIndirectDeviceAddressInfoNV> pInfo) => DllImport.GetPipelineIndirectDeviceAddressNV(device, pInfo);
+    public static ulong GetPipelineIndirectDeviceAddressNV([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")] Ref<PipelineIndirectDeviceAddressInfoNV> pInfo) => DllImport.GetPipelineIndirectDeviceAddressNV(device, pInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.GetPipelineIndirectMemoryRequirementsNV([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkComputePipelineCreateInfo *")] ComputePipelineCreateInfo* pCreateInfo, MemoryRequirements2* pMemoryRequirements) => ((delegate* unmanaged<VkDevice_T*, ComputePipelineCreateInfo*, MemoryRequirements2*, void> )(_slots[581] is not null and var loadedFnPtr ? loadedFnPtr : _slots[581] = nativeContext.LoadFunction("vkGetPipelineIndirectMemoryRequirementsNV", "vulkan")))(device, pCreateInfo, pMemoryRequirements);
     [SupportedApiProfile("vulkan", ["VK_NV_device_generated_commands_compute"], ImpliesSets = ["VK_NV_device_generated_commands"])]
@@ -26025,15 +26025,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetPipelinePropertiesEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkPipelineInfoEXT *")] Ref<PipelineInfoKHR> pPipelineInfo, Ref<BaseOutStructure> pPipelineProperties) => DllImport.GetPipelinePropertiesEXT(device, pPipelineInfo, pPipelineProperties);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] nuint* pData) => ((delegate* unmanaged<VkDevice_T*, ObjectType, nuint, VkPrivateDataSlot_T*, nuint*, void> )(_slots[584] is not null and var loadedFnPtr ? loadedFnPtr : _slots[584] = nativeContext.LoadFunction("vkGetPrivateData", "vulkan")))(device, objectType, objectHandle, privateDataSlot, pData);
+    void IVulkan.GetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] ulong* pData) => ((delegate* unmanaged<VkDevice_T*, ObjectType, ulong, VkPrivateDataSlot_T*, ulong*, void> )(_slots[584] is not null and var loadedFnPtr ? loadedFnPtr : _slots[584] = nativeContext.LoadFunction("vkGetPrivateData", "vulkan")))(device, objectType, objectHandle, privateDataSlot, pData);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     [NativeFunction("vulkan", EntryPoint = "vkGetPrivateData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] nuint* pData) => DllImport.GetPrivateData(device, objectType, objectHandle, privateDataSlot, pData);
+    public static void GetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] ulong* pData) => DllImport.GetPrivateData(device, objectType, objectHandle, privateDataSlot, pData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<nuint> pData)
+    void IVulkan.GetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<ulong> pData)
     {
-        fixed (nuint* __dsl_pData = pData)
+        fixed (ulong* __dsl_pData = pData)
         fixed (VkPrivateDataSlot_T* __dsl_privateDataSlot = privateDataSlot)
         fixed (VkDevice_T* __dsl_device = device)
         {
@@ -26045,17 +26045,17 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetPrivateData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<nuint> pData) => DllImport.GetPrivateData(device, objectType, objectHandle, privateDataSlot, pData);
+    public static void GetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<ulong> pData) => DllImport.GetPrivateData(device, objectType, objectHandle, privateDataSlot, pData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] nuint* pData) => ((delegate* unmanaged<VkDevice_T*, ObjectType, nuint, VkPrivateDataSlot_T*, nuint*, void> )(_slots[585] is not null and var loadedFnPtr ? loadedFnPtr : _slots[585] = nativeContext.LoadFunction("vkGetPrivateDataEXT", "vulkan")))(device, objectType, objectHandle, privateDataSlot, pData);
+    void IVulkan.GetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] ulong* pData) => ((delegate* unmanaged<VkDevice_T*, ObjectType, ulong, VkPrivateDataSlot_T*, ulong*, void> )(_slots[585] is not null and var loadedFnPtr ? loadedFnPtr : _slots[585] = nativeContext.LoadFunction("vkGetPrivateDataEXT", "vulkan")))(device, objectType, objectHandle, privateDataSlot, pData);
     [SupportedApiProfile("vulkan", ["VK_EXT_private_data"], ImpliesSets = ["VK_EXT_private_data+VK_KHR_get_physical_device_properties2", "VK_EXT_private_data+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPrivateDataEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] nuint* pData) => DllImport.GetPrivateDataEXT(device, objectType, objectHandle, privateDataSlot, pData);
+    public static void GetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t *")] ulong* pData) => DllImport.GetPrivateDataEXT(device, objectType, objectHandle, privateDataSlot, pData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<nuint> pData)
+    void IVulkan.GetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<ulong> pData)
     {
-        fixed (nuint* __dsl_pData = pData)
+        fixed (ulong* __dsl_pData = pData)
         fixed (VkPrivateDataSlot_T* __dsl_privateDataSlot = privateDataSlot)
         fixed (VkDevice_T* __dsl_device = device)
         {
@@ -26067,15 +26067,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetPrivateDataEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<nuint> pData) => DllImport.GetPrivateDataEXT(device, objectType, objectHandle, privateDataSlot, pData);
+    public static void GetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t *")] Ref<ulong> pData) => DllImport.GetPrivateDataEXT(device, objectType, objectHandle, privateDataSlot, pData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetQueryPoolResults([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, void* pData, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => ((delegate* unmanaged<VkDevice_T*, VkQueryPool_T*, uint, uint, nuint, void*, nuint, uint, Result> )(_slots[586] is not null and var loadedFnPtr ? loadedFnPtr : _slots[586] = nativeContext.LoadFunction("vkGetQueryPoolResults", "vulkan")))(device, queryPool, firstQuery, queryCount, dataSize, pData, stride, flags);
+    Result IVulkan.GetQueryPoolResults([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, void* pData, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => ((delegate* unmanaged<VkDevice_T*, VkQueryPool_T*, uint, uint, nuint, void*, ulong, uint, Result> )(_slots[586] is not null and var loadedFnPtr ? loadedFnPtr : _slots[586] = nativeContext.LoadFunction("vkGetQueryPoolResults", "vulkan")))(device, queryPool, firstQuery, queryCount, dataSize, pData, stride, flags);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkGetQueryPoolResults")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetQueryPoolResults([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, void* pData, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => DllImport.GetQueryPoolResults(device, queryPool, firstQuery, queryCount, dataSize, pData, stride, flags);
+    public static Result GetQueryPoolResults([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, void* pData, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => DllImport.GetQueryPoolResults(device, queryPool, firstQuery, queryCount, dataSize, pData, stride, flags);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetQueryPoolResults([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, Ref pData, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags)
+    Result IVulkan.GetQueryPoolResults([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, Ref pData, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags)
     {
         fixed (void* __dsl_pData = pData)
         fixed (VkQueryPool_T* __dsl_queryPool = queryPool)
@@ -26089,7 +26089,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetQueryPoolResults")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetQueryPoolResults([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, Ref pData, [NativeTypeName("VkDeviceSize")] nuint stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => DllImport.GetQueryPoolResults(device, queryPool, firstQuery, queryCount, dataSize, pData, stride, flags);
+    public static Result GetQueryPoolResults([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("size_t")] nuint dataSize, Ref pData, [NativeTypeName("VkDeviceSize")] ulong stride, [NativeTypeName("VkQueryResultFlags")] uint flags) => DllImport.GetQueryPoolResults(device, queryPool, firstQuery, queryCount, dataSize, pData, stride, flags);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.GetQueueCheckpointData2NV([NativeTypeName("VkQueue")] VkQueue_T* queue, [NativeTypeName("uint32_t *")] uint* pCheckpointDataCount, CheckpointData2NV* pCheckpointData) => ((delegate* unmanaged<VkQueue_T*, uint*, CheckpointData2NV*, void> )(_slots[587] is not null and var loadedFnPtr ? loadedFnPtr : _slots[587] = nativeContext.LoadFunction("vkGetQueueCheckpointData2NV", "vulkan")))(queue, pCheckpointDataCount, pCheckpointData);
     [SupportedApiProfile("vulkan", ["VK_NV_device_diagnostic_checkpoints+VK_KHR_synchronization2", "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_3"], ImpliesSets = ["VK_NV_device_diagnostic_checkpoints+VK_KHR_get_physical_device_properties2", "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1"])]
@@ -26201,19 +26201,19 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetRayTracingShaderGroupHandlesNV([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkPipeline")] Ref<VkPipeline_T> pipeline, [NativeTypeName("uint32_t")] uint firstGroup, [NativeTypeName("uint32_t")] uint groupCount, [NativeTypeName("size_t")] nuint dataSize, Ref pData) => DllImport.GetRayTracingShaderGroupHandlesNV(device, pipeline, firstGroup, groupCount, dataSize, pData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkPipeline")] VkPipeline_T* pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader) => ((delegate* unmanaged<VkDevice_T*, VkPipeline_T*, uint, ShaderGroupShaderKHR, nuint> )(_slots[592] is not null and var loadedFnPtr ? loadedFnPtr : _slots[592] = nativeContext.LoadFunction("vkGetRayTracingShaderGroupStackSizeKHR", "vulkan")))(device, pipeline, group, groupShader);
+    ulong IVulkan.GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkPipeline")] VkPipeline_T* pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader) => ((delegate* unmanaged<VkDevice_T*, VkPipeline_T*, uint, ShaderGroupShaderKHR, ulong> )(_slots[592] is not null and var loadedFnPtr ? loadedFnPtr : _slots[592] = nativeContext.LoadFunction("vkGetRayTracingShaderGroupStackSizeKHR", "vulkan")))(device, pipeline, group, groupShader);
     [return: NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_KHR_ray_tracing_pipeline"], ImpliesSets = ["VK_KHR_acceleration_structure+VK_KHR_spirv_1_4", "VK_KHR_acceleration_structure+VK_VERSION_1_2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetRayTracingShaderGroupStackSizeKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkPipeline")] VkPipeline_T* pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader) => DllImport.GetRayTracingShaderGroupStackSizeKHR(device, pipeline, group, groupShader);
+    public static ulong GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkPipeline")] VkPipeline_T* pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader) => DllImport.GetRayTracingShaderGroupStackSizeKHR(device, pipeline, group, groupShader);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nuint IVulkan.GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkPipeline")] Ref<VkPipeline_T> pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader)
+    ulong IVulkan.GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkPipeline")] Ref<VkPipeline_T> pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader)
     {
         fixed (VkPipeline_T* __dsl_pipeline = pipeline)
         fixed (VkDevice_T* __dsl_device = device)
         {
-            return (nuint)((IVulkan)this).GetRayTracingShaderGroupStackSizeKHR(__dsl_device, __dsl_pipeline, group, groupShader);
+            return (ulong)((IVulkan)this).GetRayTracingShaderGroupStackSizeKHR(__dsl_device, __dsl_pipeline, group, groupShader);
         }
     }
 
@@ -26222,7 +26222,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetRayTracingShaderGroupStackSizeKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nuint GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkPipeline")] Ref<VkPipeline_T> pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader) => DllImport.GetRayTracingShaderGroupStackSizeKHR(device, pipeline, group, groupShader);
+    public static ulong GetRayTracingShaderGroupStackSizeKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkPipeline")] Ref<VkPipeline_T> pipeline, [NativeTypeName("uint32_t")] uint group, ShaderGroupShaderKHR groupShader) => DllImport.GetRayTracingShaderGroupStackSizeKHR(device, pipeline, group, groupShader);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.GetRefreshCycleDurationGoogle([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, RefreshCycleDurationGoogle* pDisplayTimingProperties) => ((delegate* unmanaged<VkDevice_T*, VkSwapchainKHR_T*, RefreshCycleDurationGoogle*, Result> )(_slots[593] is not null and var loadedFnPtr ? loadedFnPtr : _slots[593] = nativeContext.LoadFunction("vkGetRefreshCycleDurationGOOGLE", "vulkan")))(device, swapchain, pDisplayTimingProperties);
     [SupportedApiProfile("vulkan", ["VK_GOOGLE_display_timing"], ImpliesSets = ["VK_KHR_swapchain"])]
@@ -26334,15 +26334,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetSamplerOpaqueCaptureDescriptorDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSamplerCaptureDescriptorDataInfoEXT *")] Ref<SamplerCaptureDescriptorDataInfoEXT> pInfo, Ref pData) => DllImport.GetSamplerOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSemaphoreCounterValue([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] nuint* pValue) => ((delegate* unmanaged<VkDevice_T*, VkSemaphore_T*, nuint*, Result> )(_slots[598] is not null and var loadedFnPtr ? loadedFnPtr : _slots[598] = nativeContext.LoadFunction("vkGetSemaphoreCounterValue", "vulkan")))(device, semaphore, pValue);
+    Result IVulkan.GetSemaphoreCounterValue([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] ulong* pValue) => ((delegate* unmanaged<VkDevice_T*, VkSemaphore_T*, ulong*, Result> )(_slots[598] is not null and var loadedFnPtr ? loadedFnPtr : _slots[598] = nativeContext.LoadFunction("vkGetSemaphoreCounterValue", "vulkan")))(device, semaphore, pValue);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
     [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreCounterValue")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetSemaphoreCounterValue([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] nuint* pValue) => DllImport.GetSemaphoreCounterValue(device, semaphore, pValue);
+    public static Result GetSemaphoreCounterValue([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] ulong* pValue) => DllImport.GetSemaphoreCounterValue(device, semaphore, pValue);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSemaphoreCounterValue([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<nuint> pValue)
+    Result IVulkan.GetSemaphoreCounterValue([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<ulong> pValue)
     {
-        fixed (nuint* __dsl_pValue = pValue)
+        fixed (ulong* __dsl_pValue = pValue)
         fixed (VkSemaphore_T* __dsl_semaphore = semaphore)
         fixed (VkDevice_T* __dsl_device = device)
         {
@@ -26354,17 +26354,17 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreCounterValue")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetSemaphoreCounterValue([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<nuint> pValue) => DllImport.GetSemaphoreCounterValue(device, semaphore, pValue);
+    public static Result GetSemaphoreCounterValue([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<ulong> pValue) => DllImport.GetSemaphoreCounterValue(device, semaphore, pValue);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] nuint* pValue) => ((delegate* unmanaged<VkDevice_T*, VkSemaphore_T*, nuint*, Result> )(_slots[599] is not null and var loadedFnPtr ? loadedFnPtr : _slots[599] = nativeContext.LoadFunction("vkGetSemaphoreCounterValueKHR", "vulkan")))(device, semaphore, pValue);
+    Result IVulkan.GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] ulong* pValue) => ((delegate* unmanaged<VkDevice_T*, VkSemaphore_T*, ulong*, Result> )(_slots[599] is not null and var loadedFnPtr ? loadedFnPtr : _slots[599] = nativeContext.LoadFunction("vkGetSemaphoreCounterValueKHR", "vulkan")))(device, semaphore, pValue);
     [SupportedApiProfile("vulkan", ["VK_KHR_timeline_semaphore"], ImpliesSets = ["VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2", "VK_KHR_timeline_semaphore+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreCounterValueKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] nuint* pValue) => DllImport.GetSemaphoreCounterValueKHR(device, semaphore, pValue);
+    public static Result GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore, [NativeTypeName("uint64_t *")] ulong* pValue) => DllImport.GetSemaphoreCounterValueKHR(device, semaphore, pValue);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<nuint> pValue)
+    Result IVulkan.GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<ulong> pValue)
     {
-        fixed (nuint* __dsl_pValue = pValue)
+        fixed (ulong* __dsl_pValue = pValue)
         fixed (VkSemaphore_T* __dsl_semaphore = semaphore)
         fixed (VkDevice_T* __dsl_device = device)
         {
@@ -26376,7 +26376,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreCounterValueKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<nuint> pValue) => DllImport.GetSemaphoreCounterValueKHR(device, semaphore, pValue);
+    public static Result GetSemaphoreCounterValueKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore, [NativeTypeName("uint64_t *")] Ref<ulong> pValue) => DllImport.GetSemaphoreCounterValueKHR(device, semaphore, pValue);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.GetSemaphoreFdKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreGetFdInfoKHR *")] SemaphoreGetFdInfoKHR* pGetFdInfo, int* pFd) => ((delegate* unmanaged<VkDevice_T*, SemaphoreGetFdInfoKHR*, int*, Result> )(_slots[600] is not null and var loadedFnPtr ? loadedFnPtr : _slots[600] = nativeContext.LoadFunction("vkGetSemaphoreFdKHR", "vulkan")))(device, pGetFdInfo, pFd);
     [SupportedApiProfile("vulkan", ["VK_KHR_external_semaphore_fd"], ImpliesSets = ["VK_KHR_external_semaphore_fd+VK_KHR_external_semaphore", "VK_KHR_external_semaphore_fd+VK_VERSION_1_1"])]
@@ -26490,15 +26490,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetShaderModuleIdentifierEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkShaderModule")] Ref<VkShaderModule_T> shaderModule, Ref<ShaderModuleIdentifierEXT> pIdentifier) => DllImport.GetShaderModuleIdentifierEXT(device, shaderModule, pIdentifier);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSwapchainCounterEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] nuint* pCounterValue) => ((delegate* unmanaged<VkDevice_T*, VkSwapchainKHR_T*, VkSurfaceCounterFlagBitsEXT, nuint*, Result> )(_slots[605] is not null and var loadedFnPtr ? loadedFnPtr : _slots[605] = nativeContext.LoadFunction("vkGetSwapchainCounterEXT", "vulkan")))(device, swapchain, counter, pCounterValue);
+    Result IVulkan.GetSwapchainCounterEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] ulong* pCounterValue) => ((delegate* unmanaged<VkDevice_T*, VkSwapchainKHR_T*, VkSurfaceCounterFlagBitsEXT, ulong*, Result> )(_slots[605] is not null and var loadedFnPtr ? loadedFnPtr : _slots[605] = nativeContext.LoadFunction("vkGetSwapchainCounterEXT", "vulkan")))(device, swapchain, counter, pCounterValue);
     [SupportedApiProfile("vulkan", ["VK_EXT_display_control"], ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainCounterEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetSwapchainCounterEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] nuint* pCounterValue) => DllImport.GetSwapchainCounterEXT(device, swapchain, counter, pCounterValue);
+    public static Result GetSwapchainCounterEXT([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] ulong* pCounterValue) => DllImport.GetSwapchainCounterEXT(device, swapchain, counter, pCounterValue);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSwapchainCounterEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] Ref<nuint> pCounterValue)
+    Result IVulkan.GetSwapchainCounterEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] Ref<ulong> pCounterValue)
     {
-        fixed (nuint* __dsl_pCounterValue = pCounterValue)
+        fixed (ulong* __dsl_pCounterValue = pCounterValue)
         fixed (VkSwapchainKHR_T* __dsl_swapchain = swapchain)
         fixed (VkDevice_T* __dsl_device = device)
         {
@@ -26510,7 +26510,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainCounterEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result GetSwapchainCounterEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] Ref<nuint> pCounterValue) => DllImport.GetSwapchainCounterEXT(device, swapchain, counter, pCounterValue);
+    public static Result GetSwapchainCounterEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, VkSurfaceCounterFlagBitsEXT counter, [NativeTypeName("uint64_t *")] Ref<ulong> pCounterValue) => DllImport.GetSwapchainCounterEXT(device, swapchain, counter, pCounterValue);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.GetSwapchainImagesKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint32_t *")] uint* pSwapchainImageCount, [NativeTypeName("VkImage *")] VkImage_T** pSwapchainImages) => ((delegate* unmanaged<VkDevice_T*, VkSwapchainKHR_T*, uint*, VkImage_T**, Result> )(_slots[606] is not null and var loadedFnPtr ? loadedFnPtr : _slots[606] = nativeContext.LoadFunction("vkGetSwapchainImagesKHR", "vulkan")))(device, swapchain, pSwapchainImageCount, pSwapchainImages);
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -26708,13 +26708,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result LatencySleepNV([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("const VkLatencySleepInfoNV *")] Ref<LatencySleepInfoNV> pSleepInfo) => DllImport.LatencySleepNV(device, swapchain, pSleepInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MapMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("VkMemoryMapFlags")] uint flags, void** ppData) => ((delegate* unmanaged<VkDevice_T*, VkDeviceMemory_T*, nuint, nuint, uint, void**, Result> )(_slots[615] is not null and var loadedFnPtr ? loadedFnPtr : _slots[615] = nativeContext.LoadFunction("vkMapMemory", "vulkan")))(device, memory, offset, size, flags, ppData);
+    Result IVulkan.MapMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("VkMemoryMapFlags")] uint flags, void** ppData) => ((delegate* unmanaged<VkDevice_T*, VkDeviceMemory_T*, ulong, ulong, uint, void**, Result> )(_slots[615] is not null and var loadedFnPtr ? loadedFnPtr : _slots[615] = nativeContext.LoadFunction("vkMapMemory", "vulkan")))(device, memory, offset, size, flags, ppData);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkMapMemory")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result MapMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("VkMemoryMapFlags")] uint flags, void** ppData) => DllImport.MapMemory(device, memory, offset, size, flags, ppData);
+    public static Result MapMemory([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("VkMemoryMapFlags")] uint flags, void** ppData) => DllImport.MapMemory(device, memory, offset, size, flags, ppData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MapMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("VkMemoryMapFlags")] uint flags, Ref2D ppData)
+    Result IVulkan.MapMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("VkMemoryMapFlags")] uint flags, Ref2D ppData)
     {
         fixed (void** __dsl_ppData = ppData)
         fixed (VkDeviceMemory_T* __dsl_memory = memory)
@@ -26728,7 +26728,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkMapMemory")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result MapMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] nuint offset, [NativeTypeName("VkDeviceSize")] nuint size, [NativeTypeName("VkMemoryMapFlags")] uint flags, Ref2D ppData) => DllImport.MapMemory(device, memory, offset, size, flags, ppData);
+    public static Result MapMemory([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory, [NativeTypeName("VkDeviceSize")] ulong offset, [NativeTypeName("VkDeviceSize")] ulong size, [NativeTypeName("VkMemoryMapFlags")] uint flags, Ref2D ppData) => DllImport.MapMemory(device, memory, offset, size, flags, ppData);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.MapMemory2([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkMemoryMapInfo *")] MemoryMapInfo* pMemoryMapInfo, void** ppData) => ((delegate* unmanaged<VkDevice_T*, MemoryMapInfo*, void**, Result> )(_slots[616] is not null and var loadedFnPtr ? loadedFnPtr : _slots[616] = nativeContext.LoadFunction("vkMapMemory2", "vulkan")))(device, pMemoryMapInfo, ppData);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
@@ -27520,13 +27520,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SetLocalDimmingAMD([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapChain, [NativeTypeName("VkBool32")] uint localDimmingEnable) => DllImport.SetLocalDimmingAMD(device, swapChain, localDimmingEnable);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] nuint data) => ((delegate* unmanaged<VkDevice_T*, ObjectType, nuint, VkPrivateDataSlot_T*, nuint, Result> )(_slots[653] is not null and var loadedFnPtr ? loadedFnPtr : _slots[653] = nativeContext.LoadFunction("vkSetPrivateData", "vulkan")))(device, objectType, objectHandle, privateDataSlot, data);
+    Result IVulkan.SetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] ulong data) => ((delegate* unmanaged<VkDevice_T*, ObjectType, ulong, VkPrivateDataSlot_T*, ulong, Result> )(_slots[653] is not null and var loadedFnPtr ? loadedFnPtr : _slots[653] = nativeContext.LoadFunction("vkSetPrivateData", "vulkan")))(device, objectType, objectHandle, privateDataSlot, data);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     [NativeFunction("vulkan", EntryPoint = "vkSetPrivateData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result SetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] nuint data) => DllImport.SetPrivateData(device, objectType, objectHandle, privateDataSlot, data);
+    public static Result SetPrivateData([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] ulong data) => DllImport.SetPrivateData(device, objectType, objectHandle, privateDataSlot, data);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] nuint data)
+    Result IVulkan.SetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] ulong data)
     {
         fixed (VkPrivateDataSlot_T* __dsl_privateDataSlot = privateDataSlot)
         fixed (VkDevice_T* __dsl_device = device)
@@ -27539,15 +27539,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkSetPrivateData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result SetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] nuint data) => DllImport.SetPrivateData(device, objectType, objectHandle, privateDataSlot, data);
+    public static Result SetPrivateData([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] ulong data) => DllImport.SetPrivateData(device, objectType, objectHandle, privateDataSlot, data);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] nuint data) => ((delegate* unmanaged<VkDevice_T*, ObjectType, nuint, VkPrivateDataSlot_T*, nuint, Result> )(_slots[654] is not null and var loadedFnPtr ? loadedFnPtr : _slots[654] = nativeContext.LoadFunction("vkSetPrivateDataEXT", "vulkan")))(device, objectType, objectHandle, privateDataSlot, data);
+    Result IVulkan.SetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] ulong data) => ((delegate* unmanaged<VkDevice_T*, ObjectType, ulong, VkPrivateDataSlot_T*, ulong, Result> )(_slots[654] is not null and var loadedFnPtr ? loadedFnPtr : _slots[654] = nativeContext.LoadFunction("vkSetPrivateDataEXT", "vulkan")))(device, objectType, objectHandle, privateDataSlot, data);
     [SupportedApiProfile("vulkan", ["VK_EXT_private_data"], ImpliesSets = ["VK_EXT_private_data+VK_KHR_get_physical_device_properties2", "VK_EXT_private_data+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkSetPrivateDataEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result SetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] nuint data) => DllImport.SetPrivateDataEXT(device, objectType, objectHandle, privateDataSlot, data);
+    public static Result SetPrivateDataEXT([NativeTypeName("VkDevice")] VkDevice_T* device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot, [NativeTypeName("uint64_t")] ulong data) => DllImport.SetPrivateDataEXT(device, objectType, objectHandle, privateDataSlot, data);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] nuint data)
+    Result IVulkan.SetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] ulong data)
     {
         fixed (VkPrivateDataSlot_T* __dsl_privateDataSlot = privateDataSlot)
         fixed (VkDevice_T* __dsl_device = device)
@@ -27560,7 +27560,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkSetPrivateDataEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result SetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] nuint objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] nuint data) => DllImport.SetPrivateDataEXT(device, objectType, objectHandle, privateDataSlot, data);
+    public static Result SetPrivateDataEXT([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, ObjectType objectType, [NativeTypeName("uint64_t")] ulong objectHandle, [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot, [NativeTypeName("uint64_t")] ulong data) => DllImport.SetPrivateDataEXT(device, objectType, objectHandle, privateDataSlot, data);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.SignalSemaphore([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreSignalInfo *")] SemaphoreSignalInfo* pSignalInfo) => ((delegate* unmanaged<VkDevice_T*, SemaphoreSignalInfo*, Result> )(_slots[655] is not null and var loadedFnPtr ? loadedFnPtr : _slots[655] = nativeContext.LoadFunction("vkSignalSemaphore", "vulkan")))(device, pSignalInfo);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
@@ -27956,13 +27956,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result UpdateVideoSessionParametersKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkVideoSessionParametersKHR")] Ref<VkVideoSessionParametersKHR_T> videoSessionParameters, [NativeTypeName("const VkVideoSessionParametersUpdateInfoKHR *")] Ref<VideoSessionParametersUpdateInfoKHR> pUpdateInfo) => DllImport.UpdateVideoSessionParametersKHR(device, videoSessionParameters, pUpdateInfo);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitForFences([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] VkFence_T** pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] nuint timeout) => ((delegate* unmanaged<VkDevice_T*, uint, VkFence_T**, uint, nuint, Result> )(_slots[672] is not null and var loadedFnPtr ? loadedFnPtr : _slots[672] = nativeContext.LoadFunction("vkWaitForFences", "vulkan")))(device, fenceCount, pFences, waitAll, timeout);
+    Result IVulkan.WaitForFences([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] VkFence_T** pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] ulong timeout) => ((delegate* unmanaged<VkDevice_T*, uint, VkFence_T**, uint, ulong, Result> )(_slots[672] is not null and var loadedFnPtr ? loadedFnPtr : _slots[672] = nativeContext.LoadFunction("vkWaitForFences", "vulkan")))(device, fenceCount, pFences, waitAll, timeout);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.0")]
     [NativeFunction("vulkan", EntryPoint = "vkWaitForFences")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result WaitForFences([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] VkFence_T** pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] nuint timeout) => DllImport.WaitForFences(device, fenceCount, pFences, waitAll, timeout);
+    public static Result WaitForFences([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] VkFence_T** pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] ulong timeout) => DllImport.WaitForFences(device, fenceCount, pFences, waitAll, timeout);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitForFences([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] Ref2D<VkFence_T> pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] nuint timeout)
+    Result IVulkan.WaitForFences([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] Ref2D<VkFence_T> pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] ulong timeout)
     {
         fixed (VkFence_T** __dsl_pFences = pFences)
         fixed (VkDevice_T* __dsl_device = device)
@@ -27975,15 +27975,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkWaitForFences")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result WaitForFences([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] Ref2D<VkFence_T> pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] nuint timeout) => DllImport.WaitForFences(device, fenceCount, pFences, waitAll, timeout);
+    public static Result WaitForFences([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("uint32_t")] uint fenceCount, [NativeTypeName("const VkFence *")] Ref2D<VkFence_T> pFences, [NativeTypeName("VkBool32")] uint waitAll, [NativeTypeName("uint64_t")] ulong timeout) => DllImport.WaitForFences(device, fenceCount, pFences, waitAll, timeout);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitForPresentKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] nuint presentId, [NativeTypeName("uint64_t")] nuint timeout) => ((delegate* unmanaged<VkDevice_T*, VkSwapchainKHR_T*, nuint, nuint, Result> )(_slots[673] is not null and var loadedFnPtr ? loadedFnPtr : _slots[673] = nativeContext.LoadFunction("vkWaitForPresentKHR", "vulkan")))(device, swapchain, presentId, timeout);
+    Result IVulkan.WaitForPresentKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] ulong presentId, [NativeTypeName("uint64_t")] ulong timeout) => ((delegate* unmanaged<VkDevice_T*, VkSwapchainKHR_T*, ulong, ulong, Result> )(_slots[673] is not null and var loadedFnPtr ? loadedFnPtr : _slots[673] = nativeContext.LoadFunction("vkWaitForPresentKHR", "vulkan")))(device, swapchain, presentId, timeout);
     [SupportedApiProfile("vulkan", ["VK_KHR_present_wait"], ImpliesSets = ["VK_KHR_present_id", "VK_KHR_swapchain"])]
     [NativeFunction("vulkan", EntryPoint = "vkWaitForPresentKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result WaitForPresentKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] nuint presentId, [NativeTypeName("uint64_t")] nuint timeout) => DllImport.WaitForPresentKHR(device, swapchain, presentId, timeout);
+    public static Result WaitForPresentKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain, [NativeTypeName("uint64_t")] ulong presentId, [NativeTypeName("uint64_t")] ulong timeout) => DllImport.WaitForPresentKHR(device, swapchain, presentId, timeout);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitForPresentKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] nuint presentId, [NativeTypeName("uint64_t")] nuint timeout)
+    Result IVulkan.WaitForPresentKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] ulong presentId, [NativeTypeName("uint64_t")] ulong timeout)
     {
         fixed (VkSwapchainKHR_T* __dsl_swapchain = swapchain)
         fixed (VkDevice_T* __dsl_device = device)
@@ -27996,15 +27996,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkWaitForPresentKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result WaitForPresentKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] nuint presentId, [NativeTypeName("uint64_t")] nuint timeout) => DllImport.WaitForPresentKHR(device, swapchain, presentId, timeout);
+    public static Result WaitForPresentKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain, [NativeTypeName("uint64_t")] ulong presentId, [NativeTypeName("uint64_t")] ulong timeout) => DllImport.WaitForPresentKHR(device, swapchain, presentId, timeout);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitSemaphores([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout) => ((delegate* unmanaged<VkDevice_T*, SemaphoreWaitInfo*, nuint, Result> )(_slots[674] is not null and var loadedFnPtr ? loadedFnPtr : _slots[674] = nativeContext.LoadFunction("vkWaitSemaphores", "vulkan")))(device, pWaitInfo, timeout);
+    Result IVulkan.WaitSemaphores([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout) => ((delegate* unmanaged<VkDevice_T*, SemaphoreWaitInfo*, ulong, Result> )(_slots[674] is not null and var loadedFnPtr ? loadedFnPtr : _slots[674] = nativeContext.LoadFunction("vkWaitSemaphores", "vulkan")))(device, pWaitInfo, timeout);
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.2")]
     [NativeFunction("vulkan", EntryPoint = "vkWaitSemaphores")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result WaitSemaphores([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout) => DllImport.WaitSemaphores(device, pWaitInfo, timeout);
+    public static Result WaitSemaphores([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout) => DllImport.WaitSemaphores(device, pWaitInfo, timeout);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitSemaphores([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout)
+    Result IVulkan.WaitSemaphores([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout)
     {
         fixed (SemaphoreWaitInfo* __dsl_pWaitInfo = pWaitInfo)
         fixed (VkDevice_T* __dsl_device = device)
@@ -28017,15 +28017,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkWaitSemaphores")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result WaitSemaphores([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout) => DllImport.WaitSemaphores(device, pWaitInfo, timeout);
+    public static Result WaitSemaphores([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout) => DllImport.WaitSemaphores(device, pWaitInfo, timeout);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitSemaphoresKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout) => ((delegate* unmanaged<VkDevice_T*, SemaphoreWaitInfo*, nuint, Result> )(_slots[675] is not null and var loadedFnPtr ? loadedFnPtr : _slots[675] = nativeContext.LoadFunction("vkWaitSemaphoresKHR", "vulkan")))(device, pWaitInfo, timeout);
+    Result IVulkan.WaitSemaphoresKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout) => ((delegate* unmanaged<VkDevice_T*, SemaphoreWaitInfo*, ulong, Result> )(_slots[675] is not null and var loadedFnPtr ? loadedFnPtr : _slots[675] = nativeContext.LoadFunction("vkWaitSemaphoresKHR", "vulkan")))(device, pWaitInfo, timeout);
     [SupportedApiProfile("vulkan", ["VK_KHR_timeline_semaphore"], ImpliesSets = ["VK_KHR_timeline_semaphore+VK_KHR_get_physical_device_properties2", "VK_KHR_timeline_semaphore+VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkWaitSemaphoresKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result WaitSemaphoresKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout) => DllImport.WaitSemaphoresKHR(device, pWaitInfo, timeout);
+    public static Result WaitSemaphoresKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout) => DllImport.WaitSemaphoresKHR(device, pWaitInfo, timeout);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitSemaphoresKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout)
+    Result IVulkan.WaitSemaphoresKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout)
     {
         fixed (SemaphoreWaitInfo* __dsl_pWaitInfo = pWaitInfo)
         fixed (VkDevice_T* __dsl_device = device)
@@ -28038,7 +28038,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkWaitSemaphoresKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Result WaitSemaphoresKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] nuint timeout) => DllImport.WaitSemaphoresKHR(device, pWaitInfo, timeout);
+    public static Result WaitSemaphoresKHR([NativeTypeName("VkDevice")] Ref<VkDevice_T> device, [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo, [NativeTypeName("uint64_t")] ulong timeout) => DllImport.WaitSemaphoresKHR(device, pWaitInfo, timeout);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.WriteAccelerationStructuresPropertiesKHR([NativeTypeName("VkDevice")] VkDevice_T* device, [NativeTypeName("uint32_t")] uint accelerationStructureCount, [NativeTypeName("const VkAccelerationStructureKHR *")] VkAccelerationStructureKHR_T** pAccelerationStructures, QueryType queryType, [NativeTypeName("size_t")] nuint dataSize, void* pData, [NativeTypeName("size_t")] nuint stride) => ((delegate* unmanaged<VkDevice_T*, uint, VkAccelerationStructureKHR_T**, QueryType, nuint, void*, nuint, Result> )(_slots[676] is not null and var loadedFnPtr ? loadedFnPtr : _slots[676] = nativeContext.LoadFunction("vkWriteAccelerationStructuresPropertiesKHR", "vulkan")))(device, accelerationStructureCount, pAccelerationStructures, queryType, dataSize, pData, stride);
     [SupportedApiProfile("vulkan", ["VK_KHR_acceleration_structure"], ImpliesSets = ["VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address", "VK_KHR_deferred_host_operations+VK_VERSION_1_2"])]

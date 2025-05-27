@@ -25,5 +25,5 @@ public partial struct PresentTimeGoogle
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public nuint DesiredPresentTime;
+    public ulong DesiredPresentTime;
 }

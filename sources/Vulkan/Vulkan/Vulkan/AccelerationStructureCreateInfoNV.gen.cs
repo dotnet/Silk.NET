@@ -40,7 +40,7 @@ public unsafe partial struct AccelerationStructureCreateInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public nuint CompactedSize;
+    public ulong CompactedSize;
 
     [SupportedApiProfile(
         "vulkan",

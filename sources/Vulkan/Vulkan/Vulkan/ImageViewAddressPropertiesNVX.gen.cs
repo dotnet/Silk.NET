@@ -19,9 +19,9 @@ public unsafe partial struct ImageViewAddressPropertiesNVX
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
-    public nuint DeviceAddress;
+    public ulong DeviceAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
-    public nuint Size;
+    public ulong Size;
 }

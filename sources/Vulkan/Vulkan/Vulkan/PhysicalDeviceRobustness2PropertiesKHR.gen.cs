@@ -39,7 +39,7 @@ public unsafe partial struct PhysicalDeviceRobustness2PropertiesKHR
             "VK_KHR_robustness2+VK_VERSION_1_1",
         ]
     )]
-    public nuint RobustStorageBufferAccessSizeAlignment;
+    public ulong RobustStorageBufferAccessSizeAlignment;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -50,5 +50,5 @@ public unsafe partial struct PhysicalDeviceRobustness2PropertiesKHR
             "VK_KHR_robustness2+VK_VERSION_1_1",
         ]
     )]
-    public nuint RobustUniformBufferAccessSizeAlignment;
+    public ulong RobustUniformBufferAccessSizeAlignment;
 }

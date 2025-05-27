@@ -21,7 +21,7 @@ public partial struct CopyMemoryIndirectCommandNV
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint SrcAddress;
+    public ulong SrcAddress;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -33,7 +33,7 @@ public partial struct CopyMemoryIndirectCommandNV
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint DstAddress;
+    public ulong DstAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -45,5 +45,5 @@ public partial struct CopyMemoryIndirectCommandNV
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint Size;
+    public ulong Size;
 }

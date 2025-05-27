@@ -19,5 +19,5 @@ public unsafe partial struct SubresourceHostMemcpySize
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public nuint Size;
+    public ulong Size;
 }

@@ -62,7 +62,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    public nuint MaxTransformFeedbackBufferSize;
+    public ulong MaxTransformFeedbackBufferSize;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

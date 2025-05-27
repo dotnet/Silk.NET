@@ -50,7 +50,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public nuint VertexOffset;
+    public ulong VertexOffset;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -72,7 +72,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public nuint VertexStride;
+    public ulong VertexStride;
 
     [SupportedApiProfile(
         "vulkan",
@@ -104,7 +104,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public nuint IndexOffset;
+    public ulong IndexOffset;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -147,5 +147,5 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public nuint TransformOffset;
+    public ulong TransformOffset;
 }

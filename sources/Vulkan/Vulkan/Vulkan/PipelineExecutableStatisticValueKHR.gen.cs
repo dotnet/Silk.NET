@@ -34,7 +34,7 @@ public partial struct PipelineExecutableStatisticValueKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public nint I64;
+    public long I64;
 
     [FieldOffset(0)]
     [NativeTypeName("uint64_t")]
@@ -46,7 +46,7 @@ public partial struct PipelineExecutableStatisticValueKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public nuint U64;
+    public ulong U64;
 
     [FieldOffset(0)]
     [SupportedApiProfile(

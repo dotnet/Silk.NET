@@ -24,11 +24,11 @@ public unsafe partial struct SemaphoreSubmitInfo
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint Value;
+    public ulong Value;
 
     [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint StageMask;
+    public ulong StageMask;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

@@ -80,5 +80,5 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
         ImpliesSets = ["VK_VERSION_1_1"],
         RequireAll = true
     )]
-    public nuint* POffsets;
+    public ulong* POffsets;
 }

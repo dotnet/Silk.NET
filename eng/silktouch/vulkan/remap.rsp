@@ -1,2 +1,3 @@
+@../remap-stdint.rsp
 --remap
 TODO_ADD_REMAPPINGS=HERE

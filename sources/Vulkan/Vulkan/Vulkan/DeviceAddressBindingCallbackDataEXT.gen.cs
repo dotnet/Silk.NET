@@ -51,7 +51,7 @@ public unsafe partial struct DeviceAddressBindingCallbackDataEXT
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    public nuint BaseAddress;
+    public ulong BaseAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct DeviceAddressBindingCallbackDataEXT
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    public nuint Size;
+    public ulong Size;
 
     [SupportedApiProfile(
         "vulkan",

@@ -63,7 +63,7 @@ public unsafe partial struct MicromapCreateInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public nuint Offset;
+    public ulong Offset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -74,7 +74,7 @@ public unsafe partial struct MicromapCreateInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public nuint Size;
+    public ulong Size;
 
     [SupportedApiProfile(
         "vulkan",
@@ -95,5 +95,5 @@ public unsafe partial struct MicromapCreateInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public nuint DeviceAddress;
+    public ulong DeviceAddress;
 }

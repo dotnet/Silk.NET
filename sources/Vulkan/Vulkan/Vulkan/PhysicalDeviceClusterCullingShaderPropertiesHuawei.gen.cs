@@ -73,7 +73,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHuawei
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public nuint IndirectBufferOffsetAlignment;
+    public ulong IndirectBufferOffsetAlignment;
 
     [InlineArray(3)]
     [SupportedApiProfile(

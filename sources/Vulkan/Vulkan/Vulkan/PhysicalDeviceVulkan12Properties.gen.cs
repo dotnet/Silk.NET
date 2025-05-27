@@ -427,7 +427,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public nuint MaxTimelineSemaphoreValueDifference;
+    public ulong MaxTimelineSemaphoreValueDifference;
 
     [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(

@@ -52,5 +52,5 @@ public unsafe partial struct AcquireProfilingLockInfoKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public nuint Timeout;
+    public ulong Timeout;
 }

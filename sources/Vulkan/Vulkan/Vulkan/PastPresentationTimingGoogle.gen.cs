@@ -25,7 +25,7 @@ public partial struct PastPresentationTimingGoogle
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public nuint DesiredPresentTime;
+    public ulong DesiredPresentTime;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -33,7 +33,7 @@ public partial struct PastPresentationTimingGoogle
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public nuint ActualPresentTime;
+    public ulong ActualPresentTime;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -41,7 +41,7 @@ public partial struct PastPresentationTimingGoogle
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public nuint EarliestPresentTime;
+    public ulong EarliestPresentTime;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -49,5 +49,5 @@ public partial struct PastPresentationTimingGoogle
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public nuint PresentMargin;
+    public ulong PresentMargin;
 }

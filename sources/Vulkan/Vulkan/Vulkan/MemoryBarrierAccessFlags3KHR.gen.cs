@@ -20,9 +20,9 @@ public unsafe partial struct MemoryBarrierAccessFlags3KHR
 
     [NativeTypeName("VkAccessFlags3KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public nuint SrcAccessMask3;
+    public ulong SrcAccessMask3;
 
     [NativeTypeName("VkAccessFlags3KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public nuint DstAccessMask3;
+    public ulong DstAccessMask3;
 }

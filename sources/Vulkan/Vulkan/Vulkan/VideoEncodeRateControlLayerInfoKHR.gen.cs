@@ -41,7 +41,7 @@ public unsafe partial struct VideoEncodeRateControlLayerInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public nuint AverageBitrate;
+    public ulong AverageBitrate;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -52,7 +52,7 @@ public unsafe partial struct VideoEncodeRateControlLayerInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public nuint MaxBitrate;
+    public ulong MaxBitrate;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

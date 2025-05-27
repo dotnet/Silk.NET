@@ -21,7 +21,7 @@ public partial struct DecompressMemoryRegionNV
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint SrcAddress;
+    public ulong SrcAddress;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -33,7 +33,7 @@ public partial struct DecompressMemoryRegionNV
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint DstAddress;
+    public ulong DstAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -45,7 +45,7 @@ public partial struct DecompressMemoryRegionNV
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint CompressedSize;
+    public ulong CompressedSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -57,7 +57,7 @@ public partial struct DecompressMemoryRegionNV
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint DecompressedSize;
+    public ulong DecompressedSize;
 
     [NativeTypeName("VkMemoryDecompressionMethodFlagsNV")]
     [SupportedApiProfile(
@@ -69,5 +69,5 @@ public partial struct DecompressMemoryRegionNV
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint DecompressionMethod;
+    public ulong DecompressionMethod;
 }

@@ -31,7 +31,7 @@ public partial struct DeviceFaultVendorInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public nuint VendorFaultCode;
+    public ulong VendorFaultCode;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public partial struct DeviceFaultVendorInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public nuint VendorFaultData;
+    public ulong VendorFaultData;
 
     [InlineArray(256)]
     [SupportedApiProfile(

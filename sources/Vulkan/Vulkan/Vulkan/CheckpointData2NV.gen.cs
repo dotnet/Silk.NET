@@ -49,7 +49,7 @@ public unsafe partial struct CheckpointData2NV
             "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
         ]
     )]
-    public nuint Stage;
+    public ulong Stage;
 
     [SupportedApiProfile(
         "vulkan",

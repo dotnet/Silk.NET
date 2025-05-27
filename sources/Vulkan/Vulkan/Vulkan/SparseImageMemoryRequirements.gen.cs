@@ -32,7 +32,7 @@ public partial struct SparseImageMemoryRequirements
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint ImageMipTailSize;
+    public ulong ImageMipTailSize;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -40,7 +40,7 @@ public partial struct SparseImageMemoryRequirements
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint ImageMipTailOffset;
+    public ulong ImageMipTailOffset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -48,5 +48,5 @@ public partial struct SparseImageMemoryRequirements
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public nuint ImageMipTailStride;
+    public ulong ImageMipTailStride;
 }

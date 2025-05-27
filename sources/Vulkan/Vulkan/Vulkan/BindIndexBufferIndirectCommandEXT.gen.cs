@@ -21,7 +21,7 @@ public partial struct BindIndexBufferIndirectCommandEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public nuint BufferAddress;
+    public ulong BufferAddress;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

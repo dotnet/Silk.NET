@@ -19,13 +19,13 @@ public unsafe partial struct FormatProperties3
 
     [NativeTypeName("VkFormatFeatureFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint LinearTilingFeatures;
+    public ulong LinearTilingFeatures;
 
     [NativeTypeName("VkFormatFeatureFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint OptimalTilingFeatures;
+    public ulong OptimalTilingFeatures;
 
     [NativeTypeName("VkFormatFeatureFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint BufferFeatures;
+    public ulong BufferFeatures;
 }

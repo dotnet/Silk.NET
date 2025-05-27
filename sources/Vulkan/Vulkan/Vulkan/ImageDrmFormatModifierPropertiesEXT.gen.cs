@@ -43,5 +43,5 @@ public unsafe partial struct ImageDrmFormatModifierPropertiesEXT
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint DrmFormatModifier;
+    public ulong DrmFormatModifier;
 }

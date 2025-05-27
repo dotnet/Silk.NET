@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceMemoryDecompressionPropertiesNV
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint DecompressionMethods;
+    public ulong DecompressionMethods;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -55,5 +55,5 @@ public unsafe partial struct PhysicalDeviceMemoryDecompressionPropertiesNV
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint MaxDecompressionIndirectCount;
+    public ulong MaxDecompressionIndirectCount;
 }

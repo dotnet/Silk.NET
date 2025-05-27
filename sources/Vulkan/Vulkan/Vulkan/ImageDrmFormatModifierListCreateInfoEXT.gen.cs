@@ -56,5 +56,5 @@ public unsafe partial struct ImageDrmFormatModifierListCreateInfoEXT
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint* PDrmFormatModifiers;
+    public ulong* PDrmFormatModifiers;
 }

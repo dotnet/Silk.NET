@@ -41,7 +41,7 @@ public unsafe partial struct AmigoProfilingSubmitInfoSEC
             "VK_SEC_amigo_profiling+VK_VERSION_1_1",
         ]
     )]
-    public nuint FirstDrawTimestamp;
+    public ulong FirstDrawTimestamp;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -52,5 +52,5 @@ public unsafe partial struct AmigoProfilingSubmitInfoSEC
             "VK_SEC_amigo_profiling+VK_VERSION_1_1",
         ]
     )]
-    public nuint SwapBufferTimestamp;
+    public ulong SwapBufferTimestamp;
 }

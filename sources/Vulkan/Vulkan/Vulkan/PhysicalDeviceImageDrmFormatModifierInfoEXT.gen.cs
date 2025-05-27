@@ -44,7 +44,7 @@ public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint DrmFormatModifier;
+    public ulong DrmFormatModifier;
 
     [SupportedApiProfile(
         "vulkan",

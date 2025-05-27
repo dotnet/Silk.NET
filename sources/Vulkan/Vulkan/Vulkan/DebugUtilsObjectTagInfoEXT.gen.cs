@@ -23,11 +23,11 @@ public unsafe partial struct DebugUtilsObjectTagInfoEXT
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public nuint ObjectHandle;
+    public ulong ObjectHandle;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public nuint TagName;
+    public ulong TagName;
 
     [NativeTypeName("size_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]

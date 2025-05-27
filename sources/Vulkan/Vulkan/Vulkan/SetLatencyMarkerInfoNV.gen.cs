@@ -39,7 +39,7 @@ public unsafe partial struct SetLatencyMarkerInfoNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public nuint PresentID;
+    public ulong PresentID;
 
     [SupportedApiProfile(
         "vulkan",

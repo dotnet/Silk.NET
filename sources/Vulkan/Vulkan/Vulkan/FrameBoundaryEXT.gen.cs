@@ -24,7 +24,7 @@ public unsafe partial struct FrameBoundaryEXT
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
-    public nuint FrameID;
+    public ulong FrameID;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
@@ -44,7 +44,7 @@ public unsafe partial struct FrameBoundaryEXT
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
-    public nuint TagName;
+    public ulong TagName;
 
     [NativeTypeName("size_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]

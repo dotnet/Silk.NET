@@ -20,5 +20,5 @@ public unsafe partial struct BufferUsageFlags2CreateInfo
 
     [NativeTypeName("VkBufferUsageFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public nuint Usage;
+    public ulong Usage;
 }

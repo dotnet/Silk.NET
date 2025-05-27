@@ -71,7 +71,7 @@ public unsafe partial interface IVulkan
         static abstract Result AcquireNextImageKHR(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain,
-            [NativeTypeName("uint64_t")] nuint timeout,
+            [NativeTypeName("uint64_t")] ulong timeout,
             [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore,
             [NativeTypeName("VkFence")] VkFence_T* fence,
             [NativeTypeName("uint32_t *")] uint* pImageIndex
@@ -83,7 +83,7 @@ public unsafe partial interface IVulkan
         static abstract Result AcquireNextImageKHR(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain,
-            [NativeTypeName("uint64_t")] nuint timeout,
+            [NativeTypeName("uint64_t")] ulong timeout,
             [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore,
             [NativeTypeName("VkFence")] Ref<VkFence_T> fence,
             [NativeTypeName("uint32_t *")] Ref<uint> pImageIndex
@@ -358,7 +358,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
             [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory,
-            [NativeTypeName("VkDeviceSize")] nuint memoryOffset
+            [NativeTypeName("VkDeviceSize")] ulong memoryOffset
         );
 
         [SupportedApiProfile(
@@ -378,7 +378,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
             [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory,
-            [NativeTypeName("VkDeviceSize")] nuint memoryOffset
+            [NativeTypeName("VkDeviceSize")] ulong memoryOffset
         );
 
         [SupportedApiProfile(
@@ -439,7 +439,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkImage")] VkImage_T* image,
             [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory,
-            [NativeTypeName("VkDeviceSize")] nuint memoryOffset
+            [NativeTypeName("VkDeviceSize")] ulong memoryOffset
         );
 
         [SupportedApiProfile(
@@ -459,7 +459,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkImage")] Ref<VkImage_T> image,
             [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory,
-            [NativeTypeName("VkDeviceSize")] nuint memoryOffset
+            [NativeTypeName("VkDeviceSize")] ulong memoryOffset
         );
 
         [SupportedApiProfile(
@@ -945,7 +945,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstCounterBuffer,
             [NativeTypeName("uint32_t")] uint counterBufferCount,
             [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pCounterBufferOffsets
+            [NativeTypeName("const VkDeviceSize *")] ulong* pCounterBufferOffsets
         );
 
         [SupportedApiProfile(
@@ -963,7 +963,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstCounterBuffer,
             [NativeTypeName("uint32_t")] uint counterBufferCount,
             [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pCounterBufferOffsets
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pCounterBufferOffsets
         );
 
         [SupportedApiProfile(
@@ -1206,7 +1206,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdBindIndexBuffer(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             IndexType indexType
         );
 
@@ -1226,7 +1226,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdBindIndexBuffer(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             IndexType indexType
         );
 
@@ -1235,8 +1235,8 @@ public unsafe partial interface IVulkan
         static abstract void CmdBindIndexBuffer2(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
-            [NativeTypeName("VkDeviceSize")] nuint size,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
+            [NativeTypeName("VkDeviceSize")] ulong size,
             IndexType indexType
         );
 
@@ -1246,8 +1246,8 @@ public unsafe partial interface IVulkan
         static abstract void CmdBindIndexBuffer2(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
-            [NativeTypeName("VkDeviceSize")] nuint size,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
+            [NativeTypeName("VkDeviceSize")] ulong size,
             IndexType indexType
         );
 
@@ -1260,8 +1260,8 @@ public unsafe partial interface IVulkan
         static abstract void CmdBindIndexBuffer2KHR(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
-            [NativeTypeName("VkDeviceSize")] nuint size,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
+            [NativeTypeName("VkDeviceSize")] ulong size,
             IndexType indexType
         );
 
@@ -1275,8 +1275,8 @@ public unsafe partial interface IVulkan
         static abstract void CmdBindIndexBuffer2KHR(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
-            [NativeTypeName("VkDeviceSize")] nuint size,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
+            [NativeTypeName("VkDeviceSize")] ulong size,
             IndexType indexType
         );
 
@@ -1486,8 +1486,8 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstBinding,
             [NativeTypeName("uint32_t")] uint bindingCount,
             [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pSizes
+            [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets,
+            [NativeTypeName("const VkDeviceSize *")] ulong* pSizes
         );
 
         [SupportedApiProfile(
@@ -1505,8 +1505,8 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstBinding,
             [NativeTypeName("uint32_t")] uint bindingCount,
             [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets,
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes
         );
 
         [SupportedApiProfile(
@@ -1526,7 +1526,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstBinding,
             [NativeTypeName("uint32_t")] uint bindingCount,
             [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets
+            [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets
         );
 
         [SupportedApiProfile(
@@ -1547,7 +1547,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstBinding,
             [NativeTypeName("uint32_t")] uint bindingCount,
             [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets
         );
 
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -1557,9 +1557,9 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstBinding,
             [NativeTypeName("uint32_t")] uint bindingCount,
             [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pSizes,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pStrides
+            [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets,
+            [NativeTypeName("const VkDeviceSize *")] ulong* pSizes,
+            [NativeTypeName("const VkDeviceSize *")] ulong* pStrides
         );
 
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -1570,9 +1570,9 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstBinding,
             [NativeTypeName("uint32_t")] uint bindingCount,
             [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pStrides
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets,
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes,
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pStrides
         );
 
         [SupportedApiProfile(
@@ -1589,9 +1589,9 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstBinding,
             [NativeTypeName("uint32_t")] uint bindingCount,
             [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pSizes,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pStrides
+            [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets,
+            [NativeTypeName("const VkDeviceSize *")] ulong* pSizes,
+            [NativeTypeName("const VkDeviceSize *")] ulong* pStrides
         );
 
         [SupportedApiProfile(
@@ -1609,9 +1609,9 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstBinding,
             [NativeTypeName("uint32_t")] uint bindingCount,
             [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pStrides
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets,
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes,
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pStrides
         );
 
         [SupportedApiProfile(
@@ -1742,12 +1742,12 @@ public unsafe partial interface IVulkan
             [NativeTypeName("const VkAccelerationStructureInfoNV *")]
                 AccelerationStructureInfoNV* pInfo,
             [NativeTypeName("VkBuffer")] VkBuffer_T* instanceData,
-            [NativeTypeName("VkDeviceSize")] nuint instanceOffset,
+            [NativeTypeName("VkDeviceSize")] ulong instanceOffset,
             [NativeTypeName("VkBool32")] uint update,
             [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* dst,
             [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* src,
             [NativeTypeName("VkBuffer")] VkBuffer_T* scratch,
-            [NativeTypeName("VkDeviceSize")] nuint scratchOffset
+            [NativeTypeName("VkDeviceSize")] ulong scratchOffset
         );
 
         [SupportedApiProfile(
@@ -1765,12 +1765,12 @@ public unsafe partial interface IVulkan
             [NativeTypeName("const VkAccelerationStructureInfoNV *")]
                 Ref<AccelerationStructureInfoNV> pInfo,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> instanceData,
-            [NativeTypeName("VkDeviceSize")] nuint instanceOffset,
+            [NativeTypeName("VkDeviceSize")] ulong instanceOffset,
             [NativeTypeName("VkBool32")] uint update,
             [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> dst,
             [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> src,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> scratch,
-            [NativeTypeName("VkDeviceSize")] nuint scratchOffset
+            [NativeTypeName("VkDeviceSize")] ulong scratchOffset
         );
 
         [SupportedApiProfile(
@@ -1787,7 +1787,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint infoCount,
             [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")]
                 AccelerationStructureBuildGeometryInfoKHR* pInfos,
-            [NativeTypeName("const VkDeviceAddress *")] nuint* pIndirectDeviceAddresses,
+            [NativeTypeName("const VkDeviceAddress *")] ulong* pIndirectDeviceAddresses,
             [NativeTypeName("const uint32_t *")] uint* pIndirectStrides,
             [NativeTypeName("const uint32_t *const *")] uint** ppMaxPrimitiveCounts
         );
@@ -1807,7 +1807,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint infoCount,
             [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")]
                 Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos,
-            [NativeTypeName("const VkDeviceAddress *")] Ref<nuint> pIndirectDeviceAddresses,
+            [NativeTypeName("const VkDeviceAddress *")] Ref<ulong> pIndirectDeviceAddresses,
             [NativeTypeName("const uint32_t *")] Ref<uint> pIndirectStrides,
             [NativeTypeName("const uint32_t *const *")] Ref2D<uint> ppMaxPrimitiveCounts
         );
@@ -2717,7 +2717,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectNV")]
         static abstract void CmdCopyMemoryIndirectNV(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-            [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress,
+            [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
             [NativeTypeName("uint32_t")] uint copyCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -2735,7 +2735,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectNV")]
         static abstract void CmdCopyMemoryIndirectNV(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-            [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress,
+            [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
             [NativeTypeName("uint32_t")] uint copyCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -2783,7 +2783,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
         static abstract void CmdCopyMemoryToImageIndirectNV(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-            [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress,
+            [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
             [NativeTypeName("uint32_t")] uint copyCount,
             [NativeTypeName("uint32_t")] uint stride,
             [NativeTypeName("VkImage")] VkImage_T* dstImage,
@@ -2805,7 +2805,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
         static abstract void CmdCopyMemoryToImageIndirectNV(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-            [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress,
+            [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
             [NativeTypeName("uint32_t")] uint copyCount,
             [NativeTypeName("uint32_t")] uint stride,
             [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage,
@@ -2827,7 +2827,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
         static abstract void CmdCopyMemoryToImageIndirectNV(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-            [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress,
+            [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
             [NativeTypeName("uint32_t")] uint stride,
             [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage,
             ImageLayout dstImageLayout,
@@ -2944,8 +2944,8 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstQuery,
             [NativeTypeName("uint32_t")] uint queryCount,
             [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-            [NativeTypeName("VkDeviceSize")] nuint stride,
+            [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+            [NativeTypeName("VkDeviceSize")] ulong stride,
             [NativeTypeName("VkQueryResultFlags")] uint flags
         );
 
@@ -2968,8 +2968,8 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstQuery,
             [NativeTypeName("uint32_t")] uint queryCount,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-            [NativeTypeName("VkDeviceSize")] nuint stride,
+            [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+            [NativeTypeName("VkDeviceSize")] ulong stride,
             [NativeTypeName("VkQueryResultFlags")] uint flags
         );
 
@@ -3115,8 +3115,8 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountNV")]
         static abstract void CmdDecompressMemoryIndirectCountNV(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-            [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsAddress,
-            [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsCountAddress,
+            [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress,
+            [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress,
             [NativeTypeName("uint32_t")] uint stride
         );
 
@@ -3133,8 +3133,8 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountNV")]
         static abstract void CmdDecompressMemoryIndirectCountNV(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-            [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsAddress,
-            [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsCountAddress,
+            [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress,
+            [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress,
             [NativeTypeName("uint32_t")] uint stride
         );
 
@@ -3310,7 +3310,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDispatchIndirect(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset
+            [NativeTypeName("VkDeviceSize")] ulong offset
         );
 
         [SupportedApiProfile(
@@ -3329,7 +3329,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDispatchIndirect(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset
+            [NativeTypeName("VkDeviceSize")] ulong offset
         );
 
         [SupportedApiProfile(
@@ -3445,7 +3445,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawClusterIndirectHuawei(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset
+            [NativeTypeName("VkDeviceSize")] ulong offset
         );
 
         [SupportedApiProfile(
@@ -3461,7 +3461,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawClusterIndirectHuawei(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset
+            [NativeTypeName("VkDeviceSize")] ulong offset
         );
 
         [SupportedApiProfile(
@@ -3522,7 +3522,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndexedIndirect(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("uint32_t")] uint drawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3543,7 +3543,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndexedIndirect(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("uint32_t")] uint drawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3557,9 +3557,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndexedIndirectCount(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3574,9 +3574,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndexedIndirectCount(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3586,9 +3586,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndexedIndirectCountAMD(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3599,9 +3599,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndexedIndirectCountAMD(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3611,9 +3611,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndexedIndirectCountKHR(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3624,9 +3624,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndexedIndirectCountKHR(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3646,7 +3646,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndirect(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("uint32_t")] uint drawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3667,7 +3667,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndirect(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("uint32_t")] uint drawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3686,7 +3686,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint instanceCount,
             [NativeTypeName("uint32_t")] uint firstInstance,
             [NativeTypeName("VkBuffer")] VkBuffer_T* counterBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint counterBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong counterBufferOffset,
             [NativeTypeName("uint32_t")] uint counterOffset,
             [NativeTypeName("uint32_t")] uint vertexStride
         );
@@ -3706,7 +3706,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint instanceCount,
             [NativeTypeName("uint32_t")] uint firstInstance,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> counterBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint counterBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong counterBufferOffset,
             [NativeTypeName("uint32_t")] uint counterOffset,
             [NativeTypeName("uint32_t")] uint vertexStride
         );
@@ -3720,9 +3720,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndirectCount(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3737,9 +3737,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndirectCount(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3749,9 +3749,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndirectCountAMD(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3762,9 +3762,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndirectCountAMD(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3774,9 +3774,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndirectCountKHR(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3787,9 +3787,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawIndirectCountKHR(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3839,9 +3839,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawMeshTasksIndirectCountEXT(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3859,9 +3859,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawMeshTasksIndirectCountEXT(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3878,9 +3878,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawMeshTasksIndirectCountNV(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3898,9 +3898,9 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawMeshTasksIndirectCountNV(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+            [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
             [NativeTypeName("uint32_t")] uint maxDrawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3917,7 +3917,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawMeshTasksIndirectEXT(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("uint32_t")] uint drawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3935,7 +3935,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawMeshTasksIndirectEXT(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("uint32_t")] uint drawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3952,7 +3952,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawMeshTasksIndirectNV(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("uint32_t")] uint drawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -3970,7 +3970,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdDrawMeshTasksIndirectNV(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("uint32_t")] uint drawCount,
             [NativeTypeName("uint32_t")] uint stride
         );
@@ -4467,7 +4467,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstCounterBuffer,
             [NativeTypeName("uint32_t")] uint counterBufferCount,
             [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pCounterBufferOffsets
+            [NativeTypeName("const VkDeviceSize *")] ulong* pCounterBufferOffsets
         );
 
         [SupportedApiProfile(
@@ -4485,7 +4485,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstCounterBuffer,
             [NativeTypeName("uint32_t")] uint counterBufferCount,
             [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pCounterBufferOffsets
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pCounterBufferOffsets
         );
 
         [SupportedApiProfile(
@@ -4645,8 +4645,8 @@ public unsafe partial interface IVulkan
         static abstract void CmdFillBuffer(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-            [NativeTypeName("VkDeviceSize")] nuint size,
+            [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+            [NativeTypeName("VkDeviceSize")] ulong size,
             [NativeTypeName("uint32_t")] uint data
         );
 
@@ -4666,8 +4666,8 @@ public unsafe partial interface IVulkan
         static abstract void CmdFillBuffer(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-            [NativeTypeName("VkDeviceSize")] nuint size,
+            [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+            [NativeTypeName("VkDeviceSize")] ulong size,
             [NativeTypeName("uint32_t")] uint data
         );
 
@@ -5327,7 +5327,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdResetEvent2(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkEvent")] VkEvent_T* @event,
-            [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask
+            [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
         );
 
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -5336,7 +5336,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdResetEvent2(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event,
-            [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask
+            [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
         );
 
         [SupportedApiProfile(
@@ -5351,7 +5351,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdResetEvent2KHR(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkEvent")] VkEvent_T* @event,
-            [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask
+            [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
         );
 
         [SupportedApiProfile(
@@ -5367,7 +5367,7 @@ public unsafe partial interface IVulkan
         static abstract void CmdResetEvent2KHR(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event,
-            [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask
+            [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
         );
 
         [SupportedApiProfile(
@@ -6750,7 +6750,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstSet,
             [NativeTypeName("uint32_t")] uint setCount,
             [NativeTypeName("const uint32_t *")] uint* pBufferIndices,
-            [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets
+            [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets
         );
 
         [SupportedApiProfile(
@@ -6772,7 +6772,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint firstSet,
             [NativeTypeName("uint32_t")] uint setCount,
             [NativeTypeName("const uint32_t *")] Ref<uint> pBufferIndices,
-            [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets
+            [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets
         );
 
         [SupportedApiProfile(
@@ -8845,7 +8845,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysIndirect2KHR")]
         static abstract void CmdTraceRaysIndirect2KHR(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-            [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress
+            [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress
         );
 
         [SupportedApiProfile(
@@ -8858,7 +8858,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysIndirect2KHR")]
         static abstract void CmdTraceRaysIndirect2KHR(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-            [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress
+            [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress
         );
 
         [SupportedApiProfile(
@@ -8880,7 +8880,7 @@ public unsafe partial interface IVulkan
                 StridedDeviceAddressRegionKHR* pHitShaderBindingTable,
             [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")]
                 StridedDeviceAddressRegionKHR* pCallableShaderBindingTable,
-            [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress
+            [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress
         );
 
         [SupportedApiProfile(
@@ -8903,7 +8903,7 @@ public unsafe partial interface IVulkan
                 Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable,
             [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")]
                 Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable,
-            [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress
+            [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress
         );
 
         [SupportedApiProfile(
@@ -8967,16 +8967,16 @@ public unsafe partial interface IVulkan
         static abstract void CmdTraceRaysNV(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* raygenShaderBindingTableBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint raygenShaderBindingOffset,
+            [NativeTypeName("VkDeviceSize")] ulong raygenShaderBindingOffset,
             [NativeTypeName("VkBuffer")] VkBuffer_T* missShaderBindingTableBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint missShaderBindingOffset,
-            [NativeTypeName("VkDeviceSize")] nuint missShaderBindingStride,
+            [NativeTypeName("VkDeviceSize")] ulong missShaderBindingOffset,
+            [NativeTypeName("VkDeviceSize")] ulong missShaderBindingStride,
             [NativeTypeName("VkBuffer")] VkBuffer_T* hitShaderBindingTableBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingOffset,
-            [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingStride,
+            [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingOffset,
+            [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingStride,
             [NativeTypeName("VkBuffer")] VkBuffer_T* callableShaderBindingTableBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingOffset,
-            [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingStride,
+            [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingOffset,
+            [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingStride,
             [NativeTypeName("uint32_t")] uint width,
             [NativeTypeName("uint32_t")] uint height,
             [NativeTypeName("uint32_t")] uint depth
@@ -8995,16 +8995,16 @@ public unsafe partial interface IVulkan
         static abstract void CmdTraceRaysNV(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> raygenShaderBindingTableBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint raygenShaderBindingOffset,
+            [NativeTypeName("VkDeviceSize")] ulong raygenShaderBindingOffset,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> missShaderBindingTableBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint missShaderBindingOffset,
-            [NativeTypeName("VkDeviceSize")] nuint missShaderBindingStride,
+            [NativeTypeName("VkDeviceSize")] ulong missShaderBindingOffset,
+            [NativeTypeName("VkDeviceSize")] ulong missShaderBindingStride,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> hitShaderBindingTableBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingOffset,
-            [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingStride,
+            [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingOffset,
+            [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingStride,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> callableShaderBindingTableBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingOffset,
-            [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingStride,
+            [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingOffset,
+            [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingStride,
             [NativeTypeName("uint32_t")] uint width,
             [NativeTypeName("uint32_t")] uint height,
             [NativeTypeName("uint32_t")] uint depth
@@ -9025,8 +9025,8 @@ public unsafe partial interface IVulkan
         static abstract void CmdUpdateBuffer(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-            [NativeTypeName("VkDeviceSize")] nuint dataSize,
+            [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+            [NativeTypeName("VkDeviceSize")] ulong dataSize,
             [NativeTypeName("const void *")] void* pData
         );
 
@@ -9046,8 +9046,8 @@ public unsafe partial interface IVulkan
         static abstract void CmdUpdateBuffer(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-            [NativeTypeName("VkDeviceSize")] nuint dataSize,
+            [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+            [NativeTypeName("VkDeviceSize")] ulong dataSize,
             [NativeTypeName("const void *")] Ref pData
         );
 
@@ -9308,9 +9308,9 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarker2AMD")]
         static abstract void CmdWriteBufferMarker2AMD(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-            [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+            [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
             [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint dstOffset,
+            [NativeTypeName("VkDeviceSize")] ulong dstOffset,
             [NativeTypeName("uint32_t")] uint marker
         );
 
@@ -9322,9 +9322,9 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarker2AMD")]
         static abstract void CmdWriteBufferMarker2AMD(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-            [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+            [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint dstOffset,
+            [NativeTypeName("VkDeviceSize")] ulong dstOffset,
             [NativeTypeName("uint32_t")] uint marker
         );
 
@@ -9334,7 +9334,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
             VkPipelineStageFlagBits pipelineStage,
             [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint dstOffset,
+            [NativeTypeName("VkDeviceSize")] ulong dstOffset,
             [NativeTypeName("uint32_t")] uint marker
         );
 
@@ -9345,7 +9345,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
             VkPipelineStageFlagBits pipelineStage,
             [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer,
-            [NativeTypeName("VkDeviceSize")] nuint dstOffset,
+            [NativeTypeName("VkDeviceSize")] ulong dstOffset,
             [NativeTypeName("uint32_t")] uint marker
         );
 
@@ -9447,7 +9447,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2")]
         static abstract void CmdWriteTimestamp2(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-            [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+            [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
             [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool,
             [NativeTypeName("uint32_t")] uint query
         );
@@ -9457,7 +9457,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2")]
         static abstract void CmdWriteTimestamp2(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-            [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+            [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
             [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool,
             [NativeTypeName("uint32_t")] uint query
         );
@@ -9473,7 +9473,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2KHR")]
         static abstract void CmdWriteTimestamp2KHR(
             [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-            [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+            [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
             [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool,
             [NativeTypeName("uint32_t")] uint query
         );
@@ -9490,7 +9490,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2KHR")]
         static abstract void CmdWriteTimestamp2KHR(
             [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-            [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+            [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
             [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool,
             [NativeTypeName("uint32_t")] uint query
         );
@@ -11811,7 +11811,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkInstance")] VkInstance_T* instance,
             [NativeTypeName("VkDebugReportFlagsEXT")] uint flags,
             DebugReportObjectTypeEXT objectType,
-            [NativeTypeName("uint64_t")] nuint @object,
+            [NativeTypeName("uint64_t")] ulong @object,
             [NativeTypeName("size_t")] nuint location,
             [NativeTypeName("int32_t")] int messageCode,
             [NativeTypeName("const char *")] sbyte* pLayerPrefix,
@@ -11825,7 +11825,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkInstance")] Ref<VkInstance_T> instance,
             [NativeTypeName("VkDebugReportFlagsEXT")] uint flags,
             DebugReportObjectTypeEXT objectType,
-            [NativeTypeName("uint64_t")] nuint @object,
+            [NativeTypeName("uint64_t")] ulong @object,
             [NativeTypeName("size_t")] nuint location,
             [NativeTypeName("int32_t")] int messageCode,
             [NativeTypeName("const char *")] Ref<sbyte> pLayerPrefix,
@@ -13864,7 +13864,7 @@ public unsafe partial interface IVulkan
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
-        static abstract nuint GetAccelerationStructureDeviceAddressKHR(
+        static abstract ulong GetAccelerationStructureDeviceAddressKHR(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")]
                 AccelerationStructureDeviceAddressInfoKHR* pInfo
@@ -13881,7 +13881,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
-        static abstract nuint GetAccelerationStructureDeviceAddressKHR(
+        static abstract ulong GetAccelerationStructureDeviceAddressKHR(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")]
                 Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo
@@ -14012,7 +14012,7 @@ public unsafe partial interface IVulkan
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddress")]
-        static abstract nuint GetBufferDeviceAddress(
+        static abstract ulong GetBufferDeviceAddress(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
         );
@@ -14025,7 +14025,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddress")]
-        static abstract nuint GetBufferDeviceAddress(
+        static abstract ulong GetBufferDeviceAddress(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
         );
@@ -14040,7 +14040,7 @@ public unsafe partial interface IVulkan
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressEXT")]
-        static abstract nuint GetBufferDeviceAddressEXT(
+        static abstract ulong GetBufferDeviceAddressEXT(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
         );
@@ -14056,7 +14056,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressEXT")]
-        static abstract nuint GetBufferDeviceAddressEXT(
+        static abstract ulong GetBufferDeviceAddressEXT(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
         );
@@ -14071,7 +14071,7 @@ public unsafe partial interface IVulkan
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressKHR")]
-        static abstract nuint GetBufferDeviceAddressKHR(
+        static abstract ulong GetBufferDeviceAddressKHR(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
         );
@@ -14087,7 +14087,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressKHR")]
-        static abstract nuint GetBufferDeviceAddressKHR(
+        static abstract ulong GetBufferDeviceAddressKHR(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
         );
@@ -14182,7 +14182,7 @@ public unsafe partial interface IVulkan
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
-        static abstract nuint GetBufferOpaqueCaptureAddress(
+        static abstract ulong GetBufferOpaqueCaptureAddress(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
         );
@@ -14195,7 +14195,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
-        static abstract nuint GetBufferOpaqueCaptureAddress(
+        static abstract ulong GetBufferOpaqueCaptureAddress(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
         );
@@ -14210,7 +14210,7 @@ public unsafe partial interface IVulkan
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
-        static abstract nuint GetBufferOpaqueCaptureAddressKHR(
+        static abstract ulong GetBufferOpaqueCaptureAddressKHR(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
         );
@@ -14226,7 +14226,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
-        static abstract nuint GetBufferOpaqueCaptureAddressKHR(
+        static abstract ulong GetBufferOpaqueCaptureAddressKHR(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
         );
@@ -14282,8 +14282,8 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint timestampCount,
             [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
                 CalibratedTimestampInfoKHR* pTimestampInfos,
-            [NativeTypeName("uint64_t *")] nuint* pTimestamps,
-            [NativeTypeName("uint64_t *")] nuint* pMaxDeviation
+            [NativeTypeName("uint64_t *")] ulong* pTimestamps,
+            [NativeTypeName("uint64_t *")] ulong* pMaxDeviation
         );
 
         [SupportedApiProfile(
@@ -14301,8 +14301,8 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint timestampCount,
             [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
                 Ref<CalibratedTimestampInfoKHR> pTimestampInfos,
-            [NativeTypeName("uint64_t *")] Ref<nuint> pTimestamps,
-            [NativeTypeName("uint64_t *")] Ref<nuint> pMaxDeviation
+            [NativeTypeName("uint64_t *")] Ref<ulong> pTimestamps,
+            [NativeTypeName("uint64_t *")] Ref<ulong> pMaxDeviation
         );
 
         [SupportedApiProfile(
@@ -14319,8 +14319,8 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint timestampCount,
             [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
                 CalibratedTimestampInfoKHR* pTimestampInfos,
-            [NativeTypeName("uint64_t *")] nuint* pTimestamps,
-            [NativeTypeName("uint64_t *")] nuint* pMaxDeviation
+            [NativeTypeName("uint64_t *")] ulong* pTimestamps,
+            [NativeTypeName("uint64_t *")] ulong* pMaxDeviation
         );
 
         [SupportedApiProfile(
@@ -14338,8 +14338,8 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint timestampCount,
             [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
                 Ref<CalibratedTimestampInfoKHR> pTimestampInfos,
-            [NativeTypeName("uint64_t *")] Ref<nuint> pTimestamps,
-            [NativeTypeName("uint64_t *")] Ref<nuint> pMaxDeviation
+            [NativeTypeName("uint64_t *")] Ref<ulong> pTimestamps,
+            [NativeTypeName("uint64_t *")] Ref<ulong> pMaxDeviation
         );
 
         [SupportedApiProfile(
@@ -14505,7 +14505,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout,
             [NativeTypeName("uint32_t")] uint binding,
-            [NativeTypeName("VkDeviceSize *")] nuint* pOffset
+            [NativeTypeName("VkDeviceSize *")] ulong* pOffset
         );
 
         [SupportedApiProfile(
@@ -14524,7 +14524,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout,
             [NativeTypeName("uint32_t")] uint binding,
-            [NativeTypeName("VkDeviceSize *")] Ref<nuint> pOffset
+            [NativeTypeName("VkDeviceSize *")] Ref<ulong> pOffset
         );
 
         [SupportedApiProfile(
@@ -14574,7 +14574,7 @@ public unsafe partial interface IVulkan
         static abstract void GetDescriptorSetLayoutSizeEXT(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout,
-            [NativeTypeName("VkDeviceSize *")] nuint* pLayoutSizeInBytes
+            [NativeTypeName("VkDeviceSize *")] ulong* pLayoutSizeInBytes
         );
 
         [SupportedApiProfile(
@@ -14592,7 +14592,7 @@ public unsafe partial interface IVulkan
         static abstract void GetDescriptorSetLayoutSizeEXT(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout,
-            [NativeTypeName("VkDeviceSize *")] Ref<nuint> pLayoutSizeInBytes
+            [NativeTypeName("VkDeviceSize *")] Ref<ulong> pLayoutSizeInBytes
         );
 
         [SupportedApiProfile(
@@ -15008,7 +15008,7 @@ public unsafe partial interface IVulkan
         static abstract void GetDeviceMemoryCommitment(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory,
-            [NativeTypeName("VkDeviceSize *")] nuint* pCommittedMemoryInBytes
+            [NativeTypeName("VkDeviceSize *")] ulong* pCommittedMemoryInBytes
         );
 
         [SupportedApiProfile(
@@ -15027,7 +15027,7 @@ public unsafe partial interface IVulkan
         static abstract void GetDeviceMemoryCommitment(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory,
-            [NativeTypeName("VkDeviceSize *")] Ref<nuint> pCommittedMemoryInBytes
+            [NativeTypeName("VkDeviceSize *")] Ref<ulong> pCommittedMemoryInBytes
         );
 
         [return: NativeTypeName("uint64_t")]
@@ -15037,7 +15037,7 @@ public unsafe partial interface IVulkan
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
-        static abstract nuint GetDeviceMemoryOpaqueCaptureAddress(
+        static abstract ulong GetDeviceMemoryOpaqueCaptureAddress(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
                 DeviceMemoryOpaqueCaptureAddressInfo* pInfo
@@ -15051,7 +15051,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
-        static abstract nuint GetDeviceMemoryOpaqueCaptureAddress(
+        static abstract ulong GetDeviceMemoryOpaqueCaptureAddress(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
                 Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo
@@ -15067,7 +15067,7 @@ public unsafe partial interface IVulkan
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
-        static abstract nuint GetDeviceMemoryOpaqueCaptureAddressKHR(
+        static abstract ulong GetDeviceMemoryOpaqueCaptureAddressKHR(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
                 DeviceMemoryOpaqueCaptureAddressInfo* pInfo
@@ -15084,7 +15084,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
-        static abstract nuint GetDeviceMemoryOpaqueCaptureAddressKHR(
+        static abstract ulong GetDeviceMemoryOpaqueCaptureAddressKHR(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
                 Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo
@@ -16059,7 +16059,7 @@ public unsafe partial interface IVulkan
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
-        static abstract nuint GetImageViewHandle64NVX(
+        static abstract ulong GetImageViewHandle64NVX(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkImageViewHandleInfoNVX *")] ImageViewHandleInfoNVX* pInfo
         );
@@ -16068,7 +16068,7 @@ public unsafe partial interface IVulkan
         [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
-        static abstract nuint GetImageViewHandle64NVX(
+        static abstract ulong GetImageViewHandle64NVX(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkImageViewHandleInfoNVX *")] Ref<ImageViewHandleInfoNVX> pInfo
         );
@@ -18150,7 +18150,7 @@ public unsafe partial interface IVulkan
             ImpliesSets = ["VK_NV_device_generated_commands"]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
-        static abstract nuint GetPipelineIndirectDeviceAddressNV(
+        static abstract ulong GetPipelineIndirectDeviceAddressNV(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")]
                 PipelineIndirectDeviceAddressInfoNV* pInfo
@@ -18164,7 +18164,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
-        static abstract nuint GetPipelineIndirectDeviceAddressNV(
+        static abstract ulong GetPipelineIndirectDeviceAddressNV(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")]
                 Ref<PipelineIndirectDeviceAddressInfoNV> pInfo
@@ -18266,9 +18266,9 @@ public unsafe partial interface IVulkan
         static abstract void GetPrivateData(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             ObjectType objectType,
-            [NativeTypeName("uint64_t")] nuint objectHandle,
+            [NativeTypeName("uint64_t")] ulong objectHandle,
             [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot,
-            [NativeTypeName("uint64_t *")] nuint* pData
+            [NativeTypeName("uint64_t *")] ulong* pData
         );
 
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -18277,9 +18277,9 @@ public unsafe partial interface IVulkan
         static abstract void GetPrivateData(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             ObjectType objectType,
-            [NativeTypeName("uint64_t")] nuint objectHandle,
+            [NativeTypeName("uint64_t")] ulong objectHandle,
             [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot,
-            [NativeTypeName("uint64_t *")] Ref<nuint> pData
+            [NativeTypeName("uint64_t *")] Ref<ulong> pData
         );
 
         [SupportedApiProfile(
@@ -18294,9 +18294,9 @@ public unsafe partial interface IVulkan
         static abstract void GetPrivateDataEXT(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             ObjectType objectType,
-            [NativeTypeName("uint64_t")] nuint objectHandle,
+            [NativeTypeName("uint64_t")] ulong objectHandle,
             [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot,
-            [NativeTypeName("uint64_t *")] nuint* pData
+            [NativeTypeName("uint64_t *")] ulong* pData
         );
 
         [SupportedApiProfile(
@@ -18312,9 +18312,9 @@ public unsafe partial interface IVulkan
         static abstract void GetPrivateDataEXT(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             ObjectType objectType,
-            [NativeTypeName("uint64_t")] nuint objectHandle,
+            [NativeTypeName("uint64_t")] ulong objectHandle,
             [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot,
-            [NativeTypeName("uint64_t *")] Ref<nuint> pData
+            [NativeTypeName("uint64_t *")] Ref<ulong> pData
         );
 
         [SupportedApiProfile(
@@ -18336,7 +18336,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint queryCount,
             [NativeTypeName("size_t")] nuint dataSize,
             void* pData,
-            [NativeTypeName("VkDeviceSize")] nuint stride,
+            [NativeTypeName("VkDeviceSize")] ulong stride,
             [NativeTypeName("VkQueryResultFlags")] uint flags
         );
 
@@ -18360,7 +18360,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint queryCount,
             [NativeTypeName("size_t")] nuint dataSize,
             Ref pData,
-            [NativeTypeName("VkDeviceSize")] nuint stride,
+            [NativeTypeName("VkDeviceSize")] ulong stride,
             [NativeTypeName("VkQueryResultFlags")] uint flags
         );
 
@@ -18553,7 +18553,7 @@ public unsafe partial interface IVulkan
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetRayTracingShaderGroupStackSizeKHR")]
-        static abstract nuint GetRayTracingShaderGroupStackSizeKHR(
+        static abstract ulong GetRayTracingShaderGroupStackSizeKHR(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkPipeline")] VkPipeline_T* pipeline,
             [NativeTypeName("uint32_t")] uint group,
@@ -18571,7 +18571,7 @@ public unsafe partial interface IVulkan
         )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetRayTracingShaderGroupStackSizeKHR")]
-        static abstract nuint GetRayTracingShaderGroupStackSizeKHR(
+        static abstract ulong GetRayTracingShaderGroupStackSizeKHR(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkPipeline")] Ref<VkPipeline_T> pipeline,
             [NativeTypeName("uint32_t")] uint group,
@@ -18730,7 +18730,7 @@ public unsafe partial interface IVulkan
         static abstract Result GetSemaphoreCounterValue(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore,
-            [NativeTypeName("uint64_t *")] nuint* pValue
+            [NativeTypeName("uint64_t *")] ulong* pValue
         );
 
         [SupportedApiProfile(
@@ -18743,7 +18743,7 @@ public unsafe partial interface IVulkan
         static abstract Result GetSemaphoreCounterValue(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore,
-            [NativeTypeName("uint64_t *")] Ref<nuint> pValue
+            [NativeTypeName("uint64_t *")] Ref<ulong> pValue
         );
 
         [SupportedApiProfile(
@@ -18758,7 +18758,7 @@ public unsafe partial interface IVulkan
         static abstract Result GetSemaphoreCounterValueKHR(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore,
-            [NativeTypeName("uint64_t *")] nuint* pValue
+            [NativeTypeName("uint64_t *")] ulong* pValue
         );
 
         [SupportedApiProfile(
@@ -18774,7 +18774,7 @@ public unsafe partial interface IVulkan
         static abstract Result GetSemaphoreCounterValueKHR(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore,
-            [NativeTypeName("uint64_t *")] Ref<nuint> pValue
+            [NativeTypeName("uint64_t *")] Ref<ulong> pValue
         );
 
         [SupportedApiProfile(
@@ -18945,7 +18945,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain,
             VkSurfaceCounterFlagBitsEXT counter,
-            [NativeTypeName("uint64_t *")] nuint* pCounterValue
+            [NativeTypeName("uint64_t *")] ulong* pCounterValue
         );
 
         [SupportedApiProfile(
@@ -18959,7 +18959,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain,
             VkSurfaceCounterFlagBitsEXT counter,
-            [NativeTypeName("uint64_t *")] Ref<nuint> pCounterValue
+            [NativeTypeName("uint64_t *")] Ref<ulong> pCounterValue
         );
 
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -19218,8 +19218,8 @@ public unsafe partial interface IVulkan
         static abstract Result MapMemory(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
-            [NativeTypeName("VkDeviceSize")] nuint size,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
+            [NativeTypeName("VkDeviceSize")] ulong size,
             [NativeTypeName("VkMemoryMapFlags")] uint flags,
             void** ppData
         );
@@ -19240,8 +19240,8 @@ public unsafe partial interface IVulkan
         static abstract Result MapMemory(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory,
-            [NativeTypeName("VkDeviceSize")] nuint offset,
-            [NativeTypeName("VkDeviceSize")] nuint size,
+            [NativeTypeName("VkDeviceSize")] ulong offset,
+            [NativeTypeName("VkDeviceSize")] ulong size,
             [NativeTypeName("VkMemoryMapFlags")] uint flags,
             Ref2D ppData
         );
@@ -20250,9 +20250,9 @@ public unsafe partial interface IVulkan
         static abstract Result SetPrivateData(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             ObjectType objectType,
-            [NativeTypeName("uint64_t")] nuint objectHandle,
+            [NativeTypeName("uint64_t")] ulong objectHandle,
             [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot,
-            [NativeTypeName("uint64_t")] nuint data
+            [NativeTypeName("uint64_t")] ulong data
         );
 
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -20261,9 +20261,9 @@ public unsafe partial interface IVulkan
         static abstract Result SetPrivateData(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             ObjectType objectType,
-            [NativeTypeName("uint64_t")] nuint objectHandle,
+            [NativeTypeName("uint64_t")] ulong objectHandle,
             [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot,
-            [NativeTypeName("uint64_t")] nuint data
+            [NativeTypeName("uint64_t")] ulong data
         );
 
         [SupportedApiProfile(
@@ -20278,9 +20278,9 @@ public unsafe partial interface IVulkan
         static abstract Result SetPrivateDataEXT(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             ObjectType objectType,
-            [NativeTypeName("uint64_t")] nuint objectHandle,
+            [NativeTypeName("uint64_t")] ulong objectHandle,
             [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot,
-            [NativeTypeName("uint64_t")] nuint data
+            [NativeTypeName("uint64_t")] ulong data
         );
 
         [SupportedApiProfile(
@@ -20296,9 +20296,9 @@ public unsafe partial interface IVulkan
         static abstract Result SetPrivateDataEXT(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             ObjectType objectType,
-            [NativeTypeName("uint64_t")] nuint objectHandle,
+            [NativeTypeName("uint64_t")] ulong objectHandle,
             [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot,
-            [NativeTypeName("uint64_t")] nuint data
+            [NativeTypeName("uint64_t")] ulong data
         );
 
         [SupportedApiProfile(
@@ -20802,7 +20802,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint fenceCount,
             [NativeTypeName("const VkFence *")] VkFence_T** pFences,
             [NativeTypeName("VkBool32")] uint waitAll,
-            [NativeTypeName("uint64_t")] nuint timeout
+            [NativeTypeName("uint64_t")] ulong timeout
         );
 
         [SupportedApiProfile(
@@ -20823,7 +20823,7 @@ public unsafe partial interface IVulkan
             [NativeTypeName("uint32_t")] uint fenceCount,
             [NativeTypeName("const VkFence *")] Ref2D<VkFence_T> pFences,
             [NativeTypeName("VkBool32")] uint waitAll,
-            [NativeTypeName("uint64_t")] nuint timeout
+            [NativeTypeName("uint64_t")] ulong timeout
         );
 
         [SupportedApiProfile(
@@ -20835,8 +20835,8 @@ public unsafe partial interface IVulkan
         static abstract Result WaitForPresentKHR(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain,
-            [NativeTypeName("uint64_t")] nuint presentId,
-            [NativeTypeName("uint64_t")] nuint timeout
+            [NativeTypeName("uint64_t")] ulong presentId,
+            [NativeTypeName("uint64_t")] ulong timeout
         );
 
         [SupportedApiProfile(
@@ -20849,8 +20849,8 @@ public unsafe partial interface IVulkan
         static abstract Result WaitForPresentKHR(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain,
-            [NativeTypeName("uint64_t")] nuint presentId,
-            [NativeTypeName("uint64_t")] nuint timeout
+            [NativeTypeName("uint64_t")] ulong presentId,
+            [NativeTypeName("uint64_t")] ulong timeout
         );
 
         [SupportedApiProfile(
@@ -20862,7 +20862,7 @@ public unsafe partial interface IVulkan
         static abstract Result WaitSemaphores(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo,
-            [NativeTypeName("uint64_t")] nuint timeout
+            [NativeTypeName("uint64_t")] ulong timeout
         );
 
         [SupportedApiProfile(
@@ -20875,7 +20875,7 @@ public unsafe partial interface IVulkan
         static abstract Result WaitSemaphores(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo,
-            [NativeTypeName("uint64_t")] nuint timeout
+            [NativeTypeName("uint64_t")] ulong timeout
         );
 
         [SupportedApiProfile(
@@ -20890,7 +20890,7 @@ public unsafe partial interface IVulkan
         static abstract Result WaitSemaphoresKHR(
             [NativeTypeName("VkDevice")] VkDevice_T* device,
             [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo,
-            [NativeTypeName("uint64_t")] nuint timeout
+            [NativeTypeName("uint64_t")] ulong timeout
         );
 
         [SupportedApiProfile(
@@ -20906,7 +20906,7 @@ public unsafe partial interface IVulkan
         static abstract Result WaitSemaphoresKHR(
             [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
             [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo,
-            [NativeTypeName("uint64_t")] nuint timeout
+            [NativeTypeName("uint64_t")] ulong timeout
         );
 
         [SupportedApiProfile(
@@ -21048,7 +21048,7 @@ public unsafe partial interface IVulkan
     Result AcquireNextImageKHR(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain,
-        [NativeTypeName("uint64_t")] nuint timeout,
+        [NativeTypeName("uint64_t")] ulong timeout,
         [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore,
         [NativeTypeName("VkFence")] VkFence_T* fence,
         [NativeTypeName("uint32_t *")] uint* pImageIndex
@@ -21060,7 +21060,7 @@ public unsafe partial interface IVulkan
     Result AcquireNextImageKHR(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain,
-        [NativeTypeName("uint64_t")] nuint timeout,
+        [NativeTypeName("uint64_t")] ulong timeout,
         [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore,
         [NativeTypeName("VkFence")] Ref<VkFence_T> fence,
         [NativeTypeName("uint32_t *")] Ref<uint> pImageIndex
@@ -21279,7 +21279,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
         [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory,
-        [NativeTypeName("VkDeviceSize")] nuint memoryOffset
+        [NativeTypeName("VkDeviceSize")] ulong memoryOffset
     );
 
     [SupportedApiProfile(
@@ -21293,7 +21293,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
         [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory,
-        [NativeTypeName("VkDeviceSize")] nuint memoryOffset
+        [NativeTypeName("VkDeviceSize")] ulong memoryOffset
     );
 
     [SupportedApiProfile(
@@ -21348,7 +21348,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkImage")] VkImage_T* image,
         [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory,
-        [NativeTypeName("VkDeviceSize")] nuint memoryOffset
+        [NativeTypeName("VkDeviceSize")] ulong memoryOffset
     );
 
     [SupportedApiProfile(
@@ -21362,7 +21362,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkImage")] Ref<VkImage_T> image,
         [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory,
-        [NativeTypeName("VkDeviceSize")] nuint memoryOffset
+        [NativeTypeName("VkDeviceSize")] ulong memoryOffset
     );
 
     [SupportedApiProfile(
@@ -21818,7 +21818,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstCounterBuffer,
         [NativeTypeName("uint32_t")] uint counterBufferCount,
         [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pCounterBufferOffsets
+        [NativeTypeName("const VkDeviceSize *")] ulong* pCounterBufferOffsets
     );
 
     [SupportedApiProfile(
@@ -21836,7 +21836,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstCounterBuffer,
         [NativeTypeName("uint32_t")] uint counterBufferCount,
         [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pCounterBufferOffsets
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pCounterBufferOffsets
     );
 
     [SupportedApiProfile(
@@ -22060,7 +22060,7 @@ public unsafe partial interface IVulkan
     void CmdBindIndexBuffer(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         IndexType indexType
     );
 
@@ -22074,7 +22074,7 @@ public unsafe partial interface IVulkan
     void CmdBindIndexBuffer(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         IndexType indexType
     );
 
@@ -22083,8 +22083,8 @@ public unsafe partial interface IVulkan
     void CmdBindIndexBuffer2(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
-        [NativeTypeName("VkDeviceSize")] nuint size,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
+        [NativeTypeName("VkDeviceSize")] ulong size,
         IndexType indexType
     );
 
@@ -22094,8 +22094,8 @@ public unsafe partial interface IVulkan
     void CmdBindIndexBuffer2(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
-        [NativeTypeName("VkDeviceSize")] nuint size,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
+        [NativeTypeName("VkDeviceSize")] ulong size,
         IndexType indexType
     );
 
@@ -22108,8 +22108,8 @@ public unsafe partial interface IVulkan
     void CmdBindIndexBuffer2KHR(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
-        [NativeTypeName("VkDeviceSize")] nuint size,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
+        [NativeTypeName("VkDeviceSize")] ulong size,
         IndexType indexType
     );
 
@@ -22123,8 +22123,8 @@ public unsafe partial interface IVulkan
     void CmdBindIndexBuffer2KHR(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
-        [NativeTypeName("VkDeviceSize")] nuint size,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
+        [NativeTypeName("VkDeviceSize")] ulong size,
         IndexType indexType
     );
 
@@ -22322,8 +22322,8 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
         [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pSizes
+        [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets,
+        [NativeTypeName("const VkDeviceSize *")] ulong* pSizes
     );
 
     [SupportedApiProfile(
@@ -22341,8 +22341,8 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
         [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets,
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes
     );
 
     [SupportedApiProfile(
@@ -22356,7 +22356,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
         [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets
+        [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets
     );
 
     [SupportedApiProfile(
@@ -22371,7 +22371,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
         [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets
     );
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -22381,9 +22381,9 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
         [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pSizes,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pStrides
+        [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets,
+        [NativeTypeName("const VkDeviceSize *")] ulong* pSizes,
+        [NativeTypeName("const VkDeviceSize *")] ulong* pStrides
     );
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -22394,9 +22394,9 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
         [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pStrides
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets,
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes,
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pStrides
     );
 
     [SupportedApiProfile(
@@ -22413,9 +22413,9 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
         [NativeTypeName("const VkBuffer *")] VkBuffer_T** pBuffers,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pSizes,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pStrides
+        [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets,
+        [NativeTypeName("const VkDeviceSize *")] ulong* pSizes,
+        [NativeTypeName("const VkDeviceSize *")] ulong* pStrides
     );
 
     [SupportedApiProfile(
@@ -22433,9 +22433,9 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
         [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pBuffers,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pSizes,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pStrides
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets,
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pSizes,
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pStrides
     );
 
     [SupportedApiProfile(
@@ -22548,12 +22548,12 @@ public unsafe partial interface IVulkan
         [NativeTypeName("const VkAccelerationStructureInfoNV *")]
             AccelerationStructureInfoNV* pInfo,
         [NativeTypeName("VkBuffer")] VkBuffer_T* instanceData,
-        [NativeTypeName("VkDeviceSize")] nuint instanceOffset,
+        [NativeTypeName("VkDeviceSize")] ulong instanceOffset,
         [NativeTypeName("VkBool32")] uint update,
         [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* dst,
         [NativeTypeName("VkAccelerationStructureNV")] VkAccelerationStructureNV_T* src,
         [NativeTypeName("VkBuffer")] VkBuffer_T* scratch,
-        [NativeTypeName("VkDeviceSize")] nuint scratchOffset
+        [NativeTypeName("VkDeviceSize")] ulong scratchOffset
     );
 
     [SupportedApiProfile(
@@ -22571,12 +22571,12 @@ public unsafe partial interface IVulkan
         [NativeTypeName("const VkAccelerationStructureInfoNV *")]
             Ref<AccelerationStructureInfoNV> pInfo,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> instanceData,
-        [NativeTypeName("VkDeviceSize")] nuint instanceOffset,
+        [NativeTypeName("VkDeviceSize")] ulong instanceOffset,
         [NativeTypeName("VkBool32")] uint update,
         [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> dst,
         [NativeTypeName("VkAccelerationStructureNV")] Ref<VkAccelerationStructureNV_T> src,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> scratch,
-        [NativeTypeName("VkDeviceSize")] nuint scratchOffset
+        [NativeTypeName("VkDeviceSize")] ulong scratchOffset
     );
 
     [SupportedApiProfile(
@@ -22593,7 +22593,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint infoCount,
         [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")]
             AccelerationStructureBuildGeometryInfoKHR* pInfos,
-        [NativeTypeName("const VkDeviceAddress *")] nuint* pIndirectDeviceAddresses,
+        [NativeTypeName("const VkDeviceAddress *")] ulong* pIndirectDeviceAddresses,
         [NativeTypeName("const uint32_t *")] uint* pIndirectStrides,
         [NativeTypeName("const uint32_t *const *")] uint** ppMaxPrimitiveCounts
     );
@@ -22613,7 +22613,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint infoCount,
         [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")]
             Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos,
-        [NativeTypeName("const VkDeviceAddress *")] Ref<nuint> pIndirectDeviceAddresses,
+        [NativeTypeName("const VkDeviceAddress *")] Ref<ulong> pIndirectDeviceAddresses,
         [NativeTypeName("const uint32_t *")] Ref<uint> pIndirectStrides,
         [NativeTypeName("const uint32_t *const *")] Ref2D<uint> ppMaxPrimitiveCounts
     );
@@ -23402,7 +23402,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectNV")]
     void CmdCopyMemoryIndirectNV(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-        [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress,
+        [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
         [NativeTypeName("uint32_t")] uint copyCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -23420,7 +23420,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectNV")]
     void CmdCopyMemoryIndirectNV(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-        [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress,
+        [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
         [NativeTypeName("uint32_t")] uint copyCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -23468,7 +23468,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
     void CmdCopyMemoryToImageIndirectNV(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-        [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress,
+        [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
         [NativeTypeName("uint32_t")] uint copyCount,
         [NativeTypeName("uint32_t")] uint stride,
         [NativeTypeName("VkImage")] VkImage_T* dstImage,
@@ -23490,7 +23490,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
     void CmdCopyMemoryToImageIndirectNV(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-        [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress,
+        [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
         [NativeTypeName("uint32_t")] uint copyCount,
         [NativeTypeName("uint32_t")] uint stride,
         [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage,
@@ -23512,7 +23512,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectNV")]
     void CmdCopyMemoryToImageIndirectNV(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-        [NativeTypeName("VkDeviceAddress")] nuint copyBufferAddress,
+        [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
         [NativeTypeName("uint32_t")] uint stride,
         [NativeTypeName("VkImage")] Ref<VkImage_T> dstImage,
         ImageLayout dstImageLayout,
@@ -23621,8 +23621,8 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstQuery,
         [NativeTypeName("uint32_t")] uint queryCount,
         [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-        [NativeTypeName("VkDeviceSize")] nuint stride,
+        [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+        [NativeTypeName("VkDeviceSize")] ulong stride,
         [NativeTypeName("VkQueryResultFlags")] uint flags
     );
 
@@ -23639,8 +23639,8 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstQuery,
         [NativeTypeName("uint32_t")] uint queryCount,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-        [NativeTypeName("VkDeviceSize")] nuint stride,
+        [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+        [NativeTypeName("VkDeviceSize")] ulong stride,
         [NativeTypeName("VkQueryResultFlags")] uint flags
     );
 
@@ -23758,8 +23758,8 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountNV")]
     void CmdDecompressMemoryIndirectCountNV(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-        [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsAddress,
-        [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsCountAddress,
+        [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress,
+        [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress,
         [NativeTypeName("uint32_t")] uint stride
     );
 
@@ -23776,8 +23776,8 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountNV")]
     void CmdDecompressMemoryIndirectCountNV(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-        [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsAddress,
-        [NativeTypeName("VkDeviceAddress")] nuint indirectCommandsCountAddress,
+        [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress,
+        [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress,
         [NativeTypeName("uint32_t")] uint stride
     );
 
@@ -23935,7 +23935,7 @@ public unsafe partial interface IVulkan
     void CmdDispatchIndirect(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset
+        [NativeTypeName("VkDeviceSize")] ulong offset
     );
 
     [SupportedApiProfile(
@@ -23948,7 +23948,7 @@ public unsafe partial interface IVulkan
     void CmdDispatchIndirect(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset
+        [NativeTypeName("VkDeviceSize")] ulong offset
     );
 
     [SupportedApiProfile(
@@ -24050,7 +24050,7 @@ public unsafe partial interface IVulkan
     void CmdDrawClusterIndirectHuawei(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset
+        [NativeTypeName("VkDeviceSize")] ulong offset
     );
 
     [SupportedApiProfile(
@@ -24066,7 +24066,7 @@ public unsafe partial interface IVulkan
     void CmdDrawClusterIndirectHuawei(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset
+        [NativeTypeName("VkDeviceSize")] ulong offset
     );
 
     [SupportedApiProfile(
@@ -24109,7 +24109,7 @@ public unsafe partial interface IVulkan
     void CmdDrawIndexedIndirect(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24124,7 +24124,7 @@ public unsafe partial interface IVulkan
     void CmdDrawIndexedIndirect(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24138,9 +24138,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndexedIndirectCount(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24155,9 +24155,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndexedIndirectCount(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24167,9 +24167,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndexedIndirectCountAMD(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24180,9 +24180,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndexedIndirectCountAMD(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24192,9 +24192,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndexedIndirectCountKHR(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24205,9 +24205,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndexedIndirectCountKHR(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24221,7 +24221,7 @@ public unsafe partial interface IVulkan
     void CmdDrawIndirect(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24236,7 +24236,7 @@ public unsafe partial interface IVulkan
     void CmdDrawIndirect(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24255,7 +24255,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint instanceCount,
         [NativeTypeName("uint32_t")] uint firstInstance,
         [NativeTypeName("VkBuffer")] VkBuffer_T* counterBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint counterBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong counterBufferOffset,
         [NativeTypeName("uint32_t")] uint counterOffset,
         [NativeTypeName("uint32_t")] uint vertexStride
     );
@@ -24275,7 +24275,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint instanceCount,
         [NativeTypeName("uint32_t")] uint firstInstance,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> counterBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint counterBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong counterBufferOffset,
         [NativeTypeName("uint32_t")] uint counterOffset,
         [NativeTypeName("uint32_t")] uint vertexStride
     );
@@ -24289,9 +24289,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndirectCount(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24306,9 +24306,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndirectCount(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24318,9 +24318,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndirectCountAMD(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24331,9 +24331,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndirectCountAMD(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24343,9 +24343,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndirectCountKHR(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24356,9 +24356,9 @@ public unsafe partial interface IVulkan
     void CmdDrawIndirectCountKHR(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24399,9 +24399,9 @@ public unsafe partial interface IVulkan
     void CmdDrawMeshTasksIndirectCountEXT(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24416,9 +24416,9 @@ public unsafe partial interface IVulkan
     void CmdDrawMeshTasksIndirectCountEXT(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24435,9 +24435,9 @@ public unsafe partial interface IVulkan
     void CmdDrawMeshTasksIndirectCountNV(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] VkBuffer_T* countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24455,9 +24455,9 @@ public unsafe partial interface IVulkan
     void CmdDrawMeshTasksIndirectCountNV(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> countBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint countBufferOffset,
+        [NativeTypeName("VkDeviceSize")] ulong countBufferOffset,
         [NativeTypeName("uint32_t")] uint maxDrawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24471,7 +24471,7 @@ public unsafe partial interface IVulkan
     void CmdDrawMeshTasksIndirectEXT(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24486,7 +24486,7 @@ public unsafe partial interface IVulkan
     void CmdDrawMeshTasksIndirectEXT(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24503,7 +24503,7 @@ public unsafe partial interface IVulkan
     void CmdDrawMeshTasksIndirectNV(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24521,7 +24521,7 @@ public unsafe partial interface IVulkan
     void CmdDrawMeshTasksIndirectNV(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> buffer,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("uint32_t")] uint stride
     );
@@ -24981,7 +24981,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstCounterBuffer,
         [NativeTypeName("uint32_t")] uint counterBufferCount,
         [NativeTypeName("const VkBuffer *")] VkBuffer_T** pCounterBuffers,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pCounterBufferOffsets
+        [NativeTypeName("const VkDeviceSize *")] ulong* pCounterBufferOffsets
     );
 
     [SupportedApiProfile(
@@ -24999,7 +24999,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstCounterBuffer,
         [NativeTypeName("uint32_t")] uint counterBufferCount,
         [NativeTypeName("const VkBuffer *")] Ref2D<VkBuffer_T> pCounterBuffers,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pCounterBufferOffsets
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pCounterBufferOffsets
     );
 
     [SupportedApiProfile(
@@ -25134,8 +25134,8 @@ public unsafe partial interface IVulkan
     void CmdFillBuffer(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-        [NativeTypeName("VkDeviceSize")] nuint size,
+        [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+        [NativeTypeName("VkDeviceSize")] ulong size,
         [NativeTypeName("uint32_t")] uint data
     );
 
@@ -25149,8 +25149,8 @@ public unsafe partial interface IVulkan
     void CmdFillBuffer(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-        [NativeTypeName("VkDeviceSize")] nuint size,
+        [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+        [NativeTypeName("VkDeviceSize")] ulong size,
         [NativeTypeName("uint32_t")] uint data
     );
 
@@ -25757,7 +25757,7 @@ public unsafe partial interface IVulkan
     void CmdResetEvent2(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkEvent")] VkEvent_T* @event,
-        [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask
+        [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
     );
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -25766,7 +25766,7 @@ public unsafe partial interface IVulkan
     void CmdResetEvent2(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event,
-        [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask
+        [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
     );
 
     [SupportedApiProfile(
@@ -25781,7 +25781,7 @@ public unsafe partial interface IVulkan
     void CmdResetEvent2KHR(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkEvent")] VkEvent_T* @event,
-        [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask
+        [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
     );
 
     [SupportedApiProfile(
@@ -25797,7 +25797,7 @@ public unsafe partial interface IVulkan
     void CmdResetEvent2KHR(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkEvent")] Ref<VkEvent_T> @event,
-        [NativeTypeName("VkPipelineStageFlags2")] nuint stageMask
+        [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
     );
 
     [SupportedApiProfile(
@@ -27113,7 +27113,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstSet,
         [NativeTypeName("uint32_t")] uint setCount,
         [NativeTypeName("const uint32_t *")] uint* pBufferIndices,
-        [NativeTypeName("const VkDeviceSize *")] nuint* pOffsets
+        [NativeTypeName("const VkDeviceSize *")] ulong* pOffsets
     );
 
     [SupportedApiProfile(
@@ -27135,7 +27135,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint firstSet,
         [NativeTypeName("uint32_t")] uint setCount,
         [NativeTypeName("const uint32_t *")] Ref<uint> pBufferIndices,
-        [NativeTypeName("const VkDeviceSize *")] Ref<nuint> pOffsets
+        [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets
     );
 
     [SupportedApiProfile(
@@ -29108,7 +29108,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysIndirect2KHR")]
     void CmdTraceRaysIndirect2KHR(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-        [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress
+        [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress
     );
 
     [SupportedApiProfile(
@@ -29121,7 +29121,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdTraceRaysIndirect2KHR")]
     void CmdTraceRaysIndirect2KHR(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-        [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress
+        [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress
     );
 
     [SupportedApiProfile(
@@ -29143,7 +29143,7 @@ public unsafe partial interface IVulkan
             StridedDeviceAddressRegionKHR* pHitShaderBindingTable,
         [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")]
             StridedDeviceAddressRegionKHR* pCallableShaderBindingTable,
-        [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress
+        [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress
     );
 
     [SupportedApiProfile(
@@ -29166,7 +29166,7 @@ public unsafe partial interface IVulkan
             Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable,
         [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")]
             Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable,
-        [NativeTypeName("VkDeviceAddress")] nuint indirectDeviceAddress
+        [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress
     );
 
     [SupportedApiProfile(
@@ -29230,16 +29230,16 @@ public unsafe partial interface IVulkan
     void CmdTraceRaysNV(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* raygenShaderBindingTableBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint raygenShaderBindingOffset,
+        [NativeTypeName("VkDeviceSize")] ulong raygenShaderBindingOffset,
         [NativeTypeName("VkBuffer")] VkBuffer_T* missShaderBindingTableBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint missShaderBindingOffset,
-        [NativeTypeName("VkDeviceSize")] nuint missShaderBindingStride,
+        [NativeTypeName("VkDeviceSize")] ulong missShaderBindingOffset,
+        [NativeTypeName("VkDeviceSize")] ulong missShaderBindingStride,
         [NativeTypeName("VkBuffer")] VkBuffer_T* hitShaderBindingTableBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingOffset,
-        [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingStride,
+        [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingOffset,
+        [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingStride,
         [NativeTypeName("VkBuffer")] VkBuffer_T* callableShaderBindingTableBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingOffset,
-        [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingStride,
+        [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingOffset,
+        [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingStride,
         [NativeTypeName("uint32_t")] uint width,
         [NativeTypeName("uint32_t")] uint height,
         [NativeTypeName("uint32_t")] uint depth
@@ -29258,16 +29258,16 @@ public unsafe partial interface IVulkan
     void CmdTraceRaysNV(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> raygenShaderBindingTableBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint raygenShaderBindingOffset,
+        [NativeTypeName("VkDeviceSize")] ulong raygenShaderBindingOffset,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> missShaderBindingTableBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint missShaderBindingOffset,
-        [NativeTypeName("VkDeviceSize")] nuint missShaderBindingStride,
+        [NativeTypeName("VkDeviceSize")] ulong missShaderBindingOffset,
+        [NativeTypeName("VkDeviceSize")] ulong missShaderBindingStride,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> hitShaderBindingTableBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingOffset,
-        [NativeTypeName("VkDeviceSize")] nuint hitShaderBindingStride,
+        [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingOffset,
+        [NativeTypeName("VkDeviceSize")] ulong hitShaderBindingStride,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> callableShaderBindingTableBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingOffset,
-        [NativeTypeName("VkDeviceSize")] nuint callableShaderBindingStride,
+        [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingOffset,
+        [NativeTypeName("VkDeviceSize")] ulong callableShaderBindingStride,
         [NativeTypeName("uint32_t")] uint width,
         [NativeTypeName("uint32_t")] uint height,
         [NativeTypeName("uint32_t")] uint depth
@@ -29282,8 +29282,8 @@ public unsafe partial interface IVulkan
     void CmdUpdateBuffer(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-        [NativeTypeName("VkDeviceSize")] nuint dataSize,
+        [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+        [NativeTypeName("VkDeviceSize")] ulong dataSize,
         [NativeTypeName("const void *")] void* pData
     );
 
@@ -29297,8 +29297,8 @@ public unsafe partial interface IVulkan
     void CmdUpdateBuffer(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint dstOffset,
-        [NativeTypeName("VkDeviceSize")] nuint dataSize,
+        [NativeTypeName("VkDeviceSize")] ulong dstOffset,
+        [NativeTypeName("VkDeviceSize")] ulong dataSize,
         [NativeTypeName("const void *")] Ref pData
     );
 
@@ -29546,9 +29546,9 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarker2AMD")]
     void CmdWriteBufferMarker2AMD(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-        [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+        [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
         [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint dstOffset,
+        [NativeTypeName("VkDeviceSize")] ulong dstOffset,
         [NativeTypeName("uint32_t")] uint marker
     );
 
@@ -29560,9 +29560,9 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarker2AMD")]
     void CmdWriteBufferMarker2AMD(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-        [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+        [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint dstOffset,
+        [NativeTypeName("VkDeviceSize")] ulong dstOffset,
         [NativeTypeName("uint32_t")] uint marker
     );
 
@@ -29572,7 +29572,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
         VkPipelineStageFlagBits pipelineStage,
         [NativeTypeName("VkBuffer")] VkBuffer_T* dstBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint dstOffset,
+        [NativeTypeName("VkDeviceSize")] ulong dstOffset,
         [NativeTypeName("uint32_t")] uint marker
     );
 
@@ -29583,7 +29583,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
         VkPipelineStageFlagBits pipelineStage,
         [NativeTypeName("VkBuffer")] Ref<VkBuffer_T> dstBuffer,
-        [NativeTypeName("VkDeviceSize")] nuint dstOffset,
+        [NativeTypeName("VkDeviceSize")] ulong dstOffset,
         [NativeTypeName("uint32_t")] uint marker
     );
 
@@ -29673,7 +29673,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2")]
     void CmdWriteTimestamp2(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-        [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+        [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
         [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool,
         [NativeTypeName("uint32_t")] uint query
     );
@@ -29683,7 +29683,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2")]
     void CmdWriteTimestamp2(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-        [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+        [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
         [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool,
         [NativeTypeName("uint32_t")] uint query
     );
@@ -29699,7 +29699,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2KHR")]
     void CmdWriteTimestamp2KHR(
         [NativeTypeName("VkCommandBuffer")] VkCommandBuffer_T* commandBuffer,
-        [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+        [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
         [NativeTypeName("VkQueryPool")] VkQueryPool_T* queryPool,
         [NativeTypeName("uint32_t")] uint query
     );
@@ -29716,7 +29716,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2KHR")]
     void CmdWriteTimestamp2KHR(
         [NativeTypeName("VkCommandBuffer")] Ref<VkCommandBuffer_T> commandBuffer,
-        [NativeTypeName("VkPipelineStageFlags2")] nuint stage,
+        [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
         [NativeTypeName("VkQueryPool")] Ref<VkQueryPool_T> queryPool,
         [NativeTypeName("uint32_t")] uint query
     );
@@ -31731,7 +31731,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkInstance")] VkInstance_T* instance,
         [NativeTypeName("VkDebugReportFlagsEXT")] uint flags,
         DebugReportObjectTypeEXT objectType,
-        [NativeTypeName("uint64_t")] nuint @object,
+        [NativeTypeName("uint64_t")] ulong @object,
         [NativeTypeName("size_t")] nuint location,
         [NativeTypeName("int32_t")] int messageCode,
         [NativeTypeName("const char *")] sbyte* pLayerPrefix,
@@ -31745,7 +31745,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkInstance")] Ref<VkInstance_T> instance,
         [NativeTypeName("VkDebugReportFlagsEXT")] uint flags,
         DebugReportObjectTypeEXT objectType,
-        [NativeTypeName("uint64_t")] nuint @object,
+        [NativeTypeName("uint64_t")] ulong @object,
         [NativeTypeName("size_t")] nuint location,
         [NativeTypeName("int32_t")] int messageCode,
         [NativeTypeName("const char *")] Ref<sbyte> pLayerPrefix,
@@ -33395,7 +33395,7 @@ public unsafe partial interface IVulkan
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
-    nuint GetAccelerationStructureDeviceAddressKHR(
+    ulong GetAccelerationStructureDeviceAddressKHR(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")]
             AccelerationStructureDeviceAddressInfoKHR* pInfo
@@ -33412,7 +33412,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
-    nuint GetAccelerationStructureDeviceAddressKHR(
+    ulong GetAccelerationStructureDeviceAddressKHR(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")]
             Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo
@@ -33542,7 +33542,7 @@ public unsafe partial interface IVulkan
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddress")]
-    nuint GetBufferDeviceAddress(
+    ulong GetBufferDeviceAddress(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
     );
@@ -33555,7 +33555,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddress")]
-    nuint GetBufferDeviceAddress(
+    ulong GetBufferDeviceAddress(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
     );
@@ -33570,7 +33570,7 @@ public unsafe partial interface IVulkan
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressEXT")]
-    nuint GetBufferDeviceAddressEXT(
+    ulong GetBufferDeviceAddressEXT(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
     );
@@ -33586,7 +33586,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressEXT")]
-    nuint GetBufferDeviceAddressEXT(
+    ulong GetBufferDeviceAddressEXT(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
     );
@@ -33601,7 +33601,7 @@ public unsafe partial interface IVulkan
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressKHR")]
-    nuint GetBufferDeviceAddressKHR(
+    ulong GetBufferDeviceAddressKHR(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
     );
@@ -33617,7 +33617,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddressKHR")]
-    nuint GetBufferDeviceAddressKHR(
+    ulong GetBufferDeviceAddressKHR(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
     );
@@ -33700,7 +33700,7 @@ public unsafe partial interface IVulkan
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
-    nuint GetBufferOpaqueCaptureAddress(
+    ulong GetBufferOpaqueCaptureAddress(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
     );
@@ -33713,7 +33713,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
-    nuint GetBufferOpaqueCaptureAddress(
+    ulong GetBufferOpaqueCaptureAddress(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
     );
@@ -33728,7 +33728,7 @@ public unsafe partial interface IVulkan
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
-    nuint GetBufferOpaqueCaptureAddressKHR(
+    ulong GetBufferOpaqueCaptureAddressKHR(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
     );
@@ -33744,7 +33744,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
-    nuint GetBufferOpaqueCaptureAddressKHR(
+    ulong GetBufferOpaqueCaptureAddressKHR(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
     );
@@ -33800,8 +33800,8 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint timestampCount,
         [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
             CalibratedTimestampInfoKHR* pTimestampInfos,
-        [NativeTypeName("uint64_t *")] nuint* pTimestamps,
-        [NativeTypeName("uint64_t *")] nuint* pMaxDeviation
+        [NativeTypeName("uint64_t *")] ulong* pTimestamps,
+        [NativeTypeName("uint64_t *")] ulong* pMaxDeviation
     );
 
     [SupportedApiProfile(
@@ -33819,8 +33819,8 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint timestampCount,
         [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
             Ref<CalibratedTimestampInfoKHR> pTimestampInfos,
-        [NativeTypeName("uint64_t *")] Ref<nuint> pTimestamps,
-        [NativeTypeName("uint64_t *")] Ref<nuint> pMaxDeviation
+        [NativeTypeName("uint64_t *")] Ref<ulong> pTimestamps,
+        [NativeTypeName("uint64_t *")] Ref<ulong> pMaxDeviation
     );
 
     [SupportedApiProfile(
@@ -33837,8 +33837,8 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint timestampCount,
         [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
             CalibratedTimestampInfoKHR* pTimestampInfos,
-        [NativeTypeName("uint64_t *")] nuint* pTimestamps,
-        [NativeTypeName("uint64_t *")] nuint* pMaxDeviation
+        [NativeTypeName("uint64_t *")] ulong* pTimestamps,
+        [NativeTypeName("uint64_t *")] ulong* pMaxDeviation
     );
 
     [SupportedApiProfile(
@@ -33856,8 +33856,8 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint timestampCount,
         [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
             Ref<CalibratedTimestampInfoKHR> pTimestampInfos,
-        [NativeTypeName("uint64_t *")] Ref<nuint> pTimestamps,
-        [NativeTypeName("uint64_t *")] Ref<nuint> pMaxDeviation
+        [NativeTypeName("uint64_t *")] Ref<ulong> pTimestamps,
+        [NativeTypeName("uint64_t *")] Ref<ulong> pMaxDeviation
     );
 
     [SupportedApiProfile(
@@ -34022,7 +34022,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout,
         [NativeTypeName("uint32_t")] uint binding,
-        [NativeTypeName("VkDeviceSize *")] nuint* pOffset
+        [NativeTypeName("VkDeviceSize *")] ulong* pOffset
     );
 
     [SupportedApiProfile(
@@ -34041,7 +34041,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout,
         [NativeTypeName("uint32_t")] uint binding,
-        [NativeTypeName("VkDeviceSize *")] Ref<nuint> pOffset
+        [NativeTypeName("VkDeviceSize *")] Ref<ulong> pOffset
     );
 
     [SupportedApiProfile(
@@ -34091,7 +34091,7 @@ public unsafe partial interface IVulkan
     void GetDescriptorSetLayoutSizeEXT(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkDescriptorSetLayout")] VkDescriptorSetLayout_T* layout,
-        [NativeTypeName("VkDeviceSize *")] nuint* pLayoutSizeInBytes
+        [NativeTypeName("VkDeviceSize *")] ulong* pLayoutSizeInBytes
     );
 
     [SupportedApiProfile(
@@ -34109,7 +34109,7 @@ public unsafe partial interface IVulkan
     void GetDescriptorSetLayoutSizeEXT(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkDescriptorSetLayout")] Ref<VkDescriptorSetLayout_T> layout,
-        [NativeTypeName("VkDeviceSize *")] Ref<nuint> pLayoutSizeInBytes
+        [NativeTypeName("VkDeviceSize *")] Ref<ulong> pLayoutSizeInBytes
     );
 
     [SupportedApiProfile(
@@ -34517,7 +34517,7 @@ public unsafe partial interface IVulkan
     void GetDeviceMemoryCommitment(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory,
-        [NativeTypeName("VkDeviceSize *")] nuint* pCommittedMemoryInBytes
+        [NativeTypeName("VkDeviceSize *")] ulong* pCommittedMemoryInBytes
     );
 
     [SupportedApiProfile(
@@ -34530,7 +34530,7 @@ public unsafe partial interface IVulkan
     void GetDeviceMemoryCommitment(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory,
-        [NativeTypeName("VkDeviceSize *")] Ref<nuint> pCommittedMemoryInBytes
+        [NativeTypeName("VkDeviceSize *")] Ref<ulong> pCommittedMemoryInBytes
     );
 
     [return: NativeTypeName("uint64_t")]
@@ -34540,7 +34540,7 @@ public unsafe partial interface IVulkan
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
-    nuint GetDeviceMemoryOpaqueCaptureAddress(
+    ulong GetDeviceMemoryOpaqueCaptureAddress(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
             DeviceMemoryOpaqueCaptureAddressInfo* pInfo
@@ -34554,7 +34554,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
-    nuint GetDeviceMemoryOpaqueCaptureAddress(
+    ulong GetDeviceMemoryOpaqueCaptureAddress(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
             Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo
@@ -34570,7 +34570,7 @@ public unsafe partial interface IVulkan
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
-    nuint GetDeviceMemoryOpaqueCaptureAddressKHR(
+    ulong GetDeviceMemoryOpaqueCaptureAddressKHR(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
             DeviceMemoryOpaqueCaptureAddressInfo* pInfo
@@ -34587,7 +34587,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
-    nuint GetDeviceMemoryOpaqueCaptureAddressKHR(
+    ulong GetDeviceMemoryOpaqueCaptureAddressKHR(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
             Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo
@@ -35475,7 +35475,7 @@ public unsafe partial interface IVulkan
     [return: NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
-    nuint GetImageViewHandle64NVX(
+    ulong GetImageViewHandle64NVX(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkImageViewHandleInfoNVX *")] ImageViewHandleInfoNVX* pInfo
     );
@@ -35484,7 +35484,7 @@ public unsafe partial interface IVulkan
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
-    nuint GetImageViewHandle64NVX(
+    ulong GetImageViewHandle64NVX(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkImageViewHandleInfoNVX *")] Ref<ImageViewHandleInfoNVX> pInfo
     );
@@ -37438,7 +37438,7 @@ public unsafe partial interface IVulkan
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
-    nuint GetPipelineIndirectDeviceAddressNV(
+    ulong GetPipelineIndirectDeviceAddressNV(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")]
             PipelineIndirectDeviceAddressInfoNV* pInfo
@@ -37452,7 +37452,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
-    nuint GetPipelineIndirectDeviceAddressNV(
+    ulong GetPipelineIndirectDeviceAddressNV(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")]
             Ref<PipelineIndirectDeviceAddressInfoNV> pInfo
@@ -37554,9 +37554,9 @@ public unsafe partial interface IVulkan
     void GetPrivateData(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         ObjectType objectType,
-        [NativeTypeName("uint64_t")] nuint objectHandle,
+        [NativeTypeName("uint64_t")] ulong objectHandle,
         [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot,
-        [NativeTypeName("uint64_t *")] nuint* pData
+        [NativeTypeName("uint64_t *")] ulong* pData
     );
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -37565,9 +37565,9 @@ public unsafe partial interface IVulkan
     void GetPrivateData(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         ObjectType objectType,
-        [NativeTypeName("uint64_t")] nuint objectHandle,
+        [NativeTypeName("uint64_t")] ulong objectHandle,
         [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot,
-        [NativeTypeName("uint64_t *")] Ref<nuint> pData
+        [NativeTypeName("uint64_t *")] Ref<ulong> pData
     );
 
     [SupportedApiProfile(
@@ -37582,9 +37582,9 @@ public unsafe partial interface IVulkan
     void GetPrivateDataEXT(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         ObjectType objectType,
-        [NativeTypeName("uint64_t")] nuint objectHandle,
+        [NativeTypeName("uint64_t")] ulong objectHandle,
         [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot,
-        [NativeTypeName("uint64_t *")] nuint* pData
+        [NativeTypeName("uint64_t *")] ulong* pData
     );
 
     [SupportedApiProfile(
@@ -37600,9 +37600,9 @@ public unsafe partial interface IVulkan
     void GetPrivateDataEXT(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         ObjectType objectType,
-        [NativeTypeName("uint64_t")] nuint objectHandle,
+        [NativeTypeName("uint64_t")] ulong objectHandle,
         [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot,
-        [NativeTypeName("uint64_t *")] Ref<nuint> pData
+        [NativeTypeName("uint64_t *")] Ref<ulong> pData
     );
 
     [SupportedApiProfile(
@@ -37618,7 +37618,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint queryCount,
         [NativeTypeName("size_t")] nuint dataSize,
         void* pData,
-        [NativeTypeName("VkDeviceSize")] nuint stride,
+        [NativeTypeName("VkDeviceSize")] ulong stride,
         [NativeTypeName("VkQueryResultFlags")] uint flags
     );
 
@@ -37636,7 +37636,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint queryCount,
         [NativeTypeName("size_t")] nuint dataSize,
         Ref pData,
-        [NativeTypeName("VkDeviceSize")] nuint stride,
+        [NativeTypeName("VkDeviceSize")] ulong stride,
         [NativeTypeName("VkQueryResultFlags")] uint flags
     );
 
@@ -37829,7 +37829,7 @@ public unsafe partial interface IVulkan
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetRayTracingShaderGroupStackSizeKHR")]
-    nuint GetRayTracingShaderGroupStackSizeKHR(
+    ulong GetRayTracingShaderGroupStackSizeKHR(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkPipeline")] VkPipeline_T* pipeline,
         [NativeTypeName("uint32_t")] uint group,
@@ -37847,7 +37847,7 @@ public unsafe partial interface IVulkan
     )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetRayTracingShaderGroupStackSizeKHR")]
-    nuint GetRayTracingShaderGroupStackSizeKHR(
+    ulong GetRayTracingShaderGroupStackSizeKHR(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkPipeline")] Ref<VkPipeline_T> pipeline,
         [NativeTypeName("uint32_t")] uint group,
@@ -37992,7 +37992,7 @@ public unsafe partial interface IVulkan
     Result GetSemaphoreCounterValue(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore,
-        [NativeTypeName("uint64_t *")] nuint* pValue
+        [NativeTypeName("uint64_t *")] ulong* pValue
     );
 
     [SupportedApiProfile(
@@ -38005,7 +38005,7 @@ public unsafe partial interface IVulkan
     Result GetSemaphoreCounterValue(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore,
-        [NativeTypeName("uint64_t *")] Ref<nuint> pValue
+        [NativeTypeName("uint64_t *")] Ref<ulong> pValue
     );
 
     [SupportedApiProfile(
@@ -38020,7 +38020,7 @@ public unsafe partial interface IVulkan
     Result GetSemaphoreCounterValueKHR(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkSemaphore")] VkSemaphore_T* semaphore,
-        [NativeTypeName("uint64_t *")] nuint* pValue
+        [NativeTypeName("uint64_t *")] ulong* pValue
     );
 
     [SupportedApiProfile(
@@ -38036,7 +38036,7 @@ public unsafe partial interface IVulkan
     Result GetSemaphoreCounterValueKHR(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkSemaphore")] Ref<VkSemaphore_T> semaphore,
-        [NativeTypeName("uint64_t *")] Ref<nuint> pValue
+        [NativeTypeName("uint64_t *")] Ref<ulong> pValue
     );
 
     [SupportedApiProfile(
@@ -38205,7 +38205,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain,
         VkSurfaceCounterFlagBitsEXT counter,
-        [NativeTypeName("uint64_t *")] nuint* pCounterValue
+        [NativeTypeName("uint64_t *")] ulong* pCounterValue
     );
 
     [SupportedApiProfile(
@@ -38219,7 +38219,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain,
         VkSurfaceCounterFlagBitsEXT counter,
-        [NativeTypeName("uint64_t *")] Ref<nuint> pCounterValue
+        [NativeTypeName("uint64_t *")] Ref<ulong> pCounterValue
     );
 
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -38459,8 +38459,8 @@ public unsafe partial interface IVulkan
     Result MapMemory(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkDeviceMemory")] VkDeviceMemory_T* memory,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
-        [NativeTypeName("VkDeviceSize")] nuint size,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
+        [NativeTypeName("VkDeviceSize")] ulong size,
         [NativeTypeName("VkMemoryMapFlags")] uint flags,
         void** ppData
     );
@@ -38475,8 +38475,8 @@ public unsafe partial interface IVulkan
     Result MapMemory(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkDeviceMemory")] Ref<VkDeviceMemory_T> memory,
-        [NativeTypeName("VkDeviceSize")] nuint offset,
-        [NativeTypeName("VkDeviceSize")] nuint size,
+        [NativeTypeName("VkDeviceSize")] ulong offset,
+        [NativeTypeName("VkDeviceSize")] ulong size,
         [NativeTypeName("VkMemoryMapFlags")] uint flags,
         Ref2D ppData
     );
@@ -39353,9 +39353,9 @@ public unsafe partial interface IVulkan
     Result SetPrivateData(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         ObjectType objectType,
-        [NativeTypeName("uint64_t")] nuint objectHandle,
+        [NativeTypeName("uint64_t")] ulong objectHandle,
         [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot,
-        [NativeTypeName("uint64_t")] nuint data
+        [NativeTypeName("uint64_t")] ulong data
     );
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -39364,9 +39364,9 @@ public unsafe partial interface IVulkan
     Result SetPrivateData(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         ObjectType objectType,
-        [NativeTypeName("uint64_t")] nuint objectHandle,
+        [NativeTypeName("uint64_t")] ulong objectHandle,
         [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot,
-        [NativeTypeName("uint64_t")] nuint data
+        [NativeTypeName("uint64_t")] ulong data
     );
 
     [SupportedApiProfile(
@@ -39381,9 +39381,9 @@ public unsafe partial interface IVulkan
     Result SetPrivateDataEXT(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         ObjectType objectType,
-        [NativeTypeName("uint64_t")] nuint objectHandle,
+        [NativeTypeName("uint64_t")] ulong objectHandle,
         [NativeTypeName("VkPrivateDataSlot")] VkPrivateDataSlot_T* privateDataSlot,
-        [NativeTypeName("uint64_t")] nuint data
+        [NativeTypeName("uint64_t")] ulong data
     );
 
     [SupportedApiProfile(
@@ -39399,9 +39399,9 @@ public unsafe partial interface IVulkan
     Result SetPrivateDataEXT(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         ObjectType objectType,
-        [NativeTypeName("uint64_t")] nuint objectHandle,
+        [NativeTypeName("uint64_t")] ulong objectHandle,
         [NativeTypeName("VkPrivateDataSlot")] Ref<VkPrivateDataSlot_T> privateDataSlot,
-        [NativeTypeName("uint64_t")] nuint data
+        [NativeTypeName("uint64_t")] ulong data
     );
 
     [SupportedApiProfile(
@@ -39870,7 +39870,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint fenceCount,
         [NativeTypeName("const VkFence *")] VkFence_T** pFences,
         [NativeTypeName("VkBool32")] uint waitAll,
-        [NativeTypeName("uint64_t")] nuint timeout
+        [NativeTypeName("uint64_t")] ulong timeout
     );
 
     [SupportedApiProfile(
@@ -39885,7 +39885,7 @@ public unsafe partial interface IVulkan
         [NativeTypeName("uint32_t")] uint fenceCount,
         [NativeTypeName("const VkFence *")] Ref2D<VkFence_T> pFences,
         [NativeTypeName("VkBool32")] uint waitAll,
-        [NativeTypeName("uint64_t")] nuint timeout
+        [NativeTypeName("uint64_t")] ulong timeout
     );
 
     [SupportedApiProfile(
@@ -39897,8 +39897,8 @@ public unsafe partial interface IVulkan
     Result WaitForPresentKHR(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("VkSwapchainKHR")] VkSwapchainKHR_T* swapchain,
-        [NativeTypeName("uint64_t")] nuint presentId,
-        [NativeTypeName("uint64_t")] nuint timeout
+        [NativeTypeName("uint64_t")] ulong presentId,
+        [NativeTypeName("uint64_t")] ulong timeout
     );
 
     [SupportedApiProfile(
@@ -39911,8 +39911,8 @@ public unsafe partial interface IVulkan
     Result WaitForPresentKHR(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("VkSwapchainKHR")] Ref<VkSwapchainKHR_T> swapchain,
-        [NativeTypeName("uint64_t")] nuint presentId,
-        [NativeTypeName("uint64_t")] nuint timeout
+        [NativeTypeName("uint64_t")] ulong presentId,
+        [NativeTypeName("uint64_t")] ulong timeout
     );
 
     [SupportedApiProfile(
@@ -39924,7 +39924,7 @@ public unsafe partial interface IVulkan
     Result WaitSemaphores(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo,
-        [NativeTypeName("uint64_t")] nuint timeout
+        [NativeTypeName("uint64_t")] ulong timeout
     );
 
     [SupportedApiProfile(
@@ -39937,7 +39937,7 @@ public unsafe partial interface IVulkan
     Result WaitSemaphores(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo,
-        [NativeTypeName("uint64_t")] nuint timeout
+        [NativeTypeName("uint64_t")] ulong timeout
     );
 
     [SupportedApiProfile(
@@ -39952,7 +39952,7 @@ public unsafe partial interface IVulkan
     Result WaitSemaphoresKHR(
         [NativeTypeName("VkDevice")] VkDevice_T* device,
         [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo,
-        [NativeTypeName("uint64_t")] nuint timeout
+        [NativeTypeName("uint64_t")] ulong timeout
     );
 
     [SupportedApiProfile(
@@ -39968,7 +39968,7 @@ public unsafe partial interface IVulkan
     Result WaitSemaphoresKHR(
         [NativeTypeName("VkDevice")] Ref<VkDevice_T> device,
         [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo,
-        [NativeTypeName("uint64_t")] nuint timeout
+        [NativeTypeName("uint64_t")] ulong timeout
     );
 
     [SupportedApiProfile(

@@ -1,0 +1,5 @@
+--remap
+int32_t=int
+uint32_t=uint
+int64_t=long
+uint64_t=ulong

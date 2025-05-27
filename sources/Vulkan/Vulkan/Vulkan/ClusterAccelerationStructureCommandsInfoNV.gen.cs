@@ -38,7 +38,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public nuint DstImplicitData;
+    public ulong DstImplicitData;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -46,7 +46,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public nuint ScratchData;
+    public ulong ScratchData;
 
     [SupportedApiProfile(
         "vulkan",
@@ -75,7 +75,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public nuint SrcInfosCount;
+    public ulong SrcInfosCount;
 
     [NativeTypeName("VkClusterAccelerationStructureAddressResolutionFlagsNV")]
     [SupportedApiProfile(

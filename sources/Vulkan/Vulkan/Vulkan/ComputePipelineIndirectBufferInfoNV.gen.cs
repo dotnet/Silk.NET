@@ -32,7 +32,7 @@ public unsafe partial struct ComputePipelineIndirectBufferInfoNV
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public nuint DeviceAddress;
+    public ulong DeviceAddress;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -40,7 +40,7 @@ public unsafe partial struct ComputePipelineIndirectBufferInfoNV
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public nuint Size;
+    public ulong Size;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
@@ -48,5 +48,5 @@ public unsafe partial struct ComputePipelineIndirectBufferInfoNV
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public nuint PipelineDeviceAddressCaptureReplay;
+    public ulong PipelineDeviceAddressCaptureReplay;
 }

@@ -65,7 +65,7 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
     public partial struct _heapBudget_e__FixedBuffer
     {
         [SupportedApiProfile("vulkan")]
-        public nuint e0;
+        public ulong e0;
     }
 
     [InlineArray(16)]
@@ -80,6 +80,6 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
     public partial struct _heapUsage_e__FixedBuffer
     {
         [SupportedApiProfile("vulkan")]
-        public nuint e0;
+        public ulong e0;
     }
 }

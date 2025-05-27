@@ -44,7 +44,7 @@ public unsafe partial struct ImageDrmFormatModifierExplicitCreateInfoEXT
             "VK_VERSION_1_2",
         ]
     )]
-    public nuint DrmFormatModifier;
+    public ulong DrmFormatModifier;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

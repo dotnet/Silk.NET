@@ -22,7 +22,7 @@ public unsafe partial struct DeviceOrHostAddressKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public nuint DeviceAddress;
+    public ulong DeviceAddress;
 
     [FieldOffset(0)]
     [SupportedApiProfile(

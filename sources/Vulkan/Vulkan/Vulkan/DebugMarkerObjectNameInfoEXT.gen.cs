@@ -23,7 +23,7 @@ public unsafe partial struct DebugMarkerObjectNameInfoEXT
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
-    public nuint @object;
+    public ulong @object;
 
     [NativeTypeName("const char *")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]

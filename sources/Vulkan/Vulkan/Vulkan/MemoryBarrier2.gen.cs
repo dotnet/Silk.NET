@@ -20,17 +20,17 @@ public unsafe partial struct MemoryBarrier2
 
     [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint SrcStageMask;
+    public ulong SrcStageMask;
 
     [NativeTypeName("VkAccessFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint SrcAccessMask;
+    public ulong SrcAccessMask;
 
     [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint DstStageMask;
+    public ulong DstStageMask;
 
     [NativeTypeName("VkAccessFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public nuint DstAccessMask;
+    public ulong DstAccessMask;
 }

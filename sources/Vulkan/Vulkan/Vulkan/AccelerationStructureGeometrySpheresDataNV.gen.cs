@@ -46,7 +46,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public nuint VertexStride;
+    public ulong VertexStride;
 
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +68,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public nuint RadiusStride;
+    public ulong RadiusStride;
 
     [SupportedApiProfile(
         "vulkan",
@@ -90,5 +90,5 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public nuint IndexStride;
+    public ulong IndexStride;
 }

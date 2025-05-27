@@ -48,7 +48,7 @@ public unsafe partial struct BindVideoSessionMemoryInfoKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public nuint MemoryOffset;
+    public ulong MemoryOffset;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -56,5 +56,5 @@ public unsafe partial struct BindVideoSessionMemoryInfoKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public nuint MemorySize;
+    public ulong MemorySize;
 }
