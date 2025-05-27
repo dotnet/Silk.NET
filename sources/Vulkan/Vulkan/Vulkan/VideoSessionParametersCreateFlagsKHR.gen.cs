@@ -10,19 +10,25 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DeviceQueueCreateFlagBits : uint
+public enum VideoSessionParametersCreateFlagsKHR : uint
 {
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.1"
+        ["VK_KHR_video_encode_quantization_map"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
+        ]
     )]
-    ProtectedBit = 0x00000001,
+    QuantizationMapCompatibleBitKHR = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.1"
+        ["VK_KHR_video_encode_quantization_map"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
+        ]
     )]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
+    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

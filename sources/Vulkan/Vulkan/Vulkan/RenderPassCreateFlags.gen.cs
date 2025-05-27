@@ -10,20 +10,10 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum EventCreateFlagBits : uint
+public enum RenderPassCreateFlags : uint
 {
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    DeviceOnlyBit = 0x00000001,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_synchronization2"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_VERSION_1_1",
-        ]
-    )]
-    DeviceOnlyBitKHR = DeviceOnlyBit,
+    [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
+    TransformBitQCOM = 0x00000002,
 
     [SupportedApiProfile(
         "vulkan",

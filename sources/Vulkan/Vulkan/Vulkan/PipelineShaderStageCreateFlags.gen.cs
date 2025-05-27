@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PipelineShaderStageCreateFlagBits : uint
+public enum PipelineShaderStageCreateFlags : uint
 {
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     AllowVaryingSubgroupSizeBit = 0x00000001,

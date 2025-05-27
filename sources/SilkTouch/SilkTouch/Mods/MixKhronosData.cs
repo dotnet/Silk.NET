@@ -1477,6 +1477,23 @@ public partial class MixKhronosData(
                 names[original] = (newPrim, newPrev);
             }
         }
+
+        // Rename FlagBits enums to Flags
+        if (container == null)
+        {
+            foreach (var (original, (current, previous)) in names)
+            {
+                if (current.Contains("FlagBits"))
+                {
+                    var newPrim = current.Replace("FlagBits", "Flags");
+
+                    var newPrev = previous ?? [];
+                    newPrev.Add(current);
+
+                    names[original] = (newPrim, newPrev);
+                }
+            }
+        }
     }
 
     /// <inheritdoc />

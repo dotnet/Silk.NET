@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum MemoryMapFlagBits : uint
+public enum MemoryMapFlags : uint
 {
     [SupportedApiProfile(
         "vulkan",

@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum SamplerCreateFlagBits : uint
+public enum ImageViewCreateFlags : uint
 {
     [SupportedApiProfile(
         "vulkan",
@@ -20,17 +20,7 @@ public enum SamplerCreateFlagBits : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    SubsampledBitEXT = 0x00000001,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_fragment_density_map"],
-        ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
-        ]
-    )]
-    SubsampledCoarseReconstructionBitEXT = 0x00000002,
+    FragmentDensityMapDynamicBitEXT = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
@@ -42,27 +32,14 @@ public enum SamplerCreateFlagBits : uint
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferCaptureReplayBitEXT = 0x00000008,
+    DescriptorBufferCaptureReplayBitEXT = 0x00000004,
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_non_seamless_cube_map"],
-        ImpliesSets = [
-            "VK_EXT_non_seamless_cube_map+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_non_seamless_cube_map+VK_VERSION_1_1",
-        ]
+        ["VK_EXT_fragment_density_map2"],
+        ImpliesSets = ["VK_EXT_fragment_density_map"]
     )]
-    NonSeamlessCubeMapBitEXT = 0x00000004,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_QCOM_image_processing"],
-        ImpliesSets = [
-            "VK_QCOM_image_processing+VK_KHR_format_feature_flags2",
-            "VK_QCOM_image_processing+VK_VERSION_1_3",
-        ]
-    )]
-    ImageProcessingBitQCOM = 0x00000010,
+    FragmentDensityMapDeferredBitEXT = 0x00000002,
 
     [SupportedApiProfile(
         "vulkan",

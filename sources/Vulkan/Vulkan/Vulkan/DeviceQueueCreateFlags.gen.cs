@@ -10,25 +10,19 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PipelineLayoutCreateFlagBits : uint
+public enum DeviceQueueCreateFlags : uint
 {
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_graphics_pipeline_library"],
-        ImpliesSets = [
-            "VK_KHR_pipeline_library+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_pipeline_library+VK_VERSION_1_1",
-        ]
+        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.1"
     )]
-    IndependentSetsBitEXT = 0x00000002,
+    ProtectedBit = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_graphics_pipeline_library"],
-        ImpliesSets = [
-            "VK_KHR_pipeline_library+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_pipeline_library+VK_VERSION_1_1",
-        ]
+        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.1"
     )]
     FlagBitsMaxEnum = 0x7FFFFFFF,
 }

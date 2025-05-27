@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum FramebufferCreateFlagBits : uint
+public enum FramebufferCreateFlags : uint
 {
     [SupportedApiProfile(
         "vulkan",

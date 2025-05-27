@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PipelineCacheCreateFlagBits : uint
+public enum PipelineCacheCreateFlags : uint
 {
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     ExternallySynchronizedBit = 0x00000001,

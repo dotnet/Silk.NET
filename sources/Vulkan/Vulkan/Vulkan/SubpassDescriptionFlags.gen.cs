@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum SubpassDescriptionFlagBits : uint
+public enum SubpassDescriptionFlags : uint
 {
     [SupportedApiProfile(
         "vulkan",

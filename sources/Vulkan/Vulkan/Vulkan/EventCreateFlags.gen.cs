@@ -10,18 +10,25 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum MemoryUnmapFlagBits : uint
+public enum EventCreateFlags : uint
 {
+    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    DeviceOnlyBit = 0x00000001,
+
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_map_memory_placed"],
+        ["VK_KHR_synchronization2"],
         ImpliesSets = [
-            "VK_EXT_map_memory_placed+VK_KHR_map_memory2",
-            "VK_EXT_map_memory_placed+VK_VERSION_1_4",
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
         ]
     )]
-    ReserveBitEXT = 0x00000001,
+    DeviceOnlyBitKHR = DeviceOnlyBit,
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
     FlagBitsMaxEnum = 0x7FFFFFFF,
 }
