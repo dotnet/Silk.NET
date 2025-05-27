@@ -32,7 +32,7 @@ public unsafe partial struct SemaphoreSignalInfo
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public SemaphoreTHandle Semaphore;
+    public SemaphoreHandle Semaphore;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(

@@ -40,7 +40,7 @@ public unsafe partial struct SubmitInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public SemaphoreTHandle* PWaitSemaphores;
+    public SemaphoreHandle* PWaitSemaphores;
 
     [NativeTypeName("const VkPipelineStageFlags *")]
     [SupportedApiProfile(
@@ -64,7 +64,7 @@ public unsafe partial struct SubmitInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public CommandBufferTHandle* PCommandBuffers;
+    public CommandBufferHandle* PCommandBuffers;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -80,5 +80,5 @@ public unsafe partial struct SubmitInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public SemaphoreTHandle* PSignalSemaphores;
+    public SemaphoreHandle* PSignalSemaphores;
 }

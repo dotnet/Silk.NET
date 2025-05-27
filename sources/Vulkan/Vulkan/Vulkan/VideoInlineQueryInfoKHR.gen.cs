@@ -32,7 +32,7 @@ public unsafe partial struct VideoInlineQueryInfoKHR
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    public QueryPoolTHandle QueryPool;
+    public QueryPoolHandle QueryPool;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

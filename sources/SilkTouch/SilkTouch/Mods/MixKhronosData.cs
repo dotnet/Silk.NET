@@ -1463,6 +1463,20 @@ public partial class MixKhronosData(
 
             names[original] = (newPrim, newPrev);
         }
+
+        // Trim _T from _THandle names
+        foreach (var (original, (current, previous)) in names)
+        {
+            if (current.Contains("_THandle"))
+            {
+                var newPrim = current.Replace("_THandle", "_Handle");
+
+                var newPrev = previous ?? [];
+                newPrev.Add(current);
+
+                names[original] = (newPrim, newPrev);
+            }
+        }
     }
 
     /// <inheritdoc />

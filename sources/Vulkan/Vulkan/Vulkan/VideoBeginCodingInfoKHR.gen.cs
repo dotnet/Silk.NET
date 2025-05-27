@@ -39,7 +39,7 @@ public unsafe partial struct VideoBeginCodingInfoKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public VideoSessionKHRTHandle VideoSession;
+    public VideoSessionKHRHandle VideoSession;
 
     [NativeTypeName("VkVideoSessionParametersKHR")]
     [SupportedApiProfile(
@@ -47,7 +47,7 @@ public unsafe partial struct VideoBeginCodingInfoKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public VideoSessionParametersKHRTHandle VideoSessionParameters;
+    public VideoSessionParametersKHRHandle VideoSessionParameters;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

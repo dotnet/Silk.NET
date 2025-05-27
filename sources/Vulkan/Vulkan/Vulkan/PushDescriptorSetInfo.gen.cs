@@ -24,7 +24,7 @@ public unsafe partial struct PushDescriptorSetInfo
 
     [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public PipelineLayoutTHandle Layout;
+    public PipelineLayoutHandle Layout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]

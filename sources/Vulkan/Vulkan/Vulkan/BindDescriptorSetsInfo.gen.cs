@@ -24,7 +24,7 @@ public unsafe partial struct BindDescriptorSetsInfo
 
     [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public PipelineLayoutTHandle Layout;
+    public PipelineLayoutHandle Layout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
@@ -36,7 +36,7 @@ public unsafe partial struct BindDescriptorSetsInfo
 
     [NativeTypeName("const VkDescriptorSet *")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public DescriptorSetTHandle* PDescriptorSets;
+    public DescriptorSetHandle* PDescriptorSets;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]

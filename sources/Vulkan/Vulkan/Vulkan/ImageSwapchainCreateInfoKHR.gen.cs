@@ -35,5 +35,5 @@ public unsafe partial struct ImageSwapchainCreateInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public SwapchainKHRTHandle Swapchain;
+    public SwapchainKHRHandle Swapchain;
 }

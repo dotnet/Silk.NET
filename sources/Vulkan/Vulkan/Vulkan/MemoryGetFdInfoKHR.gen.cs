@@ -41,7 +41,7 @@ public unsafe partial struct MemoryGetFdInfoKHR
             "VK_KHR_external_memory_fd+VK_VERSION_1_1",
         ]
     )]
-    public DeviceMemoryTHandle Memory;
+    public DeviceMemoryHandle Memory;
 
     [SupportedApiProfile(
         "vulkan",

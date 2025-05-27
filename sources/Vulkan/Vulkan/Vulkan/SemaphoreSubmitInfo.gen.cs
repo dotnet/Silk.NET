@@ -20,7 +20,7 @@ public unsafe partial struct SemaphoreSubmitInfo
 
     [NativeTypeName("VkSemaphore")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public SemaphoreTHandle Semaphore;
+    public SemaphoreHandle Semaphore;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
