@@ -80,7 +80,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public VkPipelineLayout_T* PipelineLayout;
+    public PipelineLayoutTHandle PipelineLayout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -47,5 +47,5 @@ public unsafe partial struct ImageCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public VkImage_T* Image;
+    public ImageTHandle Image;
 }

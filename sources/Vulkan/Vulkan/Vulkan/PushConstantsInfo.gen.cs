@@ -20,7 +20,7 @@ public unsafe partial struct PushConstantsInfo
 
     [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public VkPipelineLayout_T* Layout;
+    public PipelineLayoutTHandle Layout;
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]

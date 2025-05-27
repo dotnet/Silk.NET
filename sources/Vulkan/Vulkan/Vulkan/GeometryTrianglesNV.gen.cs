@@ -39,7 +39,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public VkBuffer_T* VertexData;
+    public BufferTHandle VertexData;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -93,7 +93,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public VkBuffer_T* IndexData;
+    public BufferTHandle IndexData;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -136,7 +136,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public VkBuffer_T* TransformData;
+    public BufferTHandle TransformData;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

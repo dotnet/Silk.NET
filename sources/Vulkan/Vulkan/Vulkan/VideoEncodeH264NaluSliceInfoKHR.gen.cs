@@ -38,5 +38,5 @@ public unsafe partial struct VideoEncodeH264NaluSliceInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StdVideoEncodeH264SliceHeader* PStdSliceHeader;
+    public StdVideoEncodeH264SliceHeaderHandle PStdSliceHeader;
 }

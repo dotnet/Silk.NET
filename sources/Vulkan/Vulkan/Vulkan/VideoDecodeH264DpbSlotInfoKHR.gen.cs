@@ -32,5 +32,5 @@ public unsafe partial struct VideoDecodeH264DpbSlotInfoKHR
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StdVideoDecodeH264ReferenceInfo* PStdReferenceInfo;
+    public StdVideoDecodeH264ReferenceInfoHandle PStdReferenceInfo;
 }

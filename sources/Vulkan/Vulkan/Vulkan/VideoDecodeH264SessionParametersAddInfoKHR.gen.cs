@@ -40,7 +40,7 @@ public unsafe partial struct VideoDecodeH264SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StdVideoH264SequenceParameterSet* PStdSPSs;
+    public StdVideoH264SequenceParameterSetHandle PStdSPSs;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -56,5 +56,5 @@ public unsafe partial struct VideoDecodeH264SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StdVideoH264PictureParameterSet* PStdPPSs;
+    public StdVideoH264PictureParameterSetHandle PStdPPSs;
 }

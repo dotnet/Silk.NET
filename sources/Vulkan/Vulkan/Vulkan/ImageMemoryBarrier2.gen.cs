@@ -50,7 +50,7 @@ public unsafe partial struct ImageMemoryBarrier2
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public VkImage_T* Image;
+    public ImageTHandle Image;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public ImageSubresourceRange SubresourceRange;

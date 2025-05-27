@@ -166,6 +166,7 @@
         "ClangScraper",
         "AddApiProfiles",
         "MixKhronosData",
+        "TransformHandles",
         "TransformFunctions",
         "PrettifyNames",
         "AddVTables",
@@ -200,6 +201,10 @@
             "IsDefault": true
           }
         ]
+      },
+      "TransformHandles": {
+        "AssumeMissingTypesOpaque": true,
+        "UseDSL": true
       },
     }
   }

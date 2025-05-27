@@ -17,7 +17,7 @@ public unsafe partial struct DescriptorImageInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public VkSampler_T* Sampler;
+    public SamplerTHandle Sampler;
 
     [NativeTypeName("VkImageView")]
     [SupportedApiProfile(
@@ -25,7 +25,7 @@ public unsafe partial struct DescriptorImageInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public VkImageView_T* ImageView;
+    public ImageViewTHandle ImageView;
 
     [SupportedApiProfile(
         "vulkan",

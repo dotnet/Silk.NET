@@ -70,7 +70,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public VkPipelineLayout_T* PushconstantPipelineLayout;
+    public PipelineLayoutTHandle PushconstantPipelineLayout;
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(

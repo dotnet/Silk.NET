@@ -20,7 +20,7 @@ public unsafe partial struct RenderingAttachmentInfo
 
     [NativeTypeName("VkImageView")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public VkImageView_T* ImageView;
+    public ImageViewTHandle ImageView;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public ImageLayout ImageLayout;
@@ -30,7 +30,7 @@ public unsafe partial struct RenderingAttachmentInfo
 
     [NativeTypeName("VkImageView")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public VkImageView_T* ResolveImageView;
+    public ImageViewTHandle ResolveImageView;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public ImageLayout ResolveImageLayout;
