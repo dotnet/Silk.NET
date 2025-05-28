@@ -43,6 +43,18 @@ namespace Silk.NET.Maths
             Y = values[1];
         }
 
+        /// <summary>Gets a vector whose 2 elements are equal to one.</summary>
+        public static Vector2I<T> One => new(Scalar<T>.One);
+
+        /// <summary>Gets the vector (1, 0).</summary>
+        public static Vector2I<T> UnitX => new(Scalar<T>.One, Scalar<T>.Zero);
+
+        /// <summary>Gets the vector (0, 1).</summary>
+        public static Vector2I<T> UnitY => new(Scalar<T>.Zero, Scalar<T>.One);
+
+        /// <summary>Returns a vector whose 2 elements are equal to zero.</summary>
+        public static Vector2I<T> Zero => default;
+
         ///<summary>Gets the component at the specified index: 0 = X, 1 = Y. </summary>
         public T this[int index] => index switch {
             0 => X,
