@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Silk.NET.Maths
@@ -55,15 +56,18 @@ namespace Silk.NET.Maths
         /// <summary>Returns a vector whose 2 elements are equal to zero.</summary>
         public static Vector2I<T> Zero => default;
 
+        /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
+        public T LengthSquared => (X * X) + (Y * Y);
+
+        /// <summary>The number of elements in the vector.</summary>
+        public int Count => 2;
+
         ///<summary>Gets the component at the specified index: 0 = X, 1 = Y. </summary>
         public T this[int index] => index switch {
             0 => X,
             1 => Y,
             _ => throw new ArgumentOutOfRangeException(nameof(index), "Index must be 0 or 1.")
         };
-
-        /// <summary>The number of elements in the vector.</summary>
-        public int Count => 2;
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector2I{T}"/> instance.</summary>
         public bool Equals(Vector2I<T> other) => X.Equals(other.X) && Y.Equals(other.Y);
@@ -75,8 +79,58 @@ namespace Silk.NET.Maths
             yield return Y;
         }
 
+        /// <summary> Computes the dot product of this vector with another vector. </summary>
+        public T Dot(Vector2I<T> other) => (X * other.X) + (Y * other.Y);
+
+        /// <summary> Computes the dot product of two vectors. </summary>
+        public static T Dot(Vector2I<T> left, Vector2I<T> right) => (left.X * right.X) + (left.Y * right.Y);
+
+        /// <summary> Computes the cross product of this vector with another vector. </summary>
+        public T Cross(Vector2I<T> other) => (X * other.Y) - (Y * other.X);
+
+        /// <summary> Computes the cross product of two vectors. </summary>
+        public static T Cross(Vector2I<T> left, Vector2I<T> right) => (left.X * right.Y) - (left.Y * right.X);
+
+        /// <summary>Returns a span over the vector components.</summary>
+        public Span<T> AsSpan() => MemoryMarshal.CreateSpan(ref X, 2);
+
+        /// <summary>Returns a vector with the component-wise maximum of this and another vector.</summary>
+        public Vector2I<T> Max(Vector2I<T> other) =>
+            new Vector2I<T>(T.Max(X, other.X), T.Max(Y, other.Y));
+
+        /// <summary>Returns a vector with the component-wise maximum of two vectors.</summary>
+        public static Vector2I<T> Max(Vector2I<T> left, Vector2I<T> right) =>
+            new Vector2I<T>(T.Max(left.X, right.X), T.Max(left.Y, right.Y));
+
+        /// <summary>Returns a vector with the component-wise maximum of this vector and a scalar.</summary>
+        public Vector2I<T> Max(T scalar) =>
+            new Vector2I<T>(T.Max(X, scalar), T.Max(Y, scalar));
+
+        /// <summary>Returns a vector with the component-wise maximum of a vector and a scalar.</summary>
+        public static Vector2I<T> Max(Vector2I<T> vector, T scalar) =>
+            new Vector2I<T>(T.Max(vector.X, scalar), T.Max(vector.Y, scalar));
+
+        /// <summary>Returns a vector with the component-wise minimum of this and another vector.</summary>
+        public Vector2I<T> Min(Vector2I<T> other) =>
+            new Vector2I<T>(T.Min(X, other.X), T.Min(Y, other.Y));
+
+        /// <summary>Returns a vector with the component-wise minimum of two vectors.</summary>
+        public static Vector2I<T> Min(Vector2I<T> left, Vector2I<T> right) =>
+            new Vector2I<T>(T.Min(left.X, right.X), T.Min(left.Y, right.Y));
+
+        /// <summary>Returns a vector with the component-wise minimum of this vector and a scalar.</summary>
+        public Vector2I<T> Min(T scalar) =>
+            new Vector2I<T>(T.Min(X, scalar), T.Min(Y, scalar));
+
+        /// <summary>Returns a vector with the component-wise minimum of a vector and a scalar.</summary>
+        public static Vector2I<T> Min(Vector2I<T> vector, T scalar) =>
+            new Vector2I<T>(T.Min(vector.X, scalar), T.Min(vector.Y, scalar));
+
         /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
         public string ToString(string? format, IFormatProvider? formatProvider) => $"<{X.ToString(format, formatProvider)}, {Y.ToString(format, formatProvider)}>";
+
+        /// <summary>Formats the vector as a string.</summary>
+        public override string ToString() => $"<{X}, {Y}>";
 
         /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
         public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
@@ -239,5 +293,44 @@ namespace Silk.NET.Maths
             Encoding.UTF8.GetChars(utf8Text, charBuffer);
             return TryParse(charBuffer, provider, out result);
         }
+
+        // Component Operators
+        public static Vector2I<T> operator +(Vector2I<T> left, Vector2I<T> right) =>
+            new Vector2I<T>(left.X + right.X, left.Y + right.Y);
+
+        public static Vector2I<T> operator -(Vector2I<T> left, Vector2I<T> right) =>
+            new Vector2I<T>(left.X - right.X, left.Y - right.Y);
+
+        public static Vector2I<T> operator *(Vector2I<T> left, Vector2I<T> right) =>
+            new Vector2I<T>(left.X * right.X, left.Y * right.Y);
+
+        public static Vector2I<T> operator /(Vector2I<T> left, Vector2I<T> right) =>
+            new Vector2I<T>(left.X / right.X, left.Y / right.Y);
+
+        public static Vector2I<T> operator %(Vector2I<T> left, Vector2I<T> right) =>
+            new Vector2I<T>(left.X % right.X, left.Y % right.Y);
+
+        // Scalar Operators
+        public static Vector2I<T> operator +(Vector2I<T> vector, T scalar) =>
+            new Vector2I<T>(vector.X + scalar, vector.Y + scalar);
+
+        public static Vector2I<T> operator -(Vector2I<T> vector, T scalar) =>
+            new Vector2I<T>(vector.X - scalar, vector.Y - scalar);
+
+        public static Vector2I<T> operator *(Vector2I<T> vector, T scalar) =>
+            new Vector2I<T>(vector.X * scalar, vector.Y * scalar);
+
+        public static Vector2I<T> operator /(Vector2I<T> vector, T scalar) =>
+            new Vector2I<T>(vector.X / scalar, vector.Y / scalar);
+
+        public static Vector2I<T> operator %(Vector2I<T> vector, T scalar) =>
+            new Vector2I<T>(vector.X % scalar, vector.Y % scalar);
+
+        // + operator: returns the vector (?)
+        public static Vector2I<T> operator +(Vector2I<T> vector) => vector;
+
+        //  - operator: returns the negated vector
+        public static Vector2I<T> operator -(Vector2I<T> vector) =>
+            new Vector2I<T>(-vector.X, -vector.Y);
     }
 }
