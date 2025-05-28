@@ -81,7 +81,13 @@ namespace Silk.NET.Maths
         };
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector3I{T}"/> instance.</summary>
-        public bool Equals(Vector3I<T> other) => X.Equals(other.X) && Y.Equals(other.Y) && Z.Equals(other.Z);
+        public override bool Equals(object? obj) => obj is Vector3I<T> other && Equals(other);
+
+        /// <summary>Returns a boolean indicating whether the given Vector3I is equal to this <see cref="Vector3I{T}"/> instance.</summary>
+        public bool Equals(Vector3I<T> other) => this == other;
+
+        /// <summary>Returns the hash code for this instance.</summary>
+        public override int GetHashCode() => HashCode.Combine(X, Y, Z);
 
         /// <summary> Returns an enumerator that iterates through the vector components.</summary>
         public IEnumerator<T> GetEnumerator()
@@ -511,6 +517,13 @@ namespace Silk.NET.Maths
         // NOT operator
         public static Vector3I<T> operator ~(Vector3I<T> vector) =>
             new Vector3I<T>(~vector.X, ~vector.Y, ~vector.Z);
+
+        // Equality Operators
+        public static bool operator ==(Vector3I<T> left, Vector3I<T> right) =>
+            left.X == right.X && left.Y == right.Y && left.Z == right.Z;
+
+        public static bool operator !=(Vector3I<T> left, Vector3I<T> right) =>
+            left.X != right.X || left.Y != right.Y || left.Z != right.Z;
 
         // IBinaryInteger
         public static Vector3I<T> Log2(Vector3I<T> x) =>

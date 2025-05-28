@@ -73,7 +73,13 @@ namespace Silk.NET.Maths
         };
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector2I{T}"/> instance.</summary>
-        public bool Equals(Vector2I<T> other) => X.Equals(other.X) && Y.Equals(other.Y);
+        public override bool Equals(object? obj) => obj is Vector2I<T> other && Equals(other);
+
+        /// <summary>Returns a boolean indicating whether the given Vector2I is equal to this <see cref="Vector2I{T}"/> instance.</summary>
+        public bool Equals(Vector2I<T> other) => this == other;
+
+        /// <summary>Returns the hash code for this instance.</summary>
+        public override int GetHashCode() => HashCode.Combine(X, Y);
 
         /// <summary> Returns an enumerator that iterates through the vector components.</summary>
         public IEnumerator<T> GetEnumerator()
@@ -449,6 +455,13 @@ namespace Silk.NET.Maths
         // NOT operator
         public static Vector2I<T> operator ~(Vector2I<T> vector) =>
             new Vector2I<T>(~vector.X, ~vector.Y);
+
+        // Equality Operators
+        public static bool operator ==(Vector2I<T> left, Vector2I<T> right) =>
+            left.X == right.X && left.Y == right.Y;
+
+        public static bool operator !=(Vector2I<T> left, Vector2I<T> right) =>
+            left.X != right.X || left.Y != right.Y;
 
         // IBinaryInteger
         // TODO: Verify these are actually correct
