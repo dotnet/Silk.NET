@@ -42,16 +42,29 @@ namespace Silk.NET.Maths
             W = w;
         }
 
+        /// <summary>Gets the rotation angle represented by the <see cref="Quaternion{T}"/>.</summary>
+        public T Angle => T.CreateChecked(2) * T.Acos(W);
+
+        ///<summary>Gets the component at the specified index: 0 = X, 1 = Y, 2 = Z, 3 = W. </summary>
+        // TODO: Make this a ref
+        public T this[int index] => index switch {
+            0 => X,
+            1 => Y,
+            2 => Z,
+            3 => W,
+            _ => throw new IndexOutOfRangeException(nameof(index))
+        };
+
         // TODO: Vector4F/Vector3F constructors
 
-        /// <summary>Returns a Quaternion representing no rotation.</summary>
+        /// <summary>Returns a <see cref="Quaternion{T}"/> representing no rotation.</summary>
         public static Quaternion<T> Identity => new Quaternion<T>(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
 
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this Quaternion instance.</summary>
+        /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Quaternion{T}"/> instance.</summary>
         public override bool Equals(object? obj) =>
             obj is Quaternion<T> other && Equals(other);
 
-        /// <summary>Returns a boolean indicating whether the given Quaternion is equal to this Quaternion instance.</summary>
+        /// <summary>Returns a boolean indicating whether the given <see cref="Quaternion{T}"/> is equal to this <see cref="Quaternion{T}"/> instance.</summary>
         public bool Equals(Quaternion<T> other) =>
             this == other;
 

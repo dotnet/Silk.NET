@@ -73,6 +73,7 @@ namespace Silk.NET.Maths
         public int Count => 3;
 
         ///<summary>Gets the component at the specified index: 0 = X, 1 = Y, 2 = Z. </summary>
+        // TODO: Make this a ref
         public T this[int index] => index switch {
             0 => X,
             1 => Y,
