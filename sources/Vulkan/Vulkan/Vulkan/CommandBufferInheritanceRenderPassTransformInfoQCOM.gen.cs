@@ -17,8 +17,9 @@ public unsafe partial struct CommandBufferInheritanceRenderPassTransformInfoQCOM
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
     public void* PNext;
 
+    [NativeTypeName("VkSurfaceTransformFlagBitsKHR")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
-    public VkSurfaceTransformFlagBitsKHR Transform;
+    public SurfaceTransformFlagsKHR Transform;
 
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
     public Rect2D RenderArea;

@@ -26,10 +26,11 @@ public unsafe partial struct BindImagePlaneMemoryInfo
     )]
     public void* PNext;
 
+    [NativeTypeName("VkImageAspectFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public VkImageAspectFlagBits PlaneAspect;
+    public ImageAspectFlags PlaneAspect;
 }

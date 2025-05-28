@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -19,5 +20,5 @@ public enum AcquireProfilingLockFlagsKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    MaxEnumKHR = 0x7FFFFFFF,
+    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

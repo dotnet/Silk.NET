@@ -31,6 +31,7 @@ public unsafe partial struct CheckpointDataNV
     )]
     public void* PNext;
 
+    [NativeTypeName("VkPipelineStageFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_diagnostic_checkpoints"],
@@ -39,7 +40,7 @@ public unsafe partial struct CheckpointDataNV
             "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
         ]
     )]
-    public VkPipelineStageFlagBits Stage;
+    public PipelineStageFlags Stage;
 
     [SupportedApiProfile(
         "vulkan",

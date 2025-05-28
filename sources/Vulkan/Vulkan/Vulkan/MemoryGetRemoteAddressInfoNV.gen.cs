@@ -43,6 +43,7 @@ public unsafe partial struct MemoryGetRemoteAddressInfoNV
     )]
     public DeviceMemoryHandle Memory;
 
+    [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory_rdma"],
@@ -51,5 +52,5 @@ public unsafe partial struct MemoryGetRemoteAddressInfoNV
             "VK_NV_external_memory_rdma+VK_VERSION_1_1",
         ]
     )]
-    public VkExternalMemoryHandleTypeFlagBits HandleType;
+    public ExternalMemoryHandleTypeFlags HandleType;
 }

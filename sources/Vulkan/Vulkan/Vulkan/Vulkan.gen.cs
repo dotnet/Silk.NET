@@ -1564,7 +1564,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         public static extern void CmdBindShadersEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint stageCount,
-            [NativeTypeName("const VkShaderStageFlagBits *")] VkShaderStageFlagBits* pStages,
+            [NativeTypeName("const VkShaderStageFlagBits *")] ShaderStageFlags* pStages,
             [NativeTypeName("const VkShaderEXT *")] ShaderEXTHandle* pShaders
         );
 
@@ -1585,12 +1585,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         public static void CmdBindShadersEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint stageCount,
-            [NativeTypeName("const VkShaderStageFlagBits *")] Ref<VkShaderStageFlagBits> pStages,
+            [NativeTypeName("const VkShaderStageFlagBits *")] Ref<ShaderStageFlags> pStages,
             [NativeTypeName("const VkShaderEXT *")] Ref<ShaderEXTHandle> pShaders
         )
         {
             fixed (ShaderEXTHandle* __dsl_pShaders = pShaders)
-            fixed (VkShaderStageFlagBits* __dsl_pStages = pStages)
+            fixed (ShaderStageFlags* __dsl_pStages = pStages)
             {
                 CmdBindShadersEXT(commandBuffer, stageCount, __dsl_pStages, __dsl_pShaders);
             }
@@ -8009,7 +8009,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static extern void CmdSetRasterizationSamplesEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            VkSampleCountFlagBits rasterizationSamples
+            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags rasterizationSamples
         );
 
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCmdSetRasterizationStreamEXT")]
@@ -8315,7 +8315,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static extern void CmdSetSampleMaskEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            VkSampleCountFlagBits samples,
+            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
             [NativeTypeName("const VkSampleMask *")] uint* pSampleMask
         );
 
@@ -8334,7 +8334,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static void CmdSetSampleMaskEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            VkSampleCountFlagBits samples,
+            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
             [NativeTypeName("const VkSampleMask *")] Ref<uint> pSampleMask
         )
         {
@@ -9692,7 +9692,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [SupportedApiProfile("vulkan", ["VK_AMD_buffer_marker"])]
         public static extern void CmdWriteBufferMarkerAMD(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            VkPipelineStageFlagBits pipelineStage,
+            [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
             [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
             [NativeTypeName("VkDeviceSize")] ulong dstOffset,
             [NativeTypeName("uint32_t")] uint marker
@@ -9791,7 +9791,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static extern void CmdWriteTimestamp(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            VkPipelineStageFlagBits pipelineStage,
+            [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
             [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
             [NativeTypeName("uint32_t")] uint query
         );
@@ -19346,7 +19346,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static extern Result GetMemoryFdPropertiesKHR(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            VkExternalMemoryHandleTypeFlagBits handleType,
+            [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+                ExternalMemoryHandleTypeFlags handleType,
             int fd,
             MemoryFdPropertiesKHR* pMemoryFdProperties
         );
@@ -19366,7 +19367,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static Result GetMemoryFdPropertiesKHR(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            VkExternalMemoryHandleTypeFlagBits handleType,
+            [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+                ExternalMemoryHandleTypeFlags handleType,
             int fd,
             Ref<MemoryFdPropertiesKHR> pMemoryFdProperties
         )
@@ -19397,7 +19399,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static extern Result GetMemoryHostPointerPropertiesEXT(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            VkExternalMemoryHandleTypeFlagBits handleType,
+            [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+                ExternalMemoryHandleTypeFlags handleType,
             [NativeTypeName("const void *")] void* pHostPointer,
             MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties
         );
@@ -19417,7 +19420,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static Result GetMemoryHostPointerPropertiesEXT(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            VkExternalMemoryHandleTypeFlagBits handleType,
+            [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+                ExternalMemoryHandleTypeFlags handleType,
             [NativeTypeName("const void *")] Ref pHostPointer,
             Ref<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties
         )
@@ -21003,7 +21007,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static extern void GetPhysicalDeviceMultisamplePropertiesEXT(
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
-            VkSampleCountFlagBits samples,
+            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
             MultisamplePropertiesEXT* pMultisampleProperties
         );
 
@@ -21022,7 +21026,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static void GetPhysicalDeviceMultisamplePropertiesEXT(
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
-            VkSampleCountFlagBits samples,
+            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
             Ref<MultisamplePropertiesEXT> pMultisampleProperties
         )
         {
@@ -21461,7 +21465,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
             Format format,
             ImageType type,
-            VkSampleCountFlagBits samples,
+            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
             [NativeTypeName("VkImageUsageFlags")] uint usage,
             ImageTiling tiling,
             [NativeTypeName("uint32_t *")] uint* pPropertyCount,
@@ -21488,7 +21492,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
             Format format,
             ImageType type,
-            VkSampleCountFlagBits samples,
+            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
             [NativeTypeName("VkImageUsageFlags")] uint usage,
             ImageTiling tiling,
             [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
@@ -23409,7 +23413,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         public static extern Result GetShaderInfoAMD(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
-            VkShaderStageFlagBits shaderStage,
+            [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
             ShaderInfoTypeAMD infoType,
             [NativeTypeName("size_t *")] nuint* pInfoSize,
             void* pInfo
@@ -23424,7 +23428,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         public static Result GetShaderInfoAMD(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
-            VkShaderStageFlagBits shaderStage,
+            [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
             ShaderInfoTypeAMD infoType,
             [NativeTypeName("size_t *")] Ref<nuint> pInfoSize,
             Ref pInfo
@@ -23548,7 +23552,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         public static extern Result GetSwapchainCounterEXT(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
-            VkSurfaceCounterFlagBitsEXT counter,
+            [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
             [NativeTypeName("uint64_t *")] ulong* pCounterValue
         );
 
@@ -23565,7 +23569,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         public static Result GetSwapchainCounterEXT(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
-            VkSurfaceCounterFlagBitsEXT counter,
+            [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
             [NativeTypeName("uint64_t *")] Ref<ulong> pCounterValue
         )
         {
@@ -25079,7 +25083,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         public static extern void SubmitDebugUtilsMessageEXT(
             [NativeTypeName("VkInstance")] InstanceHandle instance,
-            VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
+            [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
+                DebugUtilsMessageSeverityFlagsEXT messageSeverity,
             [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
             [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
                 DebugUtilsMessengerCallbackDataEXT* pCallbackData
@@ -25093,7 +25098,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static void SubmitDebugUtilsMessageEXT(
             [NativeTypeName("VkInstance")] InstanceHandle instance,
-            VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
+            [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
+                DebugUtilsMessageSeverityFlagsEXT messageSeverity,
             [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
             [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
                 Ref<DebugUtilsMessengerCallbackDataEXT> pCallbackData
@@ -38364,14 +38370,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     void IVulkan.CmdBindShadersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint stageCount,
-        [NativeTypeName("const VkShaderStageFlagBits *")] VkShaderStageFlagBits* pStages,
+        [NativeTypeName("const VkShaderStageFlagBits *")] ShaderStageFlags* pStages,
         [NativeTypeName("const VkShaderEXT *")] ShaderEXTHandle* pShaders
     ) =>
         (
             (delegate* unmanaged<
                 CommandBufferHandle,
                 uint,
-                VkShaderStageFlagBits*,
+                ShaderStageFlags*,
                 ShaderEXTHandle*,
                 void>)(
                 _slots[45] is not null and var loadedFnPtr
@@ -38394,7 +38400,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     public static void CmdBindShadersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint stageCount,
-        [NativeTypeName("const VkShaderStageFlagBits *")] VkShaderStageFlagBits* pStages,
+        [NativeTypeName("const VkShaderStageFlagBits *")] ShaderStageFlags* pStages,
         [NativeTypeName("const VkShaderEXT *")] ShaderEXTHandle* pShaders
     ) => DllImport.CmdBindShadersEXT(commandBuffer, stageCount, pStages, pShaders);
 
@@ -38402,12 +38408,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     void IVulkan.CmdBindShadersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint stageCount,
-        [NativeTypeName("const VkShaderStageFlagBits *")] Ref<VkShaderStageFlagBits> pStages,
+        [NativeTypeName("const VkShaderStageFlagBits *")] Ref<ShaderStageFlags> pStages,
         [NativeTypeName("const VkShaderEXT *")] Ref<ShaderEXTHandle> pShaders
     )
     {
         fixed (ShaderEXTHandle* __dsl_pShaders = pShaders)
-        fixed (VkShaderStageFlagBits* __dsl_pStages = pStages)
+        fixed (ShaderStageFlags* __dsl_pStages = pStages)
         {
             ((IVulkan)this).CmdBindShadersEXT(
                 commandBuffer,
@@ -38433,7 +38439,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     public static void CmdBindShadersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint stageCount,
-        [NativeTypeName("const VkShaderStageFlagBits *")] Ref<VkShaderStageFlagBits> pStages,
+        [NativeTypeName("const VkShaderStageFlagBits *")] Ref<ShaderStageFlags> pStages,
         [NativeTypeName("const VkShaderEXT *")] Ref<ShaderEXTHandle> pShaders
     ) => DllImport.CmdBindShadersEXT(commandBuffer, stageCount, pStages, pShaders);
 
@@ -49758,10 +49764,10 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdSetRasterizationSamplesEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        VkSampleCountFlagBits rasterizationSamples
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags rasterizationSamples
     ) =>
         (
-            (delegate* unmanaged<CommandBufferHandle, VkSampleCountFlagBits, void>)(
+            (delegate* unmanaged<CommandBufferHandle, SampleCountFlags, void>)(
                 _slots[240] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[240] = nativeContext.LoadFunction(
@@ -49783,7 +49789,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdSetRasterizationSamplesEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        VkSampleCountFlagBits rasterizationSamples
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags rasterizationSamples
     ) => DllImport.CmdSetRasterizationSamplesEXT(commandBuffer, rasterizationSamples);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -50285,11 +50291,11 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdSetSampleMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         [NativeTypeName("const VkSampleMask *")] uint* pSampleMask
     ) =>
         (
-            (delegate* unmanaged<CommandBufferHandle, VkSampleCountFlagBits, uint*, void>)(
+            (delegate* unmanaged<CommandBufferHandle, SampleCountFlags, uint*, void>)(
                 _slots[252] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[252] = nativeContext.LoadFunction("vkCmdSetSampleMaskEXT", "vulkan")
@@ -50308,14 +50314,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdSetSampleMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         [NativeTypeName("const VkSampleMask *")] uint* pSampleMask
     ) => DllImport.CmdSetSampleMaskEXT(commandBuffer, samples, pSampleMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdSetSampleMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         [NativeTypeName("const VkSampleMask *")] Ref<uint> pSampleMask
     )
     {
@@ -50338,7 +50344,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdSetSampleMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         [NativeTypeName("const VkSampleMask *")] Ref<uint> pSampleMask
     ) => DllImport.CmdSetSampleMaskEXT(commandBuffer, samples, pSampleMask);
 
@@ -52779,7 +52785,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdWriteBufferMarkerAMD(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        VkPipelineStageFlagBits pipelineStage,
+        [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
         [NativeTypeName("VkDeviceSize")] ulong dstOffset,
         [NativeTypeName("uint32_t")] uint marker
@@ -52787,7 +52793,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         (
             (delegate* unmanaged<
                 CommandBufferHandle,
-                VkPipelineStageFlagBits,
+                PipelineStageFlags,
                 BufferHandle,
                 ulong,
                 uint,
@@ -52806,7 +52812,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdWriteBufferMarkerAMD(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        VkPipelineStageFlagBits pipelineStage,
+        [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
         [NativeTypeName("VkDeviceSize")] ulong dstOffset,
         [NativeTypeName("uint32_t")] uint marker
@@ -52970,14 +52976,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.CmdWriteTimestamp(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        VkPipelineStageFlagBits pipelineStage,
+        [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint query
     ) =>
         (
             (delegate* unmanaged<
                 CommandBufferHandle,
-                VkPipelineStageFlagBits,
+                PipelineStageFlags,
                 QueryPoolHandle,
                 uint,
                 void>)(
@@ -52996,7 +53002,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CmdWriteTimestamp(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        VkPipelineStageFlagBits pipelineStage,
+        [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint query
     ) => DllImport.CmdWriteTimestamp(commandBuffer, pipelineStage, queryPool, query);
@@ -67982,14 +67988,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.GetMemoryFdPropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        VkExternalMemoryHandleTypeFlagBits handleType,
+        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+            ExternalMemoryHandleTypeFlags handleType,
         int fd,
         MemoryFdPropertiesKHR* pMemoryFdProperties
     ) =>
         (
             (delegate* unmanaged<
                 DeviceHandle,
-                VkExternalMemoryHandleTypeFlagBits,
+                ExternalMemoryHandleTypeFlags,
                 int,
                 MemoryFdPropertiesKHR*,
                 Result>)(
@@ -68014,7 +68021,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetMemoryFdPropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        VkExternalMemoryHandleTypeFlagBits handleType,
+        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+            ExternalMemoryHandleTypeFlags handleType,
         int fd,
         MemoryFdPropertiesKHR* pMemoryFdProperties
     ) => DllImport.GetMemoryFdPropertiesKHR(device, handleType, fd, pMemoryFdProperties);
@@ -68022,7 +68030,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.GetMemoryFdPropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        VkExternalMemoryHandleTypeFlagBits handleType,
+        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+            ExternalMemoryHandleTypeFlags handleType,
         int fd,
         Ref<MemoryFdPropertiesKHR> pMemoryFdProperties
     )
@@ -68052,7 +68061,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetMemoryFdPropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        VkExternalMemoryHandleTypeFlagBits handleType,
+        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+            ExternalMemoryHandleTypeFlags handleType,
         int fd,
         Ref<MemoryFdPropertiesKHR> pMemoryFdProperties
     ) => DllImport.GetMemoryFdPropertiesKHR(device, handleType, fd, pMemoryFdProperties);
@@ -68060,14 +68070,15 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.GetMemoryHostPointerPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        VkExternalMemoryHandleTypeFlagBits handleType,
+        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+            ExternalMemoryHandleTypeFlags handleType,
         [NativeTypeName("const void *")] void* pHostPointer,
         MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties
     ) =>
         (
             (delegate* unmanaged<
                 DeviceHandle,
-                VkExternalMemoryHandleTypeFlagBits,
+                ExternalMemoryHandleTypeFlags,
                 void*,
                 MemoryHostPointerPropertiesEXT*,
                 Result>)(
@@ -68092,7 +68103,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetMemoryHostPointerPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        VkExternalMemoryHandleTypeFlagBits handleType,
+        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+            ExternalMemoryHandleTypeFlags handleType,
         [NativeTypeName("const void *")] void* pHostPointer,
         MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties
     ) =>
@@ -68106,7 +68118,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Result IVulkan.GetMemoryHostPointerPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        VkExternalMemoryHandleTypeFlagBits handleType,
+        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+            ExternalMemoryHandleTypeFlags handleType,
         [NativeTypeName("const void *")] Ref pHostPointer,
         Ref<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties
     )
@@ -68140,7 +68153,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Result GetMemoryHostPointerPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        VkExternalMemoryHandleTypeFlagBits handleType,
+        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
+            ExternalMemoryHandleTypeFlags handleType,
         [NativeTypeName("const void *")] Ref pHostPointer,
         Ref<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties
     ) =>
@@ -70739,13 +70753,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.GetPhysicalDeviceMultisamplePropertiesEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         MultisamplePropertiesEXT* pMultisampleProperties
     ) =>
         (
             (delegate* unmanaged<
                 PhysicalDeviceHandle,
-                VkSampleCountFlagBits,
+                SampleCountFlags,
                 MultisamplePropertiesEXT*,
                 void>)(
                 _slots[549] is not null and var loadedFnPtr
@@ -70769,7 +70783,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetPhysicalDeviceMultisamplePropertiesEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         MultisamplePropertiesEXT* pMultisampleProperties
     ) =>
         DllImport.GetPhysicalDeviceMultisamplePropertiesEXT(
@@ -70781,7 +70795,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.GetPhysicalDeviceMultisamplePropertiesEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         Ref<MultisamplePropertiesEXT> pMultisampleProperties
     )
     {
@@ -70808,7 +70822,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetPhysicalDeviceMultisamplePropertiesEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         Ref<MultisamplePropertiesEXT> pMultisampleProperties
     ) =>
         DllImport.GetPhysicalDeviceMultisamplePropertiesEXT(
@@ -71462,7 +71476,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         [NativeTypeName("VkImageUsageFlags")] uint usage,
         ImageTiling tiling,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
@@ -71473,7 +71487,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 PhysicalDeviceHandle,
                 Format,
                 ImageType,
-                VkSampleCountFlagBits,
+                SampleCountFlags,
                 uint,
                 ImageTiling,
                 uint*,
@@ -71499,7 +71513,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         [NativeTypeName("VkImageUsageFlags")] uint usage,
         ImageTiling tiling,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
@@ -71521,7 +71535,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         [NativeTypeName("VkImageUsageFlags")] uint usage,
         ImageTiling tiling,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
@@ -71556,7 +71570,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
-        VkSampleCountFlagBits samples,
+        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         [NativeTypeName("VkImageUsageFlags")] uint usage,
         ImageTiling tiling,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
@@ -74801,7 +74815,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     Result IVulkan.GetShaderInfoAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
-        VkShaderStageFlagBits shaderStage,
+        [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
         ShaderInfoTypeAMD infoType,
         [NativeTypeName("size_t *")] nuint* pInfoSize,
         void* pInfo
@@ -74810,7 +74824,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             (delegate* unmanaged<
                 DeviceHandle,
                 PipelineHandle,
-                VkShaderStageFlagBits,
+                ShaderStageFlags,
                 ShaderInfoTypeAMD,
                 nuint*,
                 void*,
@@ -74827,7 +74841,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     public static Result GetShaderInfoAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
-        VkShaderStageFlagBits shaderStage,
+        [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
         ShaderInfoTypeAMD infoType,
         [NativeTypeName("size_t *")] nuint* pInfoSize,
         void* pInfo
@@ -74837,7 +74851,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     Result IVulkan.GetShaderInfoAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
-        VkShaderStageFlagBits shaderStage,
+        [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
         ShaderInfoTypeAMD infoType,
         [NativeTypeName("size_t *")] Ref<nuint> pInfoSize,
         Ref pInfo
@@ -74865,7 +74879,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     public static Result GetShaderInfoAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
-        VkShaderStageFlagBits shaderStage,
+        [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
         ShaderInfoTypeAMD infoType,
         [NativeTypeName("size_t *")] Ref<nuint> pInfoSize,
         Ref pInfo
@@ -75020,14 +75034,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     Result IVulkan.GetSwapchainCounterEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
-        VkSurfaceCounterFlagBitsEXT counter,
+        [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
         [NativeTypeName("uint64_t *")] ulong* pCounterValue
     ) =>
         (
             (delegate* unmanaged<
                 DeviceHandle,
                 SwapchainKHRHandle,
-                VkSurfaceCounterFlagBitsEXT,
+                SurfaceCounterFlagsEXT,
                 ulong*,
                 Result>)(
                 _slots[605] is not null and var loadedFnPtr
@@ -75046,7 +75060,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     public static Result GetSwapchainCounterEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
-        VkSurfaceCounterFlagBitsEXT counter,
+        [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
         [NativeTypeName("uint64_t *")] ulong* pCounterValue
     ) => DllImport.GetSwapchainCounterEXT(device, swapchain, counter, pCounterValue);
 
@@ -75054,7 +75068,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     Result IVulkan.GetSwapchainCounterEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
-        VkSurfaceCounterFlagBitsEXT counter,
+        [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
         [NativeTypeName("uint64_t *")] Ref<ulong> pCounterValue
     )
     {
@@ -75081,7 +75095,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     public static Result GetSwapchainCounterEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
-        VkSurfaceCounterFlagBitsEXT counter,
+        [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
         [NativeTypeName("uint64_t *")] Ref<ulong> pCounterValue
     ) => DllImport.GetSwapchainCounterEXT(device, swapchain, counter, pCounterValue);
 
@@ -77538,7 +77552,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.SubmitDebugUtilsMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
-        VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
+        [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
+            DebugUtilsMessageSeverityFlagsEXT messageSeverity,
         [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
         [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
             DebugUtilsMessengerCallbackDataEXT* pCallbackData
@@ -77546,7 +77561,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         (
             (delegate* unmanaged<
                 InstanceHandle,
-                VkDebugUtilsMessageSeverityFlagBitsEXT,
+                DebugUtilsMessageSeverityFlagsEXT,
                 uint,
                 DebugUtilsMessengerCallbackDataEXT*,
                 void>)(
@@ -77564,7 +77579,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SubmitDebugUtilsMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
-        VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
+        [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
+            DebugUtilsMessageSeverityFlagsEXT messageSeverity,
         [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
         [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
             DebugUtilsMessengerCallbackDataEXT* pCallbackData
@@ -77579,7 +77595,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.SubmitDebugUtilsMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
-        VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
+        [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
+            DebugUtilsMessageSeverityFlagsEXT messageSeverity,
         [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
         [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
             Ref<DebugUtilsMessengerCallbackDataEXT> pCallbackData
@@ -77602,7 +77619,8 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SubmitDebugUtilsMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
-        VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
+        [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
+            DebugUtilsMessageSeverityFlagsEXT messageSeverity,
         [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
         [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
             Ref<DebugUtilsMessengerCallbackDataEXT> pCallbackData

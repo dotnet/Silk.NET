@@ -36,8 +36,9 @@ public partial struct SurfaceCapabilitiesKHR
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     public uint SupportedTransforms;
 
+    [NativeTypeName("VkSurfaceTransformFlagBitsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    public VkSurfaceTransformFlagBitsKHR CurrentTransform;
+    public SurfaceTransformFlagsKHR CurrentTransform;
 
     [NativeTypeName("VkCompositeAlphaFlagsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]

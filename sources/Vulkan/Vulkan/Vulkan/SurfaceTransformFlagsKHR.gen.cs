@@ -8,43 +8,37 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public unsafe partial struct DisplaySurfaceCreateInfoKHR
+public enum SurfaceTransformFlagsKHR : uint
 {
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public StructureType SType;
-
-    [NativeTypeName("const void *")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public void* PNext;
-
-    [NativeTypeName("VkDisplaySurfaceCreateFlagsKHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint Flags;
-
-    [NativeTypeName("VkDisplayModeKHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public DisplayModeKHRHandle DisplayMode;
-
-    [NativeTypeName("uint32_t")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint PlaneIndex;
-
-    [NativeTypeName("uint32_t")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint PlaneStackIndex;
-
-    [NativeTypeName("VkSurfaceTransformFlagBitsKHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public SurfaceTransformFlagsKHR Transform;
+    IdentityBitKHR = 0x00000001,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public float GlobalAlpha;
-
-    [NativeTypeName("VkDisplayPlaneAlphaFlagBitsKHR")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public DisplayPlaneAlphaFlagsKHR AlphaMode;
+    Rotate90BitKHR = 0x00000002,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public Extent2D ImageExtent;
+    Rotate180BitKHR = 0x00000004,
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
+    Rotate270BitKHR = 0x00000008,
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
+    HorizontalMirrorBitKHR = 0x00000010,
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
+    HorizontalMirrorRotate90BitKHR = 0x00000020,
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
+    HorizontalMirrorRotate180BitKHR = 0x00000040,
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
+    HorizontalMirrorRotate270BitKHR = 0x00000080,
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
+    InheritBitKHR = 0x00000100,
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
+    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

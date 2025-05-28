@@ -46,11 +46,12 @@ public unsafe partial struct DeviceGroupPresentInfoKHR
     )]
     public uint* PDeviceMasks;
 
+    [NativeTypeName("VkDeviceGroupPresentModeFlagBitsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public VkDeviceGroupPresentModeFlagBitsKHR Mode;
+    public DeviceGroupPresentModeFlagsKHR Mode;
 }

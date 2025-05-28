@@ -31,6 +31,7 @@ public unsafe partial struct VideoEncodeQualityLevelPropertiesKHR
     )]
     public void* PNext;
 
+    [NativeTypeName("VkVideoEncodeRateControlModeFlagBitsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -39,7 +40,7 @@ public unsafe partial struct VideoEncodeQualityLevelPropertiesKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public VkVideoEncodeRateControlModeFlagBitsKHR PreferredRateControlMode;
+    public VideoEncodeRateControlModeFlagsKHR PreferredRateControlMode;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

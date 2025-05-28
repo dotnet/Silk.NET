@@ -43,6 +43,7 @@ public unsafe partial struct MemoryGetFdInfoKHR
     )]
     public DeviceMemoryHandle Memory;
 
+    [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory_fd"],
@@ -51,5 +52,5 @@ public unsafe partial struct MemoryGetFdInfoKHR
             "VK_KHR_external_memory_fd+VK_VERSION_1_1",
         ]
     )]
-    public VkExternalMemoryHandleTypeFlagBits HandleType;
+    public ExternalMemoryHandleTypeFlags HandleType;
 }

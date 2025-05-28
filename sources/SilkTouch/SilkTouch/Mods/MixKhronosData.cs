@@ -281,6 +281,27 @@ public partial class MixKhronosData(
 
             job.TypeMap.TryAdd(type, baseType);
         }
+
+        // TODO: This is temporary
+        // Get mappings from FlagBits to Flags enums
+        Console.WriteLine("--remap");
+        foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
+        {
+            var typedef = typeElement.Element("type")?.Value;
+            if (typedef != "VkFlags" && typedef != "VkFlags64")
+            {
+                continue;
+            }
+
+            var mapFrom = typeElement.Attribute("requires")?.Value;
+            var mapTo = typeElement.Element("name")?.Value;
+            if (mapFrom == null || mapTo == null)
+            {
+                continue;
+            }
+
+            Console.WriteLine($"{mapFrom}={mapTo}");
+        }
     }
 
     /// <inheritdoc />

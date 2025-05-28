@@ -25,8 +25,9 @@ public unsafe partial struct RenderingAttachmentInfo
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public ImageLayout ImageLayout;
 
+    [NativeTypeName("VkResolveModeFlagBits")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public VkResolveModeFlagBits ResolveMode;
+    public ResolveModeFlags ResolveMode;
 
     [NativeTypeName("VkImageView")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

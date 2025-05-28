@@ -58,11 +58,13 @@ public unsafe partial struct SwapchainCreateInfoKHR
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     public uint* PQueueFamilyIndices;
 
+    [NativeTypeName("VkSurfaceTransformFlagBitsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public VkSurfaceTransformFlagBitsKHR PreTransform;
+    public SurfaceTransformFlagsKHR PreTransform;
 
+    [NativeTypeName("VkCompositeAlphaFlagBitsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public VkCompositeAlphaFlagBitsKHR CompositeAlpha;
+    public CompositeAlphaFlagsKHR CompositeAlpha;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     public PresentModeKHR PresentMode;

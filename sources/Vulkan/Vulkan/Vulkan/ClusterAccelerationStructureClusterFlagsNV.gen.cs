@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from the Vulkan headers and corresponding dependencies.
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -9,26 +10,19 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum SemaphoreImportFlags : uint
+public enum ClusterAccelerationStructureClusterFlagsNV : uint
 {
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.1"
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    TemporaryBit = 0x00000001,
+    AllowDisableOpacityMicromapsNV = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_external_semaphore"],
-        ImpliesSets = ["VK_KHR_external_semaphore_capabilities"]
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    TemporaryBitKHR = TemporaryBit,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.1"
-    )]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
+    FlagBitsMaxEnumNV = 0x7FFFFFFF,
 }

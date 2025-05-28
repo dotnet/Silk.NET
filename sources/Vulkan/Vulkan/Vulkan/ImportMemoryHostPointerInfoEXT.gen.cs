@@ -32,6 +32,7 @@ public unsafe partial struct ImportMemoryHostPointerInfoEXT
     )]
     public void* PNext;
 
+    [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_external_memory_host"],
@@ -40,7 +41,7 @@ public unsafe partial struct ImportMemoryHostPointerInfoEXT
             "VK_EXT_external_memory_host+VK_VERSION_1_1",
         ]
     )]
-    public VkExternalMemoryHandleTypeFlagBits HandleType;
+    public ExternalMemoryHandleTypeFlags HandleType;
 
     [SupportedApiProfile(
         "vulkan",

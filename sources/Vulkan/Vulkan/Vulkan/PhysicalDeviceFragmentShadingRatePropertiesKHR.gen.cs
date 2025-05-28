@@ -137,6 +137,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint MaxFragmentShadingRateCoverageSamples;
 
+    [NativeTypeName("VkSampleCountFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -146,7 +147,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public VkSampleCountFlagBits MaxFragmentShadingRateRasterizationSamples;
+    public SampleCountFlags MaxFragmentShadingRateRasterizationSamples;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(

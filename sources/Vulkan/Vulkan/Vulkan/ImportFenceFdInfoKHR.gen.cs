@@ -53,6 +53,7 @@ public unsafe partial struct ImportFenceFdInfoKHR
     )]
     public uint Flags;
 
+    [NativeTypeName("VkExternalFenceHandleTypeFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_fd"],
@@ -61,7 +62,7 @@ public unsafe partial struct ImportFenceFdInfoKHR
             "VK_KHR_external_fence_fd+VK_VERSION_1_1",
         ]
     )]
-    public VkExternalFenceHandleTypeFlagBits HandleType;
+    public ExternalFenceHandleTypeFlags HandleType;
 
     [SupportedApiProfile(
         "vulkan",

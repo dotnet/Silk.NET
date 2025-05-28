@@ -40,6 +40,7 @@ public unsafe partial struct CommandBufferInheritanceRenderingInfo
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public Format StencilAttachmentFormat;
 
+    [NativeTypeName("VkSampleCountFlagBits")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public VkSampleCountFlagBits RasterizationSamples;
+    public SampleCountFlags RasterizationSamples;
 }

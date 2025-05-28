@@ -8,28 +8,28 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
+public enum SemaphoreImportFlags : uint
 {
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_fragment_shading_rate_enums"],
-        ImpliesSets = ["VK_KHR_fragment_shading_rate"]
+        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.1"
     )]
-    public StructureType SType;
+    TemporaryBit = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_fragment_shading_rate_enums"],
-        ImpliesSets = ["VK_KHR_fragment_shading_rate"]
+        ["VK_KHR_external_semaphore"],
+        ImpliesSets = ["VK_KHR_external_semaphore_capabilities"]
     )]
-    public void* PNext;
+    TemporaryBitKHR = TemporaryBit,
 
-    [NativeTypeName("VkSampleCountFlagBits")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_fragment_shading_rate_enums"],
-        ImpliesSets = ["VK_KHR_fragment_shading_rate"]
+        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.1"
     )]
-    public SampleCountFlags MaxFragmentShadingRateInvocationCount;
+    FlagBitsMaxEnum = 0x7FFFFFFF,
 }

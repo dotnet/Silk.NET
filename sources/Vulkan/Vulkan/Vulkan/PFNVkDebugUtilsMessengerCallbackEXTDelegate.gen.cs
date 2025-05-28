@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 public unsafe delegate uint PFNVkDebugUtilsMessengerCallbackEXTDelegate(
-    VkDebugUtilsMessageSeverityFlagBitsEXT arg0,
+    DebugUtilsMessageSeverityFlagsEXT arg0,
     uint arg1,
     DebugUtilsMessengerCallbackDataEXT* arg2,
     void* arg3

@@ -26,12 +26,13 @@ public partial struct AttachmentDescription
     )]
     public Format Format;
 
+    [NativeTypeName("VkSampleCountFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public VkSampleCountFlagBits Samples;
+    public SampleCountFlags Samples;
 
     [SupportedApiProfile(
         "vulkan",
