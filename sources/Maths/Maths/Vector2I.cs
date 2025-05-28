@@ -3,12 +3,22 @@
 
 
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using System.Text;
 
 namespace Silk.NET.Maths
 {
     /// <summary>A structure representing a 2D integer vector.</summary>
-    internal struct Vector2I<T> : IEquatable<Vector2I<T>>, IReadOnlyList<T>, ISpanFormattable
+    internal struct Vector2I<T> :
+        IEquatable<Vector2I<T>>,
+        IReadOnlyList<T>,
+        ISpanFormattable,
+        ISpanParsable<Vector2I<T>>,
+        IUtf8SpanFormattable,
+        IUtf8SpanParsable<Vector2I<T>>,
+        IParsable<Vector2I<T>>,
+        IFormattable
         where T : IBinaryInteger<T>
     {
         /// <summary>The X component of the vector.</summary>
@@ -17,10 +27,21 @@ namespace Silk.NET.Maths
         /// <summary>The Y component of the vector.</summary>
         public T Y;
 
-        /// <summary>Creates a vector whose elements have the specified values.</summary>
-        /// <param name="x">The value to assign to the <see cref="X"/> field.</param>
-        /// <param name="y">The value to assign to the <see cref="Y"/> field.</param>
+        /// <summary>Initializes both components to the same value.</summary>
+        public Vector2I(T value) => (X, Y) = (value, value);
+
+        /// <summary>Initializes the vector with individual values for X and Y.</summary>
         public Vector2I(T x, T y) => (X, Y) = (x, y);
+
+        /// <summary>Initializes the vector from a span of two values.</summary>
+        public Vector2I(ReadOnlySpan<T> values)
+        {
+            if (values.Length != 2)
+                throw new ArgumentException("Input span must contain exactly 2 elements.", nameof(values));
+
+            X = values[0];
+            Y = values[1];
+        }
 
         ///<summary>Gets the component at the specified index: 0 = X, 1 = Y. </summary>
         public T this[int index] => index switch {
@@ -43,10 +64,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
-        public string ToString(string? format, IFormatProvider? formatProvider)
-        {
-            return $"<{X.ToString(format, formatProvider)}, {Y.ToString(format, formatProvider)}>";
-        }
+        public string ToString(string? format, IFormatProvider? formatProvider) => $"<{X.ToString(format, formatProvider)}, {Y.ToString(format, formatProvider)}>";
 
         /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
         public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
@@ -90,7 +108,124 @@ namespace Silk.NET.Maths
             return true;
         }
 
+        /// <summary>Parses a span to a Vector2I instance.</summary>
+        public static Vector2I<T> Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
+        {
+            if (!TryParse(s, provider, out var result))
+                throw new FormatException("Invalid format for Vector2I.");
+
+            return result;
+        }
+
+        /// <summary>Parses a string to a Vector2I instance.</summary>
+        public static Vector2I<T> Parse(string s, IFormatProvider? provider) => Parse(s.AsSpan(), provider);
+
+        /// <summary>Tries to parse a span to a Vector2I instance.</summary>
+        public static bool TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2I<T> result)
+        {
+            result = default;
+
+            s = s.Trim();
+            if (s.Length < 5 || s[0] != '<' || s[^1] != '>')
+                return false;
+
+            s = s[1..^1]; // Remove < and >
+
+            int commaIndex = s.IndexOf(',');
+            if (commaIndex < 0)
+                return false;
+
+            ReadOnlySpan<char> xSpan = s[..commaIndex].Trim();
+            ReadOnlySpan<char> ySpan = s[(commaIndex + 1)..].Trim();
+
+            if (T.TryParse(xSpan, provider, out var x) &&
+                T.TryParse(ySpan, provider, out var y))
+            {
+                result = new Vector2I<T>(x, y);
+                return true;
+            }
+
+            return false;
+        }
+
+
+        /// <summary>Tries to parse a string to a Vector2I instance.</summary>
+        public static bool TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2I<T> result) =>
+            TryParse(s.AsSpan(), provider, out result);
+
+        /// <summary>Parses a span to a Vector2I instance.</summary>
+        static Vector2I<T> ISpanParsable<Vector2I<T>>.Parse(ReadOnlySpan<char> s, IFormatProvider? provider) =>
+            Parse(s, provider);
+
+        /// <summary>Parses a string to a Vector2I instance.</summary>
+        static Vector2I<T> IParsable<Vector2I<T>>.Parse(string s, IFormatProvider? provider) =>
+            Parse(s, provider);
+
+        /// <summary>Tries to parse a span to a Vector2I instance.</summary>
+        static bool ISpanParsable<Vector2I<T>>.TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2I<T> result) =>
+            TryParse(s, provider, out result);
+
+        /// <summary>Tries to parse a string to a Vector2I instance.</summary>
+        static bool IParsable<Vector2I<T>>.TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2I<T> result) =>
+            TryParse(s, provider, out result);
+
         /// <summary> Returns an enumerator that iterates through the vector components.</summary>
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        /// <summary>Formats the vector as a UTF-8 string using the specified format and format provider.</summary>
+        public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
+        {
+            // Format components individually into temporary buffers
+            // Not too sure about this implementation
+            Span<char> xBuffer = stackalloc char[64];
+            Span<char> yBuffer = stackalloc char[64];
+
+            if (!X.TryFormat(xBuffer, out int xChars, format, provider) ||
+                !Y.TryFormat(yBuffer, out int yChars, format, provider))
+            {
+                bytesWritten = 0;
+                return false;
+            }
+
+            // Estimate total required UTF-8 bytes
+            int estimatedSize = Encoding.UTF8.GetByteCount(xBuffer[..xChars]) +
+                                Encoding.UTF8.GetByteCount(yBuffer[..yChars]) +
+                                Encoding.UTF8.GetByteCount("<, >");
+
+            if (utf8Destination.Length < estimatedSize)
+            {
+                bytesWritten = 0;
+                return false;
+            }
+
+            int totalBytes = 0;
+
+            totalBytes += Encoding.UTF8.GetBytes("<", utf8Destination[totalBytes..]);
+            totalBytes += Encoding.UTF8.GetBytes(xBuffer[..xChars], utf8Destination[totalBytes..]);
+            totalBytes += Encoding.UTF8.GetBytes(", ", utf8Destination[totalBytes..]);
+            totalBytes += Encoding.UTF8.GetBytes(yBuffer[..yChars], utf8Destination[totalBytes..]);
+            totalBytes += Encoding.UTF8.GetBytes(">", utf8Destination[totalBytes..]);
+
+            bytesWritten = totalBytes;
+            return true;
+        }
+
+        /// <summary>Parses a UTF-8 span to a Vector2I instance.</summary>
+        public static Vector2I<T> Parse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider)
+        {
+            int charCount = Encoding.UTF8.GetCharCount(utf8Text);
+            Span<char> charBuffer = charCount <= 128 ? stackalloc char[charCount] : new char[charCount];
+            Encoding.UTF8.GetChars(utf8Text, charBuffer);
+            return Parse(charBuffer, provider);
+        }
+
+        /// <summary>Tries to parse a UTF-8 span to a Vector2I instance.</summary>
+        public static bool TryParse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2I<T> result)
+        {
+            int charCount = Encoding.UTF8.GetCharCount(utf8Text);
+            Span<char> charBuffer = charCount <= 128 ? stackalloc char[charCount] : new char[charCount];
+            Encoding.UTF8.GetChars(utf8Text, charBuffer);
+            return TryParse(charBuffer, provider, out result);
+        }
     }
 }
