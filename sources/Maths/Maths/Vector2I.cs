@@ -200,7 +200,7 @@ namespace Silk.NET.Maths
             return true;
         }
 
-        /// <summary>Parses a span to a Vector2I instance.</summary>
+        /// <summary>Parses a span to a <see cref="Vector2I{T}"/> instance.</summary>
         public static Vector2I<T> Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
         {
             if (!TryParse(s, provider, out var result))
@@ -258,10 +258,10 @@ namespace Silk.NET.Maths
         public static Vector2I<T> CopySign(Vector2I<T> value, T signScalar) =>
             new Vector2I<T>(T.CopySign(value.X, signScalar), T.CopySign(value.Y, signScalar));
 
-        /// <summary>Parses a string to a Vector2I instance.</summary>
+        /// <summary>Parses a string to a <see cref="Vector2I{T}"/> instance.</summary>
         public static Vector2I<T> Parse(string s, IFormatProvider? provider) => Parse(s.AsSpan(), provider);
 
-        /// <summary>Tries to parse a span to a Vector2I instance.</summary>
+        /// <summary>Tries to parse a span to a <see cref="Vector2I{T}"/> instance.</summary>
         public static bool TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2I<T> result)
         {
             result = default;
@@ -290,23 +290,23 @@ namespace Silk.NET.Maths
         }
 
 
-        /// <summary>Tries to parse a string to a Vector2I instance.</summary>
+        /// <summary>Tries to parse a string to a <see cref="Vector2I{T}"/> instance.</summary>
         public static bool TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2I<T> result) =>
             TryParse(s.AsSpan(), provider, out result);
 
-        /// <summary>Parses a span to a Vector2I instance.</summary>
+        /// <summary>Parses a span to a <see cref="Vector2I{T}"/> instance.</summary>
         static Vector2I<T> ISpanParsable<Vector2I<T>>.Parse(ReadOnlySpan<char> s, IFormatProvider? provider) =>
             Parse(s, provider);
 
-        /// <summary>Parses a string to a Vector2I instance.</summary>
+        /// <summary>Parses a string to a <see cref="Vector2I{T}"/> instance.</summary>
         static Vector2I<T> IParsable<Vector2I<T>>.Parse(string s, IFormatProvider? provider) =>
             Parse(s, provider);
 
-        /// <summary>Tries to parse a span to a Vector2I instance.</summary>
+        /// <summary>Tries to parse a span to a <see cref="Vector2I{T}"/> instance.</summary>
         static bool ISpanParsable<Vector2I<T>>.TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2I<T> result) =>
             TryParse(s, provider, out result);
 
-        /// <summary>Tries to parse a string to a Vector2I instance.</summary>
+        /// <summary>Tries to parse a string to a <see cref="Vector2I{T}"/> instance.</summary>
         static bool IParsable<Vector2I<T>>.TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2I<T> result) =>
             TryParse(s, provider, out result);
 
@@ -351,7 +351,7 @@ namespace Silk.NET.Maths
             return true;
         }
 
-        /// <summary>Parses a UTF-8 span to a Vector2I instance.</summary>
+        /// <summary>Parses a UTF-8 span to a <see cref="Vector2I{T}"/> instance.</summary>
         public static Vector2I<T> Parse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider)
         {
             int charCount = Encoding.UTF8.GetCharCount(utf8Text);
@@ -360,7 +360,7 @@ namespace Silk.NET.Maths
             return Parse(charBuffer, provider);
         }
 
-        /// <summary>Tries to parse a UTF-8 span to a Vector2I instance.</summary>
+        /// <summary>Tries to parse a UTF-8 span to a <see cref="Vector2I{T}"/> instance.</summary>
         public static bool TryParse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2I<T> result)
         {
             int charCount = Encoding.UTF8.GetCharCount(utf8Text);
@@ -371,11 +371,11 @@ namespace Silk.NET.Maths
 
         // Casts
 
-        /// <summary>Explicitly casts a System.Numerics.Vector2 to a Vector2I.</summary>
+        /// <summary>Explicitly casts a <see cref="System.Numerics.Vector2"/> to a <see cref="Vector2I{T}"/>.</summary>
         public static explicit operator Vector2I<T>(System.Numerics.Vector2 v) =>
             new Vector2I<T>((T)Convert.ChangeType(v.X, typeof(T)), (T)Convert.ChangeType(v.Y, typeof(T)));
 
-        /// <summary>Explicitly casts a Vector2I to System.Numerics.Vector2.</summary>
+        /// <summary>Explicitly casts a <see cref="Vector2I{T}"/> to <see cref="System.Numerics.Vector2"/>.</summary>
         public static explicit operator System.Numerics.Vector2(Vector2I<T> v) =>
             new System.Numerics.Vector2(Convert.ToSingle(v.X), Convert.ToSingle(v.Y));
 
