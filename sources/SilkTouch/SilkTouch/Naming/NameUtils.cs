@@ -86,6 +86,11 @@ public static partial class NameUtils
         bool naive = false
     )
     {
+        if (names.Count == 0)
+        {
+            return "";
+        }
+
         if (allowFullMatch && names.Count == 1)
         {
             return names.First();
@@ -114,7 +119,7 @@ public static partial class NameUtils
     /// Finds a common prefix in a set of names with respect to the word boundaries
     /// </summary>
     /// <param name="names">Set of names, snake_case</param>
-    /// <param name="allowFullMatch">Allows result to be a a full match with one of the names</param>
+    /// <param name="allowFullMatch">Allows result to be a full match with one of the names</param>
     /// <param name="maxLen">Match length limit</param>
     /// <param name="naive">
     /// Just match the start of the strings, don't bother checking for obvious name separation gaps.
@@ -127,6 +132,11 @@ public static partial class NameUtils
         bool naive = false
     )
     {
+        if (names.Count == 0)
+        {
+            return "";
+        }
+
         var pos = 0;
         var foundPrefix = "";
         var minLen = names.Min(x => x.Length);

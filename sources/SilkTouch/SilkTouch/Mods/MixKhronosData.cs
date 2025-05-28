@@ -281,6 +281,27 @@ public partial class MixKhronosData(
 
             job.TypeMap.TryAdd(type, baseType);
         }
+
+        // TODO: This is temporary
+        // Get mappings from FlagBits to Flags enums
+        Console.WriteLine("--remap");
+        foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
+        {
+            var typedef = typeElement.Element("type")?.Value;
+            if (typedef != "VkFlags" && typedef != "VkFlags64")
+            {
+                continue;
+            }
+
+            var mapFrom = typeElement.Attribute("requires")?.Value;
+            var mapTo = typeElement.Element("name")?.Value;
+            if (mapFrom == null || mapTo == null)
+            {
+                continue;
+            }
+
+            Console.WriteLine($"{mapFrom}={mapTo}");
+        }
     }
 
     /// <inheritdoc />
@@ -622,7 +643,6 @@ public partial class MixKhronosData(
                         _listSeparators,
                         StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries
                     ) ?? [];
-            Debug.Assert((depends.Length > 0) == explicitDependencies);
 
             // Evaluate all of the elements.
             for (var i = 0; i < allApis.Length; i++)
@@ -1463,6 +1483,35 @@ public partial class MixKhronosData(
             }
 
             names[original] = (newPrim, newPrev);
+        }
+
+        // Trim _T from _THandle names
+        foreach (var (original, (current, previous)) in names)
+        {
+            var newPrim = current.Replace("_THandle", "_Handle");
+            if (current != newPrim)
+            {
+                var newPrev = previous ?? [];
+                newPrev.Add(current);
+
+                names[original] = (newPrim, newPrev);
+            }
+        }
+
+        // Rename FlagBits enums to Flags
+        if (container == null)
+        {
+            foreach (var (original, (current, previous)) in names)
+            {
+                var newPrim = current.Replace("FlagBits", "Flags");
+                if (current != newPrim)
+                {
+                    var newPrev = previous ?? [];
+                    newPrev.Add(current);
+
+                    names[original] = (newPrim, newPrev);
+                }
+            }
         }
     }
 
