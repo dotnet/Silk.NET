@@ -23,7 +23,7 @@ namespace Silk.NET.Maths
         IUtf8SpanParsable<Vector2F<T>>,
         IParsable<Vector2F<T>>,
         IFormattable
-        where T : IBinaryFloatingPointIeee754<T>
+        where T : IFloatingPointIeee754<T>
     {
         /// <summary>The X component of the vector.</summary>
         public T X;
