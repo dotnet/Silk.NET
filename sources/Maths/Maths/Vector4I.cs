@@ -52,6 +52,13 @@ namespace Silk.NET.Maths
             W = values[3];
         }
 
+        /// <summary> Initializes the vector using a Vector2I for X and Y, and a separate value for Z and W. </summary>
+        // TODO: Make sure lower dimensional constructors arent meant to zero-out the higher dimensions
+        public Vector4I(Vector2I<T> xy, T z, T w) => (X, Y, Z, W) = (xy.X, xy.Y, z, w);
+
+        /// <summary> Initializes the vector using a Vector3I for X, Y and Z, and a separate value for W. </summary>
+        public Vector4I(Vector3I<T> xyz, T w) => (X, Y, Z, W) = (xyz.X, xyz.Y, xyz.Z, w);
+
         /// <summary>Gets a vector whose 4 elements are equal to one.</summary>
         public static Vector4I<T> One => new(Scalar<T>.One);
 

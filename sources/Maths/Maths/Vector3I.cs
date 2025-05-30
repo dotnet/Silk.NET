@@ -48,6 +48,10 @@ namespace Silk.NET.Maths
             Z = values[2];
         }
 
+        /// <summary> Initializes the vector using a Vector2I for X and Y, and a separate value for Z. </summary>
+        // TODO: Make sure lower dimensional constructors arent meant to zero-out the higher dimensions
+        public Vector3I(Vector2I<T> xy, T z) => (X, Y, Z) = (xy.X, xy.Y, z);
+
         /// <summary>Gets a vector whose 3 elements are equal to one.</summary>
         public static Vector3I<T> One => new(Scalar<T>.One);
 
