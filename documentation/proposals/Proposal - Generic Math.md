@@ -45,25 +45,19 @@ For each vector struct, the following requirements **must** fulfill the followin
 - A ref indexer that takes a int index and returns the corresponding component value (0 -> x, 1 -> y, etc.)
 - An AsSpan function which returns this vector as a Span of the generic type
 - A LengthSquared property which returns the dot product of the vector with itself.
-- A Dot function which takes another vector and returns the dot product with our original vector. 
-  - A static implementation of this function **must** be available as well.
-- For 3D Vectors, a Cross function which takes another vector and returns the cross product with our original vector. 
+- A Dot extension method which takes another vector and returns the dot product with our original vector. 
+- For 3D Vectors, a Cross extension method which takes another vector and returns the cross product with our original vector. 
   - A static implementation of this function **must** be available as well.
 - `+`, `-`, `*`, `/`, and `%` operators defined between two vectors of the same type which returns a vector which has had each operation applied component-wise.
 - `+`, `-`, `*`, `/`, and `%` operators defined between a vector and a scalar value that matches the generic type which returns a vector which has had each operation applied component-wise with the scalar value. Both vector first and scalar first should be implemented.
 - A `-` unary operator which returns the negated vector.
 - A `+` unary operator which returns the vector.
 - Overrides ToString to show component values.
-- Max and Min functions, which takes another vector and returns a new vector which component-wise has the Max or Min value, respectively.
-  - A Static implementation of this function **must** be available as well.
-- Max and Min functions, which takes a scalar value which matches the generic type and returns a new vector which component-wise has the Max or Min value with the scalar value, respectively.
-  - A Static implementation of this function **must** be available as well.
-- A Clamp function which takes a Max vector and a Min vector and returns a vector which has its components bounded between the Min and Max vectors.
-  - A Static implementation of this function **must** be available as well.
-- A Clamp function which takes a Max scalar and a Min scalar, both which match the generic type, and returns a vector which has its components bounded between the Min and Max scalars.
-  - A Static implementation of this function **must** be available as well.
-- An Abs function which returns a vector where each component is the absolute value of the original
-  - A Static implementation of this function **must** be available as well.
+- Max and Min extension methods, which takes another vector and returns a new vector which component-wise has the Max or Min value, respectively.
+- Max and Min extension methods, which takes a scalar value which matches the generic type and returns a new vector which component-wise has the Max or Min value with the scalar value, respectively.
+- A Clamp extension method which takes a Max vector and a Min vector and returns a vector which has its components bounded between the Min and Max vectors.
+- A Clamp extension method which takes a Max scalar and a Min scalar, both which match the generic type, and returns a vector which has its components bounded between the Min and Max scalars.
+- An Abs extension method which returns a vector where each component is the absolute value of the original
 - CopyTo functions which copy to an array or span, with or without a starting index
 - Explicit cast and checked cast operators to all standard variants of the F and I vector types of the same dimensionality
 - Explicit cast and checked cast to and from matching System.Numerics vector type
@@ -72,8 +66,7 @@ For each vector struct, the following requirements **must** fulfill the followin
   - A Static implementation of this function **must** be available but it should return a new vector without affecting the original
 - A Copy sign function which takes a scalar which matches the generic type, and copies the scalars sign onto each component of the vector
   - A Static implementation of this function **must** be available but it should return a new vector without affecting the original
-- A Sign function which returns a vector where each component is only the sign segment of the original vector
-  - A Static implementation of this function **must** be available
+- A Sign extension method which returns a vector where each component is only the sign segment of the original vector
 - Static Unit Vectors for each component
 - A Static Zero Vector with zero for all components
 - A Static One Vector with one for all components
@@ -93,7 +86,7 @@ For I types, the following additional requirements **must** be fulfilled:
 - the bitwise `&`, `|`, and `^` operators defined between two vectors which returns a vector which has had these operators applied on a component-wise basis.
 - the bitwise `&`, `|`, and `^` operators defined between a vectors and a scalar value that matches the generic type which returns a vector which has had these operators applied on a component-wise basis with the scalar.
 - the unary bitwise `~` operator defined which negates the bits of the vector components.
-- Define the following static functions for these types to match IBinaryInteger (Vector replaced with type, e.g. `Vector2I<T>`) which returns a new vector with these operations applied component-wise, unless otherwise specified:
+- Define the following extension methods for these types to match IBinaryInteger (Vector replaced with type, e.g. `Vector2I<T>`) which returns a new vector with these operations applied component-wise, unless otherwise specified:
   - Log2(Vector x)
   - DivRem(Vector left, Vector right)
     - Returns tuple of 2 Vectors (Vector Quotient, Vector Remainder)
@@ -101,15 +94,11 @@ For I types, the following additional requirements **must** be fulfilled:
     - returns The number of set bits in the vector
 
 For F types, the following additional requirements **must** be fulfilled:
-- A GetLength function which returns the square root of LengthSquared.
-- A Normalize function which divides all components by the length of the vector
-  - A static implementation of this function **must** be available but it should return a normalized vector without affecting the original vector
-- A static Lerp function which takes Two vectors to interpolate between and a vector representing the t value for each component, and returns a vector which components are linearly interpolated between the original two vectors based on the respective t values.
-  - A clamped version of this function **must** also be available which clamps the t-values between 0 and 1
-- A static Lerp function which takes Two vectors and a scalar value which matches the generic type, and returns a vector which is linearly interpolated between the two vectors using the scalar as the t value.
-  - A clamped version of this function **must** also be available which clamps the t-values between 0 and 1
-- A Reflect Function which takes a normal vector and reflects the vector over the normal
-  - A Static implemenation of this function **must** be available as well, but should return the reflected vector without affecting the original vector.
+- A GetLength extension method which returns the square root of LengthSquared.
+- A Normalize extension method which divides all components by the length of the vector
+- A Lerp extension method which takes Two vectors to interpolate between and a vector representing the t value for each component, and returns a vector which components are linearly interpolated between the original two vectors based on the respective t values.
+- A Lerp extension method which takes Two vectors and a scalar value which matches the generic type, and returns a vector which is linearly interpolated between the two vectors using the scalar as the t value.
+- A Reflect extension method which takes a normal vector and reflects the vector over the normal
 - The following static Vector properties which have the given value for all components
   - PositiveInfinity
   - NegativeInfinity
@@ -119,7 +108,7 @@ For F types, the following additional requirements **must** be fulfilled:
   - Pi
   - Tau
   - E
-- Define the following static functions for these types to match IBinaryFloatingPointIeee754 (Vector replaced with type, e.g. `Vector2F<T>`) which returns a new vector with these operations applied component-wise, unless otherwise specified:
+- Define the following extension methods for these types to match IBinaryFloatingPointIeee754 (Vector replaced with type, e.g. `Vector2F<T>`) which returns a new vector with these operations applied component-wise, unless otherwise specified:
   - Sqrt(Vector x)
   - Acosh(Vector x)
   - Asinh(Vector x)
@@ -241,9 +230,9 @@ Matrix structs **must** fulfill the following requirements:
 - Multiply operators defined with compatible matricies, if the output matrix type already exists (AxB * BxC = AxC)
 - Negate Operator defined
 - Implicit conversion to and from the System.Numerics matrix type, if available
-- Invert function for square matricies
-- GetDeterminant function for square matricies and Matrix3x2, Matrix4x3, and Matrix 5x4
-- Transpose function
+- Invert extension method for square matricies
+- GetDeterminant extension method for square matricies and Matrix3x2, Matrix4x3, and Matrix 5x4
+- Transpose extension method
 - for F matrices, a static lerp function
 - static identity property
 - For Matrix3x2, Matrix3x3, Matrix4x3, and Matrix4x4 include the following static functions
