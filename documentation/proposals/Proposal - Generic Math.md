@@ -234,7 +234,7 @@ Matrix structs **must** fulfill the following requirements:
 - GetDeterminant extension method for square matricies and Matrix3x2, Matrix4x3, and Matrix 5x4
 - Transpose extension method
 - for F matrices, a static lerp function
-- static identity property
+- static identity property for square matrices
 - For Matrix3x2, Matrix3x3, Matrix4x3, and Matrix4x4 include the following static functions
   - CreateBillboardRH
   - CreateBillboardLH
