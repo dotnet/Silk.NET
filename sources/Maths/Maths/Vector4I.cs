@@ -13,13 +13,6 @@ namespace Silk.NET.Maths
     /// <summary>A structure representing a 4D integer vector.</summary>
     internal partial struct Vector4I<T>
     {
-        /// <summary> Initializes the vector using a Vector2I for X and Y, and a separate value for Z and W. </summary>
-        // TODO: Make sure lower dimensional constructors arent meant to zero-out the higher dimensions
-        public Vector4I(Vector2I<T> xy, T z, T w) => (X, Y, Z, W) = (xy.X, xy.Y, z, w);
-
-        /// <summary> Initializes the vector using a Vector3I for X, Y and Z, and a separate value for W. </summary>
-        public Vector4I(Vector3I<T> xyz, T w) => (X, Y, Z, W) = (xyz.X, xyz.Y, xyz.Z, w);
-
         /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
         public T LengthSquared => (X * X) + (Y * Y) + (Z * Z) + (W * W);
 

@@ -32,6 +32,9 @@ namespace Silk.NET.Maths
         /// <summary>Initializes the vector with individual component values.</summary>
         public Vector3I(T x, T y, T z) => (X, Y, Z) = (x, y, z);
 
+        /// <summary> Initializes the vector using a <see cref="Vector2I{T}"/> for the initial elements, and the specified component for the remainder. </summary>
+        public Vector3I(Vector2I<T> other, T z) => (X, Y, Z) = (other.X, other.Y, z);
+
         /// <summary>Initializes the vector from a span of 3 values.</summary>
         public Vector3I(ReadOnlySpan<T> values)
         {

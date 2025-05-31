@@ -14,10 +14,6 @@ namespace Silk.NET.Maths
     /// <summary>A structure representing a 3D integer vector.</summary>
     internal partial struct Vector3I<T>
     {
-        /// <summary> Initializes the vector using a Vector2I for X and Y, and a separate value for Z. </summary>
-        // TODO: Make sure lower dimensional constructors arent meant to zero-out the higher dimensions
-        public Vector3I(Vector2I<T> xy, T z) => (X, Y, Z) = (xy.X, xy.Y, z);
-
         /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
         public T LengthSquared => (X * X) + (Y * Y) + (Z * Z);
 
