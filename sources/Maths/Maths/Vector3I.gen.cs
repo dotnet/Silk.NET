@@ -3,7 +3,10 @@ namespace Silk.NET.Maths
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
-    partial struct Vector3I<T> : IEquatable<Vector3I<T>> where T : IBinaryInteger<T>
+    partial struct Vector3I<T> :
+        IEquatable<Vector3I<T>>,
+        IReadOnlyList<T>
+        where T : IBinaryInteger<T>
     {
         /// <summary>The X component of the vector.</summary>
         public T X;
@@ -13,6 +16,9 @@ namespace Silk.NET.Maths
 
         /// <summary>The Z component of the vector.</summary>
         public T Z;
+
+        /// <summary>Initializes all components of the vector to the same value.</summary>
+        public Vector3I(T value) => (X, Y, Z) = (value, value, value);
 
         /// <summary>Initializes the vector with individual component values.</summary>
         public Vector3I(T x, T y, T z) => (X, Y, Z) = (x, y, z);

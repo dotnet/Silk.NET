@@ -3,7 +3,9 @@ namespace Silk.NET.Maths
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
-    partial struct Matrix4x4I<T> : IEquatable<Matrix4x4I<T>> where T : IBinaryInteger<T>
+    partial struct Matrix4x4I<T> :
+        IEquatable<Matrix4x4I<T>>
+        where T : IBinaryInteger<T>
     {
         /// <summary>The multiplicative identity matrix of size 4x4.</summary>
         public static readonly Matrix4x4I<T> Identity = new(

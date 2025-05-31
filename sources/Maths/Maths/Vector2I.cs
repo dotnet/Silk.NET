@@ -13,8 +13,6 @@ namespace Silk.NET.Maths
 {
     /// <summary>A structure representing a 2D integer vector.</summary>
     internal partial struct Vector2I<T> :
-        IEquatable<Vector2I<T>>,
-        IReadOnlyList<T>,
         ISpanFormattable,
         ISpanParsable<Vector2I<T>>,
         IUtf8SpanFormattable,
@@ -23,9 +21,6 @@ namespace Silk.NET.Maths
         IFormattable
         where T : IBinaryInteger<T>
     {
-        /// <summary>Initializes both components to the same value.</summary>
-        public Vector2I(T value) => (X, Y) = (value, value);
-
         /// <summary>Initializes the vector from a span of two values.</summary>
         public Vector2I(ReadOnlySpan<T> values)
         {

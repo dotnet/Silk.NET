@@ -3,7 +3,9 @@ namespace Silk.NET.Maths
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
-    partial struct Matrix2x2F<T> : IEquatable<Matrix2x2F<T>> where T : IFloatingPointIeee754<T>
+    partial struct Matrix2x2F<T> :
+        IEquatable<Matrix2x2F<T>>
+        where T : IFloatingPointIeee754<T>
     {
         /// <summary>The multiplicative identity matrix of size 2x2.</summary>
         public static readonly Matrix2x2F<T> Identity = new(

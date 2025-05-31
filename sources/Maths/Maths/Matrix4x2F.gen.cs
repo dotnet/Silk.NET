@@ -3,7 +3,9 @@ namespace Silk.NET.Maths
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
-    partial struct Matrix4x2F<T> : IEquatable<Matrix4x2F<T>> where T : IFloatingPointIeee754<T>
+    partial struct Matrix4x2F<T> :
+        IEquatable<Matrix4x2F<T>>
+        where T : IFloatingPointIeee754<T>
     {
         /// <summary>The 1st row of the matrix represented as a vector.</summary>
         public Vector2F<T> Row1;

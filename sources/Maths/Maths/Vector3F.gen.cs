@@ -3,7 +3,10 @@ namespace Silk.NET.Maths
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
-    partial struct Vector3F<T> : IEquatable<Vector3F<T>> where T : IFloatingPointIeee754<T>
+    partial struct Vector3F<T> :
+        IEquatable<Vector3F<T>>,
+        IReadOnlyList<T>
+        where T : IFloatingPointIeee754<T>
     {
         /// <summary>The X component of the vector.</summary>
         public T X;
@@ -14,8 +17,14 @@ namespace Silk.NET.Maths
         /// <summary>The Z component of the vector.</summary>
         public T Z;
 
+        /// <summary>Initializes all components of the vector to the same value.</summary>
+        public Vector3F(T value) => (X, Y, Z) = (value, value, value);
+
         /// <summary>Initializes the vector with individual component values.</summary>
         public Vector3F(T x, T y, T z) => (X, Y, Z) = (x, y, z);
+
+        /// <inheritdoc/>
+        T IReadOnlyList<T>.this[int index] => this[index];
 
         ///<summary>Gets the component at the specified index: 0 = X, 1 = Y, 2 = Z. </summary>
         [UnscopedRef]

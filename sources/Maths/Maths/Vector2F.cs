@@ -15,8 +15,6 @@ namespace Silk.NET.Maths
 {
     /// <summary>A structure representing a 2D floating-point vector.</summary>
     internal partial struct Vector2F<T> :
-        IEquatable<Vector2F<T>>,
-        IReadOnlyList<T>,
         ISpanFormattable,
         ISpanParsable<Vector2F<T>>,
         IUtf8SpanFormattable,
@@ -25,9 +23,6 @@ namespace Silk.NET.Maths
         IFormattable
         where T : IFloatingPointIeee754<T>
     {
-        /// <summary>Initializes both components to the same value.</summary>
-        public Vector2F(T value) => (X, Y) = (value, value);
-
         /// <summary>Initializes the vector from a span of two values.</summary>
         public Vector2F(ReadOnlySpan<T> values)
         {

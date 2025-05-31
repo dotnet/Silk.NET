@@ -3,13 +3,19 @@ namespace Silk.NET.Maths
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
-    partial struct Vector2F<T> : IEquatable<Vector2F<T>> where T : IFloatingPointIeee754<T>
+    partial struct Vector2F<T> :
+        IEquatable<Vector2F<T>>,
+        IReadOnlyList<T>
+        where T : IFloatingPointIeee754<T>
     {
         /// <summary>The X component of the vector.</summary>
         public T X;
 
         /// <summary>The Y component of the vector.</summary>
         public T Y;
+
+        /// <summary>Initializes all components of the vector to the same value.</summary>
+        public Vector2F(T value) => (X, Y) = (value, value);
 
         /// <summary>Initializes the vector with individual component values.</summary>
         public Vector2F(T x, T y) => (X, Y) = (x, y);

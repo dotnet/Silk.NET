@@ -12,8 +12,6 @@ namespace Silk.NET.Maths
 {
     /// <summary>A structure representing a 4D integer vector.</summary>
     internal partial struct Vector4I<T> :
-        IEquatable<Vector4I<T>>,
-        IReadOnlyList<T>,
         ISpanFormattable,
         ISpanParsable<Vector4I<T>>,
         IUtf8SpanFormattable,
@@ -22,9 +20,6 @@ namespace Silk.NET.Maths
         IFormattable
         where T : IBinaryInteger<T>
     {
-        /// <summary>Initializes all components to the same value.</summary>
-        public Vector4I(T value) => (X, Y, Z, W) = (value, value, value, value);
-
         /// <summary>Initializes the vector from a span of four values.</summary>
         public Vector4I(ReadOnlySpan<T> values)
         {

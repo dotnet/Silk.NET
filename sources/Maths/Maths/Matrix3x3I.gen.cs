@@ -3,7 +3,9 @@ namespace Silk.NET.Maths
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
-    partial struct Matrix3x3I<T> : IEquatable<Matrix3x3I<T>> where T : IBinaryInteger<T>
+    partial struct Matrix3x3I<T> :
+        IEquatable<Matrix3x3I<T>>
+        where T : IBinaryInteger<T>
     {
         /// <summary>The multiplicative identity matrix of size 3x3.</summary>
         public static readonly Matrix3x3I<T> Identity = new(

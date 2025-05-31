@@ -3,7 +3,9 @@ namespace Silk.NET.Maths
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
-    partial struct Matrix2x3I<T> : IEquatable<Matrix2x3I<T>> where T : IBinaryInteger<T>
+    partial struct Matrix2x3I<T> :
+        IEquatable<Matrix2x3I<T>>
+        where T : IBinaryInteger<T>
     {
         /// <summary>The 1st row of the matrix represented as a vector.</summary>
         public Vector3I<T> Row1;
