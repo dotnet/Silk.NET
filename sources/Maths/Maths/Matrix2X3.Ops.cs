@@ -104,7 +104,7 @@ namespace Silk.NET.Maths
         /// <summary>Creates a rotation matrix from the given Quaternion rotation value.</summary>
         /// <param name="quaternion">The source Quaternion.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix2X3<T> CreateFromQuaternion<T>(Quaternion<T> quaternion)
+        public static Matrix2X3<T> CreateFromQuaternion<T>(Silk.NET.Maths.Legacy.Quaternion<T> quaternion)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             Matrix2X3<T> result = Matrix2X3<T>.Identity;
@@ -140,7 +140,7 @@ namespace Silk.NET.Maths
         public static Matrix2X3<T> CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Quaternion<T> q = Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
+            Legacy.Quaternion<T> q = Legacy.Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
             return CreateFromQuaternion(q);
         }
 
@@ -223,7 +223,7 @@ namespace Silk.NET.Maths
         /// <param name="value">The source matrix to transform.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed matrix.</returns>
-        public static Matrix2X3<T> Transform<T>(Matrix2X3<T> value, Quaternion<T> rotation)
+        public static Matrix2X3<T> Transform<T>(Matrix2X3<T> value, Legacy.Quaternion<T> rotation)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             // Compute rotation matrix.

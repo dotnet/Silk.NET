@@ -213,7 +213,7 @@ namespace Silk.NET.Maths
         /// <param name="value">The source vector to be rotated.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed vector.</returns>
-        public static Vector2D<T> Transform<T>(Vector2D<T> value, Quaternion<T> rotation)
+        public static Vector2D<T> Transform<T>(Vector2D<T> value, Legacy.Quaternion<T> rotation)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             T x2 = Scalar.Add(rotation.X, rotation.X);
