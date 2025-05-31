@@ -14,37 +14,8 @@ using System.Text;
 namespace Silk.NET.Maths
 {
     /// <summary>A structure representing a 2D floating-point vector.</summary>
-    internal partial struct Vector2F<T> :
-        ISpanFormattable,
-        ISpanParsable<Vector2F<T>>,
-        IUtf8SpanFormattable,
-        IUtf8SpanParsable<Vector2F<T>>,
-        IParsable<Vector2F<T>>,
-        IFormattable
-        where T : IFloatingPointIeee754<T>
+    internal partial struct Vector2F<T>
     {
-        /// <summary>Initializes the vector from a span of two values.</summary>
-        public Vector2F(ReadOnlySpan<T> values)
-        {
-            if (values.Length != 2)
-                throw new ArgumentException("Input span must contain exactly 2 elements.", nameof(values));
-
-            X = values[0];
-            Y = values[1];
-        }
-
-        /// <summary>Gets a vector whose 2 elements are equal to one.</summary>
-        public static Vector2F<T> One => new(Scalar<T>.One);
-
-        /// <summary>Returns a vector whose 2 elements are equal to zero.</summary>
-        public static Vector2F<T> Zero => default;
-
-        /// <summary>Gets the vector (1, 0).</summary>
-        public static Vector2F<T> UnitX => new(Scalar<T>.One, Scalar<T>.Zero);
-
-        /// <summary>Gets the vector (0, 1).</summary>
-        public static Vector2F<T> UnitY => new(Scalar<T>.Zero, Scalar<T>.One);
-
         /// <summary>Gets a vector with all bits set for each component.</summary>
         public static Vector2F<T> AllBitsSet => new(T.AllBitsSet, T.AllBitsSet);
 
@@ -65,9 +36,6 @@ namespace Silk.NET.Maths
 
         /// <summary> Computes the cross product of two vectors. </summary>
         public static T Cross(Vector2F<T> left, Vector2F<T> right) => (left.X * right.Y) - (left.Y * right.X);
-
-        /// <summary>Returns a span over the vector components.</summary>
-        public Span<T> AsSpan() => MemoryMarshal.CreateSpan(ref X, 2);
 
         /// <summary>Normalizes this vector.</summary>
         public Vector2F<T> Normalize()
@@ -171,86 +139,6 @@ namespace Silk.NET.Maths
             return vector - (normal * (dot + dot));
         }
 
-        /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
-        public string ToString(string? format, IFormatProvider? formatProvider) => $"<{X.ToString(format, formatProvider)}, {Y.ToString(format, formatProvider)}>";
-
-        /// <summary>Formats the vector as a string.</summary>
-        public override string ToString() => $"<{X}, {Y}>";
-
-        /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
-        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
-        {
-            Span<char> xBuffer = stackalloc char[64];
-            Span<char> yBuffer = stackalloc char[64];
-
-            if (!X.TryFormat(xBuffer, out int xChars, format, provider) ||
-                !Y.TryFormat(yBuffer, out int yChars, format, provider))
-            {
-                charsWritten = 0;
-                return false;
-            }
-
-            int requiredLength = 1 + xChars + 2 + yChars + 1;
-
-            if (destination.Length < requiredLength)
-            {
-                charsWritten = 0;
-                return false;
-            }
-
-            int pos = 0;
-            destination[pos++] = '<';
-
-            xBuffer[..xChars].CopyTo(destination[pos..]);
-            pos += xChars;
-
-            destination[pos++] = ',';
-            destination[pos++] = ' ';
-
-            yBuffer[..yChars].CopyTo(destination[pos..]);
-            pos += yChars;
-
-            destination[pos++] = '>';
-
-            charsWritten = pos;
-            return true;
-        }
-
-        /// <summary>Parses a span to a <see cref="Vector2F{T}"/> instance.</summary>
-        public static Vector2F<T> Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
-        {
-            if (!TryParse(s, provider, out var result))
-                throw new FormatException("Invalid format for Vector2F.");
-
-            return result;
-        }
-
-        /// <summary>Copies the components of the vector to the specified array starting at index 0.</summary>
-        public void CopyTo(T[] array) => CopyTo(array, 0);
-
-        /// <summary>Copies the components of the vector to the specified array starting at the given index.</summary>
-        public void CopyTo(T[] array, int startIndex)
-        {
-            if (array == null)
-                throw new ArgumentNullException(nameof(array));
-            if (startIndex < 0 || startIndex + 2 > array.Length)
-                throw new ArgumentOutOfRangeException(nameof(startIndex));
-            array[startIndex] = X;
-            array[startIndex + 1] = Y;
-        }
-
-        /// <summary>Copies the components of the vector to the specified span starting at index 0.</summary>
-        public void CopyTo(Span<T> span) => CopyTo(span, 0);
-
-        /// <summary>Copies the components of the vector to the specified span starting at the given index.</summary>
-        public void CopyTo(Span<T> span, int startIndex)
-        {
-            if (startIndex < 0 || startIndex + 2 > span.Length)
-                throw new ArgumentOutOfRangeException(nameof(startIndex));
-            span[startIndex] = X;
-            span[startIndex + 1] = Y;
-        }
-
         /// <summary>Returns a vector where each component is the sign of the original vector's component.</summary>
         public Vector2F<T> Sign() => new(T.CreateChecked(T.Sign(X)), T.CreateChecked(T.Sign(Y)));
 
@@ -274,110 +162,6 @@ namespace Silk.NET.Maths
         public static Vector2F<T> CopySign(Vector2F<T> value, T signScalar) =>
             new(T.CopySign(value.X, signScalar), T.CopySign(value.Y, signScalar));
 
-        /// <summary>Parses a string to a <see cref="Vector2F{T}"/> instance.</summary>
-        public static Vector2F<T> Parse(string s, IFormatProvider? provider) => Parse(s.AsSpan(), provider);
-
-        /// <summary>Tries to parse a span to a <see cref="Vector2F{T}"/> instance.</summary>
-        public static bool TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2F<T> result)
-        {
-            result = default;
-
-            s = s.Trim();
-            if (s.Length < 5 || s[0] != '<' || s[^1] != '>')
-                return false;
-
-            s = s[1..^1]; // Remove < and >
-
-            int commaIndex = s.IndexOf(',');
-            if (commaIndex < 0)
-                return false;
-
-            ReadOnlySpan<char> xSpan = s[..commaIndex].Trim();
-            ReadOnlySpan<char> ySpan = s[(commaIndex + 1)..].Trim();
-
-            if (T.TryParse(xSpan, provider, out var x) &&
-                T.TryParse(ySpan, provider, out var y))
-            {
-                result = new Vector2F<T>(x, y);
-                return true;
-            }
-
-            return false;
-        }
-
-        /// <summary>Tries to parse a string to a <see cref="Vector2F{T}"/> instance.</summary>
-        public static bool TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2F<T> result) =>
-            TryParse(s.AsSpan(), provider, out result);
-
-        /// <summary>Parses a span to a <see cref="Vector2F{T}"/> instance.</summary>
-        static Vector2F<T> ISpanParsable<Vector2F<T>>.Parse(ReadOnlySpan<char> s, IFormatProvider? provider) =>
-            Parse(s, provider);
-
-        /// <summary>Parses a string to a <see cref="Vector2F{T}"/> instance.</summary>
-        static Vector2F<T> IParsable<Vector2F<T>>.Parse(string s, IFormatProvider? provider) =>
-            Parse(s, provider);
-
-        /// <summary>Tries to parse a span to a <see cref="Vector2F{T}"/> instance.</summary>
-        static bool ISpanParsable<Vector2F<T>>.TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2F<T> result) =>
-            TryParse(s, provider, out result);
-
-        /// <summary>Tries to parse a string to a <see cref="Vector2F{T}"/> instance.</summary>
-        static bool IParsable<Vector2F<T>>.TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2F<T> result) =>
-            TryParse(s, provider, out result);
-
-        /// <summary>Formats the vector as a UTF-8 string using the specified format and format provider.</summary>
-        public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
-        {
-            Span<char> xBuffer = stackalloc char[64];
-            Span<char> yBuffer = stackalloc char[64];
-
-            if (!X.TryFormat(xBuffer, out int xChars, format, provider) ||
-                !Y.TryFormat(yBuffer, out int yChars, format, provider))
-            {
-                bytesWritten = 0;
-                return false;
-            }
-
-            int estimatedSize = Encoding.UTF8.GetByteCount(xBuffer[..xChars]) +
-                                Encoding.UTF8.GetByteCount(yBuffer[..yChars]) +
-                                Encoding.UTF8.GetByteCount("<, >");
-
-            if (utf8Destination.Length < estimatedSize)
-            {
-                bytesWritten = 0;
-                return false;
-            }
-
-            int totalBytes = 0;
-
-            totalBytes += Encoding.UTF8.GetBytes("<", utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(xBuffer[..xChars], utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(", ", utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(yBuffer[..yChars], utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(">", utf8Destination[totalBytes..]);
-
-            bytesWritten = totalBytes;
-            return true;
-        }
-
-        /// <summary>Parses a UTF-8 span to a <see cref="Vector2F{T}"/> instance.</summary>
-        public static Vector2F<T> Parse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider)
-        {
-            int charCount = Encoding.UTF8.GetCharCount(utf8Text);
-            Span<char> charBuffer = charCount <= 128 ? stackalloc char[charCount] : new char[charCount];
-            Encoding.UTF8.GetChars(utf8Text, charBuffer);
-            return Parse(charBuffer, provider);
-        }
-
-        /// <summary>Tries to parse a UTF-8 span to a <see cref="Vector2F{T}"/> instance.</summary>
-        public static bool TryParse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2F<T> result)
-        {
-            int charCount = Encoding.UTF8.GetCharCount(utf8Text);
-            Span<char> charBuffer = charCount <= 128 ? stackalloc char[charCount] : new char[charCount];
-            Encoding.UTF8.GetChars(utf8Text, charBuffer);
-            return TryParse(charBuffer, provider, out result);
-        }
-
         // Casts
 
         /// <summary>Explicitly casts a <see cref="System.Numerics.Vector2"/> to a <see cref="Vector2F{T}"/>.</summary>
@@ -387,45 +171,6 @@ namespace Silk.NET.Maths
         /// <summary>Explicitly casts a <see cref="Vector2F{T}"/> to <see cref="System.Numerics.Vector2"/>.</summary>
         public static explicit operator System.Numerics.Vector2(Vector2F<T> v) =>
             new(Convert.ToSingle(v.X), Convert.ToSingle(v.Y));
-
-        // Component Operators
-        public static Vector2F<T> operator +(Vector2F<T> left, Vector2F<T> right) =>
-            new(left.X + right.X, left.Y + right.Y);
-
-        public static Vector2F<T> operator -(Vector2F<T> left, Vector2F<T> right) =>
-            new(left.X - right.X, left.Y - right.Y);
-
-        public static Vector2F<T> operator *(Vector2F<T> left, Vector2F<T> right) =>
-            new(left.X * right.X, left.Y * right.Y);
-
-        public static Vector2F<T> operator /(Vector2F<T> left, Vector2F<T> right) =>
-            new(left.X / right.X, left.Y / right.Y);
-
-        public static Vector2F<T> operator %(Vector2F<T> left, Vector2F<T> right) =>
-            new(left.X % right.X, left.Y % right.Y);
-
-        // Scalar Operators
-        public static Vector2F<T> operator +(Vector2F<T> vector, T scalar) =>
-            new(vector.X + scalar, vector.Y + scalar);
-
-        public static Vector2F<T> operator -(Vector2F<T> vector, T scalar) =>
-            new(vector.X - scalar, vector.Y - scalar);
-
-        public static Vector2F<T> operator *(Vector2F<T> vector, T scalar) =>
-            new(vector.X * scalar, vector.Y * scalar);
-
-        public static Vector2F<T> operator /(Vector2F<T> vector, T scalar) =>
-            new(vector.X / scalar, vector.Y / scalar);
-
-        public static Vector2F<T> operator %(Vector2F<T> vector, T scalar) =>
-            new(vector.X % scalar, vector.Y % scalar);
-
-        // + operator: returns the vector
-        public static Vector2F<T> operator +(Vector2F<T> vector) => vector;
-
-        // - operator: returns the negated vector
-        public static Vector2F<T> operator -(Vector2F<T> vector) =>
-            new(-vector.X, -vector.Y);
 
         // IFloatingPointIeee754
         public static Vector2F<T> Sqrt(Vector2F<T> x) =>
