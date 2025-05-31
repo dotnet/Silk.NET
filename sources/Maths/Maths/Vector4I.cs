@@ -103,7 +103,7 @@ namespace Silk.NET.Maths
                     case 3:
                         return ref W;
                     default:
-                        throw new ArgumentOutOfRangeException(nameof(index), "Index must be 0 or 1.");
+                        throw new ArgumentOutOfRangeException(nameof(index), "Index must be 0, 1, 2 or 3.");
                 }
             }
         }
