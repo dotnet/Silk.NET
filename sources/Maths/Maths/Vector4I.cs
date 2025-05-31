@@ -63,18 +63,6 @@ namespace Silk.NET.Maths
         /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
         public T LengthSquared => (X * X) + (Y * Y) + (Z * Z) + (W * W);
 
-        /// <summary>The number of elements in the vector.</summary>
-        public int Count => 4;
-
-        /// <summary> Returns an enumerator that iterates through the vector components.</summary>
-        public IEnumerator<T> GetEnumerator()
-        {
-            yield return X;
-            yield return Y;
-            yield return Z;
-            yield return W;
-        }
-
         /// <summary> Computes the dot product of this vector with another vector. </summary>
         public T Dot(Vector4I<T> other) => (X * other.X) + (Y * other.Y) + (Z * other.Z) + (W * other.W);
 
@@ -352,9 +340,6 @@ namespace Silk.NET.Maths
         /// <summary>Tries to parse a string to a Vector4I instance.</summary>
         static bool IParsable<Vector4I<T>>.TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector4I<T> result) =>
             TryParse(s, provider, out result);
-
-        /// <summary> Returns an enumerator that iterates through the vector components.</summary>
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         /// <summary>Formats the vector as a UTF-8 string using the specified format and format provider.</summary>
         public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider? provider)

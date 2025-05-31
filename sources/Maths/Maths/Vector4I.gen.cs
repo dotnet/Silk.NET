@@ -1,5 +1,6 @@
 namespace Silk.NET.Maths
 {
+    using System.Collections;
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
@@ -49,6 +50,21 @@ namespace Silk.NET.Maths
 
                 throw new ArgumentOutOfRangeException(nameof(index));
             }
+        }
+
+        /// <summary>The number of elements in the vector.</summary>
+        public int Count => 4;
+
+        /// <inheritdoc/>
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        /// <summary> Returns an enumerator that iterates through the vector components.</summary>
+        public IEnumerator<T> GetEnumerator()
+        {
+            yield return X;
+            yield return Y;
+            yield return Z;
+            yield return W;
         }
 
         /// <summary>Returns a boolean indicating whether the given two vectors are equal.</summary>
