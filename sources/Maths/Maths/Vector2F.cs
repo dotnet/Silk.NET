@@ -14,9 +14,7 @@ using System.Text;
 namespace Silk.NET.Maths
 {
     /// <summary>A structure representing a 2D floating-point vector.</summary>
-    internal struct Vector2F<T> :
-        IEquatable<Vector2F<T>>,
-        IReadOnlyList<T>,
+    internal partial struct Vector2F<T> :
         ISpanFormattable,
         ISpanParsable<Vector2F<T>>,
         IUtf8SpanFormattable,
@@ -25,18 +23,6 @@ namespace Silk.NET.Maths
         IFormattable
         where T : IFloatingPointIeee754<T>
     {
-        /// <summary>The X component of the vector.</summary>
-        public T X;
-
-        /// <summary>The Y component of the vector.</summary>
-        public T Y;
-
-        /// <summary>Initializes both components to the same value.</summary>
-        public Vector2F(T value) => (X, Y) = (value, value);
-
-        /// <summary>Initializes the vector with individual values for X and Y.</summary>
-        public Vector2F(T x, T y) => (X, Y) = (x, y);
-
         /// <summary>Initializes the vector from a span of two values.</summary>
         public Vector2F(ReadOnlySpan<T> values)
         {
@@ -67,46 +53,6 @@ namespace Silk.NET.Maths
 
         /// <summary>Gets the length of the vector.</summary>
         public T Length => T.Sqrt(LengthSquared);
-
-        /// <summary>The number of elements in the vector.</summary>
-        public int Count => 2;
-
-        ///<summary>Gets the component at the specified index: 0 = X, 1 = Y. </summary>
-        [UnscopedRef]
-        public ref T this[int index]
-        {
-            get
-            {
-                switch (index)
-                {
-                    case 0:
-                        return ref X;
-                    case 1:
-                        return ref Y;
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(index), "Index must be 0 or 1.");
-                }
-            }
-        }
-
-        /// <summary>Gets the component at the specified index (<see cref="IReadOnlyList{T}"/>).</summary>
-        T IReadOnlyList<T>.this[int index] => this[index];
-
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector2F{T}"/> instance.</summary>
-        public override bool Equals(object? obj) => obj is Vector2F<T> other && Equals(other);
-
-        /// <summary>Returns a boolean indicating whether the given Vector2F is equal to this <see cref="Vector2F{T}"/> instance.</summary>
-        public bool Equals(Vector2F<T> other) => this == other;
-
-        /// <summary>Returns the hash code for this instance.</summary>
-        public override int GetHashCode() => HashCode.Combine(X, Y);
-
-        /// <summary> Returns an enumerator that iterates through the vector components.</summary>
-        public IEnumerator<T> GetEnumerator()
-        {
-            yield return X;
-            yield return Y;
-        }
 
         /// <summary> Computes the dot product of this vector with another vector. </summary>
         public T Dot(Vector2F<T> other) => (X * other.X) + (Y * other.Y);
@@ -379,9 +325,6 @@ namespace Silk.NET.Maths
         static bool IParsable<Vector2F<T>>.TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2F<T> result) =>
             TryParse(s, provider, out result);
 
-        /// <summary> Returns an enumerator that iterates through the vector components.</summary>
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-
         /// <summary>Formats the vector as a UTF-8 string using the specified format and format provider.</summary>
         public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
         {
@@ -483,13 +426,6 @@ namespace Silk.NET.Maths
         // - operator: returns the negated vector
         public static Vector2F<T> operator -(Vector2F<T> vector) =>
             new(-vector.X, -vector.Y);
-
-        // Equality Operators
-        public static bool operator ==(Vector2F<T> left, Vector2F<T> right) =>
-            left.X == right.X && left.Y == right.Y;
-
-        public static bool operator !=(Vector2F<T> left, Vector2F<T> right) =>
-            left.X != right.X || left.Y != right.Y;
 
         // IFloatingPointIeee754
         public static Vector2F<T> Sqrt(Vector2F<T> x) =>

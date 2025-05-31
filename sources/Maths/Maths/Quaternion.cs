@@ -13,9 +13,9 @@ namespace Silk.NET.Maths
     /// <summary>
     /// Represents a four-dimensional vector used to encode 3D rotations.
     /// </summary>
-    internal struct Quaternion<T> :
+    public struct Quaternion<T> :
         IEquatable<Quaternion<T>>
-        where T : IBinaryFloatingPointIeee754<T>
+        where T : IFloatingPointIeee754<T>
     {
         /// <summary>Specifies the X-value of the vector component of the Quaternion.</summary>
         public T X;

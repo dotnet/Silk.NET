@@ -3,7 +3,9 @@ namespace Silk.NET.Maths
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
-    partial struct Matrix3x2I<T> : IEquatable<Matrix3x2I<T>> where T : IBinaryInteger<T>
+    partial struct Matrix3x2I<T> :
+        IEquatable<Matrix3x2I<T>>
+        where T : IBinaryInteger<T>
     {
         /// <summary>The 1st row of the matrix represented as a vector.</summary>
         public Vector2I<T> Row1;
@@ -39,7 +41,7 @@ namespace Silk.NET.Maths
         }
 
         [UnscopedRef]
-        public ref Vector2I<T> this[int row, int column] => ref this[row][column];
+        public ref T this[int row, int column] => ref this[row][column];
 
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
         [UnscopedRef]
@@ -77,7 +79,7 @@ namespace Silk.NET.Maths
         /// <summary>Computes the transpose of the matrix.</summary>
         public Matrix2x3I<T> Transpose() =>
             new(new(M11, M21, M31),
-                new(M12, M22, M32))
+                new(M12, M22, M32));
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
         /// <param name="left">The first matrix to compare.</param>
@@ -138,4 +140,5 @@ namespace Silk.NET.Maths
                 left.M21 * right.Row1 + left.M22 * right.Row2,
                 left.M31 * right.Row1 + left.M32 * right.Row2);
     }
+
 }

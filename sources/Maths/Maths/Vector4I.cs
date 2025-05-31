@@ -11,9 +11,7 @@ using System.Text;
 namespace Silk.NET.Maths
 {
     /// <summary>A structure representing a 4D integer vector.</summary>
-    internal struct Vector4I<T> :
-        IEquatable<Vector4I<T>>,
-        IReadOnlyList<T>,
+    internal partial struct Vector4I<T> :
         ISpanFormattable,
         ISpanParsable<Vector4I<T>>,
         IUtf8SpanFormattable,
@@ -22,24 +20,6 @@ namespace Silk.NET.Maths
         IFormattable
         where T : IBinaryInteger<T>
     {
-        /// <summary>The X component of the vector.</summary>
-        public T X;
-
-        /// <summary>The Y component of the vector.</summary>
-        public T Y;
-
-        /// <summary>The Z component of the vector.</summary>
-        public T Z;
-
-        /// <summary>The W component of the vector.</summary>
-        public T W;
-
-        /// <summary>Initializes all components to the same value.</summary>
-        public Vector4I(T value) => (X, Y, Z, W) = (value, value, value, value);
-
-        /// <summary>Initializes the vector with individual values for X, Y, Z and W.</summary>
-        public Vector4I(T x, T y, T z, T w) => (X, Y, Z, W) = (x, y, z, w);
-
         /// <summary>Initializes the vector from a span of four values.</summary>
         public Vector4I(ReadOnlySpan<T> values)
         {
@@ -82,52 +62,6 @@ namespace Silk.NET.Maths
 
         /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
         public T LengthSquared => (X * X) + (Y * Y) + (Z * Z) + (W * W);
-
-        /// <summary>The number of elements in the vector.</summary>
-        public int Count => 4;
-
-        ///<summary>Gets the component at the specified index: 0 = X, 1 = Y, 2 = Z, 3 = W. </summary>
-        [UnscopedRef]
-        public ref T this[int index]
-        {
-            get
-            {
-                switch (index)
-                {
-                    case 0:
-                        return ref X;
-                    case 1:
-                        return ref Y;
-                    case 2:
-                        return ref Z;
-                    case 3:
-                        return ref W;
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(index), "Index must be 0, 1, 2 or 3.");
-                }
-            }
-        }
-
-        /// <summary>Gets the component at the specified index (<see cref="IReadOnlyList{T}"/>).</summary>
-        T IReadOnlyList<T>.this[int index] => this[index];
-
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector4I{T}"/> instance.</summary>
-        public override bool Equals(object? obj) => obj is Vector4I<T> other && Equals(other);
-
-        /// <summary>Returns a boolean indicating whether the given Vector4I is equal to this <see cref="Vector4I{T}"/> instance.</summary>
-        public bool Equals(Vector4I<T> other) => this == other;
-
-        /// <summary>Returns the hash code for this instance.</summary>
-        public override int GetHashCode() => HashCode.Combine(X, Y, Z, W);
-
-        /// <summary> Returns an enumerator that iterates through the vector components.</summary>
-        public IEnumerator<T> GetEnumerator()
-        {
-            yield return X;
-            yield return Y;
-            yield return Z;
-            yield return W;
-        }
 
         /// <summary> Computes the dot product of this vector with another vector. </summary>
         public T Dot(Vector4I<T> other) => (X * other.X) + (Y * other.Y) + (Z * other.Z) + (W * other.W);
@@ -407,9 +341,6 @@ namespace Silk.NET.Maths
         static bool IParsable<Vector4I<T>>.TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector4I<T> result) =>
             TryParse(s, provider, out result);
 
-        /// <summary> Returns an enumerator that iterates through the vector components.</summary>
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-
         /// <summary>Formats the vector as a UTF-8 string using the specified format and format provider.</summary>
         public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
         {
@@ -555,19 +486,6 @@ namespace Silk.NET.Maths
         // NOT operator
         public static Vector4I<T> operator ~(Vector4I<T> vector) =>
             new Vector4I<T>(~vector.X, ~vector.Y, ~vector.Z, ~vector.W);
-
-        // Equality Operators
-        public static bool operator ==(Vector4I<T> left, Vector4I<T> right) =>
-            left.X == right.X &&
-            left.Y == right.Y &&
-            left.Z == right.Z &&
-            left.W == right.W;
-
-        public static bool operator !=(Vector4I<T> left, Vector4I<T> right) =>
-            left.X != right.X ||
-            left.Y != right.Y ||
-            left.Z != right.Z ||
-            left.W != right.W;
 
         // IBinaryInteger
         public static Vector4I<T> Log2(Vector4I<T> x) =>

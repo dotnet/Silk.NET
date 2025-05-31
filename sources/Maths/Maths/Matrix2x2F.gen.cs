@@ -3,7 +3,9 @@ namespace Silk.NET.Maths
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
-    partial struct Matrix2x2F<T> : IEquatable<Matrix2x2F<T>> where T : IFloatingPointIeee754<T>
+    partial struct Matrix2x2F<T> :
+        IEquatable<Matrix2x2F<T>>
+        where T : IFloatingPointIeee754<T>
     {
         /// <summary>The multiplicative identity matrix of size 2x2.</summary>
         public static readonly Matrix2x2F<T> Identity = new(
@@ -39,7 +41,7 @@ namespace Silk.NET.Maths
         }
 
         [UnscopedRef]
-        public ref Vector2F<T> this[int row, int column] => ref this[row][column];
+        public ref T this[int row, int column] => ref this[row][column];
 
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
         [UnscopedRef]
@@ -69,7 +71,7 @@ namespace Silk.NET.Maths
         /// <summary>Computes the transpose of the matrix.</summary>
         public Matrix2x2F<T> Transpose() =>
             new(new(M11, M21),
-                new(M12, M22))
+                new(M12, M22));
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
         /// <param name="left">The first matrix to compare.</param>
@@ -115,5 +117,13 @@ namespace Silk.NET.Maths
         public static Matrix2x2F<T> operator *(Matrix2x2F<T> left, Matrix2x2F<T> right) =>
             new(left.M11 * right.Row1 + left.M12 * right.Row2,
                 left.M21 * right.Row1 + left.M22 * right.Row2);
+    }
+
+    static partial class Matrix2x2F
+    {
+        public static Matrix2x2F<T> Lerp<T>(Matrix2x2F<T> value1, Matrix2x2F<T> value2, T amount)
+            where T : IFloatingPointIeee754<T> =>
+            new(new(T.Lerp(value1.M11, value2.M11, amount), T.Lerp(value1.M12, value2.M12, amount)),
+                new(T.Lerp(value1.M21, value2.M21, amount), T.Lerp(value1.M22, value2.M22, amount)));
     }
 }

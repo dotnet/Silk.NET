@@ -3,7 +3,9 @@ namespace Silk.NET.Maths
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
 
-    partial struct Matrix4x4F<T> : IEquatable<Matrix4x4F<T>> where T : IFloatingPointIeee754<T>
+    partial struct Matrix4x4F<T> :
+        IEquatable<Matrix4x4F<T>>
+        where T : IFloatingPointIeee754<T>
     {
         /// <summary>The multiplicative identity matrix of size 4x4.</summary>
         public static readonly Matrix4x4F<T> Identity = new(
@@ -51,7 +53,7 @@ namespace Silk.NET.Maths
         }
 
         [UnscopedRef]
-        public ref Vector4F<T> this[int row, int column] => ref this[row][column];
+        public ref T this[int row, int column] => ref this[row][column];
 
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
         [UnscopedRef]
@@ -131,7 +133,7 @@ namespace Silk.NET.Maths
             new(new(M11, M21, M31, M41),
                 new(M12, M22, M32, M42),
                 new(M13, M23, M33, M43),
-                new(M14, M24, M34, M44))
+                new(M14, M24, M34, M44));
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
         /// <param name="left">The first matrix to compare.</param>
@@ -224,5 +226,15 @@ namespace Silk.NET.Maths
                 left.M21 * right.Row1 + left.M22 * right.Row2 + left.M23 * right.Row3 + left.M24 * right.Row4,
                 left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3 + left.M34 * right.Row4,
                 left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3 + left.M44 * right.Row4);
+    }
+
+    static partial class Matrix4x4F
+    {
+        public static Matrix4x4F<T> Lerp<T>(Matrix4x4F<T> value1, Matrix4x4F<T> value2, T amount)
+            where T : IFloatingPointIeee754<T> =>
+            new(new(T.Lerp(value1.M11, value2.M11, amount), T.Lerp(value1.M12, value2.M12, amount), T.Lerp(value1.M13, value2.M13, amount), T.Lerp(value1.M14, value2.M14, amount)),
+                new(T.Lerp(value1.M21, value2.M21, amount), T.Lerp(value1.M22, value2.M22, amount), T.Lerp(value1.M23, value2.M23, amount), T.Lerp(value1.M24, value2.M24, amount)),
+                new(T.Lerp(value1.M31, value2.M31, amount), T.Lerp(value1.M32, value2.M32, amount), T.Lerp(value1.M33, value2.M33, amount), T.Lerp(value1.M34, value2.M34, amount)),
+                new(T.Lerp(value1.M41, value2.M41, amount), T.Lerp(value1.M42, value2.M42, amount), T.Lerp(value1.M43, value2.M43, amount), T.Lerp(value1.M44, value2.M44, amount)));
     }
 }
