@@ -445,7 +445,7 @@ namespace Silk.NET.Maths
         public static Vector2F<T> operator -(Vector2F<T> vector) =>
             new(-vector.X, -vector.Y);
 
-        // IBinaryFloatingPointIeee754
+        // IFloatingPointIeee754
         public static Vector2F<T> Sqrt(Vector2F<T> x) =>
             new(T.Sqrt(x.X), T.Sqrt(x.Y));
 
