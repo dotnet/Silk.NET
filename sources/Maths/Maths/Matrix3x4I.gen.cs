@@ -38,41 +38,56 @@ namespace Silk.NET.Maths
             }
         }
 
+        [UnscopedRef]
+        public ref Vector4I<T> this[int row, int column] => ref this[row][column];
+
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
-        public T M11 => Row1.X;
+        [UnscopedRef]
+        public ref T M11 => ref Row1.X;
 
         /// <summary>Gets the element in the 1st row and 2nd column of the matrix.</summary>
-        public T M12 => Row1.Y;
+        [UnscopedRef]
+        public ref T M12 => ref Row1.Y;
 
         /// <summary>Gets the element in the 1st row and 3rd column of the matrix.</summary>
-        public T M13 => Row1.Z;
+        [UnscopedRef]
+        public ref T M13 => ref Row1.Z;
 
         /// <summary>Gets the element in the 1st row and 4th column of the matrix.</summary>
-        public T M14 => Row1.W;
+        [UnscopedRef]
+        public ref T M14 => ref Row1.W;
 
         /// <summary>Gets the element in the 2nd row and 1st column of the matrix.</summary>
-        public T M21 => Row2.X;
+        [UnscopedRef]
+        public ref T M21 => ref Row2.X;
 
         /// <summary>Gets the element in the 2nd row and 2nd column of the matrix.</summary>
-        public T M22 => Row2.Y;
+        [UnscopedRef]
+        public ref T M22 => ref Row2.Y;
 
         /// <summary>Gets the element in the 2nd row and 3rd column of the matrix.</summary>
-        public T M23 => Row2.Z;
+        [UnscopedRef]
+        public ref T M23 => ref Row2.Z;
 
         /// <summary>Gets the element in the 2nd row and 4th column of the matrix.</summary>
-        public T M24 => Row2.W;
+        [UnscopedRef]
+        public ref T M24 => ref Row2.W;
 
         /// <summary>Gets the element in the 3rd row and 1st column of the matrix.</summary>
-        public T M31 => Row3.X;
+        [UnscopedRef]
+        public ref T M31 => ref Row3.X;
 
         /// <summary>Gets the element in the 3rd row and 2nd column of the matrix.</summary>
-        public T M32 => Row3.Y;
+        [UnscopedRef]
+        public ref T M32 => ref Row3.Y;
 
         /// <summary>Gets the element in the 3rd row and 3rd column of the matrix.</summary>
-        public T M33 => Row3.Z;
+        [UnscopedRef]
+        public ref T M33 => ref Row3.Z;
 
         /// <summary>Gets the element in the 3rd row and 4th column of the matrix.</summary>
-        public T M34 => Row3.W;
+        [UnscopedRef]
+        public ref T M34 => ref Row3.W;
 
         /// <inheridoc/>
         public override bool Equals(object? obj) => obj is Matrix3x4I<T> other && Equals(other);
@@ -82,6 +97,13 @@ namespace Silk.NET.Maths
 
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(Row1, Row2, Row3);
+
+        /// <summary>Computes the transpose of the matrix.</summary>
+        public Matrix4x3I<T> Transpose() =>
+            new(new(M11, M21, M31),
+                new(M12, M22, M32),
+                new(M13, M23, M33),
+                new(M14, M24, M34))
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
         /// <param name="left">The first matrix to compare.</param>
@@ -115,6 +137,14 @@ namespace Silk.NET.Maths
             new(left.Row1 - right.Row1,
                 left.Row2 - right.Row2,
                 left.Row3 - right.Row3);
+
+        /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
+        /// <param name="value">The source matrix.</param>
+        /// <returns>The negated matrix.</returns>
+        public static Matrix3x4I<T> operator -(Matrix3x4I<T> value) =>
+            new(-value.Row1,
+                -value.Row2,
+                -value.Row3);
 
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="left">The first source matrix.</param>

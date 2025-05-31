@@ -5,6 +5,11 @@ namespace Silk.NET.Maths
 
     partial struct Matrix2x2F<T> : IEquatable<Matrix2x2F<T>> where T : IFloatingPointIeee754<T>
     {
+        /// <summary>The multiplicative identity matrix of size 2x2.</summary>
+        public static readonly Matrix2x2F<T> Identity = new(
+            new(T.MultiplicativeIdentity, T.Zero),
+            new(T.Zero, T.MultiplicativeIdentity));
+
         /// <summary>The 1st row of the matrix represented as a vector.</summary>
         public Vector2F<T> Row1;
 
@@ -33,17 +38,24 @@ namespace Silk.NET.Maths
             }
         }
 
+        [UnscopedRef]
+        public ref Vector2F<T> this[int row, int column] => ref this[row][column];
+
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
-        public T M11 => Row1.X;
+        [UnscopedRef]
+        public ref T M11 => ref Row1.X;
 
         /// <summary>Gets the element in the 1st row and 2nd column of the matrix.</summary>
-        public T M12 => Row1.Y;
+        [UnscopedRef]
+        public ref T M12 => ref Row1.Y;
 
         /// <summary>Gets the element in the 2nd row and 1st column of the matrix.</summary>
-        public T M21 => Row2.X;
+        [UnscopedRef]
+        public ref T M21 => ref Row2.X;
 
         /// <summary>Gets the element in the 2nd row and 2nd column of the matrix.</summary>
-        public T M22 => Row2.Y;
+        [UnscopedRef]
+        public ref T M22 => ref Row2.Y;
 
         /// <inheridoc/>
         public override bool Equals(object? obj) => obj is Matrix2x2F<T> other && Equals(other);
@@ -53,6 +65,11 @@ namespace Silk.NET.Maths
 
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(Row1, Row2);
+
+        /// <summary>Computes the transpose of the matrix.</summary>
+        public Matrix2x2F<T> Transpose() =>
+            new(new(M11, M21),
+                new(M12, M22))
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
         /// <param name="left">The first matrix to compare.</param>
@@ -83,6 +100,13 @@ namespace Silk.NET.Maths
         public static Matrix2x2F<T> operator -(Matrix2x2F<T> left, Matrix2x2F<T> right) =>
             new(left.Row1 - right.Row1,
                 left.Row2 - right.Row2);
+
+        /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
+        /// <param name="value">The source matrix.</param>
+        /// <returns>The negated matrix.</returns>
+        public static Matrix2x2F<T> operator -(Matrix2x2F<T> value) =>
+            new(-value.Row1,
+                -value.Row2);
 
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="left">The first source matrix.</param>

@@ -48,65 +48,88 @@ namespace Silk.NET.Maths
             }
         }
 
+        [UnscopedRef]
+        public ref Vector4I<T> this[int row, int column] => ref this[row][column];
+
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
-        public T M11 => Row1.X;
+        [UnscopedRef]
+        public ref T M11 => ref Row1.X;
 
         /// <summary>Gets the element in the 1st row and 2nd column of the matrix.</summary>
-        public T M12 => Row1.Y;
+        [UnscopedRef]
+        public ref T M12 => ref Row1.Y;
 
         /// <summary>Gets the element in the 1st row and 3rd column of the matrix.</summary>
-        public T M13 => Row1.Z;
+        [UnscopedRef]
+        public ref T M13 => ref Row1.Z;
 
         /// <summary>Gets the element in the 1st row and 4th column of the matrix.</summary>
-        public T M14 => Row1.W;
+        [UnscopedRef]
+        public ref T M14 => ref Row1.W;
 
         /// <summary>Gets the element in the 2nd row and 1st column of the matrix.</summary>
-        public T M21 => Row2.X;
+        [UnscopedRef]
+        public ref T M21 => ref Row2.X;
 
         /// <summary>Gets the element in the 2nd row and 2nd column of the matrix.</summary>
-        public T M22 => Row2.Y;
+        [UnscopedRef]
+        public ref T M22 => ref Row2.Y;
 
         /// <summary>Gets the element in the 2nd row and 3rd column of the matrix.</summary>
-        public T M23 => Row2.Z;
+        [UnscopedRef]
+        public ref T M23 => ref Row2.Z;
 
         /// <summary>Gets the element in the 2nd row and 4th column of the matrix.</summary>
-        public T M24 => Row2.W;
+        [UnscopedRef]
+        public ref T M24 => ref Row2.W;
 
         /// <summary>Gets the element in the 3rd row and 1st column of the matrix.</summary>
-        public T M31 => Row3.X;
+        [UnscopedRef]
+        public ref T M31 => ref Row3.X;
 
         /// <summary>Gets the element in the 3rd row and 2nd column of the matrix.</summary>
-        public T M32 => Row3.Y;
+        [UnscopedRef]
+        public ref T M32 => ref Row3.Y;
 
         /// <summary>Gets the element in the 3rd row and 3rd column of the matrix.</summary>
-        public T M33 => Row3.Z;
+        [UnscopedRef]
+        public ref T M33 => ref Row3.Z;
 
         /// <summary>Gets the element in the 3rd row and 4th column of the matrix.</summary>
-        public T M34 => Row3.W;
+        [UnscopedRef]
+        public ref T M34 => ref Row3.W;
 
         /// <summary>Gets the element in the 4th row and 1st column of the matrix.</summary>
-        public T M41 => Row4.X;
+        [UnscopedRef]
+        public ref T M41 => ref Row4.X;
 
         /// <summary>Gets the element in the 4th row and 2nd column of the matrix.</summary>
-        public T M42 => Row4.Y;
+        [UnscopedRef]
+        public ref T M42 => ref Row4.Y;
 
         /// <summary>Gets the element in the 4th row and 3rd column of the matrix.</summary>
-        public T M43 => Row4.Z;
+        [UnscopedRef]
+        public ref T M43 => ref Row4.Z;
 
         /// <summary>Gets the element in the 4th row and 4th column of the matrix.</summary>
-        public T M44 => Row4.W;
+        [UnscopedRef]
+        public ref T M44 => ref Row4.W;
 
         /// <summary>Gets the element in the 5th row and 1st column of the matrix.</summary>
-        public T M51 => Row5.X;
+        [UnscopedRef]
+        public ref T M51 => ref Row5.X;
 
         /// <summary>Gets the element in the 5th row and 2nd column of the matrix.</summary>
-        public T M52 => Row5.Y;
+        [UnscopedRef]
+        public ref T M52 => ref Row5.Y;
 
         /// <summary>Gets the element in the 5th row and 3rd column of the matrix.</summary>
-        public T M53 => Row5.Z;
+        [UnscopedRef]
+        public ref T M53 => ref Row5.Z;
 
         /// <summary>Gets the element in the 5th row and 4th column of the matrix.</summary>
-        public T M54 => Row5.W;
+        [UnscopedRef]
+        public ref T M54 => ref Row5.W;
 
         /// <inheridoc/>
         public override bool Equals(object? obj) => obj is Matrix5x4I<T> other && Equals(other);
@@ -155,6 +178,16 @@ namespace Silk.NET.Maths
                 left.Row3 - right.Row3,
                 left.Row4 - right.Row4,
                 left.Row5 - right.Row5);
+
+        /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
+        /// <param name="value">The source matrix.</param>
+        /// <returns>The negated matrix.</returns>
+        public static Matrix5x4I<T> operator -(Matrix5x4I<T> value) =>
+            new(-value.Row1,
+                -value.Row2,
+                -value.Row3,
+                -value.Row4,
+                -value.Row5);
 
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="left">The first source matrix.</param>
