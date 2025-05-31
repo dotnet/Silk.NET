@@ -14,7 +14,7 @@ using System.Text;
 namespace Silk.NET.Maths
 {
     /// <summary>A structure representing a 2D floating-point vector.</summary>
-    internal struct Vector2F<T> :
+    internal partial struct Vector2F<T> :
         IEquatable<Vector2F<T>>,
         IReadOnlyList<T>,
         ISpanFormattable,
@@ -25,17 +25,8 @@ namespace Silk.NET.Maths
         IFormattable
         where T : IFloatingPointIeee754<T>
     {
-        /// <summary>The X component of the vector.</summary>
-        public T X;
-
-        /// <summary>The Y component of the vector.</summary>
-        public T Y;
-
         /// <summary>Initializes both components to the same value.</summary>
         public Vector2F(T value) => (X, Y) = (value, value);
-
-        /// <summary>Initializes the vector with individual values for X and Y.</summary>
-        public Vector2F(T x, T y) => (X, Y) = (x, y);
 
         /// <summary>Initializes the vector from a span of two values.</summary>
         public Vector2F(ReadOnlySpan<T> values)
@@ -70,22 +61,6 @@ namespace Silk.NET.Maths
 
         /// <summary>The number of elements in the vector.</summary>
         public int Count => 2;
-
-        ///<summary>Gets the component at the specified index: 0 = X, 1 = Y. </summary>
-        public T this[int index] => index switch {
-            0 => X,
-            1 => Y,
-            _ => throw new ArgumentOutOfRangeException(nameof(index), "Index must be 0 or 1.")
-        };
-
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector2F{T}"/> instance.</summary>
-        public override bool Equals(object? obj) => obj is Vector2F<T> other && Equals(other);
-
-        /// <summary>Returns a boolean indicating whether the given Vector2F is equal to this <see cref="Vector2F{T}"/> instance.</summary>
-        public bool Equals(Vector2F<T> other) => this == other;
-
-        /// <summary>Returns the hash code for this instance.</summary>
-        public override int GetHashCode() => HashCode.Combine(X, Y);
 
         /// <summary> Returns an enumerator that iterates through the vector components.</summary>
         public IEnumerator<T> GetEnumerator()
@@ -469,13 +444,6 @@ namespace Silk.NET.Maths
         // - operator: returns the negated vector
         public static Vector2F<T> operator -(Vector2F<T> vector) =>
             new(-vector.X, -vector.Y);
-
-        // Equality Operators
-        public static bool operator ==(Vector2F<T> left, Vector2F<T> right) =>
-            left.X == right.X && left.Y == right.Y;
-
-        public static bool operator !=(Vector2F<T> left, Vector2F<T> right) =>
-            left.X != right.X || left.Y != right.Y;
 
         // IBinaryFloatingPointIeee754
         public static Vector2F<T> Sqrt(Vector2F<T> x) =>

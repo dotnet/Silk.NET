@@ -11,7 +11,7 @@ using System.Text;
 namespace Silk.NET.Maths
 {
     /// <summary>A structure representing a 3D integer vector.</summary>
-    internal struct Vector3I<T> :
+    internal partial struct Vector3I<T> :
         IEquatable<Vector3I<T>>,
         IReadOnlyList<T>,
         ISpanFormattable,
@@ -22,20 +22,8 @@ namespace Silk.NET.Maths
         IFormattable
         where T : IBinaryInteger<T>
     {
-        /// <summary>The X component of the vector.</summary>
-        public T X;
-
-        /// <summary>The Y component of the vector.</summary>
-        public T Y;
-
-        /// <summary>The Z component of the vector.</summary>
-        public T Z;
-
         /// <summary>Initializes all components to the same value.</summary>
         public Vector3I(T value) => (X, Y, Z) = (value, value, value);
-
-        /// <summary>Initializes the vector with individual values for X, Y and Z.</summary>
-        public Vector3I(T x, T y, T z) => (X, Y, Z) = (x, y, z);
 
         /// <summary>Initializes the vector from a span of three values.</summary>
         public Vector3I(ReadOnlySpan<T> values)
@@ -75,24 +63,6 @@ namespace Silk.NET.Maths
 
         /// <summary>The number of elements in the vector.</summary>
         public int Count => 3;
-
-        ///<summary>Gets the component at the specified index: 0 = X, 1 = Y, 2 = Z. </summary>
-        // TODO: Make this a ref
-        public T this[int index] => index switch {
-            0 => X,
-            1 => Y,
-            2 => Z,
-            _ => throw new ArgumentOutOfRangeException(nameof(index), "Index must be 0, 1, or 2.")
-        };
-
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector3I{T}"/> instance.</summary>
-        public override bool Equals(object? obj) => obj is Vector3I<T> other && Equals(other);
-
-        /// <summary>Returns a boolean indicating whether the given Vector3I is equal to this <see cref="Vector3I{T}"/> instance.</summary>
-        public bool Equals(Vector3I<T> other) => this == other;
-
-        /// <summary>Returns the hash code for this instance.</summary>
-        public override int GetHashCode() => HashCode.Combine(X, Y, Z);
 
         /// <summary> Returns an enumerator that iterates through the vector components.</summary>
         public IEnumerator<T> GetEnumerator()
@@ -522,13 +492,6 @@ namespace Silk.NET.Maths
         // NOT operator
         public static Vector3I<T> operator ~(Vector3I<T> vector) =>
             new Vector3I<T>(~vector.X, ~vector.Y, ~vector.Z);
-
-        // Equality Operators
-        public static bool operator ==(Vector3I<T> left, Vector3I<T> right) =>
-            left.X == right.X && left.Y == right.Y && left.Z == right.Z;
-
-        public static bool operator !=(Vector3I<T> left, Vector3I<T> right) =>
-            left.X != right.X || left.Y != right.Y || left.Z != right.Z;
 
         // IBinaryInteger
         public static Vector3I<T> Log2(Vector3I<T> x) =>
