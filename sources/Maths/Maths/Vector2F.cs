@@ -72,11 +72,25 @@ namespace Silk.NET.Maths
         public int Count => 2;
 
         ///<summary>Gets the component at the specified index: 0 = X, 1 = Y. </summary>
-        public T this[int index] => index switch {
-            0 => X,
-            1 => Y,
-            _ => throw new ArgumentOutOfRangeException(nameof(index), "Index must be 0 or 1.")
-        };
+        [UnscopedRef]
+        public ref T this[int index]
+        {
+            get
+            {
+                switch (index)
+                {
+                    case 0:
+                        return ref X;
+                    case 1:
+                        return ref Y;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(index), "Index must be 0 or 1.");
+                }
+            }
+        }
+
+        /// <summary>Gets the component at the specified index (<see cref="IReadOnlyList{T}"/>).</summary>
+        T IReadOnlyList<T>.this[int index] => this[index];
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector2F{T}"/> instance.</summary>
         public override bool Equals(object? obj) => obj is Vector2F<T> other && Equals(other);
