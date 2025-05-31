@@ -16,9 +16,6 @@ namespace Silk.NET.Maths
     /// <summary>A structure representing a 2D floating-point vector.</summary>
     internal partial struct Vector2F<T>
     {
-        /// <summary>Gets a vector with all bits set for each component.</summary>
-        public static Vector2F<T> AllBitsSet => new(T.AllBitsSet, T.AllBitsSet);
-
         /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
         public T LengthSquared => (X * X) + (Y * Y);
 
