@@ -54,6 +54,9 @@ namespace Silk.NET.Maths
         /// <summary>Gets a vector with all bits set for each component.</summary>
         public static Vector2I<T> AllBitsSet => new Vector2I<T>(T.AllBitsSet, T.AllBitsSet);
 
+        /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
+        public T LengthSquared => Vector2I.Dot(this, this);
+
         /// <inheritdoc/>
         T IReadOnlyList<T>.this[int index] => this[index];
 
@@ -374,6 +377,19 @@ namespace Silk.NET.Maths
 
     static partial class Vector2I
     {
+        /// <summary>Computes the dot product of two vectors.</summary>
+        public static T Dot<T>(this Vector2I<T> left, Vector2I<T> right)
+            where T : IBinaryInteger<T> =>
+            left.X * right.X + left.Y * right.Y;
+
+        /// <summary>Reflects a vector over a normal vector.</summary>
+        public static Vector2I<T> Reflect<T>(Vector2I<T> vector, Vector2I<T> normal)
+            where T : IBinaryInteger<T>
+        {
+            T dot = vector.Dot(normal);
+            return vector - (normal * (dot + dot));
+        }
+
         public static Vector2I<TSelf> Log<TSelf>(this Vector2I<TSelf> x)
             where TSelf : IBinaryInteger<TSelf>, ILogarithmicFunctions<TSelf> =>
             new(TSelf.Log(x.X), TSelf.Log(x.Y));

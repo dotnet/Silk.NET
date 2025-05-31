@@ -14,15 +14,6 @@ namespace Silk.NET.Maths
     /// <summary>A structure representing a 3D integer vector.</summary>
     internal partial struct Vector3I<T>
     {
-        /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
-        public T LengthSquared => (X * X) + (Y * Y) + (Z * Z);
-
-        /// <summary> Computes the dot product of this vector with another vector. </summary>
-        public T Dot(Vector3I<T> other) => (X * other.X) + (Y * other.Y) + (Z * other.Z);
-
-        /// <summary> Computes the dot product of two vectors. </summary>
-        public static T Dot(Vector3I<T> left, Vector3I<T> right) => (left.X * right.X) + (left.Y * right.Y) + (left.Z * right.Z);
-
         /// <summary> Computes the cross product of this vector with another vector. </summary>
         public Vector3I<T> Cross(Vector3I<T> other) =>
             new Vector3I<T>(

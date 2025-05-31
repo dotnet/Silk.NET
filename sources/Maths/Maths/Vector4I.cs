@@ -13,15 +13,6 @@ namespace Silk.NET.Maths
     /// <summary>A structure representing a 4D integer vector.</summary>
     internal partial struct Vector4I<T>
     {
-        /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
-        public T LengthSquared => (X * X) + (Y * Y) + (Z * Z) + (W * W);
-
-        /// <summary> Computes the dot product of this vector with another vector. </summary>
-        public T Dot(Vector4I<T> other) => (X * other.X) + (Y * other.Y) + (Z * other.Z) + (W * other.W);
-
-        /// <summary> Computes the dot product of two vectors. </summary>
-        public static T Dot(Vector4I<T> left, Vector4I<T> right) => (left.X * right.X) + (left.Y * right.Y) + (left.Z * right.Z) + (left.W * right.W);
-
         /// <summary>Returns a vector with the component-wise maximum of this and another vector.</summary>
         public Vector4I<T> Max(Vector4I<T> other) =>
             new Vector4I<T>(T.Max(X, other.X), T.Max(Y, other.Y), T.Max(Z, other.Z), T.Max(W, other.W));

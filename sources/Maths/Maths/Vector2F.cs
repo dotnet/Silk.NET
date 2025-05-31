@@ -16,38 +16,6 @@ namespace Silk.NET.Maths
     /// <summary>A structure representing a 2D floating-point vector.</summary>
     internal partial struct Vector2F<T>
     {
-        /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
-        public T LengthSquared => (X * X) + (Y * Y);
-
-        /// <summary>Gets the length of the vector.</summary>
-        public T Length => T.Sqrt(LengthSquared);
-
-        /// <summary> Computes the dot product of this vector with another vector. </summary>
-        public T Dot(Vector2F<T> other) => (X * other.X) + (Y * other.Y);
-
-        /// <summary> Computes the dot product of two vectors. </summary>
-        public static T Dot(Vector2F<T> left, Vector2F<T> right) => (left.X * right.X) + (left.Y * right.Y);
-
-        /// <summary> Computes the cross product of this vector with another vector. </summary>
-        public T Cross(Vector2F<T> other) => (X * other.Y) - (Y * other.X);
-
-        /// <summary> Computes the cross product of two vectors. </summary>
-        public static T Cross(Vector2F<T> left, Vector2F<T> right) => (left.X * right.Y) - (left.Y * right.X);
-
-        /// <summary>Normalizes this vector.</summary>
-        public Vector2F<T> Normalize()
-        {
-            T length = Length;
-            return length != T.Zero ? this / length : Zero;
-        }
-
-        /// <summary>Normalizes a vector.</summary>
-        public static Vector2F<T> Normalize(Vector2F<T> vector)
-        {
-            T length = vector.Length;
-            return length != T.Zero ? vector / length : Zero;
-        }
-
         /// <summary>Returns a vector with the component-wise maximum of this and another vector.</summary>
         public Vector2F<T> Max(Vector2F<T> other) =>
             new(T.Max(X, other.X), T.Max(Y, other.Y));
@@ -121,20 +89,6 @@ namespace Silk.NET.Maths
                 a.X + (b.X - a.X) * T.Clamp(t.X, T.Zero, T.One),
                 a.Y + (b.Y - a.Y) * T.Clamp(t.Y, T.Zero, T.One)
             );
-
-        /// <summary>Reflects a vector over a normal vector.</summary>
-        public Vector2F<T> Reflect(Vector2F<T> normal)
-        {
-            T dot = Dot(normal);
-            return this - (normal * (dot + dot));
-        }
-
-        /// <summary>Reflects a vector over a normal vector.</summary>
-        public static Vector2F<T> Reflect(Vector2F<T> vector, Vector2F<T> normal)
-        {
-            T dot = Dot(vector, normal);
-            return vector - (normal * (dot + dot));
-        }
 
         /// <summary>Returns a vector where each component is the sign of the original vector's component.</summary>
         public Vector2F<T> Sign() => new(T.CreateChecked(T.Sign(X)), T.CreateChecked(T.Sign(Y)));
@@ -357,5 +311,12 @@ namespace Silk.NET.Maths
 
         public static Vector2F<T> ScaleB(Vector2F<T> x, int n) =>
             new(T.ScaleB(x.X, n), T.ScaleB(x.Y, n));
+    }
+
+    static partial class Vector2F
+    {
+        /// <summary> Computes the cross product of two vectors.</summary>
+        public static T Cross<T>(this Vector2F<T> left, Vector2F<T> right)
+            where T : IFloatingPointIeee754<T> => (left.X * right.Y) - (left.Y * right.X);
     }
 }

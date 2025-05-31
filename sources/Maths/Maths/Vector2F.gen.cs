@@ -51,6 +51,9 @@ namespace Silk.NET.Maths
         /// <summary>Gets the vector (0, 1).</summary>
         public static Vector2F<T> UnitY => new(Scalar<T>.Zero, Scalar<T>.One);
 
+        /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
+        public T LengthSquared => Vector2F.Dot(this, this);
+
         /// <inheritdoc/>
         T IReadOnlyList<T>.this[int index] => this[index];
 
@@ -342,6 +345,32 @@ namespace Silk.NET.Maths
 
     static partial class Vector2F
     {
+        /// <summary>Computes the dot product of two vectors.</summary>
+        public static T Dot<T>(this Vector2F<T> left, Vector2F<T> right)
+            where T : IFloatingPointIeee754<T> =>
+            left.X * right.X + left.Y * right.Y;
+
+        /// <summary>Reflects a vector over a normal vector.</summary>
+        public static Vector2F<T> Reflect<T>(Vector2F<T> vector, Vector2F<T> normal)
+            where T : IFloatingPointIeee754<T>
+        {
+            T dot = vector.Dot(normal);
+            return vector - (normal * (dot + dot));
+        }
+
+        /// <summary>Computes the length of the vector.</summary>
+        public static T GetLength<T>(this Vector2F<T> vector)
+            where T : IFloatingPointIeee754<T> =>
+            T.Sqrt(vector.LengthSquared);
+
+        /// <summary>Normalizes a vector.</summary>
+        public static Vector2F<T> Normalize<T>(this Vector2F<T> vector)
+            where T : IFloatingPointIeee754<T>
+        {
+            T length = vector.GetLength();
+            return length != T.Zero ? vector / length : Vector2F<T>.Zero;
+        }
+
         public static Vector2F<TSelf> Log<TSelf>(this Vector2F<TSelf> x)
             where TSelf : IFloatingPointIeee754<TSelf>, ILogarithmicFunctions<TSelf> =>
             new(TSelf.Log(x.X), TSelf.Log(x.Y));

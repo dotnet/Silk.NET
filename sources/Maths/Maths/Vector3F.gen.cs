@@ -61,6 +61,9 @@ namespace Silk.NET.Maths
         /// <summary>Gets the vector (0, 0, 1).</summary>
         public static Vector3F<T> UnitZ => new(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
 
+        /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
+        public T LengthSquared => Vector3F.Dot(this, this);
+
         /// <inheritdoc/>
         T IReadOnlyList<T>.this[int index] => this[index];
 
@@ -379,6 +382,32 @@ namespace Silk.NET.Maths
 
     static partial class Vector3F
     {
+        /// <summary>Computes the dot product of two vectors.</summary>
+        public static T Dot<T>(this Vector3F<T> left, Vector3F<T> right)
+            where T : IFloatingPointIeee754<T> =>
+            left.X * right.X + left.Y * right.Y + left.Z * right.Z;
+
+        /// <summary>Reflects a vector over a normal vector.</summary>
+        public static Vector3F<T> Reflect<T>(Vector3F<T> vector, Vector3F<T> normal)
+            where T : IFloatingPointIeee754<T>
+        {
+            T dot = vector.Dot(normal);
+            return vector - (normal * (dot + dot));
+        }
+
+        /// <summary>Computes the length of the vector.</summary>
+        public static T GetLength<T>(this Vector3F<T> vector)
+            where T : IFloatingPointIeee754<T> =>
+            T.Sqrt(vector.LengthSquared);
+
+        /// <summary>Normalizes a vector.</summary>
+        public static Vector3F<T> Normalize<T>(this Vector3F<T> vector)
+            where T : IFloatingPointIeee754<T>
+        {
+            T length = vector.GetLength();
+            return length != T.Zero ? vector / length : Vector3F<T>.Zero;
+        }
+
         public static Vector3F<TSelf> Log<TSelf>(this Vector3F<TSelf> x)
             where TSelf : IFloatingPointIeee754<TSelf>, ILogarithmicFunctions<TSelf> =>
             new(TSelf.Log(x.X), TSelf.Log(x.Y), TSelf.Log(x.Z));

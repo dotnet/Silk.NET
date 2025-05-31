@@ -14,15 +14,6 @@ namespace Silk.NET.Maths
     /// <summary>A structure representing a 2D integer vector.</summary>
     internal partial struct Vector2I<T>
     {
-        /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
-        public T LengthSquared => (X * X) + (Y * Y);
-
-        /// <summary> Computes the dot product of this vector with another vector. </summary>
-        public T Dot(Vector2I<T> other) => (X * other.X) + (Y * other.Y);
-
-        /// <summary> Computes the dot product of two vectors. </summary>
-        public static T Dot(Vector2I<T> left, Vector2I<T> right) => (left.X * right.X) + (left.Y * right.Y);
-
         /// <summary> Computes the cross product of this vector with another vector. </summary>
         public T Cross(Vector2I<T> other) => (X * other.Y) - (Y * other.X);
 
