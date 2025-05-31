@@ -242,7 +242,7 @@ Matrix structs **must** fulfill the following requirements:
 - Invert function for square matricies
 - GetDeterminant function for square matricies and Matrix3x2, Matrix4x3, and Matrix 5x4
 - Transpose function
-- static lerp function
+- for F matrices, a static lerp function
 - static identity property
 - For Matrix3x2, Matrix3x3, Matrix4x3, and Matrix4x4 include the following static functions
   - CreateBillboardRH
