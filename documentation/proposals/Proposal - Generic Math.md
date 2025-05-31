@@ -99,7 +99,7 @@ For I types, the following additional requirements **must** be fulfilled:
     - returns The number of set bits in the vector
 
 For F types, the following additional requirements **must** be fulfilled:
-- A Length property which returns the square root of LengthSquared.
+- A GetLength function which returns the square root of LengthSquared.
 - A Normalize function which divides all components by the length of the vector
   - A static implementation of this function **must** be available but it should return a normalized vector without affecting the original vector
 - A static Lerp function which takes Two vectors to interpolate between and a vector representing the t value for each component, and returns a vector which components are linearly interpolated between the original two vectors based on the respective t values.
