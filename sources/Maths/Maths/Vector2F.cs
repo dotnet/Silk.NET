@@ -477,7 +477,7 @@ namespace Silk.NET.Maths
         public static bool operator !=(Vector2F<T> left, Vector2F<T> right) =>
             left.X != right.X || left.Y != right.Y;
 
-        // IBinaryFloatingPointIeee754
+        // IFloatingPointIeee754
         public static Vector2F<T> Sqrt(Vector2F<T> x) =>
             new(T.Sqrt(x.X), T.Sqrt(x.Y));
 
