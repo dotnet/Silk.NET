@@ -49,7 +49,7 @@ namespace Silk.NET.Maths
         }
 
         [UnscopedRef]
-        public ref Vector4I<T> this[int row, int column] => ref this[row][column];
+        public ref T this[int row, int column] => ref this[row][column];
 
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
         [UnscopedRef]
@@ -200,4 +200,5 @@ namespace Silk.NET.Maths
                 left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3 + left.M44 * right.Row4,
                 left.M51 * right.Row1 + left.M52 * right.Row2 + left.M53 * right.Row3 + left.M54 * right.Row4);
     }
+
 }

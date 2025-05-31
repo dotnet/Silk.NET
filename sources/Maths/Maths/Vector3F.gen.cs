@@ -12,6 +12,25 @@ namespace Silk.NET.Maths
 
         public Vector3F(T x, T y, T z) => (X, Y, Z) = (x, y, z);
 
+        [UnscopedRef]
+        public ref T this[int index]
+        {
+            get
+            {
+                switch (index)
+                {
+                    case 0:
+                        return ref X;
+                    case 1:
+                        return ref Y;
+                    case 2:
+                        return ref Z;
+                }
+
+                throw new ArgumentOutOfRangeException(nameof(index));
+            }
+        }
+
         public static bool operator ==(Vector3F<T> left, Vector3F<T> right) => left.X == right.X && left.Y == right.Y && left.Z == right.Z;
 
         public static bool operator !=(Vector3F<T> left, Vector3F<T> right) => !(left == right);

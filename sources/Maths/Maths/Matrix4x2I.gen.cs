@@ -44,7 +44,7 @@ namespace Silk.NET.Maths
         }
 
         [UnscopedRef]
-        public ref Vector2I<T> this[int row, int column] => ref this[row][column];
+        public ref T this[int row, int column] => ref this[row][column];
 
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
         [UnscopedRef]
@@ -90,7 +90,7 @@ namespace Silk.NET.Maths
         /// <summary>Computes the transpose of the matrix.</summary>
         public Matrix2x4I<T> Transpose() =>
             new(new(M11, M21, M31, M41),
-                new(M12, M22, M32, M42))
+                new(M12, M22, M32, M42));
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
         /// <param name="left">The first matrix to compare.</param>
@@ -167,4 +167,5 @@ namespace Silk.NET.Maths
                 left.M31 * right.Row1 + left.M32 * right.Row2,
                 left.M41 * right.Row1 + left.M42 * right.Row2);
     }
+
 }

@@ -49,7 +49,7 @@ namespace Silk.NET.Maths
         }
 
         [UnscopedRef]
-        public ref Vector4F<T> this[int row, int column] => ref this[row][column];
+        public ref T this[int row, int column] => ref this[row][column];
 
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
         [UnscopedRef]
@@ -199,5 +199,16 @@ namespace Silk.NET.Maths
                 left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3 + left.M34 * right.Row4,
                 left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3 + left.M44 * right.Row4,
                 left.M51 * right.Row1 + left.M52 * right.Row2 + left.M53 * right.Row3 + left.M54 * right.Row4);
+    }
+
+    static partial class Matrix5x4F
+    {
+        public static Matrix5x4F<T> Lerp<T>(Matrix5x4F<T> value1, Matrix5x4F<T> value2, T amount)
+            where T : IFloatingPointIeee754<T> =>
+            new(new(T.Lerp(value1.M11, value2.M11, amount), T.Lerp(value1.M12, value2.M12, amount), T.Lerp(value1.M13, value2.M13, amount), T.Lerp(value1.M14, value2.M14, amount)),
+                new(T.Lerp(value1.M21, value2.M21, amount), T.Lerp(value1.M22, value2.M22, amount), T.Lerp(value1.M23, value2.M23, amount), T.Lerp(value1.M24, value2.M24, amount)),
+                new(T.Lerp(value1.M31, value2.M31, amount), T.Lerp(value1.M32, value2.M32, amount), T.Lerp(value1.M33, value2.M33, amount), T.Lerp(value1.M34, value2.M34, amount)),
+                new(T.Lerp(value1.M41, value2.M41, amount), T.Lerp(value1.M42, value2.M42, amount), T.Lerp(value1.M43, value2.M43, amount), T.Lerp(value1.M44, value2.M44, amount)),
+                new(T.Lerp(value1.M51, value2.M51, amount), T.Lerp(value1.M52, value2.M52, amount), T.Lerp(value1.M53, value2.M53, amount), T.Lerp(value1.M54, value2.M54, amount)));
     }
 }

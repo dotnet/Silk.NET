@@ -34,7 +34,7 @@ namespace Silk.NET.Maths
         }
 
         [UnscopedRef]
-        public ref Vector3F<T> this[int row, int column] => ref this[row][column];
+        public ref T this[int row, int column] => ref this[row][column];
 
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
         [UnscopedRef]
@@ -73,7 +73,7 @@ namespace Silk.NET.Maths
         public Matrix3x2F<T> Transpose() =>
             new(new(M11, M21),
                 new(M12, M22),
-                new(M13, M23))
+                new(M13, M23));
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
         /// <param name="left">The first matrix to compare.</param>
@@ -127,5 +127,13 @@ namespace Silk.NET.Maths
         public static Matrix2x2F<T> operator *(Matrix2x3F<T> left, Matrix3x2F<T> right) =>
             new(left.M11 * right.Row1 + left.M12 * right.Row2 + left.M13 * right.Row3,
                 left.M21 * right.Row1 + left.M22 * right.Row2 + left.M23 * right.Row3);
+    }
+
+    static partial class Matrix2x3F
+    {
+        public static Matrix2x3F<T> Lerp<T>(Matrix2x3F<T> value1, Matrix2x3F<T> value2, T amount)
+            where T : IFloatingPointIeee754<T> =>
+            new(new(T.Lerp(value1.M11, value2.M11, amount), T.Lerp(value1.M12, value2.M12, amount), T.Lerp(value1.M13, value2.M13, amount)),
+                new(T.Lerp(value1.M21, value2.M21, amount), T.Lerp(value1.M22, value2.M22, amount), T.Lerp(value1.M23, value2.M23, amount)));
     }
 }
