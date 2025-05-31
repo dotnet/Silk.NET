@@ -78,6 +78,8 @@ For each vector struct, the following requirements **must** fulfill the followin
 - A Static Zero Vector with zero for all components
 - A Static One Vector with one for all components
 - A static AllBitsSet Vector with all bits set for all components
+- A deconstruct method for detupling
+- An implicit conversion from a value tuple of the same size.
 - Define static CreateChecked, CreateSaturating, and CreateTruncating which converts other vector types to this type
   - Try variants of these methods should also be defined which out the resulting vector and return a bool representing success or failure of the operation.
 - Define Transform functions which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
