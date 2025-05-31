@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -77,13 +78,27 @@ namespace Silk.NET.Maths
         public int Count => 3;
 
         ///<summary>Gets the component at the specified index: 0 = X, 1 = Y, 2 = Z. </summary>
-        // TODO: Make this a ref
-        public T this[int index] => index switch {
-            0 => X,
-            1 => Y,
-            2 => Z,
-            _ => throw new ArgumentOutOfRangeException(nameof(index), "Index must be 0, 1, or 2.")
-        };
+        [UnscopedRef]
+        public ref T this[int index]
+        {
+            get
+            {
+                switch (index)
+                {
+                    case 0:
+                        return ref X;
+                    case 1:
+                        return ref Y;
+                    case 2:
+                        return ref Z;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(index), "Index must be 0 or 1.");
+                }
+            }
+        }
+
+        /// <summary>Gets the component at the specified index (<see cref="IReadOnlyList{T}"/>).</summary>
+        T IReadOnlyList<T>.this[int index] => this[index];
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector3I{T}"/> instance.</summary>
         public override bool Equals(object? obj) => obj is Vector3I<T> other && Equals(other);
