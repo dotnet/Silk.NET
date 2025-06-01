@@ -127,7 +127,7 @@ namespace Silk.NET.Maths
         /// <summary>Creates a rotation matrix from the given Quaternion rotation value.</summary>
         /// <param name="quaternion">The source Quaternion.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix3X3<T> CreateFromQuaternion<T>(Quaternion<T> quaternion)
+        public static Matrix3X3<T> CreateFromQuaternion<T>(Silk.NET.Maths.Legacy.Quaternion<T> quaternion)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             Matrix3X3<T> result = Matrix3X3<T>.Identity;
@@ -167,7 +167,7 @@ namespace Silk.NET.Maths
         public static Matrix3X3<T> CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Quaternion<T> q = Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
+            Legacy.Quaternion<T> q = Legacy.Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
             return CreateFromQuaternion(q);
         }
 
@@ -373,7 +373,7 @@ namespace Silk.NET.Maths
         /// <param name="scale">The scaling component of the transformation matrix.</param>
         /// <param name="rotation">The rotation component of the transformation matrix.</param>
         /// <returns>True if the source matrix was successfully decomposed; False otherwise.</returns>
-        public static bool Decompose<T>(Matrix3X3<T> matrix, out Vector3D<T> scale, out Quaternion<T> rotation)
+        public static bool Decompose<T>(Matrix3X3<T> matrix, out Vector3D<T> scale, out Silk.NET.Maths.Legacy.Quaternion<T> rotation)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             bool result = true;
@@ -546,13 +546,13 @@ namespace Silk.NET.Maths
                     if (!Scalar.GreaterThanOrEqual(Scalar.As<float, T>(DecomposeEpsilon), det))
                     {
                         // Non-SRT matrix encountered
-                        rotation = Quaternion<T>.Identity;
+                        rotation = Legacy.Quaternion<T>.Identity;
                         result = false;
                     }
                     else
                     {
                         // generate the quaternion from the matrix
-                        rotation = Quaternion<T>.CreateFromRotationMatrix(matTemp);
+                        rotation = Legacy.Quaternion<T>.CreateFromRotationMatrix(matTemp);
                     }
                 }
             }
@@ -579,7 +579,7 @@ namespace Silk.NET.Maths
         /// <param name="value">The source matrix to transform.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed matrix.</returns>
-        public static Matrix3X3<T> Transform<T>(Matrix3X3<T> value, Quaternion<T> rotation)
+        public static Matrix3X3<T> Transform<T>(Matrix3X3<T> value, Legacy.Quaternion<T> rotation)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             // Compute rotation matrix.
