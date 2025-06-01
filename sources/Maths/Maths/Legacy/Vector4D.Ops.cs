@@ -237,7 +237,7 @@ namespace Silk.NET.Maths
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed vector.</returns>
         [MethodImpl((MethodImplOptions) 768)]
-        public static Vector4D<T> Transform<T>(Vector2D<T> value, Quaternion<T> rotation)
+        public static Vector4D<T> Transform<T>(Vector2D<T> value, Silk.NET.Maths.Legacy.Quaternion<T> rotation)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             T x2 = Scalar.Add(rotation.X, rotation.X);
@@ -283,7 +283,7 @@ namespace Silk.NET.Maths
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed vector.</returns>
         [MethodImpl((MethodImplOptions) 768)]
-        public static Vector4D<T> Transform<T>(Vector3D<T> value, Quaternion<T> rotation)
+        public static Vector4D<T> Transform<T>(Vector3D<T> value, Legacy.Quaternion<T> rotation)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             T x2 = Scalar.Add(rotation.X, rotation.X);
@@ -329,7 +329,7 @@ namespace Silk.NET.Maths
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed vector.</returns>
         [MethodImpl((MethodImplOptions) 768)]
-        public static Vector4D<T> Transform<T>(Vector4D<T> value, Quaternion<T> rotation)
+        public static Vector4D<T> Transform<T>(Vector4D<T> value, Legacy.Quaternion<T> rotation)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             T x2 = Scalar.Add(rotation.X, rotation.X);

@@ -181,7 +181,7 @@ namespace Silk.NET.Maths
         /// <param name="rotation">The Quaternion rotation to apply to the Plane.</param>
         /// <returns>A new Plane that results from applying the rotation.</returns>
         [MethodImpl((MethodImplOptions) 768)]
-        public static Plane<T> Transform<T>(Plane<T> plane, Quaternion<T> rotation)
+        public static Plane<T> Transform<T>(Plane<T> plane, Legacy.Quaternion<T> rotation)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             // Compute rotation matrix.
