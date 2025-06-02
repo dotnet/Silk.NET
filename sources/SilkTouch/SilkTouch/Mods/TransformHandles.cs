@@ -20,8 +20,12 @@ namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
 /// Transforms any pointers to an opaque/empty struct or pointers to a non-existent type to be "handle" type.
-/// That is, a struct that wraps the underlying opaque pointer (or other underlying value).
+/// A handle type is a struct that wraps the underlying opaque pointer (or other underlying value).
 /// </summary>
+/// <example>
+/// For the following pointer, <c>VkBuffer*</c>, a corresponding handle struct will be generated, <c>struct VkBuffer</c>.
+/// Usages of that pointer will then be replaced with <c>VkBuffer</c>.
+/// </example>
 /// <remarks>
 /// It is assumed that all handle types in the generated syntax do not require a <c>using</c> directive in order to be
 /// in scope. That is, if a file with the namespace <c>Silk.NET.OpenGL</c> is encountered and it is referencing
