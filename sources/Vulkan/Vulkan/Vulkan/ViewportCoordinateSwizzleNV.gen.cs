@@ -8,9 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ViewportCoordinateSwizzleNV : uint
+public enum ViewportCoordinateSwizzleNV
 {
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     PositiveXNV = 0,

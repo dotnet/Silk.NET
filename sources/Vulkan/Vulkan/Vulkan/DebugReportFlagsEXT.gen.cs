@@ -8,9 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DebugReportFlagsEXT : uint
+public enum DebugReportFlagsEXT
 {
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     InformationBitEXT = 0x00000001,

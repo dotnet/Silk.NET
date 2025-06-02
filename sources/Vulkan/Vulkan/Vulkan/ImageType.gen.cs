@@ -8,9 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ImageType : uint
+public enum ImageType
 {
     [SupportedApiProfile(
         "vulkan",

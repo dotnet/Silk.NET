@@ -8,9 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum QueryType : uint
+public enum QueryType
 {
     [SupportedApiProfile(
         "vulkan",
