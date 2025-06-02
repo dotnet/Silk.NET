@@ -47,7 +47,6 @@ For each vector struct, the following requirements **must** fulfill the followin
 - A LengthSquared property which returns the dot product of the vector with itself.
 - A Dot extension method which takes another vector and returns the dot product with our original vector. 
 - For 3D Vectors, a Cross extension method which takes another vector and returns the cross product with our original vector. 
-  - A static implementation of this function **must** be available as well.
 - `+`, `-`, `*`, `/`, and `%` operators defined between two vectors of the same type which returns a vector which has had each operation applied component-wise.
 - `+`, `-`, `*`, `/`, and `%` operators defined between a vector and a scalar value that matches the generic type which returns a vector which has had each operation applied component-wise with the scalar value. Both vector first and scalar first should be implemented.
 - A `-` unary operator which returns the negated vector.
