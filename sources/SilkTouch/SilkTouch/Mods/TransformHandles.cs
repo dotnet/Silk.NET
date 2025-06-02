@@ -19,8 +19,8 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Transforms any pointers to an opaque struct or pointers to a non-existent type to be "handle" type. That is, a
-/// struct that wraps the underlying opaque pointer (or other underlying value)
+/// Transforms any pointers to an opaque/empty struct or pointers to a non-existent type to be "handle" type.
+/// That is, a struct that wraps the underlying opaque pointer (or other underlying value).
 /// </summary>
 /// <remarks>
 /// It is assumed that all handle types in the generated syntax do not require a <c>using</c> directive in order to be
@@ -53,6 +53,10 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
     {
         await base.ExecuteAsync(ctx, ct);
         var cfg = config.Get(ctx.JobKey);
+
+        // First we look for all type references and type declarations
+        // For type references, we track if the type if referenced as a pointer
+        // For type declarations, we track if the type was declared as an empty struct
         var firstPass = new TypeDiscoverer();
         var proj = ctx.SourceProject;
         foreach (var doc in ctx.SourceProject?.Documents ?? [])
@@ -63,6 +67,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
             }
         }
 
+        // If a type is always referenced as a pointer AND if there is no empty struct declared already, we generate one
         Dictionary<string, SyntaxNode>? missingFullyQualifiedTypeNamesToRootNodes =
             cfg.AssumeMissingTypesOpaque ? [] : null;
         var handles = firstPass.GetHandleTypes(missingFullyQualifiedTypeNamesToRootNodes);
@@ -81,6 +86,11 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
             }
         }
 
+        // Before the execution of this foreach loop, the handle structs are empty
+        //
+        // During this foreach loop, we do two things:
+        // 1. Rewrite all type references to refer to the handle structs
+        // 2. Add members to handle structs (as identified the handles variable)
         var rewriter = new Rewriter(handles, cfg.UseDSL);
         foreach (var docId in proj?.DocumentIds ?? [])
         {
@@ -93,6 +103,8 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
 
             doc = doc.WithSyntaxRoot(rewriter.Visit(root).NormalizeWhitespace());
             var effectiveName = ModUtils.GetEffectiveName(doc.FilePath).ToString();
+
+            // Add "Handle" suffix if the document represents a handle struct
             if (handles.ContainsKey(effectiveName))
             {
                 doc = doc.WithFilePath(
