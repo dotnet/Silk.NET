@@ -83,14 +83,22 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                 continue;
             }
 
+            // Rewrite node
+            // What this does depends on the node's type
+            //
+            // For example:
+            // This will handle removing nested structs.
+            // This is also where extracted enums are processed.
             rewriter.File = fname;
             proj = doc.WithSyntaxRoot(
                 rewriter.Visit(node)?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Rewriter returned null")
             ).Project;
+
             foreach (var newStruct in rewriter.ExtractedNestedStructs)
             {
-                proj = proj.AddDocument(
+                // Add new documents for each nested struct
+                 proj = proj.AddDocument(
                     $"{newStruct.Identifier}.gen.cs",
                     CompilationUnit()
                         .WithMembers(
@@ -117,42 +125,43 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             rewriter.ExtractedNestedStructs.Clear();
         }
 
-        foreach (
-            var (typeDecl, identifier, fileDirs, namespaces) in rewriter
-                .FunctionPointerTypes.Values //.Where(x => x.IsUnique)
-                .SelectMany(x =>
-                    (IEnumerable<(
-                        MemberDeclarationSyntax,
-                        string,
-                        HashSet<string>,
-                        HashSet<string>
-                    )>)
-                        [
-                            (
-                                x.Delegate,
-                                x.Delegate.Identifier.ToString(),
-                                x.ReferencingFileDirs,
-                                x.ReferencingNamespaces
-                            ),
-                            (
-                                x.Pfn,
-                                x.Pfn.Identifier.ToString(),
-                                x.ReferencingFileDirs,
-                                x.ReferencingNamespaces
-                            ),
-                        ]
-                )
-                .Concat(
-                    enums.Select(x =>
-                        (
-                            (MemberDeclarationSyntax)x.Value.Item1,
-                            x.Value.Item1.Identifier.ToString(),
-                            x.Value.Item2,
-                            x.Value.Item3
-                        )
+        // Add documents for each extracted function pointer
+        // This is moved out of the foreach statement for better debuggability
+        var extractedFunctionPointers = rewriter
+            .FunctionPointerTypes.Values //.Where(x => x.IsUnique)
+            .SelectMany(x =>
+                (IEnumerable<(
+                    MemberDeclarationSyntax,
+                    string,
+                    HashSet<string>,
+                    HashSet<string>
+                    )>) [
+                    (
+                        x.Delegate,
+                        x.Delegate.Identifier.ToString(),
+                        x.ReferencingFileDirs,
+                        x.ReferencingNamespaces
+                    ),
+                    (
+                        x.Pfn,
+                        x.Pfn.Identifier.ToString(),
+                        x.ReferencingFileDirs,
+                        x.ReferencingNamespaces
+                    ),
+                ]
+            )
+            .Concat(
+                enums.Select(x =>
+                    (
+                        (MemberDeclarationSyntax)x.Value.Item1,
+                        x.Value.Item1.Identifier.ToString(),
+                        x.Value.Item2,
+                        x.Value.Item3
                     )
                 )
-        )
+            ).ToList();
+
+        foreach (var (typeDecl, identifier, fileDirs, namespaces) in extractedFunctionPointers)
         {
             var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
             var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
@@ -296,7 +305,10 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
 
         public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            // Extract nested structs.
+            // Extract nested structs
+            // This will do two things:
+            // 1. Remove the nested struct(s) from the original struct
+            // 2. Add them to the ExtractedNestedStructs list to be processed later
             var nextExtractedNestedIdx = ExtractedNestedStructs.Count;
             var members = node.Members;
             for (var i = 0; i < members.Count; i++)
