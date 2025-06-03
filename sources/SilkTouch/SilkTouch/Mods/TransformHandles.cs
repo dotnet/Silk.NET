@@ -61,9 +61,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         var proj = ctx.SourceProject;
         var cfg = config.Get(ctx.JobKey);
 
-        // First we look for all type references and type declarations
-        // For type references, we track if the type if referenced as a pointer
-        // For type declarations, we track if the type was declared as an empty struct
+        // First pass to discover any existing or missing handle types
         var discoverer = new HandleTypeDiscoverer();
         foreach (var doc in ctx.SourceProject?.Documents ?? [])
         {
@@ -73,12 +71,13 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
             }
         }
 
-        // If a type is always referenced as a pointer AND if there is no empty struct declared already, we generate one
+        // Get the discovered handle types and missing handle types
         Dictionary<string, SyntaxNode>? missingFullyQualifiedTypeNamesToRootNodes =
             cfg.AssumeMissingTypesOpaque ? [] : null;
         var handles = discoverer.GetHandleTypes(missingFullyQualifiedTypeNamesToRootNodes);
         if (missingFullyQualifiedTypeNamesToRootNodes is not null)
         {
+            // Generate missing handle types
             foreach (var (fqTypeName, node) in missingFullyQualifiedTypeNamesToRootNodes)
             {
                 var rel = $"Handles/{PathForFullyQualified(fqTypeName)}";

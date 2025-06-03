@@ -13,8 +13,20 @@ namespace Silk.NET.SilkTouch.Mods.Scraping;
 /// This discovers "handle" types, which are structs that wrap an underlying opaque pointer.
 /// </summary>
 /// <remarks>
+/// <para>
 /// This was originally used by <see cref="TransformHandles"/>, but was moved out as a separate class
 /// so that <see cref="ExtractNestedTyping"/> can share the functionality.
+/// </para>
+/// <para>
+/// This works by looking for all type references and type declarations.
+/// For type references, we track if the type if referenced as a pointer.
+/// For type declarations, we track if the type was declared as an empty struct.
+/// </para>
+/// <para>
+/// If a type is always referenced as a pointer, we conclude that the type is a handle type.
+/// Additionally, if the handle type does not have a corresponding empty struct, we conclude that the handle type is
+/// missing.
+/// </para>
 /// </remarks>
 public class HandleTypeDiscoverer : CSharpSyntaxWalker
 {

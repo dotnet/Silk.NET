@@ -192,6 +192,9 @@
         "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
         "Namespace": "Silk.NET.Vulkan"
       },
+      "ExtractNestedTyping": {
+        "AssumeMissingTypesOpaque": true
+      },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
         "GlobalPrefixHint": "vk"

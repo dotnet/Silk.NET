@@ -14,8 +14,10 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Silk.NET.Core;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods.Scraping;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -43,18 +45,35 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </description>
 /// </item>
 /// <item><description>Fixed buffers and anonymous structures contained within structures.</description></item>
+/// <item><description>Missing types that are only referenced through pointers. This works alongside the <see cref="TransformHandles"/> mod.</description></item>
 /// </list>
 /// </summary>
-public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : Mod
+[ModConfiguration<Config>]
+public partial class ExtractNestedTyping(
+    IOptionsSnapshot<ExtractNestedTyping.Config> config, ILogger<ExtractNestedTyping> logger) : Mod
 {
+    /// <summary>
+    /// The configuration for the <see cref="ExtractNestedTyping"/> mod.
+    /// </summary>
+    public class Config
+    {
+        /// <summary>
+        /// Whether it should be assumed that missing types are likely opaque if they are only used as a pointer type
+        /// and therefore should be subjected to handle transformations.
+        /// </summary>
+        public bool AssumeMissingTypesOpaque { get; init; }
+    }
+
     /// <inheritdoc />
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         await base.ExecuteAsync(ctx, ct);
-        var walker = new Walker();
-        var rewriter = new Rewriter(logger);
+
+        var proj = ctx.SourceProject;
+        var cfg = config.Get(ctx.JobKey);
 
         // First pass to discover the types to extract.
+        var walker = new Walker();
         foreach (var doc in ctx.SourceProject?.Documents ?? [])
         {
             var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
@@ -67,12 +86,45 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             walker.Visit(node);
         }
 
-        // Second pass to modify existing files as per our discovery.
+        // Second pass to discover handle types
+        var handlesDiscoverer = new HandleTypeDiscoverer();
+        foreach (var doc in ctx.SourceProject?.Documents ?? [])
+        {
+            if (await doc.GetSyntaxRootAsync(ct) is { } root)
+            {
+                handlesDiscoverer.Visit(root);
+            }
+        }
+
+        // We now have gathered all the required information
+        // We can now begin modifying the project data
+
+        // Get the missing handle types
+        Dictionary<string, SyntaxNode>? missingFullyQualifiedTypeNamesToRootNodes =
+            cfg.AssumeMissingTypesOpaque ? [] : null;
+        handlesDiscoverer.GetHandleTypes(missingFullyQualifiedTypeNamesToRootNodes);
+        if (missingFullyQualifiedTypeNamesToRootNodes is not null)
+        {
+            // Generate missing handle types
+            foreach (var (fqTypeName, node) in missingFullyQualifiedTypeNamesToRootNodes)
+            {
+                var rel = $"Handles/{PathForFullyQualified(fqTypeName)}";
+                proj = proj
+                    ?.AddDocument(
+                        Path.GetFileName(rel),
+                        node.NormalizeWhitespace(),
+                        filePath: proj.FullPath(rel)
+                    )
+                    .Project;
+            }
+        }
+
+        // Third pass to modify existing files as per our discovery.
+        var rewriter = new Rewriter(logger);
         // rewriter.FunctionPointerTypes = walker.GetFunctionPointerTypes();
         var (enums, constants) = walker.GetExtractedEnums();
         rewriter.ConstantsToRemove = constants;
         rewriter.ExtractedEnums = enums.Keys;
-        var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
             var doc =
