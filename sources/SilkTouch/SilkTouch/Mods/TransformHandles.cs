@@ -13,6 +13,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods.Scraping;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -56,25 +57,26 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         await base.ExecuteAsync(ctx, ct);
+
+        var proj = ctx.SourceProject;
         var cfg = config.Get(ctx.JobKey);
 
         // First we look for all type references and type declarations
         // For type references, we track if the type if referenced as a pointer
         // For type declarations, we track if the type was declared as an empty struct
-        var firstPass = new TypeDiscoverer();
-        var proj = ctx.SourceProject;
+        var discoverer = new HandleTypeDiscoverer();
         foreach (var doc in ctx.SourceProject?.Documents ?? [])
         {
             if (await doc.GetSyntaxRootAsync(ct) is { } root)
             {
-                firstPass.Visit(root);
+                discoverer.Visit(root);
             }
         }
 
         // If a type is always referenced as a pointer AND if there is no empty struct declared already, we generate one
         Dictionary<string, SyntaxNode>? missingFullyQualifiedTypeNamesToRootNodes =
             cfg.AssumeMissingTypesOpaque ? [] : null;
-        var handles = firstPass.GetHandleTypes(missingFullyQualifiedTypeNamesToRootNodes);
+        var handles = discoverer.GetHandleTypes(missingFullyQualifiedTypeNamesToRootNodes);
         if (missingFullyQualifiedTypeNamesToRootNodes is not null)
         {
             foreach (var (fqTypeName, node) in missingFullyQualifiedTypeNamesToRootNodes)
@@ -123,314 +125,6 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         ctx.SourceProject = proj;
     }
 
-    class TypeDiscoverer : CSharpSyntaxWalker
-    {
-        /// <summary>
-        /// A map of type names to a map of scopes that reference that type name and whether it was referenced as a
-        /// pointer.
-        /// </summary>
-        private Dictionary<string, Dictionary<string, bool>> _referencedTypes = new();
-
-        /// <summary>
-        /// A map of parent scopes to types declared within that scope and whether they are an empty struct.
-        /// </summary>
-        private Dictionary<string, Dictionary<string, bool>> _declaredTypes = new();
-
-        /// <summary>
-        /// Tracks the current scope i.e. fully qualified type name.
-        /// </summary>
-        private string _currentScope = string.Empty;
-
-        /// <summary>
-        /// Tracks if the currently visited type was referenced as a pointer.
-        /// </summary>
-        private bool _isPointerType;
-
-        private void VisitType<T>(T type, SyntaxToken identifier, Action<T> @base)
-            where T : SyntaxNode
-        {
-            var before = _currentScope;
-            if (!_declaredTypes.TryGetValue(_currentScope, out var v))
-            {
-                _declaredTypes[_currentScope] = v = [];
-            }
-
-            v.Add(
-                identifier.ToString(),
-                type is StructDeclarationSyntax s
-                    && !s.Members.OfType<BaseFieldDeclarationSyntax>().Any()
-            );
-            _currentScope = string.IsNullOrWhiteSpace(_currentScope)
-                ? $"{type.NamespaceFromSyntaxNode()}.{identifier}"
-                : $"{_currentScope}.{identifier}";
-            @base(type);
-            _currentScope = before;
-        }
-
-        // We restrict the allowed parents to hopefully avoid mistaking references to e.g. variable names as type
-        // references.
-        internal static bool SkipTypeNode(SyntaxNode node) =>
-            node.Parent
-                is not (
-                        TypeSyntax
-                        or BaseParameterSyntax
-                        or BaseMethodDeclarationSyntax
-                        or VariableDeclarationSyntax
-                    )
-                    or QualifiedNameSyntax;
-
-        public override void VisitPointerType(PointerTypeSyntax node)
-        {
-            if (SkipTypeNode(node))
-            {
-                return;
-            }
-            var before = _isPointerType;
-            _isPointerType = true;
-            base.VisitPointerType(node);
-            _isPointerType = before;
-        }
-
-        public override void VisitGenericName(GenericNameSyntax node) { }
-
-        public override void VisitAttributeList(AttributeListSyntax node) { }
-
-        public override void VisitIdentifierName(IdentifierNameSyntax node)
-        {
-            if (SkipTypeNode(node) || node.IsNint || node.IsNuint)
-            {
-                return;
-            }
-
-            if (
-                !_referencedTypes.TryGetValue(node.Identifier.ToString(), out var referencingScopes)
-            )
-            {
-                _referencedTypes[node.Identifier.ToString()] = referencingScopes = [];
-            }
-
-            referencingScopes[_currentScope] =
-                _isPointerType && (!referencingScopes.TryGetValue(_currentScope, out var v) || v);
-        }
-
-        public override void VisitStructDeclaration(StructDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitStructDeclaration);
-
-        public override void VisitClassDeclaration(ClassDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitClassDeclaration);
-
-        public override void VisitRecordDeclaration(RecordDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitRecordDeclaration);
-
-        public override void VisitEnumDeclaration(EnumDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitEnumDeclaration);
-
-        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitDelegateDeclaration);
-
-        public override void VisitInterfaceDeclaration(InterfaceDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitInterfaceDeclaration);
-
-        public Dictionary<string, Dictionary<string, string>> GetHandleTypes(
-            Dictionary<string, SyntaxNode>? missingFullyQualifiedTypeNamesToRootNodes
-        )
-        {
-            var typeNameToScopesAvailableToDeclaringScope =
-                new Dictionary<string, Dictionary<string, string>>();
-
-            // First, let's go through and remove the type references that can be resolved.
-            RemoveResolvableTypeReferences(typeNameToScopesAvailableToDeclaringScope);
-
-            if (missingFullyQualifiedTypeNamesToRootNodes is not null)
-            {
-                GenerateRemainingTypes(
-                    typeNameToScopesAvailableToDeclaringScope,
-                    missingFullyQualifiedTypeNamesToRootNodes
-                );
-            }
-
-            _referencedTypes.Clear();
-            _declaredTypes.Clear();
-            return typeNameToScopesAvailableToDeclaringScope;
-        }
-
-        private void RemoveResolvableTypeReferences(
-            // ReSharper disable once SuggestBaseTypeForParameter
-            Dictionary<
-                string,
-                Dictionary<string, string>
-            > typeNameToScopesAvailableToDeclaringScope
-        )
-        {
-            foreach (var (typeName, scopeAndIsPointer) in _referencedTypes)
-            {
-                var reloop = true; // <-- this is used to get around the whole "can't mutate while iterating" issue
-                while (reloop)
-                {
-                    reloop = false;
-                    foreach (var (scope, _) in scopeAndIsPointer.OrderBy(x => x.Key.Length))
-                    {
-                        // First, we find the scope in which the type is declared. This is expected to be within the
-                        // reach of the current scope per the documentation remarks on the mod class.
-                        var scopeSpan = scope.AsSpan();
-                        string? declaringScope = null;
-                        var isEmpty = false;
-
-                        // For each parent scope...
-                        for (
-                            var i = scopeSpan.Length;
-                            i != -1;
-                            i = scopeSpan.LastIndexOf('.'),
-                                scopeSpan = i == -1 ? default : scopeSpan[..i]
-                        )
-                        {
-                            var thisScope = scopeSpan.ToString();
-                            if (
-                                !_declaredTypes.TryGetValue(
-                                    thisScope,
-                                    out var declaredTypesToIsEmpty
-                                ) || !declaredTypesToIsEmpty.TryGetValue(typeName, out isEmpty)
-                            )
-                            {
-                                continue;
-                            }
-
-                            // If we have a found a declaration in the parent scope, this is the declaring scope.
-                            declaringScope = thisScope;
-                            break;
-                        }
-
-                        // The above for loop won't check the global scope, so let's check it now.
-                        if (
-                            declaringScope is null
-                            && _declaredTypes.TryGetValue("", out var globalDeclTypesToIsEmpty)
-                            && globalDeclTypesToIsEmpty.TryGetValue(typeName, out isEmpty)
-                        )
-                        {
-                            declaringScope = string.Empty;
-                        }
-
-                        if (declaringScope is null)
-                        {
-                            // Type does not exist, keep in the reference list.
-                            continue;
-                        }
-
-                        var isHandle =
-                            isEmpty
-                            && scopeAndIsPointer
-                                .Where(x => x.Key.StartsWith(declaringScope))
-                                .All(x => x.Value);
-                        reloop = true;
-                        while (reloop)
-                        {
-                            reloop = false;
-                            foreach (var relatedScope in scopeAndIsPointer.Keys)
-                            {
-                                if (!relatedScope.StartsWith(declaringScope))
-                                {
-                                    // Not related.
-                                    continue;
-                                }
-
-                                scopeAndIsPointer.Remove(relatedScope);
-                                if (isHandle)
-                                {
-                                    if (
-                                        !typeNameToScopesAvailableToDeclaringScope.TryGetValue(
-                                            typeName,
-                                            out var scopesAvailableToDeclaringScope
-                                        )
-                                    )
-                                    {
-                                        typeNameToScopesAvailableToDeclaringScope[typeName] =
-                                            scopesAvailableToDeclaringScope = [];
-                                    }
-
-                                    scopesAvailableToDeclaringScope[relatedScope] = declaringScope;
-                                }
-
-                                reloop = true;
-                                break;
-                            }
-                        }
-
-                        reloop = true;
-                        break;
-                    }
-                }
-            }
-        }
-
-        private void GenerateRemainingTypes(
-            Dictionary<
-                string,
-                Dictionary<string, string>
-            > typeNameToScopesAvailableToDeclaringScope,
-            Dictionary<string, SyntaxNode> missingFullyQualifiedTypeNamesToRootNodes
-        )
-        {
-            foreach (var (typeName, scopeAndIsPointer) in _referencedTypes)
-            {
-                if (scopeAndIsPointer.Count == 0 || scopeAndIsPointer.Any(x => !x.Value))
-                {
-                    continue;
-                }
-
-                var destNs = NameUtils
-                    .FindCommonPrefix(
-                        scopeAndIsPointer
-                            .Keys.Select(x =>
-                                // Get the parent scopes because each scope is actually the fully qualified type name,
-                                // not the namespace
-                                x[..(x.LastIndexOf('.') is var i && i == -1 ? x.Length : i)]
-                            )
-                            .ToArray(),
-                        true,
-                        false,
-                        true
-                    )
-                    .Trim('.');
-                var fq = string.IsNullOrWhiteSpace(destNs) ? typeName : $"{destNs}.{typeName}";
-                var s = StructDeclaration(typeName)
-                    .WithModifiers(
-                        TokenList(
-                            Token(SyntaxKind.PublicKeyword),
-                            Token(SyntaxKind.UnsafeKeyword),
-                            Token(SyntaxKind.PartialKeyword)
-                        )
-                    );
-                if (
-                    !typeNameToScopesAvailableToDeclaringScope.TryGetValue(
-                        typeName,
-                        out var scopesAvailableToDeclaringScope
-                    )
-                )
-                {
-                    typeNameToScopesAvailableToDeclaringScope[typeName] =
-                        scopesAvailableToDeclaringScope = [];
-                }
-
-                foreach (var scope in scopeAndIsPointer.Keys)
-                {
-                    scopesAvailableToDeclaringScope[scope] = destNs;
-                }
-
-                missingFullyQualifiedTypeNamesToRootNodes[fq] = CompilationUnit()
-                    .WithMembers(
-                        SingletonList<MemberDeclarationSyntax>(
-                            string.IsNullOrWhiteSpace(destNs)
-                                ? s
-                                : FileScopedNamespaceDeclaration(
-                                        ModUtils.NamespaceIntoIdentifierName(destNs)
-                                    )
-                                    .WithMembers(SingletonList<MemberDeclarationSyntax>(s))
-                        )
-                    );
-            }
-        }
-    }
-
     class Rewriter(Dictionary<string, Dictionary<string, string>> handles, bool useDSL)
         : CSharpSyntaxRewriter
     {
@@ -456,7 +150,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
 
         public override SyntaxNode? VisitPointerType(PointerTypeSyntax node)
         {
-            if (TypeDiscoverer.SkipTypeNode(node))
+            if (HandleTypeDiscoverer.SkipTypeNode(node))
             {
                 return node;
             }
@@ -477,7 +171,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
 
         public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node)
         {
-            if (TypeDiscoverer.SkipTypeNode(node))
+            if (HandleTypeDiscoverer.SkipTypeNode(node))
             {
                 return node;
             }
