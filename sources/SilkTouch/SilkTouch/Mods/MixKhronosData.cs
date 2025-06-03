@@ -1485,12 +1485,12 @@ public partial class MixKhronosData(
             names[original] = (newPrim, newPrev);
         }
 
-        // Trim _T from _THandle names
+        // Trim _T from the end of names
         foreach (var (original, (current, previous)) in names)
         {
-            var newPrim = current.Replace("_THandle", "_Handle");
-            if (current != newPrim)
+            if (current.EndsWith("_T"))
             {
+                var newPrim = current.Substring(0, current.Length - 2);
                 var newPrev = previous ?? [];
                 newPrev.Add(current);
 
