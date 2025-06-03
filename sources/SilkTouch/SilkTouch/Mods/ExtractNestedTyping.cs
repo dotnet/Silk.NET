@@ -557,6 +557,10 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                 HashSet<string> ReferencingNamespaces
             )?
         > _numericTypeNames = new();
+
+        /// <summary>
+        /// Tracks the name and value of constants discovered.
+        /// </summary>
         private readonly Dictionary<string, ExpressionSyntax> _constants = [];
 
         public string? File { get; set; }

@@ -137,10 +137,13 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         private Dictionary<string, Dictionary<string, bool>> _declaredTypes = new();
 
         /// <summary>
-        /// The current scope i.e. fully qualified type name.
+        /// Tracks the current scope i.e. fully qualified type name.
         /// </summary>
         private string _currentScope = string.Empty;
 
+        /// <summary>
+        /// Tracks if the currently visited type was referenced as a pointer.
+        /// </summary>
         private bool _isPointerType;
 
         private void VisitType<T>(T type, SyntaxToken identifier, Action<T> @base)
