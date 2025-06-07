@@ -656,6 +656,9 @@ public bool IsInDeadzone(IAxisDevice device, int descriptionIndex, Deadzone dead
 ```
 
 # Outputs
+> [!NOTE]
+> The Outputs portion of the API has been deemed too frail of an abstraction for consideration at this time, as conceptually mapping outputs as disparate as motors, LEDs, displays, and speakers is unlikely to be widely useful or scrutable. For further details, the discussion leading to this decision can [be found here](https://www.youtube.com/live/em31FdVOB-0?t=1086s).
+
 Many controllers have haptics, LEDs, etc, that would be nice to access in a generic, normalized way as well. The following is a first draft concept for this functionality that could accomplish this while leaving room for different sorts of outputs later on. 
 
 Feedback requested: is custom data handling necessary here? At that point it violates the "axis" concept pretty strongly and is best served by higher-level interfaces, but I wanted to make sure we at least consider these things.
