@@ -49,7 +49,7 @@ What are we doing here? Silk.NET requires you to keep a **reference** to the Ope
 Now, run your application again. If all is good, you should see no change. Awesome! Let's do our first steps in OpenGL: Clearing the window.
 
 ## Clearing the window
-Before we start this, let's take a look at what makes up an OpenGL window. 
+Before we start this, let's take a look at what makes up an OpenGL window.
 
 A window contains at least two **framebuffers**. A framebuffer is a set of textures that can be rendered to. An OpenGL window's framebuffer consists of the following textures:
 
@@ -103,7 +103,7 @@ Before we can continue further, you'll have to get used to the concept that Open
 ### What is a state machine?
 At its core, a state machine holds... state. You set the state of something, and it retains that state until you change it.
 
-This is exactly how OpenGL works. Once you set something, it will remain set until you change it. This counts for everything in OpenGL. Clear color, binding objects, etc etc, everything goes through the state machine. You can *manipulate* the current state, however you have to be wary at all times of what part of the state you are changing. Change the wrong thing and suddenly you program might not work!
+This is exactly how OpenGL works. Once you set something, it will remain set until you change it. This counts for everything in OpenGL. Clear color, binding objects, etc etc, everything goes through the state machine. You can *manipulate* the current state, however you have to be wary at all times of what part of the state you are changing. Change the wrong thing and suddenly your program might not work!
 
 So, this explains why clearing the window works. You set the clear color, and it remains *as* the clear color until you change it.
 
@@ -262,7 +262,7 @@ Now, you may be looking at this thinking "what is this?". Don't worry, once you 
 
 You'll notice that it contains 6 values. These values correspond to an index in our vertex buffer (notice how the maximum value is 3, which is the maximum index in our vertex buffer.)
 
-Take a look at the [image you saw earlier](#what-makes-up-a-quad). The points are representitive of a value in the vertex buffer. If you trace each point, you'll see it's in clockwise order (top left is the first point, bottom left is the last point). Assign each of these an incrementing value from 0-3. Then, trace out the indices we defined above. You may notice that you'll trace out two triangles, making up our quad. 
+Take a look at the [image you saw earlier](#what-makes-up-a-quad). The points are representitive of a value in the vertex buffer. If you trace each point, you'll see it's in clockwise order (top left is the first point, bottom left is the last point). Assign each of these an incrementing value from 0-3. Then, trace out the indices we defined above. You may notice that you'll trace out two triangles, making up our quad.
 
 Great! Hopefully you now have a better understanding of how index buffers allow you to reduce the amount of duplicate data in the vertex buffer. If we didn't use an index buffer, we'd have to define the top left, and bottom left points twice!
 
@@ -516,11 +516,11 @@ Let's explain what's going on here.
 
 First, we bind our vertex array. Before we can draw anything, we need to have a vertex array bound. The vertex array you bind will depend on what you want to draw. Next, we use the program object we created earlier. Again, we must have a program bound before we can draw.
 
-Finally, we tell the GPU to draw. We're using `glDrawElements` here, as we used an EBO. If we didn't use an EBO, we'd want to use `glDrawArrays` instead. 
+Finally, we tell the GPU to draw. We're using `glDrawElements` here, as we used an EBO. If we didn't use an EBO, we'd want to use `glDrawArrays` instead.
 
-The first parameter tells it that we're drawing triangles (triangle list to be precise, there are other triangle types we don't need to worry about for now.). 
+The first parameter tells it that we're drawing triangles (triangle list to be precise, there are other triangle types we don't need to worry about for now.).
 
-The `6` is simply the number of elements in our EBO. Remember, a quad is two triangles, with three vertices per triangle, making six vertices total. 
+The `6` is simply the number of elements in our EBO. Remember, a quad is two triangles, with three vertices per triangle, making six vertices total.
 
 We tell it we're using an unsigned int as the element type (you may have noticed earlier that `indices` was of type `uint[]`). The most commonly used values are `UnsignedInt` and `UnsignedShort`. Some older GPUs only supported `UnsignedShort`, however all modern GPUs can fully support `UnsignedInt`, so this isn't really something you need to worry about anymore.
 
