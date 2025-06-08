@@ -188,7 +188,7 @@
         "Namespace": "Silk.NET.Vulkan"
       },
       "ExtractNestedTyping": {
-        "AssumeMissingTypesOpaque": true
+        "GenerateMissingHandleTypes": true
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
