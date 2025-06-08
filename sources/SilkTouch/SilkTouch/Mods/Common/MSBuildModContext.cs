@@ -87,41 +87,63 @@ internal class MSBuildModContext(
             throw new InvalidOperationException("No solution provided in configuration.");
         }
 
-        var solution = await parent.OpenSolutionAsync(
-            Path.GetFullPath(_cfg.Solution, ConfigurationDirectory)
-        );
-
         if (_cfg?.SourceProject is null)
         {
             throw new InvalidOperationException("No source project provided in configuration.");
         }
 
-        // First locate the source project
-        var projectFile = Path.GetFullPath(_cfg.SourceProject, ConfigurationDirectory);
+        var solutionPath = Path.GetFullPath(_cfg.Solution, ConfigurationDirectory);
+        var solution = await parent.OpenSolutionAsync(solutionPath);
+
+        // Locate source project
+        var projectPath = Path.GetFullPath(_cfg.SourceProject, ConfigurationDirectory);
         _srcProject = solution
             .Projects.Where(x => x.FilePath is not null)
             .FirstOrDefault(x =>
-                Path.GetFullPath(x.FilePath!, ConfigurationDirectory) == projectFile
+                Path.GetFullPath(x.FilePath!, ConfigurationDirectory) == projectPath
             );
+
         if (_srcProject is null)
         {
             throw new InvalidOperationException("Failed to locate source project.");
         }
 
-        // Wipe the slate clean. The generator should only be able to see generated code.
-        // TODO maybe one day we'll lift this restriction? I couldn't think of a reason not to have it, but there's also not many to have it.
-        SourceProject = _srcProject.RemoveDocuments([.. _srcProject.DocumentIds]);
+        // Remove all documents from the output directory
+        // This is to ensure that existing code is not used as the input for newly generated code,
+        // which would cause a cycle.
+        // Note that this does not remove all documents from the project, such as the global usings files.
+        SourceProject = _srcProject.RemoveDocuments([..GetDocumentsInProjectDirectory(_srcProject)]);
         solution = _srcProject.Solution;
+
+        // Do the same for the test project
         if (_cfg.TestProject is not null)
         {
-            var testProjectFile = Path.GetFullPath(_cfg.TestProject, ConfigurationDirectory);
+            // Locate test project
+            var testProjectPath = Path.GetFullPath(_cfg.TestProject, ConfigurationDirectory);
             _testProject = solution
                 .Projects.Where(x => x.FilePath is not null)
                 .FirstOrDefault(x =>
-                    Path.GetFullPath(x.FilePath!, ConfigurationDirectory) == testProjectFile
+                    Path.GetFullPath(x.FilePath!, ConfigurationDirectory) == testProjectPath
                 );
-            TestProject = _testProject?.RemoveDocuments([.. _testProject.DocumentIds]);
+
+            // Remove all documents from the output directory
+            TestProject = _testProject?.RemoveDocuments([..GetDocumentsInProjectDirectory(_testProject)]);
             solution = _testProject?.Solution ?? solution;
+        }
+
+        return;
+
+        static IEnumerable<DocumentId> GetDocumentsInProjectDirectory(Project project)
+        {
+            var projectDirectory = Path.GetDirectoryName(project.FilePath);
+            if (projectDirectory == null)
+            {
+                throw new InvalidOperationException("Project is not part of a directory");
+            }
+
+            return project.Documents
+                .Where(d => d.FilePath?.StartsWith(projectDirectory) ?? false)
+                .Select(d => d.Id);
         }
     }
 
