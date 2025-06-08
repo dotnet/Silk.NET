@@ -83,7 +83,7 @@ public partial class ExtractNestedTyping(
 
         var cfg = config.Get(ctx.JobKey);
 
-        // First pass to discover the types to extract.
+        // First pass to gather data, such as the types to extract and generate
         var walker = new Walker();
         foreach (var doc in ctx.SourceProject?.Documents ?? [])
         {
@@ -97,10 +97,31 @@ public partial class ExtractNestedTyping(
             walker.Visit(node);
         }
 
+        // Find missing handle types
         var handleDiscoverer = new MissingHandleTypeDiscoverer(logger);
         var missingHandleTypes = handleDiscoverer.GetMissingHandleTypes(compilation, ct);
 
-        // Third pass to modify existing files as per our discovery.
+        if (cfg.GenerateMissingHandleTypes)
+        {
+            // Generate syntax nodes representing the missing handle types
+            var handleGenerator = new MissingHandleTypeGenerator();
+            var syntaxNodes = handleGenerator.GenerateMissingHandleSyntaxes(missingHandleTypes);
+
+            // Add syntax nodes to the project as new documents
+            foreach (var (fullyQualifiedName, node) in syntaxNodes)
+            {
+                var relativePath = $"Handles/{PathForFullyQualified(fullyQualifiedName)}";
+                proj = proj
+                    ?.AddDocument(
+                        Path.GetFileName(relativePath),
+                        node.NormalizeWhitespace(),
+                        filePath: proj.FullPath(relativePath)
+                    )
+                    .Project;
+            }
+        }
+
+        // Second pass to modify project based on gathered data
         var rewriter = new Rewriter(logger);
         // rewriter.FunctionPointerTypes = walker.GetFunctionPointerTypes();
         var (enums, constants) = walker.GetExtractedEnums();
@@ -369,7 +390,7 @@ public partial class ExtractNestedTyping(
         /// <summary>
         /// Resets internal state.
         /// </summary>
-        public void Clear()
+        private void Clear()
         {
             _nonHandleTypes.Clear();
             _missingTypes.Clear();
@@ -452,13 +473,64 @@ public partial class ExtractNestedTyping(
 
                 if (_missingTypes.TryGetValue(errorTypeSymbol, out var sharedNamespace))
                 {
-                    _missingTypes[errorTypeSymbol] = NameUtils.FindCommonPrefix([sharedNamespace, _currentNamespace], true, false, true);
+                    _missingTypes[errorTypeSymbol] = NameUtils.FindCommonPrefix([sharedNamespace, _currentNamespace], true, false, true).Trim('.');
                 }
                 else
                 {
                     _missingTypes[errorTypeSymbol] = _currentNamespace;
                 }
             }
+        }
+    }
+
+    private class MissingHandleTypeGenerator
+    {
+        /// <summary>
+        /// Generates syntax node for each missing type.
+        /// </summary>
+        /// <param name="missingHandleTypes">Map from missing type symbol to the namespace the type should be created in.</param>
+        /// <returns>Map from the fully qualified name of the generated type to the syntax node containing code for that type.</returns>
+        public Dictionary<string, SyntaxNode> GenerateMissingHandleSyntaxes(
+            Dictionary<IErrorTypeSymbol, string> missingHandleTypes) =>
+            GenerateMissingHandleSyntaxes(missingHandleTypes
+                .Select(kvp => new KeyValuePair<string, string>(kvp.Key.Name, kvp.Value))
+                .ToDictionary());
+
+        /// <summary>
+        /// Generates syntax node for each missing type.
+        /// </summary>
+        /// <param name="missingHandleTypes">Map from missing type name to the namespace the type should be created in.</param>
+        /// <returns>Map from the fully qualified name of the generated type to the syntax node containing code for that type.</returns>
+        public Dictionary<string, SyntaxNode> GenerateMissingHandleSyntaxes(
+            Dictionary<string, string> missingHandleTypes)
+        {
+            var results = new Dictionary<string, SyntaxNode>();
+            foreach (var (name, ns) in missingHandleTypes)
+            {
+                var fullyQualifiedName = string.IsNullOrWhiteSpace(ns) ? name : $"{ns}.{name}";
+                var structDeclarationSyntax = StructDeclaration(name)
+                    .WithModifiers(
+                        TokenList(
+                            Token(SyntaxKind.PublicKeyword),
+                            Token(SyntaxKind.UnsafeKeyword),
+                            Token(SyntaxKind.PartialKeyword)
+                        )
+                    );
+
+                results[fullyQualifiedName] = CompilationUnit()
+                    .WithMembers(
+                        SingletonList<MemberDeclarationSyntax>(
+                            string.IsNullOrWhiteSpace(ns)
+                                ? structDeclarationSyntax
+                                : FileScopedNamespaceDeclaration(
+                                        ModUtils.NamespaceIntoIdentifierName(ns)
+                                    )
+                                    .WithMembers(SingletonList<MemberDeclarationSyntax>(structDeclarationSyntax))
+                        )
+                    );
+            }
+
+            return results;
         }
     }
 
