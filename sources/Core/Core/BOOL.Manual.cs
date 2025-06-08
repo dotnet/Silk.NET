@@ -8,12 +8,12 @@ namespace Silk.NET.Core;
 /// <summary>
 /// Boolean value commonly used by Microsoft
 /// </summary>
-public readonly partial struct BOOL : IIncrementOperators<BOOL>
+public readonly partial struct Bool : IIncrementOperators<Bool>
 {
     /// <summary>
     /// Increment boolean value
     /// </summary>
     /// <param name="value">bool value to increment</param>
     /// <returns>incremented bool value</returns>
-    public static BOOL operator ++(BOOL value) => new(value.Value + 1);
+    public static Bool operator ++(Bool value) => new(value.Value + 1);
 }

@@ -7,15 +7,15 @@ namespace Silk.NET.Core;
 /// <summary>
 /// Common error code value returned by Microsoft methods
 /// </summary>
-public partial struct HRESULT
+public partial struct HResult
 {
     /// <summary>
     /// Has the function failed
     /// </summary>
-    public bool FAILED => Value < 0;
+    public bool Failed => Value < 0;
 
     /// <summary>
     /// Has the function succeeded
     /// </summary>
-    public bool SUCCEEDED => Value >= 0;
+    public bool Succeeded => Value >= 0;
 }

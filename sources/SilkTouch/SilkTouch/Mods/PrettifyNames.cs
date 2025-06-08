@@ -275,7 +275,6 @@ public class PrettifyNames(
             );
         await NameUtils.RenameAllAsync(
             ctx,
-            logger,
             types.SelectMany(x =>
             {
                 var nonFunctionConflicts = x
@@ -286,7 +285,6 @@ public class PrettifyNames(
                 return comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
                     .OfType<ITypeSymbol>()
                     .SelectMany<ITypeSymbol, (ISymbol, string)>(y =>
-
                         [
                             .. Enumerable.SelectMany(
                                 [
@@ -298,7 +296,7 @@ public class PrettifyNames(
                                             )
                                             : z
                                     ) ?? [],
-                                    .. x.Value.Functions ?? []
+                                    .. x.Value.Functions ?? [],
                                 ],
                                 z =>
                                 {
@@ -311,10 +309,11 @@ public class PrettifyNames(
                                     z.MethodKind is MethodKind.Constructor or MethodKind.Destructor
                                 )
                                 .Select(z => (z, x.Value.NewName)),
-                            (y, x.Value.NewName)
+                            (y, x.Value.NewName),
                         ]
                     );
             }),
+            logger,
             ct
         );
         logger.LogDebug(
@@ -534,7 +533,9 @@ public class PrettifyNames(
                         {
                             2 => 2, // The original needs to be counted as a conflict in addition to this conflict
                             > 2 => 1, // Just mark this conflict, original is already counted.
-                            _ => 0 // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
+                            _ =>
+                                0 // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
+                            ,
                         };
 
                         if (discrimMatches.Count == 2 && ogTrimmingName is not null)
@@ -947,6 +948,15 @@ public class PrettifyNames(
             {
                 logger.LogWarning(
                     "{} (for {}) should use exclude-using-statics-for-enums as PrettifyNames does not resolve "
+                        + "conflicts with members of other types.",
+                    responseFile.FilePath,
+                    key
+                );
+            }
+            if (!responseFile.GeneratorConfiguration.DontUseUsingStaticsForGuidMember)
+            {
+                logger.LogWarning(
+                    "{} (for {}) should use exclude-using-statics-for-guid-members as PrettifyNames does not resolve "
                         + "conflicts with members of other types.",
                     responseFile.FilePath,
                     key

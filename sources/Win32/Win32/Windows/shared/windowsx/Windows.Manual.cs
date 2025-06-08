@@ -393,38 +393,37 @@ public static unsafe partial class Windows
     public static MaybeBool<BOOL> DeleteBitmap(HBITMAP hbm) =>
         (MaybeBool<BOOL>)(BOOL)DeleteBitmapRaw(hbm);
 
-    public static BOOL DeleteBitmapRaw(HBITMAP hbm) => DeleteObjectRaw((HGDIOBJ)(HBITMAP)(hbm));
+    public static BOOL DeleteBitmapRaw(HBITMAP hbm) => DeleteObject((HGDIOBJ)(HBITMAP)(hbm));
 
     [Transformed]
     public static MaybeBool<BOOL> DeleteBrush(HBRUSH hbr) =>
         (MaybeBool<BOOL>)(BOOL)DeleteBrushRaw(hbr);
 
-    public static BOOL DeleteBrushRaw(HBRUSH hbr) => DeleteObjectRaw((HGDIOBJ)(HBRUSH)(hbr));
+    public static BOOL DeleteBrushRaw(HBRUSH hbr) => DeleteObject((HGDIOBJ)(HBRUSH)(hbr));
 
     [Transformed]
     public static MaybeBool<BOOL> DeleteFont(HFONT hfont) =>
         (MaybeBool<BOOL>)(BOOL)DeleteFontRaw(hfont);
 
-    public static BOOL DeleteFontRaw(HFONT hfont) => DeleteObjectRaw((HGDIOBJ)(HFONT)(hfont));
+    public static BOOL DeleteFontRaw(HFONT hfont) => DeleteObject((HGDIOBJ)(HFONT)(hfont));
 
     [Transformed]
     public static MaybeBool<BOOL> DeletePalette(HPALETTE hpal) =>
         (MaybeBool<BOOL>)(BOOL)DeletePaletteRaw(hpal);
 
-    public static BOOL DeletePaletteRaw(HPALETTE hpal) =>
-        DeleteObjectRaw((HGDIOBJ)(HPALETTE)(hpal));
+    public static BOOL DeletePaletteRaw(HPALETTE hpal) => DeleteObject((HGDIOBJ)(HPALETTE)(hpal));
 
     [Transformed]
     /****** GDI Macro APIs *******************************************************/
     public static MaybeBool<BOOL> DeletePen(HPEN hpen) => (MaybeBool<BOOL>)(BOOL)DeletePenRaw(hpen);
 
     /****** GDI Macro APIs *******************************************************/
-    public static BOOL DeletePenRaw(HPEN hpen) => DeleteObjectRaw((HGDIOBJ)(HPEN)(hpen));
+    public static BOOL DeletePenRaw(HPEN hpen) => DeleteObject((HGDIOBJ)(HPEN)(hpen));
 
     [Transformed]
     public static MaybeBool<BOOL> DeleteRgn(HRGN hrgn) => (MaybeBool<BOOL>)(BOOL)DeleteRgnRaw(hrgn);
 
-    public static BOOL DeleteRgnRaw(HRGN hrgn) => DeleteObjectRaw((HGDIOBJ)(HRGN)(hrgn));
+    public static BOOL DeleteRgnRaw(HRGN hrgn) => DeleteObject((HGDIOBJ)(HRGN)(hrgn));
 
     [Transformed]
     public static MaybeBool<BOOL> Edit_CanUndo(HWND hwndCtl) =>
@@ -2534,7 +2533,7 @@ public static unsafe partial class Windows
         }
     }
 
-    public static BOOL GlobalUnlockPtr(void* lp) => GlobalUnlockRaw(GlobalPtrHandle(lp));
+    public static BOOL GlobalUnlockPtr(void* lp) => GlobalUnlock(GlobalPtrHandle(lp));
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -3623,7 +3622,7 @@ public static unsafe partial class Windows
     )
     {
         fn((hwnd), (HWND)(wParam), (PAINTSTRUCT*)GlobalLockRaw((HGLOBAL)(lParam)));
-        _ = GlobalUnlockRaw((HGLOBAL)(lParam));
+        _ = GlobalUnlock((HGLOBAL)(lParam));
         return 0;
     }
 
@@ -3889,7 +3888,7 @@ public static unsafe partial class Windows
     )
     {
         fn((hwnd), (HWND)(wParam), (RECT*)GlobalLockRaw((HGLOBAL)(lParam)));
-        _ = GlobalUnlockRaw((HGLOBAL)(lParam));
+        _ = GlobalUnlock((HGLOBAL)(lParam));
         return 0;
     }
 

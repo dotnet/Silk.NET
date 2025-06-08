@@ -1,21 +1,11 @@
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
-using Silk.NET.SilkTouch.Utility;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -145,7 +135,7 @@ public class TransformFunctions(
         times.Add(watch.Elapsed);
         watch.Restart();
 
-        await NameUtils.RenameAllAsync(ctx, logger, toRenameSymbols, ct, false, true);
+        await NameUtils.RenameAllAsync(ctx, toRenameSymbols, logger, ct, false, true);
 
         watch.Stop();
         times.Add(watch.Elapsed);
@@ -263,24 +253,7 @@ public class TransformFunctions(
         // Add the suffixed function
         var newFun = transFunc
             .Function.WithRenameSafeAttributeLists()
-            .WithIdentifier(Identifier(newIden))
-            .WithAttributeLists(
-                List(
-                    transFunc
-                        .Function.AttributeLists.Select(x =>
-                            x.WithAttributes(
-                                SeparatedList(
-                                    x.Attributes.Where(y =>
-                                        !y.IsAttribute(
-                                            "System.Runtime.InteropServices.UnmanagedCallersOnly"
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                        .Where(x => x.Attributes.Count > 0)
-                )
-            );
+            .WithIdentifier(Identifier(newIden));
 
         return newFun;
     }

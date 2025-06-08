@@ -3,74 +3,74 @@ using System;
 #pragma warning disable CS1589, CS1591, CS0419, CA1416, CS0618
 namespace Silk.NET.Core;
 
-public readonly unsafe partial struct HRESULT
+public readonly unsafe partial struct HResult
     : IComparable,
-        IComparable<HRESULT>,
-        IEquatable<HRESULT>,
+        IComparable<HResult>,
+        IEquatable<HResult>,
         IFormattable
 {
     public readonly int Value;
 
-    public HRESULT(int value)
+    public HResult(int value)
     {
         Value = value;
     }
 
-    public static bool operator ==(HRESULT left, HRESULT right) => left.Value == right.Value;
+    public static bool operator ==(HResult left, HResult right) => left.Value == right.Value;
 
-    public static bool operator !=(HRESULT left, HRESULT right) => left.Value != right.Value;
+    public static bool operator !=(HResult left, HResult right) => left.Value != right.Value;
 
-    public static bool operator <(HRESULT left, HRESULT right) => left.Value < right.Value;
+    public static bool operator <(HResult left, HResult right) => left.Value < right.Value;
 
-    public static bool operator <=(HRESULT left, HRESULT right) => left.Value <= right.Value;
+    public static bool operator <=(HResult left, HResult right) => left.Value <= right.Value;
 
-    public static bool operator >(HRESULT left, HRESULT right) => left.Value > right.Value;
+    public static bool operator >(HResult left, HResult right) => left.Value > right.Value;
 
-    public static bool operator >=(HRESULT left, HRESULT right) => left.Value >= right.Value;
+    public static bool operator >=(HResult left, HResult right) => left.Value >= right.Value;
 
-    public static implicit operator HRESULT(byte value) => new HRESULT(value);
+    public static implicit operator HResult(byte value) => new HResult(value);
 
-    public static explicit operator byte(HRESULT value) => (byte)(value.Value);
+    public static explicit operator byte(HResult value) => (byte)(value.Value);
 
-    public static implicit operator HRESULT(short value) => new HRESULT(value);
+    public static implicit operator HResult(short value) => new HResult(value);
 
-    public static explicit operator short(HRESULT value) => (short)(value.Value);
+    public static explicit operator short(HResult value) => (short)(value.Value);
 
-    public static implicit operator HRESULT(int value) => new HRESULT(value);
+    public static implicit operator HResult(int value) => new HResult(value);
 
-    public static implicit operator int(HRESULT value) => value.Value;
+    public static implicit operator int(HResult value) => value.Value;
 
-    public static explicit operator HRESULT(long value) => new HRESULT(unchecked((int)(value)));
+    public static explicit operator HResult(long value) => new HResult(unchecked((int)(value)));
 
-    public static implicit operator long(HRESULT value) => value.Value;
+    public static implicit operator long(HResult value) => value.Value;
 
-    public static explicit operator HRESULT(nint value) => new HRESULT(unchecked((int)(value)));
+    public static explicit operator HResult(nint value) => new HResult(unchecked((int)(value)));
 
-    public static implicit operator nint(HRESULT value) => value.Value;
+    public static implicit operator nint(HResult value) => value.Value;
 
-    public static implicit operator HRESULT(sbyte value) => new HRESULT(value);
+    public static implicit operator HResult(sbyte value) => new HResult(value);
 
-    public static explicit operator sbyte(HRESULT value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(HResult value) => (sbyte)(value.Value);
 
-    public static implicit operator HRESULT(ushort value) => new HRESULT(value);
+    public static implicit operator HResult(ushort value) => new HResult(value);
 
-    public static explicit operator ushort(HRESULT value) => (ushort)(value.Value);
+    public static explicit operator ushort(HResult value) => (ushort)(value.Value);
 
-    public static explicit operator HRESULT(uint value) => new HRESULT(unchecked((int)(value)));
+    public static explicit operator HResult(uint value) => new HResult(unchecked((int)(value)));
 
-    public static explicit operator uint(HRESULT value) => (uint)(value.Value);
+    public static explicit operator uint(HResult value) => (uint)(value.Value);
 
-    public static explicit operator HRESULT(ulong value) => new HRESULT(unchecked((int)(value)));
+    public static explicit operator HResult(ulong value) => new HResult(unchecked((int)(value)));
 
-    public static explicit operator ulong(HRESULT value) => (ulong)(value.Value);
+    public static explicit operator ulong(HResult value) => (ulong)(value.Value);
 
-    public static explicit operator HRESULT(nuint value) => new HRESULT(unchecked((int)(value)));
+    public static explicit operator HResult(nuint value) => new HResult(unchecked((int)(value)));
 
-    public static explicit operator nuint(HRESULT value) => (nuint)(value.Value);
+    public static explicit operator nuint(HResult value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HRESULT other)
+        if (obj is HResult other)
         {
             return CompareTo(other);
         }
@@ -79,11 +79,11 @@ public readonly unsafe partial struct HRESULT
             : throw new ArgumentException("obj is not an instance of HRESULT.");
     }
 
-    public int CompareTo(HRESULT other) => Value.CompareTo(other.Value);
+    public int CompareTo(HResult other) => Value.CompareTo(other.Value);
 
-    public override bool Equals(object? obj) => (obj is HRESULT other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is HResult other) && Equals(other);
 
-    public bool Equals(HRESULT other) => Value.Equals(other.Value);
+    public bool Equals(HResult other) => Value.Equals(other.Value);
 
     public override int GetHashCode() => Value.GetHashCode();
 

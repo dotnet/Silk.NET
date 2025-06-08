@@ -4,18 +4,18 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static Silk.NET.Core.IID;
-
+using Silk.NET.Core;
 #pragma warning disable CS1589, CS1591, CS0419, CA1416, CS0618
 namespace Silk.NET.Core;
 
 /// <inheritdoc cref = "IDisposable.Dispose"></inheritdoc>
+
 [Guid("00000000-0000-0000-C000-000000000046")]
 public unsafe partial struct IUnknown : IUnknown.Interface, IComInterface, IDisposable
 {
-    public Native* lpVtbl;
+    public Native* LpVtbl;
     static Guid* INativeGuid.NativeGuid =>
-        (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUnknown));
+        (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID.IUnknown));
 
     public interface Interface
     {
@@ -24,13 +24,13 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComInterface, IDisp
         uint AddRef();
 
         [VtblIndex(0)]
-        HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject);
+        HResult QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject);
 
         [VtblIndex(0)]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        HRESULT QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid, Ref2D ppvObject);
+        HResult QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid, Ref2D ppvObject);
 
         [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
@@ -38,12 +38,12 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComInterface, IDisp
     }
 
     /// <include file='IUnknown.xml' path='doc/member[@name="IUnknown"]/*'/>
+
     [Guid("00000000-0000-0000-C000-000000000046")]
     public unsafe partial struct Native : Interface, INativeGuid
     {
         static Guid* INativeGuid.NativeGuid =>
-            (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUnknown));
-
+            (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID.IUnknown));
         public void** lpVtbl;
 
         public partial struct Vtbl<TSelf>
@@ -60,6 +60,7 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComInterface, IDisp
         }
 
         /// <include file='IUnknown.xml' path='doc/member[@name="IUnknown.AddRef"]/*'/>
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
@@ -71,9 +72,10 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComInterface, IDisp
         }
 
         /// <include file='IUnknown.xml' path='doc/member[@name="IUnknown.QueryInterface"]/*'/>
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HResult QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUnknown.Native*, Guid*, void**, int>)(lpVtbl[0]))(
                 (IUnknown.Native*)Unsafe.AsPointer(ref this),
@@ -87,7 +89,7 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComInterface, IDisp
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT QueryInterface(
+        public HResult QueryInterface(
             [NativeTypeName("const IID &")] Ref<Guid> riid,
             Ref2D ppvObject
         )
@@ -95,13 +97,13 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComInterface, IDisp
             fixed (void** __dsl_ppvObject = ppvObject)
             fixed (Guid* __dsl_riid = riid)
             {
-                return (HRESULT)QueryInterface(__dsl_riid, __dsl_ppvObject);
+                return (HResult)QueryInterface(__dsl_riid, __dsl_ppvObject);
             }
         }
 
         [VtblIndex(0)]
         [Transformed]
-        public HRESULT QueryInterface<TCom>(out TCom ppvObject)
+        public HResult QueryInterface<TCom>(out TCom ppvObject)
             where TCom : unmanaged, IComInterface
         {
             ppvObject = default;
@@ -109,6 +111,7 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComInterface, IDisp
         }
 
         /// <include file='IUnknown.xml' path='doc/member[@name="IUnknown.Release"]/*'/>
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
@@ -122,92 +125,108 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComInterface, IDisp
 
     /// <summary>Initializes a new instance of the <see cref = "IUnknown"/> struct with the specified virtual table pointer.</summary>
     /// <param name = "vtbl">The pointer to virtual table.</param>
-    public IUnknown(Ptr3D vtbl) => lpVtbl = (IUnknown.Native*)vtbl;
+
+    public IUnknown(Ptr3D vtbl) => LpVtbl = (IUnknown.Native*)vtbl;
 
     /// <summary>Initializes a new instance of the <see cref = "IUnknown"/> struct with the specified virtual table pointer.</summary>
     /// <param name = "vtbl">The pointer to virtual table.</param>
-    public IUnknown(Ptr<IUnknown.Native> vtbl) => lpVtbl = vtbl;
+
+    public IUnknown(Ptr<IUnknown.Native> vtbl) => LpVtbl = vtbl;
 
     /// <summary>casts <see cref = "IUnknown.Native"/> to <see cref = "IUnknown"/>.</summary>
     /// <param name = "value">The <see cref = "IUnknown.Native"/> instance to be converted </param>
+
     public static implicit operator IUnknown(IUnknown.Native* value) =>
         new IUnknown((Ptr<Native>)value);
 
     /// <summary>casts <see cref = "IUnknown"/> to <see cref = "IUnknown.Native"/> pointer.</summary>
     /// <param name = "value">The <see cref = "IUnknown"/> instance to be converted </param>
-    public static implicit operator IUnknown.Native*(IUnknown value) => value.lpVtbl;
+
+    public static implicit operator IUnknown.Native*(IUnknown value) => value.LpVtbl;
 
     /// <summary>casts <see cref = "Ptr3D"/> to <see cref = "IUnknown"/>.</summary>
     /// <param name = "value">The <see cref = "Ptr3D"/> instance to be converted </param>
+
     public static explicit operator IUnknown(Ptr3D value) => new IUnknown(value);
 
     /// <summary>casts <see cref = "IUnknown"/> to <see cref = "Ptr3D"/> .</summary>
     /// <param name = "value">The <see cref = "IUnknown"/> instance to be converted </param>
-    public static implicit operator Ptr3D(IUnknown value) => (Ptr3D)value.lpVtbl;
+
+    public static implicit operator Ptr3D(IUnknown value) => (Ptr3D)value.LpVtbl;
 
     /// <summary>casts <see cref = "Ptr{T}"/> to <see cref = "IUnknown"/>.</summary>
     /// <param name = "value">The <see cref = "Ptr{T}"/> instance to be converted </param>
+
     public static explicit operator IUnknown(Ptr<IUnknown.Native> value) => new IUnknown(value);
 
     /// <summary>casts <see cref = "IUnknown"/> to <see cref = "Ptr{T}"/> .</summary>
     /// <param name = "value">The <see cref = "IUnknown"/> instance to be converted </param>
+
     public static implicit operator Ptr<IUnknown.Native>(IUnknown value) =>
-        (Ptr<IUnknown.Native>)value.lpVtbl;
+        (Ptr<IUnknown.Native>)value.LpVtbl;
 
     /// <summary>casts void*** to <see cref = "IUnknown"/>.</summary>
     /// <param name = "value">The void*** instance to be converted </param>
+
     public static explicit operator IUnknown(void*** value) => new IUnknown((Ptr<Native>)value);
 
     /// <summary>casts <see cref = "IUnknown"/> to void*** pointer.</summary>
     /// <param name = "value">The <see cref = "IUnknown"/> instance to be converted </param>
-    public static implicit operator void***(IUnknown value) => (void***)value.lpVtbl;
+
+    public static implicit operator void***(IUnknown value) => (void***)value.LpVtbl;
 
     /// <summary>casts <see cref = "nuint"/> to <see cref = "IUnknown"/>.</summary>
     /// <param name = "value">The <see cref = "nuint"/> instance to be converted </param>
+
     public static explicit operator IUnknown(nuint value) =>
         new IUnknown((Ptr<Native>)value.ToPointer());
 
     /// <summary>casts <see cref = "IUnknown"/> to <see cref = "nuint"/> .</summary>
     /// <param name = "value">The <see cref = "IUnknown"/> instance to be converted </param>
-    public static implicit operator nuint(IUnknown value) => (nuint)value.lpVtbl;
+
+    public static implicit operator nuint(IUnknown value) => (nuint)value.LpVtbl;
 
     /// <include file='IUnknown.xml' path='doc/member[@name="IUnknown.AddRef"]/*'/>
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
-    public uint AddRef() => lpVtbl->AddRef();
+    public uint AddRef() => LpVtbl->AddRef();
 
     public void Dispose() => Release();
 
     /// <inheritdoc cref = "IComInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
+
     public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
         where TNativeInterface : unmanaged =>
         (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
     /// <inheritdoc cref = "IComInterface.GetAddressOf()"></inheritdoc>
+
     public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
     /// <include file='IUnknown.xml' path='doc/member[@name="IUnknown.QueryInterface"]/*'/>
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
-    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject) =>
-        lpVtbl->QueryInterface(riid, ppvObject);
+    public HResult QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject) =>
+        LpVtbl->QueryInterface(riid, ppvObject);
 
     [VtblIndex(0)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid, Ref2D ppvObject)
+    public HResult QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid, Ref2D ppvObject)
     {
         fixed (void** __dsl_ppvObject = ppvObject)
         fixed (Guid* __dsl_riid = riid)
         {
-            return (HRESULT)QueryInterface(__dsl_riid, __dsl_ppvObject);
+            return (HResult)QueryInterface(__dsl_riid, __dsl_ppvObject);
         }
     }
 
     [VtblIndex(0)]
     [Transformed]
-    public HRESULT QueryInterface<TCom>(out TCom ppvObject)
+    public HResult QueryInterface<TCom>(out TCom ppvObject)
         where TCom : unmanaged, IComInterface
     {
         ppvObject = default;
@@ -215,8 +234,9 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComInterface, IDisp
     }
 
     /// <include file='IUnknown.xml' path='doc/member[@name="IUnknown.Release"]/*'/>
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
-    public uint Release() => lpVtbl->Release();
+    public uint Release() => LpVtbl->Release();
 }

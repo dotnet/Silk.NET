@@ -71,12 +71,29 @@ namespace Silk.NET.SilkTouch.Mods
             int count = proj?.DocumentIds.Count ?? 0;
             int index = 0;
 
+            var baseTypes = cfg.BaseTypes ?? [];
+            if (!baseTypes.ContainsKey("IUnknown.Interface"))
+                baseTypes.Add("IUnknown.Interface", "Silk.NET.Core.IUnknown.Interface");
+
             progressService.SetTask("COM Object Discovery");
-            var firstPass = new TypeDiscoverer(
-                cfg.BaseTypes
-                    ?? new() { { "IUnknown.Interface", "Silk.NET.Windows.IUnknown.Interface" } },
-                logger
+            var firstPass = new TypeDiscoverer(baseTypes, logger);
+
+            firstPass.AddInitialType(
+                "IInspectable.Interface",
+                "Silk.NET.Core",
+                "IUnknown.Interface"
             );
+            firstPass.AddInitialType(
+                "IClassFactory.Interface",
+                "Silk.NET.Core",
+                "IUnknown.Interface"
+            );
+            firstPass.AddInitialType(
+                "AsyncIUnknown.Interface",
+                "Silk.NET.Core",
+                "IUnknown.Interface"
+            );
+            firstPass.AddInitialType("IUnknown.Interface", "Silk.NET.Core", "");
 
             foreach (var comType in cfg.AdditionalCOMTypes ?? [])
             {
@@ -860,7 +877,11 @@ namespace Silk.NET.SilkTouch.Mods
                                             Argument(
                                                 CastExpression(
                                                     ParseTypeName($"Ptr<{className}.Native>"),
-                                                    IdentifierName("value.lpVtbl")
+                                                    MemberAccessExpression(
+                                                        SyntaxKind.SimpleMemberAccessExpression,
+                                                        IdentifierName("value"),
+                                                        IdentifierName("lpVtbl")
+                                                    )
                                                 )
                                             )
                                         )

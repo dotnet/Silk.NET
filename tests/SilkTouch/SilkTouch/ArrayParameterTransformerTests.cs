@@ -207,7 +207,16 @@ public class ArrayParameterTransformerTests
         var og =
             SyntaxFactory.ParseMemberDeclaration(originalMethod) as MethodDeclarationSyntax
             ?? throw new InvalidOperationException("failed to cast original");
-        var uut = new ArrayParameterTransformer(new Options() { Value = new() { IntReturnsMaybeBool = false, BenefitOfTheDoubtArrayTransformation = true } });
+        var uut = new ArrayParameterTransformer(
+            new Options()
+            {
+                Value = new()
+                {
+                    IntReturnsMaybeBool = false,
+                    BenefitOfTheDoubtArrayTransformation = true,
+                },
+            }
+        );
         var result = og;
         uut.Transform(og, new TestApiMetadata { Original = og }, (x) => result = x);
         Assert.That(
@@ -256,7 +265,7 @@ public class ArrayParameterTransformerTests
                                 IsOut: childNativeName.Contains('o'),
                                 IsIn: childNativeName.Contains('i')
                             )
-                        )
+                        ),
                     ],
                     ElementTypeConstraints: new SymbolConstraints(
                         [
@@ -266,7 +275,7 @@ public class ArrayParameterTransformerTests
                                 null,
                                 null,
                                 new UsageConstraints()
-                            )
+                            ),
                         ]
                     ),
                     IsMutable: childNativeName.Contains('m')
@@ -288,7 +297,7 @@ public class ArrayParameterTransformerTests
                                 IsOut: childNativeName.Contains('o'),
                                 IsIn: childNativeName.Contains('i')
                             )
-                        )
+                        ),
                     ],
                     ElementTypeConstraints: new SymbolConstraints(
                         [
@@ -298,7 +307,7 @@ public class ArrayParameterTransformerTests
                                 null,
                                 null,
                                 new UsageConstraints()
-                            )
+                            ),
                         ]
                     ),
                     IsMutable: childNativeName.Contains('m')

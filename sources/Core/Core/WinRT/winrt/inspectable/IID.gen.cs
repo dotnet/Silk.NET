@@ -10,7 +10,7 @@ namespace Silk.NET.Core;
 
 public static partial class IID
 {
-    public static ref readonly Guid IID_IInspectable
+    public static ref readonly Guid IInspectable
     {
         get
         {

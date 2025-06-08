@@ -14,11 +14,11 @@ public unsafe partial struct SIGNER_ATTR_AUTHCODE
 
     /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.fCommercial"]/*'/>
 
-    public BOOL fCommercial;
+    public Bool fCommercial;
 
     /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.fIndividual"]/*'/>
 
-    public BOOL fIndividual;
+    public Bool fIndividual;
 
     /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.pwszName"]/*'/>
 

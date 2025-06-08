@@ -10,7 +10,7 @@ namespace Silk.NET.Core;
 
 public static partial class IID
 {
-    public static ref readonly Guid IID_IUnknown
+    public static ref readonly Guid IUnknown
     {
         get
         {
@@ -37,7 +37,7 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
-    public static ref readonly Guid IID_AsyncIUnknown
+    public static ref readonly Guid AsyncIUnknown
     {
         get
         {
@@ -64,7 +64,7 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
-    public static ref readonly Guid IID_IClassFactory
+    public static ref readonly Guid IClassFactory
     {
         get
         {

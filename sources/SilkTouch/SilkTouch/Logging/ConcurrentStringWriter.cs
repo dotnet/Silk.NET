@@ -14,21 +14,16 @@ namespace Silk.NET.SilkTouch.Logging
     {
         private readonly object _lockObject = new object();
 
-        public ConcurrentStringWriter()
-        {
-        }
+        public ConcurrentStringWriter() { }
 
-        public ConcurrentStringWriter(IFormatProvider? formatProvider) : base(formatProvider)
-        {
-        }
+        public ConcurrentStringWriter(IFormatProvider? formatProvider)
+            : base(formatProvider) { }
 
-        public ConcurrentStringWriter(StringBuilder sb) : base(sb)
-        {
-        }
+        public ConcurrentStringWriter(StringBuilder sb)
+            : base(sb) { }
 
-        public ConcurrentStringWriter(StringBuilder sb, IFormatProvider? formatProvider) : base(sb, formatProvider)
-        {
-        }
+        public ConcurrentStringWriter(StringBuilder sb, IFormatProvider? formatProvider)
+            : base(sb, formatProvider) { }
 
         // Writes a character to the underlying string buffer.
         //
@@ -96,7 +91,10 @@ namespace Silk.NET.SilkTouch.Logging
             }
         }
 
-        public override Task WriteAsync(StringBuilder? value, CancellationToken cancellationToken = default)
+        public override Task WriteAsync(
+            StringBuilder? value,
+            CancellationToken cancellationToken = default
+        )
         {
             if (cancellationToken.IsCancellationRequested)
             {
@@ -111,7 +109,10 @@ namespace Silk.NET.SilkTouch.Logging
             return Task.CompletedTask;
         }
 
-        public override Task WriteLineAsync(StringBuilder? value, CancellationToken cancellationToken = default)
+        public override Task WriteLineAsync(
+            StringBuilder? value,
+            CancellationToken cancellationToken = default
+        )
         {
             if (cancellationToken.IsCancellationRequested)
             {
@@ -125,7 +126,10 @@ namespace Silk.NET.SilkTouch.Logging
             return Task.CompletedTask;
         }
 
-        public override Task WriteLineAsync(ReadOnlyMemory<char> buffer, CancellationToken cancellationToken = default)
+        public override Task WriteLineAsync(
+            ReadOnlyMemory<char> buffer,
+            CancellationToken cancellationToken = default
+        )
         {
             if (cancellationToken.IsCancellationRequested)
             {

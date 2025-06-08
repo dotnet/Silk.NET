@@ -332,8 +332,8 @@ public static partial class NameUtils
     /// <exception cref="ArgumentException"></exception>
     public static async Task RenameAllAsync(
         IModContext ctx,
-        ILogger logger,
         IEnumerable<(ISymbol Symbol, string NewName)> toRename,
+        ILogger? logger = null,
         CancellationToken ct = default,
         bool includeDeclarations = true,
         bool includeCandidateLocations = false
@@ -396,7 +396,11 @@ public static partial class NameUtils
             }
         );
 
-        logger.LogDebug("{} referencing locations for renames for {}", locations.Count, ctx.JobKey);
+        logger?.LogDebug(
+            "{} referencing locations for renames for {}",
+            locations.Count,
+            ctx.JobKey
+        );
 
         // Now it's just a simple find and replace.
         var sln = ctx.SourceProject.Solution;
@@ -424,7 +428,7 @@ public static partial class NameUtils
                 var contents = ogText.GetSubText(location.SourceSpan).ToString();
                 if (contents.Contains(' '))
                 {
-                    logger.LogWarning(
+                    logger?.LogWarning(
                         "Refusing to do unsafe rename/replacement of \"{}\" to \"{}\" at {}",
                         contents,
                         newName,
@@ -433,9 +437,9 @@ public static partial class NameUtils
                     continue;
                 }
 
-                if (logger.IsEnabled(LogLevel.Trace))
+                if (logger?.IsEnabled(LogLevel.Trace) ?? false)
                 {
-                    logger.LogTrace(
+                    logger?.LogTrace(
                         "\"{}\" -> \"{}\" at {}",
                         contents,
                         newName,

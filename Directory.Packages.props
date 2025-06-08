@@ -11,19 +11,15 @@
     <PackageVersion Include="NUnit" Version="4.2.2" />
     <PackageVersion Include="xunit" Version="2.9.2" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
-
     <!-- eng/benchmarks -->
     <PackageVersion Include="BenchmarkDotNet" Version="0.14.0" />
-
     <!-- Silk.NET.Core -->
     <PackageVersion Include="Fody" Version="6.8.2" PrivateAssets="all" />
     <PackageVersion Include="InlineIL.Fody" Version="1.9.0" PrivateAssets="all" />
-
     <!-- Analyzers -->
     <PackageVersion Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" />
-
     <!-- SilkTouch -->
-    <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="18.1.0.2" />
+    <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="20.1.2.1" />
     <PackageVersion Include="CSharpier.Core" Version="0.30.2" />
     <PackageVersion Include="Humanizer.Core" Version="2.14.1" />
     <PackageVersion Include="Microsoft.Build.Locator" Version="1.7.8" />
@@ -39,10 +35,8 @@
     <PackageVersion Include="Microsoft.VisualStudio.Setup.Configuration.Interop" Version="3.12.2149" />
     <PackageVersion Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
     <PackageVersion Include="System.IO.Hashing" Version="9.0.0" />
-
     <!-- This is not used but it is used transitively and the version pulled in has a vulnerability -->
     <PackageVersion Include="System.Formats.Asn1" Version="9.0.0" />
-
     <!-- SilkTouch Unit Tests -->
     <PackageVersion Include="Silk.NET.BuildTools" Version="2.22.0" />
     <PackageVersion Include="System.Linq.Async" Version="6.0.1" />

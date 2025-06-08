@@ -19,5 +19,5 @@ public unsafe partial struct SIGNER_FILE_INFO
 
     /// <include file='SIGNER_FILE_INFO.xml' path='doc/member[@name="SIGNER_FILE_INFO.hFile"]/*'/>
 
-    public HANDLE hFile;
+    public Handle hFile;
 }

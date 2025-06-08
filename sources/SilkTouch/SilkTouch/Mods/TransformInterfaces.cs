@@ -71,13 +71,13 @@ namespace Silk.NET.SilkTouch.Mods
             var includes = (cfg.IncludeList ?? ["**"]).Select(type => type.Replace(".", "/"));
             Matcher matcher = new Matcher();
             matcher.AddIncludePatterns(
-                includes.Where(x => !x.StartsWith("!")).Select(ResponseFileHandler.PathFixup)
+                includes.Where(x => !x.StartsWith("!")).Select(FileUtils.PathFixup)
             );
             matcher.AddExcludePatterns(
                 includes
                     .Where(x => x.StartsWith("!"))
                     .Select(x => x[1..])
-                    .Select(ResponseFileHandler.PathFixup)
+                    .Select(FileUtils.PathFixup)
             );
 
             int count = proj?.DocumentIds.Count ?? 0;
@@ -101,6 +101,11 @@ namespace Silk.NET.SilkTouch.Mods
 
                 progressService.SetProgress((float)index / count);
             }
+
+            AddManualType(firstPass.FoundTypes, "IUnknown");
+            AddManualType(firstPass.FoundTypes, "IInspectable");
+            AddManualType(firstPass.FoundTypes, "IClassFactory");
+            AddManualType(firstPass.FoundTypes, "AsyncIUnknown");
 
             if (cfg.AdditionalInterfaces is not null)
             {
@@ -184,6 +189,12 @@ namespace Silk.NET.SilkTouch.Mods
                 progressService.SetProgress((float)index / count);
             }
             ctx.SourceProject = proj;
+        }
+
+        private void AddManualType(Dictionary<string, string> foundTypes, string typeName)
+        {
+            if (!foundTypes.ContainsKey(typeName))
+                foundTypes.Add(typeName, typeName);
         }
 
         class TypeDiscoverer : CSharpSyntaxWalker

@@ -76,7 +76,6 @@ rootCommand.SetHandler(async ctx =>
 
     var sp = new ServiceCollection()
         .AddSingleton(jobContext)
-        .AddSingleton<IProgressService, ProgressService>()
         .AddLogging(builder =>
         {
             builder.ClearProviders();
@@ -98,9 +97,9 @@ rootCommand.SetHandler(async ctx =>
 
             builder.Services.AddSingleton(typeof(ILogger<>), typeof(SilkLogger<>));
         })
-        .AddSingleton<ConsoleRenderer>()
         .AddOptions()
         .AddSilkTouch(config)
+        .AddSingleton<ConsoleRenderer>()
         .BuildServiceProvider();
 
     // Start the console renderer

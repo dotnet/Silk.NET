@@ -178,23 +178,6 @@ public sealed partial class PtrRefTransformer()
                     )
                 )
             )
-            .WithAttributeLists(
-                List(
-                    methWithReplacementsButNoFixed
-                        .AttributeLists.Select(x =>
-                            x.WithAttributes(
-                                SeparatedList(
-                                    x.Attributes.Where(y =>
-                                        !y.IsAttribute(
-                                            "System.Runtime.InteropServices.UnmanagedCallersOnly"
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                        .Where(x => x.Attributes.Count > 0)
-                )
-            )
             .AddMaxOpt();
         _ctx.Value?.AddUsing("System.Runtime.CompilerServices");
 

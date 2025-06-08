@@ -12,7 +12,7 @@ namespace Silk.NET.SilkTouch.Logging
     /// <summary>
     /// A console renderer which handles progress bar writing
     /// </summary>
-    public class ConsoleRenderer
+    internal class ConsoleRenderer
     {
         private readonly IProgressService _progressService;
         private readonly TextWriter _originalOut;

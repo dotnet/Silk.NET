@@ -5,7 +5,6 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Win32;
-using static Silk.NET.Win32.IID;
 
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.DirectX;
@@ -21,7 +20,7 @@ public unsafe partial struct ID3DDestructionNotifier
 {
     public Native* lpVtbl;
     static Guid* INativeGuid.NativeGuid =>
-        (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3DDestructionNotifier));
+        (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID.IID_ID3DDestructionNotifier));
 
     public interface Interface : IUnknown.Interface
     {
@@ -36,7 +35,7 @@ public unsafe partial struct ID3DDestructionNotifier
     public unsafe partial struct Native : Interface, INativeGuid
     {
         static Guid* INativeGuid.NativeGuid =>
-            (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3DDestructionNotifier));
+            (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID.IID_ID3DDestructionNotifier));
 
         public void** lpVtbl;
 

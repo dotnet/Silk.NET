@@ -197,30 +197,7 @@ public class FunctionTransformer(
             if (includeOriginal)
             {
                 // Try to add the original function as-is
-                ret.Insert(
-                    idx,
-                    new(
-                        function.WithAttributeLists(
-                            List(
-                                function
-                                    .AttributeLists.Select(x =>
-                                        x.WithAttributes(
-                                            SeparatedList(
-                                                x.Attributes.Where(y =>
-                                                    !y.IsAttribute(
-                                                        "System.Runtime.InteropServices.UnmanagedCallersOnly"
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                                    .Where(x => x.Attributes.Count > 0)
-                            )
-                        ),
-                        !discrims.Add(discrim),
-                        true
-                    )
-                );
+                ret.Insert(idx, new(function, !discrims.Add(discrim), true));
             }
 
             ctx.Original = null;
@@ -256,9 +233,73 @@ public class FunctionTransformer(
             return;
         }
 
+        var unmanagedCallersOnlyAttr = function
+            .AttributeLists.SelectMany(al => al.Attributes)
+            .FirstOrDefault(attr => attr.Name.ToString() == "UnmanagedCallersOnly");
+
+        ExpressionSyntax functionCall = IdentifierName(function.Identifier);
+
+        if (unmanagedCallersOnlyAttr is not null)
+        {
+            //remove UCO attribute for transformations
+            function = function.WithAttributeLists(
+                List(
+                    function
+                        .AttributeLists.Select(x =>
+                            x.WithAttributes(
+                                SeparatedList(
+                                    x.Attributes.Where(y =>
+                                        !y.IsAttribute(
+                                            "System.Runtime.InteropServices.UnmanagedCallersOnly"
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                        .Where(x => x.Attributes.Count > 0)
+                )
+            );
+
+            var callConvArg = unmanagedCallersOnlyAttr?.ArgumentList?.Arguments.FirstOrDefault(
+                arg => arg.NameEquals?.Name.Identifier.ValueText == "CallConvs"
+            );
+            var callConvTypes =
+                callConvArg != null
+                    ? "["
+                        + string.Join(
+                            ", ",
+                            callConvArg
+                                .Expression.DescendantNodesAndSelf()
+                                .OfType<TypeOfExpressionSyntax>()
+                                .Select(typeOfExpr =>
+                                {
+                                    // Strip the "CallConv" prefix from the type name.
+                                    var typeName = typeOfExpr.Type.ToString();
+                                    return typeName.StartsWith("CallConv")
+                                        ? typeName.Substring(8)
+                                        : typeName;
+                                })
+                        )
+                        + "]"
+                    : string.Empty;
+
+            var parameterTypes = string.Join(
+                ", ",
+                function.ParameterList.Parameters.Select(p => p.Type!.ToString())
+            );
+
+            var delegateType =
+                $"delegate* unmanaged{callConvTypes}<{parameterTypes}, {function.ReturnType}>";
+
+            functionCall = CastExpression(
+                ParseTypeName(delegateType),
+                PrefixUnaryExpression(SyntaxKind.AddressOfExpression, functionCall)
+            );
+        }
+
         StatementSyntax impl = ExpressionStatement(
             InvocationExpression(
-                IdentifierName(function.Identifier),
+                functionCall,
                 ArgumentList(
                     SeparatedList(
                         function.ParameterList.Parameters.Select(x =>

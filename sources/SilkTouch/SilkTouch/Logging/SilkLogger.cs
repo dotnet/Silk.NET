@@ -15,7 +15,7 @@ namespace Silk.NET.SilkTouch.Logging
     /// <summary>
     /// A custom logger for SilkTouch
     /// </summary>
-    public class SilkLogger<T> : ILogger<T>
+    internal class SilkLogger<T> : ILogger<T>
     {
         private readonly ILogger _innerLogger;
         private readonly JobContext _jobContext;

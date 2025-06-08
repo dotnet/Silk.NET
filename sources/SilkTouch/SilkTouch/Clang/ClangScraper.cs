@@ -79,6 +79,16 @@ public sealed class ClangScraper(
         public Dictionary<string, string>? ManualOverrides { get; init; }
 
         /// <summary>
+        /// Entries to be added to the Response File remapped names
+        /// </summary>
+        public Dictionary<string, string>? InjectedRemappedNames { get; init; }
+
+        /// <summary>
+        /// Entries to be added to each Response file
+        /// </summary>
+        public string[]? InjectedGeneratorOptions { get; init; }
+
+        /// <summary>
         /// The root output directory as defined in the response files.
         /// </summary>
         public string? InputSourceRoot { get; init; }
@@ -501,10 +511,21 @@ public sealed class ClangScraper(
         // Read the configuration.
         var cfg = await inputResolver.Resolve(config.Get(ctx.JobKey));
 
+        Dictionary<string, string> remappedNames = cfg.InjectedRemappedNames ?? [];
+        if (!remappedNames.ContainsKey("HANDLE"))
+            remappedNames.Add("HANDLE", "Handle");
+        if (!remappedNames.ContainsKey("BOOL"))
+            remappedNames.Add("BOOL", "Bool");
+
         // Read the response files.
         logger.LogInformation("Reading response files for {}, please wait...", ctx.JobKey);
         var rsps = rspHandler
-            .ReadResponseFiles(ctx.ConfigurationDirectory, cfg.ClangSharpResponseFiles)
+            .ReadResponseFiles(
+                ctx.ConfigurationDirectory,
+                cfg.ClangSharpResponseFiles,
+                remappedNames,
+                cfg.InjectedGeneratorOptions
+            )
             .ToList();
 
         var toRemoveMatcher = new Matcher();
@@ -512,12 +533,12 @@ public sealed class ClangScraper(
         {
             toRemoveMatcher.AddIncludePatterns(
                 cfg.GeneratedToRemove.Where(toRemove => !toRemove.StartsWith("!"))
-                    .Select(ResponseFileHandler.PathFixup)
+                    .Select(FileUtils.PathFixup)
             );
             toRemoveMatcher.AddExcludePatterns(
                 cfg.GeneratedToRemove.Where(toRemove => toRemove.StartsWith("!"))
                     .Select(toRemove => toRemove[1..])
-                    .Select(ResponseFileHandler.PathFixup)
+                    .Select(FileUtils.PathFixup)
             );
         }
 
@@ -706,92 +727,94 @@ public sealed class ClangScraper(
             === Generator configuration ===
             DefaultClass: {0}
             DontUseUsingStaticsForEnums: {1}
-            ExcludeAnonymousFieldHelpers: {2}
-            ExcludeComProxies: {3}
-            ExcludeEmptyRecords: {4}
-            ExcludeEnumOperators: {5}
-            ExcludeFnptrCodegen: {6}
-            ExcludeFunctionsWithBody: {7}
-            ExcludeNIntCodegen: {8}
-            GenerateAggressiveInlining: {9}
-            GenerateCompatibleCode: {10}
-            GenerateCppAttributes: {11}
-            GenerateDocIncludes: {12}
-            GenerateExplicitVtbls: {13}
-            GenerateFileScopedNamespaces: {14}
-            GenerateGuidMember: {15}
-            GenerateHelperTypes: {16}
-            GenerateLatestCode: {17}
-            GenerateMacroBindings: {18}
-            GenerateMarkerInterfaces: {19}
-            GenerateMultipleFiles: {20}
-            GenerateNativeBitfieldAttribute: {21}
-            GenerateNativeInheritanceAttribute: {22}
-            GeneratePreviewCode: {23}
-            GenerateSetsLastSystemErrorAttribute: {24}
-            GenerateSourceLocationAttribute: {25}
-            GenerateTemplateBindings: {26}
-            GenerateTestsNUnit: {27}
-            GenerateTestsXUnit: {28}
-            GenerateTrimmableVtbls: {29}
-            GenerateUnixTypes: {30}
-            GenerateUnmanagedConstants: {31}
-            GenerateVtblIndexAttribute: {32}
-            HeaderText: {33}
-            LibraryPath: {34}
-            LogExclusions: {35}
-            LogPotentialTypedefRemappings: {36}
-            LogVisitedFiles: {37}
+            DontUseUsingStaticsForGuidMember: {2}
+            ExcludeAnonymousFieldHelpers: {3}
+            ExcludeComProxies: {4}
+            ExcludeEmptyRecords: {5}
+            ExcludeEnumOperators: {6}
+            ExcludeFnptrCodegen: {7}
+            ExcludeFunctionsWithBody: {8}
+            ExcludeNIntCodegen: {9}
+            GenerateAggressiveInlining: {10}
+            GenerateCompatibleCode: {11}
+            GenerateCppAttributes: {12}
+            GenerateDocIncludes: {13}
+            GenerateExplicitVtbls: {14}
+            GenerateFileScopedNamespaces: {15}
+            GenerateGuidMember: {16}
+            GenerateHelperTypes: {17}
+            GenerateLatestCode: {18}
+            GenerateMacroBindings: {19}
+            GenerateMarkerInterfaces: {20}
+            GenerateMultipleFiles: {21}
+            GenerateNativeBitfieldAttribute: {22}
+            GenerateNativeInheritanceAttribute: {23}
+            GeneratePreviewCode: {24}
+            GenerateSetsLastSystemErrorAttribute: {25}
+            GenerateSourceLocationAttribute: {26}
+            GenerateTemplateBindings: {27}
+            GenerateTestsNUnit: {28}
+            GenerateTestsXUnit: {29}
+            GenerateTrimmableVtbls: {30}
+            GenerateUnixTypes: {31}
+            GenerateUnmanagedConstants: {32}
+            GenerateVtblIndexAttribute: {33}
+            HeaderText: {34}
+            LibraryPath: {35}
+            LogExclusions: {36}
+            LogPotentialTypedefRemappings: {37}
+            LogVisitedFiles: {38}
             MethodPrefixToStrip: {38}
-            DefaultNamespace: {39}
-            OutputMode: {40}
-            OutputLocation: {41}
-            Language: {42}
-            LanguageStandard: {43}
-            TestOutputLocation: {44}
+            DefaultNamespace: {40}
+            OutputMode: {41}
+            OutputLocation: {42}
+            Language: {43}
+            LanguageStandard: {44}
+            TestOutputLocation: {45}
             ExcludedNames:
-                {45}
-            IncludedNames:
                 {46}
-            NativeTypeNamesToStrip:
+            IncludedNames:
                 {47}
-            ForceRemappedNames:
+            NativeTypeNamesToStrip:
                 {48}
-            TraversalNames:
+            ForceRemappedNames:
                 {49}
-            WithManualImports:
+            TraversalNames:
                 {50}
-            WithSetLastErrors:
+            WithManualImports:
                 {51}
-            WithSuppressGCTransitions:
+            WithSetLastErrors:
                 {52}
-            RemappedNames:
+            WithSuppressGCTransitions:
                 {53}
-            WithAccessSpecifiers:
+            RemappedNames:
                 {54}
-            WithCallConvs:
+            WithAccessSpecifiers:
                 {55}
-            WithClasses:
+            WithCallConvs:
                 {56}
-            WithGuids:
+            WithClasses:
                 {57}
-            WithLibraryPaths:
+            WithGuids:
                 {58}
-            WithNamespaces:
+            WithLibraryPaths:
                 {59}
-            WithTypes:
+            WithNamespaces:
                 {60}
-            WithPackings:
+            WithTypes:
                 {61}
-            WithTransparentStructs:
+            WithPackings:
                 {62}
-            WithAttributes:
+            WithTransparentStructs:
                 {63}
-            WithUsings:
+            WithAttributes:
                 {64}
+            WithUsings:
+                {65}
             """,
             cfg.GeneratorConfiguration.DefaultClass,
             cfg.GeneratorConfiguration.DontUseUsingStaticsForEnums,
+            cfg.GeneratorConfiguration.DontUseUsingStaticsForGuidMember,
             cfg.GeneratorConfiguration.ExcludeAnonymousFieldHelpers,
             cfg.GeneratorConfiguration.ExcludeComProxies,
             cfg.GeneratorConfiguration.ExcludeEmptyRecords,

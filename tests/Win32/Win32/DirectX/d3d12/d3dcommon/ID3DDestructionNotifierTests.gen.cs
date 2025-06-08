@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
-using static Silk.NET.Win32.IID;
+using Silk.NET.Win32;
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.DirectX.UnitTests;
 
@@ -16,7 +16,10 @@ public static unsafe partial class ID3DDestructionNotifierTests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(ID3DDestructionNotifier).GUID, Is.EqualTo(IID_ID3DDestructionNotifier));
+        Assert.That(
+            typeof(ID3DDestructionNotifier).GUID,
+            Is.EqualTo(IID.IID_ID3DDestructionNotifier)
+        );
     }
 
     /// <summary>Validates that the <see cref = "ID3DDestructionNotifier"/> struct is blittable.</summary>

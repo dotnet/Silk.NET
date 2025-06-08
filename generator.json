@@ -19,7 +19,7 @@
           "eng/submodules/terrafx.interop.windows/generation/**/generate.rsp",
           "!eng/submodules/terrafx.interop.windows/generation/DirectX/d3dx12/d3dx12_state_object/generate.rsp",
           "!eng/submodules/terrafx.interop.windows/generation/Windows/um/Unknwnbase/generate.rsp",
-          "!eng/submodules/terrafx.interop.windows/generation/WinRT/winrt/inspectable/generate.rsp",
+          "!eng/submodules/terrafx.interop.windows/generation/WinRT/winrt/inspectable/generate.rsp"
         ],
         "ManualOverrides": {
           "sources/Windows/um/httpserv/IHttpResponse.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/IHttpResponse.cs",
@@ -53,8 +53,12 @@
           "sources/**/helper-types/*Attribute.gen.cs",
           "sources/**/helper-types/HRESULT.gen.cs",
           "sources/**/helper-types/BOOL.gen.cs",
-          "sources/**/helper-types/HSTRING.gen.cs",
+          "sources/**/helper-types/HSTRING.gen.cs"
         ],
+        "InjectedGeneratorOptions": [
+          "--config",
+          "dont-use-using-statics-for-guid-members"
+        ]
       },
       "ImportManualFiles": {
         "ManualImports": {
@@ -94,11 +98,7 @@
       },
       "TransformInterfaces": {
         "AdditionalInterfaces": [
-          "IDispatchEx",
-          "IUnknown",
-          "IInspectable",
-          "IClassFactory",
-          "AsyncIUknown"
+          "IDispatchEx"
         ]
       },
       "TransformCOM": {
@@ -109,22 +109,6 @@
           "IDispatchEx.Interface": {
             "Namespace": "Silk.NET.Win32",
             "Parent": "IDispatch.Interface"
-          },
-          "IInspectable.Interface": {
-            "Namespace": "Silk.NET.Core",
-            "Parent": "IUnknown.Interface"
-          },
-          "IClassFactory.Interface": {
-            "Namespace": "Silk.NET.Core",
-            "Parent": "IUnknown.Interface"
-          },
-          "AsyncIUnknown.Interface": {
-            "Namespace": "Silk.NET.Core",
-            "Parent": "IUnknown.Interface"
-          },
-          "IUnknown.Interface": {
-            "Namespace": "Silk.NET.Core",
-            "Parent": ""
           }
         }
       },
@@ -140,6 +124,12 @@
         "BoolTypes": {
           "BOOL": null
         }
+      },
+      "PrettifyNames": {
+        "NameOverrides": {
+          "HSTRING": "HString",
+          "HRESULT": "HResult"
+        }
       }
     },
     "Core": {
@@ -153,7 +143,8 @@
         "TransformInterfaces",
         "TransformCOM",
         "DisableWarnings",
-        "TransformFunctions"
+        "TransformFunctions",
+        "PrettifyNames"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -169,15 +160,19 @@
         "CacheOutput": false,
         "GeneratedToRemove": [
           "sources/**/helper-types/*.gen.cs",
-          "!sources/**/helper-types/HRESULT.gen.cs",
-          "!sources/**/helper-types/BOOL.gen.cs",
-          "!sources/**/helper-types/HSTRING.gen.cs",
-          "!sources/**/helper-types/HANDLE.gen.cs"
+          "!sources/**/helper-types/Hresult.gen.cs",
+          "!sources/**/helper-types/Bool.gen.cs",
+          "!sources/**/helper-types/Hstring.gen.cs",
+          "!sources/**/helper-types/Handle.gen.cs"
+        ],
+        "InjectedGeneratorOptions": [
+          "--config",
+          "dont-use-using-statics-for-guid-members"
         ]
       },
       "ChangeNamespace": {
         "Mappings": {
-          "TerraFX.Interop(.*)": "Silk.NET.Core",
+          "TerraFX.Interop(.*)": "Silk.NET.Core"
         }
       },
       "TransformInterfaces": {
@@ -199,6 +194,12 @@
       "TransformFunctions": {
         "BoolTypes": {
           "BOOL": null
+        }
+      },
+      "PrettifyNames": {
+        "NameOverrides": {
+          "HSTRING": "HString",
+          "HRESULT": "HResult"
         }
       }
     },

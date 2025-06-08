@@ -17,6 +17,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Sources;
+using Silk.NET.SilkTouch.Utility;
 using static Silk.NET.SilkTouch.Mods.TransformHandles;
 
 namespace Silk.NET.SilkTouch.Mods
@@ -69,7 +70,7 @@ namespace Silk.NET.SilkTouch.Mods
                 regexConverters.Add(new(regexPatternIn), regexPatternOut);
             }
 
-            var files = ResponseFileHandler.Glob(pathGlobs);
+            var files = FileUtils.Glob(pathGlobs);
 
             var aggregatedSources = new ConcurrentDictionary<string, SyntaxTree>();
             var aggregatedTests = new ConcurrentDictionary<string, SyntaxTree>();
