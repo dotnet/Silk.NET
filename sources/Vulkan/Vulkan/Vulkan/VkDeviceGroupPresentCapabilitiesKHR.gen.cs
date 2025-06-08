@@ -1,0 +1,45 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from the Vulkan headers and corresponding dependencies.
+// Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+using System.Runtime.CompilerServices;
+
+namespace Silk.NET.Vulkan;
+
+[SupportedApiProfile("vulkan")]
+public unsafe partial struct VkDeviceGroupPresentCapabilitiesKHR
+{
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    public VkStructureType sType;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    public void* pNext;
+
+    [NativeTypeName("uint32_t[32]")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    public VkDeviceGroupPresentCapabilitiesKHR_presentMask presentMask;
+
+    [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    public uint modes;
+}

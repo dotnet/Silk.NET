@@ -1,0 +1,73 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from the Vulkan headers and corresponding dependencies.
+// Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
+namespace Silk.NET.Vulkan;
+
+[SupportedApiProfile("vulkan")]
+public unsafe partial struct VkImportFenceFdInfoKHR
+{
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
+    public VkStructureType sType;
+
+    [NativeTypeName("const void *")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
+    public void* pNext;
+
+    [NativeTypeName("VkFence")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
+    public VkFence_T* fence;
+
+    [NativeTypeName("VkFenceImportFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
+    public uint flags;
+
+    [NativeTypeName("VkExternalFenceHandleTypeFlagBits")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
+    public VkExternalFenceHandleTypeFlags handleType;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
+    public int fd;
+}
