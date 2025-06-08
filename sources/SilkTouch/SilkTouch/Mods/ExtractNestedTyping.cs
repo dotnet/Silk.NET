@@ -61,7 +61,7 @@ public partial class ExtractNestedTyping(
         /// Handle types are identified by looking for missing types that are only referenced through a pointer.
         /// If true, empty structs representing handle types will be generated.
         /// </summary>
-        public bool GenerateMissingHandleTypes { get; init; }
+        public bool GenerateEmptyStructsForMissingHandleTypes { get; init; }
     }
 
     /// <inheritdoc />
@@ -102,11 +102,11 @@ public partial class ExtractNestedTyping(
         var missingHandleTypes = handleDiscoverer.GetMissingHandleTypes(compilation, ct);
 
         // Second pass to modify project based on gathered data
-        if (cfg.GenerateMissingHandleTypes)
+        if (cfg.GenerateEmptyStructsForMissingHandleTypes)
         {
-            // Generate syntax nodes representing the missing handle types
-            var handleGenerator = new MissingHandleTypeGenerator();
-            var syntaxNodes = handleGenerator.GenerateMissingHandleSyntaxes(missingHandleTypes);
+            // Generate syntax nodes containing empty structs to represent the missing handle types
+            var structGenerator = new EmptyStructGenerator();
+            var syntaxNodes = structGenerator.GenerateSyntaxNodes(missingHandleTypes);
 
             // Add syntax nodes to the project as new documents
             foreach (var (fullyQualifiedName, node) in syntaxNodes)
@@ -483,25 +483,25 @@ public partial class ExtractNestedTyping(
         }
     }
 
-    private class MissingHandleTypeGenerator
+    private class EmptyStructGenerator
     {
         /// <summary>
-        /// Generates syntax node for each missing type.
+        /// Generates a syntax node for each specified type.
         /// </summary>
-        /// <param name="missingHandleTypes">Map from missing type symbol to the namespace the type should be created in.</param>
+        /// <param name="typesToGenerate">Map from error type symbol to the namespace the type should be created in.</param>
         /// <returns>Map from the fully qualified name of the generated type to the syntax node containing code for that type.</returns>
-        public Dictionary<string, SyntaxNode> GenerateMissingHandleSyntaxes(
-            Dictionary<IErrorTypeSymbol, string> missingHandleTypes) =>
-            GenerateMissingHandleSyntaxes(missingHandleTypes
+        public Dictionary<string, SyntaxNode> GenerateSyntaxNodes(
+            Dictionary<IErrorTypeSymbol, string> typesToGenerate) =>
+            GenerateSyntaxNodes(typesToGenerate
                 .Select(kvp => new KeyValuePair<string, string>(kvp.Key.Name, kvp.Value))
                 .ToDictionary());
 
         /// <summary>
-        /// Generates syntax node for each missing type.
+        /// Generates a syntax node for each specified type.
         /// </summary>
-        /// <param name="missingHandleTypes">Map from missing type name to the namespace the type should be created in.</param>
+        /// <param name="missingHandleTypes">Map from type name to the namespace the type should be created in.</param>
         /// <returns>Map from the fully qualified name of the generated type to the syntax node containing code for that type.</returns>
-        public Dictionary<string, SyntaxNode> GenerateMissingHandleSyntaxes(
+        public Dictionary<string, SyntaxNode> GenerateSyntaxNodes(
             Dictionary<string, string> missingHandleTypes)
         {
             var results = new Dictionary<string, SyntaxNode>();
