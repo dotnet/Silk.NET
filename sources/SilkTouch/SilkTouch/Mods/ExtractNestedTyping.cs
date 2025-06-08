@@ -70,6 +70,17 @@ public partial class ExtractNestedTyping(
         await base.ExecuteAsync(ctx, ct);
 
         var proj = ctx.SourceProject;
+        if (proj == null)
+        {
+            return;
+        }
+
+        var compilation = await proj.GetCompilationAsync(ct);
+        if (compilation == null)
+        {
+            return;
+        }
+
         var cfg = config.Get(ctx.JobKey);
 
         // First pass to discover the types to extract.
@@ -86,38 +97,86 @@ public partial class ExtractNestedTyping(
             walker.Visit(node);
         }
 
-        // Second pass to discover handle types
-        var handlesDiscoverer = new HandleTypeDiscoverer();
-        foreach (var doc in ctx.SourceProject?.Documents ?? [])
+        var handleDiscoverer = new HandleTypeDiscoverer();
         {
-            if (await doc.GetSyntaxRootAsync(ct) is { } root)
+            // We need to find and generate all missing handle types
+            // Handle types are types that are only referenced through a pointer
+            // We do this by parsing through the list of type errors
+            var typeErrors = compilation.GetDiagnostics(ct)
+                .Where(d => d.Id == "CS0246") // Type errors
+                .ToList();
+
+            // Find symbols that contain ITypeErrorSymbols
+            // These symbols are not necessarily ITypeErrorSymbols
+            var symbolsFound = new HashSet<ISymbol>(SymbolEqualityComparer.Default);
+            foreach (var typeError in typeErrors)
             {
-                handlesDiscoverer.Visit(root);
+                var syntaxTree = typeError.Location.SourceTree;
+                if (syntaxTree == null)
+                {
+                    continue;
+                }
+
+                var semanticModel = compilation.GetSemanticModel(syntaxTree);
+
+                // Get the syntax node the type error corresponds to
+                var currentSyntax = syntaxTree.GetRoot().FindNode(typeError.Location.SourceSpan);
+
+                // Search upwards to find a syntax node that we can call GetDeclaredSymbol on
+                // This is because calling GetDeclaredSymbol on the starting node will just return null
+                var isSuccess = false;
+                while (currentSyntax != null && currentSyntax is not TypeDeclarationSyntax)
+                {
+                    switch (currentSyntax)
+                    {
+                        case VariableDeclarationSyntax variableDeclarationSyntax:
+                        {
+                            foreach (var declaratorSyntax in variableDeclarationSyntax.Variables)
+                            {
+                                var symbol = semanticModel.GetDeclaredSymbol(declaratorSyntax, ct);
+                                if (symbol != null)
+                                {
+                                    symbolsFound.Add(symbol);
+                                    isSuccess = true;
+
+                                    // All of the declarators will have the same type, so getting the first symbol is enough
+                                    break;
+                                }
+                            }
+
+                            break;
+                        }
+                        case MemberDeclarationSyntax memberDeclarationSyntax:
+                        {
+                            var symbol = semanticModel.GetDeclaredSymbol(memberDeclarationSyntax, ct);
+                            if (symbol != null)
+                            {
+                                symbolsFound.Add(symbol);
+                                isSuccess = true;
+                            }
+
+                            break;
+                        }
+                    }
+
+                    currentSyntax = currentSyntax.Parent;
+                }
+
+                if (!isSuccess)
+                {
+                    // This is to warn of unhandled cases
+                    logger.LogWarning("Failed to find corresponding symbol for type error. There may be an unhandled case in the code");
+                }
+            }
+
+            // These symbols contain at least one IErrorTypeSymbol, we need to search downwards for them
+            foreach (var symbol in symbolsFound)
+            {
+                handleDiscoverer.Visit(symbol);
             }
         }
 
-        // We now have gathered all the required information
-        // We can now begin modifying the project data
-
-        // Get the missing handle types
-        Dictionary<string, SyntaxNode>? missingFullyQualifiedTypeNamesToRootNodes =
-            cfg.AssumeMissingTypesOpaque ? [] : null;
-        handlesDiscoverer.GetHandleTypes(missingFullyQualifiedTypeNamesToRootNodes);
-        if (missingFullyQualifiedTypeNamesToRootNodes is not null)
-        {
-            // Generate missing handle types
-            foreach (var (fqTypeName, node) in missingFullyQualifiedTypeNamesToRootNodes)
-            {
-                var rel = $"Handles/{PathForFullyQualified(fqTypeName)}";
-                proj = proj
-                    ?.AddDocument(
-                        Path.GetFileName(rel),
-                        node.NormalizeWhitespace(),
-                        filePath: proj.FullPath(rel)
-                    )
-                    .Project;
-            }
-        }
+        var missingHandleTypes = handleDiscoverer.GetMissingHandleTypes();
 
         // Third pass to modify existing files as per our discovery.
         var rewriter = new Rewriter(logger);
@@ -288,6 +347,104 @@ public partial class ExtractNestedTyping(
         if (numericTypeNames?.ContainsKey(nativeTypeName) ?? false)
         {
             numericTypeNames[nativeTypeName] = null;
+        }
+    }
+
+    private class HandleTypeDiscoverer : SymbolVisitor
+    {
+        private readonly HashSet<IErrorTypeSymbol> _nonHandleTypes = new(SymbolEqualityComparer.Default);
+        private readonly Dictionary<IErrorTypeSymbol, string> _missingTypes = new(SymbolEqualityComparer.Default);
+
+        private string? _currentNamespace = null;
+        private int pointerTypeDepth = 0;
+
+        /// <summary>
+        /// Gets all missing handle types that are found and the namespace that they should be created in.
+        /// </summary>
+        public Dictionary<IErrorTypeSymbol, string> GetMissingHandleTypes() => new(_missingTypes.Where(kvp => !_nonHandleTypes.Contains(kvp.Key)), SymbolEqualityComparer.Default);
+
+        public override void VisitMethod(IMethodSymbol symbol)
+        {
+            base.VisitMethod(symbol);
+
+            _currentNamespace = symbol.NamespaceFromSymbol();
+            foreach (var parameterSymbol in symbol.Parameters)
+            {
+                Visit(parameterSymbol);
+            }
+            _currentNamespace = null;
+        }
+
+        public override void VisitParameter(IParameterSymbol symbol)
+        {
+            base.VisitParameter(symbol);
+
+            _currentNamespace = symbol.NamespaceFromSymbol();
+            Visit(symbol.Type);
+            _currentNamespace = null;
+        }
+
+        public override void VisitProperty(IPropertySymbol symbol)
+        {
+            base.VisitProperty(symbol);
+
+            _currentNamespace = symbol.NamespaceFromSymbol();
+            Visit(symbol.Type);
+            _currentNamespace = null;
+        }
+
+        public override void VisitField(IFieldSymbol symbol)
+        {
+            base.VisitField(symbol);
+
+            _currentNamespace = symbol.NamespaceFromSymbol();
+            Visit(symbol.Type);
+            _currentNamespace = null;
+        }
+
+        public override void VisitLocal(ILocalSymbol symbol)
+        {
+            base.VisitLocal(symbol);
+
+            _currentNamespace = symbol.NamespaceFromSymbol();
+            Visit(symbol.Type);
+            _currentNamespace = null;
+        }
+
+        public override void VisitPointerType(IPointerTypeSymbol symbol)
+        {
+            base.VisitPointerType(symbol);
+
+            pointerTypeDepth++;
+            Visit(symbol.PointedAtType);
+            pointerTypeDepth--;
+        }
+
+        public override void VisitNamedType(INamedTypeSymbol symbol)
+        {
+            base.VisitNamedType(symbol);
+
+            if (symbol is IErrorTypeSymbol errorTypeSymbol)
+            {
+                if (_currentNamespace == null)
+                {
+                    throw new InvalidOperationException($"{nameof(_currentNamespace)} should not be null");
+                }
+
+                if (pointerTypeDepth == 0)
+                {
+                    _nonHandleTypes.Add(errorTypeSymbol);
+                }
+
+                if (_missingTypes.TryGetValue(errorTypeSymbol, out var sharedNamespace))
+                {
+                    _missingTypes[errorTypeSymbol] = NameUtils.FindCommonPrefix([sharedNamespace, _currentNamespace], true, false, true);
+                }
+                else
+                {
+                    _missingTypes[errorTypeSymbol] = _currentNamespace;
+                }
+            }
         }
     }
 
