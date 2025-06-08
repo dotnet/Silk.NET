@@ -101,6 +101,7 @@ public partial class ExtractNestedTyping(
         var handleDiscoverer = new MissingHandleTypeDiscoverer(logger);
         var missingHandleTypes = handleDiscoverer.GetMissingHandleTypes(compilation, ct);
 
+        // Second pass to modify project based on gathered data
         if (cfg.GenerateMissingHandleTypes)
         {
             // Generate syntax nodes representing the missing handle types
@@ -121,7 +122,6 @@ public partial class ExtractNestedTyping(
             }
         }
 
-        // Second pass to modify project based on gathered data
         var rewriter = new Rewriter(logger);
         // rewriter.FunctionPointerTypes = walker.GetFunctionPointerTypes();
         var (enums, constants) = walker.GetExtractedEnums();
