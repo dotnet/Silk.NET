@@ -13,25 +13,26 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
-using Silk.NET.SilkTouch.Mods.Scraping;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Transforms any pointers to an opaque/empty struct or pointers to a non-existent type to be "handle" type.
-/// A handle type is a struct that wraps the underlying opaque pointer (or other underlying value).
+/// Identifies handle types by finding pointers to empty structs.
+/// In general, a handle type is a struct that wraps an underlying opaque pointer (or some other underlying value).
+/// These handle types are then transformed by making the struct wrap the underlying pointer and
+/// reducing the dimension of pointers referencing that handle type by one.
 /// </summary>
 /// <example>
-/// For the following pointer, <c>VkBuffer*</c>, a corresponding handle struct will be generated, <c>struct VkBuffer</c>.
-/// Usages of that pointer will then be replaced with <c>VkBuffer</c>.
+/// Given an empty struct, <c>struct VkBuffer</c>, and all usages of that struct are through a pointer,
+/// <c>VkBuffer*</c>, usages of that pointer will be replaced by <c>VkBufferHandle</c>. For a 2-dimensional pointer,
+/// <c>VkBuffer**</c>, the resulting replacement is <c>VkBufferHandle*</c>.
 /// </example>
 /// <remarks>
 /// It is assumed that all handle types in the generated syntax do not require a <c>using</c> directive in order to be
 /// in scope. That is, if a file with the namespace <c>Silk.NET.OpenGL</c> is encountered and it is referencing
 /// <c>Program</c>, <c>Program</c> must be declared in <c>Silk.NET.OpenGL</c>, <c>Silk.NET</c>, or <c>Silk</c>.
-/// When <see cref="Config.AssumeMissingTypesOpaque"/> is used, types will be generated to this effect.
 /// </remarks>
 [ModConfiguration<Config>]
 public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) : Mod
@@ -41,12 +42,6 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
     /// </summary>
     public class Config
     {
-        /// <summary>
-        /// Whether it should be assumed that missing types are likely opaque if they are only used as a pointer type
-        /// and therefore should be subjected to handle transformations.
-        /// </summary>
-        public bool AssumeMissingTypesOpaque { get; init; }
-
         /// <summary>
         /// Whether the DSL (i.e. <c>nullptr</c>) should be usable with handle types.
         /// </summary>
@@ -61,36 +56,13 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         var proj = ctx.SourceProject;
         var cfg = config.Get(ctx.JobKey);
 
-        // First pass to discover any existing or missing handle types
-        var discoverer = new HandleTypeDiscoverer();
-        foreach (var doc in ctx.SourceProject?.Documents ?? [])
-        {
-            if (await doc.GetSyntaxRootAsync(ct) is { } root)
-            {
-                discoverer.Visit(root);
-            }
-        }
+        // First pass to gather data
+        var handleTypeDiscoverer = new HandleTypeDiscoverer();
 
         // Get the discovered handle types and missing handle types
-        Dictionary<string, SyntaxNode>? missingFullyQualifiedTypeNamesToRootNodes =
-            cfg.AssumeMissingTypesOpaque ? [] : null;
-        var handles = discoverer.GetHandleTypes(missingFullyQualifiedTypeNamesToRootNodes);
-        if (missingFullyQualifiedTypeNamesToRootNodes is not null)
-        {
-            // // Generate missing handle types
-            // foreach (var (fqTypeName, node) in missingFullyQualifiedTypeNamesToRootNodes)
-            // {
-            //     var rel = $"Handles/{PathForFullyQualified(fqTypeName)}";
-            //     proj = proj
-            //         ?.AddDocument(
-            //             Path.GetFileName(rel),
-            //             node.NormalizeWhitespace(),
-            //             filePath: proj.FullPath(rel)
-            //         )
-            //         .Project;
-            // }
-        }
+        Dictionary<string, Dictionary<string, string>> handles = [];
 
+        // Second pass to modify the project based on gathered data
         // Before the execution of this foreach loop, the handle structs are empty
         //
         // During this foreach loop, we do two things:
@@ -124,8 +96,12 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         ctx.SourceProject = proj;
     }
 
-    class Rewriter(Dictionary<string, Dictionary<string, string>> handles, bool useDSL)
-        : CSharpSyntaxRewriter
+    private class HandleTypeDiscoverer
+    {
+
+    }
+
+    class Rewriter(Dictionary<string, Dictionary<string, string>> handles, bool useDSL) : CSharpSyntaxRewriter
     {
         /// <summary>
         /// The current scope i.e. fully qualified type name.
@@ -134,6 +110,18 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
 
         private bool _isPointerType;
         private bool _derefPtr;
+
+        // We restrict the allowed parents to hopefully avoid mistaking references to e.g. variable names as type
+        // references.
+        private static bool SkipTypeNode(SyntaxNode node) =>
+            node.Parent
+                is not (
+                TypeSyntax
+                or BaseParameterSyntax
+                or BaseMethodDeclarationSyntax
+                or VariableDeclarationSyntax
+                )
+                or QualifiedNameSyntax;
 
         private SyntaxNode? VisitType<T>(T type, SyntaxToken identifier, Func<T, SyntaxNode?> @base)
             where T : SyntaxNode
@@ -149,7 +137,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
 
         public override SyntaxNode? VisitPointerType(PointerTypeSyntax node)
         {
-            if (HandleTypeDiscoverer.SkipTypeNode(node))
+            if (SkipTypeNode(node))
             {
                 return node;
             }
@@ -170,7 +158,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
 
         public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node)
         {
-            if (HandleTypeDiscoverer.SkipTypeNode(node))
+            if (SkipTypeNode(node))
             {
                 return node;
             }
