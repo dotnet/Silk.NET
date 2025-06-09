@@ -74,32 +74,42 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         var handleTypes = await handleTypeDiscoverer.GetHandleTypesAsync();
 
         // Second pass to modify the project based on gathered data
+        var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL);
         foreach (var handleTypeSymbol in handleTypes)
         {
-            foreach (var declaringSyntaxReference in handleTypeSymbol.DeclaringSyntaxReferences)
+            if (handleTypeSymbol.DeclaringSyntaxReferences.Length > 1)
             {
-                var handleTypeName = handleTypeSymbol.Name;
-                var document = proj.GetDocument(declaringSyntaxReference.SyntaxTree);
-                if (document != null)
-                {
-                    // Add -Handle suffix to end of document name
-                    document = document.WithFilePath(
-                            document.FilePath!.Replace(handleTypeName, $"{handleTypeName}Handle")
-                        )
-                        .WithName(document.Name.Replace(handleTypeName, $"{handleTypeName}Handle"));
+                // The struct is defined in multiple places (eg: partial keyword)
+                // This means we don't know which of the parts to rewrite
+                throw new InvalidOperationException("Struct has more than 1 declaring syntax reference");
+            }
 
-                    proj = document.Project;
+            var declaringSyntaxReference = handleTypeSymbol.DeclaringSyntaxReferences.Single();
+            var document = proj.GetDocument(declaringSyntaxReference.SyntaxTree);
+            if (document != null)
+            {
+                var syntaxTree = await document.GetSyntaxTreeAsync(ct);
+                if (syntaxTree == null)
+                {
+                    continue;
                 }
+
+                var syntaxRoot = await syntaxTree.GetRootAsync(ct);
+
+                // Rewrite handle struct to include handle members
+                document = document.WithSyntaxRoot(handleTypeRewriter.Visit(syntaxRoot).NormalizeWhitespace());
+
+                proj = document.Project;
             }
         }
 
-        // // Second pass to modify the project based on gathered data
+        // TODO: Old code. Cleanup needed
         // // Before the execution of this foreach loop, the handle structs are empty
         // //
         // // During this foreach loop, we do two things:
         // // 1. Rewrite all type references to refer to the handle structs
         // // 2. Add members to handle structs (as identified the handles variable)
-        // var rewriter = new Rewriter(handles, cfg.UseDSL);
+        // var rewriter = new PointerDimensionReducer(handles, cfg.UseDSL);
         // foreach (var docId in proj?.DocumentIds ?? [])
         // {
         //     var doc =
@@ -216,7 +226,348 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         }
     }
 
-    class Rewriter(Dictionary<string, Dictionary<string, string>> handles, bool useDSL) : CSharpSyntaxRewriter
+    private class HandleTypeRewriter(bool useDSL) : CSharpSyntaxRewriter
+    {
+        public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
+        {
+            var structName = node.Identifier.Text;
+            return node.WithIdentifier(Identifier(structName))
+                .WithMembers(
+                    List(
+                        GetDefaultHandleMembers(structName).Concat(useDSL ? GetDSLHandleMembers(structName) : [])
+                    )
+                )
+                .WithModifiers(
+                    TokenList(
+                        Token(SyntaxKind.PublicKeyword),
+                        Token(SyntaxKind.ReadOnlyKeyword),
+                        Token(SyntaxKind.UnsafeKeyword),
+                        Token(SyntaxKind.PartialKeyword)
+                    )
+                );
+        }
+
+        private static IEnumerable<MemberDeclarationSyntax> GetDefaultHandleMembers(string structName)
+        {
+            yield return FieldDeclaration(
+                    VariableDeclaration(
+                        PointerType(PredefinedType(Token(SyntaxKind.VoidKeyword))),
+                        SingletonSeparatedList(VariableDeclarator("Handle"))
+                    )
+                )
+                .WithModifiers(
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.ReadOnlyKeyword))
+                );
+
+            yield return MethodDeclaration(
+                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
+                    Identifier("Equals")
+                )
+                .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                .WithParameterList(
+                    ParameterList(
+                        SingletonSeparatedList(
+                            Parameter(Identifier("other")).WithType(IdentifierName(structName))
+                        )
+                    )
+                )
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        BinaryExpression(
+                            SyntaxKind.EqualsExpression,
+                            IdentifierName("Handle"),
+                            MemberAccessExpression(
+                                SyntaxKind.SimpleMemberAccessExpression,
+                                IdentifierName("other"),
+                                IdentifierName("Handle")
+                            )
+                        )
+                    )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
+            yield return MethodDeclaration(
+                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
+                    Identifier("Equals")
+                )
+                .WithModifiers(
+                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.OverrideKeyword)])
+                )
+                .WithParameterList(
+                    ParameterList(
+                        SingletonSeparatedList(
+                            Parameter(Identifier("obj"))
+                                .WithType(
+                                    NullableType(PredefinedType(Token(SyntaxKind.ObjectKeyword)))
+                                )
+                        )
+                    )
+                )
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        BinaryExpression(
+                            SyntaxKind.LogicalAndExpression,
+                            IsPatternExpression(
+                                IdentifierName("obj"),
+                                DeclarationPattern(
+                                    IdentifierName(structName),
+                                    SingleVariableDesignation(Identifier("other"))
+                                )
+                            ),
+                            InvocationExpression(IdentifierName("Equals"))
+                                .WithArgumentList(
+                                    ArgumentList(
+                                        SingletonSeparatedList(Argument(IdentifierName("other")))
+                                    )
+                                )
+                        )
+                    )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
+            yield return MethodDeclaration(
+                    PredefinedType(Token(SyntaxKind.IntKeyword)),
+                    Identifier("GetHashCode")
+                )
+                .WithModifiers(
+                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.OverrideKeyword)])
+                )
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        InvocationExpression(
+                                MemberAccessExpression(
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    IdentifierName("HashCode"),
+                                    IdentifierName("Combine")
+                                )
+                            )
+                            .WithArgumentList(
+                                ArgumentList(
+                                    SingletonSeparatedList(
+                                        Argument(
+                                            CastExpression(
+                                                IdentifierName("nuint"),
+                                                IdentifierName("Handle")
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                    )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
+            yield return OperatorDeclaration(
+                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
+                    Token(SyntaxKind.EqualsEqualsToken)
+                )
+                .WithModifiers(
+                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
+                )
+                .WithParameterList(
+                    ParameterList(
+                        SeparatedList<ParameterSyntax>(
+                            new SyntaxNodeOrToken[]
+                            {
+                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
+                                Token(SyntaxKind.CommaToken),
+                                Parameter(Identifier("right")).WithType(IdentifierName(structName))
+                            }
+                        )
+                    )
+                )
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        InvocationExpression(
+                                MemberAccessExpression(
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    IdentifierName("left"),
+                                    IdentifierName("Equals")
+                                )
+                            )
+                            .WithArgumentList(
+                                ArgumentList(
+                                    SingletonSeparatedList(Argument(IdentifierName("right")))
+                                )
+                            )
+                    )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
+            yield return OperatorDeclaration(
+                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
+                    Token(SyntaxKind.ExclamationEqualsToken)
+                )
+                .WithModifiers(
+                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
+                )
+                .WithParameterList(
+                    ParameterList(
+                        SeparatedList(
+                            [
+                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
+                                Parameter(Identifier("right")).WithType(IdentifierName(structName))
+                            ]
+                        )
+                    )
+                )
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        PrefixUnaryExpression(
+                            SyntaxKind.LogicalNotExpression,
+                            InvocationExpression(
+                                    MemberAccessExpression(
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        IdentifierName("left"),
+                                        IdentifierName("Equals")
+                                    )
+                                )
+                                .WithArgumentList(
+                                    ArgumentList(
+                                        SingletonSeparatedList(Argument(IdentifierName("right")))
+                                    )
+                                )
+                        )
+                    )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+        }
+
+        private static IEnumerable<MemberDeclarationSyntax> GetDSLHandleMembers(string structName)
+        {
+            yield return MethodDeclaration(
+                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
+                    Identifier("Equals")
+                )
+                .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                .WithParameterList(
+                    ParameterList(
+                        SingletonSeparatedList(
+                            Parameter(Identifier("_")).WithType(IdentifierName("NullPtr"))
+                        )
+                    )
+                )
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        IsPatternExpression(
+                            IdentifierName("Handle"),
+                            ConstantPattern(LiteralExpression(SyntaxKind.NullLiteralExpression))
+                        )
+                    )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
+            yield return OperatorDeclaration(
+                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
+                    Token(SyntaxKind.EqualsEqualsToken)
+                )
+                .WithModifiers(
+                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
+                )
+                .WithParameterList(
+                    ParameterList(
+                        SeparatedList<ParameterSyntax>(
+                            new SyntaxNodeOrToken[]
+                            {
+                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
+                                Token(SyntaxKind.CommaToken),
+                                Parameter(Identifier("right")).WithType(IdentifierName("NullPtr"))
+                            }
+                        )
+                    )
+                )
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        InvocationExpression(
+                                MemberAccessExpression(
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    IdentifierName("left"),
+                                    IdentifierName("Equals")
+                                )
+                            )
+                            .WithArgumentList(
+                                ArgumentList(
+                                    SingletonSeparatedList(Argument(IdentifierName("right")))
+                                )
+                            )
+                    )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
+            yield return OperatorDeclaration(
+                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
+                    Token(SyntaxKind.ExclamationEqualsToken)
+                )
+                .WithModifiers(
+                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
+                )
+                .WithParameterList(
+                    ParameterList(
+                        SeparatedList(
+                            [
+                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
+                                Parameter(Identifier("right")).WithType(IdentifierName("NullPtr"))
+                            ]
+                        )
+                    )
+                )
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        PrefixUnaryExpression(
+                            SyntaxKind.LogicalNotExpression,
+                            InvocationExpression(
+                                    MemberAccessExpression(
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        IdentifierName("left"),
+                                        IdentifierName("Equals")
+                                    )
+                                )
+                                .WithArgumentList(
+                                    ArgumentList(
+                                        SingletonSeparatedList(Argument(IdentifierName("right")))
+                                    )
+                                )
+                        )
+                    )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
+            yield return ConversionOperatorDeclaration(
+                    Token(SyntaxKind.ImplicitKeyword),
+                    IdentifierName(structName)
+                )
+                .WithModifiers(
+                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
+                )
+                .WithParameterList(
+                    ParameterList(
+                        SingletonSeparatedList(
+                            Parameter(
+                                    Identifier(
+                                        TriviaList(),
+                                        SyntaxKind.UnderscoreToken,
+                                        "_",
+                                        "_",
+                                        TriviaList()
+                                    )
+                                )
+                                .WithType(IdentifierName("NullPtr"))
+                        )
+                    )
+                )
+                .WithExpressionBody(
+                    ArrowExpressionClause(LiteralExpression(SyntaxKind.DefaultLiteralExpression))
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+        }
+    }
+
+    // TODO: This currently rewrites handle types and reduces pointer dimensions
+    // Perksey said he wanted pointer reduction to be potentially done by NameUtils.RenameAllAsync
+    // so keeping handle type rewriting and pointer dimension reduction separately would make this easier
+    // TODO: Make this take in a list of references (eg: Type*, Type**) to rewrite. If a non-pointer reference
+    // is encountered, throw an error
+    private class PointerDimensionReducer(Dictionary<string, Dictionary<string, string>> handles) : CSharpSyntaxRewriter
     {
         /// <summary>
         /// The current scope i.e. fully qualified type name.
@@ -284,32 +635,8 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
             return _derefPtr ? node.WithIdentifier(Identifier($"{node.Identifier}Handle")) : node;
         }
 
-        public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
-        {
-            if (
-                handles.TryGetValue(node.Identifier.ToString(), out var scopes)
-                && scopes.ContainsValue(node.NamespaceFromSyntaxNode())
-            )
-            {
-                var self = $"{node.Identifier}Handle";
-                return node.WithIdentifier(Identifier(self))
-                    .WithMembers(
-                        List(
-                            GetDefaultMembers(self).Concat(useDSL ? GetDSLImplementation(self) : [])
-                        )
-                    )
-                    .WithModifiers(
-                        TokenList(
-                            Token(SyntaxKind.PublicKeyword),
-                            Token(SyntaxKind.ReadOnlyKeyword),
-                            Token(SyntaxKind.UnsafeKeyword),
-                            Token(SyntaxKind.PartialKeyword)
-                        )
-                    );
-            }
-
-            return VisitType(node, node.Identifier, base.VisitStructDeclaration);
-        }
+        public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node) =>
+            VisitType(node, node.Identifier, base.VisitStructDeclaration);
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node) =>
             VisitType(node, node.Identifier, base.VisitClassDeclaration);
@@ -325,311 +652,5 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
 
         public override SyntaxNode? VisitInterfaceDeclaration(InterfaceDeclarationSyntax node) =>
             VisitType(node, node.Identifier, base.VisitInterfaceDeclaration);
-
-        private static IEnumerable<MemberDeclarationSyntax> GetDefaultMembers(string self)
-        {
-            yield return FieldDeclaration(
-                    VariableDeclaration(
-                        PointerType(PredefinedType(Token(SyntaxKind.VoidKeyword))),
-                        SingletonSeparatedList(VariableDeclarator("Handle"))
-                    )
-                )
-                .WithModifiers(
-                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.ReadOnlyKeyword))
-                );
-            yield return MethodDeclaration(
-                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
-                    Identifier("Equals")
-                )
-                .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                .WithParameterList(
-                    ParameterList(
-                        SingletonSeparatedList(
-                            Parameter(Identifier("other")).WithType(IdentifierName(self))
-                        )
-                    )
-                )
-                .WithExpressionBody(
-                    ArrowExpressionClause(
-                        BinaryExpression(
-                            SyntaxKind.EqualsExpression,
-                            IdentifierName("Handle"),
-                            MemberAccessExpression(
-                                SyntaxKind.SimpleMemberAccessExpression,
-                                IdentifierName("other"),
-                                IdentifierName("Handle")
-                            )
-                        )
-                    )
-                )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-            yield return MethodDeclaration(
-                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
-                    Identifier("Equals")
-                )
-                .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.OverrideKeyword)])
-                )
-                .WithParameterList(
-                    ParameterList(
-                        SingletonSeparatedList(
-                            Parameter(Identifier("obj"))
-                                .WithType(
-                                    NullableType(PredefinedType(Token(SyntaxKind.ObjectKeyword)))
-                                )
-                        )
-                    )
-                )
-                .WithExpressionBody(
-                    ArrowExpressionClause(
-                        BinaryExpression(
-                            SyntaxKind.LogicalAndExpression,
-                            IsPatternExpression(
-                                IdentifierName("obj"),
-                                DeclarationPattern(
-                                    IdentifierName(self),
-                                    SingleVariableDesignation(Identifier("other"))
-                                )
-                            ),
-                            InvocationExpression(IdentifierName("Equals"))
-                                .WithArgumentList(
-                                    ArgumentList(
-                                        SingletonSeparatedList(Argument(IdentifierName("other")))
-                                    )
-                                )
-                        )
-                    )
-                )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-            yield return MethodDeclaration(
-                    PredefinedType(Token(SyntaxKind.IntKeyword)),
-                    Identifier("GetHashCode")
-                )
-                .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.OverrideKeyword)])
-                )
-                .WithExpressionBody(
-                    ArrowExpressionClause(
-                        InvocationExpression(
-                                MemberAccessExpression(
-                                    SyntaxKind.SimpleMemberAccessExpression,
-                                    IdentifierName("HashCode"),
-                                    IdentifierName("Combine")
-                                )
-                            )
-                            .WithArgumentList(
-                                ArgumentList(
-                                    SingletonSeparatedList(
-                                        Argument(
-                                            CastExpression(
-                                                IdentifierName("nuint"),
-                                                IdentifierName("Handle")
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                    )
-                )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-            yield return OperatorDeclaration(
-                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
-                    Token(SyntaxKind.EqualsEqualsToken)
-                )
-                .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
-                )
-                .WithParameterList(
-                    ParameterList(
-                        SeparatedList<ParameterSyntax>(
-                            new SyntaxNodeOrToken[]
-                            {
-                                Parameter(Identifier("left")).WithType(IdentifierName(self)),
-                                Token(SyntaxKind.CommaToken),
-                                Parameter(Identifier("right")).WithType(IdentifierName(self))
-                            }
-                        )
-                    )
-                )
-                .WithExpressionBody(
-                    ArrowExpressionClause(
-                        InvocationExpression(
-                                MemberAccessExpression(
-                                    SyntaxKind.SimpleMemberAccessExpression,
-                                    IdentifierName("left"),
-                                    IdentifierName("Equals")
-                                )
-                            )
-                            .WithArgumentList(
-                                ArgumentList(
-                                    SingletonSeparatedList(Argument(IdentifierName("right")))
-                                )
-                            )
-                    )
-                )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-            yield return OperatorDeclaration(
-                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
-                    Token(SyntaxKind.ExclamationEqualsToken)
-                )
-                .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
-                )
-                .WithParameterList(
-                    ParameterList(
-                        SeparatedList(
-                            [
-                                Parameter(Identifier("left")).WithType(IdentifierName(self)),
-                                Parameter(Identifier("right")).WithType(IdentifierName(self))
-                            ]
-                        )
-                    )
-                )
-                .WithExpressionBody(
-                    ArrowExpressionClause(
-                        PrefixUnaryExpression(
-                            SyntaxKind.LogicalNotExpression,
-                            InvocationExpression(
-                                    MemberAccessExpression(
-                                        SyntaxKind.SimpleMemberAccessExpression,
-                                        IdentifierName("left"),
-                                        IdentifierName("Equals")
-                                    )
-                                )
-                                .WithArgumentList(
-                                    ArgumentList(
-                                        SingletonSeparatedList(Argument(IdentifierName("right")))
-                                    )
-                                )
-                        )
-                    )
-                )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-        }
-
-        private static IEnumerable<MemberDeclarationSyntax> GetDSLImplementation(string self)
-        {
-            yield return MethodDeclaration(
-                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
-                    Identifier("Equals")
-                )
-                .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                .WithParameterList(
-                    ParameterList(
-                        SingletonSeparatedList(
-                            Parameter(Identifier("_")).WithType(IdentifierName("NullPtr"))
-                        )
-                    )
-                )
-                .WithExpressionBody(
-                    ArrowExpressionClause(
-                        IsPatternExpression(
-                            IdentifierName("Handle"),
-                            ConstantPattern(LiteralExpression(SyntaxKind.NullLiteralExpression))
-                        )
-                    )
-                )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-            yield return OperatorDeclaration(
-                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
-                    Token(SyntaxKind.EqualsEqualsToken)
-                )
-                .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
-                )
-                .WithParameterList(
-                    ParameterList(
-                        SeparatedList<ParameterSyntax>(
-                            new SyntaxNodeOrToken[]
-                            {
-                                Parameter(Identifier("left")).WithType(IdentifierName(self)),
-                                Token(SyntaxKind.CommaToken),
-                                Parameter(Identifier("right")).WithType(IdentifierName("NullPtr"))
-                            }
-                        )
-                    )
-                )
-                .WithExpressionBody(
-                    ArrowExpressionClause(
-                        InvocationExpression(
-                                MemberAccessExpression(
-                                    SyntaxKind.SimpleMemberAccessExpression,
-                                    IdentifierName("left"),
-                                    IdentifierName("Equals")
-                                )
-                            )
-                            .WithArgumentList(
-                                ArgumentList(
-                                    SingletonSeparatedList(Argument(IdentifierName("right")))
-                                )
-                            )
-                    )
-                )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-            yield return OperatorDeclaration(
-                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
-                    Token(SyntaxKind.ExclamationEqualsToken)
-                )
-                .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
-                )
-                .WithParameterList(
-                    ParameterList(
-                        SeparatedList(
-                            [
-                                Parameter(Identifier("left")).WithType(IdentifierName(self)),
-                                Parameter(Identifier("right")).WithType(IdentifierName("NullPtr"))
-                            ]
-                        )
-                    )
-                )
-                .WithExpressionBody(
-                    ArrowExpressionClause(
-                        PrefixUnaryExpression(
-                            SyntaxKind.LogicalNotExpression,
-                            InvocationExpression(
-                                    MemberAccessExpression(
-                                        SyntaxKind.SimpleMemberAccessExpression,
-                                        IdentifierName("left"),
-                                        IdentifierName("Equals")
-                                    )
-                                )
-                                .WithArgumentList(
-                                    ArgumentList(
-                                        SingletonSeparatedList(Argument(IdentifierName("right")))
-                                    )
-                                )
-                        )
-                    )
-                )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-            yield return ConversionOperatorDeclaration(
-                    Token(SyntaxKind.ImplicitKeyword),
-                    IdentifierName(self)
-                )
-                .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
-                )
-                .WithParameterList(
-                    ParameterList(
-                        SingletonSeparatedList(
-                            Parameter(
-                                    Identifier(
-                                        TriviaList(),
-                                        SyntaxKind.UnderscoreToken,
-                                        "_",
-                                        "_",
-                                        TriviaList()
-                                    )
-                                )
-                                .WithType(IdentifierName("NullPtr"))
-                        )
-                    )
-                )
-                .WithExpressionBody(
-                    ArrowExpressionClause(LiteralExpression(SyntaxKind.DefaultLiteralExpression))
-                )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-        }
     }
 }
