@@ -229,7 +229,7 @@ namespace Silk.NET.Core
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static explicit operator nuint(Ptr ptr) => new(ptr.Native);
+        public static implicit operator nuint(Ptr ptr) => new(ptr.Native);
 
         /// <summary>
         /// Creates a <see cref="Ptr"/> from a <see cref="nuint"/>

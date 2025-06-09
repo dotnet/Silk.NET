@@ -327,7 +327,7 @@ namespace Silk.NET.Core
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static implicit operator Ptr<T>(nuint ptr) => new((T*)ptr.ToPointer());
+        public static explicit operator Ptr<T>(nuint ptr) => new((T*)ptr.ToPointer());
 
         /// <summary>
         /// Creates a <see cref="nint"/> from a <see cref="Ptr{T}"/>
