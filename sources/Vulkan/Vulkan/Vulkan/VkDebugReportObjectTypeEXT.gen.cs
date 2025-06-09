@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkDebugReportObjectTypeEXT
+public enum VkDebugReportObjectTypeEXT : uint
 {
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     VK_DEBUG_REPORT_OBJECT_TYPE_UNKNOWN_EXT = 0,

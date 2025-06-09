@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkShaderInfoTypeAMD
+public enum VkShaderInfoTypeAMD : uint
 {
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     VK_SHADER_INFO_TYPE_STATISTICS_AMD = 0,

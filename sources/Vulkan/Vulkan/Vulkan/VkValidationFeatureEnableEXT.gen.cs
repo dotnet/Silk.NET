@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkValidationFeatureEnableEXT
+public enum VkValidationFeatureEnableEXT : uint
 {
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     VK_VALIDATION_FEATURE_ENABLE_GPU_ASSISTED_EXT = 0,

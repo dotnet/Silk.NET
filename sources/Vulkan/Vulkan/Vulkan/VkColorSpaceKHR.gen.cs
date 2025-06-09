@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkColorSpaceKHR
+public enum VkColorSpaceKHR : uint
 {
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     VK_COLOR_SPACE_SRGB_NONLINEAR_KHR = 0,

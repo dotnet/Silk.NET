@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkRasterizationOrderAMD
+public enum VkRasterizationOrderAMD : uint
 {
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
     VK_RASTERIZATION_ORDER_STRICT_AMD = 0,

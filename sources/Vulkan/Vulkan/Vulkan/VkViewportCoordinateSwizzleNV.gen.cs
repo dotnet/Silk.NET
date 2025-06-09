@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkViewportCoordinateSwizzleNV
+public enum VkViewportCoordinateSwizzleNV : uint
 {
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     VK_VIEWPORT_COORDINATE_SWIZZLE_POSITIVE_X_NV = 0,

@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkLayerSettingTypeEXT
+public enum VkLayerSettingTypeEXT : uint
 {
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     VK_LAYER_SETTING_TYPE_BOOL32_EXT = 0,

@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkCoverageModulationModeNV
+public enum VkCoverageModulationModeNV : uint
 {
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
     VK_COVERAGE_MODULATION_MODE_NONE_NV = 0,

@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkCooperativeVectorMatrixLayoutNV
+public enum VkCooperativeVectorMatrixLayoutNV : uint
 {
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
     VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_ROW_MAJOR_NV = 0,

@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkQueryPoolSamplingModeINTEL
+public enum VkQueryPoolSamplingModeINTEL : uint
 {
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     VK_QUERY_POOL_SAMPLING_MODE_MANUAL_INTEL = 0,

@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkDebugUtilsMessageTypeFlagsEXT
+public enum VkDebugUtilsMessageTypeFlagsEXT : uint
 {
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT = 0x00000001,

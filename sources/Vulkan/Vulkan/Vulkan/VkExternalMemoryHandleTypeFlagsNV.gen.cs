@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkExternalMemoryHandleTypeFlagsNV
+public enum VkExternalMemoryHandleTypeFlagsNV : uint
 {
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_NV = 0x00000001,

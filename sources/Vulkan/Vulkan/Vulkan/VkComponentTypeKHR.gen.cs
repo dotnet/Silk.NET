@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkComponentTypeKHR
+public enum VkComponentTypeKHR : uint
 {
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
     VK_COMPONENT_TYPE_FLOAT16_KHR = 0,

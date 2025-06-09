@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkMemoryOverallocationBehaviorAMD
+public enum VkMemoryOverallocationBehaviorAMD : uint
 {
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
     VK_MEMORY_OVERALLOCATION_BEHAVIOR_DEFAULT_AMD = 0,

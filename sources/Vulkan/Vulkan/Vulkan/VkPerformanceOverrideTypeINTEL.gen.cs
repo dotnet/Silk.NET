@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkPerformanceOverrideTypeINTEL
+public enum VkPerformanceOverrideTypeINTEL : uint
 {
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     VK_PERFORMANCE_OVERRIDE_TYPE_NULL_HARDWARE_INTEL = 0,

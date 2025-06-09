@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkVideoEncodeAV1SuperblockSizeFlagsKHR
+public enum VkVideoEncodeAV1SuperblockSizeFlagsKHR : uint
 {
     [SupportedApiProfile(
         "vulkan",

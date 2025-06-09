@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkCompositeAlphaFlagsKHR
+public enum VkCompositeAlphaFlagsKHR : uint
 {
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR = 0x00000001,

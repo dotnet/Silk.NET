@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkAntiLagModeAMD
+public enum VkAntiLagModeAMD : uint
 {
     [SupportedApiProfile("vulkan", ["VK_AMD_anti_lag"])]
     VK_ANTI_LAG_MODE_DRIVER_CONTROL_AMD = 0,

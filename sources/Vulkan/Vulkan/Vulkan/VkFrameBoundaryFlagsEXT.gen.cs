@@ -4,8 +4,9 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VkFrameBoundaryFlagsEXT
+public enum VkFrameBoundaryFlagsEXT : uint
 {
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
     VK_FRAME_BOUNDARY_FRAME_END_BIT_EXT = 0x00000001,
