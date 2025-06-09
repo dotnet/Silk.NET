@@ -26,108 +26,108 @@ namespace Silk.NET.Vulkan;
 public unsafe partial struct PhysicalDeviceGroupPropertiesPhysicalDevices
 {
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E0;
+    public PhysicalDevice* E0;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E1;
+    public PhysicalDevice* E1;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E2;
+    public PhysicalDevice* E2;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E3;
+    public PhysicalDevice* E3;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E4;
+    public PhysicalDevice* E4;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E5;
+    public PhysicalDevice* E5;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E6;
+    public PhysicalDevice* E6;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E7;
+    public PhysicalDevice* E7;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E8;
+    public PhysicalDevice* E8;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E9;
+    public PhysicalDevice* E9;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E10;
+    public PhysicalDevice* E10;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E11;
+    public PhysicalDevice* E11;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E12;
+    public PhysicalDevice* E12;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E13;
+    public PhysicalDevice* E13;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E14;
+    public PhysicalDevice* E14;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E15;
+    public PhysicalDevice* E15;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E16;
+    public PhysicalDevice* E16;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E17;
+    public PhysicalDevice* E17;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E18;
+    public PhysicalDevice* E18;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E19;
+    public PhysicalDevice* E19;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E20;
+    public PhysicalDevice* E20;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E21;
+    public PhysicalDevice* E21;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E22;
+    public PhysicalDevice* E22;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E23;
+    public PhysicalDevice* E23;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E24;
+    public PhysicalDevice* E24;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E25;
+    public PhysicalDevice* E25;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E26;
+    public PhysicalDevice* E26;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E27;
+    public PhysicalDevice* E27;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E28;
+    public PhysicalDevice* E28;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E29;
+    public PhysicalDevice* E29;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E30;
+    public PhysicalDevice* E30;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E31;
+    public PhysicalDevice* E31;
 
     [SupportedApiProfile("vulkan")]
-    public ref VkPhysicalDevice_THandle this[int index]
+    public ref PhysicalDevice* this[int index]
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (VkPhysicalDevice_THandle* pThis = &E0)
+            fixed (PhysicalDevice** pThis = &E0)
             {
                 return ref pThis[index];
             }

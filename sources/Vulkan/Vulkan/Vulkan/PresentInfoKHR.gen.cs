@@ -34,7 +34,7 @@ public unsafe partial struct PresentInfoKHR
 
     [NativeTypeName("const VkSemaphore *")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public VkSemaphore_THandle* PWaitSemaphores;
+    public Semaphore** PWaitSemaphores;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -42,7 +42,7 @@ public unsafe partial struct PresentInfoKHR
 
     [NativeTypeName("const VkSwapchainKHR *")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public VkSwapchainKHR_THandle* PSwapchains;
+    public SwapchainKHR** PSwapchains;
 
     [NativeTypeName("const uint32_t *")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]

@@ -62,7 +62,7 @@ public unsafe partial struct VideoEncodeInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public VkBuffer_THandle DstBuffer;
+    public Buffer* DstBuffer;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

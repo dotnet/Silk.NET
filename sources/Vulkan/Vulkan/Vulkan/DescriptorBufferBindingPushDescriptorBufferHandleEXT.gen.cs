@@ -57,5 +57,5 @@ public unsafe partial struct DescriptorBufferBindingPushDescriptorBufferHandleEX
             "VK_VERSION_1_3",
         ]
     )]
-    public VkBuffer_THandle Buffer;
+    public Buffer* Buffer;
 }

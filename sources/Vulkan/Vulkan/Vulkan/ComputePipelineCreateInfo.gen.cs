@@ -57,7 +57,7 @@ public unsafe partial struct ComputePipelineCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public VkPipelineLayout_THandle Layout;
+    public PipelineLayout* Layout;
 
     [NativeTypeName("VkPipeline")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public unsafe partial struct ComputePipelineCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public VkPipeline_THandle BasePipelineHandle;
+    public Pipeline* BasePipelineHandle;
 
     [NativeTypeName("int32_t")]
     [SupportedApiProfile(

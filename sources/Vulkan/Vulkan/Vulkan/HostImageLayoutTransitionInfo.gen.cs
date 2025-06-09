@@ -30,7 +30,7 @@ public unsafe partial struct HostImageLayoutTransitionInfo
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public VkImage_THandle Image;
+    public Image* Image;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public ImageLayout OldLayout;

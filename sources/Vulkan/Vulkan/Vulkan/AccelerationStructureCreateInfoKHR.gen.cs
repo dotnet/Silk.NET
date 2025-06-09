@@ -62,7 +62,7 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public VkBuffer_THandle Buffer;
+    public Buffer* Buffer;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

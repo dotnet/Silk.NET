@@ -34,14 +34,14 @@ public unsafe partial struct CopyImageToImageInfo
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public VkImage_THandle SrcImage;
+    public Image* SrcImage;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public ImageLayout SrcImageLayout;
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public VkImage_THandle DstImage;
+    public Image* DstImage;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public ImageLayout DstImageLayout;

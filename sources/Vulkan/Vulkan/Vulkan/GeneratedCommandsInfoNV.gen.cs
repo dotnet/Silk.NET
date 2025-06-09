@@ -49,7 +49,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public VkPipeline_THandle Pipeline;
+    public Pipeline* Pipeline;
 
     [NativeTypeName("VkIndirectCommandsLayoutNV")]
     [SupportedApiProfile(
@@ -57,7 +57,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public VkIndirectCommandsLayoutNV_THandle IndirectCommandsLayout;
+    public IndirectCommandsLayoutNV* IndirectCommandsLayout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -89,7 +89,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public VkBuffer_THandle PreprocessBuffer;
+    public Buffer* PreprocessBuffer;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -113,7 +113,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public VkBuffer_THandle SequencesCountBuffer;
+    public Buffer* SequencesCountBuffer;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -129,7 +129,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public VkBuffer_THandle SequencesIndexBuffer;
+    public Buffer* SequencesIndexBuffer;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

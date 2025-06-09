@@ -65,5 +65,5 @@ public unsafe partial struct GeneratedCommandsShaderInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public VkShaderEXT_THandle* PShaders;
+    public ShaderEXT** PShaders;
 }

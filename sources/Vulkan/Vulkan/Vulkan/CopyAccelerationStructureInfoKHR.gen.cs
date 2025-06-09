@@ -51,7 +51,7 @@ public unsafe partial struct CopyAccelerationStructureInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public VkAccelerationStructureKHR_THandle Src;
+    public AccelerationStructureKHR* Src;
 
     [NativeTypeName("VkAccelerationStructureKHR")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct CopyAccelerationStructureInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public VkAccelerationStructureKHR_THandle Dst;
+    public AccelerationStructureKHR* Dst;
 
     [SupportedApiProfile(
         "vulkan",

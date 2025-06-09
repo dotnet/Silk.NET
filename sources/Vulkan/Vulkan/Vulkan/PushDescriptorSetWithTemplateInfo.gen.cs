@@ -30,11 +30,11 @@ public unsafe partial struct PushDescriptorSetWithTemplateInfo
 
     [NativeTypeName("VkDescriptorUpdateTemplate")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public VkDescriptorUpdateTemplate_THandle DescriptorUpdateTemplate;
+    public DescriptorUpdateTemplate* DescriptorUpdateTemplate;
 
     [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public VkPipelineLayout_THandle Layout;
+    public PipelineLayout* Layout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]

@@ -62,7 +62,7 @@ public unsafe partial struct VideoDecodeInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public VkBuffer_THandle SrcBuffer;
+    public Buffer* SrcBuffer;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

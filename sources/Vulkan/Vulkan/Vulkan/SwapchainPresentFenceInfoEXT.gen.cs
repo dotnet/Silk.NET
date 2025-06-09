@@ -61,5 +61,5 @@ public unsafe partial struct SwapchainPresentFenceInfoEXT
             "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
-    public VkFence_THandle* PFences;
+    public Fence** PFences;
 }

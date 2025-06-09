@@ -51,7 +51,7 @@ public unsafe partial struct BindAccelerationStructureMemoryInfoNV
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public VkAccelerationStructureNV_THandle AccelerationStructure;
+    public AccelerationStructureNV* AccelerationStructure;
 
     [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct BindAccelerationStructureMemoryInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public VkDeviceMemory_THandle Memory;
+    public DeviceMemory* Memory;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

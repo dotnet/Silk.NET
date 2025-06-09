@@ -73,39 +73,46 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         var handleTypeDiscoverer = new HandleTypeDiscoverer(proj, compilation, ct);
         var handleTypes = await handleTypeDiscoverer.GetHandleTypesAsync();
 
-        // Get the discovered handle types and missing handle types
-        Dictionary<string, Dictionary<string, string>> handles = [];
-
         // Second pass to modify the project based on gathered data
-        // Before the execution of this foreach loop, the handle structs are empty
-        //
-        // During this foreach loop, we do two things:
-        // 1. Rewrite all type references to refer to the handle structs
-        // 2. Add members to handle structs (as identified the handles variable)
-        var rewriter = new Rewriter(handles, cfg.UseDSL);
-        foreach (var docId in proj?.DocumentIds ?? [])
+        foreach (var handleTypeSymbol in handleTypes)
         {
-            var doc =
-                proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
-            if (await doc.GetSyntaxRootAsync(ct) is not { } root)
+            foreach (var declaringSyntaxReference in handleTypeSymbol.DeclaringSyntaxReferences)
             {
-                continue;
+                var handleTypeName = handleTypeSymbol.Name;
+                var document = proj.GetDocument(declaringSyntaxReference.SyntaxTree);
+                if (document != null)
+                {
+                    // Add -Handle suffix to end of document name
+                    document = document.WithFilePath(
+                            document.FilePath!.Replace(handleTypeName, $"{handleTypeName}Handle")
+                        )
+                        .WithName(document.Name.Replace(handleTypeName, $"{handleTypeName}Handle"));
+
+                    proj = document.Project;
+                }
             }
-
-            doc = doc.WithSyntaxRoot(rewriter.Visit(root).NormalizeWhitespace());
-            var effectiveName = ModUtils.GetEffectiveName(doc.FilePath).ToString();
-
-            // Add "Handle" suffix if the document represents a handle struct
-            if (handles.ContainsKey(effectiveName))
-            {
-                doc = doc.WithFilePath(
-                        doc.FilePath!.Replace(effectiveName, $"{effectiveName}Handle")
-                    )
-                    .WithName(doc.Name.Replace(effectiveName, $"{effectiveName}Handle"));
-            }
-
-            proj = doc.Project;
         }
+
+        // // Second pass to modify the project based on gathered data
+        // // Before the execution of this foreach loop, the handle structs are empty
+        // //
+        // // During this foreach loop, we do two things:
+        // // 1. Rewrite all type references to refer to the handle structs
+        // // 2. Add members to handle structs (as identified the handles variable)
+        // var rewriter = new Rewriter(handles, cfg.UseDSL);
+        // foreach (var docId in proj?.DocumentIds ?? [])
+        // {
+        //     var doc =
+        //         proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+        //     if (await doc.GetSyntaxRootAsync(ct) is not { } root)
+        //     {
+        //         continue;
+        //     }
+        //
+        //     doc = doc.WithSyntaxRoot(rewriter.Visit(root).NormalizeWhitespace());
+        //
+        //     proj = doc.Project;
+        // }
 
         ctx.SourceProject = proj;
     }

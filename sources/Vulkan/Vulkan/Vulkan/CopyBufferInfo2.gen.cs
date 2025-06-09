@@ -30,11 +30,11 @@ public unsafe partial struct CopyBufferInfo2
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public VkBuffer_THandle SrcBuffer;
+    public Buffer* SrcBuffer;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public VkBuffer_THandle DstBuffer;
+    public Buffer* DstBuffer;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

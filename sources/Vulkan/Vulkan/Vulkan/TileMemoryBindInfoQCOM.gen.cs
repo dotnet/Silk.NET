@@ -51,5 +51,5 @@ public unsafe partial struct TileMemoryBindInfoQCOM
             "VK_VERSION_1_1",
         ]
     )]
-    public VkDeviceMemory_THandle Memory;
+    public DeviceMemory* Memory;
 }

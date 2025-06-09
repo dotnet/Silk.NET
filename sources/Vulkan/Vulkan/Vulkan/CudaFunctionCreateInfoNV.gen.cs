@@ -29,7 +29,7 @@ public unsafe partial struct CudaFunctionCreateInfoNV
 
     [NativeTypeName("VkCudaModuleNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    public VkCudaModuleNV_THandle Module;
+    public CudaModuleNV* Module;
 
     [NativeTypeName("const char *")]
     [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]

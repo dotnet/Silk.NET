@@ -50,7 +50,7 @@ public unsafe partial struct FramebufferCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public VkRenderPass_THandle RenderPass;
+    public RenderPass* RenderPass;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -66,7 +66,7 @@ public unsafe partial struct FramebufferCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public VkImageView_THandle* PAttachments;
+    public ImageView** PAttachments;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

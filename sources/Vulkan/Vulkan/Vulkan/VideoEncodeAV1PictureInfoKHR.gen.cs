@@ -64,7 +64,7 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StdVideoEncodeAV1PictureInfoHandle PStdPictureInfo;
+    public StdVideoEncodeAV1PictureInfo* PStdPictureInfo;
 
     [NativeTypeName("int32_t[7]")]
     [SupportedApiProfile(

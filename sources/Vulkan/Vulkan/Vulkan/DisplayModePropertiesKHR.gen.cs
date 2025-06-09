@@ -23,7 +23,7 @@ public unsafe partial struct DisplayModePropertiesKHR
 {
     [NativeTypeName("VkDisplayModeKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public VkDisplayModeKHR_THandle DisplayMode;
+    public DisplayModeKHR* DisplayMode;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public DisplayModeParametersKHR Parameters;
