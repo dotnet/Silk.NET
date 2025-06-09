@@ -77,18 +77,18 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         var handles = discoverer.GetHandleTypes(missingFullyQualifiedTypeNamesToRootNodes);
         if (missingFullyQualifiedTypeNamesToRootNodes is not null)
         {
-            // Generate missing handle types
-            foreach (var (fqTypeName, node) in missingFullyQualifiedTypeNamesToRootNodes)
-            {
-                var rel = $"Handles/{PathForFullyQualified(fqTypeName)}";
-                proj = proj
-                    ?.AddDocument(
-                        Path.GetFileName(rel),
-                        node.NormalizeWhitespace(),
-                        filePath: proj.FullPath(rel)
-                    )
-                    .Project;
-            }
+            // // Generate missing handle types
+            // foreach (var (fqTypeName, node) in missingFullyQualifiedTypeNamesToRootNodes)
+            // {
+            //     var rel = $"Handles/{PathForFullyQualified(fqTypeName)}";
+            //     proj = proj
+            //         ?.AddDocument(
+            //             Path.GetFileName(rel),
+            //             node.NormalizeWhitespace(),
+            //             filePath: proj.FullPath(rel)
+            //         )
+            //         .Project;
+            // }
         }
 
         // Before the execution of this foreach loop, the handle structs are empty

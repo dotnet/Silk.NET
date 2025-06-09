@@ -167,6 +167,11 @@
         "AddApiProfiles",
         "MixKhronosData",
         "ExtractNestedTyping",
+        "TransformHandles",
+        "TransformFunctions",
+        "TransformProperties",
+        "PrettifyNames",
+        "AddVTables"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -203,9 +208,8 @@
         ]
       },
       "TransformHandles": {
-        "AssumeMissingTypesOpaque": true,
         "UseDSL": true
-      },
+      }
     }
   }
 }
