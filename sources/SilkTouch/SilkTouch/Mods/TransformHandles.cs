@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Naming;
@@ -54,10 +56,22 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         await base.ExecuteAsync(ctx, ct);
 
         var proj = ctx.SourceProject;
+        if (proj == null)
+        {
+            return;
+        }
+
+        var compilation = await proj.GetCompilationAsync(ct);
+        if (compilation == null)
+        {
+            return;
+        }
+
         var cfg = config.Get(ctx.JobKey);
 
         // First pass to gather data
-        var handleTypeDiscoverer = new HandleTypeDiscoverer();
+        var handleTypeDiscoverer = new HandleTypeDiscoverer(proj, compilation, ct);
+        var handleTypes = await handleTypeDiscoverer.GetHandleTypesAsync();
 
         // Get the discovered handle types and missing handle types
         Dictionary<string, Dictionary<string, string>> handles = [];
@@ -96,9 +110,103 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         ctx.SourceProject = proj;
     }
 
-    private class HandleTypeDiscoverer
+    private class HandleTypeDiscoverer(Project project, Compilation compilation, CancellationToken ct) : SymbolVisitor
     {
+        private readonly Solution solution = project.Solution;
 
+        /// <summary>
+        /// All discovered empty structs. These are not all handle types.
+        /// </summary>
+        private readonly List<INamedTypeSymbol> emptyStructs = new();
+
+        /// <summary>
+        /// Finds all symbols that correspond to a handle type.
+        /// These symbols are identified by finding empty structs that are only ever referenced through a pointer.
+        /// </summary>
+        public async Task<List<INamedTypeSymbol>> GetHandleTypesAsync()
+        {
+            Clear();
+
+            Visit(compilation.GlobalNamespace);
+
+            var results = new List<INamedTypeSymbol>();
+            var documents = project.Documents.ToImmutableHashSet();
+            foreach (var structSymbol in emptyStructs)
+            {
+                // For each struct, find its references
+                // Verify that all references are through pointers
+                // Also verify that there is at least one reference through a pointer
+                var references = await SymbolFinder.FindReferencesAsync(structSymbol, solution, documents, ct);
+
+                var wasReferencedAsPointer = false;
+                var wasReferencedAsNonPointer = false;
+                foreach (var referencedLocation in references.SelectMany(r => r.Locations))
+                {
+                    var syntaxTree = referencedLocation.Location.SourceTree;
+                    if (syntaxTree == null)
+                    {
+                        continue;
+                    }
+
+                    // Get the syntax node that references this struct
+                    var syntaxRoot = await syntaxTree.GetRootAsync(ct);
+                    var syntaxNode = syntaxRoot.FindNode(referencedLocation.Location.SourceSpan);
+                    if (syntaxNode.Parent.IsKind(SyntaxKind.PointerType))
+                    {
+                        // This lets us know if there was at least one reference through a pointer
+                        wasReferencedAsPointer = true;
+                    }
+                    else
+                    {
+                        // Was referenced through a non-pointer
+                        // Immediately break
+                        wasReferencedAsNonPointer = true;
+
+                        break;
+                    }
+                }
+
+                if (wasReferencedAsPointer && !wasReferencedAsNonPointer)
+                {
+                    results.Add(structSymbol);
+                }
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Clears all internal state
+        /// </summary>
+        private void Clear()
+        {
+            emptyStructs.Clear();
+        }
+
+        public override void VisitNamespace(INamespaceSymbol symbol)
+        {
+            base.VisitNamespace(symbol);
+
+            foreach (var member in symbol.Members())
+            {
+                Visit(member);
+            }
+        }
+
+        public override void VisitNamedType(INamedTypeSymbol symbol)
+        {
+            base.VisitNamedType(symbol);
+
+            // Find empty structs
+            // IsImplicitlyDeclared lets us ignore implicitly declared constructors
+            // SpecialType lets us ignore Void and System.RuntimeArgumentHandle
+            if (symbol.TypeKind != TypeKind.Struct || symbol.Members().Any(member => !member.IsImplicitlyDeclared) || symbol.SpecialType != SpecialType.None)
+            {
+                return;
+            }
+
+            emptyStructs.Add(symbol);
+        }
     }
 
     class Rewriter(Dictionary<string, Dictionary<string, string>> handles, bool useDSL) : CSharpSyntaxRewriter
