@@ -24,27 +24,31 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// A mod that extracts type system information nested within other types. Today this includes:
+/// A mod that extracts type system information nested within other types. This currently includes:
 /// <list type="bullet">
-/// <item>
-/// <description>
-/// Function pointers identified by their <see cref="NativeTypeNameAttribute"/>s into delegates and <c>Pfn</c>-prefixed
-/// structures.
-/// </description>
-/// </item>
-/// <item>
-/// <description>
-/// Enums identified by their <see cref="NativeTypeNameAttribute"/>s where there are constants declared with a matching
-/// prefix. This accounts for the below pattern seen frequently pre-C99:
+/// <item><description>
+/// Replacing function pointers identified by their <see cref="NativeTypeNameAttribute"/>s with delegates and
+/// <c>Pfn</c>-prefixed structures.
+/// </description></item>
+/// <item><description>
+/// Moving constants into their respective enums. These constants are identified by checking for an enum with
+/// a matching prefix, as identified by the enum's <see cref="NativeTypeNameAttribute"/>.
+/// This accounts for the below pattern seen frequently pre-C99:
 /// <code>
 /// typedef unsigned int MyEnum;
 /// #define MY_ENUM_HELLO 0
 /// extern MyEnum GetMyEnum();
 /// </code>
-/// </description>
-/// </item>
-/// <item><description>Fixed buffers and anonymous structures contained within structures.</description></item>
-/// <item><description>Missing types that are only referenced through pointers. This works alongside the <see cref="TransformHandles"/> mod.</description></item>
+/// </description></item>
+/// <item><description>
+/// Extracting fixed buffers and anonymous structures contained within structures into separate types.
+/// </description></item>
+/// <item><description>
+/// Creating empty structs for types identified to be handle types.
+/// Handle types are identified by looking for missing types that are only referenced through a pointer.
+/// While these empty structs are usable by themselves, the <see cref="TransformHandles"/> mod can further transform
+/// these to be more user-friendly.
+/// </description></item>
 /// </list>
 /// </summary>
 [ModConfiguration<Config>]
