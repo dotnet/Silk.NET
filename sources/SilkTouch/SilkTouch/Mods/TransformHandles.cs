@@ -103,6 +103,9 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
             }
         }
 
+        // TODO: Add -Handle prefix to handle type names
+        // TODO: Reduce handle pointer dimensions by 1
+
         // TODO: Old code. Cleanup needed
         // // Before the execution of this foreach loop, the handle structs are empty
         // //
@@ -562,9 +565,8 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         }
     }
 
-    // TODO: This currently rewrites handle types and reduces pointer dimensions
-    // Perksey said he wanted pointer reduction to be potentially done by NameUtils.RenameAllAsync
-    // so keeping handle type rewriting and pointer dimension reduction separately would make this easier
+    // TODO: Perksey said he wanted pointer reduction to be handled alongside NameUtils.RenameAllAsync
+    // for performance reasons
     // TODO: Make this take in a list of references (eg: Type*, Type**) to rewrite. If a non-pointer reference
     // is encountered, throw an error
     private class PointerDimensionReducer(Dictionary<string, Dictionary<string, string>> handles) : CSharpSyntaxRewriter
