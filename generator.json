@@ -169,10 +169,10 @@
         "AddApiProfiles",
         "MixKhronosData",
         "ExtractNestedTyping",
+        "PrettifyNames",
         "TransformHandles",
         "TransformFunctions",
         "TransformProperties",
-        "PrettifyNames",
         "AddVTables"
       ],
       "ClangScraper": {

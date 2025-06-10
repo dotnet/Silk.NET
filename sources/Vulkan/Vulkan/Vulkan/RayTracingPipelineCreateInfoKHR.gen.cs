@@ -150,7 +150,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public PipelineLayout* Layout;
+    public PipelineLayoutHandle* Layout;
 
     [NativeTypeName("VkPipeline")]
     [SupportedApiProfile(
@@ -161,7 +161,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public Pipeline* BasePipelineHandle;
+    public PipelineHandle* BasePipelineHandle;
 
     [NativeTypeName("int32_t")]
     [SupportedApiProfile(

@@ -34,5 +34,5 @@ public unsafe partial struct MemoryUnmapInfo
 
     [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public DeviceMemory* Memory;
+    public DeviceMemoryHandle* Memory;
 }

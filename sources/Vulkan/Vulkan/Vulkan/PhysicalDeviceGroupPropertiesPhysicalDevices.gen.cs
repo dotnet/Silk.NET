@@ -26,108 +26,108 @@ namespace Silk.NET.Vulkan;
 public unsafe partial struct PhysicalDeviceGroupPropertiesPhysicalDevices
 {
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E0;
+    public PhysicalDeviceHandle* E0;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E1;
+    public PhysicalDeviceHandle* E1;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E2;
+    public PhysicalDeviceHandle* E2;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E3;
+    public PhysicalDeviceHandle* E3;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E4;
+    public PhysicalDeviceHandle* E4;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E5;
+    public PhysicalDeviceHandle* E5;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E6;
+    public PhysicalDeviceHandle* E6;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E7;
+    public PhysicalDeviceHandle* E7;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E8;
+    public PhysicalDeviceHandle* E8;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E9;
+    public PhysicalDeviceHandle* E9;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E10;
+    public PhysicalDeviceHandle* E10;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E11;
+    public PhysicalDeviceHandle* E11;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E12;
+    public PhysicalDeviceHandle* E12;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E13;
+    public PhysicalDeviceHandle* E13;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E14;
+    public PhysicalDeviceHandle* E14;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E15;
+    public PhysicalDeviceHandle* E15;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E16;
+    public PhysicalDeviceHandle* E16;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E17;
+    public PhysicalDeviceHandle* E17;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E18;
+    public PhysicalDeviceHandle* E18;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E19;
+    public PhysicalDeviceHandle* E19;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E20;
+    public PhysicalDeviceHandle* E20;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E21;
+    public PhysicalDeviceHandle* E21;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E22;
+    public PhysicalDeviceHandle* E22;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E23;
+    public PhysicalDeviceHandle* E23;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E24;
+    public PhysicalDeviceHandle* E24;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E25;
+    public PhysicalDeviceHandle* E25;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E26;
+    public PhysicalDeviceHandle* E26;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E27;
+    public PhysicalDeviceHandle* E27;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E28;
+    public PhysicalDeviceHandle* E28;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E29;
+    public PhysicalDeviceHandle* E29;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E30;
+    public PhysicalDeviceHandle* E30;
 
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice* E31;
+    public PhysicalDeviceHandle* E31;
 
     [SupportedApiProfile("vulkan")]
-    public ref PhysicalDevice* this[int index]
+    public ref PhysicalDeviceHandle* this[int index]
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (PhysicalDevice** pThis = &E0)
+            fixed (PhysicalDeviceHandle** pThis = &E0)
             {
                 return ref pThis[index];
             }

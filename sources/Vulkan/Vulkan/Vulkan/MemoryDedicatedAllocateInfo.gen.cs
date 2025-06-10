@@ -42,7 +42,7 @@ public unsafe partial struct MemoryDedicatedAllocateInfo
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public Image* Image;
+    public ImageHandle* Image;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
@@ -50,5 +50,5 @@ public unsafe partial struct MemoryDedicatedAllocateInfo
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public Buffer* Buffer;
+    public BufferHandle* Buffer;
 }

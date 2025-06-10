@@ -34,7 +34,7 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeTypeName("VkSurfaceKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public SurfaceKHR* Surface;
+    public SurfaceKHRHandle* Surface;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -85,5 +85,5 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeTypeName("VkSwapchainKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public SwapchainKHR* OldSwapchain;
+    public SwapchainKHRHandle* OldSwapchain;
 }

@@ -51,7 +51,7 @@ public unsafe partial struct GeometryAABBNV
             "VK_VERSION_1_1",
         ]
     )]
-    public Buffer* AabbData;
+    public BufferHandle* AabbData;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

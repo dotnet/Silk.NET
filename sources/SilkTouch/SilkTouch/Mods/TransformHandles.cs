@@ -13,6 +13,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.FindSymbols;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Naming;
@@ -37,7 +38,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <c>Program</c>, <c>Program</c> must be declared in <c>Silk.NET.OpenGL</c>, <c>Silk.NET</c>, or <c>Silk</c>.
 /// </remarks>
 [ModConfiguration<Config>]
-public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) : Mod
+public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, ILogger<TransformHandles> logger) : Mod
 {
     /// <summary>
     /// The configuration for the <see cref="TransformHandles"/> mod.
@@ -69,12 +70,14 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
 
         var cfg = config.Get(ctx.JobKey);
 
-        // First pass to gather data
+        // Phase 1. Gather data before modifying
+        // Find handle documents
         var handleTypeDiscoverer = new HandleTypeDiscoverer(proj, compilation, ct);
         var handleTypes = await handleTypeDiscoverer.GetHandleTypesAsync();
 
-        // Second pass to modify the project based on gathered data
-        var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL);
+        // Store handle document IDs for later
+        // We will use these IDs to know which documents to rewrite and rename
+        var handleTypeDocumentIds = new List<(string OriginalName, DocumentId DocumentId)>();
         foreach (var handleTypeSymbol in handleTypes)
         {
             if (handleTypeSymbol.DeclaringSyntaxReferences.Length > 1)
@@ -85,25 +88,45 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
             }
 
             var declaringSyntaxReference = handleTypeSymbol.DeclaringSyntaxReferences.Single();
-            var document = proj.GetDocument(declaringSyntaxReference.SyntaxTree);
-            if (document != null)
+            var documentId = proj.GetDocumentId(declaringSyntaxReference.SyntaxTree);
+            if (documentId != null)
             {
-                var syntaxTree = await document.GetSyntaxTreeAsync(ct);
-                if (syntaxTree == null)
-                {
-                    continue;
-                }
-
-                var syntaxRoot = await syntaxTree.GetRootAsync(ct);
-
-                // Rewrite handle struct to include handle members
-                document = document.WithSyntaxRoot(handleTypeRewriter.Visit(syntaxRoot).NormalizeWhitespace());
-
-                proj = document.Project;
+                handleTypeDocumentIds.Add((handleTypeSymbol.Name, documentId));
             }
         }
 
-        // TODO: Add -Handle prefix to handle type names
+        // Phase 2. Modify project after gathering data
+        // Add -Handle suffix
+        ctx.SourceProject = proj;
+        await NameUtils.RenameAllAsync(ctx, logger, handleTypes.Select(t => ((ISymbol)t, $"{t.Name}Handle")), ct);
+        proj = ctx.SourceProject;
+
+        // Use document IDs from earlier
+        var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL);
+        foreach (var (originalName, documentId) in handleTypeDocumentIds)
+        {
+            var document = proj.GetDocument(documentId) ?? throw new InvalidOperationException("Failed to find document");
+
+            var syntaxTree = await document.GetSyntaxTreeAsync(ct);
+            if (syntaxTree == null)
+            {
+                continue;
+            }
+
+            var syntaxRoot = await syntaxTree.GetRootAsync(ct);
+
+            // Rewrite handle struct to include handle members
+            document = document.WithSyntaxRoot(handleTypeRewriter.Visit(syntaxRoot).NormalizeWhitespace());
+
+            // Add -Handle suffix to end of document name
+            document = document.WithFilePath(
+                    document.FilePath!.Replace(originalName, $"{originalName}Handle")
+                )
+                .WithName(document.Name.Replace(originalName, $"{originalName}Handle"));
+
+            proj = document.Project;
+        }
+
         // TODO: Reduce handle pointer dimensions by 1
 
         // TODO: Old code. Cleanup needed
@@ -132,12 +155,12 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
 
     private class HandleTypeDiscoverer(Project project, Compilation compilation, CancellationToken ct) : SymbolVisitor
     {
-        private readonly Solution solution = project.Solution;
+        private readonly Solution _solution = project.Solution;
 
         /// <summary>
         /// All discovered empty structs. These are not all handle types.
         /// </summary>
-        private readonly List<INamedTypeSymbol> emptyStructs = new();
+        private readonly List<INamedTypeSymbol> _emptyStructs = new();
 
         /// <summary>
         /// Finds all symbols that correspond to a handle type.
@@ -151,12 +174,12 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
 
             var results = new List<INamedTypeSymbol>();
             var documents = project.Documents.ToImmutableHashSet();
-            foreach (var structSymbol in emptyStructs)
+            foreach (var structSymbol in _emptyStructs)
             {
                 // For each struct, find its references
                 // Verify that all references are through pointers
                 // Also verify that there is at least one reference through a pointer
-                var references = await SymbolFinder.FindReferencesAsync(structSymbol, solution, documents, ct);
+                var references = await SymbolFinder.FindReferencesAsync(structSymbol, _solution, documents, ct);
 
                 var wasReferencedAsPointer = false;
                 var wasReferencedAsNonPointer = false;
@@ -198,10 +221,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         /// <summary>
         /// Clears all internal state
         /// </summary>
-        private void Clear()
-        {
-            emptyStructs.Clear();
-        }
+        private void Clear() => _emptyStructs.Clear();
 
         public override void VisitNamespace(INamespaceSymbol symbol)
         {
@@ -225,7 +245,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                 return;
             }
 
-            emptyStructs.Add(symbol);
+            _emptyStructs.Add(symbol);
         }
     }
 

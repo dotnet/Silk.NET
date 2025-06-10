@@ -51,7 +51,7 @@ public unsafe partial struct CopyMicromapInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public MicromapEXT* Src;
+    public MicromapEXTHandle* Src;
 
     [NativeTypeName("VkMicromapEXT")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct CopyMicromapInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public MicromapEXT* Dst;
+    public MicromapEXTHandle* Dst;
 
     [SupportedApiProfile(
         "vulkan",

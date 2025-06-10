@@ -30,12 +30,12 @@ public unsafe partial struct ImageViewHandleInfoNVX
 
     [NativeTypeName("VkImageView")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
-    public ImageView* ImageView;
+    public ImageViewHandle* ImageView;
 
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     public DescriptorType DescriptorType;
 
     [NativeTypeName("VkSampler")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
-    public Sampler* Sampler;
+    public SamplerHandle* Sampler;
 }

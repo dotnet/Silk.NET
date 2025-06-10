@@ -51,7 +51,7 @@ public unsafe partial struct ImportFenceFdInfoKHR
             "VK_KHR_external_fence_fd+VK_VERSION_1_1",
         ]
     )]
-    public Fence* Fence;
+    public FenceHandle* Fence;
 
     [NativeTypeName("VkFenceImportFlags")]
     [SupportedApiProfile(

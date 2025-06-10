@@ -30,5 +30,5 @@ public unsafe partial struct ShaderModuleValidationCacheCreateInfoEXT
 
     [NativeTypeName("VkValidationCacheEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
-    public ValidationCacheEXT* ValidationCache;
+    public ValidationCacheEXTHandle* ValidationCache;
 }

@@ -138,7 +138,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public PipelineLayout* Layout;
+    public PipelineLayoutHandle* Layout;
 
     [NativeTypeName("VkRenderPass")]
     [SupportedApiProfile(
@@ -146,7 +146,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public RenderPass* RenderPass;
+    public RenderPassHandle* RenderPass;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -162,7 +162,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public Pipeline* BasePipelineHandle;
+    public PipelineHandle* BasePipelineHandle;
 
     [NativeTypeName("int32_t")]
     [SupportedApiProfile(

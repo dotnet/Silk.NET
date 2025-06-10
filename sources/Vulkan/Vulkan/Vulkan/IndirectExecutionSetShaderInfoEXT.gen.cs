@@ -66,7 +66,7 @@ public unsafe partial struct IndirectExecutionSetShaderInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ShaderEXT** PInitialShaders;
+    public ShaderEXTHandle** PInitialShaders;
 
     [NativeTypeName("const VkIndirectExecutionSetShaderLayoutInfoEXT *")]
     [SupportedApiProfile(

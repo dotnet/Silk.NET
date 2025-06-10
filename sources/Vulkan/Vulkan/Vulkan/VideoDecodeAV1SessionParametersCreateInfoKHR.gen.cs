@@ -42,5 +42,5 @@ public unsafe partial struct VideoDecodeAV1SessionParametersCreateInfoKHR
         ["VK_KHR_video_decode_av1"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StdVideoAV1SequenceHeader* PStdSequenceHeader;
+    public StdVideoAV1SequenceHeaderHandle* PStdSequenceHeader;
 }

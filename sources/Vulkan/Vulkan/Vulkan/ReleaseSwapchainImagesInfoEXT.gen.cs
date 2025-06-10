@@ -51,7 +51,7 @@ public unsafe partial struct ReleaseSwapchainImagesInfoEXT
             "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
-    public SwapchainKHR* Swapchain;
+    public SwapchainKHRHandle* Swapchain;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

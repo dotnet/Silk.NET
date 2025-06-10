@@ -57,5 +57,5 @@ public unsafe partial struct ImageCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public Image* Image;
+    public ImageHandle* Image;
 }

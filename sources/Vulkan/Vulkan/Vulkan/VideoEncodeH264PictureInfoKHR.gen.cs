@@ -58,7 +58,7 @@ public unsafe partial struct VideoEncodeH264PictureInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StdVideoEncodeH264PictureInfo* PStdPictureInfo;
+    public StdVideoEncodeH264PictureInfoHandle* PStdPictureInfo;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(

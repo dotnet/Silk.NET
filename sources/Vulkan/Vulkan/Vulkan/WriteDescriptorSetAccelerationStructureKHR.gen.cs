@@ -62,5 +62,5 @@ public unsafe partial struct WriteDescriptorSetAccelerationStructureKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHR** PAccelerationStructures;
+    public AccelerationStructureKHRHandle** PAccelerationStructures;
 }

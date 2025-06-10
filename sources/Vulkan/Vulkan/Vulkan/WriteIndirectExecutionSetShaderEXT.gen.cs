@@ -70,5 +70,5 @@ public unsafe partial struct WriteIndirectExecutionSetShaderEXT
         ],
         RequireAll = true
     )]
-    public ShaderEXT* Shader;
+    public ShaderEXTHandle* Shader;
 }

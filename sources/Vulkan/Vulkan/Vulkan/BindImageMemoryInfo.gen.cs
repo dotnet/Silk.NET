@@ -42,7 +42,7 @@ public unsafe partial struct BindImageMemoryInfo
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public Image* Image;
+    public ImageHandle* Image;
 
     [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile(
@@ -50,7 +50,7 @@ public unsafe partial struct BindImageMemoryInfo
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public DeviceMemory* Memory;
+    public DeviceMemoryHandle* Memory;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

@@ -50,5 +50,5 @@ public unsafe partial struct ReleaseCapturedPipelineDataInfoKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public Pipeline* Pipeline;
+    public PipelineHandle* Pipeline;
 }

@@ -50,7 +50,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StdVideoH265VideoParameterSet* PStdVPSs;
+    public StdVideoH265VideoParameterSetHandle* PStdVPSs;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -66,7 +66,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StdVideoH265SequenceParameterSet* PStdSPSs;
+    public StdVideoH265SequenceParameterSetHandle* PStdSPSs;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -82,5 +82,5 @@ public unsafe partial struct VideoDecodeH265SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StdVideoH265PictureParameterSet* PStdPPSs;
+    public StdVideoH265PictureParameterSetHandle* PStdPPSs;
 }

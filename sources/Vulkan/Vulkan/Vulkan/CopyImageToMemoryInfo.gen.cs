@@ -34,7 +34,7 @@ public unsafe partial struct CopyImageToMemoryInfo
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public Image* SrcImage;
+    public ImageHandle* SrcImage;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public ImageLayout SrcImageLayout;

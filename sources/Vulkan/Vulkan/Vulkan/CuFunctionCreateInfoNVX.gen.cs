@@ -30,7 +30,7 @@ public unsafe partial struct CuFunctionCreateInfoNVX
 
     [NativeTypeName("VkCuModuleNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public CuModuleNVX* Module;
+    public CuModuleNVXHandle* Module;
 
     [NativeTypeName("const char *")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
