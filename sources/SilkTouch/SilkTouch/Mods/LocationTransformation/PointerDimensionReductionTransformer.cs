@@ -44,68 +44,26 @@ public static class LocationTransformationUtils
         }
 
         // Find all locations where the symbols are referenced
-        var locations = new List<Location>();
         var documents = project.Documents.ToImmutableHashSet();
-        foreach (var symbol in symbolSet)
-        {
-            var references = await SymbolFinder.FindReferencesAsync(symbol, project.Solution, documents, ct);
-            locations.AddRange(references.SelectMany(r => r.Locations).Select(rl => rl.Location));
-        }
-
-        // var locations = new ConcurrentDictionary<Location, string>();
-        // // TODO this needs parallelisation config & be sensitive to the environment (future src generator form factor?)
-        // await Parallel.ForEachAsync(
-        //     toRename,
-        //     ct,
-        //     async (tuple, _) =>
-        //     {
-        //         // First, let's add all of the locations of the declaration identifiers.
-        //         var (symbol, newName) = tuple;
-        //         if (includeDeclarations)
-        //         {
-        //             foreach (var syntaxRef in symbol.DeclaringSyntaxReferences)
-        //             {
-        //                 var identifierLocation = IdentifierLocation(
-        //                     await syntaxRef.GetSyntaxAsync(ct)
-        //                 );
-        //                 if (identifierLocation is not null)
-        //                 {
-        //                     locations.TryAdd(identifierLocation, newName);
-        //                 }
-        //             }
-        //         }
-        //
-        //         // Next, let's find all the references of the symbols.
-        //         var references = await SymbolFinder.FindReferencesAsync(
-        //             symbol,
-        //             ctx.SourceProject?.Solution
-        //                 ?? throw new ArgumentException("SourceProject is null"),
-        //             ct
-        //         );
-        //
-        //         foreach (var referencedSymbol in references)
-        //         {
-        //             foreach (var referencedSymbolLocation in referencedSymbol.Locations)
-        //             {
-        //                 if (
-        //                     !includeCandidateLocations
-        //                     && (
-        //                         referencedSymbolLocation.IsCandidateLocation
-        //                         || referencedSymbolLocation.IsImplicit
-        //                     )
-        //                 )
-        //                 {
-        //                     continue;
-        //                 }
-        //
-        //                 locations.TryAdd(referencedSymbolLocation.Location, newName);
-        //             }
-        //         }
-        //     }
-        // );
+        var locations = new ConcurrentBag<(ISymbol Symbol, Location Location)>();
+        // TODO this needs parallelisation config & be sensitive to the environment (future src generator form factor?)
+        await Parallel.ForEachAsync(
+            symbolSet,
+            ct,
+            async (symbol, _) => {
+                var references = await SymbolFinder.FindReferencesAsync(symbol, project.Solution, documents, ct);
+                foreach (var reference in references)
+                {
+                    foreach (var location in reference.Locations)
+                    {
+                        locations.Add((symbol, location.Location));
+                    }
+                }
+            }
+        );
 
         // Group the locations by source tree. This will be used to prevent accidentally overwriting changes.
-        var locationsBySourcetree = locations.GroupBy(l => l.SourceTree);
+        var locationsBySourcetree = locations.GroupBy(l => l.Location.SourceTree);
         foreach (var group in locationsBySourcetree)
         {
             var syntaxTree = group.Key;
@@ -125,12 +83,12 @@ public static class LocationTransformationUtils
             // Modify each location
             // We order the locations so that we modify starting from the end of the file
             // This way we prevent changes from being accidentally overwriting changes
-            foreach (var location in group.OrderByDescending(l => l.SourceSpan.Start))
+            foreach (var (symbol, location) in group.OrderByDescending(l => l.Location.SourceSpan.Start))
             {
                 foreach (var transformer in transformersSet)
                 {
                     var syntaxNode = syntaxRoot.FindNode(location.SourceSpan);
-                    var nodeToModify = transformer.GetNodeToModify(syntaxNode);
+                    var nodeToModify = transformer.GetNodeToModify(syntaxNode, symbol);
                     if (nodeToModify == null)
                     {
                         continue;
@@ -162,9 +120,10 @@ public abstract class LocationTransformer : CSharpSyntaxRewriter
     /// Returning null will lead to no node being modified.
     /// Returning the parent node will lead to the parent node being modified instead of the original node.
     /// </summary>
-    /// <param name="current">TODO</param>
-    /// <returns>TODO</returns>
-    public abstract SyntaxNode? GetNodeToModify(SyntaxNode current);
+    /// <param name="current">The current node.</param>
+    /// <param name="symbol">The symbol that was used to find the current node.</param>
+    /// <returns>The parent of the given node, the given node, or null.</returns>
+    public abstract SyntaxNode? GetNodeToModify(SyntaxNode current, ISymbol symbol);
 }
 
 // // TODO: Implement this
@@ -194,7 +153,7 @@ public abstract class LocationTransformer : CSharpSyntaxRewriter
 public class PointerDimensionReductionTransformer : LocationTransformer
 {
     /// <inheritdoc />
-    public override SyntaxNode? GetNodeToModify(SyntaxNode current)
+    public override SyntaxNode? GetNodeToModify(SyntaxNode current, ISymbol symbol)
     {
         if (current.Parent is PointerTypeSyntax parent)
         {
