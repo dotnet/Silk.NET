@@ -314,21 +314,6 @@ public static partial class NameUtils
         private static partial Regex Words();
     }
 
-    private static Location? IdentifierLocation(SyntaxNode? node) =>
-        node switch
-        {
-            BaseTypeDeclarationSyntax bt => bt.Identifier.GetLocation(),
-            DelegateDeclarationSyntax d => d.Identifier.GetLocation(),
-            EnumMemberDeclarationSyntax em => em.Identifier.GetLocation(),
-            EventDeclarationSyntax e => e.Identifier.GetLocation(),
-            MethodDeclarationSyntax m => m.Identifier.GetLocation(),
-            PropertyDeclarationSyntax p => p.Identifier.GetLocation(),
-            VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
-            ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
-            DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
-            _ => null,
-        };
-
     /// <summary>
     /// Rename all symbols with the given new names
     /// </summary>
