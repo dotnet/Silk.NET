@@ -615,8 +615,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                 locations.AddRange(references.SelectMany(r => r.Locations).Select(rl => rl.Location));
             }
 
-            // Reduce the pointer dimension of all reference locations
-            // Also, do modifications in groups to prevent overwriting changes
+            // Group the locations by source tree. This will be used to prevent accidentally overwriting changes.
             var locationsBySourcetree = locations.GroupBy(l => l.SourceTree);
             foreach (var group in locationsBySourcetree)
             {
@@ -635,6 +634,8 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                 var syntaxRoot = await syntaxTree.GetRootAsync(ct);
 
                 // Modify each location
+                // We order the locations so that we modify starting from the end of the file
+                // This way we prevent changes from being accidentally overwriting changes
                 foreach (var location in group.OrderByDescending(l => l.SourceSpan.Start))
                 {
                     var syntaxNode = syntaxRoot.FindNode(location.SourceSpan);
@@ -668,92 +669,5 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         }
 
         public override SyntaxNode? VisitPointerType(PointerTypeSyntax node) => node.ElementType;
-    }
-
-    private class OldPointerDimensionReducer(Dictionary<string, Dictionary<string, string>> handles) : CSharpSyntaxRewriter
-    {
-        /// <summary>
-        /// The current scope i.e. fully qualified type name.
-        /// </summary>
-        private string _currentScope = string.Empty;
-
-        private bool _isPointerType;
-        private bool _derefPtr;
-
-        // We restrict the allowed parents to hopefully avoid mistaking references to e.g. variable names as type
-        // references.
-        private static bool SkipTypeNode(SyntaxNode node) =>
-            node.Parent
-                is not (
-                TypeSyntax
-                or BaseParameterSyntax
-                or BaseMethodDeclarationSyntax
-                or VariableDeclarationSyntax
-                )
-                or QualifiedNameSyntax;
-
-        private SyntaxNode? VisitType<T>(T type, SyntaxToken identifier, Func<T, SyntaxNode?> @base)
-            where T : SyntaxNode
-        {
-            var before = _currentScope;
-            _currentScope = string.IsNullOrWhiteSpace(_currentScope)
-                ? $"{type.NamespaceFromSyntaxNode()}.{identifier}"
-                : $"{_currentScope}.{identifier}";
-            var ret = @base(type);
-            _currentScope = before;
-            return ret;
-        }
-
-        public override SyntaxNode? VisitPointerType(PointerTypeSyntax node)
-        {
-            if (SkipTypeNode(node))
-            {
-                return node;
-            }
-            var before = _isPointerType;
-            _isPointerType = true;
-            var ret = base.VisitPointerType(node);
-            _isPointerType = before;
-            if (_derefPtr && ret is PointerTypeSyntax ptr)
-            {
-                ret = ptr.ElementType;
-            }
-
-            _derefPtr = false;
-            return ret;
-        }
-
-        public override SyntaxNode VisitGenericName(GenericNameSyntax node) => node;
-
-        public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node)
-        {
-            if (SkipTypeNode(node))
-            {
-                return node;
-            }
-
-            _derefPtr =
-                handles.TryGetValue(node.Identifier.ToString(), out var applicableScopes)
-                && applicableScopes.ContainsKey(_currentScope);
-            return _derefPtr ? node.WithIdentifier(Identifier($"{node.Identifier}Handle")) : node;
-        }
-
-        public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitStructDeclaration);
-
-        public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitClassDeclaration);
-
-        public override SyntaxNode? VisitRecordDeclaration(RecordDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitRecordDeclaration);
-
-        public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitEnumDeclaration);
-
-        public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitDelegateDeclaration);
-
-        public override SyntaxNode? VisitInterfaceDeclaration(InterfaceDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitInterfaceDeclaration);
     }
 }
