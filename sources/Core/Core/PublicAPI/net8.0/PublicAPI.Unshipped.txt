@@ -231,9 +231,10 @@ Silk.NET.Core.IClassFactory.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, 
 Silk.NET.Core.IClassFactory.QueryInterface(System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
 Silk.NET.Core.IClassFactory.QueryInterface<TCom>(out TCom ppvObject) -> Silk.NET.Core.HResult
 Silk.NET.Core.IClassFactory.Release() -> uint
-Silk.NET.Core.IComInterface
-Silk.NET.Core.IComInterface.GetAddressOf() -> Silk.NET.Core.Ptr2D
-Silk.NET.Core.IComInterface.GetAddressOf<TNativeInterface>() -> Silk.NET.Core.Ptr2D<TNativeInterface>
+Silk.NET.Core.IComVtbl
+Silk.NET.Core.IComVtbl.GetAddressOf() -> Silk.NET.Core.Ptr2D
+Silk.NET.Core.IComVtbl.GetAddressOf<TNativeInterface>() -> Silk.NET.Core.Ptr2D<TNativeInterface>
+Silk.NET.Core.IComVtbl<T>
 Silk.NET.Core.IGLContext
 Silk.NET.Core.IGLContext.IsCurrent.get -> bool
 Silk.NET.Core.IGLContext.IsCurrent.set -> void
@@ -606,12 +607,10 @@ static Silk.NET.Core.HResult.explicit operator ushort(Silk.NET.Core.HResult valu
 static Silk.NET.Core.HResult.GetCode(int hr) -> int
 static Silk.NET.Core.HResult.GetFacility(int hr) -> int
 static Silk.NET.Core.HResult.GetSeverity(int hr) -> int
-static Silk.NET.Core.HResult.implicit operator int(Silk.NET.Core.HResult hr) -> int
 static Silk.NET.Core.HResult.implicit operator int(Silk.NET.Core.HResult value) -> int
 static Silk.NET.Core.HResult.implicit operator long(Silk.NET.Core.HResult value) -> long
 static Silk.NET.Core.HResult.implicit operator nint(Silk.NET.Core.HResult value) -> nint
 static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(byte value) -> Silk.NET.Core.HResult
-static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(int hr) -> Silk.NET.Core.HResult
 static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(int value) -> Silk.NET.Core.HResult
 static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(sbyte value) -> Silk.NET.Core.HResult
 static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(short value) -> Silk.NET.Core.HResult
@@ -695,10 +694,10 @@ static Silk.NET.Core.MaybeBool<T>.implicit operator bool(Silk.NET.Core.MaybeBool
 static Silk.NET.Core.MaybeBool<T>.implicit operator Silk.NET.Core.MaybeBool<T>(bool value) -> Silk.NET.Core.MaybeBool<T>
 static Silk.NET.Core.MaybeBool<T>.implicit operator Silk.NET.Core.MaybeBool<T>(T Value) -> Silk.NET.Core.MaybeBool<T>
 static Silk.NET.Core.MaybeBool<T>.implicit operator T(Silk.NET.Core.MaybeBool<T> value) -> T
-static Silk.NET.Core.MaybeBool<T>.operator !=(int lh, Silk.NET.Core.MaybeBool<T> rh) -> bool
-static Silk.NET.Core.MaybeBool<T>.operator !=(Silk.NET.Core.MaybeBool<T> lh, int rh) -> bool
-static Silk.NET.Core.MaybeBool<T>.operator ==(int lh, Silk.NET.Core.MaybeBool<T> rh) -> bool
-static Silk.NET.Core.MaybeBool<T>.operator ==(Silk.NET.Core.MaybeBool<T> lh, int rh) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator !=(Silk.NET.Core.MaybeBool<T> lh, T rh) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator !=(T lh, Silk.NET.Core.MaybeBool<T> rh) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator ==(Silk.NET.Core.MaybeBool<T> lh, T rh) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator ==(T lh, Silk.NET.Core.MaybeBool<T> rh) -> bool
 static Silk.NET.Core.NullPtr.implicit operator void*(Silk.NET.Core.NullPtr _) -> void*
 static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<byte> this) -> string!
 static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<byte> this, int length) -> string!
@@ -935,13 +934,13 @@ static Silk.NET.Core.Ptr3D<T>.operator ==(T* lh, Silk.NET.Core.Ptr3D<T> rh) -> b
 static Silk.NET.Core.Ptr3D<T>.operator ==(T** lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
 static Silk.NET.Core.Ptr3D<T>.operator ==(void* lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
 static Silk.NET.Core.Ptr3D<T>.operator ==(void** lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.explicit operator Silk.NET.Core.Ptr<T>(nint ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.explicit operator Silk.NET.Core.Ptr<T>(nuint ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.explicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.Ref<T> ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.explicit operator string!(Silk.NET.Core.Ptr<T> ptr) -> string!
 static Silk.NET.Core.Ptr<T>.implicit operator nint(Silk.NET.Core.Ptr<T> ptr) -> nint
 static Silk.NET.Core.Ptr<T>.implicit operator nuint(Silk.NET.Core.Ptr<T> ptr) -> nuint
 static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr<T> ptr) -> Silk.NET.Core.Ptr
-static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(nint ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.Ptr ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(T* ptr) -> Silk.NET.Core.Ptr<T>
