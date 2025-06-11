@@ -190,7 +190,7 @@ public unsafe partial struct IAsyncOperation<TResult>
 
     [Transformed]
     public HRESULT QueryInterface<TCom>([NativeTypeName("void **")] out TCom ppvObject)
-        where TCom : unmanaged, IComInterface
+        where TCom : unmanaged, IComVtbl
     {
         ppvObject = default;
         return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());

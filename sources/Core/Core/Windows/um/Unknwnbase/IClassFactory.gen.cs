@@ -13,7 +13,10 @@ namespace Silk.NET.Core;
 [Guid("00000001-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IClassFactory : IClassFactory.Interface, IComInterface, IDisposable
+public unsafe partial struct IClassFactory
+    : IClassFactory.Interface,
+        IComVtbl<IClassFactory>,
+        IDisposable
 {
     public Native* LpVtbl;
     static Guid* INativeGuid.NativeGuid =>
@@ -122,7 +125,7 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface, IComInterf
         [VtblIndex(3)]
         [Transformed]
         public HResult CreateInstance<TCom>(IUnknown pUnkOuter, out TCom ppvObject)
-            where TCom : unmanaged, IComInterface
+            where TCom : unmanaged, IComVtbl
         {
             ppvObject = default;
             return CreateInstance(pUnkOuter, TCom.NativeGuid, ppvObject.GetAddressOf());
@@ -173,7 +176,7 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface, IComInterf
         [VtblIndex(0)]
         [Transformed]
         public HResult QueryInterface<TCom>(out TCom ppvObject)
-            where TCom : unmanaged, IComInterface
+            where TCom : unmanaged, IComVtbl
         {
             ppvObject = default;
             return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
@@ -305,7 +308,7 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface, IComInterf
     [VtblIndex(3)]
     [Transformed]
     public HResult CreateInstance<TCom>(IUnknown pUnkOuter, out TCom ppvObject)
-        where TCom : unmanaged, IComInterface
+        where TCom : unmanaged, IComVtbl
     {
         ppvObject = default;
         return CreateInstance(pUnkOuter, TCom.NativeGuid, ppvObject.GetAddressOf());
@@ -313,13 +316,13 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface, IComInterf
 
     public void Dispose() => Release();
 
-    /// <inheritdoc cref = "IComInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
+    /// <inheritdoc cref = "IComVtbl.GetAddressOf{TNativeInterface}()"></inheritdoc>
 
     public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
         where TNativeInterface : unmanaged =>
         (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
-    /// <inheritdoc cref = "IComInterface.GetAddressOf()"></inheritdoc>
+    /// <inheritdoc cref = "IComVtbl.GetAddressOf()"></inheritdoc>
 
     public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
@@ -352,7 +355,7 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface, IComInterf
     [VtblIndex(0)]
     [Transformed]
     public HResult QueryInterface<TCom>(out TCom ppvObject)
-        where TCom : unmanaged, IComInterface
+        where TCom : unmanaged, IComVtbl
     {
         ppvObject = default;
         return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());

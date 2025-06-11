@@ -512,8 +512,6 @@ public sealed class ClangScraper(
         var cfg = await inputResolver.Resolve(config.Get(ctx.JobKey));
 
         Dictionary<string, string> remappedNames = cfg.InjectedRemappedNames ?? [];
-        if (!remappedNames.ContainsKey("HANDLE"))
-            remappedNames.Add("HANDLE", "Handle");
 
         // Read the response files.
         logger.LogInformation("Reading response files for {}, please wait...", ctx.JobKey);

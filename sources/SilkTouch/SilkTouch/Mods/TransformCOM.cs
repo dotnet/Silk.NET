@@ -237,7 +237,7 @@ namespace Silk.NET.SilkTouch.Mods
                                     SeparatedList<TypeParameterConstraintSyntax>(
                                         [
                                             TypeConstraint(IdentifierName("unmanaged")),
-                                            TypeConstraint(IdentifierName("IComInterface")),
+                                            TypeConstraint(IdentifierName("IComVtbl")),
                                         ]
                                     )
                                 )
@@ -482,10 +482,11 @@ namespace Silk.NET.SilkTouch.Mods
         {
             bool isInCom = false;
             bool disposeFound = false;
+            string currentName = string.Empty;
 
             public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
             {
-                string name = node.Identifier.ToString();
+                string name = currentName = node.Identifier.ToString();
                 bool parentIsCom = isInCom;
 
                 if (
@@ -635,7 +636,7 @@ namespace Silk.NET.SilkTouch.Mods
                                                                 XmlCrefAttribute(
                                                                     NameMemberCref(
                                                                         IdentifierName(
-                                                                            "IComInterface.GetAddressOf{TNativeInterface}()"
+                                                                            "IComVtbl.GetAddressOf{TNativeInterface}()"
                                                                         )
                                                                     )
                                                                 )
@@ -711,7 +712,7 @@ namespace Silk.NET.SilkTouch.Mods
                                                                 XmlCrefAttribute(
                                                                     NameMemberCref(
                                                                         IdentifierName(
-                                                                            "IComInterface.GetAddressOf()"
+                                                                            "IComVtbl.GetAddressOf()"
                                                                         )
                                                                     )
                                                                 )
@@ -751,7 +752,7 @@ namespace Silk.NET.SilkTouch.Mods
             public override SyntaxNode? VisitSimpleBaseType(SimpleBaseTypeSyntax node)
             {
                 return isInCom && node.Type.ToString() == "INativeGuid"
-                    ? SimpleBaseType(ParseTypeName("IComInterface"))
+                    ? SimpleBaseType(ParseTypeName($"IComVtbl<{currentName}>"))
                     : base.VisitSimpleBaseType(node);
             }
 

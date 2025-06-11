@@ -49,12 +49,13 @@ public partial class MixKhronosData(
     );
     private static readonly char[] _listSeparators = { ',', '|', '+' };
 
-    private static readonly Dictionary<string, string> _defaultEnumNativeTypeNameMaps = new()
-    {
-        { "GLenum", "GLEnum" },
-        { "EGLenum", "EGLEnum" },
-        { "GLbitfield", "GLEnum" },
-    };
+    private static readonly Dictionary<string, string> _defaultEnumNativeTypeNameMaps =
+        new()
+        {
+            { "GLenum", "GLEnum" },
+            { "EGLenum", "EGLEnum" },
+            { "GLbitfield", "GLEnum" },
+        };
 
     internal class JobData
     {
@@ -1475,6 +1476,7 @@ public partial class MixKhronosData(
         if (ctx.JobKey is null)
         {
             next(current);
+            return;
         }
 
         current.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);

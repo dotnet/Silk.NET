@@ -13,7 +13,7 @@ namespace Silk.NET.DirectX;
 [Guid("8BA5FB08-5195-40E2-AC58-0D989C3A0102")]
 [NativeTypeName("struct ID3D10Blob : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID3DBlob : ID3DBlob.Interface, IComInterface, IDisposable
+public unsafe partial struct ID3DBlob : ID3DBlob.Interface, IComVtbl<ID3DBlob>, IDisposable
 {
     public Native* lpVtbl;
     static Guid* INativeGuid.NativeGuid =>
@@ -144,7 +144,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, IComInterface, IDisp
         [VtblIndex(0)]
         [Transformed]
         public HRESULT QueryInterface<TCom>(out TCom ppvObject)
-            where TCom : unmanaged, IComInterface
+            where TCom : unmanaged, IComVtbl
         {
             ppvObject = default;
             return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
@@ -247,13 +247,13 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, IComInterface, IDisp
 
     public void Dispose() => Release();
 
-    /// <inheritdoc cref = "IComInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
+    /// <inheritdoc cref = "IComVtbl.GetAddressOf{TNativeInterface}()"></inheritdoc>
 
     public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
         where TNativeInterface : unmanaged =>
         (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
-    /// <inheritdoc cref = "IComInterface.GetAddressOf()"></inheritdoc>
+    /// <inheritdoc cref = "IComVtbl.GetAddressOf()"></inheritdoc>
 
     public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
@@ -299,7 +299,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, IComInterface, IDisp
     [VtblIndex(0)]
     [Transformed]
     public HRESULT QueryInterface<TCom>(out TCom ppvObject)
-        where TCom : unmanaged, IComInterface
+        where TCom : unmanaged, IComVtbl
     {
         ppvObject = default;
         return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());

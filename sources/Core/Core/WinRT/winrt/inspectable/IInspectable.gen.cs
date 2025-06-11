@@ -15,7 +15,10 @@ namespace Silk.NET.Core;
 [NativeTypeName("struct IInspectable : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows6.2")]
-public unsafe partial struct IInspectable : IInspectable.Interface, IComInterface, IDisposable
+public unsafe partial struct IInspectable
+    : IInspectable.Interface,
+        IComVtbl<IInspectable>,
+        IDisposable
 {
     public Native* LpVtbl;
     static Guid* INativeGuid.NativeGuid =>
@@ -219,7 +222,7 @@ public unsafe partial struct IInspectable : IInspectable.Interface, IComInterfac
         [VtblIndex(0)]
         [Transformed]
         public HResult QueryInterface<TCom>(out TCom ppvObject)
-            where TCom : unmanaged, IComInterface
+            where TCom : unmanaged, IComVtbl
         {
             ppvObject = default;
             return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
@@ -324,13 +327,13 @@ public unsafe partial struct IInspectable : IInspectable.Interface, IComInterfac
 
     public void Dispose() => Release();
 
-    /// <inheritdoc cref = "IComInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
+    /// <inheritdoc cref = "IComVtbl.GetAddressOf{TNativeInterface}()"></inheritdoc>
 
     public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
         where TNativeInterface : unmanaged =>
         (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
-    /// <inheritdoc cref = "IComInterface.GetAddressOf()"></inheritdoc>
+    /// <inheritdoc cref = "IComVtbl.GetAddressOf()"></inheritdoc>
 
     public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
@@ -415,7 +418,7 @@ public unsafe partial struct IInspectable : IInspectable.Interface, IComInterfac
     [VtblIndex(0)]
     [Transformed]
     public HResult QueryInterface<TCom>(out TCom ppvObject)
-        where TCom : unmanaged, IComInterface
+        where TCom : unmanaged, IComVtbl
     {
         ppvObject = default;
         return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());

@@ -56,7 +56,8 @@
           "sources/**/helper-types/HSTRING.gen.cs"
         ],
         "InjectedRemappedNames": {
-          "BOOL": "MaybeBool<int>"
+          "BOOL": "MaybeBool<int>",
+          "HANDLE": "Handle"
         },
         "InjectedGeneratorOptions": [
           "--config",
@@ -165,7 +166,8 @@
           "!sources/**/helper-types/Handle.gen.cs"
         ],
         "InjectedRemappedNames": {
-          "BOOL": "MaybeBool<int>"
+          "BOOL": "MaybeBool<int>",
+          "HANDLE": "Handle"
         },
         "InjectedGeneratorOptions": [
           "--config",

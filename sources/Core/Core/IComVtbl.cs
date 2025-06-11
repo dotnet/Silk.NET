@@ -4,22 +4,23 @@
 namespace Silk.NET.Core
 {
     /// <summary>
-    /// A specialized native interface representing a ComType
+    /// Represents a type that can be represented as a pointer to a COM V-Table. (i.e. a pointer to a pointer to the first
+    /// function pointer) 
     /// </summary>
-    public interface IComInterface : INativeGuid
+    public interface IComVtbl : INativeGuid
     {
         /// <summary>
-        /// Gets the address of  the pointer to the interface object address
+        /// Gets the address of the pointer to the V-Table as a given interface.
         /// </summary>
         /// <typeparam name="TNativeInterface">The native interface object type</typeparam>
-        /// <returns>pointer to interface object address </returns>
+        /// <returns>the pointer to the V-Table as a given interface</returns>
         Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
             where TNativeInterface : unmanaged;
 
         /// <summary>
-        /// Gets the address of  the pointer to the interface object address
+        /// Gets the address of the pointer to the V-Table.
         /// </summary>
-        /// <returns>pointer to interface object address </returns>
+        /// <returns> pointer to the V-Table</returns>
         Ptr2D GetAddressOf();
     }
 }

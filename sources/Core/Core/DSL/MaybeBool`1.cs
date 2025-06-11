@@ -61,7 +61,7 @@ public readonly record struct MaybeBool<T>(T Value)
     /// <param name="lh">left hand value</param>
     /// <param name="rh">right hand value</param>
     /// <returns></returns>
-    public static bool operator ==(MaybeBool<T> lh, int rh) => lh == (rh != 0);
+    public static bool operator ==(MaybeBool<T> lh, T rh) => lh.Value.Equals(rh);
 
     /// <summary>
     /// Compares boolean value and int
@@ -69,7 +69,7 @@ public readonly record struct MaybeBool<T>(T Value)
     /// <param name="lh">left hand value</param>
     /// <param name="rh">right hand value</param>
     /// <returns></returns>
-    public static bool operator !=(MaybeBool<T> lh, int rh) => lh != (rh != 0);
+    public static bool operator !=(MaybeBool<T> lh, T rh) => !lh.Value.Equals(rh);
 
     /// <summary>
     /// compares boolean value and int
@@ -77,7 +77,7 @@ public readonly record struct MaybeBool<T>(T Value)
     /// <param name="lh">left hand value</param>
     /// <param name="rh">right hand value</param>
     /// <returns></returns>
-    public static bool operator ==(int lh, MaybeBool<T> rh) => (lh != 0) == rh;
+    public static bool operator ==(T lh, MaybeBool<T> rh) => lh.Equals(rh.Value);
 
     /// <summary>
     /// Compares boolean value and int
@@ -85,5 +85,5 @@ public readonly record struct MaybeBool<T>(T Value)
     /// <param name="lh">left hand value</param>
     /// <param name="rh">right hand value</param>
     /// <returns></returns>
-    public static bool operator !=(int lh, MaybeBool<T> rh) => (lh != 0) != rh;
+    public static bool operator !=(T lh, MaybeBool<T> rh) => !lh.Equals(rh.Value);
 }
