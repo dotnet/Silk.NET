@@ -18871,7 +18871,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static extern void DestroyPipelineBinaryKHR(
             [NativeTypeName("VkDevice")] DeviceHandle* device,
-            [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle* pipelineBinary,
+            [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
             [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
         );
 
@@ -18890,15 +18890,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )]
         public static void DestroyPipelineBinaryKHR(
             [NativeTypeName("VkDevice")] Ref<DeviceHandle> device,
-            [NativeTypeName("VkPipelineBinaryKHR")] Ref<PipelineBinaryKHRHandle> pipelineBinary,
+            [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
             [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
         )
         {
             fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
-            fixed (PipelineBinaryKHRHandle* __dsl_pipelineBinary = pipelineBinary)
             fixed (DeviceHandle* __dsl_device = device)
             {
-                DestroyPipelineBinaryKHR(__dsl_device, __dsl_pipelineBinary, __dsl_pAllocator);
+                DestroyPipelineBinaryKHR(__dsl_device, pipelineBinary, __dsl_pAllocator);
             }
         }
 
@@ -71247,13 +71246,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.DestroyPipelineBinaryKHR(
         [NativeTypeName("VkDevice")] DeviceHandle* device,
-        [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle* pipelineBinary,
+        [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
     ) =>
         (
             (delegate* unmanaged<
                 DeviceHandle*,
-                PipelineBinaryKHRHandle*,
+                PipelineBinaryKHRHandle,
                 AllocationCallbacks*,
                 void>)(
                 _slots[395] is not null and var loadedFnPtr
@@ -71277,24 +71276,23 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DestroyPipelineBinaryKHR(
         [NativeTypeName("VkDevice")] DeviceHandle* device,
-        [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle* pipelineBinary,
+        [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
     ) => DllImport.DestroyPipelineBinaryKHR(device, pipelineBinary, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IVulkan.DestroyPipelineBinaryKHR(
         [NativeTypeName("VkDevice")] Ref<DeviceHandle> device,
-        [NativeTypeName("VkPipelineBinaryKHR")] Ref<PipelineBinaryKHRHandle> pipelineBinary,
+        [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     )
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
-        fixed (PipelineBinaryKHRHandle* __dsl_pipelineBinary = pipelineBinary)
         fixed (DeviceHandle* __dsl_device = device)
         {
             ((IVulkan)this).DestroyPipelineBinaryKHR(
                 __dsl_device,
-                __dsl_pipelineBinary,
+                pipelineBinary,
                 __dsl_pAllocator
             );
         }
@@ -71313,7 +71311,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DestroyPipelineBinaryKHR(
         [NativeTypeName("VkDevice")] Ref<DeviceHandle> device,
-        [NativeTypeName("VkPipelineBinaryKHR")] Ref<PipelineBinaryKHRHandle> pipelineBinary,
+        [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     ) => DllImport.DestroyPipelineBinaryKHR(device, pipelineBinary, pAllocator);
 

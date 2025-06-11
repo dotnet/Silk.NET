@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan;
 public unsafe partial struct PhysicalDeviceGroupPropertiesPhysicalDevices
 {
     [SupportedApiProfile("vulkan")]
-    public PhysicalDeviceHandle* E0;
+    public PhysicalDeviceHandle E0;
 
     [SupportedApiProfile("vulkan")]
     public PhysicalDeviceHandle* E1;

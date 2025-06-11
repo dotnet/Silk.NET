@@ -34,5 +34,5 @@ public unsafe partial struct DedicatedAllocationMemoryAllocateInfoNV
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
-    public BufferHandle* Buffer;
+    public BufferHandle Buffer;
 }

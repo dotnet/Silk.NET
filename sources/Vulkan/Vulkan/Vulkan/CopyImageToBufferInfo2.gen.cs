@@ -37,7 +37,7 @@ public unsafe partial struct CopyImageToBufferInfo2
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public BufferHandle* DstBuffer;
+    public BufferHandle DstBuffer;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

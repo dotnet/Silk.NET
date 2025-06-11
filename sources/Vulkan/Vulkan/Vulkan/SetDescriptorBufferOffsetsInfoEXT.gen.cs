@@ -54,7 +54,7 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
         ImpliesSets = ["VK_VERSION_1_1"],
         RequireAll = true
     )]
-    public PipelineLayoutHandle* Layout;
+    public PipelineLayoutHandle Layout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

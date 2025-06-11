@@ -54,7 +54,7 @@ public unsafe partial struct BufferMemoryBarrier2
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public BufferHandle* Buffer;
+    public BufferHandle Buffer;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

@@ -51,7 +51,7 @@ public unsafe partial struct CopyAccelerationStructureInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHRHandle* Src;
+    public AccelerationStructureKHRHandle Src;
 
     [NativeTypeName("VkAccelerationStructureKHR")]
     [SupportedApiProfile(

@@ -42,7 +42,7 @@ public unsafe partial struct DisplayPlaneInfo2KHR
         ["VK_KHR_get_display_properties2"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public DisplayModeKHRHandle* Mode;
+    public DisplayModeKHRHandle Mode;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

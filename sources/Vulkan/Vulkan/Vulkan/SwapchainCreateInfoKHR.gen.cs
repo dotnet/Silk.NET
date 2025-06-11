@@ -85,5 +85,5 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeTypeName("VkSwapchainKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public SwapchainKHRHandle* OldSwapchain;
+    public SwapchainKHRHandle OldSwapchain;
 }

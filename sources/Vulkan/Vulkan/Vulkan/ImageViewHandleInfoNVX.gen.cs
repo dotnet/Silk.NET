@@ -30,7 +30,7 @@ public unsafe partial struct ImageViewHandleInfoNVX
 
     [NativeTypeName("VkImageView")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
-    public ImageViewHandle* ImageView;
+    public ImageViewHandle ImageView;
 
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     public DescriptorType DescriptorType;

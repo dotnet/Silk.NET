@@ -72,16 +72,16 @@ public partial class ExtractNestedTyping(
     {
         await base.ExecuteAsync(ctx, ct);
 
-        var proj = ctx.SourceProject;
-        if (proj == null)
+        var project = ctx.SourceProject;
+        if (project == null)
         {
             return;
         }
 
-        var compilation = await proj.GetCompilationAsync(ct);
+        var compilation = await project.GetCompilationAsync(ct);
         if (compilation == null)
         {
-            return;
+            throw new InvalidOperationException("Failed to get compilation");
         }
 
         var cfg = config.Get(ctx.JobKey);
@@ -115,11 +115,11 @@ public partial class ExtractNestedTyping(
             foreach (var (fullyQualifiedName, node) in syntaxNodes)
             {
                 var relativePath = $"Handles/{PathForFullyQualified(fullyQualifiedName)}";
-                proj = proj
+                project = project
                     ?.AddDocument(
                         Path.GetFileName(relativePath),
                         node.NormalizeWhitespace(),
-                        filePath: proj.FullPath(relativePath)
+                        filePath: project.FullPath(relativePath)
                     )
                     .Project;
             }
@@ -133,7 +133,7 @@ public partial class ExtractNestedTyping(
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
             var doc =
-                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                project!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
             if (fname is null)
             {
@@ -147,7 +147,7 @@ public partial class ExtractNestedTyping(
             // This will handle removing nested structs.
             // This is also where extracted enums are processed.
             rewriter.File = fname;
-            proj = doc.WithSyntaxRoot(
+            project = doc.WithSyntaxRoot(
                 rewriter.Visit(node)?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Rewriter returned null")
             ).Project;
@@ -155,7 +155,7 @@ public partial class ExtractNestedTyping(
             foreach (var newStruct in rewriter.ExtractedNestedStructs)
             {
                 // Add new documents for each nested struct
-                 proj = proj.AddDocument(
+                 project = project.AddDocument(
                     $"{newStruct.Identifier}.gen.cs",
                     CompilationUnit()
                         .WithMembers(
@@ -171,7 +171,7 @@ public partial class ExtractNestedTyping(
                                 : SingletonList<MemberDeclarationSyntax>(newStruct)
                         )
                         .NormalizeWhitespace(),
-                    filePath: proj.FullPath(
+                    filePath: project.FullPath(
                         $"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
                     )
                 ).Project;
@@ -222,7 +222,7 @@ public partial class ExtractNestedTyping(
         {
             var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
             var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
-            proj = proj
+            project = project
                 ?.AddDocument(
                     $"{identifier}.gen.cs",
                     CompilationUnit()
@@ -237,12 +237,12 @@ public partial class ExtractNestedTyping(
                                 : SingletonList(typeDecl)
                         )
                         .NormalizeWhitespace(),
-                    filePath: proj.FullPath($"{dir}/{identifier}.gen.cs")
+                    filePath: project.FullPath($"{dir}/{identifier}.gen.cs")
                 )
                 .Project;
         }
 
-        ctx.SourceProject = proj;
+        ctx.SourceProject = project;
     }
 
     private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(

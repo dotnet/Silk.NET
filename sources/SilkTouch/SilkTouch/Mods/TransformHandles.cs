@@ -56,23 +56,23 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
     {
         await base.ExecuteAsync(ctx, ct);
 
-        var proj = ctx.SourceProject;
-        if (proj == null)
+        var project = ctx.SourceProject;
+        if (project == null)
         {
             return;
         }
 
-        var compilation = await proj.GetCompilationAsync(ct);
+        var compilation = await project.GetCompilationAsync(ct);
         if (compilation == null)
         {
-            return;
+            throw new InvalidOperationException("Failed to get compilation");
         }
 
         var cfg = config.Get(ctx.JobKey);
 
         // Phase 1. Gather data before modifying
         // Find handle documents
-        var handleTypeDiscoverer = new HandleTypeDiscoverer(proj, compilation, ct);
+        var handleTypeDiscoverer = new HandleTypeDiscoverer(project, compilation, ct);
         var handleTypes = await handleTypeDiscoverer.GetHandleTypesAsync();
 
         // Store handle document IDs for later
@@ -88,24 +88,37 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             }
 
             var declaringSyntaxReference = handleTypeSymbol.DeclaringSyntaxReferences.Single();
-            var documentId = proj.GetDocumentId(declaringSyntaxReference.SyntaxTree);
+            var documentId = project.GetDocumentId(declaringSyntaxReference.SyntaxTree);
             if (documentId != null)
             {
                 handleTypeDocumentIds.Add((handleTypeSymbol.Name, documentId));
             }
         }
 
+        // Get fully qualified metadata names for each handle type
+        // This is because symbols are invalidated after modifying the project they come from
+        // We use these names to restore the symbols
+        // TODO: This actually requires rewriting the fully qualified metadata names since the names will be different after the rename below. AHHHH...
+        // Rewriting RenameAllAsync to allow providing a list of CSharpSyntaxRewriters might work best
+        var handleTypeMetadataNames = handleTypes
+            .Select(t => {
+                var ns = t.NamespaceFromSymbol();
+                var name = string.IsNullOrEmpty(ns) ? t.Name : $"{ns}.{t.Name}";
+
+                return name.Replace(t.Name, $"{t.Name}Handle");
+            });
+
         // Phase 2. Modify project after gathering data
         // Add -Handle suffix
-        ctx.SourceProject = proj;
+        ctx.SourceProject = project;
         await NameUtils.RenameAllAsync(ctx, logger, handleTypes.Select(t => ((ISymbol)t, $"{t.Name}Handle")), ct);
-        proj = ctx.SourceProject;
+        project = ctx.SourceProject;
 
         // Use document IDs from earlier
         var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL);
         foreach (var (originalName, documentId) in handleTypeDocumentIds)
         {
-            var document = proj.GetDocument(documentId) ?? throw new InvalidOperationException("Failed to find document");
+            var document = project.GetDocument(documentId) ?? throw new InvalidOperationException("Failed to find document");
 
             var syntaxTree = await document.GetSyntaxTreeAsync(ct);
             if (syntaxTree == null)
@@ -124,33 +137,29 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                 )
                 .WithName(document.Name.Replace(originalName, $"{originalName}Handle"));
 
-            proj = document.Project;
+            project = document.Project;
         }
 
-        // TODO: Reduce handle pointer dimensions by 1
+        // Phase 3. Reduce pointer dimensions
+        // Get the compilation again
+        compilation = await project.GetCompilationAsync(ct);
+        if (compilation == null)
+        {
+            throw new InvalidOperationException("Failed to get compilation");
+        }
 
-        // TODO: Old code. Cleanup needed
-        // // Before the execution of this foreach loop, the handle structs are empty
-        // //
-        // // During this foreach loop, we do two things:
-        // // 1. Rewrite all type references to refer to the handle structs
-        // // 2. Add members to handle structs (as identified the handles variable)
-        // var rewriter = new PointerDimensionReducer(handles, cfg.UseDSL);
-        // foreach (var docId in proj?.DocumentIds ?? [])
-        // {
-        //     var doc =
-        //         proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
-        //     if (await doc.GetSyntaxRootAsync(ct) is not { } root)
-        //     {
-        //         continue;
-        //     }
-        //
-        //     doc = doc.WithSyntaxRoot(rewriter.Visit(root).NormalizeWhitespace());
-        //
-        //     proj = doc.Project;
-        // }
+        // Restore symbols
+        handleTypes = handleTypeMetadataNames.SelectMany(name => compilation.GetTypesByMetadataName(name)).ToList();
 
-        ctx.SourceProject = proj;
+        // Reduce pointer dimensions
+        ctx.SourceProject = project;
+        var pointerDimensionReducer = new PointerDimensionReducer(ctx, ct);
+        await pointerDimensionReducer.ReducePointerDimensionAsync(handleTypes);
+        project = ctx.SourceProject;
+
+        // At the time of writing this comment, this line effectively does nothing
+        // However, if the code above is removed, then this line ensures that the context's project is updated properly
+        ctx.SourceProject = project;
     }
 
     private class HandleTypeDiscoverer(Project project, Compilation compilation, CancellationToken ct) : SymbolVisitor
@@ -578,11 +587,82 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         }
     }
 
-    // TODO: Perksey said he wanted pointer reduction to be handled alongside NameUtils.RenameAllAsync
-    // for performance reasons
-    // TODO: Make this take in a list of references (eg: Type*, Type**) to rewrite. If a non-pointer reference
-    // is encountered, throw an error
-    private class PointerDimensionReducer(Dictionary<string, Dictionary<string, string>> handles) : CSharpSyntaxRewriter
+    private class PointerDimensionReducer(IModContext ctx, CancellationToken ct) : CSharpSyntaxRewriter
+    {
+        /// <summary>
+        /// Reduces the pointer dimension of all references to the specified symbols.
+        /// </summary>
+        public async Task ReducePointerDimensionAsync(List<INamedTypeSymbol> symbols)
+        {
+            var project = ctx.SourceProject;
+            if (project == null)
+            {
+                return;
+            }
+
+            var compilation = await project.GetCompilationAsync(ct);
+            if (compilation == null)
+            {
+                return;
+            }
+
+            // Find all locations where the symbols are referenced
+            var locations = new List<Location>();
+            var documents = project.Documents.ToImmutableHashSet();
+            foreach (var symbol in symbols)
+            {
+                var references = await SymbolFinder.FindReferencesAsync(symbol, project.Solution, documents, ct);
+                locations.AddRange(references.SelectMany(r => r.Locations).Select(rl => rl.Location));
+            }
+
+            // Reduce the pointer dimension of all reference locations
+            foreach (var location in locations)
+            {
+                var syntaxTree = location.SourceTree;
+                if (syntaxTree == null)
+                {
+                    continue;
+                }
+
+                var document = project.GetDocument(syntaxTree);
+                if (document == null)
+                {
+                    continue;
+                }
+
+                var syntaxRoot = await syntaxTree.GetRootAsync(ct);
+                var syntaxNode = syntaxRoot.FindNode(location.SourceSpan);
+
+                var nodeToModify = GetNodeToModify(syntaxNode);
+                if (nodeToModify == null)
+                {
+                    continue;
+                }
+
+                var newNode = Visit(nodeToModify);
+                var newRoot = syntaxRoot.ReplaceNode(nodeToModify, newNode);
+                var newDocument = document.WithSyntaxRoot(newRoot);
+
+                project = newDocument.Project;
+            }
+
+            ctx.SourceProject = project;
+        }
+
+        private SyntaxNode? GetNodeToModify(SyntaxNode current)
+        {
+            if (current.Parent is PointerTypeSyntax parent)
+            {
+                return parent;
+            }
+
+            return null;
+        }
+
+        public override SyntaxNode? VisitPointerType(PointerTypeSyntax node) => node.ElementType;
+    }
+
+    private class OldPointerDimensionReducer(Dictionary<string, Dictionary<string, string>> handles) : CSharpSyntaxRewriter
     {
         /// <summary>
         /// The current scope i.e. fully qualified type name.

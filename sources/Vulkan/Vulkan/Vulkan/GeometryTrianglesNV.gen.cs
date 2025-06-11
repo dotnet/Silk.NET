@@ -50,7 +50,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public BufferHandle* VertexData;
+    public BufferHandle VertexData;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

@@ -54,7 +54,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public IndirectExecutionSetEXTHandle* IndirectExecutionSet;
+    public IndirectExecutionSetEXTHandle IndirectExecutionSet;
 
     [NativeTypeName("VkIndirectCommandsLayoutEXT")]
     [SupportedApiProfile(

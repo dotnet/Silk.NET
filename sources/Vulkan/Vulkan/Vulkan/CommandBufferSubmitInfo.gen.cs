@@ -30,7 +30,7 @@ public unsafe partial struct CommandBufferSubmitInfo
 
     [NativeTypeName("VkCommandBuffer")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public CommandBufferHandle* CommandBuffer;
+    public CommandBufferHandle CommandBuffer;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

@@ -34,7 +34,7 @@ public unsafe partial struct CopyMemoryToImageInfo
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public ImageHandle* DstImage;
+    public ImageHandle DstImage;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public ImageLayout DstImageLayout;

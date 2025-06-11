@@ -34,7 +34,7 @@ public unsafe partial struct DescriptorDataEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public SamplerHandle** PSampler;
+    public SamplerHandle* PSampler;
 
     [FieldOffset(0)]
     [NativeTypeName("const VkDescriptorImageInfo *")]

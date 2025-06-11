@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan;
 public readonly unsafe struct PFNVkGetInstanceProcAddrLunarg : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<InstanceHandle*, sbyte*, PFNVkGetInstanceProcAddrLunargP2> Handle =>
+    public delegate* unmanaged<InstanceHandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2> Handle =>
         (delegate* unmanaged<InstanceHandle*, sbyte*, PFNVkGetInstanceProcAddrLunargP2>)Pointer;
 
     public PFNVkGetInstanceProcAddrLunarg(

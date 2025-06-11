@@ -50,7 +50,7 @@ public unsafe partial struct FrameBoundaryEXT
 
     [NativeTypeName("const VkBuffer *")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
-    public BufferHandle** PBuffers;
+    public BufferHandle* PBuffers;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]

@@ -12768,7 +12768,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkDestroyPipelineBinaryKHR")]
         static abstract void DestroyPipelineBinaryKHR(
             [NativeTypeName("VkDevice")] DeviceHandle* device,
-            [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle* pipelineBinary,
+            [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
             [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
         );
 
@@ -12784,7 +12784,7 @@ public unsafe partial interface IVulkan
         [NativeFunction("vulkan", EntryPoint = "vkDestroyPipelineBinaryKHR")]
         static abstract void DestroyPipelineBinaryKHR(
             [NativeTypeName("VkDevice")] Ref<DeviceHandle> device,
-            [NativeTypeName("VkPipelineBinaryKHR")] Ref<PipelineBinaryKHRHandle> pipelineBinary,
+            [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
             [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -32561,7 +32561,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkDestroyPipelineBinaryKHR")]
     void DestroyPipelineBinaryKHR(
         [NativeTypeName("VkDevice")] DeviceHandle* device,
-        [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle* pipelineBinary,
+        [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
     );
 
@@ -32577,7 +32577,7 @@ public unsafe partial interface IVulkan
     [NativeFunction("vulkan", EntryPoint = "vkDestroyPipelineBinaryKHR")]
     void DestroyPipelineBinaryKHR(
         [NativeTypeName("VkDevice")] Ref<DeviceHandle> device,
-        [NativeTypeName("VkPipelineBinaryKHR")] Ref<PipelineBinaryKHRHandle> pipelineBinary,
+        [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     );
 

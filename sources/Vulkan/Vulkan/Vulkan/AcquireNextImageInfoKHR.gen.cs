@@ -63,7 +63,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public SemaphoreHandle* Semaphore;
+    public SemaphoreHandle Semaphore;
 
     [NativeTypeName("VkFence")]
     [SupportedApiProfile(

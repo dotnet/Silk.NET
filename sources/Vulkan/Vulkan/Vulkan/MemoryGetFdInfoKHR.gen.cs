@@ -51,7 +51,7 @@ public unsafe partial struct MemoryGetFdInfoKHR
             "VK_KHR_external_memory_fd+VK_VERSION_1_1",
         ]
     )]
-    public DeviceMemoryHandle* Memory;
+    public DeviceMemoryHandle Memory;
 
     [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
     [SupportedApiProfile(

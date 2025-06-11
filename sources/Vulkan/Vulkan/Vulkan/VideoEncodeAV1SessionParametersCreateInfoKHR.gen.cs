@@ -42,7 +42,7 @@ public unsafe partial struct VideoEncodeAV1SessionParametersCreateInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StdVideoAV1SequenceHeaderHandle* PStdSequenceHeader;
+    public StdVideoAV1SequenceHeaderHandle PStdSequenceHeader;
 
     [NativeTypeName("const StdVideoEncodeAV1DecoderModelInfo *")]
     [SupportedApiProfile(

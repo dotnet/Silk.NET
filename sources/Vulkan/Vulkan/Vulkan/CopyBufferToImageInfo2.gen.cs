@@ -30,7 +30,7 @@ public unsafe partial struct CopyBufferToImageInfo2
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public BufferHandle* SrcBuffer;
+    public BufferHandle SrcBuffer;
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
