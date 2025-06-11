@@ -28,8 +28,10 @@ public static class LocationTransformationUtils
         IEnumerable<LocationTransformer> transformers,
         CancellationToken ct = default)
     {
-        var symbolSet = symbols.ToList();
-        var transformersSet = transformers.ToList();
+        // Convert to lists
+        // The parameters being IEnumerables is for convenience
+        var symbolList = symbols.ToList();
+        var transformersList = transformers.ToList();
 
         var project = ctx.SourceProject;
         if (project == null)
@@ -43,12 +45,23 @@ public static class LocationTransformationUtils
             return;
         }
 
+        var locations = new ConcurrentBag<(Location Location, LocationTransformerContext Context)>();
+
+        // Add the locations of the declaration identifiers for each symbol
+        foreach (var symbol in symbolList)
+        {
+            foreach (var declaringSyntaxReference in symbol.DeclaringSyntaxReferences)
+            {
+                locations.Add((declaringSyntaxReference.GetSyntax().GetLocation(),
+                    new LocationTransformerContext(symbol, true, false)));
+            }
+        }
+
         // Find all locations where the symbols are referenced
-        var documents = project.Documents.ToImmutableHashSet();
-        var locations = new ConcurrentBag<(ISymbol Symbol, Location Location)>();
         // TODO this needs parallelisation config & be sensitive to the environment (future src generator form factor?)
+        var documents = project.Documents.ToImmutableHashSet();
         await Parallel.ForEachAsync(
-            symbolSet,
+            symbolList,
             ct,
             async (symbol, _) => {
                 var references = await SymbolFinder.FindReferencesAsync(symbol, project.Solution, documents, ct);
@@ -56,7 +69,9 @@ public static class LocationTransformationUtils
                 {
                     foreach (var location in reference.Locations)
                     {
-                        locations.Add((symbol, location.Location));
+                        locations.Add((location.Location,
+                            new LocationTransformerContext(symbol, false,
+                                location.IsCandidateLocation || location.IsImplicit)));
                     }
                 }
             }
@@ -83,12 +98,12 @@ public static class LocationTransformationUtils
             // Modify each location
             // We order the locations so that we modify starting from the end of the file
             // This way we prevent changes from being accidentally overwriting changes
-            foreach (var (symbol, location) in group.OrderByDescending(l => l.Location.SourceSpan.Start))
+            foreach (var (location, context) in group.OrderByDescending(l => l.Location.SourceSpan.Start))
             {
-                foreach (var transformer in transformersSet)
+                foreach (var transformer in transformersList)
                 {
                     var syntaxNode = syntaxRoot.FindNode(location.SourceSpan);
-                    var nodeToModify = transformer.GetNodeToModify(syntaxNode, symbol);
+                    var nodeToModify = transformer.GetNodeToModify(syntaxNode, context);
                     if (nodeToModify == null)
                     {
                         continue;
@@ -97,8 +112,6 @@ public static class LocationTransformationUtils
                     var newNode = transformer.Visit(nodeToModify);
                     syntaxRoot = syntaxRoot.ReplaceNode(nodeToModify, newNode);
                 }
-
-
             }
 
             // Commit the changes to the project
@@ -111,36 +124,80 @@ public static class LocationTransformationUtils
 }
 
 /// <summary>
+/// Additional information about the syntax node being processed.
+/// </summary>
+/// <param name="Symbol">The symbol used to find the node.</param>
+/// <param name="IsDeclaration">Does the syntax node represent the declaration of the symbol?</param>
+/// <param name="IsCandidateLocation">Does the syntax node represent a candidate location?</param>
+public record struct LocationTransformerContext(ISymbol Symbol, bool IsDeclaration, bool IsCandidateLocation);
+
+/// <summary>
 /// Base class for location transformers used by <see cref="LocationTransformationUtils.ModifyAllReferencesAsync"/>.
 /// </summary>
 public abstract class LocationTransformer : CSharpSyntaxRewriter
 {
     /// <summary>
-    /// Given a node, this method should return a parent node, the given node, or null.
+    /// Given a node, this method should return the given node, another node, or null.
     /// Returning null will lead to no node being modified.
-    /// Returning the parent node will lead to the parent node being modified instead of the original node.
+    /// Returning the another node will lead to the other node being modified instead of the original node.
     /// </summary>
     /// <param name="current">The current node.</param>
-    /// <param name="symbol">The symbol that was used to find the current node.</param>
-    /// <returns>The parent of the given node, the given node, or null.</returns>
-    public abstract SyntaxNode? GetNodeToModify(SyntaxNode current, ISymbol symbol);
+    /// <param name="context">Additional information about the syntax node being processed.</param>
+    /// <returns>The given node, another node, or null.</returns>
+    public abstract SyntaxNode? GetNodeToModify(SyntaxNode current, LocationTransformerContext context);
 }
 
-// // TODO: Implement this
-// /// <summary>
-// /// Renames the identifiers for all locations transformed.
-// /// </summary>
-// public class IdentifierRenamingTransformer(bool includeDeclarations = true, bool includeCandidateLocations = false) : LocationTransformer
-// {
-//     /// <inheritdoc />
-//     public override SyntaxNode? GetNodeToModify(SyntaxNode current, ISymbol symbol) => current;
-//
-//     /// <inheritdoc />
-//     public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
-//     {
-//         return IdentifierName("Equals");
-//     }
-// }
+/// <summary>
+/// Renames the identifiers for all locations transformed.
+/// </summary>
+/// <param name="newNamesBySymbol">The new names for each symbol as a dictionary.</param>
+/// <param name="includeDeclarations">Should declaration references be renamed?</param>
+/// <param name="includeCandidateLocations">Should candidate references or implicit references be renamed?</param>
+public class IdentifierRenamingTransformer(IEnumerable<(ISymbol Symbol, string NewName)> newNamesBySymbol, bool includeDeclarations = true, bool includeCandidateLocations = false) : LocationTransformer
+{
+    private LocationTransformerContext _context;
+    private Dictionary<ISymbol, string> _newNameLookup = newNamesBySymbol.Select(t => new KeyValuePair<ISymbol, string>(t.Symbol, t.NewName)).ToDictionary(SymbolEqualityComparer.Default);
+
+    /// <inheritdoc />
+    public override SyntaxNode? GetNodeToModify(SyntaxNode current, LocationTransformerContext context)
+    {
+        _context = context;
+
+        if (!includeDeclarations && context.IsDeclaration)
+        {
+            return null;
+        }
+
+        if (!includeCandidateLocations && context.IsCandidateLocation)
+        {
+            return null;
+        }
+
+        return current;
+    }
+
+    /// <inheritdoc />
+    public override SyntaxNode? DefaultVisit(SyntaxNode node)
+    {
+        var newName = _newNameLookup[_context.Symbol];
+        var newNameToken = Identifier(newName);
+
+        return node switch
+        {
+            IdentifierNameSyntax => IdentifierName(newNameToken),
+            BaseTypeDeclarationSyntax bt => bt.WithIdentifier(newNameToken),
+            DelegateDeclarationSyntax d => d.WithIdentifier(newNameToken),
+            EnumMemberDeclarationSyntax em => em.WithIdentifier(newNameToken),
+            EventDeclarationSyntax e => e.WithIdentifier(newNameToken),
+            MethodDeclarationSyntax m => m.WithIdentifier(newNameToken),
+            PropertyDeclarationSyntax p => p.WithIdentifier(newNameToken),
+            VariableDeclaratorSyntax v => v.WithIdentifier(newNameToken),
+            ConstructorDeclarationSyntax c => c.WithIdentifier(newNameToken),
+            DestructorDeclarationSyntax d => d.WithIdentifier(newNameToken),
+            _ => node,
+        };
+    }
+}
 
 /// <summary>
 /// Reduces the pointer dimension by one for all locations transformed.
@@ -153,7 +210,7 @@ public abstract class LocationTransformer : CSharpSyntaxRewriter
 public class PointerDimensionReductionTransformer : LocationTransformer
 {
     /// <inheritdoc />
-    public override SyntaxNode? GetNodeToModify(SyntaxNode current, ISymbol symbol)
+    public override SyntaxNode? GetNodeToModify(SyntaxNode current, LocationTransformerContext context)
     {
         if (current.Parent is PointerTypeSyntax parent)
         {

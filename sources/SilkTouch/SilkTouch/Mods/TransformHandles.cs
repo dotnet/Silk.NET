@@ -96,39 +96,15 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             }
         }
 
-        // Get fully qualified metadata names for each handle type
-        // This is because symbols are invalidated after modifying the project they come from
-        // We use these names to restore the symbols
-        // TODO: This actually requires rewriting the fully qualified metadata names since the names will be different after the rename below. AHHHH...
-        // Rewriting RenameAllAsync to allow providing a list of CSharpSyntaxRewriters might work best
-        var handleTypeMetadataNames = handleTypes
-            .Select(t => {
-                var ns = t.NamespaceFromSymbol();
-                var name = string.IsNullOrEmpty(ns) ? t.Name : $"{ns}.{t.Name}";
-
-                return name.Replace(t.Name, $"{t.Name}Handle");
-            });
-
         // Phase 2. Modify project after gathering data
-        // Add -Handle suffix
+        // Do the two following transformation to all references of the handle types:
+        // 1. Add -Handle suffix
+        // 2. Reduce pointer dimensions
         ctx.SourceProject = project;
-        await NameUtils.RenameAllAsync(ctx, logger, handleTypes.Select(t => ((ISymbol)t, $"{t.Name}Handle")), ct);
-        project = ctx.SourceProject;
-
-        // Get the compilation again
-        compilation = await project.GetCompilationAsync(ct);
-        if (compilation == null)
-        {
-            throw new InvalidOperationException("Failed to get compilation");
-        }
-
-        // Restore symbols invalidated by previous modification
-        handleTypes = handleTypeMetadataNames.SelectMany(name => compilation.GetTypesByMetadataName(name)).ToList();
-
-        // Reduce pointer dimensions
-        ctx.SourceProject = project;
-        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, logger, handleTypes,
-            [new PointerDimensionReductionTransformer()], ct);
+        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, logger, handleTypes, [
+            new PointerDimensionReductionTransformer(),
+            new IdentifierRenamingTransformer(handleTypes.Select(t => ((ISymbol)t, $"{t.Name}Handle")))
+        ], ct);
         project = ctx.SourceProject;
 
         // Use document IDs from earlier
