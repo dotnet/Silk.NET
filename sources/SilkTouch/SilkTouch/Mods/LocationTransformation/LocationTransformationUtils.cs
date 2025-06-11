@@ -6,6 +6,7 @@ using System.Collections.Immutable;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Logging;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.LocationTransformation;
 
@@ -95,7 +96,7 @@ public static class LocationTransformationUtils
             // Modify each location
             // We order the locations so that we modify starting from the end of the file
             // This way we prevent changes from being accidentally overwriting changes
-            foreach (var (location, context) in group.OrderByDescending(l => l.Location.SourceSpan.Start))
+            foreach (var (location, context) in group.OrderByDescending(l => l.Location.SourceSpan))
             {
                 foreach (var transformer in transformersList)
                 {
@@ -107,12 +108,23 @@ public static class LocationTransformationUtils
                     }
 
                     var newNode = transformer.Visit(nodeToModify);
+                    var originalLength = syntaxNode.FullSpan.Length;
+                    var newLength = newNode.FullSpan.Length;
+
+                    // Ensure that the new node's length is at least the original node's length
+                    // This is because the last few nodes processed usually make up the entire document
+                    // If the document's length has been reduced, then an ArgumentOutOfRangeException will be thrown
+                    if (originalLength - newLength > 0)
+                    {
+                        newNode = newNode.WithTrailingTrivia(TriviaList([..newNode.GetTrailingTrivia(), Whitespace(new string(' ', originalLength - newLength))]));
+                    }
+
                     syntaxRoot = syntaxRoot.ReplaceNode(nodeToModify, newNode);
                 }
             }
 
             // Commit the changes to the project
-            var newDocument = document.WithSyntaxRoot(syntaxRoot);
+            var newDocument = document.WithSyntaxRoot(syntaxRoot.NormalizeWhitespace());
             project = newDocument.Project;
         }
 

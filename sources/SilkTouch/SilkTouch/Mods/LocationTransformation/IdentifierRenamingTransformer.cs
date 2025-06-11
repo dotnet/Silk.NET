@@ -2,8 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.LocationTransformation;
 
@@ -36,11 +36,11 @@ public class IdentifierRenamingTransformer(IEnumerable<(ISymbol Symbol, string N
         return current;
     }
 
-    private SyntaxToken GetNewName() => SyntaxFactory.Identifier(_newNameLookup[_context.Symbol]);
+    private SyntaxToken GetNewName() => Identifier(_newNameLookup[_context.Symbol]);
 
     /// <inheritdoc />
     public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
-        => SyntaxFactory.IdentifierName(GetNewName());
+        => IdentifierName(GetNewName());
 
     // ----- Types -----
 
