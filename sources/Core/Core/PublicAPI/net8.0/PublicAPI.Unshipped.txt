@@ -1,7 +1,4 @@
 #nullable enable
-override Silk.NET.Core.Bool.Equals(object? obj) -> bool
-override Silk.NET.Core.Bool.GetHashCode() -> int
-override Silk.NET.Core.Bool.ToString() -> string!
 override Silk.NET.Core.Handle.Equals(object? obj) -> bool
 override Silk.NET.Core.Handle.GetHashCode() -> int
 override Silk.NET.Core.Handle.ToString() -> string!
@@ -36,7 +33,6 @@ override Silk.NET.Core.Ref3D<T>.GetHashCode() -> int
 override Silk.NET.Core.Ref<T>.Equals(object? obj) -> bool
 override Silk.NET.Core.Ref<T>.GetHashCode() -> int
 override Silk.NET.Core.Utf8String.ToString() -> string!
-readonly Silk.NET.Core.Bool.Value -> int
 readonly Silk.NET.Core.Handle.Value -> void*
 readonly Silk.NET.Core.HResult.Value -> int
 readonly Silk.NET.Core.HString.Value -> void*
@@ -112,15 +108,6 @@ Silk.NET.Core.AsyncIUnknown.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, 
 Silk.NET.Core.AsyncIUnknown.QueryInterface(System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
 Silk.NET.Core.AsyncIUnknown.QueryInterface<TCom>(out TCom ppvObject) -> Silk.NET.Core.HResult
 Silk.NET.Core.AsyncIUnknown.Release() -> uint
-Silk.NET.Core.Bool
-Silk.NET.Core.Bool.Bool() -> void
-Silk.NET.Core.Bool.Bool(int value) -> void
-Silk.NET.Core.Bool.CompareTo(object? obj) -> int
-Silk.NET.Core.Bool.CompareTo(Silk.NET.Core.Bool other) -> int
-Silk.NET.Core.Bool.CompareTo(Silk.NET.Core.MaybeBool<Silk.NET.Core.Bool> other) -> int
-Silk.NET.Core.Bool.Equals(Silk.NET.Core.Bool other) -> bool
-Silk.NET.Core.Bool.Equals(Silk.NET.Core.MaybeBool<Silk.NET.Core.Bool> other) -> bool
-Silk.NET.Core.Bool.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
 Silk.NET.Core.BreakneckLock
 Silk.NET.Core.BreakneckLock.BreakneckLock() -> void
 Silk.NET.Core.BreakneckLock.Enter(ref bool taken) -> void
@@ -210,15 +197,15 @@ Silk.NET.Core.IClassFactory.IClassFactory(Silk.NET.Core.Ptr<Silk.NET.Core.IClass
 Silk.NET.Core.IClassFactory.Interface
 Silk.NET.Core.IClassFactory.Interface.CreateInstance(Silk.NET.Core.IUnknown pUnkOuter, Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
 Silk.NET.Core.IClassFactory.Interface.CreateInstance(Silk.NET.Core.IUnknown pUnkOuter, System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
-Silk.NET.Core.IClassFactory.Interface.LockServer(Silk.NET.Core.Bool fLock) -> Silk.NET.Core.HResult
-Silk.NET.Core.IClassFactory.LockServer(Silk.NET.Core.Bool fLock) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Interface.LockServer(Silk.NET.Core.MaybeBool<int> fLock) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.LockServer(Silk.NET.Core.MaybeBool<int> fLock) -> Silk.NET.Core.HResult
 Silk.NET.Core.IClassFactory.LpVtbl -> Silk.NET.Core.IClassFactory.Native*
 Silk.NET.Core.IClassFactory.Native
 Silk.NET.Core.IClassFactory.Native.AddRef() -> uint
 Silk.NET.Core.IClassFactory.Native.CreateInstance(Silk.NET.Core.IUnknown pUnkOuter, Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
 Silk.NET.Core.IClassFactory.Native.CreateInstance(Silk.NET.Core.IUnknown pUnkOuter, System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
 Silk.NET.Core.IClassFactory.Native.CreateInstance<TCom>(Silk.NET.Core.IUnknown pUnkOuter, out TCom ppvObject) -> Silk.NET.Core.HResult
-Silk.NET.Core.IClassFactory.Native.LockServer(Silk.NET.Core.Bool fLock) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Native.LockServer(Silk.NET.Core.MaybeBool<int> fLock) -> Silk.NET.Core.HResult
 Silk.NET.Core.IClassFactory.Native.lpVtbl -> void**
 Silk.NET.Core.IClassFactory.Native.Native() -> void
 Silk.NET.Core.IClassFactory.Native.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
@@ -228,7 +215,7 @@ Silk.NET.Core.IClassFactory.Native.Release() -> uint
 Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>
 Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.AddRef -> delegate* unmanaged<TSelf*, uint>
 Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.CreateInstance -> delegate* unmanaged<TSelf*, Silk.NET.Core.IUnknown.Native*, System.Guid*, void**, int>
-Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.LockServer -> delegate* unmanaged<TSelf*, Silk.NET.Core.Bool, int>
+Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.LockServer -> delegate* unmanaged<TSelf*, Silk.NET.Core.MaybeBool<int>, int>
 Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.QueryInterface -> delegate* unmanaged<TSelf*, System.Guid*, void**, int>
 Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.Release -> delegate* unmanaged<TSelf*, uint>
 Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.Vtbl() -> void
@@ -552,39 +539,6 @@ static Silk.NET.Core.AsyncIUnknown.implicit operator Silk.NET.Core.IUnknown(Silk
 static Silk.NET.Core.AsyncIUnknown.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.AsyncIUnknown value) -> Silk.NET.Core.Ptr3D
 static Silk.NET.Core.AsyncIUnknown.implicit operator Silk.NET.Core.Ptr<Silk.NET.Core.AsyncIUnknown.Native>(Silk.NET.Core.AsyncIUnknown value) -> Silk.NET.Core.Ptr<Silk.NET.Core.AsyncIUnknown.Native>
 static Silk.NET.Core.AsyncIUnknown.implicit operator void***(Silk.NET.Core.AsyncIUnknown value) -> void***
-static Silk.NET.Core.Bool.explicit operator byte(Silk.NET.Core.Bool value) -> byte
-static Silk.NET.Core.Bool.explicit operator nuint(Silk.NET.Core.Bool value) -> nuint
-static Silk.NET.Core.Bool.explicit operator sbyte(Silk.NET.Core.Bool value) -> sbyte
-static Silk.NET.Core.Bool.explicit operator short(Silk.NET.Core.Bool value) -> short
-static Silk.NET.Core.Bool.explicit operator Silk.NET.Core.Bool(long value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.explicit operator Silk.NET.Core.Bool(nint value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.explicit operator Silk.NET.Core.Bool(nuint value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.explicit operator Silk.NET.Core.Bool(uint value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.explicit operator Silk.NET.Core.Bool(ulong value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.explicit operator uint(Silk.NET.Core.Bool value) -> uint
-static Silk.NET.Core.Bool.explicit operator ulong(Silk.NET.Core.Bool value) -> ulong
-static Silk.NET.Core.Bool.explicit operator ushort(Silk.NET.Core.Bool value) -> ushort
-static Silk.NET.Core.Bool.FALSE.get -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.implicit operator bool(Silk.NET.Core.Bool value) -> bool
-static Silk.NET.Core.Bool.implicit operator int(Silk.NET.Core.Bool value) -> int
-static Silk.NET.Core.Bool.implicit operator long(Silk.NET.Core.Bool value) -> long
-static Silk.NET.Core.Bool.implicit operator nint(Silk.NET.Core.Bool value) -> nint
-static Silk.NET.Core.Bool.implicit operator Silk.NET.Core.Bool(bool value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.implicit operator Silk.NET.Core.Bool(byte value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.implicit operator Silk.NET.Core.Bool(int value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.implicit operator Silk.NET.Core.Bool(sbyte value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.implicit operator Silk.NET.Core.Bool(short value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.implicit operator Silk.NET.Core.Bool(ushort value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.operator !=(Silk.NET.Core.Bool left, Silk.NET.Core.Bool right) -> bool
-static Silk.NET.Core.Bool.operator ++(Silk.NET.Core.Bool value) -> Silk.NET.Core.Bool
-static Silk.NET.Core.Bool.operator <(Silk.NET.Core.Bool left, Silk.NET.Core.Bool right) -> bool
-static Silk.NET.Core.Bool.operator <=(Silk.NET.Core.Bool left, Silk.NET.Core.Bool right) -> bool
-static Silk.NET.Core.Bool.operator ==(Silk.NET.Core.Bool left, Silk.NET.Core.Bool right) -> bool
-static Silk.NET.Core.Bool.operator >(Silk.NET.Core.Bool left, Silk.NET.Core.Bool right) -> bool
-static Silk.NET.Core.Bool.operator >=(Silk.NET.Core.Bool left, Silk.NET.Core.Bool right) -> bool
-static Silk.NET.Core.Bool.operator false(Silk.NET.Core.Bool value) -> bool
-static Silk.NET.Core.Bool.operator true(Silk.NET.Core.Bool value) -> bool
-static Silk.NET.Core.Bool.TRUE.get -> Silk.NET.Core.Bool
 static Silk.NET.Core.BreakneckLock.Create() -> Silk.NET.Core.BreakneckLock
 static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.implicit operator Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>(TEnum1 value) -> Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>
 static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.implicit operator Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>(TEnum2 value) -> Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>

@@ -317,7 +317,8 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
 
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_UNKNOWN =>
         [
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R32G32B32A32 =>
         [
@@ -325,7 +326,8 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_R32G32B32A32_FLOAT,
             DXGI_FORMAT_R32G32B32A32_UINT,
             DXGI_FORMAT_R32G32B32A32_SINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R32G32B32 =>
         [
@@ -333,7 +335,8 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_R32G32B32_FLOAT,
             DXGI_FORMAT_R32G32B32_UINT,
             DXGI_FORMAT_R32G32B32_SINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R16G16B16A16 =>
         [
@@ -343,7 +346,8 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_R16G16B16A16_UINT,
             DXGI_FORMAT_R16G16B16A16_SNORM,
             DXGI_FORMAT_R16G16B16A16_SINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R32G32 =>
         [
@@ -351,7 +355,8 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_R32G32_FLOAT,
             DXGI_FORMAT_R32G32_UINT,
             DXGI_FORMAT_R32G32_SINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R32G8X24 =>
         [
@@ -359,12 +364,14 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_D32_FLOAT_S8X24_UINT,
             DXGI_FORMAT_R32_FLOAT_X8X24_TYPELESS,
             DXGI_FORMAT_X32_TYPELESS_G8X24_UINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R11G11B10 =>
         [
             DXGI_FORMAT_R11G11B10_FLOAT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R8G8B8A8 =>
         [
@@ -374,7 +381,8 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_R8G8B8A8_UINT,
             DXGI_FORMAT_R8G8B8A8_SNORM,
             DXGI_FORMAT_R8G8B8A8_SINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R16G16 =>
         [
@@ -384,7 +392,8 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_R16G16_UINT,
             DXGI_FORMAT_R16G16_SNORM,
             DXGI_FORMAT_R16G16_SINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R32 =>
         [
@@ -393,7 +402,8 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_R32_FLOAT,
             DXGI_FORMAT_R32_UINT,
             DXGI_FORMAT_R32_SINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R24G8 =>
         [
@@ -401,7 +411,8 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_D24_UNORM_S8_UINT,
             DXGI_FORMAT_R24_UNORM_X8_TYPELESS,
             DXGI_FORMAT_X24_TYPELESS_G8_UINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R8G8 =>
         [
@@ -410,7 +421,8 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_R8G8_UINT,
             DXGI_FORMAT_R8G8_SNORM,
             DXGI_FORMAT_R8G8_SINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R16 =>
         [
@@ -421,7 +433,8 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_R16_UINT,
             DXGI_FORMAT_R16_SNORM,
             DXGI_FORMAT_R16_SINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R8 =>
         [
@@ -430,91 +443,106 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_R8_UINT,
             DXGI_FORMAT_R8_SNORM,
             DXGI_FORMAT_R8_SINT,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_A8 =>
         [
             DXGI_FORMAT_A8_UNORM,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R1 =>
         [
             DXGI_FORMAT_R1_UNORM,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R9G9B9E5 =>
         [
             DXGI_FORMAT_R9G9B9E5_SHAREDEXP,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R8G8_B8G8 =>
         [
             DXGI_FORMAT_R8G8_B8G8_UNORM,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_G8R8_G8B8 =>
         [
             DXGI_FORMAT_G8R8_G8B8_UNORM,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_BC1 =>
         [
             DXGI_FORMAT_BC1_TYPELESS,
             DXGI_FORMAT_BC1_UNORM,
             DXGI_FORMAT_BC1_UNORM_SRGB,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_BC2 =>
         [
             DXGI_FORMAT_BC2_TYPELESS,
             DXGI_FORMAT_BC2_UNORM,
             DXGI_FORMAT_BC2_UNORM_SRGB,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_BC3 =>
         [
             DXGI_FORMAT_BC3_TYPELESS,
             DXGI_FORMAT_BC3_UNORM,
             DXGI_FORMAT_BC3_UNORM_SRGB,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_BC4 =>
         [
             DXGI_FORMAT_BC4_TYPELESS,
             DXGI_FORMAT_BC4_UNORM,
             DXGI_FORMAT_BC4_SNORM,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_BC5 =>
         [
             DXGI_FORMAT_BC5_TYPELESS,
             DXGI_FORMAT_BC5_UNORM,
             DXGI_FORMAT_BC5_SNORM,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_B5G6R5 =>
         [
             DXGI_FORMAT_B5G6R5_UNORM,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_B5G5R5A1 =>
         [
             DXGI_FORMAT_B5G5R5A1_UNORM,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_B8G8R8A8 =>
         [
             DXGI_FORMAT_B8G8R8A8_TYPELESS,
             DXGI_FORMAT_B8G8R8A8_UNORM,
             DXGI_FORMAT_B8G8R8A8_UNORM_SRGB,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_B8G8R8X8 =>
         [
             DXGI_FORMAT_B8G8R8X8_TYPELESS,
             DXGI_FORMAT_B8G8R8X8_UNORM,
             DXGI_FORMAT_B8G8R8X8_UNORM_SRGB,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_R10G10B10A2 =>
         [
@@ -522,121 +550,144 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             DXGI_FORMAT_R10G10B10A2_UNORM,
             DXGI_FORMAT_R10G10B10A2_UINT,
             DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_BC6H =>
         [
             DXGI_FORMAT_BC6H_TYPELESS,
             DXGI_FORMAT_BC6H_UF16,
             DXGI_FORMAT_BC6H_SF16,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_BC7 =>
         [
             DXGI_FORMAT_BC7_TYPELESS,
             DXGI_FORMAT_BC7_UNORM,
             DXGI_FORMAT_BC7_UNORM_SRGB,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_AYUV =>
         [
             DXGI_FORMAT_AYUV,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_NV12 =>
         [
             DXGI_FORMAT_NV12,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_YUY2 =>
         [
             DXGI_FORMAT_YUY2,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_P010 =>
         [
             DXGI_FORMAT_P010,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_P016 =>
         [
             DXGI_FORMAT_P016,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_NV11 =>
         [
             DXGI_FORMAT_NV11,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_420_OPAQUE =>
         [
             DXGI_FORMAT_420_OPAQUE,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_Y410 =>
         [
             DXGI_FORMAT_Y410,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_Y416 =>
         [
             DXGI_FORMAT_Y416,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_Y210 =>
         [
             DXGI_FORMAT_Y210,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_Y216 =>
         [
             DXGI_FORMAT_Y216,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_AI44 =>
         [
             DXGI_FORMAT_AI44,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_IA44 =>
         [
             DXGI_FORMAT_IA44,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_P8 =>
         [
             DXGI_FORMAT_P8,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_A8P8 =>
         [
             DXGI_FORMAT_A8P8,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_B4G4R4A4 =>
         [
             DXGI_FORMAT_B4G4R4A4_UNORM,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_P208 =>
         [
             DXGI_FORMAT_P208,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_V208 =>
         [
             DXGI_FORMAT_V208,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_V408 =>
         [
             DXGI_FORMAT_V408,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_A4B4G4R4 =>
         [
             DXGI_FORMAT_A4B4G4R4_UNORM,
-            DXGI_FORMAT_UNKNOWN, // not part of cast set, just the "null terminator"
+            DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
+            ,
         ];
     private static readonly FORMAT_DETAIL[] s_FormatDetail =
     [
@@ -4999,7 +5050,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
     )
     {
         Unsafe.SkipInit(out totalHeight);
-        if (!PlanarRaw(format))
+        if (!Planar(format))
         {
             totalHeight = plane0Height;
             return S_OK;
@@ -5127,7 +5178,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
     )
     {
         Unsafe.SkipInit(out SlicePitch);
-        if (PlanarRaw(Format))
+        if (Planar(Format))
         {
             if (FAILED(CalculateExtraPlanarRows(Format, Height, out uint PlanarHeight)))
             {
@@ -5363,20 +5414,12 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
         return hr;
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> DX9TextureFormat(DXGI_FORMAT Format) =>
-        (MaybeBool<BOOL>)(BOOL)DX9TextureFormatRaw(Format);
-
-    public static BOOL DX9TextureFormatRaw(DXGI_FORMAT Format)
+    public static BOOL DX9TextureFormat(DXGI_FORMAT Format)
     {
         return GetFormatDetailRefThrow(Format).bDX9TextureFormat;
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> DX9VertexOrIndexFormat(DXGI_FORMAT Format) =>
-        (MaybeBool<BOOL>)(BOOL)DX9VertexOrIndexFormatRaw(Format);
-
-    public static BOOL DX9VertexOrIndexFormatRaw(DXGI_FORMAT Format)
+    public static BOOL DX9VertexOrIndexFormat(DXGI_FORMAT Format)
     {
         return GetFormatDetailRefThrow(Format).bDX9VertexOrIndexFormat;
     }
@@ -5415,11 +5458,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
         return false;
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> FloatNormTextureFormat(DXGI_FORMAT Format) =>
-        (MaybeBool<BOOL>)(BOOL)FloatNormTextureFormatRaw(Format);
-
-    public static BOOL FloatNormTextureFormatRaw(DXGI_FORMAT Format)
+    public static BOOL FloatNormTextureFormat(DXGI_FORMAT Format)
     {
         return GetFormatDetailRefThrow(Format).bFloatNormFormat;
     }
@@ -6264,7 +6303,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
         Unsafe.SkipInit(out PlaneWidth);
         Unsafe.SkipInit(out PlaneHeight);
         DXGI_FORMAT ParentFormat = GetParentFormat(Format);
-        if (PlanarRaw(ParentFormat))
+        if (Planar(ParentFormat))
         {
             switch (ParentFormat)
             {
@@ -6769,7 +6808,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             default:
             {
                 // All YCbCr formats should be in this list.
-                Debug.Assert(!YUVRaw(Format));
+                Debug.Assert(!YUV(Format));
                 HorizontalSubsampling = 1;
                 VerticalSubsampling = 1;
                 break;
@@ -6827,18 +6866,14 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
         return Format == DXGI_FORMAT_NV12;
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> NonOpaquePlanar(DXGI_FORMAT Format) =>
-        (MaybeBool<BOOL>)(BOOL)NonOpaquePlanarRaw(Format);
-
-    public static BOOL NonOpaquePlanarRaw(DXGI_FORMAT Format)
+    public static BOOL NonOpaquePlanar(DXGI_FORMAT Format)
     {
-        return PlanarRaw(Format) && !OpaqueRaw(Format);
+        return Planar(Format) && !Opaque(Format);
     }
 
     public static uint NonOpaquePlaneCount(DXGI_FORMAT Format)
     {
-        if (!NonOpaquePlanarRaw(Format))
+        if (!NonOpaquePlanar(Format))
         {
             return 1;
         }
@@ -6846,20 +6881,12 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
         return ((Format == DXGI_FORMAT_V208) || (Format == DXGI_FORMAT_V408)) ? 3u : 2u;
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> Opaque(DXGI_FORMAT Format) =>
-        (MaybeBool<BOOL>)(BOOL)OpaqueRaw(Format);
-
-    public static BOOL OpaqueRaw(DXGI_FORMAT Format)
+    public static BOOL Opaque(DXGI_FORMAT Format)
     {
         return Format == DXGI_FORMAT_420_OPAQUE;
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> Planar(DXGI_FORMAT Format) =>
-        (MaybeBool<BOOL>)(BOOL)PlanarRaw(Format);
-
-    public static BOOL PlanarRaw(DXGI_FORMAT Format)
+    public static BOOL Planar(DXGI_FORMAT Format)
     {
         return GetFormatDetailRefThrow(Format).bPlanar;
     }
@@ -7026,10 +7053,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
         return false;
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> YUV(DXGI_FORMAT Format) => (MaybeBool<BOOL>)(BOOL)YUVRaw(Format);
-
-    public static BOOL YUVRaw(DXGI_FORMAT Format)
+    public static BOOL YUV(DXGI_FORMAT Format)
     {
         return GetFormatDetailRefThrow(Format).bYUV;
     }

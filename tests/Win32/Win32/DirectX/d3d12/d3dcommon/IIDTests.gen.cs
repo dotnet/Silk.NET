@@ -4,7 +4,7 @@
 using System;
 using NUnit.Framework;
 using static Silk.NET.Win32.IID;
-#pragma warning disable CS1589, CS0419, CA1416, CS0618
+
 namespace Silk.NET.Win32.UnitTests;
 
 /// <summary>Provides validation of the <see cref = "IID"/> class.</summary>

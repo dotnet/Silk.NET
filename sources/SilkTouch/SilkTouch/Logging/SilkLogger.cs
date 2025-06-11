@@ -18,6 +18,8 @@ namespace Silk.NET.SilkTouch.Logging
     internal class SilkLogger<T> : ILogger<T>
     {
         private readonly ILogger _innerLogger;
+
+#pragma warning disable ST0005 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
         private readonly JobContext _jobContext;
 
         /// <summary>
@@ -30,6 +32,7 @@ namespace Silk.NET.SilkTouch.Logging
             _innerLogger = loggerfactory.CreateLogger<T>();
             _jobContext = jobContext;
         }
+#pragma warning restore ST0005 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 
         /// <inheritdoc/>
         public IDisposable? BeginScope<TState>(TState state)

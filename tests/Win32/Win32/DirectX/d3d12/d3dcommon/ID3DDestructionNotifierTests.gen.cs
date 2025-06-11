@@ -5,7 +5,7 @@ using System;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
 using Silk.NET.Win32;
-#pragma warning disable CS1589, CS0419, CA1416, CS0618
+
 namespace Silk.NET.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref = "ID3DDestructionNotifier"/> struct.</summary>

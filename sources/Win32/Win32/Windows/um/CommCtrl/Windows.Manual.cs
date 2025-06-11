@@ -365,15 +365,11 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> FlatSB_GetScrollPropPtr(
-        HWND param0,
-        int propIndex,
-        Ref<nint> param2
-    )
+    public static BOOL FlatSB_GetScrollPropPtr(HWND param0, int propIndex, Ref<nint> param2)
     {
         fixed (nint* __dsl_param2 = param2)
         {
-            return (MaybeBool<BOOL>)(BOOL)FlatSB_GetScrollPropPtr(param0, propIndex, __dsl_param2);
+            return (BOOL)FlatSB_GetScrollPropPtr(param0, propIndex, __dsl_param2);
         }
     }
 }

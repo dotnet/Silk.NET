@@ -8,14 +8,9 @@ namespace Silk.NET.Gdiplus;
 
 public static partial class Gdiplus
 {
-    [Transformed]
-    public static MaybeBool<BOOL> ObjectTypeIsValid(
-        [NativeTypeName("Gdiplus::ObjectType")] ObjectType type
-    ) => (MaybeBool<BOOL>)(BOOL)ObjectTypeIsValidRaw(type);
-
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.ObjectTypeIsValid"]/*'/>
 
-    public static BOOL ObjectTypeIsValidRaw([NativeTypeName("Gdiplus::ObjectType")] ObjectType type)
+    public static BOOL ObjectTypeIsValid([NativeTypeName("Gdiplus::ObjectType")] ObjectType type)
     {
         return (type >= ObjectTypeMin) && (type <= ObjectTypeMax);
     }

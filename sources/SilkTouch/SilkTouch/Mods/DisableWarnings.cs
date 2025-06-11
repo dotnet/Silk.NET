@@ -52,7 +52,6 @@ namespace Silk.NET.SilkTouch.Mods
             );
 
             ctx.SourceProject = await DisableWarningsAsync(ctx.SourceProject, pragmaDirective, ct);
-            ctx.TestProject = await DisableWarningsAsync(ctx.TestProject, pragmaDirective, ct);
         }
 
         private async Task<Microsoft.CodeAnalysis.Project?> DisableWarningsAsync(

@@ -22,11 +22,6 @@ public static unsafe partial class Windows
     public static BOOL Button_Enable(HWND hwndCtl, BOOL fEnable) =>
         EnableWindow((hwndCtl), (fEnable));
 
-    [Transformed]
-    /****** Button control message APIs ******************************************/
-    public static MaybeBool<BOOL> Button_Enable(HWND hwndCtl, MaybeBool<BOOL> fEnable) =>
-        (MaybeBool<BOOL>)(BOOL)Button_Enable(hwndCtl, (BOOL)fEnable);
-
     public static int Button_GetCheck(HWND hwndCtl) =>
         ((int)(uint)SNDMSG((hwndCtl), BM_GETCHECK, 0u, 0));
 
@@ -62,19 +57,15 @@ public static unsafe partial class Windows
             MAKELPARAM(((ushort)((fRedraw) ? TRUE : FALSE)), 0)
         );
 
-    [Transformed]
-    public static void Button_SetStyle(HWND hwndCtl, int style, MaybeBool<BOOL> fRedraw) =>
-        Button_SetStyle(hwndCtl, style, (BOOL)fRedraw);
-
     public static BOOL Button_SetText(HWND hwndCtl, char* lpsz) => SetWindowText((hwndCtl), (lpsz));
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> Button_SetText(HWND hwndCtl, Ref<char> lpsz)
+    public static BOOL Button_SetText(HWND hwndCtl, Ref<char> lpsz)
     {
         fixed (char* __dsl_lpsz = lpsz)
         {
-            return (MaybeBool<BOOL>)(BOOL)Button_SetText(hwndCtl, __dsl_lpsz);
+            return (BOOL)Button_SetText(hwndCtl, __dsl_lpsz);
         }
     }
 
@@ -90,11 +81,11 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> CheckDefDlgRecursion(Ref<BOOL> pfRecursion)
+    public static BOOL CheckDefDlgRecursion(Ref<BOOL> pfRecursion)
     {
         fixed (BOOL* __dsl_pfRecursion = pfRecursion)
         {
-            return (MaybeBool<BOOL>)(BOOL)CheckDefDlgRecursion(__dsl_pfRecursion);
+            return (BOOL)CheckDefDlgRecursion(__dsl_pfRecursion);
         }
     }
 
@@ -141,11 +132,6 @@ public static unsafe partial class Windows
     /****** ComboBox control message APIs ****************************************/
     public static BOOL ComboBox_Enable(HWND hwndCtl, BOOL fEnable) =>
         EnableWindow((hwndCtl), (fEnable));
-
-    [Transformed]
-    /****** ComboBox control message APIs ****************************************/
-    public static MaybeBool<BOOL> ComboBox_Enable(HWND hwndCtl, MaybeBool<BOOL> fEnable) =>
-        (MaybeBool<BOOL>)(BOOL)ComboBox_Enable(hwndCtl, (BOOL)fEnable);
 
     public static int ComboBox_FindItemData(HWND hwndCtl, int indexStart, LPARAM data) =>
         ((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data)));
@@ -211,11 +197,7 @@ public static unsafe partial class Windows
         }
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> ComboBox_GetDroppedState(HWND hwndCtl) =>
-        (MaybeBool<BOOL>)(BOOL)ComboBox_GetDroppedStateRaw(hwndCtl);
-
-    public static BOOL ComboBox_GetDroppedStateRaw(HWND hwndCtl) =>
+    public static BOOL ComboBox_GetDroppedState(HWND hwndCtl) =>
         ((BOOL)(uint)SNDMSG((hwndCtl), CB_GETDROPPEDSTATE, 0u, 0));
 
     public static uint ComboBox_GetEditSel(HWND hwndCtl) =>
@@ -343,20 +325,16 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> ComboBox_SetText(HWND hwndCtl, Ref<char> lpsz)
+    public static BOOL ComboBox_SetText(HWND hwndCtl, Ref<char> lpsz)
     {
         fixed (char* __dsl_lpsz = lpsz)
         {
-            return (MaybeBool<BOOL>)(BOOL)ComboBox_SetText(hwndCtl, __dsl_lpsz);
+            return (BOOL)ComboBox_SetText(hwndCtl, __dsl_lpsz);
         }
     }
 
     public static BOOL ComboBox_ShowDropdown(HWND hwndCtl, BOOL fShow) =>
         ((BOOL)(uint)SNDMSG((hwndCtl), CB_SHOWDROPDOWN, (WPARAM)(BOOL)(fShow), 0));
-
-    [Transformed]
-    public static MaybeBool<BOOL> ComboBox_ShowDropdown(HWND hwndCtl, MaybeBool<BOOL> fShow) =>
-        (MaybeBool<BOOL>)(BOOL)ComboBox_ShowDropdown(hwndCtl, (BOOL)fShow);
 
     public static int CopyRgn(HRGN hrgnDst, HRGN hrgnSrc) =>
         CombineRgn(hrgnDst, hrgnSrc, HRGN.NULL, RGN_COPY);
@@ -389,47 +367,20 @@ public static unsafe partial class Windows
         }
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> DeleteBitmap(HBITMAP hbm) =>
-        (MaybeBool<BOOL>)(BOOL)DeleteBitmapRaw(hbm);
+    public static BOOL DeleteBitmap(HBITMAP hbm) => DeleteObject((HGDIOBJ)(HBITMAP)(hbm));
 
-    public static BOOL DeleteBitmapRaw(HBITMAP hbm) => DeleteObject((HGDIOBJ)(HBITMAP)(hbm));
+    public static BOOL DeleteBrush(HBRUSH hbr) => DeleteObject((HGDIOBJ)(HBRUSH)(hbr));
 
-    [Transformed]
-    public static MaybeBool<BOOL> DeleteBrush(HBRUSH hbr) =>
-        (MaybeBool<BOOL>)(BOOL)DeleteBrushRaw(hbr);
+    public static BOOL DeleteFont(HFONT hfont) => DeleteObject((HGDIOBJ)(HFONT)(hfont));
 
-    public static BOOL DeleteBrushRaw(HBRUSH hbr) => DeleteObject((HGDIOBJ)(HBRUSH)(hbr));
-
-    [Transformed]
-    public static MaybeBool<BOOL> DeleteFont(HFONT hfont) =>
-        (MaybeBool<BOOL>)(BOOL)DeleteFontRaw(hfont);
-
-    public static BOOL DeleteFontRaw(HFONT hfont) => DeleteObject((HGDIOBJ)(HFONT)(hfont));
-
-    [Transformed]
-    public static MaybeBool<BOOL> DeletePalette(HPALETTE hpal) =>
-        (MaybeBool<BOOL>)(BOOL)DeletePaletteRaw(hpal);
-
-    public static BOOL DeletePaletteRaw(HPALETTE hpal) => DeleteObject((HGDIOBJ)(HPALETTE)(hpal));
-
-    [Transformed]
-    /****** GDI Macro APIs *******************************************************/
-    public static MaybeBool<BOOL> DeletePen(HPEN hpen) => (MaybeBool<BOOL>)(BOOL)DeletePenRaw(hpen);
+    public static BOOL DeletePalette(HPALETTE hpal) => DeleteObject((HGDIOBJ)(HPALETTE)(hpal));
 
     /****** GDI Macro APIs *******************************************************/
-    public static BOOL DeletePenRaw(HPEN hpen) => DeleteObject((HGDIOBJ)(HPEN)(hpen));
+    public static BOOL DeletePen(HPEN hpen) => DeleteObject((HGDIOBJ)(HPEN)(hpen));
 
-    [Transformed]
-    public static MaybeBool<BOOL> DeleteRgn(HRGN hrgn) => (MaybeBool<BOOL>)(BOOL)DeleteRgnRaw(hrgn);
+    public static BOOL DeleteRgn(HRGN hrgn) => DeleteObject((HGDIOBJ)(HRGN)(hrgn));
 
-    public static BOOL DeleteRgnRaw(HRGN hrgn) => DeleteObject((HGDIOBJ)(HRGN)(hrgn));
-
-    [Transformed]
-    public static MaybeBool<BOOL> Edit_CanUndo(HWND hwndCtl) =>
-        (MaybeBool<BOOL>)(BOOL)Edit_CanUndoRaw(hwndCtl);
-
-    public static BOOL Edit_CanUndoRaw(HWND hwndCtl) =>
+    public static BOOL Edit_CanUndo(HWND hwndCtl) =>
         ((BOOL)(uint)SNDMSG((hwndCtl), EM_CANUNDO, 0u, 0));
 
     public static void Edit_EmptyUndoBuffer(HWND hwndCtl) =>
@@ -439,17 +390,8 @@ public static unsafe partial class Windows
     public static BOOL Edit_Enable(HWND hwndCtl, BOOL fEnable) =>
         EnableWindow((hwndCtl), (fEnable));
 
-    [Transformed]
-    /****** Edit control message APIs ********************************************/
-    public static MaybeBool<BOOL> Edit_Enable(HWND hwndCtl, MaybeBool<BOOL> fEnable) =>
-        (MaybeBool<BOOL>)(BOOL)Edit_Enable(hwndCtl, (BOOL)fEnable);
-
     public static BOOL Edit_FmtLines(HWND hwndCtl, BOOL fAddEOL) =>
         ((BOOL)(uint)SNDMSG((hwndCtl), EM_FMTLINES, (WPARAM)(BOOL)(fAddEOL), 0));
-
-    [Transformed]
-    public static MaybeBool<BOOL> Edit_FmtLines(HWND hwndCtl, MaybeBool<BOOL> fAddEOL) =>
-        (MaybeBool<BOOL>)(BOOL)Edit_FmtLines(hwndCtl, (BOOL)fAddEOL);
 
     public static int Edit_GetFirstVisibleLine(HWND hwndCtl) =>
         ((int)(uint)SNDMSG((hwndCtl), EM_GETFIRSTVISIBLELINE, 0u, 0));
@@ -478,11 +420,7 @@ public static unsafe partial class Windows
     public static int Edit_GetLineCount(HWND hwndCtl) =>
         ((int)(uint)SNDMSG((hwndCtl), EM_GETLINECOUNT, 0u, 0));
 
-    [Transformed]
-    public static MaybeBool<BOOL> Edit_GetModify(HWND hwndCtl) =>
-        (MaybeBool<BOOL>)(BOOL)Edit_GetModifyRaw(hwndCtl);
-
-    public static BOOL Edit_GetModifyRaw(HWND hwndCtl) =>
+    public static BOOL Edit_GetModify(HWND hwndCtl) =>
         ((BOOL)(uint)SNDMSG((hwndCtl), EM_GETMODIFY, 0u, 0));
 
     public static ushort Edit_GetPasswordChar(HWND hwndCtl) =>
@@ -558,11 +496,7 @@ public static unsafe partial class Windows
     public static void Edit_Scroll(HWND hwndCtl, WPARAM dv, LPARAM dh) =>
         SNDMSG((hwndCtl), EM_LINESCROLL, (WPARAM)(dh), (LPARAM)(dv));
 
-    [Transformed]
-    public static MaybeBool<BOOL> Edit_ScrollCaret(HWND hwndCtl) =>
-        (MaybeBool<BOOL>)(BOOL)Edit_ScrollCaretRaw(hwndCtl);
-
-    public static BOOL Edit_ScrollCaretRaw(HWND hwndCtl) =>
+    public static BOOL Edit_ScrollCaret(HWND hwndCtl) =>
         ((BOOL)(uint)SNDMSG((hwndCtl), EM_SCROLLCARET, 0u, 0));
 
     public static void Edit_SetHandle(HWND hwndCtl, HLOCAL h) =>
@@ -576,10 +510,6 @@ public static unsafe partial class Windows
 
     public static BOOL Edit_SetReadOnly(HWND hwndCtl, BOOL fReadOnly) =>
         ((BOOL)(uint)SNDMSG((hwndCtl), EM_SETREADONLY, (WPARAM)(BOOL)(fReadOnly), 0));
-
-    [Transformed]
-    public static MaybeBool<BOOL> Edit_SetReadOnly(HWND hwndCtl, MaybeBool<BOOL> fReadOnly) =>
-        (MaybeBool<BOOL>)(BOOL)Edit_SetReadOnly(hwndCtl, (BOOL)fReadOnly);
 
     public static void Edit_SetRect(HWND hwndCtl, RECT* lprc) =>
         SNDMSG((hwndCtl), EM_SETRECT, 0u, (LPARAM)(RECT*)(lprc));
@@ -627,11 +557,11 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> Edit_SetText(HWND hwndCtl, Ref<char> lpsz)
+    public static BOOL Edit_SetText(HWND hwndCtl, Ref<char> lpsz)
     {
         fixed (char* __dsl_lpsz = lpsz)
         {
-            return (MaybeBool<BOOL>)(BOOL)Edit_SetText(hwndCtl, __dsl_lpsz);
+            return (BOOL)Edit_SetText(hwndCtl, __dsl_lpsz);
         }
     }
 
@@ -646,12 +576,7 @@ public static unsafe partial class Windows
             (LPARAM)(delegate* unmanaged<char*, int, int, int, int>)(lpfnWordBreak)
         );
 
-    [Transformed]
-    public static MaybeBool<BOOL> Edit_Undo(HWND hwndCtl) =>
-        (MaybeBool<BOOL>)(BOOL)Edit_UndoRaw(hwndCtl);
-
-    public static BOOL Edit_UndoRaw(HWND hwndCtl) =>
-        ((BOOL)(uint)SNDMSG((hwndCtl), EM_UNDO, 0u, 0));
+    public static BOOL Edit_Undo(HWND hwndCtl) => ((BOOL)(uint)SNDMSG((hwndCtl), EM_UNDO, 0u, 0));
 
     public static void FORWARD_WM_ACTIVATE(
         HWND hwnd,
@@ -667,29 +592,12 @@ public static unsafe partial class Windows
             (LPARAM)(HWND)(hwndActDeact)
         );
 
-    [Transformed]
-    public static void FORWARD_WM_ACTIVATE(
-        HWND hwnd,
-        uint state,
-        HWND hwndActDeact,
-        MaybeBool<BOOL> fMinimized,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_ACTIVATE(hwnd, state, hwndActDeact, (BOOL)fMinimized, fn);
-
     public static void FORWARD_WM_ACTIVATEAPP(
         HWND hwnd,
         BOOL fActivate,
         uint dwThreadId,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => fn((hwnd), WM_ACTIVATEAPP, (WPARAM)(BOOL)(fActivate), (LPARAM)(dwThreadId));
-
-    [Transformed]
-    public static void FORWARD_WM_ACTIVATEAPP(
-        HWND hwnd,
-        MaybeBool<BOOL> fActivate,
-        uint dwThreadId,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_ACTIVATEAPP(hwnd, (BOOL)fActivate, dwThreadId, fn);
 
     public static void FORWARD_WM_ASKCBFORMATNAME(
         HWND hwnd,
@@ -839,7 +747,7 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> FORWARD_WM_COPYDATA(
+    public static BOOL FORWARD_WM_COPYDATA(
         HWND hwnd,
         HWND hwndFrom,
         Ref<COPYDATASTRUCT> pcds,
@@ -848,7 +756,7 @@ public static unsafe partial class Windows
     {
         fixed (COPYDATASTRUCT* __dsl_pcds = pcds)
         {
-            return (MaybeBool<BOOL>)(BOOL)FORWARD_WM_COPYDATA(hwnd, hwndFrom, __dsl_pcds, fn);
+            return (BOOL)FORWARD_WM_COPYDATA(hwnd, hwndFrom, __dsl_pcds, fn);
         }
     }
 
@@ -860,7 +768,7 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> FORWARD_WM_CREATE(
+    public static BOOL FORWARD_WM_CREATE(
         HWND hwnd,
         Ref<CREATESTRUCTW> lpCreateStruct,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
@@ -868,7 +776,7 @@ public static unsafe partial class Windows
     {
         fixed (CREATESTRUCTW* __dsl_lpCreateStruct = lpCreateStruct)
         {
-            return (MaybeBool<BOOL>)(BOOL)FORWARD_WM_CREATE(hwnd, __dsl_lpCreateStruct, fn);
+            return (BOOL)FORWARD_WM_CREATE(hwnd, __dsl_lpCreateStruct, fn);
         }
     }
 
@@ -975,15 +883,7 @@ public static unsafe partial class Windows
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => fn((hwnd), WM_DESTROYCLIPBOARD, 0u, 0);
 
-    [Transformed]
-    public static MaybeBool<BOOL> FORWARD_WM_DEVICECHANGE(
-        HWND hwnd,
-        uint uEvent,
-        uint dwEventData,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (MaybeBool<BOOL>)(BOOL)FORWARD_WM_DEVICECHANGERaw(hwnd, uEvent, dwEventData, fn);
-
-    public static BOOL FORWARD_WM_DEVICECHANGERaw(
+    public static BOOL FORWARD_WM_DEVICECHANGE(
         HWND hwnd,
         uint uEvent,
         uint dwEventData,
@@ -1069,25 +969,11 @@ public static unsafe partial class Windows
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => fn((hwnd), WM_ENABLE, (WPARAM)(BOOL)(fEnable), 0);
 
-    [Transformed]
-    public static void FORWARD_WM_ENABLE(
-        HWND hwnd,
-        MaybeBool<BOOL> fEnable,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_ENABLE(hwnd, (BOOL)fEnable, fn);
-
     public static void FORWARD_WM_ENDSESSION(
         HWND hwnd,
         BOOL fEnding,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => fn((hwnd), WM_ENDSESSION, (WPARAM)(BOOL)(fEnding), 0);
-
-    [Transformed]
-    public static void FORWARD_WM_ENDSESSION(
-        HWND hwnd,
-        MaybeBool<BOOL> fEnding,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_ENDSESSION(hwnd, (BOOL)fEnding, fn);
 
     public static void FORWARD_WM_ENTERIDLE(
         HWND hwnd,
@@ -1096,14 +982,7 @@ public static unsafe partial class Windows
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => fn((hwnd), WM_ENTERIDLE, (WPARAM)(uint)(source), (LPARAM)(HWND)(hwndSource));
 
-    [Transformed]
-    public static MaybeBool<BOOL> FORWARD_WM_ERASEBKGND(
-        HWND hwnd,
-        HDC hdc,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (MaybeBool<BOOL>)(BOOL)FORWARD_WM_ERASEBKGNDRaw(hwnd, hdc, fn);
-
-    public static BOOL FORWARD_WM_ERASEBKGNDRaw(
+    public static BOOL FORWARD_WM_ERASEBKGND(
         HWND hwnd,
         HDC hdc,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
@@ -1229,28 +1108,13 @@ public static unsafe partial class Windows
             MAKELPARAM((code), (nuint)(pos))
         );
 
-    [Transformed]
-    public static MaybeBool<BOOL> FORWARD_WM_ICONERASEBKGND(
-        HWND hwnd,
-        HDC hdc,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (MaybeBool<BOOL>)(BOOL)FORWARD_WM_ICONERASEBKGNDRaw(hwnd, hdc, fn);
-
-    public static BOOL FORWARD_WM_ICONERASEBKGNDRaw(
+    public static BOOL FORWARD_WM_ICONERASEBKGND(
         HWND hwnd,
         HDC hdc,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => (BOOL)(uint)fn((hwnd), WM_ICONERASEBKGND, (WPARAM)(HDC)(hdc), 0);
 
-    [Transformed]
-    public static MaybeBool<BOOL> FORWARD_WM_INITDIALOG(
-        HWND hwnd,
-        HWND hwndFocus,
-        LPARAM lParam,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (MaybeBool<BOOL>)(BOOL)FORWARD_WM_INITDIALOGRaw(hwnd, hwndFocus, lParam, fn);
-
-    public static BOOL FORWARD_WM_INITDIALOGRaw(
+    public static BOOL FORWARD_WM_INITDIALOG(
         HWND hwnd,
         HWND hwndFocus,
         LPARAM lParam,
@@ -1276,15 +1140,6 @@ public static unsafe partial class Windows
             (WPARAM)(HMENU)(hMenu),
             MAKELPARAM((item), (nuint)(fSystemMenu))
         );
-
-    [Transformed]
-    public static void FORWARD_WM_INITMENUPOPUP(
-        HWND hwnd,
-        HMENU hMenu,
-        uint item,
-        MaybeBool<BOOL> fSystemMenu,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_INITMENUPOPUP(hwnd, hMenu, item, (BOOL)fSystemMenu, fn);
 
     public static void FORWARD_WM_KEYDOWN(
         HWND hwnd,
@@ -1323,16 +1178,6 @@ public static unsafe partial class Windows
             MAKELPARAM((x), (y))
         );
 
-    [Transformed]
-    public static void FORWARD_WM_LBUTTONDOWN(
-        HWND hwnd,
-        MaybeBool<BOOL> fDoubleClick,
-        int x,
-        int y,
-        uint keyFlags,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_LBUTTONDOWN(hwnd, (BOOL)fDoubleClick, x, y, keyFlags, fn);
-
     public static void FORWARD_WM_LBUTTONUP(
         HWND hwnd,
         int x,
@@ -1356,16 +1201,6 @@ public static unsafe partial class Windows
             MAKELPARAM((x), (y))
         );
 
-    [Transformed]
-    public static void FORWARD_WM_MBUTTONDOWN(
-        HWND hwnd,
-        MaybeBool<BOOL> fDoubleClick,
-        int x,
-        int y,
-        uint keyFlags,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_MBUTTONDOWN(hwnd, (BOOL)fDoubleClick, x, y, keyFlags, fn);
-
     public static void FORWARD_WM_MBUTTONUP(
         HWND hwnd,
         int x,
@@ -1382,23 +1217,7 @@ public static unsafe partial class Windows
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => fn(hwnd, WM_MDIACTIVATE, (WPARAM)(hwndDeactivate), (LPARAM)(hwndActivate));
 
-    [Transformed]
-    public static void FORWARD_WM_MDIACTIVATE(
-        HWND hwnd,
-        MaybeBool<BOOL> fActive,
-        HWND hwndActivate,
-        HWND hwndDeactivate,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_MDIACTIVATE(hwnd, (BOOL)fActive, hwndActivate, hwndDeactivate, fn);
-
-    [Transformed]
-    public static MaybeBool<BOOL> FORWARD_WM_MDICASCADE(
-        HWND hwnd,
-        uint cmd,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (MaybeBool<BOOL>)(BOOL)FORWARD_WM_MDICASCADERaw(hwnd, cmd, fn);
-
-    public static BOOL FORWARD_WM_MDICASCADERaw(
+    public static BOOL FORWARD_WM_MDICASCADE(
         HWND hwnd,
         uint cmd,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
@@ -1453,14 +1272,6 @@ public static unsafe partial class Windows
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => (HWND)(nuint)fn((hwnd), WM_MDINEXT, (WPARAM)(hwndCur), (LPARAM)(fPrev));
 
-    [Transformed]
-    public static HWND FORWARD_WM_MDINEXT(
-        HWND hwnd,
-        HWND hwndCur,
-        MaybeBool<BOOL> fPrev,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (HWND)FORWARD_WM_MDINEXT(hwnd, hwndCur, (BOOL)fPrev, fn);
-
     public static void FORWARD_WM_MDIRESTORE(
         HWND hwnd,
         HWND hwndRestore,
@@ -1482,23 +1293,7 @@ public static unsafe partial class Windows
                 (LPARAM)(hmenuWindow)
             );
 
-    [Transformed]
-    public static HMENU FORWARD_WM_MDISETMENU(
-        HWND hwnd,
-        MaybeBool<BOOL> fRefresh,
-        HMENU hmenuFrame,
-        HMENU hmenuWindow,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (HMENU)FORWARD_WM_MDISETMENU(hwnd, (BOOL)fRefresh, hmenuFrame, hmenuWindow, fn);
-
-    [Transformed]
-    public static MaybeBool<BOOL> FORWARD_WM_MDITILE(
-        HWND hwnd,
-        uint cmd,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (MaybeBool<BOOL>)(BOOL)FORWARD_WM_MDITILERaw(hwnd, cmd, fn);
-
-    public static BOOL FORWARD_WM_MDITILERaw(
+    public static BOOL FORWARD_WM_MDITILE(
         HWND hwnd,
         uint cmd,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
@@ -1606,17 +1401,6 @@ public static unsafe partial class Windows
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => (BOOL)(uint)fn((hwnd), WM_NCACTIVATE, (WPARAM)(BOOL)(fActive), 0);
 
-    [Transformed]
-    public static MaybeBool<BOOL> FORWARD_WM_NCACTIVATE(
-        HWND hwnd,
-        MaybeBool<BOOL> fActive,
-        HWND hwndActDeact,
-        MaybeBool<BOOL> fMinimized,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) =>
-        (MaybeBool<BOOL>)
-            (BOOL)FORWARD_WM_NCACTIVATE(hwnd, (BOOL)fActive, hwndActDeact, (BOOL)fMinimized, fn);
-
     public static uint FORWARD_WM_NCCALCSIZE(
         HWND hwnd,
         BOOL fCalcValidRects,
@@ -1635,14 +1419,14 @@ public static unsafe partial class Windows
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint FORWARD_WM_NCCALCSIZE(
         HWND hwnd,
-        MaybeBool<BOOL> fCalcValidRects,
+        BOOL fCalcValidRects,
         Ref<NCCALCSIZE_PARAMS> lpcsp,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     )
     {
         fixed (NCCALCSIZE_PARAMS* __dsl_lpcsp = lpcsp)
         {
-            return (uint)FORWARD_WM_NCCALCSIZE(hwnd, (BOOL)fCalcValidRects, __dsl_lpcsp, fn);
+            return (uint)FORWARD_WM_NCCALCSIZE(hwnd, fCalcValidRects, __dsl_lpcsp, fn);
         }
     }
 
@@ -1654,7 +1438,7 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> FORWARD_WM_NCCREATE(
+    public static BOOL FORWARD_WM_NCCREATE(
         HWND hwnd,
         Ref<CREATESTRUCTW> lpCreateStruct,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
@@ -1662,7 +1446,7 @@ public static unsafe partial class Windows
     {
         fixed (CREATESTRUCTW* __dsl_lpCreateStruct = lpCreateStruct)
         {
-            return (MaybeBool<BOOL>)(BOOL)FORWARD_WM_NCCREATE(hwnd, __dsl_lpCreateStruct, fn);
+            return (BOOL)FORWARD_WM_NCCREATE(hwnd, __dsl_lpCreateStruct, fn);
         }
     }
 
@@ -1693,16 +1477,6 @@ public static unsafe partial class Windows
             MAKELPARAM((x), (y))
         );
 
-    [Transformed]
-    public static void FORWARD_WM_NCLBUTTONDOWN(
-        HWND hwnd,
-        MaybeBool<BOOL> fDoubleClick,
-        int x,
-        int y,
-        uint codeHitTest,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_NCLBUTTONDOWN(hwnd, (BOOL)fDoubleClick, x, y, codeHitTest, fn);
-
     public static void FORWARD_WM_NCLBUTTONUP(
         HWND hwnd,
         int x,
@@ -1725,16 +1499,6 @@ public static unsafe partial class Windows
             (WPARAM)(uint)(codeHitTest),
             MAKELPARAM((x), (y))
         );
-
-    [Transformed]
-    public static void FORWARD_WM_NCMBUTTONDOWN(
-        HWND hwnd,
-        MaybeBool<BOOL> fDoubleClick,
-        int x,
-        int y,
-        uint codeHitTest,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_NCMBUTTONDOWN(hwnd, (BOOL)fDoubleClick, x, y, codeHitTest, fn);
 
     public static void FORWARD_WM_NCMBUTTONUP(
         HWND hwnd,
@@ -1773,16 +1537,6 @@ public static unsafe partial class Windows
             MAKELPARAM((x), (y))
         );
 
-    [Transformed]
-    public static void FORWARD_WM_NCRBUTTONDOWN(
-        HWND hwnd,
-        MaybeBool<BOOL> fDoubleClick,
-        int x,
-        int y,
-        uint codeHitTest,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_NCRBUTTONDOWN(hwnd, (BOOL)fDoubleClick, x, y, codeHitTest, fn);
-
     public static void FORWARD_WM_NCRBUTTONUP(
         HWND hwnd,
         int x,
@@ -1797,14 +1551,6 @@ public static unsafe partial class Windows
         BOOL fNext,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => (HWND)(nuint)fn((hwnd), WM_NEXTDLGCTL, (WPARAM)(HWND)(hwndSetFocus), (LPARAM)(fNext));
-
-    [Transformed]
-    public static HWND FORWARD_WM_NEXTDLGCTL(
-        HWND hwnd,
-        HWND hwndSetFocus,
-        MaybeBool<BOOL> fNext,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (HWND)FORWARD_WM_NEXTDLGCTL(hwnd, hwndSetFocus, (BOOL)fNext, fn);
 
     public static void FORWARD_WM_PAINT(
         HWND hwnd,
@@ -1875,35 +1621,17 @@ public static unsafe partial class Windows
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => (HICON)(uint)(uint)fn((hwnd), WM_QUERYDRAGICON, 0u, 0);
 
-    [Transformed]
-    public static MaybeBool<BOOL> FORWARD_WM_QUERYENDSESSION(
-        HWND hwnd,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (MaybeBool<BOOL>)(BOOL)FORWARD_WM_QUERYENDSESSIONRaw(hwnd, fn);
-
-    public static BOOL FORWARD_WM_QUERYENDSESSIONRaw(
+    public static BOOL FORWARD_WM_QUERYENDSESSION(
         HWND hwnd,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => (BOOL)(uint)fn((hwnd), WM_QUERYENDSESSION, 0u, 0);
 
-    [Transformed]
-    public static MaybeBool<BOOL> FORWARD_WM_QUERYNEWPALETTE(
-        HWND hwnd,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (MaybeBool<BOOL>)(BOOL)FORWARD_WM_QUERYNEWPALETTERaw(hwnd, fn);
-
-    public static BOOL FORWARD_WM_QUERYNEWPALETTERaw(
+    public static BOOL FORWARD_WM_QUERYNEWPALETTE(
         HWND hwnd,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => (BOOL)(uint)fn((hwnd), WM_QUERYNEWPALETTE, 0u, 0);
 
-    [Transformed]
-    public static MaybeBool<BOOL> FORWARD_WM_QUERYOPEN(
-        HWND hwnd,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (MaybeBool<BOOL>)(BOOL)FORWARD_WM_QUERYOPENRaw(hwnd, fn);
-
-    public static BOOL FORWARD_WM_QUERYOPENRaw(
+    public static BOOL FORWARD_WM_QUERYOPEN(
         HWND hwnd,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => (BOOL)(uint)fn((hwnd), WM_QUERYOPEN, 0u, 0);
@@ -1934,16 +1662,6 @@ public static unsafe partial class Windows
             MAKELPARAM((x), (y))
         );
 
-    [Transformed]
-    public static void FORWARD_WM_RBUTTONDOWN(
-        HWND hwnd,
-        MaybeBool<BOOL> fDoubleClick,
-        int x,
-        int y,
-        uint keyFlags,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_RBUTTONDOWN(hwnd, (BOOL)fDoubleClick, x, y, keyFlags, fn);
-
     public static void FORWARD_WM_RBUTTONUP(
         HWND hwnd,
         int x,
@@ -1963,16 +1681,7 @@ public static unsafe partial class Windows
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => (HANDLE)(nuint)fn((hwnd), WM_RENDERFORMAT, (WPARAM)(uint)(fmt), 0);
 
-    [Transformed]
-    public static MaybeBool<BOOL> FORWARD_WM_SETCURSOR(
-        HWND hwnd,
-        HWND hwndCursor,
-        uint codeHitTest,
-        uint msg,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => (MaybeBool<BOOL>)(BOOL)FORWARD_WM_SETCURSORRaw(hwnd, hwndCursor, codeHitTest, msg, fn);
-
-    public static BOOL FORWARD_WM_SETCURSORRaw(
+    public static BOOL FORWARD_WM_SETCURSOR(
         HWND hwnd,
         HWND hwndCursor,
         uint codeHitTest,
@@ -2000,26 +1709,11 @@ public static unsafe partial class Windows
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => fn((hwnd), WM_SETFONT, (WPARAM)(HFONT)(hfont), (LPARAM)(BOOL)(fRedraw));
 
-    [Transformed]
-    public static void FORWARD_WM_SETFONT(
-        HWND hwnd,
-        HFONT hfont,
-        MaybeBool<BOOL> fRedraw,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_SETFONT(hwnd, hfont, (BOOL)fRedraw, fn);
-
     public static void FORWARD_WM_SETREDRAW(
         HWND hwnd,
         BOOL fRedraw,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => fn((hwnd), WM_SETREDRAW, (WPARAM)(BOOL)(fRedraw), 0);
-
-    [Transformed]
-    public static void FORWARD_WM_SETREDRAW(
-        HWND hwnd,
-        MaybeBool<BOOL> fRedraw,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_SETREDRAW(hwnd, (BOOL)fRedraw, fn);
 
     public static void FORWARD_WM_SETTEXT(
         HWND hwnd,
@@ -2047,14 +1741,6 @@ public static unsafe partial class Windows
         uint status,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
     ) => fn((hwnd), WM_SHOWWINDOW, (WPARAM)(BOOL)(fShow), (LPARAM)(uint)(status));
-
-    [Transformed]
-    public static void FORWARD_WM_SHOWWINDOW(
-        HWND hwnd,
-        MaybeBool<BOOL> fShow,
-        uint status,
-        delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
-    ) => FORWARD_WM_SHOWWINDOW(hwnd, (BOOL)fShow, status, fn);
 
     public static void FORWARD_WM_SIZE(
         HWND hwnd,
@@ -2229,7 +1915,7 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> FORWARD_WM_WINDOWPOSCHANGING(
+    public static BOOL FORWARD_WM_WINDOWPOSCHANGING(
         HWND hwnd,
         Ref<WINDOWPOS> lpwpos,
         delegate* <HWND, uint, WPARAM, LPARAM, LRESULT> fn
@@ -2237,7 +1923,7 @@ public static unsafe partial class Windows
     {
         fixed (WINDOWPOS* __dsl_lpwpos = lpwpos)
         {
-            return (MaybeBool<BOOL>)(BOOL)FORWARD_WM_WINDOWPOSCHANGING(hwnd, __dsl_lpwpos, fn);
+            return (BOOL)FORWARD_WM_WINDOWPOSCHANGING(hwnd, __dsl_lpwpos, fn);
         }
     }
 
@@ -2273,23 +1959,12 @@ public static unsafe partial class Windows
 
     public static LPARAM GET_LPARAM(WPARAM wp, LPARAM lp) => (lp);
 
-    [Transformed]
-    public static MaybeBool<BOOL> GET_WM_ACTIVATE_FMINIMIZED(WPARAM wp, LPARAM lp) =>
-        (MaybeBool<BOOL>)(BOOL)GET_WM_ACTIVATE_FMINIMIZEDRaw(wp, lp);
-
-    public static BOOL GET_WM_ACTIVATE_FMINIMIZEDRaw(WPARAM wp, LPARAM lp) => (BOOL)HIWORD(wp);
+    public static BOOL GET_WM_ACTIVATE_FMINIMIZED(WPARAM wp, LPARAM lp) => (BOOL)HIWORD(wp);
 
     public static HWND GET_WM_ACTIVATE_HWND(WPARAM wp, LPARAM lp) => (HWND)(lp);
 
     public static (WPARAM wp, LPARAM lp) GET_WM_ACTIVATE_MPS(ushort s, BOOL fmin, HWND hwnd) =>
         ((WPARAM)MAKELONG((s), (fmin)), (LPARAM)(hwnd));
-
-    [Transformed]
-    public static (WPARAM wp, LPARAM lp) GET_WM_ACTIVATE_MPS(
-        ushort s,
-        MaybeBool<BOOL> fmin,
-        HWND hwnd
-    ) => ((WPARAM wp, LPARAM lp))GET_WM_ACTIVATE_MPS(s, (BOOL)fmin, hwnd);
 
     public static ushort GET_WM_ACTIVATE_STATE(WPARAM wp, LPARAM lp) => LOWORD(wp);
 
@@ -2334,13 +2009,8 @@ public static unsafe partial class Windows
 
     public static ushort GET_WM_HSCROLL_POS(WPARAM wp, LPARAM lp) => HIWORD(wp);
 
-    [Transformed]
     /* Note: the following are for interpreting MDIclient to MDI child messages. */
-    public static MaybeBool<BOOL> GET_WM_MDIACTIVATE_FACTIVATE(HWND hwnd, WPARAM wp, LPARAM lp) =>
-        (MaybeBool<BOOL>)(BOOL)GET_WM_MDIACTIVATE_FACTIVATERaw(hwnd, wp, lp);
-
-    /* Note: the following are for interpreting MDIclient to MDI child messages. */
-    public static BOOL GET_WM_MDIACTIVATE_FACTIVATERaw(HWND hwnd, WPARAM wp, LPARAM lp) =>
+    public static BOOL GET_WM_MDIACTIVATE_FACTIVATE(HWND hwnd, WPARAM wp, LPARAM lp) =>
         (lp == (LPARAM)hwnd);
 
     public static HWND GET_WM_MDIACTIVATE_HWNDACTIVATE(WPARAM wp, LPARAM lp) => (HWND)(lp);
@@ -2351,36 +2021,17 @@ public static unsafe partial class Windows
     public static (WPARAM wp, LPARAM lp) GET_WM_MDIACTIVATE_MPS(BOOL f, HWND hwndD, HWND hwndA) =>
         ((WPARAM)(hwndA), 0);
 
-    [Transformed]
-    /* Note: the following is for sending to the MDI client window. */
-    public static (WPARAM wp, LPARAM lp) GET_WM_MDIACTIVATE_MPS(
-        MaybeBool<BOOL> f,
-        HWND hwndD,
-        HWND hwndA
-    ) => ((WPARAM wp, LPARAM lp))GET_WM_MDIACTIVATE_MPS((BOOL)f, hwndD, hwndA);
-
     public static (WPARAM wp, LPARAM lp) GET_WM_MDISETMENU_MPS(HMENU hmenuF, HMENU hmenuW) =>
         ((WPARAM)hmenuF, (LPARAM)hmenuW);
 
     public static ushort GET_WM_MENUCHAR_CHAR(WPARAM wp, LPARAM lp) => (ushort)LOWORD(wp);
 
-    [Transformed]
-    public static MaybeBool<BOOL> GET_WM_MENUCHAR_FMENU(WPARAM wp, LPARAM lp) =>
-        (MaybeBool<BOOL>)(BOOL)GET_WM_MENUCHAR_FMENURaw(wp, lp);
-
-    public static BOOL GET_WM_MENUCHAR_FMENURaw(WPARAM wp, LPARAM lp) => (BOOL)HIWORD(wp);
+    public static BOOL GET_WM_MENUCHAR_FMENU(WPARAM wp, LPARAM lp) => (BOOL)HIWORD(wp);
 
     public static HMENU GET_WM_MENUCHAR_HMENU(WPARAM wp, LPARAM lp) => (HMENU)(lp);
 
     public static (WPARAM wp, LPARAM lp) GET_WM_MENUCHAR_MPS(ushort ch, HMENU hmenu, BOOL f) =>
         ((WPARAM)MAKELONG(ch, f), (LPARAM)(hmenu));
-
-    [Transformed]
-    public static (WPARAM wp, LPARAM lp) GET_WM_MENUCHAR_MPS(
-        ushort ch,
-        HMENU hmenu,
-        MaybeBool<BOOL> f
-    ) => ((WPARAM wp, LPARAM lp))GET_WM_MENUCHAR_MPS(ch, hmenu, (BOOL)f);
 
     public static ushort GET_WM_MENUSELECT_CMD(WPARAM wp, LPARAM lp) => LOWORD(wp);
 
@@ -2485,11 +2136,11 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> GlobalFreePtr(Ref lp)
+    public static BOOL GlobalFreePtr(Ref lp)
     {
         fixed (void* __dsl_lp = lp)
         {
-            return (MaybeBool<BOOL>)(BOOL)GlobalFreePtr(__dsl_lp);
+            return (BOOL)GlobalFreePtr(__dsl_lp);
         }
     }
 
@@ -2497,11 +2148,11 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> GlobalLockPtr(Ref lp)
+    public static BOOL GlobalLockPtr(Ref lp)
     {
         fixed (void* __dsl_lp = lp)
         {
-            return (MaybeBool<BOOL>)(BOOL)GlobalLockPtr(__dsl_lp);
+            return (BOOL)GlobalLockPtr(__dsl_lp);
         }
     }
 
@@ -2525,11 +2176,11 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> GlobalReAllocPtr(Ref lp, nuint cbNew, uint flags)
+    public static BOOL GlobalReAllocPtr(Ref lp, nuint cbNew, uint flags)
     {
         fixed (void* __dsl_lp = lp)
         {
-            return (MaybeBool<BOOL>)(BOOL)GlobalReAllocPtr(__dsl_lp, cbNew, flags);
+            return (BOOL)GlobalReAllocPtr(__dsl_lp, cbNew, flags);
         }
     }
 
@@ -2537,11 +2188,11 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> GlobalUnlockPtr(Ref lp)
+    public static BOOL GlobalUnlockPtr(Ref lp)
     {
         fixed (void* __dsl_lp = lp)
         {
-            return (MaybeBool<BOOL>)(BOOL)GlobalUnlockPtr(__dsl_lp);
+            return (BOOL)GlobalUnlockPtr(__dsl_lp);
         }
     }
 
@@ -4091,49 +3742,28 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> InsetRect(Ref<RECT> lprc, int dx, int dy)
+    public static BOOL InsetRect(Ref<RECT> lprc, int dx, int dy)
     {
         fixed (RECT* __dsl_lprc = lprc)
         {
-            return (MaybeBool<BOOL>)(BOOL)InsetRect(__dsl_lprc, dx, dy);
+            return (BOOL)InsetRect(__dsl_lprc, dx, dy);
         }
     }
 
     public static int IntersectRgn(HRGN hrgnResult, HRGN hrgnA, HRGN hrgnB) =>
         CombineRgn(hrgnResult, hrgnA, hrgnB, RGN_AND);
 
-    [Transformed]
-    public static MaybeBool<BOOL> IsLButtonDown() => (MaybeBool<BOOL>)(BOOL)IsLButtonDownRaw();
+    public static BOOL IsLButtonDown() => (GetKeyState(VK_LBUTTON) < 0);
 
-    public static BOOL IsLButtonDownRaw() => (GetKeyState(VK_LBUTTON) < 0);
+    public static BOOL IsMaximized(HWND hwnd) => IsZoomed(hwnd);
 
-    [Transformed]
-    public static MaybeBool<BOOL> IsMaximized(HWND hwnd) =>
-        (MaybeBool<BOOL>)(BOOL)IsMaximizedRaw(hwnd);
+    public static BOOL IsMButtonDown() => (GetKeyState(VK_MBUTTON) < 0);
 
-    public static BOOL IsMaximizedRaw(HWND hwnd) => IsZoomedRaw(hwnd);
+    public static BOOL IsMinimized(HWND hwnd) => IsIconic(hwnd);
 
-    [Transformed]
-    public static MaybeBool<BOOL> IsMButtonDown() => (MaybeBool<BOOL>)(BOOL)IsMButtonDownRaw();
+    public static BOOL IsRButtonDown() => (GetKeyState(VK_RBUTTON) < 0);
 
-    public static BOOL IsMButtonDownRaw() => (GetKeyState(VK_MBUTTON) < 0);
-
-    [Transformed]
-    public static MaybeBool<BOOL> IsMinimized(HWND hwnd) =>
-        (MaybeBool<BOOL>)(BOOL)IsMinimizedRaw(hwnd);
-
-    public static BOOL IsMinimizedRaw(HWND hwnd) => IsIconicRaw(hwnd);
-
-    [Transformed]
-    public static MaybeBool<BOOL> IsRButtonDown() => (MaybeBool<BOOL>)(BOOL)IsRButtonDownRaw();
-
-    public static BOOL IsRButtonDownRaw() => (GetKeyState(VK_RBUTTON) < 0);
-
-    [Transformed]
-    public static MaybeBool<BOOL> IsRestored(HWND hwnd) =>
-        (MaybeBool<BOOL>)(BOOL)IsRestoredRaw(hwnd);
-
-    public static BOOL IsRestoredRaw(HWND hwnd) =>
+    public static BOOL IsRestored(HWND hwnd) =>
         ((GetWindowStyle(hwnd) & (WS_MINIMIZE | WS_MAXIMIZE)) == 0);
 
     public static int ListBox_AddItemData(HWND hwndCtl, LPARAM data) =>
@@ -4179,11 +3809,6 @@ public static unsafe partial class Windows
     /****** ListBox control message APIs *****************************************/
     public static BOOL ListBox_Enable(HWND hwndCtl, BOOL fEnable) =>
         EnableWindow((hwndCtl), (fEnable));
-
-    [Transformed]
-    /****** ListBox control message APIs *****************************************/
-    public static MaybeBool<BOOL> ListBox_Enable(HWND hwndCtl, MaybeBool<BOOL> fEnable) =>
-        (MaybeBool<BOOL>)(BOOL)ListBox_Enable(hwndCtl, (BOOL)fEnable);
 
     public static int ListBox_FindItemData(HWND hwndCtl, int indexStart, LPARAM data) =>
         ((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data)));
@@ -4339,11 +3964,7 @@ public static unsafe partial class Windows
         }
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> ListBox_ResetContent(HWND hwndCtl) =>
-        (MaybeBool<BOOL>)(BOOL)ListBox_ResetContentRaw(hwndCtl);
-
-    public static BOOL ListBox_ResetContentRaw(HWND hwndCtl) =>
+    public static BOOL ListBox_ResetContent(HWND hwndCtl) =>
         ((BOOL)(uint)SNDMSG((hwndCtl), LB_RESETCONTENT, 0u, 0));
 
     public static int ListBox_SelectItemData(HWND hwndCtl, int indexStart, LPARAM data) =>
@@ -4381,14 +4002,6 @@ public static unsafe partial class Windows
                 )
         );
 
-    [Transformed]
-    public static int ListBox_SelItemRange(
-        HWND hwndCtl,
-        MaybeBool<BOOL> fSelect,
-        ushort first,
-        ushort last
-    ) => (int)ListBox_SelItemRange(hwndCtl, (BOOL)fSelect, first, last);
-
     public static int ListBox_SetCaretIndex(HWND hwndCtl, int index) =>
         ((int)(uint)SNDMSG((hwndCtl), LB_SETCARETINDEX, (WPARAM)(int)(index), 0));
 
@@ -4410,10 +4023,6 @@ public static unsafe partial class Windows
     public static int ListBox_SetSel(HWND hwndCtl, BOOL fSelect, LPARAM index) =>
         ((int)(uint)SNDMSG((hwndCtl), LB_SETSEL, (WPARAM)(BOOL)(fSelect), (LPARAM)(index)));
 
-    [Transformed]
-    public static int ListBox_SetSel(HWND hwndCtl, MaybeBool<BOOL> fSelect, LPARAM index) =>
-        (int)ListBox_SetSel(hwndCtl, (BOOL)fSelect, index);
-
     public static BOOL ListBox_SetTabStops(HWND hwndCtl, int cTabs, int* lpTabs) =>
         (
             (BOOL)
@@ -4427,11 +4036,11 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> ListBox_SetTabStops(HWND hwndCtl, int cTabs, Ref<int> lpTabs)
+    public static BOOL ListBox_SetTabStops(HWND hwndCtl, int cTabs, Ref<int> lpTabs)
     {
         fixed (int* __dsl_lpTabs = lpTabs)
         {
-            return (MaybeBool<BOOL>)(BOOL)ListBox_SetTabStops(hwndCtl, cTabs, __dsl_lpTabs);
+            return (BOOL)ListBox_SetTabStops(hwndCtl, cTabs, __dsl_lpTabs);
         }
     }
 
@@ -4451,16 +4060,10 @@ public static unsafe partial class Windows
         }
     }
 
-    [Transformed]
     /****** ScrollBar control message APIs ***************************************/
     /* NOTE: flags parameter is a collection of ESB_* values, NOT a boolean! */
-    public static MaybeBool<BOOL> ScrollBar_Enable(HWND hwndCtl, uint flags) =>
-        (MaybeBool<BOOL>)(BOOL)ScrollBar_EnableRaw(hwndCtl, flags);
-
-    /****** ScrollBar control message APIs ***************************************/
-    /* NOTE: flags parameter is a collection of ESB_* values, NOT a boolean! */
-    public static BOOL ScrollBar_EnableRaw(HWND hwndCtl, uint flags) =>
-        EnableScrollBarRaw((hwndCtl), SB_CTL, (flags));
+    public static BOOL ScrollBar_Enable(HWND hwndCtl, uint flags) =>
+        EnableScrollBar((hwndCtl), SB_CTL, (flags));
 
     public static int ScrollBar_GetPos(HWND hwndCtl) => GetScrollPos((hwndCtl), SB_CTL);
 
@@ -4469,44 +4072,23 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> ScrollBar_GetRange(
-        HWND hwndCtl,
-        Ref<int> lpposMin,
-        Ref<int> lpposMax
-    )
+    public static BOOL ScrollBar_GetRange(HWND hwndCtl, Ref<int> lpposMin, Ref<int> lpposMax)
     {
         fixed (int* __dsl_lpposMax = lpposMax)
         fixed (int* __dsl_lpposMin = lpposMin)
         {
-            return (MaybeBool<BOOL>)
-                (BOOL)ScrollBar_GetRange(hwndCtl, __dsl_lpposMin, __dsl_lpposMax);
+            return (BOOL)ScrollBar_GetRange(hwndCtl, __dsl_lpposMin, __dsl_lpposMax);
         }
     }
 
     public static int ScrollBar_SetPos(HWND hwndCtl, int pos, BOOL fRedraw) =>
         SetScrollPos((hwndCtl), SB_CTL, (pos), (fRedraw));
 
-    [Transformed]
-    public static int ScrollBar_SetPos(HWND hwndCtl, int pos, MaybeBool<BOOL> fRedraw) =>
-        (int)ScrollBar_SetPos(hwndCtl, pos, (BOOL)fRedraw);
-
     public static BOOL ScrollBar_SetRange(HWND hwndCtl, int posMin, int posMax, BOOL fRedraw) =>
         SetScrollRange((hwndCtl), SB_CTL, (posMin), (posMax), (fRedraw));
 
-    [Transformed]
-    public static MaybeBool<BOOL> ScrollBar_SetRange(
-        HWND hwndCtl,
-        int posMin,
-        int posMax,
-        MaybeBool<BOOL> fRedraw
-    ) => (MaybeBool<BOOL>)(BOOL)ScrollBar_SetRange(hwndCtl, posMin, posMax, (BOOL)fRedraw);
-
     public static BOOL ScrollBar_Show(HWND hwndCtl, BOOL fShow) =>
-        ShowWindowRaw((hwndCtl), (fShow) ? SW_SHOWNORMAL : SW_HIDE);
-
-    [Transformed]
-    public static MaybeBool<BOOL> ScrollBar_Show(HWND hwndCtl, MaybeBool<BOOL> fShow) =>
-        (MaybeBool<BOOL>)(BOOL)ScrollBar_Show(hwndCtl, (BOOL)fShow);
+        ShowWindow((hwndCtl), (fShow) ? SW_SHOWNORMAL : SW_HIDE);
 
     public static HBITMAP SelectBitmap(HDC hdc, HBITMAP hbm) =>
         ((HBITMAP)SelectObject((hdc), (HGDIOBJ)(HBITMAP)(hbm)));
@@ -4546,32 +4128,15 @@ public static unsafe partial class Windows
         }
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> SetDlgMsgResult(HWND hwnd, uint msg, MaybeBool<BOOL> result) =>
-        (MaybeBool<BOOL>)(BOOL)SetDlgMsgResult(hwnd, msg, (BOOL)result);
-
     public static void SetWindowFont(HWND hwnd, HFONT hfont, BOOL fRedraw) =>
         FORWARD_WM_SETFONT((hwnd), (hfont), (fRedraw), SNDMSG);
-
-    [Transformed]
-    public static void SetWindowFont(HWND hwnd, HFONT hfont, MaybeBool<BOOL> fRedraw) =>
-        SetWindowFont(hwnd, hfont, (BOOL)fRedraw);
 
     public static LRESULT SetWindowRedraw(HWND hwnd, BOOL fRedraw) =>
         SNDMSG(hwnd, WM_SETREDRAW, (WPARAM)(BOOL)(fRedraw), 0);
 
-    [Transformed]
-    public static LRESULT SetWindowRedraw(HWND hwnd, MaybeBool<BOOL> fRedraw) =>
-        (LRESULT)SetWindowRedraw(hwnd, (BOOL)fRedraw);
-
     /****** Static control message APIs ******************************************/
     public static BOOL Static_Enable(HWND hwndCtl, BOOL fEnable) =>
         EnableWindow((hwndCtl), (fEnable));
-
-    [Transformed]
-    /****** Static control message APIs ******************************************/
-    public static MaybeBool<BOOL> Static_Enable(HWND hwndCtl, MaybeBool<BOOL> fEnable) =>
-        (MaybeBool<BOOL>)(BOOL)Static_Enable(hwndCtl, (BOOL)fEnable);
 
     public static HICON Static_GetIcon(HWND hwndCtl, HICON hIcon) =>
         ((HICON)(nuint)SNDMSG((hwndCtl), STM_GETICON, 0u, 0));
@@ -4598,11 +4163,11 @@ public static unsafe partial class Windows
 
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<BOOL> Static_SetText(HWND hwndCtl, Ref<char> lpsz)
+    public static BOOL Static_SetText(HWND hwndCtl, Ref<char> lpsz)
     {
         fixed (char* __dsl_lpsz = lpsz)
         {
-            return (MaybeBool<BOOL>)(BOOL)Static_SetText(hwndCtl, __dsl_lpsz);
+            return (BOOL)Static_SetText(hwndCtl, __dsl_lpsz);
         }
     }
 

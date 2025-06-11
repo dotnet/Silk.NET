@@ -514,8 +514,6 @@ public sealed class ClangScraper(
         Dictionary<string, string> remappedNames = cfg.InjectedRemappedNames ?? [];
         if (!remappedNames.ContainsKey("HANDLE"))
             remappedNames.Add("HANDLE", "Handle");
-        if (!remappedNames.ContainsKey("BOOL"))
-            remappedNames.Add("BOOL", "Bool");
 
         // Read the response files.
         logger.LogInformation("Reading response files for {}, please wait...", ctx.JobKey);

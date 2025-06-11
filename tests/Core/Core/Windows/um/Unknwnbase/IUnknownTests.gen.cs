@@ -1,17 +1,18 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from um/Unknwnbase.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
-using NUnit.Framework;
-using Silk.NET.Core;
 using System;
 using System.Runtime.InteropServices;
+using NUnit.Framework;
+using Silk.NET.Core;
 
-#pragma warning disable CS1589, CS1591, CS0419, CA1416, CS0618
 namespace Silk.NET.Core.UnitTests;
+
 /// <summary>Provides validation of the <see cref = "IUnknown"/> struct.</summary>
 public static unsafe partial class IUnknownTests
 {
     /// <summary>Validates that the <see cref = "Guid"/> of the <see cref = "IUnknown"/> struct is correct.</summary>
+
     [Test]
     public static void GuidOfTest()
     {
@@ -19,6 +20,7 @@ public static unsafe partial class IUnknownTests
     }
 
     /// <summary>Validates that the <see cref = "IUnknown"/> struct is blittable.</summary>
+
     [Test]
     public static void IsBlittableTest()
     {
@@ -26,6 +28,7 @@ public static unsafe partial class IUnknownTests
     }
 
     /// <summary>Validates that the <see cref = "IUnknown"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+
     [Test]
     public static void IsLayoutSequentialTest()
     {
@@ -33,6 +36,7 @@ public static unsafe partial class IUnknownTests
     }
 
     /// <summary>Validates that the <see cref = "IUnknown"/> struct has the correct size.</summary>
+
     [Test]
     public static void SizeOfTest()
     {

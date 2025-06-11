@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,10 @@ namespace Silk.NET.SilkTouch
     /// <summary>
     /// Information on the current Job
     /// </summary>
+    [Experimental(
+        "ST0005",
+        UrlFormat = "https://dotnet.github.io/Silk.NET/docs/v3/silk.net/diagnostics/{0}"
+    )]
     public class JobContext
     {
         private readonly AsyncLocal<string?> _key = new AsyncLocal<string?>();

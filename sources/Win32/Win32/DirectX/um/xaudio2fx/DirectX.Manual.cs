@@ -91,13 +91,13 @@ public static unsafe partial class DirectX
         [NativeTypeName("const XAUDIO2FX_REVERB_I3DL2_PARAMETERS *")]
             Ref<XAUDIO2FX_REVERB_I3DL2_PARAMETERS> pI3DL2,
         [NativeTypeName("XAUDIO2FX_REVERB_PARAMETERS *")] Ref<XAUDIO2FX_REVERB_PARAMETERS> pNative,
-        [Optional, DefaultParameterValue(true)] MaybeBool<BOOL> sevenDotOneReverb
+        [Optional, DefaultParameterValue(1)] BOOL sevenDotOneReverb
     )
     {
         fixed (XAUDIO2FX_REVERB_PARAMETERS* __dsl_pNative = pNative)
         fixed (XAUDIO2FX_REVERB_I3DL2_PARAMETERS* __dsl_pI3DL2 = pI3DL2)
         {
-            ReverbConvertI3DL2ToNative(__dsl_pI3DL2, __dsl_pNative, (BOOL)sevenDotOneReverb);
+            ReverbConvertI3DL2ToNative(__dsl_pI3DL2, __dsl_pNative, sevenDotOneReverb);
         }
     }
 

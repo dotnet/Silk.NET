@@ -55,6 +55,9 @@
           "sources/**/helper-types/BOOL.gen.cs",
           "sources/**/helper-types/HSTRING.gen.cs"
         ],
+        "InjectedRemappedNames": {
+          "BOOL": "MaybeBool<int>"
+        },
         "InjectedGeneratorOptions": [
           "--config",
           "dont-use-using-statics-for-guid-members"
@@ -121,9 +124,6 @@
         ]
       },
       "TransformFunctions": {
-        "BoolTypes": {
-          "BOOL": null
-        }
       },
       "PrettifyNames": {
         "NameOverrides": {
@@ -161,10 +161,12 @@
         "GeneratedToRemove": [
           "sources/**/helper-types/*.gen.cs",
           "!sources/**/helper-types/Hresult.gen.cs",
-          "!sources/**/helper-types/Bool.gen.cs",
           "!sources/**/helper-types/Hstring.gen.cs",
           "!sources/**/helper-types/Handle.gen.cs"
         ],
+        "InjectedRemappedNames": {
+          "BOOL": "MaybeBool<int>"
+        },
         "InjectedGeneratorOptions": [
           "--config",
           "dont-use-using-statics-for-guid-members"
@@ -192,9 +194,6 @@
         ]
       },
       "TransformFunctions": {
-        "BoolTypes": {
-          "BOOL": null
-        }
       },
       "PrettifyNames": {
         "NameOverrides": {

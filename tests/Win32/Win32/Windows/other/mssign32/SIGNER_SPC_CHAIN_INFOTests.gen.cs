@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
-#pragma warning disable CS1589, CS0419, CA1416, CS0618
+
 namespace Silk.NET.Win32.UnitTests;
 
 /// <summary>Provides validation of the <see cref = "SIGNER_SPC_CHAIN_INFO"/> struct.</summary>

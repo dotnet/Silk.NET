@@ -39,7 +39,7 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface, IComInterf
         );
 
         [VtblIndex(4)]
-        HResult LockServer(Bool fLock);
+        HResult LockServer([NativeTypeName("BOOL")] MaybeBool<int> fLock);
     }
 
     /// <include file='IClassFactory.xml' path='doc/member[@name="IClassFactory"]/*'/>
@@ -69,7 +69,7 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface, IComInterf
             public delegate* unmanaged<TSelf*, IUnknown.Native*, Guid*, void**, int> CreateInstance;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, Bool, int> LockServer;
+            public delegate* unmanaged<TSelf*, MaybeBool<int>, int> LockServer;
         }
 
         /// <inheritdoc cref = "IUnknown.AddRef"/>
@@ -132,9 +132,9 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface, IComInterf
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HResult LockServer(Bool fLock)
+        public HResult LockServer([NativeTypeName("BOOL")] MaybeBool<int> fLock)
         {
-            return ((delegate* unmanaged<IClassFactory.Native*, Bool, int>)(lpVtbl[4]))(
+            return ((delegate* unmanaged<IClassFactory.Native*, MaybeBool<int>, int>)(lpVtbl[4]))(
                 (IClassFactory.Native*)Unsafe.AsPointer(ref this),
                 fLock
             );
@@ -327,7 +327,8 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface, IComInterf
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HResult LockServer(Bool fLock) => LpVtbl->LockServer(fLock);
+    public HResult LockServer([NativeTypeName("BOOL")] MaybeBool<int> fLock) =>
+        LpVtbl->LockServer(fLock);
 
     /// <inheritdoc cref = "IUnknown.QueryInterface"/>
 

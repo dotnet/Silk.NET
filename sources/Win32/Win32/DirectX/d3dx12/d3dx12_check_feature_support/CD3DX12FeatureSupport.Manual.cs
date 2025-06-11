@@ -99,96 +99,41 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
         public ref Guid* pTypes => ref Base.pTypes;
     }
 
-    [Transformed]
     // D3D12_OPTIONS6
-    public readonly MaybeBool<BOOL> AdditionalShadingRatesSupported() =>
-        (MaybeBool<BOOL>)(BOOL)AdditionalShadingRatesSupportedRaw();
-
-    // D3D12_OPTIONS6
-    public readonly BOOL AdditionalShadingRatesSupportedRaw() =>
+    public readonly BOOL AdditionalShadingRatesSupported() =>
         m_dOptions6.AdditionalShadingRatesSupported;
 
-    [Transformed]
     // D3D12_OPTIONS14
-    public readonly MaybeBool<BOOL> AdvancedTextureOpsSupported() =>
-        (MaybeBool<BOOL>)(BOOL)AdvancedTextureOpsSupportedRaw();
+    public readonly BOOL AdvancedTextureOpsSupported() => m_dOptions14.AdvancedTextureOpsSupported;
 
-    // D3D12_OPTIONS14
-    public readonly BOOL AdvancedTextureOpsSupportedRaw() =>
-        m_dOptions14.AdvancedTextureOpsSupported;
+    public readonly BOOL AlphaBlendFactorSupported() => m_dOptions13.AlphaBlendFactorSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> AlphaBlendFactorSupported() =>
-        (MaybeBool<BOOL>)(BOOL)AlphaBlendFactorSupportedRaw();
-
-    public readonly BOOL AlphaBlendFactorSupportedRaw() => m_dOptions13.AlphaBlendFactorSupported;
-
-    [Transformed]
-    public readonly MaybeBool<BOOL> AnisoFilterWithPointMipSupported() =>
-        (MaybeBool<BOOL>)(BOOL)AnisoFilterWithPointMipSupportedRaw();
-
-    public readonly BOOL AnisoFilterWithPointMipSupportedRaw() =>
+    public readonly BOOL AnisoFilterWithPointMipSupported() =>
         m_dOptions19.AnisoFilterWithPointMipSupported;
 
-    [Transformed]
     // D3D12_OPTIONS11
-    public readonly MaybeBool<BOOL> AtomicInt64OnDescriptorHeapResourceSupported() =>
-        (MaybeBool<BOOL>)(BOOL)AtomicInt64OnDescriptorHeapResourceSupportedRaw();
-
-    // D3D12_OPTIONS11
-    public readonly BOOL AtomicInt64OnDescriptorHeapResourceSupportedRaw() =>
+    public readonly BOOL AtomicInt64OnDescriptorHeapResourceSupported() =>
         m_dOptions11.AtomicInt64OnDescriptorHeapResourceSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> AtomicInt64OnGroupSharedSupported() =>
-        (MaybeBool<BOOL>)(BOOL)AtomicInt64OnGroupSharedSupportedRaw();
-
-    public readonly BOOL AtomicInt64OnGroupSharedSupportedRaw() =>
+    public readonly BOOL AtomicInt64OnGroupSharedSupported() =>
         m_dOptions9.AtomicInt64OnGroupSharedSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> AtomicInt64OnTypedResourceSupported() =>
-        (MaybeBool<BOOL>)(BOOL)AtomicInt64OnTypedResourceSupportedRaw();
-
-    public readonly BOOL AtomicInt64OnTypedResourceSupportedRaw() =>
+    public readonly BOOL AtomicInt64OnTypedResourceSupported() =>
         m_dOptions9.AtomicInt64OnTypedResourceSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> BackgroundProcessingSupported() =>
-        (MaybeBool<BOOL>)(BOOL)BackgroundProcessingSupportedRaw();
-
-    public readonly BOOL BackgroundProcessingSupportedRaw() =>
+    public readonly BOOL BackgroundProcessingSupported() =>
         m_dOptions6.BackgroundProcessingSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> BarycentricsSupported() =>
-        (MaybeBool<BOOL>)(BOOL)BarycentricsSupportedRaw();
+    public readonly BOOL BarycentricsSupported() => m_dOptions3.BarycentricsSupported;
 
-    public readonly BOOL BarycentricsSupportedRaw() => m_dOptions3.BarycentricsSupported;
-
-    [Transformed]
-    public readonly MaybeBool<BOOL> CacheCoherentUMA(uint NodeIndex = 0) =>
-        (MaybeBool<BOOL>)(BOOL)CacheCoherentUMARaw(NodeIndex);
-
-    public readonly BOOL CacheCoherentUMARaw(uint NodeIndex = 0) =>
+    public readonly BOOL CacheCoherentUMA(uint NodeIndex = 0) =>
         m_dArchitecture1[NodeIndex].CacheCoherentUMA;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> CastingFullyTypedFormatSupported() =>
-        (MaybeBool<BOOL>)(BOOL)CastingFullyTypedFormatSupportedRaw();
-
-    public readonly BOOL CastingFullyTypedFormatSupportedRaw() =>
+    public readonly BOOL CastingFullyTypedFormatSupported() =>
         m_dOptions3.CastingFullyTypedFormatSupported;
 
-    [Transformed]
     // COMMAND_QUEUE_PRIORITY
-    public MaybeBool<BOOL> CommandQueuePrioritySupported(
-        D3D12_COMMAND_LIST_TYPE CommandListType,
-        uint Priority
-    ) => (MaybeBool<BOOL>)(BOOL)CommandQueuePrioritySupportedRaw(CommandListType, Priority);
-
-    // COMMAND_QUEUE_PRIORITY
-    public BOOL CommandQueuePrioritySupportedRaw(
+    public BOOL CommandQueuePrioritySupported(
         D3D12_COMMAND_LIST_TYPE CommandListType,
         uint Priority
     )
@@ -213,43 +158,23 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
         return m_dCommandQueuePriority.PriorityForTypeIsSupported;
     }
 
-    [Transformed]
     // D3D12_OPTIONS20
-    public readonly MaybeBool<BOOL> ComputeOnlyWriteWatchSupported() =>
-        (MaybeBool<BOOL>)(BOOL)ComputeOnlyWriteWatchSupportedRaw();
-
-    // D3D12_OPTIONS20
-    public readonly BOOL ComputeOnlyWriteWatchSupportedRaw() =>
+    public readonly BOOL ComputeOnlyWriteWatchSupported() =>
         m_dOptions20.ComputeOnlyWriteWatchSupported;
 
     public readonly D3D12_CONSERVATIVE_RASTERIZATION_TIER ConservativeRasterizationTier() =>
         m_dOptions.ConservativeRasterizationTier;
 
-    [Transformed]
     // D3D12_OPTIONS3
-    public readonly MaybeBool<BOOL> CopyQueueTimestampQueriesSupported() =>
-        (MaybeBool<BOOL>)(BOOL)CopyQueueTimestampQueriesSupportedRaw();
-
-    // D3D12_OPTIONS3
-    public readonly BOOL CopyQueueTimestampQueriesSupportedRaw() =>
+    public readonly BOOL CopyQueueTimestampQueriesSupported() =>
         m_dOptions3.CopyQueueTimestampQueriesSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> CrossAdapterRowMajorTextureSupported() =>
-        (MaybeBool<BOOL>)(BOOL)CrossAdapterRowMajorTextureSupportedRaw();
-
-    public readonly BOOL CrossAdapterRowMajorTextureSupportedRaw() =>
+    public readonly BOOL CrossAdapterRowMajorTextureSupported() =>
         m_dOptions.CrossAdapterRowMajorTextureSupported;
 
-    [Transformed]
     // CROSS_NODE
     // CrossNodeSharingTier handled in D3D12Options
-    public readonly MaybeBool<BOOL> CrossNodeAtomicShaderInstructions() =>
-        (MaybeBool<BOOL>)(BOOL)CrossNodeAtomicShaderInstructionsRaw();
-
-    // CROSS_NODE
-    // CrossNodeSharingTier handled in D3D12Options
-    public readonly BOOL CrossNodeAtomicShaderInstructionsRaw() =>
+    public readonly BOOL CrossNodeAtomicShaderInstructions() =>
         m_dCrossNode.AtomicShaderInstructions;
 
     public readonly D3D12_CROSS_NODE_SHARING_TIER CrossNodeSharingTier()
@@ -264,28 +189,14 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
         }
     }
 
-    [Transformed]
     // D3D12_OPTIONS2
-    public readonly MaybeBool<BOOL> DepthBoundsTestSupported() =>
-        (MaybeBool<BOOL>)(BOOL)DepthBoundsTestSupportedRaw();
+    public readonly BOOL DepthBoundsTestSupported() => m_dOptions2.DepthBoundsTestSupported;
 
-    // D3D12_OPTIONS2
-    public readonly BOOL DepthBoundsTestSupportedRaw() => m_dOptions2.DepthBoundsTestSupported;
-
-    [Transformed]
-    public readonly MaybeBool<BOOL> DerivativesInMeshAndAmplificationShadersSupported() =>
-        (MaybeBool<BOOL>)(BOOL)DerivativesInMeshAndAmplificationShadersSupportedRaw();
-
-    public readonly BOOL DerivativesInMeshAndAmplificationShadersSupportedRaw() =>
+    public readonly BOOL DerivativesInMeshAndAmplificationShadersSupported() =>
         m_dOptions9.DerivativesInMeshAndAmplificationShadersSupported;
 
-    [Transformed]
     // DISPLAYABLE
-    public readonly MaybeBool<BOOL> DisplayableTexture() =>
-        (MaybeBool<BOOL>)(BOOL)DisplayableTextureRaw();
-
-    // DISPLAYABLE
-    public readonly BOOL DisplayableTextureRaw() => m_dDisplayable.DisplayableTexture;
+    public readonly BOOL DisplayableTexture() => m_dDisplayable.DisplayableTexture;
 
     public void Dispose()
     {
@@ -309,51 +220,23 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
         }
     }
 
-    [Transformed]
     // Getter functions for each feature class
     // D3D12_OPTIONS
-    public readonly MaybeBool<BOOL> DoublePrecisionFloatShaderOps() =>
-        (MaybeBool<BOOL>)(BOOL)DoublePrecisionFloatShaderOpsRaw();
-
-    // Getter functions for each feature class
-    // D3D12_OPTIONS
-    public readonly BOOL DoublePrecisionFloatShaderOpsRaw() =>
+    public readonly BOOL DoublePrecisionFloatShaderOps() =>
         m_dOptions.DoublePrecisionFloatShaderOps;
 
-    [Transformed]
     // D3D12_OPTIONS16
-    public readonly MaybeBool<BOOL> DynamicDepthBiasSupported() =>
-        (MaybeBool<BOOL>)(BOOL)DynamicDepthBiasSupportedRaw();
+    public readonly BOOL DynamicDepthBiasSupported() => m_dOptions16.DynamicDepthBiasSupported;
 
-    // D3D12_OPTIONS16
-    public readonly BOOL DynamicDepthBiasSupportedRaw() => m_dOptions16.DynamicDepthBiasSupported;
-
-    [Transformed]
-    public readonly MaybeBool<BOOL> DynamicIndexBufferStripCutSupported() =>
-        (MaybeBool<BOOL>)(BOOL)DynamicIndexBufferStripCutSupportedRaw();
-
-    public readonly BOOL DynamicIndexBufferStripCutSupportedRaw() =>
+    public readonly BOOL DynamicIndexBufferStripCutSupported() =>
         m_dOptions15.DynamicIndexBufferStripCutSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> EnhancedBarriersSupported() =>
-        (MaybeBool<BOOL>)(BOOL)EnhancedBarriersSupportedRaw();
-
-    public readonly BOOL EnhancedBarriersSupportedRaw() => m_dOptions12.EnhancedBarriersSupported;
-
-    [Transformed]
-    // EXISTING_HEAPS
-    public readonly MaybeBool<BOOL> ExistingHeapsSupported() =>
-        (MaybeBool<BOOL>)(BOOL)ExistingHeapsSupportedRaw();
+    public readonly BOOL EnhancedBarriersSupported() => m_dOptions12.EnhancedBarriersSupported;
 
     // EXISTING_HEAPS
-    public readonly BOOL ExistingHeapsSupportedRaw() => m_dExistingHeaps.Supported;
+    public readonly BOOL ExistingHeapsSupported() => m_dExistingHeaps.Supported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> ExpandedComputeResourceStates() =>
-        (MaybeBool<BOOL>)(BOOL)ExpandedComputeResourceStatesRaw();
-
-    public readonly BOOL ExpandedComputeResourceStatesRaw() =>
+    public readonly BOOL ExpandedComputeResourceStates() =>
         m_dOptions1.ExpandedComputeResourceStates;
 
     // FORMAT_INFO
@@ -403,11 +286,7 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
     // Retrieves the status of the object. If an error occurred in the initialization process, the function returns the error code.
     public readonly HRESULT GetStatus() => m_hStatus;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> GPUUploadHeapSupported() =>
-        (MaybeBool<BOOL>)(BOOL)GPUUploadHeapSupportedRaw();
-
-    public readonly BOOL GPUUploadHeapSupportedRaw() => m_dOptions16.GPUUploadHeapSupported;
+    public readonly BOOL GPUUploadHeapSupported() => m_dOptions16.GPUUploadHeapSupported;
 
     // SERIALIZATION
     public readonly D3D12_HEAP_SERIALIZATION_TIER HeapSerializationTier(uint NodeIndex = 0) =>
@@ -420,11 +299,7 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
     // SHADER_MODEL
     public readonly D3D_SHADER_MODEL HighestShaderModel() => m_dShaderModel.HighestShaderModel;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> IndependentFrontAndBackStencilRefMaskSupported() =>
-        (MaybeBool<BOOL>)(BOOL)IndependentFrontAndBackStencilRefMaskSupportedRaw();
-
-    public readonly BOOL IndependentFrontAndBackStencilRefMaskSupportedRaw() =>
+    public readonly BOOL IndependentFrontAndBackStencilRefMaskSupported() =>
         m_dOptions14.IndependentFrontAndBackStencilRefMaskSupported;
 
     // Initialize data from the given device
@@ -889,37 +764,17 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
         return m_hStatus;
     }
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> Int64ShaderOps() => (MaybeBool<BOOL>)(BOOL)Int64ShaderOpsRaw();
+    public readonly BOOL Int64ShaderOps() => m_dOptions1.Int64ShaderOps;
 
-    public readonly BOOL Int64ShaderOpsRaw() => m_dOptions1.Int64ShaderOps;
-
-    [Transformed]
-    public readonly MaybeBool<BOOL> InvertedViewportDepthFlipsZSupported() =>
-        (MaybeBool<BOOL>)(BOOL)InvertedViewportDepthFlipsZSupportedRaw();
-
-    public readonly BOOL InvertedViewportDepthFlipsZSupportedRaw() =>
+    public readonly BOOL InvertedViewportDepthFlipsZSupported() =>
         m_dOptions13.InvertedViewportDepthFlipsZSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> InvertedViewportHeightFlipsYSupported() =>
-        (MaybeBool<BOOL>)(BOOL)InvertedViewportHeightFlipsYSupportedRaw();
-
-    public readonly BOOL InvertedViewportHeightFlipsYSupportedRaw() =>
+    public readonly BOOL InvertedViewportHeightFlipsYSupported() =>
         m_dOptions13.InvertedViewportHeightFlipsYSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> IsolatedMMU(uint NodeIndex = 0) =>
-        (MaybeBool<BOOL>)(BOOL)IsolatedMMURaw(NodeIndex);
+    public readonly BOOL IsolatedMMU(uint NodeIndex = 0) => m_dArchitecture1[NodeIndex].IsolatedMMU;
 
-    public readonly BOOL IsolatedMMURaw(uint NodeIndex = 0) =>
-        m_dArchitecture1[NodeIndex].IsolatedMMU;
-
-    [Transformed]
-    public readonly MaybeBool<BOOL> ManualWriteTrackingResourceSupported() =>
-        (MaybeBool<BOOL>)(BOOL)ManualWriteTrackingResourceSupportedRaw();
-
-    public readonly BOOL ManualWriteTrackingResourceSupportedRaw() =>
+    public readonly BOOL ManualWriteTrackingResourceSupported() =>
         m_dOptions17.ManualWriteTrackingResourceSupported;
 
     // GPU_VIRTUAL_ADDRESS_SUPPORT
@@ -949,27 +804,14 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
 
     public readonly uint MaxViewDescriptorHeapSize() => m_dOptions19.MaxViewDescriptorHeapSize;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> MeshShaderPerPrimitiveShadingRateSupported() =>
-        (MaybeBool<BOOL>)(BOOL)MeshShaderPerPrimitiveShadingRateSupportedRaw();
-
-    public readonly BOOL MeshShaderPerPrimitiveShadingRateSupportedRaw() =>
+    public readonly BOOL MeshShaderPerPrimitiveShadingRateSupported() =>
         m_dOptions10.MeshShaderPerPrimitiveShadingRateSupported;
 
-    [Transformed]
     // D3D12_OPTIONS9
-    public readonly MaybeBool<BOOL> MeshShaderPipelineStatsSupported() =>
-        (MaybeBool<BOOL>)(BOOL)MeshShaderPipelineStatsSupportedRaw();
-
-    // D3D12_OPTIONS9
-    public readonly BOOL MeshShaderPipelineStatsSupportedRaw() =>
+    public readonly BOOL MeshShaderPipelineStatsSupported() =>
         m_dOptions9.MeshShaderPipelineStatsSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> MeshShaderSupportsFullRangeRenderTargetArrayIndex() =>
-        (MaybeBool<BOOL>)(BOOL)MeshShaderSupportsFullRangeRenderTargetArrayIndexRaw();
-
-    public readonly BOOL MeshShaderSupportsFullRangeRenderTargetArrayIndexRaw() =>
+    public readonly BOOL MeshShaderSupportsFullRangeRenderTargetArrayIndex() =>
         m_dOptions9.MeshShaderSupportsFullRangeRenderTargetArrayIndex;
 
     // D3D12_OPTIONS7
@@ -978,22 +820,12 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
     public readonly D3D12_SHADER_MIN_PRECISION_SUPPORT MinPrecisionSupport() =>
         m_dOptions.MinPrecisionSupport;
 
-    [Transformed]
     // D3D12_OPTIONS19
-    public readonly MaybeBool<BOOL> MismatchingOutputDimensionsSupported() =>
-        (MaybeBool<BOOL>)(BOOL)MismatchingOutputDimensionsSupportedRaw();
-
-    // D3D12_OPTIONS19
-    public readonly BOOL MismatchingOutputDimensionsSupportedRaw() =>
+    public readonly BOOL MismatchingOutputDimensionsSupported() =>
         m_dOptions19.MismatchingOutputDimensionsSupported;
 
-    [Transformed]
     // D3D12_OPTIONS4
-    public readonly MaybeBool<BOOL> MSAA64KBAlignedTextureSupported() =>
-        (MaybeBool<BOOL>)(BOOL)MSAA64KBAlignedTextureSupportedRaw();
-
-    // D3D12_OPTIONS4
-    public readonly BOOL MSAA64KBAlignedTextureSupportedRaw() =>
+    public readonly BOOL MSAA64KBAlignedTextureSupported() =>
         m_dOptions4.MSAA64KBAlignedTextureSupported;
 
     // D3D12_OPTIONS12
@@ -1028,47 +860,22 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
         return result;
     }
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> NarrowQuadrilateralLinesSupported() =>
-        (MaybeBool<BOOL>)(BOOL)NarrowQuadrilateralLinesSupportedRaw();
-
-    public readonly BOOL NarrowQuadrilateralLinesSupportedRaw() =>
+    public readonly BOOL NarrowQuadrilateralLinesSupported() =>
         m_dOptions19.NarrowQuadrilateralLinesSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> Native16BitShaderOpsSupported() =>
-        (MaybeBool<BOOL>)(BOOL)Native16BitShaderOpsSupportedRaw();
-
-    public readonly BOOL Native16BitShaderOpsSupportedRaw() =>
+    public readonly BOOL Native16BitShaderOpsSupported() =>
         m_dOptions4.Native16BitShaderOpsSupported;
 
-    [Transformed]
     // D3D12_OPTIONS17
-    public readonly MaybeBool<BOOL> NonNormalizedCoordinateSamplersSupported() =>
-        (MaybeBool<BOOL>)(BOOL)NonNormalizedCoordinateSamplersSupportedRaw();
-
-    // D3D12_OPTIONS17
-    public readonly BOOL NonNormalizedCoordinateSamplersSupportedRaw() =>
+    public readonly BOOL NonNormalizedCoordinateSamplersSupported() =>
         m_dOptions17.NonNormalizedCoordinateSamplersSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> OutputMergerLogicOp() =>
-        (MaybeBool<BOOL>)(BOOL)OutputMergerLogicOpRaw();
+    public readonly BOOL OutputMergerLogicOp() => m_dOptions.OutputMergerLogicOp;
 
-    public readonly BOOL OutputMergerLogicOpRaw() => m_dOptions.OutputMergerLogicOp;
-
-    [Transformed]
-    public readonly MaybeBool<BOOL> PerPrimitiveShadingRateSupportedWithViewportIndexing() =>
-        (MaybeBool<BOOL>)(BOOL)PerPrimitiveShadingRateSupportedWithViewportIndexingRaw();
-
-    public readonly BOOL PerPrimitiveShadingRateSupportedWithViewportIndexingRaw() =>
+    public readonly BOOL PerPrimitiveShadingRateSupportedWithViewportIndexing() =>
         m_dOptions6.PerPrimitiveShadingRateSupportedWithViewportIndexing;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> PointSamplingAddressesNeverRoundUp() =>
-        (MaybeBool<BOOL>)(BOOL)PointSamplingAddressesNeverRoundUpRaw();
-
-    public readonly BOOL PointSamplingAddressesNeverRoundUpRaw() =>
+    public readonly BOOL PointSamplingAddressesNeverRoundUp() =>
         m_dOptions19.PointSamplingAddressesNeverRoundUp;
 
     public readonly D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER ProgrammableSamplePositionsTier() =>
@@ -1095,11 +902,7 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
     public readonly Guid* ProtectedResourceSessionTypesRaw(uint NodeIndex = 0) =>
         m_dProtectedResourceSessionTypes[NodeIndex].TypeVec;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> PSSpecifiedStencilRefSupported() =>
-        (MaybeBool<BOOL>)(BOOL)PSSpecifiedStencilRefSupportedRaw();
-
-    public readonly BOOL PSSpecifiedStencilRefSupportedRaw() =>
+    public readonly BOOL PSSpecifiedStencilRefSupported() =>
         m_dOptions.PSSpecifiedStencilRefSupported;
 
     // Helper function to decide the highest feature level
@@ -1277,40 +1080,24 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
         return result;
     }
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> RasterizerDesc2Supported() =>
-        (MaybeBool<BOOL>)(BOOL)RasterizerDesc2SupportedRaw();
-
-    public readonly BOOL RasterizerDesc2SupportedRaw() => m_dOptions19.RasterizerDesc2Supported;
+    public readonly BOOL RasterizerDesc2Supported() => m_dOptions19.RasterizerDesc2Supported;
 
     public readonly D3D12_RAYTRACING_TIER RaytracingTier() => m_dOptions5.RaytracingTier;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> RelaxedFormatCastingSupported() =>
-        (MaybeBool<BOOL>)(BOOL)RelaxedFormatCastingSupportedRaw();
-
-    public readonly BOOL RelaxedFormatCastingSupportedRaw() =>
+    public readonly BOOL RelaxedFormatCastingSupported() =>
         m_dOptions12.RelaxedFormatCastingSupported;
 
     public readonly D3D12_RENDER_PASS_TIER RenderPassesTier() => m_dOptions5.RenderPassesTier;
 
-    [Transformed]
     // D3D12_OPTIONS18
-    public readonly MaybeBool<BOOL> RenderPassesValid() =>
-        (MaybeBool<BOOL>)(BOOL)RenderPassesValidRaw();
-
-    // D3D12_OPTIONS18
-    public readonly BOOL RenderPassesValidRaw() => m_dOptions18.RenderPassesValid;
+    public readonly BOOL RenderPassesValid() => m_dOptions18.RenderPassesValid;
 
     public readonly D3D12_RESOURCE_BINDING_TIER ResourceBindingTier() =>
         m_dOptions.ResourceBindingTier;
 
     public readonly D3D12_RESOURCE_HEAP_TIER ResourceHeapTier() => m_dOptions.ResourceHeapTier;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> ROVsSupported() => (MaybeBool<BOOL>)(BOOL)ROVsSupportedRaw();
-
-    public readonly BOOL ROVsSupportedRaw() => m_dOptions.ROVsSupported;
+    public readonly BOOL ROVsSupported() => m_dOptions.ROVsSupported;
 
     public readonly D3D12_SAMPLER_FEEDBACK_TIER SamplerFeedbackTier() =>
         m_dOptions7.SamplerFeedbackTier;
@@ -1324,38 +1111,19 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
     public readonly D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER SharedResourceCompatibilityTier() =>
         m_dOptions4.SharedResourceCompatibilityTier;
 
-    [Transformed]
     // D3D12_OPTIONS5
-    public readonly MaybeBool<BOOL> SRVOnlyTiledResourceTier3() =>
-        (MaybeBool<BOOL>)(BOOL)SRVOnlyTiledResourceTier3Raw();
+    public readonly BOOL SRVOnlyTiledResourceTier3() => m_dOptions5.SRVOnlyTiledResourceTier3;
 
-    // D3D12_OPTIONS5
-    public readonly BOOL SRVOnlyTiledResourceTier3Raw() => m_dOptions5.SRVOnlyTiledResourceTier3;
-
-    [Transformed]
-    public readonly MaybeBool<BOOL> StandardSwizzle64KBSupported() =>
-        (MaybeBool<BOOL>)(BOOL)StandardSwizzle64KBSupportedRaw();
-
-    public readonly BOOL StandardSwizzle64KBSupportedRaw() =>
-        m_dOptions.StandardSwizzle64KBSupported;
+    public readonly BOOL StandardSwizzle64KBSupported() => m_dOptions.StandardSwizzle64KBSupported;
 
     public readonly uint SupportedSampleCountsWithNoOutputs() =>
         m_dOptions19.SupportedSampleCountsWithNoOutputs;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> TextureCopyBetweenDimensionsSupported() =>
-        (MaybeBool<BOOL>)(BOOL)TextureCopyBetweenDimensionsSupportedRaw();
-
-    public readonly BOOL TextureCopyBetweenDimensionsSupportedRaw() =>
+    public readonly BOOL TextureCopyBetweenDimensionsSupported() =>
         m_dOptions13.TextureCopyBetweenDimensionsSupported;
 
-    [Transformed]
     // ARCHITECTURE1
-    public readonly MaybeBool<BOOL> TileBasedRenderer(uint NodeIndex = 0) =>
-        (MaybeBool<BOOL>)(BOOL)TileBasedRendererRaw(NodeIndex);
-
-    // ARCHITECTURE1
-    public readonly BOOL TileBasedRendererRaw(uint NodeIndex = 0) =>
+    public readonly BOOL TileBasedRenderer(uint NodeIndex = 0) =>
         m_dArchitecture1[NodeIndex].TileBasedRenderer;
 
     public readonly D3D12_TILED_RESOURCES_TIER TiledResourcesTier() =>
@@ -1363,59 +1131,27 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
 
     public readonly uint TotalLaneCount() => m_dOptions1.TotalLaneCount;
 
-    [Transformed]
     // D3D12_OPTIONS15
-    public readonly MaybeBool<BOOL> TriangleFanSupported() =>
-        (MaybeBool<BOOL>)(BOOL)TriangleFanSupportedRaw();
+    public readonly BOOL TriangleFanSupported() => m_dOptions15.TriangleFanSupported;
 
-    // D3D12_OPTIONS15
-    public readonly BOOL TriangleFanSupportedRaw() => m_dOptions15.TriangleFanSupported;
-
-    [Transformed]
-    public readonly MaybeBool<BOOL> TypedUAVLoadAdditionalFormats() =>
-        (MaybeBool<BOOL>)(BOOL)TypedUAVLoadAdditionalFormatsRaw();
-
-    public readonly BOOL TypedUAVLoadAdditionalFormatsRaw() =>
+    public readonly BOOL TypedUAVLoadAdditionalFormats() =>
         m_dOptions.TypedUAVLoadAdditionalFormats;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> UMA(uint NodeIndex = 0) =>
-        (MaybeBool<BOOL>)(BOOL)UMARaw(NodeIndex);
-
-    public readonly BOOL UMARaw(uint NodeIndex = 0) => m_dArchitecture1[NodeIndex].UMA;
-
-    [Transformed]
-    // D3D12_OPTIONS8
-    public readonly MaybeBool<BOOL> UnalignedBlockTexturesSupported() =>
-        (MaybeBool<BOOL>)(BOOL)UnalignedBlockTexturesSupportedRaw();
+    public readonly BOOL UMA(uint NodeIndex = 0) => m_dArchitecture1[NodeIndex].UMA;
 
     // D3D12_OPTIONS8
-    public readonly BOOL UnalignedBlockTexturesSupportedRaw() =>
+    public readonly BOOL UnalignedBlockTexturesSupported() =>
         m_dOptions8.UnalignedBlockTexturesSupported;
 
-    [Transformed]
     // D3D12_OPTIONS13
-    public readonly MaybeBool<BOOL> UnrestrictedBufferTextureCopyPitchSupported() =>
-        (MaybeBool<BOOL>)(BOOL)UnrestrictedBufferTextureCopyPitchSupportedRaw();
-
-    // D3D12_OPTIONS13
-    public readonly BOOL UnrestrictedBufferTextureCopyPitchSupportedRaw() =>
+    public readonly BOOL UnrestrictedBufferTextureCopyPitchSupported() =>
         m_dOptions13.UnrestrictedBufferTextureCopyPitchSupported;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> UnrestrictedVertexElementAlignmentSupported() =>
-        (MaybeBool<BOOL>)(BOOL)UnrestrictedVertexElementAlignmentSupportedRaw();
-
-    public readonly BOOL UnrestrictedVertexElementAlignmentSupportedRaw() =>
+    public readonly BOOL UnrestrictedVertexElementAlignmentSupported() =>
         m_dOptions13.UnrestrictedVertexElementAlignmentSupported;
 
-    [Transformed]
     // D3D12_OPTIONS10
-    public readonly MaybeBool<BOOL> VariableRateShadingSumCombinerSupported() =>
-        (MaybeBool<BOOL>)(BOOL)VariableRateShadingSumCombinerSupportedRaw();
-
-    // D3D12_OPTIONS10
-    public readonly BOOL VariableRateShadingSumCombinerSupportedRaw() =>
+    public readonly BOOL VariableRateShadingSumCombinerSupported() =>
         m_dOptions10.VariableRateShadingSumCombinerSupported;
 
     public readonly D3D12_VARIABLE_SHADING_RATE_TIER VariableShadingRateTier() =>
@@ -1424,12 +1160,7 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
     public readonly D3D12_VIEW_INSTANCING_TIER ViewInstancingTier() =>
         m_dOptions3.ViewInstancingTier;
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation() =>
-        (MaybeBool<BOOL>)
-            (BOOL)VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulationRaw();
-
-    public readonly BOOL VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulationRaw() =>
+    public readonly BOOL VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation() =>
         m_dOptions.VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation;
 
     public readonly uint WaveLaneCountMax() => m_dOptions1.WaveLaneCountMax;
@@ -1438,18 +1169,10 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
 
     public readonly D3D12_WAVE_MMA_TIER WaveMMATier() => m_dOptions9.WaveMMATier;
 
-    [Transformed]
     // D3D12_OPTIONS1
-    public readonly MaybeBool<BOOL> WaveOps() => (MaybeBool<BOOL>)(BOOL)WaveOpsRaw();
+    public readonly BOOL WaveOps() => m_dOptions1.WaveOps;
 
-    // D3D12_OPTIONS1
-    public readonly BOOL WaveOpsRaw() => m_dOptions1.WaveOps;
-
-    [Transformed]
-    public readonly MaybeBool<BOOL> WriteableMSAATexturesSupported() =>
-        (MaybeBool<BOOL>)(BOOL)WriteableMSAATexturesSupportedRaw();
-
-    public readonly BOOL WriteableMSAATexturesSupportedRaw() =>
+    public readonly BOOL WriteableMSAATexturesSupported() =>
         m_dOptions14.WriteableMSAATexturesSupported;
 
     public readonly D3D12_COMMAND_LIST_SUPPORT_FLAGS WriteBufferImmediateSupportFlags() =>

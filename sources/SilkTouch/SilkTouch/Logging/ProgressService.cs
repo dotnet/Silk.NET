@@ -19,6 +19,8 @@ namespace Silk.NET.SilkTouch.Logging
     {
         private ConcurrentDictionary<string, (string, float)> Progress =
             new ConcurrentDictionary<string, (string, float)>();
+
+#pragma warning disable ST0005 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
         private JobContext _jobContext;
 
         /// <summary>
@@ -29,6 +31,8 @@ namespace Silk.NET.SilkTouch.Logging
         {
             _jobContext = context;
         }
+#pragma warning restore ST0005 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+
 
         /// <inheritdoc/>
         public IEnumerable<KeyValuePair<string, (string, float)>> GetAllProgress() => Progress;

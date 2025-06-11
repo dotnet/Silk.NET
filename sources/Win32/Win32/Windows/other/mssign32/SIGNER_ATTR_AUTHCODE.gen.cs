@@ -14,11 +14,13 @@ public unsafe partial struct SIGNER_ATTR_AUTHCODE
 
     /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.fCommercial"]/*'/>
 
-    public Bool fCommercial;
+    [NativeTypeName("BOOL")]
+    public MaybeBool<int> fCommercial;
 
     /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.fIndividual"]/*'/>
 
-    public Bool fIndividual;
+    [NativeTypeName("BOOL")]
+    public MaybeBool<int> fIndividual;
 
     /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.pwszName"]/*'/>
 

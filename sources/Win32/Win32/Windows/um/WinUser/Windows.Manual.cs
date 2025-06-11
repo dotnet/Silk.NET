@@ -394,27 +394,16 @@ public static unsafe partial class Windows
         }
     }
 
-    [Transformed]
-    public static MaybeBool<BOOL> EnumTaskWindows(
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static BOOL EnumTaskWindows(
         HTASK hTask,
         [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpfn,
         LPARAM lParam
-    ) => (MaybeBool<BOOL>)(BOOL)EnumTaskWindowsRaw(hTask, lpfn, lParam);
+    ) => EnumThreadWindows((uint)hTask, lpfn, lParam);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static BOOL EnumTaskWindowsRaw(
-        HTASK hTask,
-        [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpfn,
-        LPARAM lParam
-    ) => EnumThreadWindowsRaw((uint)hTask, lpfn, lParam);
-
-    [Transformed]
-    public static MaybeBool<BOOL> ExitWindows(uint dwReserved, int Code) =>
-        (MaybeBool<BOOL>)(BOOL)ExitWindowsRaw(dwReserved, Code);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static BOOL ExitWindowsRaw(uint dwReserved, int Code) =>
-        ExitWindowsExRaw(EWX_LOGOFF, 0xFFFFFFFF);
+    public static BOOL ExitWindows(uint dwReserved, int Code) =>
+        ExitWindowsEx(EWX_LOGOFF, 0xFFFFFFFF);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static short GET_APPCOMMAND_LPARAM(LPARAM lParam) =>
@@ -664,37 +653,21 @@ public static unsafe partial class Windows
     public static int POINTTOPOINTS(POINTS pt) =>
         unchecked(MAKELONG((nuint)(short)pt.x, (nuint)(short)pt.y));
 
-    [Transformed]
-    public static MaybeBool<BOOL> PostAppMessageA(
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static BOOL PostAppMessageA(
         [NativeTypeName("DWORD")] uint idThread,
         uint wMsg,
         WPARAM wParam,
         LPARAM lParam
-    ) => (MaybeBool<BOOL>)(BOOL)PostAppMessageARaw(idThread, wMsg, wParam, lParam);
+    ) => PostThreadMessageA(idThread, wMsg, wParam, lParam);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static BOOL PostAppMessageARaw(
+    public static BOOL PostAppMessageW(
         [NativeTypeName("DWORD")] uint idThread,
         uint wMsg,
         WPARAM wParam,
         LPARAM lParam
-    ) => PostThreadMessageARaw(idThread, wMsg, wParam, lParam);
-
-    [Transformed]
-    public static MaybeBool<BOOL> PostAppMessageW(
-        [NativeTypeName("DWORD")] uint idThread,
-        uint wMsg,
-        WPARAM wParam,
-        LPARAM lParam
-    ) => (MaybeBool<BOOL>)(BOOL)PostAppMessageWRaw(idThread, wMsg, wParam, lParam);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static BOOL PostAppMessageWRaw(
-        [NativeTypeName("DWORD")] uint idThread,
-        uint wMsg,
-        WPARAM wParam,
-        LPARAM lParam
-    ) => PostThreadMessageWRaw(idThread, wMsg, wParam, lParam);
+    ) => PostThreadMessageW(idThread, wMsg, wParam, lParam);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static nint RAWINPUT_ALIGN(nint x) => (x + sizeof(nint) - 1) & ~(sizeof(nint) - 1);

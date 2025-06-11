@@ -4,7 +4,7 @@
 using System;
 using NUnit.Framework;
 using static Silk.NET.DirectX.D3D;
-#pragma warning disable CS1589, CS0419, CA1416, CS0618
+
 namespace Silk.NET.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref = "D3D"/> class.</summary>

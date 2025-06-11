@@ -241,25 +241,6 @@ public class FunctionTransformer(
 
         if (unmanagedCallersOnlyAttr is not null)
         {
-            //remove UCO attribute for transformations
-            function = function.WithAttributeLists(
-                List(
-                    function
-                        .AttributeLists.Select(x =>
-                            x.WithAttributes(
-                                SeparatedList(
-                                    x.Attributes.Where(y =>
-                                        !y.IsAttribute(
-                                            "System.Runtime.InteropServices.UnmanagedCallersOnly"
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                        .Where(x => x.Attributes.Count > 0)
-                )
-            );
-
             var callConvArg = unmanagedCallersOnlyAttr?.ArgumentList?.Arguments.FirstOrDefault(
                 arg => arg.NameEquals?.Name.Identifier.ValueText == "CallConvs"
             );

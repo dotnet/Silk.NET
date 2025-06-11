@@ -72,7 +72,9 @@ rootCommand.SetHandler(async ctx =>
     // Register MSBuild
     MSBuildLocator.RegisterDefaults();
 
+#pragma warning disable ST0005 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
     JobContext jobContext = new();
+#pragma warning restore ST0005 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 
     var sp = new ServiceCollection()
         .AddSingleton(jobContext)

@@ -150,7 +150,7 @@ public static unsafe partial class DirectX
                     ),
                 "D3D12_TEXTURE_DATA_PLACEMENT_ALIGNMENT must be >= and evenly divisible by D3D12_TEXTURE_DATA_PITCH_ALIGNMENT."
             );
-            Placement->RowPitch = D3D12_PROPERTY_LAYOUT_FORMAT_TABLE.PlanarRaw(Format)
+            Placement->RowPitch = D3D12_PROPERTY_LAYOUT_FORMAT_TABLE.Planar(Format)
                 ? D3DX12Align<uint>(MinPlaneRowPitch, D3D12_TEXTURE_DATA_PLACEMENT_ALIGNMENT)
                 : D3DX12Align<uint>(MinPlaneRowPitch, D3D12_TEXTURE_DATA_PITCH_ALIGNMENT);
             if (pRowSizeInBytes != null)
@@ -163,7 +163,7 @@ public static unsafe partial class DirectX
                 pRowSizeInBytes[uSubRes] = PlaneRowSize;
             }
             uint NumRows = 0;
-            if (D3D12_PROPERTY_LAYOUT_FORMAT_TABLE.PlanarRaw(Format))
+            if (D3D12_PROPERTY_LAYOUT_FORMAT_TABLE.Planar(Format))
             {
                 NumRows = PlaneHeight;
             }

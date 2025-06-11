@@ -8,18 +8,12 @@ namespace Silk.NET.Gdiplus;
 
 public partial struct MetafileHeader
 {
-    [Transformed]
-    public readonly MaybeBool<BOOL> IsEmfOrEmfPlus() => (MaybeBool<BOOL>)(BOOL)IsEmfOrEmfPlusRaw();
-
-    public readonly BOOL IsEmfOrEmfPlusRaw()
+    public readonly BOOL IsEmfOrEmfPlus()
     {
         return Type >= MetafileTypeEmf;
     }
 
-    [Transformed]
-    public readonly MaybeBool<BOOL> IsEmfPlus() => (MaybeBool<BOOL>)(BOOL)IsEmfPlusRaw();
-
-    public readonly BOOL IsEmfPlusRaw()
+    public readonly BOOL IsEmfPlus()
     {
         return Type >= MetafileTypeEmfPlusOnly;
     }
