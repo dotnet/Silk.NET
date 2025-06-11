@@ -15,7 +15,7 @@ namespace Silk.NET.SilkTouch.Logging
     /// <summary>
     /// Default Implementation for ProgressService
     /// </summary>
-    public class ProgressService : IProgressService
+    internal class ProgressService : IProgressService
     {
         private ConcurrentDictionary<string, (string, float)> Progress =
             new ConcurrentDictionary<string, (string, float)>();

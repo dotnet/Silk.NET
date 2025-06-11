@@ -164,13 +164,21 @@ Silk.NET.Core.Handle.Handle() -> void
 Silk.NET.Core.Handle.Handle(void* value) -> void
 Silk.NET.Core.Handle.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
 Silk.NET.Core.HResult
+Silk.NET.Core.HResult.Code.get -> int
 Silk.NET.Core.HResult.CompareTo(object? obj) -> int
 Silk.NET.Core.HResult.CompareTo(Silk.NET.Core.HResult other) -> int
 Silk.NET.Core.HResult.Equals(Silk.NET.Core.HResult other) -> bool
+Silk.NET.Core.HResult.Facility.get -> int
 Silk.NET.Core.HResult.Failed.get -> bool
 Silk.NET.Core.HResult.HResult() -> void
+Silk.NET.Core.HResult.HResult(int severity, int facility, int code) -> void
 Silk.NET.Core.HResult.HResult(int value) -> void
+Silk.NET.Core.HResult.IsError.get -> bool
+Silk.NET.Core.HResult.IsFailure.get -> bool
+Silk.NET.Core.HResult.IsSuccess.get -> bool
+Silk.NET.Core.HResult.Severity.get -> int
 Silk.NET.Core.HResult.Succeeded.get -> bool
+Silk.NET.Core.HResult.Throw() -> void
 Silk.NET.Core.HResult.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
 Silk.NET.Core.HString
 Silk.NET.Core.HString.CompareTo(object? obj) -> int
@@ -582,6 +590,7 @@ static Silk.NET.Core.Handle.operator <=(Silk.NET.Core.Handle left, Silk.NET.Core
 static Silk.NET.Core.Handle.operator ==(Silk.NET.Core.Handle left, Silk.NET.Core.Handle right) -> bool
 static Silk.NET.Core.Handle.operator >(Silk.NET.Core.Handle left, Silk.NET.Core.Handle right) -> bool
 static Silk.NET.Core.Handle.operator >=(Silk.NET.Core.Handle left, Silk.NET.Core.Handle right) -> bool
+static Silk.NET.Core.HResult.Create(int severity, int facility, int code) -> int
 static Silk.NET.Core.HResult.explicit operator byte(Silk.NET.Core.HResult value) -> byte
 static Silk.NET.Core.HResult.explicit operator nuint(Silk.NET.Core.HResult value) -> nuint
 static Silk.NET.Core.HResult.explicit operator sbyte(Silk.NET.Core.HResult value) -> sbyte
@@ -594,14 +603,22 @@ static Silk.NET.Core.HResult.explicit operator Silk.NET.Core.HResult(ulong value
 static Silk.NET.Core.HResult.explicit operator uint(Silk.NET.Core.HResult value) -> uint
 static Silk.NET.Core.HResult.explicit operator ulong(Silk.NET.Core.HResult value) -> ulong
 static Silk.NET.Core.HResult.explicit operator ushort(Silk.NET.Core.HResult value) -> ushort
+static Silk.NET.Core.HResult.GetCode(int hr) -> int
+static Silk.NET.Core.HResult.GetFacility(int hr) -> int
+static Silk.NET.Core.HResult.GetSeverity(int hr) -> int
+static Silk.NET.Core.HResult.implicit operator int(Silk.NET.Core.HResult hr) -> int
 static Silk.NET.Core.HResult.implicit operator int(Silk.NET.Core.HResult value) -> int
 static Silk.NET.Core.HResult.implicit operator long(Silk.NET.Core.HResult value) -> long
 static Silk.NET.Core.HResult.implicit operator nint(Silk.NET.Core.HResult value) -> nint
 static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(byte value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(int hr) -> Silk.NET.Core.HResult
 static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(int value) -> Silk.NET.Core.HResult
 static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(sbyte value) -> Silk.NET.Core.HResult
 static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(short value) -> Silk.NET.Core.HResult
 static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(ushort value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.IndicatesError(int status) -> bool
+static Silk.NET.Core.HResult.IndicatesFailure(int hr) -> bool
+static Silk.NET.Core.HResult.IndicatesSuccess(int hr) -> bool
 static Silk.NET.Core.HResult.operator !=(Silk.NET.Core.HResult left, Silk.NET.Core.HResult right) -> bool
 static Silk.NET.Core.HResult.operator <(Silk.NET.Core.HResult left, Silk.NET.Core.HResult right) -> bool
 static Silk.NET.Core.HResult.operator <=(Silk.NET.Core.HResult left, Silk.NET.Core.HResult right) -> bool

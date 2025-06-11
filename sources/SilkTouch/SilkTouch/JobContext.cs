@@ -14,11 +14,7 @@ namespace Silk.NET.SilkTouch
     /// <summary>
     /// Information on the current Job
     /// </summary>
-    [Experimental(
-        "ST0005",
-        UrlFormat = "https://dotnet.github.io/Silk.NET/docs/v3/silk.net/diagnostics/{0}"
-    )]
-    public class JobContext
+    internal class JobContext
     {
         private readonly AsyncLocal<string?> _key = new AsyncLocal<string?>();
 
