@@ -168,8 +168,6 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         /// </summary>
         public async Task<List<INamedTypeSymbol>> GetHandleTypesAsync()
         {
-            Clear();
-
             Visit(compilation.GlobalNamespace);
 
             var results = new List<INamedTypeSymbol>();
@@ -217,11 +215,6 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
 
             return results;
         }
-
-        /// <summary>
-        /// Clears all internal state
-        /// </summary>
-        private void Clear() => _emptyStructs.Clear();
 
         public override void VisitNamespace(INamespaceSymbol symbol)
         {

@@ -101,8 +101,8 @@ public partial class ExtractNestedTyping(
         }
 
         // Find missing handle types
-        var handleDiscoverer = new MissingHandleTypeDiscoverer(logger);
-        var missingHandleTypes = handleDiscoverer.GetMissingHandleTypes(compilation, ct);
+        var handleDiscoverer = new MissingHandleTypeDiscoverer(logger, compilation, ct);
+        var missingHandleTypes = handleDiscoverer.GetMissingHandleTypes();
 
         // Second pass to modify project based on gathered data
         if (cfg.GenerateEmptyStructsForMissingHandleTypes)
@@ -296,7 +296,7 @@ public partial class ExtractNestedTyping(
         }
     }
 
-    private class MissingHandleTypeDiscoverer(ILogger logger) : SymbolVisitor
+    private class MissingHandleTypeDiscoverer(ILogger logger, Compilation compilation, CancellationToken ct) : SymbolVisitor
     {
         private readonly HashSet<IErrorTypeSymbol> _nonHandleTypes = new(SymbolEqualityComparer.Default);
         private readonly Dictionary<IErrorTypeSymbol, string> _missingTypes = new(SymbolEqualityComparer.Default);
@@ -307,10 +307,8 @@ public partial class ExtractNestedTyping(
         /// <summary>
         /// Gets all missing handle types that are found and the namespace that they should be created in.
         /// </summary>
-        public Dictionary<IErrorTypeSymbol, string> GetMissingHandleTypes(Compilation compilation, CancellationToken ct)
+        public Dictionary<IErrorTypeSymbol, string> GetMissingHandleTypes()
         {
-            Clear();
-
             // We need to find and generate all missing handle types
             // Handle types are types that are only referenced through a pointer
             // We do this by parsing through the list of type errors
@@ -388,17 +386,6 @@ public partial class ExtractNestedTyping(
             }
 
             return new Dictionary<IErrorTypeSymbol, string>(_missingTypes.Where(kvp => !_nonHandleTypes.Contains(kvp.Key)), SymbolEqualityComparer.Default);
-        }
-
-        /// <summary>
-        /// Resets internal state.
-        /// </summary>
-        private void Clear()
-        {
-            _nonHandleTypes.Clear();
-            _missingTypes.Clear();
-            _currentNamespace = null;
-            _pointerTypeDepth = 0;
         }
 
         public override void VisitMethod(IMethodSymbol symbol)
