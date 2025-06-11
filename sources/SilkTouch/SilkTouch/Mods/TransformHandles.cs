@@ -16,6 +16,7 @@ using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods.LocationTransformation;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -153,8 +154,8 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
 
         // Reduce pointer dimensions
         ctx.SourceProject = project;
-        var pointerDimensionReducer = new PointerDimensionReducer(ctx, ct);
-        await pointerDimensionReducer.ReducePointerDimensionAsync(handleTypes);
+        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, logger, handleTypes,
+            [new PointerDimensionReductionTransformer()], ct);
         project = ctx.SourceProject;
 
         // At the time of writing this comment, this line effectively does nothing
@@ -585,89 +586,5 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                 )
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
         }
-    }
-
-    private class PointerDimensionReducer(IModContext ctx, CancellationToken ct) : CSharpSyntaxRewriter
-    {
-        /// <summary>
-        /// Reduces the pointer dimension of all references to the specified symbols.
-        /// </summary>
-        public async Task ReducePointerDimensionAsync(List<INamedTypeSymbol> symbols)
-        {
-            var project = ctx.SourceProject;
-            if (project == null)
-            {
-                return;
-            }
-
-            var compilation = await project.GetCompilationAsync(ct);
-            if (compilation == null)
-            {
-                return;
-            }
-
-            // Find all locations where the symbols are referenced
-            var locations = new List<Location>();
-            var documents = project.Documents.ToImmutableHashSet();
-            foreach (var symbol in symbols)
-            {
-                var references = await SymbolFinder.FindReferencesAsync(symbol, project.Solution, documents, ct);
-                locations.AddRange(references.SelectMany(r => r.Locations).Select(rl => rl.Location));
-            }
-
-            // Group the locations by source tree. This will be used to prevent accidentally overwriting changes.
-            var locationsBySourcetree = locations.GroupBy(l => l.SourceTree);
-            foreach (var group in locationsBySourcetree)
-            {
-                var syntaxTree = group.Key;
-                if (syntaxTree == null)
-                {
-                    continue;
-                }
-
-                var document = project.GetDocument(syntaxTree);
-                if (document == null)
-                {
-                    continue;
-                }
-
-                var syntaxRoot = await syntaxTree.GetRootAsync(ct);
-
-                // Modify each location
-                // We order the locations so that we modify starting from the end of the file
-                // This way we prevent changes from being accidentally overwriting changes
-                foreach (var location in group.OrderByDescending(l => l.SourceSpan.Start))
-                {
-                    var syntaxNode = syntaxRoot.FindNode(location.SourceSpan);
-
-                    var nodeToModify = GetNodeToModify(syntaxNode);
-                    if (nodeToModify == null)
-                    {
-                        continue;
-                    }
-
-                    var newNode = Visit(nodeToModify);
-                    syntaxRoot = syntaxRoot.ReplaceNode(nodeToModify, newNode);
-                }
-
-                // Commit the changes to the project
-                var newDocument = document.WithSyntaxRoot(syntaxRoot);
-                project = newDocument.Project;
-            }
-
-            ctx.SourceProject = project;
-        }
-
-        private SyntaxNode? GetNodeToModify(SyntaxNode current)
-        {
-            if (current.Parent is PointerTypeSyntax parent)
-            {
-                return parent;
-            }
-
-            return null;
-        }
-
-        public override SyntaxNode? VisitPointerType(PointerTypeSyntax node) => node.ElementType;
     }
 }
