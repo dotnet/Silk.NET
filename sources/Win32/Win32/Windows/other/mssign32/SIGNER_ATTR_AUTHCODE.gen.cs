@@ -1,7 +1,8 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from https://docs.microsoft.com/en-us/windows/win32/appxpkg/how-to-programmatically-sign-a-package
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
-namespace Silk.NET.Windows;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
 /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE"]/*'/>
 public unsafe partial struct SIGNER_ATTR_AUTHCODE
@@ -13,11 +14,13 @@ public unsafe partial struct SIGNER_ATTR_AUTHCODE
 
     /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.fCommercial"]/*'/>
 
-    public BOOL fCommercial;
+    [NativeTypeName("BOOL")]
+    public MaybeBool<int> fCommercial;
 
     /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.fIndividual"]/*'/>
 
-    public BOOL fIndividual;
+    [NativeTypeName("BOOL")]
+    public MaybeBool<int> fIndividual;
 
     /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.pwszName"]/*'/>
 

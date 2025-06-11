@@ -8,5 +8,14 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Windows\other\helper-types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Silk.NET.Core" />
+    <Using Include="Silk.NET.Core.IID">
+      <Static>True</Static>
+    </Using>
+  </ItemGroup>
   <Import Project="..\..\Core\Core\Silk.NET.Core.targets" />
 </Project>

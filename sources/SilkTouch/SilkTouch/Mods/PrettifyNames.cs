@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -273,7 +273,7 @@ public class PrettifyNames(
             ?? throw new InvalidOperationException(
                 "Failed to obtain compilation for source project!"
             );
-        await RenameAllAsync(
+        await NameUtils.RenameAllAsync(
             ctx,
             types.SelectMany(x =>
             {
@@ -285,7 +285,6 @@ public class PrettifyNames(
                 return comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
                     .OfType<ITypeSymbol>()
                     .SelectMany<ITypeSymbol, (ISymbol, string)>(y =>
-
                         [
                             .. Enumerable.SelectMany(
                                 [
@@ -297,7 +296,7 @@ public class PrettifyNames(
                                             )
                                             : z
                                     ) ?? [],
-                                    .. x.Value.Functions ?? []
+                                    .. x.Value.Functions ?? [],
                                 ],
                                 z =>
                                 {
@@ -310,10 +309,11 @@ public class PrettifyNames(
                                     z.MethodKind is MethodKind.Constructor or MethodKind.Destructor
                                 )
                                 .Select(z => (z, x.Value.NewName)),
-                            (y, x.Value.NewName)
+                            (y, x.Value.NewName),
                         ]
                     );
             }),
+            logger,
             ct
         );
         logger.LogDebug(
@@ -533,7 +533,9 @@ public class PrettifyNames(
                         {
                             2 => 2, // The original needs to be counted as a conflict in addition to this conflict
                             > 2 => 1, // Just mark this conflict, original is already counted.
-                            _ => 0 // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
+                            _ =>
+                                0 // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
+                            ,
                         };
 
                         if (discrimMatches.Count == 2 && ogTrimmingName is not null)
@@ -937,132 +939,6 @@ public class PrettifyNames(
             ).WithRenameSafeAttributeLists();
     }
 
-    private Location? IdentifierLocation(SyntaxNode? node) =>
-        node switch
-        {
-            BaseTypeDeclarationSyntax bt => bt.Identifier.GetLocation(),
-            DelegateDeclarationSyntax d => d.Identifier.GetLocation(),
-            EnumMemberDeclarationSyntax em => em.Identifier.GetLocation(),
-            EventDeclarationSyntax e => e.Identifier.GetLocation(),
-            MethodDeclarationSyntax m => m.Identifier.GetLocation(),
-            PropertyDeclarationSyntax p => p.Identifier.GetLocation(),
-            VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
-            ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
-            DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
-            _ => null
-        };
-
-    private async Task RenameAllAsync(
-        IModContext ctx,
-        IEnumerable<(ISymbol Symbol, string NewName)> toRename,
-        CancellationToken ct = default
-    )
-    {
-        if (ctx.SourceProject is null)
-        {
-            return;
-        }
-
-        var locations = new ConcurrentDictionary<Location, string>();
-        // TODO this needs parallelisation config & be sensitive to the environment (future src generator form factor?)
-        await Parallel.ForEachAsync(
-            toRename,
-            ct,
-            async (tuple, _) =>
-            {
-                // First, let's add all of the locations of the declaration identifiers.
-                var (symbol, newName) = tuple;
-                foreach (var syntaxRef in symbol.DeclaringSyntaxReferences)
-                {
-                    var identifierLocation = IdentifierLocation(await syntaxRef.GetSyntaxAsync(ct));
-                    if (identifierLocation is not null)
-                    {
-                        locations.TryAdd(identifierLocation, newName);
-                    }
-                }
-
-                // Next, let's find all the references of the symbols.
-                var references = await SymbolFinder.FindReferencesAsync(
-                    symbol,
-                    ctx.SourceProject?.Solution
-                        ?? throw new ArgumentException("SourceProject is null"),
-                    ct
-                );
-
-                foreach (var referencedSymbol in references)
-                {
-                    foreach (var referencedSymbolLocation in referencedSymbol.Locations)
-                    {
-                        if (
-                            referencedSymbolLocation.IsCandidateLocation
-                            || referencedSymbolLocation.IsImplicit
-                        )
-                        {
-                            continue;
-                        }
-
-                        locations.TryAdd(referencedSymbolLocation.Location, newName);
-                    }
-                }
-            }
-        );
-
-        logger.LogDebug("{} referencing locations for renames for {}", locations.Count, ctx.JobKey);
-
-        // Now it's just a simple find and replace.
-        var sln = ctx.SourceProject.Solution;
-        var srcProjId = ctx.SourceProject.Id;
-        var testProjId = ctx.TestProject?.Id;
-        foreach (
-            var (syntaxTree, renameLocations) in locations
-                .GroupBy(x => x.Key.SourceTree)
-                .Select(x => (x.Key, x.OrderByDescending(y => y.Key.SourceSpan)))
-        )
-        {
-            if (
-                syntaxTree is null
-                || sln.GetDocument(syntaxTree) is not { } doc
-                || (doc.Project.Id != srcProjId && doc.Project.Id != testProjId)
-                || await syntaxTree.GetTextAsync(ct) is not { } text
-            )
-            {
-                continue;
-            }
-
-            var ogText = text;
-            foreach (var (location, newName) in renameLocations)
-            {
-                var contents = ogText.GetSubText(location.SourceSpan).ToString();
-                if (contents.Contains(' '))
-                {
-                    logger.LogWarning(
-                        "Refusing to do unsafe rename/replacement of \"{}\" to \"{}\" at {}",
-                        contents,
-                        newName,
-                        location.GetLineSpan()
-                    );
-                    continue;
-                }
-
-                if (logger.IsEnabled(LogLevel.Trace))
-                {
-                    logger.LogTrace(
-                        "\"{}\" -> \"{}\" at {}",
-                        contents,
-                        newName,
-                        location.GetLineSpan()
-                    );
-                }
-
-                text = text.Replace(location.SourceSpan, newName);
-            }
-
-            sln = doc.WithText(text).Project.Solution;
-        }
-
-        ctx.SourceProject = sln.GetProject(srcProjId);
-    }
-
     /// <inheritdoc />
     public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
@@ -1072,6 +948,15 @@ public class PrettifyNames(
             {
                 logger.LogWarning(
                     "{} (for {}) should use exclude-using-statics-for-enums as PrettifyNames does not resolve "
+                        + "conflicts with members of other types.",
+                    responseFile.FilePath,
+                    key
+                );
+            }
+            if (!responseFile.GeneratorConfiguration.DontUseUsingStaticsForGuidMember)
+            {
+                logger.LogWarning(
+                    "{} (for {}) should use exclude-using-statics-for-guid-members as PrettifyNames does not resolve "
                         + "conflicts with members of other types.",
                     responseFile.FilePath,
                     key
