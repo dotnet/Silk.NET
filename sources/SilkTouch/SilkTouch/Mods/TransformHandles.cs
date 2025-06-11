@@ -115,6 +115,22 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         await NameUtils.RenameAllAsync(ctx, logger, handleTypes.Select(t => ((ISymbol)t, $"{t.Name}Handle")), ct);
         project = ctx.SourceProject;
 
+        // Get the compilation again
+        compilation = await project.GetCompilationAsync(ct);
+        if (compilation == null)
+        {
+            throw new InvalidOperationException("Failed to get compilation");
+        }
+
+        // Restore symbols invalidated by previous modification
+        handleTypes = handleTypeMetadataNames.SelectMany(name => compilation.GetTypesByMetadataName(name)).ToList();
+
+        // Reduce pointer dimensions
+        ctx.SourceProject = project;
+        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, logger, handleTypes,
+            [new PointerDimensionReductionTransformer()], ct);
+        project = ctx.SourceProject;
+
         // Use document IDs from earlier
         var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL);
         foreach (var (originalName, documentId) in handleTypeDocumentIds)
@@ -140,23 +156,6 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
 
             project = document.Project;
         }
-
-        // Phase 3. Reduce pointer dimensions
-        // Get the compilation again
-        compilation = await project.GetCompilationAsync(ct);
-        if (compilation == null)
-        {
-            throw new InvalidOperationException("Failed to get compilation");
-        }
-
-        // Restore symbols
-        handleTypes = handleTypeMetadataNames.SelectMany(name => compilation.GetTypesByMetadataName(name)).ToList();
-
-        // Reduce pointer dimensions
-        ctx.SourceProject = project;
-        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, logger, handleTypes,
-            [new PointerDimensionReductionTransformer()], ct);
-        project = ctx.SourceProject;
 
         // At the time of writing this comment, this line effectively does nothing
         // However, if the code above is removed, then this line ensures that the context's project is updated properly
