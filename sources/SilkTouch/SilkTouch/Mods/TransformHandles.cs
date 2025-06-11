@@ -102,8 +102,8 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         // 2. Reduce pointer dimensions
         ctx.SourceProject = project;
         await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, logger, handleTypes, [
-            new PointerDimensionReductionTransformer(),
-            new IdentifierRenamingTransformer(handleTypes.Select(t => ((ISymbol)t, $"{t.Name}Handle")))
+            new IdentifierRenamingTransformer(handleTypes.Select(t => ((ISymbol)t, $"{t.Name}Handle"))),
+            new PointerDimensionReductionTransformer()
         ], ct);
         project = ctx.SourceProject;
 

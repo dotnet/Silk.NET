@@ -176,27 +176,73 @@ public class IdentifierRenamingTransformer(IEnumerable<(ISymbol Symbol, string N
         return current;
     }
 
-    /// <inheritdoc />
-    public override SyntaxNode? DefaultVisit(SyntaxNode node)
-    {
-        var newName = _newNameLookup[_context.Symbol];
-        var newNameToken = Identifier(newName);
+    private SyntaxToken GetNewName() => Identifier(_newNameLookup[_context.Symbol]);
 
-        return node switch
-        {
-            IdentifierNameSyntax => IdentifierName(newNameToken),
-            BaseTypeDeclarationSyntax bt => bt.WithIdentifier(newNameToken),
-            DelegateDeclarationSyntax d => d.WithIdentifier(newNameToken),
-            EnumMemberDeclarationSyntax em => em.WithIdentifier(newNameToken),
-            EventDeclarationSyntax e => e.WithIdentifier(newNameToken),
-            MethodDeclarationSyntax m => m.WithIdentifier(newNameToken),
-            PropertyDeclarationSyntax p => p.WithIdentifier(newNameToken),
-            VariableDeclaratorSyntax v => v.WithIdentifier(newNameToken),
-            ConstructorDeclarationSyntax c => c.WithIdentifier(newNameToken),
-            DestructorDeclarationSyntax d => d.WithIdentifier(newNameToken),
-            _ => node,
-        };
-    }
+    /// <inheritdoc />
+    public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
+        => IdentifierName(GetNewName());
+
+    // ----- Types -----
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitInterfaceDeclaration(InterfaceDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitRecordDeclaration(RecordDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    // ----- Members -----
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitEventDeclaration(EventDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitDestructorDeclaration(DestructorDeclarationSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    // ----- Other -----
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitVariableDeclarator(VariableDeclaratorSyntax node)
+        => node.WithIdentifier(GetNewName());
+
+    /// <inheritdoc />
+    public override SyntaxNode? VisitTypeParameter(TypeParameterSyntax node)
+        => node.WithIdentifier(GetNewName());
 }
 
 /// <summary>
