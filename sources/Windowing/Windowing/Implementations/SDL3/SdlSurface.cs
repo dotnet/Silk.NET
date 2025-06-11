@@ -89,6 +89,12 @@ internal class SdlSurface : Surface, IDisposable
             return false;
         }
 
+        if (typeof(TPlatformInfo) == typeof(SdlPlatformInfo))
+        {
+            info = (TPlatformInfo)(object)new SdlPlatformInfo(Impl.Handle);
+            return true;
+        }
+
         var props = Sdl.GetWindowProperties(Impl.Handle);
         if (typeof(TPlatformInfo) == typeof(CocoaPlatformInfo))
         {
