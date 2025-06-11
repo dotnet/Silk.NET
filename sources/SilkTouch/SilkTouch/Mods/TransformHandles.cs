@@ -616,9 +616,11 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             }
 
             // Reduce the pointer dimension of all reference locations
-            foreach (var location in locations)
+            // Also, do modifications in groups to prevent overwriting changes
+            var locationsBySourcetree = locations.GroupBy(l => l.SourceTree);
+            foreach (var group in locationsBySourcetree)
             {
-                var syntaxTree = location.SourceTree;
+                var syntaxTree = group.Key;
                 if (syntaxTree == null)
                 {
                     continue;
@@ -631,18 +633,24 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                 }
 
                 var syntaxRoot = await syntaxTree.GetRootAsync(ct);
-                var syntaxNode = syntaxRoot.FindNode(location.SourceSpan);
 
-                var nodeToModify = GetNodeToModify(syntaxNode);
-                if (nodeToModify == null)
+                // Modify each location
+                foreach (var location in group.OrderByDescending(l => l.SourceSpan.Start))
                 {
-                    continue;
+                    var syntaxNode = syntaxRoot.FindNode(location.SourceSpan);
+
+                    var nodeToModify = GetNodeToModify(syntaxNode);
+                    if (nodeToModify == null)
+                    {
+                        continue;
+                    }
+
+                    var newNode = Visit(nodeToModify);
+                    syntaxRoot = syntaxRoot.ReplaceNode(nodeToModify, newNode);
                 }
 
-                var newNode = Visit(nodeToModify);
-                var newRoot = syntaxRoot.ReplaceNode(nodeToModify, newNode);
-                var newDocument = document.WithSyntaxRoot(newRoot);
-
+                // Commit the changes to the project
+                var newDocument = document.WithSyntaxRoot(syntaxRoot);
                 project = newDocument.Project;
             }
 

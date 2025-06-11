@@ -46,7 +46,7 @@ public unsafe partial struct BindDescriptorSetsInfo
 
     [NativeTypeName("const VkDescriptorSet *")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public DescriptorSetHandle** PDescriptorSets;
+    public DescriptorSetHandle* PDescriptorSets;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]

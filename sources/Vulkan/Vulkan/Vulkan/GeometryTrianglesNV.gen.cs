@@ -104,7 +104,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public BufferHandle* IndexData;
+    public BufferHandle IndexData;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -147,7 +147,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public BufferHandle* TransformData;
+    public BufferHandle TransformData;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

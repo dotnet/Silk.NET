@@ -22,10 +22,10 @@ public readonly unsafe struct PFNVkGetInstanceProcAddrLunarg : IDisposable
 {
     private readonly void* Pointer;
     public delegate* unmanaged<InstanceHandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2> Handle =>
-        (delegate* unmanaged<InstanceHandle*, sbyte*, PFNVkGetInstanceProcAddrLunargP2>)Pointer;
+        (delegate* unmanaged<InstanceHandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2>)Pointer;
 
     public PFNVkGetInstanceProcAddrLunarg(
-        delegate* unmanaged<InstanceHandle*, sbyte*, PFNVkGetInstanceProcAddrLunargP2> ptr
+        delegate* unmanaged<InstanceHandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2> ptr
     ) => Pointer = ptr;
 
     public PFNVkGetInstanceProcAddrLunarg(PFNVkGetInstanceProcAddrLunargDelegate proc) =>
@@ -34,12 +34,12 @@ public readonly unsafe struct PFNVkGetInstanceProcAddrLunarg : IDisposable
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator PFNVkGetInstanceProcAddrLunarg(
-        delegate* unmanaged<InstanceHandle*, sbyte*, PFNVkGetInstanceProcAddrLunargP2> pfn
+        delegate* unmanaged<InstanceHandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2> pfn
     ) => new(pfn);
 
     public static implicit operator delegate* unmanaged<
-        InstanceHandle*,
+        InstanceHandle,
         sbyte*,
         PFNVkGetInstanceProcAddrLunargP2>(PFNVkGetInstanceProcAddrLunarg pfn) =>
-        (delegate* unmanaged<InstanceHandle*, sbyte*, PFNVkGetInstanceProcAddrLunargP2>)pfn.Pointer;
+        (delegate* unmanaged<InstanceHandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2>)pfn.Pointer;
 }

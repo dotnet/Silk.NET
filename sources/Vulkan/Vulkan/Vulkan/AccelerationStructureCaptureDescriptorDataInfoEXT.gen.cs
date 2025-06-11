@@ -77,5 +77,5 @@ public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public AccelerationStructureNVHandle* AccelerationStructureNV;
+    public AccelerationStructureNVHandle AccelerationStructureNV;
 }

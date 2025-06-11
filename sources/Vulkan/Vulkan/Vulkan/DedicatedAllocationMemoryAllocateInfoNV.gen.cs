@@ -30,7 +30,7 @@ public unsafe partial struct DedicatedAllocationMemoryAllocateInfoNV
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
-    public ImageHandle* Image;
+    public ImageHandle Image;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]

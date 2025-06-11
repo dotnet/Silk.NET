@@ -42,7 +42,7 @@ public unsafe partial struct FrameBoundaryEXT
 
     [NativeTypeName("const VkImage *")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
-    public ImageHandle** PImages;
+    public ImageHandle* PImages;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]

@@ -54,7 +54,7 @@ public unsafe partial struct VideoDecodeH265InlineSessionParametersInfoKHR
         ImpliesSets = ["VK_KHR_video_queue"],
         RequireAll = true
     )]
-    public StdVideoH265SequenceParameterSetHandle* PStdSPS;
+    public StdVideoH265SequenceParameterSetHandle PStdSPS;
 
     [NativeTypeName("const StdVideoH265PictureParameterSet *")]
     [SupportedApiProfile(
@@ -63,5 +63,5 @@ public unsafe partial struct VideoDecodeH265InlineSessionParametersInfoKHR
         ImpliesSets = ["VK_KHR_video_queue"],
         RequireAll = true
     )]
-    public StdVideoH265PictureParameterSetHandle* PStdPPS;
+    public StdVideoH265PictureParameterSetHandle PStdPPS;
 }

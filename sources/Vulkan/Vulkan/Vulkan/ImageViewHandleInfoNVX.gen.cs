@@ -37,5 +37,5 @@ public unsafe partial struct ImageViewHandleInfoNVX
 
     [NativeTypeName("VkSampler")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
-    public SamplerHandle* Sampler;
+    public SamplerHandle Sampler;
 }

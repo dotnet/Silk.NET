@@ -66,5 +66,5 @@ public unsafe partial struct VideoEncodeH264SessionParametersAddInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StdVideoH264PictureParameterSetHandle* PStdPPSs;
+    public StdVideoH264PictureParameterSetHandle PStdPPSs;
 }

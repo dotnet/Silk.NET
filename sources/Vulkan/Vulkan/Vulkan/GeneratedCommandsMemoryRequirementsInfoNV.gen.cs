@@ -57,7 +57,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public IndirectCommandsLayoutNVHandle* IndirectCommandsLayout;
+    public IndirectCommandsLayoutNVHandle IndirectCommandsLayout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

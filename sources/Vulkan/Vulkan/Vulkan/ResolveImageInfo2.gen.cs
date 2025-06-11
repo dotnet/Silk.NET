@@ -37,7 +37,7 @@ public unsafe partial struct ResolveImageInfo2
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ImageHandle* DstImage;
+    public ImageHandle DstImage;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public ImageLayout DstImageLayout;
