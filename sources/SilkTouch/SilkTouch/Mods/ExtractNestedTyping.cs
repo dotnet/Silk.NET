@@ -374,6 +374,8 @@ public partial class ExtractNestedTyping(
 
                 if (!isSuccess)
                 {
+                    // TODO: AttributeSyntaxes are currently not handled properly
+                    
                     // This is to warn of unhandled cases
                     logger.LogWarning("Failed to find corresponding symbol for type error. There may be an unhandled case in the code");
                 }
