@@ -367,6 +367,14 @@ public partial class ExtractNestedTyping(
 
                             break;
                         }
+                        case AttributeSyntax:
+                        {
+                            // Skip AttributeSyntaxes
+                            // A handle type will never be used as an attribute
+                            isSuccess = true;
+
+                            break;
+                        }
                     }
 
                     currentSyntax = currentSyntax.Parent;
@@ -374,8 +382,6 @@ public partial class ExtractNestedTyping(
 
                 if (!isSuccess)
                 {
-                    // TODO: AttributeSyntaxes are currently not handled properly
-                    
                     // This is to warn of unhandled cases
                     logger.LogWarning("Failed to find corresponding symbol for type error. There may be an unhandled case in the code");
                 }
