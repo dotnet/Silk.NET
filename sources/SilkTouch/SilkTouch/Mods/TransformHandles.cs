@@ -133,8 +133,6 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             project = document.Project;
         }
 
-        // At the time of writing this comment, this line effectively does nothing
-        // However, if the code above is removed, then this line ensures that the context's project is updated properly
         ctx.SourceProject = project;
     }
 
