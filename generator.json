@@ -54,8 +54,10 @@
         "InputSourceRoot": "sources/SDL",
         "InputTestRoot": "tests/SDL"
       },
+      "ExtractNestedTyping": {
+        "GenerateEmptyStructsForMissingHandleTypes": true
+      },
       "TransformHandles": {
-        "AssumeMissingTypesOpaque": true,
         "UseDSL": true
       },
       "TransformFunctions": {
@@ -155,6 +157,60 @@
         "BoolTypes": {
           "GLboolean": null
         }
+      }
+    },
+    "Vulkan": {
+      "SourceProject": "sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj",
+      "Solution": "Silk.NET.sln",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
+      "Mods": [
+        "AddIncludes",
+        "ClangScraper",
+        "AddApiProfiles",
+        "MixKhronosData",
+        "ExtractNestedTyping",
+        "PrettifyNames",
+        "TransformHandles",
+        "TransformFunctions",
+        "TransformProperties",
+        "AddVTables"
+      ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/vulkan/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/Vulkan",
+        "InputTestRoot": "tests/Vulkan"
+      },
+      "AddApiProfiles": {
+        "Profiles": [
+          {
+            "Profile": "vulkan",
+            "SourceSubdirectory": "vulkan"
+          }
+        ]
+      },
+      "MixKhronosData": {
+        "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
+        "Namespace": "Silk.NET.Vulkan"
+      },
+      "ExtractNestedTyping": {
+        "GenerateEmptyStructsForMissingHandleTypes": true
+      },
+      "PrettifyNames": {
+        "LongAcronymThreshold": 4,
+        "GlobalPrefixHint": "vk"
+      },
+      "AddVTables": {
+        "VTables": [
+          {
+            "Kind": "DllImport",
+            "IsDefault": true
+          }
+        ]
+      },
+      "TransformHandles": {
+        "UseDSL": true
       }
     }
   }
