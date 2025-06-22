@@ -3,8 +3,7 @@
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Numerics;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
@@ -17,7 +16,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
     private bool _pumped;
     private long _epoch;
     private List<IInputDevice> _devices = [];
-    private List<QueuedEvent> _eventQueue = [];
+    private readonly EventQueue _pumpedEvents = new();
     private WindowHandle _focusedWindow;
     private ISdl _sdl;
 
@@ -172,7 +171,12 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
         }
 
         _pumped = false;
-        throw new NotImplementedException();
+        if (handler == null)
+        {
+            return;
+        }
+
+        // process all events that have been queued?
     }
 
     private enum QueuedEventType : byte
@@ -194,76 +198,72 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
         BoundedPointerTargetUpdate,
     }
 
-    private readonly record struct QueuedEvent(
-        QueuedEventType Type,
-        ulong Timestamp,
-        Vector2 Vector0 = default,
-        Vector2 Vector1 = default
-    );
-
     private ulong GetTimestamp(ref readonly Event @event) =>
         unchecked((ulong)(_epoch + (@event.Common.Timestamp * _ticksPerNanosecond)));
 
     private unsafe byte OnEvent(void* arg0, Event* arg1)
     {
         _pumped = true;
+        _pumpedEvents.Add(ref *arg1);
+        return 1;
+    }
+
+    private void ProcessEvent(ref Event arg1, IInputHandler handler)
+    {
+         var timestamp = GetTimestamp(ref arg1);
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
-        switch ((EventType)arg1->Common.Type)
+        switch ((EventType)arg1.Common.Type)
         {
-            case EventType.DisplayOrientation:
-            case EventType.DisplayAdded:
-            case EventType.DisplayRemoved:
-            case EventType.DisplayMoved:
-            case EventType.DisplayDesktopModeChanged:
-            case EventType.DisplayCurrentModeChanged:
-            case EventType.DisplayContentScaleChanged:
+            //  Device changed events -------------------------------------------------
+            case EventType.KeymapChanged:
+                break;
+            case EventType.KeyboardAdded:
             {
-                var bounds = SdlBoundedPointerTarget.CalculateBounds(Sdl);
-                _eventQueue.Add(
-                    new QueuedEvent(
-                        QueuedEventType.BoundedPointerTargetUpdate,
-                        GetTimestamp(ref *arg1),
-                        bounds.Min.ToSystem(),
-                        bounds.Max.ToSystem()
-                    )
-                );
+                var id = arg1.Kdevice.Which;
+                Debug.Assert(_devices.All(x => x.Id != AsSilkId(id)));
+                _ = GetOrCreateKeyboard(id);
                 break;
             }
-            case EventType.WindowMouseLeave:
+            case EventType.KeyboardRemoved:
             {
-                _eventQueue.Add(
-                    new QueuedEvent(QueuedEventType.MouseExitedWindow, GetTimestamp(ref *arg1))
-                );
+                RemoveDevice(arg1.Kdevice.Which);
                 break;
             }
+
+
+            case EventType.MouseAdded:
+                break;
+            case EventType.MouseRemoved:
+                RemoveDevice(arg1.Mdevice.Which);
+                break;
+
+            case EventType.GamepadAdded:
+            {
+                var id = arg1.Kdevice.Which;
+                Debug.Assert(_devices.All(x => x.Id != AsSilkId(id)));
+                _ = GetOrCreateDevice<SdlGamepad>(id);
+                break;
+            }
+            case EventType.GamepadRemoved:
+            {
+                RemoveDevice(arg1.Gdevice.Which);
+                break;
+            }
+            case EventType.GamepadRemapped:
+                break;
+
+            case EventType.JoystickAdded:
+                RemoveDevice(arg1.Jdevice.Which);
+                break;
+            case EventType.JoystickRemoved:
+                break;
+
+            //  Input events ----------------------------------------------------------
             case EventType.KeyDown:
                 break;
             case EventType.KeyUp:
                 break;
-            case EventType.TextEditing:
-                break;
-            case EventType.TextInput:
-                break;
-            case EventType.KeymapChanged:
-                break;
-            case EventType.KeyboardAdded:
-                break;
-            case EventType.KeyboardRemoved:
-                break;
-            case EventType.TextEditingCandidates:
-                break;
-            case EventType.MouseMotion:
-                break;
-            case EventType.MouseButtonDown:
-                break;
-            case EventType.MouseButtonUp:
-                break;
-            case EventType.MouseWheel:
-                break;
-            case EventType.MouseAdded:
-                break;
-            case EventType.MouseRemoved:
-                break;
+
             case EventType.JoystickAxisMotion:
                 break;
             case EventType.JoystickBallMotion:
@@ -274,10 +274,6 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                 break;
             case EventType.JoystickButtonUp:
                 break;
-            case EventType.JoystickAdded:
-                break;
-            case EventType.JoystickRemoved:
-                break;
             case EventType.JoystickBatteryUpdated:
                 break;
             case EventType.JoystickUpdateComplete:
@@ -287,12 +283,6 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             case EventType.GamepadButtonDown:
                 break;
             case EventType.GamepadButtonUp:
-                break;
-            case EventType.GamepadAdded:
-                break;
-            case EventType.GamepadRemoved:
-                break;
-            case EventType.GamepadRemapped:
                 break;
             case EventType.GamepadTouchpadDown:
                 break;
@@ -306,6 +296,22 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                 break;
             case EventType.GamepadSteamHandleUpdated:
                 break;
+
+            case EventType.SensorUpdate:
+                break;
+
+
+            // ----- Pointer events
+
+            case EventType.MouseMotion:
+                break;
+            case EventType.MouseButtonDown:
+                break;
+            case EventType.MouseButtonUp:
+                break;
+            case EventType.MouseWheel:
+                break;
+
             case EventType.FingerDown:
                 break;
             case EventType.FingerUp:
@@ -314,10 +320,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                 break;
             case EventType.FingerCanceled:
                 break;
-            case EventType.ClipboardUpdate:
-                break;
-            case EventType.SensorUpdate:
-                break;
+
             case EventType.PenProximityIn:
                 break;
             case EventType.PenProximityOut:
@@ -334,9 +337,111 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                 break;
             case EventType.PenAxis:
                 break;
+
+            // Display & window (pointer target) events ----------------------------
+            case EventType.DisplayOrientation:
+            case EventType.DisplayAdded:
+            case EventType.DisplayRemoved:
+            case EventType.DisplayMoved:
+            case EventType.DisplayDesktopModeChanged:
+            case EventType.DisplayCurrentModeChanged:
+            case EventType.DisplayContentScaleChanged:
+            {
+                var bounds = SdlBoundedPointerTarget.CalculateBounds(Sdl);
+                var x = (QueuedEventType.BoundedPointerTargetUpdate,
+                        timestamp,
+                        bounds.Min.ToSystem(),
+                        bounds.Max.ToSystem()
+                    );
+                break;
+            }
+            case EventType.WindowMouseLeave: // do we need to do anything? we should probably track the current window of the pointer
+            {
+                var x = (QueuedEventType.MouseExitedWindow, timestamp);
+                break;
+            }
+
+            // Text input events -------------------------------------------
+            case EventType.TextEditing:
+                break;
+            case EventType.TextInput:
+                break;
+            case EventType.TextEditingCandidates:
+                break;
+            case EventType.ClipboardUpdate:
+                break;
+
+
         }
 
-        return 1;
+        return;
+
+        void RemoveDevice(uint id)
+        {
+            var silkId = AsSilkId(id);
+            var deviceIdx = _devices.FindIndex(x => x.Id == silkId);
+
+            if (deviceIdx == -1)
+                return; // we never used this device to begin with, so just ignore its removal
+
+            _devices.RemoveAt(deviceIdx);
+        }
+
+        T GetOrCreateDevice<T>(uint id) where T : SdlDevice, new()
+        {
+            // If we already have a device with this ID, return it.
+            for(var i = 0; i < _devices.Count; i++)
+            {
+                if (_devices[i] is T typedDevice && typedDevice.DeviceId == id)
+                {
+                    return typedDevice;
+                }
+            }
+
+            var device = new T() { DeviceId = id, DeviceHandle =  , Backend = this};
+            _devices.Add(device);
+            Console.WriteLine($"Gamepad added: (sdl ID: {id})");
+            return device;
+        }
+
+        SdlKeyboard GetOrCreateKeyboard(uint id)
+        {
+            // If we already have a device with this ID, return it.
+            for (var i = 0; i < _devices.Count; i++)
+            {
+                if (_devices[i] is SdlKeyboard keyboard && keyboard.DeviceId == id)
+                {
+                    return keyboard;
+                }
+            }
+
+            var device = new SdlKeyboard();
+            _devices.Add(device);
+            Console.WriteLine($"Keyboard added: (sdl ID: {id})");
+            return device;
+        }
+    }
+
+    /// <summary>
+    /// Turns an sdl device id into a universally unique Silk.NET input id.
+    /// </summary>
+    /// <param name="which"></param>
+    /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public nint AsSilkId(uint which)
+    {
+        return Id + Unsafe.As<uint, nint>(ref which) + 1;
+    }
+
+    /// <summary>
+    /// Reverts the process of <see cref="AsSilkId(uint)"/> to get the original SDL id.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public uint AsSdlId(nint id)
+    {
+        return (uint)(id - Id - 1);
     }
 
     private unsafe void ReleaseUnmanagedResources()
@@ -355,4 +460,10 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
     }
 
     ~SdlInputBackend() => ReleaseUnmanagedResources();
+
+    private class EventQueue
+    {
+        private readonly Queue<Event> _events = new(1024);
+        public void Add(ref Event p0) => _events.Enqueue(p0);
+    }
 }

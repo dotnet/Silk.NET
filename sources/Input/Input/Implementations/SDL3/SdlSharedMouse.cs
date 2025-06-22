@@ -9,15 +9,14 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse
 {
     private readonly MouseState _state;
 
-    public SdlSharedMouse(SdlInputBackend backend)
-        : base(backend)
+    public override void Initialize()
     {
         var buttons = InputMarshal.CreateList<Button<PointerButton>>(32);
         var points = InputMarshal.CreateList<TargetPoint>(1);
         _state = new MouseState(buttons.List.AsButtonList(), points.List, Vector2.Zero);
         float x = 0,
             y = 0;
-        var buttonMask = backend.Sdl.GetMouseState(x.AsRef(), y.AsRef());
+        var buttonMask = Backend.Sdl.GetMouseState(x.AsRef(), y.AsRef());
         for (var i = 0; i < 32; i++)
         {
             InputMarshal.SetButtonState(
@@ -37,7 +36,7 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse
         }
 
         var pos = new Vector2(x, y);
-        var bounds = backend.BoundedPointerTarget.Bounds;
+        var bounds = Backend.BoundedPointerTarget.Bounds;
         var min = new Vector2(bounds.Min.X, bounds.Min.Y);
         var max = new Vector2(bounds.Max.X, bounds.Max.Y);
         points
@@ -50,12 +49,10 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse
                     new Vector3((pos - min) / (max - min), 0),
                     default,
                     1.0f,
-                    backend.BoundedPointerTarget
+                    Backend.BoundedPointerTarget
                 )
             );
     }
-
-    public override IntPtr Id => HashCode.Combine(Backend.Id);
 
     public override string Name => $"{Backend.Name}: Shared/Global Mouse";
 

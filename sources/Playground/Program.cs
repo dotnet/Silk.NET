@@ -2,11 +2,12 @@
 
 using System.Runtime.InteropServices;
 using Silk.NET.Core;
+using Silk.NET.Input;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Surface = Silk.NET.Windowing.Surface;
 
-internal class MyApplication : ISurfaceApplication
+internal partial class InputTesting : ISurfaceApplication
 {
     public static void Initialize<TSurface>(TSurface surface)
         where TSurface : Surface
@@ -22,9 +23,11 @@ internal class MyApplication : ISurfaceApplication
         surface.OpenGL.Profile = OpenGLContextProfile.Core;
         surface.OpenGL.Version = new Version32(3, 3);
 
+
         var vbo = 0u;
         var vao = 0u;
         var prog = 0u;
+        InputContext? inputContext = null;
         surface.Created += _ =>
         {
             // Make the OpenGL context current, this will allow us to use GL static functions.
@@ -92,9 +95,15 @@ internal class MyApplication : ISurfaceApplication
             GL.DeleteShader(vert);
             GL.DeleteShader(frag);
             GL.UseProgram(prog);
+
+
+            inputContext = InitInput(surface);
+            inputContext.ConnectionChanged += OnInputConnectionChanged;
         };
         surface.Render += _ =>
         {
+            ExecuteInput(inputContext, surface);
+
             GL.Clear(ClearBufferMask.ColorBufferBit);
             GL.DrawArrays(PrimitiveType.Triangles, 0, 3);
         };
@@ -105,5 +114,5 @@ internal class MyApplication : ISurfaceApplication
         };
     }
 
-    public static void Main() => ISurfaceApplication.Run<MyApplication>();
+    public static void Main() => ISurfaceApplication.Run<InputTesting>();
 }

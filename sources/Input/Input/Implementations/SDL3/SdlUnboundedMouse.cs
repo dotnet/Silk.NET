@@ -7,11 +7,6 @@ namespace Silk.NET.Input.SDL3;
 
 internal class SdlUnboundedMouse : SdlDevice, IMouse
 {
-    public SdlUnboundedMouse(SdlInputBackend backend, uint mouseId)
-        : base(backend) { }
-
-    public override IntPtr Id => throw new NotImplementedException();
-
     public override string Name => throw new NotImplementedException();
 
     public MouseState State => throw new NotImplementedException();

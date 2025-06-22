@@ -91,7 +91,7 @@ internal class SdlSurface : Surface, IDisposable
 
         if (typeof(TPlatformInfo) == typeof(SdlPlatformInfo))
         {
-            info = (TPlatformInfo)(object)new SdlPlatformInfo(Impl.Handle);
+            info = (TPlatformInfo)(object)new SdlPlatformInfo(Impl.Handle, Sdl.Instance);
             return true;
         }
 

@@ -3,7 +3,7 @@
 
 namespace Silk.NET.Input.SDL3;
 
-internal abstract class SdlDevice(SdlInputBackend backend) : IInputDevice
+internal abstract unsafe class SdlDevice : IInputDevice
 {
     public bool Equals(IInputDevice? other) =>
         other?.GetType() == GetType()
@@ -11,7 +11,11 @@ internal abstract class SdlDevice(SdlInputBackend backend) : IInputDevice
         && other is SdlBoundedPointerDevice dev
         && dev.Backend.Sdl == Backend.Sdl;
 
-    public abstract IntPtr Id { get; }
+    public nint Id => Backend.AsSilkId(DeviceId);
+    public required uint DeviceId { get; init; }
+    public required SdlInputBackend Backend { get; init; }
+    public required void* DeviceHandle { get; init; }
     public abstract string Name { get; }
-    public SdlInputBackend Backend { get; } = backend;
+
+    public abstract void Initialize();
 }

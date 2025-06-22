@@ -8,10 +8,7 @@ namespace Silk.NET.Input.SDL3;
 /// <summary>
 /// A base class for SDL input devices that operate in terms of a window's or DWMs bounds.
 /// </summary>
-/// <param name="backend">The backend.</param>
-internal abstract class SdlBoundedPointerDevice(SdlInputBackend backend)
-    : SdlDevice(backend),
-        IPointerDevice
+internal abstract class SdlBoundedPointerDevice : SdlDevice, IPointerDevice
 {
     public abstract PointerState State { get; }
 

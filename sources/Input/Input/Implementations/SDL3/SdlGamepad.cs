@@ -8,7 +8,11 @@ namespace Silk.NET.Input.SDL3;
 
 internal class SdlGamepad : SdlDevice, IGamepad, IDisposable
 {
-    private readonly GamepadHandle _gamepad;
+    public SdlGamepad()
+    {
+
+    }
+    private unsafe GamepadHandle _gamepad => (GamepadHandle)DeviceHandle;
 
     private static JoystickButton? GetSilkButton(GamepadButton btn) =>
         btn switch
@@ -32,10 +36,10 @@ internal class SdlGamepad : SdlDevice, IGamepad, IDisposable
             _ => null,
         };
 
-    public SdlGamepad(SdlInputBackend backend, uint joystickId)
-        : base(backend)
+    public sealed override void Initialize()
     {
-        _gamepad = backend.Sdl.OpenGamepad(joystickId);
+        _gamepad = Backend.Sdl.OpenGamepad(joystickId);
+        var backend = Backend;
         if (_gamepad == nullptr)
         {
             backend.Sdl.ThrowError();
@@ -78,12 +82,9 @@ internal class SdlGamepad : SdlDevice, IGamepad, IDisposable
         State = new GamepadState(buttons.List.AsButtonList(), thumbsticks, triggers);
     }
 
-    // TODO this is not spec compliant, we need to use a physical device ID
-    public override unsafe nint Id => (nint)_gamepad.Handle;
-
     public override string Name => Backend.Sdl.GetGamepadName(_gamepad).ReadToString();
 
-    public GamepadState State { get; }
+    public GamepadState State { get; private set; } = null!;
 
     // TODO this entire API needs to be redesigned as right now this is literally only ever going to be useful if it's
     // just left or right. The original intention was that this would be useful for things like 3D haptics, but what did
