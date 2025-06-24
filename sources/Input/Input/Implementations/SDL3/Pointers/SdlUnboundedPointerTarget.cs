@@ -3,7 +3,7 @@
 
 using Silk.NET.Maths;
 
-namespace Silk.NET.Input.SDL3;
+namespace Silk.NET.Input.SDL3.Pointers;
 
 internal class SdlUnboundedPointerTarget(SdlInputBackend backend) : IPointerTarget
 {
@@ -20,17 +20,22 @@ internal class SdlUnboundedPointerTarget(SdlInputBackend backend) : IPointerTarg
 
     public int GetPointCount(IPointerDevice pointer)
     {
-        if (pointer is not SdlUnboundedMouse mouse)
+        if (pointer is not SdlDevice device)
         {
             return 0;
         }
 
-        if (mouse.Backend != backend)
+        if (pointer.State.Points.Count == 0)
         {
-            return mouse.Backend.UnboundedPointerTarget.GetPointCount(pointer);
+            return 0;
         }
 
-        return (mouse.Backend.Mode & CursorModes.Unbounded) != 0 ? 1 : 0;
+        if (device.Backend != backend)
+        {
+            return device.Backend.UnboundedPointerTarget.GetPointCount(pointer);
+        }
+
+        return (device.Backend.Mode & CursorModes.Unbounded) != 0 ? 1 : 0;
     }
 
     public TargetPoint GetPoint(IPointerDevice pointer, int point) =>

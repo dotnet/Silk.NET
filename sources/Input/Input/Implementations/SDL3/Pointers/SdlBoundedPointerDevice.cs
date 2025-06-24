@@ -3,13 +3,19 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-namespace Silk.NET.Input.SDL3;
+namespace Silk.NET.Input.SDL3.Pointers;
 
 /// <summary>
 /// A base class for SDL input devices that operate in terms of a window's or DWMs bounds.
 /// </summary>
 internal abstract class SdlBoundedPointerDevice : SdlDevice, IPointerDevice
 {
+    protected SdlBoundedPointerDevice(uint sdlDeviceId, SdlInputBackend backend, IReadOnlyList<IPointerTarget> targets, InputMarshal.ListOwner<TargetPoint> boundedPoints) : base(sdlDeviceId, backend)
+    {
+        Targets = targets;
+        BoundedPoints = boundedPoints;
+    }
+
     public abstract PointerState State { get; }
 
     [field: MaybeNull]

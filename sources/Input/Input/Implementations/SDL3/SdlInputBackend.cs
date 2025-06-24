@@ -4,6 +4,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using Silk.NET.Input.SDL3.Pointers;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
@@ -221,7 +222,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             {
                 var id = arg1.Kdevice.Which;
                 Debug.Assert(_devices.All(x => x.Id != AsSilkId(id)));
-                _ = GetOrCreateKeyboard(id);
+                _ = GetOrCreateDevice<SdlKeyboard>(id);
                 break;
             }
             case EventType.KeyboardRemoved:
@@ -387,37 +388,20 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             _devices.RemoveAt(deviceIdx);
         }
 
-        T GetOrCreateDevice<T>(uint id) where T : SdlDevice, new()
+        T GetOrCreateDevice<T>(uint id) where T : SdlDevice, ISdlDevice<T>
         {
             // If we already have a device with this ID, return it.
             for(var i = 0; i < _devices.Count; i++)
             {
-                if (_devices[i] is T typedDevice && typedDevice.DeviceId == id)
+                if (_devices[i] is T typedDevice && typedDevice.SdlDeviceId == id)
                 {
                     return typedDevice;
                 }
             }
 
-            var device = new T() { DeviceId = id, DeviceHandle =  , Backend = this};
+            var device = T.CreateDevice(this, id);
             _devices.Add(device);
             Console.WriteLine($"Gamepad added: (sdl ID: {id})");
-            return device;
-        }
-
-        SdlKeyboard GetOrCreateKeyboard(uint id)
-        {
-            // If we already have a device with this ID, return it.
-            for (var i = 0; i < _devices.Count; i++)
-            {
-                if (_devices[i] is SdlKeyboard keyboard && keyboard.DeviceId == id)
-                {
-                    return keyboard;
-                }
-            }
-
-            var device = new SdlKeyboard();
-            _devices.Add(device);
-            Console.WriteLine($"Keyboard added: (sdl ID: {id})");
             return device;
         }
     }

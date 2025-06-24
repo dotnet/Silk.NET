@@ -1,11 +1,10 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Numerics;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
-namespace Silk.NET.Input.SDL3;
+namespace Silk.NET.Input.SDL3.Pointers;
 
 internal class SdlBoundedPointerTarget(SdlInputBackend backend) : IPointerTarget
 {

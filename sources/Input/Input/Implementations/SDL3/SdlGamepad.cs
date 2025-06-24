@@ -6,13 +6,9 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlGamepad : SdlDevice, IGamepad, IDisposable
+internal sealed class SdlGamepad : SdlDevice, IGamepad, IDisposable, ISdlDevice<SdlGamepad>
 {
-    public SdlGamepad()
-    {
-
-    }
-    private unsafe GamepadHandle _gamepad => (GamepadHandle)DeviceHandle;
+    private readonly GamepadHandle _gamepad;
 
     private static JoystickButton? GetSilkButton(GamepadButton btn) =>
         btn switch
@@ -36,10 +32,9 @@ internal class SdlGamepad : SdlDevice, IGamepad, IDisposable
             _ => null,
         };
 
-    public sealed override void Initialize()
+    private SdlGamepad(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
     {
-        _gamepad = Backend.Sdl.OpenGamepad(joystickId);
-        var backend = Backend;
+        _gamepad = Backend.Sdl.OpenGamepad(sdlDeviceId);
         if (_gamepad == nullptr)
         {
             backend.Sdl.ThrowError();
@@ -82,6 +77,8 @@ internal class SdlGamepad : SdlDevice, IGamepad, IDisposable
         State = new GamepadState(buttons.List.AsButtonList(), thumbsticks, triggers);
     }
 
+    public override unsafe void* DeviceHandle => _gamepad.Handle;
+
     public override string Name => Backend.Sdl.GetGamepadName(_gamepad).ReadToString();
 
     public GamepadState State { get; private set; } = null!;
@@ -120,6 +117,11 @@ internal class SdlGamepad : SdlDevice, IGamepad, IDisposable
     {
         ReleaseUnmanagedResources();
         GC.SuppressFinalize(this);
+    }
+
+    public static SdlGamepad CreateDevice(SdlInputBackend backend, uint sdlDeviceId)
+    {
+        throw new NotImplementedException();
     }
 
     ~SdlGamepad() => ReleaseUnmanagedResources();

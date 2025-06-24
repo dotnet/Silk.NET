@@ -3,10 +3,16 @@
 
 using System.Numerics;
 
-namespace Silk.NET.Input.SDL3;
+namespace Silk.NET.Input.SDL3.Pointers;
 
 internal class SdlUnboundedMouse : SdlDevice, IMouse
 {
+    public SdlUnboundedMouse(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
+    {
+    }
+
+    public override unsafe void* DeviceHandle => throw new NotImplementedException();
+
     public override string Name => throw new NotImplementedException();
 
     public MouseState State => throw new NotImplementedException();

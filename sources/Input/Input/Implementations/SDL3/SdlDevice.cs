@@ -1,21 +1,40 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+
+using Silk.NET.Input.SDL3.Pointers;
+
 namespace Silk.NET.Input.SDL3;
 
+/// <summary>
+/// A base class for all SDL input devices.
+/// </summary>
 internal abstract unsafe class SdlDevice : IInputDevice
 {
-    public bool Equals(IInputDevice? other) =>
+    bool IEquatable<IInputDevice>.Equals(IInputDevice? other) =>
         other?.GetType() == GetType()
         && other.Id == Id
         && other is SdlBoundedPointerDevice dev
         && dev.Backend.Sdl == Backend.Sdl;
 
-    public nint Id => Backend.AsSilkId(DeviceId);
-    public required uint DeviceId { get; init; }
-    public required SdlInputBackend Backend { get; init; }
-    public required void* DeviceHandle { get; init; }
+    public nint Id => Backend.AsSilkId(SdlDeviceId);
+    public uint SdlDeviceId { get; }
+    public SdlInputBackend Backend { get; }
+    public abstract void* DeviceHandle { get; }
     public abstract string Name { get; }
 
-    public abstract void Initialize();
+    public SdlDevice(uint sdlDeviceId, SdlInputBackend backend)
+    {
+        Backend = backend;
+        SdlDeviceId = sdlDeviceId;
+    }
+}
+
+/// <summary>
+/// An interface defining a generic constructor for managed SDL devices.
+/// </summary>
+/// <typeparam name="T"></typeparam>
+internal interface ISdlDevice<out T> : IInputDevice where T : SdlDevice
+{
+    public static abstract T CreateDevice(SdlInputBackend backend, uint sdlDeviceId);
 }

@@ -7,8 +7,16 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlKeyboard : SdlDevice, IKeyboard
+internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 {
+    public SdlKeyboard(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
+    {
+    }
+
+    public override unsafe void* DeviceHandle => throw new NotImplementedException();
+
+    public static SdlKeyboard CreateDevice(SdlInputBackend backend, uint sdlDeviceId) => throw new NotImplementedException();
+
     public override string Name
     {
         get

@@ -3,13 +3,14 @@
 
 using System.Numerics;
 
-namespace Silk.NET.Input.SDL3;
+namespace Silk.NET.Input.SDL3.Pointers;
 
-internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse
+internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlSharedMouse>
 {
     private readonly MouseState _state;
 
-    public override void Initialize()
+    public SdlSharedMouse(uint sdlDeviceId, SdlInputBackend backend, IReadOnlyList<IPointerTarget> targets, InputMarshal.ListOwner<TargetPoint> boundedPoints)
+        : base(sdlDeviceId, backend, targets, boundedPoints)
     {
         var buttons = InputMarshal.CreateList<Button<PointerButton>>(32);
         var points = InputMarshal.CreateList<TargetPoint>(1);
@@ -53,6 +54,10 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse
                 )
             );
     }
+
+    public override unsafe void* DeviceHandle => throw new NotImplementedException();
+
+    public static SdlSharedMouse CreateDevice(SdlInputBackend backend, uint sdlDeviceId) => throw new NotImplementedException();
 
     public override string Name => $"{Backend.Name}: Shared/Global Mouse";
 
