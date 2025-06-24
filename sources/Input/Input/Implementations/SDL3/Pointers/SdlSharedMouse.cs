@@ -55,8 +55,6 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
             );
     }
 
-    public override unsafe void* DeviceHandle => throw new NotImplementedException();
-
     public static SdlSharedMouse CreateDevice(SdlInputBackend backend, uint sdlDeviceId) => throw new NotImplementedException();
 
     public override string Name => $"{Backend.Name}: Shared/Global Mouse";

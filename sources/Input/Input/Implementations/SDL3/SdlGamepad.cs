@@ -34,7 +34,7 @@ internal sealed class SdlGamepad : SdlDevice, IGamepad, IDisposable, ISdlDevice<
 
     private SdlGamepad(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
     {
-        _gamepad = Backend.Sdl.OpenGamepad(sdlDeviceId);
+        _gamepad = backend.Sdl.OpenGamepad(sdlDeviceId);
         if (_gamepad == nullptr)
         {
             backend.Sdl.ThrowError();
@@ -77,11 +77,9 @@ internal sealed class SdlGamepad : SdlDevice, IGamepad, IDisposable, ISdlDevice<
         State = new GamepadState(buttons.List.AsButtonList(), thumbsticks, triggers);
     }
 
-    public override unsafe void* DeviceHandle => _gamepad.Handle;
+    public GamepadState State { get; }
 
-    public override string Name => Backend.Sdl.GetGamepadName(_gamepad).ReadToString();
-
-    public GamepadState State { get; private set; } = null!;
+    public override string Name => Backend.Sdl.GetGamepadNameForID(SdlDeviceId).ReadToString();
 
     // TODO this entire API needs to be redesigned as right now this is literally only ever going to be useful if it's
     // just left or right. The original intention was that this would be useful for things like 3D haptics, but what did

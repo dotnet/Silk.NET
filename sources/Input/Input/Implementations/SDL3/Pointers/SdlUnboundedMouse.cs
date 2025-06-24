@@ -11,11 +11,9 @@ internal class SdlUnboundedMouse : SdlDevice, IMouse
     {
     }
 
-    public override unsafe void* DeviceHandle => throw new NotImplementedException();
-
-    public override string Name => throw new NotImplementedException();
 
     public MouseState State => throw new NotImplementedException();
+    public override string Name => Backend.Sdl.GetMouseNameForID(SdlDeviceId).ReadToString();
 
     public ICursorConfiguration Cursor => Backend;
 

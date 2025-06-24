@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 
+using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.Pointers;
 
 namespace Silk.NET.Input.SDL3;
@@ -20,8 +21,17 @@ internal abstract unsafe class SdlDevice : IInputDevice
     public nint Id => Backend.AsSilkId(SdlDeviceId);
     public uint SdlDeviceId { get; }
     public SdlInputBackend Backend { get; }
-    public abstract void* DeviceHandle { get; }
+
     public abstract string Name { get; }
+    /*{
+        {
+            var namePtr = _sdlNameFunc(SdlDeviceId);
+            ref var casted = ref Unsafe.As<sbyte,byte>(ref namePtr[0]);
+            var marshalled = SilkMarshal.NativeToString(ref casted);
+            return marshalled ?? "Unknown Sdl Keyboard";
+        }
+    }*/
+
 
     public SdlDevice(uint sdlDeviceId, SdlInputBackend backend)
     {

@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
@@ -13,23 +12,11 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
     {
     }
 
-    public override unsafe void* DeviceHandle => throw new NotImplementedException();
-
     public static SdlKeyboard CreateDevice(SdlInputBackend backend, uint sdlDeviceId) => throw new NotImplementedException();
-
-    public override string Name
-    {
-        get
-        {
-            var namePtr = Backend.Sdl.GetKeyboardNameForID(Backend.AsSdlId(Id));
-            ref var casted = ref Unsafe.As<sbyte,byte>(ref namePtr[0]);
-            var marshalled = SilkMarshal.NativeToString(ref casted);
-            return marshalled ?? "Unknown Sdl Keyboard";
-        }
-    }
 
     public KeyboardState State { get; } = new ();
 
+    public override string Name => Backend.Sdl.GetKeyboardNameForID(SdlDeviceId).ReadToString();
     public string? ClipboardText
     {
         get
