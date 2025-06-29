@@ -77,6 +77,8 @@ internal sealed class SdlGamepad : SdlDevice, IGamepad, IDisposable, ISdlDevice<
         State = new GamepadState(buttons.List.AsButtonList(), thumbsticks, triggers);
     }
 
+    public override void Release() => Backend.Sdl.CloseGamepad(_gamepad);
+
     public GamepadState State { get; }
 
     public override string Name => Backend.Sdl.GetGamepadNameForID(SdlDeviceId).ReadToString();

@@ -34,4 +34,9 @@ internal abstract class SdlBoundedPointerDevice : SdlDevice, IPointerDevice
     // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
     public InputMarshal.ListOwner<TargetPoint> BoundedPoints =>
         field.List.Data is null ? field = InputMarshal.CreateList<TargetPoint>() : field;
+
+    public sealed override void Release()
+    {
+
+    }
 }

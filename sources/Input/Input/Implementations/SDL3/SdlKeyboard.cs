@@ -8,13 +8,22 @@ namespace Silk.NET.Input.SDL3;
 
 internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 {
-    public SdlKeyboard(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
+    private readonly List<Button<KeyName>> _keyStates;
+    public unsafe SdlKeyboard(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
     {
+        _keyStates = new List<Button<KeyName>>((int)Scancode.ScancodeCount);
+        for (var i = 0; i < 512; i++)
+        {
+            _keyStates.Add(new Button<KeyName>((KeyName)i, false, 0f));
+        }
+
+        State = new KeyboardState(_keyStates, () => false, () => false);// todo : how do i get the num lock/capslock?
     }
 
     public static SdlKeyboard CreateDevice(SdlInputBackend backend, uint sdlDeviceId) => throw new NotImplementedException();
 
-    public KeyboardState State { get; } = new ();
+    public KeyboardState State { get; }
+    public override void Release() {} // empty?
 
     public override string Name => Backend.Sdl.GetKeyboardNameForID(SdlDeviceId).ReadToString();
     public string? ClipboardText
@@ -36,4 +45,10 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
     public void BeginInput() => throw new NotImplementedException();
 
     public string? EndInput() => throw new NotImplementedException();
+
+    public void AddKeyEvent(EventType type, KeyboardEvent key)
+    {
+        const float fraction = 1f / 255f;
+        _keyStates[(int)key.Key] = new Button<KeyName>((KeyName)key.Key, key.Down != 0, key.Down * fraction);
+    }
 }

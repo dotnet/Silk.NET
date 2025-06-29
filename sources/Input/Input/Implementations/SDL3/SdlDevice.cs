@@ -33,11 +33,13 @@ internal abstract unsafe class SdlDevice : IInputDevice
     }*/
 
 
-    public SdlDevice(uint sdlDeviceId, SdlInputBackend backend)
+    protected SdlDevice(uint sdlDeviceId, SdlInputBackend backend)
     {
         Backend = backend;
         SdlDeviceId = sdlDeviceId;
     }
+
+    public abstract void Release();
 }
 
 /// <summary>

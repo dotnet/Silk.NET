@@ -3,15 +3,20 @@
 
 namespace Silk.NET.Input.SDL3.Pointers;
 
-internal class SdlTouchScreen : IPointerDevice
+internal class SdlTouchScreen : SdlDevice, ISdlDevice<SdlTouchScreen>, IPointerDevice
 {
+    public static SdlTouchScreen CreateDevice(SdlInputBackend backend, uint sdlDeviceId) => throw new NotImplementedException();
+
     public bool Equals(IInputDevice? other) => throw new NotImplementedException();
 
-    public IntPtr Id => throw new NotImplementedException();
-
-    public string Name => throw new NotImplementedException();
+    public override string Name => throw new NotImplementedException();
+    public override void Release() => throw new NotImplementedException();
 
     public PointerState State => throw new NotImplementedException();
 
     public IReadOnlyList<IPointerTarget> Targets => throw new NotImplementedException();
+
+    public SdlTouchScreen(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
+    {
+    }
 }

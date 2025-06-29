@@ -16,7 +16,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
 
     private bool _pumped;
     private long _epoch;
-    private List<IInputDevice> _devices = [];
+    private List<SdlDevice> _devices = [];
     private readonly EventQueue _pumpedEvents = new();
     private WindowHandle _focusedWindow;
     private ISdl _sdl;
@@ -174,10 +174,16 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
         _pumped = false;
         if (handler == null)
         {
+            _pumpedEvents.Clear();
             return;
         }
 
         // process all events that have been queued?
+
+        while (_pumpedEvents.TryDequeue(out var evt))
+        {
+            ProcessEvent(ref evt, handler);
+        }
     }
 
     private enum QueuedEventType : byte
@@ -211,7 +217,10 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
 
     private void ProcessEvent(ref Event arg1, IInputHandler handler)
     {
-         var timestamp = GetTimestamp(ref arg1);
+        var timestamp = GetTimestamp(ref arg1);
+        Debug.Assert(timestamp >= _previousTimestamp, "Events out of order");
+        _previousTimestamp = timestamp;
+
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         switch ((EventType)arg1.Common.Type)
         {
@@ -261,9 +270,17 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
 
             //  Input events ----------------------------------------------------------
             case EventType.KeyDown:
+            {
+                var keyboard = GetOrCreateDevice<SdlKeyboard>(arg1.Key.Which);
+                keyboard.AddKeyEvent(EventType.KeyDown, arg1.Key);
                 break;
+            }
             case EventType.KeyUp:
+            {
+                var keyboard = GetOrCreateDevice<SdlKeyboard>(arg1.Key.Which);
+                keyboard.AddKeyEvent(EventType.KeyUp, arg1.Key);
                 break;
+            }
 
             case EventType.JoystickAxisMotion:
                 break;
@@ -356,7 +373,8 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                     );
                 break;
             }
-            case EventType.WindowMouseLeave: // do we need to do anything? we should probably track the current window of the pointer
+            case EventType.WindowMouseLeave
+                : // do we need to do anything? we should probably track the current window of the pointer
             {
                 var x = (QueuedEventType.MouseExitedWindow, timestamp);
                 break;
@@ -385,13 +403,15 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             if (deviceIdx == -1)
                 return; // we never used this device to begin with, so just ignore its removal
 
+            var device = _devices[deviceIdx];
+            device.Release();
             _devices.RemoveAt(deviceIdx);
         }
 
         T GetOrCreateDevice<T>(uint id) where T : SdlDevice, ISdlDevice<T>
         {
             // If we already have a device with this ID, return it.
-            for(var i = 0; i < _devices.Count; i++)
+            for (var i = 0; i < _devices.Count; i++)
             {
                 if (_devices[i] is T typedDevice && typedDevice.SdlDeviceId == id)
                 {
@@ -412,10 +432,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
     /// <param name="which"></param>
     /// <returns></returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public nint AsSilkId(uint which)
-    {
-        return Id + Unsafe.As<uint, nint>(ref which) + 1;
-    }
+    public nint AsSilkId(uint which) => Id + Unsafe.As<uint, nint>(ref which) + 1;
 
     /// <summary>
     /// Reverts the process of <see cref="AsSilkId(uint)"/> to get the original SDL id.
@@ -423,10 +440,9 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
     /// <param name="id"></param>
     /// <returns></returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public uint AsSdlId(nint id)
-    {
-        return (uint)(id - Id - 1);
-    }
+    public uint AsSdlId(nint id) => (uint)(id - Id - 1);
+
+    private ulong _previousTimestamp = ulong.MinValue;
 
     private unsafe void ReleaseUnmanagedResources()
     {
@@ -449,5 +465,11 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
     {
         private readonly Queue<Event> _events = new(1024);
         public void Add(ref Event p0) => _events.Enqueue(p0);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool TryDequeue(out Event p0) => _events.TryDequeue(out p0);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void Clear() => _events.Clear();
     }
 }

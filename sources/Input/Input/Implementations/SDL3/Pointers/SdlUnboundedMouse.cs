@@ -20,4 +20,9 @@ internal class SdlUnboundedMouse : SdlDevice, IMouse
     public bool TrySetPosition(Vector2 position) => throw new NotImplementedException();
 
     public IReadOnlyList<IPointerTarget> Targets => throw new NotImplementedException();
+
+    public override void Release()
+    {
+        // nothing?
+    }
 }
