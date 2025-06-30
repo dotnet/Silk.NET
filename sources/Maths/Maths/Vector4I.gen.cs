@@ -54,22 +54,22 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Gets a vector whose 4 elements are equal to one.</summary>
-        public static Vector4I<T> One => new(Scalar<T>.One);
+        public static Vector4I<T> One => new(T.One);
 
         /// <summary>Returns a vector whose 4 elements are equal to zero.</summary>
         public static Vector4I<T> Zero => default;
 
         /// <summary>Gets the vector (1, 0, 0, 0).</summary>
-        public static Vector4I<T> UnitX => new(Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero);
+        public static Vector4I<T> UnitX => new(T.One, T.Zero, T.Zero, T.Zero);
 
         /// <summary>Gets the vector (0, 1, 0, 0).</summary>
-        public static Vector4I<T> UnitY => new(Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero);
+        public static Vector4I<T> UnitY => new(T.Zero, T.One, T.Zero, T.Zero);
 
         /// <summary>Gets the vector (0, 0, 1, 0).</summary>
-        public static Vector4I<T> UnitZ => new(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero);
+        public static Vector4I<T> UnitZ => new(T.Zero, T.Zero, T.One, T.Zero);
 
         /// <summary>Gets the vector (0, 0, 0, 1).</summary>
-        public static Vector4I<T> UnitW => new(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
+        public static Vector4I<T> UnitW => new(T.Zero, T.Zero, T.Zero, T.One);
 
         /// <summary>Gets a vector with all bits set for each component.</summary>
         public static Vector4I<T> AllBitsSet => new Vector4I<T>(T.AllBitsSet, T.AllBitsSet, T.AllBitsSet, T.AllBitsSet);
@@ -379,44 +379,65 @@ namespace Silk.NET.Maths
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(X, Y, Z, W);
 
+        /// <summary>Desconstructs a vector into its components.</summary>
+        /// <param name="x">The X component.</param>
+        /// <param name="y">The Y component.</param>
+        /// <param name="z">The Z component.</param>
+        /// <param name="w">The W component.</param>
+        public void Deconstruct(out T x, out T y, out T z, out T w)
+        {
+            x = X;
+            y = Y;
+            z = Z;
+            w = W;
+        }
+
+        /// <summary>Implicitly casts a <see cref="ValueTuple{T, T, T, T}"/> to a <see cref="Vector4I{T}"/>.</summary>
+        public static implicit operator Vector4I<T>((T X, T Y, T Z, T W) v) =>
+            new(v.X, v.Y, v.Z, v.W);
+
+        /// <summary>Implicitly casts a <see cref="Vector4I{T}"/> to a <see cref="ValueTuple{T, T, T, T}"/>.</summary>
+        public static implicit operator (T X, T Y, T Z, T W)(Vector4I<T> v) =>
+            (v.X, v.Y, v.Z, v.W);
+
         public static Vector4I<T> operator +(Vector4I<T> vector) =>
             vector;
 
         public static Vector4I<T> operator -(Vector4I<T> vector) =>
-            new Vector4I<T>(-vector.X, -vector.Y, -vector.Z, -vector.W);
+            new(-vector.X, -vector.Y, -vector.Z, -vector.W);
 
         public static Vector4I<T> operator +(Vector4I<T> left, Vector4I<T> right) =>
-            new Vector4I<T>(left.X + right.X, left.Y + right.Y, left.Z + right.Z, left.W + right.W);
+            new(left.X + right.X, left.Y + right.Y, left.Z + right.Z, left.W + right.W);
 
         public static Vector4I<T> operator -(Vector4I<T> left, Vector4I<T> right) =>
-            new Vector4I<T>(left.X - right.X, left.Y - right.Y, left.Z - right.Z, left.W - right.W);
+            new(left.X - right.X, left.Y - right.Y, left.Z - right.Z, left.W - right.W);
 
         public static Vector4I<T> operator *(Vector4I<T> left, Vector4I<T> right) =>
-            new Vector4I<T>(left.X * right.X, left.Y * right.Y, left.Z * right.Z, left.W * right.W);
+            new(left.X * right.X, left.Y * right.Y, left.Z * right.Z, left.W * right.W);
 
         public static Vector4I<T> operator /(Vector4I<T> left, Vector4I<T> right) =>
-            new Vector4I<T>(left.X / right.X, left.Y / right.Y, left.Z / right.Z, left.W / right.W);
+            new(left.X / right.X, left.Y / right.Y, left.Z / right.Z, left.W / right.W);
 
         public static Vector4I<T> operator %(Vector4I<T> left, Vector4I<T> right) =>
-            new Vector4I<T>(left.X % right.X, left.Y % right.Y, left.Z % right.Z, left.W % right.W);
+            new(left.X % right.X, left.Y % right.Y, left.Z % right.Z, left.W % right.W);
 
         public static Vector4I<T> operator +(Vector4I<T> vector, T scalar) =>
-            new Vector4I<T>(vector.X + scalar, vector.Y + scalar, vector.Z + scalar, vector.W + scalar);
+            new(vector.X + scalar, vector.Y + scalar, vector.Z + scalar, vector.W + scalar);
 
         public static Vector4I<T> operator -(Vector4I<T> vector, T scalar) =>
-            new Vector4I<T>(vector.X - scalar, vector.Y - scalar, vector.Z - scalar, vector.W - scalar);
+            new(vector.X - scalar, vector.Y - scalar, vector.Z - scalar, vector.W - scalar);
 
         public static Vector4I<T> operator *(Vector4I<T> vector, T scalar) =>
-            new Vector4I<T>(vector.X * scalar, vector.Y * scalar, vector.Z * scalar, vector.W * scalar);
+            new(vector.X * scalar, vector.Y * scalar, vector.Z * scalar, vector.W * scalar);
 
         public static Vector4I<T> operator *(T scalar, Vector4I<T> vector) =>
-            new Vector4I<T>(scalar * vector.X, scalar * vector.Y, scalar * vector.Z, scalar * vector.W);
+            new(scalar * vector.X, scalar * vector.Y, scalar * vector.Z, scalar * vector.W);
 
         public static Vector4I<T> operator /(Vector4I<T> vector, T scalar) =>
-            new Vector4I<T>(vector.X / scalar, vector.Y / scalar, vector.Z / scalar, vector.W / scalar);
+            new(vector.X / scalar, vector.Y / scalar, vector.Z / scalar, vector.W / scalar);
 
         public static Vector4I<T> operator %(Vector4I<T> vector, T scalar) =>
-            new Vector4I<T>(vector.X % scalar, vector.Y % scalar, vector.Z % scalar, vector.W % scalar);
+            new(vector.X % scalar, vector.Y % scalar, vector.Z % scalar, vector.W % scalar);
 
         public static Vector4I<T> operator ~(Vector4I<T> vector) =>
             new Vector4I<T>(~vector.X, ~vector.Y, ~vector.Z, ~vector.W);
@@ -464,56 +485,136 @@ namespace Silk.NET.Maths
             return vector - (normal * (dot + dot));
         }
 
-        public static Vector4I<TSelf> Log<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, ILogarithmicFunctions<TSelf> =>
-            new(TSelf.Log(x.X), TSelf.Log(x.Y), TSelf.Log(x.Z), TSelf.Log(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.Sign(TSelf)"/> to the provided arguments.</summary>
+        /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
+        public static Vector4I<int> Sign<TSelf>(this Vector4I<TSelf> value)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.Sign(value.X), TSelf.Sign(value.Y), TSelf.Sign(value.Z), TSelf.Sign(value.W));
 
-        public static Vector4I<TSelf> Log<TSelf>(this Vector4I<TSelf> x, Vector4I<TSelf> newBase)
-            where TSelf : IBinaryInteger<TSelf>, ILogarithmicFunctions<TSelf> =>
-            new(TSelf.Log(x.X, newBase.X), TSelf.Log(x.Y, newBase.Y), TSelf.Log(x.Z, newBase.Z), TSelf.Log(x.W, newBase.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.Max(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> Max<TSelf>(this Vector4I<TSelf> x, Vector4I<TSelf> y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.Max(x.X, y.X), TSelf.Max(x.Y, y.Y), TSelf.Max(x.Z, y.Z), TSelf.Max(x.W, y.W));
 
-        public static Vector4I<TSelf> LogP1<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, ILogarithmicFunctions<TSelf> =>
-            new(TSelf.LogP1(x.X), TSelf.LogP1(x.Y), TSelf.LogP1(x.Z), TSelf.LogP1(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.Max(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A single value provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> Max<TSelf>(this Vector4I<TSelf> x, TSelf y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.Max(x.X, y), TSelf.Max(x.Y, y), TSelf.Max(x.Z, y), TSelf.Max(x.W, y));
 
-        public static Vector4I<TSelf> Log2<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, ILogarithmicFunctions<TSelf> =>
-            new(TSelf.Log2(x.X), TSelf.Log2(x.Y), TSelf.Log2(x.Z), TSelf.Log2(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.MaxNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> MaxNumber<TSelf>(this Vector4I<TSelf> x, Vector4I<TSelf> y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.MaxNumber(x.X, y.X), TSelf.MaxNumber(x.Y, y.Y), TSelf.MaxNumber(x.Z, y.Z), TSelf.MaxNumber(x.W, y.W));
 
-        public static Vector4I<TSelf> Log2P1<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, ILogarithmicFunctions<TSelf> =>
-            new(TSelf.Log2P1(x.X), TSelf.Log2P1(x.Y), TSelf.Log2P1(x.Z), TSelf.Log2P1(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.MaxNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A single value provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> MaxNumber<TSelf>(this Vector4I<TSelf> x, TSelf y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.MaxNumber(x.X, y), TSelf.MaxNumber(x.Y, y), TSelf.MaxNumber(x.Z, y), TSelf.MaxNumber(x.W, y));
 
-        public static Vector4I<TSelf> Log10<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, ILogarithmicFunctions<TSelf> =>
-            new(TSelf.Log10(x.X), TSelf.Log10(x.Y), TSelf.Log10(x.Z), TSelf.Log10(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.Min(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> Min<TSelf>(this Vector4I<TSelf> x, Vector4I<TSelf> y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.Min(x.X, y.X), TSelf.Min(x.Y, y.Y), TSelf.Min(x.Z, y.Z), TSelf.Min(x.W, y.W));
 
-        public static Vector4I<TSelf> Log10P1<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, ILogarithmicFunctions<TSelf> =>
-            new(TSelf.Log10P1(x.X), TSelf.Log10P1(x.Y), TSelf.Log10P1(x.Z), TSelf.Log10P1(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.Min(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A single value provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> Min<TSelf>(this Vector4I<TSelf> x, TSelf y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.Min(x.X, y), TSelf.Min(x.Y, y), TSelf.Min(x.Z, y), TSelf.Min(x.W, y));
 
-        public static Vector4I<TSelf> Exp<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, IExponentialFunctions<TSelf> =>
-            new(TSelf.Exp(x.X), TSelf.Exp(x.Y), TSelf.Exp(x.Z), TSelf.Exp(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.MinNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> MinNumber<TSelf>(this Vector4I<TSelf> x, Vector4I<TSelf> y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.MinNumber(x.X, y.X), TSelf.MinNumber(x.Y, y.Y), TSelf.MinNumber(x.Z, y.Z), TSelf.MinNumber(x.W, y.W));
 
-        public static Vector4I<TSelf> ExpM1<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, IExponentialFunctions<TSelf> =>
-            new(TSelf.ExpM1(x.X), TSelf.ExpM1(x.Y), TSelf.ExpM1(x.Z), TSelf.ExpM1(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.MinNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A single value provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> MinNumber<TSelf>(this Vector4I<TSelf> x, TSelf y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.MinNumber(x.X, y), TSelf.MinNumber(x.Y, y), TSelf.MinNumber(x.Z, y), TSelf.MinNumber(x.W, y));
 
-        public static Vector4I<TSelf> Exp2<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, IExponentialFunctions<TSelf> =>
-            new(TSelf.Exp2(x.X), TSelf.Exp2(x.Y), TSelf.Exp2(x.Z), TSelf.Exp2(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.Clamp(TSelf, TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
+        /// <param name="min">A vector whose members will be provided for <parameref name="min"/>.</param>
+        /// <param name="max">A vector whose members will be provided for <parameref name="max"/>.</param>
+        public static Vector4I<TSelf> Clamp<TSelf>(this Vector4I<TSelf> value, Vector4I<TSelf> min, Vector4I<TSelf> max)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.Clamp(value.X, min.X, max.X), TSelf.Clamp(value.Y, min.Y, max.Y), TSelf.Clamp(value.Z, min.Z, max.Z), TSelf.Clamp(value.W, min.W, max.W));
 
-        public static Vector4I<TSelf> Exp2M1<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, IExponentialFunctions<TSelf> =>
-            new(TSelf.Exp2M1(x.X), TSelf.Exp2M1(x.Y), TSelf.Exp2M1(x.Z), TSelf.Exp2M1(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.Clamp(TSelf, TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
+        /// <param name="min">A single value provided for <parameref name="min"/>.</param>
+        /// <param name="max">A single value provided for <parameref name="max"/>.</param>
+        public static Vector4I<TSelf> Clamp<TSelf>(this Vector4I<TSelf> value, TSelf min, TSelf max)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.Clamp(value.X, min, max), TSelf.Clamp(value.Y, min, max), TSelf.Clamp(value.Z, min, max), TSelf.Clamp(value.W, min, max));
 
-        public static Vector4I<TSelf> Exp10<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, IExponentialFunctions<TSelf> =>
-            new(TSelf.Exp10(x.X), TSelf.Exp10(x.Y), TSelf.Exp10(x.Z), TSelf.Exp10(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.CopySign(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
+        /// <param name="sign">A vector whose members will be provided for <parameref name="sign"/>.</param>
+        public static Vector4I<TSelf> CopySign<TSelf>(this Vector4I<TSelf> value, Vector4I<TSelf> sign)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.CopySign(value.X, sign.X), TSelf.CopySign(value.Y, sign.Y), TSelf.CopySign(value.Z, sign.Z), TSelf.CopySign(value.W, sign.W));
 
-        public static Vector4I<TSelf> Exp10M1<TSelf>(this Vector4I<TSelf> x)
-            where TSelf : IBinaryInteger<TSelf>, IExponentialFunctions<TSelf> =>
-            new(TSelf.Exp10M1(x.X), TSelf.Exp10M1(x.Y), TSelf.Exp10M1(x.Z), TSelf.Exp10M1(x.W));
+        /// <summary>Applies <see cref="INumber{TSelf}.CopySign(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
+        /// <param name="sign">A single value provided for <parameref name="sign"/>.</param>
+        public static Vector4I<TSelf> CopySign<TSelf>(this Vector4I<TSelf> value, TSelf sign)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.CopySign(value.X, sign), TSelf.CopySign(value.Y, sign), TSelf.CopySign(value.Z, sign), TSelf.CopySign(value.W, sign));
+
+        /// <summary>Applies <see cref="INumberBase{TSelf}.Abs(TSelf)"/> to the provided arguments.</summary>
+        /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
+        public static Vector4I<TSelf> Abs<TSelf>(this Vector4I<TSelf> value)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.Abs(value.X), TSelf.Abs(value.Y), TSelf.Abs(value.Z), TSelf.Abs(value.W));
+
+        /// <summary>Applies <see cref="INumberBase{TSelf}.MaxMagnitude(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> MaxMagnitude<TSelf>(this Vector4I<TSelf> x, Vector4I<TSelf> y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.MaxMagnitude(x.X, y.X), TSelf.MaxMagnitude(x.Y, y.Y), TSelf.MaxMagnitude(x.Z, y.Z), TSelf.MaxMagnitude(x.W, y.W));
+
+        /// <summary>Applies <see cref="INumberBase{TSelf}.MaxMagnitudeNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> MaxMagnitudeNumber<TSelf>(this Vector4I<TSelf> x, Vector4I<TSelf> y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.MaxMagnitudeNumber(x.X, y.X), TSelf.MaxMagnitudeNumber(x.Y, y.Y), TSelf.MaxMagnitudeNumber(x.Z, y.Z), TSelf.MaxMagnitudeNumber(x.W, y.W));
+
+        /// <summary>Applies <see cref="INumberBase{TSelf}.MinMagnitude(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> MinMagnitude<TSelf>(this Vector4I<TSelf> x, Vector4I<TSelf> y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.MinMagnitude(x.X, y.X), TSelf.MinMagnitude(x.Y, y.Y), TSelf.MinMagnitude(x.Z, y.Z), TSelf.MinMagnitude(x.W, y.W));
+
+        /// <summary>Applies <see cref="INumberBase{TSelf}.MinMagnitudeNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
+        public static Vector4I<TSelf> MinMagnitudeNumber<TSelf>(this Vector4I<TSelf> x, Vector4I<TSelf> y)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.MinMagnitudeNumber(x.X, y.X), TSelf.MinMagnitudeNumber(x.Y, y.Y), TSelf.MinMagnitudeNumber(x.Z, y.Z), TSelf.MinMagnitudeNumber(x.W, y.W));
+
+        /// <summary>Applies <see cref="IBinaryNumber{TSelf}.Log2(TSelf)"/> to the provided arguments.</summary>
+        /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
+        public static Vector4I<TSelf> Log2<TSelf>(this Vector4I<TSelf> value)
+            where TSelf : IBinaryInteger<TSelf> =>
+            new(TSelf.Log2(value.X), TSelf.Log2(value.Y), TSelf.Log2(value.Z), TSelf.Log2(value.W));
     }
 }
