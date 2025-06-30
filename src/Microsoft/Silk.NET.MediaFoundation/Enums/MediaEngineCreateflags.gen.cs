@@ -11,7 +11,7 @@ namespace Silk.NET.MediaFoundation
 {
     [Flags]
     [NativeName("Name", "MF_MEDIA_ENGINE_CREATEFLAGS")]
-    public enum MediaEngineCreateflags : int
+    public enum MediaEngineCreateFlags : int
     {
         [NativeName("Name", "")]
         None = 0,

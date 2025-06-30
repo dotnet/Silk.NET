@@ -129,11 +129,11 @@ namespace Silk.NET.MediaFoundation
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetErrorCode(MediaEngineErr error)
+        public readonly int SetErrorCode(MediaEngineError error)
         {
             var @this = (IMFMediaError*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IMFMediaError*, MediaEngineErr, int>)@this->LpVtbl[5])(@this, error);
+            ret = ((delegate* unmanaged[Stdcall]<IMFMediaError*, MediaEngineError, int>)@this->LpVtbl[5])(@this, error);
             return ret;
         }
 

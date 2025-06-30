@@ -85,107 +85,107 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, char* keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, char* keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystem, pAnswer);
+        ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystem, pAnswer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, char* keySystem, ref MediaEngineCanplay pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, char* keySystem, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+        fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystem, pAnswerPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystem, pAnswerPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, ref char keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, ref char keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* keySystemPtr = &keySystem)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswer);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, ref char keySystem, ref MediaEngineCanplay pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, ref char keySystem, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* keySystemPtr = &keySystem)
         {
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswerPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-        ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswer);
+        ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswer);
         SilkMarshal.Free((nint)keySystemPtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanplay pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-        fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+        fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswerPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswerPtr);
         }
         SilkMarshal.Free((nint)keySystemPtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, char* keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, char* keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* typePtr = &type)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswer);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, char* keySystem, ref MediaEngineCanplay pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, char* keySystem, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* typePtr = &type)
         {
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswerPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, ref char keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, ref char keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -193,14 +193,14 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
         {
             fixed (char* keySystemPtr = &keySystem)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, ref char keySystem, ref MediaEngineCanplay pAnswer)
+    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, ref char keySystem, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -208,9 +208,9 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
         {
             fixed (char* keySystemPtr = &keySystem)
             {
-                fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+                fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
                 }
             }
         }
@@ -218,30 +218,30 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* typePtr = &type)
         {
         var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
         SilkMarshal.Free((nint)keySystemPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanplay pAnswer)
+    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, ref char type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* typePtr = &type)
         {
         var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
             }
         SilkMarshal.Free((nint)keySystemPtr);
         }
@@ -249,55 +249,55 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, char* keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, char* keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
-        ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswer);
+        ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswer);
         SilkMarshal.Free((nint)typePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, char* keySystem, ref MediaEngineCanplay pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, char* keySystem, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
-        fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+        fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswerPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswerPtr);
         }
         SilkMarshal.Free((nint)typePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref char keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref char keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
         fixed (char* keySystemPtr = &keySystem)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
         }
         SilkMarshal.Free((nint)typePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref char keySystem, ref MediaEngineCanplay pAnswer)
+    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref char keySystem, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
         fixed (char* keySystemPtr = &keySystem)
         {
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
             }
         }
         SilkMarshal.Free((nint)typePtr);
@@ -305,28 +305,28 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
         var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-        ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
+        ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
         SilkMarshal.Free((nint)keySystemPtr);
         SilkMarshal.Free((nint)typePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanplay pAnswer)
+    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
         var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-        fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+        fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
         }
         SilkMarshal.Free((nint)keySystemPtr);
         SilkMarshal.Free((nint)typePtr);
@@ -359,7 +359,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, char* keySystem, Span<MediaEngineCanplay> pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, char* keySystem, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -367,7 +367,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, Span<char> keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, Span<char> keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -375,7 +375,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, Span<char> keySystem, Span<MediaEngineCanplay> pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, Span<char> keySystem, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -383,7 +383,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, Span<MediaEngineCanplay> pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, char* type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -391,7 +391,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, char* keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, char* keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -399,7 +399,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, char* keySystem, Span<MediaEngineCanplay> pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, char* keySystem, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -407,7 +407,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, Span<char> keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, Span<char> keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -415,7 +415,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, Span<char> keySystem, Span<MediaEngineCanplay> pAnswer)
+    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, Span<char> keySystem, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -423,7 +423,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -431,7 +431,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, Span<MediaEngineCanplay> pAnswer)
+    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, Span<char> type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -439,7 +439,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, char* keySystem, Span<MediaEngineCanplay> pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, char* keySystem, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -447,7 +447,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, Span<char> keySystem, MediaEngineCanplay* pAnswer)
+    public static unsafe int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, Span<char> keySystem, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -455,7 +455,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, Span<char> keySystem, Span<MediaEngineCanplay> pAnswer)
+    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, Span<char> keySystem, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -463,7 +463,7 @@ public unsafe static class MFExtendedDRMTypeSupportVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, Span<MediaEngineCanplay> pAnswer)
+    public static int IsTypeSupportedEx(this ComPtr<IMFExtendedDRMTypeSupport> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

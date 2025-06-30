@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.MediaFoundation
 {
     [NativeName("Name", "MF_MEDIA_ENGINE_ERR")]
-    public enum MediaEngineErr : int
+    public enum MediaEngineError : int
     {
         [NativeName("Name", "MF_MEDIA_ENGINE_ERR_NOERROR")]
         Noerror = 0x0,

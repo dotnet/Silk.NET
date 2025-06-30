@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.MediaFoundation
 {
     [NativeName("Name", "MF_MEDIA_ENGINE_STREAMTYPE_FAILED")]
-    public enum MediaEngineStreamtypeFailed : int
+    public enum MediaEngineStreamTypeFailed : int
     {
         [NativeName("Name", "MF_MEDIA_ENGINE_STREAMTYPE_FAILED_UNKNOWN")]
         Unknown = 0x0,

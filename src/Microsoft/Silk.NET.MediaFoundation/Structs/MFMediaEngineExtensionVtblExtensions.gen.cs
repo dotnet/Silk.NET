@@ -85,73 +85,73 @@ public unsafe static class MFMediaEngineExtensionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, char* MimeType, MediaEngineCanplay* pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, char* MimeType, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeType, pAnswer);
+        ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeType, pAnswer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, char* MimeType, ref MediaEngineCanplay pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, char* MimeType, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+        fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeType, pAnswerPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeType, pAnswerPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, ref char MimeType, MediaEngineCanplay* pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, ref char MimeType, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* MimeTypePtr = &MimeType)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeTypePtr, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeTypePtr, pAnswer);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, ref char MimeType, ref MediaEngineCanplay pAnswer)
+    public static int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, ref char MimeType, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* MimeTypePtr = &MimeType)
         {
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeTypePtr, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeTypePtr, pAnswerPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string MimeType, MediaEngineCanplay* pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string MimeType, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var MimeTypePtr = (byte*) SilkMarshal.StringToPtr(MimeType, NativeStringEncoding.BStr);
-        ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeTypePtr, pAnswer);
+        ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeTypePtr, pAnswer);
         SilkMarshal.Free((nint)MimeTypePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string MimeType, ref MediaEngineCanplay pAnswer)
+    public static int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string MimeType, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var MimeTypePtr = (byte*) SilkMarshal.StringToPtr(MimeType, NativeStringEncoding.BStr);
-        fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+        fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeTypePtr, pAnswerPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineExtension*, Silk.NET.Core.Bool32, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, AudioOnly, MimeTypePtr, pAnswerPtr);
         }
         SilkMarshal.Free((nint)MimeTypePtr);
         return ret;
@@ -1052,7 +1052,7 @@ public unsafe static class MFMediaEngineExtensionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, char* MimeType, Span<MediaEngineCanplay> pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, char* MimeType, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1060,7 +1060,7 @@ public unsafe static class MFMediaEngineExtensionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, Span<char> MimeType, MediaEngineCanplay* pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, Span<char> MimeType, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1068,7 +1068,7 @@ public unsafe static class MFMediaEngineExtensionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, Span<char> MimeType, Span<MediaEngineCanplay> pAnswer)
+    public static int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, Span<char> MimeType, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1076,7 +1076,7 @@ public unsafe static class MFMediaEngineExtensionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string MimeType, Span<MediaEngineCanplay> pAnswer)
+    public static int CanPlayType(this ComPtr<IMFMediaEngineExtension> thisVtbl, Silk.NET.Core.Bool32 AudioOnly, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string MimeType, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

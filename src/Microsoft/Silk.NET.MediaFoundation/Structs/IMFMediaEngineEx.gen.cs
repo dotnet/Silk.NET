@@ -135,11 +135,11 @@ namespace Silk.NET.MediaFoundation
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetErrorCode(MediaEngineErr error)
+        public readonly int SetErrorCode(MediaEngineError error)
         {
             var @this = (IMFMediaEngineEx*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, MediaEngineErr, int>)@this->LpVtbl[4])(@this, error);
+            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, MediaEngineError, int>)@this->LpVtbl[4])(@this, error);
             return ret;
         }
 
@@ -275,73 +275,73 @@ namespace Silk.NET.MediaFoundation
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CanPlayType(char* type, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int CanPlayType(char* type, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFMediaEngineEx*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, type, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, type, pAnswer);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CanPlayType(char* type, ref MediaEngineCanplay pAnswer)
+        public readonly unsafe int CanPlayType(char* type, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFMediaEngineEx*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, type, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, type, pAnswerPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CanPlayType(ref char type, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int CanPlayType(ref char type, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFMediaEngineEx*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* typePtr = &type)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswer);
+                ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswer);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CanPlayType(ref char type, ref MediaEngineCanplay pAnswer)
+        public readonly int CanPlayType(ref char type, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFMediaEngineEx*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* typePtr = &type)
             {
-                fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+                fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswerPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswerPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CanPlayType([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int CanPlayType([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFMediaEngineEx*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
-            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswer);
             SilkMarshal.Free((nint)typePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CanPlayType([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref MediaEngineCanplay pAnswer)
+        public readonly int CanPlayType([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFMediaEngineEx*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswerPtr);
             }
             SilkMarshal.Free((nint)typePtr);
             return ret;

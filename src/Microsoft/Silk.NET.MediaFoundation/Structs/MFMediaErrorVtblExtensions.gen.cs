@@ -103,11 +103,11 @@ public unsafe static class MFMediaErrorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetErrorCode(this ComPtr<IMFMediaError> thisVtbl, MediaEngineErr error)
+    public static int SetErrorCode(this ComPtr<IMFMediaError> thisVtbl, MediaEngineError error)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IMFMediaError*, MediaEngineErr, int>)@this->LpVtbl[5])(@this, error);
+        ret = ((delegate* unmanaged[Stdcall]<IMFMediaError*, MediaEngineError, int>)@this->LpVtbl[5])(@this, error);
         return ret;
     }
 

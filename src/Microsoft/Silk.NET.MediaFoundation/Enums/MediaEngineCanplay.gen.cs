@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.MediaFoundation
 {
     [NativeName("Name", "MF_MEDIA_ENGINE_CANPLAY")]
-    public enum MediaEngineCanplay : int
+    public enum MediaEngineCanPlay : int
     {
         [NativeName("Name", "MF_MEDIA_ENGINE_CANPLAY_NOT_SUPPORTED")]
         NotSupported = 0x0,

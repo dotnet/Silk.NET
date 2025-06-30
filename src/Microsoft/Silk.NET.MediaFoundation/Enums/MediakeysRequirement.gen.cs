@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.MediaFoundation
 {
     [NativeName("Name", "MF_MEDIAKEYS_REQUIREMENT")]
-    public enum MediakeysRequirement : int
+    public enum MediaKeysRequirement : int
     {
         [NativeName("Name", "MF_MEDIAKEYS_REQUIREMENT_REQUIRED")]
         Required = 0x1,

@@ -106,11 +106,11 @@ public unsafe static class MFMediaEngineExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetErrorCode(this ComPtr<IMFMediaEngineEx> thisVtbl, MediaEngineErr error)
+    public static int SetErrorCode(this ComPtr<IMFMediaEngineEx> thisVtbl, MediaEngineError error)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, MediaEngineErr, int>)@this->LpVtbl[4])(@this, error);
+        ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, MediaEngineError, int>)@this->LpVtbl[4])(@this, error);
         return ret;
     }
 
@@ -246,73 +246,73 @@ public unsafe static class MFMediaEngineExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, char* type, MediaEngineCanplay* pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, char* type, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, type, pAnswer);
+        ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, type, pAnswer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, char* type, ref MediaEngineCanplay pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, char* type, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+        fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, type, pAnswerPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, type, pAnswerPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, ref char type, MediaEngineCanplay* pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, ref char type, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* typePtr = &type)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswer);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, ref char type, ref MediaEngineCanplay pAnswer)
+    public static int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, ref char type, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* typePtr = &type)
         {
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswerPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, MediaEngineCanplay* pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
-        ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswer);
+        ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswer);
         SilkMarshal.Free((nint)typePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref MediaEngineCanplay pAnswer)
+    public static int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref MediaEngineCanPlay pAnswer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
-        fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+        fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswerPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IMFMediaEngineEx*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[13])(@this, typePtr, pAnswerPtr);
         }
         SilkMarshal.Free((nint)typePtr);
         return ret;
@@ -1762,7 +1762,7 @@ public unsafe static class MFMediaEngineExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, char* type, Span<MediaEngineCanplay> pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, char* type, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1770,7 +1770,7 @@ public unsafe static class MFMediaEngineExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, Span<char> type, MediaEngineCanplay* pAnswer)
+    public static unsafe int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, Span<char> type, MediaEngineCanPlay* pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1778,7 +1778,7 @@ public unsafe static class MFMediaEngineExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, Span<char> type, Span<MediaEngineCanplay> pAnswer)
+    public static int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, Span<char> type, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1786,7 +1786,7 @@ public unsafe static class MFMediaEngineExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, Span<MediaEngineCanplay> pAnswer)
+    public static int CanPlayType(this ComPtr<IMFMediaEngineEx> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, Span<MediaEngineCanPlay> pAnswer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.MediaFoundation
 {
     [NativeName("Name", "_MF_MEDIA_ENGINE_KEYERR")]
-    public enum MediaEngineKeyerr : int
+    public enum MediaEngineKeyError : int
     {
         [NativeName("Name", "MF_MEDIAENGINE_KEYERR_UNKNOWN")]
         Unknown = 0x1,

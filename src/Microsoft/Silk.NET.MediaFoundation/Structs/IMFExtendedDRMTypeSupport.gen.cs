@@ -111,107 +111,107 @@ namespace Silk.NET.MediaFoundation
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx(char* type, char* keySystem, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int IsTypeSupportedEx(char* type, char* keySystem, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystem, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystem, pAnswer);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx(char* type, char* keySystem, ref MediaEngineCanplay pAnswer)
+        public readonly unsafe int IsTypeSupportedEx(char* type, char* keySystem, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystem, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystem, pAnswerPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx(char* type, ref char keySystem, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int IsTypeSupportedEx(char* type, ref char keySystem, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* keySystemPtr = &keySystem)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswer);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswer);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx(char* type, ref char keySystem, ref MediaEngineCanplay pAnswer)
+        public readonly unsafe int IsTypeSupportedEx(char* type, ref char keySystem, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* keySystemPtr = &keySystem)
             {
-                fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+                fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswerPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswerPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx(char* type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int IsTypeSupportedEx(char* type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswer);
             SilkMarshal.Free((nint)keySystemPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx(char* type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanplay pAnswer)
+        public readonly unsafe int IsTypeSupportedEx(char* type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, type, keySystemPtr, pAnswerPtr);
             }
             SilkMarshal.Free((nint)keySystemPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx(ref char type, char* keySystem, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int IsTypeSupportedEx(ref char type, char* keySystem, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* typePtr = &type)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswer);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswer);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx(ref char type, char* keySystem, ref MediaEngineCanplay pAnswer)
+        public readonly unsafe int IsTypeSupportedEx(ref char type, char* keySystem, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* typePtr = &type)
             {
-                fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+                fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswerPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswerPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx(ref char type, ref char keySystem, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int IsTypeSupportedEx(ref char type, ref char keySystem, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -219,14 +219,14 @@ namespace Silk.NET.MediaFoundation
             {
                 fixed (char* keySystemPtr = &keySystem)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
+                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsTypeSupportedEx(ref char type, ref char keySystem, ref MediaEngineCanplay pAnswer)
+        public readonly int IsTypeSupportedEx(ref char type, ref char keySystem, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -234,9 +234,9 @@ namespace Silk.NET.MediaFoundation
             {
                 fixed (char* keySystemPtr = &keySystem)
                 {
-                    fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+                    fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
                     }
                 }
             }
@@ -244,30 +244,30 @@ namespace Silk.NET.MediaFoundation
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx(ref char type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int IsTypeSupportedEx(ref char type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* typePtr = &type)
             {
             var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
             SilkMarshal.Free((nint)keySystemPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsTypeSupportedEx(ref char type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanplay pAnswer)
+        public readonly int IsTypeSupportedEx(ref char type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* typePtr = &type)
             {
             var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-                fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+                fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, char*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
                 }
             SilkMarshal.Free((nint)keySystemPtr);
             }
@@ -275,55 +275,55 @@ namespace Silk.NET.MediaFoundation
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, char* keySystem, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, char* keySystem, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswer);
             SilkMarshal.Free((nint)typePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, char* keySystem, ref MediaEngineCanplay pAnswer)
+        public readonly unsafe int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, char* keySystem, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystem, pAnswerPtr);
             }
             SilkMarshal.Free((nint)typePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref char keySystem, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref char keySystem, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
             fixed (char* keySystemPtr = &keySystem)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
             }
             SilkMarshal.Free((nint)typePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref char keySystem, ref MediaEngineCanplay pAnswer)
+        public readonly int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, ref char keySystem, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
             fixed (char* keySystemPtr = &keySystem)
             {
-                fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+                fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, char*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
                 }
             }
             SilkMarshal.Free((nint)typePtr);
@@ -331,28 +331,28 @@ namespace Silk.NET.MediaFoundation
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanplay* pAnswer)
+        public readonly unsafe int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, MediaEngineCanPlay* pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
             var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
+            ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswer);
             SilkMarshal.Free((nint)keySystemPtr);
             SilkMarshal.Free((nint)typePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanplay pAnswer)
+        public readonly int IsTypeSupportedEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.BStr)] string keySystem, ref MediaEngineCanPlay pAnswer)
         {
             var @this = (IMFExtendedDRMTypeSupport*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var typePtr = (byte*) SilkMarshal.StringToPtr(type, NativeStringEncoding.BStr);
             var keySystemPtr = (byte*) SilkMarshal.StringToPtr(keySystem, NativeStringEncoding.BStr);
-            fixed (MediaEngineCanplay* pAnswerPtr = &pAnswer)
+            fixed (MediaEngineCanPlay* pAnswerPtr = &pAnswer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, byte*, MediaEngineCanplay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IMFExtendedDRMTypeSupport*, byte*, byte*, MediaEngineCanPlay*, int>)@this->LpVtbl[3])(@this, typePtr, keySystemPtr, pAnswerPtr);
             }
             SilkMarshal.Free((nint)keySystemPtr);
             SilkMarshal.Free((nint)typePtr);
