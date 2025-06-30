@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
@@ -157,7 +158,7 @@ namespace Silk.NET.Maths
         /// <param name="anchor">The anchor.</param>
         /// <returns>The calculated box.</returns>
         public Box3D<T> GetScaled<TScale>(Vector3D<TScale> scale, Vector3D<T> anchor)
-            where TScale : unmanaged, IFormattable, IEquatable<TScale>, IComparable<TScale>
+            where TScale : INumberBase<TScale>
         {
             var convertedAnchor = anchor.As<TScale>();
             var min = (scale * (Min.As<TScale>() - convertedAnchor)) + convertedAnchor;
