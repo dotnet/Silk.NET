@@ -3,6 +3,7 @@
 
 using System;
 using System.Globalization;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
@@ -11,165 +12,13 @@ namespace Silk.NET.Maths
     /// <summary>A structure encapsulating a 2x4 matrix.</summary>
     [Serializable]
     [DataContract]
-    public struct Matrix2X4<T> : IEquatable<Matrix2X4<T>>
-        where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+    public partial struct Matrix2X4<T>
     {
         private static readonly Matrix2X4<T> _identity = new
         (
             Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero,
             Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero
         );
-
-        /// <summary>
-        /// Row 1 of the matrix.
-        /// </summary>
-        [IgnoreDataMember]
-        public Vector4D<T> Row1;
-
-        /// <summary>
-        /// Row 2 of the matrix.
-        /// </summary>
-        [IgnoreDataMember]
-        public Vector4D<T> Row2;
-
-        /// <summary>
-        /// Column 1 of the matrix.
-        /// </summary>
-        [IgnoreDataMember]
-        public Vector2D<T> Column1 => new(M11, M21);
-
-        /// <summary>
-        /// Column 2 of the matrix.
-        /// </summary>
-        [IgnoreDataMember]
-        public Vector2D<T> Column2 => new(M12, M22);
-
-        /// <summary>
-        /// Column 3 of the matrix.
-        /// </summary>
-        [IgnoreDataMember]
-        public Vector2D<T> Column3 => new(M13, M23);
-
-        /// <summary>
-        /// Column 4 of the matrix.
-        /// </summary>
-        [IgnoreDataMember]
-        public Vector2D<T> Column4 => new(M14, M24);
-
-        /// <summary>Value at row 1, column 1 of the matrix.</summary>
-        [DataMember]
-        public T M11
-        {
-            readonly get => Row1.X;
-            set => Row1.X = value;
-        }
-
-        /// <summary>Value at row 1, column 2 of the matrix.</summary>
-        [DataMember]
-        public T M12
-        {
-            readonly get => Row1.Y;
-            set => Row1.Y = value;
-        }
-
-        /// <summary>Value at row 1, column 3 of the matrix.</summary>
-        [DataMember]
-        public T M13
-        {
-            readonly get => Row1.Z;
-            set => Row1.Z = value;
-        }
-
-        /// <summary>Value at row 1, column 4 of the matrix.</summary>
-        [DataMember]
-        public T M14
-        {
-            readonly get => Row1.W;
-            set => Row1.W = value;
-        }
-
-        /// <summary>Value at row 2, column 1 of the matrix.</summary>
-        [DataMember]
-        public T M21
-        {
-            readonly get => Row2.X;
-            set => Row2.X = value;
-        }
-
-        /// <summary>Value at row 2, column 2 of the matrix.</summary>
-        [DataMember]
-        public T M22
-        {
-            readonly get => Row2.Y;
-            set => Row2.Y = value;
-        }
-
-        /// <summary>Value at row 2, column 3 of the matrix.</summary>
-        [DataMember]
-        public T M23
-        {
-            readonly get => Row2.Z;
-            set => Row2.Z = value;
-        }
-
-        /// <summary>Value at row 2, column 4 of the matrix.</summary>
-        [DataMember]
-        public T M24
-        {
-            readonly get => Row2.W;
-            set => Row2.W = value;
-        }
-
-        /// <summary>
-        /// Indexer for the rows of this matrix.
-        /// </summary>
-        /// <param name="x">The row to select. Zero based.</param>
-        public unsafe Vector4D<T> this[int x]
-        {
-            get
-            {
-                static void VerifyBounds(int i)
-                {
-                    static void ThrowHelper() => throw new IndexOutOfRangeException();
-
-                    if (i > 1 || i < 0)
-                        ThrowHelper();
-                }
-
-                VerifyBounds(x);
-                return Unsafe.Add(ref Row1, x);
-            }
-        }
-
-        /// <summary>
-        /// Indexer for the values in this matrix.
-        /// </summary>
-        /// <param name="x">The row to select. Zero based.</param>
-        /// <param name="j">The column to select. Zero based.</param>
-        public unsafe T this[int x, int j]
-        {
-            get
-            {
-                var row = this[x];
-                return row[j];
-            }
-        }
-
-        /// <summary>
-        /// Constructs a <see cref="Matrix2X4{T}"/> from the given rows
-        /// </summary>
-        public Matrix2X4(Vector4D<T> row1, Vector4D<T> row2)
-        {
-            Row1 = row1;
-            Row2 = row2;
-        }
-
-        /// <summary>Constructs a <see cref="Matrix2X4{T}"/> from the given components.</summary>
-        public Matrix2X4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24)
-        {
-            Row1 = new(m11, m12, m13, m14);
-            Row2 = new(m21, m22, m23, m24);
-        }
 
         /// <summary>Constructs a <see cref="Matrix2X4{T}"/> from the given <see cref="Matrix3X2{T}"/>.</summary>
         /// <param name="value">The source <see cref="Matrix3X2{T}"/>.</param>
@@ -223,51 +72,6 @@ namespace Silk.NET.Maths
                Scalar.Equal(M14, Scalar<T>.Zero) && Scalar.Equal(M21, Scalar<T>.Zero) &&
                Scalar.Equal(M23, Scalar<T>.Zero) && Scalar.Equal(M24, Scalar<T>.Zero);
 
-        /// <summary>Adds two matrices together.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The resulting matrix.</returns>
-        public static unsafe Matrix2X4<T> operator +(Matrix2X4<T> value1, Matrix2X4<T> value2)
-        {
-            return new(value1.Row1 + value2.Row1, value1.Row2 + value2.Row2);
-        }
-
-        /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
-        /// <param name="value1">The first matrix to compare.</param>
-        /// <param name="value2">The second matrix to compare.</param>
-        /// <returns>True if the given matrices are equal; False otherwise.</returns>
-        public static unsafe bool operator ==(Matrix2X4<T> value1, Matrix2X4<T> value2)
-        {
-            return Scalar.Equal(value1.M11, value2.M11) &&
-                   Scalar.Equal(value1.M22, value2.M22) && // Check diagonal elements first for early out.
-                   Scalar.Equal(value1.M12, value2.M12) && Scalar.Equal(value1.M13, value2.M13) &&
-                   Scalar.Equal(value1.M14, value2.M14) && Scalar.Equal(value1.M21, value2.M21) &&
-                   Scalar.Equal(value1.M23, value2.M23) && Scalar.Equal(value1.M24, value2.M24);
-        }
-
-        /// <summary>Returns a boolean indicating whether the given two matrices are not equal.</summary>
-        /// <param name="value1">The first matrix to compare.</param>
-        /// <param name="value2">The second matrix to compare.</param>
-        /// <returns>True if the given matrices are not equal; False if they are equal.</returns>
-        public static unsafe bool operator !=(Matrix2X4<T> value1, Matrix2X4<T> value2)
-        {
-            return Scalar.NotEqual(value1.M11, value2.M11) ||
-                   Scalar.NotEqual(value1.M22, value2.M22) || // Check diagonal elements first for early out.
-                   Scalar.NotEqual(value1.M12, value2.M12) || Scalar.NotEqual(value1.M13, value2.M13) ||
-                   Scalar.NotEqual(value1.M14, value2.M14) || Scalar.NotEqual(value1.M21, value2.M21) ||
-                   Scalar.NotEqual(value1.M23, value2.M23) || Scalar.NotEqual(value1.M24, value2.M24);
-        }
-
-        /// <summary>Multiplies a matrix by another matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        public static unsafe Matrix2X4<T> operator *(Matrix2X4<T> value1, Matrix4X4<T> value2)
-        {
-            return new(value1.M11 * value2.Row1 + value1.M12 * value1.Row2 + value1.M13 * value2.Row3 + value1.M14 * value2.Row4,
-                value1.M21 * value2.Row1 + value1.M22 * value1.Row2 + value1.M23 * value2.Row3 + value1.M24 * value2.Row4);
-        }
-
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
@@ -287,32 +91,6 @@ namespace Silk.NET.Maths
                 value1.M21 * value2.Row1 + value2.M22 * value2.Row2 + value1.M23 * value2.Row3 + value1.M24 * value2.Row4);
         }
 
-        /// <summary>Multiplies a matrix by another matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        public static unsafe Matrix3X4<T> operator *(Matrix3X2<T> value1, Matrix2X4<T> value2)
-        {
-            return new
-            (
-                value1.M11 * value2.Row1 + value1.M12 * value2.Row2,
-                value1.M21 * value2.Row1 + value1.M22 * value2.Row2,
-                value1.M31 * value2.Row1 + value1.M32 * value2.Row2
-            );
-        }
-
-        /// <summary>Multiplies a matrix by another matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        public static unsafe Matrix2X4<T> operator *(Matrix2X2<T> value1, Matrix2X4<T> value2)
-        {
-            return new(
-                    value1.M11 * value2.Row1 + value1.M12 * value2.Row2,
-                    value1.M21 * value2.Row1 + value1.M22 * value2.Row2
-                );
-        }
-
         /// <summary>Multiplies a matrix by a scalar value.</summary>
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling factor.</param>
@@ -320,55 +98,6 @@ namespace Silk.NET.Maths
         public static unsafe Matrix2X4<T> operator *(Matrix2X4<T> value1, T value2)
         {
             return new(value1.Row1 * value2, value1.Row2 * value2);
-        }
-
-        /// <summary>Subtracts the second matrix from the first.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the subtraction.</returns>
-        public static unsafe Matrix2X4<T> operator -(Matrix2X4<T> value1, Matrix2X4<T> value2)
-        {
-            return new(value1.Row1 - value2.Row1, value1.Row2 - value2.Row2);
-        }
-
-        /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
-        /// <param name="value">The source matrix.</param>
-        /// <returns>The negated matrix.</returns>
-        public static unsafe Matrix2X4<T> operator -(Matrix2X4<T> value)
-        {
-            return new(-value.Row1, -value.Row2);
-        }
-
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
-        /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions) 768)]
-        public override readonly bool Equals(object? obj)
-            => (obj is Matrix2X4<T> other) && Equals(other);
-
-        /// <summary>Returns a boolean indicating whether this matrix instance is equal to the other given matrix.</summary>
-        /// <param name="other">The matrix to compare this instance to.</param>
-        /// <returns>True if the matrices are equal; False otherwise.</returns>
-        public readonly bool Equals(Matrix2X4<T> other)
-            => this == other;
-
-        /// <summary>Returns the hash code for this instance.</summary>
-        /// <returns>The hash code.</returns>   
-        public override readonly int GetHashCode()
-        {
-            HashCode hash = default;
-
-            hash.Add(M11);
-            hash.Add(M12);
-            hash.Add(M13);
-            hash.Add(M14);
-
-            hash.Add(M21);
-            hash.Add(M22);
-            hash.Add(M23);
-            hash.Add(M24);
-
-            return hash.ToHashCode();
         }
 
         /// <summary>Returns a String representing this matrix instance.</summary>
@@ -553,7 +282,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted matrix</returns>
-        public Matrix2X4<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        public Matrix2X4<TOther> As<TOther>() where TOther : INumberBase<TOther>
         {
             return new(Row1.As<TOther>(), Row2.As<TOther>());
         }

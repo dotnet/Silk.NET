@@ -3,6 +3,7 @@
 
 using System;
 using System.Globalization;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
@@ -11,148 +12,13 @@ namespace Silk.NET.Maths
     /// <summary>A structure encapsulating a 3x2 matrix.</summary>
     [Serializable]
     [DataContract]
-    public struct Matrix3X2<T>
-        : IEquatable<Matrix3X2<T>>
-        where T : unmanaged, IFormattable, IComparable<T>, IEquatable<T>
+    public partial struct Matrix3X2<T>
     {
         private static readonly Matrix3X2<T> _identity = new(
             Scalar<T>.One, Scalar<T>.Zero,
             Scalar<T>.Zero, Scalar<T>.One,
             Scalar<T>.Zero, Scalar<T>.Zero
         );
-
-        /// <summary>
-        /// Row 1 of the matrix.
-        /// </summary>
-        [IgnoreDataMember]
-        public Vector2D<T> Row1;
-
-        /// <summary>
-        /// Row 2 of the matrix.
-        /// </summary>
-        [IgnoreDataMember]
-        public Vector2D<T> Row2;
-
-        /// <summary>
-        /// Row 3 of the matrix.
-        /// </summary>
-        [IgnoreDataMember]
-        public Vector2D<T> Row3;
-
-        /// <summary>
-        /// Column 1 of the matrix.
-        /// </summary>
-        [IgnoreDataMember]
-        public Vector3D<T> Column1 => new(Row1.X, Row2.X, Row3.X);
-
-        /// <summary>
-        /// Column 2 of the matrix.
-        /// </summary>
-        [IgnoreDataMember]
-        public Vector3D<T> Column2 => new(Row1.Y, Row2.Y, Row3.Y);
-
-        /// <summary>The first element of the first row</summary>
-        [DataMember]
-        public T M11
-        {
-            readonly get => Row1.X;
-            set => Row1.X = value;
-        }
-
-        /// <summary>The second element of the first row</summary>
-        [DataMember]
-        public T M12
-        {
-            readonly get => Row1.Y;
-            set => Row1.Y = value;
-        }
-
-        /// <summary>The first element of the second row</summary>
-        [DataMember]
-        public T M21
-        {
-            readonly get => Row2.X;
-            set => Row2.X = value;
-        }
-
-        /// <summary>The second element of the second row</summary>
-        [DataMember]
-        public T M22
-        {
-            readonly get => Row2.Y;
-            set => Row2.Y = value;
-        }
-
-        /// <summary>The first element of the third row</summary>
-        [DataMember]
-        public T M31
-        {
-            readonly get => Row3.X;
-            set => Row3.X = value;
-        }
-
-        /// <summary>The second element of the third row</summary>
-        [DataMember]
-        public T M32
-        {
-            readonly get => Row3.Y;
-            set => Row3.Y = value;
-        }
-
-        /// <summary>
-        /// Indexer for the rows of this matrix.
-        /// </summary>
-        /// <param name="x">The row to select. Zero based.</param>
-        public unsafe Vector2D<T> this[int x]
-        {
-            get
-            {
-                static void VerifyBounds(int i)
-                {
-                    static void ThrowHelper() => throw new IndexOutOfRangeException();
-
-                    if (i > 2 || i < 0)
-                        ThrowHelper();
-                }
-
-                VerifyBounds(x);
-                return Unsafe.Add(ref Row1, x);
-            }
-        }
-
-        /// <summary>
-        /// Indexer for the values in this matrix.
-        /// </summary>
-        /// <param name="x">The row to select. Zero based.</param>
-        /// <param name="y">The column to select. Zero based.</param>
-        public unsafe T this[int x, int y]
-        {
-            get
-            {
-                var row = this[x];
-                return row[y];
-            }
-        }
-
-        /// <summary>Constructs a <see cref="Matrix3X2{T}"/> from the given components.</summary>
-        public Matrix3X2(T m11, T m12,
-            T m21, T m22,
-            T m31, T m32)
-        {
-            Row1 = new(m11, m12);
-            Row2 = new(m21, m22);
-            Row3 = new(m31, m32);
-        }
-
-        /// <summary>
-        /// Constructs a <see cref="Matrix3X2{T}"/> from the given rows.
-        /// </summary>
-        public Matrix3X2(Vector2D<T> row1, Vector2D<T> row2, Vector2D<T> row3)
-        {
-            Row1 = row1;
-            Row2 = row2;
-            Row3 = row3;
-        }
 
         /// <summary>Constructs a <see cref="Matrix3X2{T}"/> from the given Matrix4x3.</summary>
         /// <param name="value">The source Matrix4x3.</param>
@@ -206,54 +72,6 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public readonly bool IsIdentity => this == Identity;
 
-        /// <summary>Adds each matrix element in value1 with its corresponding element in value2.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The matrix containing the summed values.</returns>
-        public static Matrix3X2<T> operator +(Matrix3X2<T> value1, Matrix3X2<T> value2)
-        {
-            return new(value1.Row1 + value2.Row1, value1.Row2 + value2.Row2, value1.Row3 + value2.Row3);
-        }
-
-        /// <summary>Returns a boolean indicating whether the given matrices are equal.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>True if the matrices are equal; False otherwise.</returns>
-        public static bool operator ==(Matrix3X2<T> value1, Matrix3X2<T> value2)
-        {
-            return (Scalar.Equal(value1.M11, value2.M11)
-                 && Scalar.Equal(value1.M22, value2.M22) // Check diagonal element first for early out
-                 && Scalar.Equal(value1.M12, value2.M12)
-                 && Scalar.Equal(value1.M21, value2.M21)
-                 && Scalar.Equal(value1.M31, value2.M31)
-                 && Scalar.Equal(value1.M32, value2.M32));
-        }
-
-        /// <summary>Returns a boolean indicating whether the given matrices are not equal.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>True if the matrices are not equal; False if they are equal.</returns>
-        public static bool operator !=(Matrix3X2<T> value1, Matrix3X2<T> value2)
-        {
-            return (Scalar.NotEqual(value1.M11, value2.M11)
-                    || Scalar.NotEqual(value1.M22, value2.M22) // Check diagonal element first for early out
-                    || Scalar.NotEqual(value1.M12, value2.M12)
-                    || Scalar.NotEqual(value1.M21, value2.M21)
-                    || Scalar.NotEqual(value1.M31, value2.M31)
-                    || Scalar.NotEqual(value1.M32, value2.M32));
-        }
-
-        /// <summary>Multiplies a matrix by another matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        public static unsafe Matrix3X3<T> operator *(Matrix3X2<T> value1, Matrix2X3<T> value2)
-        {
-            return new(value1.M11 * value2.Row1 * value1.M12 * value2.Row2,
-                value1.M21 * value2.Row1 * value1.M22 * value2.Row2,
-                value1.M31 * value2.Row1 * value1.M32 * value2.Row2);
-        }
-
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
@@ -261,19 +79,6 @@ namespace Silk.NET.Maths
         public static unsafe Vector2D<T> operator *(Vector3D<T> value1, Matrix3X2<T> value2)
         {
             return value1.X * value2.Row1 + value1.Y * value2.Row2 + value1.Z * value2.Row3;
-        }
-
-        /// <summary>Multiplies a matrix by another matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        public static unsafe Matrix3X2<T> operator *(Matrix3X2<T> value1, Matrix2X2<T> value2)
-        {
-            return new(
-                value1.M11 * value2.Row1 + value1.M12 * value2.Row2,
-                value1.M21 * value2.Row1 + value1.M22 * value2.Row2,
-                value1.M31 * value2.Row1 + value1.M32 * value2.Row2
-                );
         }
 
         /// <summary>Multiplies a matrix by another matrix.</summary>
@@ -298,38 +103,6 @@ namespace Silk.NET.Maths
             return new(value1.Row1 * value2, value1.Row2 * value2, value1.Row3 * value2);
         }
 
-        /// <summary>Subtracts each matrix element in value2 from its corresponding element in value1.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The matrix containing the resulting values.</returns>
-        public static Matrix3X2<T> operator -(Matrix3X2<T> value1, Matrix3X2<T> value2)
-        {
-            return new(value1.Row1 - value2.Row1, value1.Row2 - value2.Row2, value1.Row3 - value2.Row3);
-        }
-
-        /// <summary>Negates the given matrix by multiplying all values by -1.</summary>
-        /// <param name="value">The source matrix.</param>
-        /// <returns>The negated matrix.</returns>
-        public static Matrix3X2<T> operator -(Matrix3X2<T> value)
-        {
-            return new(-value.Row1, -value.Row2, -value.Row3);
-        }
-
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
-        /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions) 768)]
-        public override readonly bool Equals(object? obj)
-            => (obj is Matrix3X2<T> other) && Equals(other);
-
-        /// <summary>Returns a boolean indicating whether the matrix is equal to the other given matrix.</summary>
-        /// <param name="other">The other matrix to test equality against.</param>
-        /// <returns>True if this matrix is equal to other; False otherwise.</returns>
-        public readonly bool Equals(Matrix3X2<T> other)
-        {
-            return this == other;
-        }
-
         /// <summary>Calculates the determinant for this matrix.
         /// The determinant is calculated by expanding the matrix with a third column whose values are (0,0,1).</summary>
         /// <returns>The determinant.</returns>
@@ -352,13 +125,6 @@ namespace Silk.NET.Maths
             // Collapse out the constants and oh look, this is just a 2x2 determinant!
 
             return Scalar.Subtract(Scalar.Multiply(M11, M22), Scalar.Multiply(M21, M12));
-        }
-
-        /// <summary>Returns the hash code for this instance.</summary>
-        /// <returns>The hash code.</returns>
-        public override readonly int GetHashCode()
-        {
-            return HashCode.Combine(M11, M12, M21, M22, M31, M32);
         }
 
         /// <summary>Returns a String representing this matrix instance.</summary>
@@ -532,7 +298,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted matrix</returns>
-        public Matrix3X2<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        public Matrix3X2<TOther> As<TOther>() where TOther : INumberBase<TOther>
         {
             return new(Row1.As<TOther>(), Row2.As<TOther>(), Row3.As<TOther>());
         }

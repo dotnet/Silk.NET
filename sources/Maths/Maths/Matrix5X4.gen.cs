@@ -2,31 +2,60 @@ namespace Silk.NET.Maths
 {
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
+    using System.Runtime.CompilerServices;
+    using System.Runtime.Serialization;
 
     public partial struct Matrix5X4<T> :
         IEquatable<Matrix5X4<T>>
         where T : INumberBase<T>
     {
         /// <summary>The 1st row of the matrix represented as a vector.</summary>
+        [IgnoreDataMember]
         public Vector4D<T> Row1;
 
         /// <summary>The 2nd row of the matrix represented as a vector.</summary>
+        [IgnoreDataMember]
         public Vector4D<T> Row2;
 
         /// <summary>The 3rd row of the matrix represented as a vector.</summary>
+        [IgnoreDataMember]
         public Vector4D<T> Row3;
 
         /// <summary>The 4th row of the matrix represented as a vector.</summary>
+        [IgnoreDataMember]
         public Vector4D<T> Row4;
 
         /// <summary>The 5th row of the matrix represented as a vector.</summary>
+        [IgnoreDataMember]
         public Vector4D<T> Row5;
 
         /// <summary>
         /// Constructs a <see cref="Matrix5X4{T}"/> from the given rows.
         /// </summary>
-        public Matrix5X4(Vector4D<T> row1, Vector4D<T> row2, Vector4D<T> row3, Vector4D<T> row4, Vector4D<T> row5) => (Row1, Row2, Row3, Row4, Row5) = (row1, row2, row3, row4, row5);
+        public Matrix5X4(Vector4D<T> row1, Vector4D<T> row2, Vector4D<T> row3, Vector4D<T> row4, Vector4D<T> row5) =>
+            (Row1, Row2, Row3, Row4, Row5) = (row1, row2, row3, row4, row5);
 
+        /// <summary>
+        /// Constructs a <see cref="Matrix5X4{T}"/> from the given components.
+        /// </summary>
+        public Matrix5X4(
+            T m11, T m12, T m13, T m14,
+            T m21, T m22, T m23, T m24,
+            T m31, T m32, T m33, T m34,
+            T m41, T m42, T m43, T m44,
+            T m51, T m52, T m53, T m54)
+        {
+            Row1 = new(m11, m12, m13, m14);
+            Row2 = new(m21, m22, m23, m24);
+            Row3 = new(m31, m32, m33, m34);
+            Row4 = new(m41, m42, m43, m44);
+            Row5 = new(m51, m52, m53, m54);
+        }
+
+        /// <summary>
+        /// Indexer for the rows of this matrix.
+        /// </summary>
+        /// <param name="row">The row to select. Zero based.</param>
         [UnscopedRef]
         public ref Vector4D<T> this[int row]
         {
@@ -46,94 +75,120 @@ namespace Silk.NET.Maths
                         return ref Row5;
                 }
 
-                throw new ArgumentOutOfRangeException(nameof(row));
+                throw new IndexOutOfRangeException();
             }
         }
 
+        /// <summary>
+        /// Indexer for the values in this matrix.
+        /// </summary>
+        /// <param name="row">The row to select. Zero based.</param>
+        /// <param name="column">The column to select. Zero based.</param>
         [UnscopedRef]
         public ref T this[int row, int column] => ref this[row][column];
 
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M11 => ref Row1.X;
 
         /// <summary>Gets the element in the 1st row and 2nd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M12 => ref Row1.Y;
 
         /// <summary>Gets the element in the 1st row and 3rd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M13 => ref Row1.Z;
 
         /// <summary>Gets the element in the 1st row and 4th column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M14 => ref Row1.W;
 
         /// <summary>Gets the element in the 2nd row and 1st column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M21 => ref Row2.X;
 
         /// <summary>Gets the element in the 2nd row and 2nd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M22 => ref Row2.Y;
 
         /// <summary>Gets the element in the 2nd row and 3rd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M23 => ref Row2.Z;
 
         /// <summary>Gets the element in the 2nd row and 4th column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M24 => ref Row2.W;
 
         /// <summary>Gets the element in the 3rd row and 1st column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M31 => ref Row3.X;
 
         /// <summary>Gets the element in the 3rd row and 2nd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M32 => ref Row3.Y;
 
         /// <summary>Gets the element in the 3rd row and 3rd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M33 => ref Row3.Z;
 
         /// <summary>Gets the element in the 3rd row and 4th column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M34 => ref Row3.W;
 
         /// <summary>Gets the element in the 4th row and 1st column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M41 => ref Row4.X;
 
         /// <summary>Gets the element in the 4th row and 2nd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M42 => ref Row4.Y;
 
         /// <summary>Gets the element in the 4th row and 3rd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M43 => ref Row4.Z;
 
         /// <summary>Gets the element in the 4th row and 4th column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M44 => ref Row4.W;
 
         /// <summary>Gets the element in the 5th row and 1st column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M51 => ref Row5.X;
 
         /// <summary>Gets the element in the 5th row and 2nd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M52 => ref Row5.Y;
 
         /// <summary>Gets the element in the 5th row and 3rd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M53 => ref Row5.Z;
 
         /// <summary>Gets the element in the 5th row and 4th column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M54 => ref Row5.W;
 
         /// <inheridoc/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public override bool Equals(object? obj) => obj is Matrix5X4<T> other && Equals(other);
 
         /// <inheridoc/>
@@ -205,12 +260,17 @@ namespace Silk.NET.Maths
 
     public static partial class Matrix5X4
     {
+        /// <summary>Linearly interpolates between the corresponding values of two matrices.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <param name="amount">The relative weight of the second source matrix.</param>
+        /// <returns>The interpolated matrix.</returns>
         public static Matrix5X4<T> Lerp<T>(Matrix5X4<T> value1, Matrix5X4<T> value2, T amount)
             where T : IFloatingPointIeee754<T> =>
-            new(new(T.Lerp(value1.M11, value2.M11, amount), T.Lerp(value1.M12, value2.M12, amount), T.Lerp(value1.M13, value2.M13, amount), T.Lerp(value1.M14, value2.M14, amount)),
-                new(T.Lerp(value1.M21, value2.M21, amount), T.Lerp(value1.M22, value2.M22, amount), T.Lerp(value1.M23, value2.M23, amount), T.Lerp(value1.M24, value2.M24, amount)),
-                new(T.Lerp(value1.M31, value2.M31, amount), T.Lerp(value1.M32, value2.M32, amount), T.Lerp(value1.M33, value2.M33, amount), T.Lerp(value1.M34, value2.M34, amount)),
-                new(T.Lerp(value1.M41, value2.M41, amount), T.Lerp(value1.M42, value2.M42, amount), T.Lerp(value1.M43, value2.M43, amount), T.Lerp(value1.M44, value2.M44, amount)),
-                new(T.Lerp(value1.M51, value2.M51, amount), T.Lerp(value1.M52, value2.M52, amount), T.Lerp(value1.M53, value2.M53, amount), T.Lerp(value1.M54, value2.M54, amount)));
+            new(Vector4D.Lerp(value1.Row1, value2.Row1, amount),
+                Vector4D.Lerp(value1.Row2, value2.Row2, amount),
+                Vector4D.Lerp(value1.Row3, value2.Row3, amount),
+                Vector4D.Lerp(value1.Row4, value2.Row4, amount),
+                Vector4D.Lerp(value1.Row5, value2.Row5, amount));
     }
 }

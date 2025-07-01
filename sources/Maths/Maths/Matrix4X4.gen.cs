@@ -5,25 +5,32 @@ namespace Silk.NET.Maths
     using System.Runtime.CompilerServices;
     using System.Runtime.Serialization;
 
-    public partial struct Matrix4X3<T> :
-        IEquatable<Matrix4X3<T>>
+    public partial struct Matrix4X4<T> :
+        IEquatable<Matrix4X4<T>>
         where T : INumberBase<T>
     {
+        /// <summary>The multiplicative identity matrix of size 4x4.</summary>
+        public static Matrix4X4<T> Identity { get; } = new(
+            new(T.MultiplicativeIdentity, T.Zero, T.Zero, T.Zero),
+            new(T.Zero, T.MultiplicativeIdentity, T.Zero, T.Zero),
+            new(T.Zero, T.Zero, T.MultiplicativeIdentity, T.Zero),
+            new(T.Zero, T.Zero, T.Zero, T.MultiplicativeIdentity));
+
         /// <summary>The 1st row of the matrix represented as a vector.</summary>
         [IgnoreDataMember]
-        public Vector3D<T> Row1;
+        public Vector4D<T> Row1;
 
         /// <summary>The 2nd row of the matrix represented as a vector.</summary>
         [IgnoreDataMember]
-        public Vector3D<T> Row2;
+        public Vector4D<T> Row2;
 
         /// <summary>The 3rd row of the matrix represented as a vector.</summary>
         [IgnoreDataMember]
-        public Vector3D<T> Row3;
+        public Vector4D<T> Row3;
 
         /// <summary>The 4th row of the matrix represented as a vector.</summary>
         [IgnoreDataMember]
-        public Vector3D<T> Row4;
+        public Vector4D<T> Row4;
 
         /// <summary>The 1st column of the matrix represented as a vector.</summary>
         [IgnoreDataMember]
@@ -37,25 +44,29 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector4D<T> Column3 => new(Row1.Z, Row2.Z, Row3.Z, Row4.Z);
 
+        /// <summary>The 4th column of the matrix represented as a vector.</summary>
+        [IgnoreDataMember]
+        public Vector4D<T> Column4 => new(Row1.W, Row2.W, Row3.W, Row4.W);
+
         /// <summary>
-        /// Constructs a <see cref="Matrix4X3{T}"/> from the given rows.
+        /// Constructs a <see cref="Matrix4X4{T}"/> from the given rows.
         /// </summary>
-        public Matrix4X3(Vector3D<T> row1, Vector3D<T> row2, Vector3D<T> row3, Vector3D<T> row4) =>
+        public Matrix4X4(Vector4D<T> row1, Vector4D<T> row2, Vector4D<T> row3, Vector4D<T> row4) =>
             (Row1, Row2, Row3, Row4) = (row1, row2, row3, row4);
 
         /// <summary>
-        /// Constructs a <see cref="Matrix4X3{T}"/> from the given components.
+        /// Constructs a <see cref="Matrix4X4{T}"/> from the given components.
         /// </summary>
-        public Matrix4X3(
-            T m11, T m12, T m13,
-            T m21, T m22, T m23,
-            T m31, T m32, T m33,
-            T m41, T m42, T m43)
+        public Matrix4X4(
+            T m11, T m12, T m13, T m14,
+            T m21, T m22, T m23, T m24,
+            T m31, T m32, T m33, T m34,
+            T m41, T m42, T m43, T m44)
         {
-            Row1 = new(m11, m12, m13);
-            Row2 = new(m21, m22, m23);
-            Row3 = new(m31, m32, m33);
-            Row4 = new(m41, m42, m43);
+            Row1 = new(m11, m12, m13, m14);
+            Row2 = new(m21, m22, m23, m24);
+            Row3 = new(m31, m32, m33, m34);
+            Row4 = new(m41, m42, m43, m44);
         }
 
         /// <summary>
@@ -63,7 +74,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="row">The row to select. Zero based.</param>
         [UnscopedRef]
-        public ref Vector3D<T> this[int row]
+        public ref Vector4D<T> this[int row]
         {
             get
             {
@@ -106,6 +117,11 @@ namespace Silk.NET.Maths
         [UnscopedRef]
         public ref T M13 => ref Row1.Z;
 
+        /// <summary>Gets the element in the 1st row and 4th column of the matrix.</summary>
+        [DataMember]
+        [UnscopedRef]
+        public ref T M14 => ref Row1.W;
+
         /// <summary>Gets the element in the 2nd row and 1st column of the matrix.</summary>
         [DataMember]
         [UnscopedRef]
@@ -120,6 +136,11 @@ namespace Silk.NET.Maths
         [DataMember]
         [UnscopedRef]
         public ref T M23 => ref Row2.Z;
+
+        /// <summary>Gets the element in the 2nd row and 4th column of the matrix.</summary>
+        [DataMember]
+        [UnscopedRef]
+        public ref T M24 => ref Row2.W;
 
         /// <summary>Gets the element in the 3rd row and 1st column of the matrix.</summary>
         [DataMember]
@@ -136,6 +157,11 @@ namespace Silk.NET.Maths
         [UnscopedRef]
         public ref T M33 => ref Row3.Z;
 
+        /// <summary>Gets the element in the 3rd row and 4th column of the matrix.</summary>
+        [DataMember]
+        [UnscopedRef]
+        public ref T M34 => ref Row3.W;
+
         /// <summary>Gets the element in the 4th row and 1st column of the matrix.</summary>
         [DataMember]
         [UnscopedRef]
@@ -151,27 +177,33 @@ namespace Silk.NET.Maths
         [UnscopedRef]
         public ref T M43 => ref Row4.Z;
 
-        /// <inheridoc/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public override bool Equals(object? obj) => obj is Matrix4X3<T> other && Equals(other);
+        /// <summary>Gets the element in the 4th row and 4th column of the matrix.</summary>
+        [DataMember]
+        [UnscopedRef]
+        public ref T M44 => ref Row4.W;
 
         /// <inheridoc/>
-        public bool Equals(Matrix4X3<T> other) => this == other;
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        public override bool Equals(object? obj) => obj is Matrix4X4<T> other && Equals(other);
+
+        /// <inheridoc/>
+        public bool Equals(Matrix4X4<T> other) => this == other;
 
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(Row1, Row2, Row3, Row4);
 
         /// <summary>Computes the transpose of the matrix.</summary>
-        public Matrix3X4<T> Transpose() =>
+        public Matrix4X4<T> Transpose() =>
             new(new(M11, M21, M31, M41),
                 new(M12, M22, M32, M42),
-                new(M13, M23, M33, M43));
+                new(M13, M23, M33, M43),
+                new(M14, M24, M34, M44));
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
         /// <param name="left">The first matrix to compare.</param>
         /// <param name="right">The second matrix to compare.</param>
         /// <returns><c>true</c> if the given matrices are equal; <c>false</c> otherwise.</returns>
-        public static bool operator ==(Matrix4X3<T> left, Matrix4X3<T> right) =>
+        public static bool operator ==(Matrix4X4<T> left, Matrix4X4<T> right) =>
             left.Row1 == right.Row1 &&
             left.Row2 == right.Row2 &&
             left.Row3 == right.Row3 &&
@@ -181,13 +213,13 @@ namespace Silk.NET.Maths
         /// <param name="left">The first matrix to compare.</param>
         /// <param name="right">The second matrix to compare.</param>
         /// <returns><c>true</c> if the given matrices are not equal; <c>false</c> otherwise.</returns>
-        public static bool operator !=(Matrix4X3<T> left, Matrix4X3<T> right) => !(left == right);
+        public static bool operator !=(Matrix4X4<T> left, Matrix4X4<T> right) => !(left == right);
 
         /// <summary>Adds two matrices together.</summary>
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
         /// <returns>The result of the addition.</returns>
-        public static Matrix4X3<T> operator +(Matrix4X3<T> left, Matrix4X3<T> right) =>
+        public static Matrix4X4<T> operator +(Matrix4X4<T> left, Matrix4X4<T> right) =>
             new(left.Row1 + right.Row1,
                 left.Row2 + right.Row2,
                 left.Row3 + right.Row3,
@@ -197,7 +229,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
         /// <returns>The result of the subtraction.</returns>
-        public static Matrix4X3<T> operator -(Matrix4X3<T> left, Matrix4X3<T> right) =>
+        public static Matrix4X4<T> operator -(Matrix4X4<T> left, Matrix4X4<T> right) =>
             new(left.Row1 - right.Row1,
                 left.Row2 - right.Row2,
                 left.Row3 - right.Row3,
@@ -206,7 +238,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
         /// <param name="value">The source matrix.</param>
         /// <returns>The negated matrix.</returns>
-        public static Matrix4X3<T> operator -(Matrix4X3<T> value) =>
+        public static Matrix4X4<T> operator -(Matrix4X4<T> value) =>
             new(-value.Row1,
                 -value.Row2,
                 -value.Row3,
@@ -216,7 +248,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        public static Matrix2X3<T> operator *(Matrix2X4<T> left, Matrix4X3<T> right) =>
+        public static Matrix2X4<T> operator *(Matrix2X4<T> left, Matrix4X4<T> right) =>
             new(left.M11 * right.Row1 + left.M12 * right.Row2 + left.M13 * right.Row3 + left.M14 * right.Row4,
                 left.M21 * right.Row1 + left.M22 * right.Row2 + left.M23 * right.Row3 + left.M24 * right.Row4);
 
@@ -224,45 +256,54 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        public static Matrix4X2<T> operator *(Matrix4X3<T> left, Matrix3X2<T> right) =>
-            new(left.M11 * right.Row1 + left.M12 * right.Row2 + left.M13 * right.Row3,
-                left.M21 * right.Row1 + left.M22 * right.Row2 + left.M23 * right.Row3,
-                left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3,
-                left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3);
+        public static Matrix3X4<T> operator *(Matrix3X4<T> left, Matrix4X4<T> right) =>
+            new(left.M11 * right.Row1 + left.M12 * right.Row2 + left.M13 * right.Row3 + left.M14 * right.Row4,
+                left.M21 * right.Row1 + left.M22 * right.Row2 + left.M23 * right.Row3 + left.M24 * right.Row4,
+                left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3 + left.M34 * right.Row4);
 
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        public static Matrix4X3<T> operator *(Matrix4X3<T> left, Matrix3X3<T> right) =>
-            new(left.M11 * right.Row1 + left.M12 * right.Row2 + left.M13 * right.Row3,
-                left.M21 * right.Row1 + left.M22 * right.Row2 + left.M23 * right.Row3,
-                left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3,
-                left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3);
+        public static Matrix4X2<T> operator *(Matrix4X4<T> left, Matrix4X2<T> right) =>
+            new(left.M11 * right.Row1 + left.M12 * right.Row2 + left.M13 * right.Row3 + left.M14 * right.Row4,
+                left.M21 * right.Row1 + left.M22 * right.Row2 + left.M23 * right.Row3 + left.M24 * right.Row4,
+                left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3 + left.M34 * right.Row4,
+                left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3 + left.M44 * right.Row4);
 
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        public static Matrix4X4<T> operator *(Matrix4X3<T> left, Matrix3X4<T> right) =>
-            new(left.M11 * right.Row1 + left.M12 * right.Row2 + left.M13 * right.Row3,
-                left.M21 * right.Row1 + left.M22 * right.Row2 + left.M23 * right.Row3,
-                left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3,
-                left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3);
+        public static Matrix4X3<T> operator *(Matrix4X4<T> left, Matrix4X3<T> right) =>
+            new(left.M11 * right.Row1 + left.M12 * right.Row2 + left.M13 * right.Row3 + left.M14 * right.Row4,
+                left.M21 * right.Row1 + left.M22 * right.Row2 + left.M23 * right.Row3 + left.M24 * right.Row4,
+                left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3 + left.M34 * right.Row4,
+                left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3 + left.M44 * right.Row4);
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="left">The first source matrix.</param>
+        /// <param name="right">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static Matrix4X4<T> operator *(Matrix4X4<T> left, Matrix4X4<T> right) =>
+            new(left.M11 * right.Row1 + left.M12 * right.Row2 + left.M13 * right.Row3 + left.M14 * right.Row4,
+                left.M21 * right.Row1 + left.M22 * right.Row2 + left.M23 * right.Row3 + left.M24 * right.Row4,
+                left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3 + left.M34 * right.Row4,
+                left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3 + left.M44 * right.Row4);
     }
 
-    public static partial class Matrix4X3
+    public static partial class Matrix4X4
     {
         /// <summary>Linearly interpolates between the corresponding values of two matrices.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <param name="amount">The relative weight of the second source matrix.</param>
         /// <returns>The interpolated matrix.</returns>
-        public static Matrix4X3<T> Lerp<T>(Matrix4X3<T> value1, Matrix4X3<T> value2, T amount)
+        public static Matrix4X4<T> Lerp<T>(Matrix4X4<T> value1, Matrix4X4<T> value2, T amount)
             where T : IFloatingPointIeee754<T> =>
-            new(Vector3D.Lerp(value1.Row1, value2.Row1, amount),
-                Vector3D.Lerp(value1.Row2, value2.Row2, amount),
-                Vector3D.Lerp(value1.Row3, value2.Row3, amount),
-                Vector3D.Lerp(value1.Row4, value2.Row4, amount));
+            new(Vector4D.Lerp(value1.Row1, value2.Row1, amount),
+                Vector4D.Lerp(value1.Row2, value2.Row2, amount),
+                Vector4D.Lerp(value1.Row3, value2.Row3, amount),
+                Vector4D.Lerp(value1.Row4, value2.Row4, amount));
     }
 }

@@ -2,22 +2,54 @@ namespace Silk.NET.Maths
 {
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
+    using System.Runtime.CompilerServices;
+    using System.Runtime.Serialization;
 
     public partial struct Matrix2X3<T> :
         IEquatable<Matrix2X3<T>>
         where T : INumberBase<T>
     {
         /// <summary>The 1st row of the matrix represented as a vector.</summary>
+        [IgnoreDataMember]
         public Vector3D<T> Row1;
 
         /// <summary>The 2nd row of the matrix represented as a vector.</summary>
+        [IgnoreDataMember]
         public Vector3D<T> Row2;
+
+        /// <summary>The 1st column of the matrix represented as a vector.</summary>
+        [IgnoreDataMember]
+        public Vector2D<T> Column1 => new(Row1.X, Row2.X);
+
+        /// <summary>The 2nd column of the matrix represented as a vector.</summary>
+        [IgnoreDataMember]
+        public Vector2D<T> Column2 => new(Row1.Y, Row2.Y);
+
+        /// <summary>The 3rd column of the matrix represented as a vector.</summary>
+        [IgnoreDataMember]
+        public Vector2D<T> Column3 => new(Row1.Z, Row2.Z);
 
         /// <summary>
         /// Constructs a <see cref="Matrix2X3{T}"/> from the given rows.
         /// </summary>
-        public Matrix2X3(Vector3D<T> row1, Vector3D<T> row2) => (Row1, Row2) = (row1, row2);
+        public Matrix2X3(Vector3D<T> row1, Vector3D<T> row2) =>
+            (Row1, Row2) = (row1, row2);
 
+        /// <summary>
+        /// Constructs a <see cref="Matrix2X3{T}"/> from the given components.
+        /// </summary>
+        public Matrix2X3(
+            T m11, T m12, T m13,
+            T m21, T m22, T m23)
+        {
+            Row1 = new(m11, m12, m13);
+            Row2 = new(m21, m22, m23);
+        }
+
+        /// <summary>
+        /// Indexer for the rows of this matrix.
+        /// </summary>
+        /// <param name="row">The row to select. Zero based.</param>
         [UnscopedRef]
         public ref Vector3D<T> this[int row]
         {
@@ -31,38 +63,50 @@ namespace Silk.NET.Maths
                         return ref Row2;
                 }
 
-                throw new ArgumentOutOfRangeException(nameof(row));
+                throw new IndexOutOfRangeException();
             }
         }
 
+        /// <summary>
+        /// Indexer for the values in this matrix.
+        /// </summary>
+        /// <param name="row">The row to select. Zero based.</param>
+        /// <param name="column">The column to select. Zero based.</param>
         [UnscopedRef]
         public ref T this[int row, int column] => ref this[row][column];
 
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M11 => ref Row1.X;
 
         /// <summary>Gets the element in the 1st row and 2nd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M12 => ref Row1.Y;
 
         /// <summary>Gets the element in the 1st row and 3rd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M13 => ref Row1.Z;
 
         /// <summary>Gets the element in the 2nd row and 1st column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M21 => ref Row2.X;
 
         /// <summary>Gets the element in the 2nd row and 2nd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M22 => ref Row2.Y;
 
         /// <summary>Gets the element in the 2nd row and 3rd column of the matrix.</summary>
+        [DataMember]
         [UnscopedRef]
         public ref T M23 => ref Row2.Z;
 
         /// <inheridoc/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public override bool Equals(object? obj) => obj is Matrix2X3<T> other && Equals(other);
 
         /// <inheridoc/>
@@ -133,9 +177,14 @@ namespace Silk.NET.Maths
 
     public static partial class Matrix2X3
     {
+        /// <summary>Linearly interpolates between the corresponding values of two matrices.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <param name="amount">The relative weight of the second source matrix.</param>
+        /// <returns>The interpolated matrix.</returns>
         public static Matrix2X3<T> Lerp<T>(Matrix2X3<T> value1, Matrix2X3<T> value2, T amount)
             where T : IFloatingPointIeee754<T> =>
-            new(new(T.Lerp(value1.M11, value2.M11, amount), T.Lerp(value1.M12, value2.M12, amount), T.Lerp(value1.M13, value2.M13, amount)),
-                new(T.Lerp(value1.M21, value2.M21, amount), T.Lerp(value1.M22, value2.M22, amount), T.Lerp(value1.M23, value2.M23, amount)));
+            new(Vector3D.Lerp(value1.Row1, value2.Row1, amount),
+                Vector3D.Lerp(value1.Row2, value2.Row2, amount));
     }
 }
