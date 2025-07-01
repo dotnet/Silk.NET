@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -14,7 +15,7 @@ namespace Silk.NET.Maths
     [DataContract]
     public struct Ray2D<T>
         : IEquatable<Ray2D<T>>
-        where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        where T : INumberBase<T>
     {
         /// <summary>
         /// The origin of this Ray.
@@ -129,7 +130,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted ray</returns>
-        public Ray2D<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        public Ray2D<TOther> As<TOther>()
+            where TOther : INumberBase<TOther>
         {
             return new(Origin.As<TOther>(), Direction.As<TOther>());
         }

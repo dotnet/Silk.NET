@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
@@ -14,7 +15,7 @@ namespace Silk.NET.Maths
     [DataContract]
     public struct Cube<T>
         : IEquatable<Cube<T>>
-        where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        where T : INumberBase<T>
     {
         /// <summary>
         /// The origin.
@@ -169,7 +170,7 @@ namespace Silk.NET.Maths
         /// <param name="anchor">The anchor.</param>
         /// <returns>The calculated cube.</returns>
         public Cube<T> GetScaled<TScale>(Vector3D<TScale> scale, Vector3D<T> anchor)
-            where TScale : unmanaged, IFormattable, IEquatable<TScale>, IComparable<TScale>
+            where TScale : INumberBase<TScale>
         {
             var convertedAnchor = anchor.As<TScale>();
             var min = (scale * (Origin.As<TScale>() - convertedAnchor)) + convertedAnchor;
@@ -235,7 +236,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted cube</returns>
-        public Cube<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        public Cube<TOther> As<TOther>() where TOther : INumberBase<TOther>
         {
             return new(Origin.As<TOther>(), Max.As<TOther>());
         }

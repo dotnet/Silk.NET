@@ -15,7 +15,7 @@ namespace Silk.NET.Maths
     [DataContract]
     public struct Box3D<T>
         : IEquatable<Box3D<T>>
-        where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        where T : INumberBase<T>
     {
         /// <summary>
         /// The min.
@@ -222,7 +222,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted box</returns>
-        public Box3D<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        public Box3D<TOther> As<TOther>() where TOther : INumberBase<TOther>
         {
             return new(Min.As<TOther>(), Max.As<TOther>());
         }

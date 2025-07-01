@@ -3,6 +3,7 @@
 
 using System;
 using System.Globalization;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using Silk.NET.Maths;
@@ -16,7 +17,8 @@ namespace Silk.NET.Maths.Legacy
     [Serializable]
     [DataContract]
     public struct Quaternion<T>
-        : IEquatable<Quaternion<T>> where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        : IEquatable<Quaternion<T>>
+        where T : INumberBase<T>
     {
         private const float SlerpEpsilon = 1e-6f;
 
@@ -786,7 +788,7 @@ namespace Silk.NET.Maths.Legacy
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted quaternion</returns>
-        public Quaternion<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        public Quaternion<TOther> As<TOther>() where TOther : INumberBase<TOther>
         {
             return new(Scalar.As<T, TOther>(X), Scalar.As<T, TOther>(Y), Scalar.As<T, TOther>(Z), Scalar.As<T, TOther>(W));
         }

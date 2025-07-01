@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -12,7 +13,7 @@ namespace Silk.NET.Maths
     [Serializable]
     [DataContract]
     public struct Sphere<T>
-        : IEquatable<Sphere<T>> where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        : IEquatable<Sphere<T>> where T : INumberBase<T>
     {
         /// <summary>
         /// The center.
@@ -168,7 +169,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted sphere</returns>
-        public Sphere<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        public Sphere<TOther> As<TOther>() where TOther : INumberBase<TOther>
         {
             return new(Center.As<TOther>(), Scalar.As<T, TOther>(Radius));
         }
