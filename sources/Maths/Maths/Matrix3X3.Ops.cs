@@ -15,6 +15,7 @@ namespace Silk.NET.Maths
         private const float BillboardEpsilon = 1e-4f;
         private const float DecomposeEpsilon = 0.0001f;
 
+        /*
         private struct CanonicalBasis<T>
             where T : INumberBase<T>
         {
@@ -23,7 +24,6 @@ namespace Silk.NET.Maths
             public Vector3D<T> Row2;
         };
 
-        /*
         private struct VectorBasis<T>
             where T : INumberBase<T>
         {

@@ -81,16 +81,6 @@ namespace Silk.NET.Maths
             return value1.X * value2.Row1 + value1.Y * value2.Row2;
         }
 
-        /// <summary>Multiplies a matrix by another matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        public static unsafe Matrix2X3<T> operator *(Matrix2X4<T> value1, Matrix4X3<T> value2)
-        {
-            return new(value1.M11 * value2.Row1 + value2.M12 * value2.Row2 + value1.M13 * value2.Row3 + value1.M14 * value2.Row4,
-                value1.M21 * value2.Row1 + value2.M22 * value2.Row2 + value1.M23 * value2.Row3 + value1.M24 * value2.Row4);
-        }
-
         /// <summary>Multiplies a matrix by a scalar value.</summary>
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling factor.</param>

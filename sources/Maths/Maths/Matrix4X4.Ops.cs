@@ -20,6 +20,7 @@ namespace Silk.NET.Maths
 #endif
         private const float DecomposeEpsilon = 0.0001f;
 
+        /*
         private struct CanonicalBasis<T>
             where T : INumberBase<T>
         {
@@ -28,7 +29,6 @@ namespace Silk.NET.Maths
             public Vector3D<T> Row2;
         };
 
-        /*
         private struct VectorBasis<T>
             where T : INumberBase<T>
         {

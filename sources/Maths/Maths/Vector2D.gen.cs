@@ -356,7 +356,6 @@ namespace Silk.NET.Maths
 
         public static Vector2D<T> operator /(Vector2D<T> vector, T scalar) =>
             new(vector.X / scalar, vector.Y / scalar);
-
     }
 
     public static partial class Vector2D

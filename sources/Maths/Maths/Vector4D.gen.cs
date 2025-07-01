@@ -434,7 +434,6 @@ namespace Silk.NET.Maths
 
         public static Vector4D<T> operator /(Vector4D<T> vector, T scalar) =>
             new(vector.X / scalar, vector.Y / scalar, vector.Z / scalar, vector.W / scalar);
-
     }
 
     public static partial class Vector4D

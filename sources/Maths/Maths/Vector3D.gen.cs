@@ -395,7 +395,6 @@ namespace Silk.NET.Maths
 
         public static Vector3D<T> operator /(Vector3D<T> vector, T scalar) =>
             new(vector.X / scalar, vector.Y / scalar, vector.Z / scalar);
-
     }
 
     public static partial class Vector3D
