@@ -58,7 +58,7 @@ namespace Silk.NET.Maths
         /// <param name="cameraForwardVector">The forward vector of the camera.</param>
         /// <returns>The created billboard matrix</returns>
         public static Matrix4X4<T> CreateBillboard<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> cameraUpVector, Vector3D<T> cameraForwardVector)
-            where T : INumberBase<T>
+            where T : IRootFunctions<T>
         {
             Vector3D<T> zaxis = objectPosition - cameraPosition;
             var norm = zaxis.LengthSquared;
@@ -90,7 +90,7 @@ namespace Silk.NET.Maths
         /// <param name="objectForwardVector">Forward vector of the object.</param>
         /// <returns>The created billboard matrix.</returns>
         public static Matrix4X4<T> CreateConstrainedBillboard<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> rotateAxis, Vector3D<T> cameraForwardVector, Vector3D<T> objectForwardVector)
-            where T : INumberBase<T>
+            where T : IRootFunctions<T>
         {
             // Treat the case when object and camera positions are too close.
             Vector3D<T> faceDir = objectPosition - cameraPosition;
@@ -250,7 +250,7 @@ namespace Silk.NET.Maths
         /// <param name="cameraUpVector">The direction that is "up" from the camera's point of view.</param>
         /// <returns>The view matrix.</returns>
         public static Matrix4X4<T> CreateLookAt<T>(Vector3D<T> cameraPosition, Vector3D<T> cameraTarget, Vector3D<T> cameraUpVector)
-            where T : INumberBase<T>
+            where T : IRootFunctions<T>
         {
             Vector3D<T> zaxis = Vector3D.Normalize(cameraPosition - cameraTarget);
             Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
@@ -814,7 +814,7 @@ namespace Silk.NET.Maths
         /// <param name="up">Upward direction of the object; usually [0, 1, 0].</param>
         /// <returns>The world matrix.</returns>
         public static Matrix4X4<T> CreateWorld<T>(Vector3D<T> position, Vector3D<T> forward, Vector3D<T> up)
-            where T : INumberBase<T>
+            where T : IRootFunctions<T>
         {
             Vector3D<T> zaxis = Vector3D.Normalize(-forward);
             Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(up, zaxis));

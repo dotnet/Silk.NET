@@ -14,7 +14,7 @@ namespace Silk.NET.Maths
     [DataContract]
     public struct Circle<T>
         : IEquatable<Circle<T>>
-        where T : INumberBase<T>
+        where T : IRootFunctions<T>
     {
         /// <summary>
         /// The center.
@@ -174,7 +174,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted circle</returns>
-        public Circle<TOther> As<TOther>() where TOther : INumberBase<TOther>
+        public Circle<TOther> As<TOther>() where TOther : IRootFunctions<TOther>
         {
             return new(Center.As<TOther>(), Scalar.As<T, TOther>(Radius));
         }

@@ -13,7 +13,8 @@ namespace Silk.NET.Maths
     [Serializable]
     [DataContract]
     public struct Sphere<T>
-        : IEquatable<Sphere<T>> where T : INumberBase<T>
+        : IEquatable<Sphere<T>>
+        where T : IRootFunctions<T>
     {
         /// <summary>
         /// The center.
@@ -169,7 +170,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted sphere</returns>
-        public Sphere<TOther> As<TOther>() where TOther : INumberBase<TOther>
+        public Sphere<TOther> As<TOther>()
+            where TOther : IRootFunctions<TOther>
         {
             return new(Center.As<TOther>(), Scalar.As<T, TOther>(Radius));
         }
