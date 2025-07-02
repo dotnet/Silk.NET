@@ -202,6 +202,27 @@ namespace Silk.NET.Maths
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(Row1, Row2, Row3, Row4);
 
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public static Matrix4X4<T> CreateChecked<TOther>(Matrix4X4<TOther> other)
+            where TOther : INumberBase<TOther> =>
+            new(Vector4D<T>.CreateChecked(other.Row1), Vector4D<T>.CreateChecked(other.Row2), Vector4D<T>.CreateChecked(other.Row3), Vector4D<T>.CreateChecked(other.Row4));
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public static Matrix4X4<T> CreateSaturating<TOther>(Matrix4X4<TOther> other)
+            where TOther : INumberBase<TOther> =>
+            new(Vector4D<T>.CreateSaturating(other.Row1), Vector4D<T>.CreateSaturating(other.Row2), Vector4D<T>.CreateSaturating(other.Row3), Vector4D<T>.CreateSaturating(other.Row4));
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public static Matrix4X4<T> CreateTruncating<TOther>(Matrix4X4<TOther> other)
+            where TOther : INumberBase<TOther> =>
+            new(Vector4D<T>.CreateTruncating(other.Row1), Vector4D<T>.CreateTruncating(other.Row2), Vector4D<T>.CreateTruncating(other.Row3), Vector4D<T>.CreateTruncating(other.Row4));
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        [Obsolete("Use CreateChecked, CreateSaturating, CreateTruncating or cast instead.", error: false)]
+        public Matrix4X4<TOther> As<TOther>()
+            where TOther : INumberBase<TOther> =>
+            new(Row1.As<TOther>(), Row2.As<TOther>(), Row3.As<TOther>(), Row4.As<TOther>());
+
         /// <summary>Computes the transpose of the matrix.</summary>
         public Matrix4X4<T> Transpose() =>
             new(new(M11, M21, M31, M41),
@@ -320,16 +341,28 @@ namespace Silk.NET.Maths
                 left.M21 * right.Row1 + left.M22 * right.Row2 + left.M23 * right.Row3 + left.M24 * right.Row4,
                 left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3 + left.M34 * right.Row4,
                 left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3 + left.M44 * right.Row4);
+
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
         /// </summary>
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="Half"/> matrix.</returns>
         public static explicit operator Matrix4X4<Half>(Matrix4X4<T> from) =>
-            new(from.Row1.As<Half>(),
-                from.Row2.As<Half>(),
-                from.Row3.As<Half>(),
-                from.Row4.As<Half>());
+            new(Vector4D<Half>.CreateTruncating(from.Row1),
+                Vector4D<Half>.CreateTruncating(from.Row2),
+                Vector4D<Half>.CreateTruncating(from.Row3),
+                Vector4D<Half>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="Half"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<Half>(Matrix4X4<T> from) =>
+            new(Vector4D<Half>.CreateChecked(from.Row1),
+                Vector4D<Half>.CreateChecked(from.Row2),
+                Vector4D<Half>.CreateChecked(from.Row3),
+                Vector4D<Half>.CreateChecked(from.Row4));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="float"/>.
@@ -337,10 +370,21 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="float"/> matrix.</returns>
         public static explicit operator Matrix4X4<float>(Matrix4X4<T> from) =>
-            new(from.Row1.As<float>(),
-                from.Row2.As<float>(),
-                from.Row3.As<float>(),
-                from.Row4.As<float>());
+            new(Vector4D<float>.CreateTruncating(from.Row1),
+                Vector4D<float>.CreateTruncating(from.Row2),
+                Vector4D<float>.CreateTruncating(from.Row3),
+                Vector4D<float>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="float"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="float"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<float>(Matrix4X4<T> from) =>
+            new(Vector4D<float>.CreateChecked(from.Row1),
+                Vector4D<float>.CreateChecked(from.Row2),
+                Vector4D<float>.CreateChecked(from.Row3),
+                Vector4D<float>.CreateChecked(from.Row4));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="double"/>.
@@ -348,10 +392,21 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="double"/> matrix.</returns>
         public static explicit operator Matrix4X4<double>(Matrix4X4<T> from) =>
-            new(from.Row1.As<double>(),
-                from.Row2.As<double>(),
-                from.Row3.As<double>(),
-                from.Row4.As<double>());
+            new(Vector4D<double>.CreateTruncating(from.Row1),
+                Vector4D<double>.CreateTruncating(from.Row2),
+                Vector4D<double>.CreateTruncating(from.Row3),
+                Vector4D<double>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="double"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="double"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<double>(Matrix4X4<T> from) =>
+            new(Vector4D<double>.CreateChecked(from.Row1),
+                Vector4D<double>.CreateChecked(from.Row2),
+                Vector4D<double>.CreateChecked(from.Row3),
+                Vector4D<double>.CreateChecked(from.Row4));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="decimal"/>.
@@ -359,10 +414,21 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="decimal"/> matrix.</returns>
         public static explicit operator Matrix4X4<decimal>(Matrix4X4<T> from) =>
-            new(from.Row1.As<decimal>(),
-                from.Row2.As<decimal>(),
-                from.Row3.As<decimal>(),
-                from.Row4.As<decimal>());
+            new(Vector4D<decimal>.CreateTruncating(from.Row1),
+                Vector4D<decimal>.CreateTruncating(from.Row2),
+                Vector4D<decimal>.CreateTruncating(from.Row3),
+                Vector4D<decimal>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="decimal"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="decimal"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<decimal>(Matrix4X4<T> from) =>
+            new(Vector4D<decimal>.CreateChecked(from.Row1),
+                Vector4D<decimal>.CreateChecked(from.Row2),
+                Vector4D<decimal>.CreateChecked(from.Row3),
+                Vector4D<decimal>.CreateChecked(from.Row4));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="byte"/>.
@@ -370,10 +436,21 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="byte"/> matrix.</returns>
         public static explicit operator Matrix4X4<byte>(Matrix4X4<T> from) =>
-            new(from.Row1.As<byte>(),
-                from.Row2.As<byte>(),
-                from.Row3.As<byte>(),
-                from.Row4.As<byte>());
+            new(Vector4D<byte>.CreateTruncating(from.Row1),
+                Vector4D<byte>.CreateTruncating(from.Row2),
+                Vector4D<byte>.CreateTruncating(from.Row3),
+                Vector4D<byte>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="byte"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="byte"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<byte>(Matrix4X4<T> from) =>
+            new(Vector4D<byte>.CreateChecked(from.Row1),
+                Vector4D<byte>.CreateChecked(from.Row2),
+                Vector4D<byte>.CreateChecked(from.Row3),
+                Vector4D<byte>.CreateChecked(from.Row4));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="short"/>.
@@ -381,10 +458,21 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="short"/> matrix.</returns>
         public static explicit operator Matrix4X4<short>(Matrix4X4<T> from) =>
-            new(from.Row1.As<short>(),
-                from.Row2.As<short>(),
-                from.Row3.As<short>(),
-                from.Row4.As<short>());
+            new(Vector4D<short>.CreateTruncating(from.Row1),
+                Vector4D<short>.CreateTruncating(from.Row2),
+                Vector4D<short>.CreateTruncating(from.Row3),
+                Vector4D<short>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="short"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="short"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<short>(Matrix4X4<T> from) =>
+            new(Vector4D<short>.CreateChecked(from.Row1),
+                Vector4D<short>.CreateChecked(from.Row2),
+                Vector4D<short>.CreateChecked(from.Row3),
+                Vector4D<short>.CreateChecked(from.Row4));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="int"/>.
@@ -392,10 +480,21 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="int"/> matrix.</returns>
         public static explicit operator Matrix4X4<int>(Matrix4X4<T> from) =>
-            new(from.Row1.As<int>(),
-                from.Row2.As<int>(),
-                from.Row3.As<int>(),
-                from.Row4.As<int>());
+            new(Vector4D<int>.CreateTruncating(from.Row1),
+                Vector4D<int>.CreateTruncating(from.Row2),
+                Vector4D<int>.CreateTruncating(from.Row3),
+                Vector4D<int>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="int"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="int"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<int>(Matrix4X4<T> from) =>
+            new(Vector4D<int>.CreateChecked(from.Row1),
+                Vector4D<int>.CreateChecked(from.Row2),
+                Vector4D<int>.CreateChecked(from.Row3),
+                Vector4D<int>.CreateChecked(from.Row4));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="long"/>.
@@ -403,10 +502,21 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="long"/> matrix.</returns>
         public static explicit operator Matrix4X4<long>(Matrix4X4<T> from) =>
-            new(from.Row1.As<long>(),
-                from.Row2.As<long>(),
-                from.Row3.As<long>(),
-                from.Row4.As<long>());
+            new(Vector4D<long>.CreateTruncating(from.Row1),
+                Vector4D<long>.CreateTruncating(from.Row2),
+                Vector4D<long>.CreateTruncating(from.Row3),
+                Vector4D<long>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="long"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="long"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<long>(Matrix4X4<T> from) =>
+            new(Vector4D<long>.CreateChecked(from.Row1),
+                Vector4D<long>.CreateChecked(from.Row2),
+                Vector4D<long>.CreateChecked(from.Row3),
+                Vector4D<long>.CreateChecked(from.Row4));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="sbyte"/>.
@@ -414,10 +524,21 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="sbyte"/> matrix.</returns>
         public static explicit operator Matrix4X4<sbyte>(Matrix4X4<T> from) =>
-            new(from.Row1.As<sbyte>(),
-                from.Row2.As<sbyte>(),
-                from.Row3.As<sbyte>(),
-                from.Row4.As<sbyte>());
+            new(Vector4D<sbyte>.CreateTruncating(from.Row1),
+                Vector4D<sbyte>.CreateTruncating(from.Row2),
+                Vector4D<sbyte>.CreateTruncating(from.Row3),
+                Vector4D<sbyte>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="sbyte"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="sbyte"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<sbyte>(Matrix4X4<T> from) =>
+            new(Vector4D<sbyte>.CreateChecked(from.Row1),
+                Vector4D<sbyte>.CreateChecked(from.Row2),
+                Vector4D<sbyte>.CreateChecked(from.Row3),
+                Vector4D<sbyte>.CreateChecked(from.Row4));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ushort"/>.
@@ -425,10 +546,21 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="ushort"/> matrix.</returns>
         public static explicit operator Matrix4X4<ushort>(Matrix4X4<T> from) =>
-            new(from.Row1.As<ushort>(),
-                from.Row2.As<ushort>(),
-                from.Row3.As<ushort>(),
-                from.Row4.As<ushort>());
+            new(Vector4D<ushort>.CreateTruncating(from.Row1),
+                Vector4D<ushort>.CreateTruncating(from.Row2),
+                Vector4D<ushort>.CreateTruncating(from.Row3),
+                Vector4D<ushort>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ushort"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="ushort"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<ushort>(Matrix4X4<T> from) =>
+            new(Vector4D<ushort>.CreateChecked(from.Row1),
+                Vector4D<ushort>.CreateChecked(from.Row2),
+                Vector4D<ushort>.CreateChecked(from.Row3),
+                Vector4D<ushort>.CreateChecked(from.Row4));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="uint"/>.
@@ -436,10 +568,21 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="uint"/> matrix.</returns>
         public static explicit operator Matrix4X4<uint>(Matrix4X4<T> from) =>
-            new(from.Row1.As<uint>(),
-                from.Row2.As<uint>(),
-                from.Row3.As<uint>(),
-                from.Row4.As<uint>());
+            new(Vector4D<uint>.CreateTruncating(from.Row1),
+                Vector4D<uint>.CreateTruncating(from.Row2),
+                Vector4D<uint>.CreateTruncating(from.Row3),
+                Vector4D<uint>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="uint"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="uint"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<uint>(Matrix4X4<T> from) =>
+            new(Vector4D<uint>.CreateChecked(from.Row1),
+                Vector4D<uint>.CreateChecked(from.Row2),
+                Vector4D<uint>.CreateChecked(from.Row3),
+                Vector4D<uint>.CreateChecked(from.Row4));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ulong"/>.
@@ -447,10 +590,21 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="ulong"/> matrix.</returns>
         public static explicit operator Matrix4X4<ulong>(Matrix4X4<T> from) =>
-            new(from.Row1.As<ulong>(),
-                from.Row2.As<ulong>(),
-                from.Row3.As<ulong>(),
-                from.Row4.As<ulong>());
+            new(Vector4D<ulong>.CreateTruncating(from.Row1),
+                Vector4D<ulong>.CreateTruncating(from.Row2),
+                Vector4D<ulong>.CreateTruncating(from.Row3),
+                Vector4D<ulong>.CreateTruncating(from.Row4));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ulong"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="ulong"/> matrix.</returns>
+        public static explicit operator checked Matrix4X4<ulong>(Matrix4X4<T> from) =>
+            new(Vector4D<ulong>.CreateChecked(from.Row1),
+                Vector4D<ulong>.CreateChecked(from.Row2),
+                Vector4D<ulong>.CreateChecked(from.Row3),
+                Vector4D<ulong>.CreateChecked(from.Row4));
     }
 
     public static partial class Matrix4X4

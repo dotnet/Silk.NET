@@ -300,19 +300,26 @@ namespace Silk.NET.Maths
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(X, Y);
 
-        /// <summary>Desconstructs a vector into its components.</summary>
-        /// <param name="x">The X component.</param>
-        /// <param name="y">The Y component.</param>
-        public void Deconstruct(out T x, out T y)
-        {
-            x = X;
-            y = Y;
-        }
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public static Vector2D<T> CreateChecked<TOther>(Vector2D<TOther> source)
+            where TOther : INumberBase<TOther> =>
+            new(T.CreateChecked(source.X), T.CreateChecked(source.Y));
 
         /// <summary>Converts the components of this vector to another type.</summary>
+        public static Vector2D<T> CreateSaturating<TOther>(Vector2D<TOther> source)
+            where TOther : INumberBase<TOther> =>
+            new(T.CreateSaturating(source.X), T.CreateSaturating(source.Y));
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public static Vector2D<T> CreateTruncating<TOther>(Vector2D<TOther> source)
+            where TOther : INumberBase<TOther> =>
+            new(T.CreateTruncating(source.X), T.CreateTruncating(source.Y));
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        [Obsolete("Use CreateChecked, CreateSaturating, CreateTruncating, or a cast instead.", error: false)]
         public Vector2D<TOther> As<TOther>()
             where TOther : INumberBase<TOther> =>
-            new(TOther.CreateSaturating(X), TOther.CreateSaturating(Y));
+            Vector2D<TOther>.CreateTruncating(this);
 
         /// <summary>Implicitly casts a <see cref="ValueTuple{T, T}"/> to a <see cref="Vector2D{T}"/>.</summary>
         public static implicit operator Vector2D<T>((T X, T Y) v) =>
@@ -361,7 +368,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="Half"/> vector.</returns>
         public static explicit operator Vector2D<Half>(Vector2D<T> from) =>
-            from.As<Half>();
+            Vector2D<Half>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="Half"/> vector.</returns>
+        public static explicit operator checked Vector2D<Half>(Vector2D<T> from) =>
+            Vector2D<Half>.CreateChecked(from);
 
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="float"/>.
@@ -369,7 +384,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="float"/> vector.</returns>
         public static explicit operator Vector2D<float>(Vector2D<T> from) =>
-            from.As<float>();
+            Vector2D<float>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="float"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="float"/> vector.</returns>
+        public static explicit operator checked Vector2D<float>(Vector2D<T> from) =>
+            Vector2D<float>.CreateChecked(from);
 
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="double"/>.
@@ -377,7 +400,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="double"/> vector.</returns>
         public static explicit operator Vector2D<double>(Vector2D<T> from) =>
-            from.As<double>();
+            Vector2D<double>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="double"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="double"/> vector.</returns>
+        public static explicit operator checked Vector2D<double>(Vector2D<T> from) =>
+            Vector2D<double>.CreateChecked(from);
 
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="decimal"/>.
@@ -385,7 +416,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="decimal"/> vector.</returns>
         public static explicit operator Vector2D<decimal>(Vector2D<T> from) =>
-            from.As<decimal>();
+            Vector2D<decimal>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="decimal"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="decimal"/> vector.</returns>
+        public static explicit operator checked Vector2D<decimal>(Vector2D<T> from) =>
+            Vector2D<decimal>.CreateChecked(from);
 
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="byte"/>.
@@ -393,7 +432,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="byte"/> vector.</returns>
         public static explicit operator Vector2D<byte>(Vector2D<T> from) =>
-            from.As<byte>();
+            Vector2D<byte>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="byte"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="byte"/> vector.</returns>
+        public static explicit operator checked Vector2D<byte>(Vector2D<T> from) =>
+            Vector2D<byte>.CreateChecked(from);
 
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="short"/>.
@@ -401,7 +448,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="short"/> vector.</returns>
         public static explicit operator Vector2D<short>(Vector2D<T> from) =>
-            from.As<short>();
+            Vector2D<short>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="short"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="short"/> vector.</returns>
+        public static explicit operator checked Vector2D<short>(Vector2D<T> from) =>
+            Vector2D<short>.CreateChecked(from);
 
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="int"/>.
@@ -409,7 +464,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="int"/> vector.</returns>
         public static explicit operator Vector2D<int>(Vector2D<T> from) =>
-            from.As<int>();
+            Vector2D<int>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="int"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="int"/> vector.</returns>
+        public static explicit operator checked Vector2D<int>(Vector2D<T> from) =>
+            Vector2D<int>.CreateChecked(from);
 
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="long"/>.
@@ -417,7 +480,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="long"/> vector.</returns>
         public static explicit operator Vector2D<long>(Vector2D<T> from) =>
-            from.As<long>();
+            Vector2D<long>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="long"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="long"/> vector.</returns>
+        public static explicit operator checked Vector2D<long>(Vector2D<T> from) =>
+            Vector2D<long>.CreateChecked(from);
 
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="sbyte"/>.
@@ -425,7 +496,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="sbyte"/> vector.</returns>
         public static explicit operator Vector2D<sbyte>(Vector2D<T> from) =>
-            from.As<sbyte>();
+            Vector2D<sbyte>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="sbyte"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="sbyte"/> vector.</returns>
+        public static explicit operator checked Vector2D<sbyte>(Vector2D<T> from) =>
+            Vector2D<sbyte>.CreateChecked(from);
 
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="ushort"/>.
@@ -433,7 +512,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="ushort"/> vector.</returns>
         public static explicit operator Vector2D<ushort>(Vector2D<T> from) =>
-            from.As<ushort>();
+            Vector2D<ushort>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="ushort"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="ushort"/> vector.</returns>
+        public static explicit operator checked Vector2D<ushort>(Vector2D<T> from) =>
+            Vector2D<ushort>.CreateChecked(from);
 
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="uint"/>.
@@ -441,7 +528,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="uint"/> vector.</returns>
         public static explicit operator Vector2D<uint>(Vector2D<T> from) =>
-            from.As<uint>();
+            Vector2D<uint>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="uint"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="uint"/> vector.</returns>
+        public static explicit operator checked Vector2D<uint>(Vector2D<T> from) =>
+            Vector2D<uint>.CreateChecked(from);
 
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="ulong"/>.
@@ -449,7 +544,15 @@ namespace Silk.NET.Maths
         /// <param name="from">The source vector.</param>
         /// <returns>The <see cref="ulong"/> vector.</returns>
         public static explicit operator Vector2D<ulong>(Vector2D<T> from) =>
-            from.As<ulong>();
+            Vector2D<ulong>.CreateTruncating(from);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="ulong"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="ulong"/> vector.</returns>
+        public static explicit operator checked Vector2D<ulong>(Vector2D<T> from) =>
+            Vector2D<ulong>.CreateChecked(from);
     }
 
     public static partial class Vector2D
@@ -466,6 +569,16 @@ namespace Silk.NET.Maths
         {
             /// <summary>Gets the length squared of the vector.</summary>
             public T LengthSquared => Vector2D.Dot(vector, vector);
+        }
+
+        /// <summary>Desconstructs a vector into its components.</summary>
+        /// <param name="x">The X component.</param>
+        /// <param name="y">The Y component.</param>
+        public static void Deconstruct<T>(this Vector2D<T> vector, out T x, out T y)
+            where T : INumberBase<T>
+        {
+            x = vector.X;
+            y = vector.Y;
         }
 
         /// <summary>Computes the dot product of two vectors.</summary>

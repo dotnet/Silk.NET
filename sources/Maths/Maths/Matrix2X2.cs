@@ -81,15 +81,5 @@ namespace Silk.NET.Maths
 
             return Scalar.Subtract(Scalar.Multiply(a, d), Scalar.Multiply(b, c));
         }
-
-        /// <summary>
-        /// Returns this matrix casted to <typeparamref name="TOther"></typeparamref>
-        /// </summary>
-        /// <typeparam name="TOther">The type to cast to</typeparam>
-        /// <returns>The casted matrix</returns>
-        public Matrix2X2<TOther> As<TOther>() where TOther : INumberBase<TOther>
-        {
-            return new(Row1.As<TOther>(), Row2.As<TOther>());
-        }
     }
 }

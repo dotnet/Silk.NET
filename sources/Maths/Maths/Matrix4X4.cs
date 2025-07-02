@@ -160,15 +160,5 @@ namespace Silk.NET.Maths
                             Scalar.Subtract(Scalar.Multiply(e, jo_kn), Scalar.Multiply(f, io_km)),
                             Scalar.Multiply(g, in_jm)))));
         }
-
-        /// <summary>
-        /// Returns this matrix casted to <typeparamref name="TOther"></typeparamref>
-        /// </summary>
-        /// <typeparam name="TOther">The type to cast to</typeparam>
-        /// <returns>The casted matrix</returns>
-        public Matrix4X4<TOther> As<TOther>() where TOther : INumberBase<TOther>
-        {
-            return new(Row1.As<TOther>(), Row2.As<TOther>(), Row3.As<TOther>(), Row4.As<TOther>());
-        }
     }
 }

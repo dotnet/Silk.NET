@@ -114,6 +114,27 @@ namespace Silk.NET.Maths
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(Row1, Row2);
 
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public static Matrix2X2<T> CreateChecked<TOther>(Matrix2X2<TOther> other)
+            where TOther : INumberBase<TOther> =>
+            new(Vector2D<T>.CreateChecked(other.Row1), Vector2D<T>.CreateChecked(other.Row2));
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public static Matrix2X2<T> CreateSaturating<TOther>(Matrix2X2<TOther> other)
+            where TOther : INumberBase<TOther> =>
+            new(Vector2D<T>.CreateSaturating(other.Row1), Vector2D<T>.CreateSaturating(other.Row2));
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public static Matrix2X2<T> CreateTruncating<TOther>(Matrix2X2<TOther> other)
+            where TOther : INumberBase<TOther> =>
+            new(Vector2D<T>.CreateTruncating(other.Row1), Vector2D<T>.CreateTruncating(other.Row2));
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        [Obsolete("Use CreateChecked, CreateSaturating, CreateTruncating or cast instead.", error: false)]
+        public Matrix2X2<TOther> As<TOther>()
+            where TOther : INumberBase<TOther> =>
+            new(Row1.As<TOther>(), Row2.As<TOther>());
+
         /// <summary>Computes the transpose of the matrix.</summary>
         public Matrix2X2<T> Transpose() =>
             new(new(M11, M21),
@@ -179,14 +200,24 @@ namespace Silk.NET.Maths
         public static Matrix2X2<T> operator *(Matrix2X2<T> left, Matrix2X2<T> right) =>
             new(left.M11 * right.Row1 + left.M12 * right.Row2,
                 left.M21 * right.Row1 + left.M22 * right.Row2);
+
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
         /// </summary>
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="Half"/> matrix.</returns>
         public static explicit operator Matrix2X2<Half>(Matrix2X2<T> from) =>
-            new(from.Row1.As<Half>(),
-                from.Row2.As<Half>());
+            new(Vector2D<Half>.CreateTruncating(from.Row1),
+                Vector2D<Half>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="Half"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<Half>(Matrix2X2<T> from) =>
+            new(Vector2D<Half>.CreateChecked(from.Row1),
+                Vector2D<Half>.CreateChecked(from.Row2));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="float"/>.
@@ -194,8 +225,17 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="float"/> matrix.</returns>
         public static explicit operator Matrix2X2<float>(Matrix2X2<T> from) =>
-            new(from.Row1.As<float>(),
-                from.Row2.As<float>());
+            new(Vector2D<float>.CreateTruncating(from.Row1),
+                Vector2D<float>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="float"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="float"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<float>(Matrix2X2<T> from) =>
+            new(Vector2D<float>.CreateChecked(from.Row1),
+                Vector2D<float>.CreateChecked(from.Row2));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="double"/>.
@@ -203,8 +243,17 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="double"/> matrix.</returns>
         public static explicit operator Matrix2X2<double>(Matrix2X2<T> from) =>
-            new(from.Row1.As<double>(),
-                from.Row2.As<double>());
+            new(Vector2D<double>.CreateTruncating(from.Row1),
+                Vector2D<double>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="double"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="double"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<double>(Matrix2X2<T> from) =>
+            new(Vector2D<double>.CreateChecked(from.Row1),
+                Vector2D<double>.CreateChecked(from.Row2));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="decimal"/>.
@@ -212,8 +261,17 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="decimal"/> matrix.</returns>
         public static explicit operator Matrix2X2<decimal>(Matrix2X2<T> from) =>
-            new(from.Row1.As<decimal>(),
-                from.Row2.As<decimal>());
+            new(Vector2D<decimal>.CreateTruncating(from.Row1),
+                Vector2D<decimal>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="decimal"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="decimal"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<decimal>(Matrix2X2<T> from) =>
+            new(Vector2D<decimal>.CreateChecked(from.Row1),
+                Vector2D<decimal>.CreateChecked(from.Row2));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="byte"/>.
@@ -221,8 +279,17 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="byte"/> matrix.</returns>
         public static explicit operator Matrix2X2<byte>(Matrix2X2<T> from) =>
-            new(from.Row1.As<byte>(),
-                from.Row2.As<byte>());
+            new(Vector2D<byte>.CreateTruncating(from.Row1),
+                Vector2D<byte>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="byte"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="byte"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<byte>(Matrix2X2<T> from) =>
+            new(Vector2D<byte>.CreateChecked(from.Row1),
+                Vector2D<byte>.CreateChecked(from.Row2));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="short"/>.
@@ -230,8 +297,17 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="short"/> matrix.</returns>
         public static explicit operator Matrix2X2<short>(Matrix2X2<T> from) =>
-            new(from.Row1.As<short>(),
-                from.Row2.As<short>());
+            new(Vector2D<short>.CreateTruncating(from.Row1),
+                Vector2D<short>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="short"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="short"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<short>(Matrix2X2<T> from) =>
+            new(Vector2D<short>.CreateChecked(from.Row1),
+                Vector2D<short>.CreateChecked(from.Row2));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="int"/>.
@@ -239,8 +315,17 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="int"/> matrix.</returns>
         public static explicit operator Matrix2X2<int>(Matrix2X2<T> from) =>
-            new(from.Row1.As<int>(),
-                from.Row2.As<int>());
+            new(Vector2D<int>.CreateTruncating(from.Row1),
+                Vector2D<int>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="int"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="int"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<int>(Matrix2X2<T> from) =>
+            new(Vector2D<int>.CreateChecked(from.Row1),
+                Vector2D<int>.CreateChecked(from.Row2));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="long"/>.
@@ -248,8 +333,17 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="long"/> matrix.</returns>
         public static explicit operator Matrix2X2<long>(Matrix2X2<T> from) =>
-            new(from.Row1.As<long>(),
-                from.Row2.As<long>());
+            new(Vector2D<long>.CreateTruncating(from.Row1),
+                Vector2D<long>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="long"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="long"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<long>(Matrix2X2<T> from) =>
+            new(Vector2D<long>.CreateChecked(from.Row1),
+                Vector2D<long>.CreateChecked(from.Row2));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="sbyte"/>.
@@ -257,8 +351,17 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="sbyte"/> matrix.</returns>
         public static explicit operator Matrix2X2<sbyte>(Matrix2X2<T> from) =>
-            new(from.Row1.As<sbyte>(),
-                from.Row2.As<sbyte>());
+            new(Vector2D<sbyte>.CreateTruncating(from.Row1),
+                Vector2D<sbyte>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="sbyte"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="sbyte"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<sbyte>(Matrix2X2<T> from) =>
+            new(Vector2D<sbyte>.CreateChecked(from.Row1),
+                Vector2D<sbyte>.CreateChecked(from.Row2));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ushort"/>.
@@ -266,8 +369,17 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="ushort"/> matrix.</returns>
         public static explicit operator Matrix2X2<ushort>(Matrix2X2<T> from) =>
-            new(from.Row1.As<ushort>(),
-                from.Row2.As<ushort>());
+            new(Vector2D<ushort>.CreateTruncating(from.Row1),
+                Vector2D<ushort>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ushort"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="ushort"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<ushort>(Matrix2X2<T> from) =>
+            new(Vector2D<ushort>.CreateChecked(from.Row1),
+                Vector2D<ushort>.CreateChecked(from.Row2));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="uint"/>.
@@ -275,8 +387,17 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="uint"/> matrix.</returns>
         public static explicit operator Matrix2X2<uint>(Matrix2X2<T> from) =>
-            new(from.Row1.As<uint>(),
-                from.Row2.As<uint>());
+            new(Vector2D<uint>.CreateTruncating(from.Row1),
+                Vector2D<uint>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="uint"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="uint"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<uint>(Matrix2X2<T> from) =>
+            new(Vector2D<uint>.CreateChecked(from.Row1),
+                Vector2D<uint>.CreateChecked(from.Row2));
 
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ulong"/>.
@@ -284,8 +405,17 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix.</param>
         /// <returns>The <see cref="ulong"/> matrix.</returns>
         public static explicit operator Matrix2X2<ulong>(Matrix2X2<T> from) =>
-            new(from.Row1.As<ulong>(),
-                from.Row2.As<ulong>());
+            new(Vector2D<ulong>.CreateTruncating(from.Row1),
+                Vector2D<ulong>.CreateTruncating(from.Row2));
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ulong"/>.
+        /// </summary>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="ulong"/> matrix.</returns>
+        public static explicit operator checked Matrix2X2<ulong>(Matrix2X2<T> from) =>
+            new(Vector2D<ulong>.CreateChecked(from.Row1),
+                Vector2D<ulong>.CreateChecked(from.Row2));
     }
 
     public static partial class Matrix2X2

@@ -116,15 +116,5 @@ namespace Silk.NET.Maths
         {
             return value1.X * value2.Row1 + value1.Y * value2.Row2 + value1.Z * value2.Row3 + value1.W * value2.Row4;
         }
-
-        /// <summary>
-        /// Returns this matrix casted to <typeparamref name="TOther"></typeparamref>
-        /// </summary>
-        /// <typeparam name="TOther">The type to cast to</typeparam>
-        /// <returns>The casted matrix</returns>
-        public Matrix4X3<TOther> As<TOther>() where TOther : INumberBase<TOther>
-        {
-            return new(Row1.As<TOther>(), Row2.As<TOther>(), Row3.As<TOther>(), Row4.As<TOther>());
-        }
     }
 }
