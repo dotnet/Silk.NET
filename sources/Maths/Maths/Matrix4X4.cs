@@ -18,20 +18,20 @@ namespace Silk.NET.Maths
         /// <param name="value">The source <see cref="Matrix3X2{T}"/>.</param>
         public Matrix4X4(Matrix3X2<T> value)
         {
-            Row1 = new(value.M11, value.M12, default, default);
-            Row2 = new(value.M21, value.M22, default, default);
-            Row4 = new(value.M31, value.M32, default, Scalar<T>.One);
-            Row3 = new(default, default, Scalar<T>.One, default);
+            Row1 = new(value.M11, value.M12, T.Zero, T.Zero);
+            Row2 = new(value.M21, value.M22, T.Zero, T.Zero);
+            Row4 = new(value.M31, value.M32, T.Zero, T.One);
+            Row3 = new(T.Zero, T.Zero, T.One, T.Zero);
         }
 
         /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix4X3{T}"/>.</summary>
         /// <param name="value">The source <see cref="Matrix4X3{T}"/>.</param>
         public Matrix4X4(Matrix4X3<T> value)
         {
-            Row1 = new(value.M11, value.M12, value.M13, default);
-            Row2 = new(value.M21, value.M22, value.M23, default);
-            Row3 = new(value.M31, value.M32, value.M33, default);
-            Row4 = new(value.M41, value.M42, value.M43, Scalar<T>.One);
+            Row1 = new(value.M11, value.M12, value.M13, T.Zero);
+            Row2 = new(value.M21, value.M22, value.M23, T.Zero);
+            Row3 = new(value.M31, value.M32, value.M33, T.Zero);
+            Row4 = new(value.M41, value.M42, value.M43, T.One);
         }
 
         /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix3X4{T}"/>.</summary>
@@ -48,10 +48,10 @@ namespace Silk.NET.Maths
         /// <param name="value">The source <see cref="Matrix3X3{T}"/>.</param>
         public Matrix4X4(Matrix3X3<T> value)
         {
-            Row1 = new(value.M11, value.M12, value.M13, default);
-            Row2 = new(value.M21, value.M22, value.M23, default);
-            Row4 = new(value.M31, value.M32, value.M33, Scalar<T>.One);
-            Row3 = new(default, default, Scalar<T>.One, default);
+            Row1 = new(value.M11, value.M12, value.M13, T.Zero);
+            Row2 = new(value.M21, value.M22, value.M23, T.Zero);
+            Row4 = new(value.M31, value.M32, value.M33, T.One);
+            Row3 = new(T.Zero, T.Zero, T.One, T.Zero);
         }
 
         /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix2X4{T}"/>.</summary>
@@ -68,10 +68,10 @@ namespace Silk.NET.Maths
         /// <param name="value">The source <see cref="Matrix4X2{T}"/>.</param>
         public Matrix4X4(Matrix4X2<T> value)
         {
-            Row1 = new(value.M11, value.M12, default, default);
-            Row2 = new(value.M21, value.M22, default, default);
-            Row3 = new(value.M31, value.M32, Scalar<T>.One, default);
-            Row4 = new(value.M41, value.M42, default, Scalar<T>.One);
+            Row1 = new(value.M11, value.M12, T.Zero, T.Zero);
+            Row2 = new(value.M21, value.M22, T.Zero, T.Zero);
+            Row3 = new(value.M31, value.M32, T.One, T.Zero);
+            Row4 = new(value.M41, value.M42, T.Zero, T.One);
         }
 
         /// <summary>Multiplies a vector by a matrix.</summary>

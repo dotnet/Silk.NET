@@ -76,9 +76,9 @@ namespace Silk.NET.Maths
             Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
 
             return new(
-                new(xaxis, default),
-                new(yaxis, default),
-                new(zaxis, default),
+                new(xaxis, T.Zero),
+                new(yaxis, T.Zero),
+                new(zaxis, T.Zero),
                 new(objectPosition, Scalar<T>.One));
         }
 
@@ -137,9 +137,9 @@ namespace Silk.NET.Maths
             }
 
             return new(
-                new(xaxis, default),
-                new(yaxis, default),
-                new(zaxis, default),
+                new(xaxis, T.Zero),
+                new(yaxis, T.Zero),
+                new(zaxis, T.Zero),
                 new(objectPosition, Scalar<T>.One));
         }
 

@@ -16,20 +16,20 @@ namespace Silk.NET.Maths
     {
         private static readonly Matrix5X4<T> _identity = new
         (
-            Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero,
-            Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero,
-            Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero,
-            Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One,
-            Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero
+            T.One, T.Zero, T.Zero, T.Zero,
+            T.Zero, T.One, T.Zero, T.Zero,
+            T.Zero, T.Zero, T.One, T.Zero,
+            T.Zero, T.Zero, T.Zero, T.One,
+            T.Zero, T.Zero, T.Zero, T.Zero
         );
 
         /// <summary>Constructs a <see cref="Matrix5X4{T}"/> from the given <see cref="Matrix3X2{T}"/>.</summary>
         /// <param name="value">The source <see cref="Matrix3X2{T}"/>.</param>
         public Matrix5X4(Matrix3X2<T> value)
         {
-            Row1 = new(value.M11, value.M12, default, default);
-            Row2 = new(value.M21, value.M22, default, default);
-            Row5 = new(value.M31, value.M32, default, default);
+            Row1 = new(value.M11, value.M12, T.Zero, T.Zero);
+            Row2 = new(value.M21, value.M22, T.Zero, T.Zero);
+            Row5 = new(value.M31, value.M32, T.Zero, T.Zero);
             Row3 = Vector4D<T>.UnitZ;
             Row4 = Vector4D<T>.UnitW;
         }
@@ -49,10 +49,10 @@ namespace Silk.NET.Maths
         /// <param name="value">The source <see cref="Matrix4X3{T}"/>.</param>
         public Matrix5X4(Matrix4X3<T> value)
         {
-            Row1 = new(value.M11, value.M12, value.M13, default);
-            Row2 = new(value.M21, value.M22, value.M23, default);
-            Row3 = new(value.M31, value.M32, value.M33, default);
-            Row4 = new(value.M41, value.M42, value.M43, Scalar<T>.One);
+            Row1 = new(value.M11, value.M12, value.M13, T.Zero);
+            Row2 = new(value.M21, value.M22, value.M23, T.Zero);
+            Row3 = new(value.M31, value.M32, value.M33, T.Zero);
+            Row4 = new(value.M41, value.M42, value.M43, T.One);
             Row5 = default;
         }
 
@@ -71,9 +71,9 @@ namespace Silk.NET.Maths
         /// <param name="value">The source <see cref="Matrix3X3{T}"/>.</param>
         public Matrix5X4(Matrix3X3<T> value)
         {
-            Row1 = new(value.M11, value.M12, value.M13, default);
-            Row2 = new(value.M21, value.M22, value.M23, default);
-            Row5 = new(value.M31, value.M32, value.M33, default);
+            Row1 = new(value.M11, value.M12, value.M13, T.Zero);
+            Row2 = new(value.M21, value.M22, value.M23, T.Zero);
+            Row5 = new(value.M31, value.M32, value.M33, T.Zero);
             Row3 = Vector4D<T>.UnitZ;
             Row4 = Vector4D<T>.UnitW;
         }
@@ -93,10 +93,10 @@ namespace Silk.NET.Maths
         /// <param name="value">The source <see cref="Matrix4X2{T}"/>.</param>
         public Matrix5X4(Matrix4X2<T> value)
         {
-            Row1 = new(value.M11, value.M12, default, default);
-            Row2 = new(value.M21, value.M22, default, default);
-            Row3 = new(value.M31, value.M32, Scalar<T>.One, default);
-            Row4 = new(value.M41, value.M42, default, Scalar<T>.One);
+            Row1 = new(value.M11, value.M12, T.Zero, T.Zero);
+            Row2 = new(value.M21, value.M22, T.Zero, T.Zero);
+            Row3 = new(value.M31, value.M32, T.One, T.Zero);
+            Row4 = new(value.M41, value.M42, T.Zero, T.One);
             Row5 = default;
         }
 

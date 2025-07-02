@@ -28,10 +28,10 @@ namespace Silk.NET.Maths
         /// <param name="value">The source <see cref="Matrix3X2{T}"/>.</param>
         public Matrix4X3(Matrix3X2<T> value)
         {
-            Row1 = new(value.M11, value.M12, default);
-            Row2 = new(value.M21, value.M22, default);
+            Row1 = new(value.M11, value.M12, T.Zero);
+            Row2 = new(value.M21, value.M22, T.Zero);
             Row3 = Vector3D<T>.UnitZ;
-            Row4 = new(value.M31, value.M32, default);
+            Row4 = new(value.M31, value.M32, T.Zero);
         }
 
         /// <summary>Constructs a <see cref="Matrix4X3{T}"/> from the given <see cref="Matrix4X3{T}"/>.</summary>
@@ -78,9 +78,9 @@ namespace Silk.NET.Maths
         /// <param name="value">The source <see cref="Matrix4X2{T}"/>.</param>
         public Matrix4X3(Matrix4X2<T> value)
         {
-            Row1 = new(value.M11, value.M12, default);
-            Row2 = new(value.M21, value.M22, default);
-            Row3 = new(value.M31, value.M32, default);
+            Row1 = new(value.M11, value.M12, T.Zero);
+            Row2 = new(value.M21, value.M22, T.Zero);
+            Row3 = new(value.M31, value.M32, T.Zero);
             Row4 = new(value.M41, value.M42, Scalar<T>.One);
         }
 
