@@ -71,8 +71,6 @@ namespace Silk.NET.Maths
         /// <summary>Gets the vector (0, 0, 0, 1).</summary>
         public static Vector4D<T> UnitW => new(T.Zero, T.Zero, T.Zero, T.One);
 
-        /// <summary>Gets the squared length of the vector (dot product with itself).</summary>
-        public T LengthSquared => Vector4D.Dot(this, this);
 
         /// <inheritdoc/>
         T IReadOnlyList<T>.this[int index] => this[index];
@@ -534,6 +532,20 @@ namespace Silk.NET.Maths
 
     public static partial class Vector4D
     {
+        extension<T>(Vector4D<T> vector)
+            where T : IRootFunctions<T>
+        {
+            /// <summary>Gets the length of the vector.</summary>
+            public T Length => T.Sqrt(vector.LengthSquared);
+        }
+
+        extension<T>(Vector4D<T> vector)
+            where T : INumberBase<T>
+        {
+            /// <summary>Gets the length squared of the vector.</summary>
+            public T LengthSquared => Vector4D.Dot(vector, vector);
+        }
+
         /// <summary>Computes the dot product of two vectors.</summary>
         public static T Dot<T>(this Vector4D<T> left, Vector4D<T> right)
             where T : INumberBase<T> =>
@@ -547,17 +559,31 @@ namespace Silk.NET.Maths
             return vector - (normal * (dot + dot));
         }
 
-        /// <summary>Computes the length of the vector.</summary>
-        public static T GetLength<T>(this Vector4D<T> vector)
-            where T : IFloatingPointIeee754<T> =>
-            T.Sqrt(vector.LengthSquared);
-
         /// <summary>Normalizes a vector.</summary>
         public static Vector4D<T> Normalize<T>(this Vector4D<T> vector)
-            where T : IFloatingPointIeee754<T>
+            where T : IRootFunctions<T>
         {
-            T length = vector.GetLength();
+            T length = vector.Length;
             return length != T.Zero ? vector / length : Vector4D<T>.Zero;
+        }
+
+        /// <summary>Returns the Euclidean distance between the two given points.</summary>
+        /// <param name="value1">The first point.</param>
+        /// <param name="value2">The second point.</param>
+        /// <returns>The distance.</returns>
+        public static T Distance<T>(Vector4D<T> value1, Vector4D<T> value2)
+            where T : IRootFunctions<T> =>
+            T.Sqrt(DistanceSquared(value1, value2));
+
+        /// <summary>Returns the Euclidean distance squared between the two given points.</summary>
+        /// <param name="value1">The first point.</param>
+        /// <param name="value2">The second point.</param>
+        /// <returns>The distance squared.</returns>
+        public static T DistanceSquared<T>(Vector4D<T> value1, Vector4D<T> value2)
+            where T : INumberBase<T>
+        {
+            var difference = value1 - value2;
+            return Dot(difference, difference);
         }
 
         /// <summary>Applies <see cref="INumber{TSelf}.Sign(TSelf)"/> to the provided arguments.</summary>

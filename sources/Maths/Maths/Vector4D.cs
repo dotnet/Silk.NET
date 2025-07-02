@@ -13,8 +13,6 @@ namespace Silk.NET.Maths
     /// <summary>A structure representing a 4D integer vector.</summary>
     public partial struct Vector4D<T>
     {
-        // Casts
-
         /// <summary>Explicitly casts a System.Numerics.Vector4 to a Vector4D.</summary>
         public static explicit operator Vector4D<T>(System.Numerics.Vector4 v) =>
             new Vector4D<T>((T)Convert.ChangeType(v.X, typeof(T)), (T)Convert.ChangeType(v.Y, typeof(T)), (T)Convert.ChangeType(v.Z, typeof(T)), (T)Convert.ChangeType(v.W, typeof(T)));
