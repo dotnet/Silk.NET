@@ -54,12 +54,6 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22);
         }
 
-        /// <summary>Returns whether the matrix is the identity matrix.</summary>
-        public readonly bool IsIdentity
-            => Scalar.Equal(M11, Scalar<T>.One) &&
-               Scalar.Equal(M22, Scalar<T>.One) && // Check diagonal element first for early out.
-               Scalar.Equal(M12, Scalar<T>.Zero) && Scalar.Equal(M21, Scalar<T>.Zero);
-
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
@@ -76,8 +70,8 @@ namespace Silk.NET.Maths
             //   | a b |
             //   | c d | = ad - bc
 
-            T a = M11, b = M12;
-            T d = M21, c = M22;
+            T a = Row1.X, b = Row1.Y;
+            T d = Row2.X, c = Row1.Y;
 
             return Scalar.Subtract(Scalar.Multiply(a, d), Scalar.Multiply(b, c));
         }

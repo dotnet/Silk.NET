@@ -102,7 +102,9 @@ namespace Silk.NET.Maths
             //
             // Collapse out the constants and oh look, this is just a 2x2 determinant!
 
-            return Scalar.Subtract(Scalar.Multiply(M11, M22), Scalar.Multiply(M21, M12));
+            return Scalar.Subtract(
+                Scalar.Multiply(Row1.X, Row2.Y),
+                Scalar.Multiply(Row2.X, Row1.Y));
         }
 
         /// <summary>

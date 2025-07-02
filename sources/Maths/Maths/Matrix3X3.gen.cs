@@ -15,6 +15,10 @@ namespace Silk.NET.Maths
             new(T.Zero, T.MultiplicativeIdentity, T.Zero),
             new(T.Zero, T.Zero, T.MultiplicativeIdentity));
 
+        /// <summary>Returns whether the matrix is the identity matrix.</summary>
+        [IgnoreDataMember]
+        public readonly bool IsIdentity => this == Identity;
+
         /// <summary>The 1st row of the matrix represented as a vector.</summary>
         [IgnoreDataMember]
         public Vector3D<T> Row1;

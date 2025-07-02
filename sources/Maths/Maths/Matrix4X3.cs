@@ -99,14 +99,7 @@ namespace Silk.NET.Maths
 
         /// <summary>Returns whether the matrix is the identity matrix.</summary>
         [IgnoreDataMember]
-        public readonly bool IsIdentity
-            => Scalar.Equal(M11, Scalar<T>.One) && Scalar.Equal(M22, Scalar<T>.One) &&
-               Scalar.Equal(M33, Scalar<T>.One) && // Check diagonal element first for early out.
-               Scalar.Equal(M12, Scalar<T>.Zero) && Scalar.Equal(M13, Scalar<T>.Zero) &&
-               Scalar.Equal(M21, Scalar<T>.Zero) && Scalar.Equal(M23, Scalar<T>.Zero) &&
-               Scalar.Equal(M31, Scalar<T>.Zero) && Scalar.Equal(M32, Scalar<T>.Zero) &&
-               Scalar.Equal(M41, Scalar<T>.Zero) && Scalar.Equal(M42, Scalar<T>.Zero) &&
-               Scalar.Equal(M43, Scalar<T>.Zero);
+        public readonly bool IsIdentity => this == Identity;
 
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>

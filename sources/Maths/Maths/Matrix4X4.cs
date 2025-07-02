@@ -74,19 +74,6 @@ namespace Silk.NET.Maths
             Row4 = new(value.M41, value.M42, default, Scalar<T>.One);
         }
 
-        /// <summary>Returns whether the matrix is the identity matrix.</summary>
-        [IgnoreDataMember]
-        public readonly bool IsIdentity
-            => Scalar.Equal(M11, Scalar<T>.One) && Scalar.Equal(M22, Scalar<T>.One) &&
-               Scalar.Equal(M33, Scalar<T>.One) &&
-               Scalar.Equal(M44, Scalar<T>.One) && // Check diagonal element first for early out.
-               Scalar.Equal(M12, Scalar<T>.Zero) && Scalar.Equal(M13, Scalar<T>.Zero) &&
-               Scalar.Equal(M14, Scalar<T>.Zero) && Scalar.Equal(M21, Scalar<T>.Zero) &&
-               Scalar.Equal(M23, Scalar<T>.Zero) && Scalar.Equal(M24, Scalar<T>.Zero) &&
-               Scalar.Equal(M31, Scalar<T>.Zero) && Scalar.Equal(M32, Scalar<T>.Zero) &&
-               Scalar.Equal(M34, Scalar<T>.Zero) && Scalar.Equal(M41, Scalar<T>.Zero) &&
-               Scalar.Equal(M42, Scalar<T>.Zero) && Scalar.Equal(M43, Scalar<T>.Zero);
-
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
@@ -128,10 +115,10 @@ namespace Silk.NET.Maths
             // add: 6 + 8 + 3 = 17
             // mul: 12 + 16 = 28
 
-            T a = M11, b = M12, c = M13, d = M14;
-            T e = M21, f = M22, g = M23, h = M24;
-            T i = M31, j = M32, k = M33, l = M34;
-            T m = M41, n = M42, o = M43, p = M44;
+            T a = Row1.X, b = Row1.Y, c = Row1.Z, d = Row1.W;
+            T e = Row2.X, f = Row2.Y, g = Row2.Z, h = Row2.W;
+            T i = Row3.X, j = Row3.Y, k = Row3.Z, l = Row3.W;
+            T m = Row4.X, n = Row4.Y, o = Row4.Z, p = Row4.W;
 
             T kp_lo = Scalar.Subtract(Scalar.Multiply(k, p), Scalar.Multiply(l, o));
             T jp_ln = Scalar.Subtract(Scalar.Multiply(j, p), Scalar.Multiply(l, n));

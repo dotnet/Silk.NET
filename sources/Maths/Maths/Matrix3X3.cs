@@ -77,15 +77,6 @@ namespace Silk.NET.Maths
             Row3 = new(value.M31, value.M32, value.M33);
         }
 
-        /// <summary>Returns whether the matrix is the identity matrix.</summary>
-        [IgnoreDataMember]
-        public readonly bool IsIdentity
-            => Scalar.Equal(M11, Scalar<T>.One) && Scalar.Equal(M22, Scalar<T>.One) &&
-               Scalar.Equal(M33, Scalar<T>.One) && // Check diagonal element first for early out.
-               Scalar.Equal(M12, Scalar<T>.Zero) && Scalar.Equal(M13, Scalar<T>.Zero) &&
-               Scalar.Equal(M21, Scalar<T>.Zero) && Scalar.Equal(M23, Scalar<T>.Zero) &&
-               Scalar.Equal(M31, Scalar<T>.Zero) && Scalar.Equal(M32, Scalar<T>.Zero);
-
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
@@ -103,9 +94,9 @@ namespace Silk.NET.Maths
             //   | d e f | = ( a ( ei - fh ) - b ( di - fg ) + c ( dh - eg ) )
             //   | g h i |
 
-            T a = M11, b = M12, c = M13;
-            T d = M21, e = M22, f = M23;
-            T g = M31, h = M32, i = M33;
+            T a = Row1.X, b = Row1.Y, c = Row1.Z;
+            T d = Row2.X, e = Row2.Y, f = Row2.Z;
+            T g = Row3.X, h = Row3.Y, i = Row3.Z;
 
             return Scalar.Add(
                 Scalar.Subtract(
