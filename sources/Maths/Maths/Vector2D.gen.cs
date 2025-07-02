@@ -356,6 +356,102 @@ namespace Silk.NET.Maths
 
         public static Vector2D<T> operator /(Vector2D<T> vector, T scalar) =>
             new(vector.X / scalar, vector.Y / scalar);
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="Half"/> vector.</returns>
+        public static explicit operator Vector2D<Half>(Vector2D<T> from) =>
+            from.As<Half>();
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="float"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="float"/> vector.</returns>
+        public static explicit operator Vector2D<float>(Vector2D<T> from) =>
+            from.As<float>();
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="double"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="double"/> vector.</returns>
+        public static explicit operator Vector2D<double>(Vector2D<T> from) =>
+            from.As<double>();
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="decimal"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="decimal"/> vector.</returns>
+        public static explicit operator Vector2D<decimal>(Vector2D<T> from) =>
+            from.As<decimal>();
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="byte"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="byte"/> vector.</returns>
+        public static explicit operator Vector2D<byte>(Vector2D<T> from) =>
+            from.As<byte>();
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="short"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="short"/> vector.</returns>
+        public static explicit operator Vector2D<short>(Vector2D<T> from) =>
+            from.As<short>();
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="int"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="int"/> vector.</returns>
+        public static explicit operator Vector2D<int>(Vector2D<T> from) =>
+            from.As<int>();
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="long"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="long"/> vector.</returns>
+        public static explicit operator Vector2D<long>(Vector2D<T> from) =>
+            from.As<long>();
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="sbyte"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="sbyte"/> vector.</returns>
+        public static explicit operator Vector2D<sbyte>(Vector2D<T> from) =>
+            from.As<sbyte>();
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="ushort"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="ushort"/> vector.</returns>
+        public static explicit operator Vector2D<ushort>(Vector2D<T> from) =>
+            from.As<ushort>();
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="uint"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="uint"/> vector.</returns>
+        public static explicit operator Vector2D<uint>(Vector2D<T> from) =>
+            from.As<uint>();
+
+        /// <summary>
+        /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="ulong"/>.
+        /// </summary>
+        /// <param name="from">The source vector.</param>
+        /// <returns>The <see cref="ulong"/> vector.</returns>
+        public static explicit operator Vector2D<ulong>(Vector2D<T> from) =>
+            from.As<ulong>();
     }
 
     public static partial class Vector2D

@@ -269,8 +269,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="Half"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="Half"/> matrix.</returns>
         public static explicit operator Matrix3X4<Half>(Matrix3X4<T> from) =>
             new(from.Row1.As<Half>(),
                 from.Row2.As<Half>(),
@@ -279,8 +279,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="float"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="float"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="float"/> matrix.</returns>
         public static explicit operator Matrix3X4<float>(Matrix3X4<T> from) =>
             new(from.Row1.As<float>(),
                 from.Row2.As<float>(),
@@ -289,8 +289,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="double"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="double"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="double"/> matrix.</returns>
         public static explicit operator Matrix3X4<double>(Matrix3X4<T> from) =>
             new(from.Row1.As<double>(),
                 from.Row2.As<double>(),
@@ -299,8 +299,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="decimal"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="decimal"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="decimal"/> matrix.</returns>
         public static explicit operator Matrix3X4<decimal>(Matrix3X4<T> from) =>
             new(from.Row1.As<decimal>(),
                 from.Row2.As<decimal>(),
@@ -309,8 +309,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="byte"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="byte"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="byte"/> matrix.</returns>
         public static explicit operator Matrix3X4<byte>(Matrix3X4<T> from) =>
             new(from.Row1.As<byte>(),
                 from.Row2.As<byte>(),
@@ -319,8 +319,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="short"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="short"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="short"/> matrix.</returns>
         public static explicit operator Matrix3X4<short>(Matrix3X4<T> from) =>
             new(from.Row1.As<short>(),
                 from.Row2.As<short>(),
@@ -329,8 +329,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="int"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="int"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="int"/> matrix.</returns>
         public static explicit operator Matrix3X4<int>(Matrix3X4<T> from) =>
             new(from.Row1.As<int>(),
                 from.Row2.As<int>(),
@@ -339,8 +339,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="long"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="long"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="long"/> matrix.</returns>
         public static explicit operator Matrix3X4<long>(Matrix3X4<T> from) =>
             new(from.Row1.As<long>(),
                 from.Row2.As<long>(),
@@ -349,8 +349,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="sbyte"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="sbyte"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="sbyte"/> matrix.</returns>
         public static explicit operator Matrix3X4<sbyte>(Matrix3X4<T> from) =>
             new(from.Row1.As<sbyte>(),
                 from.Row2.As<sbyte>(),
@@ -359,8 +359,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ushort"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="ushort"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="ushort"/> matrix.</returns>
         public static explicit operator Matrix3X4<ushort>(Matrix3X4<T> from) =>
             new(from.Row1.As<ushort>(),
                 from.Row2.As<ushort>(),
@@ -369,8 +369,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="uint"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="uint"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="uint"/> matrix.</returns>
         public static explicit operator Matrix3X4<uint>(Matrix3X4<T> from) =>
             new(from.Row1.As<uint>(),
                 from.Row2.As<uint>(),
@@ -379,8 +379,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ulong"/>.
         /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="ulong"/> matrix</returns>
+        /// <param name="from">The source matrix.</param>
+        /// <returns>The <see cref="ulong"/> matrix.</returns>
         public static explicit operator Matrix3X4<ulong>(Matrix3X4<T> from) =>
             new(from.Row1.As<ulong>(),
                 from.Row2.As<ulong>(),
