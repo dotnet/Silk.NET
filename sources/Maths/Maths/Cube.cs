@@ -15,7 +15,7 @@ namespace Silk.NET.Maths
     [DataContract]
     public struct Cube<T>
         : IEquatable<Cube<T>>
-        where T : INumberBase<T>
+        where T : INumber<T>
     {
         /// <summary>
         /// The origin.
@@ -236,7 +236,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted cube</returns>
-        public Cube<TOther> As<TOther>() where TOther : INumberBase<TOther>
+        public Cube<TOther> As<TOther>()
+            where TOther : INumber<TOther>
         {
             return new(Origin.As<TOther>(), Max.As<TOther>());
         }

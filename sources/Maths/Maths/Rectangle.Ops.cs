@@ -21,7 +21,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type.</typeparam>
         /// <returns>The constructed rectangle.</returns>
         public static Rectangle<T> FromLTRB<T>(T left, T top, T right, T bottom)
-            where T : INumberBase<T>
+            where T : INumber<T>
         {
             Vector2D<T> o = new(left, top);
             return new Rectangle<T>(o, new Vector2D<T>(right, bottom) - o);

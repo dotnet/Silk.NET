@@ -14,7 +14,7 @@ namespace Silk.NET.Maths
     [DataContract]
     public struct Rectangle<T>
         : IEquatable<Rectangle<T>>
-        where T : INumberBase<T>
+        where T : INumber<T>
     {
         /// <summary>
         /// The origin.
@@ -228,7 +228,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted rectangle</returns>
-        public Rectangle<TOther> As<TOther>() where TOther : INumberBase<TOther>
+        public Rectangle<TOther> As<TOther>()
+            where TOther : INumber<TOther>
         {
             return new(Origin.As<TOther>(), Size.As<TOther>());
         }

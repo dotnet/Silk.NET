@@ -15,7 +15,7 @@ namespace Silk.NET.Maths
     [DataContract]
     public struct Box2D<T>
         : IEquatable<Box2D<T>>
-        where T : INumberBase<T>
+        where T : INumber<T>
     {
         /// <summary>
         /// The min.
@@ -149,7 +149,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="TScale">The type of the scale.</typeparam>
         /// <returns>The calculated box.</returns>
         public Box2D<T> GetScaled<TScale>(Vector2D<TScale> scale, Vector2D<T> anchor)
-            where TScale : INumberBase<TScale>
+            where TScale : INumber<TScale>
         {
             return this.As<TScale>().GetScaled(scale, anchor.As<TScale>()).As<T>();
         }
@@ -210,7 +210,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted box</returns>
-        public Box2D<TOther> As<TOther>() where TOther : INumberBase<TOther>
+        public Box2D<TOther> As<TOther>()
+            where TOther : INumber<TOther>
         {
             return new(Min.As<TOther>(), Max.As<TOther>());
         }
