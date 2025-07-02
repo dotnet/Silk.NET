@@ -127,6 +127,16 @@ namespace Silk.NET.Maths
         [UnscopedRef]
         public ref T M42 => ref Row4.Y;
 
+
+        /// <inheritdoc/>
+        public override string ToString() =>
+            string.Format(
+                "{{ {{M11:{0} M12:{1}}} {{M21:{2} M22:{3}}} {{M31:{4} M32:{5}}} {{M41:{6} M42:{7}}} }}",
+                Row1.X, Row1.Y,
+                Row2.X, Row2.Y,
+                Row3.X, Row3.Y,
+                Row4.X, Row4.Y);
+
         /// <inheridoc/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public override bool Equals(object? obj) => obj is Matrix4X2<T> other && Equals(other);
@@ -187,6 +197,26 @@ namespace Silk.NET.Maths
                 -value.Row3,
                 -value.Row4);
 
+        /// <summary>Multiplies a matrix by a scalar value.</summary>
+        /// <param name="left">The scaling factor.</param>
+        /// <param name="right">The source matrix.</param>
+        /// <returns>The scaled matrix.</returns>
+        public static Matrix4X2<T> operator *(T left, Matrix4X2<T> right) =>
+            new(left * right.Row1,
+                left * right.Row2,
+                left * right.Row3,
+                left * right.Row4);
+
+        /// <summary>Multiplies a matrix by a scalar value.</summary>
+        /// <param name="left">The source matrix.</param>
+        /// <param name="right">The scaling factor.</param>
+        /// <returns>The scaled matrix.</returns>
+        public static Matrix4X2<T> operator *(Matrix4X2<T> left, T right) =>
+            new(left.Row1 * right,
+                left.Row2 * right,
+                left.Row3 * right,
+                left.Row4 * right);
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
@@ -216,6 +246,137 @@ namespace Silk.NET.Maths
                 left.M21 * right.Row1 + left.M22 * right.Row2,
                 left.M31 * right.Row1 + left.M32 * right.Row2,
                 left.M41 * right.Row1 + left.M42 * right.Row2);
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="Half"/> matrix</returns>
+        public static explicit operator Matrix4X2<Half>(Matrix4X2<T> from) =>
+            new(from.Row1.As<Half>(),
+                from.Row2.As<Half>(),
+                from.Row3.As<Half>(),
+                from.Row4.As<Half>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="float"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="float"/> matrix</returns>
+        public static explicit operator Matrix4X2<float>(Matrix4X2<T> from) =>
+            new(from.Row1.As<float>(),
+                from.Row2.As<float>(),
+                from.Row3.As<float>(),
+                from.Row4.As<float>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="double"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="double"/> matrix</returns>
+        public static explicit operator Matrix4X2<double>(Matrix4X2<T> from) =>
+            new(from.Row1.As<double>(),
+                from.Row2.As<double>(),
+                from.Row3.As<double>(),
+                from.Row4.As<double>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="decimal"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="decimal"/> matrix</returns>
+        public static explicit operator Matrix4X2<decimal>(Matrix4X2<T> from) =>
+            new(from.Row1.As<decimal>(),
+                from.Row2.As<decimal>(),
+                from.Row3.As<decimal>(),
+                from.Row4.As<decimal>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="byte"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="byte"/> matrix</returns>
+        public static explicit operator Matrix4X2<byte>(Matrix4X2<T> from) =>
+            new(from.Row1.As<byte>(),
+                from.Row2.As<byte>(),
+                from.Row3.As<byte>(),
+                from.Row4.As<byte>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="short"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="short"/> matrix</returns>
+        public static explicit operator Matrix4X2<short>(Matrix4X2<T> from) =>
+            new(from.Row1.As<short>(),
+                from.Row2.As<short>(),
+                from.Row3.As<short>(),
+                from.Row4.As<short>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="int"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="int"/> matrix</returns>
+        public static explicit operator Matrix4X2<int>(Matrix4X2<T> from) =>
+            new(from.Row1.As<int>(),
+                from.Row2.As<int>(),
+                from.Row3.As<int>(),
+                from.Row4.As<int>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="long"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="long"/> matrix</returns>
+        public static explicit operator Matrix4X2<long>(Matrix4X2<T> from) =>
+            new(from.Row1.As<long>(),
+                from.Row2.As<long>(),
+                from.Row3.As<long>(),
+                from.Row4.As<long>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="sbyte"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="sbyte"/> matrix</returns>
+        public static explicit operator Matrix4X2<sbyte>(Matrix4X2<T> from) =>
+            new(from.Row1.As<sbyte>(),
+                from.Row2.As<sbyte>(),
+                from.Row3.As<sbyte>(),
+                from.Row4.As<sbyte>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ushort"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ushort"/> matrix</returns>
+        public static explicit operator Matrix4X2<ushort>(Matrix4X2<T> from) =>
+            new(from.Row1.As<ushort>(),
+                from.Row2.As<ushort>(),
+                from.Row3.As<ushort>(),
+                from.Row4.As<ushort>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="uint"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="uint"/> matrix</returns>
+        public static explicit operator Matrix4X2<uint>(Matrix4X2<T> from) =>
+            new(from.Row1.As<uint>(),
+                from.Row2.As<uint>(),
+                from.Row3.As<uint>(),
+                from.Row4.As<uint>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ulong"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ulong"/> matrix</returns>
+        public static explicit operator Matrix4X2<ulong>(Matrix4X2<T> from) =>
+            new(from.Row1.As<ulong>(),
+                from.Row2.As<ulong>(),
+                from.Row3.As<ulong>(),
+                from.Row4.As<ulong>());
     }
 
     public static partial class Matrix4X2

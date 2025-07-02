@@ -187,6 +187,17 @@ namespace Silk.NET.Maths
         [UnscopedRef]
         public ref T M54 => ref Row5.W;
 
+
+        /// <inheritdoc/>
+        public override string ToString() =>
+            string.Format(
+                "{{ {{M11:{0} M12:{1} M13:{2} M14:{3}}} {{M21:{4} M22:{5} M23:{6} M24:{7}}} {{M31:{8} M32:{9} M33:{10} M34:{11}}} {{M41:{12} M42:{13} M43:{14} M44:{15}}} {{M51:{16} M52:{17} M53:{18} M54:{19}}} }}",
+                Row1.X, Row1.Y, Row1.Z, Row1.W,
+                Row2.X, Row2.Y, Row2.Z, Row2.W,
+                Row3.X, Row3.Y, Row3.Z, Row3.W,
+                Row4.X, Row4.Y, Row4.Z, Row4.W,
+                Row5.X, Row5.Y, Row5.Z, Row5.W);
+
         /// <inheridoc/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public override bool Equals(object? obj) => obj is Matrix5X4<T> other && Equals(other);
@@ -246,6 +257,28 @@ namespace Silk.NET.Maths
                 -value.Row4,
                 -value.Row5);
 
+        /// <summary>Multiplies a matrix by a scalar value.</summary>
+        /// <param name="left">The scaling factor.</param>
+        /// <param name="right">The source matrix.</param>
+        /// <returns>The scaled matrix.</returns>
+        public static Matrix5X4<T> operator *(T left, Matrix5X4<T> right) =>
+            new(left * right.Row1,
+                left * right.Row2,
+                left * right.Row3,
+                left * right.Row4,
+                left * right.Row5);
+
+        /// <summary>Multiplies a matrix by a scalar value.</summary>
+        /// <param name="left">The source matrix.</param>
+        /// <param name="right">The scaling factor.</param>
+        /// <returns>The scaled matrix.</returns>
+        public static Matrix5X4<T> operator *(Matrix5X4<T> left, T right) =>
+            new(left.Row1 * right,
+                left.Row2 * right,
+                left.Row3 * right,
+                left.Row4 * right,
+                left.Row5 * right);
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
@@ -256,6 +289,149 @@ namespace Silk.NET.Maths
                 left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3 + left.M34 * right.Row4,
                 left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3 + left.M44 * right.Row4,
                 left.M51 * right.Row1 + left.M52 * right.Row2 + left.M53 * right.Row3 + left.M54 * right.Row4);
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="Half"/> matrix</returns>
+        public static explicit operator Matrix5X4<Half>(Matrix5X4<T> from) =>
+            new(from.Row1.As<Half>(),
+                from.Row2.As<Half>(),
+                from.Row3.As<Half>(),
+                from.Row4.As<Half>(),
+                from.Row5.As<Half>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="float"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="float"/> matrix</returns>
+        public static explicit operator Matrix5X4<float>(Matrix5X4<T> from) =>
+            new(from.Row1.As<float>(),
+                from.Row2.As<float>(),
+                from.Row3.As<float>(),
+                from.Row4.As<float>(),
+                from.Row5.As<float>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="double"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="double"/> matrix</returns>
+        public static explicit operator Matrix5X4<double>(Matrix5X4<T> from) =>
+            new(from.Row1.As<double>(),
+                from.Row2.As<double>(),
+                from.Row3.As<double>(),
+                from.Row4.As<double>(),
+                from.Row5.As<double>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="decimal"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="decimal"/> matrix</returns>
+        public static explicit operator Matrix5X4<decimal>(Matrix5X4<T> from) =>
+            new(from.Row1.As<decimal>(),
+                from.Row2.As<decimal>(),
+                from.Row3.As<decimal>(),
+                from.Row4.As<decimal>(),
+                from.Row5.As<decimal>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="byte"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="byte"/> matrix</returns>
+        public static explicit operator Matrix5X4<byte>(Matrix5X4<T> from) =>
+            new(from.Row1.As<byte>(),
+                from.Row2.As<byte>(),
+                from.Row3.As<byte>(),
+                from.Row4.As<byte>(),
+                from.Row5.As<byte>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="short"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="short"/> matrix</returns>
+        public static explicit operator Matrix5X4<short>(Matrix5X4<T> from) =>
+            new(from.Row1.As<short>(),
+                from.Row2.As<short>(),
+                from.Row3.As<short>(),
+                from.Row4.As<short>(),
+                from.Row5.As<short>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="int"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="int"/> matrix</returns>
+        public static explicit operator Matrix5X4<int>(Matrix5X4<T> from) =>
+            new(from.Row1.As<int>(),
+                from.Row2.As<int>(),
+                from.Row3.As<int>(),
+                from.Row4.As<int>(),
+                from.Row5.As<int>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="long"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="long"/> matrix</returns>
+        public static explicit operator Matrix5X4<long>(Matrix5X4<T> from) =>
+            new(from.Row1.As<long>(),
+                from.Row2.As<long>(),
+                from.Row3.As<long>(),
+                from.Row4.As<long>(),
+                from.Row5.As<long>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="sbyte"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="sbyte"/> matrix</returns>
+        public static explicit operator Matrix5X4<sbyte>(Matrix5X4<T> from) =>
+            new(from.Row1.As<sbyte>(),
+                from.Row2.As<sbyte>(),
+                from.Row3.As<sbyte>(),
+                from.Row4.As<sbyte>(),
+                from.Row5.As<sbyte>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ushort"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ushort"/> matrix</returns>
+        public static explicit operator Matrix5X4<ushort>(Matrix5X4<T> from) =>
+            new(from.Row1.As<ushort>(),
+                from.Row2.As<ushort>(),
+                from.Row3.As<ushort>(),
+                from.Row4.As<ushort>(),
+                from.Row5.As<ushort>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="uint"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="uint"/> matrix</returns>
+        public static explicit operator Matrix5X4<uint>(Matrix5X4<T> from) =>
+            new(from.Row1.As<uint>(),
+                from.Row2.As<uint>(),
+                from.Row3.As<uint>(),
+                from.Row4.As<uint>(),
+                from.Row5.As<uint>());
+
+        /// <summary>
+        /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="ulong"/>.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ulong"/> matrix</returns>
+        public static explicit operator Matrix5X4<ulong>(Matrix5X4<T> from) =>
+            new(from.Row1.As<ulong>(),
+                from.Row2.As<ulong>(),
+                from.Row3.As<ulong>(),
+                from.Row4.As<ulong>(),
+                from.Row5.As<ulong>());
     }
 
     public static partial class Matrix5X4
