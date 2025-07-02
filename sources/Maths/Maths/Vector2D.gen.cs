@@ -508,6 +508,33 @@ namespace Silk.NET.Maths
             return Dot(difference, difference);
         }
 
+        /// <summary>Linearly interpolates between two vectors using a scalar t-value (clamped between 0 and 1).</summary>
+        public static Vector2D<T> LerpClamped<T>(Vector2D<T> a, Vector2D<T> b, T amount)
+            where T : IFloatingPointIeee754<T> =>
+            Lerp(a, b, T.Clamp(amount, T.Zero, T.One));
+
+        /// <summary>Linearly interpolates between two vectors using a vector t-value (clamped between 0 and 1).</summary>
+        public static Vector2D<T> LerpClamped<T>(Vector2D<T> a, Vector2D<T> b, Vector2D<T> amount)
+            where T : IFloatingPointIeee754<T> =>
+            new(T.Lerp(a.X, b.X, T.Clamp(amount.X, T.Zero, T.One)),
+                T.Lerp(a.Y, b.Y, T.Clamp(amount.Y, T.Zero, T.One)));
+
+        public static (Vector2D<T> Sin, Vector2D<T> Cos) SinCos<T>(this Vector2D<T> x)
+            where T : ITrigonometricFunctions<T> =>
+            (new(T.Sin(x.X), T.Sin(x.Y)), new(T.Cos(x.X), T.Cos(x.Y)));
+
+        public static (Vector2D<T> SinPi, Vector2D<T> CosPi) SinCosPi<T>(this Vector2D<T> x)
+            where T : ITrigonometricFunctions<T> =>
+            (new(T.SinPi(x.X), T.SinPi(x.Y)), new(T.CosPi(x.X), T.CosPi(x.Y)));
+
+        public static (Vector2D<T> Quotient, Vector2D<T> Remainder) DivRem<T>(Vector2D<T> left, Vector2D<T> right)
+            where T : IBinaryInteger<T>
+        {
+            var (qX, rX) = T.DivRem(left.X, right.X);
+            var (qY, rY) = T.DivRem(left.Y, right.Y);
+            return (new Vector2D<T>(qX, qY), new Vector2D<T>(rX, rY));
+        }
+
         /// <summary>Applies <see cref="INumber{TSelf}.Sign(TSelf)"/> to the provided arguments.</summary>
         /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
         public static Vector2D<int> Sign<TSelf>(this Vector2D<TSelf> value)

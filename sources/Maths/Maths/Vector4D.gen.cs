@@ -586,6 +586,37 @@ namespace Silk.NET.Maths
             return Dot(difference, difference);
         }
 
+        /// <summary>Linearly interpolates between two vectors using a scalar t-value (clamped between 0 and 1).</summary>
+        public static Vector4D<T> LerpClamped<T>(Vector4D<T> a, Vector4D<T> b, T amount)
+            where T : IFloatingPointIeee754<T> =>
+            Lerp(a, b, T.Clamp(amount, T.Zero, T.One));
+
+        /// <summary>Linearly interpolates between two vectors using a vector t-value (clamped between 0 and 1).</summary>
+        public static Vector4D<T> LerpClamped<T>(Vector4D<T> a, Vector4D<T> b, Vector4D<T> amount)
+            where T : IFloatingPointIeee754<T> =>
+            new(T.Lerp(a.X, b.X, T.Clamp(amount.X, T.Zero, T.One)),
+                T.Lerp(a.Y, b.Y, T.Clamp(amount.Y, T.Zero, T.One)),
+                T.Lerp(a.Z, b.Z, T.Clamp(amount.Z, T.Zero, T.One)),
+                T.Lerp(a.W, b.W, T.Clamp(amount.W, T.Zero, T.One)));
+
+        public static (Vector4D<T> Sin, Vector4D<T> Cos) SinCos<T>(this Vector4D<T> x)
+            where T : ITrigonometricFunctions<T> =>
+            (new(T.Sin(x.X), T.Sin(x.Y), T.Sin(x.Z), T.Sin(x.W)), new(T.Cos(x.X), T.Cos(x.Y), T.Cos(x.Z), T.Cos(x.W)));
+
+        public static (Vector4D<T> SinPi, Vector4D<T> CosPi) SinCosPi<T>(this Vector4D<T> x)
+            where T : ITrigonometricFunctions<T> =>
+            (new(T.SinPi(x.X), T.SinPi(x.Y), T.SinPi(x.Z), T.SinPi(x.W)), new(T.CosPi(x.X), T.CosPi(x.Y), T.CosPi(x.Z), T.CosPi(x.W)));
+
+        public static (Vector4D<T> Quotient, Vector4D<T> Remainder) DivRem<T>(Vector4D<T> left, Vector4D<T> right)
+            where T : IBinaryInteger<T>
+        {
+            var (qX, rX) = T.DivRem(left.X, right.X);
+            var (qY, rY) = T.DivRem(left.Y, right.Y);
+            var (qZ, rZ) = T.DivRem(left.Z, right.Z);
+            var (qW, rW) = T.DivRem(left.W, right.W);
+            return (new Vector4D<T>(qX, qY, qZ, qW), new Vector4D<T>(rX, rY, rZ, rW));
+        }
+
         /// <summary>Applies <see cref="INumber{TSelf}.Sign(TSelf)"/> to the provided arguments.</summary>
         /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
         public static Vector4D<int> Sign<TSelf>(this Vector4D<TSelf> value)
