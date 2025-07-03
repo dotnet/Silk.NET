@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -12,7 +13,8 @@ namespace Silk.NET.Maths
     [Serializable]
     [DataContract]
     public struct Circle<T>
-        : IEquatable<Circle<T>> where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        : IEquatable<Circle<T>>
+        where T : IRootFunctions<T>
     {
         /// <summary>
         /// The center.
@@ -166,13 +168,14 @@ namespace Silk.NET.Maths
         {
             return !value1.Equals(value2);
         }
-        
+
         /// <summary>
         /// Returns this circle casted to <typeparamref name="TOther"></typeparamref>
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted circle</returns>
-        public Circle<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
+        public Circle<TOther> As<TOther>() where TOther : IRootFunctions<TOther>
         {
             return new(Center.As<TOther>(), Scalar.As<T, TOther>(Radius));
         }

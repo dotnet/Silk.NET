@@ -3,11 +3,12 @@
 
 using System;
 using System.Globalization;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using Silk.NET.Maths;
 
-namespace Silk.NET.Maths.Legacy
+namespace Silk.NET.Maths
 {
     /// <summary>
     /// Represents a vector that is used to encode three-dimensional physical rotations.
@@ -15,39 +16,9 @@ namespace Silk.NET.Maths.Legacy
     /// <typeparam name="T">The type used to store values.</typeparam>
     [Serializable]
     [DataContract]
-    public struct Quaternion<T>
-        : IEquatable<Quaternion<T>> where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+    public partial struct Quaternion<T>
     {
         private const float SlerpEpsilon = 1e-6f;
-
-        /// <summary>Specifies the X-value of the vector component of the Quaternion.</summary>
-        [DataMember]
-        public T X;
-
-        /// <summary>Specifies the Y-value of the vector component of the Quaternion.</summary>
-        [DataMember]
-        public T Y;
-
-        /// <summary>Specifies the Z-value of the vector component of the Quaternion.</summary>
-        [DataMember]
-        public T Z;
-
-        /// <summary>Specifies the rotation component of the Quaternion.</summary>
-        [DataMember]
-        public T W;
-
-        /// <summary>Constructs a Quaternion from the given components.</summary>
-        /// <param name="x">The X component of the Quaternion.</param>
-        /// <param name="y">The Y component of the Quaternion.</param>
-        /// <param name="z">The Z component of the Quaternion.</param>
-        /// <param name="w">The W component of the Quaternion.</param>
-        public Quaternion(T x, T y, T z, T w)
-        {
-            X = x;
-            Y = y;
-            Z = z;
-            W = w;
-        }
 
         /// <summary>Constructs a Quaternion from the given vector and rotation parts.</summary>
         /// <param name="vectorPart">The vector part of the Quaternion.</param>
@@ -59,9 +30,6 @@ namespace Silk.NET.Maths.Legacy
             Z = vectorPart.Z;
             W = scalarPart;
         }
-
-        /// <summary>Returns a Quaternion representing no rotation.</summary>
-        public static Quaternion<T> Identity => new(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
 
         /// <summary>Returns whether the Quaternion is the identity Quaternion.</summary>
         [IgnoreDataMember]
@@ -102,22 +70,22 @@ namespace Silk.NET.Maths.Legacy
                 Scalar.Add(
                     Scalar.Add(Scalar.Multiply(value2.X, value2.X), Scalar.Multiply(value2.Y, value2.Y)),
                     Scalar.Multiply(value2.Z, value2.Z)), Scalar.Multiply(value2.W, value2.W));
-            T invNorm = Scalar.Reciprocal(ls);
+            var invNorm = Scalar.Reciprocal(ls);
 
-            T q2x = Scalar.Negate(Scalar.Multiply(value2.X, invNorm));
-            T q2y = Scalar.Negate(Scalar.Multiply(value2.Y, invNorm));
-            T q2z = Scalar.Negate(Scalar.Multiply(value2.Z, invNorm));
-            T q2w = Scalar.Multiply(value2.W, invNorm);
+            var q2x = Scalar.Negate(Scalar.Multiply(value2.X, invNorm));
+            var q2y = Scalar.Negate(Scalar.Multiply(value2.Y, invNorm));
+            var q2z = Scalar.Negate(Scalar.Multiply(value2.Z, invNorm));
+            var q2w = Scalar.Multiply(value2.W, invNorm);
 
             //-------------------------------------
             // Multiply part.
 
             // cross(av, bv)
-            T cx = Scalar.Subtract(Scalar.Multiply(q1y, q2z), Scalar.Multiply(q1z, q2y));
-            T cy = Scalar.Subtract(Scalar.Multiply(q1z, q2x), Scalar.Multiply(q1x, q2z));
-            T cz = Scalar.Subtract(Scalar.Multiply(q1x, q2y), Scalar.Multiply(q1y, q2x));
+            var cx = Scalar.Subtract(Scalar.Multiply(q1y, q2z), Scalar.Multiply(q1z, q2y));
+            var cy = Scalar.Subtract(Scalar.Multiply(q1z, q2x), Scalar.Multiply(q1x, q2z));
+            var cz = Scalar.Subtract(Scalar.Multiply(q1x, q2y), Scalar.Multiply(q1y, q2x));
 
-            T dot = Scalar.Add(Scalar.Add(Scalar.Multiply(q1x, q2x), Scalar.Multiply(q1y, q2y)),
+            var dot = Scalar.Add(Scalar.Add(Scalar.Multiply(q1x, q2x), Scalar.Multiply(q1y, q2y)),
                 Scalar.Multiply(q1z, q2z));
 
             ans.X = Scalar.Add(Scalar.Add(Scalar.Multiply(q1x, q2w), Scalar.Multiply(q2x, q1w)), cx);
@@ -127,23 +95,6 @@ namespace Silk.NET.Maths.Legacy
 
             return ans;
         }
-
-        /// <summary>Returns a boolean indicating whether the two given Quaternions are equal.</summary>
-        /// <param name="value1">The first Quaternion to compare.</param>
-        /// <param name="value2">The second Quaternion to compare.</param>
-        /// <returns>True if the Quaternions are equal; False otherwise.</returns>
-        public static bool operator ==(Quaternion<T> value1, Quaternion<T> value2)
-            => Scalar.Equal(value1.X, value2.X)
-            && Scalar.Equal(value1.Y, value2.Y)
-            && Scalar.Equal(value1.Z, value2.Z)
-            && Scalar.Equal(value1.W, value2.W);
-
-        /// <summary>Returns a boolean indicating whether the two given Quaternions are not equal.</summary>
-        /// <param name="value1">The first Quaternion to compare.</param>
-        /// <param name="value2">The second Quaternion to compare.</param>
-        /// <returns>True if the Quaternions are not equal; False if they are equal.</returns>
-        public static bool operator !=(Quaternion<T> value1, Quaternion<T> value2)
-            => !(value1 == value2);
 
         /// <summary>Multiplies two Quaternions together.</summary>
         /// <param name="value1">The Quaternion on the left side of the multiplication.</param>
@@ -164,11 +115,11 @@ namespace Silk.NET.Maths.Legacy
             T q2w = value2.W;
 
             // cross(av, bv)
-            T cx = Scalar.Subtract(Scalar.Multiply(q1y, q2z), Scalar.Multiply(q1z, q2y));
-            T cy = Scalar.Subtract(Scalar.Multiply(q1z, q2x), Scalar.Multiply(q1x, q2z));
-            T cz = Scalar.Subtract(Scalar.Multiply(q1x, q2y), Scalar.Multiply(q1y, q2x));
+            var cx = Scalar.Subtract(Scalar.Multiply(q1y, q2z), Scalar.Multiply(q1z, q2y));
+            var cy = Scalar.Subtract(Scalar.Multiply(q1z, q2x), Scalar.Multiply(q1x, q2z));
+            var cz = Scalar.Subtract(Scalar.Multiply(q1x, q2y), Scalar.Multiply(q1y, q2x));
 
-            T dot = Scalar.Add(Scalar.Add(Scalar.Multiply(q1x, q2x), Scalar.Multiply(q1y, q2y)),
+            var dot = Scalar.Add(Scalar.Add(Scalar.Multiply(q1x, q2x), Scalar.Multiply(q1y, q2y)),
                 Scalar.Multiply(q1z, q2z));
 
             ans.X = Scalar.Add(Scalar.Add(Scalar.Multiply(q1x, q2w), Scalar.Multiply(q2x, q1w)), cx);
@@ -255,11 +206,11 @@ namespace Silk.NET.Maths.Legacy
             T q2w = value1.W;
 
             // cross(av, bv)
-            T cx = Scalar.Subtract(Scalar.Multiply(q1y, q2z), Scalar.Multiply(q1z, q2y));
-            T cy = Scalar.Subtract(Scalar.Multiply(q1z, q2x), Scalar.Multiply(q1x, q2z));
-            T cz = Scalar.Subtract(Scalar.Multiply(q1x, q2y), Scalar.Multiply(q1y, q2x));
+            var cx = Scalar.Subtract(Scalar.Multiply(q1y, q2z), Scalar.Multiply(q1z, q2y));
+            var cy = Scalar.Subtract(Scalar.Multiply(q1z, q2x), Scalar.Multiply(q1x, q2z));
+            var cz = Scalar.Subtract(Scalar.Multiply(q1x, q2y), Scalar.Multiply(q1y, q2x));
 
-            T dot = Scalar.Add(Scalar.Add(Scalar.Multiply(q1x, q2x), Scalar.Multiply(q1y, q2y)),
+            var dot = Scalar.Add(Scalar.Add(Scalar.Multiply(q1x, q2x), Scalar.Multiply(q1y, q2y)),
                 Scalar.Multiply(q1z, q2z));
 
             ans.X = Scalar.Add(Scalar.Add(Scalar.Multiply(q1x, q2w), Scalar.Multiply(q2x, q1w)), cx);
@@ -294,9 +245,9 @@ namespace Silk.NET.Maths.Legacy
         {
             Quaternion<T> ans;
 
-            T halfAngle = Scalar.Divide(angle, Scalar<T>.Two);
-            T s = Scalar.Sin(halfAngle);
-            T c = Scalar.Cos(halfAngle);
+            var halfAngle = Scalar.Divide(angle, Scalar<T>.Two);
+            var s = Scalar.Sin(halfAngle);
+            var c = Scalar.Cos(halfAngle);
 
             ans.X = Scalar.Multiply(axis.X, s);
             ans.Y = Scalar.Multiply(axis.Y, s);
@@ -311,13 +262,13 @@ namespace Silk.NET.Maths.Legacy
         /// <returns>The created Quaternion.</returns>
         public static Quaternion<T> CreateFromRotationMatrix(Matrix4X4<T> matrix)
         {
-            T trace = Scalar.Add(Scalar.Add(matrix.M11, matrix.M22), matrix.M33);
+            var trace = Scalar.Add(Scalar.Add(matrix.M11, matrix.M22), matrix.M33);
 
             Quaternion<T> q = default;
 
             if (Scalar.GreaterThan(trace, Scalar<T>.Zero))
             {
-                T s = Scalar.Sqrt(Scalar.Add(trace, Scalar<T>.One));
+                var s = Scalar.Sqrt(Scalar.Add(trace, Scalar<T>.One));
                 q.W = Scalar.Divide(s, Scalar<T>.Two);
                 s = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                 q.X = Scalar.Multiply(Scalar.Subtract(matrix.M23, matrix.M32), s);
@@ -328,8 +279,8 @@ namespace Silk.NET.Maths.Legacy
             {
                 if (Scalar.GreaterThanOrEqual(matrix.M11, matrix.M22) && Scalar.GreaterThanOrEqual(matrix.M11, matrix.M33))
                 {
-                    T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M11), matrix.M22), matrix.M33));
-                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
+                    var s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M11), matrix.M22), matrix.M33));
+                    var invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Divide(s, Scalar<T>.Two);
                     q.Y = Scalar.Multiply(Scalar.Add(matrix.M12, matrix.M21), invS);
                     q.Z = Scalar.Multiply(Scalar.Add(matrix.M13, matrix.M31), invS);
@@ -337,8 +288,8 @@ namespace Silk.NET.Maths.Legacy
                 }
                 else if (Scalar.GreaterThan(matrix.M22, matrix.M33))
                 {
-                    T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M22), matrix.M11), matrix.M33));
-                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
+                    var s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M22), matrix.M11), matrix.M33));
+                    var invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Multiply(Scalar.Add(matrix.M21, matrix.M12), invS);
                     q.Y = Scalar.Divide(s, Scalar<T>.Two);
                     q.Z = Scalar.Multiply(Scalar.Add(matrix.M32, matrix.M23), invS);
@@ -346,8 +297,8 @@ namespace Silk.NET.Maths.Legacy
                 }
                 else
                 {
-                    T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M33), matrix.M11), matrix.M22));
-                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
+                    var s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M33), matrix.M11), matrix.M22));
+                    var invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Multiply(Scalar.Add(matrix.M31, matrix.M13), invS);
                     q.Y = Scalar.Multiply(Scalar.Add(matrix.M32, matrix.M23), invS);
                     q.Z = Scalar.Divide(s, Scalar<T>.Two);
@@ -363,13 +314,13 @@ namespace Silk.NET.Maths.Legacy
         /// <returns>The created Quaternion.</returns>
         public static Quaternion<T> CreateFromRotationMatrix(Matrix3X3<T> matrix)
         {
-            T trace = Scalar.Add(Scalar.Add(matrix.M11, matrix.M22), matrix.M33);
+            var trace = Scalar.Add(Scalar.Add(matrix.M11, matrix.M22), matrix.M33);
 
             Quaternion<T> q = default;
 
             if (Scalar.GreaterThan(trace, Scalar<T>.Zero))
             {
-                T s = Scalar.Sqrt(Scalar.Add(trace, Scalar<T>.One));
+                var s = Scalar.Sqrt(Scalar.Add(trace, Scalar<T>.One));
                 q.W = Scalar.Divide(s, Scalar<T>.Two);
                 s = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                 q.X = Scalar.Multiply(Scalar.Subtract(matrix.M23, matrix.M32), s);
@@ -380,8 +331,8 @@ namespace Silk.NET.Maths.Legacy
             {
                 if (Scalar.GreaterThanOrEqual(matrix.M11, matrix.M22) && Scalar.GreaterThanOrEqual(matrix.M11, matrix.M33))
                 {
-                    T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M11), matrix.M22), matrix.M33));
-                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
+                    var s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M11), matrix.M22), matrix.M33));
+                    var invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Divide(s, Scalar<T>.Two);
                     q.Y = Scalar.Multiply(Scalar.Add(matrix.M12, matrix.M21), invS);
                     q.Z = Scalar.Multiply(Scalar.Add(matrix.M13, matrix.M31), invS);
@@ -389,8 +340,8 @@ namespace Silk.NET.Maths.Legacy
                 }
                 else if (Scalar.GreaterThan(matrix.M22, matrix.M33))
                 {
-                    T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M22), matrix.M11), matrix.M33));
-                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
+                    var s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M22), matrix.M11), matrix.M33));
+                    var invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Multiply(Scalar.Add(matrix.M21, matrix.M12), invS);
                     q.Y = Scalar.Divide(s, Scalar<T>.Two);
                     q.Z = Scalar.Multiply(Scalar.Add(matrix.M32, matrix.M23), invS);
@@ -398,8 +349,8 @@ namespace Silk.NET.Maths.Legacy
                 }
                 else
                 {
-                    T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M33), matrix.M11), matrix.M22));
-                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
+                    var s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M33), matrix.M11), matrix.M22));
+                    var invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Multiply(Scalar.Add(matrix.M31, matrix.M13), invS);
                     q.Y = Scalar.Multiply(Scalar.Add(matrix.M32, matrix.M23), invS);
                     q.Z = Scalar.Divide(s, Scalar<T>.Two);
@@ -421,15 +372,15 @@ namespace Silk.NET.Maths.Legacy
             //  pitch upward, then yaw to face into the new heading
             T sr, cr, sp, cp, sy, cy;
 
-            T halfRoll = Scalar.Divide(roll, Scalar<T>.Two);
+            var halfRoll = Scalar.Divide(roll, Scalar<T>.Two);
             sr = Scalar.Sin(halfRoll);
             cr = Scalar.Cos(halfRoll);
 
-            T halfPitch = Scalar.Divide(pitch, Scalar<T>.Two);
+            var halfPitch = Scalar.Divide(pitch, Scalar<T>.Two);
             sp = Scalar.Sin(halfPitch);
             cp = Scalar.Cos(halfPitch);
 
-            T halfYaw = Scalar.Divide(yaw, Scalar<T>.Two);
+            var halfYaw = Scalar.Divide(yaw, Scalar<T>.Two);
             sy = Scalar.Sin(halfYaw);
             cy = Scalar.Cos(halfYaw);
 
@@ -475,7 +426,7 @@ namespace Silk.NET.Maths.Legacy
             Quaternion<T> ans;
 
             T ls = Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(value.X, value.X), Scalar.Multiply(value.Y, value.Y)), Scalar.Multiply(value.Z, value.Z)), Scalar.Multiply(value.W, value.W));
-            T invNorm = Scalar.Reciprocal(ls);
+            var invNorm = Scalar.Reciprocal(ls);
 
             ans.X = Scalar.Negate(Scalar.Multiply(value.X, invNorm));
             ans.Y = Scalar.Negate(Scalar.Multiply(value.Y, invNorm));
@@ -492,8 +443,8 @@ namespace Silk.NET.Maths.Legacy
         /// <returns>The interpolated Quaternion.</returns>
         public static Quaternion<T> Lerp(Quaternion<T> quaternion1, Quaternion<T> quaternion2, T amount)
         {
-            T t = amount;
-            T t1 = Scalar.Subtract(Scalar<T>.One, t);
+            var t = amount;
+            var t1 = Scalar.Subtract(Scalar<T>.One, t);
 
             Quaternion<T> r = default;
 
@@ -521,7 +472,7 @@ namespace Silk.NET.Maths.Legacy
 
             // Normalize it.
             T ls = Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(r.X, r.X), Scalar.Multiply(r.Y, r.Y)), Scalar.Multiply(r.Z, r.Z)), Scalar.Multiply(r.W, r.W));
-            T invNorm = Scalar.Reciprocal(Scalar.Sqrt(ls));
+            var invNorm = Scalar.Reciprocal(Scalar.Sqrt(ls));
 
             r.X = Scalar.Multiply(r.X, invNorm);
             r.Y = Scalar.Multiply(r.Y, invNorm);
@@ -562,7 +513,7 @@ namespace Silk.NET.Maths.Legacy
             Quaternion<T> ans;
 
             T ls = Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(value.X, value.X), Scalar.Multiply(value.Y, value.Y)), Scalar.Multiply(value.Z, value.Z)), Scalar.Multiply(value.W, value.W));
-            T invNorm = Scalar.Reciprocal(Scalar.Sqrt(ls));
+            var invNorm = Scalar.Reciprocal(Scalar.Sqrt(ls));
 
             ans.X = Scalar.Multiply(value.X, invNorm);
             ans.Y = Scalar.Multiply(value.Y, invNorm);
@@ -579,11 +530,11 @@ namespace Silk.NET.Maths.Legacy
         /// <returns>The interpolated Quaternion.</returns>
         public static Quaternion<T> Slerp(Quaternion<T> quaternion1, Quaternion<T> quaternion2, T amount)
         {
-            T t = amount;
+            var t = amount;
 
             T cosOmega = Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(quaternion1.X, quaternion2.X), Scalar.Multiply(quaternion1.Y, quaternion2.Y)), Scalar.Multiply(quaternion1.Z, quaternion2.Z)), Scalar.Multiply(quaternion1.W, quaternion2.W));
 
-            bool flip = false;
+            var flip = false;
 
             if (!Scalar.GreaterThanOrEqual(cosOmega, Scalar<T>.Zero))
             {
@@ -601,11 +552,11 @@ namespace Silk.NET.Maths.Legacy
             }
             else
             {
-                T omega = Scalar.Acos(cosOmega);
-                T invSinOmega = Scalar.Reciprocal(Scalar.Sin(omega));
+                var omega = Scalar.Acos(cosOmega);
+                var invSinOmega = Scalar.Reciprocal(Scalar.Sin(omega));
 
                 s1 = Scalar.Multiply(Scalar.Sin(Scalar.Multiply(Scalar.Subtract(Scalar<T>.One, t), omega)), invSinOmega);
-                s2 = (flip)
+                s2 = flip
                     ? Scalar.Negate(Scalar.Multiply(Scalar.Sin(Scalar.Multiply(t, omega)), invSinOmega))
                     : Scalar.Multiply(Scalar.Sin(Scalar.Multiply(t, omega)), invSinOmega);
             }
@@ -627,25 +578,6 @@ namespace Silk.NET.Maths.Legacy
         [MethodImpl((MethodImplOptions) 768)]
         public static Quaternion<T> Subtract(Quaternion<T> value1, Quaternion<T> value2)
             => value1 - value2;
-
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this Quaternion instance.</summary>
-        /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this Quaternion; False otherwise.</returns>
-        public override readonly bool Equals(object? obj)
-            => (obj is Quaternion<T> other) && Equals(other);
-
-        /// <summary>Returns a boolean indicating whether the given Quaternion is equal to this Quaternion instance.</summary>
-        /// <param name="other">The Quaternion to compare this instance to.</param>
-        /// <returns>True if the other Quaternion is equal to this instance; False otherwise.</returns>
-        public readonly bool Equals(Quaternion<T> other)
-            => this == other;
-
-        /// <summary>Returns the hash code for this instance.</summary>
-        /// <returns>The hash code.</returns>
-        public override readonly int GetHashCode()
-        {
-            return unchecked(X.GetHashCode() + Y.GetHashCode() + Z.GetHashCode() + W.GetHashCode());
-        }
 
         /// <summary>Calculates the length of the Quaternion.</summary>
         /// <returns>The computed length of the Quaternion.</returns>
@@ -683,14 +615,14 @@ namespace Silk.NET.Maths.Legacy
                 Scalar.As<T, float>(from.W));
 
         /// <summary>
-        /// Converts a <see cref="Quaternion{T}"/> into <see cref="System.Numerics.Quaternion"/>
+        /// Converts a <see cref="Quaternion{T}"/> into <see cref="Quaternion"/>
         /// </summary>
         /// <param name="from">The source quaternion</param>
         /// <returns>The <see cref="System.Numerics"/> quaternion</returns>
-        public static explicit operator System.Numerics.Quaternion(Quaternion<T> from)
+        public static explicit operator Quaternion(Quaternion<T> from)
             => new(Scalar.As<T, float>(from.X), Scalar.As<T, float>(from.Y), Scalar.As<T, float>(from.Z),
                 Scalar.As<T, float>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
@@ -701,92 +633,11 @@ namespace Silk.NET.Maths.Legacy
                 Scalar.As<T, double>(from.W));
 
         /// <summary>
-        /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="decimal"/> matrix</returns>
-        public static explicit operator Quaternion<decimal>(Quaternion<T> from)
-            => new(Scalar.As<T, decimal>(from.X), Scalar.As<T, decimal>(from.Y), Scalar.As<T, decimal>(from.Z),
-                Scalar.As<T, decimal>(from.W));
-
-        /// <summary>
-        /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="sbyte"/> matrix</returns>
-        public static explicit operator Quaternion<sbyte>(Quaternion<T> from)
-            => new(Scalar.As<T, sbyte>(from.X), Scalar.As<T, sbyte>(from.Y), Scalar.As<T, sbyte>(from.Z),
-                Scalar.As<T, sbyte>(from.W));
-
-        /// <summary>
-        /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="byte"/> matrix</returns>
-        public static explicit operator Quaternion<byte>(Quaternion<T> from)
-            => new(Scalar.As<T, byte>(from.X), Scalar.As<T, byte>(from.Y), Scalar.As<T, byte>(from.Z),
-                Scalar.As<T, byte>(from.W));
-
-        /// <summary>
-        /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="ushort"/> matrix</returns>
-        public static explicit operator Quaternion<ushort>(Quaternion<T> from)
-            => new(Scalar.As<T, ushort>(from.X), Scalar.As<T, ushort>(from.Y), Scalar.As<T, ushort>(from.Z),
-                Scalar.As<T, ushort>(from.W));
-
-        /// <summary>
-        /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="short"/> matrix</returns>
-        public static explicit operator Quaternion<short>(Quaternion<T> from)
-            => new(Scalar.As<T, short>(from.X), Scalar.As<T, short>(from.Y), Scalar.As<T, short>(from.Z),
-                Scalar.As<T, short>(from.W));
-
-        /// <summary>
-        /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="uint"/> matrix</returns>
-        public static explicit operator Quaternion<uint>(Quaternion<T> from)
-            => new(Scalar.As<T, uint>(from.X), Scalar.As<T, uint>(from.Y), Scalar.As<T, uint>(from.Z),
-                Scalar.As<T, uint>(from.W));
-
-        /// <summary>
-        /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="int"/> matrix</returns>
-        public static explicit operator Quaternion<int>(Quaternion<T> from)
-            => new(Scalar.As<T, int>(from.X), Scalar.As<T, int>(from.Y), Scalar.As<T, int>(from.Z),
-                Scalar.As<T, int>(from.W));
-
-        /// <summary>
-        /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="ulong"/> matrix</returns>
-        public static explicit operator Quaternion<ulong>(Quaternion<T> from)
-            => new(Scalar.As<T, ulong>(from.X), Scalar.As<T, ulong>(from.Y), Scalar.As<T, ulong>(from.Z),
-                Scalar.As<T, ulong>(from.W));
-
-        /// <summary>
-        /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="long"/> matrix</returns>
-        public static explicit operator Quaternion<long>(Quaternion<T> from)
-            => new(Scalar.As<T, long>(from.X), Scalar.As<T, long>(from.Y), Scalar.As<T, long>(from.Z),
-                Scalar.As<T, long>(from.W));
-        
-        /// <summary>
         /// Returns this quaternion casted to <typeparamref name="TOther"></typeparamref>
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted quaternion</returns>
-        public Quaternion<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        public Quaternion<TOther> As<TOther>() where TOther : ITrigonometricFunctions<TOther>
         {
             return new(Scalar.As<T, TOther>(X), Scalar.As<T, TOther>(Y), Scalar.As<T, TOther>(Z), Scalar.As<T, TOther>(W));
         }
