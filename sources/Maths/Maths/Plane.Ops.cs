@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Maths
@@ -18,7 +19,7 @@ namespace Silk.NET.Maths
         /// <returns>The Plane containing the three points.</returns>
         [MethodImpl((MethodImplOptions) 768)]
         public static Plane<T> CreateFromVertices<T>(Vector3D<T> point1, Vector3D<T> point2, Vector3D<T> point3)
-            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            where T : INumberBase<T>
         {
             var a = point1;
             var b = point2;
@@ -86,7 +87,7 @@ namespace Silk.NET.Maths
         /// <returns>The dot product.</returns>
         [MethodImpl((MethodImplOptions) 768)]
         public static T Dot<T>(Plane<T> plane, Vector4D<T> value)
-            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            where T : INumberBase<T>
             => Scalar.Add(
                 Scalar.Add(
                     Scalar.Add(Scalar.Multiply(plane.Normal.X, value.X),
@@ -99,7 +100,7 @@ namespace Silk.NET.Maths
         /// <returns>The resulting value.</returns>
         [MethodImpl((MethodImplOptions) 768)]
         public static T DotCoordinate<T>(Plane<T> plane, Vector3D<T> value)
-            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            where T : INumberBase<T>
             => Scalar.Add(Vector3D.Dot(plane.Normal, value), plane.Distance);
 
         /// <summary>Returns the dot product of a specified Vector3D and the Normal vector of this Plane.</summary>
@@ -108,7 +109,7 @@ namespace Silk.NET.Maths
         /// <returns>The resulting dot product.</returns>
         [MethodImpl((MethodImplOptions) 768)]
         public static T DotNormal<T>(Plane<T> plane, Vector3D<T> value)
-            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            where T : INumberBase<T>
             => Vector3D.Dot(plane.Normal, value);
 
         private const float NormalizeEpsilon = 1.192092896e-07f; // smallest such that 1.0+NormalizeEpsilon != 1.0
@@ -118,7 +119,7 @@ namespace Silk.NET.Maths
         /// <returns>The normalized Plane.</returns>
         [MethodImpl((MethodImplOptions) 768)]
         public static Plane<T> Normalize<T>(Plane<T> value)
-            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            where T : INumberBase<T>
         {
             /*if (Vector.IsHardwareAccelerated)
             {
@@ -140,7 +141,7 @@ namespace Silk.NET.Maths
                         Scalar.Multiply(value.Normal.Y, value.Normal.Y)),
                     Scalar.Multiply(value.Normal.Z, value.Normal.Z));
 
-                if (!Scalar.GreaterThanOrEqual(Scalar.Abs(Scalar.Subtract(f, Scalar<T>.One)), Scalar.As<float, T>(NormalizeEpsilon)))
+                if (!Scalar.GreaterThanOrEqual(T.Abs(Scalar.Subtract(f, Scalar<T>.One)), Scalar.As<float, T>(NormalizeEpsilon)))
                 {
                     return value; // It already normalized, so we don't need to further process.
                 }
@@ -162,7 +163,7 @@ namespace Silk.NET.Maths
         /// <returns>The transformed Plane.</returns>
         [MethodImpl((MethodImplOptions) 768)]
         public static Plane<T> Transform<T>(Plane<T> plane, Matrix4X4<T> matrix)
-            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            where T : INumberBase<T>
         {
             Matrix4X4.Invert(matrix, out Matrix4X4<T> m);
 
@@ -182,7 +183,7 @@ namespace Silk.NET.Maths
         /// <returns>A new Plane that results from applying the rotation.</returns>
         [MethodImpl((MethodImplOptions) 768)]
         public static Plane<T> Transform<T>(Plane<T> plane, Quaternion<T> rotation)
-            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            where T : ITrigonometricFunctions<T>
         {
             // Compute rotation matrix.
             T x2 = Scalar.Add(rotation.X, rotation.X);
