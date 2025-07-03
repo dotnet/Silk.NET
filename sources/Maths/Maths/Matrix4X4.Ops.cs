@@ -189,8 +189,8 @@ namespace Silk.NET.Maths
         /// <summary>Creates a rotation matrix from the given Quaternion rotation value.</summary>
         /// <param name="quaternion">The source Quaternion.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4X4<T> CreateFromQuaternion<T>(Silk.NET.Maths.Legacy.Quaternion<T> quaternion)
-            where T : INumberBase<T>
+        public static Matrix4X4<T> CreateFromQuaternion<T>(Quaternion<T> quaternion)
+            where T : ITrigonometricFunctions<T>
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
@@ -227,9 +227,9 @@ namespace Silk.NET.Maths
         /// <param name="roll">Angle of rotation, in radians, around the Z-axis.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix4X4<T> CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
-            Legacy.Quaternion<T> q = Legacy.Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
+            var q = Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
             return CreateFromQuaternion(q);
         }
 
@@ -1404,8 +1404,8 @@ namespace Silk.NET.Maths
         /// <param name="value">The source matrix to transform.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed matrix.</returns>
-        public static Matrix4X4<T> Transform<T>(Matrix4X4<T> value, Legacy.Quaternion<T> rotation)
-            where T : INumberBase<T>
+        public static Matrix4X4<T> Transform<T>(Matrix4X4<T> value, Quaternion<T> rotation)
+            where T : ITrigonometricFunctions<T>
         {
             // Compute rotation matrix.
             T x2 = Scalar.Add(rotation.X, rotation.X);
