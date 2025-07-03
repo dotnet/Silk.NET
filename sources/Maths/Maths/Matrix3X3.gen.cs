@@ -539,7 +539,7 @@ namespace Silk.NET.Maths
     }
 
     /// <summary>
-    /// Methods for working with <see cref="Matrix3X3{T}"/>
+    /// Methods for working with <see cref="Matrix3X3{T}"/>.
     /// </summary>
     public static partial class Matrix3X3
     {

@@ -451,7 +451,7 @@ namespace Silk.NET.Maths
     }
 
     /// <summary>
-    /// Methods for working with <see cref="Matrix2X2{T}"/>
+    /// Methods for working with <see cref="Matrix2X2{T}"/>.
     /// </summary>
     public static partial class Matrix2X2
     {

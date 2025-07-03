@@ -344,36 +344,78 @@ namespace Silk.NET.Maths
         public static implicit operator (T X, T Y)(Vector2D<T> v) =>
             (v.X, v.Y);
 
+        /// <summary>Returns the given vector.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The source vector.</returns>
         public static Vector2D<T> operator +(Vector2D<T> vector) =>
             vector;
 
+        /// <summary>Negates a given vector.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The negated vector.</returns>
         public static Vector2D<T> operator -(Vector2D<T> vector) =>
             new(-vector.X, -vector.Y);
 
+        /// <summary>Adds two vectors together.</summary>
+        /// <param name="left">The first source vector.</param>
+        /// <param name="right">The second source vector.</param>
+        /// <returns>The summed vector.</returns>
         public static Vector2D<T> operator +(Vector2D<T> left, Vector2D<T> right) =>
             new(left.X + right.X, left.Y + right.Y);
 
+        /// <summary>Subtracts the second vector from the first.</summary>
+        /// <param name="left">The first source vector.</param>
+        /// <param name="right">The second source vector.</param>
+        /// <returns>The difference vector.</returns>
         public static Vector2D<T> operator -(Vector2D<T> left, Vector2D<T> right) =>
             new(left.X - right.X, left.Y - right.Y);
 
+        /// <summary>Multiplies two vectors together.</summary>
+        /// <param name="left">The first source vector.</param>
+        /// <param name="right">The second source vector.</param>
+        /// <returns>The product vector.</returns>
         public static Vector2D<T> operator *(Vector2D<T> left, Vector2D<T> right) =>
             new(left.X * right.X, left.Y * right.Y);
 
+        /// <summary>Divides the first vector by the second.</summary>
+        /// <param name="left">The first source vector.</param>
+        /// <param name="right">The second source vector.</param>
+        /// <returns>The vector resulting from the division.</returns>
         public static Vector2D<T> operator /(Vector2D<T> left, Vector2D<T> right) =>
             new(left.X / right.X, left.Y / right.Y);
 
+        /// <summary>Adds a scalar to the components of a vector.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="scalar">The scalar value.</param>
+        /// <returns>The offset vector.</returns>
         public static Vector2D<T> operator +(Vector2D<T> vector, T scalar) =>
             new(vector.X + scalar, vector.Y + scalar);
 
+        /// <summary>Subtracts a scalar from the components of a vector.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="scalar">The scalar value.</param>
+        /// <returns>The offset vector.</returns>
         public static Vector2D<T> operator -(Vector2D<T> vector, T scalar) =>
             new(vector.X - scalar, vector.Y - scalar);
 
+        /// <summary>Multiplies a vector by the given scalar.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="scalar">The scalar value.</param>
+        /// <returns>The scaled vector.</returns>
         public static Vector2D<T> operator *(Vector2D<T> vector, T scalar) =>
             new(vector.X * scalar, vector.Y * scalar);
 
+        /// <summary>Multiplies a vector by the given scalar.</summary>
+        /// <param name="scalar">The scalar value.</param>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The scaled vector.</returns>
         public static Vector2D<T> operator *(T scalar, Vector2D<T> vector) =>
             new(scalar * vector.X, scalar * vector.Y);
 
+        /// <summary>Divides the vector by the given scalar.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="scalar">The scalar value.</param>
+        /// <returns>The result of the division.</returns>
         public static Vector2D<T> operator /(Vector2D<T> vector, T scalar) =>
             new(vector.X / scalar, vector.Y / scalar);
 
@@ -570,8 +612,12 @@ namespace Silk.NET.Maths
             Vector2D<ulong>.CreateChecked(from);
     }
 
+    /// <summary>
+    /// Methods for working with <see cref="Vector2D{T}"/>.
+    /// </summary>
     public static partial class Vector2D
     {
+        /// <summary>Extensions for vectors with elements implementing <see cref="IRootFunctions{TSelf}"/>.</summary>
         extension<T>(Vector2D<T> vector)
             where T : IRootFunctions<T>
         {
@@ -579,6 +625,7 @@ namespace Silk.NET.Maths
             public T Length => T.Sqrt(vector.LengthSquared);
         }
 
+        /// <summary>Extensions for vectors with elements implementing <see cref="INumberBase{TSelf}"/>.</summary>
         extension<T>(Vector2D<T> vector)
             where T : INumberBase<T>
         {
@@ -648,14 +695,21 @@ namespace Silk.NET.Maths
             new(T.Lerp(a.X, b.X, T.Clamp(amount.X, T.Zero, T.One)),
                 T.Lerp(a.Y, b.Y, T.Clamp(amount.Y, T.Zero, T.One)));
 
+        /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.SinCos(TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         public static (Vector2D<T> Sin, Vector2D<T> Cos) SinCos<T>(this Vector2D<T> x)
             where T : ITrigonometricFunctions<T> =>
             (new(T.Sin(x.X), T.Sin(x.Y)), new(T.Cos(x.X), T.Cos(x.Y)));
 
+        /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.SinCosPi(TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         public static (Vector2D<T> SinPi, Vector2D<T> CosPi) SinCosPi<T>(this Vector2D<T> x)
             where T : ITrigonometricFunctions<T> =>
             (new(T.SinPi(x.X), T.SinPi(x.Y)), new(T.CosPi(x.X), T.CosPi(x.Y)));
 
+        /// <summary>Applies <see cref="IBinaryInteger{TSelf}.DivRem(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
+        /// <param name="right">A vector whose members will be provided for <parameref name="right"/>.</param>
         public static (Vector2D<T> Quotient, Vector2D<T> Remainder) DivRem<T>(Vector2D<T> left, Vector2D<T> right)
             where T : IBinaryInteger<T>
         {

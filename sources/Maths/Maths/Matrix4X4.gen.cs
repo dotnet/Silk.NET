@@ -640,7 +640,7 @@ namespace Silk.NET.Maths
     }
 
     /// <summary>
-    /// Methods for working with <see cref="Matrix4X4{T}"/>
+    /// Methods for working with <see cref="Matrix4X4{T}"/>.
     /// </summary>
     public static partial class Matrix4X4
     {
