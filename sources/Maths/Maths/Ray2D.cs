@@ -124,12 +124,13 @@ namespace Silk.NET.Maths
         {
             return !value1.Equals(value2);
         }
-        
+
         /// <summary>
         /// Returns this ray casted to <typeparamref name="TOther"></typeparamref>
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted ray</returns>
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
         public Ray2D<TOther> As<TOther>()
             where TOther : INumberBase<TOther>
         {

@@ -136,26 +136,41 @@ namespace Silk.NET.Maths
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(Row1, Row2);
 
-        /// <summary>Converts the components of this vector to another type.</summary>
+        /// <summary>Converts the components of this matrix to another type.</summary>
         public static Matrix2X4<T> CreateChecked<TOther>(Matrix2X4<TOther> other)
             where TOther : INumberBase<TOther> =>
             new(Vector4D<T>.CreateChecked(other.Row1), Vector4D<T>.CreateChecked(other.Row2));
 
-        /// <summary>Converts the components of this vector to another type.</summary>
+        /// <summary>Converts the components of this matrix to another type.</summary>
         public static Matrix2X4<T> CreateSaturating<TOther>(Matrix2X4<TOther> other)
             where TOther : INumberBase<TOther> =>
             new(Vector4D<T>.CreateSaturating(other.Row1), Vector4D<T>.CreateSaturating(other.Row2));
 
-        /// <summary>Converts the components of this vector to another type.</summary>
+        /// <summary>Converts the components of this matrix to another type.</summary>
         public static Matrix2X4<T> CreateTruncating<TOther>(Matrix2X4<TOther> other)
             where TOther : INumberBase<TOther> =>
             new(Vector4D<T>.CreateTruncating(other.Row1), Vector4D<T>.CreateTruncating(other.Row2));
 
-        /// <summary>Converts the components of this vector to another type.</summary>
-        [Obsolete("Use CreateChecked, CreateSaturating, CreateTruncating or cast instead.", error: false)]
+        /// <summary>Converts the components of this matrix to another type.</summary>
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
         public Matrix2X4<TOther> As<TOther>()
             where TOther : INumberBase<TOther> =>
             new(Row1.As<TOther>(), Row2.As<TOther>());
+
+        /// <summary>Converts the components of this matrix to another type.</summary>
+        public Matrix2X4<TOther> AsChecked<TOther>()
+            where TOther : INumberBase<TOther> =>
+            Matrix2X4<TOther>.CreateChecked(this);
+
+        /// <summary>Converts the components of this matrix to another type.</summary>
+        public Matrix2X4<TOther> AsSaturating<TOther>()
+            where TOther : INumberBase<TOther> =>
+            Matrix2X4<TOther>.CreateSaturating(this);
+
+        /// <summary>Converts the components of this matrix to another type.</summary>
+        public Matrix2X4<TOther> AsTruncating<TOther>()
+            where TOther : INumberBase<TOther> =>
+            Matrix2X4<TOther>.CreateTruncating(this);
 
         /// <summary>Computes the transpose of the matrix.</summary>
         public Matrix4X2<T> Transpose() =>

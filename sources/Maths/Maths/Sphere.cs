@@ -170,6 +170,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted sphere</returns>
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
         public Sphere<TOther> As<TOther>()
             where TOther : IRootFunctions<TOther>
         {

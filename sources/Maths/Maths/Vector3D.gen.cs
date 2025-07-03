@@ -353,8 +353,23 @@ namespace Silk.NET.Maths
             new(T.CreateTruncating(source.X), T.CreateTruncating(source.Y), T.CreateTruncating(source.Z));
 
         /// <summary>Converts the components of this vector to another type.</summary>
-        [Obsolete("Use CreateChecked, CreateSaturating, CreateTruncating, or a cast instead.", error: false)]
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
         public Vector3D<TOther> As<TOther>()
+            where TOther : INumberBase<TOther> =>
+            Vector3D<TOther>.CreateTruncating(this);
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public Vector3D<TOther> AsChecked<TOther>()
+            where TOther : INumberBase<TOther> =>
+            Vector3D<TOther>.CreateChecked(this);
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public Vector3D<TOther> AsSaturating<TOther>()
+            where TOther : INumberBase<TOther> =>
+            Vector3D<TOther>.CreateSaturating(this);
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public Vector3D<TOther> AsTruncating<TOther>()
             where TOther : INumberBase<TOther> =>
             Vector3D<TOther>.CreateTruncating(this);
 
@@ -609,6 +624,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Desconstructs a vector into its components.</summary>
+        /// <param name="vector">The vector to deconstruct.</param>
         /// <param name="x">The X component.</param>
         /// <param name="y">The Y component.</param>
         /// <param name="z">The Z component.</param>

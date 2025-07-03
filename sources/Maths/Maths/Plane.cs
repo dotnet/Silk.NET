@@ -175,7 +175,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="short"/> matrix</returns>
         public static explicit operator Plane<short>(Plane<T> from)
-            => new(from.Normal.As<short>(), short.CreateSaturating(from.Distance));
+            => new(from.Normal.AsSaturating<short>(), short.CreateSaturating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
@@ -214,6 +214,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted plane</returns>
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
         public Plane<TOther> As<TOther>() where TOther : INumberBase<TOther>
         {
             return new(Normal.As<TOther>(), Scalar.As<T, TOther>(Distance));

@@ -160,10 +160,10 @@ namespace Silk.NET.Maths
         public Box3D<T> GetScaled<TScale>(Vector3D<TScale> scale, Vector3D<T> anchor)
             where TScale : INumberBase<TScale>
         {
-            var convertedAnchor = anchor.As<TScale>();
-            var min = (scale * (Min.As<TScale>() - convertedAnchor)) + convertedAnchor;
-            var max = (scale * (Max.As<TScale>() - convertedAnchor)) + convertedAnchor;
-            return new Box3D<T>(min.As<T>(), max.As<T>());
+            var convertedAnchor = anchor.AsTruncating<TScale>();
+            var min = (scale * (Min.AsTruncating<TScale>() - convertedAnchor)) + convertedAnchor;
+            var max = (scale * (Max.AsTruncating<TScale>() - convertedAnchor)) + convertedAnchor;
+            return new Box3D<T>(min.AsTruncating<T>(), max.AsTruncating<T>());
         }
 
         /// <summary>
@@ -222,6 +222,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted box</returns>
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
         public Box3D<TOther> As<TOther>()
             where TOther : INumber<TOther>
         {

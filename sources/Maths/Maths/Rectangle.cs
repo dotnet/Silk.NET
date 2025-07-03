@@ -164,10 +164,10 @@ namespace Silk.NET.Maths
         public Rectangle<T> GetScaled<TScale>(Vector2D<TScale> scale, Vector2D<T> anchor)
             where TScale : INumberBase<TScale>
         {
-            var convertedAnchor = anchor.As<TScale>();
-            var min = (scale * (Origin.As<TScale>() - convertedAnchor)) + convertedAnchor;
-            var max = (scale * (Max.As<TScale>() - convertedAnchor)) + convertedAnchor;
-            return new(min.As<T>(), (max - min).As<T>());
+            var convertedAnchor = anchor.AsTruncating<TScale>();
+            var min = (scale * (Origin.AsTruncating<TScale>() - convertedAnchor)) + convertedAnchor;
+            var max = (scale * (Max.AsTruncating<TScale>() - convertedAnchor)) + convertedAnchor;
+            return new(min.AsTruncating<T>(), (max - min).AsTruncating<T>());
         }
 
         /// <summary>
@@ -222,12 +222,13 @@ namespace Silk.NET.Maths
         {
             return !value1.Equals(value2);
         }
-        
+
         /// <summary>
         /// Returns this rectangle casted to <typeparamref name="TOther"></typeparamref>
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted rectangle</returns>
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
         public Rectangle<TOther> As<TOther>()
             where TOther : INumber<TOther>
         {
