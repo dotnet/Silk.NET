@@ -74,16 +74,6 @@ namespace Silk.NET.Maths
             Row4 = new(value.M41, value.M42, T.Zero, T.One);
         }
 
-        /// <summary>Multiplies a vector by a matrix.</summary>
-        /// <param name="value1">The vector.</param>
-        /// <param name="value2">The matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        public static unsafe Vector4D<T> operator *(Vector4D<T> value1, Matrix4X4<T> value2)
-        {
-            return value1.X * value2.Row1 + value1.Y * value2.Row2 + value1.Z * value2.Row3 +
-                   value1.W * value2.Row4;
-        }
-
         /// <summary>Calculates the determinant of the matrix.</summary>
         /// <returns>The determinant of the matrix.</returns>
         public readonly T GetDeterminant()

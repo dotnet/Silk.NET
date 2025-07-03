@@ -689,6 +689,22 @@ namespace Silk.NET.Maths
             return (new Vector3D<T>(qX, qY, qZ), new Vector3D<T>(rX, rY, rZ));
         }
 
+        /// <summary>Multiplies a vector by a scalar value.</summary>
+        /// <param name="left">The source vector.</param>
+        /// <param name="right">The scaling factor.</param>
+        /// <returns>The scaled vector.</returns>
+        public static Vector3D<T> Multiply<T>(Vector3D<T> left, T right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        /// <summary>Multiplies a vector by a scalar value.</summary>
+        /// <param name="left">The scaling factor.</param>
+        /// <param name="right">The source vector.</param>
+        /// <returns>The scaled vector.</returns>
+        public static Vector3D<T> Multiply<T>(T left, Vector3D<T> right)
+            where T : INumberBase<T> =>
+            left * right;
+
         /// <summary>Applies <see cref="INumber{TSelf}.Sign(TSelf)"/> to the provided arguments.</summary>
         /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
         public static Vector3D<int> Sign<TSelf>(this Vector3D<TSelf> value)

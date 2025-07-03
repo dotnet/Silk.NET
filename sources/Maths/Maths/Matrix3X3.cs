@@ -77,15 +77,6 @@ namespace Silk.NET.Maths
             Row3 = new(value.M31, value.M32, value.M33);
         }
 
-        /// <summary>Multiplies a vector by a matrix.</summary>
-        /// <param name="value1">The vector.</param>
-        /// <param name="value2">The matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        public static unsafe Vector3D<T> operator *(Vector3D<T> value1, Matrix3X3<T> value2)
-        {
-            return value1.X * value2.Row1 + value1.Y * value2.Row2 + value1.Z * value2.Row3;
-        }
-
         /// <summary>Calculates the determinant of the matrix.</summary>
         /// <returns>The determinant of the matrix.</returns>
         public readonly T GetDeterminant()

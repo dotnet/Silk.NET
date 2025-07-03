@@ -18,15 +18,6 @@ namespace Silk.NET.Maths
         private const float RotationEpsilon = 0.001f * ((float) Math.PI) / 180f;     // 0.1% of a degree
 #endif
 
-        /// <summary>Adds each matrix element in value1 with its corresponding element in value2.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The matrix containing the summed values.</returns>
-        [MethodImpl((MethodImplOptions) 768)]
-        public static Matrix3X2<T> Add<T>(Matrix3X2<T> value1, Matrix3X2<T> value2)
-            where T : INumberBase<T>
-            => value1 + value2;
-
         /// <summary>Creates a rotation matrix using the given rotation in radians.</summary>
         /// <param name="radians">The amount of rotation, in radians.</param>
         /// <returns>A rotation matrix.</returns>
@@ -413,76 +404,5 @@ namespace Silk.NET.Maths
 
             return true;
         }
-
-        /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions) 768)]
-        public static Matrix3X2<T> Multiply<T>(Matrix3X2<T> value1, Matrix2X2<T> value2)
-            where T : INumberBase<T>
-            => value1 * value2;
-
-        /// <summary>Multiplies a vector by a matrix.</summary>
-        /// <param name="value1">The vector.</param>
-        /// <param name="value2">The matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions) 768)]
-        public static Vector2D<T> Multiply<T>(Vector3D<T> value1, Matrix3X2<T> value2)
-            where T : INumberBase<T>
-            => value1 * value2;
-
-        /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions) 768)]
-        public static Matrix3X3<T> Multiply<T>(Matrix3X2<T> value1, Matrix2X3<T> value2)
-            where T : INumberBase<T>
-            => value1 * value2;
-
-        /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions) 768)]
-        public static Matrix2X2<T> Multiply<T>(Matrix2X3<T> value1, Matrix3X2<T> value2)
-            where T : INumberBase<T>
-            => value1 * value2;
-
-        /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions) 768)]
-        public static Matrix2X3<T> Multiply<T>(Matrix2X3<T> value1, Matrix3X3<T> value2)
-            where T : INumberBase<T>
-            => value1 * value2;
-
-        /// <summary>Scales all elements in a matrix by the given scalar factor.</summary>
-        /// <param name="value1">The source matrix.</param>
-        /// <param name="value2">The scaling value to use.</param>
-        /// <returns>The resulting matrix.</returns>
-        [MethodImpl((MethodImplOptions) 768)]
-        public static Matrix3X2<T> Multiply<T>(Matrix3X2<T> value1, T value2)
-            where T : INumberBase<T>
-            => value1 * value2;
-
-        /// <summary>Negates the given matrix by multiplying all values by -1.</summary>
-        /// <param name="value">The source matrix.</param>
-        /// <returns>The negated matrix.</returns>
-        [MethodImpl((MethodImplOptions) 768)]
-        public static Matrix3X2<T> Negate<T>(Matrix3X2<T> value)
-            where T : INumberBase<T>
-            => -value;
-
-        /// <summary>Subtracts each matrix element in value2 from its corresponding element in value1.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The matrix containing the resulting values.</returns>
-        [MethodImpl((MethodImplOptions) 768)]
-        public static Matrix3X2<T> Subtract<T>(Matrix3X2<T> value1, Matrix3X2<T> value2)
-            where T : INumberBase<T>
-            => value1 - value2;
     }
 }

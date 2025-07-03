@@ -54,15 +54,6 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22);
         }
 
-        /// <summary>Multiplies a vector by a matrix.</summary>
-        /// <param name="value1">The vector.</param>
-        /// <param name="value2">The matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        public static unsafe Vector2D<T> operator *(Vector2D<T> value1, Matrix2X2<T> value2)
-        {
-            return value1 * value2.Row1 + value1 * value2.Row2;
-        }
-
         /// <summary>Calculates the determinant of the matrix.</summary>
         /// <returns>The determinant of the matrix.</returns>
         public readonly T GetDeterminant()

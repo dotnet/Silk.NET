@@ -66,14 +66,5 @@ namespace Silk.NET.Maths
         /// <summary>Returns whether the matrix is the identity matrix.</summary>
         [IgnoreDataMember]
         public readonly bool IsIdentity => this == Identity;
-
-        /// <summary>Multiplies a vector by a matrix.</summary>
-        /// <param name="value1">The vector.</param>
-        /// <param name="value2">The matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        public static unsafe Vector3D<T> operator *(Vector2D<T> value1, Matrix2X3<T> value2)
-        {
-            return value1.X * value2.Row1 + value1.Y * value2.Row2;
-        }
     }
 }

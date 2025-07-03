@@ -157,7 +157,6 @@ namespace Silk.NET.Maths
                 Row3.X, Row3.Y, Row3.Z, Row3.W);
 
         /// <inheridoc/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public override bool Equals(object? obj) => obj is Matrix3X4<T> other && Equals(other);
 
         /// <inheridoc/>
@@ -252,6 +251,20 @@ namespace Silk.NET.Maths
             new(left.Row1 * right,
                 left.Row2 * right,
                 left.Row3 * right);
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="rowVector">The first source matrix, expressed as a row vector.</param>
+        /// <param name="matrix">The second source matrix.</param>
+        /// <returns>The result of the multiplication as a column vector.</returns>
+        public static Vector4D<T> operator *(Vector3D<T> rowVector, Matrix3X4<T> matrix) =>
+            rowVector.X * matrix.Row1 + rowVector.Y * matrix.Row2 + rowVector.Z * matrix.Row3;
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="matrix">The first source matrix.</param>
+        /// <param name="columnVector">The second source matrix, expressed as a column vector.</param>
+        /// <returns>The result of the multiplication as a row vector.</returns>
+        public static Vector3D<T> operator *(Matrix3X4<T> matrix, Vector4D<T> columnVector) =>
+             matrix.Column1 * columnVector.X +  matrix.Column2 * columnVector.Y +  matrix.Column3 * columnVector.Z +  matrix.Column4 * columnVector.W;
 
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="left">The first source matrix.</param>
@@ -529,6 +542,9 @@ namespace Silk.NET.Maths
                 Vector4D<ulong>.CreateChecked(from.Row3));
     }
 
+    /// <summary>
+    /// Methods for working with <see cref="Matrix3X4{T}"/>
+    /// </summary>
     public static partial class Matrix3X4
     {
         /// <summary>Linearly interpolates between the corresponding values of two matrices.</summary>
@@ -541,5 +557,108 @@ namespace Silk.NET.Maths
             new(Vector4D.Lerp(value1.Row1, value2.Row1, amount),
                 Vector4D.Lerp(value1.Row2, value2.Row2, amount),
                 Vector4D.Lerp(value1.Row3, value2.Row3, amount));
+
+        /// <summary>Adds two matrices together.</summary>
+        /// <param name="left">The first source matrix.</param>
+        /// <param name="right">The second source matrix.</param>
+        /// <returns>The result of the addition.</returns>
+        public static Matrix3X4<T> Add<T>(Matrix3X4<T> left, Matrix3X4<T> right)
+            where T : INumberBase<T> =>
+            left + right;
+
+        /// <summary>Returns a negated copy of the specified matrix.</summary>
+        /// <param name="value">The source matrix.</param>
+        /// <returns>The negated matrix.</returns>
+        public static Matrix3X4<T> Negate<T>(Matrix3X4<T> value)
+            where T : INumberBase<T>
+            => -value;
+
+        /// <summary>Subtracts the second matrix from the first.</summary>
+        /// <param name="left">The first source matrix.</param>
+        /// <param name="right">The second source matrix.</param>
+        /// <returns>The result of the subtraction.</returns>
+        public static Matrix3X4<T> Subtract<T>(Matrix3X4<T> left, Matrix3X4<T> right)
+            where T : INumberBase<T>
+            => left - right;
+
+        /// <summary>Multiplies a matrix by a scalar value.</summary>
+        /// <param name="left">The source matrix.</param>
+        /// <param name="right">The scaling factor.</param>
+        /// <returns>The scaled matrix.</returns>
+        public static Matrix3X4<T> Multiply<T>(Matrix3X4<T> left, T right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        /// <summary>Multiplies a matrix by a scalar value.</summary>
+        /// <param name="left">The scaling factor.</param>
+        /// <param name="right">The source matrix.</param>
+        /// <returns>The scaled matrix.</returns>
+        public static Matrix3X4<T> Multiply<T>(T left, Matrix3X4<T> right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="rowVector">The first source matrix, expressed as a row vector.</param>
+        /// <param name="matrix">The second source matrix.</param>
+        /// <returns>The result of the multiplication as a column vector.</returns>
+        public static Vector4D<T> Multiply<T>(Vector3D<T> rowVector, Matrix3X4<T> matrix)
+            where T : INumberBase<T> =>
+            rowVector * matrix;
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="matrix">The first source matrix.</param>
+        /// <param name="columnVector">The second source matrix, expressed as a column vector.</param>
+        /// <returns>The result of the multiplication as a row vector.</returns>
+        public static Vector3D<T> Multiply<T>(Matrix3X4<T> matrix, Vector4D<T> columnVector)
+            where T : INumberBase<T> =>
+            matrix * columnVector;
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="left">The first source matrix.</param>
+        /// <param name="right">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static Matrix2X4<T> Multiply<T>(Matrix2X3<T> left, Matrix3X4<T> right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="left">The first source matrix.</param>
+        /// <param name="right">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static Matrix3X4<T> Multiply<T>(Matrix3X3<T> left, Matrix3X4<T> right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="left">The first source matrix.</param>
+        /// <param name="right">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static Matrix3X2<T> Multiply<T>(Matrix3X4<T> left, Matrix4X2<T> right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="left">The first source matrix.</param>
+        /// <param name="right">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static Matrix3X3<T> Multiply<T>(Matrix3X4<T> left, Matrix4X3<T> right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="left">The first source matrix.</param>
+        /// <param name="right">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static Matrix3X4<T> Multiply<T>(Matrix3X4<T> left, Matrix4X4<T> right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="left">The first source matrix.</param>
+        /// <param name="right">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static Matrix4X4<T> Multiply<T>(Matrix4X3<T> left, Matrix3X4<T> right)
+            where T : INumberBase<T> =>
+            left * right;
     }
 }
