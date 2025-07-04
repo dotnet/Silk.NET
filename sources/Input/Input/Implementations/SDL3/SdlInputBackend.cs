@@ -249,7 +249,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
 
             case EventType.GamepadAdded:
             {
-                var id = arg1.Kdevice.Which;
+                var id = arg1.Gdevice.Which;
                 Debug.Assert(_devices.All(x => x.Id != AsSilkId(id)));
                 _ = GetOrCreateDevice<SdlGamepad>(id);
                 break;
@@ -269,6 +269,8 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                 break;
 
             //  Input events ----------------------------------------------------------
+
+            // keyboard
             case EventType.KeyDown:
             {
                 var keyboard = GetOrCreateDevice<SdlKeyboard>(arg1.Key.Which);
@@ -282,6 +284,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                 break;
             }
 
+            // Joystick
             case EventType.JoystickAxisMotion:
                 break;
             case EventType.JoystickBallMotion:
@@ -315,12 +318,13 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             case EventType.GamepadSteamHandleUpdated:
                 break;
 
+            // sensor? for what?
             case EventType.SensorUpdate:
                 break;
 
-
             // ----- Pointer events
 
+            // mouse
             case EventType.MouseMotion:
                 break;
             case EventType.MouseButtonDown:
@@ -330,6 +334,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             case EventType.MouseWheel:
                 break;
 
+            // touch
             case EventType.FingerDown:
                 break;
             case EventType.FingerUp:
@@ -339,6 +344,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             case EventType.FingerCanceled:
                 break;
 
+            // pen
             case EventType.PenProximityIn:
                 break;
             case EventType.PenProximityOut:
@@ -381,6 +387,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             }
 
             // Text input events -------------------------------------------
+            // todo: attribute this to a keyboard device? or something else?
             case EventType.TextEditing:
                 break;
             case EventType.TextInput:
@@ -389,24 +396,9 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                 break;
             case EventType.ClipboardUpdate:
                 break;
-
-
         }
 
         return;
-
-        void RemoveDevice(uint id)
-        {
-            var silkId = AsSilkId(id);
-            var deviceIdx = _devices.FindIndex(x => x.Id == silkId);
-
-            if (deviceIdx == -1)
-                return; // we never used this device to begin with, so just ignore its removal
-
-            var device = _devices[deviceIdx];
-            device.Release();
-            _devices.RemoveAt(deviceIdx);
-        }
 
         T GetOrCreateDevice<T>(uint id) where T : SdlDevice, ISdlDevice<T>
         {
@@ -424,6 +416,20 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             Console.WriteLine($"Gamepad added: (sdl ID: {id})");
             return device;
         }
+    }
+
+    internal bool RemoveDevice(uint id)
+    {
+        var silkId = AsSilkId(id);
+        var deviceIdx = _devices.FindIndex(x => x.Id == silkId);
+
+        if (deviceIdx == -1)
+            return false; // we never used this device to begin with, so just ignore its removal
+
+        var device = _devices[deviceIdx];
+        device.Release();
+        _devices.RemoveAt(deviceIdx);
+        return true;
     }
 
     /// <summary>

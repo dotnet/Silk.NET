@@ -10,7 +10,7 @@ namespace Silk.NET.Input.SDL3;
 /// <summary>
 /// A base class for all SDL input devices.
 /// </summary>
-internal abstract unsafe class SdlDevice : IInputDevice
+internal abstract class SdlDevice : IInputDevice
 {
     bool IEquatable<IInputDevice>.Equals(IInputDevice? other) =>
         other?.GetType() == GetType()
