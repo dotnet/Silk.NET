@@ -28,7 +28,7 @@ public struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
     /// Gets the state for the button with the given name.
     /// </summary>
     /// <param name="name">The button name.</param>
-    public Button<T> this[T name] => InputMarshal.GetButtonState(_list, name);
+    public Button<T> this[T name] => _list[EnumInfo<T>.ValueIndexOf(name)];
 
     /// <inheritdoc />
     public IEnumerator<Button<T>> GetEnumerator() => _list.GetEnumerator();
