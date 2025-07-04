@@ -9,10 +9,11 @@ namespace Silk.NET.Input;
 // ^ that's the point
 internal static class EnumInfo<T> where T : unmanaged, Enum
 {
-    public static readonly IReadOnlyList<T> Values;
+    public static IReadOnlyList<T> Values => _values;
     public static readonly int Count;
     public static readonly T MaxValue;
     public static readonly T MinValue;
+    private static readonly T[] _values;
 
     static EnumInfo()
     {
@@ -24,35 +25,35 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         var underlyingType = typeof(T).GetEnumUnderlyingType();
         if (underlyingType == typeof(int))
         {
-            Values = OrderedValues<int>();
+            _values = OrderedValues<int>();
         }
         else if (underlyingType == typeof(uint))
         {
-            Values = OrderedValues<uint>();
+            _values = OrderedValues<uint>();
         }
         else if (underlyingType == typeof(byte))
         {
-            Values = OrderedValues<byte>();
+            _values = OrderedValues<byte>();
         }
         else if (underlyingType == typeof(sbyte))
         {
-            Values = OrderedValues<sbyte>();
+            _values = OrderedValues<sbyte>();
         }
         else if (underlyingType == typeof(short))
         {
-            Values = OrderedValues<short>();
+            _values = OrderedValues<short>();
         }
         else if (underlyingType == typeof(ushort))
         {
-            Values = OrderedValues<ushort>();
+            _values = OrderedValues<ushort>();
         }
         else if (underlyingType == typeof(long))
         {
-            Values = OrderedValues<long>();
+            _values = OrderedValues<long>();
         }
         else if (underlyingType == typeof(ulong))
         {
-            Values = OrderedValues<ulong>();
+            _values = OrderedValues<ulong>();
         }
         else
         {
@@ -63,6 +64,8 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         MinValue = Values[0];
         MaxValue = Values[^1];
     }
+
+    public static int IndexOf(T value) => Array.IndexOf(_values, value);
 
     private static unsafe T[] OrderedValues<TNumber>() where TNumber : unmanaged, IComparable<TNumber>
     {
