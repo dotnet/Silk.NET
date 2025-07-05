@@ -110,7 +110,7 @@ internal class MSBuildModContext(
 
         // TODO: This currently causes the global usings to be output into each file. Not sure why.
 
-        // Remove all documents from the output directory
+        // Remove all documents that are part of the output directory
         // This is to ensure that existing code is not used as the input for newly generated code,
         // which would cause a cycle.
         // Note that this does not remove all documents from the project, such as the global usings files.
