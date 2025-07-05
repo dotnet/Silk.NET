@@ -121,7 +121,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
             allValues = allValues.DistinctBy(x => *(TNumber*)&x).ToArray();
         }
 
-        // sort with a lambda expression
+        // sort by increasing order
         Array.Sort(allValues, (a, b) => {
             var aNumber = *(TNumber*)&a;
             var bNumber = *(TNumber*)&b;
