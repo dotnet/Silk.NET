@@ -108,8 +108,6 @@ internal class MSBuildModContext(
             throw new InvalidOperationException("Failed to locate source project.");
         }
 
-        // TODO: This currently causes the global usings to be output into each file. Not sure why.
-
         // Remove all documents that are part of the output directory
         // This is to ensure that existing code is not used as the input for newly generated code,
         // which would cause a cycle.

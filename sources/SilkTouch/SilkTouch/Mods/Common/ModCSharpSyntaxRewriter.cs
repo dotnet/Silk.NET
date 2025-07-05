@@ -37,7 +37,7 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
             return ret;
         }
 
-        foreach (var use in comp.Usings)
+        foreach (var use in comp.Usings.Where(use => !use.GlobalKeyword.IsKind(SyntaxKind.GlobalKeyword)))
         {
             AddUsing(use);
         }
@@ -68,7 +68,7 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
         FileScopedNamespaceDeclarationSyntax node
     )
     {
-        foreach (var use in node.Usings)
+        foreach (var use in node.Usings.Where(use => !use.GlobalKeyword.IsKind(SyntaxKind.GlobalKeyword)))
         {
             AddUsing(use);
         }
