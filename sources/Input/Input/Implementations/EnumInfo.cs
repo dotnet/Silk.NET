@@ -13,17 +13,38 @@ namespace Silk.NET.Input;
 /// <typeparam name="T"></typeparam>
 internal static class EnumInfo<T> where T : unmanaged, Enum
 {
-    public static IReadOnlyList<T> Values => _values;
-    public static int NameCount => _values.Length;
-    public static int ValueCount => _numericallyDistinctValues.Count;
+    /// <summary>
+    /// All enum values sorted in increasing order (unstable sort)
+    /// </summary>
+    public static IReadOnlyList<T> All => _all;
 
+    /// <summary>
+    /// All enum values with distinct numerical values sorted in increasing order.
+    /// In the case of multiple enum entries with the same numerical value, this makes no guarantees about
+    /// which version ends up here.
+    /// </summary>
+    public static IReadOnlyList<T> UniqueValues;
+
+
+    /// <summary>
+    /// The value with the highest numerical value
+    /// </summary>
     public static readonly T MaxValue;
+
+    /// <summary>
+    /// The value with the lowest numerical value
+    /// </summary>
     public static readonly T MinValue;
 
-    private static readonly T[] _values;
+    /// <summary>
+    /// The numerical type of the enum
+    /// </summary>
+    public static readonly Type UnderlyingType = typeof(T).GetEnumUnderlyingType();
+
+    private static readonly T[] _all;
+    private static readonly string[] _names;
     private static readonly Dictionary<T, int> _numericallyDistinctValues;
 
-    public static readonly Type UnderlyingType = typeof(T).GetEnumUnderlyingType();
 
     static EnumInfo()
     {
@@ -34,44 +55,45 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
         var underlyingType = UnderlyingType;
         T[] vals;
+        T[] all;
         if (underlyingType == typeof(int))
         {
-            _values = OrderedValues<int>(false);
-            vals = OrderedValues<uint>(true);
+            all = OrderedValues<int>(false);
+            vals = OrderedValues<int>(true);
         }
         else if (underlyingType == typeof(uint))
         {
-            _values = OrderedValues<uint>(false);
+            all = OrderedValues<uint>(false);
             vals = OrderedValues<uint>(true);
         }
         else if (underlyingType == typeof(byte))
         {
-            _values = OrderedValues<byte>(false);
+            all = OrderedValues<byte>(false);
             vals = OrderedValues<byte>(true);
         }
         else if (underlyingType == typeof(sbyte))
         {
-            _values = OrderedValues<sbyte>(false);
+            all = OrderedValues<sbyte>(false);
             vals = OrderedValues<sbyte>(true);
         }
         else if (underlyingType == typeof(short))
         {
-            _values = OrderedValues<short>(false);
+            all = OrderedValues<short>(false);
             vals = OrderedValues<short>(true);
         }
         else if (underlyingType == typeof(ushort))
         {
-            _values = OrderedValues<ushort>(false);
+            all = OrderedValues<ushort>(false);
             vals = OrderedValues<ushort>(true);
         }
         else if (underlyingType == typeof(long))
         {
-            _values = OrderedValues<long>(false);
+            all = OrderedValues<long>(false);
             vals = OrderedValues<long>(true);
         }
         else if (underlyingType == typeof(ulong))
         {
-            _values = OrderedValues<ulong>(false);
+            all = OrderedValues<ulong>(false);
             vals = OrderedValues<ulong>(true);
         }
         else
@@ -79,26 +101,44 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
             throw new InvalidOperationException("Enum provided uses an unknown numeric base??");
         }
 
+
+        var names = new string[all.Length];
+        for (var index = 0; index < all.Length; index++)
+        {
+            names[index] = all[index].ToString(); // todo: readable name attributes?
+        }
+
         var dict = new Dictionary<T, int>(vals.Length);
-        for (int i = 0; i < vals.Length; i++)
+        for (var i = 0; i < vals.Length; i++)
         {
             dict.Add(vals[i], i);
         }
 
+        _names = names;
+        _all = all;
+        UniqueValues = vals;
         _numericallyDistinctValues = dict;
-        MinValue = Values[0];
-        MaxValue = Values[^1];
+        MinValue = All[0];
+        MaxValue = All[^1];
     }
 
     /// <summary>
     /// Get the ordered index of the value provided.
     /// Values with the same numerical value will *not* return the same index, and are not guaranteed to be
     /// stably sorted across application runs.
+    /// The index provided
     /// </summary>
     /// <param name="value"></param>
     /// <returns>The index of the sorted enum value</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static int NameIndexOf(T value) => Array.IndexOf(_values, value);
+    public static int NameIndexOf(T value) => Array.IndexOf(_all, value);
+
+    /// <inheritdoc cref="_names"/>
+
+    /// <summary>
+    /// Returns the names of an enum value, pre-allocated
+    /// </summary>
+    public static string NameOf(T value) => _names[NameIndexOf(value)];
 
     /// <summary>
     /// Get the ordered index of the value provided.
