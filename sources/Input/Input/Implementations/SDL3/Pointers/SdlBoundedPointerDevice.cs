@@ -18,7 +18,7 @@ internal abstract class SdlBoundedPointerDevice : SdlDevice, IPointerDevice
 
     public abstract PointerState State { get; }
 
-    public override string Name => Backend.Sdl.GetMouseNameForID(SdlDeviceId).ReadToString();
+    public override string Name => NativeBackend.GetMouseNameForID(SdlDeviceId).ReadToString();
 
     [field: MaybeNull]
     public virtual IReadOnlyList<IPointerTarget> Targets =>
@@ -35,7 +35,7 @@ internal abstract class SdlBoundedPointerDevice : SdlDevice, IPointerDevice
     public InputMarshal.ListOwner<TargetPoint> BoundedPoints =>
         field.List.Data is null ? field = InputMarshal.CreateList<TargetPoint>() : field;
 
-    public sealed override void Release()
+    protected sealed override void Release()
     {
 
     }

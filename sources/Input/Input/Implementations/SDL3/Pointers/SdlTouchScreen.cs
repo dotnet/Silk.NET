@@ -10,7 +10,7 @@ internal class SdlTouchScreen : SdlDevice, ISdlDevice<SdlTouchScreen>, IPointerD
     public bool Equals(IInputDevice? other) => throw new NotImplementedException();
 
     public override string Name => throw new NotImplementedException();
-    public override void Release() => throw new NotImplementedException();
+    protected override void Release() => throw new NotImplementedException();
 
     public PointerState State => throw new NotImplementedException();
 

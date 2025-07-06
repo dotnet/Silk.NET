@@ -5,7 +5,6 @@ using System.Collections;
 using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace Silk.NET.Input;
 
@@ -302,12 +301,12 @@ public static class InputMarshal
     {
         if (typeof(T) == typeof(JoystickButton))
         {
-            return (int)JoystickButton.DPadLeft;
+            return EnumInfo<JoystickButton>.UniqueValues.Count;
         }
 
         if (typeof(T) == typeof(PointerButton))
         {
-            return (int)PointerButton.Button32;
+            return EnumInfo<PointerButton>.UniqueValues.Count;
         }
 
         if (typeof(T) == typeof(KeyName))

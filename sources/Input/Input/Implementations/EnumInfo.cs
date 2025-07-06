@@ -1,6 +1,5 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input;
@@ -23,7 +22,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// In the case of multiple enum entries with the same numerical value, this makes no guarantees about
     /// which version ends up here.
     /// </summary>
-    public static IReadOnlyList<T> UniqueValues;
+    public static readonly IReadOnlyList<T> UniqueValues;
 
 
     /// <summary>
@@ -44,9 +43,9 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     private static readonly T[] _all;
     private static readonly string[] _names;
     private static readonly Dictionary<T, int> _numericallyDistinctValues;
+    private static readonly ulong[] _allEnumValuesRaw;
 
-
-    static EnumInfo()
+    static unsafe EnumInfo()
     {
         if (typeof(T).CustomAttributes.Any(x => x.AttributeType == typeof(FlagsAttribute)))
         {
@@ -60,41 +59,49 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         {
             all = OrderedValues<int>(false);
             vals = OrderedValues<int>(true);
+            _allEnumValuesRaw = vals.Select(x => (ulong)*(uint*)&x).ToArray();
         }
         else if (underlyingType == typeof(uint))
         {
             all = OrderedValues<uint>(false);
             vals = OrderedValues<uint>(true);
+            _allEnumValuesRaw = vals.Select(x => (ulong)*(uint*)&x).ToArray();
         }
         else if (underlyingType == typeof(byte))
         {
             all = OrderedValues<byte>(false);
             vals = OrderedValues<byte>(true);
+            _allEnumValuesRaw = vals.Select(x => (ulong)*(byte*)&x).ToArray();
         }
         else if (underlyingType == typeof(sbyte))
         {
             all = OrderedValues<sbyte>(false);
             vals = OrderedValues<sbyte>(true);
+            _allEnumValuesRaw = vals.Select(x => (ulong)*(byte*)&x).ToArray();
         }
         else if (underlyingType == typeof(short))
         {
             all = OrderedValues<short>(false);
             vals = OrderedValues<short>(true);
+            _allEnumValuesRaw = vals.Select(x => (ulong)*(ushort*)&x).ToArray();
         }
         else if (underlyingType == typeof(ushort))
         {
             all = OrderedValues<ushort>(false);
             vals = OrderedValues<ushort>(true);
+            _allEnumValuesRaw = vals.Select(x => (ulong)*(ushort*)&x).ToArray();
         }
         else if (underlyingType == typeof(long))
         {
             all = OrderedValues<long>(false);
             vals = OrderedValues<long>(true);
+            _allEnumValuesRaw = vals.Select(x => *(ulong*)&x).ToArray();
         }
         else if (underlyingType == typeof(ulong))
         {
             all = OrderedValues<ulong>(false);
             vals = OrderedValues<ulong>(true);
+            _allEnumValuesRaw = vals.Select(x => *(ulong*)&x).ToArray();
         }
         else
         {
@@ -111,7 +118,8 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         var dict = new Dictionary<T, int>(vals.Length);
         for (var i = 0; i < vals.Length; i++)
         {
-            dict.Add(vals[i], i);
+            var enumVal = vals[i];
+            dict.Add(enumVal, i);
         }
 
         _names = names;
@@ -131,7 +139,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// <param name="value"></param>
     /// <returns>The index of the sorted enum value</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static int NameIndexOf(T value) => Array.IndexOf(_all, value);
+    private static int NameIndexOf(T value) => Array.IndexOf(_all, value);
 
     /// <inheritdoc cref="_names"/>
 
@@ -148,7 +156,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// <returns>The index of the sorted enum numerical value</returns>
     /// <exception cref="InvalidOperationException"></exception>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static int ValueIndexOf(T value) => _numericallyDistinctValues[value];
+    public static int ValueIndexOf(T value) => _numericallyDistinctValues.TryGetValue(value, out var index) ? index : -1;
 
     private static unsafe T[] OrderedValues<TNumber>(bool byNumericValue)
         where TNumber : unmanaged, IComparable<TNumber>
@@ -170,4 +178,8 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
         return allValues;
     }
+
+    public static int ToUnknownIndex<TOther>(TOther value)
+
+    public static unsafe bool HasValue(int value) => _allEnumValuesRaw.Contains(*(uint*)&value);
 }

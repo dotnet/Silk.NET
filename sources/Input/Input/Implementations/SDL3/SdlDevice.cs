@@ -1,26 +1,30 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-
-using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.Pointers;
+using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
 /// <summary>
 /// A base class for all SDL input devices.
 /// </summary>
-internal abstract class SdlDevice : IInputDevice
+internal abstract class SdlDevice : IInputDevice, IDisposable
 {
     bool IEquatable<IInputDevice>.Equals(IInputDevice? other) =>
         other?.GetType() == GetType()
         && other.Id == Id
         && other is SdlBoundedPointerDevice dev
-        && dev.Backend.Sdl == Backend.Sdl;
+        && dev.NativeBackend == NativeBackend;
 
     public nint Id => Backend.AsSilkId(SdlDeviceId);
     public uint SdlDeviceId { get; }
     public SdlInputBackend Backend { get; }
+
+    /// <summary>
+    /// For readability and refactorability - provides the SDL interface instance.
+    /// </summary>
+    protected ISdl NativeBackend => Backend.Sdl;
 
     public abstract string Name { get; }
     /*{
@@ -39,7 +43,23 @@ internal abstract class SdlDevice : IInputDevice
         SdlDeviceId = sdlDeviceId;
     }
 
-    public abstract void Release();
+    protected abstract void Release();
+
+    public void Dispose()
+    {
+        ObjectDisposedException.ThrowIf(_isDisposed, GetType());
+        _isDisposed = true;
+        Release();
+        GC.SuppressFinalize(this);
+    }
+
+    ~SdlDevice()
+    {
+        _isDisposed = true;
+        Release();
+    }
+
+    private bool _isDisposed;
 }
 
 /// <summary>

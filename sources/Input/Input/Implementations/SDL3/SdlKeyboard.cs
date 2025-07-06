@@ -23,9 +23,9 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
     public static SdlKeyboard CreateDevice(SdlInputBackend backend, uint sdlDeviceId) => throw new NotImplementedException();
 
     public KeyboardState State { get; }
-    public override void Release() {} // empty?
+    protected override void Release() {} // empty?
 
-    public override string Name => Backend.Sdl.GetKeyboardNameForID(SdlDeviceId).ReadToString();
+    public override string Name => NativeBackend.GetKeyboardNameForID(SdlDeviceId).ReadToString();
     public string? ClipboardText
     {
         get

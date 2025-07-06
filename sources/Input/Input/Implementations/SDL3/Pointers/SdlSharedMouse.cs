@@ -17,7 +17,7 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
         _state = new MouseState(buttons.List.AsButtonList(), points.List, Vector2.Zero);
         float x = 0,
             y = 0;
-        var buttonMask = Backend.Sdl.GetMouseState(x.AsRef(), y.AsRef());
+        var buttonMask = NativeBackend.GetMouseState(x.AsRef(), y.AsRef());
         for (var i = 0; i < 32; i++)
         {
             InputMarshal.SetButtonState(
@@ -65,12 +65,12 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
 
     public bool TrySetPosition(Vector2 position)
     {
-        if (Backend.Sdl.WarpMouseGlobal(position.X, position.Y))
+        if (NativeBackend.WarpMouseGlobal(position.X, position.Y))
         {
             return true;
         }
 
-        Backend.Sdl.ClearError();
+        NativeBackend.ClearError();
         return false;
     }
 

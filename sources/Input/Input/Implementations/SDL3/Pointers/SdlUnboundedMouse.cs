@@ -13,7 +13,7 @@ internal class SdlUnboundedMouse : SdlDevice, IMouse
 
 
     public MouseState State => throw new NotImplementedException();
-    public override string Name => Backend.Sdl.GetMouseNameForID(SdlDeviceId).ReadToString();
+    public override string Name => NativeBackend.GetMouseNameForID(SdlDeviceId).ReadToString();
 
     public ICursorConfiguration Cursor => Backend;
 
@@ -21,7 +21,7 @@ internal class SdlUnboundedMouse : SdlDevice, IMouse
 
     public IReadOnlyList<IPointerTarget> Targets => throw new NotImplementedException();
 
-    public override void Release()
+    protected override void Release()
     {
         // nothing?
     }

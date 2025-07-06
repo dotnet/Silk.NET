@@ -10,25 +10,23 @@ namespace Silk.NET.Input;
 /// <typeparam name="T">
 /// The button type (e.g. <see cref="JoystickButton"/>, <see cref="PointerButton"/>, etc).
 /// </typeparam>
-public struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
+public readonly struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
     where T : unmanaged, Enum
 {
-    private InputReadOnlyList<Button<T>> _list;
+    private readonly int _count;
+    private readonly Func<T, int> _getIndexFunc;
+    private readonly Func<int, int> _indexMap;
 
-    internal ButtonReadOnlyList(InputReadOnlyList<Button<T>> list) => _list = list;
-
-    /// <summary>
-    /// Creates an <see cref="ButtonReadOnlyList{T}"/> from a <see cref="IReadOnlyList{T}"/>.
-    /// </summary>
-    /// <param name="other">The list to copy.</param>
-    public ButtonReadOnlyList(IReadOnlyList<Button<T>> other) =>
-        InputMarshal.Clone(other).List.AsButtonList();
+    public ButtonReadOnlyList(InputReadOnlyList<Button<JoystickButton>> getIndexFunc)
+    {
+        throw new NotImplementedException();
+    }
 
     /// <summary>
     /// Gets the state for the button with the given name.
     /// </summary>
     /// <param name="name">The button name.</param>
-    public Button<T> this[T name] => _list[EnumInfo<T>.ValueIndexOf(name)];
+    public Button<T> this[T name] => _list[_getIndexFunc(name)];
 
     /// <inheritdoc />
     public IEnumerator<Button<T>> GetEnumerator() => _list.GetEnumerator();
@@ -39,5 +37,5 @@ public struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
     public int Count => _list.Count;
 
     /// <inheritdoc />
-    public Button<T> this[int index] => _list[index];
+    public Button<T> this[int index] => _list[_indexMap(index)];
 }

@@ -292,18 +292,23 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             case EventType.JoystickHatMotion:
                 break;
             case EventType.JoystickButtonDown:
-                break;
             case EventType.JoystickButtonUp:
+                var joystick = GetOrCreateDevice<SdlJoystick>(arg1.Jbutton.Which);
+                joystick.AddButtonEvent(arg1.Jbutton);
                 break;
             case EventType.JoystickBatteryUpdated:
                 break;
             case EventType.JoystickUpdateComplete:
                 break;
+
+
+            // Gamepad inputs
             case EventType.GamepadAxisMotion:
                 break;
             case EventType.GamepadButtonDown:
-                break;
             case EventType.GamepadButtonUp:
+                var gamepad = GetOrCreateDevice<SdlGamepad>(arg1.Gbutton.Which);
+                gamepad.AddButtonEvent(arg1.Gbutton);
                 break;
             case EventType.GamepadTouchpadDown:
                 break;
@@ -427,7 +432,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             return false; // we never used this device to begin with, so just ignore its removal
 
         var device = _devices[deviceIdx];
-        device.Release();
+        device.Dispose();
         _devices.RemoveAt(deviceIdx);
         return true;
     }

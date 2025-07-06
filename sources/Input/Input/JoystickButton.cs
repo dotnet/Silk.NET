@@ -3,12 +3,14 @@ namespace Silk.NET.Input;
 /// <summary>
 /// Enumerates the buttons of a joystick.
 /// </summary>
-public enum JoystickButton
+public enum JoystickButton // todo : should we include XInput, PSX, and Nintendo button names here?
 {
     /// <summary>
     /// The button was not recognised.
     /// </summary>
-    Unknown,
+    /// <remarks>This is defined as such a large number such that unknown buttons can still be a JoystickButton,
+    /// and we can define up to <see cref="ushort.MaxValue"/> predefined unique joystick buttons.</remarks>
+    Unknown = int.MaxValue - ushort.MaxValue,
 
     /// <summary>
     /// The down-most button of the primary button cluster.
@@ -107,3 +109,17 @@ public enum JoystickButton
 
     // BEFORE ADDING A NEW ITEM MAKE SURE YOU CHANGE LastJoystickButton IN InputMarshal
 }
+
+/// <summary>
+/// Additional functions for making sense of <see cref="JoystickButton"/>s
+/// </summary>
+public static class JoystickButtonExtensions
+{
+    /// <summary>
+    /// Returns true if we have identified this button as a known button
+    /// </summary>
+    /// <param name="button"></param>
+    /// <returns></returns>
+    public static bool IsIdentified(this JoystickButton button) => button > JoystickButton.Unknown;
+}
+

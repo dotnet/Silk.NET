@@ -6,82 +6,41 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal sealed class SdlGamepad : SdlDevice, IGamepad, IDisposable, ISdlDevice<SdlGamepad>
+internal sealed class SdlGenericJoystick : SdlJoystick, ISdlDevice<SdlGenericJoystick>
 {
-    private readonly GamepadHandle _gamepad;
-
-    private static JoystickButton? GetSilkButton(GamepadButton btn) =>
-        btn switch
-        {
-            GamepadButton.South => JoystickButton.ButtonDown,
-            GamepadButton.East => JoystickButton.ButtonRight,
-            GamepadButton.West => JoystickButton.ButtonLeft,
-            GamepadButton.North => JoystickButton.ButtonUp,
-            GamepadButton.Back => JoystickButton.Back,
-            GamepadButton.Guide => JoystickButton.Home,
-            GamepadButton.Start => JoystickButton.Start,
-            GamepadButton.LeftStick => JoystickButton.LeftStick,
-            GamepadButton.RightStick => JoystickButton.RightStick,
-            GamepadButton.LeftShoulder => JoystickButton.LeftBumper,
-            GamepadButton.RightShoulder => JoystickButton.RightBumper,
-            GamepadButton.DpadUp => JoystickButton.DPadUp,
-            GamepadButton.DpadDown => JoystickButton.DPadDown,
-            GamepadButton.DpadLeft => JoystickButton.DPadLeft,
-            GamepadButton.DpadRight => JoystickButton.DPadRight,
-            // TODO not exposed today
-            _ => null,
-        };
-
-    private SdlGamepad(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
+    public SdlGenericJoystick(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
     {
-        _gamepad = backend.Sdl.OpenGamepad(sdlDeviceId);
-        if (_gamepad == nullptr)
+        if (JoystickType == JoystickType.Gamepad)
         {
-            backend.Sdl.ThrowError();
+            throw new Exception("Joystick should have been created as a gamepad, not a joystick.");
         }
-
-        var buttons = InputMarshal.CreateList<Button<JoystickButton>>();
-        for (var i = 0; i < (int)GamepadButton.Count; i++)
-        {
-            if (GetSilkButton((GamepadButton)i) is not { } btn)
-            {
-                continue;
-            }
-
-            var isDown = backend.Sdl.GetGamepadButton(_gamepad, (GamepadButton)i);
-            InputMarshal.SetButtonState(
-                buttons,
-                new Button<JoystickButton>(btn, isDown, isDown ? 1 : 0),
-                true
-            );
-        }
-
-        // For thumbsticks, the state is a value ranging from -32768 (up/left) to 32767 (down/right).
-        // Triggers range from 0 when released to 32767 when fully pressed, and never return a negative value. Note that
-        // this differs from the value reported by the lower-level SDL_GetJoystickAxis(), which normally uses the full
-        // range.
-        var triggers = new DualReadOnlyList<float>(
-            (float)backend.Sdl.GetGamepadAxis(_gamepad, GamepadAxis.LeftTrigger) / short.MaxValue,
-            (float)backend.Sdl.GetGamepadAxis(_gamepad, GamepadAxis.RightTrigger) / short.MaxValue
-        );
-        var thumbsticks = new DualReadOnlyList<Vector2>(
-            new Vector2(
-                (float)backend.Sdl.GetGamepadAxis(_gamepad, GamepadAxis.Leftx) / short.MaxValue,
-                (float)backend.Sdl.GetGamepadAxis(_gamepad, GamepadAxis.Lefty) / short.MaxValue
-            ),
-            new Vector2(
-                (float)backend.Sdl.GetGamepadAxis(_gamepad, GamepadAxis.Rightx) / short.MaxValue,
-                (float)backend.Sdl.GetGamepadAxis(_gamepad, GamepadAxis.Righty) / short.MaxValue
-            )
-        );
-        State = new GamepadState(buttons.List.AsButtonList(), thumbsticks, triggers);
     }
 
-    public override void Release() => Backend.Sdl.CloseGamepad(_gamepad);
+    public static SdlGenericJoystick CreateDevice(SdlInputBackend backend, uint sdlDeviceId) => throw new NotImplementedException();
+}
 
-    public GamepadState State { get; }
+/// <summary>
+/// provides the IGamepad implementation for a joystick
+/// </summary>
+internal sealed class SdlGamepad : SdlJoystick, IGamepad, ISdlDevice<SdlGamepad>
+{
+    public SdlGamepad(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
+    {
+        var _gamepad = NativeBackend.OpenGamepad(sdlDeviceId);
+        if (_gamepad == nullptr)
+        {
+            NativeBackend.ThrowError();
+        }
 
-    public override string Name => Backend.Sdl.GetGamepadNameForID(SdlDeviceId).ReadToString();
+        _gamepadState = new GamepadState(new ButtonReadOnlyList<JoystickButton>(Buttons), thumbsticks, triggers);
+    }
+
+    protected override void Release() => NativeBackend.CloseGamepad(_gamepad);
+
+    private readonly GamepadState _gamepadState;
+    GamepadState IGamepad.State => _gamepadState;
+
+    public override string Name => NativeBackend.GetGamepadNameForID(SdlDeviceId).ReadToString();
 
     // TODO this entire API needs to be redesigned as right now this is literally only ever going to be useful if it's
     // just left or right. The original intention was that this would be useful for things like 3D haptics, but what did
@@ -99,7 +58,7 @@ internal sealed class SdlGamepad : SdlDevice, IGamepad, IDisposable, ISdlDevice<
     {
         (_motorFrequencies ??= [0, 0])[motor] = value;
         if (
-            !Backend.Sdl.RumbleGamepad(
+            !NativeBackend.RumbleGamepad(
                 _gamepad,
                 _motorFrequencies[0],
                 _motorFrequencies[1],
@@ -107,22 +66,21 @@ internal sealed class SdlGamepad : SdlDevice, IGamepad, IDisposable, ISdlDevice<
             )
         )
         {
-            Backend.Sdl.ThrowError();
+            NativeBackend.ThrowError();
         }
     }
 
-    private void ReleaseUnmanagedResources() => Backend.Sdl.CloseGamepad(_gamepad);
+    public static SdlGamepad CreateDevice(SdlInputBackend backend, uint sdlDeviceId) => new(sdlDeviceId, backend);
 
-    public void Dispose()
+    ~SdlGamepad() => Release();
+
+    public void AddButtonEvent(GamepadButtonEvent sdlButton)
     {
-        ReleaseUnmanagedResources();
-        GC.SuppressFinalize(this);
+        ProcessButtonEvent(this, sdlButton.Button, sdlButton.Down);
     }
 
-    public static SdlGamepad CreateDevice(SdlInputBackend backend, uint sdlDeviceId)
+    private static void ProcessButtonEvent<T>(T device, byte sdlButtonId, byte sdlButtonDown) where T : SdlJoystick, ISdlDevice<T>
     {
-        throw new NotImplementedException();
     }
 
-    ~SdlGamepad() => ReleaseUnmanagedResources();
 }
