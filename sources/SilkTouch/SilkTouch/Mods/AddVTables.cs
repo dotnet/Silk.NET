@@ -155,6 +155,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 .WithModifiers(
                     TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
                 )
+                .WithBaseList(
+                    BaseList(
+                        SingletonSeparatedList<BaseTypeSyntax>(
+                            SimpleBaseType(IdentifierName($"I{ctx.ClassName}.Static"))
+                        )
+                    )
+                )
                 .WithMembers(
                     SingletonList<MemberDeclarationSyntax>(
                         ConstructorDeclaration(Name)
@@ -490,6 +497,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
     class Rewriter(VTable[] vTables) : ModCSharpSyntaxRewriter
     {
         private InterfaceDeclarationSyntax? _currentInterface;
+        private ClassDeclarationSyntax? _currentClass;
         private VTable[] _vTables = vTables;
 
         private ClassDeclarationSyntax?[] _currentVTableOutputs = new ClassDeclarationSyntax?[
@@ -576,16 +584,18 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             return ret;
         }
 
+        private static string InterfaceKey(ClassDeclarationSyntax klass) => $"I{klass.Identifier}";
+
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            if (_currentInterface is not null)
+            if (_currentClass is not null)
             {
                 return node;
             }
 
             // Get the interface containing the methods
             var ns = node.NamespaceFromSyntaxNode();
-            var key = $"I{node.Identifier}";
+            var key = InterfaceKey(node);
             var className = node.Identifier.ToString();
             _fullClassName = $"{ns}.{node.Identifier}";
             if (!_multiClass && _className is null)
@@ -623,10 +633,18 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 FullClassNames[className] = _fullClassName;
             }
 
-            _currentInterface = NewInterface(key, node);
+            _currentClass = node;
 
             // Visit the class - this should record the methods.
             var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
+
+            _currentClass = null;
+            if (_currentInterface is null) // <-- there were no eligible methods.
+            {
+                // We shouldn't need to reset in this case.
+                return ret;
+            }
+
             ret = ret.WithMembers(
                     List<MemberDeclarationSyntax>(
                         // _currentVTableOutputs contains the partials for the vtable implementations within this
@@ -662,45 +680,45 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 );
 
             // Reset for the next partial.
-            _currentVTableOutputs.AsSpan().Clear();
             InterfacePartials.Add((ns, _currentInterface));
             _currentInterface = null;
+            _currentVTableOutputs.AsSpan().Clear();
             return ret;
-
-            static InterfaceDeclarationSyntax NewInterface(
-                string key,
-                MemberDeclarationSyntax node
-            ) =>
-                InterfaceDeclaration(key)
-                    .WithModifiers(
-                        TokenList(
-                            node.Modifiers.Where(x =>
-                                    x.Kind()
-                                        is SyntaxKind.PublicKeyword
-                                            or SyntaxKind.PrivateKeyword
-                                            or SyntaxKind.InternalKeyword
-                                            or SyntaxKind.ProtectedKeyword
-                                            or SyntaxKind.UnsafeKeyword
-                                )
-                                .Concat(Enumerable.Repeat(Token(SyntaxKind.PartialKeyword), 1))
-                        )
-                    )
-                    .AddMembers(
-                        InterfaceDeclaration("Static")
-                            .WithModifiers(
-                                TokenList(
-                                    Token(SyntaxKind.PublicKeyword),
-                                    Token(SyntaxKind.PartialKeyword)
-                                )
-                            )
-                    );
         }
+
+        private static InterfaceDeclarationSyntax NewInterface(
+            string key,
+            MemberDeclarationSyntax node
+        ) =>
+            InterfaceDeclaration(key)
+                .WithModifiers(
+                    TokenList(
+                        node.Modifiers.Where(x =>
+                                x.Kind()
+                                    is SyntaxKind.PublicKeyword
+                                        or SyntaxKind.PrivateKeyword
+                                        or SyntaxKind.InternalKeyword
+                                        or SyntaxKind.ProtectedKeyword
+                                        or SyntaxKind.UnsafeKeyword
+                            )
+                            .Concat(Enumerable.Repeat(Token(SyntaxKind.PartialKeyword), 1))
+                    )
+                )
+                .AddMembers(
+                    InterfaceDeclaration("Static")
+                        .WithModifiers(
+                            TokenList(
+                                Token(SyntaxKind.PublicKeyword),
+                                Token(SyntaxKind.PartialKeyword)
+                            )
+                        )
+                );
 
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
             var parent = node.FirstAncestorOrSelf<ClassDeclarationSyntax>();
             if (
-                _currentInterface is null
+                _currentClass is null
                 || !node.AttributeLists.GetNativeFunctionInfo(
                     out var lib,
                     out var entryPoint,
@@ -720,6 +738,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             }
 
             entryPoint ??= node.Identifier.ToString();
+            _currentInterface ??= NewInterface(InterfaceKey(_currentClass), _currentClass);
 
             // Get the static interface within this interface
             var staticInterface = _currentInterface
@@ -942,6 +961,11 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     continue;
                 }
 
+                if (!EntryPoints.TryGetValue(nonInterface, out var entryPoints))
+                {
+                    continue;
+                }
+
                 var nonInterfaceIden = nonInterface[(nonInterface.LastIndexOf('.') + 1)..];
                 var ns = nonInterface[..nonInterface.LastIndexOf('.')];
                 var boilerplate = ClassDeclaration(nonInterfaceIden)
@@ -959,12 +983,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     )
                                 )
                                 .Where(x => x is not null)
-                                .Concat(
-                                    GenerateTopLevelBoilerplate(
-                                        nonInterfaceIden,
-                                        EntryPoints[nonInterface]
-                                    )
-                                )!
+                                .Concat(GenerateTopLevelBoilerplate(nonInterfaceIden, entryPoints))!
                         )
                     )
                     .WithParameterList(
@@ -1301,6 +1320,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         )
                     )
             );
+
+        public void Reset()
+        {
+            InterfacePartials.Clear();
+            ClassName = null;
+            _methods.Clear();
+        }
     }
 
     /// <inheritdoc />
@@ -1353,8 +1379,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 continue;
             }
 
-            rw.InterfacePartials.Clear();
-            rw.ClassName = null;
+            rw.Reset();
             proj = doc.WithSyntaxRoot(
                 rw.Visit(node)?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Visit returned null")

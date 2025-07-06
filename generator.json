@@ -156,6 +156,70 @@
           "GLboolean": null
         }
       }
+    },
+    "OpenAL": {
+      "SourceProject": "sources/OpenAL/OpenAL/Silk.NET.OpenAL.csproj",
+      "Solution": "Silk.NET.sln",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
+      "Mods": [
+        "AddIncludes",
+        "ClangScraper",
+        "ChangeNativeClass",
+        "ExtractNestedTyping",
+        "TransformHandles",
+        "TransformFunctions",
+        "PrettifyNames",
+        "AddVTables"
+      ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/openal*/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/OpenAL",
+        "InputTestRoot": "tests/OpenAL"
+      },
+      "ChangeNativeClass": {
+        "NewClasses": {
+          "(alc|ALC_).*": "ALContext",
+          "EFX_REVERB_PRESET_.*": "EfxReverbPreset"
+        }
+      },
+      "_TODO_Add_MixKhronosData_once_OpenAL_Soft_has_a_Khronos_style_spec": {},
+      "AddVTables": {
+        "VTables": [
+          {
+            "Kind": "DllImport"
+          },
+          {
+            "Kind": "StaticWrapper"
+          },
+          {
+            "Kind": "ThisThread",
+            "IsDefault": true
+          }
+        ]
+      },
+      "PrettifyNames": {
+        "LongAcronymThreshold": 4,
+        "NameOverrides": {
+          "ALContext": "ALContext",
+          "EFXEAXREVERBPROPERTIES": "EfxEaxReverbProperties",
+          "EFXEAXREVERBPROPERTIES_flReflectionsPan": "EfxEaxReverbPropertiesFlReflectionsPan",
+          "EFXEAXREVERBPROPERTIES_flLateReverbPan": "EfxEaxReverbPropertiesFlLateReverbPan",
+          "ALCcontextHandle": "ContextHandle",
+          "ALCdeviceHandle": "DeviceHandle"
+        }
+      },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "ALboolean": null
+        },
+        "BenefitOfTheDoubtArrayTransformation": true
+      },
+      "TransformHandles": {
+        "AssumeMissingTypesOpaque": true,
+        "UseDSL": true
+      }
     }
   }
 }

@@ -285,7 +285,6 @@ public class PrettifyNames(
                 return comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
                     .OfType<ITypeSymbol>()
                     .SelectMany<ITypeSymbol, (ISymbol, string)>(y =>
-
                         [
                             .. Enumerable.SelectMany(
                                 [
@@ -297,7 +296,7 @@ public class PrettifyNames(
                                             )
                                             : z
                                     ) ?? [],
-                                    .. x.Value.Functions ?? []
+                                    .. x.Value.Functions ?? [],
                                 ],
                                 z =>
                                 {
@@ -310,7 +309,7 @@ public class PrettifyNames(
                                     z.MethodKind is MethodKind.Constructor or MethodKind.Destructor
                                 )
                                 .Select(z => (z, x.Value.NewName)),
-                            (y, x.Value.NewName)
+                            (y, x.Value.NewName),
                         ]
                     );
             }),
@@ -433,7 +432,7 @@ public class PrettifyNames(
                 container,
                 globalPrefixHint,
                 key,
-                names,
+                namesToTrim,
                 prefixOverrides,
                 nonDeterminant,
                 ref identifiedPrefix
@@ -533,7 +532,9 @@ public class PrettifyNames(
                         {
                             2 => 2, // The original needs to be counted as a conflict in addition to this conflict
                             > 2 => 1, // Just mark this conflict, original is already counted.
-                            _ => 0 // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
+                            _ =>
+                                0 // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
+                            ,
                         };
 
                         if (discrimMatches.Count == 2 && ogTrimmingName is not null)
@@ -949,7 +950,7 @@ public class PrettifyNames(
             VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
             ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
             DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
-            _ => null
+            _ => null,
         };
 
     private async Task RenameAllAsync(
