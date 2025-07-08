@@ -1925,7 +1925,7 @@ public partial class MixKhronosData(
             static bool IsUngroupable(string groupName) =>
                 IsIntentionalExclusion(groupName)
                 || groupName.StartsWith("enums") // these are unnamed
-                || groupName is "cl_device_info"; // bug in cl.xml - see see https://github.com/KhronosGroup/OpenCL-Docs/pull/779
+                || groupName is "cl_device_info"; // bug in cl.xml - see https://github.com/KhronosGroup/OpenCL-Docs/pull/779
 
             // ...continued from:
             // https://github.com/dotnet/Silk.NET/blob/d8919600/src/Core/Silk.NET.BuildTools/Converters/Readers/OpenCLReader.cs#L855-L870
