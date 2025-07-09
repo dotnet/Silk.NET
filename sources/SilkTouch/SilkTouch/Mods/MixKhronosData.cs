@@ -1834,6 +1834,7 @@ public partial class MixKhronosData(
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
+            // Only match constant fields
             if (
                 node.Declaration.Variables.Count != 1
                 || !node.Modifiers.Any(SyntaxKind.ConstKeyword)
@@ -1843,29 +1844,62 @@ public partial class MixKhronosData(
             }
 
             var nativeName = node.AttributeLists.GetNativeTypeName();
-            if (nativeName is null || !nativeName.StartsWith("#define "))
+            switch (nativeName)
             {
-                return base.VisitFieldDeclaration(node);
-            }
-
-            var nnSpan = nativeName.AsSpan()["#define ".Length..].Trim();
-            nativeName = (
-                nnSpan.IndexOf(' ') is >= 0 and var idx ? nnSpan[..idx] : nnSpan
-            ).ToString();
-
-            if (job.ApiSets.ContainsKey(nativeName))
-            {
-                return null;
-            }
-
-            if (job.EnumsToGroups.TryGetValue(nativeName, out var groups))
-            {
-                foreach (var group in groups)
+                // Handle case where the native name is in the form "#define NAME VALUE"
+                case {} s when s.StartsWith("#define "):
                 {
-                    job.Groups[group].Enums.Add(node.Declaration.Variables[0]);
+                    // Extract the "NAME" portion from the native name
+                    var nativeNameSpan = s.AsSpan()["#define ".Length..].Trim();
+                    var defineName = (
+                        nativeNameSpan.IndexOf(' ') is >= 0 and var idx ? nativeNameSpan[..idx] : nativeNameSpan
+                    ).ToString();
+
+                    // Remove constants that match an API set name
+                    // Eg: #define GL_VERSION_1_0 1
+                    if (job.ApiSets.ContainsKey(defineName))
+                    {
+                        return null;
+                    }
+
+                    // Remove constants that match an enum name
+                    // We save these constants so we can move them to the actual enum
+                    if (job.EnumsToGroups.TryGetValue(defineName, out var groups))
+                    {
+                        foreach (var group in groups)
+                        {
+                            job.Groups[group].Enums.Add(node.Declaration.Variables[0]);
+                        }
+
+                        return null;
+                    }
+
+                    break;
                 }
 
-                return null;
+                // Handle case where the native name is in the form "const Type"
+                case {} s when s.StartsWith("const "):
+                {
+                    // Extract the "Type" portion from the native name
+                    var typeName = s.AsSpan()["const ".Length..].Trim().ToString();
+
+                    // Vulkan/OpenXR enum name
+                    if (typeName.Contains("FlagBits"))
+                    {
+                        typeName = typeName.Replace("FlagBits", "Flags");
+                    }
+
+                    // Remove constants that match an enum group name
+                    // We save these constants so we can move them to the actual enum
+                    if (job.Groups.TryGetValue(typeName, out var group))
+                    {
+                        job.Groups[group.Name].Enums.Add(node.Declaration.Variables[0]);
+
+                        return null;
+                    }
+
+                    break;
+                }
             }
 
             return base.VisitFieldDeclaration(node);
