@@ -25908,6 +25908,440 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         }
     }
 
+    [NativeTypeName("#define VULKAN_VIDEO_CODEC_AV1STD_H_ 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecAv1StdH = 1;
+
+    [NativeTypeName("#define vulkan_video_codec_av1std 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecAv1Std = 1;
+
+    [NativeTypeName("#define VULKAN_VIDEO_CODECS_COMMON_H_ 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecsCommonH = 1;
+
+    [NativeTypeName("#define vulkan_video_codecs_common 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecsCommon = 1;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_NUM_REF_FRAMES 8")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1NumRefFrames = 8;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_REFS_PER_FRAME 7")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1RefsPerFrame = 7;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_TOTAL_REFS_PER_FRAME 8")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1TotalRefsPerFrame = 8;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_MAX_TILE_COLS 64")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1MaxTileCols = 64;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_MAX_TILE_ROWS 64")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1MaxTileRows = 64;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_MAX_SEGMENTS 8")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1MaxSegments = 8;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_SEG_LVL_MAX 8")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1SegLvlMax = 8;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_PRIMARY_REF_NONE 7")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1PrimaryRefNone = 7;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_SELECT_INTEGER_MV 2")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1SelectIntegerMv = 2;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_SELECT_SCREEN_CONTENT_TOOLS 2")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1SelectScreenContentTools = 2;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_SKIP_MODE_FRAMES 2")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1SkipModeFrames = 2;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_MAX_LOOP_FILTER_STRENGTHS 4")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1MaxLoopFilterStrengths = 4;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_LOOP_FILTER_ADJUSTMENTS 2")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1LoopFilterAdjustments = 2;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_MAX_CDEF_FILTER_STRENGTHS 8")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1MaxCdefFilterStrengths = 8;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_MAX_NUM_PLANES 3")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1MaxNumPlanes = 3;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_GLOBAL_MOTION_PARAMS 6")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1GlobalMotionParams = 6;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_MAX_NUM_Y_POINTS 14")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1MaxNumYPoints = 14;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_MAX_NUM_CB_POINTS 10")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1MaxNumCbPoints = 10;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_MAX_NUM_CR_POINTS 10")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1MaxNumCrPoints = 10;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_MAX_NUM_POS_LUMA 24")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1MaxNumPosLuma = 24;
+
+    [NativeTypeName("#define STD_VIDEO_AV1_MAX_NUM_POS_CHROMA 25")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoAv1MaxNumPosChroma = 25;
+
+    [NativeTypeName("#define VULKAN_VIDEO_CODEC_AV1STD_DECODE_H_ 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecAv1StdDecodeH = 1;
+
+    [NativeTypeName("#define vulkan_video_codec_av1std_decode 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecAv1StdDecode = 1;
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_AV1_DECODE_API_VERSION_1_0_0 VK_MAKE_VIDEO_STD_VERSION(1, 0, 0)"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecAv1DecodeApiVersion1X0X0 = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_AV1_DECODE_SPEC_VERSION VK_STD_VULKAN_VIDEO_CODEC_AV1_DECODE_API_VERSION_1_0_0"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecAv1DecodeSpecVersion = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_AV1_DECODE_EXTENSION_NAME \"VK_STD_vulkan_video_codec_av1_decode\""
+    )]
+    [SupportedApiProfile("vulkan")]
+    public static Utf8String StdVulkanVideoCodecAv1DecodeExtensionName =>
+        "VK_STD_vulkan_video_codec_av1_decode"u8;
+
+    [NativeTypeName("#define VULKAN_VIDEO_CODEC_AV1STD_ENCODE_H_ 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecAv1StdEncodeH = 1;
+
+    [NativeTypeName("#define vulkan_video_codec_av1std_encode 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecAv1StdEncode = 1;
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_AV1_ENCODE_API_VERSION_1_0_0 VK_MAKE_VIDEO_STD_VERSION(1, 0, 0)"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecAv1EncodeApiVersion1X0X0 = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_AV1_ENCODE_SPEC_VERSION VK_STD_VULKAN_VIDEO_CODEC_AV1_ENCODE_API_VERSION_1_0_0"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecAv1EncodeSpecVersion = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_AV1_ENCODE_EXTENSION_NAME \"VK_STD_vulkan_video_codec_av1_encode\""
+    )]
+    [SupportedApiProfile("vulkan")]
+    public static Utf8String StdVulkanVideoCodecAv1EncodeExtensionName =>
+        "VK_STD_vulkan_video_codec_av1_encode"u8;
+
+    [NativeTypeName("#define VULKAN_VIDEO_CODEC_H264STD_H_ 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH264StdH = 1;
+
+    [NativeTypeName("#define vulkan_video_codec_h264std 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH264Std = 1;
+
+    [NativeTypeName("#define STD_VIDEO_H264_CPB_CNT_LIST_SIZE 32")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH264CpbCntListSize = 32;
+
+    [NativeTypeName("#define STD_VIDEO_H264_SCALING_LIST_4X4_NUM_LISTS 6")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH264ScalingList4X4NumLists = 6;
+
+    [NativeTypeName("#define STD_VIDEO_H264_SCALING_LIST_4X4_NUM_ELEMENTS 16")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH264ScalingList4X4NumElements = 16;
+
+    [NativeTypeName("#define STD_VIDEO_H264_SCALING_LIST_8X8_NUM_LISTS 6")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH264ScalingList8X8NumLists = 6;
+
+    [NativeTypeName("#define STD_VIDEO_H264_SCALING_LIST_8X8_NUM_ELEMENTS 64")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH264ScalingList8X8NumElements = 64;
+
+    [NativeTypeName("#define STD_VIDEO_H264_MAX_NUM_LIST_REF 32")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH264MaxNumListRef = 32;
+
+    [NativeTypeName("#define STD_VIDEO_H264_MAX_CHROMA_PLANES 2")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH264MaxChromaPlanes = 2;
+
+    [NativeTypeName("#define STD_VIDEO_H264_NO_REFERENCE_PICTURE 0xFF")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH264NoReferencePicture = 0xFF;
+
+    [NativeTypeName("#define VULKAN_VIDEO_CODEC_H264STD_DECODE_H_ 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH264StdDecodeH = 1;
+
+    [NativeTypeName("#define vulkan_video_codec_h264std_decode 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH264StdDecode = 1;
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H264_DECODE_API_VERSION_1_0_0 VK_MAKE_VIDEO_STD_VERSION(1, 0, 0)"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecH264DecodeApiVersion1X0X0 = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H264_DECODE_SPEC_VERSION VK_STD_VULKAN_VIDEO_CODEC_H264_DECODE_API_VERSION_1_0_0"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecH264DecodeSpecVersion = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H264_DECODE_EXTENSION_NAME \"VK_STD_vulkan_video_codec_h264_decode\""
+    )]
+    [SupportedApiProfile("vulkan")]
+    public static Utf8String StdVulkanVideoCodecH264DecodeExtensionName =>
+        "VK_STD_vulkan_video_codec_h264_decode"u8;
+
+    [NativeTypeName("#define STD_VIDEO_DECODE_H264_FIELD_ORDER_COUNT_LIST_SIZE 2")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoDecodeH264FieldOrderCountListSize = 2;
+
+    [NativeTypeName("#define VULKAN_VIDEO_CODEC_H264STD_ENCODE_H_ 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH264StdEncodeH = 1;
+
+    [NativeTypeName("#define vulkan_video_codec_h264std_encode 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH264StdEncode = 1;
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H264_ENCODE_API_VERSION_1_0_0 VK_MAKE_VIDEO_STD_VERSION(1, 0, 0)"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecH264EncodeApiVersion1X0X0 = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H264_ENCODE_SPEC_VERSION VK_STD_VULKAN_VIDEO_CODEC_H264_ENCODE_API_VERSION_1_0_0"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecH264EncodeSpecVersion = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H264_ENCODE_EXTENSION_NAME \"VK_STD_vulkan_video_codec_h264_encode\""
+    )]
+    [SupportedApiProfile("vulkan")]
+    public static Utf8String StdVulkanVideoCodecH264EncodeExtensionName =>
+        "VK_STD_vulkan_video_codec_h264_encode"u8;
+
+    [NativeTypeName("#define VULKAN_VIDEO_CODEC_H265STD_H_ 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH265StdH = 1;
+
+    [NativeTypeName("#define vulkan_video_codec_h265std 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH265Std = 1;
+
+    [NativeTypeName("#define STD_VIDEO_H265_CPB_CNT_LIST_SIZE 32")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265CpbCntListSize = 32;
+
+    [NativeTypeName("#define STD_VIDEO_H265_SUBLAYERS_LIST_SIZE 7")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265SublayersListSize = 7;
+
+    [NativeTypeName("#define STD_VIDEO_H265_SCALING_LIST_4X4_NUM_LISTS 6")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265ScalingList4X4NumLists = 6;
+
+    [NativeTypeName("#define STD_VIDEO_H265_SCALING_LIST_4X4_NUM_ELEMENTS 16")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265ScalingList4X4NumElements = 16;
+
+    [NativeTypeName("#define STD_VIDEO_H265_SCALING_LIST_8X8_NUM_LISTS 6")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265ScalingList8X8NumLists = 6;
+
+    [NativeTypeName("#define STD_VIDEO_H265_SCALING_LIST_8X8_NUM_ELEMENTS 64")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265ScalingList8X8NumElements = 64;
+
+    [NativeTypeName("#define STD_VIDEO_H265_SCALING_LIST_16X16_NUM_LISTS 6")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265ScalingList16X16NumLists = 6;
+
+    [NativeTypeName("#define STD_VIDEO_H265_SCALING_LIST_16X16_NUM_ELEMENTS 64")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265ScalingList16X16NumElements = 64;
+
+    [NativeTypeName("#define STD_VIDEO_H265_SCALING_LIST_32X32_NUM_LISTS 2")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265ScalingList32X32NumLists = 2;
+
+    [NativeTypeName("#define STD_VIDEO_H265_SCALING_LIST_32X32_NUM_ELEMENTS 64")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265ScalingList32X32NumElements = 64;
+
+    [NativeTypeName("#define STD_VIDEO_H265_CHROMA_QP_OFFSET_LIST_SIZE 6")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265ChromaQpOffsetListSize = 6;
+
+    [NativeTypeName("#define STD_VIDEO_H265_CHROMA_QP_OFFSET_TILE_COLS_LIST_SIZE 19")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265ChromaQpOffsetTileColsListSize = 19;
+
+    [NativeTypeName("#define STD_VIDEO_H265_CHROMA_QP_OFFSET_TILE_ROWS_LIST_SIZE 21")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265ChromaQpOffsetTileRowsListSize = 21;
+
+    [NativeTypeName("#define STD_VIDEO_H265_PREDICTOR_PALETTE_COMPONENTS_LIST_SIZE 3")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265PredictorPaletteComponentsListSize = 3;
+
+    [NativeTypeName("#define STD_VIDEO_H265_PREDICTOR_PALETTE_COMP_ENTRIES_LIST_SIZE 128")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265PredictorPaletteCompEntriesListSize = 128;
+
+    [NativeTypeName("#define STD_VIDEO_H265_MAX_NUM_LIST_REF 15")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265MaxNumListRef = 15;
+
+    [NativeTypeName("#define STD_VIDEO_H265_MAX_CHROMA_PLANES 2")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265MaxChromaPlanes = 2;
+
+    [NativeTypeName("#define STD_VIDEO_H265_MAX_SHORT_TERM_REF_PIC_SETS 64")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265MaxShortTermRefPicSets = 64;
+
+    [NativeTypeName("#define STD_VIDEO_H265_MAX_DPB_SIZE 16")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265MaxDpbSize = 16;
+
+    [NativeTypeName("#define STD_VIDEO_H265_MAX_LONG_TERM_REF_PICS_SPS 32")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265MaxLongTermRefPicsSps = 32;
+
+    [NativeTypeName("#define STD_VIDEO_H265_MAX_LONG_TERM_PICS 16")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265MaxLongTermPics = 16;
+
+    [NativeTypeName("#define STD_VIDEO_H265_MAX_DELTA_POC 48")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265MaxDeltaPoc = 48;
+
+    [NativeTypeName("#define STD_VIDEO_H265_NO_REFERENCE_PICTURE 0xFF")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoH265NoReferencePicture = 0xFF;
+
+    [NativeTypeName("#define VULKAN_VIDEO_CODEC_H265STD_DECODE_H_ 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH265StdDecodeH = 1;
+
+    [NativeTypeName("#define vulkan_video_codec_h265std_decode 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH265StdDecode = 1;
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H265_DECODE_API_VERSION_1_0_0 VK_MAKE_VIDEO_STD_VERSION(1, 0, 0)"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecH265DecodeApiVersion1X0X0 = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H265_DECODE_SPEC_VERSION VK_STD_VULKAN_VIDEO_CODEC_H265_DECODE_API_VERSION_1_0_0"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecH265DecodeSpecVersion = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H265_DECODE_EXTENSION_NAME \"VK_STD_vulkan_video_codec_h265_decode\""
+    )]
+    [SupportedApiProfile("vulkan")]
+    public static Utf8String StdVulkanVideoCodecH265DecodeExtensionName =>
+        "VK_STD_vulkan_video_codec_h265_decode"u8;
+
+    [NativeTypeName("#define STD_VIDEO_DECODE_H265_REF_PIC_SET_LIST_SIZE 8")]
+    [SupportedApiProfile("vulkan")]
+    public const int StdVideoDecodeH265RefPicSetListSize = 8;
+
+    [NativeTypeName("#define VULKAN_VIDEO_CODEC_H265STD_ENCODE_H_ 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH265StdEncodeH = 1;
+
+    [NativeTypeName("#define vulkan_video_codec_h265std_encode 1")]
+    [SupportedApiProfile("vulkan")]
+    public const int VulkanVideoCodecH265StdEncode = 1;
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H265_ENCODE_API_VERSION_1_0_0 VK_MAKE_VIDEO_STD_VERSION(1, 0, 0)"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecH265EncodeApiVersion1X0X0 = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H265_ENCODE_SPEC_VERSION VK_STD_VULKAN_VIDEO_CODEC_H265_ENCODE_API_VERSION_1_0_0"
+    )]
+    [SupportedApiProfile("vulkan")]
+    public const uint StdVulkanVideoCodecH265EncodeSpecVersion = (
+        (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+    );
+
+    [NativeTypeName(
+        "#define VK_STD_VULKAN_VIDEO_CODEC_H265_ENCODE_EXTENSION_NAME \"VK_STD_vulkan_video_codec_h265_encode\""
+    )]
+    [SupportedApiProfile("vulkan")]
+    public static Utf8String StdVulkanVideoCodecH265EncodeExtensionName =>
+        "VK_STD_vulkan_video_codec_h265_encode"u8;
+
     [NativeTypeName("#define VULKAN_H_ 1")]
     [SupportedApiProfile("vulkan")]
     public const int VulkanH = 1;

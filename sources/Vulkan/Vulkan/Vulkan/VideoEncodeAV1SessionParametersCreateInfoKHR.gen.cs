@@ -33,7 +33,7 @@ public unsafe partial struct VideoEncodeAV1SessionParametersCreateInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StdVideoAV1SequenceHeaderHandle PStdSequenceHeader;
+    public StdVideoAV1SequenceHeader* PStdSequenceHeader;
 
     [NativeTypeName("const StdVideoEncodeAV1DecoderModelInfo *")]
     [SupportedApiProfile(
@@ -41,7 +41,7 @@ public unsafe partial struct VideoEncodeAV1SessionParametersCreateInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StdVideoEncodeAV1DecoderModelInfoHandle PStdDecoderModelInfo;
+    public StdVideoEncodeAV1DecoderModelInfo* PStdDecoderModelInfo;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -57,5 +57,5 @@ public unsafe partial struct VideoEncodeAV1SessionParametersCreateInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StdVideoEncodeAV1OperatingPointInfoHandle PStdOperatingPoints;
+    public StdVideoEncodeAV1OperatingPointInfo* PStdOperatingPoints;
 }

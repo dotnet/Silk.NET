@@ -5,6 +5,7 @@
 using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
@@ -40,5 +41,5 @@ public unsafe partial struct VideoEncodeH264NaluSliceInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StdVideoEncodeH264SliceHeaderHandle PStdSliceHeader;
+    public StdVideoEncodeH264SliceHeader* PStdSliceHeader;
 }

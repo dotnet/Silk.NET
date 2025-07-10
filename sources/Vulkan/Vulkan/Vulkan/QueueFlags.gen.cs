@@ -4,7 +4,6 @@
 // Original source is Copyright 2015-2023 The Khronos Group Inc. Licensed under the MIT license.
 using System;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
