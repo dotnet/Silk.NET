@@ -26365,7 +26365,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         MinVersion = "1.0"
     )]
     public const uint ApiVersion1X0 = (
-        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(0)) << 12U) | ((uint)(0))
+        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
     );
 
     [NativeTypeName("#define VK_HEADER_VERSION 315")]
@@ -26385,7 +26385,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         MinVersion = "1.0"
     )]
     public const uint HeaderVersionComplete = (
-        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(4)) << 12U) | ((uint)(315))
+        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(4)) << 12) | ((uint)(315))
     );
 
     [NativeTypeName("#define VK_API_VERSION_1_1 VK_MAKE_API_VERSION(0, 1, 1, 0)")]
@@ -26395,7 +26395,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         MinVersion = "1.1"
     )]
     public const uint ApiVersion1X1 = (
-        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(1)) << 12U) | ((uint)(0))
+        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(1)) << 12) | ((uint)(0))
     );
 
     [NativeTypeName("#define VK_API_VERSION_1_2 VK_MAKE_API_VERSION(0, 1, 2, 0)")]
@@ -26405,19 +26405,19 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         MinVersion = "1.2"
     )]
     public const uint ApiVersion1X2 = (
-        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(2)) << 12U) | ((uint)(0))
+        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(2)) << 12) | ((uint)(0))
     );
 
     [NativeTypeName("#define VK_API_VERSION_1_3 VK_MAKE_API_VERSION(0, 1, 3, 0)")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public const uint ApiVersion1X3 = (
-        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(3)) << 12U) | ((uint)(0))
+        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(3)) << 12) | ((uint)(0))
     );
 
     [NativeTypeName("#define VK_API_VERSION_1_4 VK_MAKE_API_VERSION(0, 1, 4, 0)")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public const uint ApiVersion1X4 = (
-        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(4)) << 12U) | ((uint)(0))
+        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(4)) << 12) | ((uint)(0))
     );
 
     [NativeTypeName("#define VK_KHR_SURFACE_SPEC_VERSION 25")]
