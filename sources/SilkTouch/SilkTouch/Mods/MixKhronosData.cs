@@ -253,7 +253,12 @@ public partial class MixKhronosData(
         logger.LogInformation("Reading Khronos XML from \"{}\"...", specPath);
         await using var fs = File.OpenRead(specPath);
         var xml = await XDocument.LoadAsync(fs, LoadOptions.None, default);
+
         var (apiSets, supportedApiProfiles) = EvaluateProfiles(xml);
+        job.ApiSets = apiSets;
+        job.SupportedApiProfiles = supportedApiProfiles;
+
+        var profiles = supportedApiProfiles.SelectMany(x => x.Value).Select(x => x.Profile).ToHashSet();
         job.Vendors =
         [
             .. xml.Element("registry")
@@ -264,12 +269,20 @@ public partial class MixKhronosData(
             .. xml.Element("registry")
                 ?.Element("extensions")
                 ?.Elements("extension")
+                // Only include vendors who have extensions that match a declared profile
+                // This is mainly to exclude extensions that are declared as supported="disabled"
+                .Where(ext => {
+                    var supportedProfiles = ext.Attribute("supported")?.Value.Split("|") ?? [];
+                    return profiles.Intersect(supportedProfiles).Any();
+                })
                 .Attributes("name")
-                .Select(x => x.Value.Split('_')[1].ToUpper()) ?? Enumerable.Empty<string>()
+                // Extract the second part from the extension name
+                // Eg: GL_NV_command_list -> NV
+                .Select(name => name.Value.Split('_')[1].ToUpper()) ?? Enumerable.Empty<string>()
         ];
-        job.ApiSets = apiSets;
-        job.SupportedApiProfiles = supportedApiProfiles;
+
         ReadGroups(xml, job, job.Vendors);
+
         foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
         {
             var type = typeElement.Element("name")?.Value;
