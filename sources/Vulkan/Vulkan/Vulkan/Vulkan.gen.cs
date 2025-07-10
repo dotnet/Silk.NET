@@ -26651,12 +26651,6 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
     public static Utf8String KhrMaintenance1ExtensionName => "VK_KHR_maintenance1"u8;
 
-    [NativeTypeName(
-        "#define VK_KHR_MAINTENANCE1_EXTENSION_NAME VK_KHR_MAINTENANCE_1_EXTENSION_NAME"
-    )]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
-    public static Utf8String KhrMaintenance1ExtensionName => "VK_KHR_maintenance1"u8;
-
     [NativeTypeName("#define VK_KHR_DEVICE_GROUP_CREATION_SPEC_VERSION 1")]
     [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
     public const int KhrDeviceGroupCreationSpecVersion = 1;
@@ -27093,16 +27087,6 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     public static Utf8String KhrMaintenance2ExtensionName => "VK_KHR_maintenance2"u8;
 
-    [NativeTypeName("#define VK_KHR_MAINTENANCE2_SPEC_VERSION VK_KHR_MAINTENANCE_2_SPEC_VERSION")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    public const int KhrMaintenance2SpecVersion = 1;
-
-    [NativeTypeName(
-        "#define VK_KHR_MAINTENANCE2_EXTENSION_NAME VK_KHR_MAINTENANCE_2_EXTENSION_NAME"
-    )]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    public static Utf8String KhrMaintenance2ExtensionName => "VK_KHR_maintenance2"u8;
-
     [NativeTypeName("#define VK_KHR_GET_SURFACE_CAPABILITIES_2_SPEC_VERSION 1")]
     [SupportedApiProfile(
         "vulkan",
@@ -27294,30 +27278,6 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     public const int KhrMaintenance3SpecVersion = 1;
 
     [NativeTypeName("#define VK_KHR_MAINTENANCE_3_EXTENSION_NAME \"VK_KHR_maintenance3\"")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance3"],
-        ImpliesSets = [
-            "VK_KHR_maintenance3+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_maintenance3+VK_VERSION_1_1",
-        ]
-    )]
-    public static Utf8String KhrMaintenance3ExtensionName => "VK_KHR_maintenance3"u8;
-
-    [NativeTypeName("#define VK_KHR_MAINTENANCE3_SPEC_VERSION VK_KHR_MAINTENANCE_3_SPEC_VERSION")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_maintenance3"],
-        ImpliesSets = [
-            "VK_KHR_maintenance3+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_maintenance3+VK_VERSION_1_1",
-        ]
-    )]
-    public const int KhrMaintenance3SpecVersion = 1;
-
-    [NativeTypeName(
-        "#define VK_KHR_MAINTENANCE3_EXTENSION_NAME VK_KHR_MAINTENANCE_3_EXTENSION_NAME"
-    )]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance3"],
@@ -29177,18 +29137,6 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_array2"])]
     public static Utf8String NvViewportArray2ExtensionName => "VK_NV_viewport_array2"u8;
 
-    [NativeTypeName(
-        "#define VK_NV_VIEWPORT_ARRAY2_SPEC_VERSION VK_NV_VIEWPORT_ARRAY_2_SPEC_VERSION"
-    )]
-    [SupportedApiProfile("vulkan", ["VK_NV_viewport_array2"])]
-    public const int NvViewportArray2SpecVersion = 1;
-
-    [NativeTypeName(
-        "#define VK_NV_VIEWPORT_ARRAY2_EXTENSION_NAME VK_NV_VIEWPORT_ARRAY_2_EXTENSION_NAME"
-    )]
-    [SupportedApiProfile("vulkan", ["VK_NV_viewport_array2"])]
-    public static Utf8String NvViewportArray2ExtensionName => "VK_NV_viewport_array2"u8;
-
     [NativeTypeName("#define VK_NVX_MULTIVIEW_PER_VIEW_ATTRIBUTES_SPEC_VERSION 1")]
     [SupportedApiProfile(
         "vulkan",
@@ -30194,19 +30142,6 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
 
     [NativeTypeName(
         "#define VK_GOOGLE_HLSL_FUNCTIONALITY_1_EXTENSION_NAME \"VK_GOOGLE_hlsl_functionality1\""
-    )]
-    [SupportedApiProfile("vulkan", ["VK_GOOGLE_hlsl_functionality1"])]
-    public static Utf8String GoogleHlslFunctionality1ExtensionName =>
-        "VK_GOOGLE_hlsl_functionality1"u8;
-
-    [NativeTypeName(
-        "#define VK_GOOGLE_HLSL_FUNCTIONALITY1_SPEC_VERSION VK_GOOGLE_HLSL_FUNCTIONALITY_1_SPEC_VERSION"
-    )]
-    [SupportedApiProfile("vulkan", ["VK_GOOGLE_hlsl_functionality1"])]
-    public const int GoogleHlslFunctionality1SpecVersion = 1;
-
-    [NativeTypeName(
-        "#define VK_GOOGLE_HLSL_FUNCTIONALITY1_EXTENSION_NAME VK_GOOGLE_HLSL_FUNCTIONALITY_1_EXTENSION_NAME"
     )]
     [SupportedApiProfile("vulkan", ["VK_GOOGLE_hlsl_functionality1"])]
     public static Utf8String GoogleHlslFunctionality1ExtensionName =>
