@@ -2,6 +2,8 @@
 @../remap.rsp
 --exclude
 VK_NULL_HANDLE
+VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES2_EXT
+VK_KHR_MAINTENANCE1_SPEC_VERSION
 --file
 vulkan-vulkan.h
 --methodClassName

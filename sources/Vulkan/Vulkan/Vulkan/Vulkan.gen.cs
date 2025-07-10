@@ -26217,10 +26217,6 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
     public static Utf8String KhrMaintenance1ExtensionName => "VK_KHR_maintenance1"u8;
 
-    [NativeTypeName("#define VK_KHR_MAINTENANCE1_SPEC_VERSION VK_KHR_MAINTENANCE_1_SPEC_VERSION")]
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
-    public const int KhrMaintenance1SpecVersion = 2;
-
     [NativeTypeName(
         "#define VK_KHR_MAINTENANCE1_EXTENSION_NAME VK_KHR_MAINTENANCE_1_EXTENSION_NAME"
     )]

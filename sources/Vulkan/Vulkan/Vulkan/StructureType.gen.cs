@@ -7995,13 +7995,6 @@ public enum StructureType : uint
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_display_surface_counter"],
-        ImpliesSets = ["VK_KHR_display"]
-    )]
-    SurfaceCapabilities2EXT = SurfaceCapabilities2EXT,
-
-    [SupportedApiProfile(
-        "vulkan",
         ["VK_KHR_imageless_framebuffer"],
         ImpliesSets = [
             "VK_KHR_image_format_list+VK_KHR_get_physical_device_properties2+VK_KHR_maintenance2",
