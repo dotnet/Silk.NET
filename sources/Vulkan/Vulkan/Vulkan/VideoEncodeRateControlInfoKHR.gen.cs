@@ -52,7 +52,7 @@ public unsafe partial struct VideoEncodeRateControlInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public VkVideoEncodeRateControlModeFlagBitsKHR RateControlMode;
+    public VideoEncodeRateControlModeFlagsKHR RateControlMode;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

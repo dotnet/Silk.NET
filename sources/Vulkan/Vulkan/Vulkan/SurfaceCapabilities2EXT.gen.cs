@@ -84,7 +84,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public VkSurfaceTransformFlagBitsKHR CurrentTransform;
+    public SurfaceTransformFlagsKHR CurrentTransform;
 
     [NativeTypeName("VkCompositeAlphaFlagsKHR")]
     [SupportedApiProfile(

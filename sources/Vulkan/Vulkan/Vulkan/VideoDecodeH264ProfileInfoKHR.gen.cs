@@ -39,5 +39,5 @@ public unsafe partial struct VideoDecodeH264ProfileInfoKHR
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public VkVideoDecodeH264PictureLayoutFlagBitsKHR PictureLayout;
+    public VideoDecodeH264PictureLayoutFlagsKHR PictureLayout;
 }

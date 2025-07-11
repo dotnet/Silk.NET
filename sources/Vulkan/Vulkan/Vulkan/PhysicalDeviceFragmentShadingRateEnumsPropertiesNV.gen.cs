@@ -31,5 +31,5 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    public VkSampleCountFlagBits MaxFragmentShadingRateInvocationCount;
+    public SampleCountFlags MaxFragmentShadingRateInvocationCount;
 }

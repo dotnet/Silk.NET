@@ -148,7 +148,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public VkSampleCountFlagBits MaxFragmentShadingRateRasterizationSamples;
+    public SampleCountFlags MaxFragmentShadingRateRasterizationSamples;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(

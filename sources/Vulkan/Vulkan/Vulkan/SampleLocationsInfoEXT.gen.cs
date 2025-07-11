@@ -41,7 +41,7 @@ public unsafe partial struct SampleLocationsInfoEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public VkSampleCountFlagBits SampleLocationsPerPixel;
+    public SampleCountFlags SampleLocationsPerPixel;
 
     [SupportedApiProfile(
         "vulkan",

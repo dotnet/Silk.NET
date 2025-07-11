@@ -49,7 +49,7 @@ public unsafe partial struct AttachmentSampleCountInfoAMD
             "VK_AMD_mixed_attachment_samples+VK_VERSION_1_3",
         ]
     )]
-    public VkSampleCountFlagBits* PColorAttachmentSamples;
+    public SampleCountFlags* PColorAttachmentSamples;
 
     [SupportedApiProfile(
         "vulkan",
@@ -58,5 +58,5 @@ public unsafe partial struct AttachmentSampleCountInfoAMD
             "VK_AMD_mixed_attachment_samples+VK_VERSION_1_3",
         ]
     )]
-    public VkSampleCountFlagBits DepthStencilAttachmentSamples;
+    public SampleCountFlags DepthStencilAttachmentSamples;
 }

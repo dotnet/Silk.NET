@@ -60,10 +60,10 @@ public unsafe partial struct SwapchainCreateInfoKHR
     public uint* PQueueFamilyIndices;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public VkSurfaceTransformFlagBitsKHR PreTransform;
+    public SurfaceTransformFlagsKHR PreTransform;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public VkCompositeAlphaFlagBitsKHR CompositeAlpha;
+    public CompositeAlphaFlagsKHR CompositeAlpha;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     public PresentModeKHR PresentMode;

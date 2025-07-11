@@ -36,13 +36,13 @@ public unsafe partial struct DisplaySurfaceCreateInfoKHR
     public uint PlaneStackIndex;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public VkSurfaceTransformFlagBitsKHR Transform;
+    public SurfaceTransformFlagsKHR Transform;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public float GlobalAlpha;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public VkDisplayPlaneAlphaFlagBitsKHR AlphaMode;
+    public DisplayPlaneAlphaFlagsKHR AlphaMode;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Extent2D ImageExtent;

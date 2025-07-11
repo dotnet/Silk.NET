@@ -21,5 +21,5 @@ public partial struct IndirectCommandsIndexBufferTokenEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public VkIndirectCommandsInputModeFlagBitsEXT Mode;
+    public IndirectCommandsInputModeFlagsEXT Mode;
 }

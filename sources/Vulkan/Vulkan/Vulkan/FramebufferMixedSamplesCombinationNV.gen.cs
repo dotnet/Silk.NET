@@ -50,7 +50,7 @@ public unsafe partial struct FramebufferMixedSamplesCombinationNV
             "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_1",
         ]
     )]
-    public VkSampleCountFlagBits RasterizationSamples;
+    public SampleCountFlags RasterizationSamples;
 
     [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(

@@ -32,7 +32,7 @@ public unsafe partial struct VideoProfileInfoKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public VkVideoCodecOperationFlagBitsKHR VideoCodecOperation;
+    public VideoCodecOperationFlagsKHR VideoCodecOperation;
 
     [NativeTypeName("VkVideoChromaSubsamplingFlagsKHR")]
     [SupportedApiProfile(

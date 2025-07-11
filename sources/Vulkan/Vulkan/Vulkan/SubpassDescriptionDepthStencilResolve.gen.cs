@@ -32,14 +32,14 @@ public unsafe partial struct SubpassDescriptionDepthStencilResolve
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public VkResolveModeFlagBits DepthResolveMode;
+    public ResolveModeFlags DepthResolveMode;
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public VkResolveModeFlagBits StencilResolveMode;
+    public ResolveModeFlags StencilResolveMode;
 
     [NativeTypeName("const VkAttachmentReference2 *")]
     [SupportedApiProfile(

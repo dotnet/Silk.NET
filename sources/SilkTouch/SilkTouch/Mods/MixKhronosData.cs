@@ -1884,6 +1884,8 @@ public partial class MixKhronosData(
 
             return base.VisitFieldDeclaration(node);
         }
+
+        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]

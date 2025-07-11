@@ -41,5 +41,5 @@ public unsafe partial struct CopyCommandTransformInfoQCOM
             "VK_QCOM_rotated_copy_commands+VK_VERSION_1_3",
         ]
     )]
-    public VkSurfaceTransformFlagBitsKHR Transform;
+    public SurfaceTransformFlagsKHR Transform;
 }

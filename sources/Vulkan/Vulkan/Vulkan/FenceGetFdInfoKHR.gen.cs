@@ -52,5 +52,5 @@ public unsafe partial struct FenceGetFdInfoKHR
             "VK_KHR_external_fence_fd+VK_VERSION_1_1",
         ]
     )]
-    public VkExternalFenceHandleTypeFlagBits HandleType;
+    public ExternalFenceHandleTypeFlags HandleType;
 }

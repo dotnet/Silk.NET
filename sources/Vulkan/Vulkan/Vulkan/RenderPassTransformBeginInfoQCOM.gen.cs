@@ -19,5 +19,5 @@ public unsafe partial struct RenderPassTransformBeginInfoQCOM
     public void* PNext;
 
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
-    public VkSurfaceTransformFlagBitsKHR Transform;
+    public SurfaceTransformFlagsKHR Transform;
 }
