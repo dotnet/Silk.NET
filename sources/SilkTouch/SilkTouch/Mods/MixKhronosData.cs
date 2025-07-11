@@ -1830,10 +1830,8 @@ public partial class MixKhronosData(
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             var iden = node.Identifier.ToString();
-            if (iden.Contains("FlagBits"))
-            {
-                iden = iden.Replace("FlagBits", "Flags");
-            }
+            iden = iden.Replace("FlagBits", "Flags");
+
             if (
                 job.Groups.ContainsKey(iden)
                 && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
@@ -1897,10 +1895,7 @@ public partial class MixKhronosData(
                     var typeName = s.AsSpan()["const ".Length..].Trim().ToString();
 
                     // Vulkan/OpenXR enum name
-                    if (typeName.Contains("FlagBits"))
-                    {
-                        typeName = typeName.Replace("FlagBits", "Flags");
-                    }
+                    typeName = typeName.Replace("FlagBits", "Flags");
 
                     // Remove constants that match an enum group name
                     // We save these constants so we can move them to the actual enum
@@ -1954,10 +1949,7 @@ public partial class MixKhronosData(
             }
 
             // Vulkan/OpenXR enum name
-            if (groupName?.Contains("FlagBits") ?? false)
-            {
-                groupName = groupName.Replace("FlagBits", "Flags");
-            }
+            groupName = groupName?.Replace("FlagBits", "Flags");
 
             // Skip Vulkan API Constants since it is not an enum
             if (block.Attribute("type")?.Value == "constants")
