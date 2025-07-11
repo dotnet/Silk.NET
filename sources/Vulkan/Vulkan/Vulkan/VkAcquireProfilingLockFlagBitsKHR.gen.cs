@@ -11,8 +11,15 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PipelineCompilerControlFlagsAMD : uint
+public enum AcquireProfilingLockFlagsKHR : uint
 {
-    [SupportedApiProfile("vulkan", ["VK_AMD_pipeline_compiler_control"])]
-    MaxEnumAMD = 0x7FFFFFFF,
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
+    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

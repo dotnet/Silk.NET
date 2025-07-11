@@ -18,5 +18,5 @@ public enum ShaderCorePropertiesFlagsAMD : uint
         ["VK_AMD_shader_core_properties2"],
         ImpliesSets = ["VK_AMD_shader_core_properties"]
     )]
-    MaxEnumAMD = 0x7FFFFFFF,
+    FlagBitsMaxEnumAMD = 0x7FFFFFFF,
 }

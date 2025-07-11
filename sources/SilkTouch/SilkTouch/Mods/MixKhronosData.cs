@@ -294,27 +294,6 @@ public partial class MixKhronosData(
 
             job.TypeMap.TryAdd(type, baseType);
         }
-
-        // TODO: This is temporary
-        // Get mappings from FlagBits to Flags enums
-        Console.WriteLine("--remap");
-        foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
-        {
-            var typedef = typeElement.Element("type")?.Value;
-            if (typedef != "VkFlags" && typedef != "VkFlags64")
-            {
-                continue;
-            }
-
-            var mapFrom = typeElement.Attribute("requires")?.Value;
-            var mapTo = typeElement.Element("name")?.Value;
-            if (mapFrom == null || mapTo == null)
-            {
-                continue;
-            }
-
-            Console.WriteLine($"{mapFrom}={mapTo}");
-        }
     }
 
     /// <inheritdoc />
@@ -322,136 +301,29 @@ public partial class MixKhronosData(
     {
         var jobData = Jobs[ctx.JobKey];
         var proj = ctx.SourceProject;
-        var rewriter = new Rewriter(jobData);
+        var rewriter = new Rewriter(jobData, logger);
         foreach (var docId in proj?.DocumentIds ?? [])
         {
             var doc =
                 proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
-                    ?? throw new InvalidOperationException("Visit returned null.")
+                ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
 
-        foreach (var (fname, node) in GetNewSyntaxTrees(jobData, rewriter))
+        foreach (var (filePath, node) in rewriter.GetNewSyntaxTrees())
         {
             proj = proj
                 ?.AddDocument(
-                    Path.GetFileName(fname),
+                    Path.GetFileName(filePath),
                     node.NormalizeWhitespace(),
-                    filePath: proj.FullPath(fname)
+                    filePath: proj.FullPath(filePath)
                 )
                 .Project;
         }
 
         ctx.SourceProject = proj;
-    }
-
-    private IEnumerable<(string, SyntaxNode)> GetNewSyntaxTrees(JobData jobData, Rewriter rewriter)
-    {
-        foreach (var (groupName, groupInfo) in jobData.Groups)
-        {
-            if (!rewriter.AlreadyPresentGroups.Contains(groupName))
-            {
-                var baseType = groupInfo.Type ?? groupName;
-                while (jobData.TypeMap.TryGetValue(baseType, out var ty))
-                {
-                    baseType = ty;
-                }
-
-                if (baseType == groupName)
-                {
-                    logger?.LogError(
-                        "Enum \"{}\" has no base type. Please add TypeMap entry to the configuration. "
-                            + "This enum group will be skipped.",
-                        groupName
-                    );
-                    continue;
-                }
-
-                var ns = groupInfo
-                    .Enums.Select(x => x.NamespaceFromSyntaxNode())
-                    .Distinct()
-                    .Select((x, i) => (x, i))
-                    .LastOrDefault()
-                    is
-                    (var n, 0)
-                    ? n
-                    : null;
-
-                ns ??= jobData.Configuration.Namespace;
-                if (ns is null)
-                {
-                    logger?.LogError(
-                        "Enum \"{}\" has no namespace. Please add Namespace to the configuration. "
-                            + "This enum group will be skipped.",
-                        groupName
-                    );
-                    continue;
-                }
-
-                yield return (
-                    $"Enums/{groupName}.gen.cs",
-                    CompilationUnit()
-                        .WithMembers(
-                            SingletonList<MemberDeclarationSyntax>(
-                                FileScopedNamespaceDeclaration(
-                                        ModUtils.NamespaceIntoIdentifierName(ns)
-                                    )
-                                    .WithMembers(
-                                        SingletonList<MemberDeclarationSyntax>(
-                                            EnumDeclaration(groupName)
-                                                .WithModifiers(
-                                                    TokenList(Token(SyntaxKind.PublicKeyword))
-                                                )
-                                                .WithAttributeLists(
-                                                    SingletonList(
-                                                        AttributeList(
-                                                            SingletonSeparatedList(
-                                                                Attribute(
-                                                                    IdentifierName("Transformed")
-                                                                )
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                                .WithBaseList(
-                                                    BaseList(
-                                                        SingletonSeparatedList<BaseTypeSyntax>(
-                                                            SimpleBaseType(IdentifierName(baseType))
-                                                        )
-                                                    )
-                                                )
-                                                .WithMembers(
-                                                    SeparatedList(
-                                                        groupInfo.Enums.Select(x =>
-                                                            EnumMemberDeclaration(
-                                                                    x.Identifier.ToString()
-                                                                )
-                                                                // TODO actually eval the expression to see if necessary?
-                                                                .WithEqualsValue(
-                                                                    x.Initializer?.WithValue(
-                                                                        CheckedExpression(
-                                                                            SyntaxKind.UncheckedExpression,
-                                                                            CastExpression(
-                                                                                IdentifierName(
-                                                                                    baseType
-                                                                                ),
-                                                                                x.Initializer.Value
-                                                                            )
-                                                                        )
-                                                                    )
-                                                                )
-                                                        )
-                                                    )
-                                                )
-                                        )
-                                    )
-                            )
-                        )
-                );
-            }
-        }
     }
 
     internal record EnumGroup(
@@ -1510,22 +1382,6 @@ public partial class MixKhronosData(
                 names[original] = (newPrim, newPrev);
             }
         }
-
-        // Rename FlagBits enums to Flags
-        if (container == null)
-        {
-            foreach (var (original, (current, previous)) in names)
-            {
-                var newPrim = current.Replace("FlagBits", "Flags");
-                if (current != newPrim)
-                {
-                    var newPrev = previous ?? [];
-                    newPrev.Add(current);
-
-                    names[original] = (newPrim, newPrev);
-                }
-            }
-        }
     }
 
     /// <inheritdoc />
@@ -1817,9 +1673,125 @@ public partial class MixKhronosData(
     )]
     private static partial Regex EndingsNotToTrim();
 
-    private class Rewriter(JobData job) : CSharpSyntaxRewriter(true)
+    private class Rewriter(JobData job, ILogger logger) : CSharpSyntaxRewriter(true)
     {
         public HashSet<string> AlreadyPresentGroups { get; } = [];
+
+        public IEnumerable<(string FilePath, SyntaxNode Node)> GetNewSyntaxTrees()
+        {
+            var results = new List<(string FilePath, SyntaxNode Node)>();
+
+            // Generate initial syntax trees
+            foreach (var (groupName, groupInfo) in job.Groups)
+            {
+                if (!AlreadyPresentGroups.Contains(groupName))
+                {
+                    var baseType = groupInfo.Type ?? groupName;
+                    while (job.TypeMap.TryGetValue(baseType, out var ty))
+                    {
+                        baseType = ty;
+                    }
+
+                    if (baseType == groupName)
+                    {
+                        logger?.LogError(
+                            "Enum \"{}\" has no base type. Please add TypeMap entry to the configuration. "
+                                + "This enum group will be skipped.",
+                            groupName
+                        );
+                        continue;
+                    }
+
+                    var ns = groupInfo
+                        .Enums.Select(x => x.NamespaceFromSyntaxNode())
+                        .Distinct()
+                        .Select((x, i) => (x, i))
+                        .LastOrDefault()
+                        is
+                        (var n, 0)
+                        ? n
+                        : null;
+
+                    ns ??= job.Configuration.Namespace;
+                    if (ns is null)
+                    {
+                        logger?.LogError(
+                            "Enum \"{}\" has no namespace. Please add Namespace to the configuration. "
+                                + "This enum group will be skipped.",
+                            groupName
+                        );
+                        continue;
+                    }
+
+                    results.Add((
+                        $"Enums/{groupName}.gen.cs",
+                        CompilationUnit()
+                            .WithMembers(
+                                SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns)
+                                        )
+                                        .WithMembers(
+                                            SingletonList<MemberDeclarationSyntax>(
+                                                EnumDeclaration(groupName)
+                                                    .WithModifiers(
+                                                        TokenList(Token(SyntaxKind.PublicKeyword))
+                                                    )
+                                                    .WithAttributeLists(
+                                                        SingletonList(
+                                                            AttributeList(
+                                                                SingletonSeparatedList(
+                                                                    Attribute(
+                                                                        IdentifierName("Transformed")
+                                                                    )
+                                                                )
+                                                            )
+                                                        )
+                                                    )
+                                                    .WithBaseList(
+                                                        BaseList(
+                                                            SingletonSeparatedList<BaseTypeSyntax>(
+                                                                SimpleBaseType(IdentifierName(baseType))
+                                                            )
+                                                        )
+                                                    )
+                                                    .WithMembers(
+                                                        SeparatedList(
+                                                            groupInfo.Enums.Select(x =>
+                                                                EnumMemberDeclaration(
+                                                                        x.Identifier.ToString()
+                                                                    )
+                                                                    // TODO actually eval the expression to see if necessary?
+                                                                    .WithEqualsValue(
+                                                                        x.Initializer?.WithValue(
+                                                                            CheckedExpression(
+                                                                                SyntaxKind.UncheckedExpression,
+                                                                                CastExpression(
+                                                                                    IdentifierName(
+                                                                                        baseType
+                                                                                    ),
+                                                                                    x.Initializer.Value
+                                                                                )
+                                                                            )
+                                                                        )
+                                                                    )
+                                                            )
+                                                        )
+                                                    )
+                                            )
+                                        )
+                                )
+                            )
+                    ));
+                }
+            }
+
+            // Rewrite syntax trees
+            // This is to ensure that these trees are processed similarly to all other trees in the project
+            results = results.Select(r => (r.FilePath, Visit(r.Node))).ToList();
+
+            return results;
+        }
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
@@ -1838,9 +1810,9 @@ public partial class MixKhronosData(
             )
             {
                 AlreadyPresentGroups.Add(iden);
-                return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(iden)));
             }
-            return base.VisitEnumDeclaration(node);
+
+            return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(iden)));
         }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
