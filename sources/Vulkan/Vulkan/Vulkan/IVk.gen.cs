@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-public unsafe partial interface IVulkan
+public unsafe partial interface IVk
 {
     public partial interface Static
     {

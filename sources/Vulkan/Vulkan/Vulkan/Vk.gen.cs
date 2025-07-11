@@ -10,9 +10,9 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [SupportedApiProfile("vulkan")]
-public unsafe partial class Vulkan : IVulkan, IVulkan.Static
+public unsafe partial class Vk : IVk, IVk.Static
 {
-    public partial class DllImport : IVulkan.Static
+    public partial class DllImport : IVk.Static
     {
         [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkAcquireDrmDisplayEXT")]
         [SupportedApiProfile(
@@ -26365,7 +26365,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         MinVersion = "1.0"
     )]
     public const uint ApiVersion1X0 = (
-        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(0)) << 12) | ((uint)(0))
+        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(0)) << 12U) | ((uint)(0))
     );
 
     [NativeTypeName("#define VK_HEADER_VERSION 315")]
@@ -26385,7 +26385,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         MinVersion = "1.0"
     )]
     public const uint HeaderVersionComplete = (
-        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(4)) << 12) | ((uint)(315))
+        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(4)) << 12U) | ((uint)(315))
     );
 
     [NativeTypeName("#define VK_API_VERSION_1_1 VK_MAKE_API_VERSION(0, 1, 1, 0)")]
@@ -26395,7 +26395,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         MinVersion = "1.1"
     )]
     public const uint ApiVersion1X1 = (
-        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(1)) << 12) | ((uint)(0))
+        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(1)) << 12U) | ((uint)(0))
     );
 
     [NativeTypeName("#define VK_API_VERSION_1_2 VK_MAKE_API_VERSION(0, 1, 2, 0)")]
@@ -26405,19 +26405,19 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         MinVersion = "1.2"
     )]
     public const uint ApiVersion1X2 = (
-        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(2)) << 12) | ((uint)(0))
+        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(2)) << 12U) | ((uint)(0))
     );
 
     [NativeTypeName("#define VK_API_VERSION_1_3 VK_MAKE_API_VERSION(0, 1, 3, 0)")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public const uint ApiVersion1X3 = (
-        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(3)) << 12) | ((uint)(0))
+        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(3)) << 12U) | ((uint)(0))
     );
 
     [NativeTypeName("#define VK_API_VERSION_1_4 VK_MAKE_API_VERSION(0, 1, 4, 0)")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public const uint ApiVersion1X4 = (
-        (((uint)(0)) << 29) | (((uint)(1)) << 22) | (((uint)(4)) << 12) | ((uint)(0))
+        (((uint)(0)) << 29U) | (((uint)(1)) << 22U) | (((uint)(4)) << 12U) | ((uint)(0))
     );
 
     [NativeTypeName("#define VK_KHR_SURFACE_SPEC_VERSION 25")]
@@ -33499,7 +33499,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     public static Utf8String ExtMeshShaderExtensionName => "VK_EXT_mesh_shader"u8;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AcquireDrmDisplayEXT(
+    Result IVk.AcquireDrmDisplayEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("int32_t")] int drmFd,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display
@@ -33526,7 +33526,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AcquireDrmDisplayEXT(physicalDevice, drmFd, display);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AcquireNextImage2KHR(
+    Result IVk.AcquireNextImage2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAcquireNextImageInfoKHR *")] AcquireNextImageInfoKHR* pAcquireInfo,
         [NativeTypeName("uint32_t *")] uint* pImageIndex
@@ -33554,7 +33554,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AcquireNextImage2KHR(device, pAcquireInfo, pImageIndex);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AcquireNextImage2KHR(
+    Result IVk.AcquireNextImage2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAcquireNextImageInfoKHR *")]
             Ref<AcquireNextImageInfoKHR> pAcquireInfo,
@@ -33565,7 +33565,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (AcquireNextImageInfoKHR* __dsl_pAcquireInfo = pAcquireInfo)
         {
             return (Result)
-                ((IVulkan)this).AcquireNextImage2KHR(device, __dsl_pAcquireInfo, __dsl_pImageIndex);
+                ((IVk)this).AcquireNextImage2KHR(device, __dsl_pAcquireInfo, __dsl_pImageIndex);
         }
     }
 
@@ -33586,7 +33586,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AcquireNextImage2KHR(device, pAcquireInfo, pImageIndex);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AcquireNextImageKHR(
+    Result IVk.AcquireNextImageKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("uint64_t")] ulong timeout,
@@ -33622,7 +33622,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AcquireNextImageKHR(device, swapchain, timeout, semaphore, fence, pImageIndex);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AcquireNextImageKHR(
+    Result IVk.AcquireNextImageKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("uint64_t")] ulong timeout,
@@ -33634,7 +33634,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pImageIndex = pImageIndex)
         {
             return (Result)
-                ((IVulkan)this).AcquireNextImageKHR(
+                ((IVk)this).AcquireNextImageKHR(
                     device,
                     swapchain,
                     timeout,
@@ -33659,7 +33659,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AcquireNextImageKHR(device, swapchain, timeout, semaphore, fence, pImageIndex);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AcquirePerformanceConfigurationIntel(
+    Result IVk.AcquirePerformanceConfigurationIntel(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPerformanceConfigurationAcquireInfoINTEL *")]
             PerformanceConfigurationAcquireInfoIntel* pAcquireInfo,
@@ -33693,7 +33693,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AcquirePerformanceConfigurationIntel(device, pAcquireInfo, pConfiguration);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AcquirePerformanceConfigurationIntel(
+    Result IVk.AcquirePerformanceConfigurationIntel(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPerformanceConfigurationAcquireInfoINTEL *")]
             Ref<PerformanceConfigurationAcquireInfoIntel> pAcquireInfo,
@@ -33705,7 +33705,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PerformanceConfigurationAcquireInfoIntel* __dsl_pAcquireInfo = pAcquireInfo)
         {
             return (Result)
-                ((IVulkan)this).AcquirePerformanceConfigurationIntel(
+                ((IVk)this).AcquirePerformanceConfigurationIntel(
                     device,
                     __dsl_pAcquireInfo,
                     __dsl_pConfiguration
@@ -33726,7 +33726,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AcquirePerformanceConfigurationIntel(device, pAcquireInfo, pConfiguration);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AcquireProfilingLockKHR(
+    Result IVk.AcquireProfilingLockKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAcquireProfilingLockInfoKHR *")] AcquireProfilingLockInfoKHR* pInfo
     ) =>
@@ -33754,7 +33754,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AcquireProfilingLockKHR(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AcquireProfilingLockKHR(
+    Result IVk.AcquireProfilingLockKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAcquireProfilingLockInfoKHR *")]
             Ref<AcquireProfilingLockInfoKHR> pInfo
@@ -33762,7 +33762,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AcquireProfilingLockInfoKHR* __dsl_pInfo = pInfo)
         {
-            return (Result)((IVulkan)this).AcquireProfilingLockKHR(device, __dsl_pInfo);
+            return (Result)((IVk)this).AcquireProfilingLockKHR(device, __dsl_pInfo);
         }
     }
 
@@ -33784,7 +33784,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AcquireProfilingLockKHR(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AllocateCommandBuffers(
+    Result IVk.AllocateCommandBuffers(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCommandBufferAllocateInfo *")]
             CommandBufferAllocateInfo* pAllocateInfo,
@@ -33817,7 +33817,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AllocateCommandBuffers(device, pAllocateInfo, pCommandBuffers);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AllocateCommandBuffers(
+    Result IVk.AllocateCommandBuffers(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCommandBufferAllocateInfo *")]
             Ref<CommandBufferAllocateInfo> pAllocateInfo,
@@ -33828,7 +33828,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CommandBufferAllocateInfo* __dsl_pAllocateInfo = pAllocateInfo)
         {
             return (Result)
-                ((IVulkan)this).AllocateCommandBuffers(
+                ((IVk)this).AllocateCommandBuffers(
                     device,
                     __dsl_pAllocateInfo,
                     __dsl_pCommandBuffers
@@ -33852,7 +33852,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AllocateCommandBuffers(device, pAllocateInfo, pCommandBuffers);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AllocateDescriptorSets(
+    Result IVk.AllocateDescriptorSets(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorSetAllocateInfo *")]
             DescriptorSetAllocateInfo* pAllocateInfo,
@@ -33885,7 +33885,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AllocateDescriptorSets(device, pAllocateInfo, pDescriptorSets);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AllocateDescriptorSets(
+    Result IVk.AllocateDescriptorSets(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorSetAllocateInfo *")]
             Ref<DescriptorSetAllocateInfo> pAllocateInfo,
@@ -33896,7 +33896,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DescriptorSetAllocateInfo* __dsl_pAllocateInfo = pAllocateInfo)
         {
             return (Result)
-                ((IVulkan)this).AllocateDescriptorSets(
+                ((IVk)this).AllocateDescriptorSets(
                     device,
                     __dsl_pAllocateInfo,
                     __dsl_pDescriptorSets
@@ -33920,7 +33920,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AllocateDescriptorSets(device, pAllocateInfo, pDescriptorSets);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AllocateMemory(
+    Result IVk.AllocateMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryAllocateInfo *")] MemoryAllocateInfo* pAllocateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -33954,7 +33954,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AllocateMemory(device, pAllocateInfo, pAllocator, pMemory);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.AllocateMemory(
+    Result IVk.AllocateMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryAllocateInfo *")] Ref<MemoryAllocateInfo> pAllocateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -33966,7 +33966,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryAllocateInfo* __dsl_pAllocateInfo = pAllocateInfo)
         {
             return (Result)
-                ((IVulkan)this).AllocateMemory(
+                ((IVk)this).AllocateMemory(
                     device,
                     __dsl_pAllocateInfo,
                     __dsl_pAllocator,
@@ -33991,7 +33991,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AllocateMemory(device, pAllocateInfo, pAllocator, pMemory);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.AntiLagUpdateAMD(
+    void IVk.AntiLagUpdateAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAntiLagDataAMD *")] AntiLagDataAMD* pData
     ) =>
@@ -34012,14 +34012,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AntiLagUpdateAMD(device, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.AntiLagUpdateAMD(
+    void IVk.AntiLagUpdateAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAntiLagDataAMD *")] Ref<AntiLagDataAMD> pData
     )
     {
         fixed (AntiLagDataAMD* __dsl_pData = pData)
         {
-            ((IVulkan)this).AntiLagUpdateAMD(device, __dsl_pData);
+            ((IVk)this).AntiLagUpdateAMD(device, __dsl_pData);
         }
     }
 
@@ -34033,7 +34033,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.AntiLagUpdateAMD(device, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BeginCommandBuffer(
+    Result IVk.BeginCommandBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCommandBufferBeginInfo *")] CommandBufferBeginInfo* pBeginInfo
     ) =>
@@ -34058,14 +34058,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BeginCommandBuffer(commandBuffer, pBeginInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BeginCommandBuffer(
+    Result IVk.BeginCommandBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCommandBufferBeginInfo *")] Ref<CommandBufferBeginInfo> pBeginInfo
     )
     {
         fixed (CommandBufferBeginInfo* __dsl_pBeginInfo = pBeginInfo)
         {
-            return (Result)((IVulkan)this).BeginCommandBuffer(commandBuffer, __dsl_pBeginInfo);
+            return (Result)((IVk)this).BeginCommandBuffer(commandBuffer, __dsl_pBeginInfo);
         }
     }
 
@@ -34083,7 +34083,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BeginCommandBuffer(commandBuffer, pBeginInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindAccelerationStructureMemoryNV(
+    Result IVk.BindAccelerationStructureMemoryNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindAccelerationStructureMemoryInfoNV *")]
@@ -34122,7 +34122,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindAccelerationStructureMemoryNV(device, bindInfoCount, pBindInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindAccelerationStructureMemoryNV(
+    Result IVk.BindAccelerationStructureMemoryNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindAccelerationStructureMemoryInfoNV *")]
@@ -34132,7 +34132,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (BindAccelerationStructureMemoryInfoNV* __dsl_pBindInfos = pBindInfos)
         {
             return (Result)
-                ((IVulkan)this).BindAccelerationStructureMemoryNV(
+                ((IVk)this).BindAccelerationStructureMemoryNV(
                     device,
                     bindInfoCount,
                     __dsl_pBindInfos
@@ -34159,7 +34159,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindAccelerationStructureMemoryNV(device, bindInfoCount, pBindInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindBufferMemory(
+    Result IVk.BindBufferMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
@@ -34188,7 +34188,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindBufferMemory(device, buffer, memory, memoryOffset);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindBufferMemory2(
+    Result IVk.BindBufferMemory2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindBufferMemoryInfo *")] BindBufferMemoryInfo* pBindInfos
@@ -34215,7 +34215,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindBufferMemory2(device, bindInfoCount, pBindInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindBufferMemory2(
+    Result IVk.BindBufferMemory2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindBufferMemoryInfo *")] Ref<BindBufferMemoryInfo> pBindInfos
@@ -34223,8 +34223,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (BindBufferMemoryInfo* __dsl_pBindInfos = pBindInfos)
         {
-            return (Result)
-                ((IVulkan)this).BindBufferMemory2(device, bindInfoCount, __dsl_pBindInfos);
+            return (Result)((IVk)this).BindBufferMemory2(device, bindInfoCount, __dsl_pBindInfos);
         }
     }
 
@@ -34243,7 +34242,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindBufferMemory2(device, bindInfoCount, pBindInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindBufferMemory2KHR(
+    Result IVk.BindBufferMemory2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindBufferMemoryInfo *")] BindBufferMemoryInfo* pBindInfos
@@ -34266,7 +34265,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindBufferMemory2KHR(device, bindInfoCount, pBindInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindBufferMemory2KHR(
+    Result IVk.BindBufferMemory2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindBufferMemoryInfo *")] Ref<BindBufferMemoryInfo> pBindInfos
@@ -34275,7 +34274,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (BindBufferMemoryInfo* __dsl_pBindInfos = pBindInfos)
         {
             return (Result)
-                ((IVulkan)this).BindBufferMemory2KHR(device, bindInfoCount, __dsl_pBindInfos);
+                ((IVk)this).BindBufferMemory2KHR(device, bindInfoCount, __dsl_pBindInfos);
         }
     }
 
@@ -34290,7 +34289,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindBufferMemory2KHR(device, bindInfoCount, pBindInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindImageMemory(
+    Result IVk.BindImageMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
@@ -34319,7 +34318,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindImageMemory(device, image, memory, memoryOffset);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindImageMemory2(
+    Result IVk.BindImageMemory2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindImageMemoryInfo *")] BindImageMemoryInfo* pBindInfos
@@ -34346,7 +34345,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindImageMemory2(device, bindInfoCount, pBindInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindImageMemory2(
+    Result IVk.BindImageMemory2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindImageMemoryInfo *")] Ref<BindImageMemoryInfo> pBindInfos
@@ -34354,8 +34353,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (BindImageMemoryInfo* __dsl_pBindInfos = pBindInfos)
         {
-            return (Result)
-                ((IVulkan)this).BindImageMemory2(device, bindInfoCount, __dsl_pBindInfos);
+            return (Result)((IVk)this).BindImageMemory2(device, bindInfoCount, __dsl_pBindInfos);
         }
     }
 
@@ -34374,7 +34372,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindImageMemory2(device, bindInfoCount, pBindInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindImageMemory2KHR(
+    Result IVk.BindImageMemory2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindImageMemoryInfo *")] BindImageMemoryInfo* pBindInfos
@@ -34397,7 +34395,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindImageMemory2KHR(device, bindInfoCount, pBindInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindImageMemory2KHR(
+    Result IVk.BindImageMemory2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindImageMemoryInfo *")] Ref<BindImageMemoryInfo> pBindInfos
@@ -34405,8 +34403,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (BindImageMemoryInfo* __dsl_pBindInfos = pBindInfos)
         {
-            return (Result)
-                ((IVulkan)this).BindImageMemory2KHR(device, bindInfoCount, __dsl_pBindInfos);
+            return (Result)((IVk)this).BindImageMemory2KHR(device, bindInfoCount, __dsl_pBindInfos);
         }
     }
 
@@ -34421,7 +34418,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindImageMemory2KHR(device, bindInfoCount, pBindInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindOpticalFlowSessionImageNV(
+    Result IVk.BindOpticalFlowSessionImageNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkOpticalFlowSessionNV")] OpticalFlowSessionNVHandle session,
         OpticalFlowSessionBindingPointNV bindingPoint,
@@ -34465,7 +34462,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BindOpticalFlowSessionImageNV(device, session, bindingPoint, view, layout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindVideoSessionMemoryKHR(
+    Result IVk.BindVideoSessionMemoryKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkVideoSessionKHR")] VideoSessionKHRHandle videoSession,
         [NativeTypeName("uint32_t")] uint bindSessionMemoryInfoCount,
@@ -34510,7 +34507,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BindVideoSessionMemoryKHR(
+    Result IVk.BindVideoSessionMemoryKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkVideoSessionKHR")] VideoSessionKHRHandle videoSession,
         [NativeTypeName("uint32_t")] uint bindSessionMemoryInfoCount,
@@ -34523,7 +34520,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         {
             return (Result)
-                ((IVulkan)this).BindVideoSessionMemoryKHR(
+                ((IVk)this).BindVideoSessionMemoryKHR(
                     device,
                     videoSession,
                     bindSessionMemoryInfoCount,
@@ -34555,7 +34552,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BuildAccelerationStructuresKHR(
+    Result IVk.BuildAccelerationStructuresKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("uint32_t")] uint infoCount,
@@ -34609,7 +34606,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BuildAccelerationStructuresKHR(
+    Result IVk.BuildAccelerationStructuresKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("uint32_t")] uint infoCount,
@@ -34623,7 +34620,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (AccelerationStructureBuildGeometryInfoKHR* __dsl_pInfos = pInfos)
         {
             return (Result)
-                ((IVulkan)this).BuildAccelerationStructuresKHR(
+                ((IVk)this).BuildAccelerationStructuresKHR(
                     device,
                     deferredOperation,
                     infoCount,
@@ -34662,7 +34659,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BuildMicromapsEXT(
+    Result IVk.BuildMicromapsEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("uint32_t")] uint infoCount,
@@ -34699,7 +34696,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BuildMicromapsEXT(device, deferredOperation, infoCount, pInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.BuildMicromapsEXT(
+    Result IVk.BuildMicromapsEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("uint32_t")] uint infoCount,
@@ -34709,12 +34706,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MicromapBuildInfoEXT* __dsl_pInfos = pInfos)
         {
             return (Result)
-                ((IVulkan)this).BuildMicromapsEXT(
-                    device,
-                    deferredOperation,
-                    infoCount,
-                    __dsl_pInfos
-                );
+                ((IVk)this).BuildMicromapsEXT(device, deferredOperation, infoCount, __dsl_pInfos);
         }
     }
 
@@ -34737,7 +34729,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.BuildMicromapsEXT(device, deferredOperation, infoCount, pInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginConditionalRenderingEXT(
+    void IVk.CmdBeginConditionalRenderingEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkConditionalRenderingBeginInfoEXT *")]
             ConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin
@@ -34770,7 +34762,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginConditionalRenderingEXT(commandBuffer, pConditionalRenderingBegin);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginConditionalRenderingEXT(
+    void IVk.CmdBeginConditionalRenderingEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkConditionalRenderingBeginInfoEXT *")]
             Ref<ConditionalRenderingBeginInfoEXT> pConditionalRenderingBegin
@@ -34781,7 +34773,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pConditionalRenderingBegin
         )
         {
-            ((IVulkan)this).CmdBeginConditionalRenderingEXT(
+            ((IVk)this).CmdBeginConditionalRenderingEXT(
                 commandBuffer,
                 __dsl_pConditionalRenderingBegin
             );
@@ -34806,7 +34798,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginConditionalRenderingEXT(commandBuffer, pConditionalRenderingBegin);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginDebugUtilsLabelEXT(
+    void IVk.CmdBeginDebugUtilsLabelEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDebugUtilsLabelEXT *")] DebugUtilsLabelEXT* pLabelInfo
     ) =>
@@ -34830,14 +34822,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginDebugUtilsLabelEXT(commandBuffer, pLabelInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginDebugUtilsLabelEXT(
+    void IVk.CmdBeginDebugUtilsLabelEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDebugUtilsLabelEXT *")] Ref<DebugUtilsLabelEXT> pLabelInfo
     )
     {
         fixed (DebugUtilsLabelEXT* __dsl_pLabelInfo = pLabelInfo)
         {
-            ((IVulkan)this).CmdBeginDebugUtilsLabelEXT(commandBuffer, __dsl_pLabelInfo);
+            ((IVk)this).CmdBeginDebugUtilsLabelEXT(commandBuffer, __dsl_pLabelInfo);
         }
     }
 
@@ -34851,7 +34843,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginDebugUtilsLabelEXT(commandBuffer, pLabelInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginPerTileExecutionQCOM(
+    void IVk.CmdBeginPerTileExecutionQCOM(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPerTileBeginInfoQCOM *")] PerTileBeginInfoQCOM* pPerTileBeginInfo
     ) =>
@@ -34882,7 +34874,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginPerTileExecutionQCOM(commandBuffer, pPerTileBeginInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginPerTileExecutionQCOM(
+    void IVk.CmdBeginPerTileExecutionQCOM(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPerTileBeginInfoQCOM *")]
             Ref<PerTileBeginInfoQCOM> pPerTileBeginInfo
@@ -34890,7 +34882,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (PerTileBeginInfoQCOM* __dsl_pPerTileBeginInfo = pPerTileBeginInfo)
         {
-            ((IVulkan)this).CmdBeginPerTileExecutionQCOM(commandBuffer, __dsl_pPerTileBeginInfo);
+            ((IVk)this).CmdBeginPerTileExecutionQCOM(commandBuffer, __dsl_pPerTileBeginInfo);
         }
     }
 
@@ -34912,7 +34904,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginPerTileExecutionQCOM(commandBuffer, pPerTileBeginInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginQuery(
+    void IVk.CmdBeginQuery(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint query,
@@ -34941,7 +34933,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginQuery(commandBuffer, queryPool, query, flags);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginQueryIndexedEXT(
+    void IVk.CmdBeginQueryIndexedEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint query,
@@ -34975,7 +34967,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginQueryIndexedEXT(commandBuffer, queryPool, query, flags, index);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginRendering(
+    void IVk.CmdBeginRendering(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingInfo *")] RenderingInfo* pRenderingInfo
     ) =>
@@ -34996,14 +34988,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginRendering(commandBuffer, pRenderingInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginRendering(
+    void IVk.CmdBeginRendering(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingInfo *")] Ref<RenderingInfo> pRenderingInfo
     )
     {
         fixed (RenderingInfo* __dsl_pRenderingInfo = pRenderingInfo)
         {
-            ((IVulkan)this).CmdBeginRendering(commandBuffer, __dsl_pRenderingInfo);
+            ((IVk)this).CmdBeginRendering(commandBuffer, __dsl_pRenderingInfo);
         }
     }
 
@@ -35017,7 +35009,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginRendering(commandBuffer, pRenderingInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginRenderingKHR(
+    void IVk.CmdBeginRenderingKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingInfo *")] RenderingInfo* pRenderingInfo
     ) =>
@@ -35046,14 +35038,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginRenderingKHR(commandBuffer, pRenderingInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginRenderingKHR(
+    void IVk.CmdBeginRenderingKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingInfo *")] Ref<RenderingInfo> pRenderingInfo
     )
     {
         fixed (RenderingInfo* __dsl_pRenderingInfo = pRenderingInfo)
         {
-            ((IVulkan)this).CmdBeginRenderingKHR(commandBuffer, __dsl_pRenderingInfo);
+            ((IVk)this).CmdBeginRenderingKHR(commandBuffer, __dsl_pRenderingInfo);
         }
     }
 
@@ -35075,7 +35067,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginRenderingKHR(commandBuffer, pRenderingInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginRenderPass(
+    void IVk.CmdBeginRenderPass(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderPassBeginInfo *")] RenderPassBeginInfo* pRenderPassBegin,
         SubpassContents contents
@@ -35102,7 +35094,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginRenderPass(commandBuffer, pRenderPassBegin, contents);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginRenderPass(
+    void IVk.CmdBeginRenderPass(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderPassBeginInfo *")] Ref<RenderPassBeginInfo> pRenderPassBegin,
         SubpassContents contents
@@ -35110,7 +35102,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (RenderPassBeginInfo* __dsl_pRenderPassBegin = pRenderPassBegin)
         {
-            ((IVulkan)this).CmdBeginRenderPass(commandBuffer, __dsl_pRenderPassBegin, contents);
+            ((IVk)this).CmdBeginRenderPass(commandBuffer, __dsl_pRenderPassBegin, contents);
         }
     }
 
@@ -35129,7 +35121,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginRenderPass(commandBuffer, pRenderPassBegin, contents);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginRenderPass2(
+    void IVk.CmdBeginRenderPass2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderPassBeginInfo *")] RenderPassBeginInfo* pRenderPassBegin,
         [NativeTypeName("const VkSubpassBeginInfo *")] SubpassBeginInfo* pSubpassBeginInfo
@@ -35160,7 +35152,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginRenderPass2(commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginRenderPass2(
+    void IVk.CmdBeginRenderPass2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderPassBeginInfo *")] Ref<RenderPassBeginInfo> pRenderPassBegin,
         [NativeTypeName("const VkSubpassBeginInfo *")] Ref<SubpassBeginInfo> pSubpassBeginInfo
@@ -35169,7 +35161,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SubpassBeginInfo* __dsl_pSubpassBeginInfo = pSubpassBeginInfo)
         fixed (RenderPassBeginInfo* __dsl_pRenderPassBegin = pRenderPassBegin)
         {
-            ((IVulkan)this).CmdBeginRenderPass2(
+            ((IVk)this).CmdBeginRenderPass2(
                 commandBuffer,
                 __dsl_pRenderPassBegin,
                 __dsl_pSubpassBeginInfo
@@ -35192,7 +35184,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginRenderPass2(commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginRenderPass2KHR(
+    void IVk.CmdBeginRenderPass2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderPassBeginInfo *")] RenderPassBeginInfo* pRenderPassBegin,
         [NativeTypeName("const VkSubpassBeginInfo *")] SubpassBeginInfo* pSubpassBeginInfo
@@ -35223,7 +35215,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginRenderPass2KHR(commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginRenderPass2KHR(
+    void IVk.CmdBeginRenderPass2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderPassBeginInfo *")] Ref<RenderPassBeginInfo> pRenderPassBegin,
         [NativeTypeName("const VkSubpassBeginInfo *")] Ref<SubpassBeginInfo> pSubpassBeginInfo
@@ -35232,7 +35224,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SubpassBeginInfo* __dsl_pSubpassBeginInfo = pSubpassBeginInfo)
         fixed (RenderPassBeginInfo* __dsl_pRenderPassBegin = pRenderPassBegin)
         {
-            ((IVulkan)this).CmdBeginRenderPass2KHR(
+            ((IVk)this).CmdBeginRenderPass2KHR(
                 commandBuffer,
                 __dsl_pRenderPassBegin,
                 __dsl_pSubpassBeginInfo
@@ -35255,7 +35247,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginRenderPass2KHR(commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginTransformFeedbackEXT(
+    void IVk.CmdBeginTransformFeedbackEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstCounterBuffer,
         [NativeTypeName("uint32_t")] uint counterBufferCount,
@@ -35305,7 +35297,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginTransformFeedbackEXT(
+    void IVk.CmdBeginTransformFeedbackEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstCounterBuffer,
         [NativeTypeName("uint32_t")] uint counterBufferCount,
@@ -35316,7 +35308,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ulong* __dsl_pCounterBufferOffsets = pCounterBufferOffsets)
         fixed (BufferHandle* __dsl_pCounterBuffers = pCounterBuffers)
         {
-            ((IVulkan)this).CmdBeginTransformFeedbackEXT(
+            ((IVk)this).CmdBeginTransformFeedbackEXT(
                 commandBuffer,
                 firstCounterBuffer,
                 counterBufferCount,
@@ -35353,7 +35345,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginVideoCodingKHR(
+    void IVk.CmdBeginVideoCodingKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkVideoBeginCodingInfoKHR *")] VideoBeginCodingInfoKHR* pBeginInfo
     ) =>
@@ -35378,7 +35370,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginVideoCodingKHR(commandBuffer, pBeginInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBeginVideoCodingKHR(
+    void IVk.CmdBeginVideoCodingKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkVideoBeginCodingInfoKHR *")]
             Ref<VideoBeginCodingInfoKHR> pBeginInfo
@@ -35386,7 +35378,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (VideoBeginCodingInfoKHR* __dsl_pBeginInfo = pBeginInfo)
         {
-            ((IVulkan)this).CmdBeginVideoCodingKHR(commandBuffer, __dsl_pBeginInfo);
+            ((IVk)this).CmdBeginVideoCodingKHR(commandBuffer, __dsl_pBeginInfo);
         }
     }
 
@@ -35405,7 +35397,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBeginVideoCodingKHR(commandBuffer, pBeginInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorBufferEmbeddedSamplers2EXT(
+    void IVk.CmdBindDescriptorBufferEmbeddedSamplers2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBindDescriptorBufferEmbeddedSamplersInfoEXT *")]
             BindDescriptorBufferEmbeddedSamplersInfoEXT* pBindDescriptorBufferEmbeddedSamplersInfo
@@ -35443,7 +35435,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorBufferEmbeddedSamplers2EXT(
+    void IVk.CmdBindDescriptorBufferEmbeddedSamplers2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBindDescriptorBufferEmbeddedSamplersInfoEXT *")]
             Ref<BindDescriptorBufferEmbeddedSamplersInfoEXT> pBindDescriptorBufferEmbeddedSamplersInfo
@@ -35454,7 +35446,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pBindDescriptorBufferEmbeddedSamplersInfo
         )
         {
-            ((IVulkan)this).CmdBindDescriptorBufferEmbeddedSamplers2EXT(
+            ((IVk)this).CmdBindDescriptorBufferEmbeddedSamplers2EXT(
                 commandBuffer,
                 __dsl_pBindDescriptorBufferEmbeddedSamplersInfo
             );
@@ -35481,7 +35473,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorBufferEmbeddedSamplersEXT(
+    void IVk.CmdBindDescriptorBufferEmbeddedSamplersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
@@ -35529,7 +35521,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorBuffersEXT(
+    void IVk.CmdBindDescriptorBuffersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint bufferCount,
         [NativeTypeName("const VkDescriptorBufferBindingInfoEXT *")]
@@ -35566,7 +35558,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindDescriptorBuffersEXT(commandBuffer, bufferCount, pBindingInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorBuffersEXT(
+    void IVk.CmdBindDescriptorBuffersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint bufferCount,
         [NativeTypeName("const VkDescriptorBufferBindingInfoEXT *")]
@@ -35575,7 +35567,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DescriptorBufferBindingInfoEXT* __dsl_pBindingInfos = pBindingInfos)
         {
-            ((IVulkan)this).CmdBindDescriptorBuffersEXT(
+            ((IVk)this).CmdBindDescriptorBuffersEXT(
                 commandBuffer,
                 bufferCount,
                 __dsl_pBindingInfos
@@ -35604,12 +35596,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindDescriptorBuffersEXT(commandBuffer, bufferCount, pBindingInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorBuffersEXT(
+    void IVk.CmdBindDescriptorBuffersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDescriptorBufferBindingInfoEXT *")]
             DescriptorBufferBindingInfoEXT pBindingInfos
     ) =>
-        ((IVulkan)this).CmdBindDescriptorBuffersEXT(
+        ((IVk)this).CmdBindDescriptorBuffersEXT(
             commandBuffer,
             1,
             (DescriptorBufferBindingInfoEXT*)&pBindingInfos
@@ -35635,7 +35627,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindDescriptorBuffersEXT(commandBuffer, pBindingInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorSets(
+    void IVk.CmdBindDescriptorSets(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
@@ -35700,7 +35692,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorSets(
+    void IVk.CmdBindDescriptorSets(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
@@ -35714,7 +35706,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pDynamicOffsets = pDynamicOffsets)
         fixed (DescriptorSetHandle* __dsl_pDescriptorSets = pDescriptorSets)
         {
-            ((IVulkan)this).CmdBindDescriptorSets(
+            ((IVk)this).CmdBindDescriptorSets(
                 commandBuffer,
                 pipelineBindPoint,
                 layout,
@@ -35757,7 +35749,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorSets2(
+    void IVk.CmdBindDescriptorSets2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBindDescriptorSetsInfo *")]
             BindDescriptorSetsInfo* pBindDescriptorSetsInfo
@@ -35780,7 +35772,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindDescriptorSets2(commandBuffer, pBindDescriptorSetsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorSets2(
+    void IVk.CmdBindDescriptorSets2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBindDescriptorSetsInfo *")]
             Ref<BindDescriptorSetsInfo> pBindDescriptorSetsInfo
@@ -35788,7 +35780,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (BindDescriptorSetsInfo* __dsl_pBindDescriptorSetsInfo = pBindDescriptorSetsInfo)
         {
-            ((IVulkan)this).CmdBindDescriptorSets2(commandBuffer, __dsl_pBindDescriptorSetsInfo);
+            ((IVk)this).CmdBindDescriptorSets2(commandBuffer, __dsl_pBindDescriptorSetsInfo);
         }
     }
 
@@ -35803,7 +35795,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindDescriptorSets2(commandBuffer, pBindDescriptorSetsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorSets2KHR(
+    void IVk.CmdBindDescriptorSets2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBindDescriptorSetsInfo *")]
             BindDescriptorSetsInfo* pBindDescriptorSetsInfo
@@ -35829,7 +35821,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindDescriptorSets2KHR(commandBuffer, pBindDescriptorSetsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindDescriptorSets2KHR(
+    void IVk.CmdBindDescriptorSets2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBindDescriptorSetsInfo *")]
             Ref<BindDescriptorSetsInfo> pBindDescriptorSetsInfo
@@ -35837,7 +35829,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (BindDescriptorSetsInfo* __dsl_pBindDescriptorSetsInfo = pBindDescriptorSetsInfo)
         {
-            ((IVulkan)this).CmdBindDescriptorSets2KHR(commandBuffer, __dsl_pBindDescriptorSetsInfo);
+            ((IVk)this).CmdBindDescriptorSets2KHR(commandBuffer, __dsl_pBindDescriptorSetsInfo);
         }
     }
 
@@ -35852,7 +35844,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindDescriptorSets2KHR(commandBuffer, pBindDescriptorSetsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindIndexBuffer(
+    void IVk.CmdBindIndexBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -35881,7 +35873,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindIndexBuffer(commandBuffer, buffer, offset, indexType);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindIndexBuffer2(
+    void IVk.CmdBindIndexBuffer2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -35908,7 +35900,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindIndexBuffer2(commandBuffer, buffer, offset, size, indexType);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindIndexBuffer2KHR(
+    void IVk.CmdBindIndexBuffer2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -35939,7 +35931,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindIndexBuffer2KHR(commandBuffer, buffer, offset, size, indexType);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindInvocationMaskHuawei(
+    void IVk.CmdBindInvocationMaskHuawei(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImageView")] ImageViewHandle imageView,
         ImageLayout imageLayout
@@ -35972,7 +35964,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindInvocationMaskHuawei(commandBuffer, imageView, imageLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindPipeline(
+    void IVk.CmdBindPipeline(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline
@@ -35999,7 +35991,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindPipeline(commandBuffer, pipelineBindPoint, pipeline);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindPipelineShaderGroupNV(
+    void IVk.CmdBindPipelineShaderGroupNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
@@ -36042,7 +36034,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindShadersEXT(
+    void IVk.CmdBindShadersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint stageCount,
         [NativeTypeName("const VkShaderStageFlagBits *")] ShaderStageFlags* pStages,
@@ -36080,7 +36072,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindShadersEXT(commandBuffer, stageCount, pStages, pShaders);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindShadersEXT(
+    void IVk.CmdBindShadersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint stageCount,
         [NativeTypeName("const VkShaderStageFlagBits *")] Ref<ShaderStageFlags> pStages,
@@ -36090,12 +36082,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ShaderEXTHandle* __dsl_pShaders = pShaders)
         fixed (ShaderStageFlags* __dsl_pStages = pStages)
         {
-            ((IVulkan)this).CmdBindShadersEXT(
-                commandBuffer,
-                stageCount,
-                __dsl_pStages,
-                __dsl_pShaders
-            );
+            ((IVk)this).CmdBindShadersEXT(commandBuffer, stageCount, __dsl_pStages, __dsl_pShaders);
         }
     }
 
@@ -36119,7 +36106,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindShadersEXT(commandBuffer, stageCount, pStages, pShaders);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindShadingRateImageNV(
+    void IVk.CmdBindShadingRateImageNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImageView")] ImageViewHandle imageView,
         ImageLayout imageLayout
@@ -36152,7 +36139,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindShadingRateImageNV(commandBuffer, imageView, imageLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindTileMemoryQCOM(
+    void IVk.CmdBindTileMemoryQCOM(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkTileMemoryBindInfoQCOM *")]
             TileMemoryBindInfoQCOM* pTileMemoryBindInfo
@@ -36182,7 +36169,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindTileMemoryQCOM(commandBuffer, pTileMemoryBindInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindTileMemoryQCOM(
+    void IVk.CmdBindTileMemoryQCOM(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkTileMemoryBindInfoQCOM *")]
             Ref<TileMemoryBindInfoQCOM> pTileMemoryBindInfo
@@ -36190,7 +36177,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (TileMemoryBindInfoQCOM* __dsl_pTileMemoryBindInfo = pTileMemoryBindInfo)
         {
-            ((IVulkan)this).CmdBindTileMemoryQCOM(commandBuffer, __dsl_pTileMemoryBindInfo);
+            ((IVk)this).CmdBindTileMemoryQCOM(commandBuffer, __dsl_pTileMemoryBindInfo);
         }
     }
 
@@ -36212,7 +36199,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBindTileMemoryQCOM(commandBuffer, pTileMemoryBindInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindTransformFeedbackBuffersEXT(
+    void IVk.CmdBindTransformFeedbackBuffersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
@@ -36266,7 +36253,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindTransformFeedbackBuffersEXT(
+    void IVk.CmdBindTransformFeedbackBuffersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
@@ -36279,7 +36266,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ulong* __dsl_pOffsets = pOffsets)
         fixed (BufferHandle* __dsl_pBuffers = pBuffers)
         {
-            ((IVulkan)this).CmdBindTransformFeedbackBuffersEXT(
+            ((IVk)this).CmdBindTransformFeedbackBuffersEXT(
                 commandBuffer,
                 firstBinding,
                 bindingCount,
@@ -36319,7 +36306,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers(
+    void IVk.CmdBindVertexBuffers(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
@@ -36357,7 +36344,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers(
+    void IVk.CmdBindVertexBuffers(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
@@ -36368,7 +36355,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ulong* __dsl_pOffsets = pOffsets)
         fixed (BufferHandle* __dsl_pBuffers = pBuffers)
         {
-            ((IVulkan)this).CmdBindVertexBuffers(
+            ((IVk)this).CmdBindVertexBuffers(
                 commandBuffer,
                 firstBinding,
                 bindingCount,
@@ -36402,7 +36389,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers2(
+    void IVk.CmdBindVertexBuffers2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
@@ -36450,7 +36437,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers2(
+    void IVk.CmdBindVertexBuffers2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
@@ -36465,7 +36452,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ulong* __dsl_pOffsets = pOffsets)
         fixed (BufferHandle* __dsl_pBuffers = pBuffers)
         {
-            ((IVulkan)this).CmdBindVertexBuffers2(
+            ((IVk)this).CmdBindVertexBuffers2(
                 commandBuffer,
                 firstBinding,
                 bindingCount,
@@ -36501,7 +36488,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers2EXT(
+    void IVk.CmdBindVertexBuffers2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
@@ -36559,7 +36546,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBindVertexBuffers2EXT(
+    void IVk.CmdBindVertexBuffers2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstBinding,
         [NativeTypeName("uint32_t")] uint bindingCount,
@@ -36574,7 +36561,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ulong* __dsl_pOffsets = pOffsets)
         fixed (BufferHandle* __dsl_pBuffers = pBuffers)
         {
-            ((IVulkan)this).CmdBindVertexBuffers2EXT(
+            ((IVk)this).CmdBindVertexBuffers2EXT(
                 commandBuffer,
                 firstBinding,
                 bindingCount,
@@ -36617,7 +36604,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBlitImage(
+    void IVk.CmdBlitImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
@@ -36682,7 +36669,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBlitImage(
+    void IVk.CmdBlitImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
@@ -36695,7 +36682,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ImageBlit* __dsl_pRegions = pRegions)
         {
-            ((IVulkan)this).CmdBlitImage(
+            ((IVk)this).CmdBlitImage(
                 commandBuffer,
                 srcImage,
                 srcImageLayout,
@@ -36738,7 +36725,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBlitImage(
+    void IVk.CmdBlitImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
@@ -36747,7 +36734,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [NativeTypeName("const VkImageBlit *")] ImageBlit pRegions,
         Filter filter
     ) =>
-        ((IVulkan)this).CmdBlitImage(
+        ((IVk)this).CmdBlitImage(
             commandBuffer,
             srcImage,
             srcImageLayout,
@@ -36786,7 +36773,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBlitImage2(
+    void IVk.CmdBlitImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBlitImageInfo2 *")] BlitImageInfo2* pBlitImageInfo
     ) =>
@@ -36807,14 +36794,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBlitImage2(commandBuffer, pBlitImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBlitImage2(
+    void IVk.CmdBlitImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBlitImageInfo2 *")] Ref<BlitImageInfo2> pBlitImageInfo
     )
     {
         fixed (BlitImageInfo2* __dsl_pBlitImageInfo = pBlitImageInfo)
         {
-            ((IVulkan)this).CmdBlitImage2(commandBuffer, __dsl_pBlitImageInfo);
+            ((IVk)this).CmdBlitImage2(commandBuffer, __dsl_pBlitImageInfo);
         }
     }
 
@@ -36828,7 +36815,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBlitImage2(commandBuffer, pBlitImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBlitImage2KHR(
+    void IVk.CmdBlitImage2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBlitImageInfo2 *")] BlitImageInfo2* pBlitImageInfo
     ) =>
@@ -36856,14 +36843,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBlitImage2KHR(commandBuffer, pBlitImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBlitImage2KHR(
+    void IVk.CmdBlitImage2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBlitImageInfo2 *")] Ref<BlitImageInfo2> pBlitImageInfo
     )
     {
         fixed (BlitImageInfo2* __dsl_pBlitImageInfo = pBlitImageInfo)
         {
-            ((IVulkan)this).CmdBlitImage2KHR(commandBuffer, __dsl_pBlitImageInfo);
+            ((IVk)this).CmdBlitImage2KHR(commandBuffer, __dsl_pBlitImageInfo);
         }
     }
 
@@ -36884,7 +36871,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBlitImage2KHR(commandBuffer, pBlitImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildAccelerationStructureNV(
+    void IVk.CmdBuildAccelerationStructureNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkAccelerationStructureInfoNV *")]
             AccelerationStructureInfoNV* pInfo,
@@ -36962,7 +36949,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildAccelerationStructureNV(
+    void IVk.CmdBuildAccelerationStructureNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkAccelerationStructureInfoNV *")]
             Ref<AccelerationStructureInfoNV> pInfo,
@@ -36977,7 +36964,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AccelerationStructureInfoNV* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).CmdBuildAccelerationStructureNV(
+            ((IVk)this).CmdBuildAccelerationStructureNV(
                 commandBuffer,
                 __dsl_pInfo,
                 instanceData,
@@ -37027,7 +37014,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildAccelerationStructuresIndirectKHR(
+    void IVk.CmdBuildAccelerationStructuresIndirectKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint infoCount,
         [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")]
@@ -37090,7 +37077,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildAccelerationStructuresIndirectKHR(
+    void IVk.CmdBuildAccelerationStructuresIndirectKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint infoCount,
         [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")]
@@ -37105,7 +37092,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ulong* __dsl_pIndirectDeviceAddresses = pIndirectDeviceAddresses)
         fixed (AccelerationStructureBuildGeometryInfoKHR* __dsl_pInfos = pInfos)
         {
-            ((IVulkan)this).CmdBuildAccelerationStructuresIndirectKHR(
+            ((IVk)this).CmdBuildAccelerationStructuresIndirectKHR(
                 commandBuffer,
                 infoCount,
                 __dsl_pInfos,
@@ -37146,7 +37133,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildAccelerationStructuresKHR(
+    void IVk.CmdBuildAccelerationStructuresKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint infoCount,
         [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")]
@@ -37196,7 +37183,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildAccelerationStructuresKHR(
+    void IVk.CmdBuildAccelerationStructuresKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint infoCount,
         [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")]
@@ -37208,7 +37195,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (AccelerationStructureBuildRangeInfoKHR** __dsl_ppBuildRangeInfos = ppBuildRangeInfos)
         fixed (AccelerationStructureBuildGeometryInfoKHR* __dsl_pInfos = pInfos)
         {
-            ((IVulkan)this).CmdBuildAccelerationStructuresKHR(
+            ((IVk)this).CmdBuildAccelerationStructuresKHR(
                 commandBuffer,
                 infoCount,
                 __dsl_pInfos,
@@ -37244,7 +37231,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildClusterAccelerationStructureIndirectNV(
+    void IVk.CmdBuildClusterAccelerationStructureIndirectNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkClusterAccelerationStructureCommandsInfoNV *")]
             ClusterAccelerationStructureCommandsInfoNV* pCommandInfos
@@ -37277,7 +37264,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBuildClusterAccelerationStructureIndirectNV(commandBuffer, pCommandInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildClusterAccelerationStructureIndirectNV(
+    void IVk.CmdBuildClusterAccelerationStructureIndirectNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkClusterAccelerationStructureCommandsInfoNV *")]
             Ref<ClusterAccelerationStructureCommandsInfoNV> pCommandInfos
@@ -37285,7 +37272,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ClusterAccelerationStructureCommandsInfoNV* __dsl_pCommandInfos = pCommandInfos)
         {
-            ((IVulkan)this).CmdBuildClusterAccelerationStructureIndirectNV(
+            ((IVk)this).CmdBuildClusterAccelerationStructureIndirectNV(
                 commandBuffer,
                 __dsl_pCommandInfos
             );
@@ -37307,7 +37294,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBuildClusterAccelerationStructureIndirectNV(commandBuffer, pCommandInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildMicromapsEXT(
+    void IVk.CmdBuildMicromapsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint infoCount,
         [NativeTypeName("const VkMicromapBuildInfoEXT *")] MicromapBuildInfoEXT* pInfos
@@ -37337,7 +37324,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBuildMicromapsEXT(commandBuffer, infoCount, pInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildMicromapsEXT(
+    void IVk.CmdBuildMicromapsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint infoCount,
         [NativeTypeName("const VkMicromapBuildInfoEXT *")] Ref<MicromapBuildInfoEXT> pInfos
@@ -37345,7 +37332,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (MicromapBuildInfoEXT* __dsl_pInfos = pInfos)
         {
-            ((IVulkan)this).CmdBuildMicromapsEXT(commandBuffer, infoCount, __dsl_pInfos);
+            ((IVk)this).CmdBuildMicromapsEXT(commandBuffer, infoCount, __dsl_pInfos);
         }
     }
 
@@ -37367,10 +37354,10 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBuildMicromapsEXT(commandBuffer, infoCount, pInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildMicromapsEXT(
+    void IVk.CmdBuildMicromapsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkMicromapBuildInfoEXT *")] MicromapBuildInfoEXT pInfos
-    ) => ((IVulkan)this).CmdBuildMicromapsEXT(commandBuffer, 1, (MicromapBuildInfoEXT*)&pInfos);
+    ) => ((IVk)this).CmdBuildMicromapsEXT(commandBuffer, 1, (MicromapBuildInfoEXT*)&pInfos);
 
     [SupportedApiProfile(
         "vulkan",
@@ -37389,7 +37376,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBuildMicromapsEXT(commandBuffer, pInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildPartitionedAccelerationStructuresNV(
+    void IVk.CmdBuildPartitionedAccelerationStructuresNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBuildPartitionedAccelerationStructureInfoNV *")]
             BuildPartitionedAccelerationStructureInfoNV* pBuildInfo
@@ -37422,7 +37409,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBuildPartitionedAccelerationStructuresNV(commandBuffer, pBuildInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdBuildPartitionedAccelerationStructuresNV(
+    void IVk.CmdBuildPartitionedAccelerationStructuresNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBuildPartitionedAccelerationStructureInfoNV *")]
             Ref<BuildPartitionedAccelerationStructureInfoNV> pBuildInfo
@@ -37430,7 +37417,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (BuildPartitionedAccelerationStructureInfoNV* __dsl_pBuildInfo = pBuildInfo)
         {
-            ((IVulkan)this).CmdBuildPartitionedAccelerationStructuresNV(
+            ((IVk)this).CmdBuildPartitionedAccelerationStructuresNV(
                 commandBuffer,
                 __dsl_pBuildInfo
             );
@@ -37452,7 +37439,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdBuildPartitionedAccelerationStructuresNV(commandBuffer, pBuildInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdClearAttachments(
+    void IVk.CmdClearAttachments(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint attachmentCount,
         [NativeTypeName("const VkClearAttachment *")] ClearAttachment* pAttachments,
@@ -37496,7 +37483,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdClearAttachments(
+    void IVk.CmdClearAttachments(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint attachmentCount,
         [NativeTypeName("const VkClearAttachment *")] Ref<ClearAttachment> pAttachments,
@@ -37507,7 +37494,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ClearRect* __dsl_pRects = pRects)
         fixed (ClearAttachment* __dsl_pAttachments = pAttachments)
         {
-            ((IVulkan)this).CmdClearAttachments(
+            ((IVk)this).CmdClearAttachments(
                 commandBuffer,
                 attachmentCount,
                 __dsl_pAttachments,
@@ -37541,7 +37528,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdClearColorImage(
+    void IVk.CmdClearColorImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle image,
         ImageLayout imageLayout,
@@ -37589,7 +37576,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdClearColorImage(
+    void IVk.CmdClearColorImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle image,
         ImageLayout imageLayout,
@@ -37601,7 +37588,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ImageSubresourceRange* __dsl_pRanges = pRanges)
         fixed (ClearColorValue* __dsl_pColor = pColor)
         {
-            ((IVulkan)this).CmdClearColorImage(
+            ((IVk)this).CmdClearColorImage(
                 commandBuffer,
                 image,
                 imageLayout,
@@ -37638,7 +37625,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdClearColorImage(
+    void IVk.CmdClearColorImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle image,
         ImageLayout imageLayout,
@@ -37648,7 +37635,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ClearColorValue* __dsl_pColor = pColor)
         {
-            ((IVulkan)this).CmdClearColorImage(
+            ((IVk)this).CmdClearColorImage(
                 commandBuffer,
                 image,
                 imageLayout,
@@ -37676,7 +37663,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdClearColorImage(commandBuffer, image, imageLayout, pColor, pRanges);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdClearDepthStencilImage(
+    void IVk.CmdClearDepthStencilImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle image,
         ImageLayout imageLayout,
@@ -37727,7 +37714,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdClearDepthStencilImage(
+    void IVk.CmdClearDepthStencilImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle image,
         ImageLayout imageLayout,
@@ -37740,7 +37727,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ImageSubresourceRange* __dsl_pRanges = pRanges)
         fixed (ClearDepthStencilValue* __dsl_pDepthStencil = pDepthStencil)
         {
-            ((IVulkan)this).CmdClearDepthStencilImage(
+            ((IVk)this).CmdClearDepthStencilImage(
                 commandBuffer,
                 image,
                 imageLayout,
@@ -37778,7 +37765,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdClearDepthStencilImage(
+    void IVk.CmdClearDepthStencilImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle image,
         ImageLayout imageLayout,
@@ -37789,7 +37776,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ClearDepthStencilValue* __dsl_pDepthStencil = pDepthStencil)
         {
-            ((IVulkan)this).CmdClearDepthStencilImage(
+            ((IVk)this).CmdClearDepthStencilImage(
                 commandBuffer,
                 image,
                 imageLayout,
@@ -37825,7 +37812,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdControlVideoCodingKHR(
+    void IVk.CmdControlVideoCodingKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkVideoCodingControlInfoKHR *")]
             VideoCodingControlInfoKHR* pCodingControlInfo
@@ -37855,7 +37842,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdControlVideoCodingKHR(commandBuffer, pCodingControlInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdControlVideoCodingKHR(
+    void IVk.CmdControlVideoCodingKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkVideoCodingControlInfoKHR *")]
             Ref<VideoCodingControlInfoKHR> pCodingControlInfo
@@ -37863,7 +37850,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (VideoCodingControlInfoKHR* __dsl_pCodingControlInfo = pCodingControlInfo)
         {
-            ((IVulkan)this).CmdControlVideoCodingKHR(commandBuffer, __dsl_pCodingControlInfo);
+            ((IVk)this).CmdControlVideoCodingKHR(commandBuffer, __dsl_pCodingControlInfo);
         }
     }
 
@@ -37882,7 +37869,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdControlVideoCodingKHR(commandBuffer, pCodingControlInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdConvertCooperativeVectorMatrixNV(
+    void IVk.CmdConvertCooperativeVectorMatrixNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint infoCount,
         [NativeTypeName("const VkConvertCooperativeVectorMatrixInfoNV *")]
@@ -37914,7 +37901,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdConvertCooperativeVectorMatrixNV(commandBuffer, infoCount, pInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdConvertCooperativeVectorMatrixNV(
+    void IVk.CmdConvertCooperativeVectorMatrixNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint infoCount,
         [NativeTypeName("const VkConvertCooperativeVectorMatrixInfoNV *")]
@@ -37923,11 +37910,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ConvertCooperativeVectorMatrixInfoNV* __dsl_pInfos = pInfos)
         {
-            ((IVulkan)this).CmdConvertCooperativeVectorMatrixNV(
-                commandBuffer,
-                infoCount,
-                __dsl_pInfos
-            );
+            ((IVk)this).CmdConvertCooperativeVectorMatrixNV(commandBuffer, infoCount, __dsl_pInfos);
         }
     }
 
@@ -37943,12 +37926,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdConvertCooperativeVectorMatrixNV(commandBuffer, infoCount, pInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdConvertCooperativeVectorMatrixNV(
+    void IVk.CmdConvertCooperativeVectorMatrixNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkConvertCooperativeVectorMatrixInfoNV *")]
             ConvertCooperativeVectorMatrixInfoNV pInfos
     ) =>
-        ((IVulkan)this).CmdConvertCooperativeVectorMatrixNV(
+        ((IVk)this).CmdConvertCooperativeVectorMatrixNV(
             commandBuffer,
             1,
             (ConvertCooperativeVectorMatrixInfoNV*)&pInfos
@@ -37965,7 +37948,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdConvertCooperativeVectorMatrixNV(commandBuffer, pInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyAccelerationStructureKHR(
+    void IVk.CmdCopyAccelerationStructureKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyAccelerationStructureInfoKHR *")]
             CopyAccelerationStructureInfoKHR* pInfo
@@ -37998,7 +37981,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyAccelerationStructureKHR(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyAccelerationStructureKHR(
+    void IVk.CmdCopyAccelerationStructureKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyAccelerationStructureInfoKHR *")]
             Ref<CopyAccelerationStructureInfoKHR> pInfo
@@ -38006,7 +37989,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyAccelerationStructureInfoKHR* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).CmdCopyAccelerationStructureKHR(commandBuffer, __dsl_pInfo);
+            ((IVk)this).CmdCopyAccelerationStructureKHR(commandBuffer, __dsl_pInfo);
         }
     }
 
@@ -38028,7 +38011,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyAccelerationStructureKHR(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyAccelerationStructureNV(
+    void IVk.CmdCopyAccelerationStructureNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkAccelerationStructureNV")] AccelerationStructureNVHandle dst,
         [NativeTypeName("VkAccelerationStructureNV")] AccelerationStructureNVHandle src,
@@ -38068,7 +38051,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyAccelerationStructureNV(commandBuffer, dst, src, mode);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyAccelerationStructureToMemoryKHR(
+    void IVk.CmdCopyAccelerationStructureToMemoryKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyAccelerationStructureToMemoryInfoKHR *")]
             CopyAccelerationStructureToMemoryInfoKHR* pInfo
@@ -38104,7 +38087,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyAccelerationStructureToMemoryKHR(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyAccelerationStructureToMemoryKHR(
+    void IVk.CmdCopyAccelerationStructureToMemoryKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyAccelerationStructureToMemoryInfoKHR *")]
             Ref<CopyAccelerationStructureToMemoryInfoKHR> pInfo
@@ -38112,7 +38095,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyAccelerationStructureToMemoryInfoKHR* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).CmdCopyAccelerationStructureToMemoryKHR(commandBuffer, __dsl_pInfo);
+            ((IVk)this).CmdCopyAccelerationStructureToMemoryKHR(commandBuffer, __dsl_pInfo);
         }
     }
 
@@ -38134,7 +38117,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyAccelerationStructureToMemoryKHR(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBuffer(
+    void IVk.CmdCopyBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle srcBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
@@ -38171,7 +38154,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyBuffer(commandBuffer, srcBuffer, dstBuffer, regionCount, pRegions);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBuffer(
+    void IVk.CmdCopyBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle srcBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
@@ -38181,7 +38164,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (BufferCopy* __dsl_pRegions = pRegions)
         {
-            ((IVulkan)this).CmdCopyBuffer(
+            ((IVk)this).CmdCopyBuffer(
                 commandBuffer,
                 srcBuffer,
                 dstBuffer,
@@ -38208,19 +38191,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyBuffer(commandBuffer, srcBuffer, dstBuffer, regionCount, pRegions);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBuffer(
+    void IVk.CmdCopyBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle srcBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
         [NativeTypeName("const VkBufferCopy *")] BufferCopy pRegions
-    ) =>
-        ((IVulkan)this).CmdCopyBuffer(
-            commandBuffer,
-            srcBuffer,
-            dstBuffer,
-            1,
-            (BufferCopy*)&pRegions
-        );
+    ) => ((IVk)this).CmdCopyBuffer(commandBuffer, srcBuffer, dstBuffer, 1, (BufferCopy*)&pRegions);
 
     [SupportedApiProfile(
         "vulkan",
@@ -38238,7 +38214,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyBuffer(commandBuffer, srcBuffer, dstBuffer, pRegions);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBuffer2(
+    void IVk.CmdCopyBuffer2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyBufferInfo2 *")] CopyBufferInfo2* pCopyBufferInfo
     ) =>
@@ -38259,14 +38235,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyBuffer2(commandBuffer, pCopyBufferInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBuffer2(
+    void IVk.CmdCopyBuffer2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyBufferInfo2 *")] Ref<CopyBufferInfo2> pCopyBufferInfo
     )
     {
         fixed (CopyBufferInfo2* __dsl_pCopyBufferInfo = pCopyBufferInfo)
         {
-            ((IVulkan)this).CmdCopyBuffer2(commandBuffer, __dsl_pCopyBufferInfo);
+            ((IVk)this).CmdCopyBuffer2(commandBuffer, __dsl_pCopyBufferInfo);
         }
     }
 
@@ -38280,7 +38256,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyBuffer2(commandBuffer, pCopyBufferInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBuffer2KHR(
+    void IVk.CmdCopyBuffer2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyBufferInfo2 *")] CopyBufferInfo2* pCopyBufferInfo
     ) =>
@@ -38308,14 +38284,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyBuffer2KHR(commandBuffer, pCopyBufferInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBuffer2KHR(
+    void IVk.CmdCopyBuffer2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyBufferInfo2 *")] Ref<CopyBufferInfo2> pCopyBufferInfo
     )
     {
         fixed (CopyBufferInfo2* __dsl_pCopyBufferInfo = pCopyBufferInfo)
         {
-            ((IVulkan)this).CmdCopyBuffer2KHR(commandBuffer, __dsl_pCopyBufferInfo);
+            ((IVk)this).CmdCopyBuffer2KHR(commandBuffer, __dsl_pCopyBufferInfo);
         }
     }
 
@@ -38336,7 +38312,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyBuffer2KHR(commandBuffer, pCopyBufferInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBufferToImage(
+    void IVk.CmdCopyBufferToImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle srcBuffer,
         [NativeTypeName("VkImage")] ImageHandle dstImage,
@@ -38384,7 +38360,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBufferToImage(
+    void IVk.CmdCopyBufferToImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle srcBuffer,
         [NativeTypeName("VkImage")] ImageHandle dstImage,
@@ -38395,7 +38371,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (BufferImageCopy* __dsl_pRegions = pRegions)
         {
-            ((IVulkan)this).CmdCopyBufferToImage(
+            ((IVk)this).CmdCopyBufferToImage(
                 commandBuffer,
                 srcBuffer,
                 dstImage,
@@ -38432,14 +38408,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBufferToImage(
+    void IVk.CmdCopyBufferToImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle srcBuffer,
         [NativeTypeName("VkImage")] ImageHandle dstImage,
         ImageLayout dstImageLayout,
         [NativeTypeName("const VkBufferImageCopy *")] BufferImageCopy pRegions
     ) =>
-        ((IVulkan)this).CmdCopyBufferToImage(
+        ((IVk)this).CmdCopyBufferToImage(
             commandBuffer,
             srcBuffer,
             dstImage,
@@ -38472,7 +38448,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBufferToImage2(
+    void IVk.CmdCopyBufferToImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyBufferToImageInfo2 *")]
             CopyBufferToImageInfo2* pCopyBufferToImageInfo
@@ -38495,7 +38471,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyBufferToImage2(commandBuffer, pCopyBufferToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBufferToImage2(
+    void IVk.CmdCopyBufferToImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyBufferToImageInfo2 *")]
             Ref<CopyBufferToImageInfo2> pCopyBufferToImageInfo
@@ -38503,7 +38479,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyBufferToImageInfo2* __dsl_pCopyBufferToImageInfo = pCopyBufferToImageInfo)
         {
-            ((IVulkan)this).CmdCopyBufferToImage2(commandBuffer, __dsl_pCopyBufferToImageInfo);
+            ((IVk)this).CmdCopyBufferToImage2(commandBuffer, __dsl_pCopyBufferToImageInfo);
         }
     }
 
@@ -38518,7 +38494,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyBufferToImage2(commandBuffer, pCopyBufferToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBufferToImage2KHR(
+    void IVk.CmdCopyBufferToImage2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyBufferToImageInfo2 *")]
             CopyBufferToImageInfo2* pCopyBufferToImageInfo
@@ -38551,7 +38527,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyBufferToImage2KHR(commandBuffer, pCopyBufferToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyBufferToImage2KHR(
+    void IVk.CmdCopyBufferToImage2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyBufferToImageInfo2 *")]
             Ref<CopyBufferToImageInfo2> pCopyBufferToImageInfo
@@ -38559,7 +38535,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyBufferToImageInfo2* __dsl_pCopyBufferToImageInfo = pCopyBufferToImageInfo)
         {
-            ((IVulkan)this).CmdCopyBufferToImage2KHR(commandBuffer, __dsl_pCopyBufferToImageInfo);
+            ((IVk)this).CmdCopyBufferToImage2KHR(commandBuffer, __dsl_pCopyBufferToImageInfo);
         }
     }
 
@@ -38581,7 +38557,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyBufferToImage2KHR(commandBuffer, pCopyBufferToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImage(
+    void IVk.CmdCopyImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
@@ -38633,7 +38609,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImage(
+    void IVk.CmdCopyImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
@@ -38645,7 +38621,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ImageCopy* __dsl_pRegions = pRegions)
         {
-            ((IVulkan)this).CmdCopyImage(
+            ((IVk)this).CmdCopyImage(
                 commandBuffer,
                 srcImage,
                 srcImageLayout,
@@ -38685,7 +38661,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImage(
+    void IVk.CmdCopyImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
@@ -38693,7 +38669,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ImageLayout dstImageLayout,
         [NativeTypeName("const VkImageCopy *")] ImageCopy pRegions
     ) =>
-        ((IVulkan)this).CmdCopyImage(
+        ((IVk)this).CmdCopyImage(
             commandBuffer,
             srcImage,
             srcImageLayout,
@@ -38729,7 +38705,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImage2(
+    void IVk.CmdCopyImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyImageInfo2 *")] CopyImageInfo2* pCopyImageInfo
     ) =>
@@ -38750,14 +38726,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyImage2(commandBuffer, pCopyImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImage2(
+    void IVk.CmdCopyImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyImageInfo2 *")] Ref<CopyImageInfo2> pCopyImageInfo
     )
     {
         fixed (CopyImageInfo2* __dsl_pCopyImageInfo = pCopyImageInfo)
         {
-            ((IVulkan)this).CmdCopyImage2(commandBuffer, __dsl_pCopyImageInfo);
+            ((IVk)this).CmdCopyImage2(commandBuffer, __dsl_pCopyImageInfo);
         }
     }
 
@@ -38771,7 +38747,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyImage2(commandBuffer, pCopyImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImage2KHR(
+    void IVk.CmdCopyImage2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyImageInfo2 *")] CopyImageInfo2* pCopyImageInfo
     ) =>
@@ -38799,14 +38775,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyImage2KHR(commandBuffer, pCopyImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImage2KHR(
+    void IVk.CmdCopyImage2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyImageInfo2 *")] Ref<CopyImageInfo2> pCopyImageInfo
     )
     {
         fixed (CopyImageInfo2* __dsl_pCopyImageInfo = pCopyImageInfo)
         {
-            ((IVulkan)this).CmdCopyImage2KHR(commandBuffer, __dsl_pCopyImageInfo);
+            ((IVk)this).CmdCopyImage2KHR(commandBuffer, __dsl_pCopyImageInfo);
         }
     }
 
@@ -38827,7 +38803,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyImage2KHR(commandBuffer, pCopyImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImageToBuffer(
+    void IVk.CmdCopyImageToBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
@@ -38875,7 +38851,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImageToBuffer(
+    void IVk.CmdCopyImageToBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
@@ -38886,7 +38862,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (BufferImageCopy* __dsl_pRegions = pRegions)
         {
-            ((IVulkan)this).CmdCopyImageToBuffer(
+            ((IVk)this).CmdCopyImageToBuffer(
                 commandBuffer,
                 srcImage,
                 srcImageLayout,
@@ -38923,14 +38899,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImageToBuffer(
+    void IVk.CmdCopyImageToBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
         [NativeTypeName("const VkBufferImageCopy *")] BufferImageCopy pRegions
     ) =>
-        ((IVulkan)this).CmdCopyImageToBuffer(
+        ((IVk)this).CmdCopyImageToBuffer(
             commandBuffer,
             srcImage,
             srcImageLayout,
@@ -38963,7 +38939,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImageToBuffer2(
+    void IVk.CmdCopyImageToBuffer2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyImageToBufferInfo2 *")]
             CopyImageToBufferInfo2* pCopyImageToBufferInfo
@@ -38986,7 +38962,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyImageToBuffer2(commandBuffer, pCopyImageToBufferInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImageToBuffer2(
+    void IVk.CmdCopyImageToBuffer2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyImageToBufferInfo2 *")]
             Ref<CopyImageToBufferInfo2> pCopyImageToBufferInfo
@@ -38994,7 +38970,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyImageToBufferInfo2* __dsl_pCopyImageToBufferInfo = pCopyImageToBufferInfo)
         {
-            ((IVulkan)this).CmdCopyImageToBuffer2(commandBuffer, __dsl_pCopyImageToBufferInfo);
+            ((IVk)this).CmdCopyImageToBuffer2(commandBuffer, __dsl_pCopyImageToBufferInfo);
         }
     }
 
@@ -39009,7 +38985,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyImageToBuffer2(commandBuffer, pCopyImageToBufferInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImageToBuffer2KHR(
+    void IVk.CmdCopyImageToBuffer2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyImageToBufferInfo2 *")]
             CopyImageToBufferInfo2* pCopyImageToBufferInfo
@@ -39042,7 +39018,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyImageToBuffer2KHR(commandBuffer, pCopyImageToBufferInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyImageToBuffer2KHR(
+    void IVk.CmdCopyImageToBuffer2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyImageToBufferInfo2 *")]
             Ref<CopyImageToBufferInfo2> pCopyImageToBufferInfo
@@ -39050,7 +39026,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyImageToBufferInfo2* __dsl_pCopyImageToBufferInfo = pCopyImageToBufferInfo)
         {
-            ((IVulkan)this).CmdCopyImageToBuffer2KHR(commandBuffer, __dsl_pCopyImageToBufferInfo);
+            ((IVk)this).CmdCopyImageToBuffer2KHR(commandBuffer, __dsl_pCopyImageToBufferInfo);
         }
     }
 
@@ -39072,7 +39048,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyImageToBuffer2KHR(commandBuffer, pCopyImageToBufferInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryIndirectNV(
+    void IVk.CmdCopyMemoryIndirectNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
         [NativeTypeName("uint32_t")] uint copyCount,
@@ -39105,7 +39081,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyMemoryIndirectNV(commandBuffer, copyBufferAddress, copyCount, stride);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryToAccelerationStructureKHR(
+    void IVk.CmdCopyMemoryToAccelerationStructureKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyMemoryToAccelerationStructureInfoKHR *")]
             CopyMemoryToAccelerationStructureInfoKHR* pInfo
@@ -39141,7 +39117,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyMemoryToAccelerationStructureKHR(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryToAccelerationStructureKHR(
+    void IVk.CmdCopyMemoryToAccelerationStructureKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyMemoryToAccelerationStructureInfoKHR *")]
             Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo
@@ -39149,7 +39125,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyMemoryToAccelerationStructureInfoKHR* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).CmdCopyMemoryToAccelerationStructureKHR(commandBuffer, __dsl_pInfo);
+            ((IVk)this).CmdCopyMemoryToAccelerationStructureKHR(commandBuffer, __dsl_pInfo);
         }
     }
 
@@ -39171,7 +39147,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyMemoryToAccelerationStructureKHR(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryToImageIndirectNV(
+    void IVk.CmdCopyMemoryToImageIndirectNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
         [NativeTypeName("uint32_t")] uint copyCount,
@@ -39240,7 +39216,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryToImageIndirectNV(
+    void IVk.CmdCopyMemoryToImageIndirectNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
         [NativeTypeName("uint32_t")] uint copyCount,
@@ -39253,7 +39229,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ImageSubresourceLayers* __dsl_pImageSubresources = pImageSubresources)
         {
-            ((IVulkan)this).CmdCopyMemoryToImageIndirectNV(
+            ((IVk)this).CmdCopyMemoryToImageIndirectNV(
                 commandBuffer,
                 copyBufferAddress,
                 copyCount,
@@ -39298,7 +39274,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryToImageIndirectNV(
+    void IVk.CmdCopyMemoryToImageIndirectNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkDeviceAddress")] ulong copyBufferAddress,
         [NativeTypeName("uint32_t")] uint stride,
@@ -39307,7 +39283,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [NativeTypeName("const VkImageSubresourceLayers *")]
             ImageSubresourceLayers pImageSubresources
     ) =>
-        ((IVulkan)this).CmdCopyMemoryToImageIndirectNV(
+        ((IVk)this).CmdCopyMemoryToImageIndirectNV(
             commandBuffer,
             copyBufferAddress,
             1,
@@ -39348,7 +39324,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryToMicromapEXT(
+    void IVk.CmdCopyMemoryToMicromapEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyMemoryToMicromapInfoEXT *")] CopyMemoryToMicromapInfoEXT* pInfo
     ) =>
@@ -39379,7 +39355,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyMemoryToMicromapEXT(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMemoryToMicromapEXT(
+    void IVk.CmdCopyMemoryToMicromapEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyMemoryToMicromapInfoEXT *")]
             Ref<CopyMemoryToMicromapInfoEXT> pInfo
@@ -39387,7 +39363,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyMemoryToMicromapInfoEXT* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).CmdCopyMemoryToMicromapEXT(commandBuffer, __dsl_pInfo);
+            ((IVk)this).CmdCopyMemoryToMicromapEXT(commandBuffer, __dsl_pInfo);
         }
     }
 
@@ -39409,7 +39385,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyMemoryToMicromapEXT(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMicromapEXT(
+    void IVk.CmdCopyMicromapEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyMicromapInfoEXT *")] CopyMicromapInfoEXT* pInfo
     ) =>
@@ -39437,14 +39413,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyMicromapEXT(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMicromapEXT(
+    void IVk.CmdCopyMicromapEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyMicromapInfoEXT *")] Ref<CopyMicromapInfoEXT> pInfo
     )
     {
         fixed (CopyMicromapInfoEXT* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).CmdCopyMicromapEXT(commandBuffer, __dsl_pInfo);
+            ((IVk)this).CmdCopyMicromapEXT(commandBuffer, __dsl_pInfo);
         }
     }
 
@@ -39465,7 +39441,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyMicromapEXT(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMicromapToMemoryEXT(
+    void IVk.CmdCopyMicromapToMemoryEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyMicromapToMemoryInfoEXT *")] CopyMicromapToMemoryInfoEXT* pInfo
     ) =>
@@ -39496,7 +39472,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyMicromapToMemoryEXT(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyMicromapToMemoryEXT(
+    void IVk.CmdCopyMicromapToMemoryEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyMicromapToMemoryInfoEXT *")]
             Ref<CopyMicromapToMemoryInfoEXT> pInfo
@@ -39504,7 +39480,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyMicromapToMemoryInfoEXT* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).CmdCopyMicromapToMemoryEXT(commandBuffer, __dsl_pInfo);
+            ((IVk)this).CmdCopyMicromapToMemoryEXT(commandBuffer, __dsl_pInfo);
         }
     }
 
@@ -39526,7 +39502,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCopyMicromapToMemoryEXT(commandBuffer, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCopyQueryPoolResults(
+    void IVk.CmdCopyQueryPoolResults(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint firstQuery,
@@ -39582,7 +39558,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCudaLaunchKernelNV(
+    void IVk.CmdCudaLaunchKernelNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCudaLaunchInfoNV *")] CudaLaunchInfoNV* pLaunchInfo
     ) =>
@@ -39603,14 +39579,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCudaLaunchKernelNV(commandBuffer, pLaunchInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCudaLaunchKernelNV(
+    void IVk.CmdCudaLaunchKernelNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCudaLaunchInfoNV *")] Ref<CudaLaunchInfoNV> pLaunchInfo
     )
     {
         fixed (CudaLaunchInfoNV* __dsl_pLaunchInfo = pLaunchInfo)
         {
-            ((IVulkan)this).CmdCudaLaunchKernelNV(commandBuffer, __dsl_pLaunchInfo);
+            ((IVk)this).CmdCudaLaunchKernelNV(commandBuffer, __dsl_pLaunchInfo);
         }
     }
 
@@ -39624,7 +39600,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCudaLaunchKernelNV(commandBuffer, pLaunchInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCuLaunchKernelNVX(
+    void IVk.CmdCuLaunchKernelNVX(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCuLaunchInfoNVX *")] CuLaunchInfoNVX* pLaunchInfo
     ) =>
@@ -39645,14 +39621,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCuLaunchKernelNVX(commandBuffer, pLaunchInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdCuLaunchKernelNVX(
+    void IVk.CmdCuLaunchKernelNVX(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCuLaunchInfoNVX *")] Ref<CuLaunchInfoNVX> pLaunchInfo
     )
     {
         fixed (CuLaunchInfoNVX* __dsl_pLaunchInfo = pLaunchInfo)
         {
-            ((IVulkan)this).CmdCuLaunchKernelNVX(commandBuffer, __dsl_pLaunchInfo);
+            ((IVk)this).CmdCuLaunchKernelNVX(commandBuffer, __dsl_pLaunchInfo);
         }
     }
 
@@ -39666,7 +39642,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdCuLaunchKernelNVX(commandBuffer, pLaunchInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDebugMarkerBeginEXT(
+    void IVk.CmdDebugMarkerBeginEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDebugMarkerMarkerInfoEXT *")] DebugMarkerMarkerInfoEXT* pMarkerInfo
     ) =>
@@ -39687,7 +39663,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDebugMarkerBeginEXT(commandBuffer, pMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDebugMarkerBeginEXT(
+    void IVk.CmdDebugMarkerBeginEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDebugMarkerMarkerInfoEXT *")]
             Ref<DebugMarkerMarkerInfoEXT> pMarkerInfo
@@ -39695,7 +39671,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DebugMarkerMarkerInfoEXT* __dsl_pMarkerInfo = pMarkerInfo)
         {
-            ((IVulkan)this).CmdDebugMarkerBeginEXT(commandBuffer, __dsl_pMarkerInfo);
+            ((IVk)this).CmdDebugMarkerBeginEXT(commandBuffer, __dsl_pMarkerInfo);
         }
     }
 
@@ -39710,7 +39686,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDebugMarkerBeginEXT(commandBuffer, pMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDebugMarkerEndEXT(
+    void IVk.CmdDebugMarkerEndEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer
     ) =>
         (
@@ -39729,7 +39705,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDebugMarkerEndEXT(commandBuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDebugMarkerInsertEXT(
+    void IVk.CmdDebugMarkerInsertEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDebugMarkerMarkerInfoEXT *")] DebugMarkerMarkerInfoEXT* pMarkerInfo
     ) =>
@@ -39750,7 +39726,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDebugMarkerInsertEXT(commandBuffer, pMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDebugMarkerInsertEXT(
+    void IVk.CmdDebugMarkerInsertEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDebugMarkerMarkerInfoEXT *")]
             Ref<DebugMarkerMarkerInfoEXT> pMarkerInfo
@@ -39758,7 +39734,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DebugMarkerMarkerInfoEXT* __dsl_pMarkerInfo = pMarkerInfo)
         {
-            ((IVulkan)this).CmdDebugMarkerInsertEXT(commandBuffer, __dsl_pMarkerInfo);
+            ((IVk)this).CmdDebugMarkerInsertEXT(commandBuffer, __dsl_pMarkerInfo);
         }
     }
 
@@ -39773,7 +39749,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDebugMarkerInsertEXT(commandBuffer, pMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDecodeVideoKHR(
+    void IVk.CmdDecodeVideoKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkVideoDecodeInfoKHR *")] VideoDecodeInfoKHR* pDecodeInfo
     ) =>
@@ -39801,14 +39777,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDecodeVideoKHR(commandBuffer, pDecodeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDecodeVideoKHR(
+    void IVk.CmdDecodeVideoKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkVideoDecodeInfoKHR *")] Ref<VideoDecodeInfoKHR> pDecodeInfo
     )
     {
         fixed (VideoDecodeInfoKHR* __dsl_pDecodeInfo = pDecodeInfo)
         {
-            ((IVulkan)this).CmdDecodeVideoKHR(commandBuffer, __dsl_pDecodeInfo);
+            ((IVk)this).CmdDecodeVideoKHR(commandBuffer, __dsl_pDecodeInfo);
         }
     }
 
@@ -39829,7 +39805,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDecodeVideoKHR(commandBuffer, pDecodeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDecompressMemoryIndirectCountNV(
+    void IVk.CmdDecompressMemoryIndirectCountNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress,
         [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress,
@@ -39871,7 +39847,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDecompressMemoryNV(
+    void IVk.CmdDecompressMemoryNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint decompressRegionCount,
         [NativeTypeName("const VkDecompressMemoryRegionNV *")]
@@ -39909,7 +39885,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDecompressMemoryNV(
+    void IVk.CmdDecompressMemoryNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint decompressRegionCount,
         [NativeTypeName("const VkDecompressMemoryRegionNV *")]
@@ -39918,7 +39894,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DecompressMemoryRegionNV* __dsl_pDecompressMemoryRegions = pDecompressMemoryRegions)
         {
-            ((IVulkan)this).CmdDecompressMemoryNV(
+            ((IVk)this).CmdDecompressMemoryNV(
                 commandBuffer,
                 decompressRegionCount,
                 __dsl_pDecompressMemoryRegions
@@ -39951,12 +39927,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDecompressMemoryNV(
+    void IVk.CmdDecompressMemoryNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDecompressMemoryRegionNV *")]
             DecompressMemoryRegionNV pDecompressMemoryRegions
     ) =>
-        ((IVulkan)this).CmdDecompressMemoryNV(
+        ((IVk)this).CmdDecompressMemoryNV(
             commandBuffer,
             1,
             (DecompressMemoryRegionNV*)&pDecompressMemoryRegions
@@ -39981,7 +39957,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDecompressMemoryNV(commandBuffer, pDecompressMemoryRegions);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDispatch(
+    void IVk.CmdDispatch(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint groupCountX,
         [NativeTypeName("uint32_t")] uint groupCountY,
@@ -40010,7 +39986,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDispatch(commandBuffer, groupCountX, groupCountY, groupCountZ);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDispatchBase(
+    void IVk.CmdDispatchBase(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint baseGroupX,
         [NativeTypeName("uint32_t")] uint baseGroupY,
@@ -40054,7 +40030,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDispatchBaseKHR(
+    void IVk.CmdDispatchBaseKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint baseGroupX,
         [NativeTypeName("uint32_t")] uint baseGroupY,
@@ -40098,7 +40074,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDispatchIndirect(
+    void IVk.CmdDispatchIndirect(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset
@@ -40125,7 +40101,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDispatchIndirect(commandBuffer, buffer, offset);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDispatchTileQCOM(
+    void IVk.CmdDispatchTileQCOM(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer
     ) =>
         (
@@ -40151,7 +40127,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDispatchTileQCOM(commandBuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDraw(
+    void IVk.CmdDraw(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint vertexCount,
         [NativeTypeName("uint32_t")] uint instanceCount,
@@ -40182,7 +40158,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDraw(commandBuffer, vertexCount, instanceCount, firstVertex, firstInstance);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawClusterHuawei(
+    void IVk.CmdDrawClusterHuawei(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint groupCountX,
         [NativeTypeName("uint32_t")] uint groupCountY,
@@ -40214,7 +40190,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDrawClusterHuawei(commandBuffer, groupCountX, groupCountY, groupCountZ);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawClusterIndirectHuawei(
+    void IVk.CmdDrawClusterIndirectHuawei(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset
@@ -40247,7 +40223,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDrawClusterIndirectHuawei(commandBuffer, buffer, offset);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexed(
+    void IVk.CmdDrawIndexed(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint indexCount,
         [NativeTypeName("uint32_t")] uint instanceCount,
@@ -40288,7 +40264,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirect(
+    void IVk.CmdDrawIndexedIndirect(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40319,7 +40295,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDrawIndexedIndirect(commandBuffer, buffer, offset, drawCount, stride);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirectCount(
+    void IVk.CmdDrawIndexedIndirectCount(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40374,7 +40350,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirectCountAMD(
+    void IVk.CmdDrawIndexedIndirectCountAMD(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40425,7 +40401,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndexedIndirectCountKHR(
+    void IVk.CmdDrawIndexedIndirectCountKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40476,7 +40452,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirect(
+    void IVk.CmdDrawIndirect(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40507,7 +40483,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDrawIndirect(commandBuffer, buffer, offset, drawCount, stride);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectByteCountEXT(
+    void IVk.CmdDrawIndirectByteCountEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint instanceCount,
         [NativeTypeName("uint32_t")] uint firstInstance,
@@ -40573,7 +40549,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectCount(
+    void IVk.CmdDrawIndirectCount(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40625,7 +40601,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectCountAMD(
+    void IVk.CmdDrawIndirectCountAMD(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40676,7 +40652,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawIndirectCountKHR(
+    void IVk.CmdDrawIndirectCountKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40727,7 +40703,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksEXT(
+    void IVk.CmdDrawMeshTasksEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint groupCountX,
         [NativeTypeName("uint32_t")] uint groupCountY,
@@ -40756,7 +40732,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDrawMeshTasksEXT(commandBuffer, groupCountX, groupCountY, groupCountZ);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectCountEXT(
+    void IVk.CmdDrawMeshTasksIndirectCountEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40811,7 +40787,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectCountNV(
+    void IVk.CmdDrawMeshTasksIndirectCountNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40869,7 +40845,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectEXT(
+    void IVk.CmdDrawMeshTasksIndirectEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40903,7 +40879,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDrawMeshTasksIndirectEXT(commandBuffer, buffer, offset, drawCount, stride);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksIndirectNV(
+    void IVk.CmdDrawMeshTasksIndirectNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -40940,7 +40916,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDrawMeshTasksIndirectNV(commandBuffer, buffer, offset, drawCount, stride);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMeshTasksNV(
+    void IVk.CmdDrawMeshTasksNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint taskCount,
         [NativeTypeName("uint32_t")] uint firstTask
@@ -40970,7 +40946,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdDrawMeshTasksNV(commandBuffer, taskCount, firstTask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMultiEXT(
+    void IVk.CmdDrawMultiEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("const VkMultiDrawInfoEXT *")] MultiDrawInfoEXT* pVertexInfo,
@@ -41021,7 +40997,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMultiEXT(
+    void IVk.CmdDrawMultiEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("const VkMultiDrawInfoEXT *")] Ref<MultiDrawInfoEXT> pVertexInfo,
@@ -41032,7 +41008,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (MultiDrawInfoEXT* __dsl_pVertexInfo = pVertexInfo)
         {
-            ((IVulkan)this).CmdDrawMultiEXT(
+            ((IVk)this).CmdDrawMultiEXT(
                 commandBuffer,
                 drawCount,
                 __dsl_pVertexInfo,
@@ -41072,14 +41048,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMultiEXT(
+    void IVk.CmdDrawMultiEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkMultiDrawInfoEXT *")] MultiDrawInfoEXT pVertexInfo,
         [NativeTypeName("uint32_t")] uint instanceCount,
         [NativeTypeName("uint32_t")] uint firstInstance,
         [NativeTypeName("uint32_t")] uint stride
     ) =>
-        ((IVulkan)this).CmdDrawMultiEXT(
+        ((IVk)this).CmdDrawMultiEXT(
             commandBuffer,
             1,
             (MultiDrawInfoEXT*)&pVertexInfo,
@@ -41109,7 +41085,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.CmdDrawMultiEXT(commandBuffer, pVertexInfo, instanceCount, firstInstance, stride);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMultiIndexedEXT(
+    void IVk.CmdDrawMultiIndexedEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("const VkMultiDrawIndexedInfoEXT *")] MultiDrawIndexedInfoEXT* pIndexInfo,
@@ -41172,7 +41148,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMultiIndexedEXT(
+    void IVk.CmdDrawMultiIndexedEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint drawCount,
         [NativeTypeName("const VkMultiDrawIndexedInfoEXT *")]
@@ -41186,7 +41162,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (int* __dsl_pVertexOffset = pVertexOffset)
         fixed (MultiDrawIndexedInfoEXT* __dsl_pIndexInfo = pIndexInfo)
         {
-            ((IVulkan)this).CmdDrawMultiIndexedEXT(
+            ((IVk)this).CmdDrawMultiIndexedEXT(
                 commandBuffer,
                 drawCount,
                 __dsl_pIndexInfo,
@@ -41230,7 +41206,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdDrawMultiIndexedEXT(
+    void IVk.CmdDrawMultiIndexedEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkMultiDrawIndexedInfoEXT *")] MultiDrawIndexedInfoEXT pIndexInfo,
         [NativeTypeName("uint32_t")] uint instanceCount,
@@ -41241,7 +41217,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (int* __dsl_pVertexOffset = pVertexOffset)
         {
-            ((IVulkan)this).CmdDrawMultiIndexedEXT(
+            ((IVk)this).CmdDrawMultiIndexedEXT(
                 commandBuffer,
                 1,
                 (MultiDrawIndexedInfoEXT*)&pIndexInfo,
@@ -41282,7 +41258,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEncodeVideoKHR(
+    void IVk.CmdEncodeVideoKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkVideoEncodeInfoKHR *")] VideoEncodeInfoKHR* pEncodeInfo
     ) =>
@@ -41310,14 +41286,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEncodeVideoKHR(commandBuffer, pEncodeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEncodeVideoKHR(
+    void IVk.CmdEncodeVideoKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkVideoEncodeInfoKHR *")] Ref<VideoEncodeInfoKHR> pEncodeInfo
     )
     {
         fixed (VideoEncodeInfoKHR* __dsl_pEncodeInfo = pEncodeInfo)
         {
-            ((IVulkan)this).CmdEncodeVideoKHR(commandBuffer, __dsl_pEncodeInfo);
+            ((IVk)this).CmdEncodeVideoKHR(commandBuffer, __dsl_pEncodeInfo);
         }
     }
 
@@ -41338,7 +41314,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEncodeVideoKHR(commandBuffer, pEncodeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndConditionalRenderingEXT(
+    void IVk.CmdEndConditionalRenderingEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer
     ) =>
         (
@@ -41367,7 +41343,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndConditionalRenderingEXT(commandBuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndDebugUtilsLabelEXT(
+    void IVk.CmdEndDebugUtilsLabelEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer
     ) =>
         (
@@ -41389,7 +41365,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndDebugUtilsLabelEXT(commandBuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndPerTileExecutionQCOM(
+    void IVk.CmdEndPerTileExecutionQCOM(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPerTileEndInfoQCOM *")] PerTileEndInfoQCOM* pPerTileEndInfo
     ) =>
@@ -41420,14 +41396,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndPerTileExecutionQCOM(commandBuffer, pPerTileEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndPerTileExecutionQCOM(
+    void IVk.CmdEndPerTileExecutionQCOM(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPerTileEndInfoQCOM *")] Ref<PerTileEndInfoQCOM> pPerTileEndInfo
     )
     {
         fixed (PerTileEndInfoQCOM* __dsl_pPerTileEndInfo = pPerTileEndInfo)
         {
-            ((IVulkan)this).CmdEndPerTileExecutionQCOM(commandBuffer, __dsl_pPerTileEndInfo);
+            ((IVk)this).CmdEndPerTileExecutionQCOM(commandBuffer, __dsl_pPerTileEndInfo);
         }
     }
 
@@ -41448,7 +41424,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndPerTileExecutionQCOM(commandBuffer, pPerTileEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndQuery(
+    void IVk.CmdEndQuery(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint query
@@ -41475,7 +41451,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndQuery(commandBuffer, queryPool, query);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndQueryIndexedEXT(
+    void IVk.CmdEndQueryIndexedEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint query,
@@ -41507,7 +41483,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndQueryIndexedEXT(commandBuffer, queryPool, query, index);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndRendering(
+    void IVk.CmdEndRendering(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer
     ) =>
         (
@@ -41526,7 +41502,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndRendering(commandBuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndRendering2EXT(
+    void IVk.CmdEndRendering2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingEndInfoEXT *")] RenderingEndInfoEXT* pRenderingEndInfo
     ) =>
@@ -41560,14 +41536,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndRendering2EXT(commandBuffer, pRenderingEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndRendering2EXT(
+    void IVk.CmdEndRendering2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingEndInfoEXT *")] Ref<RenderingEndInfoEXT> pRenderingEndInfo
     )
     {
         fixed (RenderingEndInfoEXT* __dsl_pRenderingEndInfo = pRenderingEndInfo)
         {
-            ((IVulkan)this).CmdEndRendering2EXT(commandBuffer, __dsl_pRenderingEndInfo);
+            ((IVk)this).CmdEndRendering2EXT(commandBuffer, __dsl_pRenderingEndInfo);
         }
     }
 
@@ -41594,7 +41570,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndRendering2EXT(commandBuffer, pRenderingEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndRenderingKHR(
+    void IVk.CmdEndRenderingKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer
     ) =>
         (
@@ -41621,7 +41597,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndRenderingKHR(commandBuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndRenderPass(
+    void IVk.CmdEndRenderPass(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer
     ) =>
         (
@@ -41644,7 +41620,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndRenderPass(commandBuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndRenderPass2(
+    void IVk.CmdEndRenderPass2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSubpassEndInfo *")] SubpassEndInfo* pSubpassEndInfo
     ) =>
@@ -41669,14 +41645,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndRenderPass2(commandBuffer, pSubpassEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndRenderPass2(
+    void IVk.CmdEndRenderPass2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSubpassEndInfo *")] Ref<SubpassEndInfo> pSubpassEndInfo
     )
     {
         fixed (SubpassEndInfo* __dsl_pSubpassEndInfo = pSubpassEndInfo)
         {
-            ((IVulkan)this).CmdEndRenderPass2(commandBuffer, __dsl_pSubpassEndInfo);
+            ((IVk)this).CmdEndRenderPass2(commandBuffer, __dsl_pSubpassEndInfo);
         }
     }
 
@@ -41694,7 +41670,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndRenderPass2(commandBuffer, pSubpassEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndRenderPass2KHR(
+    void IVk.CmdEndRenderPass2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSubpassEndInfo *")] SubpassEndInfo* pSubpassEndInfo
     ) =>
@@ -41719,14 +41695,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndRenderPass2KHR(commandBuffer, pSubpassEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndRenderPass2KHR(
+    void IVk.CmdEndRenderPass2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSubpassEndInfo *")] Ref<SubpassEndInfo> pSubpassEndInfo
     )
     {
         fixed (SubpassEndInfo* __dsl_pSubpassEndInfo = pSubpassEndInfo)
         {
-            ((IVulkan)this).CmdEndRenderPass2KHR(commandBuffer, __dsl_pSubpassEndInfo);
+            ((IVk)this).CmdEndRenderPass2KHR(commandBuffer, __dsl_pSubpassEndInfo);
         }
     }
 
@@ -41744,7 +41720,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndRenderPass2KHR(commandBuffer, pSubpassEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndTransformFeedbackEXT(
+    void IVk.CmdEndTransformFeedbackEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstCounterBuffer,
         [NativeTypeName("uint32_t")] uint counterBufferCount,
@@ -41794,7 +41770,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndTransformFeedbackEXT(
+    void IVk.CmdEndTransformFeedbackEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstCounterBuffer,
         [NativeTypeName("uint32_t")] uint counterBufferCount,
@@ -41805,7 +41781,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ulong* __dsl_pCounterBufferOffsets = pCounterBufferOffsets)
         fixed (BufferHandle* __dsl_pCounterBuffers = pCounterBuffers)
         {
-            ((IVulkan)this).CmdEndTransformFeedbackEXT(
+            ((IVk)this).CmdEndTransformFeedbackEXT(
                 commandBuffer,
                 firstCounterBuffer,
                 counterBufferCount,
@@ -41842,7 +41818,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndVideoCodingKHR(
+    void IVk.CmdEndVideoCodingKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkVideoEndCodingInfoKHR *")] VideoEndCodingInfoKHR* pEndCodingInfo
     ) =>
@@ -41867,7 +41843,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndVideoCodingKHR(commandBuffer, pEndCodingInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdEndVideoCodingKHR(
+    void IVk.CmdEndVideoCodingKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkVideoEndCodingInfoKHR *")]
             Ref<VideoEndCodingInfoKHR> pEndCodingInfo
@@ -41875,7 +41851,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (VideoEndCodingInfoKHR* __dsl_pEndCodingInfo = pEndCodingInfo)
         {
-            ((IVulkan)this).CmdEndVideoCodingKHR(commandBuffer, __dsl_pEndCodingInfo);
+            ((IVk)this).CmdEndVideoCodingKHR(commandBuffer, __dsl_pEndCodingInfo);
         }
     }
 
@@ -41894,15 +41870,10 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdEndVideoCodingKHR(commandBuffer, pEndCodingInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdExecuteCommand(
+    void IVk.CmdExecuteCommand(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCommandBuffer *")] CommandBufferHandle pCommandBuffers
-    ) =>
-        ((IVulkan)this).CmdExecuteCommands(
-            commandBuffer,
-            1,
-            (CommandBufferHandle*)&pCommandBuffers
-        );
+    ) => ((IVk)this).CmdExecuteCommands(commandBuffer, 1, (CommandBufferHandle*)&pCommandBuffers);
 
     [SupportedApiProfile(
         "vulkan",
@@ -41918,7 +41889,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdExecuteCommand(commandBuffer, pCommandBuffers);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdExecuteCommands(
+    void IVk.CmdExecuteCommands(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint commandBufferCount,
         [NativeTypeName("const VkCommandBuffer *")] CommandBufferHandle* pCommandBuffers
@@ -41945,7 +41916,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdExecuteCommands(commandBuffer, commandBufferCount, pCommandBuffers);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdExecuteCommands(
+    void IVk.CmdExecuteCommands(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint commandBufferCount,
         [NativeTypeName("const VkCommandBuffer *")] Ref<CommandBufferHandle> pCommandBuffers
@@ -41953,7 +41924,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CommandBufferHandle* __dsl_pCommandBuffers = pCommandBuffers)
         {
-            ((IVulkan)this).CmdExecuteCommands(
+            ((IVk)this).CmdExecuteCommands(
                 commandBuffer,
                 commandBufferCount,
                 __dsl_pCommandBuffers
@@ -41976,7 +41947,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdExecuteCommands(commandBuffer, commandBufferCount, pCommandBuffers);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdExecuteGeneratedCommandsEXT(
+    void IVk.CmdExecuteGeneratedCommandsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint isPreprocessed,
         [NativeTypeName("const VkGeneratedCommandsInfoEXT *")]
@@ -42017,7 +41988,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdExecuteGeneratedCommandsEXT(
+    void IVk.CmdExecuteGeneratedCommandsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint isPreprocessed,
         [NativeTypeName("const VkGeneratedCommandsInfoEXT *")]
@@ -42026,7 +41997,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (GeneratedCommandsInfoEXT* __dsl_pGeneratedCommandsInfo = pGeneratedCommandsInfo)
         {
-            ((IVulkan)this).CmdExecuteGeneratedCommandsEXT(
+            ((IVk)this).CmdExecuteGeneratedCommandsEXT(
                 commandBuffer,
                 isPreprocessed,
                 __dsl_pGeneratedCommandsInfo
@@ -42059,7 +42030,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdExecuteGeneratedCommandsNV(
+    void IVk.CmdExecuteGeneratedCommandsNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint isPreprocessed,
         [NativeTypeName("const VkGeneratedCommandsInfoNV *")]
@@ -42096,7 +42067,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdExecuteGeneratedCommandsNV(
+    void IVk.CmdExecuteGeneratedCommandsNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint isPreprocessed,
         [NativeTypeName("const VkGeneratedCommandsInfoNV *")]
@@ -42105,7 +42076,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (GeneratedCommandsInfoNV* __dsl_pGeneratedCommandsInfo = pGeneratedCommandsInfo)
         {
-            ((IVulkan)this).CmdExecuteGeneratedCommandsNV(
+            ((IVk)this).CmdExecuteGeneratedCommandsNV(
                 commandBuffer,
                 isPreprocessed,
                 __dsl_pGeneratedCommandsInfo
@@ -42134,7 +42105,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdFillBuffer(
+    void IVk.CmdFillBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
         [NativeTypeName("VkDeviceSize")] ulong dstOffset,
@@ -42165,7 +42136,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdFillBuffer(commandBuffer, dstBuffer, dstOffset, size, data);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdInsertDebugUtilsLabelEXT(
+    void IVk.CmdInsertDebugUtilsLabelEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDebugUtilsLabelEXT *")] DebugUtilsLabelEXT* pLabelInfo
     ) =>
@@ -42189,14 +42160,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdInsertDebugUtilsLabelEXT(commandBuffer, pLabelInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdInsertDebugUtilsLabelEXT(
+    void IVk.CmdInsertDebugUtilsLabelEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDebugUtilsLabelEXT *")] Ref<DebugUtilsLabelEXT> pLabelInfo
     )
     {
         fixed (DebugUtilsLabelEXT* __dsl_pLabelInfo = pLabelInfo)
         {
-            ((IVulkan)this).CmdInsertDebugUtilsLabelEXT(commandBuffer, __dsl_pLabelInfo);
+            ((IVk)this).CmdInsertDebugUtilsLabelEXT(commandBuffer, __dsl_pLabelInfo);
         }
     }
 
@@ -42210,7 +42181,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdInsertDebugUtilsLabelEXT(commandBuffer, pLabelInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdNextSubpass(
+    void IVk.CmdNextSubpass(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         SubpassContents contents
     ) =>
@@ -42235,7 +42206,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdNextSubpass(commandBuffer, contents);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdNextSubpass2(
+    void IVk.CmdNextSubpass2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSubpassBeginInfo *")] SubpassBeginInfo* pSubpassBeginInfo,
         [NativeTypeName("const VkSubpassEndInfo *")] SubpassEndInfo* pSubpassEndInfo
@@ -42262,7 +42233,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdNextSubpass2(commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdNextSubpass2(
+    void IVk.CmdNextSubpass2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSubpassBeginInfo *")] Ref<SubpassBeginInfo> pSubpassBeginInfo,
         [NativeTypeName("const VkSubpassEndInfo *")] Ref<SubpassEndInfo> pSubpassEndInfo
@@ -42271,7 +42242,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SubpassEndInfo* __dsl_pSubpassEndInfo = pSubpassEndInfo)
         fixed (SubpassBeginInfo* __dsl_pSubpassBeginInfo = pSubpassBeginInfo)
         {
-            ((IVulkan)this).CmdNextSubpass2(
+            ((IVk)this).CmdNextSubpass2(
                 commandBuffer,
                 __dsl_pSubpassBeginInfo,
                 __dsl_pSubpassEndInfo
@@ -42294,7 +42265,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdNextSubpass2(commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdNextSubpass2KHR(
+    void IVk.CmdNextSubpass2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSubpassBeginInfo *")] SubpassBeginInfo* pSubpassBeginInfo,
         [NativeTypeName("const VkSubpassEndInfo *")] SubpassEndInfo* pSubpassEndInfo
@@ -42321,7 +42292,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdNextSubpass2KHR(commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdNextSubpass2KHR(
+    void IVk.CmdNextSubpass2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSubpassBeginInfo *")] Ref<SubpassBeginInfo> pSubpassBeginInfo,
         [NativeTypeName("const VkSubpassEndInfo *")] Ref<SubpassEndInfo> pSubpassEndInfo
@@ -42330,7 +42301,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SubpassEndInfo* __dsl_pSubpassEndInfo = pSubpassEndInfo)
         fixed (SubpassBeginInfo* __dsl_pSubpassBeginInfo = pSubpassBeginInfo)
         {
-            ((IVulkan)this).CmdNextSubpass2KHR(
+            ((IVk)this).CmdNextSubpass2KHR(
                 commandBuffer,
                 __dsl_pSubpassBeginInfo,
                 __dsl_pSubpassEndInfo
@@ -42353,7 +42324,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdNextSubpass2KHR(commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdOpticalFlowExecuteNV(
+    void IVk.CmdOpticalFlowExecuteNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkOpticalFlowSessionNV")] OpticalFlowSessionNVHandle session,
         [NativeTypeName("const VkOpticalFlowExecuteInfoNV *")]
@@ -42393,7 +42364,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdOpticalFlowExecuteNV(commandBuffer, session, pExecuteInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdOpticalFlowExecuteNV(
+    void IVk.CmdOpticalFlowExecuteNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkOpticalFlowSessionNV")] OpticalFlowSessionNVHandle session,
         [NativeTypeName("const VkOpticalFlowExecuteInfoNV *")]
@@ -42402,7 +42373,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (OpticalFlowExecuteInfoNV* __dsl_pExecuteInfo = pExecuteInfo)
         {
-            ((IVulkan)this).CmdOpticalFlowExecuteNV(commandBuffer, session, __dsl_pExecuteInfo);
+            ((IVk)this).CmdOpticalFlowExecuteNV(commandBuffer, session, __dsl_pExecuteInfo);
         }
     }
 
@@ -42426,7 +42397,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdOpticalFlowExecuteNV(commandBuffer, session, pExecuteInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPipelineBarrier(
+    void IVk.CmdPipelineBarrier(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkPipelineStageFlags")] uint srcStageMask,
         [NativeTypeName("VkPipelineStageFlags")] uint dstStageMask,
@@ -42503,7 +42474,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPipelineBarrier(
+    void IVk.CmdPipelineBarrier(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkPipelineStageFlags")] uint srcStageMask,
         [NativeTypeName("VkPipelineStageFlags")] uint dstStageMask,
@@ -42522,7 +42493,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (BufferMemoryBarrier* __dsl_pBufferMemoryBarriers = pBufferMemoryBarriers)
         fixed (MemoryBarrier* __dsl_pMemoryBarriers = pMemoryBarriers)
         {
-            ((IVulkan)this).CmdPipelineBarrier(
+            ((IVk)this).CmdPipelineBarrier(
                 commandBuffer,
                 srcStageMask,
                 dstStageMask,
@@ -42573,7 +42544,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPipelineBarrier2(
+    void IVk.CmdPipelineBarrier2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDependencyInfo *")] DependencyInfo* pDependencyInfo
     ) =>
@@ -42594,14 +42565,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPipelineBarrier2(commandBuffer, pDependencyInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPipelineBarrier2(
+    void IVk.CmdPipelineBarrier2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDependencyInfo *")] Ref<DependencyInfo> pDependencyInfo
     )
     {
         fixed (DependencyInfo* __dsl_pDependencyInfo = pDependencyInfo)
         {
-            ((IVulkan)this).CmdPipelineBarrier2(commandBuffer, __dsl_pDependencyInfo);
+            ((IVk)this).CmdPipelineBarrier2(commandBuffer, __dsl_pDependencyInfo);
         }
     }
 
@@ -42615,7 +42586,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPipelineBarrier2(commandBuffer, pDependencyInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPipelineBarrier2KHR(
+    void IVk.CmdPipelineBarrier2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDependencyInfo *")] DependencyInfo* pDependencyInfo
     ) =>
@@ -42643,14 +42614,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPipelineBarrier2KHR(commandBuffer, pDependencyInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPipelineBarrier2KHR(
+    void IVk.CmdPipelineBarrier2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDependencyInfo *")] Ref<DependencyInfo> pDependencyInfo
     )
     {
         fixed (DependencyInfo* __dsl_pDependencyInfo = pDependencyInfo)
         {
-            ((IVulkan)this).CmdPipelineBarrier2KHR(commandBuffer, __dsl_pDependencyInfo);
+            ((IVk)this).CmdPipelineBarrier2KHR(commandBuffer, __dsl_pDependencyInfo);
         }
     }
 
@@ -42671,7 +42642,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPipelineBarrier2KHR(commandBuffer, pDependencyInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPreprocessGeneratedCommandsEXT(
+    void IVk.CmdPreprocessGeneratedCommandsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkGeneratedCommandsInfoEXT *")]
             GeneratedCommandsInfoEXT* pGeneratedCommandsInfo,
@@ -42716,7 +42687,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPreprocessGeneratedCommandsEXT(
+    void IVk.CmdPreprocessGeneratedCommandsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkGeneratedCommandsInfoEXT *")]
             Ref<GeneratedCommandsInfoEXT> pGeneratedCommandsInfo,
@@ -42725,7 +42696,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (GeneratedCommandsInfoEXT* __dsl_pGeneratedCommandsInfo = pGeneratedCommandsInfo)
         {
-            ((IVulkan)this).CmdPreprocessGeneratedCommandsEXT(
+            ((IVk)this).CmdPreprocessGeneratedCommandsEXT(
                 commandBuffer,
                 __dsl_pGeneratedCommandsInfo,
                 stateCommandBuffer
@@ -42758,7 +42729,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPreprocessGeneratedCommandsNV(
+    void IVk.CmdPreprocessGeneratedCommandsNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkGeneratedCommandsInfoNV *")]
             GeneratedCommandsInfoNV* pGeneratedCommandsInfo
@@ -42788,7 +42759,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPreprocessGeneratedCommandsNV(commandBuffer, pGeneratedCommandsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPreprocessGeneratedCommandsNV(
+    void IVk.CmdPreprocessGeneratedCommandsNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkGeneratedCommandsInfoNV *")]
             Ref<GeneratedCommandsInfoNV> pGeneratedCommandsInfo
@@ -42796,7 +42767,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (GeneratedCommandsInfoNV* __dsl_pGeneratedCommandsInfo = pGeneratedCommandsInfo)
         {
-            ((IVulkan)this).CmdPreprocessGeneratedCommandsNV(
+            ((IVk)this).CmdPreprocessGeneratedCommandsNV(
                 commandBuffer,
                 __dsl_pGeneratedCommandsInfo
             );
@@ -42818,7 +42789,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPreprocessGeneratedCommandsNV(commandBuffer, pGeneratedCommandsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushConstants(
+    void IVk.CmdPushConstants(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
         [NativeTypeName("VkShaderStageFlags")] uint stageFlags,
@@ -42858,7 +42829,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushConstants(
+    void IVk.CmdPushConstants(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
         [NativeTypeName("VkShaderStageFlags")] uint stageFlags,
@@ -42869,7 +42840,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (void* __dsl_pValues = pValues)
         {
-            ((IVulkan)this).CmdPushConstants(
+            ((IVk)this).CmdPushConstants(
                 commandBuffer,
                 layout,
                 stageFlags,
@@ -42898,7 +42869,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushConstants2(
+    void IVk.CmdPushConstants2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushConstantsInfo *")] PushConstantsInfo* pPushConstantsInfo
     ) =>
@@ -42919,14 +42890,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPushConstants2(commandBuffer, pPushConstantsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushConstants2(
+    void IVk.CmdPushConstants2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushConstantsInfo *")] Ref<PushConstantsInfo> pPushConstantsInfo
     )
     {
         fixed (PushConstantsInfo* __dsl_pPushConstantsInfo = pPushConstantsInfo)
         {
-            ((IVulkan)this).CmdPushConstants2(commandBuffer, __dsl_pPushConstantsInfo);
+            ((IVk)this).CmdPushConstants2(commandBuffer, __dsl_pPushConstantsInfo);
         }
     }
 
@@ -42940,7 +42911,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPushConstants2(commandBuffer, pPushConstantsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushConstants2KHR(
+    void IVk.CmdPushConstants2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushConstantsInfo *")] PushConstantsInfo* pPushConstantsInfo
     ) =>
@@ -42961,14 +42932,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPushConstants2KHR(commandBuffer, pPushConstantsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushConstants2KHR(
+    void IVk.CmdPushConstants2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushConstantsInfo *")] Ref<PushConstantsInfo> pPushConstantsInfo
     )
     {
         fixed (PushConstantsInfo* __dsl_pPushConstantsInfo = pPushConstantsInfo)
         {
-            ((IVulkan)this).CmdPushConstants2KHR(commandBuffer, __dsl_pPushConstantsInfo);
+            ((IVk)this).CmdPushConstants2KHR(commandBuffer, __dsl_pPushConstantsInfo);
         }
     }
 
@@ -42982,7 +42953,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPushConstants2KHR(commandBuffer, pPushConstantsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSet(
+    void IVk.CmdPushDescriptorSet(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
@@ -43026,7 +42997,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSet(
+    void IVk.CmdPushDescriptorSet(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
@@ -43037,7 +43008,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (WriteDescriptorSet* __dsl_pDescriptorWrites = pDescriptorWrites)
         {
-            ((IVulkan)this).CmdPushDescriptorSet(
+            ((IVk)this).CmdPushDescriptorSet(
                 commandBuffer,
                 pipelineBindPoint,
                 layout,
@@ -43070,14 +43041,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSet(
+    void IVk.CmdPushDescriptorSet(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
         [NativeTypeName("uint32_t")] uint set,
         [NativeTypeName("const VkWriteDescriptorSet *")] WriteDescriptorSet pDescriptorWrites
     ) =>
-        ((IVulkan)this).CmdPushDescriptorSet(
+        ((IVk)this).CmdPushDescriptorSet(
             commandBuffer,
             pipelineBindPoint,
             layout,
@@ -43106,7 +43077,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSet2(
+    void IVk.CmdPushDescriptorSet2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushDescriptorSetInfo *")]
             PushDescriptorSetInfo* pPushDescriptorSetInfo
@@ -43129,7 +43100,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPushDescriptorSet2(commandBuffer, pPushDescriptorSetInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSet2(
+    void IVk.CmdPushDescriptorSet2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushDescriptorSetInfo *")]
             Ref<PushDescriptorSetInfo> pPushDescriptorSetInfo
@@ -43137,7 +43108,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (PushDescriptorSetInfo* __dsl_pPushDescriptorSetInfo = pPushDescriptorSetInfo)
         {
-            ((IVulkan)this).CmdPushDescriptorSet2(commandBuffer, __dsl_pPushDescriptorSetInfo);
+            ((IVk)this).CmdPushDescriptorSet2(commandBuffer, __dsl_pPushDescriptorSetInfo);
         }
     }
 
@@ -43152,7 +43123,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPushDescriptorSet2(commandBuffer, pPushDescriptorSetInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSet2KHR(
+    void IVk.CmdPushDescriptorSet2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushDescriptorSetInfo *")]
             PushDescriptorSetInfo* pPushDescriptorSetInfo
@@ -43183,7 +43154,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPushDescriptorSet2KHR(commandBuffer, pPushDescriptorSetInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSet2KHR(
+    void IVk.CmdPushDescriptorSet2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushDescriptorSetInfo *")]
             Ref<PushDescriptorSetInfo> pPushDescriptorSetInfo
@@ -43191,7 +43162,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (PushDescriptorSetInfo* __dsl_pPushDescriptorSetInfo = pPushDescriptorSetInfo)
         {
-            ((IVulkan)this).CmdPushDescriptorSet2KHR(commandBuffer, __dsl_pPushDescriptorSetInfo);
+            ((IVk)this).CmdPushDescriptorSet2KHR(commandBuffer, __dsl_pPushDescriptorSetInfo);
         }
     }
 
@@ -43211,7 +43182,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdPushDescriptorSet2KHR(commandBuffer, pPushDescriptorSetInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSetKHR(
+    void IVk.CmdPushDescriptorSetKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
@@ -43265,7 +43236,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSetKHR(
+    void IVk.CmdPushDescriptorSetKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
@@ -43276,7 +43247,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (WriteDescriptorSet* __dsl_pDescriptorWrites = pDescriptorWrites)
         {
-            ((IVulkan)this).CmdPushDescriptorSetKHR(
+            ((IVk)this).CmdPushDescriptorSetKHR(
                 commandBuffer,
                 pipelineBindPoint,
                 layout,
@@ -43316,14 +43287,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSetKHR(
+    void IVk.CmdPushDescriptorSetKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
         [NativeTypeName("uint32_t")] uint set,
         [NativeTypeName("const VkWriteDescriptorSet *")] WriteDescriptorSet pDescriptorWrites
     ) =>
-        ((IVulkan)this).CmdPushDescriptorSetKHR(
+        ((IVk)this).CmdPushDescriptorSetKHR(
             commandBuffer,
             pipelineBindPoint,
             layout,
@@ -43359,7 +43330,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSetWithTemplate(
+    void IVk.CmdPushDescriptorSetWithTemplate(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
             DescriptorUpdateTemplateHandle descriptorUpdateTemplate,
@@ -43404,7 +43375,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSetWithTemplate(
+    void IVk.CmdPushDescriptorSetWithTemplate(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
             DescriptorUpdateTemplateHandle descriptorUpdateTemplate,
@@ -43415,7 +43386,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (void* __dsl_pData = pData)
         {
-            ((IVulkan)this).CmdPushDescriptorSetWithTemplate(
+            ((IVk)this).CmdPushDescriptorSetWithTemplate(
                 commandBuffer,
                 descriptorUpdateTemplate,
                 layout,
@@ -43446,7 +43417,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSetWithTemplate2(
+    void IVk.CmdPushDescriptorSetWithTemplate2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushDescriptorSetWithTemplateInfo *")]
             PushDescriptorSetWithTemplateInfo* pPushDescriptorSetWithTemplateInfo
@@ -43476,7 +43447,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSetWithTemplate2(
+    void IVk.CmdPushDescriptorSetWithTemplate2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushDescriptorSetWithTemplateInfo *")]
             Ref<PushDescriptorSetWithTemplateInfo> pPushDescriptorSetWithTemplateInfo
@@ -43487,7 +43458,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pPushDescriptorSetWithTemplateInfo
         )
         {
-            ((IVulkan)this).CmdPushDescriptorSetWithTemplate2(
+            ((IVk)this).CmdPushDescriptorSetWithTemplate2(
                 commandBuffer,
                 __dsl_pPushDescriptorSetWithTemplateInfo
             );
@@ -43509,7 +43480,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSetWithTemplate2KHR(
+    void IVk.CmdPushDescriptorSetWithTemplate2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushDescriptorSetWithTemplateInfo *")]
             PushDescriptorSetWithTemplateInfo* pPushDescriptorSetWithTemplateInfo
@@ -43544,7 +43515,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSetWithTemplate2KHR(
+    void IVk.CmdPushDescriptorSetWithTemplate2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushDescriptorSetWithTemplateInfo *")]
             Ref<PushDescriptorSetWithTemplateInfo> pPushDescriptorSetWithTemplateInfo
@@ -43555,7 +43526,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pPushDescriptorSetWithTemplateInfo
         )
         {
-            ((IVulkan)this).CmdPushDescriptorSetWithTemplate2KHR(
+            ((IVk)this).CmdPushDescriptorSetWithTemplate2KHR(
                 commandBuffer,
                 __dsl_pPushDescriptorSetWithTemplateInfo
             );
@@ -43582,7 +43553,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSetWithTemplateKHR(
+    void IVk.CmdPushDescriptorSetWithTemplateKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
             DescriptorUpdateTemplateHandle descriptorUpdateTemplate,
@@ -43637,7 +43608,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdPushDescriptorSetWithTemplateKHR(
+    void IVk.CmdPushDescriptorSetWithTemplateKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
             DescriptorUpdateTemplateHandle descriptorUpdateTemplate,
@@ -43648,7 +43619,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (void* __dsl_pData = pData)
         {
-            ((IVulkan)this).CmdPushDescriptorSetWithTemplateKHR(
+            ((IVk)this).CmdPushDescriptorSetWithTemplateKHR(
                 commandBuffer,
                 descriptorUpdateTemplate,
                 layout,
@@ -43689,7 +43660,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResetEvent(
+    void IVk.CmdResetEvent(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
         [NativeTypeName("VkPipelineStageFlags")] uint stageMask
@@ -43716,7 +43687,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdResetEvent(commandBuffer, @event, stageMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResetEvent2(
+    void IVk.CmdResetEvent2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
         [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
@@ -43739,7 +43710,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdResetEvent2(commandBuffer, @event, stageMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResetEvent2KHR(
+    void IVk.CmdResetEvent2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
         [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
@@ -43769,7 +43740,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdResetEvent2KHR(commandBuffer, @event, stageMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResetQueryPool(
+    void IVk.CmdResetQueryPool(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint firstQuery,
@@ -43798,7 +43769,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdResetQueryPool(commandBuffer, queryPool, firstQuery, queryCount);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResolveImage(
+    void IVk.CmdResolveImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
@@ -43850,7 +43821,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResolveImage(
+    void IVk.CmdResolveImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
@@ -43862,7 +43833,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ImageResolve* __dsl_pRegions = pRegions)
         {
-            ((IVulkan)this).CmdResolveImage(
+            ((IVk)this).CmdResolveImage(
                 commandBuffer,
                 srcImage,
                 srcImageLayout,
@@ -43902,7 +43873,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResolveImage(
+    void IVk.CmdResolveImage(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImage")] ImageHandle srcImage,
         ImageLayout srcImageLayout,
@@ -43910,7 +43881,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         ImageLayout dstImageLayout,
         [NativeTypeName("const VkImageResolve *")] ImageResolve pRegions
     ) =>
-        ((IVulkan)this).CmdResolveImage(
+        ((IVk)this).CmdResolveImage(
             commandBuffer,
             srcImage,
             srcImageLayout,
@@ -43946,7 +43917,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResolveImage2(
+    void IVk.CmdResolveImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkResolveImageInfo2 *")] ResolveImageInfo2* pResolveImageInfo
     ) =>
@@ -43967,14 +43938,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdResolveImage2(commandBuffer, pResolveImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResolveImage2(
+    void IVk.CmdResolveImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkResolveImageInfo2 *")] Ref<ResolveImageInfo2> pResolveImageInfo
     )
     {
         fixed (ResolveImageInfo2* __dsl_pResolveImageInfo = pResolveImageInfo)
         {
-            ((IVulkan)this).CmdResolveImage2(commandBuffer, __dsl_pResolveImageInfo);
+            ((IVk)this).CmdResolveImage2(commandBuffer, __dsl_pResolveImageInfo);
         }
     }
 
@@ -43988,7 +43959,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdResolveImage2(commandBuffer, pResolveImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResolveImage2KHR(
+    void IVk.CmdResolveImage2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkResolveImageInfo2 *")] ResolveImageInfo2* pResolveImageInfo
     ) =>
@@ -44016,14 +43987,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdResolveImage2KHR(commandBuffer, pResolveImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdResolveImage2KHR(
+    void IVk.CmdResolveImage2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkResolveImageInfo2 *")] Ref<ResolveImageInfo2> pResolveImageInfo
     )
     {
         fixed (ResolveImageInfo2* __dsl_pResolveImageInfo = pResolveImageInfo)
         {
-            ((IVulkan)this).CmdResolveImage2KHR(commandBuffer, __dsl_pResolveImageInfo);
+            ((IVk)this).CmdResolveImage2KHR(commandBuffer, __dsl_pResolveImageInfo);
         }
     }
 
@@ -44044,7 +44015,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdResolveImage2KHR(commandBuffer, pResolveImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetAlphaToCoverageEnableEXT(
+    void IVk.CmdSetAlphaToCoverageEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint alphaToCoverageEnable
     ) =>
@@ -44075,7 +44046,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetAlphaToCoverageEnableEXT(commandBuffer, alphaToCoverageEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetAlphaToOneEnableEXT(
+    void IVk.CmdSetAlphaToOneEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint alphaToOneEnable
     ) =>
@@ -44106,7 +44077,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetAlphaToOneEnableEXT(commandBuffer, alphaToOneEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetAttachmentFeedbackLoopEnableEXT(
+    void IVk.CmdSetAttachmentFeedbackLoopEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkImageAspectFlags")] uint aspectMask
     ) =>
@@ -44137,7 +44108,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetAttachmentFeedbackLoopEnableEXT(commandBuffer, aspectMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetBlendConstants(
+    void IVk.CmdSetBlendConstants(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const float[4]")] float* blendConstants
     ) =>
@@ -44162,14 +44133,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetBlendConstants(commandBuffer, blendConstants);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetBlendConstants(
+    void IVk.CmdSetBlendConstants(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const float[4]")] Ref<float> blendConstants
     )
     {
         fixed (float* __dsl_blendConstants = blendConstants)
         {
-            ((IVulkan)this).CmdSetBlendConstants(commandBuffer, __dsl_blendConstants);
+            ((IVk)this).CmdSetBlendConstants(commandBuffer, __dsl_blendConstants);
         }
     }
 
@@ -44187,7 +44158,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetBlendConstants(commandBuffer, blendConstants);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCheckpointNV(
+    void IVk.CmdSetCheckpointNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const void *")] void* pCheckpointMarker
     ) =>
@@ -44215,14 +44186,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetCheckpointNV(commandBuffer, pCheckpointMarker);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCheckpointNV(
+    void IVk.CmdSetCheckpointNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const void *")] Ref pCheckpointMarker
     )
     {
         fixed (void* __dsl_pCheckpointMarker = pCheckpointMarker)
         {
-            ((IVulkan)this).CmdSetCheckpointNV(commandBuffer, __dsl_pCheckpointMarker);
+            ((IVk)this).CmdSetCheckpointNV(commandBuffer, __dsl_pCheckpointMarker);
         }
     }
 
@@ -44243,7 +44214,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetCheckpointNV(commandBuffer, pCheckpointMarker);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCoarseSampleOrderNV(
+    void IVk.CmdSetCoarseSampleOrderNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         CoarseSampleOrderTypeNV sampleOrderType,
         [NativeTypeName("uint32_t")] uint customSampleOrderCount,
@@ -44291,7 +44262,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCoarseSampleOrderNV(
+    void IVk.CmdSetCoarseSampleOrderNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         CoarseSampleOrderTypeNV sampleOrderType,
         [NativeTypeName("uint32_t")] uint customSampleOrderCount,
@@ -44301,7 +44272,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CoarseSampleOrderCustomNV* __dsl_pCustomSampleOrders = pCustomSampleOrders)
         {
-            ((IVulkan)this).CmdSetCoarseSampleOrderNV(
+            ((IVk)this).CmdSetCoarseSampleOrderNV(
                 commandBuffer,
                 sampleOrderType,
                 customSampleOrderCount,
@@ -44336,13 +44307,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCoarseSampleOrderNV(
+    void IVk.CmdSetCoarseSampleOrderNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         CoarseSampleOrderTypeNV sampleOrderType,
         [NativeTypeName("const VkCoarseSampleOrderCustomNV *")]
             CoarseSampleOrderCustomNV pCustomSampleOrders
     ) =>
-        ((IVulkan)this).CmdSetCoarseSampleOrderNV(
+        ((IVk)this).CmdSetCoarseSampleOrderNV(
             commandBuffer,
             sampleOrderType,
             1,
@@ -44368,7 +44339,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetCoarseSampleOrderNV(commandBuffer, sampleOrderType, pCustomSampleOrders);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorBlendAdvancedEXT(
+    void IVk.CmdSetColorBlendAdvancedEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
@@ -44412,7 +44383,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorBlendAdvancedEXT(
+    void IVk.CmdSetColorBlendAdvancedEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
@@ -44422,7 +44393,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ColorBlendAdvancedEXT* __dsl_pColorBlendAdvanced = pColorBlendAdvanced)
         {
-            ((IVulkan)this).CmdSetColorBlendAdvancedEXT(
+            ((IVk)this).CmdSetColorBlendAdvancedEXT(
                 commandBuffer,
                 firstAttachment,
                 attachmentCount,
@@ -44458,13 +44429,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorBlendAdvancedEXT(
+    void IVk.CmdSetColorBlendAdvancedEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("const VkColorBlendAdvancedEXT *")]
             ColorBlendAdvancedEXT pColorBlendAdvanced
     ) =>
-        ((IVulkan)this).CmdSetColorBlendAdvancedEXT(
+        ((IVk)this).CmdSetColorBlendAdvancedEXT(
             commandBuffer,
             firstAttachment,
             1,
@@ -44491,7 +44462,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetColorBlendAdvancedEXT(commandBuffer, firstAttachment, pColorBlendAdvanced);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorBlendEnableEXT(
+    void IVk.CmdSetColorBlendEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
@@ -44532,7 +44503,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorBlendEnableEXT(
+    void IVk.CmdSetColorBlendEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
@@ -44541,7 +44512,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (uint* __dsl_pColorBlendEnables = pColorBlendEnables)
         {
-            ((IVulkan)this).CmdSetColorBlendEnableEXT(
+            ((IVk)this).CmdSetColorBlendEnableEXT(
                 commandBuffer,
                 firstAttachment,
                 attachmentCount,
@@ -44575,12 +44546,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorBlendEnableEXT(
+    void IVk.CmdSetColorBlendEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("const VkBool32 *")] uint pColorBlendEnables
     ) =>
-        ((IVulkan)this).CmdSetColorBlendEnableEXT(
+        ((IVk)this).CmdSetColorBlendEnableEXT(
             commandBuffer,
             firstAttachment,
             1,
@@ -44605,7 +44576,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetColorBlendEnableEXT(commandBuffer, firstAttachment, pColorBlendEnables);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorBlendEquationEXT(
+    void IVk.CmdSetColorBlendEquationEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
@@ -44648,7 +44619,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorBlendEquationEXT(
+    void IVk.CmdSetColorBlendEquationEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
@@ -44658,7 +44629,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ColorBlendEquationEXT* __dsl_pColorBlendEquations = pColorBlendEquations)
         {
-            ((IVulkan)this).CmdSetColorBlendEquationEXT(
+            ((IVk)this).CmdSetColorBlendEquationEXT(
                 commandBuffer,
                 firstAttachment,
                 attachmentCount,
@@ -44693,13 +44664,13 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorBlendEquationEXT(
+    void IVk.CmdSetColorBlendEquationEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("const VkColorBlendEquationEXT *")]
             ColorBlendEquationEXT pColorBlendEquations
     ) =>
-        ((IVulkan)this).CmdSetColorBlendEquationEXT(
+        ((IVk)this).CmdSetColorBlendEquationEXT(
             commandBuffer,
             firstAttachment,
             1,
@@ -44726,7 +44697,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.CmdSetColorBlendEquationEXT(commandBuffer, firstAttachment, pColorBlendEquations);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorWriteEnableEXT(
+    void IVk.CmdSetColorWriteEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint attachmentCount,
         [NativeTypeName("const VkBool32 *")] uint* pColorWriteEnables
@@ -44759,7 +44730,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetColorWriteEnableEXT(commandBuffer, attachmentCount, pColorWriteEnables);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorWriteEnableEXT(
+    void IVk.CmdSetColorWriteEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint attachmentCount,
         [NativeTypeName("const VkBool32 *")] Ref<uint> pColorWriteEnables
@@ -44767,7 +44738,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (uint* __dsl_pColorWriteEnables = pColorWriteEnables)
         {
-            ((IVulkan)this).CmdSetColorWriteEnableEXT(
+            ((IVk)this).CmdSetColorWriteEnableEXT(
                 commandBuffer,
                 attachmentCount,
                 __dsl_pColorWriteEnables
@@ -44793,10 +44764,10 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetColorWriteEnableEXT(commandBuffer, attachmentCount, pColorWriteEnables);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorWriteEnableEXT(
+    void IVk.CmdSetColorWriteEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBool32 *")] uint pColorWriteEnables
-    ) => ((IVulkan)this).CmdSetColorWriteEnableEXT(commandBuffer, 1, (uint*)&pColorWriteEnables);
+    ) => ((IVk)this).CmdSetColorWriteEnableEXT(commandBuffer, 1, (uint*)&pColorWriteEnables);
 
     [SupportedApiProfile(
         "vulkan",
@@ -44815,7 +44786,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetColorWriteEnableEXT(commandBuffer, pColorWriteEnables);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorWriteMaskEXT(
+    void IVk.CmdSetColorWriteMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
@@ -44856,7 +44827,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorWriteMaskEXT(
+    void IVk.CmdSetColorWriteMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
@@ -44865,7 +44836,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (uint* __dsl_pColorWriteMasks = pColorWriteMasks)
         {
-            ((IVulkan)this).CmdSetColorWriteMaskEXT(
+            ((IVk)this).CmdSetColorWriteMaskEXT(
                 commandBuffer,
                 firstAttachment,
                 attachmentCount,
@@ -44899,12 +44870,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetColorWriteMaskEXT(
+    void IVk.CmdSetColorWriteMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("const VkColorComponentFlags *")] uint pColorWriteMasks
     ) =>
-        ((IVulkan)this).CmdSetColorWriteMaskEXT(
+        ((IVk)this).CmdSetColorWriteMaskEXT(
             commandBuffer,
             firstAttachment,
             1,
@@ -44929,7 +44900,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetColorWriteMaskEXT(commandBuffer, firstAttachment, pColorWriteMasks);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetConservativeRasterizationModeEXT(
+    void IVk.CmdSetConservativeRasterizationModeEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         ConservativeRasterizationModeEXT conservativeRasterizationMode
     ) =>
@@ -44965,7 +44936,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCoverageModulationModeNV(
+    void IVk.CmdSetCoverageModulationModeNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         CoverageModulationModeNV coverageModulationMode
     ) =>
@@ -44997,7 +44968,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetCoverageModulationModeNV(commandBuffer, coverageModulationMode);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCoverageModulationTableEnableNV(
+    void IVk.CmdSetCoverageModulationTableEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint coverageModulationTableEnable
     ) =>
@@ -45033,7 +45004,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCoverageModulationTableNV(
+    void IVk.CmdSetCoverageModulationTableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint coverageModulationTableCount,
         [NativeTypeName("const float *")] float* pCoverageModulationTable
@@ -45072,7 +45043,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCoverageModulationTableNV(
+    void IVk.CmdSetCoverageModulationTableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint coverageModulationTableCount,
         [NativeTypeName("const float *")] Ref<float> pCoverageModulationTable
@@ -45080,7 +45051,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (float* __dsl_pCoverageModulationTable = pCoverageModulationTable)
         {
-            ((IVulkan)this).CmdSetCoverageModulationTableNV(
+            ((IVk)this).CmdSetCoverageModulationTableNV(
                 commandBuffer,
                 coverageModulationTableCount,
                 __dsl_pCoverageModulationTable
@@ -45112,11 +45083,11 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCoverageModulationTableNV(
+    void IVk.CmdSetCoverageModulationTableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const float *")] float pCoverageModulationTable
     ) =>
-        ((IVulkan)this).CmdSetCoverageModulationTableNV(
+        ((IVk)this).CmdSetCoverageModulationTableNV(
             commandBuffer,
             1,
             (float*)&pCoverageModulationTable
@@ -45140,7 +45111,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetCoverageModulationTableNV(commandBuffer, pCoverageModulationTable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCoverageReductionModeNV(
+    void IVk.CmdSetCoverageReductionModeNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         CoverageReductionModeNV coverageReductionMode
     ) =>
@@ -45172,7 +45143,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetCoverageReductionModeNV(commandBuffer, coverageReductionMode);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCoverageToColorEnableNV(
+    void IVk.CmdSetCoverageToColorEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint coverageToColorEnable
     ) =>
@@ -45204,7 +45175,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetCoverageToColorEnableNV(commandBuffer, coverageToColorEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCoverageToColorLocationNV(
+    void IVk.CmdSetCoverageToColorLocationNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint coverageToColorLocation
     ) =>
@@ -45236,7 +45207,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetCoverageToColorLocationNV(commandBuffer, coverageToColorLocation);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCullMode(
+    void IVk.CmdSetCullMode(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkCullModeFlags")] uint cullMode
     ) =>
@@ -45257,7 +45228,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetCullMode(commandBuffer, cullMode);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetCullModeEXT(
+    void IVk.CmdSetCullModeEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkCullModeFlags")] uint cullMode
     ) =>
@@ -45285,7 +45256,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetCullModeEXT(commandBuffer, cullMode);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthBias(
+    void IVk.CmdSetDepthBias(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         float depthBiasConstantFactor,
         float depthBiasClamp,
@@ -45320,7 +45291,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthBias2EXT(
+    void IVk.CmdSetDepthBias2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDepthBiasInfoEXT *")] DepthBiasInfoEXT* pDepthBiasInfo
     ) =>
@@ -45348,14 +45319,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthBias2EXT(commandBuffer, pDepthBiasInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthBias2EXT(
+    void IVk.CmdSetDepthBias2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDepthBiasInfoEXT *")] Ref<DepthBiasInfoEXT> pDepthBiasInfo
     )
     {
         fixed (DepthBiasInfoEXT* __dsl_pDepthBiasInfo = pDepthBiasInfo)
         {
-            ((IVulkan)this).CmdSetDepthBias2EXT(commandBuffer, __dsl_pDepthBiasInfo);
+            ((IVk)this).CmdSetDepthBias2EXT(commandBuffer, __dsl_pDepthBiasInfo);
         }
     }
 
@@ -45376,7 +45347,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthBias2EXT(commandBuffer, pDepthBiasInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthBiasEnable(
+    void IVk.CmdSetDepthBiasEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint depthBiasEnable
     ) =>
@@ -45397,7 +45368,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthBiasEnable(commandBuffer, depthBiasEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthBiasEnableEXT(
+    void IVk.CmdSetDepthBiasEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint depthBiasEnable
     ) =>
@@ -45428,7 +45399,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthBiasEnableEXT(commandBuffer, depthBiasEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthBounds(
+    void IVk.CmdSetDepthBounds(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         float minDepthBounds,
         float maxDepthBounds
@@ -45455,7 +45426,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthBounds(commandBuffer, minDepthBounds, maxDepthBounds);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthBoundsTestEnable(
+    void IVk.CmdSetDepthBoundsTestEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint depthBoundsTestEnable
     ) =>
@@ -45479,7 +45450,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthBoundsTestEnable(commandBuffer, depthBoundsTestEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthBoundsTestEnableEXT(
+    void IVk.CmdSetDepthBoundsTestEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint depthBoundsTestEnable
     ) =>
@@ -45510,7 +45481,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthBoundsTestEnableEXT(commandBuffer, depthBoundsTestEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthClampEnableEXT(
+    void IVk.CmdSetDepthClampEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint depthClampEnable
     ) =>
@@ -45541,7 +45512,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthClampEnableEXT(commandBuffer, depthClampEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthClampRangeEXT(
+    void IVk.CmdSetDepthClampRangeEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         DepthClampModeEXT depthClampMode,
         [NativeTypeName("const VkDepthClampRangeEXT *")] DepthClampRangeEXT* pDepthClampRange
@@ -45580,7 +45551,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthClampRangeEXT(commandBuffer, depthClampMode, pDepthClampRange);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthClampRangeEXT(
+    void IVk.CmdSetDepthClampRangeEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         DepthClampModeEXT depthClampMode,
         [NativeTypeName("const VkDepthClampRangeEXT *")] Ref<DepthClampRangeEXT> pDepthClampRange
@@ -45588,7 +45559,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DepthClampRangeEXT* __dsl_pDepthClampRange = pDepthClampRange)
         {
-            ((IVulkan)this).CmdSetDepthClampRangeEXT(
+            ((IVk)this).CmdSetDepthClampRangeEXT(
                 commandBuffer,
                 depthClampMode,
                 __dsl_pDepthClampRange
@@ -45616,7 +45587,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthClampRangeEXT(commandBuffer, depthClampMode, pDepthClampRange);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthClipEnableEXT(
+    void IVk.CmdSetDepthClipEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint depthClipEnable
     ) =>
@@ -45648,7 +45619,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthClipEnableEXT(commandBuffer, depthClipEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthClipNegativeOneToOneEXT(
+    void IVk.CmdSetDepthClipNegativeOneToOneEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint negativeOneToOne
     ) =>
@@ -45680,7 +45651,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthClipNegativeOneToOneEXT(commandBuffer, negativeOneToOne);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthCompareOp(
+    void IVk.CmdSetDepthCompareOp(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         CompareOp depthCompareOp
     ) =>
@@ -45701,7 +45672,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthCompareOp(commandBuffer, depthCompareOp);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthCompareOpEXT(
+    void IVk.CmdSetDepthCompareOpEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         CompareOp depthCompareOp
     ) =>
@@ -45732,7 +45703,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthCompareOpEXT(commandBuffer, depthCompareOp);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthTestEnable(
+    void IVk.CmdSetDepthTestEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint depthTestEnable
     ) =>
@@ -45753,7 +45724,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthTestEnable(commandBuffer, depthTestEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthTestEnableEXT(
+    void IVk.CmdSetDepthTestEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint depthTestEnable
     ) =>
@@ -45784,7 +45755,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthTestEnableEXT(commandBuffer, depthTestEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthWriteEnable(
+    void IVk.CmdSetDepthWriteEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint depthWriteEnable
     ) =>
@@ -45805,7 +45776,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthWriteEnable(commandBuffer, depthWriteEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDepthWriteEnableEXT(
+    void IVk.CmdSetDepthWriteEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint depthWriteEnable
     ) =>
@@ -45836,7 +45807,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDepthWriteEnableEXT(commandBuffer, depthWriteEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDescriptorBufferOffsets2EXT(
+    void IVk.CmdSetDescriptorBufferOffsets2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSetDescriptorBufferOffsetsInfoEXT *")]
             SetDescriptorBufferOffsetsInfoEXT* pSetDescriptorBufferOffsetsInfo
@@ -45868,7 +45839,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.CmdSetDescriptorBufferOffsets2EXT(commandBuffer, pSetDescriptorBufferOffsetsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDescriptorBufferOffsets2EXT(
+    void IVk.CmdSetDescriptorBufferOffsets2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSetDescriptorBufferOffsetsInfoEXT *")]
             Ref<SetDescriptorBufferOffsetsInfoEXT> pSetDescriptorBufferOffsetsInfo
@@ -45879,7 +45850,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pSetDescriptorBufferOffsetsInfo
         )
         {
-            ((IVulkan)this).CmdSetDescriptorBufferOffsets2EXT(
+            ((IVk)this).CmdSetDescriptorBufferOffsets2EXT(
                 commandBuffer,
                 __dsl_pSetDescriptorBufferOffsetsInfo
             );
@@ -45903,7 +45874,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.CmdSetDescriptorBufferOffsets2EXT(commandBuffer, pSetDescriptorBufferOffsetsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDescriptorBufferOffsetsEXT(
+    void IVk.CmdSetDescriptorBufferOffsetsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
@@ -45963,7 +45934,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDescriptorBufferOffsetsEXT(
+    void IVk.CmdSetDescriptorBufferOffsetsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
@@ -45976,7 +45947,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ulong* __dsl_pOffsets = pOffsets)
         fixed (uint* __dsl_pBufferIndices = pBufferIndices)
         {
-            ((IVulkan)this).CmdSetDescriptorBufferOffsetsEXT(
+            ((IVk)this).CmdSetDescriptorBufferOffsetsEXT(
                 commandBuffer,
                 pipelineBindPoint,
                 layout,
@@ -46021,7 +45992,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDeviceMask(
+    void IVk.CmdSetDeviceMask(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint deviceMask
     ) =>
@@ -46046,7 +46017,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDeviceMask(commandBuffer, deviceMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDeviceMaskKHR(
+    void IVk.CmdSetDeviceMaskKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint deviceMask
     ) =>
@@ -46071,7 +46042,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDeviceMaskKHR(commandBuffer, deviceMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDiscardRectangleEnableEXT(
+    void IVk.CmdSetDiscardRectangleEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint discardRectangleEnable
     ) =>
@@ -46102,7 +46073,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDiscardRectangleEnableEXT(commandBuffer, discardRectangleEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDiscardRectangleEXT(
+    void IVk.CmdSetDiscardRectangleEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstDiscardRectangle,
         [NativeTypeName("uint32_t")] uint discardRectangleCount,
@@ -46143,7 +46114,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDiscardRectangleEXT(
+    void IVk.CmdSetDiscardRectangleEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstDiscardRectangle,
         [NativeTypeName("uint32_t")] uint discardRectangleCount,
@@ -46152,7 +46123,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (Rect2D* __dsl_pDiscardRectangles = pDiscardRectangles)
         {
-            ((IVulkan)this).CmdSetDiscardRectangleEXT(
+            ((IVk)this).CmdSetDiscardRectangleEXT(
                 commandBuffer,
                 firstDiscardRectangle,
                 discardRectangleCount,
@@ -46186,12 +46157,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDiscardRectangleEXT(
+    void IVk.CmdSetDiscardRectangleEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstDiscardRectangle,
         [NativeTypeName("const VkRect2D *")] Rect2D pDiscardRectangles
     ) =>
-        ((IVulkan)this).CmdSetDiscardRectangleEXT(
+        ((IVk)this).CmdSetDiscardRectangleEXT(
             commandBuffer,
             firstDiscardRectangle,
             1,
@@ -46221,7 +46192,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetDiscardRectangleModeEXT(
+    void IVk.CmdSetDiscardRectangleModeEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         DiscardRectangleModeEXT discardRectangleMode
     ) =>
@@ -46252,7 +46223,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetDiscardRectangleModeEXT(commandBuffer, discardRectangleMode);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetEvent(
+    void IVk.CmdSetEvent(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
         [NativeTypeName("VkPipelineStageFlags")] uint stageMask
@@ -46279,7 +46250,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetEvent(commandBuffer, @event, stageMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetEvent2(
+    void IVk.CmdSetEvent2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
         [NativeTypeName("const VkDependencyInfo *")] DependencyInfo* pDependencyInfo
@@ -46302,7 +46273,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetEvent2(commandBuffer, @event, pDependencyInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetEvent2(
+    void IVk.CmdSetEvent2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
         [NativeTypeName("const VkDependencyInfo *")] Ref<DependencyInfo> pDependencyInfo
@@ -46310,7 +46281,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DependencyInfo* __dsl_pDependencyInfo = pDependencyInfo)
         {
-            ((IVulkan)this).CmdSetEvent2(commandBuffer, @event, __dsl_pDependencyInfo);
+            ((IVk)this).CmdSetEvent2(commandBuffer, @event, __dsl_pDependencyInfo);
         }
     }
 
@@ -46325,7 +46296,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetEvent2(commandBuffer, @event, pDependencyInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetEvent2KHR(
+    void IVk.CmdSetEvent2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
         [NativeTypeName("const VkDependencyInfo *")] DependencyInfo* pDependencyInfo
@@ -46355,7 +46326,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetEvent2KHR(commandBuffer, @event, pDependencyInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetEvent2KHR(
+    void IVk.CmdSetEvent2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
         [NativeTypeName("const VkDependencyInfo *")] Ref<DependencyInfo> pDependencyInfo
@@ -46363,7 +46334,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DependencyInfo* __dsl_pDependencyInfo = pDependencyInfo)
         {
-            ((IVulkan)this).CmdSetEvent2KHR(commandBuffer, @event, __dsl_pDependencyInfo);
+            ((IVk)this).CmdSetEvent2KHR(commandBuffer, @event, __dsl_pDependencyInfo);
         }
     }
 
@@ -46385,7 +46356,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetEvent2KHR(commandBuffer, @event, pDependencyInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetExclusiveScissorEnableNV(
+    void IVk.CmdSetExclusiveScissorEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
         [NativeTypeName("uint32_t")] uint exclusiveScissorCount,
@@ -46426,7 +46397,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetExclusiveScissorEnableNV(
+    void IVk.CmdSetExclusiveScissorEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
         [NativeTypeName("uint32_t")] uint exclusiveScissorCount,
@@ -46435,7 +46406,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (uint* __dsl_pExclusiveScissorEnables = pExclusiveScissorEnables)
         {
-            ((IVulkan)this).CmdSetExclusiveScissorEnableNV(
+            ((IVk)this).CmdSetExclusiveScissorEnableNV(
                 commandBuffer,
                 firstExclusiveScissor,
                 exclusiveScissorCount,
@@ -46469,12 +46440,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetExclusiveScissorEnableNV(
+    void IVk.CmdSetExclusiveScissorEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
         [NativeTypeName("const VkBool32 *")] uint pExclusiveScissorEnables
     ) =>
-        ((IVulkan)this).CmdSetExclusiveScissorEnableNV(
+        ((IVk)this).CmdSetExclusiveScissorEnableNV(
             commandBuffer,
             firstExclusiveScissor,
             1,
@@ -46504,7 +46475,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetExclusiveScissorNV(
+    void IVk.CmdSetExclusiveScissorNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
         [NativeTypeName("uint32_t")] uint exclusiveScissorCount,
@@ -46545,7 +46516,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetExclusiveScissorNV(
+    void IVk.CmdSetExclusiveScissorNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
         [NativeTypeName("uint32_t")] uint exclusiveScissorCount,
@@ -46554,7 +46525,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (Rect2D* __dsl_pExclusiveScissors = pExclusiveScissors)
         {
-            ((IVulkan)this).CmdSetExclusiveScissorNV(
+            ((IVk)this).CmdSetExclusiveScissorNV(
                 commandBuffer,
                 firstExclusiveScissor,
                 exclusiveScissorCount,
@@ -46588,12 +46559,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetExclusiveScissorNV(
+    void IVk.CmdSetExclusiveScissorNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
         [NativeTypeName("const VkRect2D *")] Rect2D pExclusiveScissors
     ) =>
-        ((IVulkan)this).CmdSetExclusiveScissorNV(
+        ((IVk)this).CmdSetExclusiveScissorNV(
             commandBuffer,
             firstExclusiveScissor,
             1,
@@ -46623,7 +46594,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetExtraPrimitiveOverestimationSizeEXT(
+    void IVk.CmdSetExtraPrimitiveOverestimationSizeEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         float extraPrimitiveOverestimationSize
     ) =>
@@ -46659,7 +46630,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetFragmentShadingRateEnumNV(
+    void IVk.CmdSetFragmentShadingRateEnumNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         FragmentShadingRateNV shadingRate,
         [NativeTypeName("const VkFragmentShadingRateCombinerOpKHR[2]")]
@@ -46695,7 +46666,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetFragmentShadingRateEnumNV(commandBuffer, shadingRate, combinerOps);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetFragmentShadingRateEnumNV(
+    void IVk.CmdSetFragmentShadingRateEnumNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         FragmentShadingRateNV shadingRate,
         [NativeTypeName("const VkFragmentShadingRateCombinerOpKHR[2]")]
@@ -46704,7 +46675,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (FragmentShadingRateCombinerOpKHR* __dsl_combinerOps = combinerOps)
         {
-            ((IVulkan)this).CmdSetFragmentShadingRateEnumNV(
+            ((IVk)this).CmdSetFragmentShadingRateEnumNV(
                 commandBuffer,
                 shadingRate,
                 __dsl_combinerOps
@@ -46728,7 +46699,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetFragmentShadingRateEnumNV(commandBuffer, shadingRate, combinerOps);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetFragmentShadingRateKHR(
+    void IVk.CmdSetFragmentShadingRateKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkExtent2D *")] Extent2D* pFragmentSize,
         [NativeTypeName("const VkFragmentShadingRateCombinerOpKHR[2]")]
@@ -46768,7 +46739,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetFragmentShadingRateKHR(commandBuffer, pFragmentSize, combinerOps);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetFragmentShadingRateKHR(
+    void IVk.CmdSetFragmentShadingRateKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkExtent2D *")] Ref<Extent2D> pFragmentSize,
         [NativeTypeName("const VkFragmentShadingRateCombinerOpKHR[2]")]
@@ -46778,7 +46749,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (FragmentShadingRateCombinerOpKHR* __dsl_combinerOps = combinerOps)
         fixed (Extent2D* __dsl_pFragmentSize = pFragmentSize)
         {
-            ((IVulkan)this).CmdSetFragmentShadingRateKHR(
+            ((IVk)this).CmdSetFragmentShadingRateKHR(
                 commandBuffer,
                 __dsl_pFragmentSize,
                 __dsl_combinerOps
@@ -46806,7 +46777,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetFragmentShadingRateKHR(commandBuffer, pFragmentSize, combinerOps);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetFrontFace(
+    void IVk.CmdSetFrontFace(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         FrontFace frontFace
     ) =>
@@ -46827,7 +46798,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetFrontFace(commandBuffer, frontFace);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetFrontFaceEXT(
+    void IVk.CmdSetFrontFaceEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         FrontFace frontFace
     ) =>
@@ -46855,7 +46826,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetFrontFaceEXT(commandBuffer, frontFace);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetLineRasterizationModeEXT(
+    void IVk.CmdSetLineRasterizationModeEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkLineRasterizationModeEXT")] LineRasterizationMode lineRasterizationMode
     ) =>
@@ -46887,7 +46858,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetLineRasterizationModeEXT(commandBuffer, lineRasterizationMode);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetLineStipple(
+    void IVk.CmdSetLineStipple(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint lineStippleFactor,
         [NativeTypeName("uint16_t")] ushort lineStipplePattern
@@ -46910,7 +46881,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetLineStipple(commandBuffer, lineStippleFactor, lineStipplePattern);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetLineStippleEnableEXT(
+    void IVk.CmdSetLineStippleEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint stippledLineEnable
     ) =>
@@ -46942,7 +46913,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetLineStippleEnableEXT(commandBuffer, stippledLineEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetLineStippleEXT(
+    void IVk.CmdSetLineStippleEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint lineStippleFactor,
         [NativeTypeName("uint16_t")] ushort lineStipplePattern
@@ -46972,7 +46943,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetLineStippleEXT(commandBuffer, lineStippleFactor, lineStipplePattern);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetLineStippleKHR(
+    void IVk.CmdSetLineStippleKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint lineStippleFactor,
         [NativeTypeName("uint16_t")] ushort lineStipplePattern
@@ -47002,7 +46973,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetLineStippleKHR(commandBuffer, lineStippleFactor, lineStipplePattern);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetLineWidth(
+    void IVk.CmdSetLineWidth(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         float lineWidth
     ) =>
@@ -47027,7 +46998,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetLineWidth(commandBuffer, lineWidth);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetLogicOpEnableEXT(
+    void IVk.CmdSetLogicOpEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint logicOpEnable
     ) =>
@@ -47055,7 +47026,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetLogicOpEnableEXT(commandBuffer, logicOpEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetLogicOpEXT(
+    void IVk.CmdSetLogicOpEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         LogicOp logicOp
     ) =>
@@ -47083,7 +47054,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetLogicOpEXT(commandBuffer, logicOp);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetPatchControlPointsEXT(
+    void IVk.CmdSetPatchControlPointsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint patchControlPoints
     ) =>
@@ -47114,7 +47085,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPatchControlPointsEXT(commandBuffer, patchControlPoints);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CmdSetPerformanceMarkerIntel(
+    Result IVk.CmdSetPerformanceMarkerIntel(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPerformanceMarkerInfoINTEL *")]
             PerformanceMarkerInfoIntel* pMarkerInfo
@@ -47140,7 +47111,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPerformanceMarkerIntel(commandBuffer, pMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CmdSetPerformanceMarkerIntel(
+    Result IVk.CmdSetPerformanceMarkerIntel(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPerformanceMarkerInfoINTEL *")]
             Ref<PerformanceMarkerInfoIntel> pMarkerInfo
@@ -47149,7 +47120,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PerformanceMarkerInfoIntel* __dsl_pMarkerInfo = pMarkerInfo)
         {
             return (Result)
-                ((IVulkan)this).CmdSetPerformanceMarkerIntel(commandBuffer, __dsl_pMarkerInfo);
+                ((IVk)this).CmdSetPerformanceMarkerIntel(commandBuffer, __dsl_pMarkerInfo);
         }
     }
 
@@ -47164,7 +47135,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPerformanceMarkerIntel(commandBuffer, pMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CmdSetPerformanceOverrideIntel(
+    Result IVk.CmdSetPerformanceOverrideIntel(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPerformanceOverrideInfoINTEL *")]
             PerformanceOverrideInfoIntel* pOverrideInfo
@@ -47190,7 +47161,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPerformanceOverrideIntel(commandBuffer, pOverrideInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CmdSetPerformanceOverrideIntel(
+    Result IVk.CmdSetPerformanceOverrideIntel(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPerformanceOverrideInfoINTEL *")]
             Ref<PerformanceOverrideInfoIntel> pOverrideInfo
@@ -47199,7 +47170,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PerformanceOverrideInfoIntel* __dsl_pOverrideInfo = pOverrideInfo)
         {
             return (Result)
-                ((IVulkan)this).CmdSetPerformanceOverrideIntel(commandBuffer, __dsl_pOverrideInfo);
+                ((IVk)this).CmdSetPerformanceOverrideIntel(commandBuffer, __dsl_pOverrideInfo);
         }
     }
 
@@ -47214,7 +47185,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPerformanceOverrideIntel(commandBuffer, pOverrideInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CmdSetPerformanceStreamMarkerIntel(
+    Result IVk.CmdSetPerformanceStreamMarkerIntel(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPerformanceStreamMarkerInfoINTEL *")]
             PerformanceStreamMarkerInfoIntel* pMarkerInfo
@@ -47240,7 +47211,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPerformanceStreamMarkerIntel(commandBuffer, pMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CmdSetPerformanceStreamMarkerIntel(
+    Result IVk.CmdSetPerformanceStreamMarkerIntel(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPerformanceStreamMarkerInfoINTEL *")]
             Ref<PerformanceStreamMarkerInfoIntel> pMarkerInfo
@@ -47249,10 +47220,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PerformanceStreamMarkerInfoIntel* __dsl_pMarkerInfo = pMarkerInfo)
         {
             return (Result)
-                ((IVulkan)this).CmdSetPerformanceStreamMarkerIntel(
-                    commandBuffer,
-                    __dsl_pMarkerInfo
-                );
+                ((IVk)this).CmdSetPerformanceStreamMarkerIntel(commandBuffer, __dsl_pMarkerInfo);
         }
     }
 
@@ -47267,7 +47235,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPerformanceStreamMarkerIntel(commandBuffer, pMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetPolygonModeEXT(
+    void IVk.CmdSetPolygonModeEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PolygonMode polygonMode
     ) =>
@@ -47295,7 +47263,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPolygonModeEXT(commandBuffer, polygonMode);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetPrimitiveRestartEnable(
+    void IVk.CmdSetPrimitiveRestartEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint primitiveRestartEnable
     ) =>
@@ -47319,7 +47287,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPrimitiveRestartEnable(commandBuffer, primitiveRestartEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetPrimitiveRestartEnableEXT(
+    void IVk.CmdSetPrimitiveRestartEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint primitiveRestartEnable
     ) =>
@@ -47350,7 +47318,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPrimitiveRestartEnableEXT(commandBuffer, primitiveRestartEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetPrimitiveTopology(
+    void IVk.CmdSetPrimitiveTopology(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PrimitiveTopology primitiveTopology
     ) =>
@@ -47374,7 +47342,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPrimitiveTopology(commandBuffer, primitiveTopology);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetPrimitiveTopologyEXT(
+    void IVk.CmdSetPrimitiveTopologyEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PrimitiveTopology primitiveTopology
     ) =>
@@ -47405,7 +47373,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetPrimitiveTopologyEXT(commandBuffer, primitiveTopology);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetProvokingVertexModeEXT(
+    void IVk.CmdSetProvokingVertexModeEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         ProvokingVertexModeEXT provokingVertexMode
     ) =>
@@ -47437,7 +47405,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetProvokingVertexModeEXT(commandBuffer, provokingVertexMode);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRasterizationSamplesEXT(
+    void IVk.CmdSetRasterizationSamplesEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags rasterizationSamples
     ) =>
@@ -47468,7 +47436,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetRasterizationSamplesEXT(commandBuffer, rasterizationSamples);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRasterizationStreamEXT(
+    void IVk.CmdSetRasterizationStreamEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint rasterizationStream
     ) =>
@@ -47500,7 +47468,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetRasterizationStreamEXT(commandBuffer, rasterizationStream);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRasterizerDiscardEnable(
+    void IVk.CmdSetRasterizerDiscardEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint rasterizerDiscardEnable
     ) =>
@@ -47524,7 +47492,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetRasterizerDiscardEnable(commandBuffer, rasterizerDiscardEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRasterizerDiscardEnableEXT(
+    void IVk.CmdSetRasterizerDiscardEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint rasterizerDiscardEnable
     ) =>
@@ -47555,7 +47523,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetRasterizerDiscardEnableEXT(commandBuffer, rasterizerDiscardEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRayTracingPipelineStackSizeKHR(
+    void IVk.CmdSetRayTracingPipelineStackSizeKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint pipelineStackSize
     ) =>
@@ -47586,7 +47554,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetRayTracingPipelineStackSizeKHR(commandBuffer, pipelineStackSize);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRenderingAttachmentLocations(
+    void IVk.CmdSetRenderingAttachmentLocations(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingAttachmentLocationInfo *")]
             RenderingAttachmentLocationInfo* pLocationInfo
@@ -47612,7 +47580,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetRenderingAttachmentLocations(commandBuffer, pLocationInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRenderingAttachmentLocations(
+    void IVk.CmdSetRenderingAttachmentLocations(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingAttachmentLocationInfo *")]
             Ref<RenderingAttachmentLocationInfo> pLocationInfo
@@ -47620,7 +47588,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (RenderingAttachmentLocationInfo* __dsl_pLocationInfo = pLocationInfo)
         {
-            ((IVulkan)this).CmdSetRenderingAttachmentLocations(commandBuffer, __dsl_pLocationInfo);
+            ((IVk)this).CmdSetRenderingAttachmentLocations(commandBuffer, __dsl_pLocationInfo);
         }
     }
 
@@ -47635,7 +47603,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetRenderingAttachmentLocations(commandBuffer, pLocationInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRenderingAttachmentLocationsKHR(
+    void IVk.CmdSetRenderingAttachmentLocationsKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingAttachmentLocationInfo *")]
             RenderingAttachmentLocationInfo* pLocationInfo
@@ -47668,7 +47636,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetRenderingAttachmentLocationsKHR(commandBuffer, pLocationInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRenderingAttachmentLocationsKHR(
+    void IVk.CmdSetRenderingAttachmentLocationsKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingAttachmentLocationInfo *")]
             Ref<RenderingAttachmentLocationInfo> pLocationInfo
@@ -47676,10 +47644,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (RenderingAttachmentLocationInfo* __dsl_pLocationInfo = pLocationInfo)
         {
-            ((IVulkan)this).CmdSetRenderingAttachmentLocationsKHR(
-                commandBuffer,
-                __dsl_pLocationInfo
-            );
+            ((IVk)this).CmdSetRenderingAttachmentLocationsKHR(commandBuffer, __dsl_pLocationInfo);
         }
     }
 
@@ -47701,7 +47666,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetRenderingAttachmentLocationsKHR(commandBuffer, pLocationInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRenderingInputAttachmentIndices(
+    void IVk.CmdSetRenderingInputAttachmentIndices(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingInputAttachmentIndexInfo *")]
             RenderingInputAttachmentIndexInfo* pInputAttachmentIndexInfo
@@ -47727,7 +47692,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetRenderingInputAttachmentIndices(commandBuffer, pInputAttachmentIndexInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRenderingInputAttachmentIndices(
+    void IVk.CmdSetRenderingInputAttachmentIndices(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingInputAttachmentIndexInfo *")]
             Ref<RenderingInputAttachmentIndexInfo> pInputAttachmentIndexInfo
@@ -47738,7 +47703,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pInputAttachmentIndexInfo
         )
         {
-            ((IVulkan)this).CmdSetRenderingInputAttachmentIndices(
+            ((IVk)this).CmdSetRenderingInputAttachmentIndices(
                 commandBuffer,
                 __dsl_pInputAttachmentIndexInfo
             );
@@ -47756,7 +47721,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetRenderingInputAttachmentIndices(commandBuffer, pInputAttachmentIndexInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRenderingInputAttachmentIndicesKHR(
+    void IVk.CmdSetRenderingInputAttachmentIndicesKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingInputAttachmentIndexInfo *")]
             RenderingInputAttachmentIndexInfo* pInputAttachmentIndexInfo
@@ -47793,7 +47758,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRenderingInputAttachmentIndicesKHR(
+    void IVk.CmdSetRenderingInputAttachmentIndicesKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingInputAttachmentIndexInfo *")]
             Ref<RenderingInputAttachmentIndexInfo> pInputAttachmentIndexInfo
@@ -47804,7 +47769,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pInputAttachmentIndexInfo
         )
         {
-            ((IVulkan)this).CmdSetRenderingInputAttachmentIndicesKHR(
+            ((IVk)this).CmdSetRenderingInputAttachmentIndicesKHR(
                 commandBuffer,
                 __dsl_pInputAttachmentIndexInfo
             );
@@ -47833,7 +47798,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetRepresentativeFragmentTestEnableNV(
+    void IVk.CmdSetRepresentativeFragmentTestEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint representativeFragmentTestEnable
     ) =>
@@ -47869,7 +47834,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetSampleLocationsEnableEXT(
+    void IVk.CmdSetSampleLocationsEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint sampleLocationsEnable
     ) =>
@@ -47901,7 +47866,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetSampleLocationsEnableEXT(commandBuffer, sampleLocationsEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetSampleLocationsEXT(
+    void IVk.CmdSetSampleLocationsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSampleLocationsInfoEXT *")]
             SampleLocationsInfoEXT* pSampleLocationsInfo
@@ -47934,7 +47899,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetSampleLocationsEXT(commandBuffer, pSampleLocationsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetSampleLocationsEXT(
+    void IVk.CmdSetSampleLocationsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkSampleLocationsInfoEXT *")]
             Ref<SampleLocationsInfoEXT> pSampleLocationsInfo
@@ -47942,7 +47907,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (SampleLocationsInfoEXT* __dsl_pSampleLocationsInfo = pSampleLocationsInfo)
         {
-            ((IVulkan)this).CmdSetSampleLocationsEXT(commandBuffer, __dsl_pSampleLocationsInfo);
+            ((IVk)this).CmdSetSampleLocationsEXT(commandBuffer, __dsl_pSampleLocationsInfo);
         }
     }
 
@@ -47964,7 +47929,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetSampleLocationsEXT(commandBuffer, pSampleLocationsInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetSampleMaskEXT(
+    void IVk.CmdSetSampleMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         [NativeTypeName("const VkSampleMask *")] uint* pSampleMask
@@ -47994,7 +47959,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetSampleMaskEXT(commandBuffer, samples, pSampleMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetSampleMaskEXT(
+    void IVk.CmdSetSampleMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         [NativeTypeName("const VkSampleMask *")] Ref<uint> pSampleMask
@@ -48002,7 +47967,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (uint* __dsl_pSampleMask = pSampleMask)
         {
-            ((IVulkan)this).CmdSetSampleMaskEXT(commandBuffer, samples, __dsl_pSampleMask);
+            ((IVk)this).CmdSetSampleMaskEXT(commandBuffer, samples, __dsl_pSampleMask);
         }
     }
 
@@ -48024,7 +47989,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetSampleMaskEXT(commandBuffer, samples, pSampleMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetScissor(
+    void IVk.CmdSetScissor(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstScissor,
         [NativeTypeName("uint32_t")] uint scissorCount,
@@ -48053,7 +48018,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetScissor(commandBuffer, firstScissor, scissorCount, pScissors);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetScissor(
+    void IVk.CmdSetScissor(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstScissor,
         [NativeTypeName("uint32_t")] uint scissorCount,
@@ -48062,12 +48027,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (Rect2D* __dsl_pScissors = pScissors)
         {
-            ((IVulkan)this).CmdSetScissor(
-                commandBuffer,
-                firstScissor,
-                scissorCount,
-                __dsl_pScissors
-            );
+            ((IVk)this).CmdSetScissor(commandBuffer, firstScissor, scissorCount, __dsl_pScissors);
         }
     }
 
@@ -48087,11 +48047,11 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetScissor(commandBuffer, firstScissor, scissorCount, pScissors);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetScissor(
+    void IVk.CmdSetScissor(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstScissor,
         [NativeTypeName("const VkRect2D *")] Rect2D pScissors
-    ) => ((IVulkan)this).CmdSetScissor(commandBuffer, firstScissor, 1, (Rect2D*)&pScissors);
+    ) => ((IVk)this).CmdSetScissor(commandBuffer, firstScissor, 1, (Rect2D*)&pScissors);
 
     [SupportedApiProfile(
         "vulkan",
@@ -48108,7 +48068,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetScissor(commandBuffer, firstScissor, pScissors);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetScissorWithCount(
+    void IVk.CmdSetScissorWithCount(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint scissorCount,
         [NativeTypeName("const VkRect2D *")] Rect2D* pScissors
@@ -48131,7 +48091,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetScissorWithCount(commandBuffer, scissorCount, pScissors);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetScissorWithCount(
+    void IVk.CmdSetScissorWithCount(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint scissorCount,
         [NativeTypeName("const VkRect2D *")] Ref<Rect2D> pScissors
@@ -48139,7 +48099,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (Rect2D* __dsl_pScissors = pScissors)
         {
-            ((IVulkan)this).CmdSetScissorWithCount(commandBuffer, scissorCount, __dsl_pScissors);
+            ((IVk)this).CmdSetScissorWithCount(commandBuffer, scissorCount, __dsl_pScissors);
         }
     }
 
@@ -48154,10 +48114,10 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetScissorWithCount(commandBuffer, scissorCount, pScissors);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetScissorWithCount(
+    void IVk.CmdSetScissorWithCount(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRect2D *")] Rect2D pScissors
-    ) => ((IVulkan)this).CmdSetScissorWithCount(commandBuffer, 1, (Rect2D*)&pScissors);
+    ) => ((IVk)this).CmdSetScissorWithCount(commandBuffer, 1, (Rect2D*)&pScissors);
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     [Transformed]
@@ -48169,7 +48129,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetScissorWithCount(commandBuffer, pScissors);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetScissorWithCountEXT(
+    void IVk.CmdSetScissorWithCountEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint scissorCount,
         [NativeTypeName("const VkRect2D *")] Rect2D* pScissors
@@ -48202,7 +48162,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetScissorWithCountEXT(commandBuffer, scissorCount, pScissors);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetScissorWithCountEXT(
+    void IVk.CmdSetScissorWithCountEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint scissorCount,
         [NativeTypeName("const VkRect2D *")] Ref<Rect2D> pScissors
@@ -48210,7 +48170,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (Rect2D* __dsl_pScissors = pScissors)
         {
-            ((IVulkan)this).CmdSetScissorWithCountEXT(commandBuffer, scissorCount, __dsl_pScissors);
+            ((IVk)this).CmdSetScissorWithCountEXT(commandBuffer, scissorCount, __dsl_pScissors);
         }
     }
 
@@ -48232,10 +48192,10 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetScissorWithCountEXT(commandBuffer, scissorCount, pScissors);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetScissorWithCountEXT(
+    void IVk.CmdSetScissorWithCountEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRect2D *")] Rect2D pScissors
-    ) => ((IVulkan)this).CmdSetScissorWithCountEXT(commandBuffer, 1, (Rect2D*)&pScissors);
+    ) => ((IVk)this).CmdSetScissorWithCountEXT(commandBuffer, 1, (Rect2D*)&pScissors);
 
     [SupportedApiProfile(
         "vulkan",
@@ -48254,7 +48214,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetScissorWithCountEXT(commandBuffer, pScissors);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetShadingRateImageEnableNV(
+    void IVk.CmdSetShadingRateImageEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint shadingRateImageEnable
     ) =>
@@ -48286,7 +48246,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetShadingRateImageEnableNV(commandBuffer, shadingRateImageEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetStencilCompareMask(
+    void IVk.CmdSetStencilCompareMask(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
         [NativeTypeName("uint32_t")] uint compareMask
@@ -48316,7 +48276,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetStencilCompareMask(commandBuffer, faceMask, compareMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetStencilOp(
+    void IVk.CmdSetStencilOp(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
         StencilOp failOp,
@@ -48352,7 +48312,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetStencilOp(commandBuffer, faceMask, failOp, passOp, depthFailOp, compareOp);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetStencilOpEXT(
+    void IVk.CmdSetStencilOpEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
         StencilOp failOp,
@@ -48403,7 +48363,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetStencilReference(
+    void IVk.CmdSetStencilReference(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
         [NativeTypeName("uint32_t")] uint reference
@@ -48430,7 +48390,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetStencilReference(commandBuffer, faceMask, reference);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetStencilTestEnable(
+    void IVk.CmdSetStencilTestEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint stencilTestEnable
     ) =>
@@ -48454,7 +48414,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetStencilTestEnable(commandBuffer, stencilTestEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetStencilTestEnableEXT(
+    void IVk.CmdSetStencilTestEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint stencilTestEnable
     ) =>
@@ -48485,7 +48445,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetStencilTestEnableEXT(commandBuffer, stencilTestEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetStencilWriteMask(
+    void IVk.CmdSetStencilWriteMask(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
         [NativeTypeName("uint32_t")] uint writeMask
@@ -48512,7 +48472,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetStencilWriteMask(commandBuffer, faceMask, writeMask);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetTessellationDomainOriginEXT(
+    void IVk.CmdSetTessellationDomainOriginEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         TessellationDomainOrigin domainOrigin
     ) =>
@@ -48546,7 +48506,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetTessellationDomainOriginEXT(commandBuffer, domainOrigin);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetVertexInputEXT(
+    void IVk.CmdSetVertexInputEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint vertexBindingDescriptionCount,
         [NativeTypeName("const VkVertexInputBindingDescription2EXT *")]
@@ -48603,7 +48563,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetVertexInputEXT(
+    void IVk.CmdSetVertexInputEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint vertexBindingDescriptionCount,
         [NativeTypeName("const VkVertexInputBindingDescription2EXT *")]
@@ -48622,7 +48582,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pVertexBindingDescriptions
         )
         {
-            ((IVulkan)this).CmdSetVertexInputEXT(
+            ((IVk)this).CmdSetVertexInputEXT(
                 commandBuffer,
                 vertexBindingDescriptionCount,
                 __dsl_pVertexBindingDescriptions,
@@ -48661,7 +48621,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewport(
+    void IVk.CmdSetViewport(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("uint32_t")] uint viewportCount,
@@ -48690,7 +48650,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewport(commandBuffer, firstViewport, viewportCount, pViewports);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewport(
+    void IVk.CmdSetViewport(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("uint32_t")] uint viewportCount,
@@ -48699,7 +48659,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (Viewport* __dsl_pViewports = pViewports)
         {
-            ((IVulkan)this).CmdSetViewport(
+            ((IVk)this).CmdSetViewport(
                 commandBuffer,
                 firstViewport,
                 viewportCount,
@@ -48724,11 +48684,11 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewport(commandBuffer, firstViewport, viewportCount, pViewports);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewport(
+    void IVk.CmdSetViewport(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("const VkViewport *")] Viewport pViewports
-    ) => ((IVulkan)this).CmdSetViewport(commandBuffer, firstViewport, 1, (Viewport*)&pViewports);
+    ) => ((IVk)this).CmdSetViewport(commandBuffer, firstViewport, 1, (Viewport*)&pViewports);
 
     [SupportedApiProfile(
         "vulkan",
@@ -48745,7 +48705,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewport(commandBuffer, firstViewport, pViewports);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportShadingRatePaletteNV(
+    void IVk.CmdSetViewportShadingRatePaletteNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("uint32_t")] uint viewportCount,
@@ -48788,7 +48748,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportShadingRatePaletteNV(
+    void IVk.CmdSetViewportShadingRatePaletteNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("uint32_t")] uint viewportCount,
@@ -48798,7 +48758,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ShadingRatePaletteNV* __dsl_pShadingRatePalettes = pShadingRatePalettes)
         {
-            ((IVulkan)this).CmdSetViewportShadingRatePaletteNV(
+            ((IVk)this).CmdSetViewportShadingRatePaletteNV(
                 commandBuffer,
                 firstViewport,
                 viewportCount,
@@ -48833,12 +48793,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportShadingRatePaletteNV(
+    void IVk.CmdSetViewportShadingRatePaletteNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("const VkShadingRatePaletteNV *")] ShadingRatePaletteNV pShadingRatePalettes
     ) =>
-        ((IVulkan)this).CmdSetViewportShadingRatePaletteNV(
+        ((IVk)this).CmdSetViewportShadingRatePaletteNV(
             commandBuffer,
             firstViewport,
             1,
@@ -48868,7 +48828,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportSwizzleNV(
+    void IVk.CmdSetViewportSwizzleNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("uint32_t")] uint viewportCount,
@@ -48910,7 +48870,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportSwizzleNV(
+    void IVk.CmdSetViewportSwizzleNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("uint32_t")] uint viewportCount,
@@ -48919,7 +48879,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ViewportSwizzleNV* __dsl_pViewportSwizzles = pViewportSwizzles)
         {
-            ((IVulkan)this).CmdSetViewportSwizzleNV(
+            ((IVk)this).CmdSetViewportSwizzleNV(
                 commandBuffer,
                 firstViewport,
                 viewportCount,
@@ -48954,12 +48914,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportSwizzleNV(
+    void IVk.CmdSetViewportSwizzleNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("const VkViewportSwizzleNV *")] ViewportSwizzleNV pViewportSwizzles
     ) =>
-        ((IVulkan)this).CmdSetViewportSwizzleNV(
+        ((IVk)this).CmdSetViewportSwizzleNV(
             commandBuffer,
             firstViewport,
             1,
@@ -48985,7 +48945,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewportSwizzleNV(commandBuffer, firstViewport, pViewportSwizzles);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportWithCount(
+    void IVk.CmdSetViewportWithCount(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint viewportCount,
         [NativeTypeName("const VkViewport *")] Viewport* pViewports
@@ -49011,7 +48971,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewportWithCount(commandBuffer, viewportCount, pViewports);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportWithCount(
+    void IVk.CmdSetViewportWithCount(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint viewportCount,
         [NativeTypeName("const VkViewport *")] Ref<Viewport> pViewports
@@ -49019,7 +48979,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (Viewport* __dsl_pViewports = pViewports)
         {
-            ((IVulkan)this).CmdSetViewportWithCount(commandBuffer, viewportCount, __dsl_pViewports);
+            ((IVk)this).CmdSetViewportWithCount(commandBuffer, viewportCount, __dsl_pViewports);
         }
     }
 
@@ -49034,10 +48994,10 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewportWithCount(commandBuffer, viewportCount, pViewports);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportWithCount(
+    void IVk.CmdSetViewportWithCount(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkViewport *")] Viewport pViewports
-    ) => ((IVulkan)this).CmdSetViewportWithCount(commandBuffer, 1, (Viewport*)&pViewports);
+    ) => ((IVk)this).CmdSetViewportWithCount(commandBuffer, 1, (Viewport*)&pViewports);
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     [Transformed]
@@ -49049,7 +49009,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewportWithCount(commandBuffer, pViewports);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportWithCountEXT(
+    void IVk.CmdSetViewportWithCountEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint viewportCount,
         [NativeTypeName("const VkViewport *")] Viewport* pViewports
@@ -49082,7 +49042,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewportWithCountEXT(commandBuffer, viewportCount, pViewports);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportWithCountEXT(
+    void IVk.CmdSetViewportWithCountEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint viewportCount,
         [NativeTypeName("const VkViewport *")] Ref<Viewport> pViewports
@@ -49090,11 +49050,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (Viewport* __dsl_pViewports = pViewports)
         {
-            ((IVulkan)this).CmdSetViewportWithCountEXT(
-                commandBuffer,
-                viewportCount,
-                __dsl_pViewports
-            );
+            ((IVk)this).CmdSetViewportWithCountEXT(commandBuffer, viewportCount, __dsl_pViewports);
         }
     }
 
@@ -49116,10 +49072,10 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewportWithCountEXT(commandBuffer, viewportCount, pViewports);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportWithCountEXT(
+    void IVk.CmdSetViewportWithCountEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkViewport *")] Viewport pViewports
-    ) => ((IVulkan)this).CmdSetViewportWithCountEXT(commandBuffer, 1, (Viewport*)&pViewports);
+    ) => ((IVk)this).CmdSetViewportWithCountEXT(commandBuffer, 1, (Viewport*)&pViewports);
 
     [SupportedApiProfile(
         "vulkan",
@@ -49138,7 +49094,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewportWithCountEXT(commandBuffer, pViewports);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportWScalingEnableNV(
+    void IVk.CmdSetViewportWScalingEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBool32")] uint viewportWScalingEnable
     ) =>
@@ -49170,7 +49126,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewportWScalingEnableNV(commandBuffer, viewportWScalingEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportWScalingNV(
+    void IVk.CmdSetViewportWScalingNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("uint32_t")] uint viewportCount,
@@ -49204,7 +49160,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportWScalingNV(
+    void IVk.CmdSetViewportWScalingNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("uint32_t")] uint viewportCount,
@@ -49213,7 +49169,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ViewportWScalingNV* __dsl_pViewportWScalings = pViewportWScalings)
         {
-            ((IVulkan)this).CmdSetViewportWScalingNV(
+            ((IVk)this).CmdSetViewportWScalingNV(
                 commandBuffer,
                 firstViewport,
                 viewportCount,
@@ -49240,12 +49196,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSetViewportWScalingNV(
+    void IVk.CmdSetViewportWScalingNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstViewport,
         [NativeTypeName("const VkViewportWScalingNV *")] ViewportWScalingNV pViewportWScalings
     ) =>
-        ((IVulkan)this).CmdSetViewportWScalingNV(
+        ((IVk)this).CmdSetViewportWScalingNV(
             commandBuffer,
             firstViewport,
             1,
@@ -49263,7 +49219,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSetViewportWScalingNV(commandBuffer, firstViewport, pViewportWScalings);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdSubpassShadingHuawei(
+    void IVk.CmdSubpassShadingHuawei(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer
     ) =>
         (
@@ -49293,7 +49249,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdSubpassShadingHuawei(commandBuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysIndirect2KHR(
+    void IVk.CmdTraceRaysIndirect2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkDeviceAddress")] ulong indirectDeviceAddress
     ) =>
@@ -49322,7 +49278,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdTraceRaysIndirect2KHR(commandBuffer, indirectDeviceAddress);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysIndirectKHR(
+    void IVk.CmdTraceRaysIndirectKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")]
             StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable,
@@ -49391,7 +49347,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysIndirectKHR(
+    void IVk.CmdTraceRaysIndirectKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")]
             Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable,
@@ -49417,7 +49373,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pRaygenShaderBindingTable
         )
         {
-            ((IVulkan)this).CmdTraceRaysIndirectKHR(
+            ((IVk)this).CmdTraceRaysIndirectKHR(
                 commandBuffer,
                 __dsl_pRaygenShaderBindingTable,
                 __dsl_pMissShaderBindingTable,
@@ -49461,7 +49417,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysKHR(
+    void IVk.CmdTraceRaysKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")]
             StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable,
@@ -49537,7 +49493,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysKHR(
+    void IVk.CmdTraceRaysKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkStridedDeviceAddressRegionKHR *")]
             Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable,
@@ -49565,7 +49521,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pRaygenShaderBindingTable
         )
         {
-            ((IVulkan)this).CmdTraceRaysKHR(
+            ((IVk)this).CmdTraceRaysKHR(
                 commandBuffer,
                 __dsl_pRaygenShaderBindingTable,
                 __dsl_pMissShaderBindingTable,
@@ -49615,7 +49571,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdTraceRaysNV(
+    void IVk.CmdTraceRaysNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle raygenShaderBindingTableBuffer,
         [NativeTypeName("VkDeviceSize")] ulong raygenShaderBindingOffset,
@@ -49718,7 +49674,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdUpdateBuffer(
+    void IVk.CmdUpdateBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
         [NativeTypeName("VkDeviceSize")] ulong dstOffset,
@@ -49749,7 +49705,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, dataSize, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdUpdateBuffer(
+    void IVk.CmdUpdateBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
         [NativeTypeName("VkDeviceSize")] ulong dstOffset,
@@ -49759,13 +49715,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (void* __dsl_pData = pData)
         {
-            ((IVulkan)this).CmdUpdateBuffer(
-                commandBuffer,
-                dstBuffer,
-                dstOffset,
-                dataSize,
-                __dsl_pData
-            );
+            ((IVk)this).CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, dataSize, __dsl_pData);
         }
     }
 
@@ -49786,7 +49736,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, dataSize, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdUpdatePipelineIndirectBufferNV(
+    void IVk.CmdUpdatePipelineIndirectBufferNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         PipelineBindPoint pipelineBindPoint,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline
@@ -49816,7 +49766,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdUpdatePipelineIndirectBufferNV(commandBuffer, pipelineBindPoint, pipeline);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWaitEvents(
+    void IVk.CmdWaitEvents(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint eventCount,
         [NativeTypeName("const VkEvent *")] EventHandle* pEvents,
@@ -49898,7 +49848,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWaitEvents(
+    void IVk.CmdWaitEvents(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint eventCount,
         [NativeTypeName("const VkEvent *")] Ref<EventHandle> pEvents,
@@ -49919,7 +49869,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryBarrier* __dsl_pMemoryBarriers = pMemoryBarriers)
         fixed (EventHandle* __dsl_pEvents = pEvents)
         {
-            ((IVulkan)this).CmdWaitEvents(
+            ((IVk)this).CmdWaitEvents(
                 commandBuffer,
                 eventCount,
                 __dsl_pEvents,
@@ -49973,7 +49923,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWaitEvents2(
+    void IVk.CmdWaitEvents2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint eventCount,
         [NativeTypeName("const VkEvent *")] EventHandle* pEvents,
@@ -49998,7 +49948,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdWaitEvents2(commandBuffer, eventCount, pEvents, pDependencyInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWaitEvents2(
+    void IVk.CmdWaitEvents2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint eventCount,
         [NativeTypeName("const VkEvent *")] Ref<EventHandle> pEvents,
@@ -50008,7 +49958,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DependencyInfo* __dsl_pDependencyInfos = pDependencyInfos)
         fixed (EventHandle* __dsl_pEvents = pEvents)
         {
-            ((IVulkan)this).CmdWaitEvents2(
+            ((IVk)this).CmdWaitEvents2(
                 commandBuffer,
                 eventCount,
                 __dsl_pEvents,
@@ -50029,7 +49979,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdWaitEvents2(commandBuffer, eventCount, pEvents, pDependencyInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWaitEvents2KHR(
+    void IVk.CmdWaitEvents2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint eventCount,
         [NativeTypeName("const VkEvent *")] EventHandle* pEvents,
@@ -50061,7 +50011,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdWaitEvents2KHR(commandBuffer, eventCount, pEvents, pDependencyInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWaitEvents2KHR(
+    void IVk.CmdWaitEvents2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint eventCount,
         [NativeTypeName("const VkEvent *")] Ref<EventHandle> pEvents,
@@ -50071,7 +50021,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DependencyInfo* __dsl_pDependencyInfos = pDependencyInfos)
         fixed (EventHandle* __dsl_pEvents = pEvents)
         {
-            ((IVulkan)this).CmdWaitEvents2KHR(
+            ((IVk)this).CmdWaitEvents2KHR(
                 commandBuffer,
                 eventCount,
                 __dsl_pEvents,
@@ -50099,7 +50049,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdWaitEvents2KHR(commandBuffer, eventCount, pEvents, pDependencyInfos);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteAccelerationStructuresPropertiesKHR(
+    void IVk.CmdWriteAccelerationStructuresPropertiesKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint accelerationStructureCount,
         [NativeTypeName("const VkAccelerationStructureKHR *")]
@@ -50162,7 +50112,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteAccelerationStructuresPropertiesKHR(
+    void IVk.CmdWriteAccelerationStructuresPropertiesKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint accelerationStructureCount,
         [NativeTypeName("const VkAccelerationStructureKHR *")]
@@ -50176,7 +50126,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             AccelerationStructureKHRHandle* __dsl_pAccelerationStructures = pAccelerationStructures
         )
         {
-            ((IVulkan)this).CmdWriteAccelerationStructuresPropertiesKHR(
+            ((IVk)this).CmdWriteAccelerationStructuresPropertiesKHR(
                 commandBuffer,
                 accelerationStructureCount,
                 __dsl_pAccelerationStructures,
@@ -50217,7 +50167,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteAccelerationStructuresPropertiesKHR(
+    void IVk.CmdWriteAccelerationStructuresPropertiesKHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkAccelerationStructureKHR *")]
             AccelerationStructureKHRHandle pAccelerationStructures,
@@ -50225,7 +50175,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint firstQuery
     ) =>
-        ((IVulkan)this).CmdWriteAccelerationStructuresPropertiesKHR(
+        ((IVk)this).CmdWriteAccelerationStructuresPropertiesKHR(
             commandBuffer,
             1,
             (AccelerationStructureKHRHandle*)&pAccelerationStructures,
@@ -50262,7 +50212,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteAccelerationStructuresPropertiesNV(
+    void IVk.CmdWriteAccelerationStructuresPropertiesNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint accelerationStructureCount,
         [NativeTypeName("const VkAccelerationStructureNV *")]
@@ -50325,7 +50275,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteAccelerationStructuresPropertiesNV(
+    void IVk.CmdWriteAccelerationStructuresPropertiesNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint accelerationStructureCount,
         [NativeTypeName("const VkAccelerationStructureNV *")]
@@ -50339,7 +50289,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             AccelerationStructureNVHandle* __dsl_pAccelerationStructures = pAccelerationStructures
         )
         {
-            ((IVulkan)this).CmdWriteAccelerationStructuresPropertiesNV(
+            ((IVk)this).CmdWriteAccelerationStructuresPropertiesNV(
                 commandBuffer,
                 accelerationStructureCount,
                 __dsl_pAccelerationStructures,
@@ -50380,7 +50330,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteAccelerationStructuresPropertiesNV(
+    void IVk.CmdWriteAccelerationStructuresPropertiesNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkAccelerationStructureNV *")]
             AccelerationStructureNVHandle pAccelerationStructures,
@@ -50388,7 +50338,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint firstQuery
     ) =>
-        ((IVulkan)this).CmdWriteAccelerationStructuresPropertiesNV(
+        ((IVk)this).CmdWriteAccelerationStructuresPropertiesNV(
             commandBuffer,
             1,
             (AccelerationStructureNVHandle*)&pAccelerationStructures,
@@ -50425,7 +50375,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteBufferMarker2AMD(
+    void IVk.CmdWriteBufferMarker2AMD(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
@@ -50458,7 +50408,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdWriteBufferMarker2AMD(commandBuffer, stage, dstBuffer, dstOffset, marker);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteBufferMarkerAMD(
+    void IVk.CmdWriteBufferMarkerAMD(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
@@ -50501,7 +50451,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteMicromapsPropertiesEXT(
+    void IVk.CmdWriteMicromapsPropertiesEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint micromapCount,
         [NativeTypeName("const VkMicromapEXT *")] MicromapEXTHandle* pMicromaps,
@@ -50555,7 +50505,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteMicromapsPropertiesEXT(
+    void IVk.CmdWriteMicromapsPropertiesEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint micromapCount,
         [NativeTypeName("const VkMicromapEXT *")] Ref<MicromapEXTHandle> pMicromaps,
@@ -50566,7 +50516,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (MicromapEXTHandle* __dsl_pMicromaps = pMicromaps)
         {
-            ((IVulkan)this).CmdWriteMicromapsPropertiesEXT(
+            ((IVk)this).CmdWriteMicromapsPropertiesEXT(
                 commandBuffer,
                 micromapCount,
                 __dsl_pMicromaps,
@@ -50606,14 +50556,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteMicromapsPropertiesEXT(
+    void IVk.CmdWriteMicromapsPropertiesEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkMicromapEXT *")] MicromapEXTHandle pMicromaps,
         QueryType queryType,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint firstQuery
     ) =>
-        ((IVulkan)this).CmdWriteMicromapsPropertiesEXT(
+        ((IVk)this).CmdWriteMicromapsPropertiesEXT(
             commandBuffer,
             1,
             (MicromapEXTHandle*)&pMicromaps,
@@ -50649,7 +50599,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteTimestamp(
+    void IVk.CmdWriteTimestamp(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
@@ -50683,7 +50633,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdWriteTimestamp(commandBuffer, pipelineStage, queryPool, query);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteTimestamp2(
+    void IVk.CmdWriteTimestamp2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
@@ -50708,7 +50658,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdWriteTimestamp2(commandBuffer, stage, queryPool, query);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.CmdWriteTimestamp2KHR(
+    void IVk.CmdWriteTimestamp2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
@@ -50740,7 +50690,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CmdWriteTimestamp2KHR(commandBuffer, stage, queryPool, query);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CompileDeferredNV(
+    Result IVk.CompileDeferredNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("uint32_t")] uint shader
@@ -50770,7 +50720,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CompileDeferredNV(device, pipeline, shader);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ConvertCooperativeVectorMatrixNV(
+    Result IVk.ConvertCooperativeVectorMatrixNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkConvertCooperativeVectorMatrixInfoNV *")]
             ConvertCooperativeVectorMatrixInfoNV* pInfo
@@ -50796,7 +50746,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ConvertCooperativeVectorMatrixNV(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ConvertCooperativeVectorMatrixNV(
+    Result IVk.ConvertCooperativeVectorMatrixNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkConvertCooperativeVectorMatrixInfoNV *")]
             Ref<ConvertCooperativeVectorMatrixInfoNV> pInfo
@@ -50804,7 +50754,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ConvertCooperativeVectorMatrixInfoNV* __dsl_pInfo = pInfo)
         {
-            return (Result)((IVulkan)this).ConvertCooperativeVectorMatrixNV(device, __dsl_pInfo);
+            return (Result)((IVk)this).ConvertCooperativeVectorMatrixNV(device, __dsl_pInfo);
         }
     }
 
@@ -50819,7 +50769,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ConvertCooperativeVectorMatrixNV(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyAccelerationStructureKHR(
+    Result IVk.CopyAccelerationStructureKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyAccelerationStructureInfoKHR *")]
@@ -50858,7 +50808,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyAccelerationStructureKHR(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyAccelerationStructureKHR(
+    Result IVk.CopyAccelerationStructureKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyAccelerationStructureInfoKHR *")]
@@ -50868,11 +50818,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CopyAccelerationStructureInfoKHR* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).CopyAccelerationStructureKHR(
-                    device,
-                    deferredOperation,
-                    __dsl_pInfo
-                );
+                ((IVk)this).CopyAccelerationStructureKHR(device, deferredOperation, __dsl_pInfo);
         }
     }
 
@@ -50895,7 +50841,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyAccelerationStructureKHR(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyAccelerationStructureToMemoryKHR(
+    Result IVk.CopyAccelerationStructureToMemoryKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyAccelerationStructureToMemoryInfoKHR *")]
@@ -50934,7 +50880,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyAccelerationStructureToMemoryKHR(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyAccelerationStructureToMemoryKHR(
+    Result IVk.CopyAccelerationStructureToMemoryKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyAccelerationStructureToMemoryInfoKHR *")]
@@ -50944,7 +50890,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CopyAccelerationStructureToMemoryInfoKHR* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).CopyAccelerationStructureToMemoryKHR(
+                ((IVk)this).CopyAccelerationStructureToMemoryKHR(
                     device,
                     deferredOperation,
                     __dsl_pInfo
@@ -50971,7 +50917,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyAccelerationStructureToMemoryKHR(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyImageToImage(
+    Result IVk.CopyImageToImage(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyImageToImageInfo *")]
             CopyImageToImageInfo* pCopyImageToImageInfo
@@ -50994,7 +50940,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyImageToImage(device, pCopyImageToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyImageToImage(
+    Result IVk.CopyImageToImage(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyImageToImageInfo *")]
             Ref<CopyImageToImageInfo> pCopyImageToImageInfo
@@ -51002,7 +50948,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyImageToImageInfo* __dsl_pCopyImageToImageInfo = pCopyImageToImageInfo)
         {
-            return (Result)((IVulkan)this).CopyImageToImage(device, __dsl_pCopyImageToImageInfo);
+            return (Result)((IVk)this).CopyImageToImage(device, __dsl_pCopyImageToImageInfo);
         }
     }
 
@@ -51017,7 +50963,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyImageToImage(device, pCopyImageToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyImageToImageEXT(
+    Result IVk.CopyImageToImageEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyImageToImageInfo *")]
             CopyImageToImageInfo* pCopyImageToImageInfo
@@ -51048,7 +50994,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyImageToImageEXT(device, pCopyImageToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyImageToImageEXT(
+    Result IVk.CopyImageToImageEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyImageToImageInfo *")]
             Ref<CopyImageToImageInfo> pCopyImageToImageInfo
@@ -51056,7 +51002,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyImageToImageInfo* __dsl_pCopyImageToImageInfo = pCopyImageToImageInfo)
         {
-            return (Result)((IVulkan)this).CopyImageToImageEXT(device, __dsl_pCopyImageToImageInfo);
+            return (Result)((IVk)this).CopyImageToImageEXT(device, __dsl_pCopyImageToImageInfo);
         }
     }
 
@@ -51079,7 +51025,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyImageToImageEXT(device, pCopyImageToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyImageToMemory(
+    Result IVk.CopyImageToMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyImageToMemoryInfo *")]
             CopyImageToMemoryInfo* pCopyImageToMemoryInfo
@@ -51102,7 +51048,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyImageToMemory(device, pCopyImageToMemoryInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyImageToMemory(
+    Result IVk.CopyImageToMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyImageToMemoryInfo *")]
             Ref<CopyImageToMemoryInfo> pCopyImageToMemoryInfo
@@ -51110,7 +51056,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyImageToMemoryInfo* __dsl_pCopyImageToMemoryInfo = pCopyImageToMemoryInfo)
         {
-            return (Result)((IVulkan)this).CopyImageToMemory(device, __dsl_pCopyImageToMemoryInfo);
+            return (Result)((IVk)this).CopyImageToMemory(device, __dsl_pCopyImageToMemoryInfo);
         }
     }
 
@@ -51125,7 +51071,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyImageToMemory(device, pCopyImageToMemoryInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyImageToMemoryEXT(
+    Result IVk.CopyImageToMemoryEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyImageToMemoryInfo *")]
             CopyImageToMemoryInfo* pCopyImageToMemoryInfo
@@ -51156,7 +51102,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyImageToMemoryEXT(device, pCopyImageToMemoryInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyImageToMemoryEXT(
+    Result IVk.CopyImageToMemoryEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyImageToMemoryInfo *")]
             Ref<CopyImageToMemoryInfo> pCopyImageToMemoryInfo
@@ -51164,8 +51110,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyImageToMemoryInfo* __dsl_pCopyImageToMemoryInfo = pCopyImageToMemoryInfo)
         {
-            return (Result)
-                ((IVulkan)this).CopyImageToMemoryEXT(device, __dsl_pCopyImageToMemoryInfo);
+            return (Result)((IVk)this).CopyImageToMemoryEXT(device, __dsl_pCopyImageToMemoryInfo);
         }
     }
 
@@ -51188,7 +51133,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyImageToMemoryEXT(device, pCopyImageToMemoryInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMemoryToAccelerationStructureKHR(
+    Result IVk.CopyMemoryToAccelerationStructureKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyMemoryToAccelerationStructureInfoKHR *")]
@@ -51227,7 +51172,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMemoryToAccelerationStructureKHR(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMemoryToAccelerationStructureKHR(
+    Result IVk.CopyMemoryToAccelerationStructureKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyMemoryToAccelerationStructureInfoKHR *")]
@@ -51237,7 +51182,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CopyMemoryToAccelerationStructureInfoKHR* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).CopyMemoryToAccelerationStructureKHR(
+                ((IVk)this).CopyMemoryToAccelerationStructureKHR(
                     device,
                     deferredOperation,
                     __dsl_pInfo
@@ -51264,7 +51209,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMemoryToAccelerationStructureKHR(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMemoryToImage(
+    Result IVk.CopyMemoryToImage(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyMemoryToImageInfo *")]
             CopyMemoryToImageInfo* pCopyMemoryToImageInfo
@@ -51287,7 +51232,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMemoryToImage(device, pCopyMemoryToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMemoryToImage(
+    Result IVk.CopyMemoryToImage(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyMemoryToImageInfo *")]
             Ref<CopyMemoryToImageInfo> pCopyMemoryToImageInfo
@@ -51295,7 +51240,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyMemoryToImageInfo* __dsl_pCopyMemoryToImageInfo = pCopyMemoryToImageInfo)
         {
-            return (Result)((IVulkan)this).CopyMemoryToImage(device, __dsl_pCopyMemoryToImageInfo);
+            return (Result)((IVk)this).CopyMemoryToImage(device, __dsl_pCopyMemoryToImageInfo);
         }
     }
 
@@ -51310,7 +51255,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMemoryToImage(device, pCopyMemoryToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMemoryToImageEXT(
+    Result IVk.CopyMemoryToImageEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyMemoryToImageInfo *")]
             CopyMemoryToImageInfo* pCopyMemoryToImageInfo
@@ -51341,7 +51286,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMemoryToImageEXT(device, pCopyMemoryToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMemoryToImageEXT(
+    Result IVk.CopyMemoryToImageEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCopyMemoryToImageInfo *")]
             Ref<CopyMemoryToImageInfo> pCopyMemoryToImageInfo
@@ -51349,8 +51294,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyMemoryToImageInfo* __dsl_pCopyMemoryToImageInfo = pCopyMemoryToImageInfo)
         {
-            return (Result)
-                ((IVulkan)this).CopyMemoryToImageEXT(device, __dsl_pCopyMemoryToImageInfo);
+            return (Result)((IVk)this).CopyMemoryToImageEXT(device, __dsl_pCopyMemoryToImageInfo);
         }
     }
 
@@ -51373,7 +51317,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMemoryToImageEXT(device, pCopyMemoryToImageInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMemoryToMicromapEXT(
+    Result IVk.CopyMemoryToMicromapEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyMemoryToMicromapInfoEXT *")] CopyMemoryToMicromapInfoEXT* pInfo
@@ -51410,7 +51354,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMemoryToMicromapEXT(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMemoryToMicromapEXT(
+    Result IVk.CopyMemoryToMicromapEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyMemoryToMicromapInfoEXT *")]
@@ -51420,7 +51364,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CopyMemoryToMicromapInfoEXT* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).CopyMemoryToMicromapEXT(device, deferredOperation, __dsl_pInfo);
+                ((IVk)this).CopyMemoryToMicromapEXT(device, deferredOperation, __dsl_pInfo);
         }
     }
 
@@ -51443,7 +51387,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMemoryToMicromapEXT(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMicromapEXT(
+    Result IVk.CopyMicromapEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyMicromapInfoEXT *")] CopyMicromapInfoEXT* pInfo
@@ -51477,7 +51421,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMicromapEXT(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMicromapEXT(
+    Result IVk.CopyMicromapEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyMicromapInfoEXT *")] Ref<CopyMicromapInfoEXT> pInfo
@@ -51485,7 +51429,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CopyMicromapInfoEXT* __dsl_pInfo = pInfo)
         {
-            return (Result)((IVulkan)this).CopyMicromapEXT(device, deferredOperation, __dsl_pInfo);
+            return (Result)((IVk)this).CopyMicromapEXT(device, deferredOperation, __dsl_pInfo);
         }
     }
 
@@ -51507,7 +51451,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMicromapEXT(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMicromapToMemoryEXT(
+    Result IVk.CopyMicromapToMemoryEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyMicromapToMemoryInfoEXT *")] CopyMicromapToMemoryInfoEXT* pInfo
@@ -51544,7 +51488,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMicromapToMemoryEXT(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CopyMicromapToMemoryEXT(
+    Result IVk.CopyMicromapToMemoryEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("const VkCopyMicromapToMemoryInfoEXT *")]
@@ -51554,7 +51498,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CopyMicromapToMemoryInfoEXT* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).CopyMicromapToMemoryEXT(device, deferredOperation, __dsl_pInfo);
+                ((IVk)this).CopyMicromapToMemoryEXT(device, deferredOperation, __dsl_pInfo);
         }
     }
 
@@ -51577,7 +51521,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CopyMicromapToMemoryEXT(device, deferredOperation, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateAccelerationStructureKHR(
+    Result IVk.CreateAccelerationStructureKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureCreateInfoKHR *")]
             AccelerationStructureCreateInfoKHR* pCreateInfo,
@@ -51627,7 +51571,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateAccelerationStructureKHR(
+    Result IVk.CreateAccelerationStructureKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureCreateInfoKHR *")]
             Ref<AccelerationStructureCreateInfoKHR> pCreateInfo,
@@ -51643,7 +51587,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (AccelerationStructureCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateAccelerationStructureKHR(
+                ((IVk)this).CreateAccelerationStructureKHR(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -51679,7 +51623,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateAccelerationStructureNV(
+    Result IVk.CreateAccelerationStructureNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureCreateInfoNV *")]
             AccelerationStructureCreateInfoNV* pCreateInfo,
@@ -51729,7 +51673,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateAccelerationStructureNV(
+    Result IVk.CreateAccelerationStructureNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureCreateInfoNV *")]
             Ref<AccelerationStructureCreateInfoNV> pCreateInfo,
@@ -51743,7 +51687,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (AccelerationStructureCreateInfoNV* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateAccelerationStructureNV(
+                ((IVk)this).CreateAccelerationStructureNV(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -51779,7 +51723,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateBuffer(
+    Result IVk.CreateBuffer(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferCreateInfo *")] BufferCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -51813,7 +51757,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateBuffer(device, pCreateInfo, pAllocator, pBuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateBuffer(
+    Result IVk.CreateBuffer(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferCreateInfo *")] Ref<BufferCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -51825,7 +51769,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (BufferCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateBuffer(
+                ((IVk)this).CreateBuffer(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -51850,7 +51794,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateBuffer(device, pCreateInfo, pAllocator, pBuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateBufferView(
+    Result IVk.CreateBufferView(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferViewCreateInfo *")] BufferViewCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -51884,7 +51828,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateBufferView(device, pCreateInfo, pAllocator, pView);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateBufferView(
+    Result IVk.CreateBufferView(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferViewCreateInfo *")] Ref<BufferViewCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -51896,7 +51840,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (BufferViewCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateBufferView(
+                ((IVk)this).CreateBufferView(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -51921,7 +51865,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateBufferView(device, pCreateInfo, pAllocator, pView);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateCommandPool(
+    Result IVk.CreateCommandPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCommandPoolCreateInfo *")] CommandPoolCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -51955,7 +51899,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateCommandPool(device, pCreateInfo, pAllocator, pCommandPool);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateCommandPool(
+    Result IVk.CreateCommandPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCommandPoolCreateInfo *")] Ref<CommandPoolCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -51967,7 +51911,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CommandPoolCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateCommandPool(
+                ((IVk)this).CreateCommandPool(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -51992,7 +51936,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateCommandPool(device, pCreateInfo, pAllocator, pCommandPool);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateComputePipelines(
+    Result IVk.CreateComputePipelines(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeTypeName("uint32_t")] uint createInfoCount,
@@ -52042,7 +51986,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateComputePipelines(
+    Result IVk.CreateComputePipelines(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeTypeName("uint32_t")] uint createInfoCount,
@@ -52057,7 +52001,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ComputePipelineCreateInfo* __dsl_pCreateInfos = pCreateInfos)
         {
             return (Result)
-                ((IVulkan)this).CreateComputePipelines(
+                ((IVk)this).CreateComputePipelines(
                     device,
                     pipelineCache,
                     createInfoCount,
@@ -52095,7 +52039,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateCudaFunctionNV(
+    Result IVk.CreateCudaFunctionNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCudaFunctionCreateInfoNV *")]
             CudaFunctionCreateInfoNV* pCreateInfo,
@@ -52127,7 +52071,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateCudaFunctionNV(device, pCreateInfo, pAllocator, pFunction);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateCudaFunctionNV(
+    Result IVk.CreateCudaFunctionNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCudaFunctionCreateInfoNV *")]
             Ref<CudaFunctionCreateInfoNV> pCreateInfo,
@@ -52140,7 +52084,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CudaFunctionCreateInfoNV* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateCudaFunctionNV(
+                ((IVk)this).CreateCudaFunctionNV(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -52162,7 +52106,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateCudaFunctionNV(device, pCreateInfo, pAllocator, pFunction);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateCudaModuleNV(
+    Result IVk.CreateCudaModuleNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCudaModuleCreateInfoNV *")] CudaModuleCreateInfoNV* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -52192,7 +52136,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateCudaModuleNV(device, pCreateInfo, pAllocator, pModule);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateCudaModuleNV(
+    Result IVk.CreateCudaModuleNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCudaModuleCreateInfoNV *")]
             Ref<CudaModuleCreateInfoNV> pCreateInfo,
@@ -52205,7 +52149,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CudaModuleCreateInfoNV* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateCudaModuleNV(
+                ((IVk)this).CreateCudaModuleNV(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -52227,7 +52171,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateCudaModuleNV(device, pCreateInfo, pAllocator, pModule);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateCuFunctionNVX(
+    Result IVk.CreateCuFunctionNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCuFunctionCreateInfoNVX *")] CuFunctionCreateInfoNVX* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -52257,7 +52201,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateCuFunctionNVX(device, pCreateInfo, pAllocator, pFunction);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateCuFunctionNVX(
+    Result IVk.CreateCuFunctionNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCuFunctionCreateInfoNVX *")]
             Ref<CuFunctionCreateInfoNVX> pCreateInfo,
@@ -52270,7 +52214,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CuFunctionCreateInfoNVX* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateCuFunctionNVX(
+                ((IVk)this).CreateCuFunctionNVX(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -52292,7 +52236,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateCuFunctionNVX(device, pCreateInfo, pAllocator, pFunction);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateCuModuleNVX(
+    Result IVk.CreateCuModuleNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCuModuleCreateInfoNVX *")] CuModuleCreateInfoNVX* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -52322,7 +52266,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateCuModuleNVX(device, pCreateInfo, pAllocator, pModule);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateCuModuleNVX(
+    Result IVk.CreateCuModuleNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkCuModuleCreateInfoNVX *")] Ref<CuModuleCreateInfoNVX> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -52334,7 +52278,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CuModuleCreateInfoNVX* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateCuModuleNVX(
+                ((IVk)this).CreateCuModuleNVX(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -52355,7 +52299,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateCuModuleNVX(device, pCreateInfo, pAllocator, pModule);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDebugReportCallbackEXT(
+    Result IVk.CreateDebugReportCallbackEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const VkDebugReportCallbackCreateInfoEXT *")]
             DebugReportCallbackCreateInfoEXT* pCreateInfo,
@@ -52390,7 +52334,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDebugReportCallbackEXT(instance, pCreateInfo, pAllocator, pCallback);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDebugReportCallbackEXT(
+    Result IVk.CreateDebugReportCallbackEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const VkDebugReportCallbackCreateInfoEXT *")]
             Ref<DebugReportCallbackCreateInfoEXT> pCreateInfo,
@@ -52403,7 +52347,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DebugReportCallbackCreateInfoEXT* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateDebugReportCallbackEXT(
+                ((IVk)this).CreateDebugReportCallbackEXT(
                     instance,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -52425,7 +52369,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDebugReportCallbackEXT(instance, pCreateInfo, pAllocator, pCallback);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDebugUtilsMessengerEXT(
+    Result IVk.CreateDebugUtilsMessengerEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const VkDebugUtilsMessengerCreateInfoEXT *")]
             DebugUtilsMessengerCreateInfoEXT* pCreateInfo,
@@ -52460,7 +52404,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDebugUtilsMessengerEXT(instance, pCreateInfo, pAllocator, pMessenger);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDebugUtilsMessengerEXT(
+    Result IVk.CreateDebugUtilsMessengerEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const VkDebugUtilsMessengerCreateInfoEXT *")]
             Ref<DebugUtilsMessengerCreateInfoEXT> pCreateInfo,
@@ -52473,7 +52417,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DebugUtilsMessengerCreateInfoEXT* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateDebugUtilsMessengerEXT(
+                ((IVk)this).CreateDebugUtilsMessengerEXT(
                     instance,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -52495,7 +52439,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDebugUtilsMessengerEXT(instance, pCreateInfo, pAllocator, pMessenger);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDeferredOperationKHR(
+    Result IVk.CreateDeferredOperationKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
         [NativeTypeName("VkDeferredOperationKHR *")] DeferredOperationKHRHandle* pDeferredOperation
@@ -52525,7 +52469,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDeferredOperationKHR(device, pAllocator, pDeferredOperation);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDeferredOperationKHR(
+    Result IVk.CreateDeferredOperationKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
         [NativeTypeName("VkDeferredOperationKHR *")]
@@ -52536,7 +52480,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
             return (Result)
-                ((IVulkan)this).CreateDeferredOperationKHR(
+                ((IVk)this).CreateDeferredOperationKHR(
                     device,
                     __dsl_pAllocator,
                     __dsl_pDeferredOperation
@@ -52556,7 +52500,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDeferredOperationKHR(device, pAllocator, pDeferredOperation);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDescriptorPool(
+    Result IVk.CreateDescriptorPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorPoolCreateInfo *")]
             DescriptorPoolCreateInfo* pCreateInfo,
@@ -52592,7 +52536,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDescriptorPool(device, pCreateInfo, pAllocator, pDescriptorPool);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDescriptorPool(
+    Result IVk.CreateDescriptorPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorPoolCreateInfo *")]
             Ref<DescriptorPoolCreateInfo> pCreateInfo,
@@ -52605,7 +52549,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DescriptorPoolCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateDescriptorPool(
+                ((IVk)this).CreateDescriptorPool(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -52631,7 +52575,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDescriptorPool(device, pCreateInfo, pAllocator, pDescriptorPool);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDescriptorSetLayout(
+    Result IVk.CreateDescriptorSetLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorSetLayoutCreateInfo *")]
             DescriptorSetLayoutCreateInfo* pCreateInfo,
@@ -52670,7 +52614,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDescriptorSetLayout(device, pCreateInfo, pAllocator, pSetLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDescriptorSetLayout(
+    Result IVk.CreateDescriptorSetLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorSetLayoutCreateInfo *")]
             Ref<DescriptorSetLayoutCreateInfo> pCreateInfo,
@@ -52683,7 +52627,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DescriptorSetLayoutCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateDescriptorSetLayout(
+                ((IVk)this).CreateDescriptorSetLayout(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -52709,7 +52653,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDescriptorSetLayout(device, pCreateInfo, pAllocator, pSetLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDescriptorUpdateTemplate(
+    Result IVk.CreateDescriptorUpdateTemplate(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorUpdateTemplateCreateInfo *")]
             DescriptorUpdateTemplateCreateInfo* pCreateInfo,
@@ -52756,7 +52700,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDescriptorUpdateTemplate(
+    Result IVk.CreateDescriptorUpdateTemplate(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorUpdateTemplateCreateInfo *")]
             Ref<DescriptorUpdateTemplateCreateInfo> pCreateInfo,
@@ -52773,7 +52717,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DescriptorUpdateTemplateCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateDescriptorUpdateTemplate(
+                ((IVk)this).CreateDescriptorUpdateTemplate(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -52806,7 +52750,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDescriptorUpdateTemplateKHR(
+    Result IVk.CreateDescriptorUpdateTemplateKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorUpdateTemplateCreateInfo *")]
             DescriptorUpdateTemplateCreateInfo* pCreateInfo,
@@ -52849,7 +52793,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDescriptorUpdateTemplateKHR(
+    Result IVk.CreateDescriptorUpdateTemplateKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorUpdateTemplateCreateInfo *")]
             Ref<DescriptorUpdateTemplateCreateInfo> pCreateInfo,
@@ -52866,7 +52810,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DescriptorUpdateTemplateCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateDescriptorUpdateTemplateKHR(
+                ((IVk)this).CreateDescriptorUpdateTemplateKHR(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -52895,7 +52839,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDevice(
+    Result IVk.CreateDevice(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkDeviceCreateInfo *")] DeviceCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -52929,7 +52873,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDevice(physicalDevice, pCreateInfo, pAllocator, pDevice);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDevice(
+    Result IVk.CreateDevice(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkDeviceCreateInfo *")] Ref<DeviceCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -52941,7 +52885,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DeviceCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateDevice(
+                ((IVk)this).CreateDevice(
                     physicalDevice,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -52966,7 +52910,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDevice(physicalDevice, pCreateInfo, pAllocator, pDevice);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDisplayModeKHR(
+    Result IVk.CreateDisplayModeKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display,
         [NativeTypeName("const VkDisplayModeCreateInfoKHR *")]
@@ -53001,7 +52945,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDisplayModeKHR(physicalDevice, display, pCreateInfo, pAllocator, pMode);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDisplayModeKHR(
+    Result IVk.CreateDisplayModeKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display,
         [NativeTypeName("const VkDisplayModeCreateInfoKHR *")]
@@ -53015,7 +52959,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DisplayModeCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateDisplayModeKHR(
+                ((IVk)this).CreateDisplayModeKHR(
                     physicalDevice,
                     display,
                     __dsl_pCreateInfo,
@@ -53039,7 +52983,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDisplayModeKHR(physicalDevice, display, pCreateInfo, pAllocator, pMode);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDisplayPlaneSurfaceKHR(
+    Result IVk.CreateDisplayPlaneSurfaceKHR(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const VkDisplaySurfaceCreateInfoKHR *")]
             DisplaySurfaceCreateInfoKHR* pCreateInfo,
@@ -53074,7 +53018,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDisplayPlaneSurfaceKHR(instance, pCreateInfo, pAllocator, pSurface);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateDisplayPlaneSurfaceKHR(
+    Result IVk.CreateDisplayPlaneSurfaceKHR(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const VkDisplaySurfaceCreateInfoKHR *")]
             Ref<DisplaySurfaceCreateInfoKHR> pCreateInfo,
@@ -53087,7 +53031,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DisplaySurfaceCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateDisplayPlaneSurfaceKHR(
+                ((IVk)this).CreateDisplayPlaneSurfaceKHR(
                     instance,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -53109,7 +53053,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateDisplayPlaneSurfaceKHR(instance, pCreateInfo, pAllocator, pSurface);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateEvent(
+    Result IVk.CreateEvent(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkEventCreateInfo *")] EventCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -53143,7 +53087,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateEvent(device, pCreateInfo, pAllocator, pEvent);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateEvent(
+    Result IVk.CreateEvent(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkEventCreateInfo *")] Ref<EventCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -53155,12 +53099,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (EventCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateEvent(
-                    device,
-                    __dsl_pCreateInfo,
-                    __dsl_pAllocator,
-                    __dsl_pEvent
-                );
+                ((IVk)this).CreateEvent(device, __dsl_pCreateInfo, __dsl_pAllocator, __dsl_pEvent);
         }
     }
 
@@ -53180,7 +53119,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateEvent(device, pCreateInfo, pAllocator, pEvent);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateExternalComputeQueueNV(
+    Result IVk.CreateExternalComputeQueueNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkExternalComputeQueueCreateInfoNV *")]
             ExternalComputeQueueCreateInfoNV* pCreateInfo,
@@ -53215,7 +53154,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateExternalComputeQueueNV(device, pCreateInfo, pAllocator, pExternalQueue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateExternalComputeQueueNV(
+    Result IVk.CreateExternalComputeQueueNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkExternalComputeQueueCreateInfoNV *")]
             Ref<ExternalComputeQueueCreateInfoNV> pCreateInfo,
@@ -53229,7 +53168,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ExternalComputeQueueCreateInfoNV* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateExternalComputeQueueNV(
+                ((IVk)this).CreateExternalComputeQueueNV(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -53252,7 +53191,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateExternalComputeQueueNV(device, pCreateInfo, pAllocator, pExternalQueue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateFence(
+    Result IVk.CreateFence(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkFenceCreateInfo *")] FenceCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -53286,7 +53225,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateFence(device, pCreateInfo, pAllocator, pFence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateFence(
+    Result IVk.CreateFence(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkFenceCreateInfo *")] Ref<FenceCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -53298,12 +53237,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (FenceCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateFence(
-                    device,
-                    __dsl_pCreateInfo,
-                    __dsl_pAllocator,
-                    __dsl_pFence
-                );
+                ((IVk)this).CreateFence(device, __dsl_pCreateInfo, __dsl_pAllocator, __dsl_pFence);
         }
     }
 
@@ -53323,7 +53257,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateFence(device, pCreateInfo, pAllocator, pFence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateFramebuffer(
+    Result IVk.CreateFramebuffer(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkFramebufferCreateInfo *")] FramebufferCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -53357,7 +53291,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateFramebuffer(device, pCreateInfo, pAllocator, pFramebuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateFramebuffer(
+    Result IVk.CreateFramebuffer(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkFramebufferCreateInfo *")] Ref<FramebufferCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -53369,7 +53303,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (FramebufferCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateFramebuffer(
+                ((IVk)this).CreateFramebuffer(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -53394,7 +53328,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateFramebuffer(device, pCreateInfo, pAllocator, pFramebuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateGraphicsPipelines(
+    Result IVk.CreateGraphicsPipelines(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeTypeName("uint32_t")] uint createInfoCount,
@@ -53447,7 +53381,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateGraphicsPipelines(
+    Result IVk.CreateGraphicsPipelines(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeTypeName("uint32_t")] uint createInfoCount,
@@ -53462,7 +53396,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (GraphicsPipelineCreateInfo* __dsl_pCreateInfos = pCreateInfos)
         {
             return (Result)
-                ((IVulkan)this).CreateGraphicsPipelines(
+                ((IVk)this).CreateGraphicsPipelines(
                     device,
                     pipelineCache,
                     createInfoCount,
@@ -53500,7 +53434,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateHeadlessSurfaceEXT(
+    Result IVk.CreateHeadlessSurfaceEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const VkHeadlessSurfaceCreateInfoEXT *")]
             HeadlessSurfaceCreateInfoEXT* pCreateInfo,
@@ -53535,7 +53469,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateHeadlessSurfaceEXT(instance, pCreateInfo, pAllocator, pSurface);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateHeadlessSurfaceEXT(
+    Result IVk.CreateHeadlessSurfaceEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const VkHeadlessSurfaceCreateInfoEXT *")]
             Ref<HeadlessSurfaceCreateInfoEXT> pCreateInfo,
@@ -53548,7 +53482,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (HeadlessSurfaceCreateInfoEXT* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateHeadlessSurfaceEXT(
+                ((IVk)this).CreateHeadlessSurfaceEXT(
                     instance,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -53570,7 +53504,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateHeadlessSurfaceEXT(instance, pCreateInfo, pAllocator, pSurface);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateImage(
+    Result IVk.CreateImage(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageCreateInfo *")] ImageCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -53604,7 +53538,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateImage(device, pCreateInfo, pAllocator, pImage);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateImage(
+    Result IVk.CreateImage(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageCreateInfo *")] Ref<ImageCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -53616,12 +53550,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ImageCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateImage(
-                    device,
-                    __dsl_pCreateInfo,
-                    __dsl_pAllocator,
-                    __dsl_pImage
-                );
+                ((IVk)this).CreateImage(device, __dsl_pCreateInfo, __dsl_pAllocator, __dsl_pImage);
         }
     }
 
@@ -53641,7 +53570,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateImage(device, pCreateInfo, pAllocator, pImage);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateImageView(
+    Result IVk.CreateImageView(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageViewCreateInfo *")] ImageViewCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -53675,7 +53604,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateImageView(device, pCreateInfo, pAllocator, pView);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateImageView(
+    Result IVk.CreateImageView(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageViewCreateInfo *")] Ref<ImageViewCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -53687,7 +53616,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ImageViewCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateImageView(
+                ((IVk)this).CreateImageView(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -53712,7 +53641,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateImageView(device, pCreateInfo, pAllocator, pView);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateIndirectCommandsLayoutEXT(
+    Result IVk.CreateIndirectCommandsLayoutEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkIndirectCommandsLayoutCreateInfoEXT *")]
             IndirectCommandsLayoutCreateInfoEXT* pCreateInfo,
@@ -53763,7 +53692,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateIndirectCommandsLayoutEXT(
+    Result IVk.CreateIndirectCommandsLayoutEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkIndirectCommandsLayoutCreateInfoEXT *")]
             Ref<IndirectCommandsLayoutCreateInfoEXT> pCreateInfo,
@@ -53779,7 +53708,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (IndirectCommandsLayoutCreateInfoEXT* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateIndirectCommandsLayoutEXT(
+                ((IVk)this).CreateIndirectCommandsLayoutEXT(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -53816,7 +53745,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateIndirectCommandsLayoutNV(
+    Result IVk.CreateIndirectCommandsLayoutNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkIndirectCommandsLayoutCreateInfoNV *")]
             IndirectCommandsLayoutCreateInfoNV* pCreateInfo,
@@ -53863,7 +53792,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateIndirectCommandsLayoutNV(
+    Result IVk.CreateIndirectCommandsLayoutNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkIndirectCommandsLayoutCreateInfoNV *")]
             Ref<IndirectCommandsLayoutCreateInfoNV> pCreateInfo,
@@ -53879,7 +53808,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (IndirectCommandsLayoutCreateInfoNV* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateIndirectCommandsLayoutNV(
+                ((IVk)this).CreateIndirectCommandsLayoutNV(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -53912,7 +53841,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateIndirectExecutionSetEXT(
+    Result IVk.CreateIndirectExecutionSetEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkIndirectExecutionSetCreateInfoEXT *")]
             IndirectExecutionSetCreateInfoEXT* pCreateInfo,
@@ -53963,7 +53892,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateIndirectExecutionSetEXT(
+    Result IVk.CreateIndirectExecutionSetEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkIndirectExecutionSetCreateInfoEXT *")]
             Ref<IndirectExecutionSetCreateInfoEXT> pCreateInfo,
@@ -53977,7 +53906,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (IndirectExecutionSetCreateInfoEXT* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateIndirectExecutionSetEXT(
+                ((IVk)this).CreateIndirectExecutionSetEXT(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -54014,7 +53943,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateInstance(
+    Result IVk.CreateInstance(
         [NativeTypeName("const VkInstanceCreateInfo *")] InstanceCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
         [NativeTypeName("VkInstance *")] InstanceHandle* pInstance
@@ -54045,7 +53974,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateInstance(pCreateInfo, pAllocator, pInstance);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateInstance(
+    Result IVk.CreateInstance(
         [NativeTypeName("const VkInstanceCreateInfo *")] Ref<InstanceCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
         [NativeTypeName("VkInstance *")] Ref<InstanceHandle> pInstance
@@ -54056,11 +53985,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (InstanceCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateInstance(
-                    __dsl_pCreateInfo,
-                    __dsl_pAllocator,
-                    __dsl_pInstance
-                );
+                ((IVk)this).CreateInstance(__dsl_pCreateInfo, __dsl_pAllocator, __dsl_pInstance);
         }
     }
 
@@ -54079,7 +54004,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateInstance(pCreateInfo, pAllocator, pInstance);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateMicromapEXT(
+    Result IVk.CreateMicromapEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMicromapCreateInfoEXT *")] MicromapCreateInfoEXT* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -54116,7 +54041,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateMicromapEXT(device, pCreateInfo, pAllocator, pMicromap);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateMicromapEXT(
+    Result IVk.CreateMicromapEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMicromapCreateInfoEXT *")] Ref<MicromapCreateInfoEXT> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -54128,7 +54053,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MicromapCreateInfoEXT* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateMicromapEXT(
+                ((IVk)this).CreateMicromapEXT(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -54156,7 +54081,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateMicromapEXT(device, pCreateInfo, pAllocator, pMicromap);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateOpticalFlowSessionNV(
+    Result IVk.CreateOpticalFlowSessionNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkOpticalFlowSessionCreateInfoNV *")]
             OpticalFlowSessionCreateInfoNV* pCreateInfo,
@@ -54199,7 +54124,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateOpticalFlowSessionNV(device, pCreateInfo, pAllocator, pSession);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateOpticalFlowSessionNV(
+    Result IVk.CreateOpticalFlowSessionNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkOpticalFlowSessionCreateInfoNV *")]
             Ref<OpticalFlowSessionCreateInfoNV> pCreateInfo,
@@ -54212,7 +54137,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (OpticalFlowSessionCreateInfoNV* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateOpticalFlowSessionNV(
+                ((IVk)this).CreateOpticalFlowSessionNV(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -54242,7 +54167,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateOpticalFlowSessionNV(device, pCreateInfo, pAllocator, pSession);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreatePipelineBinariesKHR(
+    Result IVk.CreatePipelineBinariesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineBinaryCreateInfoKHR *")]
             PipelineBinaryCreateInfoKHR* pCreateInfo,
@@ -54284,7 +54209,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreatePipelineBinariesKHR(device, pCreateInfo, pAllocator, pBinaries);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreatePipelineBinariesKHR(
+    Result IVk.CreatePipelineBinariesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineBinaryCreateInfoKHR *")]
             Ref<PipelineBinaryCreateInfoKHR> pCreateInfo,
@@ -54297,7 +54222,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PipelineBinaryCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreatePipelineBinariesKHR(
+                ((IVk)this).CreatePipelineBinariesKHR(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -54326,7 +54251,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreatePipelineBinariesKHR(device, pCreateInfo, pAllocator, pBinaries);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreatePipelineCache(
+    Result IVk.CreatePipelineCache(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineCacheCreateInfo *")] PipelineCacheCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -54360,7 +54285,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreatePipelineCache(device, pCreateInfo, pAllocator, pPipelineCache);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreatePipelineCache(
+    Result IVk.CreatePipelineCache(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineCacheCreateInfo *")]
             Ref<PipelineCacheCreateInfo> pCreateInfo,
@@ -54373,7 +54298,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PipelineCacheCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreatePipelineCache(
+                ((IVk)this).CreatePipelineCache(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -54399,7 +54324,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreatePipelineCache(device, pCreateInfo, pAllocator, pPipelineCache);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreatePipelineLayout(
+    Result IVk.CreatePipelineLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineLayoutCreateInfo *")]
             PipelineLayoutCreateInfo* pCreateInfo,
@@ -54435,7 +54360,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreatePipelineLayout(device, pCreateInfo, pAllocator, pPipelineLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreatePipelineLayout(
+    Result IVk.CreatePipelineLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineLayoutCreateInfo *")]
             Ref<PipelineLayoutCreateInfo> pCreateInfo,
@@ -54448,7 +54373,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PipelineLayoutCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreatePipelineLayout(
+                ((IVk)this).CreatePipelineLayout(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -54474,7 +54399,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreatePipelineLayout(device, pCreateInfo, pAllocator, pPipelineLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreatePrivateDataSlot(
+    Result IVk.CreatePrivateDataSlot(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPrivateDataSlotCreateInfo *")]
             PrivateDataSlotCreateInfo* pCreateInfo,
@@ -54506,7 +54431,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreatePrivateDataSlot(device, pCreateInfo, pAllocator, pPrivateDataSlot);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreatePrivateDataSlot(
+    Result IVk.CreatePrivateDataSlot(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPrivateDataSlotCreateInfo *")]
             Ref<PrivateDataSlotCreateInfo> pCreateInfo,
@@ -54519,7 +54444,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PrivateDataSlotCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreatePrivateDataSlot(
+                ((IVk)this).CreatePrivateDataSlot(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -54541,7 +54466,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreatePrivateDataSlot(device, pCreateInfo, pAllocator, pPrivateDataSlot);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreatePrivateDataSlotEXT(
+    Result IVk.CreatePrivateDataSlotEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPrivateDataSlotCreateInfo *")]
             PrivateDataSlotCreateInfo* pCreateInfo,
@@ -54583,7 +54508,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreatePrivateDataSlotEXT(device, pCreateInfo, pAllocator, pPrivateDataSlot);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreatePrivateDataSlotEXT(
+    Result IVk.CreatePrivateDataSlotEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPrivateDataSlotCreateInfo *")]
             Ref<PrivateDataSlotCreateInfo> pCreateInfo,
@@ -54596,7 +54521,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PrivateDataSlotCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreatePrivateDataSlotEXT(
+                ((IVk)this).CreatePrivateDataSlotEXT(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -54625,7 +54550,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreatePrivateDataSlotEXT(device, pCreateInfo, pAllocator, pPrivateDataSlot);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateQueryPool(
+    Result IVk.CreateQueryPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkQueryPoolCreateInfo *")] QueryPoolCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -54659,7 +54584,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateQueryPool(device, pCreateInfo, pAllocator, pQueryPool);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateQueryPool(
+    Result IVk.CreateQueryPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkQueryPoolCreateInfo *")] Ref<QueryPoolCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -54671,7 +54596,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (QueryPoolCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateQueryPool(
+                ((IVk)this).CreateQueryPool(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -54696,7 +54621,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateQueryPool(device, pCreateInfo, pAllocator, pQueryPool);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateRayTracingPipelinesKHR(
+    Result IVk.CreateRayTracingPipelinesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
@@ -54764,7 +54689,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateRayTracingPipelinesKHR(
+    Result IVk.CreateRayTracingPipelinesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
@@ -54780,7 +54705,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (RayTracingPipelineCreateInfoKHR* __dsl_pCreateInfos = pCreateInfos)
         {
             return (Result)
-                ((IVulkan)this).CreateRayTracingPipelinesKHR(
+                ((IVk)this).CreateRayTracingPipelinesKHR(
                     device,
                     deferredOperation,
                     pipelineCache,
@@ -54824,7 +54749,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateRayTracingPipelinesNV(
+    Result IVk.CreateRayTracingPipelinesNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeTypeName("uint32_t")] uint createInfoCount,
@@ -54880,7 +54805,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateRayTracingPipelinesNV(
+    Result IVk.CreateRayTracingPipelinesNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeTypeName("uint32_t")] uint createInfoCount,
@@ -54895,7 +54820,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (RayTracingPipelineCreateInfoNV* __dsl_pCreateInfos = pCreateInfos)
         {
             return (Result)
-                ((IVulkan)this).CreateRayTracingPipelinesNV(
+                ((IVk)this).CreateRayTracingPipelinesNV(
                     device,
                     pipelineCache,
                     createInfoCount,
@@ -54936,7 +54861,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateRenderPass(
+    Result IVk.CreateRenderPass(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderPassCreateInfo *")] RenderPassCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -54970,7 +54895,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateRenderPass(device, pCreateInfo, pAllocator, pRenderPass);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateRenderPass(
+    Result IVk.CreateRenderPass(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderPassCreateInfo *")] Ref<RenderPassCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -54982,7 +54907,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (RenderPassCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateRenderPass(
+                ((IVk)this).CreateRenderPass(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -55007,7 +54932,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateRenderPass(device, pCreateInfo, pAllocator, pRenderPass);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateRenderPass2(
+    Result IVk.CreateRenderPass2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderPassCreateInfo2 *")] RenderPassCreateInfo2* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -55041,7 +54966,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateRenderPass2(device, pCreateInfo, pAllocator, pRenderPass);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateRenderPass2(
+    Result IVk.CreateRenderPass2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderPassCreateInfo2 *")] Ref<RenderPassCreateInfo2> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -55053,7 +54978,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (RenderPassCreateInfo2* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateRenderPass2(
+                ((IVk)this).CreateRenderPass2(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -55078,7 +55003,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateRenderPass2(device, pCreateInfo, pAllocator, pRenderPass);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateRenderPass2KHR(
+    Result IVk.CreateRenderPass2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderPassCreateInfo2 *")] RenderPassCreateInfo2* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -55112,7 +55037,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateRenderPass2KHR(device, pCreateInfo, pAllocator, pRenderPass);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateRenderPass2KHR(
+    Result IVk.CreateRenderPass2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderPassCreateInfo2 *")] Ref<RenderPassCreateInfo2> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -55124,7 +55049,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (RenderPassCreateInfo2* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateRenderPass2KHR(
+                ((IVk)this).CreateRenderPass2KHR(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -55149,7 +55074,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateRenderPass2KHR(device, pCreateInfo, pAllocator, pRenderPass);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSampler(
+    Result IVk.CreateSampler(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSamplerCreateInfo *")] SamplerCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -55183,7 +55108,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateSampler(device, pCreateInfo, pAllocator, pSampler);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSampler(
+    Result IVk.CreateSampler(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSamplerCreateInfo *")] Ref<SamplerCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -55195,7 +55120,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SamplerCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateSampler(
+                ((IVk)this).CreateSampler(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -55220,7 +55145,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateSampler(device, pCreateInfo, pAllocator, pSampler);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSamplerYcbcrConversion(
+    Result IVk.CreateSamplerYcbcrConversion(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSamplerYcbcrConversionCreateInfo *")]
             SamplerYcbcrConversionCreateInfo* pCreateInfo,
@@ -55261,7 +55186,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateSamplerYcbcrConversion(device, pCreateInfo, pAllocator, pYcbcrConversion);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSamplerYcbcrConversion(
+    Result IVk.CreateSamplerYcbcrConversion(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSamplerYcbcrConversionCreateInfo *")]
             Ref<SamplerYcbcrConversionCreateInfo> pCreateInfo,
@@ -55275,7 +55200,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SamplerYcbcrConversionCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateSamplerYcbcrConversion(
+                ((IVk)this).CreateSamplerYcbcrConversion(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -55302,7 +55227,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateSamplerYcbcrConversion(device, pCreateInfo, pAllocator, pYcbcrConversion);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSamplerYcbcrConversionKHR(
+    Result IVk.CreateSamplerYcbcrConversionKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSamplerYcbcrConversionCreateInfo *")]
             SamplerYcbcrConversionCreateInfo* pCreateInfo,
@@ -55352,7 +55277,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSamplerYcbcrConversionKHR(
+    Result IVk.CreateSamplerYcbcrConversionKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSamplerYcbcrConversionCreateInfo *")]
             Ref<SamplerYcbcrConversionCreateInfo> pCreateInfo,
@@ -55366,7 +55291,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SamplerYcbcrConversionCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateSamplerYcbcrConversionKHR(
+                ((IVk)this).CreateSamplerYcbcrConversionKHR(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -55402,7 +55327,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSemaphore(
+    Result IVk.CreateSemaphore(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreCreateInfo *")] SemaphoreCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -55436,7 +55361,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateSemaphore(device, pCreateInfo, pAllocator, pSemaphore);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSemaphore(
+    Result IVk.CreateSemaphore(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreCreateInfo *")] Ref<SemaphoreCreateInfo> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -55448,7 +55373,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SemaphoreCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateSemaphore(
+                ((IVk)this).CreateSemaphore(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -55473,7 +55398,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateSemaphore(device, pCreateInfo, pAllocator, pSemaphore);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateShaderModule(
+    Result IVk.CreateShaderModule(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkShaderModuleCreateInfo *")] ShaderModuleCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -55507,7 +55432,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateShaderModule(device, pCreateInfo, pAllocator, pShaderModule);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateShaderModule(
+    Result IVk.CreateShaderModule(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkShaderModuleCreateInfo *")]
             Ref<ShaderModuleCreateInfo> pCreateInfo,
@@ -55520,7 +55445,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ShaderModuleCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateShaderModule(
+                ((IVk)this).CreateShaderModule(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -55546,7 +55471,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateShaderModule(device, pCreateInfo, pAllocator, pShaderModule);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateShadersEXT(
+    Result IVk.CreateShadersEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint createInfoCount,
         [NativeTypeName("const VkShaderCreateInfoEXT *")] ShaderCreateInfoEXT* pCreateInfos,
@@ -55587,7 +55512,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateShadersEXT(device, createInfoCount, pCreateInfos, pAllocator, pShaders);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateShadersEXT(
+    Result IVk.CreateShadersEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint createInfoCount,
         [NativeTypeName("const VkShaderCreateInfoEXT *")] Ref<ShaderCreateInfoEXT> pCreateInfos,
@@ -55600,7 +55525,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ShaderCreateInfoEXT* __dsl_pCreateInfos = pCreateInfos)
         {
             return (Result)
-                ((IVulkan)this).CreateShadersEXT(
+                ((IVk)this).CreateShadersEXT(
                     device,
                     createInfoCount,
                     __dsl_pCreateInfos,
@@ -55631,7 +55556,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateShadersEXT(device, createInfoCount, pCreateInfos, pAllocator, pShaders);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSharedSwapchainsKHR(
+    Result IVk.CreateSharedSwapchainsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint swapchainCount,
         [NativeTypeName("const VkSwapchainCreateInfoKHR *")] SwapchainCreateInfoKHR* pCreateInfos,
@@ -55678,7 +55603,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSharedSwapchainsKHR(
+    Result IVk.CreateSharedSwapchainsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint swapchainCount,
         [NativeTypeName("const VkSwapchainCreateInfoKHR *")]
@@ -55692,7 +55617,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SwapchainCreateInfoKHR* __dsl_pCreateInfos = pCreateInfos)
         {
             return (Result)
-                ((IVulkan)this).CreateSharedSwapchainsKHR(
+                ((IVk)this).CreateSharedSwapchainsKHR(
                     device,
                     swapchainCount,
                     __dsl_pCreateInfos,
@@ -55727,7 +55652,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSwapchainKHR(
+    Result IVk.CreateSwapchainKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSwapchainCreateInfoKHR *")] SwapchainCreateInfoKHR* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -55757,7 +55682,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateSwapchainKHR(device, pCreateInfo, pAllocator, pSwapchain);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateSwapchainKHR(
+    Result IVk.CreateSwapchainKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSwapchainCreateInfoKHR *")]
             Ref<SwapchainCreateInfoKHR> pCreateInfo,
@@ -55770,7 +55695,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SwapchainCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateSwapchainKHR(
+                ((IVk)this).CreateSwapchainKHR(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -55792,7 +55717,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateSwapchainKHR(device, pCreateInfo, pAllocator, pSwapchain);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateValidationCacheEXT(
+    Result IVk.CreateValidationCacheEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkValidationCacheCreateInfoEXT *")]
             ValidationCacheCreateInfoEXT* pCreateInfo,
@@ -55827,7 +55752,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateValidationCacheEXT(device, pCreateInfo, pAllocator, pValidationCache);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateValidationCacheEXT(
+    Result IVk.CreateValidationCacheEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkValidationCacheCreateInfoEXT *")]
             Ref<ValidationCacheCreateInfoEXT> pCreateInfo,
@@ -55840,7 +55765,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ValidationCacheCreateInfoEXT* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateValidationCacheEXT(
+                ((IVk)this).CreateValidationCacheEXT(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -55862,7 +55787,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateValidationCacheEXT(device, pCreateInfo, pAllocator, pValidationCache);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateVideoSessionKHR(
+    Result IVk.CreateVideoSessionKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkVideoSessionCreateInfoKHR *")]
             VideoSessionCreateInfoKHR* pCreateInfo,
@@ -55898,7 +55823,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateVideoSessionKHR(device, pCreateInfo, pAllocator, pVideoSession);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateVideoSessionKHR(
+    Result IVk.CreateVideoSessionKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkVideoSessionCreateInfoKHR *")]
             Ref<VideoSessionCreateInfoKHR> pCreateInfo,
@@ -55911,7 +55836,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (VideoSessionCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateVideoSessionKHR(
+                ((IVk)this).CreateVideoSessionKHR(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -55937,7 +55862,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.CreateVideoSessionKHR(device, pCreateInfo, pAllocator, pVideoSession);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateVideoSessionParametersKHR(
+    Result IVk.CreateVideoSessionParametersKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkVideoSessionParametersCreateInfoKHR *")]
             VideoSessionParametersCreateInfoKHR* pCreateInfo,
@@ -55984,7 +55909,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.CreateVideoSessionParametersKHR(
+    Result IVk.CreateVideoSessionParametersKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkVideoSessionParametersCreateInfoKHR *")]
             Ref<VideoSessionParametersCreateInfoKHR> pCreateInfo,
@@ -56000,7 +55925,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (VideoSessionParametersCreateInfoKHR* __dsl_pCreateInfo = pCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).CreateVideoSessionParametersKHR(
+                ((IVk)this).CreateVideoSessionParametersKHR(
                     device,
                     __dsl_pCreateInfo,
                     __dsl_pAllocator,
@@ -56033,7 +55958,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.DebugMarkerSetObjectNameEXT(
+    Result IVk.DebugMarkerSetObjectNameEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDebugMarkerObjectNameInfoEXT *")]
             DebugMarkerObjectNameInfoEXT* pNameInfo
@@ -56059,7 +55984,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DebugMarkerSetObjectNameEXT(device, pNameInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.DebugMarkerSetObjectNameEXT(
+    Result IVk.DebugMarkerSetObjectNameEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDebugMarkerObjectNameInfoEXT *")]
             Ref<DebugMarkerObjectNameInfoEXT> pNameInfo
@@ -56067,7 +55992,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DebugMarkerObjectNameInfoEXT* __dsl_pNameInfo = pNameInfo)
         {
-            return (Result)((IVulkan)this).DebugMarkerSetObjectNameEXT(device, __dsl_pNameInfo);
+            return (Result)((IVk)this).DebugMarkerSetObjectNameEXT(device, __dsl_pNameInfo);
         }
     }
 
@@ -56082,7 +56007,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DebugMarkerSetObjectNameEXT(device, pNameInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.DebugMarkerSetObjectTagEXT(
+    Result IVk.DebugMarkerSetObjectTagEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDebugMarkerObjectTagInfoEXT *")]
             DebugMarkerObjectTagInfoEXT* pTagInfo
@@ -56108,7 +56033,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DebugMarkerSetObjectTagEXT(device, pTagInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.DebugMarkerSetObjectTagEXT(
+    Result IVk.DebugMarkerSetObjectTagEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDebugMarkerObjectTagInfoEXT *")]
             Ref<DebugMarkerObjectTagInfoEXT> pTagInfo
@@ -56116,7 +56041,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DebugMarkerObjectTagInfoEXT* __dsl_pTagInfo = pTagInfo)
         {
-            return (Result)((IVulkan)this).DebugMarkerSetObjectTagEXT(device, __dsl_pTagInfo);
+            return (Result)((IVk)this).DebugMarkerSetObjectTagEXT(device, __dsl_pTagInfo);
         }
     }
 
@@ -56131,7 +56056,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DebugMarkerSetObjectTagEXT(device, pTagInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DebugReportMessageEXT(
+    void IVk.DebugReportMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("VkDebugReportFlagsEXT")] uint flags,
         DebugReportObjectTypeEXT objectType,
@@ -56183,7 +56108,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DebugReportMessageEXT(
+    void IVk.DebugReportMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("VkDebugReportFlagsEXT")] uint flags,
         DebugReportObjectTypeEXT objectType,
@@ -56197,7 +56122,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (sbyte* __dsl_pMessage = pMessage)
         fixed (sbyte* __dsl_pLayerPrefix = pLayerPrefix)
         {
-            ((IVulkan)this).DebugReportMessageEXT(
+            ((IVk)this).DebugReportMessageEXT(
                 instance,
                 flags,
                 objectType,
@@ -56236,7 +56161,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.DeferredOperationJoinKHR(
+    Result IVk.DeferredOperationJoinKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle operation
     ) =>
@@ -56260,7 +56185,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DeferredOperationJoinKHR(device, operation);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyAccelerationStructureKHR(
+    void IVk.DestroyAccelerationStructureKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkAccelerationStructureKHR")]
             AccelerationStructureKHRHandle accelerationStructure,
@@ -56299,7 +56224,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyAccelerationStructureKHR(device, accelerationStructure, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyAccelerationStructureKHR(
+    void IVk.DestroyAccelerationStructureKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkAccelerationStructureKHR")]
             AccelerationStructureKHRHandle accelerationStructure,
@@ -56308,7 +56233,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyAccelerationStructureKHR(
+            ((IVk)this).DestroyAccelerationStructureKHR(
                 device,
                 accelerationStructure,
                 __dsl_pAllocator
@@ -56335,7 +56260,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyAccelerationStructureKHR(device, accelerationStructure, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyAccelerationStructureNV(
+    void IVk.DestroyAccelerationStructureNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkAccelerationStructureNV")]
             AccelerationStructureNVHandle accelerationStructure,
@@ -56374,7 +56299,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyAccelerationStructureNV(device, accelerationStructure, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyAccelerationStructureNV(
+    void IVk.DestroyAccelerationStructureNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkAccelerationStructureNV")]
             AccelerationStructureNVHandle accelerationStructure,
@@ -56383,7 +56308,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyAccelerationStructureNV(
+            ((IVk)this).DestroyAccelerationStructureNV(
                 device,
                 accelerationStructure,
                 __dsl_pAllocator
@@ -56410,7 +56335,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyAccelerationStructureNV(device, accelerationStructure, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyBuffer(
+    void IVk.DestroyBuffer(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -56437,7 +56362,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyBuffer(device, buffer, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyBuffer(
+    void IVk.DestroyBuffer(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -56445,7 +56370,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyBuffer(device, buffer, __dsl_pAllocator);
+            ((IVk)this).DestroyBuffer(device, buffer, __dsl_pAllocator);
         }
     }
 
@@ -56464,7 +56389,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyBuffer(device, buffer, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyBufferView(
+    void IVk.DestroyBufferView(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkBufferView")] BufferViewHandle bufferView,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -56491,7 +56416,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyBufferView(device, bufferView, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyBufferView(
+    void IVk.DestroyBufferView(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkBufferView")] BufferViewHandle bufferView,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -56499,7 +56424,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyBufferView(device, bufferView, __dsl_pAllocator);
+            ((IVk)this).DestroyBufferView(device, bufferView, __dsl_pAllocator);
         }
     }
 
@@ -56518,7 +56443,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyBufferView(device, bufferView, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyCommandPool(
+    void IVk.DestroyCommandPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -56545,7 +56470,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyCommandPool(device, commandPool, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyCommandPool(
+    void IVk.DestroyCommandPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -56553,7 +56478,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyCommandPool(device, commandPool, __dsl_pAllocator);
+            ((IVk)this).DestroyCommandPool(device, commandPool, __dsl_pAllocator);
         }
     }
 
@@ -56572,7 +56497,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyCommandPool(device, commandPool, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyCudaFunctionNV(
+    void IVk.DestroyCudaFunctionNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCudaFunctionNV")] CudaFunctionNVHandle function,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -56595,7 +56520,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyCudaFunctionNV(device, function, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyCudaFunctionNV(
+    void IVk.DestroyCudaFunctionNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCudaFunctionNV")] CudaFunctionNVHandle function,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -56603,7 +56528,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyCudaFunctionNV(device, function, __dsl_pAllocator);
+            ((IVk)this).DestroyCudaFunctionNV(device, function, __dsl_pAllocator);
         }
     }
 
@@ -56618,7 +56543,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyCudaFunctionNV(device, function, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyCudaModuleNV(
+    void IVk.DestroyCudaModuleNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -56641,7 +56566,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyCudaModuleNV(device, module, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyCudaModuleNV(
+    void IVk.DestroyCudaModuleNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -56649,7 +56574,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyCudaModuleNV(device, module, __dsl_pAllocator);
+            ((IVk)this).DestroyCudaModuleNV(device, module, __dsl_pAllocator);
         }
     }
 
@@ -56664,7 +56589,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyCudaModuleNV(device, module, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyCuFunctionNVX(
+    void IVk.DestroyCuFunctionNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCuFunctionNVX")] CuFunctionNVXHandle function,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -56687,7 +56612,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyCuFunctionNVX(device, function, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyCuFunctionNVX(
+    void IVk.DestroyCuFunctionNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCuFunctionNVX")] CuFunctionNVXHandle function,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -56695,7 +56620,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyCuFunctionNVX(device, function, __dsl_pAllocator);
+            ((IVk)this).DestroyCuFunctionNVX(device, function, __dsl_pAllocator);
         }
     }
 
@@ -56710,7 +56635,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyCuFunctionNVX(device, function, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyCuModuleNVX(
+    void IVk.DestroyCuModuleNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCuModuleNVX")] CuModuleNVXHandle module,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -56733,7 +56658,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyCuModuleNVX(device, module, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyCuModuleNVX(
+    void IVk.DestroyCuModuleNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCuModuleNVX")] CuModuleNVXHandle module,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -56741,7 +56666,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyCuModuleNVX(device, module, __dsl_pAllocator);
+            ((IVk)this).DestroyCuModuleNVX(device, module, __dsl_pAllocator);
         }
     }
 
@@ -56756,7 +56681,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyCuModuleNVX(device, module, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDebugReportCallbackEXT(
+    void IVk.DestroyDebugReportCallbackEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("VkDebugReportCallbackEXT")] DebugReportCallbackEXTHandle callback,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -56786,7 +56711,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDebugReportCallbackEXT(instance, callback, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDebugReportCallbackEXT(
+    void IVk.DestroyDebugReportCallbackEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("VkDebugReportCallbackEXT")] DebugReportCallbackEXTHandle callback,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -56794,7 +56719,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyDebugReportCallbackEXT(instance, callback, __dsl_pAllocator);
+            ((IVk)this).DestroyDebugReportCallbackEXT(instance, callback, __dsl_pAllocator);
         }
     }
 
@@ -56809,7 +56734,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDebugReportCallbackEXT(instance, callback, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDebugUtilsMessengerEXT(
+    void IVk.DestroyDebugUtilsMessengerEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("VkDebugUtilsMessengerEXT")] DebugUtilsMessengerEXTHandle messenger,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -56839,7 +56764,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDebugUtilsMessengerEXT(instance, messenger, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDebugUtilsMessengerEXT(
+    void IVk.DestroyDebugUtilsMessengerEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("VkDebugUtilsMessengerEXT")] DebugUtilsMessengerEXTHandle messenger,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -56847,7 +56772,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyDebugUtilsMessengerEXT(instance, messenger, __dsl_pAllocator);
+            ((IVk)this).DestroyDebugUtilsMessengerEXT(instance, messenger, __dsl_pAllocator);
         }
     }
 
@@ -56862,7 +56787,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDebugUtilsMessengerEXT(instance, messenger, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDeferredOperationKHR(
+    void IVk.DestroyDeferredOperationKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle operation,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -56892,7 +56817,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDeferredOperationKHR(device, operation, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDeferredOperationKHR(
+    void IVk.DestroyDeferredOperationKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle operation,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -56900,7 +56825,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyDeferredOperationKHR(device, operation, __dsl_pAllocator);
+            ((IVk)this).DestroyDeferredOperationKHR(device, operation, __dsl_pAllocator);
         }
     }
 
@@ -56915,7 +56840,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDeferredOperationKHR(device, operation, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDescriptorPool(
+    void IVk.DestroyDescriptorPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorPool")] DescriptorPoolHandle descriptorPool,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -56942,7 +56867,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDescriptorPool(device, descriptorPool, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDescriptorPool(
+    void IVk.DestroyDescriptorPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorPool")] DescriptorPoolHandle descriptorPool,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -56950,7 +56875,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyDescriptorPool(device, descriptorPool, __dsl_pAllocator);
+            ((IVk)this).DestroyDescriptorPool(device, descriptorPool, __dsl_pAllocator);
         }
     }
 
@@ -56969,7 +56894,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDescriptorPool(device, descriptorPool, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDescriptorSetLayout(
+    void IVk.DestroyDescriptorSetLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSetLayout")] DescriptorSetLayoutHandle descriptorSetLayout,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -57003,7 +56928,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDescriptorSetLayout(device, descriptorSetLayout, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDescriptorSetLayout(
+    void IVk.DestroyDescriptorSetLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSetLayout")] DescriptorSetLayoutHandle descriptorSetLayout,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -57011,11 +56936,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyDescriptorSetLayout(
-                device,
-                descriptorSetLayout,
-                __dsl_pAllocator
-            );
+            ((IVk)this).DestroyDescriptorSetLayout(device, descriptorSetLayout, __dsl_pAllocator);
         }
     }
 
@@ -57034,7 +56955,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDescriptorSetLayout(device, descriptorSetLayout, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDescriptorUpdateTemplate(
+    void IVk.DestroyDescriptorUpdateTemplate(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
             DescriptorUpdateTemplateHandle descriptorUpdateTemplate,
@@ -57070,7 +56991,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDescriptorUpdateTemplate(device, descriptorUpdateTemplate, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDescriptorUpdateTemplate(
+    void IVk.DestroyDescriptorUpdateTemplate(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
             DescriptorUpdateTemplateHandle descriptorUpdateTemplate,
@@ -57079,7 +57000,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyDescriptorUpdateTemplate(
+            ((IVk)this).DestroyDescriptorUpdateTemplate(
                 device,
                 descriptorUpdateTemplate,
                 __dsl_pAllocator
@@ -57103,7 +57024,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDescriptorUpdateTemplate(device, descriptorUpdateTemplate, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDescriptorUpdateTemplateKHR(
+    void IVk.DestroyDescriptorUpdateTemplateKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
             DescriptorUpdateTemplateHandle descriptorUpdateTemplate,
@@ -57135,7 +57056,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDescriptorUpdateTemplateKHR(device, descriptorUpdateTemplate, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDescriptorUpdateTemplateKHR(
+    void IVk.DestroyDescriptorUpdateTemplateKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
             DescriptorUpdateTemplateHandle descriptorUpdateTemplate,
@@ -57144,7 +57065,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyDescriptorUpdateTemplateKHR(
+            ((IVk)this).DestroyDescriptorUpdateTemplateKHR(
                 device,
                 descriptorUpdateTemplate,
                 __dsl_pAllocator
@@ -57164,7 +57085,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDescriptorUpdateTemplateKHR(device, descriptorUpdateTemplate, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDevice(
+    void IVk.DestroyDevice(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
     ) =>
@@ -57189,14 +57110,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDevice(device, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyDevice(
+    void IVk.DestroyDevice(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     )
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyDevice(device, __dsl_pAllocator);
+            ((IVk)this).DestroyDevice(device, __dsl_pAllocator);
         }
     }
 
@@ -57214,7 +57135,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyDevice(device, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyEvent(
+    void IVk.DestroyEvent(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkEvent")] EventHandle @event,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -57241,7 +57162,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyEvent(device, @event, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyEvent(
+    void IVk.DestroyEvent(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkEvent")] EventHandle @event,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -57249,7 +57170,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyEvent(device, @event, __dsl_pAllocator);
+            ((IVk)this).DestroyEvent(device, @event, __dsl_pAllocator);
         }
     }
 
@@ -57268,7 +57189,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyEvent(device, @event, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyExternalComputeQueueNV(
+    void IVk.DestroyExternalComputeQueueNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkExternalComputeQueueNV")] ExternalComputeQueueNVHandle externalQueue,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -57298,7 +57219,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyExternalComputeQueueNV(device, externalQueue, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyExternalComputeQueueNV(
+    void IVk.DestroyExternalComputeQueueNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkExternalComputeQueueNV")] ExternalComputeQueueNVHandle externalQueue,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -57306,7 +57227,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyExternalComputeQueueNV(device, externalQueue, __dsl_pAllocator);
+            ((IVk)this).DestroyExternalComputeQueueNV(device, externalQueue, __dsl_pAllocator);
         }
     }
 
@@ -57321,7 +57242,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyExternalComputeQueueNV(device, externalQueue, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyFence(
+    void IVk.DestroyFence(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkFence")] FenceHandle fence,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -57348,7 +57269,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyFence(device, fence, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyFence(
+    void IVk.DestroyFence(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkFence")] FenceHandle fence,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -57356,7 +57277,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyFence(device, fence, __dsl_pAllocator);
+            ((IVk)this).DestroyFence(device, fence, __dsl_pAllocator);
         }
     }
 
@@ -57375,7 +57296,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyFence(device, fence, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyFramebuffer(
+    void IVk.DestroyFramebuffer(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkFramebuffer")] FramebufferHandle framebuffer,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -57402,7 +57323,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyFramebuffer(device, framebuffer, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyFramebuffer(
+    void IVk.DestroyFramebuffer(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkFramebuffer")] FramebufferHandle framebuffer,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -57410,7 +57331,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyFramebuffer(device, framebuffer, __dsl_pAllocator);
+            ((IVk)this).DestroyFramebuffer(device, framebuffer, __dsl_pAllocator);
         }
     }
 
@@ -57429,7 +57350,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyFramebuffer(device, framebuffer, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyImage(
+    void IVk.DestroyImage(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -57456,7 +57377,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyImage(device, image, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyImage(
+    void IVk.DestroyImage(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -57464,7 +57385,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyImage(device, image, __dsl_pAllocator);
+            ((IVk)this).DestroyImage(device, image, __dsl_pAllocator);
         }
     }
 
@@ -57483,7 +57404,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyImage(device, image, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyImageView(
+    void IVk.DestroyImageView(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImageView")] ImageViewHandle imageView,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -57510,7 +57431,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyImageView(device, imageView, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyImageView(
+    void IVk.DestroyImageView(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImageView")] ImageViewHandle imageView,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -57518,7 +57439,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyImageView(device, imageView, __dsl_pAllocator);
+            ((IVk)this).DestroyImageView(device, imageView, __dsl_pAllocator);
         }
     }
 
@@ -57537,7 +57458,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyImageView(device, imageView, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyIndirectCommandsLayoutEXT(
+    void IVk.DestroyIndirectCommandsLayoutEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectCommandsLayoutEXT")]
             IndirectCommandsLayoutEXTHandle indirectCommandsLayout,
@@ -57577,7 +57498,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyIndirectCommandsLayoutEXT(device, indirectCommandsLayout, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyIndirectCommandsLayoutEXT(
+    void IVk.DestroyIndirectCommandsLayoutEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectCommandsLayoutEXT")]
             IndirectCommandsLayoutEXTHandle indirectCommandsLayout,
@@ -57586,7 +57507,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyIndirectCommandsLayoutEXT(
+            ((IVk)this).DestroyIndirectCommandsLayoutEXT(
                 device,
                 indirectCommandsLayout,
                 __dsl_pAllocator
@@ -57614,7 +57535,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyIndirectCommandsLayoutEXT(device, indirectCommandsLayout, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyIndirectCommandsLayoutNV(
+    void IVk.DestroyIndirectCommandsLayoutNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectCommandsLayoutNV")]
             IndirectCommandsLayoutNVHandle indirectCommandsLayout,
@@ -57650,7 +57571,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyIndirectCommandsLayoutNV(device, indirectCommandsLayout, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyIndirectCommandsLayoutNV(
+    void IVk.DestroyIndirectCommandsLayoutNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectCommandsLayoutNV")]
             IndirectCommandsLayoutNVHandle indirectCommandsLayout,
@@ -57659,7 +57580,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyIndirectCommandsLayoutNV(
+            ((IVk)this).DestroyIndirectCommandsLayoutNV(
                 device,
                 indirectCommandsLayout,
                 __dsl_pAllocator
@@ -57683,7 +57604,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyIndirectCommandsLayoutNV(device, indirectCommandsLayout, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyIndirectExecutionSetEXT(
+    void IVk.DestroyIndirectExecutionSetEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectExecutionSetEXT")]
             IndirectExecutionSetEXTHandle indirectExecutionSet,
@@ -57723,7 +57644,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyIndirectExecutionSetEXT(device, indirectExecutionSet, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyIndirectExecutionSetEXT(
+    void IVk.DestroyIndirectExecutionSetEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectExecutionSetEXT")]
             IndirectExecutionSetEXTHandle indirectExecutionSet,
@@ -57732,7 +57653,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyIndirectExecutionSetEXT(
+            ((IVk)this).DestroyIndirectExecutionSetEXT(
                 device,
                 indirectExecutionSet,
                 __dsl_pAllocator
@@ -57760,7 +57681,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyIndirectExecutionSetEXT(device, indirectExecutionSet, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyInstance(
+    void IVk.DestroyInstance(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
     ) =>
@@ -57785,14 +57706,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyInstance(instance, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyInstance(
+    void IVk.DestroyInstance(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     )
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyInstance(instance, __dsl_pAllocator);
+            ((IVk)this).DestroyInstance(instance, __dsl_pAllocator);
         }
     }
 
@@ -57810,7 +57731,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyInstance(instance, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyMicromapEXT(
+    void IVk.DestroyMicromapEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkMicromapEXT")] MicromapEXTHandle micromap,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -57840,7 +57761,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyMicromapEXT(device, micromap, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyMicromapEXT(
+    void IVk.DestroyMicromapEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkMicromapEXT")] MicromapEXTHandle micromap,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -57848,7 +57769,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyMicromapEXT(device, micromap, __dsl_pAllocator);
+            ((IVk)this).DestroyMicromapEXT(device, micromap, __dsl_pAllocator);
         }
     }
 
@@ -57870,7 +57791,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyMicromapEXT(device, micromap, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyOpticalFlowSessionNV(
+    void IVk.DestroyOpticalFlowSessionNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkOpticalFlowSessionNV")] OpticalFlowSessionNVHandle session,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -57908,7 +57829,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyOpticalFlowSessionNV(device, session, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyOpticalFlowSessionNV(
+    void IVk.DestroyOpticalFlowSessionNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkOpticalFlowSessionNV")] OpticalFlowSessionNVHandle session,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -57916,7 +57837,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyOpticalFlowSessionNV(device, session, __dsl_pAllocator);
+            ((IVk)this).DestroyOpticalFlowSessionNV(device, session, __dsl_pAllocator);
         }
     }
 
@@ -57939,7 +57860,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyOpticalFlowSessionNV(device, session, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPipeline(
+    void IVk.DestroyPipeline(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -57966,7 +57887,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPipeline(device, pipeline, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPipeline(
+    void IVk.DestroyPipeline(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -57974,7 +57895,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyPipeline(device, pipeline, __dsl_pAllocator);
+            ((IVk)this).DestroyPipeline(device, pipeline, __dsl_pAllocator);
         }
     }
 
@@ -57993,7 +57914,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPipeline(device, pipeline, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPipelineBinaryKHR(
+    void IVk.DestroyPipelineBinaryKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58030,7 +57951,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPipelineBinaryKHR(device, pipelineBinary, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPipelineBinaryKHR(
+    void IVk.DestroyPipelineBinaryKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineBinaryKHR")] PipelineBinaryKHRHandle pipelineBinary,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58038,7 +57959,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyPipelineBinaryKHR(device, pipelineBinary, __dsl_pAllocator);
+            ((IVk)this).DestroyPipelineBinaryKHR(device, pipelineBinary, __dsl_pAllocator);
         }
     }
 
@@ -58060,7 +57981,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPipelineBinaryKHR(device, pipelineBinary, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPipelineCache(
+    void IVk.DestroyPipelineCache(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58087,7 +58008,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPipelineCache(device, pipelineCache, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPipelineCache(
+    void IVk.DestroyPipelineCache(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58095,7 +58016,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyPipelineCache(device, pipelineCache, __dsl_pAllocator);
+            ((IVk)this).DestroyPipelineCache(device, pipelineCache, __dsl_pAllocator);
         }
     }
 
@@ -58114,7 +58035,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPipelineCache(device, pipelineCache, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPipelineLayout(
+    void IVk.DestroyPipelineLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle pipelineLayout,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58141,7 +58062,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPipelineLayout(device, pipelineLayout, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPipelineLayout(
+    void IVk.DestroyPipelineLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle pipelineLayout,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58149,7 +58070,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyPipelineLayout(device, pipelineLayout, __dsl_pAllocator);
+            ((IVk)this).DestroyPipelineLayout(device, pipelineLayout, __dsl_pAllocator);
         }
     }
 
@@ -58168,7 +58089,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPipelineLayout(device, pipelineLayout, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPrivateDataSlot(
+    void IVk.DestroyPrivateDataSlot(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPrivateDataSlot")] PrivateDataSlotHandle privateDataSlot,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58191,7 +58112,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPrivateDataSlot(device, privateDataSlot, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPrivateDataSlot(
+    void IVk.DestroyPrivateDataSlot(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPrivateDataSlot")] PrivateDataSlotHandle privateDataSlot,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58199,7 +58120,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyPrivateDataSlot(device, privateDataSlot, __dsl_pAllocator);
+            ((IVk)this).DestroyPrivateDataSlot(device, privateDataSlot, __dsl_pAllocator);
         }
     }
 
@@ -58214,7 +58135,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPrivateDataSlot(device, privateDataSlot, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPrivateDataSlotEXT(
+    void IVk.DestroyPrivateDataSlotEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPrivateDataSlot")] PrivateDataSlotHandle privateDataSlot,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58247,7 +58168,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPrivateDataSlotEXT(device, privateDataSlot, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyPrivateDataSlotEXT(
+    void IVk.DestroyPrivateDataSlotEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPrivateDataSlot")] PrivateDataSlotHandle privateDataSlot,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58255,7 +58176,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyPrivateDataSlotEXT(device, privateDataSlot, __dsl_pAllocator);
+            ((IVk)this).DestroyPrivateDataSlotEXT(device, privateDataSlot, __dsl_pAllocator);
         }
     }
 
@@ -58277,7 +58198,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyPrivateDataSlotEXT(device, privateDataSlot, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyQueryPool(
+    void IVk.DestroyQueryPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58304,7 +58225,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyQueryPool(device, queryPool, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyQueryPool(
+    void IVk.DestroyQueryPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58312,7 +58233,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyQueryPool(device, queryPool, __dsl_pAllocator);
+            ((IVk)this).DestroyQueryPool(device, queryPool, __dsl_pAllocator);
         }
     }
 
@@ -58331,7 +58252,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyQueryPool(device, queryPool, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyRenderPass(
+    void IVk.DestroyRenderPass(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkRenderPass")] RenderPassHandle renderPass,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58358,7 +58279,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyRenderPass(device, renderPass, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyRenderPass(
+    void IVk.DestroyRenderPass(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkRenderPass")] RenderPassHandle renderPass,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58366,7 +58287,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyRenderPass(device, renderPass, __dsl_pAllocator);
+            ((IVk)this).DestroyRenderPass(device, renderPass, __dsl_pAllocator);
         }
     }
 
@@ -58385,7 +58306,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyRenderPass(device, renderPass, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySampler(
+    void IVk.DestroySampler(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSampler")] SamplerHandle sampler,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58412,7 +58333,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySampler(device, sampler, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySampler(
+    void IVk.DestroySampler(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSampler")] SamplerHandle sampler,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58420,7 +58341,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroySampler(device, sampler, __dsl_pAllocator);
+            ((IVk)this).DestroySampler(device, sampler, __dsl_pAllocator);
         }
     }
 
@@ -58439,7 +58360,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySampler(device, sampler, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySamplerYcbcrConversion(
+    void IVk.DestroySamplerYcbcrConversion(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSamplerYcbcrConversion")] SamplerYcbcrConversionHandle ycbcrConversion,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58473,7 +58394,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySamplerYcbcrConversion(device, ycbcrConversion, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySamplerYcbcrConversion(
+    void IVk.DestroySamplerYcbcrConversion(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSamplerYcbcrConversion")] SamplerYcbcrConversionHandle ycbcrConversion,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58481,11 +58402,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroySamplerYcbcrConversion(
-                device,
-                ycbcrConversion,
-                __dsl_pAllocator
-            );
+            ((IVk)this).DestroySamplerYcbcrConversion(device, ycbcrConversion, __dsl_pAllocator);
         }
     }
 
@@ -58504,7 +58421,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySamplerYcbcrConversion(device, ycbcrConversion, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySamplerYcbcrConversionKHR(
+    void IVk.DestroySamplerYcbcrConversionKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSamplerYcbcrConversion")] SamplerYcbcrConversionHandle ycbcrConversion,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58541,7 +58458,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySamplerYcbcrConversionKHR(device, ycbcrConversion, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySamplerYcbcrConversionKHR(
+    void IVk.DestroySamplerYcbcrConversionKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSamplerYcbcrConversion")] SamplerYcbcrConversionHandle ycbcrConversion,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58549,11 +58466,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroySamplerYcbcrConversionKHR(
-                device,
-                ycbcrConversion,
-                __dsl_pAllocator
-            );
+            ((IVk)this).DestroySamplerYcbcrConversionKHR(device, ycbcrConversion, __dsl_pAllocator);
         }
     }
 
@@ -58575,7 +58488,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySamplerYcbcrConversionKHR(device, ycbcrConversion, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySemaphore(
+    void IVk.DestroySemaphore(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSemaphore")] SemaphoreHandle semaphore,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58602,7 +58515,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySemaphore(device, semaphore, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySemaphore(
+    void IVk.DestroySemaphore(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSemaphore")] SemaphoreHandle semaphore,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58610,7 +58523,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroySemaphore(device, semaphore, __dsl_pAllocator);
+            ((IVk)this).DestroySemaphore(device, semaphore, __dsl_pAllocator);
         }
     }
 
@@ -58629,7 +58542,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySemaphore(device, semaphore, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyShaderEXT(
+    void IVk.DestroyShaderEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkShaderEXT")] ShaderEXTHandle shader,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58660,7 +58573,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyShaderEXT(device, shader, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyShaderEXT(
+    void IVk.DestroyShaderEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkShaderEXT")] ShaderEXTHandle shader,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58668,7 +58581,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyShaderEXT(device, shader, __dsl_pAllocator);
+            ((IVk)this).DestroyShaderEXT(device, shader, __dsl_pAllocator);
         }
     }
 
@@ -58691,7 +58604,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyShaderEXT(device, shader, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyShaderModule(
+    void IVk.DestroyShaderModule(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkShaderModule")] ShaderModuleHandle shaderModule,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58718,7 +58631,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyShaderModule(device, shaderModule, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyShaderModule(
+    void IVk.DestroyShaderModule(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkShaderModule")] ShaderModuleHandle shaderModule,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58726,7 +58639,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyShaderModule(device, shaderModule, __dsl_pAllocator);
+            ((IVk)this).DestroyShaderModule(device, shaderModule, __dsl_pAllocator);
         }
     }
 
@@ -58745,7 +58658,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyShaderModule(device, shaderModule, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySurfaceKHR(
+    void IVk.DestroySurfaceKHR(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58768,7 +58681,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySurfaceKHR(instance, surface, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySurfaceKHR(
+    void IVk.DestroySurfaceKHR(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58776,7 +58689,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroySurfaceKHR(instance, surface, __dsl_pAllocator);
+            ((IVk)this).DestroySurfaceKHR(instance, surface, __dsl_pAllocator);
         }
     }
 
@@ -58791,7 +58704,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySurfaceKHR(instance, surface, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySwapchainKHR(
+    void IVk.DestroySwapchainKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58814,7 +58727,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySwapchainKHR(device, swapchain, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroySwapchainKHR(
+    void IVk.DestroySwapchainKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58822,7 +58735,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroySwapchainKHR(device, swapchain, __dsl_pAllocator);
+            ((IVk)this).DestroySwapchainKHR(device, swapchain, __dsl_pAllocator);
         }
     }
 
@@ -58837,7 +58750,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroySwapchainKHR(device, swapchain, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyValidationCacheEXT(
+    void IVk.DestroyValidationCacheEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkValidationCacheEXT")] ValidationCacheEXTHandle validationCache,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58867,7 +58780,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyValidationCacheEXT(device, validationCache, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyValidationCacheEXT(
+    void IVk.DestroyValidationCacheEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkValidationCacheEXT")] ValidationCacheEXTHandle validationCache,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58875,7 +58788,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyValidationCacheEXT(device, validationCache, __dsl_pAllocator);
+            ((IVk)this).DestroyValidationCacheEXT(device, validationCache, __dsl_pAllocator);
         }
     }
 
@@ -58890,7 +58803,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyValidationCacheEXT(device, validationCache, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyVideoSessionKHR(
+    void IVk.DestroyVideoSessionKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkVideoSessionKHR")] VideoSessionKHRHandle videoSession,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -58917,7 +58830,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyVideoSessionKHR(device, videoSession, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyVideoSessionKHR(
+    void IVk.DestroyVideoSessionKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkVideoSessionKHR")] VideoSessionKHRHandle videoSession,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -58925,7 +58838,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyVideoSessionKHR(device, videoSession, __dsl_pAllocator);
+            ((IVk)this).DestroyVideoSessionKHR(device, videoSession, __dsl_pAllocator);
         }
     }
 
@@ -58944,7 +58857,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyVideoSessionKHR(device, videoSession, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyVideoSessionParametersKHR(
+    void IVk.DestroyVideoSessionParametersKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkVideoSessionParametersKHR")]
             VideoSessionParametersKHRHandle videoSessionParameters,
@@ -58980,7 +58893,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyVideoSessionParametersKHR(device, videoSessionParameters, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.DestroyVideoSessionParametersKHR(
+    void IVk.DestroyVideoSessionParametersKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkVideoSessionParametersKHR")]
             VideoSessionParametersKHRHandle videoSessionParameters,
@@ -58989,7 +58902,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).DestroyVideoSessionParametersKHR(
+            ((IVk)this).DestroyVideoSessionParametersKHR(
                 device,
                 videoSessionParameters,
                 __dsl_pAllocator
@@ -59013,7 +58926,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DestroyVideoSessionParametersKHR(device, videoSessionParameters, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.DeviceWaitIdle([NativeTypeName("VkDevice")] DeviceHandle device) =>
+    Result IVk.DeviceWaitIdle([NativeTypeName("VkDevice")] DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, Result>)(
                 _slots[413] is not null and var loadedFnPtr
@@ -59033,7 +58946,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.DeviceWaitIdle(device);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.DisplayPowerControlEXT(
+    Result IVk.DisplayPowerControlEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display,
         [NativeTypeName("const VkDisplayPowerInfoEXT *")] DisplayPowerInfoEXT* pDisplayPowerInfo
@@ -59060,7 +58973,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DisplayPowerControlEXT(device, display, pDisplayPowerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.DisplayPowerControlEXT(
+    Result IVk.DisplayPowerControlEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display,
         [NativeTypeName("const VkDisplayPowerInfoEXT *")] Ref<DisplayPowerInfoEXT> pDisplayPowerInfo
@@ -59069,7 +58982,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DisplayPowerInfoEXT* __dsl_pDisplayPowerInfo = pDisplayPowerInfo)
         {
             return (Result)
-                ((IVulkan)this).DisplayPowerControlEXT(device, display, __dsl_pDisplayPowerInfo);
+                ((IVk)this).DisplayPowerControlEXT(device, display, __dsl_pDisplayPowerInfo);
         }
     }
 
@@ -59088,7 +59001,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.DisplayPowerControlEXT(device, display, pDisplayPowerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EndCommandBuffer(
+    Result IVk.EndCommandBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer
     ) =>
         (
@@ -59111,7 +59024,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.EndCommandBuffer(commandBuffer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumerateDeviceExtensionProperties(
+    Result IVk.EnumerateDeviceExtensionProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const char *")] sbyte* pLayerName,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
@@ -59154,7 +59067,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumerateDeviceExtensionProperties(
+    Result IVk.EnumerateDeviceExtensionProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const char *")] Ref<sbyte> pLayerName,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
@@ -59166,7 +59079,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (sbyte* __dsl_pLayerName = pLayerName)
         {
             return (Result)
-                ((IVulkan)this).EnumerateDeviceExtensionProperties(
+                ((IVk)this).EnumerateDeviceExtensionProperties(
                     physicalDevice,
                     __dsl_pLayerName,
                     __dsl_pPropertyCount,
@@ -59197,7 +59110,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumerateDeviceLayerProperties(
+    Result IVk.EnumerateDeviceLayerProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         LayerProperties* pProperties
@@ -59227,7 +59140,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.EnumerateDeviceLayerProperties(physicalDevice, pPropertyCount, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumerateDeviceLayerProperties(
+    Result IVk.EnumerateDeviceLayerProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<LayerProperties> pProperties
@@ -59237,7 +59150,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).EnumerateDeviceLayerProperties(
+                ((IVk)this).EnumerateDeviceLayerProperties(
                     physicalDevice,
                     __dsl_pPropertyCount,
                     __dsl_pProperties
@@ -59260,7 +59173,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.EnumerateDeviceLayerProperties(physicalDevice, pPropertyCount, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumerateInstanceExtensionProperties(
+    Result IVk.EnumerateInstanceExtensionProperties(
         [NativeTypeName("const char *")] sbyte* pLayerName,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         ExtensionProperties* pProperties
@@ -59290,7 +59203,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.EnumerateInstanceExtensionProperties(pLayerName, pPropertyCount, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumerateInstanceExtensionProperties(
+    Result IVk.EnumerateInstanceExtensionProperties(
         [NativeTypeName("const char *")] Ref<sbyte> pLayerName,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<ExtensionProperties> pProperties
@@ -59301,7 +59214,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (sbyte* __dsl_pLayerName = pLayerName)
         {
             return (Result)
-                ((IVulkan)this).EnumerateInstanceExtensionProperties(
+                ((IVk)this).EnumerateInstanceExtensionProperties(
                     __dsl_pLayerName,
                     __dsl_pPropertyCount,
                     __dsl_pProperties
@@ -59324,7 +59237,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.EnumerateInstanceExtensionProperties(pLayerName, pPropertyCount, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumerateInstanceLayerProperties(
+    Result IVk.EnumerateInstanceLayerProperties(
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         LayerProperties* pProperties
     ) =>
@@ -59352,7 +59265,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.EnumerateInstanceLayerProperties(pPropertyCount, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumerateInstanceLayerProperties(
+    Result IVk.EnumerateInstanceLayerProperties(
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<LayerProperties> pProperties
     )
@@ -59361,7 +59274,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).EnumerateInstanceLayerProperties(
+                ((IVk)this).EnumerateInstanceLayerProperties(
                     __dsl_pPropertyCount,
                     __dsl_pProperties
                 );
@@ -59382,7 +59295,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.EnumerateInstanceLayerProperties(pPropertyCount, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumerateInstanceVersion([NativeTypeName("uint32_t *")] uint* pApiVersion) =>
+    Result IVk.EnumerateInstanceVersion([NativeTypeName("uint32_t *")] uint* pApiVersion) =>
         (
             (delegate* unmanaged<uint*, Result>)(
                 _slots[420] is not null and var loadedFnPtr
@@ -59406,11 +59319,11 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.EnumerateInstanceVersion(pApiVersion);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumerateInstanceVersion([NativeTypeName("uint32_t *")] Ref<uint> pApiVersion)
+    Result IVk.EnumerateInstanceVersion([NativeTypeName("uint32_t *")] Ref<uint> pApiVersion)
     {
         fixed (uint* __dsl_pApiVersion = pApiVersion)
         {
-            return (Result)((IVulkan)this).EnumerateInstanceVersion(__dsl_pApiVersion);
+            return (Result)((IVk)this).EnumerateInstanceVersion(__dsl_pApiVersion);
         }
     }
 
@@ -59427,7 +59340,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.EnumerateInstanceVersion(pApiVersion);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumeratePhysicalDeviceGroups(
+    Result IVk.EnumeratePhysicalDeviceGroups(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("uint32_t *")] uint* pPhysicalDeviceGroupCount,
         PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties
@@ -59462,7 +59375,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumeratePhysicalDeviceGroups(
+    Result IVk.EnumeratePhysicalDeviceGroups(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("uint32_t *")] Ref<uint> pPhysicalDeviceGroupCount,
         Ref<PhysicalDeviceGroupProperties> pPhysicalDeviceGroupProperties
@@ -59475,7 +59388,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPhysicalDeviceGroupCount = pPhysicalDeviceGroupCount)
         {
             return (Result)
-                ((IVulkan)this).EnumeratePhysicalDeviceGroups(
+                ((IVk)this).EnumeratePhysicalDeviceGroups(
                     instance,
                     __dsl_pPhysicalDeviceGroupCount,
                     __dsl_pPhysicalDeviceGroupProperties
@@ -59503,7 +59416,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumeratePhysicalDeviceGroupsKHR(
+    Result IVk.EnumeratePhysicalDeviceGroupsKHR(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("uint32_t *")] uint* pPhysicalDeviceGroupCount,
         PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties
@@ -59534,7 +59447,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumeratePhysicalDeviceGroupsKHR(
+    Result IVk.EnumeratePhysicalDeviceGroupsKHR(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("uint32_t *")] Ref<uint> pPhysicalDeviceGroupCount,
         Ref<PhysicalDeviceGroupProperties> pPhysicalDeviceGroupProperties
@@ -59547,7 +59460,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPhysicalDeviceGroupCount = pPhysicalDeviceGroupCount)
         {
             return (Result)
-                ((IVulkan)this).EnumeratePhysicalDeviceGroupsKHR(
+                ((IVk)this).EnumeratePhysicalDeviceGroupsKHR(
                     instance,
                     __dsl_pPhysicalDeviceGroupCount,
                     __dsl_pPhysicalDeviceGroupProperties
@@ -59571,7 +59484,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR(
+    Result IVk.EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t")] uint queueFamilyIndex,
         [NativeTypeName("uint32_t *")] uint* pCounterCount,
@@ -59624,7 +59537,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR(
+    Result IVk.EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t")] uint queueFamilyIndex,
         [NativeTypeName("uint32_t *")] Ref<uint> pCounterCount,
@@ -59637,7 +59550,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pCounterCount = pCounterCount)
         {
             return (Result)
-                ((IVulkan)this).EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR(
+                ((IVk)this).EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR(
                     physicalDevice,
                     queueFamilyIndex,
                     __dsl_pCounterCount,
@@ -59677,7 +59590,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumeratePhysicalDevices(
+    Result IVk.EnumeratePhysicalDevices(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("uint32_t *")] uint* pPhysicalDeviceCount,
         [NativeTypeName("VkPhysicalDevice *")] PhysicalDeviceHandle* pPhysicalDevices
@@ -59707,7 +59620,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.EnumeratePhysicalDevices(instance, pPhysicalDeviceCount, pPhysicalDevices);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.EnumeratePhysicalDevices(
+    Result IVk.EnumeratePhysicalDevices(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("uint32_t *")] Ref<uint> pPhysicalDeviceCount,
         [NativeTypeName("VkPhysicalDevice *")] Ref<PhysicalDeviceHandle> pPhysicalDevices
@@ -59717,7 +59630,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPhysicalDeviceCount = pPhysicalDeviceCount)
         {
             return (Result)
-                ((IVulkan)this).EnumeratePhysicalDevices(
+                ((IVk)this).EnumeratePhysicalDevices(
                     instance,
                     __dsl_pPhysicalDeviceCount,
                     __dsl_pPhysicalDevices
@@ -59740,7 +59653,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.EnumeratePhysicalDevices(instance, pPhysicalDeviceCount, pPhysicalDevices);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.FlushMappedMemoryRanges(
+    Result IVk.FlushMappedMemoryRanges(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint memoryRangeCount,
         [NativeTypeName("const VkMappedMemoryRange *")] MappedMemoryRange* pMemoryRanges
@@ -59770,7 +59683,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.FlushMappedMemoryRanges(device, memoryRangeCount, pMemoryRanges);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.FlushMappedMemoryRanges(
+    Result IVk.FlushMappedMemoryRanges(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint memoryRangeCount,
         [NativeTypeName("const VkMappedMemoryRange *")] Ref<MappedMemoryRange> pMemoryRanges
@@ -59779,11 +59692,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MappedMemoryRange* __dsl_pMemoryRanges = pMemoryRanges)
         {
             return (Result)
-                ((IVulkan)this).FlushMappedMemoryRanges(
-                    device,
-                    memoryRangeCount,
-                    __dsl_pMemoryRanges
-                );
+                ((IVk)this).FlushMappedMemoryRanges(device, memoryRangeCount, __dsl_pMemoryRanges);
         }
     }
 
@@ -59802,12 +59711,12 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.FlushMappedMemoryRanges(device, memoryRangeCount, pMemoryRanges);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.FreeCommandBuffer(
+    void IVk.FreeCommandBuffer(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
         [NativeTypeName("const VkCommandBuffer *")] CommandBufferHandle pCommandBuffers
     ) =>
-        ((IVulkan)this).FreeCommandBuffers(
+        ((IVk)this).FreeCommandBuffers(
             device,
             commandPool,
             1,
@@ -59829,7 +59738,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.FreeCommandBuffer(device, commandPool, pCommandBuffers);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.FreeCommandBuffers(
+    void IVk.FreeCommandBuffers(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
         [NativeTypeName("uint32_t")] uint commandBufferCount,
@@ -59863,7 +59772,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.FreeCommandBuffers(device, commandPool, commandBufferCount, pCommandBuffers);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.FreeCommandBuffers(
+    void IVk.FreeCommandBuffers(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
         [NativeTypeName("uint32_t")] uint commandBufferCount,
@@ -59872,7 +59781,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (CommandBufferHandle* __dsl_pCommandBuffers = pCommandBuffers)
         {
-            ((IVulkan)this).FreeCommandBuffers(
+            ((IVk)this).FreeCommandBuffers(
                 device,
                 commandPool,
                 commandBufferCount,
@@ -59897,7 +59806,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.FreeCommandBuffers(device, commandPool, commandBufferCount, pCommandBuffers);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.FreeDescriptorSets(
+    Result IVk.FreeDescriptorSets(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorPool")] DescriptorPoolHandle descriptorPool,
         [NativeTypeName("uint32_t")] uint descriptorSetCount,
@@ -59931,7 +59840,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.FreeDescriptorSets(device, descriptorPool, descriptorSetCount, pDescriptorSets);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.FreeDescriptorSets(
+    Result IVk.FreeDescriptorSets(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorPool")] DescriptorPoolHandle descriptorPool,
         [NativeTypeName("uint32_t")] uint descriptorSetCount,
@@ -59941,7 +59850,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DescriptorSetHandle* __dsl_pDescriptorSets = pDescriptorSets)
         {
             return (Result)
-                ((IVulkan)this).FreeDescriptorSets(
+                ((IVk)this).FreeDescriptorSets(
                     device,
                     descriptorPool,
                     descriptorSetCount,
@@ -59966,7 +59875,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.FreeDescriptorSets(device, descriptorPool, descriptorSetCount, pDescriptorSets);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.FreeMemory(
+    void IVk.FreeMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
@@ -59993,7 +59902,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.FreeMemory(device, memory, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.FreeMemory(
+    void IVk.FreeMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
@@ -60001,7 +59910,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AllocationCallbacks* __dsl_pAllocator = pAllocator)
         {
-            ((IVulkan)this).FreeMemory(device, memory, __dsl_pAllocator);
+            ((IVk)this).FreeMemory(device, memory, __dsl_pAllocator);
         }
     }
 
@@ -60020,7 +59929,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.FreeMemory(device, memory, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetAccelerationStructureBuildSizesKHR(
+    void IVk.GetAccelerationStructureBuildSizesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         AccelerationStructureBuildTypeKHR buildType,
         [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")]
@@ -60072,7 +59981,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetAccelerationStructureBuildSizesKHR(
+    void IVk.GetAccelerationStructureBuildSizesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         AccelerationStructureBuildTypeKHR buildType,
         [NativeTypeName("const VkAccelerationStructureBuildGeometryInfoKHR *")]
@@ -60085,7 +59994,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pMaxPrimitiveCounts = pMaxPrimitiveCounts)
         fixed (AccelerationStructureBuildGeometryInfoKHR* __dsl_pBuildInfo = pBuildInfo)
         {
-            ((IVulkan)this).GetAccelerationStructureBuildSizesKHR(
+            ((IVk)this).GetAccelerationStructureBuildSizesKHR(
                 device,
                 buildType,
                 __dsl_pBuildInfo,
@@ -60123,7 +60032,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetAccelerationStructureDeviceAddressKHR(
+    ulong IVk.GetAccelerationStructureDeviceAddressKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")]
             AccelerationStructureDeviceAddressInfoKHR* pInfo
@@ -60157,7 +60066,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetAccelerationStructureDeviceAddressKHR(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetAccelerationStructureDeviceAddressKHR(
+    ulong IVk.GetAccelerationStructureDeviceAddressKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureDeviceAddressInfoKHR *")]
             Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo
@@ -60165,8 +60074,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (AccelerationStructureDeviceAddressInfoKHR* __dsl_pInfo = pInfo)
         {
-            return (ulong)
-                ((IVulkan)this).GetAccelerationStructureDeviceAddressKHR(device, __dsl_pInfo);
+            return (ulong)((IVk)this).GetAccelerationStructureDeviceAddressKHR(device, __dsl_pInfo);
         }
     }
 
@@ -60189,7 +60097,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetAccelerationStructureDeviceAddressKHR(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetAccelerationStructureHandleNV(
+    Result IVk.GetAccelerationStructureHandleNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkAccelerationStructureNV")]
             AccelerationStructureNVHandle accelerationStructure,
@@ -60231,7 +60139,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetAccelerationStructureHandleNV(device, accelerationStructure, dataSize, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetAccelerationStructureHandleNV(
+    Result IVk.GetAccelerationStructureHandleNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkAccelerationStructureNV")]
             AccelerationStructureNVHandle accelerationStructure,
@@ -60242,7 +60150,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (void* __dsl_pData = pData)
         {
             return (Result)
-                ((IVulkan)this).GetAccelerationStructureHandleNV(
+                ((IVk)this).GetAccelerationStructureHandleNV(
                     device,
                     accelerationStructure,
                     dataSize,
@@ -60271,7 +60179,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetAccelerationStructureHandleNV(device, accelerationStructure, dataSize, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetAccelerationStructureMemoryRequirementsNV(
+    void IVk.GetAccelerationStructureMemoryRequirementsNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureMemoryRequirementsInfoNV *")]
             AccelerationStructureMemoryRequirementsInfoNV* pInfo,
@@ -60310,7 +60218,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetAccelerationStructureMemoryRequirementsNV(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetAccelerationStructureMemoryRequirementsNV(
+    void IVk.GetAccelerationStructureMemoryRequirementsNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureMemoryRequirementsInfoNV *")]
             Ref<AccelerationStructureMemoryRequirementsInfoNV> pInfo,
@@ -60320,7 +60228,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (AccelerationStructureMemoryRequirementsInfoNV* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetAccelerationStructureMemoryRequirementsNV(
+            ((IVk)this).GetAccelerationStructureMemoryRequirementsNV(
                 device,
                 __dsl_pInfo,
                 __dsl_pMemoryRequirements
@@ -60347,7 +60255,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetAccelerationStructureMemoryRequirementsNV(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetAccelerationStructureOpaqueCaptureDescriptorDataEXT(
+    Result IVk.GetAccelerationStructureOpaqueCaptureDescriptorDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureCaptureDescriptorDataInfoEXT *")]
             AccelerationStructureCaptureDescriptorDataInfoEXT* pInfo,
@@ -60394,7 +60302,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetAccelerationStructureOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetAccelerationStructureOpaqueCaptureDescriptorDataEXT(
+    Result IVk.GetAccelerationStructureOpaqueCaptureDescriptorDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureCaptureDescriptorDataInfoEXT *")]
             Ref<AccelerationStructureCaptureDescriptorDataInfoEXT> pInfo,
@@ -60405,7 +60313,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (AccelerationStructureCaptureDescriptorDataInfoEXT* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).GetAccelerationStructureOpaqueCaptureDescriptorDataEXT(
+                ((IVk)this).GetAccelerationStructureOpaqueCaptureDescriptorDataEXT(
                     device,
                     __dsl_pInfo,
                     __dsl_pData
@@ -60440,7 +60348,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetAccelerationStructureOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetBufferDeviceAddress(
+    ulong IVk.GetBufferDeviceAddress(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
     ) =>
@@ -60466,14 +60374,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferDeviceAddress(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetBufferDeviceAddress(
+    ulong IVk.GetBufferDeviceAddress(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
     )
     {
         fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
         {
-            return (ulong)((IVulkan)this).GetBufferDeviceAddress(device, __dsl_pInfo);
+            return (ulong)((IVk)this).GetBufferDeviceAddress(device, __dsl_pInfo);
         }
     }
 
@@ -60492,7 +60400,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferDeviceAddress(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetBufferDeviceAddressEXT(
+    ulong IVk.GetBufferDeviceAddressEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
     ) =>
@@ -60524,14 +60432,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferDeviceAddressEXT(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetBufferDeviceAddressEXT(
+    ulong IVk.GetBufferDeviceAddressEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
     )
     {
         fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
         {
-            return (ulong)((IVulkan)this).GetBufferDeviceAddressEXT(device, __dsl_pInfo);
+            return (ulong)((IVk)this).GetBufferDeviceAddressEXT(device, __dsl_pInfo);
         }
     }
 
@@ -60553,7 +60461,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferDeviceAddressEXT(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetBufferDeviceAddressKHR(
+    ulong IVk.GetBufferDeviceAddressKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
     ) =>
@@ -60585,14 +60493,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferDeviceAddressKHR(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetBufferDeviceAddressKHR(
+    ulong IVk.GetBufferDeviceAddressKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
     )
     {
         fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
         {
-            return (ulong)((IVulkan)this).GetBufferDeviceAddressKHR(device, __dsl_pInfo);
+            return (ulong)((IVk)this).GetBufferDeviceAddressKHR(device, __dsl_pInfo);
         }
     }
 
@@ -60614,7 +60522,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferDeviceAddressKHR(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetBufferMemoryRequirements(
+    void IVk.GetBufferMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         MemoryRequirements* pMemoryRequirements
@@ -60644,7 +60552,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferMemoryRequirements(device, buffer, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetBufferMemoryRequirements(
+    void IVk.GetBufferMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkBuffer")] BufferHandle buffer,
         Ref<MemoryRequirements> pMemoryRequirements
@@ -60652,7 +60560,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (MemoryRequirements* __dsl_pMemoryRequirements = pMemoryRequirements)
         {
-            ((IVulkan)this).GetBufferMemoryRequirements(device, buffer, __dsl_pMemoryRequirements);
+            ((IVk)this).GetBufferMemoryRequirements(device, buffer, __dsl_pMemoryRequirements);
         }
     }
 
@@ -60671,7 +60579,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferMemoryRequirements(device, buffer, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetBufferMemoryRequirements2(
+    void IVk.GetBufferMemoryRequirements2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferMemoryRequirementsInfo2 *")]
             BufferMemoryRequirementsInfo2* pInfo,
@@ -60707,7 +60615,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferMemoryRequirements2(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetBufferMemoryRequirements2(
+    void IVk.GetBufferMemoryRequirements2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferMemoryRequirementsInfo2 *")]
             Ref<BufferMemoryRequirementsInfo2> pInfo,
@@ -60717,7 +60625,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (BufferMemoryRequirementsInfo2* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetBufferMemoryRequirements2(
+            ((IVk)this).GetBufferMemoryRequirements2(
                 device,
                 __dsl_pInfo,
                 __dsl_pMemoryRequirements
@@ -60741,7 +60649,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferMemoryRequirements2(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetBufferMemoryRequirements2KHR(
+    void IVk.GetBufferMemoryRequirements2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferMemoryRequirementsInfo2 *")]
             BufferMemoryRequirementsInfo2* pInfo,
@@ -60773,7 +60681,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferMemoryRequirements2KHR(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetBufferMemoryRequirements2KHR(
+    void IVk.GetBufferMemoryRequirements2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferMemoryRequirementsInfo2 *")]
             Ref<BufferMemoryRequirementsInfo2> pInfo,
@@ -60783,7 +60691,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (BufferMemoryRequirementsInfo2* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetBufferMemoryRequirements2KHR(
+            ((IVk)this).GetBufferMemoryRequirements2KHR(
                 device,
                 __dsl_pInfo,
                 __dsl_pMemoryRequirements
@@ -60803,7 +60711,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferMemoryRequirements2KHR(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetBufferOpaqueCaptureAddress(
+    ulong IVk.GetBufferOpaqueCaptureAddress(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
     ) =>
@@ -60832,14 +60740,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferOpaqueCaptureAddress(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetBufferOpaqueCaptureAddress(
+    ulong IVk.GetBufferOpaqueCaptureAddress(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
     )
     {
         fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
         {
-            return (ulong)((IVulkan)this).GetBufferOpaqueCaptureAddress(device, __dsl_pInfo);
+            return (ulong)((IVk)this).GetBufferOpaqueCaptureAddress(device, __dsl_pInfo);
         }
     }
 
@@ -60858,7 +60766,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferOpaqueCaptureAddress(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetBufferOpaqueCaptureAddressKHR(
+    ulong IVk.GetBufferOpaqueCaptureAddressKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] BufferDeviceAddressInfo* pInfo
     ) =>
@@ -60890,14 +60798,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferOpaqueCaptureAddressKHR(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetBufferOpaqueCaptureAddressKHR(
+    ulong IVk.GetBufferOpaqueCaptureAddressKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferDeviceAddressInfo *")] Ref<BufferDeviceAddressInfo> pInfo
     )
     {
         fixed (BufferDeviceAddressInfo* __dsl_pInfo = pInfo)
         {
-            return (ulong)((IVulkan)this).GetBufferOpaqueCaptureAddressKHR(device, __dsl_pInfo);
+            return (ulong)((IVk)this).GetBufferOpaqueCaptureAddressKHR(device, __dsl_pInfo);
         }
     }
 
@@ -60919,7 +60827,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferOpaqueCaptureAddressKHR(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetBufferOpaqueCaptureDescriptorDataEXT(
+    Result IVk.GetBufferOpaqueCaptureDescriptorDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferCaptureDescriptorDataInfoEXT *")]
             BufferCaptureDescriptorDataInfoEXT* pInfo,
@@ -60956,7 +60864,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetBufferOpaqueCaptureDescriptorDataEXT(
+    Result IVk.GetBufferOpaqueCaptureDescriptorDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkBufferCaptureDescriptorDataInfoEXT *")]
             Ref<BufferCaptureDescriptorDataInfoEXT> pInfo,
@@ -60967,7 +60875,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (BufferCaptureDescriptorDataInfoEXT* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).GetBufferOpaqueCaptureDescriptorDataEXT(
+                ((IVk)this).GetBufferOpaqueCaptureDescriptorDataEXT(
                     device,
                     __dsl_pInfo,
                     __dsl_pData
@@ -60996,7 +60904,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetBufferOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetCalibratedTimestampsEXT(
+    Result IVk.GetCalibratedTimestampsEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint timestampCount,
         [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
@@ -61048,7 +60956,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetCalibratedTimestampsEXT(
+    Result IVk.GetCalibratedTimestampsEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint timestampCount,
         [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
@@ -61062,7 +60970,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CalibratedTimestampInfoKHR* __dsl_pTimestampInfos = pTimestampInfos)
         {
             return (Result)
-                ((IVulkan)this).GetCalibratedTimestampsEXT(
+                ((IVk)this).GetCalibratedTimestampsEXT(
                     device,
                     timestampCount,
                     __dsl_pTimestampInfos,
@@ -61100,7 +61008,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetCalibratedTimestampsKHR(
+    Result IVk.GetCalibratedTimestampsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint timestampCount,
         [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
@@ -61152,7 +61060,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetCalibratedTimestampsKHR(
+    Result IVk.GetCalibratedTimestampsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint timestampCount,
         [NativeTypeName("const VkCalibratedTimestampInfoKHR *")]
@@ -61166,7 +61074,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CalibratedTimestampInfoKHR* __dsl_pTimestampInfos = pTimestampInfos)
         {
             return (Result)
-                ((IVulkan)this).GetCalibratedTimestampsKHR(
+                ((IVk)this).GetCalibratedTimestampsKHR(
                     device,
                     timestampCount,
                     __dsl_pTimestampInfos,
@@ -61204,7 +61112,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetClusterAccelerationStructureBuildSizesNV(
+    void IVk.GetClusterAccelerationStructureBuildSizesNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkClusterAccelerationStructureInputInfoNV *")]
             ClusterAccelerationStructureInputInfoNV* pInfo,
@@ -61240,7 +61148,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetClusterAccelerationStructureBuildSizesNV(device, pInfo, pSizeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetClusterAccelerationStructureBuildSizesNV(
+    void IVk.GetClusterAccelerationStructureBuildSizesNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkClusterAccelerationStructureInputInfoNV *")]
             Ref<ClusterAccelerationStructureInputInfoNV> pInfo,
@@ -61250,7 +61158,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (AccelerationStructureBuildSizesInfoKHR* __dsl_pSizeInfo = pSizeInfo)
         fixed (ClusterAccelerationStructureInputInfoNV* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetClusterAccelerationStructureBuildSizesNV(
+            ((IVk)this).GetClusterAccelerationStructureBuildSizesNV(
                 device,
                 __dsl_pInfo,
                 __dsl_pSizeInfo
@@ -61274,7 +61182,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetClusterAccelerationStructureBuildSizesNV(device, pInfo, pSizeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetCudaModuleCacheNV(
+    Result IVk.GetCudaModuleCacheNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
         [NativeTypeName("size_t *")] nuint* pCacheSize,
@@ -61299,7 +61207,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetCudaModuleCacheNV(device, module, pCacheSize, pCacheData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetCudaModuleCacheNV(
+    Result IVk.GetCudaModuleCacheNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
         [NativeTypeName("size_t *")] Ref<nuint> pCacheSize,
@@ -61310,7 +61218,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (nuint* __dsl_pCacheSize = pCacheSize)
         {
             return (Result)
-                ((IVulkan)this).GetCudaModuleCacheNV(
+                ((IVk)this).GetCudaModuleCacheNV(
                     device,
                     module,
                     __dsl_pCacheSize,
@@ -61331,7 +61239,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetCudaModuleCacheNV(device, module, pCacheSize, pCacheData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IVulkan.GetDeferredOperationMaxConcurrencyKHR(
+    uint IVk.GetDeferredOperationMaxConcurrencyKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle operation
     ) =>
@@ -61356,7 +61264,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeferredOperationMaxConcurrencyKHR(device, operation);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDeferredOperationResultKHR(
+    Result IVk.GetDeferredOperationResultKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle operation
     ) =>
@@ -61380,7 +61288,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeferredOperationResultKHR(device, operation);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorEXT(
+    void IVk.GetDescriptorEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorGetInfoEXT *")] DescriptorGetInfoEXT* pDescriptorInfo,
         [NativeTypeName("size_t")] nuint dataSize,
@@ -61414,7 +61322,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorEXT(device, pDescriptorInfo, dataSize, pDescriptor);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorEXT(
+    void IVk.GetDescriptorEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorGetInfoEXT *")]
             Ref<DescriptorGetInfoEXT> pDescriptorInfo,
@@ -61425,7 +61333,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (void* __dsl_pDescriptor = pDescriptor)
         fixed (DescriptorGetInfoEXT* __dsl_pDescriptorInfo = pDescriptorInfo)
         {
-            ((IVulkan)this).GetDescriptorEXT(
+            ((IVk)this).GetDescriptorEXT(
                 device,
                 __dsl_pDescriptorInfo,
                 dataSize,
@@ -61456,7 +61364,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorEXT(device, pDescriptorInfo, dataSize, pDescriptor);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetHostMappingValve(
+    void IVk.GetDescriptorSetHostMappingValve(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSet")] DescriptorSetHandle descriptorSet,
         void** ppData
@@ -61489,7 +61397,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorSetHostMappingValve(device, descriptorSet, ppData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetHostMappingValve(
+    void IVk.GetDescriptorSetHostMappingValve(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSet")] DescriptorSetHandle descriptorSet,
         Ref2D ppData
@@ -61497,7 +61405,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (void** __dsl_ppData = ppData)
         {
-            ((IVulkan)this).GetDescriptorSetHostMappingValve(device, descriptorSet, __dsl_ppData);
+            ((IVk)this).GetDescriptorSetHostMappingValve(device, descriptorSet, __dsl_ppData);
         }
     }
 
@@ -61519,7 +61427,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorSetHostMappingValve(device, descriptorSet, ppData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutBindingOffsetEXT(
+    void IVk.GetDescriptorSetLayoutBindingOffsetEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSetLayout")] DescriptorSetLayoutHandle layout,
         [NativeTypeName("uint32_t")] uint binding,
@@ -61556,7 +61464,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorSetLayoutBindingOffsetEXT(device, layout, binding, pOffset);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutBindingOffsetEXT(
+    void IVk.GetDescriptorSetLayoutBindingOffsetEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSetLayout")] DescriptorSetLayoutHandle layout,
         [NativeTypeName("uint32_t")] uint binding,
@@ -61565,7 +61473,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ulong* __dsl_pOffset = pOffset)
         {
-            ((IVulkan)this).GetDescriptorSetLayoutBindingOffsetEXT(
+            ((IVk)this).GetDescriptorSetLayoutBindingOffsetEXT(
                 device,
                 layout,
                 binding,
@@ -61595,7 +61503,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorSetLayoutBindingOffsetEXT(device, layout, binding, pOffset);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutHostMappingInfoValve(
+    void IVk.GetDescriptorSetLayoutHostMappingInfoValve(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorSetBindingReferenceVALVE *")]
             DescriptorSetBindingReferenceValve* pBindingReference,
@@ -61639,7 +61547,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutHostMappingInfoValve(
+    void IVk.GetDescriptorSetLayoutHostMappingInfoValve(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorSetBindingReferenceVALVE *")]
             Ref<DescriptorSetBindingReferenceValve> pBindingReference,
@@ -61649,7 +61557,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DescriptorSetLayoutHostMappingInfoValve* __dsl_pHostMapping = pHostMapping)
         fixed (DescriptorSetBindingReferenceValve* __dsl_pBindingReference = pBindingReference)
         {
-            ((IVulkan)this).GetDescriptorSetLayoutHostMappingInfoValve(
+            ((IVk)this).GetDescriptorSetLayoutHostMappingInfoValve(
                 device,
                 __dsl_pBindingReference,
                 __dsl_pHostMapping
@@ -61681,7 +61589,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutSizeEXT(
+    void IVk.GetDescriptorSetLayoutSizeEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSetLayout")] DescriptorSetLayoutHandle layout,
         [NativeTypeName("VkDeviceSize *")] ulong* pLayoutSizeInBytes
@@ -61716,7 +61624,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorSetLayoutSizeEXT(device, layout, pLayoutSizeInBytes);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutSizeEXT(
+    void IVk.GetDescriptorSetLayoutSizeEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSetLayout")] DescriptorSetLayoutHandle layout,
         [NativeTypeName("VkDeviceSize *")] Ref<ulong> pLayoutSizeInBytes
@@ -61724,7 +61632,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ulong* __dsl_pLayoutSizeInBytes = pLayoutSizeInBytes)
         {
-            ((IVulkan)this).GetDescriptorSetLayoutSizeEXT(device, layout, __dsl_pLayoutSizeInBytes);
+            ((IVk)this).GetDescriptorSetLayoutSizeEXT(device, layout, __dsl_pLayoutSizeInBytes);
         }
     }
 
@@ -61748,7 +61656,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorSetLayoutSizeEXT(device, layout, pLayoutSizeInBytes);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutSupport(
+    void IVk.GetDescriptorSetLayoutSupport(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorSetLayoutCreateInfo *")]
             DescriptorSetLayoutCreateInfo* pCreateInfo,
@@ -61784,7 +61692,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorSetLayoutSupport(device, pCreateInfo, pSupport);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutSupport(
+    void IVk.GetDescriptorSetLayoutSupport(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorSetLayoutCreateInfo *")]
             Ref<DescriptorSetLayoutCreateInfo> pCreateInfo,
@@ -61794,11 +61702,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DescriptorSetLayoutSupport* __dsl_pSupport = pSupport)
         fixed (DescriptorSetLayoutCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
-            ((IVulkan)this).GetDescriptorSetLayoutSupport(
-                device,
-                __dsl_pCreateInfo,
-                __dsl_pSupport
-            );
+            ((IVk)this).GetDescriptorSetLayoutSupport(device, __dsl_pCreateInfo, __dsl_pSupport);
         }
     }
 
@@ -61818,7 +61722,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorSetLayoutSupport(device, pCreateInfo, pSupport);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutSupportKHR(
+    void IVk.GetDescriptorSetLayoutSupportKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorSetLayoutCreateInfo *")]
             DescriptorSetLayoutCreateInfo* pCreateInfo,
@@ -61857,7 +61761,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorSetLayoutSupportKHR(device, pCreateInfo, pSupport);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDescriptorSetLayoutSupportKHR(
+    void IVk.GetDescriptorSetLayoutSupportKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDescriptorSetLayoutCreateInfo *")]
             Ref<DescriptorSetLayoutCreateInfo> pCreateInfo,
@@ -61867,11 +61771,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DescriptorSetLayoutSupport* __dsl_pSupport = pSupport)
         fixed (DescriptorSetLayoutCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
-            ((IVulkan)this).GetDescriptorSetLayoutSupportKHR(
-                device,
-                __dsl_pCreateInfo,
-                __dsl_pSupport
-            );
+            ((IVk)this).GetDescriptorSetLayoutSupportKHR(device, __dsl_pCreateInfo, __dsl_pSupport);
         }
     }
 
@@ -61894,7 +61794,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDescriptorSetLayoutSupportKHR(device, pCreateInfo, pSupport);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceAccelerationStructureCompatibilityKHR(
+    void IVk.GetDeviceAccelerationStructureCompatibilityKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureVersionInfoKHR *")]
             AccelerationStructureVersionInfoKHR* pVersionInfo,
@@ -61938,7 +61838,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceAccelerationStructureCompatibilityKHR(
+    void IVk.GetDeviceAccelerationStructureCompatibilityKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAccelerationStructureVersionInfoKHR *")]
             Ref<AccelerationStructureVersionInfoKHR> pVersionInfo,
@@ -61948,7 +61848,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (AccelerationStructureCompatibilityKHR* __dsl_pCompatibility = pCompatibility)
         fixed (AccelerationStructureVersionInfoKHR* __dsl_pVersionInfo = pVersionInfo)
         {
-            ((IVulkan)this).GetDeviceAccelerationStructureCompatibilityKHR(
+            ((IVk)this).GetDeviceAccelerationStructureCompatibilityKHR(
                 device,
                 __dsl_pVersionInfo,
                 __dsl_pCompatibility
@@ -61980,7 +61880,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceBufferMemoryRequirements(
+    void IVk.GetDeviceBufferMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceBufferMemoryRequirements *")]
             DeviceBufferMemoryRequirements* pInfo,
@@ -62012,7 +61912,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceBufferMemoryRequirements(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceBufferMemoryRequirements(
+    void IVk.GetDeviceBufferMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceBufferMemoryRequirements *")]
             Ref<DeviceBufferMemoryRequirements> pInfo,
@@ -62022,7 +61922,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (DeviceBufferMemoryRequirements* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetDeviceBufferMemoryRequirements(
+            ((IVk)this).GetDeviceBufferMemoryRequirements(
                 device,
                 __dsl_pInfo,
                 __dsl_pMemoryRequirements
@@ -62042,7 +61942,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceBufferMemoryRequirements(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceBufferMemoryRequirementsKHR(
+    void IVk.GetDeviceBufferMemoryRequirementsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceBufferMemoryRequirements *")]
             DeviceBufferMemoryRequirements* pInfo,
@@ -62074,7 +61974,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceBufferMemoryRequirementsKHR(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceBufferMemoryRequirementsKHR(
+    void IVk.GetDeviceBufferMemoryRequirementsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceBufferMemoryRequirements *")]
             Ref<DeviceBufferMemoryRequirements> pInfo,
@@ -62084,7 +61984,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (DeviceBufferMemoryRequirements* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetDeviceBufferMemoryRequirementsKHR(
+            ((IVk)this).GetDeviceBufferMemoryRequirementsKHR(
                 device,
                 __dsl_pInfo,
                 __dsl_pMemoryRequirements
@@ -62104,7 +62004,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceBufferMemoryRequirementsKHR(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDeviceFaultInfoEXT(
+    Result IVk.GetDeviceFaultInfoEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         DeviceFaultCountsEXT* pFaultCounts,
         DeviceFaultInfoEXT* pFaultInfo
@@ -62134,7 +62034,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceFaultInfoEXT(device, pFaultCounts, pFaultInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDeviceFaultInfoEXT(
+    Result IVk.GetDeviceFaultInfoEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         Ref<DeviceFaultCountsEXT> pFaultCounts,
         Ref<DeviceFaultInfoEXT> pFaultInfo
@@ -62144,7 +62044,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DeviceFaultCountsEXT* __dsl_pFaultCounts = pFaultCounts)
         {
             return (Result)
-                ((IVulkan)this).GetDeviceFaultInfoEXT(device, __dsl_pFaultCounts, __dsl_pFaultInfo);
+                ((IVk)this).GetDeviceFaultInfoEXT(device, __dsl_pFaultCounts, __dsl_pFaultInfo);
         }
     }
 
@@ -62166,7 +62066,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceFaultInfoEXT(device, pFaultCounts, pFaultInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceGroupPeerMemoryFeatures(
+    void IVk.GetDeviceGroupPeerMemoryFeatures(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint heapIndex,
         [NativeTypeName("uint32_t")] uint localDeviceIndex,
@@ -62207,7 +62107,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceGroupPeerMemoryFeatures(
+    void IVk.GetDeviceGroupPeerMemoryFeatures(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint heapIndex,
         [NativeTypeName("uint32_t")] uint localDeviceIndex,
@@ -62217,7 +62117,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (uint* __dsl_pPeerMemoryFeatures = pPeerMemoryFeatures)
         {
-            ((IVulkan)this).GetDeviceGroupPeerMemoryFeatures(
+            ((IVk)this).GetDeviceGroupPeerMemoryFeatures(
                 device,
                 heapIndex,
                 localDeviceIndex,
@@ -62251,7 +62151,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceGroupPeerMemoryFeaturesKHR(
+    void IVk.GetDeviceGroupPeerMemoryFeaturesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint heapIndex,
         [NativeTypeName("uint32_t")] uint localDeviceIndex,
@@ -62292,7 +62192,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceGroupPeerMemoryFeaturesKHR(
+    void IVk.GetDeviceGroupPeerMemoryFeaturesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint heapIndex,
         [NativeTypeName("uint32_t")] uint localDeviceIndex,
@@ -62302,7 +62202,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (uint* __dsl_pPeerMemoryFeatures = pPeerMemoryFeatures)
         {
-            ((IVulkan)this).GetDeviceGroupPeerMemoryFeaturesKHR(
+            ((IVk)this).GetDeviceGroupPeerMemoryFeaturesKHR(
                 device,
                 heapIndex,
                 localDeviceIndex,
@@ -62336,7 +62236,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDeviceGroupPresentCapabilitiesKHR(
+    Result IVk.GetDeviceGroupPresentCapabilitiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         DeviceGroupPresentCapabilitiesKHR* pDeviceGroupPresentCapabilities
     ) =>
@@ -62365,7 +62265,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceGroupPresentCapabilitiesKHR(device, pDeviceGroupPresentCapabilities);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDeviceGroupPresentCapabilitiesKHR(
+    Result IVk.GetDeviceGroupPresentCapabilitiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         Ref<DeviceGroupPresentCapabilitiesKHR> pDeviceGroupPresentCapabilities
     )
@@ -62376,7 +62276,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         {
             return (Result)
-                ((IVulkan)this).GetDeviceGroupPresentCapabilitiesKHR(
+                ((IVk)this).GetDeviceGroupPresentCapabilitiesKHR(
                     device,
                     __dsl_pDeviceGroupPresentCapabilities
                 );
@@ -62398,7 +62298,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceGroupPresentCapabilitiesKHR(device, pDeviceGroupPresentCapabilities);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDeviceGroupSurfacePresentModesKHR(
+    Result IVk.GetDeviceGroupSurfacePresentModesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR *")] uint* pModes
@@ -62429,7 +62329,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceGroupSurfacePresentModesKHR(device, surface, pModes);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDeviceGroupSurfacePresentModesKHR(
+    Result IVk.GetDeviceGroupSurfacePresentModesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR *")] Ref<uint> pModes
@@ -62438,7 +62338,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pModes = pModes)
         {
             return (Result)
-                ((IVulkan)this).GetDeviceGroupSurfacePresentModesKHR(device, surface, __dsl_pModes);
+                ((IVk)this).GetDeviceGroupSurfacePresentModesKHR(device, surface, __dsl_pModes);
         }
     }
 
@@ -62458,7 +62358,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceGroupSurfacePresentModesKHR(device, surface, pModes);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageMemoryRequirements(
+    void IVk.GetDeviceImageMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageMemoryRequirements *")]
             DeviceImageMemoryRequirements* pInfo,
@@ -62490,7 +62390,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceImageMemoryRequirements(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageMemoryRequirements(
+    void IVk.GetDeviceImageMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageMemoryRequirements *")]
             Ref<DeviceImageMemoryRequirements> pInfo,
@@ -62500,7 +62400,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (DeviceImageMemoryRequirements* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetDeviceImageMemoryRequirements(
+            ((IVk)this).GetDeviceImageMemoryRequirements(
                 device,
                 __dsl_pInfo,
                 __dsl_pMemoryRequirements
@@ -62520,7 +62420,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceImageMemoryRequirements(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageMemoryRequirementsKHR(
+    void IVk.GetDeviceImageMemoryRequirementsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageMemoryRequirements *")]
             DeviceImageMemoryRequirements* pInfo,
@@ -62552,7 +62452,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceImageMemoryRequirementsKHR(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageMemoryRequirementsKHR(
+    void IVk.GetDeviceImageMemoryRequirementsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageMemoryRequirements *")]
             Ref<DeviceImageMemoryRequirements> pInfo,
@@ -62562,7 +62462,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (DeviceImageMemoryRequirements* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetDeviceImageMemoryRequirementsKHR(
+            ((IVk)this).GetDeviceImageMemoryRequirementsKHR(
                 device,
                 __dsl_pInfo,
                 __dsl_pMemoryRequirements
@@ -62582,7 +62482,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceImageMemoryRequirementsKHR(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageSparseMemoryRequirements(
+    void IVk.GetDeviceImageSparseMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageMemoryRequirements *")]
             DeviceImageMemoryRequirements* pInfo,
@@ -62623,7 +62523,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageSparseMemoryRequirements(
+    void IVk.GetDeviceImageSparseMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageMemoryRequirements *")]
             Ref<DeviceImageMemoryRequirements> pInfo,
@@ -62638,7 +62538,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pSparseMemoryRequirementCount = pSparseMemoryRequirementCount)
         fixed (DeviceImageMemoryRequirements* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetDeviceImageSparseMemoryRequirements(
+            ((IVk)this).GetDeviceImageSparseMemoryRequirements(
                 device,
                 __dsl_pInfo,
                 __dsl_pSparseMemoryRequirementCount,
@@ -62666,7 +62566,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageSparseMemoryRequirementsKHR(
+    void IVk.GetDeviceImageSparseMemoryRequirementsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageMemoryRequirements *")]
             DeviceImageMemoryRequirements* pInfo,
@@ -62707,7 +62607,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageSparseMemoryRequirementsKHR(
+    void IVk.GetDeviceImageSparseMemoryRequirementsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageMemoryRequirements *")]
             Ref<DeviceImageMemoryRequirements> pInfo,
@@ -62722,7 +62622,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pSparseMemoryRequirementCount = pSparseMemoryRequirementCount)
         fixed (DeviceImageMemoryRequirements* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetDeviceImageSparseMemoryRequirementsKHR(
+            ((IVk)this).GetDeviceImageSparseMemoryRequirementsKHR(
                 device,
                 __dsl_pInfo,
                 __dsl_pSparseMemoryRequirementCount,
@@ -62750,7 +62650,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageSubresourceLayout(
+    void IVk.GetDeviceImageSubresourceLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageSubresourceInfo *")] DeviceImageSubresourceInfo* pInfo,
         SubresourceLayout2* pLayout
@@ -62780,7 +62680,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceImageSubresourceLayout(device, pInfo, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageSubresourceLayout(
+    void IVk.GetDeviceImageSubresourceLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageSubresourceInfo *")]
             Ref<DeviceImageSubresourceInfo> pInfo,
@@ -62790,7 +62690,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SubresourceLayout2* __dsl_pLayout = pLayout)
         fixed (DeviceImageSubresourceInfo* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetDeviceImageSubresourceLayout(device, __dsl_pInfo, __dsl_pLayout);
+            ((IVk)this).GetDeviceImageSubresourceLayout(device, __dsl_pInfo, __dsl_pLayout);
         }
     }
 
@@ -62806,7 +62706,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceImageSubresourceLayout(device, pInfo, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageSubresourceLayoutKHR(
+    void IVk.GetDeviceImageSubresourceLayoutKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageSubresourceInfo *")] DeviceImageSubresourceInfo* pInfo,
         SubresourceLayout2* pLayout
@@ -62840,7 +62740,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceImageSubresourceLayoutKHR(device, pInfo, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceImageSubresourceLayoutKHR(
+    void IVk.GetDeviceImageSubresourceLayoutKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceImageSubresourceInfo *")]
             Ref<DeviceImageSubresourceInfo> pInfo,
@@ -62850,7 +62750,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SubresourceLayout2* __dsl_pLayout = pLayout)
         fixed (DeviceImageSubresourceInfo* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetDeviceImageSubresourceLayoutKHR(device, __dsl_pInfo, __dsl_pLayout);
+            ((IVk)this).GetDeviceImageSubresourceLayoutKHR(device, __dsl_pInfo, __dsl_pLayout);
         }
     }
 
@@ -62870,7 +62770,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceImageSubresourceLayoutKHR(device, pInfo, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceMemoryCommitment(
+    void IVk.GetDeviceMemoryCommitment(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
         [NativeTypeName("VkDeviceSize *")] ulong* pCommittedMemoryInBytes
@@ -62900,7 +62800,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceMemoryCommitment(device, memory, pCommittedMemoryInBytes);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceMemoryCommitment(
+    void IVk.GetDeviceMemoryCommitment(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
         [NativeTypeName("VkDeviceSize *")] Ref<ulong> pCommittedMemoryInBytes
@@ -62908,11 +62808,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ulong* __dsl_pCommittedMemoryInBytes = pCommittedMemoryInBytes)
         {
-            ((IVulkan)this).GetDeviceMemoryCommitment(
-                device,
-                memory,
-                __dsl_pCommittedMemoryInBytes
-            );
+            ((IVk)this).GetDeviceMemoryCommitment(device, memory, __dsl_pCommittedMemoryInBytes);
         }
     }
 
@@ -62931,7 +62827,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceMemoryCommitment(device, memory, pCommittedMemoryInBytes);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetDeviceMemoryOpaqueCaptureAddress(
+    ulong IVk.GetDeviceMemoryOpaqueCaptureAddress(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
             DeviceMemoryOpaqueCaptureAddressInfo* pInfo
@@ -62962,7 +62858,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceMemoryOpaqueCaptureAddress(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetDeviceMemoryOpaqueCaptureAddress(
+    ulong IVk.GetDeviceMemoryOpaqueCaptureAddress(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
             Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo
@@ -62970,7 +62866,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DeviceMemoryOpaqueCaptureAddressInfo* __dsl_pInfo = pInfo)
         {
-            return (ulong)((IVulkan)this).GetDeviceMemoryOpaqueCaptureAddress(device, __dsl_pInfo);
+            return (ulong)((IVk)this).GetDeviceMemoryOpaqueCaptureAddress(device, __dsl_pInfo);
         }
     }
 
@@ -62990,7 +62886,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceMemoryOpaqueCaptureAddress(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetDeviceMemoryOpaqueCaptureAddressKHR(
+    ulong IVk.GetDeviceMemoryOpaqueCaptureAddressKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
             DeviceMemoryOpaqueCaptureAddressInfo* pInfo
@@ -63024,7 +62920,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceMemoryOpaqueCaptureAddressKHR(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetDeviceMemoryOpaqueCaptureAddressKHR(
+    ulong IVk.GetDeviceMemoryOpaqueCaptureAddressKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceMemoryOpaqueCaptureAddressInfo *")]
             Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo
@@ -63032,8 +62928,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DeviceMemoryOpaqueCaptureAddressInfo* __dsl_pInfo = pInfo)
         {
-            return (ulong)
-                ((IVulkan)this).GetDeviceMemoryOpaqueCaptureAddressKHR(device, __dsl_pInfo);
+            return (ulong)((IVk)this).GetDeviceMemoryOpaqueCaptureAddressKHR(device, __dsl_pInfo);
         }
     }
 
@@ -63056,7 +62951,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceMemoryOpaqueCaptureAddressKHR(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceMicromapCompatibilityEXT(
+    void IVk.GetDeviceMicromapCompatibilityEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMicromapVersionInfoEXT *")] MicromapVersionInfoEXT* pVersionInfo,
         AccelerationStructureCompatibilityKHR* pCompatibility
@@ -63093,7 +62988,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceMicromapCompatibilityEXT(device, pVersionInfo, pCompatibility);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceMicromapCompatibilityEXT(
+    void IVk.GetDeviceMicromapCompatibilityEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMicromapVersionInfoEXT *")]
             Ref<MicromapVersionInfoEXT> pVersionInfo,
@@ -63103,7 +62998,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (AccelerationStructureCompatibilityKHR* __dsl_pCompatibility = pCompatibility)
         fixed (MicromapVersionInfoEXT* __dsl_pVersionInfo = pVersionInfo)
         {
-            ((IVulkan)this).GetDeviceMicromapCompatibilityEXT(
+            ((IVk)this).GetDeviceMicromapCompatibilityEXT(
                 device,
                 __dsl_pVersionInfo,
                 __dsl_pCompatibility
@@ -63130,7 +63025,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceMicromapCompatibilityEXT(device, pVersionInfo, pCompatibility);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    PFNVkVoidFunction IVulkan.GetDeviceProcAddr(
+    PFNVkVoidFunction IVk.GetDeviceProcAddr(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const char *")] sbyte* pName
     ) =>
@@ -63156,14 +63051,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceProcAddr(device, pName);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    PFNVkVoidFunction IVulkan.GetDeviceProcAddr(
+    PFNVkVoidFunction IVk.GetDeviceProcAddr(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const char *")] Ref<sbyte> pName
     )
     {
         fixed (sbyte* __dsl_pName = pName)
         {
-            return (PFNVkVoidFunction)((IVulkan)this).GetDeviceProcAddr(device, __dsl_pName);
+            return (PFNVkVoidFunction)((IVk)this).GetDeviceProcAddr(device, __dsl_pName);
         }
     }
 
@@ -63182,7 +63077,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceProcAddr(device, pName);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceQueue(
+    void IVk.GetDeviceQueue(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint queueFamilyIndex,
         [NativeTypeName("uint32_t")] uint queueIndex,
@@ -63211,7 +63106,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceQueue(device, queueFamilyIndex, queueIndex, pQueue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceQueue(
+    void IVk.GetDeviceQueue(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint queueFamilyIndex,
         [NativeTypeName("uint32_t")] uint queueIndex,
@@ -63220,7 +63115,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (QueueHandle* __dsl_pQueue = pQueue)
         {
-            ((IVulkan)this).GetDeviceQueue(device, queueFamilyIndex, queueIndex, __dsl_pQueue);
+            ((IVk)this).GetDeviceQueue(device, queueFamilyIndex, queueIndex, __dsl_pQueue);
         }
     }
 
@@ -63240,7 +63135,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceQueue(device, queueFamilyIndex, queueIndex, pQueue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceQueue2(
+    void IVk.GetDeviceQueue2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceQueueInfo2 *")] DeviceQueueInfo2* pQueueInfo,
         [NativeTypeName("VkQueue *")] QueueHandle* pQueue
@@ -63267,7 +63162,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceQueue2(device, pQueueInfo, pQueue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetDeviceQueue2(
+    void IVk.GetDeviceQueue2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceQueueInfo2 *")] Ref<DeviceQueueInfo2> pQueueInfo,
         [NativeTypeName("VkQueue *")] Ref<QueueHandle> pQueue
@@ -63276,7 +63171,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (QueueHandle* __dsl_pQueue = pQueue)
         fixed (DeviceQueueInfo2* __dsl_pQueueInfo = pQueueInfo)
         {
-            ((IVulkan)this).GetDeviceQueue2(device, __dsl_pQueueInfo, __dsl_pQueue);
+            ((IVk)this).GetDeviceQueue2(device, __dsl_pQueueInfo, __dsl_pQueue);
         }
     }
 
@@ -63295,7 +63190,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDeviceQueue2(device, pQueueInfo, pQueue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDeviceSubpassShadingMaxWorkgroupSizeHuawei(
+    Result IVk.GetDeviceSubpassShadingMaxWorkgroupSizeHuawei(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkRenderPass")] RenderPassHandle renderpass,
         Extent2D* pMaxWorkgroupSize
@@ -63334,7 +63229,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDeviceSubpassShadingMaxWorkgroupSizeHuawei(
+    Result IVk.GetDeviceSubpassShadingMaxWorkgroupSizeHuawei(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkRenderPass")] RenderPassHandle renderpass,
         Ref<Extent2D> pMaxWorkgroupSize
@@ -63343,7 +63238,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (Extent2D* __dsl_pMaxWorkgroupSize = pMaxWorkgroupSize)
         {
             return (Result)
-                ((IVulkan)this).GetDeviceSubpassShadingMaxWorkgroupSizeHuawei(
+                ((IVk)this).GetDeviceSubpassShadingMaxWorkgroupSizeHuawei(
                     device,
                     renderpass,
                     __dsl_pMaxWorkgroupSize
@@ -63375,7 +63270,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDisplayModeProperties2KHR(
+    Result IVk.GetDisplayModeProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
@@ -63418,7 +63313,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDisplayModeProperties2KHR(
+    Result IVk.GetDisplayModeProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
@@ -63429,7 +63324,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).GetDisplayModeProperties2KHR(
+                ((IVk)this).GetDisplayModeProperties2KHR(
                     physicalDevice,
                     display,
                     __dsl_pPropertyCount,
@@ -63460,7 +63355,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDisplayModePropertiesKHR(
+    Result IVk.GetDisplayModePropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
@@ -63494,7 +63389,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.GetDisplayModePropertiesKHR(physicalDevice, display, pPropertyCount, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDisplayModePropertiesKHR(
+    Result IVk.GetDisplayModePropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
@@ -63505,7 +63400,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).GetDisplayModePropertiesKHR(
+                ((IVk)this).GetDisplayModePropertiesKHR(
                     physicalDevice,
                     display,
                     __dsl_pPropertyCount,
@@ -63527,7 +63422,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.GetDisplayModePropertiesKHR(physicalDevice, display, pPropertyCount, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDisplayPlaneCapabilities2KHR(
+    Result IVk.GetDisplayPlaneCapabilities2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkDisplayPlaneInfo2KHR *")] DisplayPlaneInfo2KHR* pDisplayPlaneInfo,
         DisplayPlaneCapabilities2KHR* pCapabilities
@@ -63562,7 +63457,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.GetDisplayPlaneCapabilities2KHR(physicalDevice, pDisplayPlaneInfo, pCapabilities);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDisplayPlaneCapabilities2KHR(
+    Result IVk.GetDisplayPlaneCapabilities2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkDisplayPlaneInfo2KHR *")]
             Ref<DisplayPlaneInfo2KHR> pDisplayPlaneInfo,
@@ -63573,7 +63468,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DisplayPlaneInfo2KHR* __dsl_pDisplayPlaneInfo = pDisplayPlaneInfo)
         {
             return (Result)
-                ((IVulkan)this).GetDisplayPlaneCapabilities2KHR(
+                ((IVk)this).GetDisplayPlaneCapabilities2KHR(
                     physicalDevice,
                     __dsl_pDisplayPlaneInfo,
                     __dsl_pCapabilities
@@ -63598,7 +63493,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.GetDisplayPlaneCapabilities2KHR(physicalDevice, pDisplayPlaneInfo, pCapabilities);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDisplayPlaneCapabilitiesKHR(
+    Result IVk.GetDisplayPlaneCapabilitiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkDisplayModeKHR")] DisplayModeKHRHandle mode,
         [NativeTypeName("uint32_t")] uint planeIndex,
@@ -63631,7 +63526,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDisplayPlaneCapabilitiesKHR(physicalDevice, mode, planeIndex, pCapabilities);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDisplayPlaneCapabilitiesKHR(
+    Result IVk.GetDisplayPlaneCapabilitiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkDisplayModeKHR")] DisplayModeKHRHandle mode,
         [NativeTypeName("uint32_t")] uint planeIndex,
@@ -63641,7 +63536,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DisplayPlaneCapabilitiesKHR* __dsl_pCapabilities = pCapabilities)
         {
             return (Result)
-                ((IVulkan)this).GetDisplayPlaneCapabilitiesKHR(
+                ((IVk)this).GetDisplayPlaneCapabilitiesKHR(
                     physicalDevice,
                     mode,
                     planeIndex,
@@ -63662,7 +63557,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDisplayPlaneCapabilitiesKHR(physicalDevice, mode, planeIndex, pCapabilities);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDisplayPlaneSupportedDisplaysKHR(
+    Result IVk.GetDisplayPlaneSupportedDisplaysKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t")] uint planeIndex,
         [NativeTypeName("uint32_t *")] uint* pDisplayCount,
@@ -63696,7 +63591,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDisplayPlaneSupportedDisplaysKHR(
+    Result IVk.GetDisplayPlaneSupportedDisplaysKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t")] uint planeIndex,
         [NativeTypeName("uint32_t *")] Ref<uint> pDisplayCount,
@@ -63707,7 +63602,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pDisplayCount = pDisplayCount)
         {
             return (Result)
-                ((IVulkan)this).GetDisplayPlaneSupportedDisplaysKHR(
+                ((IVk)this).GetDisplayPlaneSupportedDisplaysKHR(
                     physicalDevice,
                     planeIndex,
                     __dsl_pDisplayCount,
@@ -63734,7 +63629,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDrmDisplayEXT(
+    Result IVk.GetDrmDisplayEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("int32_t")] int drmFd,
         [NativeTypeName("uint32_t")] uint connectorId,
@@ -63763,7 +63658,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDrmDisplayEXT(physicalDevice, drmFd, connectorId, display);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDrmDisplayEXT(
+    Result IVk.GetDrmDisplayEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("int32_t")] int drmFd,
         [NativeTypeName("uint32_t")] uint connectorId,
@@ -63773,7 +63668,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DisplayKHRHandle* __dsl_display = display)
         {
             return (Result)
-                ((IVulkan)this).GetDrmDisplayEXT(physicalDevice, drmFd, connectorId, __dsl_display);
+                ((IVk)this).GetDrmDisplayEXT(physicalDevice, drmFd, connectorId, __dsl_display);
         }
     }
 
@@ -63793,7 +63688,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDrmDisplayEXT(physicalDevice, drmFd, connectorId, display);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDynamicRenderingTilePropertiesQCOM(
+    Result IVk.GetDynamicRenderingTilePropertiesQCOM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderingInfo *")] RenderingInfo* pRenderingInfo,
         TilePropertiesQCOM* pProperties
@@ -63826,7 +63721,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDynamicRenderingTilePropertiesQCOM(device, pRenderingInfo, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetDynamicRenderingTilePropertiesQCOM(
+    Result IVk.GetDynamicRenderingTilePropertiesQCOM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderingInfo *")] Ref<RenderingInfo> pRenderingInfo,
         Ref<TilePropertiesQCOM> pProperties
@@ -63836,7 +63731,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (RenderingInfo* __dsl_pRenderingInfo = pRenderingInfo)
         {
             return (Result)
-                ((IVulkan)this).GetDynamicRenderingTilePropertiesQCOM(
+                ((IVk)this).GetDynamicRenderingTilePropertiesQCOM(
                     device,
                     __dsl_pRenderingInfo,
                     __dsl_pProperties
@@ -63862,7 +63757,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetDynamicRenderingTilePropertiesQCOM(device, pRenderingInfo, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetEncodedVideoSessionParametersKHR(
+    Result IVk.GetEncodedVideoSessionParametersKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkVideoEncodeSessionParametersGetInfoKHR *")]
             VideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo,
@@ -63914,7 +63809,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetEncodedVideoSessionParametersKHR(
+    Result IVk.GetEncodedVideoSessionParametersKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkVideoEncodeSessionParametersGetInfoKHR *")]
             Ref<VideoEncodeSessionParametersGetInfoKHR> pVideoSessionParametersInfo,
@@ -63932,7 +63827,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         {
             return (Result)
-                ((IVulkan)this).GetEncodedVideoSessionParametersKHR(
+                ((IVk)this).GetEncodedVideoSessionParametersKHR(
                     device,
                     __dsl_pVideoSessionParametersInfo,
                     __dsl_pFeedbackInfo,
@@ -63970,7 +63865,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetEventStatus(
+    Result IVk.GetEventStatus(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkEvent")] EventHandle @event
     ) =>
@@ -63995,7 +63890,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetEventStatus(device, @event);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetExternalComputeQueueDataNV(
+    void IVk.GetExternalComputeQueueDataNV(
         [NativeTypeName("VkExternalComputeQueueNV")] ExternalComputeQueueNVHandle externalQueue,
         ExternalComputeQueueDataParamsNV* @params,
         void* pData
@@ -64025,7 +63920,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetExternalComputeQueueDataNV(externalQueue, @params, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetExternalComputeQueueDataNV(
+    void IVk.GetExternalComputeQueueDataNV(
         [NativeTypeName("VkExternalComputeQueueNV")] ExternalComputeQueueNVHandle externalQueue,
         Ref<ExternalComputeQueueDataParamsNV> @params,
         Ref pData
@@ -64034,7 +63929,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (void* __dsl_pData = pData)
         fixed (ExternalComputeQueueDataParamsNV* __dsl_params = @params)
         {
-            ((IVulkan)this).GetExternalComputeQueueDataNV(externalQueue, __dsl_params, __dsl_pData);
+            ((IVk)this).GetExternalComputeQueueDataNV(externalQueue, __dsl_params, __dsl_pData);
         }
     }
 
@@ -64049,7 +63944,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetExternalComputeQueueDataNV(externalQueue, @params, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetFenceFdKHR(
+    Result IVk.GetFenceFdKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkFenceGetFdInfoKHR *")] FenceGetFdInfoKHR* pGetFdInfo,
         int* pFd
@@ -64079,7 +63974,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetFenceFdKHR(device, pGetFdInfo, pFd);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetFenceFdKHR(
+    Result IVk.GetFenceFdKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkFenceGetFdInfoKHR *")] Ref<FenceGetFdInfoKHR> pGetFdInfo,
         Ref<int> pFd
@@ -64088,7 +63983,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (int* __dsl_pFd = pFd)
         fixed (FenceGetFdInfoKHR* __dsl_pGetFdInfo = pGetFdInfo)
         {
-            return (Result)((IVulkan)this).GetFenceFdKHR(device, __dsl_pGetFdInfo, __dsl_pFd);
+            return (Result)((IVk)this).GetFenceFdKHR(device, __dsl_pGetFdInfo, __dsl_pFd);
         }
     }
 
@@ -64110,7 +64005,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetFenceFdKHR(device, pGetFdInfo, pFd);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetFenceStatus(
+    Result IVk.GetFenceStatus(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkFence")] FenceHandle fence
     ) =>
@@ -64135,7 +64030,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetFenceStatus(device, fence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetFramebufferTilePropertiesQCOM(
+    Result IVk.GetFramebufferTilePropertiesQCOM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkFramebuffer")] FramebufferHandle framebuffer,
         [NativeTypeName("uint32_t *")] uint* pPropertiesCount,
@@ -64181,7 +64076,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetFramebufferTilePropertiesQCOM(
+    Result IVk.GetFramebufferTilePropertiesQCOM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkFramebuffer")] FramebufferHandle framebuffer,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertiesCount,
@@ -64192,7 +64087,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertiesCount = pPropertiesCount)
         {
             return (Result)
-                ((IVulkan)this).GetFramebufferTilePropertiesQCOM(
+                ((IVk)this).GetFramebufferTilePropertiesQCOM(
                     device,
                     framebuffer,
                     __dsl_pPropertiesCount,
@@ -64226,7 +64121,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetGeneratedCommandsMemoryRequirementsEXT(
+    void IVk.GetGeneratedCommandsMemoryRequirementsEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkGeneratedCommandsMemoryRequirementsInfoEXT *")]
             GeneratedCommandsMemoryRequirementsInfoEXT* pInfo,
@@ -64266,7 +64161,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetGeneratedCommandsMemoryRequirementsEXT(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetGeneratedCommandsMemoryRequirementsEXT(
+    void IVk.GetGeneratedCommandsMemoryRequirementsEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkGeneratedCommandsMemoryRequirementsInfoEXT *")]
             Ref<GeneratedCommandsMemoryRequirementsInfoEXT> pInfo,
@@ -64276,7 +64171,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (GeneratedCommandsMemoryRequirementsInfoEXT* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetGeneratedCommandsMemoryRequirementsEXT(
+            ((IVk)this).GetGeneratedCommandsMemoryRequirementsEXT(
                 device,
                 __dsl_pInfo,
                 __dsl_pMemoryRequirements
@@ -64304,7 +64199,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetGeneratedCommandsMemoryRequirementsEXT(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetGeneratedCommandsMemoryRequirementsNV(
+    void IVk.GetGeneratedCommandsMemoryRequirementsNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkGeneratedCommandsMemoryRequirementsInfoNV *")]
             GeneratedCommandsMemoryRequirementsInfoNV* pInfo,
@@ -64340,7 +64235,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetGeneratedCommandsMemoryRequirementsNV(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetGeneratedCommandsMemoryRequirementsNV(
+    void IVk.GetGeneratedCommandsMemoryRequirementsNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkGeneratedCommandsMemoryRequirementsInfoNV *")]
             Ref<GeneratedCommandsMemoryRequirementsInfoNV> pInfo,
@@ -64350,7 +64245,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (GeneratedCommandsMemoryRequirementsInfoNV* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetGeneratedCommandsMemoryRequirementsNV(
+            ((IVk)this).GetGeneratedCommandsMemoryRequirementsNV(
                 device,
                 __dsl_pInfo,
                 __dsl_pMemoryRequirements
@@ -64374,7 +64269,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetGeneratedCommandsMemoryRequirementsNV(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetImageDrmFormatModifierPropertiesEXT(
+    Result IVk.GetImageDrmFormatModifierPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         ImageDrmFormatModifierPropertiesEXT* pProperties
@@ -64412,7 +64307,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageDrmFormatModifierPropertiesEXT(device, image, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetImageDrmFormatModifierPropertiesEXT(
+    Result IVk.GetImageDrmFormatModifierPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         Ref<ImageDrmFormatModifierPropertiesEXT> pProperties
@@ -64421,7 +64316,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ImageDrmFormatModifierPropertiesEXT* __dsl_pProperties = pProperties)
         {
             return (Result)
-                ((IVulkan)this).GetImageDrmFormatModifierPropertiesEXT(
+                ((IVk)this).GetImageDrmFormatModifierPropertiesEXT(
                     device,
                     image,
                     __dsl_pProperties
@@ -64448,7 +64343,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageDrmFormatModifierPropertiesEXT(device, image, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageMemoryRequirements(
+    void IVk.GetImageMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         MemoryRequirements* pMemoryRequirements
@@ -64478,7 +64373,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageMemoryRequirements(device, image, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageMemoryRequirements(
+    void IVk.GetImageMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         Ref<MemoryRequirements> pMemoryRequirements
@@ -64486,7 +64381,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (MemoryRequirements* __dsl_pMemoryRequirements = pMemoryRequirements)
         {
-            ((IVulkan)this).GetImageMemoryRequirements(device, image, __dsl_pMemoryRequirements);
+            ((IVk)this).GetImageMemoryRequirements(device, image, __dsl_pMemoryRequirements);
         }
     }
 
@@ -64505,7 +64400,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageMemoryRequirements(device, image, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageMemoryRequirements2(
+    void IVk.GetImageMemoryRequirements2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageMemoryRequirementsInfo2 *")]
             ImageMemoryRequirementsInfo2* pInfo,
@@ -64541,7 +64436,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageMemoryRequirements2(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageMemoryRequirements2(
+    void IVk.GetImageMemoryRequirements2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageMemoryRequirementsInfo2 *")]
             Ref<ImageMemoryRequirementsInfo2> pInfo,
@@ -64551,11 +64446,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (ImageMemoryRequirementsInfo2* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetImageMemoryRequirements2(
-                device,
-                __dsl_pInfo,
-                __dsl_pMemoryRequirements
-            );
+            ((IVk)this).GetImageMemoryRequirements2(device, __dsl_pInfo, __dsl_pMemoryRequirements);
         }
     }
 
@@ -64575,7 +64466,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageMemoryRequirements2(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageMemoryRequirements2KHR(
+    void IVk.GetImageMemoryRequirements2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageMemoryRequirementsInfo2 *")]
             ImageMemoryRequirementsInfo2* pInfo,
@@ -64607,7 +64498,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageMemoryRequirements2KHR(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageMemoryRequirements2KHR(
+    void IVk.GetImageMemoryRequirements2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageMemoryRequirementsInfo2 *")]
             Ref<ImageMemoryRequirementsInfo2> pInfo,
@@ -64617,7 +64508,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (ImageMemoryRequirementsInfo2* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetImageMemoryRequirements2KHR(
+            ((IVk)this).GetImageMemoryRequirements2KHR(
                 device,
                 __dsl_pInfo,
                 __dsl_pMemoryRequirements
@@ -64637,7 +64528,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageMemoryRequirements2KHR(device, pInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetImageOpaqueCaptureDescriptorDataEXT(
+    Result IVk.GetImageOpaqueCaptureDescriptorDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageCaptureDescriptorDataInfoEXT *")]
             ImageCaptureDescriptorDataInfoEXT* pInfo,
@@ -64674,7 +64565,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetImageOpaqueCaptureDescriptorDataEXT(
+    Result IVk.GetImageOpaqueCaptureDescriptorDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageCaptureDescriptorDataInfoEXT *")]
             Ref<ImageCaptureDescriptorDataInfoEXT> pInfo,
@@ -64685,7 +64576,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ImageCaptureDescriptorDataInfoEXT* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).GetImageOpaqueCaptureDescriptorDataEXT(
+                ((IVk)this).GetImageOpaqueCaptureDescriptorDataEXT(
                     device,
                     __dsl_pInfo,
                     __dsl_pData
@@ -64714,7 +64605,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSparseMemoryRequirements(
+    void IVk.GetImageSparseMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("uint32_t *")] uint* pSparseMemoryRequirementCount,
@@ -64757,7 +64648,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSparseMemoryRequirements(
+    void IVk.GetImageSparseMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("uint32_t *")] Ref<uint> pSparseMemoryRequirementCount,
@@ -64770,7 +64661,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         fixed (uint* __dsl_pSparseMemoryRequirementCount = pSparseMemoryRequirementCount)
         {
-            ((IVulkan)this).GetImageSparseMemoryRequirements(
+            ((IVk)this).GetImageSparseMemoryRequirements(
                 device,
                 image,
                 __dsl_pSparseMemoryRequirementCount,
@@ -64801,7 +64692,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSparseMemoryRequirements2(
+    void IVk.GetImageSparseMemoryRequirements2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageSparseMemoryRequirementsInfo2 *")]
             ImageSparseMemoryRequirementsInfo2* pInfo,
@@ -64846,7 +64737,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSparseMemoryRequirements2(
+    void IVk.GetImageSparseMemoryRequirements2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageSparseMemoryRequirementsInfo2 *")]
             Ref<ImageSparseMemoryRequirementsInfo2> pInfo,
@@ -64861,7 +64752,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pSparseMemoryRequirementCount = pSparseMemoryRequirementCount)
         fixed (ImageSparseMemoryRequirementsInfo2* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetImageSparseMemoryRequirements2(
+            ((IVk)this).GetImageSparseMemoryRequirements2(
                 device,
                 __dsl_pInfo,
                 __dsl_pSparseMemoryRequirementCount,
@@ -64893,7 +64784,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSparseMemoryRequirements2KHR(
+    void IVk.GetImageSparseMemoryRequirements2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageSparseMemoryRequirementsInfo2 *")]
             ImageSparseMemoryRequirementsInfo2* pInfo,
@@ -64934,7 +64825,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSparseMemoryRequirements2KHR(
+    void IVk.GetImageSparseMemoryRequirements2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageSparseMemoryRequirementsInfo2 *")]
             Ref<ImageSparseMemoryRequirementsInfo2> pInfo,
@@ -64949,7 +64840,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pSparseMemoryRequirementCount = pSparseMemoryRequirementCount)
         fixed (ImageSparseMemoryRequirementsInfo2* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetImageSparseMemoryRequirements2KHR(
+            ((IVk)this).GetImageSparseMemoryRequirements2KHR(
                 device,
                 __dsl_pInfo,
                 __dsl_pSparseMemoryRequirementCount,
@@ -64977,7 +64868,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSubresourceLayout(
+    void IVk.GetImageSubresourceLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("const VkImageSubresource *")] ImageSubresource* pSubresource,
@@ -65014,7 +64905,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageSubresourceLayout(device, image, pSubresource, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSubresourceLayout(
+    void IVk.GetImageSubresourceLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("const VkImageSubresource *")] Ref<ImageSubresource> pSubresource,
@@ -65024,12 +64915,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SubresourceLayout* __dsl_pLayout = pLayout)
         fixed (ImageSubresource* __dsl_pSubresource = pSubresource)
         {
-            ((IVulkan)this).GetImageSubresourceLayout(
-                device,
-                image,
-                __dsl_pSubresource,
-                __dsl_pLayout
-            );
+            ((IVk)this).GetImageSubresourceLayout(device, image, __dsl_pSubresource, __dsl_pLayout);
         }
     }
 
@@ -65049,7 +64935,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageSubresourceLayout(device, image, pSubresource, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSubresourceLayout2(
+    void IVk.GetImageSubresourceLayout2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("const VkImageSubresource2 *")] ImageSubresource2* pSubresource,
@@ -65082,7 +64968,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageSubresourceLayout2(device, image, pSubresource, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSubresourceLayout2(
+    void IVk.GetImageSubresourceLayout2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("const VkImageSubresource2 *")] Ref<ImageSubresource2> pSubresource,
@@ -65092,7 +64978,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SubresourceLayout2* __dsl_pLayout = pLayout)
         fixed (ImageSubresource2* __dsl_pSubresource = pSubresource)
         {
-            ((IVulkan)this).GetImageSubresourceLayout2(
+            ((IVk)this).GetImageSubresourceLayout2(
                 device,
                 image,
                 __dsl_pSubresource,
@@ -65113,7 +64999,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageSubresourceLayout2(device, image, pSubresource, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSubresourceLayout2EXT(
+    void IVk.GetImageSubresourceLayout2EXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("const VkImageSubresource2 *")] ImageSubresource2* pSubresource,
@@ -65154,7 +65040,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageSubresourceLayout2EXT(device, image, pSubresource, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSubresourceLayout2EXT(
+    void IVk.GetImageSubresourceLayout2EXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("const VkImageSubresource2 *")] Ref<ImageSubresource2> pSubresource,
@@ -65164,7 +65050,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SubresourceLayout2* __dsl_pLayout = pLayout)
         fixed (ImageSubresource2* __dsl_pSubresource = pSubresource)
         {
-            ((IVulkan)this).GetImageSubresourceLayout2EXT(
+            ((IVk)this).GetImageSubresourceLayout2EXT(
                 device,
                 image,
                 __dsl_pSubresource,
@@ -65193,7 +65079,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageSubresourceLayout2EXT(device, image, pSubresource, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSubresourceLayout2KHR(
+    void IVk.GetImageSubresourceLayout2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("const VkImageSubresource2 *")] ImageSubresource2* pSubresource,
@@ -65230,7 +65116,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageSubresourceLayout2KHR(device, image, pSubresource, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetImageSubresourceLayout2KHR(
+    void IVk.GetImageSubresourceLayout2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImage")] ImageHandle image,
         [NativeTypeName("const VkImageSubresource2 *")] Ref<ImageSubresource2> pSubresource,
@@ -65240,7 +65126,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SubresourceLayout2* __dsl_pLayout = pLayout)
         fixed (ImageSubresource2* __dsl_pSubresource = pSubresource)
         {
-            ((IVulkan)this).GetImageSubresourceLayout2KHR(
+            ((IVk)this).GetImageSubresourceLayout2KHR(
                 device,
                 image,
                 __dsl_pSubresource,
@@ -65265,7 +65151,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageSubresourceLayout2KHR(device, image, pSubresource, pLayout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetImageViewAddressNVX(
+    Result IVk.GetImageViewAddressNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImageView")] ImageViewHandle imageView,
         ImageViewAddressPropertiesNVX* pProperties
@@ -65292,7 +65178,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageViewAddressNVX(device, imageView, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetImageViewAddressNVX(
+    Result IVk.GetImageViewAddressNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkImageView")] ImageViewHandle imageView,
         Ref<ImageViewAddressPropertiesNVX> pProperties
@@ -65300,8 +65186,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ImageViewAddressPropertiesNVX* __dsl_pProperties = pProperties)
         {
-            return (Result)
-                ((IVulkan)this).GetImageViewAddressNVX(device, imageView, __dsl_pProperties);
+            return (Result)((IVk)this).GetImageViewAddressNVX(device, imageView, __dsl_pProperties);
         }
     }
 
@@ -65316,7 +65201,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageViewAddressNVX(device, imageView, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetImageViewHandle64NVX(
+    ulong IVk.GetImageViewHandle64NVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageViewHandleInfoNVX *")] ImageViewHandleInfoNVX* pInfo
     ) =>
@@ -65341,14 +65226,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageViewHandle64NVX(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetImageViewHandle64NVX(
+    ulong IVk.GetImageViewHandle64NVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageViewHandleInfoNVX *")] Ref<ImageViewHandleInfoNVX> pInfo
     )
     {
         fixed (ImageViewHandleInfoNVX* __dsl_pInfo = pInfo)
         {
-            return (ulong)((IVulkan)this).GetImageViewHandle64NVX(device, __dsl_pInfo);
+            return (ulong)((IVk)this).GetImageViewHandle64NVX(device, __dsl_pInfo);
         }
     }
 
@@ -65363,7 +65248,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageViewHandle64NVX(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IVulkan.GetImageViewHandleNVX(
+    uint IVk.GetImageViewHandleNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageViewHandleInfoNVX *")] ImageViewHandleInfoNVX* pInfo
     ) =>
@@ -65385,14 +65270,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageViewHandleNVX(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IVulkan.GetImageViewHandleNVX(
+    uint IVk.GetImageViewHandleNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageViewHandleInfoNVX *")] Ref<ImageViewHandleInfoNVX> pInfo
     )
     {
         fixed (ImageViewHandleInfoNVX* __dsl_pInfo = pInfo)
         {
-            return (uint)((IVulkan)this).GetImageViewHandleNVX(device, __dsl_pInfo);
+            return (uint)((IVk)this).GetImageViewHandleNVX(device, __dsl_pInfo);
         }
     }
 
@@ -65407,7 +65292,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageViewHandleNVX(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetImageViewOpaqueCaptureDescriptorDataEXT(
+    Result IVk.GetImageViewOpaqueCaptureDescriptorDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageViewCaptureDescriptorDataInfoEXT *")]
             ImageViewCaptureDescriptorDataInfoEXT* pInfo,
@@ -65448,7 +65333,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageViewOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetImageViewOpaqueCaptureDescriptorDataEXT(
+    Result IVk.GetImageViewOpaqueCaptureDescriptorDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImageViewCaptureDescriptorDataInfoEXT *")]
             Ref<ImageViewCaptureDescriptorDataInfoEXT> pInfo,
@@ -65459,7 +65344,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ImageViewCaptureDescriptorDataInfoEXT* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).GetImageViewOpaqueCaptureDescriptorDataEXT(
+                ((IVk)this).GetImageViewOpaqueCaptureDescriptorDataEXT(
                     device,
                     __dsl_pInfo,
                     __dsl_pData
@@ -65488,7 +65373,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetImageViewOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    PFNVkVoidFunction IVulkan.GetInstanceProcAddr(
+    PFNVkVoidFunction IVk.GetInstanceProcAddr(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const char *")] sbyte* pName
     ) =>
@@ -65514,14 +65399,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetInstanceProcAddr(instance, pName);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    PFNVkVoidFunction IVulkan.GetInstanceProcAddr(
+    PFNVkVoidFunction IVk.GetInstanceProcAddr(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("const char *")] Ref<sbyte> pName
     )
     {
         fixed (sbyte* __dsl_pName = pName)
         {
-            return (PFNVkVoidFunction)((IVulkan)this).GetInstanceProcAddr(instance, __dsl_pName);
+            return (PFNVkVoidFunction)((IVk)this).GetInstanceProcAddr(instance, __dsl_pName);
         }
     }
 
@@ -65540,7 +65425,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetInstanceProcAddr(instance, pName);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetLatencyTimingsNV(
+    void IVk.GetLatencyTimingsNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         GetLatencyMarkerInfoNV* pLatencyMarkerInfo
@@ -65570,7 +65455,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetLatencyTimingsNV(device, swapchain, pLatencyMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetLatencyTimingsNV(
+    void IVk.GetLatencyTimingsNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         Ref<GetLatencyMarkerInfoNV> pLatencyMarkerInfo
@@ -65578,7 +65463,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (GetLatencyMarkerInfoNV* __dsl_pLatencyMarkerInfo = pLatencyMarkerInfo)
         {
-            ((IVulkan)this).GetLatencyTimingsNV(device, swapchain, __dsl_pLatencyMarkerInfo);
+            ((IVk)this).GetLatencyTimingsNV(device, swapchain, __dsl_pLatencyMarkerInfo);
         }
     }
 
@@ -65600,7 +65485,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetLatencyTimingsNV(device, swapchain, pLatencyMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetMemoryFdKHR(
+    Result IVk.GetMemoryFdKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryGetFdInfoKHR *")] MemoryGetFdInfoKHR* pGetFdInfo,
         int* pFd
@@ -65630,7 +65515,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetMemoryFdKHR(device, pGetFdInfo, pFd);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetMemoryFdKHR(
+    Result IVk.GetMemoryFdKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryGetFdInfoKHR *")] Ref<MemoryGetFdInfoKHR> pGetFdInfo,
         Ref<int> pFd
@@ -65639,7 +65524,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (int* __dsl_pFd = pFd)
         fixed (MemoryGetFdInfoKHR* __dsl_pGetFdInfo = pGetFdInfo)
         {
-            return (Result)((IVulkan)this).GetMemoryFdKHR(device, __dsl_pGetFdInfo, __dsl_pFd);
+            return (Result)((IVk)this).GetMemoryFdKHR(device, __dsl_pGetFdInfo, __dsl_pFd);
         }
     }
 
@@ -65661,7 +65546,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetMemoryFdKHR(device, pGetFdInfo, pFd);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetMemoryFdPropertiesKHR(
+    Result IVk.GetMemoryFdPropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
             ExternalMemoryHandleTypeFlags handleType,
@@ -65703,7 +65588,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetMemoryFdPropertiesKHR(device, handleType, fd, pMemoryFdProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetMemoryFdPropertiesKHR(
+    Result IVk.GetMemoryFdPropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
             ExternalMemoryHandleTypeFlags handleType,
@@ -65714,7 +65599,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryFdPropertiesKHR* __dsl_pMemoryFdProperties = pMemoryFdProperties)
         {
             return (Result)
-                ((IVulkan)this).GetMemoryFdPropertiesKHR(
+                ((IVk)this).GetMemoryFdPropertiesKHR(
                     device,
                     handleType,
                     fd,
@@ -65743,7 +65628,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetMemoryFdPropertiesKHR(device, handleType, fd, pMemoryFdProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetMemoryHostPointerPropertiesEXT(
+    Result IVk.GetMemoryHostPointerPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
             ExternalMemoryHandleTypeFlags handleType,
@@ -65791,7 +65676,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetMemoryHostPointerPropertiesEXT(
+    Result IVk.GetMemoryHostPointerPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
             ExternalMemoryHandleTypeFlags handleType,
@@ -65806,7 +65691,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (void* __dsl_pHostPointer = pHostPointer)
         {
             return (Result)
-                ((IVulkan)this).GetMemoryHostPointerPropertiesEXT(
+                ((IVk)this).GetMemoryHostPointerPropertiesEXT(
                     device,
                     handleType,
                     __dsl_pHostPointer,
@@ -65841,7 +65726,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetMemoryRemoteAddressNV(
+    Result IVk.GetMemoryRemoteAddressNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryGetRemoteAddressInfoNV *")]
             MemoryGetRemoteAddressInfoNV* pMemoryGetRemoteAddressInfo,
@@ -65876,7 +65761,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetMemoryRemoteAddressNV(device, pMemoryGetRemoteAddressInfo, pAddress);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetMemoryRemoteAddressNV(
+    Result IVk.GetMemoryRemoteAddressNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryGetRemoteAddressInfoNV *")]
             Ref<MemoryGetRemoteAddressInfoNV> pMemoryGetRemoteAddressInfo,
@@ -65890,7 +65775,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         {
             return (Result)
-                ((IVulkan)this).GetMemoryRemoteAddressNV(
+                ((IVk)this).GetMemoryRemoteAddressNV(
                     device,
                     __dsl_pMemoryGetRemoteAddressInfo,
                     __dsl_pAddress
@@ -65917,7 +65802,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetMemoryRemoteAddressNV(device, pMemoryGetRemoteAddressInfo, pAddress);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetMicromapBuildSizesEXT(
+    void IVk.GetMicromapBuildSizesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         AccelerationStructureBuildTypeKHR buildType,
         [NativeTypeName("const VkMicromapBuildInfoEXT *")] MicromapBuildInfoEXT* pBuildInfo,
@@ -65957,7 +65842,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetMicromapBuildSizesEXT(device, buildType, pBuildInfo, pSizeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetMicromapBuildSizesEXT(
+    void IVk.GetMicromapBuildSizesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         AccelerationStructureBuildTypeKHR buildType,
         [NativeTypeName("const VkMicromapBuildInfoEXT *")] Ref<MicromapBuildInfoEXT> pBuildInfo,
@@ -65967,7 +65852,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MicromapBuildSizesInfoEXT* __dsl_pSizeInfo = pSizeInfo)
         fixed (MicromapBuildInfoEXT* __dsl_pBuildInfo = pBuildInfo)
         {
-            ((IVulkan)this).GetMicromapBuildSizesEXT(
+            ((IVk)this).GetMicromapBuildSizesEXT(
                 device,
                 buildType,
                 __dsl_pBuildInfo,
@@ -65995,7 +65880,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetMicromapBuildSizesEXT(device, buildType, pBuildInfo, pSizeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPartitionedAccelerationStructuresBuildSizesNV(
+    void IVk.GetPartitionedAccelerationStructuresBuildSizesNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPartitionedAccelerationStructureInstancesInputNV *")]
             PartitionedAccelerationStructureInstancesInputNV* pInfo,
@@ -66031,7 +65916,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPartitionedAccelerationStructuresBuildSizesNV(device, pInfo, pSizeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPartitionedAccelerationStructuresBuildSizesNV(
+    void IVk.GetPartitionedAccelerationStructuresBuildSizesNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPartitionedAccelerationStructureInstancesInputNV *")]
             Ref<PartitionedAccelerationStructureInstancesInputNV> pInfo,
@@ -66041,7 +65926,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (AccelerationStructureBuildSizesInfoKHR* __dsl_pSizeInfo = pSizeInfo)
         fixed (PartitionedAccelerationStructureInstancesInputNV* __dsl_pInfo = pInfo)
         {
-            ((IVulkan)this).GetPartitionedAccelerationStructuresBuildSizesNV(
+            ((IVk)this).GetPartitionedAccelerationStructuresBuildSizesNV(
                 device,
                 __dsl_pInfo,
                 __dsl_pSizeInfo
@@ -66065,7 +65950,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPartitionedAccelerationStructuresBuildSizesNV(device, pInfo, pSizeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPastPresentationTimingGoogle(
+    Result IVk.GetPastPresentationTimingGoogle(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("uint32_t *")] uint* pPresentationTimingCount,
@@ -66108,7 +65993,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPastPresentationTimingGoogle(
+    Result IVk.GetPastPresentationTimingGoogle(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("uint32_t *")] Ref<uint> pPresentationTimingCount,
@@ -66119,7 +66004,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPresentationTimingCount = pPresentationTimingCount)
         {
             return (Result)
-                ((IVulkan)this).GetPastPresentationTimingGoogle(
+                ((IVk)this).GetPastPresentationTimingGoogle(
                     device,
                     swapchain,
                     __dsl_pPresentationTimingCount,
@@ -66150,7 +66035,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPerformanceParameterIntel(
+    Result IVk.GetPerformanceParameterIntel(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         PerformanceParameterTypeIntel parameter,
         PerformanceValueIntel* pValue
@@ -66180,7 +66065,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPerformanceParameterIntel(device, parameter, pValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPerformanceParameterIntel(
+    Result IVk.GetPerformanceParameterIntel(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         PerformanceParameterTypeIntel parameter,
         Ref<PerformanceValueIntel> pValue
@@ -66189,7 +66074,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PerformanceValueIntel* __dsl_pValue = pValue)
         {
             return (Result)
-                ((IVulkan)this).GetPerformanceParameterIntel(device, parameter, __dsl_pValue);
+                ((IVk)this).GetPerformanceParameterIntel(device, parameter, __dsl_pValue);
         }
     }
 
@@ -66204,7 +66089,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPerformanceParameterIntel(device, parameter, pValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCalibrateableTimeDomainsEXT(
+    Result IVk.GetPhysicalDeviceCalibrateableTimeDomainsEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pTimeDomainCount,
         TimeDomainKHR* pTimeDomains
@@ -66242,7 +66127,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCalibrateableTimeDomainsEXT(
+    Result IVk.GetPhysicalDeviceCalibrateableTimeDomainsEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pTimeDomainCount,
         Ref<TimeDomainKHR> pTimeDomains
@@ -66252,7 +66137,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pTimeDomainCount = pTimeDomainCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceCalibrateableTimeDomainsEXT(
+                ((IVk)this).GetPhysicalDeviceCalibrateableTimeDomainsEXT(
                     physicalDevice,
                     __dsl_pTimeDomainCount,
                     __dsl_pTimeDomains
@@ -66283,7 +66168,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCalibrateableTimeDomainsKHR(
+    Result IVk.GetPhysicalDeviceCalibrateableTimeDomainsKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pTimeDomainCount,
         TimeDomainKHR* pTimeDomains
@@ -66321,7 +66206,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCalibrateableTimeDomainsKHR(
+    Result IVk.GetPhysicalDeviceCalibrateableTimeDomainsKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pTimeDomainCount,
         Ref<TimeDomainKHR> pTimeDomains
@@ -66331,7 +66216,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pTimeDomainCount = pTimeDomainCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceCalibrateableTimeDomainsKHR(
+                ((IVk)this).GetPhysicalDeviceCalibrateableTimeDomainsKHR(
                     physicalDevice,
                     __dsl_pTimeDomainCount,
                     __dsl_pTimeDomains
@@ -66362,7 +66247,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV(
+    Result IVk.GetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         CooperativeMatrixFlexibleDimensionsPropertiesNV* pProperties
@@ -66404,7 +66289,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV(
+    Result IVk.GetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<CooperativeMatrixFlexibleDimensionsPropertiesNV> pProperties
@@ -66414,7 +66299,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV(
+                ((IVk)this).GetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV(
                     physicalDevice,
                     __dsl_pPropertyCount,
                     __dsl_pProperties
@@ -66445,7 +66330,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCooperativeMatrixPropertiesKHR(
+    Result IVk.GetPhysicalDeviceCooperativeMatrixPropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         CooperativeMatrixPropertiesKHR* pProperties
@@ -66487,7 +66372,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCooperativeMatrixPropertiesKHR(
+    Result IVk.GetPhysicalDeviceCooperativeMatrixPropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<CooperativeMatrixPropertiesKHR> pProperties
@@ -66497,7 +66382,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceCooperativeMatrixPropertiesKHR(
+                ((IVk)this).GetPhysicalDeviceCooperativeMatrixPropertiesKHR(
                     physicalDevice,
                     __dsl_pPropertyCount,
                     __dsl_pProperties
@@ -66528,7 +66413,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCooperativeMatrixPropertiesNV(
+    Result IVk.GetPhysicalDeviceCooperativeMatrixPropertiesNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         CooperativeMatrixPropertiesNV* pProperties
@@ -66570,7 +66455,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCooperativeMatrixPropertiesNV(
+    Result IVk.GetPhysicalDeviceCooperativeMatrixPropertiesNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<CooperativeMatrixPropertiesNV> pProperties
@@ -66580,7 +66465,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceCooperativeMatrixPropertiesNV(
+                ((IVk)this).GetPhysicalDeviceCooperativeMatrixPropertiesNV(
                     physicalDevice,
                     __dsl_pPropertyCount,
                     __dsl_pProperties
@@ -66611,7 +66496,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCooperativeVectorPropertiesNV(
+    Result IVk.GetPhysicalDeviceCooperativeVectorPropertiesNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         CooperativeVectorPropertiesNV* pProperties
@@ -66646,7 +66531,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceCooperativeVectorPropertiesNV(
+    Result IVk.GetPhysicalDeviceCooperativeVectorPropertiesNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<CooperativeVectorPropertiesNV> pProperties
@@ -66656,7 +66541,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceCooperativeVectorPropertiesNV(
+                ((IVk)this).GetPhysicalDeviceCooperativeVectorPropertiesNV(
                     physicalDevice,
                     __dsl_pPropertyCount,
                     __dsl_pProperties
@@ -66680,7 +66565,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceDisplayPlaneProperties2KHR(
+    Result IVk.GetPhysicalDeviceDisplayPlaneProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         DisplayPlaneProperties2KHR* pProperties
@@ -66715,7 +66600,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceDisplayPlaneProperties2KHR(
+    Result IVk.GetPhysicalDeviceDisplayPlaneProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<DisplayPlaneProperties2KHR> pProperties
@@ -66725,7 +66610,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceDisplayPlaneProperties2KHR(
+                ((IVk)this).GetPhysicalDeviceDisplayPlaneProperties2KHR(
                     physicalDevice,
                     __dsl_pPropertyCount,
                     __dsl_pProperties
@@ -66753,7 +66638,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceDisplayPlanePropertiesKHR(
+    Result IVk.GetPhysicalDeviceDisplayPlanePropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         DisplayPlanePropertiesKHR* pProperties
@@ -66784,7 +66669,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceDisplayPlanePropertiesKHR(
+    Result IVk.GetPhysicalDeviceDisplayPlanePropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<DisplayPlanePropertiesKHR> pProperties
@@ -66794,7 +66679,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceDisplayPlanePropertiesKHR(
+                ((IVk)this).GetPhysicalDeviceDisplayPlanePropertiesKHR(
                     physicalDevice,
                     __dsl_pPropertyCount,
                     __dsl_pProperties
@@ -66818,7 +66703,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceDisplayProperties2KHR(
+    Result IVk.GetPhysicalDeviceDisplayProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         DisplayProperties2KHR* pProperties
@@ -66853,7 +66738,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceDisplayProperties2KHR(
+    Result IVk.GetPhysicalDeviceDisplayProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<DisplayProperties2KHR> pProperties
@@ -66863,7 +66748,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceDisplayProperties2KHR(
+                ((IVk)this).GetPhysicalDeviceDisplayProperties2KHR(
                     physicalDevice,
                     __dsl_pPropertyCount,
                     __dsl_pProperties
@@ -66891,7 +66776,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceDisplayPropertiesKHR(
+    Result IVk.GetPhysicalDeviceDisplayPropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         DisplayPropertiesKHR* pProperties
@@ -66922,7 +66807,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceDisplayPropertiesKHR(
+    Result IVk.GetPhysicalDeviceDisplayPropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<DisplayPropertiesKHR> pProperties
@@ -66932,7 +66817,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceDisplayPropertiesKHR(
+                ((IVk)this).GetPhysicalDeviceDisplayPropertiesKHR(
                     physicalDevice,
                     __dsl_pPropertyCount,
                     __dsl_pProperties
@@ -66956,7 +66841,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalBufferProperties(
+    void IVk.GetPhysicalDeviceExternalBufferProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalBufferInfo *")]
             PhysicalDeviceExternalBufferInfo* pExternalBufferInfo,
@@ -66997,7 +66882,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalBufferProperties(
+    void IVk.GetPhysicalDeviceExternalBufferProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalBufferInfo *")]
             Ref<PhysicalDeviceExternalBufferInfo> pExternalBufferInfo,
@@ -67009,7 +66894,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         fixed (PhysicalDeviceExternalBufferInfo* __dsl_pExternalBufferInfo = pExternalBufferInfo)
         {
-            ((IVulkan)this).GetPhysicalDeviceExternalBufferProperties(
+            ((IVk)this).GetPhysicalDeviceExternalBufferProperties(
                 physicalDevice,
                 __dsl_pExternalBufferInfo,
                 __dsl_pExternalBufferProperties
@@ -67038,7 +66923,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalBufferPropertiesKHR(
+    void IVk.GetPhysicalDeviceExternalBufferPropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalBufferInfo *")]
             PhysicalDeviceExternalBufferInfo* pExternalBufferInfo,
@@ -67082,7 +66967,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalBufferPropertiesKHR(
+    void IVk.GetPhysicalDeviceExternalBufferPropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalBufferInfo *")]
             Ref<PhysicalDeviceExternalBufferInfo> pExternalBufferInfo,
@@ -67094,7 +66979,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         fixed (PhysicalDeviceExternalBufferInfo* __dsl_pExternalBufferInfo = pExternalBufferInfo)
         {
-            ((IVulkan)this).GetPhysicalDeviceExternalBufferPropertiesKHR(
+            ((IVk)this).GetPhysicalDeviceExternalBufferPropertiesKHR(
                 physicalDevice,
                 __dsl_pExternalBufferInfo,
                 __dsl_pExternalBufferProperties
@@ -67126,7 +67011,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalFenceProperties(
+    void IVk.GetPhysicalDeviceExternalFenceProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalFenceInfo *")]
             PhysicalDeviceExternalFenceInfo* pExternalFenceInfo,
@@ -67167,7 +67052,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalFenceProperties(
+    void IVk.GetPhysicalDeviceExternalFenceProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalFenceInfo *")]
             Ref<PhysicalDeviceExternalFenceInfo> pExternalFenceInfo,
@@ -67177,7 +67062,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ExternalFenceProperties* __dsl_pExternalFenceProperties = pExternalFenceProperties)
         fixed (PhysicalDeviceExternalFenceInfo* __dsl_pExternalFenceInfo = pExternalFenceInfo)
         {
-            ((IVulkan)this).GetPhysicalDeviceExternalFenceProperties(
+            ((IVk)this).GetPhysicalDeviceExternalFenceProperties(
                 physicalDevice,
                 __dsl_pExternalFenceInfo,
                 __dsl_pExternalFenceProperties
@@ -67206,7 +67091,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalFencePropertiesKHR(
+    void IVk.GetPhysicalDeviceExternalFencePropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalFenceInfo *")]
             PhysicalDeviceExternalFenceInfo* pExternalFenceInfo,
@@ -67250,7 +67135,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalFencePropertiesKHR(
+    void IVk.GetPhysicalDeviceExternalFencePropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalFenceInfo *")]
             Ref<PhysicalDeviceExternalFenceInfo> pExternalFenceInfo,
@@ -67260,7 +67145,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ExternalFenceProperties* __dsl_pExternalFenceProperties = pExternalFenceProperties)
         fixed (PhysicalDeviceExternalFenceInfo* __dsl_pExternalFenceInfo = pExternalFenceInfo)
         {
-            ((IVulkan)this).GetPhysicalDeviceExternalFencePropertiesKHR(
+            ((IVk)this).GetPhysicalDeviceExternalFencePropertiesKHR(
                 physicalDevice,
                 __dsl_pExternalFenceInfo,
                 __dsl_pExternalFenceProperties
@@ -67292,7 +67177,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceExternalImageFormatPropertiesNV(
+    Result IVk.GetPhysicalDeviceExternalImageFormatPropertiesNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
@@ -67356,7 +67241,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceExternalImageFormatPropertiesNV(
+    Result IVk.GetPhysicalDeviceExternalImageFormatPropertiesNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
@@ -67373,7 +67258,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceExternalImageFormatPropertiesNV(
+                ((IVk)this).GetPhysicalDeviceExternalImageFormatPropertiesNV(
                     physicalDevice,
                     format,
                     type,
@@ -67412,7 +67297,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalSemaphoreProperties(
+    void IVk.GetPhysicalDeviceExternalSemaphoreProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalSemaphoreInfo *")]
             PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo,
@@ -67453,7 +67338,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalSemaphoreProperties(
+    void IVk.GetPhysicalDeviceExternalSemaphoreProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalSemaphoreInfo *")]
             Ref<PhysicalDeviceExternalSemaphoreInfo> pExternalSemaphoreInfo,
@@ -67469,7 +67354,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pExternalSemaphoreInfo
         )
         {
-            ((IVulkan)this).GetPhysicalDeviceExternalSemaphoreProperties(
+            ((IVk)this).GetPhysicalDeviceExternalSemaphoreProperties(
                 physicalDevice,
                 __dsl_pExternalSemaphoreInfo,
                 __dsl_pExternalSemaphoreProperties
@@ -67498,7 +67383,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalSemaphorePropertiesKHR(
+    void IVk.GetPhysicalDeviceExternalSemaphorePropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalSemaphoreInfo *")]
             PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo,
@@ -67542,7 +67427,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceExternalSemaphorePropertiesKHR(
+    void IVk.GetPhysicalDeviceExternalSemaphorePropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceExternalSemaphoreInfo *")]
             Ref<PhysicalDeviceExternalSemaphoreInfo> pExternalSemaphoreInfo,
@@ -67558,7 +67443,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pExternalSemaphoreInfo
         )
         {
-            ((IVulkan)this).GetPhysicalDeviceExternalSemaphorePropertiesKHR(
+            ((IVk)this).GetPhysicalDeviceExternalSemaphorePropertiesKHR(
                 physicalDevice,
                 __dsl_pExternalSemaphoreInfo,
                 __dsl_pExternalSemaphoreProperties
@@ -67590,7 +67475,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFeatures(
+    void IVk.GetPhysicalDeviceFeatures(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         PhysicalDeviceFeatures* pFeatures
     ) =>
@@ -67618,14 +67503,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFeatures(physicalDevice, pFeatures);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFeatures(
+    void IVk.GetPhysicalDeviceFeatures(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Ref<PhysicalDeviceFeatures> pFeatures
     )
     {
         fixed (PhysicalDeviceFeatures* __dsl_pFeatures = pFeatures)
         {
-            ((IVulkan)this).GetPhysicalDeviceFeatures(physicalDevice, __dsl_pFeatures);
+            ((IVk)this).GetPhysicalDeviceFeatures(physicalDevice, __dsl_pFeatures);
         }
     }
 
@@ -67643,7 +67528,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFeatures(physicalDevice, pFeatures);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFeatures2(
+    void IVk.GetPhysicalDeviceFeatures2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         PhysicalDeviceFeatures2* pFeatures
     ) =>
@@ -67671,14 +67556,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFeatures2(physicalDevice, pFeatures);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFeatures2(
+    void IVk.GetPhysicalDeviceFeatures2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Ref<PhysicalDeviceFeatures2> pFeatures
     )
     {
         fixed (PhysicalDeviceFeatures2* __dsl_pFeatures = pFeatures)
         {
-            ((IVulkan)this).GetPhysicalDeviceFeatures2(physicalDevice, __dsl_pFeatures);
+            ((IVk)this).GetPhysicalDeviceFeatures2(physicalDevice, __dsl_pFeatures);
         }
     }
 
@@ -67696,7 +67581,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFeatures2(physicalDevice, pFeatures);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFeatures2KHR(
+    void IVk.GetPhysicalDeviceFeatures2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         PhysicalDeviceFeatures2* pFeatures
     ) =>
@@ -67720,14 +67605,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFeatures2KHR(physicalDevice, pFeatures);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFeatures2KHR(
+    void IVk.GetPhysicalDeviceFeatures2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Ref<PhysicalDeviceFeatures2> pFeatures
     )
     {
         fixed (PhysicalDeviceFeatures2* __dsl_pFeatures = pFeatures)
         {
-            ((IVulkan)this).GetPhysicalDeviceFeatures2KHR(physicalDevice, __dsl_pFeatures);
+            ((IVk)this).GetPhysicalDeviceFeatures2KHR(physicalDevice, __dsl_pFeatures);
         }
     }
 
@@ -67741,7 +67626,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFeatures2KHR(physicalDevice, pFeatures);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFormatProperties(
+    void IVk.GetPhysicalDeviceFormatProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         FormatProperties* pFormatProperties
@@ -67771,7 +67656,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFormatProperties(physicalDevice, format, pFormatProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFormatProperties(
+    void IVk.GetPhysicalDeviceFormatProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         Ref<FormatProperties> pFormatProperties
@@ -67779,7 +67664,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (FormatProperties* __dsl_pFormatProperties = pFormatProperties)
         {
-            ((IVulkan)this).GetPhysicalDeviceFormatProperties(
+            ((IVk)this).GetPhysicalDeviceFormatProperties(
                 physicalDevice,
                 format,
                 __dsl_pFormatProperties
@@ -67802,7 +67687,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFormatProperties(physicalDevice, format, pFormatProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFormatProperties2(
+    void IVk.GetPhysicalDeviceFormatProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         FormatProperties2* pFormatProperties
@@ -67832,7 +67717,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFormatProperties2(physicalDevice, format, pFormatProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFormatProperties2(
+    void IVk.GetPhysicalDeviceFormatProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         Ref<FormatProperties2> pFormatProperties
@@ -67840,7 +67725,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (FormatProperties2* __dsl_pFormatProperties = pFormatProperties)
         {
-            ((IVulkan)this).GetPhysicalDeviceFormatProperties2(
+            ((IVk)this).GetPhysicalDeviceFormatProperties2(
                 physicalDevice,
                 format,
                 __dsl_pFormatProperties
@@ -67863,7 +67748,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFormatProperties2(physicalDevice, format, pFormatProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFormatProperties2KHR(
+    void IVk.GetPhysicalDeviceFormatProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         FormatProperties2* pFormatProperties
@@ -67889,7 +67774,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFormatProperties2KHR(physicalDevice, format, pFormatProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceFormatProperties2KHR(
+    void IVk.GetPhysicalDeviceFormatProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         Ref<FormatProperties2> pFormatProperties
@@ -67897,7 +67782,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (FormatProperties2* __dsl_pFormatProperties = pFormatProperties)
         {
-            ((IVulkan)this).GetPhysicalDeviceFormatProperties2KHR(
+            ((IVk)this).GetPhysicalDeviceFormatProperties2KHR(
                 physicalDevice,
                 format,
                 __dsl_pFormatProperties
@@ -67916,7 +67801,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceFormatProperties2KHR(physicalDevice, format, pFormatProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceFragmentShadingRatesKHR(
+    Result IVk.GetPhysicalDeviceFragmentShadingRatesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pFragmentShadingRateCount,
         PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates
@@ -67959,7 +67844,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceFragmentShadingRatesKHR(
+    Result IVk.GetPhysicalDeviceFragmentShadingRatesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pFragmentShadingRateCount,
         Ref<PhysicalDeviceFragmentShadingRateKHR> pFragmentShadingRates
@@ -67972,7 +67857,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pFragmentShadingRateCount = pFragmentShadingRateCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceFragmentShadingRatesKHR(
+                ((IVk)this).GetPhysicalDeviceFragmentShadingRatesKHR(
                     physicalDevice,
                     __dsl_pFragmentShadingRateCount,
                     __dsl_pFragmentShadingRates
@@ -68004,7 +67889,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceImageFormatProperties(
+    Result IVk.GetPhysicalDeviceImageFormatProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
@@ -68059,7 +67944,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceImageFormatProperties(
+    Result IVk.GetPhysicalDeviceImageFormatProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
@@ -68072,7 +67957,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ImageFormatProperties* __dsl_pImageFormatProperties = pImageFormatProperties)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceImageFormatProperties(
+                ((IVk)this).GetPhysicalDeviceImageFormatProperties(
                     physicalDevice,
                     format,
                     type,
@@ -68112,7 +67997,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceImageFormatProperties2(
+    Result IVk.GetPhysicalDeviceImageFormatProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceImageFormatInfo2 *")]
             PhysicalDeviceImageFormatInfo2* pImageFormatInfo,
@@ -68153,7 +68038,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceImageFormatProperties2(
+    Result IVk.GetPhysicalDeviceImageFormatProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceImageFormatInfo2 *")]
             Ref<PhysicalDeviceImageFormatInfo2> pImageFormatInfo,
@@ -68164,7 +68049,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PhysicalDeviceImageFormatInfo2* __dsl_pImageFormatInfo = pImageFormatInfo)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceImageFormatProperties2(
+                ((IVk)this).GetPhysicalDeviceImageFormatProperties2(
                     physicalDevice,
                     __dsl_pImageFormatInfo,
                     __dsl_pImageFormatProperties
@@ -68193,7 +68078,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceImageFormatProperties2KHR(
+    Result IVk.GetPhysicalDeviceImageFormatProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceImageFormatInfo2 *")]
             PhysicalDeviceImageFormatInfo2* pImageFormatInfo,
@@ -68230,7 +68115,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceImageFormatProperties2KHR(
+    Result IVk.GetPhysicalDeviceImageFormatProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceImageFormatInfo2 *")]
             Ref<PhysicalDeviceImageFormatInfo2> pImageFormatInfo,
@@ -68241,7 +68126,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PhysicalDeviceImageFormatInfo2* __dsl_pImageFormatInfo = pImageFormatInfo)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceImageFormatProperties2KHR(
+                ((IVk)this).GetPhysicalDeviceImageFormatProperties2KHR(
                     physicalDevice,
                     __dsl_pImageFormatInfo,
                     __dsl_pImageFormatProperties
@@ -68266,7 +68151,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceMemoryProperties(
+    void IVk.GetPhysicalDeviceMemoryProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         PhysicalDeviceMemoryProperties* pMemoryProperties
     ) =>
@@ -68294,17 +68179,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceMemoryProperties(physicalDevice, pMemoryProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceMemoryProperties(
+    void IVk.GetPhysicalDeviceMemoryProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Ref<PhysicalDeviceMemoryProperties> pMemoryProperties
     )
     {
         fixed (PhysicalDeviceMemoryProperties* __dsl_pMemoryProperties = pMemoryProperties)
         {
-            ((IVulkan)this).GetPhysicalDeviceMemoryProperties(
-                physicalDevice,
-                __dsl_pMemoryProperties
-            );
+            ((IVk)this).GetPhysicalDeviceMemoryProperties(physicalDevice, __dsl_pMemoryProperties);
         }
     }
 
@@ -68322,7 +68204,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceMemoryProperties(physicalDevice, pMemoryProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceMemoryProperties2(
+    void IVk.GetPhysicalDeviceMemoryProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         PhysicalDeviceMemoryProperties2* pMemoryProperties
     ) =>
@@ -68350,17 +68232,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceMemoryProperties2(physicalDevice, pMemoryProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceMemoryProperties2(
+    void IVk.GetPhysicalDeviceMemoryProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Ref<PhysicalDeviceMemoryProperties2> pMemoryProperties
     )
     {
         fixed (PhysicalDeviceMemoryProperties2* __dsl_pMemoryProperties = pMemoryProperties)
         {
-            ((IVulkan)this).GetPhysicalDeviceMemoryProperties2(
-                physicalDevice,
-                __dsl_pMemoryProperties
-            );
+            ((IVk)this).GetPhysicalDeviceMemoryProperties2(physicalDevice, __dsl_pMemoryProperties);
         }
     }
 
@@ -68378,7 +68257,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceMemoryProperties2(physicalDevice, pMemoryProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceMemoryProperties2KHR(
+    void IVk.GetPhysicalDeviceMemoryProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         PhysicalDeviceMemoryProperties2* pMemoryProperties
     ) =>
@@ -68402,14 +68281,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceMemoryProperties2KHR(physicalDevice, pMemoryProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceMemoryProperties2KHR(
+    void IVk.GetPhysicalDeviceMemoryProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Ref<PhysicalDeviceMemoryProperties2> pMemoryProperties
     )
     {
         fixed (PhysicalDeviceMemoryProperties2* __dsl_pMemoryProperties = pMemoryProperties)
         {
-            ((IVulkan)this).GetPhysicalDeviceMemoryProperties2KHR(
+            ((IVk)this).GetPhysicalDeviceMemoryProperties2KHR(
                 physicalDevice,
                 __dsl_pMemoryProperties
             );
@@ -68426,7 +68305,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceMemoryProperties2KHR(physicalDevice, pMemoryProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceMultisamplePropertiesEXT(
+    void IVk.GetPhysicalDeviceMultisamplePropertiesEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         MultisamplePropertiesEXT* pMultisampleProperties
@@ -68468,7 +68347,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceMultisamplePropertiesEXT(
+    void IVk.GetPhysicalDeviceMultisamplePropertiesEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
         Ref<MultisamplePropertiesEXT> pMultisampleProperties
@@ -68476,7 +68355,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (MultisamplePropertiesEXT* __dsl_pMultisampleProperties = pMultisampleProperties)
         {
-            ((IVulkan)this).GetPhysicalDeviceMultisamplePropertiesEXT(
+            ((IVk)this).GetPhysicalDeviceMultisamplePropertiesEXT(
                 physicalDevice,
                 samples,
                 __dsl_pMultisampleProperties
@@ -68507,7 +68386,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceOpticalFlowImageFormatsNV(
+    Result IVk.GetPhysicalDeviceOpticalFlowImageFormatsNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkOpticalFlowImageFormatInfoNV *")]
             OpticalFlowImageFormatInfoNV* pOpticalFlowImageFormatInfo,
@@ -68556,7 +68435,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceOpticalFlowImageFormatsNV(
+    Result IVk.GetPhysicalDeviceOpticalFlowImageFormatsNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkOpticalFlowImageFormatInfoNV *")]
             Ref<OpticalFlowImageFormatInfoNV> pOpticalFlowImageFormatInfo,
@@ -68575,7 +68454,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceOpticalFlowImageFormatsNV(
+                ((IVk)this).GetPhysicalDeviceOpticalFlowImageFormatsNV(
                     physicalDevice,
                     __dsl_pOpticalFlowImageFormatInfo,
                     __dsl_pFormatCount,
@@ -68611,7 +68490,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDevicePresentRectanglesKHR(
+    Result IVk.GetPhysicalDevicePresentRectanglesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         [NativeTypeName("uint32_t *")] uint* pRectCount,
@@ -68650,7 +68529,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDevicePresentRectanglesKHR(
+    Result IVk.GetPhysicalDevicePresentRectanglesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         [NativeTypeName("uint32_t *")] Ref<uint> pRectCount,
@@ -68661,7 +68540,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pRectCount = pRectCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDevicePresentRectanglesKHR(
+                ((IVk)this).GetPhysicalDevicePresentRectanglesKHR(
                     physicalDevice,
                     surface,
                     __dsl_pRectCount,
@@ -68693,7 +68572,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceProperties(
+    void IVk.GetPhysicalDeviceProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         PhysicalDeviceProperties* pProperties
     ) =>
@@ -68721,14 +68600,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceProperties(physicalDevice, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceProperties(
+    void IVk.GetPhysicalDeviceProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Ref<PhysicalDeviceProperties> pProperties
     )
     {
         fixed (PhysicalDeviceProperties* __dsl_pProperties = pProperties)
         {
-            ((IVulkan)this).GetPhysicalDeviceProperties(physicalDevice, __dsl_pProperties);
+            ((IVk)this).GetPhysicalDeviceProperties(physicalDevice, __dsl_pProperties);
         }
     }
 
@@ -68746,7 +68625,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceProperties(physicalDevice, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceProperties2(
+    void IVk.GetPhysicalDeviceProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         PhysicalDeviceProperties2* pProperties
     ) =>
@@ -68774,14 +68653,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceProperties2(physicalDevice, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceProperties2(
+    void IVk.GetPhysicalDeviceProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Ref<PhysicalDeviceProperties2> pProperties
     )
     {
         fixed (PhysicalDeviceProperties2* __dsl_pProperties = pProperties)
         {
-            ((IVulkan)this).GetPhysicalDeviceProperties2(physicalDevice, __dsl_pProperties);
+            ((IVk)this).GetPhysicalDeviceProperties2(physicalDevice, __dsl_pProperties);
         }
     }
 
@@ -68799,7 +68678,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceProperties2(physicalDevice, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceProperties2KHR(
+    void IVk.GetPhysicalDeviceProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         PhysicalDeviceProperties2* pProperties
     ) =>
@@ -68823,14 +68702,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceProperties2KHR(physicalDevice, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceProperties2KHR(
+    void IVk.GetPhysicalDeviceProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Ref<PhysicalDeviceProperties2> pProperties
     )
     {
         fixed (PhysicalDeviceProperties2* __dsl_pProperties = pProperties)
         {
-            ((IVulkan)this).GetPhysicalDeviceProperties2KHR(physicalDevice, __dsl_pProperties);
+            ((IVk)this).GetPhysicalDeviceProperties2KHR(physicalDevice, __dsl_pProperties);
         }
     }
 
@@ -68844,7 +68723,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceProperties2KHR(physicalDevice, pProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR(
+    void IVk.GetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkQueryPoolPerformanceCreateInfoKHR *")]
             QueryPoolPerformanceCreateInfoKHR* pPerformanceQueryCreateInfo,
@@ -68891,7 +68770,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR(
+    void IVk.GetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkQueryPoolPerformanceCreateInfoKHR *")]
             Ref<QueryPoolPerformanceCreateInfoKHR> pPerformanceQueryCreateInfo,
@@ -68904,7 +68783,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
                 pPerformanceQueryCreateInfo
         )
         {
-            ((IVulkan)this).GetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR(
+            ((IVk)this).GetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR(
                 physicalDevice,
                 __dsl_pPerformanceQueryCreateInfo,
                 __dsl_pNumPasses
@@ -68939,7 +68818,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceQueueFamilyProperties(
+    void IVk.GetPhysicalDeviceQueueFamilyProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pQueueFamilyPropertyCount,
         QueueFamilyProperties* pQueueFamilyProperties
@@ -68974,7 +68853,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceQueueFamilyProperties(
+    void IVk.GetPhysicalDeviceQueueFamilyProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pQueueFamilyPropertyCount,
         Ref<QueueFamilyProperties> pQueueFamilyProperties
@@ -68983,7 +68862,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (QueueFamilyProperties* __dsl_pQueueFamilyProperties = pQueueFamilyProperties)
         fixed (uint* __dsl_pQueueFamilyPropertyCount = pQueueFamilyPropertyCount)
         {
-            ((IVulkan)this).GetPhysicalDeviceQueueFamilyProperties(
+            ((IVk)this).GetPhysicalDeviceQueueFamilyProperties(
                 physicalDevice,
                 __dsl_pQueueFamilyPropertyCount,
                 __dsl_pQueueFamilyProperties
@@ -69011,7 +68890,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceQueueFamilyProperties2(
+    void IVk.GetPhysicalDeviceQueueFamilyProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pQueueFamilyPropertyCount,
         QueueFamilyProperties2* pQueueFamilyProperties
@@ -69046,7 +68925,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceQueueFamilyProperties2(
+    void IVk.GetPhysicalDeviceQueueFamilyProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pQueueFamilyPropertyCount,
         Ref<QueueFamilyProperties2> pQueueFamilyProperties
@@ -69055,7 +68934,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (QueueFamilyProperties2* __dsl_pQueueFamilyProperties = pQueueFamilyProperties)
         fixed (uint* __dsl_pQueueFamilyPropertyCount = pQueueFamilyPropertyCount)
         {
-            ((IVulkan)this).GetPhysicalDeviceQueueFamilyProperties2(
+            ((IVk)this).GetPhysicalDeviceQueueFamilyProperties2(
                 physicalDevice,
                 __dsl_pQueueFamilyPropertyCount,
                 __dsl_pQueueFamilyProperties
@@ -69083,7 +68962,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceQueueFamilyProperties2KHR(
+    void IVk.GetPhysicalDeviceQueueFamilyProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pQueueFamilyPropertyCount,
         QueueFamilyProperties2* pQueueFamilyProperties
@@ -69114,7 +68993,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceQueueFamilyProperties2KHR(
+    void IVk.GetPhysicalDeviceQueueFamilyProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pQueueFamilyPropertyCount,
         Ref<QueueFamilyProperties2> pQueueFamilyProperties
@@ -69123,7 +69002,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (QueueFamilyProperties2* __dsl_pQueueFamilyProperties = pQueueFamilyProperties)
         fixed (uint* __dsl_pQueueFamilyPropertyCount = pQueueFamilyPropertyCount)
         {
-            ((IVulkan)this).GetPhysicalDeviceQueueFamilyProperties2KHR(
+            ((IVk)this).GetPhysicalDeviceQueueFamilyProperties2KHR(
                 physicalDevice,
                 __dsl_pQueueFamilyPropertyCount,
                 __dsl_pQueueFamilyProperties
@@ -69147,7 +69026,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceSparseImageFormatProperties(
+    void IVk.GetPhysicalDeviceSparseImageFormatProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
@@ -69206,7 +69085,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceSparseImageFormatProperties(
+    void IVk.GetPhysicalDeviceSparseImageFormatProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
@@ -69220,7 +69099,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SparseImageFormatProperties* __dsl_pProperties = pProperties)
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         {
-            ((IVulkan)this).GetPhysicalDeviceSparseImageFormatProperties(
+            ((IVk)this).GetPhysicalDeviceSparseImageFormatProperties(
                 physicalDevice,
                 format,
                 type,
@@ -69263,7 +69142,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceSparseImageFormatProperties2(
+    void IVk.GetPhysicalDeviceSparseImageFormatProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceSparseImageFormatInfo2 *")]
             PhysicalDeviceSparseImageFormatInfo2* pFormatInfo,
@@ -69308,7 +69187,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceSparseImageFormatProperties2(
+    void IVk.GetPhysicalDeviceSparseImageFormatProperties2(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceSparseImageFormatInfo2 *")]
             Ref<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo,
@@ -69320,7 +69199,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         fixed (PhysicalDeviceSparseImageFormatInfo2* __dsl_pFormatInfo = pFormatInfo)
         {
-            ((IVulkan)this).GetPhysicalDeviceSparseImageFormatProperties2(
+            ((IVk)this).GetPhysicalDeviceSparseImageFormatProperties2(
                 physicalDevice,
                 __dsl_pFormatInfo,
                 __dsl_pPropertyCount,
@@ -69352,7 +69231,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceSparseImageFormatProperties2KHR(
+    void IVk.GetPhysicalDeviceSparseImageFormatProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceSparseImageFormatInfo2 *")]
             PhysicalDeviceSparseImageFormatInfo2* pFormatInfo,
@@ -69393,7 +69272,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPhysicalDeviceSparseImageFormatProperties2KHR(
+    void IVk.GetPhysicalDeviceSparseImageFormatProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceSparseImageFormatInfo2 *")]
             Ref<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo,
@@ -69405,7 +69284,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPropertyCount = pPropertyCount)
         fixed (PhysicalDeviceSparseImageFormatInfo2* __dsl_pFormatInfo = pFormatInfo)
         {
-            ((IVulkan)this).GetPhysicalDeviceSparseImageFormatProperties2KHR(
+            ((IVk)this).GetPhysicalDeviceSparseImageFormatProperties2KHR(
                 physicalDevice,
                 __dsl_pFormatInfo,
                 __dsl_pPropertyCount,
@@ -69433,7 +69312,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV(
+    Result IVk.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pCombinationCount,
         FramebufferMixedSamplesCombinationNV* pCombinations
@@ -69478,7 +69357,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV(
+    Result IVk.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pCombinationCount,
         Ref<FramebufferMixedSamplesCombinationNV> pCombinations
@@ -69488,7 +69367,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pCombinationCount = pCombinationCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV(
+                ((IVk)this).GetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV(
                     physicalDevice,
                     __dsl_pCombinationCount,
                     __dsl_pCombinations
@@ -69522,7 +69401,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceCapabilities2EXT(
+    Result IVk.GetPhysicalDeviceSurfaceCapabilities2EXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         SurfaceCapabilities2EXT* pSurfaceCapabilities
@@ -69561,7 +69440,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceCapabilities2EXT(
+    Result IVk.GetPhysicalDeviceSurfaceCapabilities2EXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         Ref<SurfaceCapabilities2EXT> pSurfaceCapabilities
@@ -69570,7 +69449,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SurfaceCapabilities2EXT* __dsl_pSurfaceCapabilities = pSurfaceCapabilities)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceSurfaceCapabilities2EXT(
+                ((IVk)this).GetPhysicalDeviceSurfaceCapabilities2EXT(
                     physicalDevice,
                     surface,
                     __dsl_pSurfaceCapabilities
@@ -69598,7 +69477,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceCapabilities2KHR(
+    Result IVk.GetPhysicalDeviceSurfaceCapabilities2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceSurfaceInfo2KHR *")]
             PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
@@ -69639,7 +69518,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceCapabilities2KHR(
+    Result IVk.GetPhysicalDeviceSurfaceCapabilities2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceSurfaceInfo2KHR *")]
             Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
@@ -69650,7 +69529,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PhysicalDeviceSurfaceInfo2KHR* __dsl_pSurfaceInfo = pSurfaceInfo)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceSurfaceCapabilities2KHR(
+                ((IVk)this).GetPhysicalDeviceSurfaceCapabilities2KHR(
                     physicalDevice,
                     __dsl_pSurfaceInfo,
                     __dsl_pSurfaceCapabilities
@@ -69679,7 +69558,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceCapabilitiesKHR(
+    Result IVk.GetPhysicalDeviceSurfaceCapabilitiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         SurfaceCapabilitiesKHR* pSurfaceCapabilities
@@ -69714,7 +69593,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceCapabilitiesKHR(
+    Result IVk.GetPhysicalDeviceSurfaceCapabilitiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         Ref<SurfaceCapabilitiesKHR> pSurfaceCapabilities
@@ -69723,7 +69602,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SurfaceCapabilitiesKHR* __dsl_pSurfaceCapabilities = pSurfaceCapabilities)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceSurfaceCapabilitiesKHR(
+                ((IVk)this).GetPhysicalDeviceSurfaceCapabilitiesKHR(
                     physicalDevice,
                     surface,
                     __dsl_pSurfaceCapabilities
@@ -69747,7 +69626,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceFormats2KHR(
+    Result IVk.GetPhysicalDeviceSurfaceFormats2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceSurfaceInfo2KHR *")]
             PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
@@ -69792,7 +69671,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceFormats2KHR(
+    Result IVk.GetPhysicalDeviceSurfaceFormats2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceSurfaceInfo2KHR *")]
             Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
@@ -69805,7 +69684,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PhysicalDeviceSurfaceInfo2KHR* __dsl_pSurfaceInfo = pSurfaceInfo)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceSurfaceFormats2KHR(
+                ((IVk)this).GetPhysicalDeviceSurfaceFormats2KHR(
                     physicalDevice,
                     __dsl_pSurfaceInfo,
                     __dsl_pSurfaceFormatCount,
@@ -69837,7 +69716,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceFormatsKHR(
+    Result IVk.GetPhysicalDeviceSurfaceFormatsKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         [NativeTypeName("uint32_t *")] uint* pSurfaceFormatCount,
@@ -69876,7 +69755,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceFormatsKHR(
+    Result IVk.GetPhysicalDeviceSurfaceFormatsKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         [NativeTypeName("uint32_t *")] Ref<uint> pSurfaceFormatCount,
@@ -69887,7 +69766,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pSurfaceFormatCount = pSurfaceFormatCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceSurfaceFormatsKHR(
+                ((IVk)this).GetPhysicalDeviceSurfaceFormatsKHR(
                     physicalDevice,
                     surface,
                     __dsl_pSurfaceFormatCount,
@@ -69914,7 +69793,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfacePresentModesKHR(
+    Result IVk.GetPhysicalDeviceSurfacePresentModesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         [NativeTypeName("uint32_t *")] uint* pPresentModeCount,
@@ -69953,7 +69832,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfacePresentModesKHR(
+    Result IVk.GetPhysicalDeviceSurfacePresentModesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
         [NativeTypeName("uint32_t *")] Ref<uint> pPresentModeCount,
@@ -69964,7 +69843,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pPresentModeCount = pPresentModeCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceSurfacePresentModesKHR(
+                ((IVk)this).GetPhysicalDeviceSurfacePresentModesKHR(
                     physicalDevice,
                     surface,
                     __dsl_pPresentModeCount,
@@ -69991,7 +69870,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceSupportKHR(
+    Result IVk.GetPhysicalDeviceSurfaceSupportKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t")] uint queueFamilyIndex,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
@@ -70025,7 +69904,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceSurfaceSupportKHR(
+    Result IVk.GetPhysicalDeviceSurfaceSupportKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t")] uint queueFamilyIndex,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
@@ -70035,7 +69914,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pSupported = pSupported)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceSurfaceSupportKHR(
+                ((IVk)this).GetPhysicalDeviceSurfaceSupportKHR(
                     physicalDevice,
                     queueFamilyIndex,
                     surface,
@@ -70062,7 +69941,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceToolProperties(
+    Result IVk.GetPhysicalDeviceToolProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pToolCount,
         PhysicalDeviceToolProperties* pToolProperties
@@ -70092,7 +69971,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceToolProperties(physicalDevice, pToolCount, pToolProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceToolProperties(
+    Result IVk.GetPhysicalDeviceToolProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pToolCount,
         Ref<PhysicalDeviceToolProperties> pToolProperties
@@ -70102,7 +69981,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pToolCount = pToolCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceToolProperties(
+                ((IVk)this).GetPhysicalDeviceToolProperties(
                     physicalDevice,
                     __dsl_pToolCount,
                     __dsl_pToolProperties
@@ -70121,7 +70000,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceToolProperties(physicalDevice, pToolCount, pToolProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceToolPropertiesEXT(
+    Result IVk.GetPhysicalDeviceToolPropertiesEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] uint* pToolCount,
         PhysicalDeviceToolProperties* pToolProperties
@@ -70151,7 +70030,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceToolPropertiesEXT(physicalDevice, pToolCount, pToolProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceToolPropertiesEXT(
+    Result IVk.GetPhysicalDeviceToolPropertiesEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("uint32_t *")] Ref<uint> pToolCount,
         Ref<PhysicalDeviceToolProperties> pToolProperties
@@ -70161,7 +70040,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pToolCount = pToolCount)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceToolPropertiesEXT(
+                ((IVk)this).GetPhysicalDeviceToolPropertiesEXT(
                     physicalDevice,
                     __dsl_pToolCount,
                     __dsl_pToolProperties
@@ -70180,7 +70059,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPhysicalDeviceToolPropertiesEXT(physicalDevice, pToolCount, pToolProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceVideoCapabilitiesKHR(
+    Result IVk.GetPhysicalDeviceVideoCapabilitiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkVideoProfileInfoKHR *")] VideoProfileInfoKHR* pVideoProfile,
         VideoCapabilitiesKHR* pCapabilities
@@ -70219,7 +70098,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceVideoCapabilitiesKHR(
+    Result IVk.GetPhysicalDeviceVideoCapabilitiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkVideoProfileInfoKHR *")] Ref<VideoProfileInfoKHR> pVideoProfile,
         Ref<VideoCapabilitiesKHR> pCapabilities
@@ -70229,7 +70108,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (VideoProfileInfoKHR* __dsl_pVideoProfile = pVideoProfile)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceVideoCapabilitiesKHR(
+                ((IVk)this).GetPhysicalDeviceVideoCapabilitiesKHR(
                     physicalDevice,
                     __dsl_pVideoProfile,
                     __dsl_pCapabilities
@@ -70257,7 +70136,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(
+    Result IVk.GetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR *")]
             PhysicalDeviceVideoEncodeQualityLevelInfoKHR* pQualityLevelInfo,
@@ -70304,7 +70183,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(
+    Result IVk.GetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR *")]
             Ref<PhysicalDeviceVideoEncodeQualityLevelInfoKHR> pQualityLevelInfo,
@@ -70321,7 +70200,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(
+                ((IVk)this).GetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(
                     physicalDevice,
                     __dsl_pQualityLevelInfo,
                     __dsl_pQualityLevelProperties
@@ -70356,7 +70235,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceVideoFormatPropertiesKHR(
+    Result IVk.GetPhysicalDeviceVideoFormatPropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceVideoFormatInfoKHR *")]
             PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo,
@@ -70401,7 +70280,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPhysicalDeviceVideoFormatPropertiesKHR(
+    Result IVk.GetPhysicalDeviceVideoFormatPropertiesKHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkPhysicalDeviceVideoFormatInfoKHR *")]
             Ref<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo,
@@ -70414,7 +70293,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PhysicalDeviceVideoFormatInfoKHR* __dsl_pVideoFormatInfo = pVideoFormatInfo)
         {
             return (Result)
-                ((IVulkan)this).GetPhysicalDeviceVideoFormatPropertiesKHR(
+                ((IVk)this).GetPhysicalDeviceVideoFormatPropertiesKHR(
                     physicalDevice,
                     __dsl_pVideoFormatInfo,
                     __dsl_pVideoFormatPropertyCount,
@@ -70446,7 +70325,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineBinaryDataKHR(
+    Result IVk.GetPipelineBinaryDataKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineBinaryDataInfoKHR *")] PipelineBinaryDataInfoKHR* pInfo,
         PipelineBinaryKeyKHR* pPipelineBinaryKey,
@@ -70496,7 +70375,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineBinaryDataKHR(
+    Result IVk.GetPipelineBinaryDataKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineBinaryDataInfoKHR *")]
             Ref<PipelineBinaryDataInfoKHR> pInfo,
@@ -70511,7 +70390,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PipelineBinaryDataInfoKHR* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).GetPipelineBinaryDataKHR(
+                ((IVk)this).GetPipelineBinaryDataKHR(
                     device,
                     __dsl_pInfo,
                     __dsl_pPipelineBinaryKey,
@@ -70549,7 +70428,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineCacheData(
+    Result IVk.GetPipelineCacheData(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeTypeName("size_t *")] nuint* pDataSize,
@@ -70578,7 +70457,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPipelineCacheData(device, pipelineCache, pDataSize, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineCacheData(
+    Result IVk.GetPipelineCacheData(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeTypeName("size_t *")] Ref<nuint> pDataSize,
@@ -70589,7 +70468,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (nuint* __dsl_pDataSize = pDataSize)
         {
             return (Result)
-                ((IVulkan)this).GetPipelineCacheData(
+                ((IVk)this).GetPipelineCacheData(
                     device,
                     pipelineCache,
                     __dsl_pDataSize,
@@ -70614,7 +70493,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPipelineCacheData(device, pipelineCache, pDataSize, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineExecutableInternalRepresentationsKHR(
+    Result IVk.GetPipelineExecutableInternalRepresentationsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineExecutableInfoKHR *")]
             PipelineExecutableInfoKHR* pExecutableInfo,
@@ -70662,7 +70541,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineExecutableInternalRepresentationsKHR(
+    Result IVk.GetPipelineExecutableInternalRepresentationsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineExecutableInfoKHR *")]
             Ref<PipelineExecutableInfoKHR> pExecutableInfo,
@@ -70678,7 +70557,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PipelineExecutableInfoKHR* __dsl_pExecutableInfo = pExecutableInfo)
         {
             return (Result)
-                ((IVulkan)this).GetPipelineExecutableInternalRepresentationsKHR(
+                ((IVk)this).GetPipelineExecutableInternalRepresentationsKHR(
                     device,
                     __dsl_pExecutableInfo,
                     __dsl_pInternalRepresentationCount,
@@ -70713,7 +70592,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineExecutablePropertiesKHR(
+    Result IVk.GetPipelineExecutablePropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineInfoKHR *")] PipelineInfoKHR* pPipelineInfo,
         [NativeTypeName("uint32_t *")] uint* pExecutableCount,
@@ -70759,7 +70638,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineExecutablePropertiesKHR(
+    Result IVk.GetPipelineExecutablePropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineInfoKHR *")] Ref<PipelineInfoKHR> pPipelineInfo,
         [NativeTypeName("uint32_t *")] Ref<uint> pExecutableCount,
@@ -70771,7 +70650,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PipelineInfoKHR* __dsl_pPipelineInfo = pPipelineInfo)
         {
             return (Result)
-                ((IVulkan)this).GetPipelineExecutablePropertiesKHR(
+                ((IVk)this).GetPipelineExecutablePropertiesKHR(
                     device,
                     __dsl_pPipelineInfo,
                     __dsl_pExecutableCount,
@@ -70805,7 +70684,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineExecutableStatisticsKHR(
+    Result IVk.GetPipelineExecutableStatisticsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineExecutableInfoKHR *")]
             PipelineExecutableInfoKHR* pExecutableInfo,
@@ -70853,7 +70732,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineExecutableStatisticsKHR(
+    Result IVk.GetPipelineExecutableStatisticsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineExecutableInfoKHR *")]
             Ref<PipelineExecutableInfoKHR> pExecutableInfo,
@@ -70866,7 +70745,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PipelineExecutableInfoKHR* __dsl_pExecutableInfo = pExecutableInfo)
         {
             return (Result)
-                ((IVulkan)this).GetPipelineExecutableStatisticsKHR(
+                ((IVk)this).GetPipelineExecutableStatisticsKHR(
                     device,
                     __dsl_pExecutableInfo,
                     __dsl_pStatisticCount,
@@ -70901,7 +70780,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetPipelineIndirectDeviceAddressNV(
+    ulong IVk.GetPipelineIndirectDeviceAddressNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")]
             PipelineIndirectDeviceAddressInfoNV* pInfo
@@ -70932,7 +70811,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPipelineIndirectDeviceAddressNV(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetPipelineIndirectDeviceAddressNV(
+    ulong IVk.GetPipelineIndirectDeviceAddressNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineIndirectDeviceAddressInfoNV *")]
             Ref<PipelineIndirectDeviceAddressInfoNV> pInfo
@@ -70940,7 +70819,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (PipelineIndirectDeviceAddressInfoNV* __dsl_pInfo = pInfo)
         {
-            return (ulong)((IVulkan)this).GetPipelineIndirectDeviceAddressNV(device, __dsl_pInfo);
+            return (ulong)((IVk)this).GetPipelineIndirectDeviceAddressNV(device, __dsl_pInfo);
         }
     }
 
@@ -70960,7 +70839,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPipelineIndirectDeviceAddressNV(device, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPipelineIndirectMemoryRequirementsNV(
+    void IVk.GetPipelineIndirectMemoryRequirementsNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkComputePipelineCreateInfo *")]
             ComputePipelineCreateInfo* pCreateInfo,
@@ -70997,7 +70876,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.GetPipelineIndirectMemoryRequirementsNV(device, pCreateInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPipelineIndirectMemoryRequirementsNV(
+    void IVk.GetPipelineIndirectMemoryRequirementsNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkComputePipelineCreateInfo *")]
             Ref<ComputePipelineCreateInfo> pCreateInfo,
@@ -71007,7 +70886,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MemoryRequirements2* __dsl_pMemoryRequirements = pMemoryRequirements)
         fixed (ComputePipelineCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
-            ((IVulkan)this).GetPipelineIndirectMemoryRequirementsNV(
+            ((IVk)this).GetPipelineIndirectMemoryRequirementsNV(
                 device,
                 __dsl_pCreateInfo,
                 __dsl_pMemoryRequirements
@@ -71032,7 +70911,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.GetPipelineIndirectMemoryRequirementsNV(device, pCreateInfo, pMemoryRequirements);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineKeyKHR(
+    Result IVk.GetPipelineKeyKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineCreateInfoKHR *")]
             PipelineCreateInfoKHR* pPipelineCreateInfo,
@@ -71068,7 +70947,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPipelineKeyKHR(device, pPipelineCreateInfo, pPipelineKey);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelineKeyKHR(
+    Result IVk.GetPipelineKeyKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineCreateInfoKHR *")]
             Ref<PipelineCreateInfoKHR> pPipelineCreateInfo,
@@ -71079,7 +70958,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PipelineCreateInfoKHR* __dsl_pPipelineCreateInfo = pPipelineCreateInfo)
         {
             return (Result)
-                ((IVulkan)this).GetPipelineKeyKHR(
+                ((IVk)this).GetPipelineKeyKHR(
                     device,
                     __dsl_pPipelineCreateInfo,
                     __dsl_pPipelineKey
@@ -71106,7 +70985,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPipelineKeyKHR(device, pPipelineCreateInfo, pPipelineKey);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelinePropertiesEXT(
+    Result IVk.GetPipelinePropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineInfoEXT *")] PipelineInfoKHR* pPipelineInfo,
         BaseOutStructure* pPipelineProperties
@@ -71139,7 +71018,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPipelinePropertiesEXT(device, pPipelineInfo, pPipelineProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetPipelinePropertiesEXT(
+    Result IVk.GetPipelinePropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkPipelineInfoEXT *")] Ref<PipelineInfoKHR> pPipelineInfo,
         Ref<BaseOutStructure> pPipelineProperties
@@ -71149,7 +71028,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PipelineInfoKHR* __dsl_pPipelineInfo = pPipelineInfo)
         {
             return (Result)
-                ((IVulkan)this).GetPipelinePropertiesEXT(
+                ((IVk)this).GetPipelinePropertiesEXT(
                     device,
                     __dsl_pPipelineInfo,
                     __dsl_pPipelineProperties
@@ -71175,7 +71054,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPipelinePropertiesEXT(device, pPipelineInfo, pPipelineProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPrivateData(
+    void IVk.GetPrivateData(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         ObjectType objectType,
         [NativeTypeName("uint64_t")] ulong objectHandle,
@@ -71208,7 +71087,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPrivateData(device, objectType, objectHandle, privateDataSlot, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPrivateData(
+    void IVk.GetPrivateData(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         ObjectType objectType,
         [NativeTypeName("uint64_t")] ulong objectHandle,
@@ -71218,7 +71097,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ulong* __dsl_pData = pData)
         {
-            ((IVulkan)this).GetPrivateData(
+            ((IVk)this).GetPrivateData(
                 device,
                 objectType,
                 objectHandle,
@@ -71241,7 +71120,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPrivateData(device, objectType, objectHandle, privateDataSlot, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPrivateDataEXT(
+    void IVk.GetPrivateDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         ObjectType objectType,
         [NativeTypeName("uint64_t")] ulong objectHandle,
@@ -71281,7 +71160,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPrivateDataEXT(device, objectType, objectHandle, privateDataSlot, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetPrivateDataEXT(
+    void IVk.GetPrivateDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         ObjectType objectType,
         [NativeTypeName("uint64_t")] ulong objectHandle,
@@ -71291,7 +71170,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ulong* __dsl_pData = pData)
         {
-            ((IVulkan)this).GetPrivateDataEXT(
+            ((IVk)this).GetPrivateDataEXT(
                 device,
                 objectType,
                 objectHandle,
@@ -71321,7 +71200,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetPrivateDataEXT(device, objectType, objectHandle, privateDataSlot, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetQueryPoolResults(
+    Result IVk.GetQueryPoolResults(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint firstQuery,
@@ -71377,7 +71256,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetQueryPoolResults(
+    Result IVk.GetQueryPoolResults(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint firstQuery,
@@ -71391,7 +71270,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (void* __dsl_pData = pData)
         {
             return (Result)
-                ((IVulkan)this).GetQueryPoolResults(
+                ((IVk)this).GetQueryPoolResults(
                     device,
                     queryPool,
                     firstQuery,
@@ -71434,7 +71313,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetQueueCheckpointData2NV(
+    void IVk.GetQueueCheckpointData2NV(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t *")] uint* pCheckpointDataCount,
         CheckpointData2NV* pCheckpointData
@@ -71470,7 +71349,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetQueueCheckpointData2NV(queue, pCheckpointDataCount, pCheckpointData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetQueueCheckpointData2NV(
+    void IVk.GetQueueCheckpointData2NV(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t *")] Ref<uint> pCheckpointDataCount,
         Ref<CheckpointData2NV> pCheckpointData
@@ -71479,7 +71358,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CheckpointData2NV* __dsl_pCheckpointData = pCheckpointData)
         fixed (uint* __dsl_pCheckpointDataCount = pCheckpointDataCount)
         {
-            ((IVulkan)this).GetQueueCheckpointData2NV(
+            ((IVk)this).GetQueueCheckpointData2NV(
                 queue,
                 __dsl_pCheckpointDataCount,
                 __dsl_pCheckpointData
@@ -71508,7 +71387,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetQueueCheckpointData2NV(queue, pCheckpointDataCount, pCheckpointData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetQueueCheckpointDataNV(
+    void IVk.GetQueueCheckpointDataNV(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t *")] uint* pCheckpointDataCount,
         CheckpointDataNV* pCheckpointData
@@ -71541,7 +71420,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetQueueCheckpointDataNV(queue, pCheckpointDataCount, pCheckpointData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetQueueCheckpointDataNV(
+    void IVk.GetQueueCheckpointDataNV(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t *")] Ref<uint> pCheckpointDataCount,
         Ref<CheckpointDataNV> pCheckpointData
@@ -71550,7 +71429,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CheckpointDataNV* __dsl_pCheckpointData = pCheckpointData)
         fixed (uint* __dsl_pCheckpointDataCount = pCheckpointDataCount)
         {
-            ((IVulkan)this).GetQueueCheckpointDataNV(
+            ((IVk)this).GetQueueCheckpointDataNV(
                 queue,
                 __dsl_pCheckpointDataCount,
                 __dsl_pCheckpointData
@@ -71576,7 +71455,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetQueueCheckpointDataNV(queue, pCheckpointDataCount, pCheckpointData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetRayTracingCaptureReplayShaderGroupHandlesKHR(
+    Result IVk.GetRayTracingCaptureReplayShaderGroupHandlesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("uint32_t")] uint firstGroup,
@@ -71623,7 +71502,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetRayTracingCaptureReplayShaderGroupHandlesKHR(
+    Result IVk.GetRayTracingCaptureReplayShaderGroupHandlesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("uint32_t")] uint firstGroup,
@@ -71635,7 +71514,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (void* __dsl_pData = pData)
         {
             return (Result)
-                ((IVulkan)this).GetRayTracingCaptureReplayShaderGroupHandlesKHR(
+                ((IVk)this).GetRayTracingCaptureReplayShaderGroupHandlesKHR(
                     device,
                     pipeline,
                     firstGroup,
@@ -71675,7 +71554,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetRayTracingShaderGroupHandlesKHR(
+    Result IVk.GetRayTracingShaderGroupHandlesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("uint32_t")] uint firstGroup,
@@ -71722,7 +71601,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetRayTracingShaderGroupHandlesKHR(
+    Result IVk.GetRayTracingShaderGroupHandlesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("uint32_t")] uint firstGroup,
@@ -71734,7 +71613,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (void* __dsl_pData = pData)
         {
             return (Result)
-                ((IVulkan)this).GetRayTracingShaderGroupHandlesKHR(
+                ((IVk)this).GetRayTracingShaderGroupHandlesKHR(
                     device,
                     pipeline,
                     firstGroup,
@@ -71774,7 +71653,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetRayTracingShaderGroupHandlesNV(
+    Result IVk.GetRayTracingShaderGroupHandlesNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("uint32_t")] uint firstGroup,
@@ -71821,7 +71700,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetRayTracingShaderGroupHandlesNV(
+    Result IVk.GetRayTracingShaderGroupHandlesNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("uint32_t")] uint firstGroup,
@@ -71833,7 +71712,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (void* __dsl_pData = pData)
         {
             return (Result)
-                ((IVulkan)this).GetRayTracingShaderGroupHandlesNV(
+                ((IVk)this).GetRayTracingShaderGroupHandlesNV(
                     device,
                     pipeline,
                     firstGroup,
@@ -71873,7 +71752,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    ulong IVulkan.GetRayTracingShaderGroupStackSizeKHR(
+    ulong IVk.GetRayTracingShaderGroupStackSizeKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("uint32_t")] uint group,
@@ -71909,7 +71788,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetRayTracingShaderGroupStackSizeKHR(device, pipeline, group, groupShader);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetRefreshCycleDurationGoogle(
+    Result IVk.GetRefreshCycleDurationGoogle(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         RefreshCycleDurationGoogle* pDisplayTimingProperties
@@ -71943,7 +71822,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetRefreshCycleDurationGoogle(device, swapchain, pDisplayTimingProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetRefreshCycleDurationGoogle(
+    Result IVk.GetRefreshCycleDurationGoogle(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         Ref<RefreshCycleDurationGoogle> pDisplayTimingProperties
@@ -71954,7 +71833,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         {
             return (Result)
-                ((IVulkan)this).GetRefreshCycleDurationGoogle(
+                ((IVk)this).GetRefreshCycleDurationGoogle(
                     device,
                     swapchain,
                     __dsl_pDisplayTimingProperties
@@ -71977,7 +71856,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetRefreshCycleDurationGoogle(device, swapchain, pDisplayTimingProperties);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetRenderAreaGranularity(
+    void IVk.GetRenderAreaGranularity(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkRenderPass")] RenderPassHandle renderPass,
         Extent2D* pGranularity
@@ -72007,7 +71886,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetRenderAreaGranularity(device, renderPass, pGranularity);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetRenderAreaGranularity(
+    void IVk.GetRenderAreaGranularity(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkRenderPass")] RenderPassHandle renderPass,
         Ref<Extent2D> pGranularity
@@ -72015,7 +71894,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (Extent2D* __dsl_pGranularity = pGranularity)
         {
-            ((IVulkan)this).GetRenderAreaGranularity(device, renderPass, __dsl_pGranularity);
+            ((IVk)this).GetRenderAreaGranularity(device, renderPass, __dsl_pGranularity);
         }
     }
 
@@ -72034,7 +71913,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetRenderAreaGranularity(device, renderPass, pGranularity);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetRenderingAreaGranularity(
+    void IVk.GetRenderingAreaGranularity(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderingAreaInfo *")] RenderingAreaInfo* pRenderingAreaInfo,
         Extent2D* pGranularity
@@ -72060,7 +71939,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetRenderingAreaGranularity(device, pRenderingAreaInfo, pGranularity);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetRenderingAreaGranularity(
+    void IVk.GetRenderingAreaGranularity(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderingAreaInfo *")] Ref<RenderingAreaInfo> pRenderingAreaInfo,
         Ref<Extent2D> pGranularity
@@ -72069,7 +71948,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (Extent2D* __dsl_pGranularity = pGranularity)
         fixed (RenderingAreaInfo* __dsl_pRenderingAreaInfo = pRenderingAreaInfo)
         {
-            ((IVulkan)this).GetRenderingAreaGranularity(
+            ((IVk)this).GetRenderingAreaGranularity(
                 device,
                 __dsl_pRenderingAreaInfo,
                 __dsl_pGranularity
@@ -72088,7 +71967,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetRenderingAreaGranularity(device, pRenderingAreaInfo, pGranularity);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetRenderingAreaGranularityKHR(
+    void IVk.GetRenderingAreaGranularityKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderingAreaInfo *")] RenderingAreaInfo* pRenderingAreaInfo,
         Extent2D* pGranularity
@@ -72118,7 +71997,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetRenderingAreaGranularityKHR(device, pRenderingAreaInfo, pGranularity);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetRenderingAreaGranularityKHR(
+    void IVk.GetRenderingAreaGranularityKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkRenderingAreaInfo *")] Ref<RenderingAreaInfo> pRenderingAreaInfo,
         Ref<Extent2D> pGranularity
@@ -72127,7 +72006,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (Extent2D* __dsl_pGranularity = pGranularity)
         fixed (RenderingAreaInfo* __dsl_pRenderingAreaInfo = pRenderingAreaInfo)
         {
-            ((IVulkan)this).GetRenderingAreaGranularityKHR(
+            ((IVk)this).GetRenderingAreaGranularityKHR(
                 device,
                 __dsl_pRenderingAreaInfo,
                 __dsl_pGranularity
@@ -72150,7 +72029,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetRenderingAreaGranularityKHR(device, pRenderingAreaInfo, pGranularity);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSamplerOpaqueCaptureDescriptorDataEXT(
+    Result IVk.GetSamplerOpaqueCaptureDescriptorDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSamplerCaptureDescriptorDataInfoEXT *")]
             SamplerCaptureDescriptorDataInfoEXT* pInfo,
@@ -72191,7 +72070,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSamplerOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSamplerOpaqueCaptureDescriptorDataEXT(
+    Result IVk.GetSamplerOpaqueCaptureDescriptorDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSamplerCaptureDescriptorDataInfoEXT *")]
             Ref<SamplerCaptureDescriptorDataInfoEXT> pInfo,
@@ -72202,7 +72081,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (SamplerCaptureDescriptorDataInfoEXT* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).GetSamplerOpaqueCaptureDescriptorDataEXT(
+                ((IVk)this).GetSamplerOpaqueCaptureDescriptorDataEXT(
                     device,
                     __dsl_pInfo,
                     __dsl_pData
@@ -72231,7 +72110,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSamplerOpaqueCaptureDescriptorDataEXT(device, pInfo, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSemaphoreCounterValue(
+    Result IVk.GetSemaphoreCounterValue(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSemaphore")] SemaphoreHandle semaphore,
         [NativeTypeName("uint64_t *")] ulong* pValue
@@ -72261,7 +72140,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSemaphoreCounterValue(device, semaphore, pValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSemaphoreCounterValue(
+    Result IVk.GetSemaphoreCounterValue(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSemaphore")] SemaphoreHandle semaphore,
         [NativeTypeName("uint64_t *")] Ref<ulong> pValue
@@ -72269,8 +72148,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ulong* __dsl_pValue = pValue)
         {
-            return (Result)
-                ((IVulkan)this).GetSemaphoreCounterValue(device, semaphore, __dsl_pValue);
+            return (Result)((IVk)this).GetSemaphoreCounterValue(device, semaphore, __dsl_pValue);
         }
     }
 
@@ -72289,7 +72167,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSemaphoreCounterValue(device, semaphore, pValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSemaphoreCounterValueKHR(
+    Result IVk.GetSemaphoreCounterValueKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSemaphore")] SemaphoreHandle semaphore,
         [NativeTypeName("uint64_t *")] ulong* pValue
@@ -72322,7 +72200,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSemaphoreCounterValueKHR(device, semaphore, pValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSemaphoreCounterValueKHR(
+    Result IVk.GetSemaphoreCounterValueKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSemaphore")] SemaphoreHandle semaphore,
         [NativeTypeName("uint64_t *")] Ref<ulong> pValue
@@ -72330,8 +72208,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ulong* __dsl_pValue = pValue)
         {
-            return (Result)
-                ((IVulkan)this).GetSemaphoreCounterValueKHR(device, semaphore, __dsl_pValue);
+            return (Result)((IVk)this).GetSemaphoreCounterValueKHR(device, semaphore, __dsl_pValue);
         }
     }
 
@@ -72353,7 +72230,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSemaphoreCounterValueKHR(device, semaphore, pValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSemaphoreFdKHR(
+    Result IVk.GetSemaphoreFdKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreGetFdInfoKHR *")] SemaphoreGetFdInfoKHR* pGetFdInfo,
         int* pFd
@@ -72383,7 +72260,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSemaphoreFdKHR(device, pGetFdInfo, pFd);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSemaphoreFdKHR(
+    Result IVk.GetSemaphoreFdKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreGetFdInfoKHR *")] Ref<SemaphoreGetFdInfoKHR> pGetFdInfo,
         Ref<int> pFd
@@ -72392,7 +72269,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (int* __dsl_pFd = pFd)
         fixed (SemaphoreGetFdInfoKHR* __dsl_pGetFdInfo = pGetFdInfo)
         {
-            return (Result)((IVulkan)this).GetSemaphoreFdKHR(device, __dsl_pGetFdInfo, __dsl_pFd);
+            return (Result)((IVk)this).GetSemaphoreFdKHR(device, __dsl_pGetFdInfo, __dsl_pFd);
         }
     }
 
@@ -72414,7 +72291,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSemaphoreFdKHR(device, pGetFdInfo, pFd);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetShaderBinaryDataEXT(
+    Result IVk.GetShaderBinaryDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkShaderEXT")] ShaderEXTHandle shader,
         [NativeTypeName("size_t *")] nuint* pDataSize,
@@ -72447,7 +72324,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetShaderBinaryDataEXT(device, shader, pDataSize, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetShaderBinaryDataEXT(
+    Result IVk.GetShaderBinaryDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkShaderEXT")] ShaderEXTHandle shader,
         [NativeTypeName("size_t *")] Ref<nuint> pDataSize,
@@ -72458,12 +72335,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (nuint* __dsl_pDataSize = pDataSize)
         {
             return (Result)
-                ((IVulkan)this).GetShaderBinaryDataEXT(
-                    device,
-                    shader,
-                    __dsl_pDataSize,
-                    __dsl_pData
-                );
+                ((IVk)this).GetShaderBinaryDataEXT(device, shader, __dsl_pDataSize, __dsl_pData);
         }
     }
 
@@ -72487,7 +72359,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetShaderBinaryDataEXT(device, shader, pDataSize, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetShaderInfoAMD(
+    Result IVk.GetShaderInfoAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
@@ -72523,7 +72395,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetShaderInfoAMD(device, pipeline, shaderStage, infoType, pInfoSize, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetShaderInfoAMD(
+    Result IVk.GetShaderInfoAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
         [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
@@ -72536,7 +72408,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (nuint* __dsl_pInfoSize = pInfoSize)
         {
             return (Result)
-                ((IVulkan)this).GetShaderInfoAMD(
+                ((IVk)this).GetShaderInfoAMD(
                     device,
                     pipeline,
                     shaderStage,
@@ -72561,7 +72433,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetShaderInfoAMD(device, pipeline, shaderStage, infoType, pInfoSize, pInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetShaderModuleCreateInfoIdentifierEXT(
+    void IVk.GetShaderModuleCreateInfoIdentifierEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkShaderModuleCreateInfo *")] ShaderModuleCreateInfo* pCreateInfo,
         ShaderModuleIdentifierEXT* pIdentifier
@@ -72599,7 +72471,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetShaderModuleCreateInfoIdentifierEXT(device, pCreateInfo, pIdentifier);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetShaderModuleCreateInfoIdentifierEXT(
+    void IVk.GetShaderModuleCreateInfoIdentifierEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkShaderModuleCreateInfo *")]
             Ref<ShaderModuleCreateInfo> pCreateInfo,
@@ -72609,7 +72481,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ShaderModuleIdentifierEXT* __dsl_pIdentifier = pIdentifier)
         fixed (ShaderModuleCreateInfo* __dsl_pCreateInfo = pCreateInfo)
         {
-            ((IVulkan)this).GetShaderModuleCreateInfoIdentifierEXT(
+            ((IVk)this).GetShaderModuleCreateInfoIdentifierEXT(
                 device,
                 __dsl_pCreateInfo,
                 __dsl_pIdentifier
@@ -72637,7 +72509,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetShaderModuleCreateInfoIdentifierEXT(device, pCreateInfo, pIdentifier);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetShaderModuleIdentifierEXT(
+    void IVk.GetShaderModuleIdentifierEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkShaderModule")] ShaderModuleHandle shaderModule,
         ShaderModuleIdentifierEXT* pIdentifier
@@ -72675,7 +72547,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetShaderModuleIdentifierEXT(device, shaderModule, pIdentifier);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.GetShaderModuleIdentifierEXT(
+    void IVk.GetShaderModuleIdentifierEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkShaderModule")] ShaderModuleHandle shaderModule,
         Ref<ShaderModuleIdentifierEXT> pIdentifier
@@ -72683,7 +72555,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ShaderModuleIdentifierEXT* __dsl_pIdentifier = pIdentifier)
         {
-            ((IVulkan)this).GetShaderModuleIdentifierEXT(device, shaderModule, __dsl_pIdentifier);
+            ((IVk)this).GetShaderModuleIdentifierEXT(device, shaderModule, __dsl_pIdentifier);
         }
     }
 
@@ -72706,7 +72578,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetShaderModuleIdentifierEXT(device, shaderModule, pIdentifier);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSwapchainCounterEXT(
+    Result IVk.GetSwapchainCounterEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
@@ -72740,7 +72612,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSwapchainCounterEXT(device, swapchain, counter, pCounterValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSwapchainCounterEXT(
+    Result IVk.GetSwapchainCounterEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
@@ -72750,12 +72622,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ulong* __dsl_pCounterValue = pCounterValue)
         {
             return (Result)
-                ((IVulkan)this).GetSwapchainCounterEXT(
-                    device,
-                    swapchain,
-                    counter,
-                    __dsl_pCounterValue
-                );
+                ((IVk)this).GetSwapchainCounterEXT(device, swapchain, counter, __dsl_pCounterValue);
         }
     }
 
@@ -72775,7 +72642,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSwapchainCounterEXT(device, swapchain, counter, pCounterValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSwapchainImagesKHR(
+    Result IVk.GetSwapchainImagesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("uint32_t *")] uint* pSwapchainImageCount,
@@ -72800,7 +72667,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSwapchainImagesKHR(device, swapchain, pSwapchainImageCount, pSwapchainImages);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSwapchainImagesKHR(
+    Result IVk.GetSwapchainImagesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("uint32_t *")] Ref<uint> pSwapchainImageCount,
@@ -72811,7 +72678,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pSwapchainImageCount = pSwapchainImageCount)
         {
             return (Result)
-                ((IVulkan)this).GetSwapchainImagesKHR(
+                ((IVk)this).GetSwapchainImagesKHR(
                     device,
                     swapchain,
                     __dsl_pSwapchainImageCount,
@@ -72832,7 +72699,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSwapchainImagesKHR(device, swapchain, pSwapchainImageCount, pSwapchainImages);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetSwapchainStatusKHR(
+    Result IVk.GetSwapchainStatusKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain
     ) =>
@@ -72860,7 +72727,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetSwapchainStatusKHR(device, swapchain);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetValidationCacheDataEXT(
+    Result IVk.GetValidationCacheDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkValidationCacheEXT")] ValidationCacheEXTHandle validationCache,
         [NativeTypeName("size_t *")] nuint* pDataSize,
@@ -72888,7 +72755,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetValidationCacheDataEXT(device, validationCache, pDataSize, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetValidationCacheDataEXT(
+    Result IVk.GetValidationCacheDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkValidationCacheEXT")] ValidationCacheEXTHandle validationCache,
         [NativeTypeName("size_t *")] Ref<nuint> pDataSize,
@@ -72899,7 +72766,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (nuint* __dsl_pDataSize = pDataSize)
         {
             return (Result)
-                ((IVulkan)this).GetValidationCacheDataEXT(
+                ((IVk)this).GetValidationCacheDataEXT(
                     device,
                     validationCache,
                     __dsl_pDataSize,
@@ -72920,7 +72787,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.GetValidationCacheDataEXT(device, validationCache, pDataSize, pData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetVideoSessionMemoryRequirementsKHR(
+    Result IVk.GetVideoSessionMemoryRequirementsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkVideoSessionKHR")] VideoSessionKHRHandle videoSession,
         [NativeTypeName("uint32_t *")] uint* pMemoryRequirementsCount,
@@ -72963,7 +72830,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.GetVideoSessionMemoryRequirementsKHR(
+    Result IVk.GetVideoSessionMemoryRequirementsKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkVideoSessionKHR")] VideoSessionKHRHandle videoSession,
         [NativeTypeName("uint32_t *")] Ref<uint> pMemoryRequirementsCount,
@@ -72974,7 +72841,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (uint* __dsl_pMemoryRequirementsCount = pMemoryRequirementsCount)
         {
             return (Result)
-                ((IVulkan)this).GetVideoSessionMemoryRequirementsKHR(
+                ((IVk)this).GetVideoSessionMemoryRequirementsKHR(
                     device,
                     videoSession,
                     __dsl_pMemoryRequirementsCount,
@@ -73005,7 +72872,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ImportFenceFdKHR(
+    Result IVk.ImportFenceFdKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImportFenceFdInfoKHR *")] ImportFenceFdInfoKHR* pImportFenceFdInfo
     ) =>
@@ -73033,7 +72900,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ImportFenceFdKHR(device, pImportFenceFdInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ImportFenceFdKHR(
+    Result IVk.ImportFenceFdKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImportFenceFdInfoKHR *")]
             Ref<ImportFenceFdInfoKHR> pImportFenceFdInfo
@@ -73041,7 +72908,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ImportFenceFdInfoKHR* __dsl_pImportFenceFdInfo = pImportFenceFdInfo)
         {
-            return (Result)((IVulkan)this).ImportFenceFdKHR(device, __dsl_pImportFenceFdInfo);
+            return (Result)((IVk)this).ImportFenceFdKHR(device, __dsl_pImportFenceFdInfo);
         }
     }
 
@@ -73063,7 +72930,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ImportFenceFdKHR(device, pImportFenceFdInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ImportSemaphoreFdKHR(
+    Result IVk.ImportSemaphoreFdKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImportSemaphoreFdInfoKHR *")]
             ImportSemaphoreFdInfoKHR* pImportSemaphoreFdInfo
@@ -73093,7 +72960,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ImportSemaphoreFdKHR(device, pImportSemaphoreFdInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ImportSemaphoreFdKHR(
+    Result IVk.ImportSemaphoreFdKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkImportSemaphoreFdInfoKHR *")]
             Ref<ImportSemaphoreFdInfoKHR> pImportSemaphoreFdInfo
@@ -73101,8 +72968,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ImportSemaphoreFdInfoKHR* __dsl_pImportSemaphoreFdInfo = pImportSemaphoreFdInfo)
         {
-            return (Result)
-                ((IVulkan)this).ImportSemaphoreFdKHR(device, __dsl_pImportSemaphoreFdInfo);
+            return (Result)((IVk)this).ImportSemaphoreFdKHR(device, __dsl_pImportSemaphoreFdInfo);
         }
     }
 
@@ -73124,7 +72990,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ImportSemaphoreFdKHR(device, pImportSemaphoreFdInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.InitializePerformanceApiIntel(
+    Result IVk.InitializePerformanceApiIntel(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkInitializePerformanceApiInfoINTEL *")]
             InitializePerformanceApiInfoIntel* pInitializeInfo
@@ -73150,7 +73016,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.InitializePerformanceApiIntel(device, pInitializeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.InitializePerformanceApiIntel(
+    Result IVk.InitializePerformanceApiIntel(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkInitializePerformanceApiInfoINTEL *")]
             Ref<InitializePerformanceApiInfoIntel> pInitializeInfo
@@ -73158,8 +73024,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (InitializePerformanceApiInfoIntel* __dsl_pInitializeInfo = pInitializeInfo)
         {
-            return (Result)
-                ((IVulkan)this).InitializePerformanceApiIntel(device, __dsl_pInitializeInfo);
+            return (Result)((IVk)this).InitializePerformanceApiIntel(device, __dsl_pInitializeInfo);
         }
     }
 
@@ -73174,7 +73039,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.InitializePerformanceApiIntel(device, pInitializeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.InvalidateMappedMemoryRanges(
+    Result IVk.InvalidateMappedMemoryRanges(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint memoryRangeCount,
         [NativeTypeName("const VkMappedMemoryRange *")] MappedMemoryRange* pMemoryRanges
@@ -73204,7 +73069,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.InvalidateMappedMemoryRanges(device, memoryRangeCount, pMemoryRanges);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.InvalidateMappedMemoryRanges(
+    Result IVk.InvalidateMappedMemoryRanges(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint memoryRangeCount,
         [NativeTypeName("const VkMappedMemoryRange *")] Ref<MappedMemoryRange> pMemoryRanges
@@ -73213,7 +73078,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MappedMemoryRange* __dsl_pMemoryRanges = pMemoryRanges)
         {
             return (Result)
-                ((IVulkan)this).InvalidateMappedMemoryRanges(
+                ((IVk)this).InvalidateMappedMemoryRanges(
                     device,
                     memoryRangeCount,
                     __dsl_pMemoryRanges
@@ -73236,7 +73101,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.InvalidateMappedMemoryRanges(device, memoryRangeCount, pMemoryRanges);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.LatencySleepNV(
+    Result IVk.LatencySleepNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("const VkLatencySleepInfoNV *")] LatencySleepInfoNV* pSleepInfo
@@ -73266,7 +73131,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.LatencySleepNV(device, swapchain, pSleepInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.LatencySleepNV(
+    Result IVk.LatencySleepNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("const VkLatencySleepInfoNV *")] Ref<LatencySleepInfoNV> pSleepInfo
@@ -73274,7 +73139,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (LatencySleepInfoNV* __dsl_pSleepInfo = pSleepInfo)
         {
-            return (Result)((IVulkan)this).LatencySleepNV(device, swapchain, __dsl_pSleepInfo);
+            return (Result)((IVk)this).LatencySleepNV(device, swapchain, __dsl_pSleepInfo);
         }
     }
 
@@ -73296,7 +73161,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.LatencySleepNV(device, swapchain, pSleepInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MapMemory(
+    Result IVk.MapMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -73336,7 +73201,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.MapMemory(device, memory, offset, size, flags, ppData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MapMemory(
+    Result IVk.MapMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
         [NativeTypeName("VkDeviceSize")] ulong offset,
@@ -73347,8 +73212,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (void** __dsl_ppData = ppData)
         {
-            return (Result)
-                ((IVulkan)this).MapMemory(device, memory, offset, size, flags, __dsl_ppData);
+            return (Result)((IVk)this).MapMemory(device, memory, offset, size, flags, __dsl_ppData);
         }
     }
 
@@ -73370,7 +73234,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.MapMemory(device, memory, offset, size, flags, ppData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MapMemory2(
+    Result IVk.MapMemory2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryMapInfo *")] MemoryMapInfo* pMemoryMapInfo,
         void** ppData
@@ -73393,7 +73257,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.MapMemory2(device, pMemoryMapInfo, ppData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MapMemory2(
+    Result IVk.MapMemory2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryMapInfo *")] Ref<MemoryMapInfo> pMemoryMapInfo,
         Ref2D ppData
@@ -73402,7 +73266,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (void** __dsl_ppData = ppData)
         fixed (MemoryMapInfo* __dsl_pMemoryMapInfo = pMemoryMapInfo)
         {
-            return (Result)((IVulkan)this).MapMemory2(device, __dsl_pMemoryMapInfo, __dsl_ppData);
+            return (Result)((IVk)this).MapMemory2(device, __dsl_pMemoryMapInfo, __dsl_ppData);
         }
     }
 
@@ -73417,7 +73281,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.MapMemory2(device, pMemoryMapInfo, ppData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MapMemory2KHR(
+    Result IVk.MapMemory2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryMapInfo *")] MemoryMapInfo* pMemoryMapInfo,
         void** ppData
@@ -73440,7 +73304,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.MapMemory2KHR(device, pMemoryMapInfo, ppData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MapMemory2KHR(
+    Result IVk.MapMemory2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryMapInfo *")] Ref<MemoryMapInfo> pMemoryMapInfo,
         Ref2D ppData
@@ -73449,8 +73313,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (void** __dsl_ppData = ppData)
         fixed (MemoryMapInfo* __dsl_pMemoryMapInfo = pMemoryMapInfo)
         {
-            return (Result)
-                ((IVulkan)this).MapMemory2KHR(device, __dsl_pMemoryMapInfo, __dsl_ppData);
+            return (Result)((IVk)this).MapMemory2KHR(device, __dsl_pMemoryMapInfo, __dsl_ppData);
         }
     }
 
@@ -73465,7 +73328,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.MapMemory2KHR(device, pMemoryMapInfo, ppData);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MergePipelineCaches(
+    Result IVk.MergePipelineCaches(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle dstCache,
         [NativeTypeName("uint32_t")] uint srcCacheCount,
@@ -73499,7 +73362,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.MergePipelineCaches(device, dstCache, srcCacheCount, pSrcCaches);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MergePipelineCaches(
+    Result IVk.MergePipelineCaches(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipelineCache")] PipelineCacheHandle dstCache,
         [NativeTypeName("uint32_t")] uint srcCacheCount,
@@ -73509,12 +73372,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (PipelineCacheHandle* __dsl_pSrcCaches = pSrcCaches)
         {
             return (Result)
-                ((IVulkan)this).MergePipelineCaches(
-                    device,
-                    dstCache,
-                    srcCacheCount,
-                    __dsl_pSrcCaches
-                );
+                ((IVk)this).MergePipelineCaches(device, dstCache, srcCacheCount, __dsl_pSrcCaches);
         }
     }
 
@@ -73534,7 +73392,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.MergePipelineCaches(device, dstCache, srcCacheCount, pSrcCaches);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MergeValidationCachesEXT(
+    Result IVk.MergeValidationCachesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkValidationCacheEXT")] ValidationCacheEXTHandle dstCache,
         [NativeTypeName("uint32_t")] uint srcCacheCount,
@@ -73567,7 +73425,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.MergeValidationCachesEXT(device, dstCache, srcCacheCount, pSrcCaches);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.MergeValidationCachesEXT(
+    Result IVk.MergeValidationCachesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkValidationCacheEXT")] ValidationCacheEXTHandle dstCache,
         [NativeTypeName("uint32_t")] uint srcCacheCount,
@@ -73577,7 +73435,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ValidationCacheEXTHandle* __dsl_pSrcCaches = pSrcCaches)
         {
             return (Result)
-                ((IVulkan)this).MergeValidationCachesEXT(
+                ((IVk)this).MergeValidationCachesEXT(
                     device,
                     dstCache,
                     srcCacheCount,
@@ -73598,7 +73456,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.MergeValidationCachesEXT(device, dstCache, srcCacheCount, pSrcCaches);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.QueueBeginDebugUtilsLabelEXT(
+    void IVk.QueueBeginDebugUtilsLabelEXT(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("const VkDebugUtilsLabelEXT *")] DebugUtilsLabelEXT* pLabelInfo
     ) =>
@@ -73622,14 +73480,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueBeginDebugUtilsLabelEXT(queue, pLabelInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.QueueBeginDebugUtilsLabelEXT(
+    void IVk.QueueBeginDebugUtilsLabelEXT(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("const VkDebugUtilsLabelEXT *")] Ref<DebugUtilsLabelEXT> pLabelInfo
     )
     {
         fixed (DebugUtilsLabelEXT* __dsl_pLabelInfo = pLabelInfo)
         {
-            ((IVulkan)this).QueueBeginDebugUtilsLabelEXT(queue, __dsl_pLabelInfo);
+            ((IVk)this).QueueBeginDebugUtilsLabelEXT(queue, __dsl_pLabelInfo);
         }
     }
 
@@ -73643,7 +73501,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueBeginDebugUtilsLabelEXT(queue, pLabelInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueueBindSparse(
+    Result IVk.QueueBindSparse(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindSparseInfo *")] BindSparseInfo* pBindInfo,
@@ -73672,7 +73530,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueBindSparse(queue, bindInfoCount, pBindInfo, fence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueueBindSparse(
+    Result IVk.QueueBindSparse(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t")] uint bindInfoCount,
         [NativeTypeName("const VkBindSparseInfo *")] Ref<BindSparseInfo> pBindInfo,
@@ -73682,7 +73540,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (BindSparseInfo* __dsl_pBindInfo = pBindInfo)
         {
             return (Result)
-                ((IVulkan)this).QueueBindSparse(queue, bindInfoCount, __dsl_pBindInfo, fence);
+                ((IVk)this).QueueBindSparse(queue, bindInfoCount, __dsl_pBindInfo, fence);
         }
     }
 
@@ -73702,7 +73560,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueBindSparse(queue, bindInfoCount, pBindInfo, fence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.QueueEndDebugUtilsLabelEXT([NativeTypeName("VkQueue")] QueueHandle queue) =>
+    void IVk.QueueEndDebugUtilsLabelEXT([NativeTypeName("VkQueue")] QueueHandle queue) =>
         (
             (delegate* unmanaged<QueueHandle, void>)(
                 _slots[622] is not null and var loadedFnPtr
@@ -73721,7 +73579,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.QueueEndDebugUtilsLabelEXT(queue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.QueueInsertDebugUtilsLabelEXT(
+    void IVk.QueueInsertDebugUtilsLabelEXT(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("const VkDebugUtilsLabelEXT *")] DebugUtilsLabelEXT* pLabelInfo
     ) =>
@@ -73745,14 +73603,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueInsertDebugUtilsLabelEXT(queue, pLabelInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.QueueInsertDebugUtilsLabelEXT(
+    void IVk.QueueInsertDebugUtilsLabelEXT(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("const VkDebugUtilsLabelEXT *")] Ref<DebugUtilsLabelEXT> pLabelInfo
     )
     {
         fixed (DebugUtilsLabelEXT* __dsl_pLabelInfo = pLabelInfo)
         {
-            ((IVulkan)this).QueueInsertDebugUtilsLabelEXT(queue, __dsl_pLabelInfo);
+            ((IVk)this).QueueInsertDebugUtilsLabelEXT(queue, __dsl_pLabelInfo);
         }
     }
 
@@ -73766,7 +73624,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueInsertDebugUtilsLabelEXT(queue, pLabelInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.QueueNotifyOutOfBandNV(
+    void IVk.QueueNotifyOutOfBandNV(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("const VkOutOfBandQueueTypeInfoNV *")]
             OutOfBandQueueTypeInfoNV* pQueueTypeInfo
@@ -73796,7 +73654,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueNotifyOutOfBandNV(queue, pQueueTypeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.QueueNotifyOutOfBandNV(
+    void IVk.QueueNotifyOutOfBandNV(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("const VkOutOfBandQueueTypeInfoNV *")]
             Ref<OutOfBandQueueTypeInfoNV> pQueueTypeInfo
@@ -73804,7 +73662,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (OutOfBandQueueTypeInfoNV* __dsl_pQueueTypeInfo = pQueueTypeInfo)
         {
-            ((IVulkan)this).QueueNotifyOutOfBandNV(queue, __dsl_pQueueTypeInfo);
+            ((IVk)this).QueueNotifyOutOfBandNV(queue, __dsl_pQueueTypeInfo);
         }
     }
 
@@ -73826,7 +73684,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueNotifyOutOfBandNV(queue, pQueueTypeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueuePresentKHR(
+    Result IVk.QueuePresentKHR(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("const VkPresentInfoKHR *")] PresentInfoKHR* pPresentInfo
     ) =>
@@ -73847,14 +73705,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueuePresentKHR(queue, pPresentInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueuePresentKHR(
+    Result IVk.QueuePresentKHR(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("const VkPresentInfoKHR *")] Ref<PresentInfoKHR> pPresentInfo
     )
     {
         fixed (PresentInfoKHR* __dsl_pPresentInfo = pPresentInfo)
         {
-            return (Result)((IVulkan)this).QueuePresentKHR(queue, __dsl_pPresentInfo);
+            return (Result)((IVk)this).QueuePresentKHR(queue, __dsl_pPresentInfo);
         }
     }
 
@@ -73868,7 +73726,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueuePresentKHR(queue, pPresentInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueueSetPerformanceConfigurationIntel(
+    Result IVk.QueueSetPerformanceConfigurationIntel(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("VkPerformanceConfigurationINTEL")]
             PerformanceConfigurationIntelHandle configuration
@@ -73894,7 +73752,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueSetPerformanceConfigurationIntel(queue, configuration);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueueSubmit(
+    Result IVk.QueueSubmit(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t")] uint submitCount,
         [NativeTypeName("const VkSubmitInfo *")] SubmitInfo* pSubmits,
@@ -73923,7 +73781,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueSubmit(queue, submitCount, pSubmits, fence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueueSubmit(
+    Result IVk.QueueSubmit(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t")] uint submitCount,
         [NativeTypeName("const VkSubmitInfo *")] Ref<SubmitInfo> pSubmits,
@@ -73932,7 +73790,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (SubmitInfo* __dsl_pSubmits = pSubmits)
         {
-            return (Result)((IVulkan)this).QueueSubmit(queue, submitCount, __dsl_pSubmits, fence);
+            return (Result)((IVk)this).QueueSubmit(queue, submitCount, __dsl_pSubmits, fence);
         }
     }
 
@@ -73952,7 +73810,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueSubmit(queue, submitCount, pSubmits, fence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueueSubmit2(
+    Result IVk.QueueSubmit2(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t")] uint submitCount,
         [NativeTypeName("const VkSubmitInfo2 *")] SubmitInfo2* pSubmits,
@@ -73977,7 +73835,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueSubmit2(queue, submitCount, pSubmits, fence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueueSubmit2(
+    Result IVk.QueueSubmit2(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t")] uint submitCount,
         [NativeTypeName("const VkSubmitInfo2 *")] Ref<SubmitInfo2> pSubmits,
@@ -73986,7 +73844,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (SubmitInfo2* __dsl_pSubmits = pSubmits)
         {
-            return (Result)((IVulkan)this).QueueSubmit2(queue, submitCount, __dsl_pSubmits, fence);
+            return (Result)((IVk)this).QueueSubmit2(queue, submitCount, __dsl_pSubmits, fence);
         }
     }
 
@@ -74002,7 +73860,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueSubmit2(queue, submitCount, pSubmits, fence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueueSubmit2KHR(
+    Result IVk.QueueSubmit2KHR(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t")] uint submitCount,
         [NativeTypeName("const VkSubmitInfo2 *")] SubmitInfo2* pSubmits,
@@ -74034,7 +73892,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueSubmit2KHR(queue, submitCount, pSubmits, fence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueueSubmit2KHR(
+    Result IVk.QueueSubmit2KHR(
         [NativeTypeName("VkQueue")] QueueHandle queue,
         [NativeTypeName("uint32_t")] uint submitCount,
         [NativeTypeName("const VkSubmitInfo2 *")] Ref<SubmitInfo2> pSubmits,
@@ -74043,8 +73901,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (SubmitInfo2* __dsl_pSubmits = pSubmits)
         {
-            return (Result)
-                ((IVulkan)this).QueueSubmit2KHR(queue, submitCount, __dsl_pSubmits, fence);
+            return (Result)((IVk)this).QueueSubmit2KHR(queue, submitCount, __dsl_pSubmits, fence);
         }
     }
 
@@ -74067,7 +73924,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.QueueSubmit2KHR(queue, submitCount, pSubmits, fence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.QueueWaitIdle([NativeTypeName("VkQueue")] QueueHandle queue) =>
+    Result IVk.QueueWaitIdle([NativeTypeName("VkQueue")] QueueHandle queue) =>
         (
             (delegate* unmanaged<QueueHandle, Result>)(
                 _slots[630] is not null and var loadedFnPtr
@@ -74087,7 +73944,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.QueueWaitIdle(queue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.RegisterDeviceEventEXT(
+    Result IVk.RegisterDeviceEventEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceEventInfoEXT *")] DeviceEventInfoEXT* pDeviceEventInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -74121,7 +73978,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.RegisterDeviceEventEXT(device, pDeviceEventInfo, pAllocator, pFence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.RegisterDeviceEventEXT(
+    Result IVk.RegisterDeviceEventEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDeviceEventInfoEXT *")] Ref<DeviceEventInfoEXT> pDeviceEventInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
@@ -74133,7 +73990,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DeviceEventInfoEXT* __dsl_pDeviceEventInfo = pDeviceEventInfo)
         {
             return (Result)
-                ((IVulkan)this).RegisterDeviceEventEXT(
+                ((IVk)this).RegisterDeviceEventEXT(
                     device,
                     __dsl_pDeviceEventInfo,
                     __dsl_pAllocator,
@@ -74158,7 +74015,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.RegisterDeviceEventEXT(device, pDeviceEventInfo, pAllocator, pFence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.RegisterDisplayEventEXT(
+    Result IVk.RegisterDisplayEventEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display,
         [NativeTypeName("const VkDisplayEventInfoEXT *")] DisplayEventInfoEXT* pDisplayEventInfo,
@@ -74198,7 +74055,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.RegisterDisplayEventEXT(device, display, pDisplayEventInfo, pAllocator, pFence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.RegisterDisplayEventEXT(
+    Result IVk.RegisterDisplayEventEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display,
         [NativeTypeName("const VkDisplayEventInfoEXT *")]
@@ -74212,7 +74069,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (DisplayEventInfoEXT* __dsl_pDisplayEventInfo = pDisplayEventInfo)
         {
             return (Result)
-                ((IVulkan)this).RegisterDisplayEventEXT(
+                ((IVk)this).RegisterDisplayEventEXT(
                     device,
                     display,
                     __dsl_pDisplayEventInfo,
@@ -74240,7 +74097,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.RegisterDisplayEventEXT(device, display, pDisplayEventInfo, pAllocator, pFence);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ReleaseCapturedPipelineDataKHR(
+    Result IVk.ReleaseCapturedPipelineDataKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkReleaseCapturedPipelineDataInfoKHR *")]
             ReleaseCapturedPipelineDataInfoKHR* pInfo,
@@ -74279,7 +74136,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ReleaseCapturedPipelineDataKHR(device, pInfo, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ReleaseCapturedPipelineDataKHR(
+    Result IVk.ReleaseCapturedPipelineDataKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkReleaseCapturedPipelineDataInfoKHR *")]
             Ref<ReleaseCapturedPipelineDataInfoKHR> pInfo,
@@ -74290,11 +74147,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (ReleaseCapturedPipelineDataInfoKHR* __dsl_pInfo = pInfo)
         {
             return (Result)
-                ((IVulkan)this).ReleaseCapturedPipelineDataKHR(
-                    device,
-                    __dsl_pInfo,
-                    __dsl_pAllocator
-                );
+                ((IVk)this).ReleaseCapturedPipelineDataKHR(device, __dsl_pInfo, __dsl_pAllocator);
         }
     }
 
@@ -74317,7 +74170,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ReleaseCapturedPipelineDataKHR(device, pInfo, pAllocator);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ReleaseDisplayEXT(
+    Result IVk.ReleaseDisplayEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("VkDisplayKHR")] DisplayKHRHandle display
     ) =>
@@ -74342,7 +74195,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ReleaseDisplayEXT(physicalDevice, display);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ReleasePerformanceConfigurationIntel(
+    Result IVk.ReleasePerformanceConfigurationIntel(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPerformanceConfigurationINTEL")]
             PerformanceConfigurationIntelHandle configuration
@@ -74368,7 +74221,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ReleasePerformanceConfigurationIntel(device, configuration);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.ReleaseProfilingLockKHR([NativeTypeName("VkDevice")] DeviceHandle device) =>
+    void IVk.ReleaseProfilingLockKHR([NativeTypeName("VkDevice")] DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, void>)(
                 _slots[636] is not null and var loadedFnPtr
@@ -74394,7 +74247,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         DllImport.ReleaseProfilingLockKHR(device);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ReleaseSwapchainImagesEXT(
+    Result IVk.ReleaseSwapchainImagesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkReleaseSwapchainImagesInfoEXT *")]
             ReleaseSwapchainImagesInfoEXT* pReleaseInfo
@@ -74427,7 +74280,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ReleaseSwapchainImagesEXT(device, pReleaseInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ReleaseSwapchainImagesEXT(
+    Result IVk.ReleaseSwapchainImagesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkReleaseSwapchainImagesInfoEXT *")]
             Ref<ReleaseSwapchainImagesInfoEXT> pReleaseInfo
@@ -74435,7 +74288,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (ReleaseSwapchainImagesInfoEXT* __dsl_pReleaseInfo = pReleaseInfo)
         {
-            return (Result)((IVulkan)this).ReleaseSwapchainImagesEXT(device, __dsl_pReleaseInfo);
+            return (Result)((IVk)this).ReleaseSwapchainImagesEXT(device, __dsl_pReleaseInfo);
         }
     }
 
@@ -74457,7 +74310,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ReleaseSwapchainImagesEXT(device, pReleaseInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ResetCommandBuffer(
+    Result IVk.ResetCommandBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkCommandBufferResetFlags")] uint flags
     ) =>
@@ -74482,7 +74335,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ResetCommandBuffer(commandBuffer, flags);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ResetCommandPool(
+    Result IVk.ResetCommandPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
         [NativeTypeName("VkCommandPoolResetFlags")] uint flags
@@ -74509,7 +74362,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ResetCommandPool(device, commandPool, flags);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ResetDescriptorPool(
+    Result IVk.ResetDescriptorPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorPool")] DescriptorPoolHandle descriptorPool,
         [NativeTypeName("VkDescriptorPoolResetFlags")] uint flags
@@ -74536,7 +74389,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ResetDescriptorPool(device, descriptorPool, flags);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ResetEvent(
+    Result IVk.ResetEvent(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkEvent")] EventHandle @event
     ) =>
@@ -74561,7 +74414,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ResetEvent(device, @event);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ResetFences(
+    Result IVk.ResetFences(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint fenceCount,
         [NativeTypeName("const VkFence *")] FenceHandle* pFences
@@ -74588,7 +74441,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ResetFences(device, fenceCount, pFences);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.ResetFences(
+    Result IVk.ResetFences(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint fenceCount,
         [NativeTypeName("const VkFence *")] Ref<FenceHandle> pFences
@@ -74596,7 +74449,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (FenceHandle* __dsl_pFences = pFences)
         {
-            return (Result)((IVulkan)this).ResetFences(device, fenceCount, __dsl_pFences);
+            return (Result)((IVk)this).ResetFences(device, fenceCount, __dsl_pFences);
         }
     }
 
@@ -74615,7 +74468,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ResetFences(device, fenceCount, pFences);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.ResetQueryPool(
+    void IVk.ResetQueryPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint firstQuery,
@@ -74644,7 +74497,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ResetQueryPool(device, queryPool, firstQuery, queryCount);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.ResetQueryPoolEXT(
+    void IVk.ResetQueryPoolEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint firstQuery,
@@ -74676,7 +74529,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.ResetQueryPoolEXT(device, queryPool, firstQuery, queryCount);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetDebugUtilsObjectNameEXT(
+    Result IVk.SetDebugUtilsObjectNameEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDebugUtilsObjectNameInfoEXT *")]
             DebugUtilsObjectNameInfoEXT* pNameInfo
@@ -74702,7 +74555,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetDebugUtilsObjectNameEXT(device, pNameInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetDebugUtilsObjectNameEXT(
+    Result IVk.SetDebugUtilsObjectNameEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDebugUtilsObjectNameInfoEXT *")]
             Ref<DebugUtilsObjectNameInfoEXT> pNameInfo
@@ -74710,7 +74563,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DebugUtilsObjectNameInfoEXT* __dsl_pNameInfo = pNameInfo)
         {
-            return (Result)((IVulkan)this).SetDebugUtilsObjectNameEXT(device, __dsl_pNameInfo);
+            return (Result)((IVk)this).SetDebugUtilsObjectNameEXT(device, __dsl_pNameInfo);
         }
     }
 
@@ -74725,7 +74578,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetDebugUtilsObjectNameEXT(device, pNameInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetDebugUtilsObjectTagEXT(
+    Result IVk.SetDebugUtilsObjectTagEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDebugUtilsObjectTagInfoEXT *")]
             DebugUtilsObjectTagInfoEXT* pTagInfo
@@ -74751,7 +74604,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetDebugUtilsObjectTagEXT(device, pTagInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetDebugUtilsObjectTagEXT(
+    Result IVk.SetDebugUtilsObjectTagEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkDebugUtilsObjectTagInfoEXT *")]
             Ref<DebugUtilsObjectTagInfoEXT> pTagInfo
@@ -74759,7 +74612,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DebugUtilsObjectTagInfoEXT* __dsl_pTagInfo = pTagInfo)
         {
-            return (Result)((IVulkan)this).SetDebugUtilsObjectTagEXT(device, __dsl_pTagInfo);
+            return (Result)((IVk)this).SetDebugUtilsObjectTagEXT(device, __dsl_pTagInfo);
         }
     }
 
@@ -74774,7 +74627,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetDebugUtilsObjectTagEXT(device, pTagInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.SetDeviceMemoryPriorityEXT(
+    void IVk.SetDeviceMemoryPriorityEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
         float priority
@@ -74804,7 +74657,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetDeviceMemoryPriorityEXT(device, memory, priority);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetEvent(
+    Result IVk.SetEvent(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkEvent")] EventHandle @event
     ) =>
@@ -74829,7 +74682,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetEvent(device, @event);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.SetHdrMetadataEXT(
+    void IVk.SetHdrMetadataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint swapchainCount,
         [NativeTypeName("const VkSwapchainKHR *")] SwapchainKHRHandle* pSwapchains,
@@ -74854,7 +74707,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetHdrMetadataEXT(device, swapchainCount, pSwapchains, pMetadata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.SetHdrMetadataEXT(
+    void IVk.SetHdrMetadataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint swapchainCount,
         [NativeTypeName("const VkSwapchainKHR *")] Ref<SwapchainKHRHandle> pSwapchains,
@@ -74864,7 +74717,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (HdrMetadataEXT* __dsl_pMetadata = pMetadata)
         fixed (SwapchainKHRHandle* __dsl_pSwapchains = pSwapchains)
         {
-            ((IVulkan)this).SetHdrMetadataEXT(
+            ((IVk)this).SetHdrMetadataEXT(
                 device,
                 swapchainCount,
                 __dsl_pSwapchains,
@@ -74885,7 +74738,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetHdrMetadataEXT(device, swapchainCount, pSwapchains, pMetadata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.SetLatencyMarkerNV(
+    void IVk.SetLatencyMarkerNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("const VkSetLatencyMarkerInfoNV *")]
@@ -74917,7 +74770,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetLatencyMarkerNV(device, swapchain, pLatencyMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.SetLatencyMarkerNV(
+    void IVk.SetLatencyMarkerNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("const VkSetLatencyMarkerInfoNV *")]
@@ -74926,7 +74779,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (SetLatencyMarkerInfoNV* __dsl_pLatencyMarkerInfo = pLatencyMarkerInfo)
         {
-            ((IVulkan)this).SetLatencyMarkerNV(device, swapchain, __dsl_pLatencyMarkerInfo);
+            ((IVk)this).SetLatencyMarkerNV(device, swapchain, __dsl_pLatencyMarkerInfo);
         }
     }
 
@@ -74949,7 +74802,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetLatencyMarkerNV(device, swapchain, pLatencyMarkerInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetLatencySleepModeNV(
+    Result IVk.SetLatencySleepModeNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("const VkLatencySleepModeInfoNV *")] LatencySleepModeInfoNV* pSleepModeInfo
@@ -74983,7 +74836,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetLatencySleepModeNV(device, swapchain, pSleepModeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetLatencySleepModeNV(
+    Result IVk.SetLatencySleepModeNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("const VkLatencySleepModeInfoNV *")]
@@ -74993,7 +74846,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (LatencySleepModeInfoNV* __dsl_pSleepModeInfo = pSleepModeInfo)
         {
             return (Result)
-                ((IVulkan)this).SetLatencySleepModeNV(device, swapchain, __dsl_pSleepModeInfo);
+                ((IVk)this).SetLatencySleepModeNV(device, swapchain, __dsl_pSleepModeInfo);
         }
     }
 
@@ -75016,7 +74869,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetLatencySleepModeNV(device, swapchain, pSleepModeInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.SetLocalDimmingAMD(
+    void IVk.SetLocalDimmingAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapChain,
         [NativeTypeName("VkBool32")] uint localDimmingEnable
@@ -75046,7 +74899,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetLocalDimmingAMD(device, swapChain, localDimmingEnable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetPrivateData(
+    Result IVk.SetPrivateData(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         ObjectType objectType,
         [NativeTypeName("uint64_t")] ulong objectHandle,
@@ -75079,7 +74932,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetPrivateData(device, objectType, objectHandle, privateDataSlot, data);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SetPrivateDataEXT(
+    Result IVk.SetPrivateDataEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         ObjectType objectType,
         [NativeTypeName("uint64_t")] ulong objectHandle,
@@ -75119,7 +74972,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SetPrivateDataEXT(device, objectType, objectHandle, privateDataSlot, data);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SignalSemaphore(
+    Result IVk.SignalSemaphore(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreSignalInfo *")] SemaphoreSignalInfo* pSignalInfo
     ) =>
@@ -75144,14 +74997,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SignalSemaphore(device, pSignalInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SignalSemaphore(
+    Result IVk.SignalSemaphore(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreSignalInfo *")] Ref<SemaphoreSignalInfo> pSignalInfo
     )
     {
         fixed (SemaphoreSignalInfo* __dsl_pSignalInfo = pSignalInfo)
         {
-            return (Result)((IVulkan)this).SignalSemaphore(device, __dsl_pSignalInfo);
+            return (Result)((IVk)this).SignalSemaphore(device, __dsl_pSignalInfo);
         }
     }
 
@@ -75169,7 +75022,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SignalSemaphore(device, pSignalInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SignalSemaphoreKHR(
+    Result IVk.SignalSemaphoreKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreSignalInfo *")] SemaphoreSignalInfo* pSignalInfo
     ) =>
@@ -75197,14 +75050,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SignalSemaphoreKHR(device, pSignalInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.SignalSemaphoreKHR(
+    Result IVk.SignalSemaphoreKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreSignalInfo *")] Ref<SemaphoreSignalInfo> pSignalInfo
     )
     {
         fixed (SemaphoreSignalInfo* __dsl_pSignalInfo = pSignalInfo)
         {
-            return (Result)((IVulkan)this).SignalSemaphoreKHR(device, __dsl_pSignalInfo);
+            return (Result)((IVk)this).SignalSemaphoreKHR(device, __dsl_pSignalInfo);
         }
     }
 
@@ -75225,7 +75078,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.SignalSemaphoreKHR(device, pSignalInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.SubmitDebugUtilsMessageEXT(
+    void IVk.SubmitDebugUtilsMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
             DebugUtilsMessageSeverityFlagsEXT messageSeverity,
@@ -75268,7 +75121,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.SubmitDebugUtilsMessageEXT(
+    void IVk.SubmitDebugUtilsMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
             DebugUtilsMessageSeverityFlagsEXT messageSeverity,
@@ -75279,7 +75132,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (DebugUtilsMessengerCallbackDataEXT* __dsl_pCallbackData = pCallbackData)
         {
-            ((IVulkan)this).SubmitDebugUtilsMessageEXT(
+            ((IVk)this).SubmitDebugUtilsMessageEXT(
                 instance,
                 messageSeverity,
                 messageTypes,
@@ -75308,7 +75161,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.TransitionImageLayout(
+    Result IVk.TransitionImageLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint transitionCount,
         [NativeTypeName("const VkHostImageLayoutTransitionInfo *")]
@@ -75333,7 +75186,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.TransitionImageLayout(device, transitionCount, pTransitions);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.TransitionImageLayout(
+    Result IVk.TransitionImageLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint transitionCount,
         [NativeTypeName("const VkHostImageLayoutTransitionInfo *")]
@@ -75343,7 +75196,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (HostImageLayoutTransitionInfo* __dsl_pTransitions = pTransitions)
         {
             return (Result)
-                ((IVulkan)this).TransitionImageLayout(device, transitionCount, __dsl_pTransitions);
+                ((IVk)this).TransitionImageLayout(device, transitionCount, __dsl_pTransitions);
         }
     }
 
@@ -75359,7 +75212,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.TransitionImageLayout(device, transitionCount, pTransitions);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.TransitionImageLayoutEXT(
+    Result IVk.TransitionImageLayoutEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint transitionCount,
         [NativeTypeName("const VkHostImageLayoutTransitionInfo *")]
@@ -75395,7 +75248,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.TransitionImageLayoutEXT(device, transitionCount, pTransitions);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.TransitionImageLayoutEXT(
+    Result IVk.TransitionImageLayoutEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint transitionCount,
         [NativeTypeName("const VkHostImageLayoutTransitionInfo *")]
@@ -75405,11 +75258,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (HostImageLayoutTransitionInfo* __dsl_pTransitions = pTransitions)
         {
             return (Result)
-                ((IVulkan)this).TransitionImageLayoutEXT(
-                    device,
-                    transitionCount,
-                    __dsl_pTransitions
-                );
+                ((IVk)this).TransitionImageLayoutEXT(device, transitionCount, __dsl_pTransitions);
         }
     }
 
@@ -75433,7 +75282,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.TransitionImageLayoutEXT(device, transitionCount, pTransitions);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.TrimCommandPool(
+    void IVk.TrimCommandPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
         [NativeTypeName("VkCommandPoolTrimFlags")] uint flags
@@ -75460,7 +75309,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.TrimCommandPool(device, commandPool, flags);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.TrimCommandPoolKHR(
+    void IVk.TrimCommandPoolKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
         [NativeTypeName("VkCommandPoolTrimFlags")] uint flags
@@ -75483,9 +75332,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.TrimCommandPoolKHR(device, commandPool, flags);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UninitializePerformanceApiIntel(
-        [NativeTypeName("VkDevice")] DeviceHandle device
-    ) =>
+    void IVk.UninitializePerformanceApiIntel([NativeTypeName("VkDevice")] DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, void>)(
                 _slots[662] is not null and var loadedFnPtr
@@ -75505,7 +75352,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.UninitializePerformanceApiIntel(device);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UnmapMemory(
+    void IVk.UnmapMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory
     ) =>
@@ -75530,7 +75377,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.UnmapMemory(device, memory);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.UnmapMemory2(
+    Result IVk.UnmapMemory2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryUnmapInfo *")] MemoryUnmapInfo* pMemoryUnmapInfo
     ) =>
@@ -75551,14 +75398,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.UnmapMemory2(device, pMemoryUnmapInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.UnmapMemory2(
+    Result IVk.UnmapMemory2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryUnmapInfo *")] Ref<MemoryUnmapInfo> pMemoryUnmapInfo
     )
     {
         fixed (MemoryUnmapInfo* __dsl_pMemoryUnmapInfo = pMemoryUnmapInfo)
         {
-            return (Result)((IVulkan)this).UnmapMemory2(device, __dsl_pMemoryUnmapInfo);
+            return (Result)((IVk)this).UnmapMemory2(device, __dsl_pMemoryUnmapInfo);
         }
     }
 
@@ -75572,7 +75419,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.UnmapMemory2(device, pMemoryUnmapInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.UnmapMemory2KHR(
+    Result IVk.UnmapMemory2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryUnmapInfo *")] MemoryUnmapInfo* pMemoryUnmapInfo
     ) =>
@@ -75593,14 +75440,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.UnmapMemory2KHR(device, pMemoryUnmapInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.UnmapMemory2KHR(
+    Result IVk.UnmapMemory2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryUnmapInfo *")] Ref<MemoryUnmapInfo> pMemoryUnmapInfo
     )
     {
         fixed (MemoryUnmapInfo* __dsl_pMemoryUnmapInfo = pMemoryUnmapInfo)
         {
-            return (Result)((IVulkan)this).UnmapMemory2KHR(device, __dsl_pMemoryUnmapInfo);
+            return (Result)((IVk)this).UnmapMemory2KHR(device, __dsl_pMemoryUnmapInfo);
         }
     }
 
@@ -75614,7 +75461,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.UnmapMemory2KHR(device, pMemoryUnmapInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateDescriptorSets(
+    void IVk.UpdateDescriptorSets(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint descriptorWriteCount,
         [NativeTypeName("const VkWriteDescriptorSet *")] WriteDescriptorSet* pDescriptorWrites,
@@ -75658,7 +75505,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateDescriptorSets(
+    void IVk.UpdateDescriptorSets(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint descriptorWriteCount,
         [NativeTypeName("const VkWriteDescriptorSet *")] Ref<WriteDescriptorSet> pDescriptorWrites,
@@ -75669,7 +75516,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (CopyDescriptorSet* __dsl_pDescriptorCopies = pDescriptorCopies)
         fixed (WriteDescriptorSet* __dsl_pDescriptorWrites = pDescriptorWrites)
         {
-            ((IVulkan)this).UpdateDescriptorSets(
+            ((IVk)this).UpdateDescriptorSets(
                 device,
                 descriptorWriteCount,
                 __dsl_pDescriptorWrites,
@@ -75703,7 +75550,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateDescriptorSetWithTemplate(
+    void IVk.UpdateDescriptorSetWithTemplate(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSet")] DescriptorSetHandle descriptorSet,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
@@ -75748,7 +75595,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateDescriptorSetWithTemplate(
+    void IVk.UpdateDescriptorSetWithTemplate(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSet")] DescriptorSetHandle descriptorSet,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
@@ -75758,7 +75605,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (void* __dsl_pData = pData)
         {
-            ((IVulkan)this).UpdateDescriptorSetWithTemplate(
+            ((IVk)this).UpdateDescriptorSetWithTemplate(
                 device,
                 descriptorSet,
                 descriptorUpdateTemplate,
@@ -75790,7 +75637,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateDescriptorSetWithTemplateKHR(
+    void IVk.UpdateDescriptorSetWithTemplateKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSet")] DescriptorSetHandle descriptorSet,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
@@ -75831,7 +75678,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateDescriptorSetWithTemplateKHR(
+    void IVk.UpdateDescriptorSetWithTemplateKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorSet")] DescriptorSetHandle descriptorSet,
         [NativeTypeName("VkDescriptorUpdateTemplate")]
@@ -75841,7 +75688,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (void* __dsl_pData = pData)
         {
-            ((IVulkan)this).UpdateDescriptorSetWithTemplateKHR(
+            ((IVk)this).UpdateDescriptorSetWithTemplateKHR(
                 device,
                 descriptorSet,
                 descriptorUpdateTemplate,
@@ -75869,7 +75716,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateIndirectExecutionSetPipelineEXT(
+    void IVk.UpdateIndirectExecutionSetPipelineEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectExecutionSetEXT")]
             IndirectExecutionSetEXTHandle indirectExecutionSet,
@@ -75920,7 +75767,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateIndirectExecutionSetPipelineEXT(
+    void IVk.UpdateIndirectExecutionSetPipelineEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectExecutionSetEXT")]
             IndirectExecutionSetEXTHandle indirectExecutionSet,
@@ -75933,7 +75780,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
             WriteIndirectExecutionSetPipelineEXT* __dsl_pExecutionSetWrites = pExecutionSetWrites
         )
         {
-            ((IVulkan)this).UpdateIndirectExecutionSetPipelineEXT(
+            ((IVk)this).UpdateIndirectExecutionSetPipelineEXT(
                 device,
                 indirectExecutionSet,
                 executionSetWriteCount,
@@ -75970,14 +75817,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateIndirectExecutionSetPipelineEXT(
+    void IVk.UpdateIndirectExecutionSetPipelineEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectExecutionSetEXT")]
             IndirectExecutionSetEXTHandle indirectExecutionSet,
         [NativeTypeName("const VkWriteIndirectExecutionSetPipelineEXT *")]
             WriteIndirectExecutionSetPipelineEXT pExecutionSetWrites
     ) =>
-        ((IVulkan)this).UpdateIndirectExecutionSetPipelineEXT(
+        ((IVk)this).UpdateIndirectExecutionSetPipelineEXT(
             device,
             indirectExecutionSet,
             1,
@@ -76010,7 +75857,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateIndirectExecutionSetShaderEXT(
+    void IVk.UpdateIndirectExecutionSetShaderEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectExecutionSetEXT")]
             IndirectExecutionSetEXTHandle indirectExecutionSet,
@@ -76061,7 +75908,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateIndirectExecutionSetShaderEXT(
+    void IVk.UpdateIndirectExecutionSetShaderEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectExecutionSetEXT")]
             IndirectExecutionSetEXTHandle indirectExecutionSet,
@@ -76072,7 +75919,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (WriteIndirectExecutionSetShaderEXT* __dsl_pExecutionSetWrites = pExecutionSetWrites)
         {
-            ((IVulkan)this).UpdateIndirectExecutionSetShaderEXT(
+            ((IVk)this).UpdateIndirectExecutionSetShaderEXT(
                 device,
                 indirectExecutionSet,
                 executionSetWriteCount,
@@ -76109,14 +75956,14 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IVulkan.UpdateIndirectExecutionSetShaderEXT(
+    void IVk.UpdateIndirectExecutionSetShaderEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkIndirectExecutionSetEXT")]
             IndirectExecutionSetEXTHandle indirectExecutionSet,
         [NativeTypeName("const VkWriteIndirectExecutionSetShaderEXT *")]
             WriteIndirectExecutionSetShaderEXT pExecutionSetWrites
     ) =>
-        ((IVulkan)this).UpdateIndirectExecutionSetShaderEXT(
+        ((IVk)this).UpdateIndirectExecutionSetShaderEXT(
             device,
             indirectExecutionSet,
             1,
@@ -76149,7 +75996,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.UpdateVideoSessionParametersKHR(
+    Result IVk.UpdateVideoSessionParametersKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkVideoSessionParametersKHR")]
             VideoSessionParametersKHRHandle videoSessionParameters,
@@ -76187,7 +76034,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.UpdateVideoSessionParametersKHR(device, videoSessionParameters, pUpdateInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.UpdateVideoSessionParametersKHR(
+    Result IVk.UpdateVideoSessionParametersKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkVideoSessionParametersKHR")]
             VideoSessionParametersKHRHandle videoSessionParameters,
@@ -76198,7 +76045,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (VideoSessionParametersUpdateInfoKHR* __dsl_pUpdateInfo = pUpdateInfo)
         {
             return (Result)
-                ((IVulkan)this).UpdateVideoSessionParametersKHR(
+                ((IVk)this).UpdateVideoSessionParametersKHR(
                     device,
                     videoSessionParameters,
                     __dsl_pUpdateInfo
@@ -76223,7 +76070,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.UpdateVideoSessionParametersKHR(device, videoSessionParameters, pUpdateInfo);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitForFences(
+    Result IVk.WaitForFences(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint fenceCount,
         [NativeTypeName("const VkFence *")] FenceHandle* pFences,
@@ -76254,7 +76101,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.WaitForFences(device, fenceCount, pFences, waitAll, timeout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitForFences(
+    Result IVk.WaitForFences(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint fenceCount,
         [NativeTypeName("const VkFence *")] Ref<FenceHandle> pFences,
@@ -76265,7 +76112,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (FenceHandle* __dsl_pFences = pFences)
         {
             return (Result)
-                ((IVulkan)this).WaitForFences(device, fenceCount, __dsl_pFences, waitAll, timeout);
+                ((IVk)this).WaitForFences(device, fenceCount, __dsl_pFences, waitAll, timeout);
         }
     }
 
@@ -76286,7 +76133,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.WaitForFences(device, fenceCount, pFences, waitAll, timeout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitForPresentKHR(
+    Result IVk.WaitForPresentKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
         [NativeTypeName("uint64_t")] ulong presentId,
@@ -76315,7 +76162,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.WaitForPresentKHR(device, swapchain, presentId, timeout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitSemaphores(
+    Result IVk.WaitSemaphores(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo,
         [NativeTypeName("uint64_t")] ulong timeout
@@ -76342,7 +76189,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.WaitSemaphores(device, pWaitInfo, timeout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitSemaphores(
+    Result IVk.WaitSemaphores(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo,
         [NativeTypeName("uint64_t")] ulong timeout
@@ -76350,7 +76197,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (SemaphoreWaitInfo* __dsl_pWaitInfo = pWaitInfo)
         {
-            return (Result)((IVulkan)this).WaitSemaphores(device, __dsl_pWaitInfo, timeout);
+            return (Result)((IVk)this).WaitSemaphores(device, __dsl_pWaitInfo, timeout);
         }
     }
 
@@ -76369,7 +76216,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.WaitSemaphores(device, pWaitInfo, timeout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitSemaphoresKHR(
+    Result IVk.WaitSemaphoresKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreWaitInfo *")] SemaphoreWaitInfo* pWaitInfo,
         [NativeTypeName("uint64_t")] ulong timeout
@@ -76399,7 +76246,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.WaitSemaphoresKHR(device, pWaitInfo, timeout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WaitSemaphoresKHR(
+    Result IVk.WaitSemaphoresKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkSemaphoreWaitInfo *")] Ref<SemaphoreWaitInfo> pWaitInfo,
         [NativeTypeName("uint64_t")] ulong timeout
@@ -76407,7 +76254,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     {
         fixed (SemaphoreWaitInfo* __dsl_pWaitInfo = pWaitInfo)
         {
-            return (Result)((IVulkan)this).WaitSemaphoresKHR(device, __dsl_pWaitInfo, timeout);
+            return (Result)((IVk)this).WaitSemaphoresKHR(device, __dsl_pWaitInfo, timeout);
         }
     }
 
@@ -76429,7 +76276,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
     ) => DllImport.WaitSemaphoresKHR(device, pWaitInfo, timeout);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WriteAccelerationStructuresPropertiesKHR(
+    Result IVk.WriteAccelerationStructuresPropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint accelerationStructureCount,
         [NativeTypeName("const VkAccelerationStructureKHR *")]
@@ -76497,7 +76344,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WriteAccelerationStructuresPropertiesKHR(
+    Result IVk.WriteAccelerationStructuresPropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint accelerationStructureCount,
         [NativeTypeName("const VkAccelerationStructureKHR *")]
@@ -76514,7 +76361,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         )
         {
             return (Result)
-                ((IVulkan)this).WriteAccelerationStructuresPropertiesKHR(
+                ((IVk)this).WriteAccelerationStructuresPropertiesKHR(
                     device,
                     accelerationStructureCount,
                     __dsl_pAccelerationStructures,
@@ -76558,7 +76405,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WriteMicromapsPropertiesEXT(
+    Result IVk.WriteMicromapsPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint micromapCount,
         [NativeTypeName("const VkMicromapEXT *")] MicromapEXTHandle* pMicromaps,
@@ -76616,7 +76463,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         );
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result IVulkan.WriteMicromapsPropertiesEXT(
+    Result IVk.WriteMicromapsPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("uint32_t")] uint micromapCount,
         [NativeTypeName("const VkMicromapEXT *")] Ref<MicromapEXTHandle> pMicromaps,
@@ -76630,7 +76477,7 @@ public unsafe partial class Vulkan : IVulkan, IVulkan.Static
         fixed (MicromapEXTHandle* __dsl_pMicromaps = pMicromaps)
         {
             return (Result)
-                ((IVulkan)this).WriteMicromapsPropertiesEXT(
+                ((IVk)this).WriteMicromapsPropertiesEXT(
                     device,
                     micromapCount,
                     __dsl_pMicromaps,

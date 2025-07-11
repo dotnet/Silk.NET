@@ -10,7 +10,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan;
 
-partial class Vulkan(INativeContext nativeContext) : IDisposable
+partial class Vk(INativeContext nativeContext) : IDisposable
 {
     public partial class DllImport
     {
@@ -19,7 +19,7 @@ partial class Vulkan(INativeContext nativeContext) : IDisposable
 
     private readonly unsafe void*[] _slots = new void*[678];
 
-    public static IVulkan Create(INativeContext ctx) => new Vulkan(ctx);
+    public static IVk Create(INativeContext ctx) => new Vk(ctx);
 
     /// <inheritdoc/>
     public void Dispose() => nativeContext.Dispose();

@@ -16,7 +16,7 @@ VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES2_EXT
 --file
 vulkan-vulkan.h
 --methodClassName
-Vulkan
+Vk
 --namespace
 Silk.NET.Vulkan
 --output
