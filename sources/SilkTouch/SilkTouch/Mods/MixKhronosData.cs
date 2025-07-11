@@ -301,18 +301,20 @@ public partial class MixKhronosData(
     {
         var jobData = Jobs[ctx.JobKey];
         var proj = ctx.SourceProject;
-        var rewriter = new Rewriter(jobData, logger);
+
+        // Rewrite phase 1
+        var rewriter1 = new EnumRewriterPhase1(jobData, logger);
         foreach (var docId in proj?.DocumentIds ?? [])
         {
-            var doc =
-                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var doc = proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
-                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                rewriter1.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
                 ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
 
-        foreach (var (filePath, node) in rewriter.GetNewSyntaxTrees())
+        // Add missing enum types
+        foreach (var (filePath, node) in rewriter1.GetMissingEnums())
         {
             proj = proj
                 ?.AddDocument(
@@ -321,6 +323,17 @@ public partial class MixKhronosData(
                     filePath: proj.FullPath(filePath)
                 )
                 .Project;
+        }
+
+        // Rewrite phase 2
+        var rewriter2 = new EnumRewriterPhase2(jobData);
+        foreach (var docId in proj?.DocumentIds ?? [])
+        {
+            var doc = proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            proj = doc.WithSyntaxRoot(
+                rewriter2.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                ?? throw new InvalidOperationException("Visit returned null.")
+            ).Project;
         }
 
         ctx.SourceProject = proj;
@@ -1673,11 +1686,19 @@ public partial class MixKhronosData(
     )]
     private static partial Regex EndingsNotToTrim();
 
-    private class Rewriter(JobData job, ILogger logger) : CSharpSyntaxRewriter(true)
+    /// <summary>
+    /// Extracts enum constants that are defined as fields and moves them to their actual enum types.
+    /// Begins renaming FlagBits enums to Flags.
+    /// </summary>
+    /// <remarks>
+    /// This rewriter is split into two phases because NamespaceFromSyntaxNode breaks due to
+    /// the FieldDeclarationSyntax being modified.
+    /// </remarks>
+    private class EnumRewriterPhase1(JobData job, ILogger logger) : CSharpSyntaxRewriter
     {
         public HashSet<string> AlreadyPresentGroups { get; } = [];
 
-        public IEnumerable<(string FilePath, SyntaxNode Node)> GetNewSyntaxTrees()
+        public IEnumerable<(string FilePath, SyntaxNode Node)> GetMissingEnums()
         {
             var results = new List<(string FilePath, SyntaxNode Node)>();
 
@@ -1786,40 +1807,26 @@ public partial class MixKhronosData(
                 }
             }
 
-            // Rewrite syntax trees
-            // This is to ensure that these trees are processed similarly to all other trees in the project
-            results = results.Select(r => (r.FilePath, Visit(r.Node))).ToList();
-
             return results;
         }
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
+            // Remove empty classes
             var ret = base.VisitClassDeclaration(node);
             return ret is ClassDeclarationSyntax { Members.Count: 0 } ? null : ret;
         }
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
+            // Track which enums already exist
             var identifier = node.Identifier.ToString();
             identifier = identifier.Replace("FlagBits", "Flags");
 
-            if (
-                job.Groups.TryGetValue(identifier, out var group)
-                && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
-            )
+            if (job.Groups.TryGetValue(identifier, out var group)
+                && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any())
             {
                 AlreadyPresentGroups.Add(identifier);
-
-                if (group.KnownBitmask)
-                {
-                    // Add [Flags] attribute
-                    var flagsAttribute = AttributeList(
-                        SingletonSeparatedList(
-                            Attribute(IdentifierName("Flags"))));
-
-                    node = node.WithAttributeLists(node.AttributeLists.Add(flagsAttribute));
-                }
             }
 
             return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(identifier)));
@@ -1893,6 +1900,29 @@ public partial class MixKhronosData(
             }
 
             return base.VisitFieldDeclaration(node);
+        }
+    }
+
+    /// <summary>
+    /// Finishes renaming FlagBits enums to Flags.
+    /// Marks bitmask enums with the [Flags] attribute.
+    /// </summary>
+    private class EnumRewriterPhase2(JobData job) : CSharpSyntaxRewriter(true)
+    {
+        public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            var identifier = node.Identifier.ToString();
+            if (job.Groups.TryGetValue(identifier, out var group) && group.KnownBitmask)
+            {
+                // Add [Flags] attribute
+                var flagsAttribute = AttributeList(
+                    SingletonSeparatedList(
+                        Attribute(IdentifierName("Flags"))));
+
+                node = node.WithAttributeLists(node.AttributeLists.Add(flagsAttribute));
+            }
+
+            return base.VisitEnumDeclaration(node);
         }
 
         public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
