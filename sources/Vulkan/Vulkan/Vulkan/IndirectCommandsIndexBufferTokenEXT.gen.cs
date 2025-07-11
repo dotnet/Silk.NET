@@ -12,7 +12,6 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public partial struct IndirectCommandsIndexBufferTokenEXT
 {
-    [NativeTypeName("VkIndirectCommandsInputModeFlagBitsEXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -22,5 +21,5 @@ public partial struct IndirectCommandsIndexBufferTokenEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public IndirectCommandsInputModeFlagsEXT Mode;
+    public VkIndirectCommandsInputModeFlagBitsEXT Mode;
 }

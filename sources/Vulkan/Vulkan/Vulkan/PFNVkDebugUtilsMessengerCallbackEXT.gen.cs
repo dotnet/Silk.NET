@@ -13,13 +13,13 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
 {
     private readonly void* Pointer;
     public delegate* unmanaged<
-        DebugUtilsMessageSeverityFlagsEXT,
+        VkDebugUtilsMessageSeverityFlagBitsEXT,
         uint,
         DebugUtilsMessengerCallbackDataEXT*,
         void*,
         uint> Handle =>
         (delegate* unmanaged<
-            DebugUtilsMessageSeverityFlagsEXT,
+            VkDebugUtilsMessageSeverityFlagBitsEXT,
             uint,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
@@ -27,7 +27,7 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
 
     public PFNVkDebugUtilsMessengerCallbackEXT(
         delegate* unmanaged<
-            DebugUtilsMessageSeverityFlagsEXT,
+            VkDebugUtilsMessageSeverityFlagBitsEXT,
             uint,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
@@ -41,7 +41,7 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
 
     public static implicit operator PFNVkDebugUtilsMessengerCallbackEXT(
         delegate* unmanaged<
-            DebugUtilsMessageSeverityFlagsEXT,
+            VkDebugUtilsMessageSeverityFlagBitsEXT,
             uint,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
@@ -49,13 +49,13 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
     ) => new(pfn);
 
     public static implicit operator delegate* unmanaged<
-        DebugUtilsMessageSeverityFlagsEXT,
+        VkDebugUtilsMessageSeverityFlagBitsEXT,
         uint,
         DebugUtilsMessengerCallbackDataEXT*,
         void*,
         uint>(PFNVkDebugUtilsMessengerCallbackEXT pfn) =>
         (delegate* unmanaged<
-            DebugUtilsMessageSeverityFlagsEXT,
+            VkDebugUtilsMessageSeverityFlagBitsEXT,
             uint,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,

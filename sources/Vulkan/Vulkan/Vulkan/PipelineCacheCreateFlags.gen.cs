@@ -31,8 +31,11 @@ public enum PipelineCacheCreateFlags : uint
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
+        ["VK_EXT_pipeline_creation_cache_control"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_creation_cache_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_creation_cache_control+VK_VERSION_1_1",
+        ]
     )]
     FlagBitsMaxEnum = 0x7FFFFFFF,
 }

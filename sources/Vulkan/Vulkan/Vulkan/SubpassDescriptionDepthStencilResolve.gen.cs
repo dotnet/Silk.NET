@@ -27,21 +27,19 @@ public unsafe partial struct SubpassDescriptionDepthStencilResolve
     )]
     public void* PNext;
 
-    [NativeTypeName("VkResolveModeFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public ResolveModeFlags DepthResolveMode;
+    public VkResolveModeFlagBits DepthResolveMode;
 
-    [NativeTypeName("VkResolveModeFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public ResolveModeFlags StencilResolveMode;
+    public VkResolveModeFlagBits StencilResolveMode;
 
     [NativeTypeName("const VkAttachmentReference2 *")]
     [SupportedApiProfile(

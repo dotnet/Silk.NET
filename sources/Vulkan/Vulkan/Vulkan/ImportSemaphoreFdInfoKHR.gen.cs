@@ -55,7 +55,6 @@ public unsafe partial struct ImportSemaphoreFdInfoKHR
     )]
     public uint Flags;
 
-    [NativeTypeName("VkExternalSemaphoreHandleTypeFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_semaphore_fd"],
@@ -64,7 +63,7 @@ public unsafe partial struct ImportSemaphoreFdInfoKHR
             "VK_KHR_external_semaphore_fd+VK_VERSION_1_1",
         ]
     )]
-    public ExternalSemaphoreHandleTypeFlags HandleType;
+    public VkExternalSemaphoreHandleTypeFlagBits HandleType;
 
     [SupportedApiProfile(
         "vulkan",

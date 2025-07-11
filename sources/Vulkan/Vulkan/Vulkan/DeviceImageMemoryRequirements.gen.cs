@@ -23,7 +23,6 @@ public unsafe partial struct DeviceImageMemoryRequirements
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public ImageCreateInfo* PCreateInfo;
 
-    [NativeTypeName("VkImageAspectFlagBits")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ImageAspectFlags PlaneAspect;
+    public VkImageAspectFlagBits PlaneAspect;
 }

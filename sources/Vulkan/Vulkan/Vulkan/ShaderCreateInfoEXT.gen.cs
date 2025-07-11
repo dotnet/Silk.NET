@@ -47,7 +47,6 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public uint Flags;
 
-    [NativeTypeName("VkShaderStageFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -57,7 +56,7 @@ public unsafe partial struct ShaderCreateInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ShaderStageFlags Stage;
+    public VkShaderStageFlagBits Stage;
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(

@@ -42,7 +42,6 @@ public unsafe partial struct FramebufferMixedSamplesCombinationNV
     )]
     public CoverageReductionModeNV CoverageReductionMode;
 
-    [NativeTypeName("VkSampleCountFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],
@@ -51,7 +50,7 @@ public unsafe partial struct FramebufferMixedSamplesCombinationNV
             "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_1",
         ]
     )]
-    public SampleCountFlags RasterizationSamples;
+    public VkSampleCountFlagBits RasterizationSamples;
 
     [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(

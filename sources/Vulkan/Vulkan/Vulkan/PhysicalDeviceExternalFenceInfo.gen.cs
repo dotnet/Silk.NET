@@ -27,11 +27,10 @@ public unsafe partial struct PhysicalDeviceExternalFenceInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkExternalFenceHandleTypeFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public ExternalFenceHandleTypeFlags HandleType;
+    public VkExternalFenceHandleTypeFlagBits HandleType;
 }

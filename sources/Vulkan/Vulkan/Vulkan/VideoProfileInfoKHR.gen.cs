@@ -27,13 +27,12 @@ public unsafe partial struct VideoProfileInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkVideoCodecOperationFlagBitsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public VideoCodecOperationFlagsKHR VideoCodecOperation;
+    public VkVideoCodecOperationFlagBitsKHR VideoCodecOperation;
 
     [NativeTypeName("VkVideoChromaSubsamplingFlagsKHR")]
     [SupportedApiProfile(

@@ -44,7 +44,6 @@ public unsafe partial struct SemaphoreGetFdInfoKHR
     )]
     public SemaphoreHandle Semaphore;
 
-    [NativeTypeName("VkExternalSemaphoreHandleTypeFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_semaphore_fd"],
@@ -53,5 +52,5 @@ public unsafe partial struct SemaphoreGetFdInfoKHR
             "VK_KHR_external_semaphore_fd+VK_VERSION_1_1",
         ]
     )]
-    public ExternalSemaphoreHandleTypeFlags HandleType;
+    public VkExternalSemaphoreHandleTypeFlagBits HandleType;
 }

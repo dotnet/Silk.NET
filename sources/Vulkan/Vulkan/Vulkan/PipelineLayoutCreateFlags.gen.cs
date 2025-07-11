@@ -25,8 +25,11 @@ public enum PipelineLayoutCreateFlags : uint
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
+        ["VK_EXT_graphics_pipeline_library"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_library+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_library+VK_VERSION_1_1",
+        ]
     )]
     FlagBitsMaxEnum = 0x7FFFFFFF,
 }

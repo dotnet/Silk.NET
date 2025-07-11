@@ -33,7 +33,6 @@ public unsafe partial struct SampleLocationsInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkSampleCountFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -42,7 +41,7 @@ public unsafe partial struct SampleLocationsInfoEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public SampleCountFlags SampleLocationsPerPixel;
+    public VkSampleCountFlagBits SampleLocationsPerPixel;
 
     [SupportedApiProfile(
         "vulkan",

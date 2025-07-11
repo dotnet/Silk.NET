@@ -34,11 +34,10 @@ public unsafe partial struct VideoDecodeH264ProfileInfoKHR
     )]
     public StdVideoH264ProfileIdc StdProfileIdc;
 
-    [NativeTypeName("VkVideoDecodeH264PictureLayoutFlagBitsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public VideoDecodeH264PictureLayoutFlagsKHR PictureLayout;
+    public VkVideoDecodeH264PictureLayoutFlagBitsKHR PictureLayout;
 }

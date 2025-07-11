@@ -35,11 +35,10 @@ public unsafe partial struct MultisampledRenderToSingleSampledInfoEXT
     )]
     public uint MultisampledRenderToSingleSampledEnable;
 
-    [NativeTypeName("VkSampleCountFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multisampled_render_to_single_sampled"],
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
-    public SampleCountFlags RasterizationSamples;
+    public VkSampleCountFlagBits RasterizationSamples;
 }

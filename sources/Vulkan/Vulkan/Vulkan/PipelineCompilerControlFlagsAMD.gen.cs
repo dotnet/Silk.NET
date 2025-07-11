@@ -14,5 +14,5 @@ namespace Silk.NET.Vulkan;
 public enum PipelineCompilerControlFlagsAMD : uint
 {
     [SupportedApiProfile("vulkan", ["VK_AMD_pipeline_compiler_control"])]
-    FlagBitsMaxEnumAMD = 0x7FFFFFFF,
+    MaxEnumAMD = 0x7FFFFFFF,
 }

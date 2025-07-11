@@ -26,11 +26,10 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkSampleCountFlagBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    public SampleCountFlags MaxFragmentShadingRateInvocationCount;
+    public VkSampleCountFlagBits MaxFragmentShadingRateInvocationCount;
 }

@@ -1163,7 +1163,7 @@ public unsafe partial interface IVk
         static abstract void CmdBindShadersEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint stageCount,
-            [NativeTypeName("const VkShaderStageFlagBits *")] ShaderStageFlags* pStages,
+            [NativeTypeName("const VkShaderStageFlagBits *")] VkShaderStageFlagBits* pStages,
             [NativeTypeName("const VkShaderEXT *")] ShaderEXTHandle* pShaders
         );
 
@@ -1181,7 +1181,7 @@ public unsafe partial interface IVk
         static abstract void CmdBindShadersEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint stageCount,
-            [NativeTypeName("const VkShaderStageFlagBits *")] Ref<ShaderStageFlags> pStages,
+            [NativeTypeName("const VkShaderStageFlagBits *")] Ref<VkShaderStageFlagBits> pStages,
             [NativeTypeName("const VkShaderEXT *")] Ref<ShaderEXTHandle> pShaders
         );
 
@@ -6084,7 +6084,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizationSamplesEXT")]
         static abstract void CmdSetRasterizationSamplesEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags rasterizationSamples
+            VkSampleCountFlagBits rasterizationSamples
         );
 
         [SupportedApiProfile(
@@ -6305,7 +6305,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleMaskEXT")]
         static abstract void CmdSetSampleMaskEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+            VkSampleCountFlagBits samples,
             [NativeTypeName("const VkSampleMask *")] uint* pSampleMask
         );
 
@@ -6321,7 +6321,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleMaskEXT")]
         static abstract void CmdSetSampleMaskEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+            VkSampleCountFlagBits samples,
             [NativeTypeName("const VkSampleMask *")] Ref<uint> pSampleMask
         );
 
@@ -7348,7 +7348,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarkerAMD")]
         static abstract void CmdWriteBufferMarkerAMD(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
+            VkPipelineStageFlagBits pipelineStage,
             [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
             [NativeTypeName("VkDeviceSize")] ulong dstOffset,
             [NativeTypeName("uint32_t")] uint marker
@@ -7423,7 +7423,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp")]
         static abstract void CmdWriteTimestamp(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
+            VkPipelineStageFlagBits pipelineStage,
             [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
             [NativeTypeName("uint32_t")] uint query
         );
@@ -14076,8 +14076,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetMemoryFdPropertiesKHR")]
         static abstract Result GetMemoryFdPropertiesKHR(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
-                ExternalMemoryHandleTypeFlags handleType,
+            VkExternalMemoryHandleTypeFlagBits handleType,
             int fd,
             MemoryFdPropertiesKHR* pMemoryFdProperties
         );
@@ -14094,8 +14093,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetMemoryFdPropertiesKHR")]
         static abstract Result GetMemoryFdPropertiesKHR(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
-                ExternalMemoryHandleTypeFlags handleType,
+            VkExternalMemoryHandleTypeFlagBits handleType,
             int fd,
             Ref<MemoryFdPropertiesKHR> pMemoryFdProperties
         );
@@ -14111,8 +14109,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetMemoryHostPointerPropertiesEXT")]
         static abstract Result GetMemoryHostPointerPropertiesEXT(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
-                ExternalMemoryHandleTypeFlags handleType,
+            VkExternalMemoryHandleTypeFlagBits handleType,
             [NativeTypeName("const void *")] void* pHostPointer,
             MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties
         );
@@ -14129,8 +14126,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetMemoryHostPointerPropertiesEXT")]
         static abstract Result GetMemoryHostPointerPropertiesEXT(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
-                ExternalMemoryHandleTypeFlags handleType,
+            VkExternalMemoryHandleTypeFlagBits handleType,
             [NativeTypeName("const void *")] Ref pHostPointer,
             Ref<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties
         );
@@ -15107,7 +15103,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceMultisamplePropertiesEXT")]
         static abstract void GetPhysicalDeviceMultisamplePropertiesEXT(
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+            VkSampleCountFlagBits samples,
             MultisamplePropertiesEXT* pMultisampleProperties
         );
 
@@ -15123,7 +15119,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceMultisamplePropertiesEXT")]
         static abstract void GetPhysicalDeviceMultisamplePropertiesEXT(
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+            VkSampleCountFlagBits samples,
             Ref<MultisamplePropertiesEXT> pMultisampleProperties
         );
 
@@ -15400,7 +15396,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
             Format format,
             ImageType type,
-            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+            VkSampleCountFlagBits samples,
             [NativeTypeName("VkImageUsageFlags")] uint usage,
             ImageTiling tiling,
             [NativeTypeName("uint32_t *")] uint* pPropertyCount,
@@ -15424,7 +15420,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
             Format format,
             ImageType type,
-            [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+            VkSampleCountFlagBits samples,
             [NativeTypeName("VkImageUsageFlags")] uint usage,
             ImageTiling tiling,
             [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
@@ -16674,7 +16670,7 @@ public unsafe partial interface IVk
         static abstract Result GetShaderInfoAMD(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
-            [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
+            VkShaderStageFlagBits shaderStage,
             ShaderInfoTypeAMD infoType,
             [NativeTypeName("size_t *")] nuint* pInfoSize,
             void* pInfo
@@ -16686,7 +16682,7 @@ public unsafe partial interface IVk
         static abstract Result GetShaderInfoAMD(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
-            [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
+            VkShaderStageFlagBits shaderStage,
             ShaderInfoTypeAMD infoType,
             [NativeTypeName("size_t *")] Ref<nuint> pInfoSize,
             Ref pInfo
@@ -16769,7 +16765,7 @@ public unsafe partial interface IVk
         static abstract Result GetSwapchainCounterEXT(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
-            [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
+            VkSurfaceCounterFlagBitsEXT counter,
             [NativeTypeName("uint64_t *")] ulong* pCounterValue
         );
 
@@ -16783,7 +16779,7 @@ public unsafe partial interface IVk
         static abstract Result GetSwapchainCounterEXT(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
-            [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
+            VkSurfaceCounterFlagBitsEXT counter,
             [NativeTypeName("uint64_t *")] Ref<ulong> pCounterValue
         );
 
@@ -17920,8 +17916,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
         static abstract void SubmitDebugUtilsMessageEXT(
             [NativeTypeName("VkInstance")] InstanceHandle instance,
-            [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
-                DebugUtilsMessageSeverityFlagsEXT messageSeverity,
+            VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
             [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
             [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
                 DebugUtilsMessengerCallbackDataEXT* pCallbackData
@@ -17932,8 +17927,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
         static abstract void SubmitDebugUtilsMessageEXT(
             [NativeTypeName("VkInstance")] InstanceHandle instance,
-            [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
-                DebugUtilsMessageSeverityFlagsEXT messageSeverity,
+            VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
             [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
             [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
                 Ref<DebugUtilsMessengerCallbackDataEXT> pCallbackData
@@ -19534,7 +19528,7 @@ public unsafe partial interface IVk
     void CmdBindShadersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint stageCount,
-        [NativeTypeName("const VkShaderStageFlagBits *")] ShaderStageFlags* pStages,
+        [NativeTypeName("const VkShaderStageFlagBits *")] VkShaderStageFlagBits* pStages,
         [NativeTypeName("const VkShaderEXT *")] ShaderEXTHandle* pShaders
     );
 
@@ -19552,7 +19546,7 @@ public unsafe partial interface IVk
     void CmdBindShadersEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint stageCount,
-        [NativeTypeName("const VkShaderStageFlagBits *")] Ref<ShaderStageFlags> pStages,
+        [NativeTypeName("const VkShaderStageFlagBits *")] Ref<VkShaderStageFlagBits> pStages,
         [NativeTypeName("const VkShaderEXT *")] Ref<ShaderEXTHandle> pShaders
     );
 
@@ -24078,7 +24072,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizationSamplesEXT")]
     void CmdSetRasterizationSamplesEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags rasterizationSamples
+        VkSampleCountFlagBits rasterizationSamples
     );
 
     [SupportedApiProfile(
@@ -24299,7 +24293,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleMaskEXT")]
     void CmdSetSampleMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+        VkSampleCountFlagBits samples,
         [NativeTypeName("const VkSampleMask *")] uint* pSampleMask
     );
 
@@ -24315,7 +24309,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleMaskEXT")]
     void CmdSetSampleMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+        VkSampleCountFlagBits samples,
         [NativeTypeName("const VkSampleMask *")] Ref<uint> pSampleMask
     );
 
@@ -25261,7 +25255,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarkerAMD")]
     void CmdWriteBufferMarkerAMD(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
+        VkPipelineStageFlagBits pipelineStage,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
         [NativeTypeName("VkDeviceSize")] ulong dstOffset,
         [NativeTypeName("uint32_t")] uint marker
@@ -25330,7 +25324,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp")]
     void CmdWriteTimestamp(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkPipelineStageFlagBits")] PipelineStageFlags pipelineStage,
+        VkPipelineStageFlagBits pipelineStage,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint query
     );
@@ -31195,8 +31189,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetMemoryFdPropertiesKHR")]
     Result GetMemoryFdPropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
-            ExternalMemoryHandleTypeFlags handleType,
+        VkExternalMemoryHandleTypeFlagBits handleType,
         int fd,
         MemoryFdPropertiesKHR* pMemoryFdProperties
     );
@@ -31213,8 +31206,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetMemoryFdPropertiesKHR")]
     Result GetMemoryFdPropertiesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
-            ExternalMemoryHandleTypeFlags handleType,
+        VkExternalMemoryHandleTypeFlagBits handleType,
         int fd,
         Ref<MemoryFdPropertiesKHR> pMemoryFdProperties
     );
@@ -31230,8 +31222,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetMemoryHostPointerPropertiesEXT")]
     Result GetMemoryHostPointerPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
-            ExternalMemoryHandleTypeFlags handleType,
+        VkExternalMemoryHandleTypeFlagBits handleType,
         [NativeTypeName("const void *")] void* pHostPointer,
         MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties
     );
@@ -31248,8 +31239,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetMemoryHostPointerPropertiesEXT")]
     Result GetMemoryHostPointerPropertiesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("VkExternalMemoryHandleTypeFlagBits")]
-            ExternalMemoryHandleTypeFlags handleType,
+        VkExternalMemoryHandleTypeFlagBits handleType,
         [NativeTypeName("const void *")] Ref pHostPointer,
         Ref<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties
     );
@@ -32166,7 +32156,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceMultisamplePropertiesEXT")]
     void GetPhysicalDeviceMultisamplePropertiesEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+        VkSampleCountFlagBits samples,
         MultisamplePropertiesEXT* pMultisampleProperties
     );
 
@@ -32182,7 +32172,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceMultisamplePropertiesEXT")]
     void GetPhysicalDeviceMultisamplePropertiesEXT(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+        VkSampleCountFlagBits samples,
         Ref<MultisamplePropertiesEXT> pMultisampleProperties
     );
 
@@ -32429,7 +32419,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
-        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+        VkSampleCountFlagBits samples,
         [NativeTypeName("VkImageUsageFlags")] uint usage,
         ImageTiling tiling,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
@@ -32447,7 +32437,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Format format,
         ImageType type,
-        [NativeTypeName("VkSampleCountFlagBits")] SampleCountFlags samples,
+        VkSampleCountFlagBits samples,
         [NativeTypeName("VkImageUsageFlags")] uint usage,
         ImageTiling tiling,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
@@ -33650,7 +33640,7 @@ public unsafe partial interface IVk
     Result GetShaderInfoAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
-        [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
+        VkShaderStageFlagBits shaderStage,
         ShaderInfoTypeAMD infoType,
         [NativeTypeName("size_t *")] nuint* pInfoSize,
         void* pInfo
@@ -33662,7 +33652,7 @@ public unsafe partial interface IVk
     Result GetShaderInfoAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkPipeline")] PipelineHandle pipeline,
-        [NativeTypeName("VkShaderStageFlagBits")] ShaderStageFlags shaderStage,
+        VkShaderStageFlagBits shaderStage,
         ShaderInfoTypeAMD infoType,
         [NativeTypeName("size_t *")] Ref<nuint> pInfoSize,
         Ref pInfo
@@ -33744,7 +33734,7 @@ public unsafe partial interface IVk
     Result GetSwapchainCounterEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
-        [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
+        VkSurfaceCounterFlagBitsEXT counter,
         [NativeTypeName("uint64_t *")] ulong* pCounterValue
     );
 
@@ -33758,7 +33748,7 @@ public unsafe partial interface IVk
     Result GetSwapchainCounterEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
-        [NativeTypeName("VkSurfaceCounterFlagBitsEXT")] SurfaceCounterFlagsEXT counter,
+        VkSurfaceCounterFlagBitsEXT counter,
         [NativeTypeName("uint64_t *")] Ref<ulong> pCounterValue
     );
 
@@ -34778,8 +34768,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
     void SubmitDebugUtilsMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
-        [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
-            DebugUtilsMessageSeverityFlagsEXT messageSeverity,
+        VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
         [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
         [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
             DebugUtilsMessengerCallbackDataEXT* pCallbackData
@@ -34790,8 +34779,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
     void SubmitDebugUtilsMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
-        [NativeTypeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
-            DebugUtilsMessageSeverityFlagsEXT messageSeverity,
+        VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
         [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
         [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
             Ref<DebugUtilsMessengerCallbackDataEXT> pCallbackData

@@ -79,13 +79,12 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public uint SupportedTransforms;
 
-    [NativeTypeName("VkSurfaceTransformFlagBitsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public SurfaceTransformFlagsKHR CurrentTransform;
+    public VkSurfaceTransformFlagBitsKHR CurrentTransform;
 
     [NativeTypeName("VkCompositeAlphaFlagsKHR")]
     [SupportedApiProfile(

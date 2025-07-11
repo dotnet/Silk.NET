@@ -33,7 +33,6 @@ public unsafe partial struct CopyCommandTransformInfoQCOM
     )]
     public void* PNext;
 
-    [NativeTypeName("VkSurfaceTransformFlagBitsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_rotated_copy_commands"],
@@ -42,5 +41,5 @@ public unsafe partial struct CopyCommandTransformInfoQCOM
             "VK_QCOM_rotated_copy_commands+VK_VERSION_1_3",
         ]
     )]
-    public SurfaceTransformFlagsKHR Transform;
+    public VkSurfaceTransformFlagBitsKHR Transform;
 }

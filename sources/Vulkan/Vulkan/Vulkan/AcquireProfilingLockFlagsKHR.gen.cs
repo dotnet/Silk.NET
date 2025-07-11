@@ -21,5 +21,5 @@ public enum AcquireProfilingLockFlagsKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
+    MaxEnumKHR = 0x7FFFFFFF,
 }
