@@ -18,6 +18,9 @@ partial class Vk(INativeContext nativeContext) : IDisposable
     }
 
     private readonly unsafe void*[] _slots = new void*[678];
+    public static IVk Instance { get; } = new StaticWrapper<DllImport>();
+
+    public static IVk Create() => Instance;
 
     public static IVk Create(INativeContext ctx) => new Vk(ctx);
 
