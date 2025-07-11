@@ -42,7 +42,7 @@ public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
-    public VkPipelineDiscardRectangleStateCreateFlagsEXT Flags;
+    public uint Flags;
 
     [SupportedApiProfile(
         "vulkan",

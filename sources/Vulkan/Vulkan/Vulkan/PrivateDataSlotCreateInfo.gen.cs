@@ -21,5 +21,5 @@ public unsafe partial struct PrivateDataSlotCreateInfo
 
     [NativeTypeName("VkPrivateDataSlotCreateFlags")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public VkPrivateDataSlotCreateFlags Flags;
+    public uint Flags;
 }

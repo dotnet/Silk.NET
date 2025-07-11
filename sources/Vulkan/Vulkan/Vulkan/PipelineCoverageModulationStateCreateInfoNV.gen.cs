@@ -21,7 +21,7 @@ public unsafe partial struct PipelineCoverageModulationStateCreateInfoNV
 
     [NativeTypeName("VkPipelineCoverageModulationStateCreateFlagsNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    public VkPipelineCoverageModulationStateCreateFlagsNV Flags;
+    public uint Flags;
 
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
     public CoverageModulationModeNV CoverageModulationMode;

@@ -21,7 +21,7 @@ public unsafe partial struct ValidationCacheCreateInfoEXT
 
     [NativeTypeName("VkValidationCacheCreateFlagsEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
-    public VkValidationCacheCreateFlagsEXT Flags;
+    public uint Flags;
 
     [NativeTypeName("size_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]

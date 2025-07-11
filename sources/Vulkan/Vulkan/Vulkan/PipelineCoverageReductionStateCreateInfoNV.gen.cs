@@ -42,7 +42,7 @@ public unsafe partial struct PipelineCoverageReductionStateCreateInfoNV
             "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_1",
         ]
     )]
-    public VkPipelineCoverageReductionStateCreateFlagsNV Flags;
+    public uint Flags;
 
     [SupportedApiProfile(
         "vulkan",

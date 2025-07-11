@@ -326,7 +326,7 @@ public partial class MixKhronosData(
         }
 
         // Rewrite phase 2
-        var rewriter2 = new EnumRewriterPhase2(jobData);
+        var rewriter2 = new EnumRewriterPhase2(jobData, rewriter1);
         foreach (var docId in proj?.DocumentIds ?? [])
         {
             var doc = proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -1696,7 +1696,16 @@ public partial class MixKhronosData(
     /// </remarks>
     private class EnumRewriterPhase1(JobData job, ILogger logger) : CSharpSyntaxRewriter
     {
+        /// <summary>
+        /// Tracks enum groups that already exist in the project, prior to the generation of missing enums.
+        /// </summary>
         public HashSet<string> AlreadyPresentGroups { get; } = [];
+
+        /// <summary>
+        /// Tracks enums that exist in the project.
+        /// Note that this includes any enum, including enums not present in <see cref="JobData.Groups"/>.
+        /// </summary>
+        public HashSet<string> AllKnownEnums { get; } = [];
 
         public IEnumerable<(string FilePath, SyntaxNode Node)> GetMissingEnums()
         {
@@ -1743,6 +1752,8 @@ public partial class MixKhronosData(
                         );
                         continue;
                     }
+
+                    AllKnownEnums.Add(groupName);
 
                     results.Add((
                         $"Enums/{groupName}.gen.cs",
@@ -1822,6 +1833,8 @@ public partial class MixKhronosData(
             // Track which enums already exist
             var identifier = node.Identifier.ToString();
             identifier = identifier.Replace("FlagBits", "Flags");
+
+            AllKnownEnums.Add(identifier);
 
             if (job.Groups.TryGetValue(identifier, out var group)
                 && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any())
@@ -1908,7 +1921,7 @@ public partial class MixKhronosData(
     /// Marks bitmask enums with the [Flags] attribute.
     /// Replaces uint/ulong with the actual enum type for FlagBits/Flags types.
     /// </summary>
-    private class EnumRewriterPhase2(JobData job) : CSharpSyntaxRewriter(true)
+    private class EnumRewriterPhase2(JobData job, EnumRewriterPhase1 phase1) : CSharpSyntaxRewriter(true)
     {
         public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
 
@@ -1970,6 +1983,11 @@ public partial class MixKhronosData(
             var nativeNameParts = nativeName.Split(' ');
             var typeName = nativeName.StartsWith("const ") ? nativeNameParts[1] : nativeNameParts[0];
             var pointerDimension = nativeName.Count(c => c == '*');
+
+            if (!phase1.AllKnownEnums.Contains(typeName))
+            {
+                return false;
+            }
 
             managedName = typeName + new string('*', pointerDimension);
 

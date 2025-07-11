@@ -21,7 +21,7 @@ public unsafe partial struct DisplayModeCreateInfoKHR
 
     [NativeTypeName("VkDisplayModeCreateFlagsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public VkDisplayModeCreateFlagsKHR Flags;
+    public uint Flags;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public DisplayModeParametersKHR Parameters;

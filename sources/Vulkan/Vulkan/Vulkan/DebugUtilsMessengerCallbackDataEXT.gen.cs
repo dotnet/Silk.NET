@@ -21,7 +21,7 @@ public unsafe partial struct DebugUtilsMessengerCallbackDataEXT
 
     [NativeTypeName("VkDebugUtilsMessengerCallbackDataFlagsEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public VkDebugUtilsMessengerCallbackDataFlagsEXT Flags;
+    public uint Flags;
 
     [NativeTypeName("const char *")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]

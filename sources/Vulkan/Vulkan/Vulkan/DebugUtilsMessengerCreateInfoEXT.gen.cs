@@ -21,7 +21,7 @@ public unsafe partial struct DebugUtilsMessengerCreateInfoEXT
 
     [NativeTypeName("VkDebugUtilsMessengerCreateFlagsEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public VkDebugUtilsMessengerCreateFlagsEXT Flags;
+    public uint Flags;
 
     [NativeTypeName("VkDebugUtilsMessageSeverityFlagsEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]

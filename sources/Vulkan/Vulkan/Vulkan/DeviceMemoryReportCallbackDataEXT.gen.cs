@@ -41,7 +41,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public VkDeviceMemoryReportFlagsEXT Flags;
+    public uint Flags;
 
     [SupportedApiProfile(
         "vulkan",

@@ -42,7 +42,7 @@ public unsafe partial struct DeviceDeviceMemoryReportCreateInfoEXT
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public VkDeviceMemoryReportFlagsEXT Flags;
+    public uint Flags;
 
     [NativeTypeName("PFN_vkDeviceMemoryReportCallbackEXT")]
     [SupportedApiProfile(

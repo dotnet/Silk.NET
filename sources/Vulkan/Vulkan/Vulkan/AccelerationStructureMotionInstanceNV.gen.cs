@@ -25,7 +25,7 @@ public partial struct AccelerationStructureMotionInstanceNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public VkAccelerationStructureMotionInstanceFlagsNV Flags;
+    public uint Flags;
 
     [SupportedApiProfile(
         "vulkan",

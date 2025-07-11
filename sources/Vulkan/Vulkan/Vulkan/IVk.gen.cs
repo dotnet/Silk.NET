@@ -17593,7 +17593,7 @@ public unsafe partial interface IVk
         static abstract Result ResetDescriptorPool(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkDescriptorPool")] DescriptorPoolHandle descriptorPool,
-            [NativeTypeName("VkDescriptorPoolResetFlags")] VkDescriptorPoolResetFlags flags
+            [NativeTypeName("VkDescriptorPoolResetFlags")] uint flags
         );
 
         [SupportedApiProfile(
@@ -18007,7 +18007,7 @@ public unsafe partial interface IVk
         static abstract void TrimCommandPool(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
-            [NativeTypeName("VkCommandPoolTrimFlags")] VkCommandPoolTrimFlags flags
+            [NativeTypeName("VkCommandPoolTrimFlags")] uint flags
         );
 
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
@@ -18015,7 +18015,7 @@ public unsafe partial interface IVk
         static abstract void TrimCommandPoolKHR(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
-            [NativeTypeName("VkCommandPoolTrimFlags")] VkCommandPoolTrimFlags flags
+            [NativeTypeName("VkCommandPoolTrimFlags")] uint flags
         );
 
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
@@ -34478,7 +34478,7 @@ public unsafe partial interface IVk
     Result ResetDescriptorPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorPool")] DescriptorPoolHandle descriptorPool,
-        [NativeTypeName("VkDescriptorPoolResetFlags")] VkDescriptorPoolResetFlags flags
+        [NativeTypeName("VkDescriptorPoolResetFlags")] uint flags
     );
 
     [SupportedApiProfile(
@@ -34867,7 +34867,7 @@ public unsafe partial interface IVk
     void TrimCommandPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
-        [NativeTypeName("VkCommandPoolTrimFlags")] VkCommandPoolTrimFlags flags
+        [NativeTypeName("VkCommandPoolTrimFlags")] uint flags
     );
 
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
@@ -34875,7 +34875,7 @@ public unsafe partial interface IVk
     void TrimCommandPoolKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
-        [NativeTypeName("VkCommandPoolTrimFlags")] VkCommandPoolTrimFlags flags
+        [NativeTypeName("VkCommandPoolTrimFlags")] uint flags
     );
 
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]

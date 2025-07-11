@@ -20,7 +20,7 @@ public unsafe partial struct DirectDriverLoadingInfoLunarg
 
     [NativeTypeName("VkDirectDriverLoadingFlagsLUNARG")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
-    public VkDirectDriverLoadingFlagsLUNARG Flags;
+    public uint Flags;
 
     [NativeTypeName("PFN_vkGetInstanceProcAddrLUNARG")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
