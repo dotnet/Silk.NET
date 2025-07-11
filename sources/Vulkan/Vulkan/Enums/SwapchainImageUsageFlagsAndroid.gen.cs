@@ -10,4 +10,5 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [Transformed]
+[Flags]
 public enum SwapchainImageUsageFlagsAndroid : uint { }

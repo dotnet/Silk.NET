@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [Transformed]
+[Flags]
 public enum AccessFlags3KHR : ulong
 {
     Access3NoneKHR = unchecked((ulong)0UL),

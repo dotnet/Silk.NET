@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [Transformed]
+[Flags]
 public enum PipelineStageFlags2 : ulong
 {
     None = unchecked((ulong)0UL),

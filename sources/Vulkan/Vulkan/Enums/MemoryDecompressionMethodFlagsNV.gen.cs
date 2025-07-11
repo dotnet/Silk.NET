@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [Transformed]
+[Flags]
 public enum MemoryDecompressionMethodFlagsNV : ulong
 {
     Gdeflate1X0BitNV = unchecked((ulong)0x00000001UL),

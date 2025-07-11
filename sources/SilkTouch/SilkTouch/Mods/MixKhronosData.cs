@@ -1801,18 +1801,28 @@ public partial class MixKhronosData(
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            var iden = node.Identifier.ToString();
-            iden = iden.Replace("FlagBits", "Flags");
+            var identifier = node.Identifier.ToString();
+            identifier = identifier.Replace("FlagBits", "Flags");
 
             if (
-                job.Groups.ContainsKey(iden)
+                job.Groups.TryGetValue(identifier, out var group)
                 && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
             )
             {
-                AlreadyPresentGroups.Add(iden);
+                AlreadyPresentGroups.Add(identifier);
+
+                if (group.KnownBitmask)
+                {
+                    // Add [Flags] attribute
+                    var flagsAttribute = AttributeList(
+                        SingletonSeparatedList(
+                            Attribute(IdentifierName("Flags"))));
+
+                    node = node.WithAttributeLists(node.AttributeLists.Add(flagsAttribute));
+                }
             }
 
-            return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(iden)));
+            return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(identifier)));
         }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)

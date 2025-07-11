@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [Transformed]
+[Flags]
 public enum PipelineCreateFlags2 : ulong
 {
     DisableOptimizationBit = unchecked((ulong)0x00000001UL),

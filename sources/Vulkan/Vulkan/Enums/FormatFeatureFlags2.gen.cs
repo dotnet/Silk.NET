@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [Transformed]
+[Flags]
 public enum FormatFeatureFlags2 : ulong
 {
     SampledImageBit = unchecked((ulong)0x00000001UL),

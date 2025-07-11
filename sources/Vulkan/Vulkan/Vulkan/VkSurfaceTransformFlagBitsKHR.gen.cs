@@ -11,6 +11,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum SurfaceTransformFlagsKHR : uint
 {
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
