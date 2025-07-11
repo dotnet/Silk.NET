@@ -1959,6 +1959,12 @@ public partial class MixKhronosData(
                 groupName = groupName.Replace("FlagBits", "Flags");
             }
 
+            // Skip Vulkan API Constants since it is not an enum
+            if (block.Attribute("type")?.Value == "constants")
+            {
+                continue;
+            }
+
             // Special cases for OpenCL contributed by @Alexx999 for 2.X and ported to 3.0 from:
             // https://github.com/dotnet/Silk.NET/blob/d8919600/src/Core/Silk.NET.BuildTools/Converters/Readers/OpenCLReader.cs#L842-L845
             // Note that this has actually been split into two cases: top-level intentional exclusions and just a silent
