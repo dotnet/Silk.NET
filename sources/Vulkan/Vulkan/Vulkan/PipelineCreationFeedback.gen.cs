@@ -14,7 +14,7 @@ public partial struct PipelineCreationFeedback
 {
     [NativeTypeName("VkPipelineCreationFeedbackFlags")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint Flags;
+    public PipelineCreationFeedbackFlags Flags;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

@@ -21,7 +21,7 @@ public unsafe partial struct FrameBoundaryEXT
 
     [NativeTypeName("VkFrameBoundaryFlagsEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
-    public uint Flags;
+    public FrameBoundaryFlagsEXT Flags;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]

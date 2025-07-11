@@ -21,7 +21,7 @@ public unsafe partial struct CopyImageToMemoryInfo
 
     [NativeTypeName("VkHostImageCopyFlags")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint Flags;
+    public HostImageCopyFlags Flags;
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]

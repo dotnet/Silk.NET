@@ -116,7 +116,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint SupportedIndirectCommandsInputModes;
+    public IndirectCommandsInputModeFlagsEXT SupportedIndirectCommandsInputModes;
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
@@ -128,7 +128,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint SupportedIndirectCommandsShaderStages;
+    public ShaderStageFlags SupportedIndirectCommandsShaderStages;
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
@@ -140,7 +140,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint SupportedIndirectCommandsShaderStagesPipelineBinding;
+    public ShaderStageFlags SupportedIndirectCommandsShaderStagesPipelineBinding;
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
@@ -152,7 +152,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint SupportedIndirectCommandsShaderStagesShaderBinding;
+    public ShaderStageFlags SupportedIndirectCommandsShaderStagesShaderBinding;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(

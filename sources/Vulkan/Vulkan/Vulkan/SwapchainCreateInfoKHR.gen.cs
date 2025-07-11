@@ -21,7 +21,7 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeTypeName("VkSwapchainCreateFlagsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint Flags;
+    public SwapchainCreateFlagsKHR Flags;
 
     [NativeTypeName("VkSurfaceKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -46,7 +46,7 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeTypeName("VkImageUsageFlags")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint ImageUsage;
+    public ImageUsageFlags ImageUsage;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     public SharingMode ImageSharingMode;

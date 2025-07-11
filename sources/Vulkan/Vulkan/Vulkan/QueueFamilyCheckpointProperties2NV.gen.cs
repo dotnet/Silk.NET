@@ -50,5 +50,5 @@ public unsafe partial struct QueueFamilyCheckpointProperties2NV
             "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
         ]
     )]
-    public ulong CheckpointExecutionStageMask;
+    public PipelineStageFlags2 CheckpointExecutionStageMask;
 }

@@ -21,7 +21,7 @@ public unsafe partial struct RenderingInfo
 
     [NativeTypeName("VkRenderingFlags")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint Flags;
+    public RenderingFlags Flags;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public Rect2D RenderArea;

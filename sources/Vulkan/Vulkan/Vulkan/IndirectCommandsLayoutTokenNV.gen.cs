@@ -80,7 +80,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public uint PushconstantShaderStageFlags;
+    public ShaderStageFlags PushconstantShaderStageFlags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -104,7 +104,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public uint IndirectStateFlags;
+    public IndirectStateFlagsNV IndirectStateFlags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

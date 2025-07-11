@@ -24,7 +24,7 @@ public unsafe partial struct PushConstantsInfo
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint StageFlags;
+    public ShaderStageFlags StageFlags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]

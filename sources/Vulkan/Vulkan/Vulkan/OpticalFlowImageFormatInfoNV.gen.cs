@@ -45,5 +45,5 @@ public unsafe partial struct OpticalFlowImageFormatInfoNV
             "VK_VERSION_1_3",
         ]
     )]
-    public uint Usage;
+    public OpticalFlowUsageFlagsNV Usage;
 }

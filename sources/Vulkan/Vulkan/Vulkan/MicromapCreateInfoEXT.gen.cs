@@ -42,7 +42,7 @@ public unsafe partial struct MicromapCreateInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public uint CreateFlags;
+    public MicromapCreateFlagsEXT CreateFlags;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(

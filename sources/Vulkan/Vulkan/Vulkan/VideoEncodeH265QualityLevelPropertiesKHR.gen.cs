@@ -32,7 +32,7 @@ public unsafe partial struct VideoEncodeH265QualityLevelPropertiesKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint PreferredRateControlFlags;
+    public VideoEncodeH265RateControlFlagsKHR PreferredRateControlFlags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -44,7 +44,7 @@ public unsafe partial struct PhysicalDeviceMemoryDecompressionPropertiesNV
             "VK_VERSION_1_2",
         ]
     )]
-    public ulong DecompressionMethods;
+    public MemoryDecompressionMethodFlagsNV DecompressionMethods;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(

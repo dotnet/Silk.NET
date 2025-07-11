@@ -61,7 +61,7 @@ public unsafe partial struct FramebufferMixedSamplesCombinationNV
             "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_1",
         ]
     )]
-    public uint DepthStencilSamples;
+    public SampleCountFlags DepthStencilSamples;
 
     [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
@@ -72,5 +72,5 @@ public unsafe partial struct FramebufferMixedSamplesCombinationNV
             "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_1",
         ]
     )]
-    public uint ColorSamples;
+    public SampleCountFlags ColorSamples;
 }

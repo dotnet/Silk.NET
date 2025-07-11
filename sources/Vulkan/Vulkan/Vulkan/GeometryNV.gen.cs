@@ -62,5 +62,5 @@ public unsafe partial struct GeometryNV
             "VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public GeometryFlagsKHR Flags;
 }

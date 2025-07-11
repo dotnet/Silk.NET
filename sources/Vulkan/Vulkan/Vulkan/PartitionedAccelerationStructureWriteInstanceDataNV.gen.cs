@@ -57,7 +57,7 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint InstanceFlags;
+    public PartitionedAccelerationStructureInstanceFlagsNV InstanceFlags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -32,7 +32,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint Flags;
+    public VideoEncodeH264CapabilityFlagsKHR Flags;
 
     [SupportedApiProfile(
         "vulkan",
@@ -127,5 +127,5 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdSyntaxFlags;
+    public VideoEncodeH264StdFlagsKHR StdSyntaxFlags;
 }

@@ -33,7 +33,7 @@ public unsafe partial struct DeviceQueueInfo2
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public uint Flags;
+    public DeviceQueueCreateFlags Flags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

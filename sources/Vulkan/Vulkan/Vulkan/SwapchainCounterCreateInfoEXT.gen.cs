@@ -33,5 +33,5 @@ public unsafe partial struct SwapchainCounterCreateInfoEXT
         ["VK_EXT_display_control"],
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
-    public uint SurfaceCounters;
+    public SurfaceCounterFlagsEXT SurfaceCounters;
 }

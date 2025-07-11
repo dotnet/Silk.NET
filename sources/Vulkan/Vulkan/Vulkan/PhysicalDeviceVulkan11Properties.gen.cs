@@ -80,7 +80,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint SubgroupSupportedStages;
+    public ShaderStageFlags SubgroupSupportedStages;
 
     [NativeTypeName("VkSubgroupFeatureFlags")]
     [SupportedApiProfile(
@@ -88,7 +88,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint SubgroupSupportedOperations;
+    public SubgroupFeatureFlags SubgroupSupportedOperations;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(

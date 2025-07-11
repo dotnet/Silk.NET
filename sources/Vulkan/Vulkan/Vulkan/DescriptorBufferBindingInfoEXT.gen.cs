@@ -61,5 +61,5 @@ public unsafe partial struct DescriptorBufferBindingInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint Usage;
+    public BufferUsageFlags Usage;
 }

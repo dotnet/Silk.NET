@@ -42,5 +42,5 @@ public unsafe partial struct VideoDecodeUsageInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public uint VideoUsageHints;
+    public VideoDecodeUsageFlagsKHR VideoUsageHints;
 }

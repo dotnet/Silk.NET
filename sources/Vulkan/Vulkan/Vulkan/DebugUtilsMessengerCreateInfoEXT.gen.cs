@@ -21,15 +21,15 @@ public unsafe partial struct DebugUtilsMessengerCreateInfoEXT
 
     [NativeTypeName("VkDebugUtilsMessengerCreateFlagsEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public uint Flags;
+    public VkDebugUtilsMessengerCreateFlagsEXT Flags;
 
     [NativeTypeName("VkDebugUtilsMessageSeverityFlagsEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public uint MessageSeverity;
+    public DebugUtilsMessageSeverityFlagsEXT MessageSeverity;
 
     [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public uint MessageType;
+    public DebugUtilsMessageTypeFlagsEXT MessageType;
 
     [NativeTypeName("PFN_vkDebugUtilsMessengerCallbackEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]

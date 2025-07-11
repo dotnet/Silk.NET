@@ -44,5 +44,5 @@ public unsafe partial struct PhysicalDeviceCopyMemoryIndirectPropertiesNV
             "VK_VERSION_1_2",
         ]
     )]
-    public uint SupportedQueues;
+    public QueueFlags SupportedQueues;
 }

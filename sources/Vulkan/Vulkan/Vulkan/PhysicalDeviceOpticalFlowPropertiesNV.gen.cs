@@ -44,7 +44,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
             "VK_VERSION_1_3",
         ]
     )]
-    public uint SupportedOutputGridSizes;
+    public OpticalFlowGridSizeFlagsNV SupportedOutputGridSizes;
 
     [NativeTypeName("VkOpticalFlowGridSizeFlagsNV")]
     [SupportedApiProfile(
@@ -56,7 +56,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
             "VK_VERSION_1_3",
         ]
     )]
-    public uint SupportedHintGridSizes;
+    public OpticalFlowGridSizeFlagsNV SupportedHintGridSizes;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(

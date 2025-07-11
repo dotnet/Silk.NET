@@ -41,7 +41,7 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public uint SampleLocationSampleCounts;
+    public SampleCountFlags SampleLocationSampleCounts;
 
     [SupportedApiProfile(
         "vulkan",

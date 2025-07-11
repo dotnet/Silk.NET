@@ -41,7 +41,7 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public uint Stages;
+    public ShaderStageFlags Stages;
 
     [NativeTypeName("char[256]")]
     [SupportedApiProfile(

@@ -28,7 +28,7 @@ public unsafe partial struct DisplayPropertiesKHR
 
     [NativeTypeName("VkSurfaceTransformFlagsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint SupportedTransforms;
+    public SurfaceTransformFlagsKHR SupportedTransforms;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]

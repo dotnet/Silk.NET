@@ -32,7 +32,7 @@ public unsafe partial struct ExternalFenceProperties
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public uint ExportFromImportedHandleTypes;
+    public ExternalFenceHandleTypeFlags ExportFromImportedHandleTypes;
 
     [NativeTypeName("VkExternalFenceHandleTypeFlags")]
     [SupportedApiProfile(
@@ -40,7 +40,7 @@ public unsafe partial struct ExternalFenceProperties
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public uint CompatibleHandleTypes;
+    public ExternalFenceHandleTypeFlags CompatibleHandleTypes;
 
     [NativeTypeName("VkExternalFenceFeatureFlags")]
     [SupportedApiProfile(
@@ -48,5 +48,5 @@ public unsafe partial struct ExternalFenceProperties
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public uint ExternalFenceFeatures;
+    public ExternalFenceFeatureFlags ExternalFenceFeatures;
 }

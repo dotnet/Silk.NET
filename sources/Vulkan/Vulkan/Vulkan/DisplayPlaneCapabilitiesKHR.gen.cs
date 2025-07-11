@@ -14,7 +14,7 @@ public partial struct DisplayPlaneCapabilitiesKHR
 {
     [NativeTypeName("VkDisplayPlaneAlphaFlagsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint SupportedAlpha;
+    public DisplayPlaneAlphaFlagsKHR SupportedAlpha;
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Offset2D MinSrcPosition;

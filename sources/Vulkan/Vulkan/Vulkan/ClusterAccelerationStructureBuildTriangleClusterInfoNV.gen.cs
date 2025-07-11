@@ -26,7 +26,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint ClusterFlags;
+    public ClusterAccelerationStructureClusterFlagsNV ClusterFlags;
 
     [SupportedApiProfile(
         "vulkan",

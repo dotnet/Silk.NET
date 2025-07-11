@@ -33,7 +33,7 @@ public unsafe partial struct VideoEncodeAV1RateControlInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint Flags;
+    public VideoEncodeAV1RateControlFlagsKHR Flags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

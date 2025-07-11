@@ -32,7 +32,7 @@ public unsafe partial struct VideoEncodeAV1CapabilitiesKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint Flags;
+    public VideoEncodeAV1CapabilityFlagsKHR Flags;
 
     [SupportedApiProfile(
         "vulkan",
@@ -75,7 +75,7 @@ public unsafe partial struct VideoEncodeAV1CapabilitiesKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint SuperblockSizes;
+    public VideoEncodeAV1SuperblockSizeFlagsKHR SuperblockSizes;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -211,5 +211,5 @@ public unsafe partial struct VideoEncodeAV1CapabilitiesKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdSyntaxFlags;
+    public VideoEncodeAV1StdFlagsKHR StdSyntaxFlags;
 }

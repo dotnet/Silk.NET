@@ -41,7 +41,7 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public PerformanceCounterDescriptionFlagsKHR Flags;
 
     [NativeTypeName("char[256]")]
     [SupportedApiProfile(

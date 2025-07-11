@@ -45,7 +45,7 @@ public unsafe partial struct ShaderCreateInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint Flags;
+    public ShaderCreateFlagsEXT Flags;
 
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +68,7 @@ public unsafe partial struct ShaderCreateInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint NextStage;
+    public ShaderStageFlags NextStage;
 
     [SupportedApiProfile(
         "vulkan",

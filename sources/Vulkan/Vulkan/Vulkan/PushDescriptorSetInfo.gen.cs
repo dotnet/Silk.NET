@@ -21,7 +21,7 @@ public unsafe partial struct PushDescriptorSetInfo
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint StageFlags;
+    public ShaderStageFlags StageFlags;
 
     [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]

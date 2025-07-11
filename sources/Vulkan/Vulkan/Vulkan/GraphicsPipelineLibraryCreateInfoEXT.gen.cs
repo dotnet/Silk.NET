@@ -42,5 +42,5 @@ public unsafe partial struct GraphicsPipelineLibraryCreateInfoEXT
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public GraphicsPipelineLibraryFlagsEXT Flags;
 }

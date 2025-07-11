@@ -46,7 +46,7 @@ public unsafe partial struct VideoFormatPropertiesKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public uint ImageCreateFlags;
+    public ImageCreateFlags ImageCreateFlags;
 
     [SupportedApiProfile(
         "vulkan",
@@ -68,5 +68,5 @@ public unsafe partial struct VideoFormatPropertiesKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public uint ImageUsageFlags;
+    public ImageUsageFlags ImageUsageFlags;
 }

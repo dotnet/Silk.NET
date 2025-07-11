@@ -24,9 +24,9 @@ public unsafe partial struct PhysicalDeviceExtendedSparseAddressSpacePropertiesN
 
     [NativeTypeName("VkImageUsageFlags")]
     [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]
-    public uint ExtendedSparseImageUsageFlags;
+    public ImageUsageFlags ExtendedSparseImageUsageFlags;
 
     [NativeTypeName("VkBufferUsageFlags")]
     [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]
-    public uint ExtendedSparseBufferUsageFlags;
+    public BufferUsageFlags ExtendedSparseBufferUsageFlags;
 }

@@ -84,5 +84,5 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint AddressResolutionFlags;
+    public ClusterAccelerationStructureAddressResolutionFlagsNV AddressResolutionFlags;
 }

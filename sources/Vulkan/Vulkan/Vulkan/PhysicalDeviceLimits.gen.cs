@@ -654,7 +654,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint FramebufferColorSampleCounts;
+    public SampleCountFlags FramebufferColorSampleCounts;
 
     [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
@@ -662,7 +662,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint FramebufferDepthSampleCounts;
+    public SampleCountFlags FramebufferDepthSampleCounts;
 
     [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
@@ -670,7 +670,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint FramebufferStencilSampleCounts;
+    public SampleCountFlags FramebufferStencilSampleCounts;
 
     [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
@@ -678,7 +678,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint FramebufferNoAttachmentsSampleCounts;
+    public SampleCountFlags FramebufferNoAttachmentsSampleCounts;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -694,7 +694,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SampledImageColorSampleCounts;
+    public SampleCountFlags SampledImageColorSampleCounts;
 
     [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
@@ -702,7 +702,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SampledImageIntegerSampleCounts;
+    public SampleCountFlags SampledImageIntegerSampleCounts;
 
     [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
@@ -710,7 +710,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SampledImageDepthSampleCounts;
+    public SampleCountFlags SampledImageDepthSampleCounts;
 
     [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
@@ -718,7 +718,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SampledImageStencilSampleCounts;
+    public SampleCountFlags SampledImageStencilSampleCounts;
 
     [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
@@ -726,7 +726,7 @@ public partial struct PhysicalDeviceLimits
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint StorageImageSampleCounts;
+    public SampleCountFlags StorageImageSampleCounts;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

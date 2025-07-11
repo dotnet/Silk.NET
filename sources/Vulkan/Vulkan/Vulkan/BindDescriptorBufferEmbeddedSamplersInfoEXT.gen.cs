@@ -36,7 +36,7 @@ public unsafe partial struct BindDescriptorBufferEmbeddedSamplersInfoEXT
         ImpliesSets = ["VK_VERSION_1_1"],
         RequireAll = true
     )]
-    public uint StageFlags;
+    public ShaderStageFlags StageFlags;
 
     [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile(

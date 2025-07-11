@@ -42,7 +42,7 @@ public unsafe partial struct PipelineRasterizationStateStreamCreateInfoEXT
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public VkPipelineRasterizationStateStreamCreateFlagsEXT Flags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

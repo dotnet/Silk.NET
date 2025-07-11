@@ -21,19 +21,19 @@ public unsafe partial struct ImageMemoryBarrier2
 
     [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ulong SrcStageMask;
+    public PipelineStageFlags2 SrcStageMask;
 
     [NativeTypeName("VkAccessFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ulong SrcAccessMask;
+    public AccessFlags2 SrcAccessMask;
 
     [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ulong DstStageMask;
+    public PipelineStageFlags2 DstStageMask;
 
     [NativeTypeName("VkAccessFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ulong DstAccessMask;
+    public AccessFlags2 DstAccessMask;
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public ImageLayout OldLayout;

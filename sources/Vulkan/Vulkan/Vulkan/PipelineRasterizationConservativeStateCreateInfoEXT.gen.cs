@@ -42,7 +42,7 @@ public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public VkPipelineRasterizationConservativeStateCreateFlagsEXT Flags;
 
     [SupportedApiProfile(
         "vulkan",

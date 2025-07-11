@@ -1906,9 +1906,12 @@ public partial class MixKhronosData(
     /// <summary>
     /// Finishes renaming FlagBits enums to Flags.
     /// Marks bitmask enums with the [Flags] attribute.
+    /// Replaces uint/ulong with the actual enum type for FlagBits/Flags types.
     /// </summary>
     private class EnumRewriterPhase2(JobData job) : CSharpSyntaxRewriter(true)
     {
+        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
+
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             var identifier = node.Identifier.ToString();
@@ -1925,7 +1928,53 @@ public partial class MixKhronosData(
             return base.VisitEnumDeclaration(node);
         }
 
-        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
+        public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            if (!TryGetManagedEnumType(node.AttributeLists, out var managedName))
+            {
+                return base.VisitFieldDeclaration(node);
+            }
+
+            return base.VisitFieldDeclaration(node.WithDeclaration(node.Declaration.WithType(ParseTypeName(managedName))));
+        }
+
+        public override SyntaxNode? VisitParameter(ParameterSyntax node)
+        {
+            if (!TryGetManagedEnumType(node.AttributeLists, out var managedName))
+            {
+                return base.VisitParameter(node);
+            }
+
+            return base.VisitParameter(node.WithType(ParseTypeName(managedName)));
+        }
+
+        /// <summary>
+        /// Parses the attribute list and uses the [NativeTypeName] attribute to determine the correct enum type.
+        /// </summary>
+        /// <remarks>
+        /// This method is intentionally implemented in a naive manner to keep things simple.
+        /// </remarks>
+        private bool TryGetManagedEnumType(SyntaxList<AttributeListSyntax> attributes, [NotNullWhen(true)] out string? managedName)
+        {
+            managedName = null;
+
+            // ClangSharp does not know how to handle FlagBits and Flags types
+            // Because of this ClangSharp outputs Flags types as uints or ulongs
+            // We have to look at the NativeTypeName in order to determine the correct type
+            var nativeName = attributes.GetNativeTypeName()?.Replace("FlagBits", "Flags");
+            if (nativeName == null || !nativeName.Contains("Flags"))
+            {
+                return false;
+            }
+
+            var nativeNameParts = nativeName.Split(' ');
+            var typeName = nativeName.StartsWith("const ") ? nativeNameParts[1] : nativeNameParts[0];
+            var pointerDimension = nativeName.Count(c => c == '*');
+
+            managedName = typeName + new string('*', pointerDimension);
+
+            return true;
+        }
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]

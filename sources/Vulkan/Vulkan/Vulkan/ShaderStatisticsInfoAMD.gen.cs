@@ -14,7 +14,7 @@ public partial struct ShaderStatisticsInfoAMD
 {
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    public uint ShaderStageMask;
+    public ShaderStageFlags ShaderStageMask;
 
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public ShaderResourceUsageAMD ResourceUsage;

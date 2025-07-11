@@ -32,7 +32,7 @@ public unsafe partial struct PartitionedAccelerationStructureInstancesInputNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint Flags;
+    public BuildAccelerationStructureFlagsKHR Flags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

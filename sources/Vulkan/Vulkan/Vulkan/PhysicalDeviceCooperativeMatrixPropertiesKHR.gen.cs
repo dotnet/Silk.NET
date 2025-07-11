@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrixPropertiesKHR
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public uint CooperativeMatrixSupportedStages;
+    public ShaderStageFlags CooperativeMatrixSupportedStages;
 }

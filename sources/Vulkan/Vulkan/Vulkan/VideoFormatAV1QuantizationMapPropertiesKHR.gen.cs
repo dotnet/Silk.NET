@@ -44,5 +44,5 @@ public unsafe partial struct VideoFormatAV1QuantizationMapPropertiesKHR
         ],
         RequireAll = true
     )]
-    public uint CompatibleSuperblockSizes;
+    public VideoEncodeAV1SuperblockSizeFlagsKHR CompatibleSuperblockSizes;
 }

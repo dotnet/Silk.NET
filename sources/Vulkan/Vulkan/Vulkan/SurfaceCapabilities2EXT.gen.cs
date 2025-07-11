@@ -77,7 +77,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public uint SupportedTransforms;
+    public SurfaceTransformFlagsKHR SupportedTransforms;
 
     [SupportedApiProfile(
         "vulkan",
@@ -92,7 +92,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public uint SupportedCompositeAlpha;
+    public CompositeAlphaFlagsKHR SupportedCompositeAlpha;
 
     [NativeTypeName("VkImageUsageFlags")]
     [SupportedApiProfile(
@@ -100,7 +100,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public uint SupportedUsageFlags;
+    public ImageUsageFlags SupportedUsageFlags;
 
     [NativeTypeName("VkSurfaceCounterFlagsEXT")]
     [SupportedApiProfile(
@@ -108,5 +108,5 @@ public unsafe partial struct SurfaceCapabilities2EXT
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public uint SupportedSurfaceCounters;
+    public SurfaceCounterFlagsEXT SupportedSurfaceCounters;
 }

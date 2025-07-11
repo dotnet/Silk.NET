@@ -41,7 +41,7 @@ public unsafe partial struct DeviceAddressBindingCallbackDataEXT
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public DeviceAddressBindingFlagsEXT Flags;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(

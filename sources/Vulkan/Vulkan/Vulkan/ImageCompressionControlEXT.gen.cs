@@ -42,7 +42,7 @@ public unsafe partial struct ImageCompressionControlEXT
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public ImageCompressionFlagsEXT Flags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -64,5 +64,5 @@ public unsafe partial struct ImageCompressionControlEXT
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    public uint* PFixedRateFlags;
+    public ImageCompressionFixedRateFlagsEXT* PFixedRateFlags;
 }

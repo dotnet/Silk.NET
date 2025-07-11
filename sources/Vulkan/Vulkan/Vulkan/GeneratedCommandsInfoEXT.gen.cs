@@ -45,7 +45,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint ShaderStages;
+    public ShaderStageFlags ShaderStages;
 
     [NativeTypeName("VkIndirectExecutionSetEXT")]
     [SupportedApiProfile(

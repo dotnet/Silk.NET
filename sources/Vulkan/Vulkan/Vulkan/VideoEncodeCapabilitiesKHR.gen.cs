@@ -41,7 +41,7 @@ public unsafe partial struct VideoEncodeCapabilitiesKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public uint Flags;
+    public VideoEncodeCapabilityFlagsKHR Flags;
 
     [NativeTypeName("VkVideoEncodeRateControlModeFlagsKHR")]
     [SupportedApiProfile(
@@ -52,7 +52,7 @@ public unsafe partial struct VideoEncodeCapabilitiesKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public uint RateControlModes;
+    public VideoEncodeRateControlModeFlagsKHR RateControlModes;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -106,5 +106,5 @@ public unsafe partial struct VideoEncodeCapabilitiesKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public uint SupportedEncodeFeedbackFlags;
+    public VideoEncodeFeedbackFlagsKHR SupportedEncodeFeedbackFlags;
 }

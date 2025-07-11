@@ -41,5 +41,5 @@ public unsafe partial struct QueueFamilyCheckpointPropertiesNV
             "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
         ]
     )]
-    public uint CheckpointExecutionStageMask;
+    public PipelineStageFlags CheckpointExecutionStageMask;
 }

@@ -664,7 +664,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
             [NativeTypeName("uint32_t")] uint query,
-            [NativeTypeName("VkQueryControlFlags")] uint flags
+            [NativeTypeName("VkQueryControlFlags")] QueryControlFlags flags
         );
 
         [SupportedApiProfile(
@@ -680,7 +680,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
             [NativeTypeName("uint32_t")] uint query,
-            [NativeTypeName("VkQueryControlFlags")] uint flags,
+            [NativeTypeName("VkQueryControlFlags")] QueryControlFlags flags,
             [NativeTypeName("uint32_t")] uint index
         );
 
@@ -2670,7 +2670,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
             [NativeTypeName("VkDeviceSize")] ulong dstOffset,
             [NativeTypeName("VkDeviceSize")] ulong stride,
-            [NativeTypeName("VkQueryResultFlags")] uint flags
+            [NativeTypeName("VkQueryResultFlags")] QueryResultFlags flags
         );
 
         [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
@@ -3936,9 +3936,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdPipelineBarrier")]
         static abstract void CmdPipelineBarrier(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkPipelineStageFlags")] uint srcStageMask,
-            [NativeTypeName("VkPipelineStageFlags")] uint dstStageMask,
-            [NativeTypeName("VkDependencyFlags")] uint dependencyFlags,
+            [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags srcStageMask,
+            [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags dstStageMask,
+            [NativeTypeName("VkDependencyFlags")] DependencyFlags dependencyFlags,
             [NativeTypeName("uint32_t")] uint memoryBarrierCount,
             [NativeTypeName("const VkMemoryBarrier *")] MemoryBarrier* pMemoryBarriers,
             [NativeTypeName("uint32_t")] uint bufferMemoryBarrierCount,
@@ -3964,9 +3964,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdPipelineBarrier")]
         static abstract void CmdPipelineBarrier(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkPipelineStageFlags")] uint srcStageMask,
-            [NativeTypeName("VkPipelineStageFlags")] uint dstStageMask,
-            [NativeTypeName("VkDependencyFlags")] uint dependencyFlags,
+            [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags srcStageMask,
+            [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags dstStageMask,
+            [NativeTypeName("VkDependencyFlags")] DependencyFlags dependencyFlags,
             [NativeTypeName("uint32_t")] uint memoryBarrierCount,
             [NativeTypeName("const VkMemoryBarrier *")] Ref<MemoryBarrier> pMemoryBarriers,
             [NativeTypeName("uint32_t")] uint bufferMemoryBarrierCount,
@@ -4096,7 +4096,7 @@ public unsafe partial interface IVk
         static abstract void CmdPushConstants(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
-            [NativeTypeName("VkShaderStageFlags")] uint stageFlags,
+            [NativeTypeName("VkShaderStageFlags")] ShaderStageFlags stageFlags,
             [NativeTypeName("uint32_t")] uint offset,
             [NativeTypeName("uint32_t")] uint size,
             [NativeTypeName("const void *")] void* pValues
@@ -4118,7 +4118,7 @@ public unsafe partial interface IVk
         static abstract void CmdPushConstants(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
-            [NativeTypeName("VkShaderStageFlags")] uint stageFlags,
+            [NativeTypeName("VkShaderStageFlags")] ShaderStageFlags stageFlags,
             [NativeTypeName("uint32_t")] uint offset,
             [NativeTypeName("uint32_t")] uint size,
             [NativeTypeName("const void *")] Ref pValues
@@ -4416,7 +4416,7 @@ public unsafe partial interface IVk
         static abstract void CmdResetEvent(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("VkEvent")] EventHandle @event,
-            [NativeTypeName("VkPipelineStageFlags")] uint stageMask
+            [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags stageMask
         );
 
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -4424,7 +4424,7 @@ public unsafe partial interface IVk
         static abstract void CmdResetEvent2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("VkEvent")] EventHandle @event,
-            [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
+            [NativeTypeName("VkPipelineStageFlags2")] PipelineStageFlags2 stageMask
         );
 
         [SupportedApiProfile(
@@ -4439,7 +4439,7 @@ public unsafe partial interface IVk
         static abstract void CmdResetEvent2KHR(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("VkEvent")] EventHandle @event,
-            [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
+            [NativeTypeName("VkPipelineStageFlags2")] PipelineStageFlags2 stageMask
         );
 
         [SupportedApiProfile(
@@ -4611,7 +4611,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetAttachmentFeedbackLoopEnableEXT")]
         static abstract void CmdSetAttachmentFeedbackLoopEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkImageAspectFlags")] uint aspectMask
+            [NativeTypeName("VkImageAspectFlags")] ImageAspectFlags aspectMask
         );
 
         [SupportedApiProfile(
@@ -4945,7 +4945,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint firstAttachment,
             [NativeTypeName("uint32_t")] uint attachmentCount,
-            [NativeTypeName("const VkColorComponentFlags *")] uint* pColorWriteMasks
+            [NativeTypeName("const VkColorComponentFlags *")] ColorComponentFlags* pColorWriteMasks
         );
 
         [SupportedApiProfile(
@@ -4962,7 +4962,8 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint firstAttachment,
             [NativeTypeName("uint32_t")] uint attachmentCount,
-            [NativeTypeName("const VkColorComponentFlags *")] Ref<uint> pColorWriteMasks
+            [NativeTypeName("const VkColorComponentFlags *")]
+                Ref<ColorComponentFlags> pColorWriteMasks
         );
 
         [SupportedApiProfile(
@@ -4978,7 +4979,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetColorWriteMaskEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint firstAttachment,
-            [NativeTypeName("const VkColorComponentFlags *")] uint pColorWriteMasks
+            [NativeTypeName("const VkColorComponentFlags *")] ColorComponentFlags pColorWriteMasks
         );
 
         [SupportedApiProfile(
@@ -5124,7 +5125,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetCullMode")]
         static abstract void CmdSetCullMode(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkCullModeFlags")] uint cullMode
+            [NativeTypeName("VkCullModeFlags")] CullModeFlags cullMode
         );
 
         [SupportedApiProfile(
@@ -5138,7 +5139,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetCullModeEXT")]
         static abstract void CmdSetCullModeEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkCullModeFlags")] uint cullMode
+            [NativeTypeName("VkCullModeFlags")] CullModeFlags cullMode
         );
 
         [SupportedApiProfile(
@@ -5576,7 +5577,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetEvent(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("VkEvent")] EventHandle @event,
-            [NativeTypeName("VkPipelineStageFlags")] uint stageMask
+            [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags stageMask
         );
 
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -6483,7 +6484,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilCompareMask")]
         static abstract void CmdSetStencilCompareMask(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
+            [NativeTypeName("VkStencilFaceFlags")] StencilFaceFlags faceMask,
             [NativeTypeName("uint32_t")] uint compareMask
         );
 
@@ -6491,7 +6492,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilOp")]
         static abstract void CmdSetStencilOp(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
+            [NativeTypeName("VkStencilFaceFlags")] StencilFaceFlags faceMask,
             StencilOp failOp,
             StencilOp passOp,
             StencilOp depthFailOp,
@@ -6509,7 +6510,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilOpEXT")]
         static abstract void CmdSetStencilOpEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
+            [NativeTypeName("VkStencilFaceFlags")] StencilFaceFlags faceMask,
             StencilOp failOp,
             StencilOp passOp,
             StencilOp depthFailOp,
@@ -6530,7 +6531,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilReference")]
         static abstract void CmdSetStencilReference(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
+            [NativeTypeName("VkStencilFaceFlags")] StencilFaceFlags faceMask,
             [NativeTypeName("uint32_t")] uint reference
         );
 
@@ -6569,7 +6570,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilWriteMask")]
         static abstract void CmdSetStencilWriteMask(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
+            [NativeTypeName("VkStencilFaceFlags")] StencilFaceFlags faceMask,
             [NativeTypeName("uint32_t")] uint writeMask
         );
 
@@ -7122,8 +7123,8 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint eventCount,
             [NativeTypeName("const VkEvent *")] EventHandle* pEvents,
-            [NativeTypeName("VkPipelineStageFlags")] uint srcStageMask,
-            [NativeTypeName("VkPipelineStageFlags")] uint dstStageMask,
+            [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags srcStageMask,
+            [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags dstStageMask,
             [NativeTypeName("uint32_t")] uint memoryBarrierCount,
             [NativeTypeName("const VkMemoryBarrier *")] MemoryBarrier* pMemoryBarriers,
             [NativeTypeName("uint32_t")] uint bufferMemoryBarrierCount,
@@ -7151,8 +7152,8 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint eventCount,
             [NativeTypeName("const VkEvent *")] Ref<EventHandle> pEvents,
-            [NativeTypeName("VkPipelineStageFlags")] uint srcStageMask,
-            [NativeTypeName("VkPipelineStageFlags")] uint dstStageMask,
+            [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags srcStageMask,
+            [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags dstStageMask,
             [NativeTypeName("uint32_t")] uint memoryBarrierCount,
             [NativeTypeName("const VkMemoryBarrier *")] Ref<MemoryBarrier> pMemoryBarriers,
             [NativeTypeName("uint32_t")] uint bufferMemoryBarrierCount,
@@ -7338,7 +7339,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarker2AMD")]
         static abstract void CmdWriteBufferMarker2AMD(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
+            [NativeTypeName("VkPipelineStageFlags2")] PipelineStageFlags2 stage,
             [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
             [NativeTypeName("VkDeviceSize")] ulong dstOffset,
             [NativeTypeName("uint32_t")] uint marker
@@ -7432,7 +7433,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2")]
         static abstract void CmdWriteTimestamp2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
+            [NativeTypeName("VkPipelineStageFlags2")] PipelineStageFlags2 stage,
             [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
             [NativeTypeName("uint32_t")] uint query
         );
@@ -7448,7 +7449,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2KHR")]
         static abstract void CmdWriteTimestamp2KHR(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
+            [NativeTypeName("VkPipelineStageFlags2")] PipelineStageFlags2 stage,
             [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
             [NativeTypeName("uint32_t")] uint query
         );
@@ -9744,7 +9745,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
         static abstract void DebugReportMessageEXT(
             [NativeTypeName("VkInstance")] InstanceHandle instance,
-            [NativeTypeName("VkDebugReportFlagsEXT")] uint flags,
+            [NativeTypeName("VkDebugReportFlagsEXT")] DebugReportFlagsEXT flags,
             DebugReportObjectTypeEXT objectType,
             [NativeTypeName("uint64_t")] ulong @object,
             [NativeTypeName("size_t")] nuint location,
@@ -9758,7 +9759,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
         static abstract void DebugReportMessageEXT(
             [NativeTypeName("VkInstance")] InstanceHandle instance,
-            [NativeTypeName("VkDebugReportFlagsEXT")] uint flags,
+            [NativeTypeName("VkDebugReportFlagsEXT")] DebugReportFlagsEXT flags,
             DebugReportObjectTypeEXT objectType,
             [NativeTypeName("uint64_t")] ulong @object,
             [NativeTypeName("size_t")] nuint location,
@@ -12644,7 +12645,8 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint heapIndex,
             [NativeTypeName("uint32_t")] uint localDeviceIndex,
             [NativeTypeName("uint32_t")] uint remoteDeviceIndex,
-            [NativeTypeName("VkPeerMemoryFeatureFlags *")] uint* pPeerMemoryFeatures
+            [NativeTypeName("VkPeerMemoryFeatureFlags *")]
+                PeerMemoryFeatureFlags* pPeerMemoryFeatures
         );
 
         [SupportedApiProfile(
@@ -12659,7 +12661,8 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint heapIndex,
             [NativeTypeName("uint32_t")] uint localDeviceIndex,
             [NativeTypeName("uint32_t")] uint remoteDeviceIndex,
-            [NativeTypeName("VkPeerMemoryFeatureFlags *")] Ref<uint> pPeerMemoryFeatures
+            [NativeTypeName("VkPeerMemoryFeatureFlags *")]
+                Ref<PeerMemoryFeatureFlags> pPeerMemoryFeatures
         );
 
         [SupportedApiProfile(
@@ -12673,7 +12676,8 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint heapIndex,
             [NativeTypeName("uint32_t")] uint localDeviceIndex,
             [NativeTypeName("uint32_t")] uint remoteDeviceIndex,
-            [NativeTypeName("VkPeerMemoryFeatureFlags *")] uint* pPeerMemoryFeatures
+            [NativeTypeName("VkPeerMemoryFeatureFlags *")]
+                PeerMemoryFeatureFlags* pPeerMemoryFeatures
         );
 
         [SupportedApiProfile(
@@ -12688,7 +12692,8 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint heapIndex,
             [NativeTypeName("uint32_t")] uint localDeviceIndex,
             [NativeTypeName("uint32_t")] uint remoteDeviceIndex,
-            [NativeTypeName("VkPeerMemoryFeatureFlags *")] Ref<uint> pPeerMemoryFeatures
+            [NativeTypeName("VkPeerMemoryFeatureFlags *")]
+                Ref<PeerMemoryFeatureFlags> pPeerMemoryFeatures
         );
 
         [SupportedApiProfile(
@@ -12726,7 +12731,8 @@ public unsafe partial interface IVk
         static abstract Result GetDeviceGroupSurfacePresentModesKHR(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
-            [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR *")] uint* pModes
+            [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR *")]
+                DeviceGroupPresentModeFlagsKHR* pModes
         );
 
         [SupportedApiProfile(
@@ -12740,7 +12746,8 @@ public unsafe partial interface IVk
         static abstract Result GetDeviceGroupSurfacePresentModesKHR(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
-            [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR *")] Ref<uint> pModes
+            [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR *")]
+                Ref<DeviceGroupPresentModeFlagsKHR> pModes
         );
 
         [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -14660,9 +14667,10 @@ public unsafe partial interface IVk
             Format format,
             ImageType type,
             ImageTiling tiling,
-            [NativeTypeName("VkImageUsageFlags")] uint usage,
-            [NativeTypeName("VkImageCreateFlags")] uint flags,
-            [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")] uint externalHandleType,
+            [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
+            [NativeTypeName("VkImageCreateFlags")] ImageCreateFlags flags,
+            [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")]
+                ExternalMemoryHandleTypeFlagsNV externalHandleType,
             ExternalImageFormatPropertiesNV* pExternalImageFormatProperties
         );
 
@@ -14677,9 +14685,10 @@ public unsafe partial interface IVk
             Format format,
             ImageType type,
             ImageTiling tiling,
-            [NativeTypeName("VkImageUsageFlags")] uint usage,
-            [NativeTypeName("VkImageCreateFlags")] uint flags,
-            [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")] uint externalHandleType,
+            [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
+            [NativeTypeName("VkImageCreateFlags")] ImageCreateFlags flags,
+            [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")]
+                ExternalMemoryHandleTypeFlagsNV externalHandleType,
             Ref<ExternalImageFormatPropertiesNV> pExternalImageFormatProperties
         );
 
@@ -14945,8 +14954,8 @@ public unsafe partial interface IVk
             Format format,
             ImageType type,
             ImageTiling tiling,
-            [NativeTypeName("VkImageUsageFlags")] uint usage,
-            [NativeTypeName("VkImageCreateFlags")] uint flags,
+            [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
+            [NativeTypeName("VkImageCreateFlags")] ImageCreateFlags flags,
             ImageFormatProperties* pImageFormatProperties
         );
 
@@ -14968,8 +14977,8 @@ public unsafe partial interface IVk
             Format format,
             ImageType type,
             ImageTiling tiling,
-            [NativeTypeName("VkImageUsageFlags")] uint usage,
-            [NativeTypeName("VkImageCreateFlags")] uint flags,
+            [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
+            [NativeTypeName("VkImageCreateFlags")] ImageCreateFlags flags,
             Ref<ImageFormatProperties> pImageFormatProperties
         );
 
@@ -15397,7 +15406,7 @@ public unsafe partial interface IVk
             Format format,
             ImageType type,
             SampleCountFlags samples,
-            [NativeTypeName("VkImageUsageFlags")] uint usage,
+            [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
             ImageTiling tiling,
             [NativeTypeName("uint32_t *")] uint* pPropertyCount,
             SparseImageFormatProperties* pProperties
@@ -15421,7 +15430,7 @@ public unsafe partial interface IVk
             Format format,
             ImageType type,
             SampleCountFlags samples,
-            [NativeTypeName("VkImageUsageFlags")] uint usage,
+            [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
             ImageTiling tiling,
             [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
             Ref<SparseImageFormatProperties> pProperties
@@ -16176,7 +16185,7 @@ public unsafe partial interface IVk
             [NativeTypeName("size_t")] nuint dataSize,
             void* pData,
             [NativeTypeName("VkDeviceSize")] ulong stride,
-            [NativeTypeName("VkQueryResultFlags")] uint flags
+            [NativeTypeName("VkQueryResultFlags")] QueryResultFlags flags
         );
 
         [SupportedApiProfile(
@@ -16200,7 +16209,7 @@ public unsafe partial interface IVk
             [NativeTypeName("size_t")] nuint dataSize,
             Ref pData,
             [NativeTypeName("VkDeviceSize")] ulong stride,
-            [NativeTypeName("VkQueryResultFlags")] uint flags
+            [NativeTypeName("VkQueryResultFlags")] QueryResultFlags flags
         );
 
         [SupportedApiProfile(
@@ -17026,7 +17035,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
             [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkDeviceSize")] ulong size,
-            [NativeTypeName("VkMemoryMapFlags")] uint flags,
+            [NativeTypeName("VkMemoryMapFlags")] MemoryMapFlags flags,
             void** ppData
         );
 
@@ -17048,7 +17057,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
             [NativeTypeName("VkDeviceSize")] ulong offset,
             [NativeTypeName("VkDeviceSize")] ulong size,
-            [NativeTypeName("VkMemoryMapFlags")] uint flags,
+            [NativeTypeName("VkMemoryMapFlags")] MemoryMapFlags flags,
             Ref2D ppData
         );
 
@@ -17548,7 +17557,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkResetCommandBuffer")]
         static abstract Result ResetCommandBuffer(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("VkCommandBufferResetFlags")] uint flags
+            [NativeTypeName("VkCommandBufferResetFlags")] CommandBufferResetFlags flags
         );
 
         [SupportedApiProfile(
@@ -17566,7 +17575,7 @@ public unsafe partial interface IVk
         static abstract Result ResetCommandPool(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
-            [NativeTypeName("VkCommandPoolResetFlags")] uint flags
+            [NativeTypeName("VkCommandPoolResetFlags")] CommandPoolResetFlags flags
         );
 
         [SupportedApiProfile(
@@ -17584,7 +17593,7 @@ public unsafe partial interface IVk
         static abstract Result ResetDescriptorPool(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkDescriptorPool")] DescriptorPoolHandle descriptorPool,
-            [NativeTypeName("VkDescriptorPoolResetFlags")] uint flags
+            [NativeTypeName("VkDescriptorPoolResetFlags")] VkDescriptorPoolResetFlags flags
         );
 
         [SupportedApiProfile(
@@ -17917,7 +17926,8 @@ public unsafe partial interface IVk
         static abstract void SubmitDebugUtilsMessageEXT(
             [NativeTypeName("VkInstance")] InstanceHandle instance,
             DebugUtilsMessageSeverityFlagsEXT messageSeverity,
-            [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
+            [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")]
+                DebugUtilsMessageTypeFlagsEXT messageTypes,
             [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
                 DebugUtilsMessengerCallbackDataEXT* pCallbackData
         );
@@ -17928,7 +17938,8 @@ public unsafe partial interface IVk
         static abstract void SubmitDebugUtilsMessageEXT(
             [NativeTypeName("VkInstance")] InstanceHandle instance,
             DebugUtilsMessageSeverityFlagsEXT messageSeverity,
-            [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
+            [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")]
+                DebugUtilsMessageTypeFlagsEXT messageTypes,
             [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
                 Ref<DebugUtilsMessengerCallbackDataEXT> pCallbackData
         );
@@ -17996,7 +18007,7 @@ public unsafe partial interface IVk
         static abstract void TrimCommandPool(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
-            [NativeTypeName("VkCommandPoolTrimFlags")] uint flags
+            [NativeTypeName("VkCommandPoolTrimFlags")] VkCommandPoolTrimFlags flags
         );
 
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
@@ -18004,7 +18015,7 @@ public unsafe partial interface IVk
         static abstract void TrimCommandPoolKHR(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
-            [NativeTypeName("VkCommandPoolTrimFlags")] uint flags
+            [NativeTypeName("VkCommandPoolTrimFlags")] VkCommandPoolTrimFlags flags
         );
 
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
@@ -19069,7 +19080,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint query,
-        [NativeTypeName("VkQueryControlFlags")] uint flags
+        [NativeTypeName("VkQueryControlFlags")] QueryControlFlags flags
     );
 
     [SupportedApiProfile(
@@ -19085,7 +19096,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint query,
-        [NativeTypeName("VkQueryControlFlags")] uint flags,
+        [NativeTypeName("VkQueryControlFlags")] QueryControlFlags flags,
         [NativeTypeName("uint32_t")] uint index
     );
 
@@ -20876,7 +20887,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
         [NativeTypeName("VkDeviceSize")] ulong dstOffset,
         [NativeTypeName("VkDeviceSize")] ulong stride,
-        [NativeTypeName("VkQueryResultFlags")] uint flags
+        [NativeTypeName("VkQueryResultFlags")] QueryResultFlags flags
     );
 
     [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
@@ -22015,9 +22026,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdPipelineBarrier")]
     void CmdPipelineBarrier(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkPipelineStageFlags")] uint srcStageMask,
-        [NativeTypeName("VkPipelineStageFlags")] uint dstStageMask,
-        [NativeTypeName("VkDependencyFlags")] uint dependencyFlags,
+        [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags srcStageMask,
+        [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags dstStageMask,
+        [NativeTypeName("VkDependencyFlags")] DependencyFlags dependencyFlags,
         [NativeTypeName("uint32_t")] uint memoryBarrierCount,
         [NativeTypeName("const VkMemoryBarrier *")] MemoryBarrier* pMemoryBarriers,
         [NativeTypeName("uint32_t")] uint bufferMemoryBarrierCount,
@@ -22036,9 +22047,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdPipelineBarrier")]
     void CmdPipelineBarrier(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkPipelineStageFlags")] uint srcStageMask,
-        [NativeTypeName("VkPipelineStageFlags")] uint dstStageMask,
-        [NativeTypeName("VkDependencyFlags")] uint dependencyFlags,
+        [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags srcStageMask,
+        [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags dstStageMask,
+        [NativeTypeName("VkDependencyFlags")] DependencyFlags dependencyFlags,
         [NativeTypeName("uint32_t")] uint memoryBarrierCount,
         [NativeTypeName("const VkMemoryBarrier *")] Ref<MemoryBarrier> pMemoryBarriers,
         [NativeTypeName("uint32_t")] uint bufferMemoryBarrierCount,
@@ -22162,7 +22173,7 @@ public unsafe partial interface IVk
     void CmdPushConstants(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
-        [NativeTypeName("VkShaderStageFlags")] uint stageFlags,
+        [NativeTypeName("VkShaderStageFlags")] ShaderStageFlags stageFlags,
         [NativeTypeName("uint32_t")] uint offset,
         [NativeTypeName("uint32_t")] uint size,
         [NativeTypeName("const void *")] void* pValues
@@ -22178,7 +22189,7 @@ public unsafe partial interface IVk
     void CmdPushConstants(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkPipelineLayout")] PipelineLayoutHandle layout,
-        [NativeTypeName("VkShaderStageFlags")] uint stageFlags,
+        [NativeTypeName("VkShaderStageFlags")] ShaderStageFlags stageFlags,
         [NativeTypeName("uint32_t")] uint offset,
         [NativeTypeName("uint32_t")] uint size,
         [NativeTypeName("const void *")] Ref pValues
@@ -22466,7 +22477,7 @@ public unsafe partial interface IVk
     void CmdResetEvent(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
-        [NativeTypeName("VkPipelineStageFlags")] uint stageMask
+        [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags stageMask
     );
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -22474,7 +22485,7 @@ public unsafe partial interface IVk
     void CmdResetEvent2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
-        [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
+        [NativeTypeName("VkPipelineStageFlags2")] PipelineStageFlags2 stageMask
     );
 
     [SupportedApiProfile(
@@ -22489,7 +22500,7 @@ public unsafe partial interface IVk
     void CmdResetEvent2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
-        [NativeTypeName("VkPipelineStageFlags2")] ulong stageMask
+        [NativeTypeName("VkPipelineStageFlags2")] PipelineStageFlags2 stageMask
     );
 
     [SupportedApiProfile(
@@ -22637,7 +22648,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetAttachmentFeedbackLoopEnableEXT")]
     void CmdSetAttachmentFeedbackLoopEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkImageAspectFlags")] uint aspectMask
+        [NativeTypeName("VkImageAspectFlags")] ImageAspectFlags aspectMask
     );
 
     [SupportedApiProfile(
@@ -22959,7 +22970,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
-        [NativeTypeName("const VkColorComponentFlags *")] uint* pColorWriteMasks
+        [NativeTypeName("const VkColorComponentFlags *")] ColorComponentFlags* pColorWriteMasks
     );
 
     [SupportedApiProfile(
@@ -22976,7 +22987,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
-        [NativeTypeName("const VkColorComponentFlags *")] Ref<uint> pColorWriteMasks
+        [NativeTypeName("const VkColorComponentFlags *")] Ref<ColorComponentFlags> pColorWriteMasks
     );
 
     [SupportedApiProfile(
@@ -22992,7 +23003,7 @@ public unsafe partial interface IVk
     void CmdSetColorWriteMaskEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
-        [NativeTypeName("const VkColorComponentFlags *")] uint pColorWriteMasks
+        [NativeTypeName("const VkColorComponentFlags *")] ColorComponentFlags pColorWriteMasks
     );
 
     [SupportedApiProfile(
@@ -23138,7 +23149,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetCullMode")]
     void CmdSetCullMode(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkCullModeFlags")] uint cullMode
+        [NativeTypeName("VkCullModeFlags")] CullModeFlags cullMode
     );
 
     [SupportedApiProfile(
@@ -23152,7 +23163,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetCullModeEXT")]
     void CmdSetCullModeEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkCullModeFlags")] uint cullMode
+        [NativeTypeName("VkCullModeFlags")] CullModeFlags cullMode
     );
 
     [SupportedApiProfile(
@@ -23571,7 +23582,7 @@ public unsafe partial interface IVk
     void CmdSetEvent(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("VkEvent")] EventHandle @event,
-        [NativeTypeName("VkPipelineStageFlags")] uint stageMask
+        [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags stageMask
     );
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -24447,7 +24458,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilCompareMask")]
     void CmdSetStencilCompareMask(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
+        [NativeTypeName("VkStencilFaceFlags")] StencilFaceFlags faceMask,
         [NativeTypeName("uint32_t")] uint compareMask
     );
 
@@ -24455,7 +24466,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilOp")]
     void CmdSetStencilOp(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
+        [NativeTypeName("VkStencilFaceFlags")] StencilFaceFlags faceMask,
         StencilOp failOp,
         StencilOp passOp,
         StencilOp depthFailOp,
@@ -24473,7 +24484,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilOpEXT")]
     void CmdSetStencilOpEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
+        [NativeTypeName("VkStencilFaceFlags")] StencilFaceFlags faceMask,
         StencilOp failOp,
         StencilOp passOp,
         StencilOp depthFailOp,
@@ -24488,7 +24499,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilReference")]
     void CmdSetStencilReference(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
+        [NativeTypeName("VkStencilFaceFlags")] StencilFaceFlags faceMask,
         [NativeTypeName("uint32_t")] uint reference
     );
 
@@ -24521,7 +24532,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilWriteMask")]
     void CmdSetStencilWriteMask(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkStencilFaceFlags")] uint faceMask,
+        [NativeTypeName("VkStencilFaceFlags")] StencilFaceFlags faceMask,
         [NativeTypeName("uint32_t")] uint writeMask
     );
 
@@ -25036,8 +25047,8 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint eventCount,
         [NativeTypeName("const VkEvent *")] EventHandle* pEvents,
-        [NativeTypeName("VkPipelineStageFlags")] uint srcStageMask,
-        [NativeTypeName("VkPipelineStageFlags")] uint dstStageMask,
+        [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags srcStageMask,
+        [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags dstStageMask,
         [NativeTypeName("uint32_t")] uint memoryBarrierCount,
         [NativeTypeName("const VkMemoryBarrier *")] MemoryBarrier* pMemoryBarriers,
         [NativeTypeName("uint32_t")] uint bufferMemoryBarrierCount,
@@ -25058,8 +25069,8 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint eventCount,
         [NativeTypeName("const VkEvent *")] Ref<EventHandle> pEvents,
-        [NativeTypeName("VkPipelineStageFlags")] uint srcStageMask,
-        [NativeTypeName("VkPipelineStageFlags")] uint dstStageMask,
+        [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags srcStageMask,
+        [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags dstStageMask,
         [NativeTypeName("uint32_t")] uint memoryBarrierCount,
         [NativeTypeName("const VkMemoryBarrier *")] Ref<MemoryBarrier> pMemoryBarriers,
         [NativeTypeName("uint32_t")] uint bufferMemoryBarrierCount,
@@ -25245,7 +25256,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarker2AMD")]
     void CmdWriteBufferMarker2AMD(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
+        [NativeTypeName("VkPipelineStageFlags2")] PipelineStageFlags2 stage,
         [NativeTypeName("VkBuffer")] BufferHandle dstBuffer,
         [NativeTypeName("VkDeviceSize")] ulong dstOffset,
         [NativeTypeName("uint32_t")] uint marker
@@ -25333,7 +25344,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2")]
     void CmdWriteTimestamp2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
+        [NativeTypeName("VkPipelineStageFlags2")] PipelineStageFlags2 stage,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint query
     );
@@ -25349,7 +25360,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2KHR")]
     void CmdWriteTimestamp2KHR(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkPipelineStageFlags2")] ulong stage,
+        [NativeTypeName("VkPipelineStageFlags2")] PipelineStageFlags2 stage,
         [NativeTypeName("VkQueryPool")] QueryPoolHandle queryPool,
         [NativeTypeName("uint32_t")] uint query
     );
@@ -27348,7 +27359,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
     void DebugReportMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
-        [NativeTypeName("VkDebugReportFlagsEXT")] uint flags,
+        [NativeTypeName("VkDebugReportFlagsEXT")] DebugReportFlagsEXT flags,
         DebugReportObjectTypeEXT objectType,
         [NativeTypeName("uint64_t")] ulong @object,
         [NativeTypeName("size_t")] nuint location,
@@ -27362,7 +27373,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
     void DebugReportMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
-        [NativeTypeName("VkDebugReportFlagsEXT")] uint flags,
+        [NativeTypeName("VkDebugReportFlagsEXT")] DebugReportFlagsEXT flags,
         DebugReportObjectTypeEXT objectType,
         [NativeTypeName("uint64_t")] ulong @object,
         [NativeTypeName("size_t")] nuint location,
@@ -29857,7 +29868,7 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint heapIndex,
         [NativeTypeName("uint32_t")] uint localDeviceIndex,
         [NativeTypeName("uint32_t")] uint remoteDeviceIndex,
-        [NativeTypeName("VkPeerMemoryFeatureFlags *")] uint* pPeerMemoryFeatures
+        [NativeTypeName("VkPeerMemoryFeatureFlags *")] PeerMemoryFeatureFlags* pPeerMemoryFeatures
     );
 
     [SupportedApiProfile(
@@ -29872,7 +29883,8 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint heapIndex,
         [NativeTypeName("uint32_t")] uint localDeviceIndex,
         [NativeTypeName("uint32_t")] uint remoteDeviceIndex,
-        [NativeTypeName("VkPeerMemoryFeatureFlags *")] Ref<uint> pPeerMemoryFeatures
+        [NativeTypeName("VkPeerMemoryFeatureFlags *")]
+            Ref<PeerMemoryFeatureFlags> pPeerMemoryFeatures
     );
 
     [SupportedApiProfile(
@@ -29886,7 +29898,7 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint heapIndex,
         [NativeTypeName("uint32_t")] uint localDeviceIndex,
         [NativeTypeName("uint32_t")] uint remoteDeviceIndex,
-        [NativeTypeName("VkPeerMemoryFeatureFlags *")] uint* pPeerMemoryFeatures
+        [NativeTypeName("VkPeerMemoryFeatureFlags *")] PeerMemoryFeatureFlags* pPeerMemoryFeatures
     );
 
     [SupportedApiProfile(
@@ -29901,7 +29913,8 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint heapIndex,
         [NativeTypeName("uint32_t")] uint localDeviceIndex,
         [NativeTypeName("uint32_t")] uint remoteDeviceIndex,
-        [NativeTypeName("VkPeerMemoryFeatureFlags *")] Ref<uint> pPeerMemoryFeatures
+        [NativeTypeName("VkPeerMemoryFeatureFlags *")]
+            Ref<PeerMemoryFeatureFlags> pPeerMemoryFeatures
     );
 
     [SupportedApiProfile(
@@ -29939,7 +29952,8 @@ public unsafe partial interface IVk
     Result GetDeviceGroupSurfacePresentModesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
-        [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR *")] uint* pModes
+        [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR *")]
+            DeviceGroupPresentModeFlagsKHR* pModes
     );
 
     [SupportedApiProfile(
@@ -29953,7 +29967,8 @@ public unsafe partial interface IVk
     Result GetDeviceGroupSurfacePresentModesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRHandle surface,
-        [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR *")] Ref<uint> pModes
+        [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR *")]
+            Ref<DeviceGroupPresentModeFlagsKHR> pModes
     );
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -31764,9 +31779,10 @@ public unsafe partial interface IVk
         Format format,
         ImageType type,
         ImageTiling tiling,
-        [NativeTypeName("VkImageUsageFlags")] uint usage,
-        [NativeTypeName("VkImageCreateFlags")] uint flags,
-        [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")] uint externalHandleType,
+        [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
+        [NativeTypeName("VkImageCreateFlags")] ImageCreateFlags flags,
+        [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")]
+            ExternalMemoryHandleTypeFlagsNV externalHandleType,
         ExternalImageFormatPropertiesNV* pExternalImageFormatProperties
     );
 
@@ -31778,9 +31794,10 @@ public unsafe partial interface IVk
         Format format,
         ImageType type,
         ImageTiling tiling,
-        [NativeTypeName("VkImageUsageFlags")] uint usage,
-        [NativeTypeName("VkImageCreateFlags")] uint flags,
-        [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")] uint externalHandleType,
+        [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
+        [NativeTypeName("VkImageCreateFlags")] ImageCreateFlags flags,
+        [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")]
+            ExternalMemoryHandleTypeFlagsNV externalHandleType,
         Ref<ExternalImageFormatPropertiesNV> pExternalImageFormatProperties
     );
 
@@ -32016,8 +32033,8 @@ public unsafe partial interface IVk
         Format format,
         ImageType type,
         ImageTiling tiling,
-        [NativeTypeName("VkImageUsageFlags")] uint usage,
-        [NativeTypeName("VkImageCreateFlags")] uint flags,
+        [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
+        [NativeTypeName("VkImageCreateFlags")] ImageCreateFlags flags,
         ImageFormatProperties* pImageFormatProperties
     );
 
@@ -32033,8 +32050,8 @@ public unsafe partial interface IVk
         Format format,
         ImageType type,
         ImageTiling tiling,
-        [NativeTypeName("VkImageUsageFlags")] uint usage,
-        [NativeTypeName("VkImageCreateFlags")] uint flags,
+        [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
+        [NativeTypeName("VkImageCreateFlags")] ImageCreateFlags flags,
         Ref<ImageFormatProperties> pImageFormatProperties
     );
 
@@ -32420,7 +32437,7 @@ public unsafe partial interface IVk
         Format format,
         ImageType type,
         SampleCountFlags samples,
-        [NativeTypeName("VkImageUsageFlags")] uint usage,
+        [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
         ImageTiling tiling,
         [NativeTypeName("uint32_t *")] uint* pPropertyCount,
         SparseImageFormatProperties* pProperties
@@ -32438,7 +32455,7 @@ public unsafe partial interface IVk
         Format format,
         ImageType type,
         SampleCountFlags samples,
-        [NativeTypeName("VkImageUsageFlags")] uint usage,
+        [NativeTypeName("VkImageUsageFlags")] ImageUsageFlags usage,
         ImageTiling tiling,
         [NativeTypeName("uint32_t *")] Ref<uint> pPropertyCount,
         Ref<SparseImageFormatProperties> pProperties
@@ -33167,7 +33184,7 @@ public unsafe partial interface IVk
         [NativeTypeName("size_t")] nuint dataSize,
         void* pData,
         [NativeTypeName("VkDeviceSize")] ulong stride,
-        [NativeTypeName("VkQueryResultFlags")] uint flags
+        [NativeTypeName("VkQueryResultFlags")] QueryResultFlags flags
     );
 
     [SupportedApiProfile(
@@ -33185,7 +33202,7 @@ public unsafe partial interface IVk
         [NativeTypeName("size_t")] nuint dataSize,
         Ref pData,
         [NativeTypeName("VkDeviceSize")] ulong stride,
-        [NativeTypeName("VkQueryResultFlags")] uint flags
+        [NativeTypeName("VkQueryResultFlags")] QueryResultFlags flags
     );
 
     [SupportedApiProfile(
@@ -33976,7 +33993,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
         [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkDeviceSize")] ulong size,
-        [NativeTypeName("VkMemoryMapFlags")] uint flags,
+        [NativeTypeName("VkMemoryMapFlags")] MemoryMapFlags flags,
         void** ppData
     );
 
@@ -33992,7 +34009,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory,
         [NativeTypeName("VkDeviceSize")] ulong offset,
         [NativeTypeName("VkDeviceSize")] ulong size,
-        [NativeTypeName("VkMemoryMapFlags")] uint flags,
+        [NativeTypeName("VkMemoryMapFlags")] MemoryMapFlags flags,
         Ref2D ppData
     );
 
@@ -34437,7 +34454,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkResetCommandBuffer")]
     Result ResetCommandBuffer(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("VkCommandBufferResetFlags")] uint flags
+        [NativeTypeName("VkCommandBufferResetFlags")] CommandBufferResetFlags flags
     );
 
     [SupportedApiProfile(
@@ -34449,7 +34466,7 @@ public unsafe partial interface IVk
     Result ResetCommandPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
-        [NativeTypeName("VkCommandPoolResetFlags")] uint flags
+        [NativeTypeName("VkCommandPoolResetFlags")] CommandPoolResetFlags flags
     );
 
     [SupportedApiProfile(
@@ -34461,7 +34478,7 @@ public unsafe partial interface IVk
     Result ResetDescriptorPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkDescriptorPool")] DescriptorPoolHandle descriptorPool,
-        [NativeTypeName("VkDescriptorPoolResetFlags")] uint flags
+        [NativeTypeName("VkDescriptorPoolResetFlags")] VkDescriptorPoolResetFlags flags
     );
 
     [SupportedApiProfile(
@@ -34769,7 +34786,8 @@ public unsafe partial interface IVk
     void SubmitDebugUtilsMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         DebugUtilsMessageSeverityFlagsEXT messageSeverity,
-        [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
+        [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")]
+            DebugUtilsMessageTypeFlagsEXT messageTypes,
         [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
             DebugUtilsMessengerCallbackDataEXT* pCallbackData
     );
@@ -34780,7 +34798,8 @@ public unsafe partial interface IVk
     void SubmitDebugUtilsMessageEXT(
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         DebugUtilsMessageSeverityFlagsEXT messageSeverity,
-        [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")] uint messageTypes,
+        [NativeTypeName("VkDebugUtilsMessageTypeFlagsEXT")]
+            DebugUtilsMessageTypeFlagsEXT messageTypes,
         [NativeTypeName("const VkDebugUtilsMessengerCallbackDataEXT *")]
             Ref<DebugUtilsMessengerCallbackDataEXT> pCallbackData
     );
@@ -34848,7 +34867,7 @@ public unsafe partial interface IVk
     void TrimCommandPool(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
-        [NativeTypeName("VkCommandPoolTrimFlags")] uint flags
+        [NativeTypeName("VkCommandPoolTrimFlags")] VkCommandPoolTrimFlags flags
     );
 
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
@@ -34856,7 +34875,7 @@ public unsafe partial interface IVk
     void TrimCommandPoolKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCommandPool")] CommandPoolHandle commandPool,
-        [NativeTypeName("VkCommandPoolTrimFlags")] uint flags
+        [NativeTypeName("VkCommandPoolTrimFlags")] VkCommandPoolTrimFlags flags
     );
 
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]

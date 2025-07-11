@@ -29,7 +29,7 @@ public unsafe partial struct SemaphoreSubmitInfo
 
     [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public ulong StageMask;
+    public PipelineStageFlags2 StageMask;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

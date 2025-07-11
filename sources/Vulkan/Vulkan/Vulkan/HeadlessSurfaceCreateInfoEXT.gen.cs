@@ -21,5 +21,5 @@ public unsafe partial struct HeadlessSurfaceCreateInfoEXT
 
     [NativeTypeName("VkHeadlessSurfaceCreateFlagsEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint Flags;
+    public VkHeadlessSurfaceCreateFlagsEXT Flags;
 }

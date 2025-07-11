@@ -32,7 +32,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesEXT
         ["VK_EXT_surface_maintenance1"],
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
-    public uint SupportedPresentScaling;
+    public PresentScalingFlagsEXT SupportedPresentScaling;
 
     [NativeTypeName("VkPresentGravityFlagsEXT")]
     [SupportedApiProfile(
@@ -40,7 +40,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesEXT
         ["VK_EXT_surface_maintenance1"],
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
-    public uint SupportedPresentGravityX;
+    public PresentGravityFlagsEXT SupportedPresentGravityX;
 
     [NativeTypeName("VkPresentGravityFlagsEXT")]
     [SupportedApiProfile(
@@ -48,7 +48,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesEXT
         ["VK_EXT_surface_maintenance1"],
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
-    public uint SupportedPresentGravityY;
+    public PresentGravityFlagsEXT SupportedPresentGravityY;
 
     [SupportedApiProfile(
         "vulkan",

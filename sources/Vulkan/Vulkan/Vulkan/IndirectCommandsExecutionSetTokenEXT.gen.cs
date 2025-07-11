@@ -33,5 +33,5 @@ public partial struct IndirectCommandsExecutionSetTokenEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint ShaderStages;
+    public ShaderStageFlags ShaderStages;
 }

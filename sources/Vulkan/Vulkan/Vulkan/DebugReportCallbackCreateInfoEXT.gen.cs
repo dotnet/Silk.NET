@@ -21,7 +21,7 @@ public unsafe partial struct DebugReportCallbackCreateInfoEXT
 
     [NativeTypeName("VkDebugReportFlagsEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    public uint Flags;
+    public DebugReportFlagsEXT Flags;
 
     [NativeTypeName("PFN_vkDebugReportCallbackEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]

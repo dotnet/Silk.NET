@@ -44,5 +44,5 @@ public unsafe partial struct VideoFormatH265QuantizationMapPropertiesKHR
         ],
         RequireAll = true
     )]
-    public uint CompatibleCtbSizes;
+    public VideoEncodeH265CtbSizeFlagsKHR CompatibleCtbSizes;
 }

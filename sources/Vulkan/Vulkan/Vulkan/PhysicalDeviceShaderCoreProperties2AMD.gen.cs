@@ -32,7 +32,7 @@ public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD
         ["VK_AMD_shader_core_properties2"],
         ImpliesSets = ["VK_AMD_shader_core_properties"]
     )]
-    public uint ShaderCoreFeatures;
+    public ShaderCorePropertiesFlagsAMD ShaderCoreFeatures;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

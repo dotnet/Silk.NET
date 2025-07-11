@@ -49,7 +49,7 @@ public unsafe partial struct SubpassDependency2
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint SrcStageMask;
+    public PipelineStageFlags SrcStageMask;
 
     [NativeTypeName("VkPipelineStageFlags")]
     [SupportedApiProfile(
@@ -57,7 +57,7 @@ public unsafe partial struct SubpassDependency2
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint DstStageMask;
+    public PipelineStageFlags DstStageMask;
 
     [NativeTypeName("VkAccessFlags")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public unsafe partial struct SubpassDependency2
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint SrcAccessMask;
+    public AccessFlags SrcAccessMask;
 
     [NativeTypeName("VkAccessFlags")]
     [SupportedApiProfile(
@@ -73,7 +73,7 @@ public unsafe partial struct SubpassDependency2
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint DstAccessMask;
+    public AccessFlags DstAccessMask;
 
     [NativeTypeName("VkDependencyFlags")]
     [SupportedApiProfile(
@@ -81,7 +81,7 @@ public unsafe partial struct SubpassDependency2
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint DependencyFlags;
+    public DependencyFlags DependencyFlags;
 
     [NativeTypeName("int32_t")]
     [SupportedApiProfile(

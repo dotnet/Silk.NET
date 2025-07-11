@@ -42,7 +42,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public PipelineCreateFlags Flags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

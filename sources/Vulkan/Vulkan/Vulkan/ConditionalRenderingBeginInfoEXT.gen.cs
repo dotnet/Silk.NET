@@ -64,5 +64,5 @@ public unsafe partial struct ConditionalRenderingBeginInfoEXT
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public ConditionalRenderingFlagsEXT Flags;
 }

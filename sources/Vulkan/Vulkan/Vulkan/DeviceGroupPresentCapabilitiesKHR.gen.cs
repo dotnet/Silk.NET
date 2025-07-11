@@ -44,5 +44,5 @@ public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public uint Modes;
+    public DeviceGroupPresentModeFlagsKHR Modes;
 }

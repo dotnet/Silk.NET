@@ -42,5 +42,5 @@ public unsafe partial struct QueryPoolVideoEncodeFeedbackCreateInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public uint EncodeFeedbackFlags;
+    public VideoEncodeFeedbackFlagsKHR EncodeFeedbackFlags;
 }

@@ -21,7 +21,7 @@ public unsafe partial struct MemoryMapInfo
 
     [NativeTypeName("VkMemoryMapFlags")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint Flags;
+    public MemoryMapFlags Flags;
 
     [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]

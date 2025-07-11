@@ -33,7 +33,7 @@ public unsafe partial struct AttachmentDescription2
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint Flags;
+    public AttachmentDescriptionFlags Flags;
 
     [SupportedApiProfile(
         "vulkan",

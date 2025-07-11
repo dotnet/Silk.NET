@@ -33,7 +33,7 @@ public unsafe partial struct FramebufferAttachmentImageInfo
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint Flags;
+    public ImageCreateFlags Flags;
 
     [NativeTypeName("VkImageUsageFlags")]
     [SupportedApiProfile(
@@ -41,7 +41,7 @@ public unsafe partial struct FramebufferAttachmentImageInfo
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint Usage;
+    public ImageUsageFlags Usage;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -33,5 +33,5 @@ public unsafe partial struct ExternalMemoryImageCreateInfoNV
         ["VK_NV_external_memory"],
         ImpliesSets = ["VK_NV_external_memory_capabilities"]
     )]
-    public uint HandleTypes;
+    public ExternalMemoryHandleTypeFlagsNV HandleTypes;
 }

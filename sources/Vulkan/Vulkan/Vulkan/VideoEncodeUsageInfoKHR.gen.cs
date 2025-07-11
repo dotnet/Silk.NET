@@ -42,7 +42,7 @@ public unsafe partial struct VideoEncodeUsageInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public uint VideoUsageHints;
+    public VideoEncodeUsageFlagsKHR VideoUsageHints;
 
     [NativeTypeName("VkVideoEncodeContentFlagsKHR")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public unsafe partial struct VideoEncodeUsageInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public uint VideoContentHints;
+    public VideoEncodeContentFlagsKHR VideoContentHints;
 
     [SupportedApiProfile(
         "vulkan",

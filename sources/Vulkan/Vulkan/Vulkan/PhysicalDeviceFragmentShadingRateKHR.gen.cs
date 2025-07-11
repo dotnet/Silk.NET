@@ -44,7 +44,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public uint SampleCounts;
+    public SampleCountFlags SampleCounts;
 
     [SupportedApiProfile(
         "vulkan",

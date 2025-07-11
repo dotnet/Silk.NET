@@ -21,7 +21,7 @@ public unsafe partial struct PipelineViewportSwizzleStateCreateInfoNV
 
     [NativeTypeName("VkPipelineViewportSwizzleStateCreateFlagsNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    public uint Flags;
+    public VkPipelineViewportSwizzleStateCreateFlagsNV Flags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]

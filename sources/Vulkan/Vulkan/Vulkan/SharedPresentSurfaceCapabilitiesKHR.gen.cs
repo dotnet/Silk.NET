@@ -41,5 +41,5 @@ public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR
             "VK_KHR_swapchain+VK_KHR_get_surface_capabilities2+VK_VERSION_1_1",
         ]
     )]
-    public uint SharedPresentSupportedUsageFlags;
+    public ImageUsageFlags SharedPresentSupportedUsageFlags;
 }

@@ -32,7 +32,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint Flags;
+    public VideoEncodeH265CapabilityFlagsKHR Flags;
 
     [SupportedApiProfile(
         "vulkan",
@@ -62,7 +62,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint CtbSizes;
+    public VideoEncodeH265CtbSizeFlagsKHR CtbSizes;
 
     [NativeTypeName("VkVideoEncodeH265TransformBlockSizeFlagsKHR")]
     [SupportedApiProfile(
@@ -70,7 +70,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint TransformBlockSizes;
+    public VideoEncodeH265TransformBlockSizeFlagsKHR TransformBlockSizes;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -150,5 +150,5 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdSyntaxFlags;
+    public VideoEncodeH265StdFlagsKHR StdSyntaxFlags;
 }

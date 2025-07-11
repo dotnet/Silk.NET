@@ -32,7 +32,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint RequiredSubgroupSizeStages;
+    public ShaderStageFlags RequiredSubgroupSizeStages;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

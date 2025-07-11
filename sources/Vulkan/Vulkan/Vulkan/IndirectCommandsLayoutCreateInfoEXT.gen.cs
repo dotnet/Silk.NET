@@ -45,7 +45,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint Flags;
+    public IndirectCommandsLayoutUsageFlagsEXT Flags;
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
@@ -57,7 +57,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint ShaderStages;
+    public ShaderStageFlags ShaderStages;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
-    public uint CooperativeVectorSupportedStages;
+    public ShaderStageFlags CooperativeVectorSupportedStages;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]

@@ -44,7 +44,7 @@ public unsafe partial struct OpticalFlowExecuteInfoNV
             "VK_VERSION_1_3",
         ]
     )]
-    public uint Flags;
+    public OpticalFlowExecuteFlagsNV Flags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

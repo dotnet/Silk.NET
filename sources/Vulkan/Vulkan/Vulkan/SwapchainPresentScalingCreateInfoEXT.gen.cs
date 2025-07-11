@@ -42,7 +42,7 @@ public unsafe partial struct SwapchainPresentScalingCreateInfoEXT
             "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
-    public uint ScalingBehavior;
+    public PresentScalingFlagsEXT ScalingBehavior;
 
     [NativeTypeName("VkPresentGravityFlagsEXT")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public unsafe partial struct SwapchainPresentScalingCreateInfoEXT
             "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
-    public uint PresentGravityX;
+    public PresentGravityFlagsEXT PresentGravityX;
 
     [NativeTypeName("VkPresentGravityFlagsEXT")]
     [SupportedApiProfile(
@@ -64,5 +64,5 @@ public unsafe partial struct SwapchainPresentScalingCreateInfoEXT
             "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
-    public uint PresentGravityY;
+    public PresentGravityFlagsEXT PresentGravityY;
 }

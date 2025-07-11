@@ -46,5 +46,5 @@ public partial struct DrmFormatModifierPropertiesEXT
             "VK_VERSION_1_2",
         ]
     )]
-    public uint DrmFormatModifierTilingFeatures;
+    public FormatFeatureFlags DrmFormatModifierTilingFeatures;
 }

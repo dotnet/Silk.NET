@@ -101,7 +101,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
             "VK_VERSION_1_3",
         ]
     )]
-    public uint OutputGridSize;
+    public OpticalFlowGridSizeFlagsNV OutputGridSize;
 
     [NativeTypeName("VkOpticalFlowGridSizeFlagsNV")]
     [SupportedApiProfile(
@@ -113,7 +113,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
             "VK_VERSION_1_3",
         ]
     )]
-    public uint HintGridSize;
+    public OpticalFlowGridSizeFlagsNV HintGridSize;
 
     [SupportedApiProfile(
         "vulkan",
@@ -136,5 +136,5 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
             "VK_VERSION_1_3",
         ]
     )]
-    public uint Flags;
+    public OpticalFlowSessionCreateFlagsNV Flags;
 }

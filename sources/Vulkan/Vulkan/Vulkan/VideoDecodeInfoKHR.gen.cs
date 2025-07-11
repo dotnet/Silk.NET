@@ -42,7 +42,7 @@ public unsafe partial struct VideoDecodeInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public uint Flags;
+    public VkVideoDecodeFlagsKHR Flags;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(

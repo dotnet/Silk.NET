@@ -21,7 +21,7 @@ public unsafe partial struct SubmitInfo2
 
     [NativeTypeName("VkSubmitFlags")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint Flags;
+    public SubmitFlags Flags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

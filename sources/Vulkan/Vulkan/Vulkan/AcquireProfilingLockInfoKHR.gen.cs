@@ -42,7 +42,7 @@ public unsafe partial struct AcquireProfilingLockInfoKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public AcquireProfilingLockFlagsKHR Flags;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(

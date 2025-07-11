@@ -42,7 +42,7 @@ public unsafe partial struct RenderPassTileShadingCreateInfoQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint Flags;
+    public TileShadingRenderPassFlagsQCOM Flags;
 
     [SupportedApiProfile(
         "vulkan",

@@ -42,5 +42,5 @@ public unsafe partial struct DeviceDiagnosticsConfigCreateInfoNV
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public DeviceDiagnosticsConfigFlagsNV Flags;
 }

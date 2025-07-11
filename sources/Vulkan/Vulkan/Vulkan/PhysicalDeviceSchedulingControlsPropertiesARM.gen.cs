@@ -32,5 +32,5 @@ public unsafe partial struct PhysicalDeviceSchedulingControlsPropertiesARM
         ["VK_ARM_scheduling_controls"],
         ImpliesSets = ["VK_ARM_shader_core_builtins"]
     )]
-    public ulong SchedulingControlsFlags;
+    public PhysicalDeviceSchedulingControlsFlagsARM SchedulingControlsFlags;
 }

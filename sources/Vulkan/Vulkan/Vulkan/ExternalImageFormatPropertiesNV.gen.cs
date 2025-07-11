@@ -17,13 +17,13 @@ public partial struct ExternalImageFormatPropertiesNV
 
     [NativeTypeName("VkExternalMemoryFeatureFlagsNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    public uint ExternalMemoryFeatures;
+    public ExternalMemoryFeatureFlagsNV ExternalMemoryFeatures;
 
     [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    public uint ExportFromImportedHandleTypes;
+    public ExternalMemoryHandleTypeFlagsNV ExportFromImportedHandleTypes;
 
     [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    public uint CompatibleHandleTypes;
+    public ExternalMemoryHandleTypeFlagsNV CompatibleHandleTypes;
 }

@@ -21,5 +21,5 @@ public unsafe partial struct PipelineCompilerControlCreateInfoAMD
 
     [NativeTypeName("VkPipelineCompilerControlFlagsAMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_pipeline_compiler_control"])]
-    public uint CompilerControlFlags;
+    public PipelineCompilerControlFlagsAMD CompilerControlFlags;
 }

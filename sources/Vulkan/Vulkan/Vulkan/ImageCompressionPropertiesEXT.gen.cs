@@ -41,7 +41,7 @@ public unsafe partial struct ImageCompressionPropertiesEXT
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    public uint ImageCompressionFlags;
+    public ImageCompressionFlagsEXT ImageCompressionFlags;
 
     [NativeTypeName("VkImageCompressionFixedRateFlagsEXT")]
     [SupportedApiProfile(
@@ -52,5 +52,5 @@ public unsafe partial struct ImageCompressionPropertiesEXT
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    public uint ImageCompressionFixedRateFlags;
+    public ImageCompressionFixedRateFlagsEXT ImageCompressionFixedRateFlags;
 }
