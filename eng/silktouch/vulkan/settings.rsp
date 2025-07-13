@@ -5,8 +5,6 @@ TODO_DEFINE_MACROS=HERE
 ../header.txt
 --include-directory
 ../../../submodules/vulkan-headers/include
-# TODO: Remove this
-/usr/lib/clang/20/include
 --with-callconv
 *=Winapi
 --with-librarypath
