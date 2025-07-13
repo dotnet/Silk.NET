@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PartitionedAccelerationStructureInstanceFlagsNV : uint
 {
+    None = 0,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],

@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ExternalMemoryHandleTypeFlagsNV : uint
 {
+    None = 0,
+
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     OpaqueWin32BitNV = 0x00000001,
 

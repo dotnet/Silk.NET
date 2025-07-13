@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeH265CtbSizeFlagsKHR : uint
 {
+    None = 0,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],

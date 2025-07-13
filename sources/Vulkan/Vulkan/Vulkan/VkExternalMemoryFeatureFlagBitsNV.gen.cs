@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ExternalMemoryFeatureFlagsNV : uint
 {
+    None = 0,
+
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     DedicatedOnlyBitNV = 0x00000001,
 

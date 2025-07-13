@@ -13,6 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PipelineCreateFlags2 : ulong
 {
+    None = 0,
     DisableOptimizationBit = unchecked((ulong)0x00000001UL),
     AllowDerivativesBit = unchecked((ulong)0x00000002UL),
     DerivativeBit = unchecked((ulong)0x00000004UL),

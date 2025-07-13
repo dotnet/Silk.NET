@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum IndirectCommandsLayoutUsageFlagsNV : uint
 {
+    None = 0,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

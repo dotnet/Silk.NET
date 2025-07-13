@@ -173,6 +173,7 @@
         "TransformHandles",
         "TransformFunctions",
         "TransformProperties",
+        "TransformFlags",
         "AddVTables"
       ],
       "ClangScraper": {

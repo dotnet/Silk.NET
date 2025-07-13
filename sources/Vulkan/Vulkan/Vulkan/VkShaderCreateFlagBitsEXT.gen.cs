@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ShaderCreateFlagsEXT : uint
 {
+    None = 0,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],

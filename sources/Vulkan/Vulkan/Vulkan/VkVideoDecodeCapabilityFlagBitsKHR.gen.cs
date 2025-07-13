@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoDecodeCapabilityFlagsKHR : uint
 {
+    None = 0,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],

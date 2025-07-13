@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum BuildAccelerationStructureFlagsKHR : uint
 {
+    None = 0,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

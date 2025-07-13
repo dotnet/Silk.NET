@@ -11,4 +11,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum ExportMetalObjectTypeFlagsEXT : uint { }
+public enum ExportMetalObjectTypeFlagsEXT : uint
+{
+    None = 0,
+}

@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DeviceAddressBindingFlagsEXT : uint
 {
+    None = 0,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],

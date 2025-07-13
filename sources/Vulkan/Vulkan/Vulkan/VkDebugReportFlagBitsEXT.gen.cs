@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DebugReportFlagsEXT : uint
 {
+    None = 0,
+
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     InformationBitEXT = 0x00000001,
 

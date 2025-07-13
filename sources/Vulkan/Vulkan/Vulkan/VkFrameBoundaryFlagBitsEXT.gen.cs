@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum FrameBoundaryFlagsEXT : uint
 {
+    None = 0,
+
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
     FrameEndBitEXT = 0x00000001,
 

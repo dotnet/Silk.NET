@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum MicromapCreateFlagsEXT : uint
 {
+    None = 0,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DisplayPlaneAlphaFlagsKHR : uint
 {
+    None = 0,
+
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     OpaqueBitKHR = 0x00000001,
 

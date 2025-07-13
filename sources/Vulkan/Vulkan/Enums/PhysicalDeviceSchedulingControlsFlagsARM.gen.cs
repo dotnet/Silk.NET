@@ -13,5 +13,6 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PhysicalDeviceSchedulingControlsFlagsARM : ulong
 {
+    None = 0,
     ShaderCoreCountARM = unchecked((ulong)0x00000001UL),
 }

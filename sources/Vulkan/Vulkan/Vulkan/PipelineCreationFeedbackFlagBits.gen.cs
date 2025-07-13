@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PipelineCreationFeedbackFlags : uint
 {
+    None = 0,
+
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     ValidBit = 0x00000001,
 

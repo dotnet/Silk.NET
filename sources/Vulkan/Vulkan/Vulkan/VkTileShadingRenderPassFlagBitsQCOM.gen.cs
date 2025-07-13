@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum TileShadingRenderPassFlagsQCOM : uint
 {
+    None = 0,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],

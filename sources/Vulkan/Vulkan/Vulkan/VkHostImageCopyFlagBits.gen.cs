@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum HostImageCopyFlags : uint
 {
+    None = 0,
+
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     Memcpy = 0x00000001,
 

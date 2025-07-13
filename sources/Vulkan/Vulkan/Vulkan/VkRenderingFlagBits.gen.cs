@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum RenderingFlags : uint
 {
+    None = 0,
+
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     ContentsSecondaryCommandBuffersBit = 0x00000001,
 

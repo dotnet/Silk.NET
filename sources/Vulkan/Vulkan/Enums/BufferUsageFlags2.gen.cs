@@ -13,6 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum BufferUsageFlags2 : ulong
 {
+    None = 0,
     TransferSrcBit = unchecked((ulong)0x00000001UL),
     TransferDstBit = unchecked((ulong)0x00000002UL),
     UniformTexelBufferBit = unchecked((ulong)0x00000004UL),

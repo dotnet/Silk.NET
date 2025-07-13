@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum OpticalFlowExecuteFlagsNV : uint
 {
+    None = 0,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],

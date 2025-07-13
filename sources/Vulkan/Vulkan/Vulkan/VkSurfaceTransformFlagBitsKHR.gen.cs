@@ -14,6 +14,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SurfaceTransformFlagsKHR : uint
 {
+    None = 0,
+
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     IdentityBitKHR = 0x00000001,
 
