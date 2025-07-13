@@ -13,6 +13,5 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum AccessFlags3KHR : ulong
 {
-    None = 0,
     Access3NoneKHR = unchecked((ulong)0UL),
 }

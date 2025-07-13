@@ -58,9 +58,36 @@ public class TransformFlags : IMod
             }
 
             // Add None member if it doesn't exist yet
-            var hasNoneMember = node.Members.Any(
-                member => member.Identifier.Text == "None"
-                          || (member.EqualsValue != null && semanticModel.GetConstantValue(member.EqualsValue.Value).Value is 0));
+            var hasNoneMember = symbol.Members().Any(member =>
+            {
+                if (member.Name == "None")
+                {
+                    return true;
+                }
+
+                if (member is not IFieldSymbol fieldSymbol)
+                {
+                    return false;
+                }
+
+                // ConstantValue is an "object"
+                // Directly comparing to 0 doesn't work
+                // Casting to int does not either
+                var isZero = fieldSymbol.ConstantValue switch
+                {
+                    sbyte n => n == 0,
+                    byte n => n == 0,
+                    short n => n == 0,
+                    ushort n => n == 0,
+                    int n => n == 0,
+                    uint n => n == 0,
+                    long n => n == 0,
+                    ulong n => n == 0,
+                    _ => false
+                };
+
+                return isZero;
+            });
 
             if (!hasNoneMember)
             {
