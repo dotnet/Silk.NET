@@ -32,14 +32,4 @@ public enum OutOfBandQueueTypeNV : uint
         ]
     )]
     PresentNV = 1,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_low_latency2"],
-        ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
-        ]
-    )]
-    MaxEnumNV = 0x7FFFFFFF,
 }

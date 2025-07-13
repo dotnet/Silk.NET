@@ -27,7 +27,4 @@ public enum ValidationFeatureEnableEXT : uint
 
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     SynchronizationValidationEXT = 4,
-
-    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

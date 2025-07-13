@@ -21,19 +21,12 @@ public enum SemaphoreImportFlags : uint
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    TemporaryBit = 0x00000001,
+    SemaphoreImportTemporaryBit = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_semaphore"],
         ImpliesSets = ["VK_KHR_external_semaphore_capabilities"]
     )]
-    TemporaryBitKHR = TemporaryBit,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.1"
-    )]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
+    SemaphoreImportTemporaryBitKHR = SemaphoreImportTemporaryBit,
 }

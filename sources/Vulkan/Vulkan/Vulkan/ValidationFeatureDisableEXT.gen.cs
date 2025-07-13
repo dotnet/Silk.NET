@@ -36,7 +36,4 @@ public enum ValidationFeatureDisableEXT : uint
 
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     ShaderValidationCacheEXT = 7,
-
-    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

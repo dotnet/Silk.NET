@@ -178,7 +178,4 @@ public enum ComponentTypeKHR : uint
         ]
     )]
     Uint64NV = Uint64KHR,
-
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
-    MaxEnumKHR = 0x7FFFFFFF,
 }

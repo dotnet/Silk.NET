@@ -27,7 +27,4 @@ public enum PhysicalDeviceLayeredApiKHR : uint
 
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     OpenglesKHR = 4,
-
-    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    MaxEnumKHR = 0x7FFFFFFF,
 }

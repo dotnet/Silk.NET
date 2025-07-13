@@ -26,11 +26,4 @@ public enum RayTracingLssPrimitiveEndCapsModeNV : uint
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
     ChainedNV = 1,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing_linear_swept_spheres"],
-        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
-    )]
-    MaxEnumNV = 0x7FFFFFFF,
 }

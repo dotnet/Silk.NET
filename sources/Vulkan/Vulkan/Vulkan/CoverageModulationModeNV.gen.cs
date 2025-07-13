@@ -24,7 +24,4 @@ public enum CoverageModulationModeNV : uint
 
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
     RgbaNV = 3,
-
-    [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    MaxEnumNV = 0x7FFFFFFF,
 }

@@ -40,11 +40,4 @@ public enum CubicFilterWeightsQCOM : uint
         ImpliesSets = ["VK_EXT_filter_cubic"]
     )]
     MitchellNetravaliQCOM = 3,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_QCOM_filter_cubic_weights"],
-        ImpliesSets = ["VK_EXT_filter_cubic"]
-    )]
-    MaxEnumQCOM = 0x7FFFFFFF,
 }

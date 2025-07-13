@@ -263,14 +263,4 @@ public enum ImageCompressionFixedRateFlagsEXT : uint
         ]
     )]
     Rate24BpcBitEXT = 0x00800000,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_image_compression_control"],
-        ImpliesSets = [
-            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_image_compression_control+VK_VERSION_1_1",
-        ]
-    )]
-    RateFlagBitsMaxEnumEXT = 0x7FFFFFFF,
 }

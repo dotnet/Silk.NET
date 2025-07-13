@@ -33,7 +33,4 @@ public enum PipelineCreationFeedbackFlags : uint
 
     [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
     BasePipelineAccelerationBitEXT = BasePipelineAccelerationBit,
-
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
 }

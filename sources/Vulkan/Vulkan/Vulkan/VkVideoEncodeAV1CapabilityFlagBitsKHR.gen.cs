@@ -50,11 +50,4 @@ public enum VideoEncodeAV1CapabilityFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     MotionVectorScalingBitKHR = 0x00000010,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_av1"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

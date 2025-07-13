@@ -34,11 +34,4 @@ public enum VideoDecodeH264PictureLayoutFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
     InterlacedSeparatePlanesBitKHR = 0x00000002,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_decode_h264"],
-        ImpliesSets = ["VK_KHR_video_decode_queue"]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

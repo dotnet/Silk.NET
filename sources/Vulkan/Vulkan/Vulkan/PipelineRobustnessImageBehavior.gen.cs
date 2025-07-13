@@ -64,7 +64,4 @@ public enum PipelineRobustnessImageBehavior : uint
         ]
     )]
     RobustImageAccess2EXT = RobustImageAccess2,
-
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    MaxEnum = 0x7FFFFFFF,
 }

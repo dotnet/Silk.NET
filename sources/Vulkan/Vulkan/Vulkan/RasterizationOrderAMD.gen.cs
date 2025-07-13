@@ -18,7 +18,4 @@ public enum RasterizationOrderAMD : uint
 
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
     RelaxedAMD = 1,
-
-    [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
-    MaxEnumAMD = 0x7FFFFFFF,
 }

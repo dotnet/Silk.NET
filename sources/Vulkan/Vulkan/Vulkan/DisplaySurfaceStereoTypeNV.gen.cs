@@ -40,11 +40,4 @@ public enum DisplaySurfaceStereoTypeNV : uint
         ImpliesSets = ["VK_KHR_display", "VK_KHR_get_display_properties2"]
     )]
     InbandDisplayportNV = 3,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_display_stereo"],
-        ImpliesSets = ["VK_KHR_display", "VK_KHR_get_display_properties2"]
-    )]
-    MaxEnumNV = 0x7FFFFFFF,
 }

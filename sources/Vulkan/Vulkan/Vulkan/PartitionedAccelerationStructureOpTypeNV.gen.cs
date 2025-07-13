@@ -33,11 +33,4 @@ public enum PartitionedAccelerationStructureOpTypeNV : uint
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     WritePartitionTranslationNV = 2,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_partitioned_acceleration_structure"],
-        ImpliesSets = ["VK_KHR_acceleration_structure"]
-    )]
-    MaxEnumNV = 0x7FFFFFFF,
 }

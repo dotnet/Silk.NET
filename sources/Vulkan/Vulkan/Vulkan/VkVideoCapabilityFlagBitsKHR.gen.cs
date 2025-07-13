@@ -29,11 +29,4 @@ public enum VideoCapabilityFlagsKHR : uint
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
     SeparateReferenceImagesBitKHR = 0x00000002,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_queue"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

@@ -82,14 +82,4 @@ public enum DeviceFaultAddressTypeEXT : uint
         ]
     )]
     InstructionPointerFaultEXT = 6,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_device_fault"],
-        ImpliesSets = [
-            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_device_fault+VK_VERSION_1_1",
-        ]
-    )]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

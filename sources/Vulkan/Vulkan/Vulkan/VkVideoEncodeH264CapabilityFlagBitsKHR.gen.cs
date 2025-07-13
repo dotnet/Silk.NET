@@ -89,11 +89,4 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         RequireAll = true
     )]
     MbQpDiffWraparoundBitKHR = 0x00000200,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_h264"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

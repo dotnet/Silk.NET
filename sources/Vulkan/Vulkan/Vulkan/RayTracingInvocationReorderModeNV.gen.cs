@@ -26,11 +26,4 @@ public enum RayTracingInvocationReorderModeNV : uint
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
     ReorderNV = 1,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing_invocation_reorder"],
-        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
-    )]
-    MaxEnumNV = 0x7FFFFFFF,
 }

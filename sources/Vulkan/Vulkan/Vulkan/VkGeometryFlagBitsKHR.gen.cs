@@ -55,14 +55,4 @@ public enum GeometryFlagsKHR : uint
         ]
     )]
     NoDuplicateAnyHitInvocationBitNV = NoDuplicateAnyHitInvocationBitKHR,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

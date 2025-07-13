@@ -50,11 +50,4 @@ public enum PartitionedAccelerationStructureInstanceFlagsNV : uint
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     EnableExplicitBoundingBoxNV = 0x00000010,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_partitioned_acceleration_structure"],
-        ImpliesSets = ["VK_KHR_acceleration_structure"]
-    )]
-    BitsMaxEnumNV = 0x7FFFFFFF,
 }

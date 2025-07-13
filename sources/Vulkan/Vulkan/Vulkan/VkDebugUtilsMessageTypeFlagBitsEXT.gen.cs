@@ -34,7 +34,4 @@ public enum DebugUtilsMessageTypeFlagsEXT : uint
         ]
     )]
     DeviceAddressBindingBitEXT = 0x00000008,
-
-    [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    FlagBitsMaxEnumEXT = 0x7FFFFFFF,
 }

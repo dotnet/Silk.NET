@@ -79,15 +79,4 @@ public enum OpticalFlowUsageFlagsNV : uint
         ]
     )]
     GlobalFlowBitNV = 0x00000010,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_optical_flow"],
-        ImpliesSets = [
-            "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_VERSION_1_1",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    FlagBitsMaxEnumNV = 0x7FFFFFFF,
 }

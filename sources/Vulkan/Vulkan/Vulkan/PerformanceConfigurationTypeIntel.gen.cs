@@ -15,7 +15,4 @@ public enum PerformanceConfigurationTypeIntel : uint
 {
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     CommandQueueMetricsDiscoveryActivatedIntel = 0,
-
-    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    MaxEnumIntel = 0x7FFFFFFF,
 }

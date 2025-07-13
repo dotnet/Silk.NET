@@ -92,14 +92,4 @@ public enum ScopeKHR : uint
         ]
     )]
     QueueFamilyNV = QueueFamilyKHR,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_cooperative_matrix"],
-        ImpliesSets = [
-            "VK_KHR_cooperative_matrix+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
-        ]
-    )]
-    MaxEnumKHR = 0x7FFFFFFF,
 }

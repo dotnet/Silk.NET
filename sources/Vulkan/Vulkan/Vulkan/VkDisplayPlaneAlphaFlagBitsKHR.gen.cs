@@ -27,7 +27,4 @@ public enum DisplayPlaneAlphaFlagsKHR : uint
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     PerPixelPremultipliedBitKHR = 0x00000008,
-
-    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

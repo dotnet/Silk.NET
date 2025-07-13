@@ -73,11 +73,4 @@ public enum SamplerReductionMode : uint
         ]
     )]
     SamplerReductionModeMaxEXT = SamplerReductionModeMax,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.2"
-    )]
-    SamplerReductionModeMaxEnum = 0x7FFFFFFF,
 }

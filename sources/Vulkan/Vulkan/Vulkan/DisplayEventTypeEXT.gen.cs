@@ -18,11 +18,4 @@ public enum DisplayEventTypeEXT : uint
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
     FirstPixelOutEXT = 0,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_display_control"],
-        ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
-    )]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

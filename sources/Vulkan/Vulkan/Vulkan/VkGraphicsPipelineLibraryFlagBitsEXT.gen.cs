@@ -55,14 +55,4 @@ public enum GraphicsPipelineLibraryFlagsEXT : uint
         ]
     )]
     FragmentOutputInterfaceBitEXT = 0x00000008,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_graphics_pipeline_library"],
-        ImpliesSets = [
-            "VK_KHR_pipeline_library+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_pipeline_library+VK_VERSION_1_1",
-        ]
-    )]
-    FlagBitsMaxEnumEXT = 0x7FFFFFFF,
 }

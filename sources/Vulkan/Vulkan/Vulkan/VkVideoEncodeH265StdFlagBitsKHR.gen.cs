@@ -162,11 +162,4 @@ public enum VideoEncodeH265StdFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     DifferentSliceQpDeltaBitKHR = 0x00100000,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_h265"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

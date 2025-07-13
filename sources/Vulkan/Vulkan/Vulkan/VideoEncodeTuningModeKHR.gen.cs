@@ -62,14 +62,4 @@ public enum VideoEncodeTuningModeKHR : uint
         ]
     )]
     LosslessKHR = 4,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_queue"],
-        ImpliesSets = [
-            "VK_KHR_video_queue+VK_KHR_synchronization2",
-            "VK_KHR_video_queue+VK_VERSION_1_3",
-        ]
-    )]
-    MaxEnumKHR = 0x7FFFFFFF,
 }

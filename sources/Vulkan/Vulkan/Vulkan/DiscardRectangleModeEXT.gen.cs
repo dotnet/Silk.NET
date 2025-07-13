@@ -32,14 +32,4 @@ public enum DiscardRectangleModeEXT : uint
         ]
     )]
     ExclusiveEXT = 1,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_discard_rectangles"],
-        ImpliesSets = [
-            "VK_EXT_discard_rectangles+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_discard_rectangles+VK_VERSION_1_1",
-        ]
-    )]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

@@ -36,11 +36,4 @@ public enum ClusterAccelerationStructureIndexFormatFlagsNV : uint
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     Format32BitNV = 0x00000004,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_cluster_acceleration_structure"],
-        ImpliesSets = ["VK_KHR_acceleration_structure"]
-    )]
-    FormatFlagBitsMaxEnumNV = 0x7FFFFFFF,
 }

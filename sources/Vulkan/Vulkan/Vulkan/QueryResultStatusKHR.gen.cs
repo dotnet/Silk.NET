@@ -42,11 +42,4 @@ public enum QueryResultStatusKHR
         ]
     )]
     InsufficientBitstreamBufferRangeKHR = -1000299000,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_queue"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
-    )]
-    MaxEnumKHR = 0x7FFFFFFF,
 }

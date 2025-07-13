@@ -44,14 +44,4 @@ public enum AccelerationStructureCreateFlagsKHR : uint
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
     MotionBitNV = 0x00000004,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

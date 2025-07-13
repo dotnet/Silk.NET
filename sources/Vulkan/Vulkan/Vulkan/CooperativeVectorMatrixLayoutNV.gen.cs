@@ -24,7 +24,4 @@ public enum CooperativeVectorMatrixLayoutNV : uint
 
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
     TrainingOptimalNV = 3,
-
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
-    MaxEnumNV = 0x7FFFFFFF,
 }

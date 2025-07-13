@@ -76,7 +76,4 @@ public enum QueueGlobalPriority : uint
         ]
     )]
     QueueGlobalPriorityRealtimeKHR = QueueGlobalPriorityRealtime,
-
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    QueueGlobalPriorityMaxEnum = 0x7FFFFFFF,
 }

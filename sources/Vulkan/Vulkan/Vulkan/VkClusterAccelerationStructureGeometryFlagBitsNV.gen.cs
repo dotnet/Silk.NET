@@ -36,11 +36,4 @@ public enum ClusterAccelerationStructureGeometryFlagsNV : uint
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     OpaqueBitNV = 0x00000004,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_cluster_acceleration_structure"],
-        ImpliesSets = ["VK_KHR_acceleration_structure"]
-    )]
-    FlagBitsMaxEnumNV = 0x7FFFFFFF,
 }

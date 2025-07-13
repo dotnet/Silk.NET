@@ -27,7 +27,4 @@ public enum CompositeAlphaFlagsKHR : uint
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     InheritBitKHR = 0x00000008,
-
-    [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

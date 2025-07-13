@@ -63,11 +63,4 @@ public enum ShaderFloatControlsIndependence : uint
         ]
     )]
     IndependenceNoneKHR = IndependenceNone,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.2"
-    )]
-    IndependenceMaxEnum = 0x7FFFFFFF,
 }

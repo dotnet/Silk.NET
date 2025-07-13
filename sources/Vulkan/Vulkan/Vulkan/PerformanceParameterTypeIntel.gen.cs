@@ -18,7 +18,4 @@ public enum PerformanceParameterTypeIntel : uint
 
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     StreamMarkerValidBitsIntel = 1,
-
-    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    MaxEnumIntel = 0x7FFFFFFF,
 }

@@ -55,14 +55,4 @@ public enum VideoEncodeCapabilityFlagsKHR : uint
         ]
     )]
     EmphasisMapBitKHR = 0x00000008,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_queue"],
-        ImpliesSets = [
-            "VK_KHR_video_queue+VK_KHR_synchronization2",
-            "VK_KHR_video_queue+VK_VERSION_1_3",
-        ]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

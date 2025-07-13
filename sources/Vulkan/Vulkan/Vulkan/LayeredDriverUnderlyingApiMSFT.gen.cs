@@ -32,14 +32,4 @@ public enum LayeredDriverUnderlyingApiMSFT : uint
         ]
     )]
     D3D12Msft = 1,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_MSFT_layered_driver"],
-        ImpliesSets = [
-            "VK_MSFT_layered_driver+VK_KHR_get_physical_device_properties2",
-            "VK_MSFT_layered_driver+VK_VERSION_1_1",
-        ]
-    )]
-    MaxEnumMSFT = 0x7FFFFFFF,
 }

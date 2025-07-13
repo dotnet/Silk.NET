@@ -33,11 +33,4 @@ public enum DisplayPowerStateEXT : uint
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
     OnEXT = 2,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_display_control"],
-        ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
-    )]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

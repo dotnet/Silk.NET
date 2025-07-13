@@ -24,7 +24,7 @@ public enum VideoDecodeCapabilityFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DpbAndOutputCoincideBitKHR = 0x00000001,
+    CoincideBitKHR = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
@@ -34,15 +34,5 @@ public enum VideoDecodeCapabilityFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DpbAndOutputDistinctBitKHR = 0x00000002,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_decode_queue"],
-        ImpliesSets = [
-            "VK_KHR_video_queue+VK_KHR_synchronization2",
-            "VK_KHR_video_queue+VK_VERSION_1_3",
-        ]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
+    DistinctBitKHR = 0x00000002,
 }

@@ -21,19 +21,12 @@ public enum SurfaceCounterFlagsEXT : uint
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    VblankBitEXT = 0x00000001,
+    SurfaceCounterVblankBitEXT = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    VblankEXT = VblankBitEXT,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_display_surface_counter"],
-        ImpliesSets = ["VK_KHR_display"]
-    )]
-    FlagBitsMaxEnumEXT = 0x7FFFFFFF,
+    SurfaceCounterVblankEXT = SurfaceCounterVblankBitEXT,
 }

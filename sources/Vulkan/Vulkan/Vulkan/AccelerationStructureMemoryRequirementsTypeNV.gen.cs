@@ -42,14 +42,4 @@ public enum AccelerationStructureMemoryRequirementsTypeNV : uint
         ]
     )]
     UpdateScratchNV = 2,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing"],
-        ImpliesSets = [
-            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
-            "VK_VERSION_1_1",
-        ]
-    )]
-    MaxEnumNV = 0x7FFFFFFF,
 }

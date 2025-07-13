@@ -33,11 +33,4 @@ public enum ClusterAccelerationStructureTypeNV : uint
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     TriangleClusterTemplateNV = 2,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_cluster_acceleration_structure"],
-        ImpliesSets = ["VK_KHR_acceleration_structure"]
-    )]
-    MaxEnumNV = 0x7FFFFFFF,
 }

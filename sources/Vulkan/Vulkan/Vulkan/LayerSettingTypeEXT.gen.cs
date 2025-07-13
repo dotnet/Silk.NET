@@ -35,7 +35,4 @@ public enum LayerSettingTypeEXT : uint
 
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     StringEXT = 7,
-
-    [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

@@ -32,14 +32,4 @@ public enum OpacityMicromapFormatEXT : uint
         ]
     )]
     Format4StateEXT = 2,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_opacity_micromap"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-        ]
-    )]
-    FormatMaxEnumEXT = 0x7FFFFFFF,
 }

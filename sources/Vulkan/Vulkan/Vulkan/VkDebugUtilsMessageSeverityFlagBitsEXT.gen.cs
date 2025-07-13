@@ -27,7 +27,4 @@ public enum DebugUtilsMessageSeverityFlagsEXT : uint
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     ErrorBitEXT = 0x00001000,
-
-    [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    FlagBitsMaxEnumEXT = 0x7FFFFFFF,
 }

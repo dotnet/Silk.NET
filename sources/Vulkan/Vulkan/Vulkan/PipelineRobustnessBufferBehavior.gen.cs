@@ -64,7 +64,4 @@ public enum PipelineRobustnessBufferBehavior : uint
         ]
     )]
     RobustBufferAccess2EXT = RobustBufferAccess2,
-
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    MaxEnum = 0x7FFFFFFF,
 }

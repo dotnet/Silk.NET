@@ -133,7 +133,4 @@ public enum ColorSpaceKHR : uint
         ImpliesSets = ["VK_KHR_surface"]
     )]
     ColorSpaceDciP3LinearEXT = ColorSpaceDisplayP3LinearEXT,
-
-    [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    ColorSpaceMaxEnumKHR = 0x7FFFFFFF,
 }

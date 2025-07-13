@@ -26,11 +26,4 @@ public enum BlockMatchWindowCompareModeQCOM : uint
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
     MaxQCOM = 1,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_QCOM_image_processing2"],
-        ImpliesSets = ["VK_QCOM_image_processing"]
-    )]
-    MaxEnumQCOM = 0x7FFFFFFF,
 }

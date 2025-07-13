@@ -53,14 +53,4 @@ public enum VideoDecodeUsageFlagsKHR : uint
         ]
     )]
     StreamingBitKHR = 0x00000004,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_decode_queue"],
-        ImpliesSets = [
-            "VK_KHR_video_queue+VK_KHR_synchronization2",
-            "VK_KHR_video_queue+VK_VERSION_1_3",
-        ]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

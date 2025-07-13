@@ -51,7 +51,4 @@ public enum PresentModeKHR : uint
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
     FifoLatestReadyEXT = 1000361000,
-
-    [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    MaxEnumKHR = 0x7FFFFFFF,
 }

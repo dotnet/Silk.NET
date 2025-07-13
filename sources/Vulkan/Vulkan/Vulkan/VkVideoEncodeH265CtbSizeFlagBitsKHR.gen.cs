@@ -36,11 +36,4 @@ public enum VideoEncodeH265CtbSizeFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     Size64BitKHR = 0x00000004,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_h265"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    SizeFlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

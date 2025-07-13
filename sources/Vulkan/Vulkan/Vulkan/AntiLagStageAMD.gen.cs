@@ -18,7 +18,4 @@ public enum AntiLagStageAMD : uint
 
     [SupportedApiProfile("vulkan", ["VK_AMD_anti_lag"])]
     PresentAMD = 1,
-
-    [SupportedApiProfile("vulkan", ["VK_AMD_anti_lag"])]
-    MaxEnumAMD = 0x7FFFFFFF,
 }

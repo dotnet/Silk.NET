@@ -46,11 +46,4 @@ public enum SemaphoreType : uint
         ]
     )]
     TimelineKHR = Timeline,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.2"
-    )]
-    MaxEnum = 0x7FFFFFFF,
 }

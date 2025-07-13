@@ -43,11 +43,4 @@ public enum VideoEncodeAV1RateControlFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     ReferencePatternDyadicBitKHR = 0x00000008,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_av1"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

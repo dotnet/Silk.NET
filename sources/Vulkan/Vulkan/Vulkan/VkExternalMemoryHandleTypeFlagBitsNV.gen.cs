@@ -27,7 +27,4 @@ public enum ExternalMemoryHandleTypeFlagsNV : uint
 
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     D3D11ImageKmtBitNV = 0x00000008,
-
-    [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    FlagBitsMaxEnumNV = 0x7FFFFFFF,
 }

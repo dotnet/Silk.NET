@@ -30,7 +30,4 @@ public enum DebugReportFlagsEXT : uint
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     DebugBitEXT = 0x00000010,
-
-    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    FlagBitsMaxEnumEXT = 0x7FFFFFFF,
 }

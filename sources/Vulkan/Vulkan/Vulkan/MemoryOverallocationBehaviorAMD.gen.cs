@@ -21,7 +21,4 @@ public enum MemoryOverallocationBehaviorAMD : uint
 
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
     DisallowedAMD = 2,
-
-    [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
-    MaxEnumAMD = 0x7FFFFFFF,
 }

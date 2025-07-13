@@ -25,14 +25,4 @@ public enum MicromapCreateFlagsEXT : uint
         ]
     )]
     DeviceAddressCaptureReplayBitEXT = 0x00000001,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_opacity_micromap"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-        ]
-    )]
-    FlagBitsMaxEnumEXT = 0x7FFFFFFF,
 }

@@ -36,7 +36,4 @@ public enum ViewportCoordinateSwizzleNV : uint
 
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     NegativeWNV = 7,
-
-    [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    MaxEnumNV = 0x7FFFFFFF,
 }

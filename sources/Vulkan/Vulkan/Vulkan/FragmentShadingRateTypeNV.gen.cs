@@ -26,11 +26,4 @@ public enum FragmentShadingRateTypeNV : uint
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
     EnumsNV = 1,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_fragment_shading_rate_enums"],
-        ImpliesSets = ["VK_KHR_fragment_shading_rate"]
-    )]
-    MaxEnumNV = 0x7FFFFFFF,
 }

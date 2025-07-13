@@ -36,11 +36,4 @@ public enum PresentGravityFlagsEXT : uint
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     CenteredBitEXT = 0x00000004,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_surface_maintenance1"],
-        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
-    )]
-    FlagBitsMaxEnumEXT = 0x7FFFFFFF,
 }

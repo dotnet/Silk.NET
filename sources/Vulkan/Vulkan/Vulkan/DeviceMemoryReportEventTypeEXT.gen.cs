@@ -62,14 +62,4 @@ public enum DeviceMemoryReportEventTypeEXT : uint
         ]
     )]
     AllocationFailedEXT = 4,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_device_memory_report"],
-        ImpliesSets = [
-            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_device_memory_report+VK_VERSION_1_1",
-        ]
-    )]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

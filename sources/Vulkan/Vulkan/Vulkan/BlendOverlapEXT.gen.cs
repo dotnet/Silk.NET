@@ -42,14 +42,4 @@ public enum BlendOverlapEXT : uint
         ]
     )]
     ConjointEXT = 2,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_blend_operation_advanced"],
-        ImpliesSets = [
-            "VK_EXT_blend_operation_advanced+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
-        ]
-    )]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

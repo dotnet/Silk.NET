@@ -40,11 +40,4 @@ public enum VideoEncodeAV1PredictionModeKHR : uint
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     BidirectionalCompoundKHR = 3,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_av1"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    MaxEnumKHR = 0x7FFFFFFF,
 }

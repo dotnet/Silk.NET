@@ -21,7 +21,4 @@ public enum ShaderInfoTypeAMD : uint
 
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     DisassemblyAMD = 2,
-
-    [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    MaxEnumAMD = 0x7FFFFFFF,
 }

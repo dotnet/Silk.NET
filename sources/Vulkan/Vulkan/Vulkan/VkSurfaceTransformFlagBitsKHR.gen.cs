@@ -42,7 +42,4 @@ public enum SurfaceTransformFlagsKHR : uint
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     InheritBitKHR = 0x00000100,
-
-    [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

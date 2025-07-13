@@ -46,11 +46,4 @@ public enum AttachmentStoreOp : uint
 
     [SupportedApiProfile("vulkan", ["VK_EXT_load_store_op_none"])]
     NoneEXT = None,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    MaxEnum = 0x7FFFFFFF,
 }

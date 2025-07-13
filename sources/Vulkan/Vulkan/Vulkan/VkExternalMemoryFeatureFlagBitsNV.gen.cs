@@ -24,7 +24,4 @@ public enum ExternalMemoryFeatureFlagsNV : uint
 
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     ImportableBitNV = 0x00000004,
-
-    [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    FlagBitsMaxEnumNV = 0x7FFFFFFF,
 }

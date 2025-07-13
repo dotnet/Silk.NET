@@ -18,7 +18,4 @@ public enum ValidationCheckEXT : uint
 
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     ShadersEXT = 1,
-
-    [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

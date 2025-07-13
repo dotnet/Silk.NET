@@ -32,14 +32,4 @@ public enum DepthClampModeEXT : uint
         ]
     )]
     UserDefinedRangeEXT = 1,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_depth_clamp_control"],
-        ImpliesSets = [
-            "VK_EXT_depth_clamp_control+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_depth_clamp_control+VK_VERSION_1_1",
-        ]
-    )]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

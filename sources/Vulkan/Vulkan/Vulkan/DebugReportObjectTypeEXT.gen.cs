@@ -199,7 +199,4 @@ public enum DebugReportObjectTypeEXT : uint
         RequireAll = true
     )]
     SamplerYcbcrConversionKhrEXT = SamplerYcbcrConversionEXT,
-
-    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

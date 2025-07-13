@@ -18,7 +18,4 @@ public enum DirectDriverLoadingModeLunarg : uint
 
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     InclusiveLunarg = 1,
-
-    [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
-    MaxEnumLunarg = 0x7FFFFFFF,
 }

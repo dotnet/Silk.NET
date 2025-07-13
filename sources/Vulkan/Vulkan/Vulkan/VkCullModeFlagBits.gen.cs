@@ -41,11 +41,4 @@ public enum CullModeFlags : uint
         MinVersion = "1.0"
     )]
     FrontAndBack = 0x00000003,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
 }

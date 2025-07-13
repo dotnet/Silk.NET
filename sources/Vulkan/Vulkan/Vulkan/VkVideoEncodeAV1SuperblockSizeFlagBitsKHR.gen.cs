@@ -29,11 +29,4 @@ public enum VideoEncodeAV1SuperblockSizeFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     Size128BitKHR = 0x00000002,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_av1"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    SizeFlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

@@ -42,14 +42,4 @@ public enum ConservativeRasterizationModeEXT : uint
         ]
     )]
     UnderestimateEXT = 2,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_conservative_rasterization"],
-        ImpliesSets = [
-            "VK_EXT_conservative_rasterization+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
-        ]
-    )]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

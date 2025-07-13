@@ -124,11 +124,4 @@ public enum LogicOp : uint
         MinVersion = "1.0"
     )]
     LogicOpSet = 15,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.0"
-    )]
-    LogicOpMaxEnum = 0x7FFFFFFF,
 }

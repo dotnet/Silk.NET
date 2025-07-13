@@ -90,11 +90,4 @@ public enum IndirectCommandsTokenTypeNV : uint
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
     DispatchNV = 1000428004,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_device_generated_commands"],
-        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
-    )]
-    MaxEnumNV = 0x7FFFFFFF,
 }

@@ -25,14 +25,4 @@ public enum ConditionalRenderingFlagsEXT : uint
         ]
     )]
     InvertedBitEXT = 0x00000001,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_conditional_rendering"],
-        ImpliesSets = [
-            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
-        ]
-    )]
-    FlagBitsMaxEnumEXT = 0x7FFFFFFF,
 }

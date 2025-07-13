@@ -72,14 +72,4 @@ public enum RayTracingShaderGroupTypeKHR : uint
         ]
     )]
     ProceduralHitGroupNV = ProceduralHitGroupKHR,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_ray_tracing_pipeline"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
-        ]
-    )]
-    MaxEnumKHR = 0x7FFFFFFF,
 }

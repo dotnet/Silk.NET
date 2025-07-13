@@ -66,11 +66,4 @@ public enum ExternalMemoryFeatureFlags : uint
         ]
     )]
     ImportableBitKHR = ImportableBit,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.1"
-    )]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
 }

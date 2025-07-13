@@ -85,7 +85,4 @@ public enum RenderingFlags : uint
         ]
     )]
     ContentsInlineBitEXT = ContentsInlineBitKHR,
-
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
 }

@@ -33,11 +33,4 @@ public enum AccelerationStructureMotionInstanceTypeNV : uint
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
     SrtMotionNV = 2,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing_motion_blur"],
-        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
-    )]
-    MaxEnumNV = 0x7FFFFFFF,
 }

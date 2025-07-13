@@ -15,7 +15,4 @@ public enum ValidationCacheHeaderVersionEXT : uint
 {
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     OneEXT = 1,
-
-    [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
-    MaxEnumEXT = 0x7FFFFFFF,
 }

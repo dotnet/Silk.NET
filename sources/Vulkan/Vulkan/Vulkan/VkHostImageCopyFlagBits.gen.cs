@@ -29,7 +29,4 @@ public enum HostImageCopyFlags : uint
         ]
     )]
     MemcpyEXT = Memcpy,
-
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
 }

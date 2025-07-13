@@ -47,12 +47,4 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
         RequireAll = true
     )]
     LocalMultiDeviceBitKHR = 0x00000008,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
-        ImpliesSets = ["VK_KHR_surface"],
-        RequireAll = true
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

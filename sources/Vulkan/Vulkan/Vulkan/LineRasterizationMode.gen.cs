@@ -104,7 +104,4 @@ public enum LineRasterizationMode : uint
         ]
     )]
     RectangularSmoothKHR = RectangularSmooth,
-
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    MaxEnum = 0x7FFFFFFF,
 }

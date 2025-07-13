@@ -50,11 +50,4 @@ public enum VideoEncodeH265RateControlFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     TemporalSubLayerPatternDyadicBitKHR = 0x00000010,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_video_encode_h265"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
-    )]
-    FlagBitsMaxEnumKHR = 0x7FFFFFFF,
 }

@@ -71,11 +71,4 @@ public enum PeerMemoryFeatureFlags : uint
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
     GenericDstBitKHR = GenericDstBit,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.1"
-    )]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
 }

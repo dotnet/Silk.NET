@@ -18,14 +18,14 @@ public enum SamplerYcbcrRange : uint
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    ItuFull = 0,
+    Full = 0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    ItuNarrow = 1,
+    Narrow = 1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -35,7 +35,7 @@ public enum SamplerYcbcrRange : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ItuFullKHR = ItuFull,
+    FullKHR = Full,
 
     [SupportedApiProfile(
         "vulkan",
@@ -45,12 +45,5 @@ public enum SamplerYcbcrRange : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ItuNarrowKHR = ItuNarrow,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
-        MinVersion = "1.1"
-    )]
-    MaxEnum = 0x7FFFFFFF,
+    NarrowKHR = Narrow,
 }

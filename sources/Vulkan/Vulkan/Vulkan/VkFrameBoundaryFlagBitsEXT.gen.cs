@@ -18,7 +18,4 @@ public enum FrameBoundaryFlagsEXT : uint
 
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
     FrameEndBitEXT = 0x00000001,
-
-    [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
-    FlagBitsMaxEnumEXT = 0x7FFFFFFF,
 }
