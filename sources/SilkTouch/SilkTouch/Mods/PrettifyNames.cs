@@ -202,9 +202,9 @@ public class PrettifyNames(
                 // Add it to the rewriter's list of names to... rewrite...
                 types[typeName] = (
                     newTypeName.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names
-                    // TODO deprecate secondaries if they're within the baseline?
+                                                                          // TODO deprecate secondaries if they're within the baseline?
                     constNames
-                        .Concat(prettifiedOnly)
+                        .Concat(prettifiedOnly.DistinctBy(kvp => kvp.Key).ToDictionary())
                         .ToDictionary(x => x.Key, x => x.Value.Primary.Prettify(translator)),
                     functionNames?.ToDictionary(
                         x => x.Key,
@@ -268,11 +268,13 @@ public class PrettifyNames(
         var sw = Stopwatch.StartNew();
         logger.LogDebug("Discovering references to symbols to rename for {}...", ctx.JobKey);
         ctx.SourceProject = proj;
+
         var comp =
             await proj.GetCompilationAsync(ct)
             ?? throw new InvalidOperationException(
                 "Failed to obtain compilation for source project!"
             );
+
         await NameUtils.RenameAllAsync(
             ctx,
             types.SelectMany(x =>
@@ -316,6 +318,7 @@ public class PrettifyNames(
             logger,
             ct
         );
+
         logger.LogDebug(
             "Reference renaming took {} seconds for {}.",
             sw.Elapsed.TotalSeconds,
@@ -761,7 +764,7 @@ public class PrettifyNames(
 
             // Merge with the other partials.
             (inner.NonFunctions ??= new List<string>()).AddRange(
-                _classInProgress.Value.NonFunctions
+                _classInProgress.Value.NonFunctions.Where(val => !inner.NonFunctions?.Contains(val) ?? true)
             );
             (inner.Functions ??= new List<(string, MethodDeclarationSyntax)>()).AddRange(
                 _classInProgress.Value.Functions

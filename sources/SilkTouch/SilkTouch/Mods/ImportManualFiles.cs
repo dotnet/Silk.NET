@@ -62,8 +62,8 @@ namespace Silk.NET.SilkTouch.Mods
 
             foreach (var import in cfg.ManualImports)
             {
-                string regexPatternIn = GlobToRegexInput(import.Value);
-                string regexPatternOut = GlobToRegexOutput(import.Key);
+                string regexPatternIn = FileUtils.GlobToRegexInput(import.Value);
+                string regexPatternOut = FileUtils.GlobToRegexOutput(import.Key);
 
                 pathGlobs.Add(import.Value);
 
@@ -77,43 +77,17 @@ namespace Silk.NET.SilkTouch.Mods
 
             foreach (var file in files)
             {
-                foreach (var regex in regexConverters)
-                {
-                    if (regex.Key.Match(file).Success)
-                    {
-                        string outputLocation = regex.Key.Replace(file, regex.Value);
-                        bool isTest = outputLocation.StartsWith("tests/");
-                        outputLocation = outputLocation.Remove(
-                            0,
-                            outputLocation.IndexOf(isTest ? "tests/" : "sources/")
-                        );
-                        string relativeKey = outputLocation.Remove(0, isTest ? 6 : 8);
-                        if (
-                            !(isTest ? aggregatedTests : aggregatedSources).TryAdd(
-                                relativeKey,
-                                CSharpSyntaxTree.ParseText(
-                                    SourceText.From(File.OpenRead(file)),
-                                    path: relativeKey
-                                )
-                            )
-                        )
-                        {
-                            logger.LogError(
-                                "Failed to add {0} - are the response file outputs conflicting?",
-                                relativeKey
-                            );
-                        }
-                        else
-                        {
-                            logger.LogTrace("ClangSharp generated {0}", relativeKey);
-                        }
-                    }
-                }
+                FileUtils.ImportIfRegexMatches(regexConverters, file, false, null, aggregatedTests, aggregatedSources, logger);
             }
 
             var src = ctx.SourceProject;
             foreach (var (fname, tree) in aggregatedSources)
             {
+                if (!fname.EndsWith(".gen.cs"))
+                {
+                    logger.LogWarning($"Imported file {fname} does not end in .gen.cs which may produce undefined behavior");
+                }
+
                 src = src
                     ?.AddDocument(
                         Path.GetFileName(fname),
@@ -138,19 +112,6 @@ namespace Silk.NET.SilkTouch.Mods
             }
 
             ctx.TestProject = test;
-        }
-
-        private string GlobToRegexInput(string glob)
-        {
-            return glob.Replace("*", "**").Replace("****", "(.*)").Replace("**", @"([^\/]*)");
-        }
-
-        private string GlobToRegexOutput(string glob)
-        {
-            int index = 1;
-            return glob.Split("**")
-                .SelectMany(split => split.Split('*'))
-                .Aggregate((s1, s2) => $"{s1}${index++}{s2}");
         }
     }
 }

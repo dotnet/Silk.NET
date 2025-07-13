@@ -437,6 +437,101 @@ public static partial class NameUtils
                     continue;
                 }
 
+                if (contents == "this" || contents == "base")
+                {
+                    continue;
+                }
+
+                if (logger?.IsEnabled(LogLevel.Trace) ?? false)
+                {
+                    logger?.LogTrace(
+                        "\"{}\" -> \"{}\" at {}",
+                        contents,
+                        newName,
+                        location.GetLineSpan()
+                    );
+                }
+
+                text = text.Replace(location.SourceSpan, newName);
+            }
+
+            sln = doc.WithText(text).Project.Solution;
+        }
+
+        ctx.SourceProject = sln.GetProject(srcProjId);
+    }
+
+    /// <summary>
+    /// Rename all symbols with the given new names
+    /// </summary>
+    /// <param name="ctx">Mod context to use</param>
+    /// <param name="nameMappings">list of names to rename with new names</param>
+    /// <param name="candidateLocations">potential Locations to check for remapping</param>
+    /// <param name="ct">cancellation token</param>
+    /// <param name="logger">logger</param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentException"></exception>
+    public static async Task RemapAllAsync(
+        IModContext ctx,
+        Dictionary<string, string> nameMappings,
+        IEnumerable<Location> candidateLocations,
+        ILogger? logger = null,
+        CancellationToken ct = default
+    )
+    {
+        if (ctx.SourceProject is null)
+        {
+            return;
+        }
+        
+
+        logger?.LogDebug(
+            "{} referencing locations for renames for {}",
+            candidateLocations.Count(),
+            ctx.JobKey
+        );
+
+        // Now it's just a simple find and replace.
+        var sln = ctx.SourceProject.Solution;
+        var srcProjId = ctx.SourceProject.Id;
+        var testProjId = ctx.TestProject?.Id;
+        foreach (
+            var (syntaxTree, renameLocations) in candidateLocations
+                .GroupBy(x => x.SourceTree)
+                .Select(x => (x.Key, x.OrderByDescending(y => y.SourceSpan)))
+        )
+        {
+            if (
+                syntaxTree is null
+                || sln.GetDocument(syntaxTree) is not { } doc
+                || (doc.Project.Id != srcProjId && doc.Project.Id != testProjId)
+                || await syntaxTree.GetTextAsync(ct) is not { } text
+            )
+            {
+                continue;
+            }
+
+            var ogText = text;
+            foreach (var location in renameLocations)
+            {
+                var contents = ogText.GetSubText(location.SourceSpan).ToString();
+
+                if (!nameMappings.TryGetValue(contents, out string? newName))
+                {
+                    continue;
+                }
+
+                if (contents.Contains(' '))
+                {
+                    logger?.LogWarning(
+                        "Refusing to do unsafe rename/replacement of \"{}\" to \"{}\" at {}",
+                        contents,
+                        newName,
+                        location.GetLineSpan()
+                    );
+                    continue;
+                }
+
                 if (logger?.IsEnabled(LogLevel.Trace) ?? false)
                 {
                     logger?.LogTrace(

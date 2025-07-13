@@ -9,10 +9,13 @@
         "ClangScraper",
         "ImportManualFiles",
         "ChangeNamespace",
+        "RemapTypes",
+        "RemoveStaticUsings",
         "TransformInterfaces",
         "TransformCOM",
         "DisableWarnings",
-        "TransformFunctions"
+        "TransformFunctions",
+        "PrettifyNames"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -34,11 +37,13 @@
           "sources/Windows/shared/strsafe/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/strsafe/Windows.cs",
           "sources/Windows/shared/ws2ipdef/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/ws2ipdef/Windows.cs",
           "sources/Windows/shared/Iprtrmib/MIB_OPAQUE_INFO.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/Iprtrmib/MIB_OPAQUE_INFO.cs",
+          "sources/Windows/shared/winerror/**.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/winerror/**.cs",
           "sources/WinRT/winrt/windows.applicationmodel.email/IEmailMailboxSmimeEncryptionAlgorithm.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.email/EmailMailboxSmimeEncryptionAlgorithm.cs",
           "sources/WinRT/winrt/windows.applicationmodel.email/IEmailMailboxSmimeSigningAlgorithm.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.email/EmailMailboxSmimeSigningAlgorithm.cs",
           "sources/WinRT/winrt/windows.perception.spatial/ISpatialCoordinateSystem.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.perception.spatial/ISpatialCoordinateSystem.cs",
           "sources/WinRT/winrt/windows.security.authentication.web.core/IID.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.security.authentication.web.core/IID.Manual.cs",
-          "sources/WinRT/winrt/windows.ui.input/IID.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.ui.input/IID.Manual.cs"
+          "sources/WinRT/winrt/windows.ui.input/IID.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.ui.input/IID.Manual.cs",
+          "sources/WinRT/winrt/winstring/WinRT.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/winstring/WinRT.cs"
         },
         "InputSourceRoot": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
         "InputTestRoot": "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
@@ -53,7 +58,11 @@
           "sources/**/helper-types/*Attribute.gen.cs",
           "sources/**/helper-types/HRESULT.gen.cs",
           "sources/**/helper-types/BOOL.gen.cs",
-          "sources/**/helper-types/HSTRING.gen.cs"
+          "sources/**/helper-types/HSTRING.gen.cs",
+          "sources/WinRT/um/efswrtinterop/WinRT.gen.cs",
+          "sources/WinRT/um/appserviceinterop/WinRT.gen.cs",
+          "sources/WinRT/winrt/windows.media.casting/CastingConnectionErrorStatus.gen.cs",
+          "sources/WinRT/winrt/windows.media.casting/CastingConnectionState.gen.cs"
         ],
         "InjectedRemappedNames": {
           "BOOL": "MaybeBool<int>",
@@ -61,43 +70,52 @@
         },
         "InjectedGeneratorOptions": [
           "--config",
-          "dont-use-using-statics-for-guid-members"
+          "dont-use-using-statics-for-guid-members",
+          "dont-use-using-statics-for-enums"
         ]
       },
       "ImportManualFiles": {
         "ManualImports": {
-          "sources/**.Manual.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/**.Manual.cs",
-          "!sources/**/INativeGuid.Manual.cs": "!**/INativeGuid.Manual.cs",
-          "!sources/**/HWND.Manual.cs": "!**/HWND.Manual.cs",
-          "!sources/**/HRESULT.Manual.cs": "!**/HRESULT.Manual.cs",
-          "!sources/**/ID2D1*.Manual.cs": "!**/ID2D1*.Manual.cs",
-          "!sources/**/d2d1_1helper/DirectX.Manual.cs": "!**/d2d1_1helper/DirectX.Manual.cs",
-          "!sources/**/DirectXHelpers/DirectX.Manual.cs": "!**/DirectXHelpers/DirectX.Manual.cs",
-          "!sources/**/d2d1/DirectX.Manual.cs": "!**/d2d1/DirectX.Manual.cs",
-          "!sources/**/IWeakReference.Manual.cs": "!**/IWeakReference.Manual.cs",
-          "!sources/**/IDispatchEx.Manual.cs": "!**/IDispatchEx.Manual.cs",
-          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER.Manual.cs",
-          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM1_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM1_PARSE_HELPER.Manual.cs",
-          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM2_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM2_PARSE_HELPER.Manual.cs",
-          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM3_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM3_PARSE_HELPER.Manual.cs",
-          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM4_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM4_PARSE_HELPER.Manual.cs",
-          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM5_PARSE_HELPER.Manual.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM5_PARSE_HELPER.Manual.cs",
-          "!sources/**/ShObjIdl_core/Windows.Manual.cs": "!**/ShObjIdl_core/Windows.Manual.cs",
-          "!sources/**/propvarutil/Windows.Manual.cs": "!**/propvarutil/Windows.Manual.cs",
-          "!sources/**/uuids/Windows.Manual.cs": "!**/uuids/Windows.Manual.cs",
-          "!sources/**/gdipluscolor/Color.Manual.cs": "!**/gdipluscolor/Color.Manual.cs",
-          "!sources/**/windows.ui.input/IID.Manual.cs": "!**/windows.ui.input/IID.Manual.cs",
-          "!sources/**/windows.security.authentication.web.core/IID.Manual.cs": "!**/windows.security.authentication.web.core/IID.Manual.cs",
-          "!sources/**/roapi/WinRT.Manual.cs": "!**/roapi/WinRT.Manual.cs",
-          "!sources/**/windows.graphics.directx.direct3d11.interop/WinRT.Manual.cs": "!**/windows.graphics.directx.direct3d11.interop/WinRT.Manual.cs",
-          "!sources/**/roparameterizediid/**.Manual.cs": "!**/roparameterizediid/**.Manual.cs",
-          "!sources/**/d2d1_1/D2D1_**.Manual.cs": "!**/d2d1_1/D2D1_**.Manual.cs"
+          "sources/**.TerraFXAdditions.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/**.Manual.cs",
+          "!sources/**/INativeGuid.TerraFXAdditions.gen.cs": "!**/INativeGuid.Manual.cs",
+          "!sources/**/HWND.TerraFXAdditions.gen.cs": "!**/HWND.Manual.cs",
+          "!sources/**/HRESULT.TerraFXAdditions.gen.cs": "!**/HRESULT.Manual.cs",
+          "!sources/**/ID2D1*.TerraFXAdditions.gen.cs": "!**/ID2D1*.Manual.cs",
+          "!sources/**/d2d1_1helper/DirectX.TerraFXAdditions.gen.cs": "!**/d2d1_1helper/DirectX.Manual.cs",
+          "!sources/**/DirectXHelpers/DirectX.TerraFXAdditions.gen.cs": "!**/DirectXHelpers/DirectX.Manual.cs",
+          "!sources/**/d2d1/DirectX.TerraFXAdditions.gen.cs": "!**/d2d1/DirectX.Manual.cs",
+          "!sources/**/IWeakReference.TerraFXAdditions.gen.cs": "!**/IWeakReference.Manual.cs",
+          "!sources/**/IDispatchEx.TerraFXAdditions.gen.cs": "!**/IDispatchEx.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER.TerraFXAdditions.gen.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM1_PARSE_HELPER.TerraFXAdditions.gen.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM1_PARSE_HELPER.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM2_PARSE_HELPER.TerraFXAdditions.gen.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM2_PARSE_HELPER.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM3_PARSE_HELPER.TerraFXAdditions.gen.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM3_PARSE_HELPER.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM4_PARSE_HELPER.TerraFXAdditions.gen.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM4_PARSE_HELPER.Manual.cs",
+          "!sources/**/CD3DX12_PIPELINE_STATE_STREAM5_PARSE_HELPER.TerraFXAdditions.gen.cs": "!**/CD3DX12_PIPELINE_STATE_STREAM5_PARSE_HELPER.Manual.cs",
+          "!sources/**/ShObjIdl_core/Windows.TerraFXAdditions.gen.cs": "!**/ShObjIdl_core/Windows.Manual.cs",
+          "!sources/**/propvarutil/Windows.TerraFXAdditions.gen.cs": "!**/propvarutil/Windows.Manual.cs",
+          "!sources/**/uuids/Windows.TerraFXAdditions.gen.cs": "!**/uuids/Windows.Manual.cs",
+          "!sources/**/gdipluscolor/Color.TerraFXAdditions.gen.cs": "!**/gdipluscolor/Color.Manual.cs",
+          "!sources/**/windows.ui.input/IID.TerraFXAdditions.gen.cs": "!**/windows.ui.input/IID.Manual.cs",
+          "!sources/**/windows.security.authentication.web.core/IID.TerraFXAdditions.gen.cs": "!**/windows.security.authentication.web.core/IID.Manual.cs",
+          "!sources/**/roapi/WinRT.TerraFXAdditions.gen.cs": "!**/roapi/WinRT.Manual.cs",
+          "!sources/**/windows.graphics.directx.direct3d11.interop/WinRT.TerraFXAdditions.gen.cs": "!**/windows.graphics.directx.direct3d11.interop/WinRT.Manual.cs",
+          "!sources/**/roparameterizediid/**.TerraFXAdditions.gen.cs": "!**/roparameterizediid/**.Manual.cs",
+          "!sources/**/d2d1_1/D2D1_**.TerraFXAdditions.gen.cs": "!**/d2d1_1/D2D1_**.Manual.cs"
         }
       },
       "ChangeNamespace": {
         "Mappings": {
           "TerraFX.Interop.Windows(.*)": "Silk.NET.Win32$1",
           "TerraFX.Interop(?!.Windows)(.*)": "Silk.NET$1"
+        }
+      },
+      "RemapTypes": {
+        "Mappings": {
+          "HSTRING": "HString",
+          "HRESULT": "HResult",
+          "BOOL": "MaybeBool<int>",
+          "HANDLE": "Handle"
         }
       },
       "TransformInterfaces": {
@@ -127,9 +145,13 @@
       "TransformFunctions": {
       },
       "PrettifyNames": {
+        "LongAcronymThreshold": 4,
         "NameOverrides": {
           "HSTRING": "HString",
-          "HRESULT": "HResult"
+          "HRESULT": "HResult",
+          "GUID": "IID",
+          "ISVGPointList": "ISVGPointList",
+          "ISVGPoint": "ISVGPoint"
         }
       }
     },

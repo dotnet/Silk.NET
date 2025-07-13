@@ -71,7 +71,6 @@ public class TransformFunctions(
         int count = proj?.DocumentIds.Count ?? 0;
         int index = 0;
 
-        Stopwatch watch = Stopwatch.StartNew();
         progressService.SetTask("Transforming Functions");
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
@@ -87,9 +86,6 @@ public class TransformFunctions(
 
             progressService.SetProgress((float)index / count);
         }
-        watch.Stop();
-        List<TimeSpan> times = [watch.Elapsed];
-        watch.Restart();
 
         progressService.SetTask("Getting Project Compilation");
         var compilation = await proj!.GetCompilationAsync();
@@ -99,10 +95,6 @@ public class TransformFunctions(
                 "project was unable to compile, some usages may not be properly updated"
             );
         }
-
-        watch.Stop();
-        times.Add(watch.Elapsed);
-        watch.Restart();
 
         List<(ISymbol, string)> toRenameSymbols = [];
         Visitor visitor = new(_toRename, toRenameSymbols, logger);
@@ -131,22 +123,7 @@ public class TransformFunctions(
 
         ctx.SourceProject = proj;
 
-        watch.Stop();
-        times.Add(watch.Elapsed);
-        watch.Restart();
-
         await NameUtils.RenameAllAsync(ctx, toRenameSymbols, logger, ct, false, true);
-
-        watch.Stop();
-        times.Add(watch.Elapsed);
-
-        logger.LogInformation(
-            "TransformFunction Timing Data:"
-                + $"\nTransform Function  : {times[0]}"
-                + $"\nProject Compilation : {times[1]}"
-                + $"\nGathering Symbols   : {times[2]}"
-                + $"\nRename Symbols      : {times[3]}"
-        );
     }
 
     /// <inheritdoc />

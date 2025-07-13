@@ -294,6 +294,15 @@ public sealed class ClangScraper(
             cacheKey = null;
         }
 
+        Dictionary<Regex, string> regexConverters = [];
+        foreach (var import in cfg.ManualOverrides ?? [])
+        {
+            string regexPatternIn = FileUtils.GlobToRegexInput(import.Key);
+            string regexPatternOut = FileUtils.GlobToRegexOutput(import.Value);
+
+            regexConverters.Add(new(regexPatternIn), regexPatternOut);
+        }
+
         string? cacheDir = null;
 
         // Figure out what the common root is so we can aggregate the file paths without collisions
@@ -392,31 +401,7 @@ public sealed class ClangScraper(
                                 }
 
                                 // Add it to the dictionary.
-                                if (
-                                    !(isTest ? aggregatedTests : aggregatedSources).TryAdd(
-                                        relativeKey,
-                                        CSharpSyntaxTree.ParseText(
-                                            SourceText.From(
-                                                cfg.ManualOverrides?.TryGetValue(
-                                                    relativePath,
-                                                    out var @override
-                                                ) ?? false
-                                                    ? File.OpenRead(
-                                                        await inputResolver.ResolvePath(@override)
-                                                    )
-                                                    : stream
-                                            ),
-                                            path: relativeKey
-                                        )
-                                    )
-                                )
-                                {
-                                    logger.LogError(
-                                        "Failed to add {0} - are the response file outputs conflicting?",
-                                        relativeKey
-                                    );
-                                }
-                                else
+                                if (!FileUtils.ImportIfRegexMatches(regexConverters, relativePath, isTest, relativeKey, aggregatedTests, aggregatedSources, logger, stream))
                                 {
                                     logger.LogTrace("ClangSharp generated {0}", relativeKey);
                                 }
