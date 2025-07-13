@@ -516,7 +516,7 @@ public static class ModUtils
     /// <param name="fullNameWithoutSuffix">
     /// The fully-qualified attribute name including the namespace but without the <c>Attribute</c> suffix.
     /// </param>
-    /// <returns>Whether it is probably a DllImport.</returns>
+    /// <returns>Whether it is probably the specified attribute.</returns>
     public static bool IsAttribute(this AttributeSyntax node, string fullNameWithoutSuffix)
     {
         var sep = node.Name.ToString().Split("::").Last();
