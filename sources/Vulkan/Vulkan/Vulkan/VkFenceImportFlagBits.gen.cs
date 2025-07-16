@@ -21,12 +21,12 @@ public enum FenceImportFlags : uint
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    Bit = 0x00000001,
+    TemporaryBit = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence"],
         ImpliesSets = ["VK_KHR_external_fence_capabilities"]
     )]
-    BitKHR = Bit,
+    TemporaryBitKHR = TemporaryBit,
 }

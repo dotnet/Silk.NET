@@ -151,7 +151,10 @@
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
-        "GlobalPrefixHint": "gl"
+        "GlobalPrefixHint": "gl",
+        "PrefixOverrides": {
+          "SyncObjectMask": "GL_SYNC"
+        }
       },
       "TransformFunctions": {
         "BoolTypes": {
@@ -200,7 +203,15 @@
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
-        "GlobalPrefixHint": "vk"
+        "GlobalPrefixHint": "vk",
+        "PrefixOverrides": {
+          "VkFenceImportFlags": "VK_FENCE_IMPORT",
+          "VkIndirectStateFlagsNV": "VK_INDIRECT_STATE_FLAG",
+          "VkSemaphoreImportFlags": "VK_SEMAPHORE_IMPORT",
+          "VkSemaphoreWaitFlags": "VK_SEMAPHORE_WAIT",
+          "VkSubmitFlags": "VK_SUBMIT",
+          "VkSurfaceCounterFlagsEXT": "VK_SURFACE_COUNTER"
+        }
       },
       "AddVTables": {
         "VTables": [

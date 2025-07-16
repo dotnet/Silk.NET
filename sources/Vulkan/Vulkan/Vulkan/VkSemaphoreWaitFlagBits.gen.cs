@@ -21,7 +21,7 @@ public enum SemaphoreWaitFlags : uint
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    Bit = 0x00000001,
+    AnyBit = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
@@ -31,5 +31,5 @@ public enum SemaphoreWaitFlags : uint
             "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
         ]
     )]
-    BitKHR = Bit,
+    AnyBitKHR = AnyBit,
 }
