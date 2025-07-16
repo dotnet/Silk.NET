@@ -6,6 +6,7 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 # Contributors
 - Maxine H (@uwx)
 - Andrew Davis (@Curin)
+- John Gietzen (@otac0n)
 
 # Current Status
 - [x] Proposed
@@ -59,11 +60,11 @@ For each vector struct, the following requirements **must** fulfill the followin
 - An implicit conversion from a value tuple of the same size.
 - Define static CreateChecked, CreateSaturating, and CreateTruncating which converts other vector types to this type
   - Try variants of these methods should also be defined which out the resulting vector and return a bool representing success or failure of the operation.
-- Define Transform functions which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use Matrix2Xn, Matrix3Xn, and matrix4Xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4X4) returns Vector2)
+- Define Transform functions which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
   - A Static implementation of these functions **must** be available
 - Define `VectorND<T> * MatrixNXM` operators where N is the same for both Vector and Matrix, but M is any number
   - These operators should function like Transform, but without needed assumptions
-- Define TransformNormal functions which take a Matrix of higher dimensionality assuming 0 in for all missing components (Vector 2 can use Matrix2Xn, Matrix3Xn, and matrix4Xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
+- Define TransformNormal functions which take a Matrix of higher dimensionality assuming 0 in for all missing components (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
   - A Static implementation of these functions **must** be available
 - A Normalize extension method which divides all components by the length of the vector, when `T` implements `IRootFunctions<T>`
 - A Reflect extension method which takes a normal vector and reflects the vector over the normal
@@ -203,21 +204,20 @@ For each vector struct, the following requirements **must** fulfill the followin
 # Matrix Types
 
 This proposal includes the following matrix types:
-- Matrix2X2
-- Matrix2X3
-- Matrix2X4
-- Matrix3X2
-- Matrix3X3
-- Matrix3X4
-- Matrix4X2
-- Matrix4X3
-- Matrix4X4
-- Matrix5X4
+- `Matrix2X2<T>`
+- `Matrix2X3<T>`
+- `Matrix2X4<T>`
+- `Matrix3X2<T>`
+- `Matrix3X3<T>`
+- `Matrix3X4<T>`
+- `Matrix4X2<T>`
+- `Matrix4X3<T>`
+- `Matrix4X4<T>`
+- `Matrix5X4<T>`
 
 Matrix structs **must** fulfill the following requirements:
 - Fulfills `IEquatable<T>` where `T` is the same matrix class
 - Stored in row major format
-- F matricies work with F vectors, and I Matricies work with I vectors
 - Both row vectors and individual values (M11, etc.) accessible via properties
 - A ref indexer that takes row and column indicies and outputs the value
 - Add, subtract, and multiply operators defined with Matricies of the same size
@@ -227,7 +227,7 @@ Matrix structs **must** fulfill the following requirements:
 - Invert extension method for square matricies
 - GetDeterminant extension method for square matricies and Matrix3X2, Matrix4X3, and Matrix5X4
 - Transpose extension method
-- for F matrices, a static lerp function
+- a static lerp extension method
 - static identity property for square matrices
 - For Matrix3X2, Matrix3X3, Matrix4X3, and Matrix4X4 include the following static functions
   - CreateBillboardRH
