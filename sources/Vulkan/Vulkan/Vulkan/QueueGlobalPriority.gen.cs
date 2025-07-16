@@ -14,28 +14,28 @@ namespace Silk.NET.Vulkan;
 public enum QueueGlobalPriority : uint
 {
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    QueueGlobalPriorityLow = 128,
+    Low = 128,
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    QueueGlobalPriorityMedium = 256,
+    Medium = 256,
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    QueueGlobalPriorityHigh = 512,
+    High = 512,
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    QueueGlobalPriorityRealtime = 1024,
+    Realtime = 1024,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    QueueGlobalPriorityLowEXT = QueueGlobalPriorityLow,
+    LowEXT = Low,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    QueueGlobalPriorityMediumEXT = QueueGlobalPriorityMedium,
+    MediumEXT = Medium,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    QueueGlobalPriorityHighEXT = QueueGlobalPriorityHigh,
+    HighEXT = High,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    QueueGlobalPriorityRealtimeEXT = QueueGlobalPriorityRealtime,
+    RealtimeEXT = Realtime,
 
     [SupportedApiProfile(
         "vulkan",
@@ -45,7 +45,7 @@ public enum QueueGlobalPriority : uint
             "VK_KHR_global_priority+VK_VERSION_1_1",
         ]
     )]
-    QueueGlobalPriorityLowKHR = QueueGlobalPriorityLow,
+    LowKHR = Low,
 
     [SupportedApiProfile(
         "vulkan",
@@ -55,7 +55,7 @@ public enum QueueGlobalPriority : uint
             "VK_KHR_global_priority+VK_VERSION_1_1",
         ]
     )]
-    QueueGlobalPriorityMediumKHR = QueueGlobalPriorityMedium,
+    MediumKHR = Medium,
 
     [SupportedApiProfile(
         "vulkan",
@@ -65,7 +65,7 @@ public enum QueueGlobalPriority : uint
             "VK_KHR_global_priority+VK_VERSION_1_1",
         ]
     )]
-    QueueGlobalPriorityHighKHR = QueueGlobalPriorityHigh,
+    HighKHR = High,
 
     [SupportedApiProfile(
         "vulkan",
@@ -75,5 +75,5 @@ public enum QueueGlobalPriority : uint
             "VK_KHR_global_priority+VK_VERSION_1_1",
         ]
     )]
-    QueueGlobalPriorityRealtimeKHR = QueueGlobalPriorityRealtime,
+    RealtimeKHR = Realtime,
 }

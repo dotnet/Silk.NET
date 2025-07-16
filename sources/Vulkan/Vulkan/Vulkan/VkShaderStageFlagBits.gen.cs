@@ -21,56 +21,56 @@ public enum ShaderStageFlags : uint
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ShaderStageVertexBit = 0x00000001,
+    VertexBit = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ShaderStageTessellationControlBit = 0x00000002,
+    TessellationControlBit = 0x00000002,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ShaderStageTessellationEvaluationBit = 0x00000004,
+    TessellationEvaluationBit = 0x00000004,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ShaderStageGeometryBit = 0x00000008,
+    GeometryBit = 0x00000008,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ShaderStageFragmentBit = 0x00000010,
+    FragmentBit = 0x00000010,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ShaderStageComputeBit = 0x00000020,
+    ComputeBit = 0x00000020,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ShaderStageAllGraphics = 0x0000001F,
+    AllGraphics = 0x0000001F,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ShaderStageAll = 0x7FFFFFFF,
+    All = 0x7FFFFFFF,
 
     [SupportedApiProfile(
         "vulkan",
@@ -80,7 +80,7 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ShaderStageRaygenBitKHR = 0x00000100,
+    RaygenBitKHR = 0x00000100,
 
     [SupportedApiProfile(
         "vulkan",
@@ -90,7 +90,7 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ShaderStageAnyHitBitKHR = 0x00000200,
+    AnyHitBitKHR = 0x00000200,
 
     [SupportedApiProfile(
         "vulkan",
@@ -100,7 +100,7 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ShaderStageClosestHitBitKHR = 0x00000400,
+    ClosestHitBitKHR = 0x00000400,
 
     [SupportedApiProfile(
         "vulkan",
@@ -110,7 +110,7 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ShaderStageMissBitKHR = 0x00000800,
+    MissBitKHR = 0x00000800,
 
     [SupportedApiProfile(
         "vulkan",
@@ -120,7 +120,7 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ShaderStageIntersectionBitKHR = 0x00001000,
+    IntersectionBitKHR = 0x00001000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -130,21 +130,21 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ShaderStageCallableBitKHR = 0x00002000,
+    CallableBitKHR = 0x00002000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    ShaderStageTaskBitEXT = 0x00000040,
+    TaskBitEXT = 0x00000040,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    ShaderStageMeshBitEXT = 0x00000080,
+    MeshBitEXT = 0x00000080,
 
     [SupportedApiProfile(
         "vulkan",
@@ -155,7 +155,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    ShaderStageSubpassShadingBitHuawei = 0x00004000,
+    SubpassShadingBitHuawei = 0x00004000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -165,7 +165,7 @@ public enum ShaderStageFlags : uint
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    ShaderStageClusterCullingBitHuawei = 0x00080000,
+    ClusterCullingBitHuawei = 0x00080000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -175,7 +175,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ShaderStageRaygenBitNV = ShaderStageRaygenBitKHR,
+    RaygenBitNV = RaygenBitKHR,
 
     [SupportedApiProfile(
         "vulkan",
@@ -185,7 +185,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ShaderStageAnyHitBitNV = ShaderStageAnyHitBitKHR,
+    AnyHitBitNV = AnyHitBitKHR,
 
     [SupportedApiProfile(
         "vulkan",
@@ -195,7 +195,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ShaderStageClosestHitBitNV = ShaderStageClosestHitBitKHR,
+    ClosestHitBitNV = ClosestHitBitKHR,
 
     [SupportedApiProfile(
         "vulkan",
@@ -205,7 +205,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ShaderStageMissBitNV = ShaderStageMissBitKHR,
+    MissBitNV = MissBitKHR,
 
     [SupportedApiProfile(
         "vulkan",
@@ -215,7 +215,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ShaderStageIntersectionBitNV = ShaderStageIntersectionBitKHR,
+    IntersectionBitNV = IntersectionBitKHR,
 
     [SupportedApiProfile(
         "vulkan",
@@ -225,7 +225,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ShaderStageCallableBitNV = ShaderStageCallableBitKHR,
+    CallableBitNV = CallableBitKHR,
 
     [SupportedApiProfile(
         "vulkan",
@@ -235,7 +235,7 @@ public enum ShaderStageFlags : uint
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    ShaderStageTaskBitNV = ShaderStageTaskBitEXT,
+    TaskBitNV = TaskBitEXT,
 
     [SupportedApiProfile(
         "vulkan",
@@ -245,5 +245,5 @@ public enum ShaderStageFlags : uint
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    ShaderStageMeshBitNV = ShaderStageMeshBitEXT,
+    MeshBitNV = MeshBitEXT,
 }

@@ -18,110 +18,110 @@ public enum LogicOp : uint
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpClear = 0,
+    Clear = 0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpAnd = 1,
+    And = 1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpAndReverse = 2,
+    AndReverse = 2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpCopy = 3,
+    Copy = 3,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpAndInverted = 4,
+    AndInverted = 4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpNoOp = 5,
+    NoOp = 5,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpXor = 6,
+    Xor = 6,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpOr = 7,
+    Or = 7,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpNor = 8,
+    Nor = 8,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpEquivalent = 9,
+    Equivalent = 9,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpInvert = 10,
+    Invert = 10,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpOrReverse = 11,
+    OrReverse = 11,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpCopyInverted = 12,
+    CopyInverted = 12,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpOrInverted = 13,
+    OrInverted = 13,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpNand = 14,
+    Nand = 14,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    LogicOpSet = 15,
+    Set = 15,
 }

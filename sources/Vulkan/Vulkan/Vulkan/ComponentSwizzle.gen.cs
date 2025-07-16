@@ -18,47 +18,47 @@ public enum ComponentSwizzle : uint
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ComponentSwizzleIdentity = 0,
+    Identity = 0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ComponentSwizzleZero = 1,
+    Zero = 1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ComponentSwizzleOne = 2,
+    One = 2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ComponentSwizzleR = 3,
+    R = 3,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ComponentSwizzleG = 4,
+    G = 4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ComponentSwizzleB = 5,
+    B = 5,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    ComponentSwizzleA = 6,
+    A = 6,
 }

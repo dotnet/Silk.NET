@@ -18,33 +18,33 @@ public enum PhysicalDeviceType : uint
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    PhysicalDeviceTypeOther = 0,
+    Other = 0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    PhysicalDeviceTypeIntegratedGpu = 1,
+    IntegratedGpu = 1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    PhysicalDeviceTypeDiscreteGpu = 2,
+    DiscreteGpu = 2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    PhysicalDeviceTypeVirtualGpu = 3,
+    VirtualGpu = 3,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    PhysicalDeviceTypeCpu = 4,
+    Cpu = 4,
 }

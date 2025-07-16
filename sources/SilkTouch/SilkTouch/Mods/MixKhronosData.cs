@@ -1131,17 +1131,17 @@ public partial class MixKhronosData(
             );
         }
 
-        // Sometimes we get a little overzealous, so let's unwind back to just the GL_ being snipped
+        // NameTrimmer trims member names by looking for a common prefix and removing it
+        // This sometimes trims too much and leads to only the vendor suffix remaining
+        // This is bad so we rewind back to the previous name (minus the prefix, such as GL_)
         var rewind = false;
         if (container is not null && job.Groups.ContainsKey(container))
         {
             foreach (var (_, (current, previous)) in names)
             {
                 var prev = previous?.FirstOrDefault();
-                if (
-                    prev is not null
-                    && current.AsSpan().Count('_') - prev.AsSpan().Count('_') <= 1
-                    && (current.Length <= 4 || (job.Vendors?.Contains(current) ?? false))
+                if (prev is not null
+                    && (job.Vendors?.Contains(current.Trim('_')) ?? false)
                 )
                 {
                     rewind = true;

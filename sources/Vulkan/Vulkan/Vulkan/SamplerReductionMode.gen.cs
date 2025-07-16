@@ -18,21 +18,21 @@ public enum SamplerReductionMode : uint
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    SamplerReductionModeWeightedAverage = 0,
+    WeightedAverage = 0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    SamplerReductionModeMin = 1,
+    Min = 1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    SamplerReductionModeMax = 2,
+    Max = 2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -42,7 +42,7 @@ public enum SamplerReductionMode : uint
             "VK_EXT_filter_cubic+VK_VERSION_1_2",
         ]
     )]
-    SamplerReductionModeWeightedAverageRangeclampQCOM = 1000521000,
+    WeightedAverageRangeclampQCOM = 1000521000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -52,7 +52,7 @@ public enum SamplerReductionMode : uint
             "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
         ]
     )]
-    SamplerReductionModeWeightedAverageEXT = SamplerReductionModeWeightedAverage,
+    WeightedAverageEXT = WeightedAverage,
 
     [SupportedApiProfile(
         "vulkan",
@@ -62,7 +62,7 @@ public enum SamplerReductionMode : uint
             "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
         ]
     )]
-    SamplerReductionModeMinEXT = SamplerReductionModeMin,
+    MinEXT = Min,
 
     [SupportedApiProfile(
         "vulkan",
@@ -72,5 +72,5 @@ public enum SamplerReductionMode : uint
             "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
         ]
     )]
-    SamplerReductionModeMaxEXT = SamplerReductionModeMax,
+    MaxEXT = Max,
 }

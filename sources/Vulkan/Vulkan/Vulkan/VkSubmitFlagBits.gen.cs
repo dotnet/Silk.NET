@@ -17,7 +17,7 @@ public enum SubmitFlags : uint
     None = 0,
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    SubmitProtectedBit = 0x00000001,
+    Bit = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
@@ -27,5 +27,5 @@ public enum SubmitFlags : uint
             "VK_KHR_synchronization2+VK_VERSION_1_1",
         ]
     )]
-    SubmitProtectedBitKHR = SubmitProtectedBit,
+    BitKHR = Bit,
 }
