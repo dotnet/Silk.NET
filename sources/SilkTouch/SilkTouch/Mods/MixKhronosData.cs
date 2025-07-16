@@ -1386,15 +1386,19 @@ public partial class MixKhronosData(
         }
 
         // Trim _T from the end of names
-        foreach (var (original, (current, previous)) in names)
+        // This is targeted towards Vulkan handle type names, which end in _T
+        if (container is null)
         {
-            if (current.EndsWith("_T"))
+            foreach (var (original, (current, previous)) in names)
             {
-                var newPrim = current.Substring(0, current.Length - 2);
-                var newPrev = previous ?? [];
-                newPrev.Add(current);
+                if (current.EndsWith("_T"))
+                {
+                    var newPrim = current.Substring(0, current.Length - 2);
+                    var newPrev = previous ?? [];
+                    newPrev.Add(current);
 
-                names[original] = (newPrim, newPrev);
+                    names[original] = (newPrim, newPrev);
+                }
             }
         }
     }
