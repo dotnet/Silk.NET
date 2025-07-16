@@ -71,6 +71,12 @@ public static partial class NameUtils
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
+
+        if (ret.Length == 0)
+        {
+            throw new InvalidOperationException($"Failed to prettify string: {str}");
+        }
+
         var retSpan = ret.AsSpan();
         if (!allowAllCaps && retSpan.IndexOfAny(NotUppercase) == -1)
         {
