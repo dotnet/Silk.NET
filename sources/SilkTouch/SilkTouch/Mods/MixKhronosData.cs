@@ -1131,6 +1131,46 @@ public partial class MixKhronosData(
             );
         }
 
+        // Sometimes we get a little overzealous, so let's unwind back to just the GL_ being snipped
+        var rewind = false;
+        if (container is not null && job.Groups.ContainsKey(container))
+        {
+            foreach (var (_, (current, previous)) in names)
+            {
+                var prev = previous?.FirstOrDefault();
+                if (
+                    prev is not null
+                    && current.AsSpan().Count('_') - prev.AsSpan().Count('_') <= 1
+                    && (current.Length <= 4 || (job.Vendors?.Contains(current) ?? false))
+                )
+                {
+                    rewind = true;
+
+                    break;
+                }
+            }
+        }
+
+        if (rewind)
+        {
+            foreach (var (original, (current, previous)) in names)
+            {
+                var prev = previous?.FirstOrDefault() ?? original;
+                var prevList = previous ?? [];
+                var next = prev[(prev.IndexOf('_') + 1)..];
+                if (next == prev)
+                {
+                    prevList.Remove(prev);
+                }
+                else if (!prevList.Contains(prev))
+                {
+                    prevList.Add(prev);
+                }
+
+                names[original] = (prev[(prev.IndexOf('_') + 1)..], prevList);
+            }
+        }
+
         // OpenGL has a problem where an enum starts out as ARB but never gets promoted, and then contains other vendor
         // enums or even core enums. This removes the vendor suffix where it is not necessary e.g. BufferUsageARB
         // becomes BufferUsage.
@@ -1180,46 +1220,6 @@ public partial class MixKhronosData(
                         }
                     }
                 }
-            }
-        }
-
-        // Sometimes we get a little overzealous, so let's unwind back to just the GL_ being snipped
-        var rewind = false;
-        if (container is not null && job.Groups.ContainsKey(container))
-        {
-            foreach (var (_, (current, previous)) in names)
-            {
-                var prev = previous?.FirstOrDefault();
-                if (
-                    prev is not null
-                    && current.AsSpan().Count('_') - prev.AsSpan().Count('_') <= 1
-                    && (current.Length <= 4 || (job.Vendors?.Contains(current) ?? false))
-                )
-                {
-                    rewind = true;
-
-                    break;
-                }
-            }
-        }
-
-        if (rewind)
-        {
-            foreach (var (original, (current, previous)) in names)
-            {
-                var prev = previous?.FirstOrDefault() ?? original;
-                var prevList = previous ?? [];
-                var next = prev[(prev.IndexOf('_') + 1)..];
-                if (next == prev)
-                {
-                    prevList.Remove(prev);
-                }
-                else if (!prevList.Contains(prev))
-                {
-                    prevList.Add(prev);
-                }
-
-                names[original] = (prev[(prev.IndexOf('_') + 1)..], prevList);
             }
         }
 
