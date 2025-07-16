@@ -1197,6 +1197,8 @@ public partial class MixKhronosData(
                 )
                 {
                     rewind = true;
+
+                    break;
                 }
             }
         }
