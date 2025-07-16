@@ -1133,7 +1133,8 @@ public partial class MixKhronosData(
 
         // NameTrimmer trims member names by looking for a common prefix and removing it
         // This sometimes trims too much and leads to only the vendor suffix remaining
-        // This is bad so we rewind back to the previous name (minus the prefix, such as GL_)
+        // This is bad because the next block of code removes the vendor suffix, leaving only an empty string or underscore
+        // This means we have to rewind back to the previous name (minus the prefix, such as GL_)
         var rewind = false;
         if (container is not null && job.Groups.ContainsKey(container))
         {
