@@ -15,6 +15,7 @@ public unsafe partial struct CommandBufferInheritanceRenderPassTransformInfoQCOM
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
     public StructureType SType;
 
+    [NativeTypeName("const void *")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
     public void* PNext;
 

@@ -75,40 +75,43 @@ public enum BuildAccelerationStructureFlagsKHR : uint
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_opacity_micromap"],
+        ["VK_KHR_acceleration_structure"],
         ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AllowOpacityMicromapUpdateEXT = 0x00000040,
+    AllowOpacityMicromapUpdateBitEXT = 0x00000040,
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_opacity_micromap"],
+        ["VK_KHR_acceleration_structure"],
         ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AllowDisableOpacityMicromapsEXT = 0x00000080,
+    AllowDisableOpacityMicromapsBitEXT = 0x00000080,
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_opacity_micromap"],
+        ["VK_KHR_acceleration_structure"],
         ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AllowOpacityMicromapDataUpdateEXT = 0x00000100,
+    AllowOpacityMicromapDataUpdateBitEXT = 0x00000100,
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_ray_tracing_position_fetch"],
-        ImpliesSets = ["VK_KHR_acceleration_structure"]
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
     )]
-    AllowDataAccessKHR = 0x00000800,
+    AllowDataAccessBitKHR = 0x00000800,
 
     [SupportedApiProfile(
         "vulkan",
@@ -159,4 +162,41 @@ public enum BuildAccelerationStructureFlagsKHR : uint
         ]
     )]
     LowMemoryBitNV = LowMemoryBitKHR,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    AllowOpacityMicromapUpdateEXT = AllowOpacityMicromapUpdateBitEXT,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    AllowDisableOpacityMicromapsEXT = AllowDisableOpacityMicromapsBitEXT,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    AllowOpacityMicromapDataUpdateEXT = AllowOpacityMicromapDataUpdateBitEXT,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_position_fetch"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    AllowDataAccessKHR = AllowDataAccessBitKHR,
 }

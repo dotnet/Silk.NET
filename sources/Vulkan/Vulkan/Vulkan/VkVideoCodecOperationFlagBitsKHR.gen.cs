@@ -62,4 +62,11 @@ public enum VideoCodecOperationFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     EncodeAv1BitKHR = 0x00040000,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_queue"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
+    )]
+    DecodeVp9BitKHR = 0x00000008,
 }

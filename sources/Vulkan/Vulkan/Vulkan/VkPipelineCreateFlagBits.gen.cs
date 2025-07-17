@@ -285,10 +285,17 @@ public enum PipelineCreateFlags : uint
 
     [SupportedApiProfile(
         "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    CreateDispatchBaseBitKHR = CreateDispatchBaseBit,
+
+    [SupportedApiProfile(
+        "vulkan",
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    CreateDispatchBaseKHR = CreateDispatchBase,
+    CreateDispatchBaseKHR = CreateDispatchBaseBit,
 
     [SupportedApiProfile(
         "vulkan",

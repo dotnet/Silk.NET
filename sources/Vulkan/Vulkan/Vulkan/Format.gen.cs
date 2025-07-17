@@ -1638,6 +1638,13 @@ public enum Format : uint
 
     [SupportedApiProfile(
         "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R8BoolARM = 1000460000,
+
+    [SupportedApiProfile(
+        "vulkan",
         ["VK_NV_optical_flow"],
         ImpliesSets = [
             "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
@@ -1646,6 +1653,104 @@ public enum Format : uint
         ]
     )]
     R16G16Sfixed5NV = 1000464000,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R10X6UintPack16ARM = 1000609000,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R10X6G10X6Uint2Pack16ARM = 1000609001,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R10X6G10X6B10X6A10X6Uint4Pack16ARM = 1000609002,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R12X4UintPack16ARM = 1000609003,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R12X4G12X4Uint2Pack16ARM = 1000609004,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R12X4G12X4B12X4A12X4Uint4Pack16ARM = 1000609005,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R14X2UintPack16ARM = 1000609006,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R14X2G14X2Uint2Pack16ARM = 1000609007,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R14X2G14X2B14X2A14X2Uint4Pack16ARM = 1000609008,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R14X2UnormPack16ARM = 1000609009,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R14X2G14X2Unorm2Pack16ARM = 1000609010,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    R14X2G14X2B14X2A14X2Unorm4Pack16ARM = 1000609011,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    G14X2B14X2R14X2X2Plane420Unorm3Pack16ARM = 1000609012,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    G14X2B14X2R14X2X2Plane422Unorm3Pack16ARM = 1000609013,
 
     [SupportedApiProfile(
         "vulkan",

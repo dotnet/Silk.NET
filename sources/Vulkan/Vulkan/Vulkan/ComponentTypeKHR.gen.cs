@@ -64,10 +64,10 @@ public enum ComponentTypeKHR : uint
     Uint8PackedNV = 1000491001,
 
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
-    FloatE4M3NV = 1000491002,
+    Float8E4M3EXT = 1000491002,
 
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
-    FloatE5M2NV = 1000491003,
+    Float8E5M2EXT = 1000491003,
 
     [SupportedApiProfile(
         "vulkan",
@@ -178,4 +178,10 @@ public enum ComponentTypeKHR : uint
         ]
     )]
     Uint64NV = Uint64KHR,
+
+    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    FloatE4M3NV = Float8E4M3EXT,
+
+    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    FloatE5M2NV = Float8E5M2EXT,
 }

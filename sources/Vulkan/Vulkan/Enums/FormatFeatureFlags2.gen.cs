@@ -85,9 +85,12 @@ public enum FormatFeatureFlags2 : ulong
     WeightSampledImageBitQCOM = unchecked((ulong)0x800000000UL),
     BlockMatchingBitQCOM = unchecked((ulong)0x1000000000UL),
     BoxFilterSampledBitQCOM = unchecked((ulong)0x2000000000UL),
+    TensorShaderBitARM = unchecked((ulong)0x8000000000UL),
+    TensorImageAliasingBitARM = unchecked((ulong)0x80000000000UL),
     OpticalFlowImageBitNV = unchecked((ulong)0x10000000000UL),
     OpticalFlowVectorBitNV = unchecked((ulong)0x20000000000UL),
     OpticalFlowCostBitNV = unchecked((ulong)0x40000000000UL),
+    TensorDataGraphBitARM = unchecked((ulong)0x1000000000000UL),
     VideoEncodeQuantizationDeltaMapBitKHR = unchecked((ulong)0x2000000000000UL),
     VideoEncodeEmphasisMapBitKHR = unchecked((ulong)0x4000000000000UL),
 }

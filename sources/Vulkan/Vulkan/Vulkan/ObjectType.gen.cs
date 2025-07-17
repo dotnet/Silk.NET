@@ -308,6 +308,20 @@ public enum ObjectType : uint
 
     [SupportedApiProfile(
         "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    TensorARM = 1000460000,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    TensorViewARM = 1000460001,
+
+    [SupportedApiProfile(
+        "vulkan",
         ["VK_NV_optical_flow"],
         ImpliesSets = [
             "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
@@ -337,6 +351,13 @@ public enum ObjectType : uint
         ]
     )]
     PipelineBinaryKHR = 1000483000,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    DataGraphPipelineSessionARM = 1000507000,
 
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     ExternalComputeQueueNV = 1000556000,

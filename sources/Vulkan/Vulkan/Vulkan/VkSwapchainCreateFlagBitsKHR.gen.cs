@@ -41,6 +41,15 @@ public enum SwapchainCreateFlagsKHR : uint
     )]
     MutableFormatBitKHR = 0x00000004,
 
+    [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
+    PresentId2BitKHR = 0x00000040,
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
+    PresentWait2BitKHR = 0x00000080,
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
+    DeferredMemoryAllocationBitKHR = 0x00000008,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_maintenance1"],
@@ -49,5 +58,5 @@ public enum SwapchainCreateFlagsKHR : uint
             "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
-    DeferredMemoryAllocationBitEXT = 0x00000008,
+    DeferredMemoryAllocationBitEXT = DeferredMemoryAllocationBitKHR,
 }

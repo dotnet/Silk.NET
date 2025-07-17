@@ -231,6 +231,13 @@ public enum ImageLayout : uint
 
     [SupportedApiProfile(
         "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    TensorAliasingARM = 1000460000,
+
+    [SupportedApiProfile(
+        "vulkan",
         ["VK_KHR_video_encode_quantization_map"],
         ImpliesSets = [
             "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",

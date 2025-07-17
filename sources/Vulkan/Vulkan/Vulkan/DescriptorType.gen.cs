@@ -135,6 +135,13 @@ public enum DescriptorType : uint
 
     [SupportedApiProfile(
         "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    TensorARM = 1000460000,
+
+    [SupportedApiProfile(
+        "vulkan",
         ["VK_EXT_mutable_descriptor_type"],
         ImpliesSets = [
             "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",

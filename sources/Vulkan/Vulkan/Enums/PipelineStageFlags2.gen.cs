@@ -90,4 +90,5 @@ public enum PipelineStageFlags2 : ulong
     ClusterCullingShaderBitHuawei = unchecked((ulong)0x20000000000UL),
     OpticalFlowBitNV = unchecked((ulong)0x20000000UL),
     ConvertCooperativeVectorMatrixBitNV = unchecked((ulong)0x100000000000UL),
+    DataGraphBitARM = unchecked((ulong)0x40000000000UL),
 }

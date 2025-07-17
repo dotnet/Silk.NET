@@ -17,7 +17,7 @@ partial class Vk(INativeContext nativeContext) : IDisposable
         static DllImport() => LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
     }
 
-    private readonly unsafe void*[] _slots = new void*[678];
+    private readonly unsafe void*[] _slots = new void*[696];
     public static IVk Instance { get; } = new StaticWrapper<DllImport>();
 
     public static IVk Create() => Instance;

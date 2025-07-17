@@ -52,6 +52,13 @@ public enum DependencyFlags : uint
 
     [SupportedApiProfile(
         "vulkan",
+        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.0"
+    )]
+    AsymmetricEventBitKHR = 0x00000040,
+
+    [SupportedApiProfile(
+        "vulkan",
         ["VK_KHR_multiview"],
         ImpliesSets = [
             "VK_KHR_multiview+VK_KHR_get_physical_device_properties2",

@@ -60,4 +60,5 @@ public enum PipelineCreateFlags2 : ulong
     DisallowOpacityMicromapBitARM = unchecked((ulong)0x2000000000UL),
     CaptureDataBitKHR = unchecked((ulong)0x80000000UL),
     IndirectBindableBitEXT = unchecked((ulong)0x4000000000UL),
+    PerLayerFragmentDensityBitValve = unchecked((ulong)0x10000000000UL),
 }

@@ -51,13 +51,10 @@ public enum ResolveModeFlags : uint
 
     [SupportedApiProfile(
         "vulkan",
-        [
-            "VK_ANDROID_external_format_resolve+VK_KHR_dynamic_rendering",
-            "VK_ANDROID_external_format_resolve+VK_VERSION_1_3",
-        ],
-        ImpliesSets = ["VK_ANDROID_external_memory_android_hardware_buffer"]
+        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.2"
     )]
-    ExternalFormatDownsampleAndroid = 0x00000010,
+    ExternalFormatDownsampleBitAndroid = 0x00000010,
 
     [SupportedApiProfile(
         "vulkan",
@@ -108,4 +105,14 @@ public enum ResolveModeFlags : uint
         ]
     )]
     MaxBitKHR = MaxBit,
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_ANDROID_external_format_resolve+VK_KHR_dynamic_rendering",
+            "VK_ANDROID_external_format_resolve+VK_VERSION_1_3",
+        ],
+        ImpliesSets = ["VK_ANDROID_external_memory_android_hardware_buffer"]
+    )]
+    ExternalFormatDownsampleAndroid = ExternalFormatDownsampleBitAndroid,
 }

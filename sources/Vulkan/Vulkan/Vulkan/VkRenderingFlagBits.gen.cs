@@ -43,6 +43,9 @@ public enum RenderingFlags : uint
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     ContentsInlineBitKHR = 0x00000010,
 
+    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    PerLayerFragmentDensityBitValve = 0x00000020,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_dynamic_rendering"],

@@ -391,6 +391,25 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkBindBufferMemoryInfo *")] Ref<BindBufferMemoryInfo> pBindInfos
         );
 
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkBindDataGraphPipelineSessionMemoryARM")]
+        static abstract Result BindDataGraphPipelineSessionMemoryARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("uint32_t")] uint bindInfoCount,
+            [NativeTypeName("const VkBindDataGraphPipelineSessionMemoryInfoARM *")]
+                BindDataGraphPipelineSessionMemoryInfoARM* pBindInfos
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkBindDataGraphPipelineSessionMemoryARM")]
+        static abstract Result BindDataGraphPipelineSessionMemoryARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("uint32_t")] uint bindInfoCount,
+            [NativeTypeName("const VkBindDataGraphPipelineSessionMemoryInfoARM *")]
+                Ref<BindDataGraphPipelineSessionMemoryInfoARM> pBindInfos
+        );
+
         [SupportedApiProfile(
             "vulkan",
             [
@@ -468,6 +487,25 @@ public unsafe partial interface IVk
             OpticalFlowSessionBindingPointNV bindingPoint,
             [NativeTypeName("VkImageView")] ImageViewHandle view,
             ImageLayout layout
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
+        static abstract Result BindTensorMemoryARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("uint32_t")] uint bindInfoCount,
+            [NativeTypeName("const VkBindTensorMemoryInfoARM *")]
+                BindTensorMemoryInfoARM* pBindInfos
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
+        static abstract Result BindTensorMemoryARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("uint32_t")] uint bindInfoCount,
+            [NativeTypeName("const VkBindTensorMemoryInfoARM *")]
+                Ref<BindTensorMemoryInfoARM> pBindInfos
         );
 
         [SupportedApiProfile(
@@ -2673,19 +2711,19 @@ public unsafe partial interface IVk
             [NativeTypeName("VkQueryResultFlags")] QueryResultFlags flags
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-        [NativeFunction("vulkan", EntryPoint = "vkCmdCudaLaunchKernelNV")]
-        static abstract void CmdCudaLaunchKernelNV(
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
+        static abstract void CmdCopyTensorARM(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("const VkCudaLaunchInfoNV *")] CudaLaunchInfoNV* pLaunchInfo
+            [NativeTypeName("const VkCopyTensorInfoARM *")] CopyTensorInfoARM* pCopyTensorInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
+        [SupportedApiProfile("vulkan")]
         [Transformed]
-        [NativeFunction("vulkan", EntryPoint = "vkCmdCudaLaunchKernelNV")]
-        static abstract void CmdCudaLaunchKernelNV(
+        [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
+        static abstract void CmdCopyTensorARM(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("const VkCudaLaunchInfoNV *")] Ref<CudaLaunchInfoNV> pLaunchInfo
+            [NativeTypeName("const VkCopyTensorInfoARM *")] Ref<CopyTensorInfoARM> pCopyTensorInfo
         );
 
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
@@ -2912,6 +2950,27 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint groupCountZ
         );
 
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
+        static abstract void CmdDispatchDataGraphARM(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("VkDataGraphPipelineSessionARM")]
+                DataGraphPipelineSessionARMHandle session,
+            [NativeTypeName("const VkDataGraphPipelineDispatchInfoARM *")]
+                DataGraphPipelineDispatchInfoARM* pInfo
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
+        static abstract void CmdDispatchDataGraphARM(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("VkDataGraphPipelineSessionARM")]
+                DataGraphPipelineSessionARMHandle session,
+            [NativeTypeName("const VkDataGraphPipelineDispatchInfoARM *")]
+                Ref<DataGraphPipelineDispatchInfoARM> pInfo
+        );
+
         [SupportedApiProfile(
             "vulkan",
             [
@@ -2940,7 +2999,25 @@ public unsafe partial interface IVk
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchTileQCOM")]
         static abstract void CmdDispatchTileQCOM(
-            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("const VkDispatchTileInfoQCOM *")]
+                DispatchTileInfoQCOM* pDispatchTileInfo
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_QCOM_tile_shading"],
+            ImpliesSets = [
+                "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
+                "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
+            ]
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchTileQCOM")]
+        static abstract void CmdDispatchTileQCOM(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("const VkDispatchTileInfoQCOM *")]
+                Ref<DispatchTileInfoQCOM> pDispatchTileInfo
         );
 
         [SupportedApiProfile(
@@ -8070,48 +8147,6 @@ public unsafe partial interface IVk
             [NativeTypeName("VkPipeline *")] Ref<PipelineHandle> pPipelines
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-        [NativeFunction("vulkan", EntryPoint = "vkCreateCudaFunctionNV")]
-        static abstract Result CreateCudaFunctionNV(
-            [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("const VkCudaFunctionCreateInfoNV *")]
-                CudaFunctionCreateInfoNV* pCreateInfo,
-            [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
-            [NativeTypeName("VkCudaFunctionNV *")] CudaFunctionNVHandle* pFunction
-        );
-
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-        [Transformed]
-        [NativeFunction("vulkan", EntryPoint = "vkCreateCudaFunctionNV")]
-        static abstract Result CreateCudaFunctionNV(
-            [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("const VkCudaFunctionCreateInfoNV *")]
-                Ref<CudaFunctionCreateInfoNV> pCreateInfo,
-            [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
-            [NativeTypeName("VkCudaFunctionNV *")] Ref<CudaFunctionNVHandle> pFunction
-        );
-
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-        [NativeFunction("vulkan", EntryPoint = "vkCreateCudaModuleNV")]
-        static abstract Result CreateCudaModuleNV(
-            [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("const VkCudaModuleCreateInfoNV *")]
-                CudaModuleCreateInfoNV* pCreateInfo,
-            [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
-            [NativeTypeName("VkCudaModuleNV *")] CudaModuleNVHandle* pModule
-        );
-
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-        [Transformed]
-        [NativeFunction("vulkan", EntryPoint = "vkCreateCudaModuleNV")]
-        static abstract Result CreateCudaModuleNV(
-            [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("const VkCudaModuleCreateInfoNV *")]
-                Ref<CudaModuleCreateInfoNV> pCreateInfo,
-            [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
-            [NativeTypeName("VkCudaModuleNV *")] Ref<CudaModuleNVHandle> pModule
-        );
-
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateCuFunctionNVX")]
         static abstract Result CreateCuFunctionNVX(
@@ -8151,6 +8186,56 @@ public unsafe partial interface IVk
                 Ref<CuModuleCreateInfoNVX> pCreateInfo,
             [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
             [NativeTypeName("VkCuModuleNVX *")] Ref<CuModuleNVXHandle> pModule
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
+        static abstract Result CreateDataGraphPipelinesARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
+            [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
+            [NativeTypeName("uint32_t")] uint createInfoCount,
+            [NativeTypeName("const VkDataGraphPipelineCreateInfoARM *")]
+                DataGraphPipelineCreateInfoARM* pCreateInfos,
+            [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
+            [NativeTypeName("VkPipeline *")] PipelineHandle* pPipelines
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
+        static abstract Result CreateDataGraphPipelinesARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
+            [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
+            [NativeTypeName("uint32_t")] uint createInfoCount,
+            [NativeTypeName("const VkDataGraphPipelineCreateInfoARM *")]
+                Ref<DataGraphPipelineCreateInfoARM> pCreateInfos,
+            [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
+            [NativeTypeName("VkPipeline *")] Ref<PipelineHandle> pPipelines
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
+        static abstract Result CreateDataGraphPipelineSessionARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkDataGraphPipelineSessionCreateInfoARM *")]
+                DataGraphPipelineSessionCreateInfoARM* pCreateInfo,
+            [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
+            [NativeTypeName("VkDataGraphPipelineSessionARM *")]
+                DataGraphPipelineSessionARMHandle* pSession
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
+        static abstract Result CreateDataGraphPipelineSessionARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkDataGraphPipelineSessionCreateInfoARM *")]
+                Ref<DataGraphPipelineSessionCreateInfoARM> pCreateInfo,
+            [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
+            [NativeTypeName("VkDataGraphPipelineSessionARM *")]
+                Ref<DataGraphPipelineSessionARMHandle> pSession
         );
 
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
@@ -9609,6 +9694,46 @@ public unsafe partial interface IVk
             [NativeTypeName("VkSwapchainKHR *")] Ref<SwapchainKHRHandle> pSwapchain
         );
 
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
+        static abstract Result CreateTensorARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkTensorCreateInfoARM *")] TensorCreateInfoARM* pCreateInfo,
+            [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
+            [NativeTypeName("VkTensorARM *")] TensorARMHandle* pTensor
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
+        static abstract Result CreateTensorARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkTensorCreateInfoARM *")] Ref<TensorCreateInfoARM> pCreateInfo,
+            [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
+            [NativeTypeName("VkTensorARM *")] Ref<TensorARMHandle> pTensor
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
+        static abstract Result CreateTensorViewARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkTensorViewCreateInfoARM *")]
+                TensorViewCreateInfoARM* pCreateInfo,
+            [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
+            [NativeTypeName("VkTensorViewARM *")] TensorViewARMHandle* pView
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
+        static abstract Result CreateTensorViewARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkTensorViewCreateInfoARM *")]
+                Ref<TensorViewCreateInfoARM> pCreateInfo,
+            [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
+            [NativeTypeName("VkTensorViewARM *")] Ref<TensorViewARMHandle> pView
+        );
+
         [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateValidationCacheEXT")]
         static abstract Result CreateValidationCacheEXT(
@@ -9952,40 +10077,6 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-        [NativeFunction("vulkan", EntryPoint = "vkDestroyCudaFunctionNV")]
-        static abstract void DestroyCudaFunctionNV(
-            [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("VkCudaFunctionNV")] CudaFunctionNVHandle function,
-            [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
-        );
-
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-        [Transformed]
-        [NativeFunction("vulkan", EntryPoint = "vkDestroyCudaFunctionNV")]
-        static abstract void DestroyCudaFunctionNV(
-            [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("VkCudaFunctionNV")] CudaFunctionNVHandle function,
-            [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
-        );
-
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-        [NativeFunction("vulkan", EntryPoint = "vkDestroyCudaModuleNV")]
-        static abstract void DestroyCudaModuleNV(
-            [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
-            [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
-        );
-
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-        [Transformed]
-        [NativeFunction("vulkan", EntryPoint = "vkDestroyCudaModuleNV")]
-        static abstract void DestroyCudaModuleNV(
-            [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
-            [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
-        );
-
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyCuFunctionNVX")]
         static abstract void DestroyCuFunctionNVX(
@@ -10017,6 +10108,25 @@ public unsafe partial interface IVk
         static abstract void DestroyCuModuleNVX(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkCuModuleNVX")] CuModuleNVXHandle module,
+            [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
+        static abstract void DestroyDataGraphPipelineSessionARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("VkDataGraphPipelineSessionARM")]
+                DataGraphPipelineSessionARMHandle session,
+            [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
+        static abstract void DestroyDataGraphPipelineSessionARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("VkDataGraphPipelineSessionARM")]
+                DataGraphPipelineSessionARMHandle session,
             [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -11123,6 +11233,40 @@ public unsafe partial interface IVk
         static abstract void DestroySwapchainKHR(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
+            [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
+        static abstract void DestroyTensorARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("VkTensorARM")] TensorARMHandle tensor,
+            [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
+        static abstract void DestroyTensorARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("VkTensorARM")] TensorARMHandle tensor,
+            [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
+        static abstract void DestroyTensorViewARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("VkTensorViewARM")] TensorViewARMHandle tensorView,
+            [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
+        static abstract void DestroyTensorViewARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("VkTensorViewARM")] TensorViewARMHandle tensorView,
             [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -12263,23 +12407,98 @@ public unsafe partial interface IVk
             Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-        [NativeFunction("vulkan", EntryPoint = "vkGetCudaModuleCacheNV")]
-        static abstract Result GetCudaModuleCacheNV(
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
+        static abstract Result GetDataGraphPipelineAvailablePropertiesARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
-            [NativeTypeName("size_t *")] nuint* pCacheSize,
-            void* pCacheData
+            [NativeTypeName("const VkDataGraphPipelineInfoARM *")]
+                DataGraphPipelineInfoARM* pPipelineInfo,
+            [NativeTypeName("uint32_t *")] uint* pPropertiesCount,
+            DataGraphPipelinePropertyARM* pProperties
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
+        [SupportedApiProfile("vulkan")]
         [Transformed]
-        [NativeFunction("vulkan", EntryPoint = "vkGetCudaModuleCacheNV")]
-        static abstract Result GetCudaModuleCacheNV(
+        [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
+        static abstract Result GetDataGraphPipelineAvailablePropertiesARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
-            [NativeTypeName("size_t *")] Ref<nuint> pCacheSize,
-            Ref pCacheData
+            [NativeTypeName("const VkDataGraphPipelineInfoARM *")]
+                Ref<DataGraphPipelineInfoARM> pPipelineInfo,
+            [NativeTypeName("uint32_t *")] Ref<uint> pPropertiesCount,
+            Ref<DataGraphPipelinePropertyARM> pProperties
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
+        static abstract Result GetDataGraphPipelinePropertiesARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkDataGraphPipelineInfoARM *")]
+                DataGraphPipelineInfoARM* pPipelineInfo,
+            [NativeTypeName("uint32_t")] uint propertiesCount,
+            DataGraphPipelinePropertyQueryResultARM* pProperties
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
+        static abstract Result GetDataGraphPipelinePropertiesARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkDataGraphPipelineInfoARM *")]
+                Ref<DataGraphPipelineInfoARM> pPipelineInfo,
+            [NativeTypeName("uint32_t")] uint propertiesCount,
+            Ref<DataGraphPipelinePropertyQueryResultARM> pProperties
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction(
+            "vulkan",
+            EntryPoint = "vkGetDataGraphPipelineSessionBindPointRequirementsARM"
+        )]
+        static abstract Result GetDataGraphPipelineSessionBindPointRequirementsARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkDataGraphPipelineSessionBindPointRequirementsInfoARM *")]
+                DataGraphPipelineSessionBindPointRequirementsInfoARM* pInfo,
+            [NativeTypeName("uint32_t *")] uint* pBindPointRequirementCount,
+            DataGraphPipelineSessionBindPointRequirementARM* pBindPointRequirements
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction(
+            "vulkan",
+            EntryPoint = "vkGetDataGraphPipelineSessionBindPointRequirementsARM"
+        )]
+        static abstract Result GetDataGraphPipelineSessionBindPointRequirementsARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkDataGraphPipelineSessionBindPointRequirementsInfoARM *")]
+                Ref<DataGraphPipelineSessionBindPointRequirementsInfoARM> pInfo,
+            [NativeTypeName("uint32_t *")] Ref<uint> pBindPointRequirementCount,
+            Ref<DataGraphPipelineSessionBindPointRequirementARM> pBindPointRequirements
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction(
+            "vulkan",
+            EntryPoint = "vkGetDataGraphPipelineSessionMemoryRequirementsARM"
+        )]
+        static abstract void GetDataGraphPipelineSessionMemoryRequirementsARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkDataGraphPipelineSessionMemoryRequirementsInfoARM *")]
+                DataGraphPipelineSessionMemoryRequirementsInfoARM* pInfo,
+            MemoryRequirements2* pMemoryRequirements
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction(
+            "vulkan",
+            EntryPoint = "vkGetDataGraphPipelineSessionMemoryRequirementsARM"
+        )]
+        static abstract void GetDataGraphPipelineSessionMemoryRequirementsARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkDataGraphPipelineSessionMemoryRequirementsInfoARM *")]
+                Ref<DataGraphPipelineSessionMemoryRequirementsInfoARM> pInfo,
+            Ref<MemoryRequirements2> pMemoryRequirements
         );
 
         [return: NativeTypeName("uint32_t")]
@@ -13138,6 +13357,25 @@ public unsafe partial interface IVk
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("VkRenderPass")] RenderPassHandle renderpass,
             Ref<Extent2D> pMaxWorkgroupSize
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
+        static abstract void GetDeviceTensorMemoryRequirementsARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkDeviceTensorMemoryRequirementsARM *")]
+                DeviceTensorMemoryRequirementsARM* pInfo,
+            MemoryRequirements2* pMemoryRequirements
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
+        static abstract void GetDeviceTensorMemoryRequirementsARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkDeviceTensorMemoryRequirementsARM *")]
+                Ref<DeviceTensorMemoryRequirementsARM> pInfo,
+            Ref<MemoryRequirements2> pMemoryRequirements
         );
 
         [SupportedApiProfile(
@@ -14752,6 +14990,25 @@ public unsafe partial interface IVk
             Ref<ExternalSemaphoreProperties> pExternalSemaphoreProperties
         );
 
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
+        static abstract void GetPhysicalDeviceExternalTensorPropertiesARM(
+            [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+            [NativeTypeName("const VkPhysicalDeviceExternalTensorInfoARM *")]
+                PhysicalDeviceExternalTensorInfoARM* pExternalTensorInfo,
+            ExternalTensorPropertiesARM* pExternalTensorProperties
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
+        static abstract void GetPhysicalDeviceExternalTensorPropertiesARM(
+            [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+            [NativeTypeName("const VkPhysicalDeviceExternalTensorInfoARM *")]
+                Ref<PhysicalDeviceExternalTensorInfoARM> pExternalTensorInfo,
+            Ref<ExternalTensorPropertiesARM> pExternalTensorProperties
+        );
+
         [SupportedApiProfile(
             "vulkan",
             [
@@ -15269,6 +15526,56 @@ public unsafe partial interface IVk
         static abstract void GetPhysicalDeviceProperties2KHR(
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
             Ref<PhysicalDeviceProperties2> pProperties
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction(
+            "vulkan",
+            EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM"
+        )]
+        static abstract void GetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM(
+            [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+            [NativeTypeName("const VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM *")]
+                PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM* pQueueFamilyDataGraphProcessingEngineInfo,
+            QueueFamilyDataGraphProcessingEnginePropertiesARM* pQueueFamilyDataGraphProcessingEngineProperties
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction(
+            "vulkan",
+            EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM"
+        )]
+        static abstract void GetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM(
+            [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+            [NativeTypeName("const VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM *")]
+                Ref<PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM> pQueueFamilyDataGraphProcessingEngineInfo,
+            Ref<QueueFamilyDataGraphProcessingEnginePropertiesARM> pQueueFamilyDataGraphProcessingEngineProperties
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction(
+            "vulkan",
+            EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM"
+        )]
+        static abstract Result GetPhysicalDeviceQueueFamilyDataGraphPropertiesARM(
+            [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+            [NativeTypeName("uint32_t")] uint queueFamilyIndex,
+            [NativeTypeName("uint32_t *")] uint* pQueueFamilyDataGraphPropertyCount,
+            QueueFamilyDataGraphPropertiesARM* pQueueFamilyDataGraphProperties
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction(
+            "vulkan",
+            EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM"
+        )]
+        static abstract Result GetPhysicalDeviceQueueFamilyDataGraphPropertiesARM(
+            [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+            [NativeTypeName("uint32_t")] uint queueFamilyIndex,
+            [NativeTypeName("uint32_t *")] Ref<uint> pQueueFamilyDataGraphPropertyCount,
+            Ref<QueueFamilyDataGraphPropertiesARM> pQueueFamilyDataGraphProperties
         );
 
         [SupportedApiProfile(
@@ -16825,6 +17132,63 @@ public unsafe partial interface IVk
             [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain
         );
 
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
+        static abstract void GetTensorMemoryRequirementsARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkTensorMemoryRequirementsInfoARM *")]
+                TensorMemoryRequirementsInfoARM* pInfo,
+            MemoryRequirements2* pMemoryRequirements
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
+        static abstract void GetTensorMemoryRequirementsARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkTensorMemoryRequirementsInfoARM *")]
+                Ref<TensorMemoryRequirementsInfoARM> pInfo,
+            Ref<MemoryRequirements2> pMemoryRequirements
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
+        static abstract Result GetTensorOpaqueCaptureDescriptorDataARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkTensorCaptureDescriptorDataInfoARM *")]
+                TensorCaptureDescriptorDataInfoARM* pInfo,
+            void* pData
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
+        static abstract Result GetTensorOpaqueCaptureDescriptorDataARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkTensorCaptureDescriptorDataInfoARM *")]
+                Ref<TensorCaptureDescriptorDataInfoARM> pInfo,
+            Ref pData
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
+        static abstract Result GetTensorViewOpaqueCaptureDescriptorDataARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkTensorViewCaptureDescriptorDataInfoARM *")]
+                TensorViewCaptureDescriptorDataInfoARM* pInfo,
+            void* pData
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
+        static abstract Result GetTensorViewOpaqueCaptureDescriptorDataARM(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkTensorViewCaptureDescriptorDataInfoARM *")]
+                Ref<TensorViewCaptureDescriptorDataInfoARM> pInfo,
+            Ref pData
+        );
+
         [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetValidationCacheDataEXT")]
         static abstract Result GetValidationCacheDataEXT(
@@ -17523,8 +17887,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesEXT")]
         static abstract Result ReleaseSwapchainImagesEXT(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("const VkReleaseSwapchainImagesInfoEXT *")]
-                ReleaseSwapchainImagesInfoEXT* pReleaseInfo
+            [NativeTypeName("const VkReleaseSwapchainImagesInfoKHR *")]
+                ReleaseSwapchainImagesInfoKHR* pReleaseInfo
         );
 
         [SupportedApiProfile(
@@ -17539,8 +17903,25 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesEXT")]
         static abstract Result ReleaseSwapchainImagesEXT(
             [NativeTypeName("VkDevice")] DeviceHandle device,
-            [NativeTypeName("const VkReleaseSwapchainImagesInfoEXT *")]
-                Ref<ReleaseSwapchainImagesInfoEXT> pReleaseInfo
+            [NativeTypeName("const VkReleaseSwapchainImagesInfoKHR *")]
+                Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
+        static abstract Result ReleaseSwapchainImagesKHR(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkReleaseSwapchainImagesInfoKHR *")]
+                ReleaseSwapchainImagesInfoKHR* pReleaseInfo
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
+        static abstract Result ReleaseSwapchainImagesKHR(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("const VkReleaseSwapchainImagesInfoKHR *")]
+                Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
         );
 
         [SupportedApiProfile(
@@ -18349,6 +18730,24 @@ public unsafe partial interface IVk
             [NativeTypeName("uint64_t")] ulong timeout
         );
 
+        [SupportedApiProfile("vulkan")]
+        [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
+        static abstract Result WaitForPresent2KHR(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
+            [NativeTypeName("const VkPresentWait2InfoKHR *")] PresentWait2InfoKHR* pPresentWait2Info
+        );
+
+        [SupportedApiProfile("vulkan")]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
+        static abstract Result WaitForPresent2KHR(
+            [NativeTypeName("VkDevice")] DeviceHandle device,
+            [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
+            [NativeTypeName("const VkPresentWait2InfoKHR *")]
+                Ref<PresentWait2InfoKHR> pPresentWait2Info
+        );
+
         [SupportedApiProfile(
             "vulkan",
             ["VK_KHR_present_wait"],
@@ -18820,6 +19219,25 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkBindBufferMemoryInfo *")] Ref<BindBufferMemoryInfo> pBindInfos
     );
 
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkBindDataGraphPipelineSessionMemoryARM")]
+    Result BindDataGraphPipelineSessionMemoryARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("uint32_t")] uint bindInfoCount,
+        [NativeTypeName("const VkBindDataGraphPipelineSessionMemoryInfoARM *")]
+            BindDataGraphPipelineSessionMemoryInfoARM* pBindInfos
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkBindDataGraphPipelineSessionMemoryARM")]
+    Result BindDataGraphPipelineSessionMemoryARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("uint32_t")] uint bindInfoCount,
+        [NativeTypeName("const VkBindDataGraphPipelineSessionMemoryInfoARM *")]
+            Ref<BindDataGraphPipelineSessionMemoryInfoARM> pBindInfos
+    );
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -18891,6 +19309,24 @@ public unsafe partial interface IVk
         OpticalFlowSessionBindingPointNV bindingPoint,
         [NativeTypeName("VkImageView")] ImageViewHandle view,
         ImageLayout layout
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
+    Result BindTensorMemoryARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("uint32_t")] uint bindInfoCount,
+        [NativeTypeName("const VkBindTensorMemoryInfoARM *")] BindTensorMemoryInfoARM* pBindInfos
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
+    Result BindTensorMemoryARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("uint32_t")] uint bindInfoCount,
+        [NativeTypeName("const VkBindTensorMemoryInfoARM *")]
+            Ref<BindTensorMemoryInfoARM> pBindInfos
     );
 
     [SupportedApiProfile(
@@ -20890,19 +21326,19 @@ public unsafe partial interface IVk
         [NativeTypeName("VkQueryResultFlags")] QueryResultFlags flags
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    [NativeFunction("vulkan", EntryPoint = "vkCmdCudaLaunchKernelNV")]
-    void CmdCudaLaunchKernelNV(
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
+    void CmdCopyTensorARM(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("const VkCudaLaunchInfoNV *")] CudaLaunchInfoNV* pLaunchInfo
+        [NativeTypeName("const VkCopyTensorInfoARM *")] CopyTensorInfoARM* pCopyTensorInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
+    [SupportedApiProfile("vulkan")]
     [Transformed]
-    [NativeFunction("vulkan", EntryPoint = "vkCmdCudaLaunchKernelNV")]
-    void CmdCudaLaunchKernelNV(
+    [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
+    void CmdCopyTensorARM(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("const VkCudaLaunchInfoNV *")] Ref<CudaLaunchInfoNV> pLaunchInfo
+        [NativeTypeName("const VkCopyTensorInfoARM *")] Ref<CopyTensorInfoARM> pCopyTensorInfo
     );
 
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
@@ -21101,6 +21537,25 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint groupCountZ
     );
 
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
+    void CmdDispatchDataGraphARM(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("VkDataGraphPipelineSessionARM")] DataGraphPipelineSessionARMHandle session,
+        [NativeTypeName("const VkDataGraphPipelineDispatchInfoARM *")]
+            DataGraphPipelineDispatchInfoARM* pInfo
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
+    void CmdDispatchDataGraphARM(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("VkDataGraphPipelineSessionARM")] DataGraphPipelineSessionARMHandle session,
+        [NativeTypeName("const VkDataGraphPipelineDispatchInfoARM *")]
+            Ref<DataGraphPipelineDispatchInfoARM> pInfo
+    );
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -21122,7 +21577,26 @@ public unsafe partial interface IVk
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchTileQCOM")]
-    void CmdDispatchTileQCOM([NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer);
+    void CmdDispatchTileQCOM(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("const VkDispatchTileInfoQCOM *")] DispatchTileInfoQCOM* pDispatchTileInfo
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_shading"],
+        ImpliesSets = [
+            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
+        ]
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchTileQCOM")]
+    void CmdDispatchTileQCOM(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("const VkDispatchTileInfoQCOM *")]
+            Ref<DispatchTileInfoQCOM> pDispatchTileInfo
+    );
 
     [SupportedApiProfile(
         "vulkan",
@@ -25929,47 +26403,6 @@ public unsafe partial interface IVk
         [NativeTypeName("VkPipeline *")] Ref<PipelineHandle> pPipelines
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    [NativeFunction("vulkan", EntryPoint = "vkCreateCudaFunctionNV")]
-    Result CreateCudaFunctionNV(
-        [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("const VkCudaFunctionCreateInfoNV *")]
-            CudaFunctionCreateInfoNV* pCreateInfo,
-        [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
-        [NativeTypeName("VkCudaFunctionNV *")] CudaFunctionNVHandle* pFunction
-    );
-
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    [Transformed]
-    [NativeFunction("vulkan", EntryPoint = "vkCreateCudaFunctionNV")]
-    Result CreateCudaFunctionNV(
-        [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("const VkCudaFunctionCreateInfoNV *")]
-            Ref<CudaFunctionCreateInfoNV> pCreateInfo,
-        [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
-        [NativeTypeName("VkCudaFunctionNV *")] Ref<CudaFunctionNVHandle> pFunction
-    );
-
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    [NativeFunction("vulkan", EntryPoint = "vkCreateCudaModuleNV")]
-    Result CreateCudaModuleNV(
-        [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("const VkCudaModuleCreateInfoNV *")] CudaModuleCreateInfoNV* pCreateInfo,
-        [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
-        [NativeTypeName("VkCudaModuleNV *")] CudaModuleNVHandle* pModule
-    );
-
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    [Transformed]
-    [NativeFunction("vulkan", EntryPoint = "vkCreateCudaModuleNV")]
-    Result CreateCudaModuleNV(
-        [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("const VkCudaModuleCreateInfoNV *")]
-            Ref<CudaModuleCreateInfoNV> pCreateInfo,
-        [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
-        [NativeTypeName("VkCudaModuleNV *")] Ref<CudaModuleNVHandle> pModule
-    );
-
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateCuFunctionNVX")]
     Result CreateCuFunctionNVX(
@@ -26007,6 +26440,56 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkCuModuleCreateInfoNVX *")] Ref<CuModuleCreateInfoNVX> pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
         [NativeTypeName("VkCuModuleNVX *")] Ref<CuModuleNVXHandle> pModule
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
+    Result CreateDataGraphPipelinesARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
+        [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
+        [NativeTypeName("uint32_t")] uint createInfoCount,
+        [NativeTypeName("const VkDataGraphPipelineCreateInfoARM *")]
+            DataGraphPipelineCreateInfoARM* pCreateInfos,
+        [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
+        [NativeTypeName("VkPipeline *")] PipelineHandle* pPipelines
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
+    Result CreateDataGraphPipelinesARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("VkDeferredOperationKHR")] DeferredOperationKHRHandle deferredOperation,
+        [NativeTypeName("VkPipelineCache")] PipelineCacheHandle pipelineCache,
+        [NativeTypeName("uint32_t")] uint createInfoCount,
+        [NativeTypeName("const VkDataGraphPipelineCreateInfoARM *")]
+            Ref<DataGraphPipelineCreateInfoARM> pCreateInfos,
+        [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
+        [NativeTypeName("VkPipeline *")] Ref<PipelineHandle> pPipelines
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
+    Result CreateDataGraphPipelineSessionARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkDataGraphPipelineSessionCreateInfoARM *")]
+            DataGraphPipelineSessionCreateInfoARM* pCreateInfo,
+        [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
+        [NativeTypeName("VkDataGraphPipelineSessionARM *")]
+            DataGraphPipelineSessionARMHandle* pSession
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
+    Result CreateDataGraphPipelineSessionARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkDataGraphPipelineSessionCreateInfoARM *")]
+            Ref<DataGraphPipelineSessionCreateInfoARM> pCreateInfo,
+        [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
+        [NativeTypeName("VkDataGraphPipelineSessionARM *")]
+            Ref<DataGraphPipelineSessionARMHandle> pSession
     );
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
@@ -27240,6 +27723,45 @@ public unsafe partial interface IVk
         [NativeTypeName("VkSwapchainKHR *")] Ref<SwapchainKHRHandle> pSwapchain
     );
 
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
+    Result CreateTensorARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkTensorCreateInfoARM *")] TensorCreateInfoARM* pCreateInfo,
+        [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
+        [NativeTypeName("VkTensorARM *")] TensorARMHandle* pTensor
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
+    Result CreateTensorARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkTensorCreateInfoARM *")] Ref<TensorCreateInfoARM> pCreateInfo,
+        [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
+        [NativeTypeName("VkTensorARM *")] Ref<TensorARMHandle> pTensor
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
+    Result CreateTensorViewARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkTensorViewCreateInfoARM *")] TensorViewCreateInfoARM* pCreateInfo,
+        [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
+        [NativeTypeName("VkTensorViewARM *")] TensorViewARMHandle* pView
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
+    Result CreateTensorViewARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkTensorViewCreateInfoARM *")]
+            Ref<TensorViewCreateInfoARM> pCreateInfo,
+        [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator,
+        [NativeTypeName("VkTensorViewARM *")] Ref<TensorViewARMHandle> pView
+    );
+
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateValidationCacheEXT")]
     Result CreateValidationCacheEXT(
@@ -27530,40 +28052,6 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    [NativeFunction("vulkan", EntryPoint = "vkDestroyCudaFunctionNV")]
-    void DestroyCudaFunctionNV(
-        [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("VkCudaFunctionNV")] CudaFunctionNVHandle function,
-        [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
-    );
-
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    [Transformed]
-    [NativeFunction("vulkan", EntryPoint = "vkDestroyCudaFunctionNV")]
-    void DestroyCudaFunctionNV(
-        [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("VkCudaFunctionNV")] CudaFunctionNVHandle function,
-        [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
-    );
-
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    [NativeFunction("vulkan", EntryPoint = "vkDestroyCudaModuleNV")]
-    void DestroyCudaModuleNV(
-        [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
-        [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
-    );
-
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    [Transformed]
-    [NativeFunction("vulkan", EntryPoint = "vkDestroyCudaModuleNV")]
-    void DestroyCudaModuleNV(
-        [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
-        [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
-    );
-
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyCuFunctionNVX")]
     void DestroyCuFunctionNVX(
@@ -27595,6 +28083,23 @@ public unsafe partial interface IVk
     void DestroyCuModuleNVX(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkCuModuleNVX")] CuModuleNVXHandle module,
+        [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
+    void DestroyDataGraphPipelineSessionARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("VkDataGraphPipelineSessionARM")] DataGraphPipelineSessionARMHandle session,
+        [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
+    void DestroyDataGraphPipelineSessionARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("VkDataGraphPipelineSessionARM")] DataGraphPipelineSessionARMHandle session,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -28493,6 +28998,40 @@ public unsafe partial interface IVk
     void DestroySwapchainKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
+        [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
+    void DestroyTensorARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("VkTensorARM")] TensorARMHandle tensor,
+        [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
+    void DestroyTensorARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("VkTensorARM")] TensorARMHandle tensor,
+        [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
+    void DestroyTensorViewARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("VkTensorViewARM")] TensorViewARMHandle tensorView,
+        [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
+    void DestroyTensorViewARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("VkTensorViewARM")] TensorViewARMHandle tensorView,
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -29487,23 +30026,86 @@ public unsafe partial interface IVk
         Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
-    [NativeFunction("vulkan", EntryPoint = "vkGetCudaModuleCacheNV")]
-    Result GetCudaModuleCacheNV(
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
+    Result GetDataGraphPipelineAvailablePropertiesARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
-        [NativeTypeName("size_t *")] nuint* pCacheSize,
-        void* pCacheData
+        [NativeTypeName("const VkDataGraphPipelineInfoARM *")]
+            DataGraphPipelineInfoARM* pPipelineInfo,
+        [NativeTypeName("uint32_t *")] uint* pPropertiesCount,
+        DataGraphPipelinePropertyARM* pProperties
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cuda_kernel_launch"])]
+    [SupportedApiProfile("vulkan")]
     [Transformed]
-    [NativeFunction("vulkan", EntryPoint = "vkGetCudaModuleCacheNV")]
-    Result GetCudaModuleCacheNV(
+    [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
+    Result GetDataGraphPipelineAvailablePropertiesARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("VkCudaModuleNV")] CudaModuleNVHandle module,
-        [NativeTypeName("size_t *")] Ref<nuint> pCacheSize,
-        Ref pCacheData
+        [NativeTypeName("const VkDataGraphPipelineInfoARM *")]
+            Ref<DataGraphPipelineInfoARM> pPipelineInfo,
+        [NativeTypeName("uint32_t *")] Ref<uint> pPropertiesCount,
+        Ref<DataGraphPipelinePropertyARM> pProperties
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
+    Result GetDataGraphPipelinePropertiesARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkDataGraphPipelineInfoARM *")]
+            DataGraphPipelineInfoARM* pPipelineInfo,
+        [NativeTypeName("uint32_t")] uint propertiesCount,
+        DataGraphPipelinePropertyQueryResultARM* pProperties
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
+    Result GetDataGraphPipelinePropertiesARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkDataGraphPipelineInfoARM *")]
+            Ref<DataGraphPipelineInfoARM> pPipelineInfo,
+        [NativeTypeName("uint32_t")] uint propertiesCount,
+        Ref<DataGraphPipelinePropertyQueryResultARM> pProperties
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
+    Result GetDataGraphPipelineSessionBindPointRequirementsARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkDataGraphPipelineSessionBindPointRequirementsInfoARM *")]
+            DataGraphPipelineSessionBindPointRequirementsInfoARM* pInfo,
+        [NativeTypeName("uint32_t *")] uint* pBindPointRequirementCount,
+        DataGraphPipelineSessionBindPointRequirementARM* pBindPointRequirements
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
+    Result GetDataGraphPipelineSessionBindPointRequirementsARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkDataGraphPipelineSessionBindPointRequirementsInfoARM *")]
+            Ref<DataGraphPipelineSessionBindPointRequirementsInfoARM> pInfo,
+        [NativeTypeName("uint32_t *")] Ref<uint> pBindPointRequirementCount,
+        Ref<DataGraphPipelineSessionBindPointRequirementARM> pBindPointRequirements
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
+    void GetDataGraphPipelineSessionMemoryRequirementsARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkDataGraphPipelineSessionMemoryRequirementsInfoARM *")]
+            DataGraphPipelineSessionMemoryRequirementsInfoARM* pInfo,
+        MemoryRequirements2* pMemoryRequirements
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
+    void GetDataGraphPipelineSessionMemoryRequirementsARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkDataGraphPipelineSessionMemoryRequirementsInfoARM *")]
+            Ref<DataGraphPipelineSessionMemoryRequirementsInfoARM> pInfo,
+        Ref<MemoryRequirements2> pMemoryRequirements
     );
 
     [return: NativeTypeName("uint32_t")]
@@ -30320,6 +30922,25 @@ public unsafe partial interface IVk
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("VkRenderPass")] RenderPassHandle renderpass,
         Ref<Extent2D> pMaxWorkgroupSize
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
+    void GetDeviceTensorMemoryRequirementsARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkDeviceTensorMemoryRequirementsARM *")]
+            DeviceTensorMemoryRequirementsARM* pInfo,
+        MemoryRequirements2* pMemoryRequirements
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
+    void GetDeviceTensorMemoryRequirementsARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkDeviceTensorMemoryRequirementsARM *")]
+            Ref<DeviceTensorMemoryRequirementsARM> pInfo,
+        Ref<MemoryRequirements2> pMemoryRequirements
     );
 
     [SupportedApiProfile(
@@ -31861,6 +32482,25 @@ public unsafe partial interface IVk
         Ref<ExternalSemaphoreProperties> pExternalSemaphoreProperties
     );
 
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
+    void GetPhysicalDeviceExternalTensorPropertiesARM(
+        [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+        [NativeTypeName("const VkPhysicalDeviceExternalTensorInfoARM *")]
+            PhysicalDeviceExternalTensorInfoARM* pExternalTensorInfo,
+        ExternalTensorPropertiesARM* pExternalTensorProperties
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
+    void GetPhysicalDeviceExternalTensorPropertiesARM(
+        [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+        [NativeTypeName("const VkPhysicalDeviceExternalTensorInfoARM *")]
+            Ref<PhysicalDeviceExternalTensorInfoARM> pExternalTensorInfo,
+        Ref<ExternalTensorPropertiesARM> pExternalTensorProperties
+    );
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -32318,6 +32958,50 @@ public unsafe partial interface IVk
     void GetPhysicalDeviceProperties2KHR(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         Ref<PhysicalDeviceProperties2> pProperties
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction(
+        "vulkan",
+        EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM"
+    )]
+    void GetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM(
+        [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+        [NativeTypeName("const VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM *")]
+            PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM* pQueueFamilyDataGraphProcessingEngineInfo,
+        QueueFamilyDataGraphProcessingEnginePropertiesARM* pQueueFamilyDataGraphProcessingEngineProperties
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction(
+        "vulkan",
+        EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM"
+    )]
+    void GetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM(
+        [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+        [NativeTypeName("const VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM *")]
+            Ref<PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM> pQueueFamilyDataGraphProcessingEngineInfo,
+        Ref<QueueFamilyDataGraphProcessingEnginePropertiesARM> pQueueFamilyDataGraphProcessingEngineProperties
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
+    Result GetPhysicalDeviceQueueFamilyDataGraphPropertiesARM(
+        [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+        [NativeTypeName("uint32_t")] uint queueFamilyIndex,
+        [NativeTypeName("uint32_t *")] uint* pQueueFamilyDataGraphPropertyCount,
+        QueueFamilyDataGraphPropertiesARM* pQueueFamilyDataGraphProperties
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
+    Result GetPhysicalDeviceQueueFamilyDataGraphPropertiesARM(
+        [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+        [NativeTypeName("uint32_t")] uint queueFamilyIndex,
+        [NativeTypeName("uint32_t *")] Ref<uint> pQueueFamilyDataGraphPropertyCount,
+        Ref<QueueFamilyDataGraphPropertiesARM> pQueueFamilyDataGraphProperties
     );
 
     [SupportedApiProfile(
@@ -33802,6 +34486,63 @@ public unsafe partial interface IVk
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain
     );
 
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
+    void GetTensorMemoryRequirementsARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkTensorMemoryRequirementsInfoARM *")]
+            TensorMemoryRequirementsInfoARM* pInfo,
+        MemoryRequirements2* pMemoryRequirements
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
+    void GetTensorMemoryRequirementsARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkTensorMemoryRequirementsInfoARM *")]
+            Ref<TensorMemoryRequirementsInfoARM> pInfo,
+        Ref<MemoryRequirements2> pMemoryRequirements
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
+    Result GetTensorOpaqueCaptureDescriptorDataARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkTensorCaptureDescriptorDataInfoARM *")]
+            TensorCaptureDescriptorDataInfoARM* pInfo,
+        void* pData
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
+    Result GetTensorOpaqueCaptureDescriptorDataARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkTensorCaptureDescriptorDataInfoARM *")]
+            Ref<TensorCaptureDescriptorDataInfoARM> pInfo,
+        Ref pData
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
+    Result GetTensorViewOpaqueCaptureDescriptorDataARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkTensorViewCaptureDescriptorDataInfoARM *")]
+            TensorViewCaptureDescriptorDataInfoARM* pInfo,
+        void* pData
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
+    Result GetTensorViewOpaqueCaptureDescriptorDataARM(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkTensorViewCaptureDescriptorDataInfoARM *")]
+            Ref<TensorViewCaptureDescriptorDataInfoARM> pInfo,
+        Ref pData
+    );
+
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetValidationCacheDataEXT")]
     Result GetValidationCacheDataEXT(
@@ -34426,8 +35167,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesEXT")]
     Result ReleaseSwapchainImagesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("const VkReleaseSwapchainImagesInfoEXT *")]
-            ReleaseSwapchainImagesInfoEXT* pReleaseInfo
+        [NativeTypeName("const VkReleaseSwapchainImagesInfoKHR *")]
+            ReleaseSwapchainImagesInfoKHR* pReleaseInfo
     );
 
     [SupportedApiProfile(
@@ -34442,8 +35183,25 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesEXT")]
     Result ReleaseSwapchainImagesEXT(
         [NativeTypeName("VkDevice")] DeviceHandle device,
-        [NativeTypeName("const VkReleaseSwapchainImagesInfoEXT *")]
-            Ref<ReleaseSwapchainImagesInfoEXT> pReleaseInfo
+        [NativeTypeName("const VkReleaseSwapchainImagesInfoKHR *")]
+            Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
+    Result ReleaseSwapchainImagesKHR(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkReleaseSwapchainImagesInfoKHR *")]
+            ReleaseSwapchainImagesInfoKHR* pReleaseInfo
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
+    Result ReleaseSwapchainImagesKHR(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("const VkReleaseSwapchainImagesInfoKHR *")]
+            Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
     );
 
     [SupportedApiProfile(
@@ -35174,6 +35932,23 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkFence *")] Ref<FenceHandle> pFences,
         [NativeTypeName("VkBool32")] uint waitAll,
         [NativeTypeName("uint64_t")] ulong timeout
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
+    Result WaitForPresent2KHR(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
+        [NativeTypeName("const VkPresentWait2InfoKHR *")] PresentWait2InfoKHR* pPresentWait2Info
+    );
+
+    [SupportedApiProfile("vulkan")]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
+    Result WaitForPresent2KHR(
+        [NativeTypeName("VkDevice")] DeviceHandle device,
+        [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain,
+        [NativeTypeName("const VkPresentWait2InfoKHR *")] Ref<PresentWait2InfoKHR> pPresentWait2Info
     );
 
     [SupportedApiProfile(

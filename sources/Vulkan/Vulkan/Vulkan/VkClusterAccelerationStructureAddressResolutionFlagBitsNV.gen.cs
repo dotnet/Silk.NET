@@ -14,7 +14,12 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
 {
-    None = 0,
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    NoneNV = 0,
 
     [SupportedApiProfile(
         "vulkan",
