@@ -2136,6 +2136,19 @@ public partial class MixKhronosData(
                     enumToGroups.Add(group);
                 }
             }
+
+            // Some enum groups don't have members, meaning that the code above won't catch them
+            if (groupName != null && !data.Groups.ContainsKey(groupName))
+            {
+                data.Groups[groupName] = new EnumGroup(
+                    groupName,
+                    null,
+                    [],
+                    isBitmask,
+                    VendorFromString(groupName, vendors),
+                    enumNamespace
+                );
+            }
         }
 
         var allHandles = doc.Elements("registry")

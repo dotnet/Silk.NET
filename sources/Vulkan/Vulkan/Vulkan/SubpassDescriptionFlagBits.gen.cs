@@ -11,8 +11,11 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum SubpassDescriptionFlags : uint
 {
+    None = 0,
+
     [SupportedApiProfile(
         "vulkan",
         ["VK_NVX_multiview_per_view_attributes"],

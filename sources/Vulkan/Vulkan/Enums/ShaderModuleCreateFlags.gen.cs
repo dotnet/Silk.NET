@@ -9,20 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[Transformed]
 [Flags]
-public enum MemoryUnmapFlags : uint
+public enum ShaderModuleCreateFlags : uint
 {
     None = 0,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_map_memory_placed"],
-        ImpliesSets = [
-            "VK_EXT_map_memory_placed+VK_KHR_map_memory2",
-            "VK_EXT_map_memory_placed+VK_VERSION_1_4",
-        ]
-    )]
-    ReserveBitEXT = 0x00000001,
 }

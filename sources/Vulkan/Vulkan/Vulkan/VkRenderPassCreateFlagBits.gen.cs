@@ -11,8 +11,11 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum RenderPassCreateFlags : uint
 {
+    None = 0,
+
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
     TransformBitQCOM = 0x00000002,
 

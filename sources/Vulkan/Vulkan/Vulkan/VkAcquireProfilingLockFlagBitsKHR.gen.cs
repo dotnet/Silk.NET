@@ -11,4 +11,8 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum AcquireProfilingLockFlagsKHR : uint { }
+[Flags]
+public enum AcquireProfilingLockFlagsKHR : uint
+{
+    None = 0,
+}
