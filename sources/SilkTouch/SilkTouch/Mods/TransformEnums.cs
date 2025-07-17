@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
@@ -175,11 +174,6 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
 
             var isFlagsEnum = node.AttributeLists.SelectMany(list => list.Attributes)
                 .Any(attribute => attribute.IsAttribute("System.Flags"));
-
-            if (node.Identifier.ToString() == "ClusterAccelerationStructureAddressResolutionFlagsNV")
-            {
-                Debugger.Break();
-            }
 
             if (isFlagsEnum && config.AddNoneMemberToFlags)
             {
