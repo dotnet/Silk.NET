@@ -69,10 +69,4 @@ public enum StdVideoAV1TransferCharacteristics : uint
 
     [SupportedApiProfile("vulkan")]
     Hlg = 18,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

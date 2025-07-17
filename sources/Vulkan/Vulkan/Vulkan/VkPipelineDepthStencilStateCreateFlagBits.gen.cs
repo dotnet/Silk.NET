@@ -53,14 +53,4 @@ public enum PipelineDepthStencilStateCreateFlags : uint
     )]
     RasterizationOrderAttachmentStencilAccessBitARM =
         RasterizationOrderAttachmentStencilAccessBitEXT,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_rasterization_order_attachment_access"],
-        ImpliesSets = [
-            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
-        ]
-    )]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
 }

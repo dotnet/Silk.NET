@@ -84,10 +84,4 @@ public enum StdVideoAV1Level : uint
 
     [SupportedApiProfile("vulkan")]
     Level7X3 = 23,
-
-    [SupportedApiProfile("vulkan")]
-    LevelInvalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    LevelMaxEnum = 0x7FFFFFFF,
 }

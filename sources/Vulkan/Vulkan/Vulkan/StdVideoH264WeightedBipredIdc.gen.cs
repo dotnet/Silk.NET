@@ -21,10 +21,4 @@ public enum StdVideoH264WeightedBipredIdc : uint
 
     [SupportedApiProfile("vulkan")]
     Implicit = 2,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

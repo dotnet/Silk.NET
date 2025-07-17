@@ -69,10 +69,4 @@ public enum StdVideoH264LevelIdc : uint
 
     [SupportedApiProfile("vulkan")]
     Idc6X2 = 18,
-
-    [SupportedApiProfile("vulkan")]
-    IdcInvalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    IdcMaxEnum = 0x7FFFFFFF,
 }

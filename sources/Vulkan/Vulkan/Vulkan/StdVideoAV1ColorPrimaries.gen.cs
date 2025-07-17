@@ -50,11 +50,5 @@ public enum StdVideoAV1ColorPrimaries : uint
     Ebu3213 = 22,
 
     [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
     BtUnspecified = Unspecified,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

@@ -1927,7 +1927,6 @@ public partial class MixKhronosData(
     /// Finishes renaming FlagBits enums to Flags.
     /// Marks bitmask enums with the [Flags] attribute.
     /// Replaces uint/ulong with the actual enum type for FlagBits/Flags types.
-    /// Removes MaxEnum member from enums.
     /// </summary>
     private class EnumRewriterPhase2(JobData job, EnumRewriterPhase1 phase1) : CSharpSyntaxRewriter(true)
     {
@@ -1945,14 +1944,6 @@ public partial class MixKhronosData(
                         Attribute(IdentifierName("Flags"))));
 
                 node = node.WithAttributeLists(node.AttributeLists.Add(flagsAttribute));
-            }
-
-            if (job.Groups.ContainsKey(identifier))
-            {
-                // Remove MaxEnum member
-                node = node.WithMembers([
-                    ..node.Members.Where(member => !member.Identifier.ToString().Contains("MAX_ENUM"))
-                ]);
             }
 
             return base.VisitEnumDeclaration(node);

@@ -18,10 +18,4 @@ public enum StdVideoDecodeH264FieldOrderCount : uint
 
     [SupportedApiProfile("vulkan")]
     Bottom = 1,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

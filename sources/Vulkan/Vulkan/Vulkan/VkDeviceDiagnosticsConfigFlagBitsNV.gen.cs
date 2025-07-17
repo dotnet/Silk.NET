@@ -24,7 +24,7 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    ShaderDebugInfoBitNV = 0x00000001,
+    EnableShaderDebugInfoBitNV = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
@@ -34,7 +34,7 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    ResourceTrackingBitNV = 0x00000002,
+    EnableResourceTrackingBitNV = 0x00000002,
 
     [SupportedApiProfile(
         "vulkan",
@@ -44,7 +44,7 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    AutomaticCheckpointsBitNV = 0x00000004,
+    EnableAutomaticCheckpointsBitNV = 0x00000004,
 
     [SupportedApiProfile(
         "vulkan",
@@ -54,5 +54,5 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    ShaderErrorReportingBitNV = 0x00000008,
+    EnableShaderErrorReportingBitNV = 0x00000008,
 }

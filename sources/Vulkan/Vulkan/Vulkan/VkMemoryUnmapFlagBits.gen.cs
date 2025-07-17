@@ -22,7 +22,4 @@ public enum MemoryUnmapFlags : uint
         ]
     )]
     ReserveBitEXT = 0x00000001,
-
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
 }

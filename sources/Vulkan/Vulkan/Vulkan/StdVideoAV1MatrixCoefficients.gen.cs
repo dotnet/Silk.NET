@@ -57,10 +57,4 @@ public enum StdVideoAV1MatrixCoefficients : uint
 
     [SupportedApiProfile("vulkan")]
     Ictcp = 14,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

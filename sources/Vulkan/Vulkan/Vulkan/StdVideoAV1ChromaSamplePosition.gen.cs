@@ -24,10 +24,4 @@ public enum StdVideoAV1ChromaSamplePosition : uint
 
     [SupportedApiProfile("vulkan")]
     Reserved = 3,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

@@ -21,10 +21,4 @@ public enum StdVideoAV1TxMode : uint
 
     [SupportedApiProfile("vulkan")]
     Select = 2,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

@@ -33,10 +33,4 @@ public enum StdVideoH264NonVclNaluType : uint
 
     [SupportedApiProfile("vulkan")]
     Precoded = 6,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

@@ -24,10 +24,4 @@ public enum StdVideoH264ProfileIdc : uint
 
     [SupportedApiProfile("vulkan")]
     High444Predictive = 244,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

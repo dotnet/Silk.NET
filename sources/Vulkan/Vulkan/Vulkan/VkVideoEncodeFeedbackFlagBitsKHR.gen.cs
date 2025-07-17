@@ -24,7 +24,7 @@ public enum VideoEncodeFeedbackFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    BufferOffsetBitKHR = 0x00000001,
+    BitstreamBufferOffsetBitKHR = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
@@ -34,7 +34,7 @@ public enum VideoEncodeFeedbackFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    BytesWrittenBitKHR = 0x00000002,
+    BitstreamBytesWrittenBitKHR = 0x00000002,
 
     [SupportedApiProfile(
         "vulkan",
@@ -44,5 +44,5 @@ public enum VideoEncodeFeedbackFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    HasOverridesBitKHR = 0x00000004,
+    BitstreamHasOverridesBitKHR = 0x00000004,
 }

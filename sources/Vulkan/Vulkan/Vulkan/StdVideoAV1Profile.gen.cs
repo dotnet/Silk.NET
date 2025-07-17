@@ -21,10 +21,4 @@ public enum StdVideoAV1Profile : uint
 
     [SupportedApiProfile("vulkan")]
     Professional = 2,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

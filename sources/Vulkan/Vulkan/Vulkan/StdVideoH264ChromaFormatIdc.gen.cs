@@ -24,10 +24,4 @@ public enum StdVideoH264ChromaFormatIdc : uint
 
     [SupportedApiProfile("vulkan")]
     Idc444 = 3,
-
-    [SupportedApiProfile("vulkan")]
-    IdcInvalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    IdcMaxEnum = 0x7FFFFFFF,
 }

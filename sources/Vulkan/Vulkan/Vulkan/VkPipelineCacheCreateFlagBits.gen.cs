@@ -28,14 +28,4 @@ public enum PipelineCacheCreateFlags : uint
         ]
     )]
     ExternallySynchronizedBitEXT = ExternallySynchronizedBit,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_pipeline_creation_cache_control"],
-        ImpliesSets = [
-            "VK_EXT_pipeline_creation_cache_control+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_pipeline_creation_cache_control+VK_VERSION_1_1",
-        ]
-    )]
-    FlagBitsMaxEnum = 0x7FFFFFFF,
 }

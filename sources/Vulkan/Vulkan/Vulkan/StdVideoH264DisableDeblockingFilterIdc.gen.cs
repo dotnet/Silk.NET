@@ -21,10 +21,4 @@ public enum StdVideoH264DisableDeblockingFilterIdc : uint
 
     [SupportedApiProfile("vulkan")]
     Partial = 2,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

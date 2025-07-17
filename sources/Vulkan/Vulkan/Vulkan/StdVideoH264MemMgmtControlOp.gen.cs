@@ -33,10 +33,4 @@ public enum StdVideoH264MemMgmtControlOp : uint
 
     [SupportedApiProfile("vulkan")]
     MarkCurrentAsLongTerm = 6,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

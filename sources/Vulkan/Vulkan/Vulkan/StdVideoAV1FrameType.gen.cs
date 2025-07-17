@@ -24,10 +24,4 @@ public enum StdVideoAV1FrameType : uint
 
     [SupportedApiProfile("vulkan")]
     Switch = 3,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

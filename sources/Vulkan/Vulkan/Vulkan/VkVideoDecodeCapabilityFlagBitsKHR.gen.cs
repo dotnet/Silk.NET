@@ -24,7 +24,7 @@ public enum VideoDecodeCapabilityFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    CoincideBitKHR = 0x00000001,
+    DpbAndOutputCoincideBitKHR = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
@@ -34,5 +34,5 @@ public enum VideoDecodeCapabilityFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DistinctBitKHR = 0x00000002,
+    DpbAndOutputDistinctBitKHR = 0x00000002,
 }

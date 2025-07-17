@@ -176,7 +176,7 @@
         "TransformHandles",
         "TransformFunctions",
         "TransformProperties",
-        "TransformFlags",
+        "TransformEnums",
         "AddVTables"
       ],
       "ClangScraper": {
@@ -203,15 +203,7 @@
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
-        "GlobalPrefixHint": "vk",
-        "PrefixOverrides": {
-          "VkFenceImportFlags": "VK_FENCE_IMPORT",
-          "VkIndirectStateFlagsNV": "VK_INDIRECT_STATE_FLAG",
-          "VkSemaphoreImportFlags": "VK_SEMAPHORE_IMPORT",
-          "VkSemaphoreWaitFlags": "VK_SEMAPHORE_WAIT",
-          "VkSubmitFlags": "VK_SUBMIT",
-          "VkSurfaceCounterFlagsEXT": "VK_SURFACE_COUNTER"
-        }
+        "GlobalPrefixHint": "vk"
       },
       "AddVTables": {
         "VTables": [
@@ -226,6 +218,19 @@
       },
       "TransformHandles": {
         "UseDSL": true
+      },
+      "TransformEnums": {
+        "AddNoneMemberToFlags": true,
+        "RemoveMembers": [
+          {
+            "MemberName": "MaxEnum",
+            "MemberValue": "0x7FFFFFFF"
+          },
+          {
+            "MemberName": "Invalid",
+            "MemberValue": "0x7FFFFFFF"
+          }
+        ]
       }
     }
   }

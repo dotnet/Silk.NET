@@ -27,10 +27,4 @@ public enum StdVideoAV1InterpolationFilter : uint
 
     [SupportedApiProfile("vulkan")]
     Switchable = 4,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

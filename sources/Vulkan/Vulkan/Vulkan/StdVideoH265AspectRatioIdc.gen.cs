@@ -66,10 +66,4 @@ public enum StdVideoH265AspectRatioIdc : uint
 
     [SupportedApiProfile("vulkan")]
     IdcExtendedSar = 255,
-
-    [SupportedApiProfile("vulkan")]
-    IdcInvalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    IdcMaxEnum = 0x7FFFFFFF,
 }

@@ -36,10 +36,4 @@ public enum StdVideoAV1ReferenceName : uint
 
     [SupportedApiProfile("vulkan")]
     AltrefFrame = 7,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

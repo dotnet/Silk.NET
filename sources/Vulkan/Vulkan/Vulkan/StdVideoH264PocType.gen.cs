@@ -21,10 +21,4 @@ public enum StdVideoH264PocType : uint
 
     [SupportedApiProfile("vulkan")]
     Type2 = 2,
-
-    [SupportedApiProfile("vulkan")]
-    TypeInvalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    TypeMaxEnum = 0x7FFFFFFF,
 }

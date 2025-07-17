@@ -27,10 +27,4 @@ public enum StdVideoH265ProfileIdc : uint
 
     [SupportedApiProfile("vulkan")]
     SccExtensions = 9,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

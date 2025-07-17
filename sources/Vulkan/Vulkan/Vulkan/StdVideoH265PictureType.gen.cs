@@ -24,10 +24,4 @@ public enum StdVideoH265PictureType : uint
 
     [SupportedApiProfile("vulkan")]
     Idr = 3,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

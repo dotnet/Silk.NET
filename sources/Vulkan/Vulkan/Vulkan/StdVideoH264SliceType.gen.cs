@@ -21,10 +21,4 @@ public enum StdVideoH264SliceType : uint
 
     [SupportedApiProfile("vulkan")]
     I = 2,
-
-    [SupportedApiProfile("vulkan")]
-    Invalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    MaxEnum = 0x7FFFFFFF,
 }

@@ -11,12 +11,4 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ShaderCorePropertiesFlagsAMD : uint
-{
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_AMD_shader_core_properties2"],
-        ImpliesSets = ["VK_AMD_shader_core_properties"]
-    )]
-    FlagBitsMaxEnumAMD = 0x7FFFFFFF,
-}
+public enum ShaderCorePropertiesFlagsAMD : uint { }

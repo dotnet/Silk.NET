@@ -21,10 +21,4 @@ public enum StdVideoH264CabacInitIdc : uint
 
     [SupportedApiProfile("vulkan")]
     Idc2 = 2,
-
-    [SupportedApiProfile("vulkan")]
-    IdcInvalid = 0x7FFFFFFF,
-
-    [SupportedApiProfile("vulkan")]
-    IdcMaxEnum = 0x7FFFFFFF,
 }
