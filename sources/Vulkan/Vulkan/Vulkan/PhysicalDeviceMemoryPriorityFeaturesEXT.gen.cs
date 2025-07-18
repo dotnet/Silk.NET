@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceMemoryPriorityFeaturesEXT
             "VK_EXT_memory_priority+VK_VERSION_1_1",
         ]
     )]
-    public uint MemoryPriority;
+    public MaybeBool<uint> MemoryPriority;
 }

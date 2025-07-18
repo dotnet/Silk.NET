@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT
             "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
         ]
     )]
-    public uint ZeroInitializeDeviceMemory;
+    public MaybeBool<uint> ZeroInitializeDeviceMemory;
 }

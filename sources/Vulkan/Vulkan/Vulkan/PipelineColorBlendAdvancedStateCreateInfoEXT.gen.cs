@@ -42,7 +42,7 @@ public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    public uint SrcPremultiplied;
+    public MaybeBool<uint> SrcPremultiplied;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    public uint DstPremultiplied;
+    public MaybeBool<uint> DstPremultiplied;
 
     [SupportedApiProfile(
         "vulkan",

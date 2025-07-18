@@ -17,13 +17,13 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
         uint,
         DebugUtilsMessengerCallbackDataEXT*,
         void*,
-        uint> Handle =>
+        MaybeBool<uint>> Handle =>
         (delegate* unmanaged<
             DebugUtilsMessageSeverityFlagsEXT,
             uint,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
-            uint>)Pointer;
+            MaybeBool<uint>>)Pointer;
 
     public PFNVkDebugUtilsMessengerCallbackEXT(
         delegate* unmanaged<
@@ -31,7 +31,7 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
             uint,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
-            uint> ptr
+            MaybeBool<uint>> ptr
     ) => Pointer = ptr;
 
     public PFNVkDebugUtilsMessengerCallbackEXT(PFNVkDebugUtilsMessengerCallbackEXTDelegate proc) =>
@@ -45,7 +45,7 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
             uint,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
-            uint> pfn
+            MaybeBool<uint>> pfn
     ) => new(pfn);
 
     public static implicit operator delegate* unmanaged<
@@ -53,12 +53,12 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
         uint,
         DebugUtilsMessengerCallbackDataEXT*,
         void*,
-        uint>(PFNVkDebugUtilsMessengerCallbackEXT pfn) =>
+        MaybeBool<uint>>(PFNVkDebugUtilsMessengerCallbackEXT pfn) =>
         (delegate* unmanaged<
             DebugUtilsMessageSeverityFlagsEXT,
             uint,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
-            uint>)
+            MaybeBool<uint>>)
             pfn.Pointer;
 }

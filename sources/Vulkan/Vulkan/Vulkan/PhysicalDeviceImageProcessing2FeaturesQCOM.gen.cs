@@ -32,5 +32,5 @@ public unsafe partial struct PhysicalDeviceImageProcessing2FeaturesQCOM
         ["VK_QCOM_image_processing2"],
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
-    public uint TextureBlockMatch2;
+    public MaybeBool<uint> TextureBlockMatch2;
 }

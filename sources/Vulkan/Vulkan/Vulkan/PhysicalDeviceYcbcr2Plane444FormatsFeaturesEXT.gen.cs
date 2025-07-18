@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    public uint Ycbcr2Plane444Formats;
+    public MaybeBool<uint> Ycbcr2Plane444Formats;
 }

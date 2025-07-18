@@ -20,25 +20,25 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint EarlyFragmentMultisampleCoverageAfterSampleCounting;
+    public MaybeBool<uint> EarlyFragmentMultisampleCoverageAfterSampleCounting;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint EarlyFragmentSampleMaskTestBeforeSampleCounting;
+    public MaybeBool<uint> EarlyFragmentSampleMaskTestBeforeSampleCounting;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint DepthStencilSwizzleOneSupport;
+    public MaybeBool<uint> DepthStencilSwizzleOneSupport;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint PolygonModePointSize;
+    public MaybeBool<uint> PolygonModePointSize;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint NonStrictSinglePixelWideLinesUseParallelogram;
+    public MaybeBool<uint> NonStrictSinglePixelWideLinesUseParallelogram;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint NonStrictWideLinesUseParallelogram;
+    public MaybeBool<uint> NonStrictWideLinesUseParallelogram;
 }

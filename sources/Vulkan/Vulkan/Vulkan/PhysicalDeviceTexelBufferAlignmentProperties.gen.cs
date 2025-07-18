@@ -24,7 +24,7 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint StorageTexelBufferOffsetSingleTexelAlignment;
+    public MaybeBool<uint> StorageTexelBufferOffsetSingleTexelAlignment;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -32,5 +32,5 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint UniformTexelBufferOffsetSingleTexelAlignment;
+    public MaybeBool<uint> UniformTexelBufferOffsetSingleTexelAlignment;
 }

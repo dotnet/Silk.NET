@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceShaderRelaxedExtendedInstructionFeatu
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_shader_relaxed_extended_instruction"])]
-    public uint ShaderRelaxedExtendedInstruction;
+    public MaybeBool<uint> ShaderRelaxedExtendedInstruction;
 }

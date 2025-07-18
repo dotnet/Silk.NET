@@ -20,9 +20,9 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorFeaturesNV
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
-    public uint CooperativeVector;
+    public MaybeBool<uint> CooperativeVector;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
-    public uint CooperativeVectorTraining;
+    public MaybeBool<uint> CooperativeVectorTraining;
 }

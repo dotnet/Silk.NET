@@ -41,7 +41,7 @@ public unsafe partial struct PhysicalDeviceShaderClockFeaturesKHR
             "VK_KHR_shader_clock+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderSubgroupClock;
+    public MaybeBool<uint> ShaderSubgroupClock;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -52,5 +52,5 @@ public unsafe partial struct PhysicalDeviceShaderClockFeaturesKHR
             "VK_KHR_shader_clock+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderDeviceClock;
+    public MaybeBool<uint> ShaderDeviceClock;
 }

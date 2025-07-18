@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceMaintenance9PropertiesKHR
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint Image2DViewOf3DSparse;
+    public MaybeBool<uint> Image2DViewOf3DSparse;
 
     [SupportedApiProfile("vulkan")]
     public DefaultVertexAttributeValueKHR DefaultVertexAttributeValue;

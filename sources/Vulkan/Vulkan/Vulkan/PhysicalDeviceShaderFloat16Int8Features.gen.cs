@@ -32,9 +32,9 @@ public unsafe partial struct PhysicalDeviceShaderFloat16Int8Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint ShaderFloat16;
+    public MaybeBool<uint> ShaderFloat16;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderInt8;
+    public MaybeBool<uint> ShaderInt8;
 }

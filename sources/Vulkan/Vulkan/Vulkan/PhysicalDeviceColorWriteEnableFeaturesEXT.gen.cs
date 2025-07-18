@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceColorWriteEnableFeaturesEXT
             "VK_EXT_color_write_enable+VK_VERSION_1_1",
         ]
     )]
-    public uint ColorWriteEnable;
+    public MaybeBool<uint> ColorWriteEnable;
 }

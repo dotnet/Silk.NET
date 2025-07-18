@@ -31,7 +31,7 @@ public partial struct ColorBlendAdvancedEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint SrcPremultiplied;
+    public MaybeBool<uint> SrcPremultiplied;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public partial struct ColorBlendAdvancedEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint DstPremultiplied;
+    public MaybeBool<uint> DstPremultiplied;
 
     [SupportedApiProfile(
         "vulkan",
@@ -63,5 +63,5 @@ public partial struct ColorBlendAdvancedEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ClampResults;
+    public MaybeBool<uint> ClampResults;
 }

@@ -70,7 +70,7 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint Clipped;
+    public MaybeBool<uint> Clipped;
 
     [NativeTypeName("VkSwapchainKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]

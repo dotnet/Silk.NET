@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV
             "VK_NV_scissor_exclusive+VK_VERSION_1_1",
         ]
     )]
-    public uint ExclusiveScissor;
+    public MaybeBool<uint> ExclusiveScissor;
 }

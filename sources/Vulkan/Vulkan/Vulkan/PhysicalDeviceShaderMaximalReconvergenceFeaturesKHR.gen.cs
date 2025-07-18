@@ -32,5 +32,5 @@ public unsafe partial struct PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR
         ["VK_KHR_shader_maximal_reconvergence"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public uint ShaderMaximalReconvergence;
+    public MaybeBool<uint> ShaderMaximalReconvergence;
 }

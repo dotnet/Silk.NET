@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]
-    public uint ExtendedSparseAddressSpace;
+    public MaybeBool<uint> ExtendedSparseAddressSpace;
 }

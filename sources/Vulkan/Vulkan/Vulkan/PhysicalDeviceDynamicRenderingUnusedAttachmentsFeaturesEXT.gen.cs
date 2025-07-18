@@ -44,5 +44,5 @@ public unsafe partial struct PhysicalDeviceDynamicRenderingUnusedAttachmentsFeat
             "VK_VERSION_1_3",
         ]
     )]
-    public uint DynamicRenderingUnusedAttachments;
+    public MaybeBool<uint> DynamicRenderingUnusedAttachments;
 }

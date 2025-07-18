@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceAntiLagFeaturesAMD
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_AMD_anti_lag"])]
-    public uint AntiLag;
+    public MaybeBool<uint> AntiLag;
 }

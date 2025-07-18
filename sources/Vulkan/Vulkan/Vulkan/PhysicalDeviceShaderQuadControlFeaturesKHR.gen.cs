@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceShaderQuadControlFeaturesKHR
             "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_2",
         ]
     )]
-    public uint ShaderQuadControl;
+    public MaybeBool<uint> ShaderQuadControl;
 }

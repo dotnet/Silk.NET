@@ -38,5 +38,5 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint IdenticalMemoryTypeRequirements;
+    public MaybeBool<uint> IdenticalMemoryTypeRequirements;
 }

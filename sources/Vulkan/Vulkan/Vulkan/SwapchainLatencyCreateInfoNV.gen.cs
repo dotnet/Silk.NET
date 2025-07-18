@@ -42,5 +42,5 @@ public unsafe partial struct SwapchainLatencyCreateInfoNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public uint LatencyModeEnable;
+    public MaybeBool<uint> LatencyModeEnable;
 }

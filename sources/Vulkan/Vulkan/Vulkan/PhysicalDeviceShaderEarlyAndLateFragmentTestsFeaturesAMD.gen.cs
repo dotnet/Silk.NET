@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceShaderEarlyAndLateFragmentTestsFeatur
             "VK_AMD_shader_early_and_late_fragment_tests+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderEarlyAndLateFragmentTests;
+    public MaybeBool<uint> ShaderEarlyAndLateFragmentTests;
 }

@@ -41,7 +41,7 @@ public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
             "VK_EXT_fragment_shader_interlock+VK_VERSION_1_1",
         ]
     )]
-    public uint FragmentShaderSampleInterlock;
+    public MaybeBool<uint> FragmentShaderSampleInterlock;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -52,7 +52,7 @@ public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
             "VK_EXT_fragment_shader_interlock+VK_VERSION_1_1",
         ]
     )]
-    public uint FragmentShaderPixelInterlock;
+    public MaybeBool<uint> FragmentShaderPixelInterlock;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -63,5 +63,5 @@ public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
             "VK_EXT_fragment_shader_interlock+VK_VERSION_1_1",
         ]
     )]
-    public uint FragmentShaderShadingRateInterlock;
+    public MaybeBool<uint> FragmentShaderShadingRateInterlock;
 }

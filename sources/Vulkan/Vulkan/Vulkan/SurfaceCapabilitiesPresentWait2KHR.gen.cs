@@ -20,5 +20,5 @@ public unsafe partial struct SurfaceCapabilitiesPresentWait2KHR
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint PresentWait2Supported;
+    public MaybeBool<uint> PresentWait2Supported;
 }

@@ -32,9 +32,9 @@ public unsafe partial struct DisplayPropertiesKHR
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint PlaneReorderPossible;
+    public MaybeBool<uint> PlaneReorderPossible;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint PersistentContent;
+    public MaybeBool<uint> PersistentContent;
 }

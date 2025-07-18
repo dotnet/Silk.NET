@@ -32,9 +32,9 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint PartitionIndependentIntraRefreshRegions;
+    public MaybeBool<uint> PartitionIndependentIntraRefreshRegions;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint NonRectangularIntraRefreshRegions;
+    public MaybeBool<uint> NonRectangularIntraRefreshRegions;
 }

@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceImageRobustnessFeatures
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint RobustImageAccess;
+    public MaybeBool<uint> RobustImageAccess;
 }

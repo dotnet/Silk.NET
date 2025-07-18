@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceCubicClampFeaturesQCOM
             "VK_EXT_filter_cubic+VK_VERSION_1_2",
         ]
     )]
-    public uint CubicRangeClamp;
+    public MaybeBool<uint> CubicRangeClamp;
 }

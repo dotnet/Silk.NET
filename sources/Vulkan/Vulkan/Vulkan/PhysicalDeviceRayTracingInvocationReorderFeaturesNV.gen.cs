@@ -32,5 +32,5 @@ public unsafe partial struct PhysicalDeviceRayTracingInvocationReorderFeaturesNV
         ["VK_NV_ray_tracing_invocation_reorder"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public uint RayTracingInvocationReorder;
+    public MaybeBool<uint> RayTracingInvocationReorder;
 }

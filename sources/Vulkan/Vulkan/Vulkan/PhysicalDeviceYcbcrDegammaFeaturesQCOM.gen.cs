@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceYcbcrDegammaFeaturesQCOM
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_ycbcr_degamma"])]
-    public uint YcbcrDegamma;
+    public MaybeBool<uint> YcbcrDegamma;
 }

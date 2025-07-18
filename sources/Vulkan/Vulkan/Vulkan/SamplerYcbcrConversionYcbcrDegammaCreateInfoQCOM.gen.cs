@@ -20,9 +20,9 @@ public unsafe partial struct SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_ycbcr_degamma"])]
-    public uint EnableYDegamma;
+    public MaybeBool<uint> EnableYDegamma;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_ycbcr_degamma"])]
-    public uint EnableCbCrDegamma;
+    public MaybeBool<uint> EnableCbCrDegamma;
 }

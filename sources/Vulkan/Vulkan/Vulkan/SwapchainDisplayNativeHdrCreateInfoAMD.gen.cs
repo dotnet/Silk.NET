@@ -42,5 +42,5 @@ public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD
             "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public uint LocalDimmingEnable;
+    public MaybeBool<uint> LocalDimmingEnable;
 }

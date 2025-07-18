@@ -33,7 +33,7 @@ public unsafe partial struct VideoEncodeH264SessionCreateInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseMaxLevelIdc;
+    public MaybeBool<uint> UseMaxLevelIdc;
 
     [SupportedApiProfile(
         "vulkan",

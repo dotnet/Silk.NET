@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceFrameBoundaryFeaturesEXT
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_frame_boundary"])]
-    public uint FrameBoundary;
+    public MaybeBool<uint> FrameBoundary;
 }

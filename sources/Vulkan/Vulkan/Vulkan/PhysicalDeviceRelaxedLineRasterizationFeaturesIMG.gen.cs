@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceRelaxedLineRasterizationFeaturesIMG
             "VK_IMG_relaxed_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint RelaxedLineRasterization;
+    public MaybeBool<uint> RelaxedLineRasterization;
 }

@@ -24,7 +24,7 @@ public unsafe partial struct DataGraphPipelinePropertyQueryResultARM
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint IsText;
+    public MaybeBool<uint> IsText;
 
     [NativeTypeName("size_t")]
     [SupportedApiProfile("vulkan")]

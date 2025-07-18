@@ -41,7 +41,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint DepthClampEnable;
+    public MaybeBool<uint> DepthClampEnable;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -49,7 +49,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint RasterizerDiscardEnable;
+    public MaybeBool<uint> RasterizerDiscardEnable;
 
     [SupportedApiProfile(
         "vulkan",
@@ -79,7 +79,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint DepthBiasEnable;
+    public MaybeBool<uint> DepthBiasEnable;
 
     [SupportedApiProfile(
         "vulkan",

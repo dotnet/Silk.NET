@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceFormatPackFeaturesARM
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint FormatPack;
+    public MaybeBool<uint> FormatPack;
 }

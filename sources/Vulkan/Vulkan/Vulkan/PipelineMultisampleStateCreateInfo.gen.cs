@@ -48,7 +48,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SampleShadingEnable;
+    public MaybeBool<uint> SampleShadingEnable;
 
     [SupportedApiProfile(
         "vulkan",
@@ -71,7 +71,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint AlphaToCoverageEnable;
+    public MaybeBool<uint> AlphaToCoverageEnable;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -79,5 +79,5 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint AlphaToOneEnable;
+    public MaybeBool<uint> AlphaToOneEnable;
 }

@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferTensorFeaturesARM
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint DescriptorBufferTensorDescriptors;
+    public MaybeBool<uint> DescriptorBufferTensorDescriptors;
 }

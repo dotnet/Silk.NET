@@ -32,7 +32,7 @@ public unsafe partial struct PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
         ["VK_EXT_primitives_generated_query"],
         ImpliesSets = ["VK_EXT_transform_feedback"]
     )]
-    public uint PrimitivesGeneratedQuery;
+    public MaybeBool<uint> PrimitivesGeneratedQuery;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
         ["VK_EXT_primitives_generated_query"],
         ImpliesSets = ["VK_EXT_transform_feedback"]
     )]
-    public uint PrimitivesGeneratedQueryWithRasterizerDiscard;
+    public MaybeBool<uint> PrimitivesGeneratedQueryWithRasterizerDiscard;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -48,5 +48,5 @@ public unsafe partial struct PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
         ["VK_EXT_primitives_generated_query"],
         ImpliesSets = ["VK_EXT_transform_feedback"]
     )]
-    public uint PrimitivesGeneratedQueryWithNonZeroStreams;
+    public MaybeBool<uint> PrimitivesGeneratedQueryWithNonZeroStreams;
 }

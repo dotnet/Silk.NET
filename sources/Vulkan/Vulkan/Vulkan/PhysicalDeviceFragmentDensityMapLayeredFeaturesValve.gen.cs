@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapLayeredFeaturesValv
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint FragmentDensityMapLayered;
+    public MaybeBool<uint> FragmentDensityMapLayered;
 }

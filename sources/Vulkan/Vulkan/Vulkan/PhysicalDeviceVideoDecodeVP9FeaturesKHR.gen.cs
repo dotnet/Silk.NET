@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceVideoDecodeVP9FeaturesKHR
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint VideoDecodeVP9;
+    public MaybeBool<uint> VideoDecodeVP9;
 }

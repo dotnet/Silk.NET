@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceDepthClampControlFeaturesEXT
             "VK_EXT_depth_clamp_control+VK_VERSION_1_1",
         ]
     )]
-    public uint DepthClampControl;
+    public MaybeBool<uint> DepthClampControl;
 }

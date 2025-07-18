@@ -20,25 +20,25 @@ public unsafe partial struct PhysicalDeviceTensorFeaturesARM
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint TensorNonPacked;
+    public MaybeBool<uint> TensorNonPacked;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint ShaderTensorAccess;
+    public MaybeBool<uint> ShaderTensorAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint ShaderStorageTensorArrayDynamicIndexing;
+    public MaybeBool<uint> ShaderStorageTensorArrayDynamicIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint ShaderStorageTensorArrayNonUniformIndexing;
+    public MaybeBool<uint> ShaderStorageTensorArrayNonUniformIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint DescriptorBindingStorageTensorUpdateAfterBind;
+    public MaybeBool<uint> DescriptorBindingStorageTensorUpdateAfterBind;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint Tensors;
+    public MaybeBool<uint> Tensors;
 }

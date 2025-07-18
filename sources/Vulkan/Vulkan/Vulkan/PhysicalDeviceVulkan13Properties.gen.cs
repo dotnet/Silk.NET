@@ -60,123 +60,123 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct8BitUnsignedAccelerated;
+    public MaybeBool<uint> IntegerDotProduct8BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct8BitSignedAccelerated;
+    public MaybeBool<uint> IntegerDotProduct8BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct8BitMixedSignednessAccelerated;
+    public MaybeBool<uint> IntegerDotProduct8BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct4X8BitPackedUnsignedAccelerated;
+    public MaybeBool<uint> IntegerDotProduct4X8BitPackedUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct4X8BitPackedSignedAccelerated;
+    public MaybeBool<uint> IntegerDotProduct4X8BitPackedSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct4X8BitPackedMixedSignednessAccelerated;
+    public MaybeBool<uint> IntegerDotProduct4X8BitPackedMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct16BitUnsignedAccelerated;
+    public MaybeBool<uint> IntegerDotProduct16BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct16BitSignedAccelerated;
+    public MaybeBool<uint> IntegerDotProduct16BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct16BitMixedSignednessAccelerated;
+    public MaybeBool<uint> IntegerDotProduct16BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct32BitUnsignedAccelerated;
+    public MaybeBool<uint> IntegerDotProduct32BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct32BitSignedAccelerated;
+    public MaybeBool<uint> IntegerDotProduct32BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct32BitMixedSignednessAccelerated;
+    public MaybeBool<uint> IntegerDotProduct32BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct64BitUnsignedAccelerated;
+    public MaybeBool<uint> IntegerDotProduct64BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct64BitSignedAccelerated;
+    public MaybeBool<uint> IntegerDotProduct64BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProduct64BitMixedSignednessAccelerated;
+    public MaybeBool<uint> IntegerDotProduct64BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating8BitUnsignedAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating8BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating8BitSignedAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating8BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating4X8BitPackedUnsignedAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating4X8BitPackedUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating4X8BitPackedSignedAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating4X8BitPackedSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating4X8BitPackedMixedSignednessAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating4X8BitPackedMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating16BitUnsignedAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating16BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating16BitSignedAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating16BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating32BitUnsignedAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating32BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating32BitSignedAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating32BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating64BitUnsignedAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating64BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating64BitSignedAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating64BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint IntegerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated;
+    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -184,7 +184,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint StorageTexelBufferOffsetSingleTexelAlignment;
+    public MaybeBool<uint> StorageTexelBufferOffsetSingleTexelAlignment;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
@@ -192,7 +192,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint UniformTexelBufferOffsetSingleTexelAlignment;
+    public MaybeBool<uint> UniformTexelBufferOffsetSingleTexelAlignment;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

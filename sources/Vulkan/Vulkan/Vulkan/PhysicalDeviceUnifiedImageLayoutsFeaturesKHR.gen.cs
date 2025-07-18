@@ -20,9 +20,9 @@ public unsafe partial struct PhysicalDeviceUnifiedImageLayoutsFeaturesKHR
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint UnifiedImageLayouts;
+    public MaybeBool<uint> UnifiedImageLayouts;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint UnifiedImageLayoutsVideo;
+    public MaybeBool<uint> UnifiedImageLayoutsVideo;
 }

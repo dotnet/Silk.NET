@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceShaderReplicatedCompositesFeaturesEXT
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_replicated_composites"])]
-    public uint ShaderReplicatedComposites;
+    public MaybeBool<uint> ShaderReplicatedComposites;
 }

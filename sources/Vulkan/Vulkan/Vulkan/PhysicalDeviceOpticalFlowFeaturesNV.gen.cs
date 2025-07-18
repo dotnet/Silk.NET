@@ -44,5 +44,5 @@ public unsafe partial struct PhysicalDeviceOpticalFlowFeaturesNV
             "VK_VERSION_1_3",
         ]
     )]
-    public uint OpticalFlow;
+    public MaybeBool<uint> OpticalFlow;
 }

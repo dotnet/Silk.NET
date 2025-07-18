@@ -42,7 +42,7 @@ public unsafe partial struct LatencySleepModeInfoNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public uint LowLatencyMode;
+    public MaybeBool<uint> LowLatencyMode;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public unsafe partial struct LatencySleepModeInfoNV
             "VK_NV_low_latency2+VK_VERSION_1_2",
         ]
     )]
-    public uint LowLatencyBoost;
+    public MaybeBool<uint> LowLatencyBoost;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

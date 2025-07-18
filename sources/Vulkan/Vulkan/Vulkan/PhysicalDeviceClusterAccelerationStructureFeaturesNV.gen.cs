@@ -32,5 +32,5 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructureFeaturesN
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint ClusterAccelerationStructure;
+    public MaybeBool<uint> ClusterAccelerationStructure;
 }

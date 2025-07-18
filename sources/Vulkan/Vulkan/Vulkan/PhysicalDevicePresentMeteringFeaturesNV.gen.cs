@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDevicePresentMeteringFeaturesNV
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_present_metering"])]
-    public uint PresentMetering;
+    public MaybeBool<uint> PresentMetering;
 }

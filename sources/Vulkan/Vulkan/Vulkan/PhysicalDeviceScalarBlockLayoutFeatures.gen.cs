@@ -28,5 +28,5 @@ public unsafe partial struct PhysicalDeviceScalarBlockLayoutFeatures
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ScalarBlockLayout;
+    public MaybeBool<uint> ScalarBlockLayout;
 }

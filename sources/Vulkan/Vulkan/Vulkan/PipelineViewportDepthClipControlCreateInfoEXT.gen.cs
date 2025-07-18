@@ -42,5 +42,5 @@ public unsafe partial struct PipelineViewportDepthClipControlCreateInfoEXT
             "VK_EXT_depth_clip_control+VK_VERSION_1_1",
         ]
     )]
-    public uint NegativeOneToOne;
+    public MaybeBool<uint> NegativeOneToOne;
 }

@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceDescriptorSetHostMappingFeaturesValve
             "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
         ]
     )]
-    public uint DescriptorSetHostMapping;
+    public MaybeBool<uint> DescriptorSetHostMapping;
 }

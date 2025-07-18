@@ -63,7 +63,7 @@ public unsafe partial struct PipelineExecutableInternalRepresentationKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public uint IsText;
+    public MaybeBool<uint> IsText;
 
     [NativeTypeName("size_t")]
     [SupportedApiProfile(

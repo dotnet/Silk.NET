@@ -21,5 +21,5 @@ public unsafe partial struct AttachmentFeedbackLoopInfoEXT
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint FeedbackLoopEnable;
+    public MaybeBool<uint> FeedbackLoopEnable;
 }

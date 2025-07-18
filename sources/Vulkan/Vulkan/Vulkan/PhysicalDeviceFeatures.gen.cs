@@ -18,19 +18,19 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint RobustBufferAccess;
+    public MaybeBool<uint> RobustBufferAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint FullDrawIndexUint32;
+    public MaybeBool<uint> FullDrawIndexUint32;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ImageCubeArray;
+    public MaybeBool<uint> ImageCubeArray;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint IndependentBlend;
+    public MaybeBool<uint> IndependentBlend;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -38,7 +38,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint GeometryShader;
+    public MaybeBool<uint> GeometryShader;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -53,11 +53,11 @@ public partial struct PhysicalDeviceFeatures
         ],
         RequireAll = true
     )]
-    public uint TessellationShader;
+    public MaybeBool<uint> TessellationShader;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint SampleRateShading;
+    public MaybeBool<uint> SampleRateShading;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint DualSrcBlend;
+    public MaybeBool<uint> DualSrcBlend;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -80,7 +80,7 @@ public partial struct PhysicalDeviceFeatures
         ],
         RequireAll = true
     )]
-    public uint LogicOp;
+    public MaybeBool<uint> LogicOp;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -88,19 +88,19 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint MultiDrawIndirect;
+    public MaybeBool<uint> MultiDrawIndirect;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint DrawIndirectFirstInstance;
+    public MaybeBool<uint> DrawIndirectFirstInstance;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint DepthClamp;
+    public MaybeBool<uint> DepthClamp;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint DepthBiasClamp;
+    public MaybeBool<uint> DepthBiasClamp;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -115,7 +115,7 @@ public partial struct PhysicalDeviceFeatures
         ],
         RequireAll = true
     )]
-    public uint FillModeNonSolid;
+    public MaybeBool<uint> FillModeNonSolid;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -123,7 +123,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint DepthBounds;
+    public MaybeBool<uint> DepthBounds;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -131,11 +131,11 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint WideLines;
+    public MaybeBool<uint> WideLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint LargePoints;
+    public MaybeBool<uint> LargePoints;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -150,7 +150,7 @@ public partial struct PhysicalDeviceFeatures
         ],
         RequireAll = true
     )]
-    public uint AlphaToOne;
+    public MaybeBool<uint> AlphaToOne;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -158,11 +158,11 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint MultiViewport;
+    public MaybeBool<uint> MultiViewport;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint SamplerAnisotropy;
+    public MaybeBool<uint> SamplerAnisotropy;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -170,7 +170,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint TextureCompressionETC2;
+    public MaybeBool<uint> TextureCompressionETC2;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -178,7 +178,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint TextureCompressionASTCLDR;
+    public MaybeBool<uint> TextureCompressionASTCLDR;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -186,7 +186,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint TextureCompressionBC;
+    public MaybeBool<uint> TextureCompressionBC;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -194,7 +194,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint OcclusionQueryPrecise;
+    public MaybeBool<uint> OcclusionQueryPrecise;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -202,7 +202,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint PipelineStatisticsQuery;
+    public MaybeBool<uint> PipelineStatisticsQuery;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -210,11 +210,11 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint VertexPipelineStoresAndAtomics;
+    public MaybeBool<uint> VertexPipelineStoresAndAtomics;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint FragmentStoresAndAtomics;
+    public MaybeBool<uint> FragmentStoresAndAtomics;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -222,15 +222,15 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ShaderTessellationAndGeometryPointSize;
+    public MaybeBool<uint> ShaderTessellationAndGeometryPointSize;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderImageGatherExtended;
+    public MaybeBool<uint> ShaderImageGatherExtended;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderStorageImageExtendedFormats;
+    public MaybeBool<uint> ShaderStorageImageExtendedFormats;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -238,7 +238,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ShaderStorageImageMultisample;
+    public MaybeBool<uint> ShaderStorageImageMultisample;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -246,7 +246,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ShaderStorageImageReadWithoutFormat;
+    public MaybeBool<uint> ShaderStorageImageReadWithoutFormat;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -254,11 +254,11 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ShaderStorageImageWriteWithoutFormat;
+    public MaybeBool<uint> ShaderStorageImageWriteWithoutFormat;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderUniformBufferArrayDynamicIndexing;
+    public MaybeBool<uint> ShaderUniformBufferArrayDynamicIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -266,7 +266,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint ShaderSampledImageArrayDynamicIndexing;
+    public MaybeBool<uint> ShaderSampledImageArrayDynamicIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -274,11 +274,11 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint ShaderStorageBufferArrayDynamicIndexing;
+    public MaybeBool<uint> ShaderStorageBufferArrayDynamicIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderStorageImageArrayDynamicIndexing;
+    public MaybeBool<uint> ShaderStorageImageArrayDynamicIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -286,7 +286,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ShaderClipDistance;
+    public MaybeBool<uint> ShaderClipDistance;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -294,7 +294,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ShaderCullDistance;
+    public MaybeBool<uint> ShaderCullDistance;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -302,7 +302,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ShaderFloat64;
+    public MaybeBool<uint> ShaderFloat64;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -310,11 +310,11 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint ShaderInt64;
+    public MaybeBool<uint> ShaderInt64;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderInt16;
+    public MaybeBool<uint> ShaderInt16;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -322,7 +322,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ShaderResourceResidency;
+    public MaybeBool<uint> ShaderResourceResidency;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -330,7 +330,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ShaderResourceMinLod;
+    public MaybeBool<uint> ShaderResourceMinLod;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -338,7 +338,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SparseBinding;
+    public MaybeBool<uint> SparseBinding;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -346,7 +346,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SparseResidencyBuffer;
+    public MaybeBool<uint> SparseResidencyBuffer;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -354,7 +354,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SparseResidencyImage2D;
+    public MaybeBool<uint> SparseResidencyImage2D;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -362,7 +362,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SparseResidencyImage3D;
+    public MaybeBool<uint> SparseResidencyImage3D;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -370,7 +370,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SparseResidency2Samples;
+    public MaybeBool<uint> SparseResidency2Samples;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -378,7 +378,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SparseResidency4Samples;
+    public MaybeBool<uint> SparseResidency4Samples;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -386,7 +386,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SparseResidency8Samples;
+    public MaybeBool<uint> SparseResidency8Samples;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -394,7 +394,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SparseResidency16Samples;
+    public MaybeBool<uint> SparseResidency16Samples;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -402,7 +402,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint SparseResidencyAliased;
+    public MaybeBool<uint> SparseResidencyAliased;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -410,7 +410,7 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint VariableMultisampleRate;
+    public MaybeBool<uint> VariableMultisampleRate;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -418,5 +418,5 @@ public partial struct PhysicalDeviceFeatures
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint InheritedQueries;
+    public MaybeBool<uint> InheritedQueries;
 }

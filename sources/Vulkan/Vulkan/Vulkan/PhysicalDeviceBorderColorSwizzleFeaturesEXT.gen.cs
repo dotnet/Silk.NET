@@ -32,7 +32,7 @@ public unsafe partial struct PhysicalDeviceBorderColorSwizzleFeaturesEXT
         ["VK_EXT_border_color_swizzle"],
         ImpliesSets = ["VK_EXT_custom_border_color"]
     )]
-    public uint BorderColorSwizzle;
+    public MaybeBool<uint> BorderColorSwizzle;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceBorderColorSwizzleFeaturesEXT
         ["VK_EXT_border_color_swizzle"],
         ImpliesSets = ["VK_EXT_custom_border_color"]
     )]
-    public uint BorderColorSwizzleFromImage;
+    public MaybeBool<uint> BorderColorSwizzleFromImage;
 }

@@ -20,25 +20,25 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint RectangularLines;
+    public MaybeBool<uint> RectangularLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint BresenhamLines;
+    public MaybeBool<uint> BresenhamLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint SmoothLines;
+    public MaybeBool<uint> SmoothLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint StippledRectangularLines;
+    public MaybeBool<uint> StippledRectangularLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint StippledBresenhamLines;
+    public MaybeBool<uint> StippledBresenhamLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint StippledSmoothLines;
+    public MaybeBool<uint> StippledSmoothLines;
 }

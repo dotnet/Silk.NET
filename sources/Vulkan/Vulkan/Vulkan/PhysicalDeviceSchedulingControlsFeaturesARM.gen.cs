@@ -30,5 +30,5 @@ public unsafe partial struct PhysicalDeviceSchedulingControlsFeaturesARM
         ["VK_ARM_scheduling_controls"],
         ImpliesSets = ["VK_ARM_shader_core_builtins"]
     )]
-    public uint SchedulingControls;
+    public MaybeBool<uint> SchedulingControls;
 }

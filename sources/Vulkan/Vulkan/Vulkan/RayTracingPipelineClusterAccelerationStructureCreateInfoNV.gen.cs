@@ -35,5 +35,5 @@ public unsafe partial struct RayTracingPipelineClusterAccelerationStructureCreat
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public uint AllowClusterAccelerationStructure;
+    public MaybeBool<uint> AllowClusterAccelerationStructure;
 }

@@ -71,7 +71,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint PrimitiveUnderestimation;
+    public MaybeBool<uint> PrimitiveUnderestimation;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -82,7 +82,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint ConservativePointAndLineRasterization;
+    public MaybeBool<uint> ConservativePointAndLineRasterization;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -93,7 +93,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint DegenerateTrianglesRasterized;
+    public MaybeBool<uint> DegenerateTrianglesRasterized;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -104,7 +104,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint DegenerateLinesRasterized;
+    public MaybeBool<uint> DegenerateLinesRasterized;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -115,7 +115,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint FullyCoveredFragmentShaderInputVariable;
+    public MaybeBool<uint> FullyCoveredFragmentShaderInputVariable;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -126,5 +126,5 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint ConservativeRasterizationPostDepthCoverage;
+    public MaybeBool<uint> ConservativeRasterizationPostDepthCoverage;
 }

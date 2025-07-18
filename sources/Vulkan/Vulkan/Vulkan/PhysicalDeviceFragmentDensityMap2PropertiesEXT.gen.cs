@@ -32,7 +32,7 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMap2PropertiesEXT
         ["VK_EXT_fragment_density_map2"],
         ImpliesSets = ["VK_EXT_fragment_density_map"]
     )]
-    public uint SubsampledLoads;
+    public MaybeBool<uint> SubsampledLoads;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMap2PropertiesEXT
         ["VK_EXT_fragment_density_map2"],
         ImpliesSets = ["VK_EXT_fragment_density_map"]
     )]
-    public uint SubsampledCoarseReconstructionEarlyAccess;
+    public MaybeBool<uint> SubsampledCoarseReconstructionEarlyAccess;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

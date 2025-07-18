@@ -32,5 +32,5 @@ public unsafe partial struct PhysicalDeviceDescriptorPoolOverallocationFeaturesN
         ["VK_NV_descriptor_pool_overallocation"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public uint DescriptorPoolOverallocation;
+    public MaybeBool<uint> DescriptorPoolOverallocation;
 }

@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceComputeShaderDerivativesPropertiesKHR
             "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
         ]
     )]
-    public uint MeshAndTaskShaderDerivatives;
+    public MaybeBool<uint> MeshAndTaskShaderDerivatives;
 }

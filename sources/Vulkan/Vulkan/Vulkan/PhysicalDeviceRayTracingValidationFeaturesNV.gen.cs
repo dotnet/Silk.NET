@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceRayTracingValidationFeaturesNV
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_ray_tracing_validation"])]
-    public uint RayTracingValidation;
+    public MaybeBool<uint> RayTracingValidation;
 }

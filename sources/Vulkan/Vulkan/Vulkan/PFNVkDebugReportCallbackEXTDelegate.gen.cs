@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-public unsafe delegate uint PFNVkDebugReportCallbackEXTDelegate(
+public unsafe delegate MaybeBool<uint> PFNVkDebugReportCallbackEXTDelegate(
     uint arg0,
     DebugReportObjectTypeEXT arg1,
     ulong arg2,

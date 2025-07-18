@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceInvocationMaskFeaturesHuawei
             "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3",
         ]
     )]
-    public uint InvocationMask;
+    public MaybeBool<uint> InvocationMask;
 }

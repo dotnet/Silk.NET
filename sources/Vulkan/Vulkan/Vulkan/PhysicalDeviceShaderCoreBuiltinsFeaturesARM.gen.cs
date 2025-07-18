@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceShaderCoreBuiltinsFeaturesARM
             "VK_ARM_shader_core_builtins+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderCoreBuiltins;
+    public MaybeBool<uint> ShaderCoreBuiltins;
 }

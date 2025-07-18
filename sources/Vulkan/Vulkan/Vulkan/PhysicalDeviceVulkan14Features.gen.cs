@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint GlobalPriorityQuery;
+    public MaybeBool<uint> GlobalPriorityQuery;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -28,75 +28,75 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
         ["VK_KHR_shader_subgroup_rotate", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public uint ShaderSubgroupRotate;
+    public MaybeBool<uint> ShaderSubgroupRotate;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderSubgroupRotateClustered;
+    public MaybeBool<uint> ShaderSubgroupRotateClustered;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderFloatControls2;
+    public MaybeBool<uint> ShaderFloatControls2;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderExpectAssume;
+    public MaybeBool<uint> ShaderExpectAssume;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint RectangularLines;
+    public MaybeBool<uint> RectangularLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint BresenhamLines;
+    public MaybeBool<uint> BresenhamLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint SmoothLines;
+    public MaybeBool<uint> SmoothLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint StippledRectangularLines;
+    public MaybeBool<uint> StippledRectangularLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint StippledBresenhamLines;
+    public MaybeBool<uint> StippledBresenhamLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint StippledSmoothLines;
+    public MaybeBool<uint> StippledSmoothLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint VertexAttributeInstanceRateDivisor;
+    public MaybeBool<uint> VertexAttributeInstanceRateDivisor;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint VertexAttributeInstanceRateZeroDivisor;
+    public MaybeBool<uint> VertexAttributeInstanceRateZeroDivisor;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint IndexTypeUint8;
+    public MaybeBool<uint> IndexTypeUint8;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint DynamicRenderingLocalRead;
+    public MaybeBool<uint> DynamicRenderingLocalRead;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint Maintenance5;
+    public MaybeBool<uint> Maintenance5;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint Maintenance6;
+    public MaybeBool<uint> Maintenance6;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint PipelineProtectedAccess;
+    public MaybeBool<uint> PipelineProtectedAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint PipelineRobustness;
+    public MaybeBool<uint> PipelineRobustness;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -108,9 +108,9 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
             "VK_VERSION_1_3",
         ]
     )]
-    public uint HostImageCopy;
+    public MaybeBool<uint> HostImageCopy;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint PushDescriptor;
+    public MaybeBool<uint> PushDescriptor;
 }

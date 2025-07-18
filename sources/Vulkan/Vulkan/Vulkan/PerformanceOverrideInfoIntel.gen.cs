@@ -24,7 +24,7 @@ public unsafe partial struct PerformanceOverrideInfoIntel
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    public uint Enable;
+    public MaybeBool<uint> Enable;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]

@@ -38,5 +38,5 @@ public unsafe partial struct PhysicalDeviceMutableDescriptorTypeFeaturesEXT
         ["VK_VALVE_mutable_descriptor_type"],
         ImpliesSets = ["VK_KHR_maintenance3"]
     )]
-    public uint MutableDescriptorType;
+    public MaybeBool<uint> MutableDescriptorType;
 }

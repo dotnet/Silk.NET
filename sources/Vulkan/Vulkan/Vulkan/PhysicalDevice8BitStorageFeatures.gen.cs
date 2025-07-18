@@ -32,7 +32,7 @@ public unsafe partial struct PhysicalDevice8BitStorageFeatures
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint StorageBuffer8BitAccess;
+    public MaybeBool<uint> StorageBuffer8BitAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDevice8BitStorageFeatures
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint UniformAndStorageBuffer8BitAccess;
+    public MaybeBool<uint> UniformAndStorageBuffer8BitAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -48,5 +48,5 @@ public unsafe partial struct PhysicalDevice8BitStorageFeatures
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint StoragePushConstant8;
+    public MaybeBool<uint> StoragePushConstant8;
 }

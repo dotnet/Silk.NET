@@ -32,5 +32,5 @@ public unsafe partial struct PhysicalDeviceShaderSubgroupUniformControlFlowFeatu
         ["VK_KHR_shader_subgroup_uniform_control_flow"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public uint ShaderSubgroupUniformControlFlow;
+    public MaybeBool<uint> ShaderSubgroupUniformControlFlow;
 }

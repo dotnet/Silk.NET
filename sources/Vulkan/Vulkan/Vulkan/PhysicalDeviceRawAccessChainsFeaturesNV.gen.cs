@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceRawAccessChainsFeaturesNV
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_raw_access_chains"])]
-    public uint ShaderRawAccessChains;
+    public MaybeBool<uint> ShaderRawAccessChains;
 }

@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceLegacyDitheringFeaturesEXT
             "VK_EXT_legacy_dithering+VK_VERSION_1_1",
         ]
     )]
-    public uint LegacyDithering;
+    public MaybeBool<uint> LegacyDithering;
 }

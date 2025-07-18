@@ -47,7 +47,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferFeaturesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint DescriptorBuffer;
+    public MaybeBool<uint> DescriptorBuffer;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -60,7 +60,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferFeaturesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint DescriptorBufferCaptureReplay;
+    public MaybeBool<uint> DescriptorBufferCaptureReplay;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -73,7 +73,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferFeaturesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint DescriptorBufferImageLayoutIgnored;
+    public MaybeBool<uint> DescriptorBufferImageLayoutIgnored;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -86,5 +86,5 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferFeaturesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint DescriptorBufferPushDescriptors;
+    public MaybeBool<uint> DescriptorBufferPushDescriptors;
 }

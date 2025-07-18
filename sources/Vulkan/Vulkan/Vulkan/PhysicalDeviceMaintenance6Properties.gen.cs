@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceMaintenance6Properties
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint BlockTexelViewCompatibleMultipleLayers;
+    public MaybeBool<uint> BlockTexelViewCompatibleMultipleLayers;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
@@ -28,5 +28,5 @@ public unsafe partial struct PhysicalDeviceMaintenance6Properties
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint FragmentShadingRateClampCombinerInputs;
+    public MaybeBool<uint> FragmentShadingRateClampCombinerInputs;
 }

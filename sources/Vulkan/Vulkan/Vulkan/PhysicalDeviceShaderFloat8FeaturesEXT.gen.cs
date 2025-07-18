@@ -20,9 +20,9 @@ public unsafe partial struct PhysicalDeviceShaderFloat8FeaturesEXT
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint ShaderFloat8;
+    public MaybeBool<uint> ShaderFloat8;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint ShaderFloat8CooperativeMatrix;
+    public MaybeBool<uint> ShaderFloat8CooperativeMatrix;
 }

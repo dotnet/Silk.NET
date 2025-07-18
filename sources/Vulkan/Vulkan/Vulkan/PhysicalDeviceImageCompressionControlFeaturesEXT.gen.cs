@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceImageCompressionControlFeaturesEXT
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    public uint ImageCompressionControl;
+    public MaybeBool<uint> ImageCompressionControl;
 }

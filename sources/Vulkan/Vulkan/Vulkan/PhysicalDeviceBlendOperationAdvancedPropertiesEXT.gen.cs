@@ -52,7 +52,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    public uint AdvancedBlendIndependentBlend;
+    public MaybeBool<uint> AdvancedBlendIndependentBlend;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -63,7 +63,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    public uint AdvancedBlendNonPremultipliedSrcColor;
+    public MaybeBool<uint> AdvancedBlendNonPremultipliedSrcColor;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -74,7 +74,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    public uint AdvancedBlendNonPremultipliedDstColor;
+    public MaybeBool<uint> AdvancedBlendNonPremultipliedDstColor;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -85,7 +85,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    public uint AdvancedBlendCorrelatedOverlap;
+    public MaybeBool<uint> AdvancedBlendCorrelatedOverlap;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -96,5 +96,5 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    public uint AdvancedBlendAllOperations;
+    public MaybeBool<uint> AdvancedBlendAllOperations;
 }

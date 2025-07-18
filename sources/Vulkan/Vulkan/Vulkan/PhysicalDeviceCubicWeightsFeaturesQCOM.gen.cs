@@ -32,5 +32,5 @@ public unsafe partial struct PhysicalDeviceCubicWeightsFeaturesQCOM
         ["VK_QCOM_filter_cubic_weights"],
         ImpliesSets = ["VK_EXT_filter_cubic"]
     )]
-    public uint SelectableCubicWeights;
+    public MaybeBool<uint> SelectableCubicWeights;
 }

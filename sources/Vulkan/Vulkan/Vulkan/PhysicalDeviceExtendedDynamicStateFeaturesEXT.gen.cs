@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicStateFeaturesEXT
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState;
+    public MaybeBool<uint> ExtendedDynamicState;
 }

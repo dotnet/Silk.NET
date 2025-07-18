@@ -21,5 +21,5 @@ public unsafe partial struct DedicatedAllocationBufferCreateInfoNV
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
-    public uint DedicatedAllocation;
+    public MaybeBool<uint> DedicatedAllocation;
 }

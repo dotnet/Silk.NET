@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat16VectorFeaturesNV
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_shader_atomic_float16_vector"])]
-    public uint ShaderFloat16VectorAtomics;
+    public MaybeBool<uint> ShaderFloat16VectorAtomics;
 }

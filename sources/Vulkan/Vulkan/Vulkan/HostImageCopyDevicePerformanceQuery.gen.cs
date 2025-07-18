@@ -20,9 +20,9 @@ public unsafe partial struct HostImageCopyDevicePerformanceQuery
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint OptimalDeviceAccess;
+    public MaybeBool<uint> OptimalDeviceAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint IdenticalMemoryLayout;
+    public MaybeBool<uint> IdenticalMemoryLayout;
 }

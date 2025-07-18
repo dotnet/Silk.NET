@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceGraphicsPipelineLibraryFeaturesEXT
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    public uint GraphicsPipelineLibrary;
+    public MaybeBool<uint> GraphicsPipelineLibrary;
 }

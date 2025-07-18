@@ -30,7 +30,7 @@ public unsafe partial struct PerformanceValueDataIntel
     [FieldOffset(0)]
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    public uint ValueBool;
+    public MaybeBool<uint> ValueBool;
 
     [FieldOffset(0)]
     [NativeTypeName("const char *")]

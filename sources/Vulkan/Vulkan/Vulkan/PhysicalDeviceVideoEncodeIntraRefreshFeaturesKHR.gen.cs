@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint VideoEncodeIntraRefresh;
+    public MaybeBool<uint> VideoEncodeIntraRefresh;
 }

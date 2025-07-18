@@ -33,5 +33,5 @@ public unsafe partial struct DisplayModeStereoPropertiesNV
         ["VK_NV_display_stereo"],
         ImpliesSets = ["VK_KHR_display", "VK_KHR_get_display_properties2"]
     )]
-    public uint Hdmi3DSupported;
+    public MaybeBool<uint> Hdmi3DSupported;
 }

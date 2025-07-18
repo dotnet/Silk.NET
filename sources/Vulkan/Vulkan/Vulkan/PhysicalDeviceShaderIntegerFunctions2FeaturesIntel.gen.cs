@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceShaderIntegerFunctions2FeaturesIntel
             "VK_INTEL_shader_integer_functions2+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderIntegerFunctions2;
+    public MaybeBool<uint> ShaderIntegerFunctions2;
 }

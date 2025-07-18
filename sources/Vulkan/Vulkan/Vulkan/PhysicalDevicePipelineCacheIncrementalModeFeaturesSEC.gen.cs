@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDevicePipelineCacheIncrementalModeFeaturesS
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint PipelineCacheIncrementalMode;
+    public MaybeBool<uint> PipelineCacheIncrementalMode;
 }

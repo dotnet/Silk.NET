@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceCommandBufferInheritanceFeaturesNV
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_command_buffer_inheritance"])]
-    public uint CommandBufferInheritance;
+    public MaybeBool<uint> CommandBufferInheritance;
 }

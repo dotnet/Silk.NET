@@ -18,7 +18,7 @@ public partial struct PhysicalDeviceSparseProperties
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ResidencyStandard2DBlockShape;
+    public MaybeBool<uint> ResidencyStandard2DBlockShape;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -26,7 +26,7 @@ public partial struct PhysicalDeviceSparseProperties
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ResidencyStandard2DMultisampleBlockShape;
+    public MaybeBool<uint> ResidencyStandard2DMultisampleBlockShape;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -34,7 +34,7 @@ public partial struct PhysicalDeviceSparseProperties
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ResidencyStandard3DBlockShape;
+    public MaybeBool<uint> ResidencyStandard3DBlockShape;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public partial struct PhysicalDeviceSparseProperties
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ResidencyAlignedMipSize;
+    public MaybeBool<uint> ResidencyAlignedMipSize;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -50,5 +50,5 @@ public partial struct PhysicalDeviceSparseProperties
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint ResidencyNonResidentStrict;
+    public MaybeBool<uint> ResidencyNonResidentStrict;
 }

@@ -24,5 +24,5 @@ public unsafe partial struct PhysicalDeviceVertexAttributeDivisorProperties
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint SupportsNonZeroFirstInstance;
+    public MaybeBool<uint> SupportsNonZeroFirstInstance;
 }

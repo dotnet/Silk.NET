@@ -32,5 +32,5 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMap2FeaturesEXT
         ["VK_EXT_fragment_density_map2"],
         ImpliesSets = ["VK_EXT_fragment_density_map"]
     )]
-    public uint FragmentDensityMapDeferred;
+    public MaybeBool<uint> FragmentDensityMapDeferred;
 }

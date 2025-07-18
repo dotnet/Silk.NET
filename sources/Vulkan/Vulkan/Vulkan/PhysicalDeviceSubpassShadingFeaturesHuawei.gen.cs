@@ -44,5 +44,5 @@ public unsafe partial struct PhysicalDeviceSubpassShadingFeaturesHuawei
             "VK_VERSION_1_3",
         ]
     )]
-    public uint SubpassShading;
+    public MaybeBool<uint> SubpassShading;
 }

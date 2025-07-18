@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceAddressBindingReportFeaturesEXT
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    public uint ReportAddressBinding;
+    public MaybeBool<uint> ReportAddressBinding;
 }

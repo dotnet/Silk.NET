@@ -20,13 +20,13 @@ public unsafe partial struct PhysicalDeviceShaderTileImagePropertiesEXT
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderTileImageCoherentReadAccelerated;
+    public MaybeBool<uint> ShaderTileImageCoherentReadAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderTileImageReadSampleFromPixelRateInvocation;
+    public MaybeBool<uint> ShaderTileImageReadSampleFromPixelRateInvocation;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderTileImageReadFromHelperInvocation;
+    public MaybeBool<uint> ShaderTileImageReadFromHelperInvocation;
 }

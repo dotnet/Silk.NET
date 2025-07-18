@@ -41,7 +41,7 @@ public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    public uint ConditionalRendering;
+    public MaybeBool<uint> ConditionalRendering;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -52,5 +52,5 @@ public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    public uint InheritedConditionalRendering;
+    public MaybeBool<uint> InheritedConditionalRendering;
 }

@@ -35,5 +35,5 @@ public unsafe partial struct CooperativeVectorPropertiesNV
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
-    public uint Transpose;
+    public MaybeBool<uint> Transpose;
 }

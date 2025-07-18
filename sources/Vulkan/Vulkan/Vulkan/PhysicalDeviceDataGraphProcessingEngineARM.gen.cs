@@ -17,5 +17,5 @@ public partial struct PhysicalDeviceDataGraphProcessingEngineARM
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint IsForeign;
+    public MaybeBool<uint> IsForeign;
 }

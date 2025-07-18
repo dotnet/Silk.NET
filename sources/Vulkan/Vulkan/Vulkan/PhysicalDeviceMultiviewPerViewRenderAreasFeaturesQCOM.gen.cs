@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceMultiviewPerViewRenderAreasFeaturesQC
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_multiview_per_view_render_areas"])]
-    public uint MultiviewPerViewRenderAreas;
+    public MaybeBool<uint> MultiviewPerViewRenderAreas;
 }

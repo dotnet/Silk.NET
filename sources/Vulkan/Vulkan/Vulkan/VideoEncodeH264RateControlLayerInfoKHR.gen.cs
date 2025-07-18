@@ -33,7 +33,7 @@ public unsafe partial struct VideoEncodeH264RateControlLayerInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseMinQp;
+    public MaybeBool<uint> UseMinQp;
 
     [SupportedApiProfile(
         "vulkan",
@@ -48,7 +48,7 @@ public unsafe partial struct VideoEncodeH264RateControlLayerInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseMaxQp;
+    public MaybeBool<uint> UseMaxQp;
 
     [SupportedApiProfile(
         "vulkan",
@@ -63,7 +63,7 @@ public unsafe partial struct VideoEncodeH264RateControlLayerInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseMaxFrameSize;
+    public MaybeBool<uint> UseMaxFrameSize;
 
     [SupportedApiProfile(
         "vulkan",

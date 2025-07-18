@@ -24,9 +24,9 @@ public unsafe partial struct PhysicalDeviceShaderSubgroupRotateFeatures
         ["VK_KHR_shader_subgroup_rotate", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public uint ShaderSubgroupRotate;
+    public MaybeBool<uint> ShaderSubgroupRotate;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderSubgroupRotateClustered;
+    public MaybeBool<uint> ShaderSubgroupRotateClustered;
 }

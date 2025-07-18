@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDevicePresentIdFeaturesKHR
             "VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public uint PresentId;
+    public MaybeBool<uint> PresentId;
 }

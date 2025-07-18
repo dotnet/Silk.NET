@@ -53,5 +53,5 @@ public unsafe partial struct PipelineColorWriteCreateInfoEXT
             "VK_EXT_color_write_enable+VK_VERSION_1_1",
         ]
     )]
-    public uint* PColorWriteEnables;
+    public MaybeBool<uint>* PColorWriteEnables;
 }

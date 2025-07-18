@@ -41,5 +41,5 @@ public unsafe partial struct SwapchainPresentBarrierCreateInfoNV
             "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public uint PresentBarrierEnable;
+    public MaybeBool<uint> PresentBarrierEnable;
 }

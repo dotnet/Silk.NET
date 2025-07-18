@@ -32,7 +32,7 @@ public unsafe partial struct PhysicalDeviceRayTracingMaintenance1FeaturesKHR
         ["VK_KHR_ray_tracing_maintenance1"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint RayTracingMaintenance1;
+    public MaybeBool<uint> RayTracingMaintenance1;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceRayTracingMaintenance1FeaturesKHR
         ["VK_KHR_ray_tracing_maintenance1"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint RayTracingPipelineTraceRaysIndirect2;
+    public MaybeBool<uint> RayTracingPipelineTraceRaysIndirect2;
 }

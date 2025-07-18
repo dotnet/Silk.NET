@@ -32,7 +32,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeature
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public uint DeviceGeneratedCompute;
+    public MaybeBool<uint> DeviceGeneratedCompute;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeature
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public uint DeviceGeneratedComputePipelines;
+    public MaybeBool<uint> DeviceGeneratedComputePipelines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -48,5 +48,5 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeature
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public uint DeviceGeneratedComputeCaptureReplay;
+    public MaybeBool<uint> DeviceGeneratedComputeCaptureReplay;
 }

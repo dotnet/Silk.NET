@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDevicePerformanceQueryPropertiesKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public uint AllowCommandBufferQueryCopies;
+    public MaybeBool<uint> AllowCommandBufferQueryCopies;
 }

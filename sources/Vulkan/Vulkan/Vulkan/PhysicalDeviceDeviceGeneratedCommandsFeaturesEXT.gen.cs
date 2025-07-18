@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesEXT
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public uint DeviceGeneratedCommands;
+    public MaybeBool<uint> DeviceGeneratedCommands;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -52,5 +52,5 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint DynamicGeneratedPipelineLayout;
+    public MaybeBool<uint> DynamicGeneratedPipelineLayout;
 }

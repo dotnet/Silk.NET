@@ -18,13 +18,13 @@ public unsafe partial struct PhysicalDeviceShaderTileImageFeaturesEXT
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderTileImageColorReadAccess;
+    public MaybeBool<uint> ShaderTileImageColorReadAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderTileImageDepthReadAccess;
+    public MaybeBool<uint> ShaderTileImageDepthReadAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderTileImageStencilReadAccess;
+    public MaybeBool<uint> ShaderTileImageStencilReadAccess;
 }

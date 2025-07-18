@@ -48,5 +48,5 @@ public unsafe partial struct PhysicalDeviceGroupProperties
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public uint SubsetAllocation;
+    public MaybeBool<uint> SubsetAllocation;
 }

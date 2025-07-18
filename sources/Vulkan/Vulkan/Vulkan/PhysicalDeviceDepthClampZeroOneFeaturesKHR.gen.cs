@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceDepthClampZeroOneFeaturesKHR
             "VK_EXT_depth_clamp_zero_one+VK_VERSION_1_1",
         ]
     )]
-    public uint DepthClampZeroOne;
+    public MaybeBool<uint> DepthClampZeroOne;
 }

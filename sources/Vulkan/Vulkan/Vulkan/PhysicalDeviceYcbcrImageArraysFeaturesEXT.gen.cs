@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceYcbcrImageArraysFeaturesEXT
             "VK_EXT_ycbcr_image_arrays+VK_VERSION_1_1",
         ]
     )]
-    public uint YcbcrImageArrays;
+    public MaybeBool<uint> YcbcrImageArrays;
 }

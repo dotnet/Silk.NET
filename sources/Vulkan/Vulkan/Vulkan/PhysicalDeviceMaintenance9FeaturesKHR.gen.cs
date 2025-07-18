@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDeviceMaintenance9FeaturesKHR
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint Maintenance9;
+    public MaybeBool<uint> Maintenance9;
 }

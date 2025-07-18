@@ -33,7 +33,7 @@ public unsafe partial struct VideoEncodeH264GopRemainingFrameInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseGopRemainingFrames;
+    public MaybeBool<uint> UseGopRemainingFrames;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -1,1 +1,2 @@
 @../remap-stdint.rsp
+VkBool32=MaybeBool<uint>

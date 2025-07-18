@@ -20,5 +20,5 @@ public unsafe partial struct PhysicalDevicePresentWait2FeaturesKHR
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint PresentWait2;
+    public MaybeBool<uint> PresentWait2;
 }

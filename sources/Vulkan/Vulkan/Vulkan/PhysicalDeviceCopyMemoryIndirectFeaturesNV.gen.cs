@@ -44,5 +44,5 @@ public unsafe partial struct PhysicalDeviceCopyMemoryIndirectFeaturesNV
             "VK_VERSION_1_2",
         ]
     )]
-    public uint IndirectCopy;
+    public MaybeBool<uint> IndirectCopy;
 }

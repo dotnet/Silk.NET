@@ -41,7 +41,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShading;
+    public MaybeBool<uint> TileShading;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -52,7 +52,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingFragmentStage;
+    public MaybeBool<uint> TileShadingFragmentStage;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -63,7 +63,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingColorAttachments;
+    public MaybeBool<uint> TileShadingColorAttachments;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -74,7 +74,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingDepthAttachments;
+    public MaybeBool<uint> TileShadingDepthAttachments;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -85,7 +85,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingStencilAttachments;
+    public MaybeBool<uint> TileShadingStencilAttachments;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -96,7 +96,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingInputAttachments;
+    public MaybeBool<uint> TileShadingInputAttachments;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -107,7 +107,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingSampledAttachments;
+    public MaybeBool<uint> TileShadingSampledAttachments;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -118,7 +118,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingPerTileDraw;
+    public MaybeBool<uint> TileShadingPerTileDraw;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -129,7 +129,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingPerTileDispatch;
+    public MaybeBool<uint> TileShadingPerTileDispatch;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -140,7 +140,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingDispatchTile;
+    public MaybeBool<uint> TileShadingDispatchTile;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -151,7 +151,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingApron;
+    public MaybeBool<uint> TileShadingApron;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -162,7 +162,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingAnisotropicApron;
+    public MaybeBool<uint> TileShadingAnisotropicApron;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -173,7 +173,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingAtomicOps;
+    public MaybeBool<uint> TileShadingAtomicOps;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -184,5 +184,5 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint TileShadingImageProcessing;
+    public MaybeBool<uint> TileShadingImageProcessing;
 }

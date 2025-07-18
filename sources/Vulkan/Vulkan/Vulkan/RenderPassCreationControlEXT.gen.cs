@@ -42,5 +42,5 @@ public unsafe partial struct RenderPassCreationControlEXT
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    public uint DisallowMerging;
+    public MaybeBool<uint> DisallowMerging;
 }

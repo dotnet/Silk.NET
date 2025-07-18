@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceDepthClipEnableFeaturesEXT
             "VK_EXT_depth_clip_enable+VK_VERSION_1_1",
         ]
     )]
-    public uint DepthClipEnable;
+    public MaybeBool<uint> DepthClipEnable;
 }

@@ -20,21 +20,21 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint DataGraph;
+    public MaybeBool<uint> DataGraph;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint DataGraphUpdateAfterBind;
+    public MaybeBool<uint> DataGraphUpdateAfterBind;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint DataGraphSpecializationConstants;
+    public MaybeBool<uint> DataGraphSpecializationConstants;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint DataGraphDescriptorBuffer;
+    public MaybeBool<uint> DataGraphDescriptorBuffer;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan")]
-    public uint DataGraphShaderModule;
+    public MaybeBool<uint> DataGraphShaderModule;
 }

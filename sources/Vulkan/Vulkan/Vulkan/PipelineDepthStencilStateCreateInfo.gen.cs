@@ -41,7 +41,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint DepthTestEnable;
+    public MaybeBool<uint> DepthTestEnable;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -49,7 +49,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint DepthWriteEnable;
+    public MaybeBool<uint> DepthWriteEnable;
 
     [SupportedApiProfile(
         "vulkan",
@@ -64,7 +64,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint DepthBoundsTestEnable;
+    public MaybeBool<uint> DepthBoundsTestEnable;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -72,7 +72,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    public uint StencilTestEnable;
+    public MaybeBool<uint> StencilTestEnable;
 
     [SupportedApiProfile(
         "vulkan",

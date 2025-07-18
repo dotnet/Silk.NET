@@ -39,5 +39,5 @@ public unsafe partial struct PhysicalDeviceImageViewMinLodFeaturesEXT
             "VK_EXT_image_view_min_lod+VK_VERSION_1_1",
         ]
     )]
-    public uint MinLod;
+    public MaybeBool<uint> MinLod;
 }

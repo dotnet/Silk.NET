@@ -41,7 +41,7 @@ public unsafe partial struct PhysicalDevicePerStageDescriptorSetFeaturesNV
             "VK_NV_per_stage_descriptor_set+VK_VERSION_1_4",
         ]
     )]
-    public uint PerStageDescriptorSet;
+    public MaybeBool<uint> PerStageDescriptorSet;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -52,5 +52,5 @@ public unsafe partial struct PhysicalDevicePerStageDescriptorSetFeaturesNV
             "VK_NV_per_stage_descriptor_set+VK_VERSION_1_4",
         ]
     )]
-    public uint DynamicPipelineLayout;
+    public MaybeBool<uint> DynamicPipelineLayout;
 }

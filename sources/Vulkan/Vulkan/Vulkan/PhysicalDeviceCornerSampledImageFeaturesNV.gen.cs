@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceCornerSampledImageFeaturesNV
             "VK_NV_corner_sampled_image+VK_VERSION_1_1",
         ]
     )]
-    public uint CornerSampledImage;
+    public MaybeBool<uint> CornerSampledImage;
 }

@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceTilePropertiesFeaturesQCOM
             "VK_QCOM_tile_properties+VK_VERSION_1_1",
         ]
     )]
-    public uint TileProperties;
+    public MaybeBool<uint> TileProperties;
 }

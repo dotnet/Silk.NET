@@ -24,7 +24,7 @@ public unsafe partial struct PipelineRasterizationLineStateCreateInfo
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint StippledLineEnable;
+    public MaybeBool<uint> StippledLineEnable;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]

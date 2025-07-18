@@ -41,5 +41,5 @@ public unsafe partial struct PhysicalDeviceVertexInputDynamicStateFeaturesEXT
             "VK_EXT_vertex_input_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    public uint VertexInputDynamicState;
+    public MaybeBool<uint> VertexInputDynamicState;
 }
