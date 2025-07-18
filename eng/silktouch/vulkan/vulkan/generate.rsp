@@ -22,6 +22,8 @@ Silk.NET.Vulkan
 ../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codec_h265std.h
 ../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codec_h265std_decode.h
 ../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codec_h265std_encode.h
+../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codec_vp9std.h
+../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codec_vp9std_decode.h
 ../../../submodules/vulkan-headers/include/vk_video/vulkan_video_codecs_common.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan.h
 ../../../submodules/vulkan-headers/include/vulkan/vulkan_core.h

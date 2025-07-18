@@ -21,7 +21,7 @@ public unsafe partial struct VideoDecodeVP9PictureInfoKHR
 
     [NativeTypeName("const StdVideoDecodeVP9PictureInfo *")]
     [SupportedApiProfile("vulkan")]
-    public StdVideoDecodeVP9PictureInfoHandle PStdPictureInfo;
+    public StdVideoDecodeVP9PictureInfo* PStdPictureInfo;
 
     [NativeTypeName("int32_t[3]")]
     [SupportedApiProfile("vulkan")]
