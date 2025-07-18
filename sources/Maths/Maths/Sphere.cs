@@ -63,31 +63,6 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public T SquaredRadius => Radius * Radius;
 
-
-        /// <summary>
-        /// Calculates whether this sphere contains a point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns>True if this sphere contains the point; False otherwise.</returns>
-        /// <remarks>This does consider a point on the edge contained.</remarks>
-        public bool Contains(Vector3D<T> point)
-        {
-            return Vector3D.DistanceSquared(point, Center) <= Radius;
-        }
-
-        /// <summary>
-        /// Calculates whether this sphere contains another sphere
-        /// </summary>
-        /// <param name="other">The sphere.</param>
-        /// <returns>True if this sphere contains the given sphere; False otherwise.</returns>
-        /// <remarks>This does consider a sphere that touches the edge contained.</remarks>
-        public bool Contains(Sphere<T> other)
-        {
-            var distanceSquared = Vector3D.DistanceSquared(Center, other.Center);
-            var radiusDiff = Radius - other.Radius;
-            return distanceSquared <= radiusDiff * radiusDiff;
-        }
-
         /// <summary>
         /// Calculates the squared distance to the nearest edge from the point.
         /// </summary>
@@ -113,16 +88,6 @@ namespace Silk.NET.Maths
         public Sphere<T> GetTranslated(Vector3D<T> distance)
         {
             return new(Center + distance, Radius);
-        }
-
-        /// <summary>
-        /// Calculates a sphere inflated to contain the given point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns>The sphere.</returns>
-        public Sphere<T> GetInflated(Vector3D<T> point)
-        {
-            return new(Center, T.Max(Radius, Vector3D.Distance(Center, point)));
         }
 
         /// <summary>Returns a boolean indicating whether the given Sphere is equal to this Sphere instance.</summary>
@@ -176,6 +141,52 @@ namespace Silk.NET.Maths
             where TOther : IRootFunctions<TOther>
         {
             return new(Center.As<TOther>(), TOther.CreateTruncating(Radius));
+        }
+    }
+
+    /// <summary>
+    /// Helper methods to work with <see cref="Sphere{T}"/>
+    /// </summary>
+    public static class Sphere
+    {
+        /// <summary>
+        /// Calculates whether this sphere contains a point.
+        /// </summary>
+        /// <param name="sphere">The sphere.</param>
+        /// <param name="point">The point.</param>
+        /// <returns>True if this sphere contains the point; False otherwise.</returns>
+        /// <remarks>This does consider a point on the edge contained.</remarks>
+        public static bool Contains<T>(this Sphere<T> sphere, Vector3D<T> point)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            return Vector3D.DistanceSquared(point, sphere.Center) <= sphere.Radius;
+        }
+
+        /// <summary>
+        /// Calculates whether this sphere contains another sphere
+        /// </summary>
+        /// <param name="sphere">The sphere.</param>
+        /// <param name="other">The other sphere.</param>
+        /// <returns>True if this sphere contains the given sphere; False otherwise.</returns>
+        /// <remarks>This does consider a sphere that touches the edge contained.</remarks>
+        public static bool Contains<T>(this Sphere<T> sphere, Sphere<T> other)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            var distanceSquared = Vector3D.DistanceSquared(sphere.Center, other.Center);
+            var radiusDiff = sphere.Radius - other.Radius;
+            return distanceSquared <= radiusDiff * radiusDiff;
+        }
+
+        /// <summary>
+        /// Calculates a sphere inflated to contain the given point.
+        /// </summary>
+        /// <param name="sphere">The sphere.</param>
+        /// <param name="point">The point.</param>
+        /// <returns>The sphere.</returns>
+        public static Sphere<T> GetInflated<T>(this Sphere<T> sphere, Vector3D<T> point)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            return new(sphere.Center, T.Max(sphere.Radius, Vector3D.Distance(sphere.Center, point)));
         }
     }
 }

@@ -108,18 +108,6 @@ namespace Silk.NET.Maths
             && (other.Max.X <= Max.X) && (other.Max.Y <= Max.Y);
 
         /// <summary>
-        /// Calculates the distance to the nearest edge from the point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns>The distance.</returns>
-        public T GetDistanceToNearestEdge(Vector2D<T> point)
-        {
-            var dx = T.Max(T.Max(Min.X - point.X, T.Zero), point.X - Max.X);
-            var dy = T.Max(T.Max(Min.Y - point.Y, T.Zero), point.Y - Max.Y);
-            return T.Sqrt((dx * dx) + (dy * dy));
-        }
-
-        /// <summary>
         /// Calculates this box translated by a given distance.
         /// </summary>
         /// <param name="distance">The distance.</param>
@@ -249,6 +237,26 @@ namespace Silk.NET.Maths
             where TOther : INumber<TOther>
         {
             return new(Min.AsTruncating<TOther>(), Max.AsTruncating<TOther>());
+        }
+    }
+
+    /// <summary>
+    /// Helper methods to work with <see cref="Box2D{T}"/>
+    /// </summary>
+    public static class Box2D
+    {
+        /// <summary>
+        /// Calculates the distance to the nearest edge from the point.
+        /// </summary>
+        /// <param name="box">The box.</param>
+        /// <param name="point">The point.</param>
+        /// <returns>The distance.</returns>
+        public static T GetDistanceToNearestEdge<T>(this Box2D<T> box, Vector2D<T> point)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            var dx = T.Max(T.Max(box.Min.X - point.X, T.Zero), point.X - box.Max.X);
+            var dy = T.Max(T.Max(box.Min.Y - point.Y, T.Zero), point.Y - box.Max.Y);
+            return T.Sqrt((dx * dx) + (dy * dy));
         }
     }
 }

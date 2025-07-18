@@ -26,5 +26,20 @@ namespace Silk.NET.Maths
             Vector2D<T> o = new(left, top);
             return new Rectangle<T>(o, new Vector2D<T>(right, bottom) - o);
         }
+
+        /// <summary>
+        /// Calculates the distance to the nearest edge from the point.
+        /// </summary>
+        /// <param name="rectangle">The rectangle.</param>
+        /// <param name="point">The point.</param>
+        /// <returns>The distance.</returns>
+        public static T GetDistanceToNearestEdge<T>(this Rectangle<T> rectangle, Vector2D<T> point)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            var max = rectangle.Max;
+            var dx = T.Max(T.Max(rectangle.Origin.X - point.X, T.Zero), point.X - max.X);
+            var dy = T.Max(T.Max(rectangle.Origin.Y - point.Y, T.Zero), point.Y - max.Y);
+            return T.Sqrt((dx * dx) + (dy * dy));
+        }
     }
 }

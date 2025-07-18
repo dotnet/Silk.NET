@@ -629,7 +629,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted quaternion</returns>
-        public Quaternion<TOther> As<TOther>() where TOther : ITrigonometricFunctions<TOther>
+        public Quaternion<TOther> As<TOther>()
+            where TOther : INumber<TOther>, IRootFunctions<TOther>, ITrigonometricFunctions<TOther>
         {
             return new(TOther.CreateTruncating(X), TOther.CreateTruncating(Y), TOther.CreateTruncating(Z), TOther.CreateTruncating(W));
         }

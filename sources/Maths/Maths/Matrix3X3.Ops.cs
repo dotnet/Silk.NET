@@ -42,7 +42,7 @@ namespace Silk.NET.Maths
         /// <param name="cameraForwardVector">The forward vector of the camera.</param>
         /// <returns>The created billboard matrix</returns>
         public static Matrix3X3<T> CreateBillboard<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> cameraUpVector, Vector3D<T> cameraForwardVector)
-            where T : IRootFunctions<T>
+            where T : INumber<T>, IRootFunctions<T>
         {
             Vector3D<T> zaxis = objectPosition - cameraPosition;
             var norm = zaxis.LengthSquared;
@@ -67,7 +67,7 @@ namespace Silk.NET.Maths
         /// <param name="angle">The angle to rotate around the given axis, in radians.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix3X3<T> CreateFromAxisAngle<T>(Vector3D<T> axis, T angle)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             // a: angle
             // x, y, z: unit vector for axis.
@@ -120,7 +120,7 @@ namespace Silk.NET.Maths
         /// <param name="quaternion">The source Quaternion.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix3X3<T> CreateFromQuaternion<T>(Quaternion<T> quaternion)
-            where T : ITrigonometricFunctions<T>
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
             Matrix3X3<T> result = Matrix3X3<T>.Identity;
 
@@ -157,7 +157,7 @@ namespace Silk.NET.Maths
         /// <param name="roll">Angle of rotation, in radians, around the Z-axis.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix3X3<T> CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll)
-            where T : ITrigonometricFunctions<T>
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
             var q = Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
             return CreateFromQuaternion(q);
@@ -167,7 +167,7 @@ namespace Silk.NET.Maths
         /// <param name="radians">The amount, in radians, by which to rotate around the X-axis.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix3X3<T> CreateRotationX<T>(T radians)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             Matrix3X3<T> result = Matrix3X3<T>.Identity;
 
@@ -191,7 +191,7 @@ namespace Silk.NET.Maths
         /// <param name="radians">The amount, in radians, by which to rotate around the Y-axis.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix3X3<T> CreateRotationY<T>(T radians)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             Matrix3X3<T> result = Matrix3X3<T>.Identity;
 
@@ -214,7 +214,7 @@ namespace Silk.NET.Maths
         /// <param name="radians">The amount, in radians, by which to rotate around the Z-axis.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix3X3<T> CreateRotationZ<T>(T radians)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             Matrix3X3<T> result = Matrix3X3<T>.Identity;
 
@@ -476,7 +476,7 @@ namespace Silk.NET.Maths
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed matrix.</returns>
         public static Matrix3X3<T> Transform<T>(Matrix3X3<T> value, Quaternion<T> rotation)
-            where T : ITrigonometricFunctions<T>
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
             // Compute rotation matrix.
             T x2 = rotation.X + rotation.X;

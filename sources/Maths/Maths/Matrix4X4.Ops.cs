@@ -47,7 +47,7 @@ namespace Silk.NET.Maths
         /// <param name="cameraForwardVector">The forward vector of the camera.</param>
         /// <returns>The created billboard matrix</returns>
         public static Matrix4X4<T> CreateBillboard<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> cameraUpVector, Vector3D<T> cameraForwardVector)
-            where T : IRootFunctions<T>
+            where T : INumber<T>, IRootFunctions<T>
         {
             Vector3D<T> zaxis = objectPosition - cameraPosition;
             var norm = zaxis.LengthSquared;
@@ -79,7 +79,7 @@ namespace Silk.NET.Maths
         /// <param name="objectForwardVector">Forward vector of the object.</param>
         /// <returns>The created billboard matrix.</returns>
         public static Matrix4X4<T> CreateConstrainedBillboard<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> rotateAxis, Vector3D<T> cameraForwardVector, Vector3D<T> objectForwardVector)
-            where T : IRootFunctions<T>
+            where T : INumber<T>, IRootFunctions<T>
         {
             // Treat the case when object and camera positions are too close.
             Vector3D<T> faceDir = objectPosition - cameraPosition;
@@ -137,7 +137,7 @@ namespace Silk.NET.Maths
         /// <param name="angle">The angle to rotate around the given axis, in radians.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix4X4<T> CreateFromAxisAngle<T>(Vector3D<T> axis, T angle)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             // a: angle
             // x, y, z: unit vector for axis.
@@ -190,7 +190,7 @@ namespace Silk.NET.Maths
         /// <param name="quaternion">The source Quaternion.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix4X4<T> CreateFromQuaternion<T>(Quaternion<T> quaternion)
-            where T : ITrigonometricFunctions<T>
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
@@ -227,7 +227,7 @@ namespace Silk.NET.Maths
         /// <param name="roll">Angle of rotation, in radians, around the Z-axis.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix4X4<T> CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll)
-            where T : ITrigonometricFunctions<T>
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
             var q = Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
             return CreateFromQuaternion(q);
@@ -318,7 +318,7 @@ namespace Silk.NET.Maths
         /// <param name="farPlaneDistance">Distance to the far view plane.</param>
         /// <returns>The perspective projection matrix.</returns>
         public static Matrix4X4<T> CreatePerspective<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance)
-            where T : INumberBase<T>
+            where T : INumber<T>
         {
             if (!(nearPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
@@ -354,7 +354,7 @@ namespace Silk.NET.Maths
         /// <param name="farPlaneDistance">Distance to the far view plane.</param>
         /// <returns>The perspective projection matrix.</returns>
         public static Matrix4X4<T> CreatePerspectiveFieldOfView<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance)
-            where T : INumberBase<T>
+            where T : INumber<T>, ITrigonometricFunctions<T>
         {
             if (!(fieldOfView > T.Zero) || (fieldOfView >= T.Pi))
                 throw new ArgumentOutOfRangeException(nameof(fieldOfView));
@@ -396,7 +396,7 @@ namespace Silk.NET.Maths
         /// <param name="farPlaneDistance">Distance to of the far view plane.</param>
         /// <returns>The perspective projection matrix.</returns>
         public static Matrix4X4<T> CreatePerspectiveOffCenter<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance)
-            where T : INumberBase<T>
+            where T : INumber<T>
         {
             if (!(nearPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
@@ -428,7 +428,7 @@ namespace Silk.NET.Maths
         /// <param name="value">The Plane about which to create a reflection.</param>
         /// <returns>A new matrix expressing the reflection.</returns>
         public static Matrix4X4<T> CreateReflection<T>(Plane<T> value)
-            where T : INumberBase<T>
+            where T : INumber<T>, IRootFunctions<T>
         {
             value = Plane.Normalize(value);
 
@@ -465,7 +465,7 @@ namespace Silk.NET.Maths
         /// <param name="radians">The amount, in radians, by which to rotate around the X-axis.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix4X4<T> CreateRotationX<T>(T radians)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
@@ -490,7 +490,7 @@ namespace Silk.NET.Maths
         /// <param name="centerPoint">The center point.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix4X4<T> CreateRotationX<T>(T radians, Vector3D<T> centerPoint)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
@@ -519,7 +519,7 @@ namespace Silk.NET.Maths
         /// <param name="radians">The amount, in radians, by which to rotate around the Y-axis.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix4X4<T> CreateRotationY<T>(T radians)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
@@ -543,7 +543,7 @@ namespace Silk.NET.Maths
         /// <param name="centerPoint">The center point.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix4X4<T> CreateRotationY<T>(T radians, Vector3D<T> centerPoint)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
@@ -571,7 +571,7 @@ namespace Silk.NET.Maths
         /// <param name="radians">The amount, in radians, by which to rotate around the Z-axis.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix4X4<T> CreateRotationZ<T>(T radians)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
@@ -595,7 +595,7 @@ namespace Silk.NET.Maths
         /// <param name="centerPoint">The center point.</param>
         /// <returns>The rotation matrix.</returns>
         public static Matrix4X4<T> CreateRotationZ<T>(T radians, Vector3D<T> centerPoint)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
@@ -737,7 +737,7 @@ namespace Silk.NET.Maths
         /// <param name="plane">The Plane onto which the new matrix should flatten geometry so as to cast a shadow.</param>
         /// <returns>A new Matrix that can be used to flatten geometry onto the specified plane from the specified direction.</returns>
         public static Matrix4X4<T> CreateShadow<T>(Vector3D<T> lightDirection, Plane<T> plane)
-            where T : INumberBase<T>
+            where T : INumber<T>, IRootFunctions<T>
         {
             Plane<T> p = Plane.Normalize(plane);
 
@@ -837,7 +837,7 @@ namespace Silk.NET.Maths
         ///
         [MethodImpl((MethodImplOptions)768)]
         public static unsafe bool Invert<T>(Matrix4X4<T> matrix, out Matrix4X4<T> result)
-            where T : INumberBase<T>
+            where T : IFloatingPointIeee754<T>
         {
             // This implementation is based on the DirectX Math Library XMMatrixInverse method
             // https://github.com/microsoft/DirectXMath/blob/master/Inc/DirectXMathMatrix.inl
@@ -1207,7 +1207,7 @@ namespace Silk.NET.Maths
         /// <param name="rotation">The rotation component of the transformation matrix.</param>
         /// <param name="translation">The translation component of the transformation matrix</param>
         /// <returns>True if the source matrix was successfully decomposed; False otherwise.</returns>
-        public static bool Decompose<T>(Matrix4X4<T> matrix, out Vector3D<T> scale, out Silk.NET.Maths.Legacy.Quaternion<T> rotation, out Vector3D<T> translation)
+        public static bool Decompose<T>(Matrix4X4<T> matrix, out Vector3D<T> scale, out Quaternion<T> rotation, out Vector3D<T> translation)
             where T : INumberBase<T>
         {
             bool result = true;
@@ -1405,7 +1405,7 @@ namespace Silk.NET.Maths
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed matrix.</returns>
         public static Matrix4X4<T> Transform<T>(Matrix4X4<T> value, Quaternion<T> rotation)
-            where T : ITrigonometricFunctions<T>
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
             // Compute rotation matrix.
             T x2 = rotation.X + rotation.X;

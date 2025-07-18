@@ -16,7 +16,7 @@ namespace Silk.NET.Maths
     /// </summary>
     public partial struct Quaternion<T> :
         IEquatable<Quaternion<T>>
-        where T : ITrigonometricFunctions<T>
+        where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
     {
         /// <summary>Specifies the X-value of the vector component of the Quaternion.</summary>
         [DataMember]

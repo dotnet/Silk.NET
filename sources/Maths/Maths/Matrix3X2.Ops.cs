@@ -22,7 +22,7 @@ namespace Silk.NET.Maths
         /// <param name="radians">The amount of rotation, in radians.</param>
         /// <returns>A rotation matrix.</returns>
         public static Matrix3X2<T> CreateRotation<T>(T radians)
-            where T : INumberBase<T>
+            where T : IFloatingPointIeee754<T>
         {
             radians = T.Ieee754Remainder(radians, T.Tau);
 
@@ -113,7 +113,7 @@ namespace Silk.NET.Maths
         /// <param name="centerPoint">The center point.</param>
         /// <returns>A rotation matrix.</returns>
         public static Matrix3X2<T> CreateRotation<T>(T radians, Vector2D<T> centerPoint)
-            where T : INumberBase<T>
+            where T : IFloatingPointIeee754<T>
         {
             radians = T.Ieee754Remainder(radians, T.Tau);
 
@@ -307,7 +307,7 @@ namespace Silk.NET.Maths
         /// <param name="radiansY">The Y angle, in radians.</param>
         /// <returns>A skew matrix.</returns>
         public static Matrix3X2<T> CreateSkew<T>(T radiansX, T radiansY)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
@@ -326,7 +326,7 @@ namespace Silk.NET.Maths
         /// <param name="centerPoint">The center point.</param>
         /// <returns>A skew matrix.</returns>
         public static Matrix3X2<T> CreateSkew<T>(T radiansX, T radiansY, Vector2D<T> centerPoint)
-            where T : INumberBase<T>
+            where T : ITrigonometricFunctions<T>
         {
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 

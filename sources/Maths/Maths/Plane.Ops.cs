@@ -110,7 +110,7 @@ namespace Silk.NET.Maths
         /// <returns>The normalized Plane.</returns>
         [MethodImpl((MethodImplOptions)768)]
         public static Plane<T> Normalize<T>(Plane<T> value)
-            where T : INumberBase<T>
+            where T : INumber<T>, IRootFunctions<T>
         {
             /*if (Vector.IsHardwareAccelerated)
             {
@@ -151,7 +151,7 @@ namespace Silk.NET.Maths
         /// <returns>The transformed Plane.</returns>
         [MethodImpl((MethodImplOptions)768)]
         public static Plane<T> Transform<T>(Plane<T> plane, Matrix4X4<T> matrix)
-            where T : INumberBase<T>
+            where T : IFloatingPointIeee754<T>
         {
             Matrix4X4.Invert(matrix, out Matrix4X4<T> m);
 
@@ -171,7 +171,7 @@ namespace Silk.NET.Maths
         /// <returns>A new Plane that results from applying the rotation.</returns>
         [MethodImpl((MethodImplOptions)768)]
         public static Plane<T> Transform<T>(Plane<T> plane, Quaternion<T> rotation)
-            where T : ITrigonometricFunctions<T>
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
             // Compute rotation matrix.
             T x2 = rotation.X + rotation.X;

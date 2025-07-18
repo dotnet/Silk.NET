@@ -69,30 +69,6 @@ namespace Silk.NET.Maths
         public T Circumference => T.Tau * Radius;
 
         /// <summary>
-        /// Calculates whether this circle contains a point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns>True if this circle contains the point; False otherwise.</returns>
-        /// <remarks>This does consider a point on the edge contained.</remarks>
-        public bool Contains(Vector2D<T> point)
-        {
-            return Vector2D.DistanceSquared(point, Center) <= Radius;
-        }
-
-        /// <summary>
-        /// Calculates whether this circle contains another circle
-        /// </summary>
-        /// <param name="other">The circle.</param>
-        /// <returns>True if this circle contains the given circle; False otherwise.</returns>
-        /// <remarks>This does consider a circle that touches the edge contained.</remarks>
-        public bool Contains(Circle<T> other)
-        {
-            var distanceSquared = Vector2D.DistanceSquared(Center, other.Center);
-            var radiusDiff = Radius - other.Radius;
-            return distanceSquared <= radiusDiff * radiusDiff;
-        }
-
-        /// <summary>
         /// Calculates the squared distance to the nearest edge from the point.
         /// </summary>
         /// <param name="point">The point.</param>
@@ -117,16 +93,6 @@ namespace Silk.NET.Maths
         public Circle<T> GetTranslated(Vector2D<T> distance)
         {
             return new(Center + distance, Radius);
-        }
-
-        /// <summary>
-        /// Calculates a circle inflated to contain the given point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns>The circle.</returns>
-        public Circle<T> GetInflated(Vector2D<T> point)
-        {
-            return new(Center, T.Max(Radius, Vector2D.Distance(Center, point)));
         }
 
         /// <summary>Returns a boolean indicating whether the given Circle is equal to this Circle instance.</summary>
@@ -179,6 +145,52 @@ namespace Silk.NET.Maths
         public Circle<TOther> As<TOther>() where TOther : IRootFunctions<TOther>
         {
             return new(Center.As<TOther>(), TOther.CreateTruncating(Radius));
+        }
+    }
+
+    /// <summary>
+    /// Helper methods to work with <see cref="Circle{T}"/>
+    /// </summary>
+    public static class Circle
+    {
+        /// <summary>
+        /// Calculates whether this circle contains a point.
+        /// </summary>
+        /// <param name="circle">The circle.</param>
+        /// <param name="point">The point.</param>
+        /// <returns>True if this circle contains the point; False otherwise.</returns>
+        /// <remarks>This does consider a point on the edge contained.</remarks>
+        public static bool Contains<T>(this Circle<T> circle, Vector2D<T> point)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            return Vector2D.DistanceSquared(point, circle.Center) <= circle.Radius;
+        }
+
+        /// <summary>
+        /// Calculates whether this circle contains another circle
+        /// </summary>
+        /// <param name="circle">The circle.</param>
+        /// <param name="other">The other circle.</param>
+        /// <returns>True if this circle contains the given circle; False otherwise.</returns>
+        /// <remarks>This does consider a circle that touches the edge contained.</remarks>
+        public static bool Contains<T>(this Circle<T> circle, Circle<T> other)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            var distanceSquared = Vector2D.DistanceSquared(circle.Center, other.Center);
+            var radiusDiff = circle.Radius - other.Radius;
+            return distanceSquared <= radiusDiff * radiusDiff;
+        }
+
+        /// <summary>
+        /// Calculates a circle inflated to contain the given point.
+        /// </summary>
+        /// <param name="circle">The circle.</param>
+        /// <param name="point">The point.</param>
+        /// <returns>The circle.</returns>
+        public static Circle<T> GetInflated<T>(this Circle<T> circle, Vector2D<T> point)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            return new(circle.Center, T.Max(circle.Radius, Vector2D.Distance(circle.Center, point)));
         }
     }
 }

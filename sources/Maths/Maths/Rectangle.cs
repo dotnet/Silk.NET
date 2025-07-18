@@ -119,19 +119,6 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Calculates the distance to the nearest edge from the point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns>The distance.</returns>
-        public T GetDistanceToNearestEdge(Vector2D<T> point)
-        {
-            var max = Max;
-            var dx = T.Max(T.Max(Origin.X - point.X, T.Zero), point.X - max.X);
-            var dy = T.Max(T.Max(Origin.Y - point.Y, T.Zero), point.Y - max.Y);
-            return T.Sqrt((dx * dx) + (dy * dy));
-        }
-
-        /// <summary>
         /// Calculates a new rectangle translated by a given distance.
         /// </summary>
         /// <param name="distance">The distance.</param>

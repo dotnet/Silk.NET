@@ -124,20 +124,6 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Calculates the distance to the nearest edge from the point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns>The distance.</returns>
-        public T GetDistanceToNearestEdge(Vector3D<T> point)
-        {
-            var max = Max;
-            var dx = T.Max(T.Max(Origin.X - point.X, T.Zero), point.X - max.X);
-            var dy = T.Max(T.Max(Origin.Y - point.Y, T.Zero), point.Y - max.Y);
-            var dz = T.Max(T.Max(Origin.Z - point.Z, T.Zero), point.Z - max.Z);
-            return T.Sqrt((dx * dx) + (dy * dy) + (dz * dz));
-        }
-
-        /// <summary>
         /// Calculates a new cube translated by a given distance.
         /// </summary>
         /// <param name="distance">The distance.</param>
@@ -239,6 +225,28 @@ namespace Silk.NET.Maths
             where TOther : INumber<TOther>
         {
             return new(Origin.As<TOther>(), Max.As<TOther>());
+        }
+    }
+
+    /// <summary>
+    /// Helper methods to work with <see cref="Cube{T}"/>
+    /// </summary>
+    public static class Cube
+    {
+        /// <summary>
+        /// Calculates the distance to the nearest edge from the point.
+        /// </summary>
+        /// <param name="cube">The cube.</param>
+        /// <param name="point">The point.</param>
+        /// <returns>The distance.</returns>
+        public static T GetDistanceToNearestEdge<T>(Cube<T> cube, Vector3D<T> point)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            var max = cube.Max;
+            var dx = T.Max(T.Max(cube.Origin.X - point.X, T.Zero), point.X - max.X);
+            var dy = T.Max(T.Max(cube.Origin.Y - point.Y, T.Zero), point.Y - max.Y);
+            var dz = T.Max(T.Max(cube.Origin.Z - point.Z, T.Zero), point.Z - max.Z);
+            return T.Sqrt((dx * dx) + (dy * dy) + (dz * dz));
         }
     }
 }
