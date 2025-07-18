@@ -8109,9 +8109,6 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderDrawParameterFeatures = PhysicalDeviceShaderDrawParametersFeatures,
 
-    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DebugReportCreateInfoEXT = DebugReportCallbackCreateInfoEXT,
-
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_dynamic_rendering"],
@@ -9085,9 +9082,6 @@ public enum StructureType : uint
         ]
     )]
     SemaphoreSignalInfoKHR = SemaphoreSignalInfo,
-
-    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    QueryPoolCreateInfoIntel = QueryPoolPerformanceQueryCreateInfoIntel,
 
     [SupportedApiProfile(
         "vulkan",

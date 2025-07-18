@@ -35,24 +35,4 @@ public enum PerformanceCounterDescriptionFlagsKHR : uint
         ]
     )]
     ConcurrentlyImpactedBitKHR = 0x00000002,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_performance_query"],
-        ImpliesSets = [
-            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_performance_query+VK_VERSION_1_1",
-        ]
-    )]
-    PerformanceImpactingKHR = PerformanceImpactingBitKHR,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_performance_query"],
-        ImpliesSets = [
-            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_performance_query+VK_VERSION_1_1",
-        ]
-    )]
-    ConcurrentlyImpactedKHR = ConcurrentlyImpactedBitKHR,
 }

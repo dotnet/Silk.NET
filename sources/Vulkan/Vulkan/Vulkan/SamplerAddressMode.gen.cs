@@ -52,7 +52,4 @@ public enum SamplerAddressMode : uint
         MinVersion = "1.2"
     )]
     MirrorClampToEdge = 4,
-
-    [SupportedApiProfile("vulkan", ["VK_KHR_sampler_mirror_clamp_to_edge"])]
-    MirrorClampToEdgeKHR = MirrorClampToEdge,
 }

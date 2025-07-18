@@ -121,6 +121,18 @@ public partial class MixKhronosData(
         /// modifying the original configuration object. It is used in the same way.
         /// </summary>
         public Dictionary<string, string> TypeMap { get; init; } = [];
+
+        /// <summary>
+        /// This tracks a set of enum members marked with the deprecated="aliased" attribute.
+        /// These are removed from the generated bindings.
+        /// </summary>
+        /// <remarks>
+        /// At the time this was added, only Vulkan seems to use the deprecated="aliased" attribute.
+        /// These names tend to cause name collisions after names are prettified so removing these
+        /// prevents these issues. This can cause API breakages, but because these are aliases,
+        /// these are easily solvable breakages.
+        /// </remarks>
+        public HashSet<string> DeprecatedAliases = [];
     }
 
     /// <summary>
@@ -259,6 +271,7 @@ public partial class MixKhronosData(
         job.SupportedApiProfiles = supportedApiProfiles;
 
         var profiles = supportedApiProfiles.SelectMany(x => x.Value).Select(x => x.Profile).ToHashSet();
+
         job.Vendors =
         [
             .. xml.Element("registry")
@@ -280,6 +293,10 @@ public partial class MixKhronosData(
                 // Eg: GL_NV_command_list -> NV
                 .Select(name => name.Value.Split('_')[1].ToUpper()) ?? Enumerable.Empty<string>()
         ];
+
+        job.DeprecatedAliases = xml.Descendants()
+            .Where(x => x.Attribute("deprecated")?.Value == "aliased" && x.Attribute("name") != null)
+            .Select(x => x.Attribute("name")!.Value).ToHashSet();
 
         ReadGroups(xml, job, job.Vendors);
 
@@ -303,7 +320,7 @@ public partial class MixKhronosData(
         var proj = ctx.SourceProject;
 
         // Rewrite phase 1
-        var rewriter1 = new EnumRewriterPhase1(jobData, logger);
+        var rewriter1 = new RewriterPhase1(jobData, logger);
         foreach (var docId in proj?.DocumentIds ?? [])
         {
             var doc = proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -326,7 +343,7 @@ public partial class MixKhronosData(
         }
 
         // Rewrite phase 2
-        var rewriter2 = new EnumRewriterPhase2(jobData, rewriter1);
+        var rewriter2 = new RewriterPhase2(jobData, rewriter1);
         foreach (var docId in proj?.DocumentIds ?? [])
         {
             var doc = proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -1694,6 +1711,8 @@ public partial class MixKhronosData(
     private static partial Regex EndingsNotToTrim();
 
     /// <summary>
+    /// This rewriter focuses on adding missing enums.
+    /// <para/>
     /// Extracts enum constants that are defined as fields and moves them to their actual enum types.
     /// Begins renaming FlagBits enums to Flags.
     /// </summary>
@@ -1701,7 +1720,7 @@ public partial class MixKhronosData(
     /// This rewriter is split into two phases because NamespaceFromSyntaxNode breaks due to
     /// the FieldDeclarationSyntax being modified.
     /// </remarks>
-    private class EnumRewriterPhase1(JobData job, ILogger logger) : CSharpSyntaxRewriter
+    private class RewriterPhase1(JobData job, ILogger logger) : CSharpSyntaxRewriter
     {
         /// <summary>
         /// Tracks enum groups that already exist in the project, prior to the generation of missing enums.
@@ -1927,14 +1946,23 @@ public partial class MixKhronosData(
     /// Finishes renaming FlagBits enums to Flags.
     /// Marks bitmask enums with the [Flags] attribute.
     /// Replaces uint/ulong with the actual enum type for FlagBits/Flags types.
+    /// Removes deprecated aliases.
     /// </summary>
-    private class EnumRewriterPhase2(JobData job, EnumRewriterPhase1 phase1) : CSharpSyntaxRewriter(true)
+    private class RewriterPhase2(JobData job, RewriterPhase1 phase1) : CSharpSyntaxRewriter(true)
     {
         public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             var identifier = node.Identifier.ToString();
+
+            if (node.Members.Any(m => job.DeprecatedAliases.Contains(m.Identifier.ValueText)))
+            {
+                // Remove deprecated aliases
+                node = node.WithMembers([
+                    ..node.Members.Where(m => !job.DeprecatedAliases.Contains(m.Identifier.ValueText))
+                ]);
+            }
 
             if (job.Groups.TryGetValue(identifier, out var group) && group.KnownBitmask)
             {
@@ -1951,22 +1979,47 @@ public partial class MixKhronosData(
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
-            if (!TryGetManagedEnumType(node.AttributeLists, out var managedName))
+            if (node.Declaration.Variables.Any(v => job.DeprecatedAliases.Contains(v.Identifier.ValueText)))
             {
-                return base.VisitFieldDeclaration(node);
+                // Remove deprecated aliases
+                node = node.WithDeclaration(node.Declaration.WithVariables([
+                    ..node.Declaration.Variables.Where(v => !job.DeprecatedAliases.Contains(v.Identifier.ValueText))
+                ]));
+
+                if (node.Declaration.Variables.Count == 0)
+                {
+                    return null;
+                }
             }
 
-            return base.VisitFieldDeclaration(node.WithDeclaration(node.Declaration.WithType(ParseTypeName(managedName))));
+            if (TryGetManagedEnumType(node.AttributeLists, out var managedName))
+            {
+                node = node.WithDeclaration(node.Declaration.WithType(ParseTypeName(managedName)));
+            }
+
+            return base.VisitFieldDeclaration(node);
+
+        }
+
+        public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
+        {
+            if (job.DeprecatedAliases.Contains(node.Identifier.ValueText))
+            {
+                return null;
+            }
+
+            return base.VisitPropertyDeclaration(node);
         }
 
         public override SyntaxNode? VisitParameter(ParameterSyntax node)
         {
-            if (!TryGetManagedEnumType(node.AttributeLists, out var managedName))
+            if (TryGetManagedEnumType(node.AttributeLists, out var managedName))
             {
-                return base.VisitParameter(node);
+                node = node.WithType(ParseTypeName(managedName));
             }
 
-            return base.VisitParameter(node.WithType(ParseTypeName(managedName)));
+            return base.VisitParameter(node);
+
         }
 
         /// <summary>

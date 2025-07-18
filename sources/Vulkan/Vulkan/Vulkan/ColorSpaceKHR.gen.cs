@@ -14,105 +14,105 @@ namespace Silk.NET.Vulkan;
 public enum ColorSpaceKHR : uint
 {
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    ColorSpaceSrgbNonlinearKHR = 0,
+    SrgbNonlinearKHR = 0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceDisplayP3NonlinearEXT = 1000104001,
+    DisplayP3NonlinearEXT = 1000104001,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceExtendedSrgbLinearEXT = 1000104002,
+    ExtendedSrgbLinearEXT = 1000104002,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceDisplayP3LinearEXT = 1000104003,
+    DisplayP3LinearEXT = 1000104003,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceDciP3NonlinearEXT = 1000104004,
+    DciP3NonlinearEXT = 1000104004,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceBt709LinearEXT = 1000104005,
+    Bt709LinearEXT = 1000104005,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceBt709NonlinearEXT = 1000104006,
+    Bt709NonlinearEXT = 1000104006,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceBt2020LinearEXT = 1000104007,
+    Bt2020LinearEXT = 1000104007,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceHdr10St2084EXT = 1000104008,
+    Hdr10St2084EXT = 1000104008,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceDolbyvisionEXT = 1000104009,
+    DolbyvisionEXT = 1000104009,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceHdr10HlgEXT = 1000104010,
+    Hdr10HlgEXT = 1000104010,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceAdobergbLinearEXT = 1000104011,
+    AdobergbLinearEXT = 1000104011,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceAdobergbNonlinearEXT = 1000104012,
+    AdobergbNonlinearEXT = 1000104012,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpacePassThroughEXT = 1000104013,
+    PassThroughEXT = 1000104013,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ColorSpaceExtendedSrgbNonlinearEXT = 1000104014,
+    ExtendedSrgbNonlinearEXT = 1000104014,
 
     [SupportedApiProfile(
         "vulkan",
@@ -122,15 +122,5 @@ public enum ColorSpaceKHR : uint
             "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    ColorSpaceDisplayNativeAMD = 1000213000,
-
-    [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    ColorspaceSrgbNonlinearKHR = ColorSpaceSrgbNonlinearKHR,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_swapchain_colorspace"],
-        ImpliesSets = ["VK_KHR_surface"]
-    )]
-    ColorSpaceDciP3LinearEXT = ColorSpaceDisplayP3LinearEXT,
+    DisplayNativeAMD = 1000213000,
 }

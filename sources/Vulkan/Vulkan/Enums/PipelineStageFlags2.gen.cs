@@ -83,7 +83,6 @@ public enum PipelineStageFlags2 : ulong
     TaskShaderBitEXT = unchecked((ulong)0x00080000UL),
     MeshShaderBitEXT = unchecked((ulong)0x00100000UL),
     SubpassShaderBitHuawei = unchecked((ulong)0x8000000000UL),
-    SubpassShadingBitHuawei = unchecked((ulong)0x8000000000UL),
     InvocationMaskBitHuawei = unchecked((ulong)0x10000000000UL),
     AccelerationStructureCopyBitKHR = unchecked((ulong)0x10000000UL),
     MicromapBuildBitEXT = unchecked((ulong)0x40000000UL),

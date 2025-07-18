@@ -21,47 +21,47 @@ public enum PipelineCreateFlags : uint
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    CreateDisableOptimizationBit = 0x00000001,
+    DisableOptimizationBit = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    CreateAllowDerivativesBit = 0x00000002,
+    AllowDerivativesBit = 0x00000002,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    CreateDerivativeBit = 0x00000004,
+    DerivativeBit = 0x00000004,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    CreateViewIndexFromDeviceIndexBit = 0x00000008,
+    ViewIndexFromDeviceIndexBit = 0x00000008,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    CreateDispatchBaseBit = 0x00000010,
+    DispatchBaseBit = 0x00000010,
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    CreateFailOnPipelineCompileRequiredBit = 0x00000100,
+    FailOnPipelineCompileRequiredBit = 0x00000100,
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    CreateEarlyReturnOnFailureBit = 0x00000200,
+    EarlyReturnOnFailureBit = 0x00000200,
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    CreateNoProtectedAccessBit = 0x08000000,
+    NoProtectedAccessBit = 0x08000000,
 
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    CreateProtectedAccessOnlyBit = 0x40000000,
+    ProtectedAccessOnlyBit = 0x40000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -71,7 +71,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    CreateRayTracingNoNullAnyHitShadersBitKHR = 0x00004000,
+    RayTracingNoNullAnyHitShadersBitKHR = 0x00004000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -81,7 +81,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    CreateRayTracingNoNullClosestHitShadersBitKHR = 0x00008000,
+    RayTracingNoNullClosestHitShadersBitKHR = 0x00008000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -91,7 +91,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    CreateRayTracingNoNullMissShadersBitKHR = 0x00010000,
+    RayTracingNoNullMissShadersBitKHR = 0x00010000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -101,7 +101,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    CreateRayTracingNoNullIntersectionShadersBitKHR = 0x00020000,
+    RayTracingNoNullIntersectionShadersBitKHR = 0x00020000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -111,7 +111,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    CreateRayTracingSkipTrianglesBitKHR = 0x00001000,
+    RayTracingSkipTrianglesBitKHR = 0x00001000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -121,7 +121,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    CreateRayTracingSkipAabbsBitKHR = 0x00002000,
+    RayTracingSkipAabbsBitKHR = 0x00002000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -131,7 +131,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    CreateRayTracingShaderGroupHandleCaptureReplayBitKHR = 0x00080000,
+    RayTracingShaderGroupHandleCaptureReplayBitKHR = 0x00080000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -141,7 +141,7 @@ public enum PipelineCreateFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    CreateDeferCompileBitNV = 0x00000020,
+    DeferCompileBitNV = 0x00000020,
 
     [SupportedApiProfile(
         "vulkan",
@@ -154,7 +154,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    CreateRenderingFragmentDensityMapAttachmentBitEXT = 0x00400000,
+    RenderingFragmentDensityMapAttachmentBitEXT = 0x00400000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -168,7 +168,7 @@ public enum PipelineCreateFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    CreateRenderingFragmentShadingRateAttachmentBitKHR = 0x00200000,
+    RenderingFragmentShadingRateAttachmentBitKHR = 0x00200000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -178,7 +178,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    CreateCaptureStatisticsBitKHR = 0x00000040,
+    CaptureStatisticsBitKHR = 0x00000040,
 
     [SupportedApiProfile(
         "vulkan",
@@ -188,17 +188,17 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    CreateCaptureInternalRepresentationsBitKHR = 0x00000080,
+    CaptureInternalRepresentationsBitKHR = 0x00000080,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    CreateIndirectBindableBitNV = 0x00040000,
+    IndirectBindableBitNV = 0x00040000,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
-    CreateLibraryBitKHR = 0x00000800,
+    LibraryBitKHR = 0x00000800,
 
     [SupportedApiProfile(
         "vulkan",
@@ -210,7 +210,7 @@ public enum PipelineCreateFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateDescriptorBufferBitEXT = 0x20000000,
+    DescriptorBufferBitEXT = 0x20000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -220,7 +220,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    CreateRetainLinkTimeOptimizationInfoBitEXT = 0x00800000,
+    RetainLinkTimeOptimizationInfoBitEXT = 0x00800000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -230,14 +230,14 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    CreateLinkTimeOptimizationBitEXT = 0x00000400,
+    LinkTimeOptimizationBitEXT = 0x00000400,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    CreateRayTracingAllowMotionBitNV = 0x00100000,
+    RayTracingAllowMotionBitNV = 0x00100000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -247,7 +247,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    CreateColorAttachmentFeedbackLoopBitEXT = 0x02000000,
+    ColorAttachmentFeedbackLoopBitEXT = 0x02000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -257,7 +257,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    CreateDepthStencilAttachmentFeedbackLoopBitEXT = 0x04000000,
+    DepthStencilAttachmentFeedbackLoopBitEXT = 0x04000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -267,64 +267,35 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    CreateRayTracingOpacityMicromapBitEXT = 0x01000000,
+    RayTracingOpacityMicromapBitEXT = 0x01000000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    CreateDispatchBase = CreateDispatchBaseBit,
+    DispatchBase = DispatchBaseBit,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    CreateViewIndexFromDeviceIndexBitKHR = CreateViewIndexFromDeviceIndexBit,
+    ViewIndexFromDeviceIndexBitKHR = ViewIndexFromDeviceIndexBit,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.0"
     )]
-    CreateDispatchBaseBitKHR = CreateDispatchBaseBit,
+    DispatchBaseBitKHR = DispatchBaseBit,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    CreateDispatchBaseKHR = CreateDispatchBaseBit,
-
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_EXT_fragment_density_map+VK_KHR_dynamic_rendering",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_3",
-        ],
-        ImpliesSets = [
-            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
-            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
-        ]
-    )]
-    RasterizationStateCreateFragmentDensityMapAttachmentBitEXT =
-        CreateRenderingFragmentDensityMapAttachmentBitEXT,
-
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_KHR_fragment_shading_rate+VK_KHR_dynamic_rendering",
-            "VK_KHR_fragment_shading_rate+VK_VERSION_1_3",
-        ],
-        ImpliesSets = [
-            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
-        ]
-    )]
-    RasterizationStateCreateFragmentShadingRateAttachmentBitKHR =
-        CreateRenderingFragmentShadingRateAttachmentBitKHR,
+    DispatchBaseKHR = DispatchBaseBit,
 
     [SupportedApiProfile(
         "vulkan",
@@ -334,7 +305,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_pipeline_creation_cache_control+VK_VERSION_1_1",
         ]
     )]
-    CreateFailOnPipelineCompileRequiredBitEXT = CreateFailOnPipelineCompileRequiredBit,
+    FailOnPipelineCompileRequiredBitEXT = FailOnPipelineCompileRequiredBit,
 
     [SupportedApiProfile(
         "vulkan",
@@ -344,7 +315,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_pipeline_creation_cache_control+VK_VERSION_1_1",
         ]
     )]
-    CreateEarlyReturnOnFailureBitEXT = CreateEarlyReturnOnFailureBit,
+    EarlyReturnOnFailureBitEXT = EarlyReturnOnFailureBit,
 
     [SupportedApiProfile(
         "vulkan",
@@ -354,7 +325,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_pipeline_protected_access+VK_VERSION_1_1",
         ]
     )]
-    CreateNoProtectedAccessBitEXT = CreateNoProtectedAccessBit,
+    NoProtectedAccessBitEXT = NoProtectedAccessBit,
 
     [SupportedApiProfile(
         "vulkan",
@@ -364,5 +335,5 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_pipeline_protected_access+VK_VERSION_1_1",
         ]
     )]
-    CreateProtectedAccessOnlyBitEXT = CreateProtectedAccessOnlyBit,
+    ProtectedAccessOnlyBitEXT = ProtectedAccessOnlyBit,
 }

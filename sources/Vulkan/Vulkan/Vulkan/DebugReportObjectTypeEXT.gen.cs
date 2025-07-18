@@ -176,12 +176,6 @@ public enum DebugReportObjectTypeEXT : uint
     )]
     BufferCollectionFuchsiaEXT = 1000366000,
 
-    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DebugReportEXT = DebugReportCallbackExtEXT,
-
-    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    ValidationCacheEXT = ValidationCacheExtEXT,
-
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_debug_report", "VK_KHR_descriptor_update_template"],
