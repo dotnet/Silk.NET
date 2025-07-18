@@ -295,7 +295,6 @@ Silk.NET.Maths.Matrix3X3<T>.M33.set -> void
 Silk.NET.Maths.Matrix3X3<T>.Matrix3X3() -> void
 Silk.NET.Maths.Matrix3X3<T>.Matrix3X3(Silk.NET.Maths.Matrix2X4<T> value) -> void
 Silk.NET.Maths.Matrix3X3<T>.Matrix3X3(Silk.NET.Maths.Matrix3X2<T> value) -> void
-Silk.NET.Maths.Matrix3X3<T>.Matrix3X3(Silk.NET.Maths.Matrix3X3<T> value) -> void
 Silk.NET.Maths.Matrix3X3<T>.Matrix3X3(Silk.NET.Maths.Matrix3X4<T> value) -> void
 Silk.NET.Maths.Matrix3X3<T>.Matrix3X3(Silk.NET.Maths.Matrix4X2<T> value) -> void
 Silk.NET.Maths.Matrix3X3<T>.Matrix3X3(Silk.NET.Maths.Matrix4X3<T> value) -> void
@@ -344,7 +343,6 @@ Silk.NET.Maths.Matrix3X4<T>.Matrix3X4() -> void
 Silk.NET.Maths.Matrix3X4<T>.Matrix3X4(Silk.NET.Maths.Matrix2X4<T> value) -> void
 Silk.NET.Maths.Matrix3X4<T>.Matrix3X4(Silk.NET.Maths.Matrix3X2<T> value) -> void
 Silk.NET.Maths.Matrix3X4<T>.Matrix3X4(Silk.NET.Maths.Matrix3X3<T> value) -> void
-Silk.NET.Maths.Matrix3X4<T>.Matrix3X4(Silk.NET.Maths.Matrix3X4<T> value) -> void
 Silk.NET.Maths.Matrix3X4<T>.Matrix3X4(Silk.NET.Maths.Matrix4X2<T> value) -> void
 Silk.NET.Maths.Matrix3X4<T>.Matrix3X4(Silk.NET.Maths.Matrix4X3<T> value) -> void
 Silk.NET.Maths.Matrix3X4<T>.Matrix3X4(Silk.NET.Maths.Vector4D<T> row1, Silk.NET.Maths.Vector4D<T> row2, Silk.NET.Maths.Vector4D<T> row3) -> void
@@ -429,7 +427,6 @@ Silk.NET.Maths.Matrix4X3<T>.Matrix4X3(Silk.NET.Maths.Matrix3X2<T> value) -> void
 Silk.NET.Maths.Matrix4X3<T>.Matrix4X3(Silk.NET.Maths.Matrix3X3<T> value) -> void
 Silk.NET.Maths.Matrix4X3<T>.Matrix4X3(Silk.NET.Maths.Matrix3X4<T> value) -> void
 Silk.NET.Maths.Matrix4X3<T>.Matrix4X3(Silk.NET.Maths.Matrix4X2<T> value) -> void
-Silk.NET.Maths.Matrix4X3<T>.Matrix4X3(Silk.NET.Maths.Matrix4X3<T> value) -> void
 Silk.NET.Maths.Matrix4X3<T>.Matrix4X3(Silk.NET.Maths.Matrix4X4<T> value) -> void
 Silk.NET.Maths.Matrix4X3<T>.Matrix4X3(Silk.NET.Maths.Vector3D<T> row1, Silk.NET.Maths.Vector3D<T> row2, Silk.NET.Maths.Vector3D<T> row3, Silk.NET.Maths.Vector3D<T> row4) -> void
 Silk.NET.Maths.Matrix4X3<T>.Matrix4X3(T m11, T m12, T m13, T m21, T m22, T m23, T m31, T m32, T m33, T m41, T m42, T m43) -> void
@@ -838,7 +835,7 @@ static Silk.NET.Maths.Matrix3X2.CreateTranslation<T>(T xPosition, T yPosition) -
 static Silk.NET.Maths.Matrix3X2.Invert<T>(Silk.NET.Maths.Matrix3X2<T> matrix, out Silk.NET.Maths.Matrix3X2<T> result) -> bool
 static Silk.NET.Maths.Matrix3X2.Lerp<T>(Silk.NET.Maths.Matrix3X2<T> matrix1, Silk.NET.Maths.Matrix3X2<T> matrix2, T amount) -> Silk.NET.Maths.Matrix3X2<T>
 static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix2X3<T> value1, Silk.NET.Maths.Matrix3X2<T> value2) -> Silk.NET.Maths.Matrix2X2<T>
-static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix2X3<T> value1, Silk.NET.Maths.Matrix3X3<T> value2) -> Silk.NET.Maths.Matrix2X3<T>
+static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix3X3<T> value1, Silk.NET.Maths.Matrix3X2<T> value2) -> Silk.NET.Maths.Matrix3X2<T>
 static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix3X2<T> value1, Silk.NET.Maths.Matrix2X2<T> value2) -> Silk.NET.Maths.Matrix3X2<T>
 static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix3X2<T> value1, Silk.NET.Maths.Matrix2X3<T> value2) -> Silk.NET.Maths.Matrix3X3<T>
 static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix3X2<T> value1, T value2) -> Silk.NET.Maths.Matrix3X2<T>

@@ -51,7 +51,7 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector3D<T> Column2 => new(Row1.Y, Row2.Y, Row3.Y);
 
-        /// <summary>The first element of the first row</summary>
+        /// <summary>Value at row 1, column 1 of the matrix.</summary>
         [DataMember]
         public T M11
         {
@@ -59,7 +59,7 @@ namespace Silk.NET.Maths
             set => Row1.X = value;
         }
 
-        /// <summary>The second element of the first row</summary>
+        /// <summary>Value at row 1, column 2 of the matrix.</summary>
         [DataMember]
         public T M12
         {
@@ -67,7 +67,7 @@ namespace Silk.NET.Maths
             set => Row1.Y = value;
         }
 
-        /// <summary>The first element of the second row</summary>
+        /// <summary>Value at row 2, column 1 of the matrix.</summary>
         [DataMember]
         public T M21
         {
@@ -75,7 +75,7 @@ namespace Silk.NET.Maths
             set => Row2.X = value;
         }
 
-        /// <summary>The second element of the second row</summary>
+        /// <summary>Value at row 2, column 2 of the matrix.</summary>
         [DataMember]
         public T M22
         {
@@ -83,7 +83,7 @@ namespace Silk.NET.Maths
             set => Row2.Y = value;
         }
 
-        /// <summary>The first element of the third row</summary>
+        /// <summary>Value at row 3, column 1 of the matrix.</summary>
         [DataMember]
         public T M31
         {
@@ -91,7 +91,7 @@ namespace Silk.NET.Maths
             set => Row3.X = value;
         }
 
-        /// <summary>The second element of the third row</summary>
+        /// <summary>Value at row 3, column 2 of the matrix.</summary>
         [DataMember]
         public T M32
         {
@@ -154,8 +154,8 @@ namespace Silk.NET.Maths
             Row3 = row3;
         }
 
-        /// <summary>Constructs a <see cref="Matrix3X2{T}"/> from the given Matrix4x3.</summary>
-        /// <param name="value">The source Matrix4x3.</param>
+        /// <summary>Constructs a <see cref="Matrix3X2{T}"/> from the given <see cref="Matrix4X3{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix4X3{T}"/>.</param>
         public Matrix3X2(Matrix4X3<T> value)
         {
             Row1 = new(value.M11, value.M12);

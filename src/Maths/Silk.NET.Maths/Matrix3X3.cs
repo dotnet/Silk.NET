@@ -45,13 +45,11 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector3D<T> Column1 => new(Row1.X, Row2.X, Row3.X);
 
-
         /// <summary>
         /// Column 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Column2 => new(Row1.Y, Row2.Y, Row3.Y);
-
 
         /// <summary>
         /// Column 3 of the matrix.
@@ -205,15 +203,6 @@ namespace Silk.NET.Maths
         /// <summary>Constructs a <see cref="Matrix3X3{T}"/> from the given <see cref="Matrix3X4{T}"/>.</summary>
         /// <param name="value">The source <see cref="Matrix3X4{T}"/>.</param>
         public Matrix3X3(Matrix3X4<T> value)
-        {
-            Row1 = new(value.M11, value.M12, value.M13);
-            Row2 = new(value.M21, value.M22, value.M23);
-            Row3 = new(value.M31, value.M32, value.M33);
-        }
-
-        /// <summary>Constructs a <see cref="Matrix3X3{T}"/> from the given <see cref="Matrix3X3{T}"/>.</summary>
-        /// <param name="value">The source <see cref="Matrix3X3{T}"/>.</param>
-        public Matrix3X3(Matrix3X3<T> value)
         {
             Row1 = new(value.M11, value.M12, value.M13);
             Row2 = new(value.M21, value.M22, value.M23);

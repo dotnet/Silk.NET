@@ -29,19 +29,19 @@ namespace Silk.NET.Maths
         public Vector3D<T> Row1;
 
         /// <summary>
-        /// Row 1 of the matrix.
+        /// Row 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Row2;
 
         /// <summary>
-        /// Row 1 of the matrix.
+        /// Row 3 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Row3;
 
         /// <summary>
-        /// Row 1 of the matrix.
+        /// Row 4 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Row4;
@@ -223,16 +223,6 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22, default);
             Row3 = Vector3D<T>.UnitZ;
             Row4 = new(value.M31, value.M32, default);
-        }
-
-        /// <summary>Constructs a <see cref="Matrix4X3{T}"/> from the given <see cref="Matrix4X3{T}"/>.</summary>
-        /// <param name="value">The source <see cref="Matrix4X3{T}"/>.</param>
-        public Matrix4X3(Matrix4X3<T> value)
-        {
-            Row1 = new(value.M11, value.M12, value.M13);
-            Row2 = new(value.M21, value.M22, value.M23);
-            Row3 = new(value.M31, value.M32, value.M33);
-            Row4 = new(value.M41, value.M42, value.M43);
         }
 
         /// <summary>Constructs a <see cref="Matrix4X3{T}"/> from the given <see cref="Matrix3X4{T}"/>.</summary>

@@ -30,24 +30,22 @@ namespace Silk.NET.Maths
         public Vector2D<T> Row1;
 
         /// <summary>
-        /// Row 2 of the matrix
+        /// Row 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector2D<T> Row2;
 
         /// <summary>
-        /// Row 3 of the matrix
+        /// Row 3 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector2D<T> Row3;
 
         /// <summary>
-        /// Row 4 of the matrix
+        /// Row 4 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector2D<T> Row4;
-
-
 
         /// <summary>
         /// Column 1 of the matrix.
