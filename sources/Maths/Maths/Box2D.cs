@@ -22,6 +22,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [DataMember]
         public Vector2D<T> Min;
+
         /// <summary>
         /// The max.
         /// </summary>
@@ -77,7 +78,7 @@ namespace Silk.NET.Maths
         /// The center of this box.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2D<T> Center => (Min + Max) / Scalar<T>.Two;
+        public Vector2D<T> Center => (Min + Max) / T.CreateTruncating(2);
 
         /// <summary>
         /// The size of this box.
@@ -93,8 +94,8 @@ namespace Silk.NET.Maths
         /// <returns>True if this box contains the point; False otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector2D<T> point)
-            => Scalar.GreaterThanOrEqual(point.X, Min.X) && Scalar.GreaterThanOrEqual(point.Y, Min.Y)
-            && Scalar.LessThanOrEqual(point.X, Max.X) && Scalar.LessThanOrEqual(point.Y, Max.Y);
+            => (point.X >= Min.X) && (point.Y >= Min.Y)
+            && (point.X <= Max.X) && (point.Y <= Max.Y);
 
         /// <summary>
         /// Calculates whether this box contains another box
@@ -103,8 +104,8 @@ namespace Silk.NET.Maths
         /// <returns>True if this box contains the given box; False otherwise.</returns>
         /// <remarks>This does consider a box that touches the edge contained.</remarks>
         public bool Contains(Box2D<T> other)
-            => Scalar.GreaterThanOrEqual(other.Min.X, Min.X) && Scalar.GreaterThanOrEqual(other.Min.Y, Min.Y)
-            && Scalar.LessThanOrEqual(other.Max.X, Max.X) && Scalar.LessThanOrEqual(other.Max.Y, Max.Y);
+            => (other.Min.X >= Min.X) && (other.Min.Y >= Min.Y)
+            && (other.Max.X <= Max.X) && (other.Max.Y <= Max.Y);
 
         /// <summary>
         /// Calculates the distance to the nearest edge from the point.
@@ -113,9 +114,9 @@ namespace Silk.NET.Maths
         /// <returns>The distance.</returns>
         public T GetDistanceToNearestEdge(Vector2D<T> point)
         {
-            var dx = Scalar.Max(Scalar.Max(Scalar.Subtract(Min.X, point.X), Scalar<T>.Zero), Scalar.Subtract(point.X, Max.X));
-            var dy = Scalar.Max(Scalar.Max(Scalar.Subtract(Min.Y, point.Y), Scalar<T>.Zero), Scalar.Subtract(point.Y, Max.Y));
-            return Scalar.Sqrt(Scalar.Add(Scalar.Multiply(dx, dx), Scalar.Multiply(dy, dy)));
+            var dx = T.Max(T.Max(Min.X - point.X, T.Zero), point.X - Max.X);
+            var dy = T.Max(T.Max(Min.Y - point.Y, T.Zero), point.Y - Max.Y);
+            return T.Sqrt((dx * dx) + (dy * dy));
         }
 
         /// <summary>

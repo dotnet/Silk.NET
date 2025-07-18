@@ -21,6 +21,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [DataMember]
         public Vector2D<T> Center;
+
         /// <summary>
         /// The radius.
         /// </summary>
@@ -53,19 +54,19 @@ namespace Silk.NET.Maths
         /// The diameter.
         /// </summary>
         [IgnoreDataMember]
-        public T Diameter => Scalar.Multiply(Radius, Scalar<T>.Two);
+        public T Diameter => Radius * T.CreateTruncating(2);
 
         /// <summary>
         /// The radius squared.
         /// </summary>
         [IgnoreDataMember]
-        public T SquaredRadius => Scalar.Multiply(Radius, Radius);
+        public T SquaredRadius => Radius * Radius;
 
         /// <summary>
         /// The circumference.
         /// </summary>
         [IgnoreDataMember]
-        public T Circumference => Scalar.Multiply(Scalar<T>.Tau, Radius);
+        public T Circumference => T.Tau * Radius;
 
         /// <summary>
         /// Calculates whether this circle contains a point.
@@ -75,7 +76,7 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector2D<T> point)
         {
-            return Scalar.LessThanOrEqual(Vector2D.DistanceSquared(point, Center), Radius);
+            return Vector2D.DistanceSquared(point, Center) <= Radius;
         }
 
         /// <summary>
@@ -87,8 +88,8 @@ namespace Silk.NET.Maths
         public bool Contains(Circle<T> other)
         {
             var distanceSquared = Vector2D.DistanceSquared(Center, other.Center);
-            var radiusDiff = Scalar.Subtract(Radius, other.Radius);
-            return Scalar.LessThanOrEqual(distanceSquared, Scalar.Multiply(radiusDiff, radiusDiff));
+            var radiusDiff = Radius - other.Radius;
+            return distanceSquared <= radiusDiff * radiusDiff;
         }
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Silk.NET.Maths
         /// <returns>The distance squared.</returns>
         public T GetDistanceToNearestEdgeSquared(Vector2D<T> point)
         {
-            return Scalar.Subtract(Vector2D.DistanceSquared(Center, point), SquaredRadius);
+            return Vector2D.DistanceSquared(Center, point) - SquaredRadius;
         }
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
-        public T GetDistanceToNearestEdge(Vector2D<T> point) => Scalar.Sqrt(GetDistanceToNearestEdgeSquared(point));
+        public T GetDistanceToNearestEdge(Vector2D<T> point) => T.Sqrt(GetDistanceToNearestEdgeSquared(point));
 
         /// <summary>
         /// Calculates a new circle translated by a given distance.
@@ -125,7 +126,7 @@ namespace Silk.NET.Maths
         /// <returns>The circle.</returns>
         public Circle<T> GetInflated(Vector2D<T> point)
         {
-            return new(Center, Scalar.Max(Radius, Vector2D.Distance(Center, point)));
+            return new(Center, T.Max(Radius, Vector2D.Distance(Center, point)));
         }
 
         /// <summary>Returns a boolean indicating whether the given Circle is equal to this Circle instance.</summary>
@@ -177,7 +178,7 @@ namespace Silk.NET.Maths
         [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
         public Circle<TOther> As<TOther>() where TOther : IRootFunctions<TOther>
         {
-            return new(Center.As<TOther>(), Scalar.As<T, TOther>(Radius));
+            return new(Center.As<TOther>(), TOther.CreateTruncating(Radius));
         }
     }
 }

@@ -18,10 +18,10 @@ namespace Silk.NET.Maths
     {
         private static readonly Matrix4X3<T> _identity = new
         (
-            Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero,
-            Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero,
-            Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One,
-            Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero
+            T.One, T.Zero, T.Zero,
+            T.Zero, T.One, T.Zero,
+            T.Zero, T.Zero, T.One,
+            T.Zero, T.Zero, T.Zero
         );
 
         /// <summary>Constructs a <see cref="Matrix4X3{T}"/> from the given <see cref="Matrix3X2{T}"/>.</summary>
@@ -81,7 +81,7 @@ namespace Silk.NET.Maths
             Row1 = new(value.M11, value.M12, T.Zero);
             Row2 = new(value.M21, value.M22, T.Zero);
             Row3 = new(value.M31, value.M32, T.Zero);
-            Row4 = new(value.M41, value.M42, Scalar<T>.One);
+            Row4 = new(value.M41, value.M42, T.One);
         }
 
         /// <summary>Constructs a <see cref="Matrix4X3{T}"/> from the given <see cref="Matrix4X4{T}"/>.</summary>

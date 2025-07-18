@@ -63,7 +63,7 @@ namespace Silk.NET.Maths
         // TODO: Vector4F/Vector3F constructors
 
         /// <summary>Returns a <see cref="Quaternion{T}"/> representing no rotation.</summary>
-        public static Quaternion<T> Identity { get; } = new Quaternion<T>(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
+        public static Quaternion<T> Identity { get; } = new Quaternion<T>(T.Zero, T.Zero, T.Zero, T.One);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Quaternion{T}"/> instance.</summary>
         public override bool Equals(object? obj) =>

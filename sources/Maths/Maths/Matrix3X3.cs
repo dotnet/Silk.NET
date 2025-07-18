@@ -89,11 +89,7 @@ namespace Silk.NET.Maths
             T d = Row2.X, e = Row2.Y, f = Row2.Z;
             T g = Row3.X, h = Row3.Y, i = Row3.Z;
 
-            return Scalar.Add(
-                Scalar.Subtract(
-                    Scalar.Multiply(a, Scalar.Subtract(Scalar.Multiply(e, i), Scalar.Multiply(f, h))),
-                    Scalar.Multiply(b, Scalar.Subtract(Scalar.Multiply(d, i), Scalar.Multiply(f, g)))),
-                Scalar.Multiply(c, Scalar.Subtract(Scalar.Multiply(d, h), Scalar.Multiply(e, g))));
+            return (a * ((e * i) - (f * h))) - (b * ((d * i) - (f * g))) + (c * ((d * h) - (e * g)));
         }
     }
 }

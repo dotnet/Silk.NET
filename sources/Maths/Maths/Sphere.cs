@@ -21,6 +21,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [DataMember]
         public Vector3D<T> Center;
+
         /// <summary>
         /// The radius.
         /// </summary>
@@ -54,13 +55,13 @@ namespace Silk.NET.Maths
         /// The diameter.
         /// </summary>
         [IgnoreDataMember]
-        public T Diameter => Scalar.Multiply(Radius, Scalar<T>.Two);
+        public T Diameter => Radius * T.CreateTruncating(2);
 
         /// <summary>
         /// The radius squared.
         /// </summary>
         [IgnoreDataMember]
-        public T SquaredRadius => Scalar.Multiply(Radius, Radius);
+        public T SquaredRadius => Radius * Radius;
 
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector3D<T> point)
         {
-            return Scalar.LessThanOrEqual(Vector3D.DistanceSquared(point, Center), Radius);
+            return Vector3D.DistanceSquared(point, Center) <= Radius;
         }
 
         /// <summary>
@@ -83,8 +84,8 @@ namespace Silk.NET.Maths
         public bool Contains(Sphere<T> other)
         {
             var distanceSquared = Vector3D.DistanceSquared(Center, other.Center);
-            var radiusDiff = Scalar.Subtract(Radius, other.Radius);
-            return Scalar.LessThanOrEqual(distanceSquared, Scalar.Multiply(radiusDiff, radiusDiff));
+            var radiusDiff = Radius - other.Radius;
+            return distanceSquared <= radiusDiff * radiusDiff;
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Silk.NET.Maths
         /// <returns>The distance squared.</returns>
         public T GetDistanceToNearestEdgeSquared(Vector3D<T> point)
         {
-            return Scalar.Subtract(Vector3D.DistanceSquared(Center, point), SquaredRadius);
+            return Vector3D.DistanceSquared(Center, point) - SquaredRadius;
         }
 
         /// <summary>
@@ -102,7 +103,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
-        public T GetDistanceToNearestEdge(Vector3D<T> point) => Scalar.Sqrt(GetDistanceToNearestEdgeSquared(point));
+        public T GetDistanceToNearestEdge(Vector3D<T> point) => T.Sqrt(GetDistanceToNearestEdgeSquared(point));
 
         /// <summary>
         /// Calculates a new sphere translated by a given distance.
@@ -121,7 +122,7 @@ namespace Silk.NET.Maths
         /// <returns>The sphere.</returns>
         public Sphere<T> GetInflated(Vector3D<T> point)
         {
-            return new(Center, Scalar.Max(Radius, Vector3D.Distance(Center, point)));
+            return new(Center, T.Max(Radius, Vector3D.Distance(Center, point)));
         }
 
         /// <summary>Returns a boolean indicating whether the given Sphere is equal to this Sphere instance.</summary>
@@ -164,7 +165,7 @@ namespace Silk.NET.Maths
         {
             return !value1.Equals(value2);
         }
-        
+
         /// <summary>
         /// Returns this sphere casted to <typeparamref name="TOther"></typeparamref>
         /// </summary>
@@ -174,7 +175,7 @@ namespace Silk.NET.Maths
         public Sphere<TOther> As<TOther>()
             where TOther : IRootFunctions<TOther>
         {
-            return new(Center.As<TOther>(), Scalar.As<T, TOther>(Radius));
+            return new(Center.As<TOther>(), TOther.CreateTruncating(Radius));
         }
     }
 }

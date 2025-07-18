@@ -64,7 +64,7 @@ namespace Silk.NET.Maths
             T a = Row1.X, b = Row1.Y;
             T d = Row2.X, c = Row1.Y;
 
-            return Scalar.Subtract(Scalar.Multiply(a, d), Scalar.Multiply(b, c));
+            return (a * d) - (b * c);
         }
     }
 }

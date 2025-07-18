@@ -567,8 +567,6 @@ Silk.NET.Maths.Rectangle<T>.Rectangle(Silk.NET.Maths.Vector2D<T> origin, T sizeX
 Silk.NET.Maths.Rectangle<T>.Rectangle(T originX, T originY, Silk.NET.Maths.Vector2D<T> size) -> void
 Silk.NET.Maths.Rectangle<T>.Rectangle(T originX, T originY, T sizeX, T sizeY) -> void
 Silk.NET.Maths.Rectangle<T>.Size -> Silk.NET.Maths.Vector2D<T>
-Silk.NET.Maths.Scalar
-Silk.NET.Maths.Scalar<T>
 Silk.NET.Maths.Sphere<T>
 Silk.NET.Maths.Sphere<T>.As<TOther>() -> Silk.NET.Maths.Sphere<TOther>
 Silk.NET.Maths.Sphere<T>.Center -> Silk.NET.Maths.Vector3D<T>
@@ -673,23 +671,6 @@ Silk.NET.Maths.Vector4D<T>.W -> T
 Silk.NET.Maths.Vector4D<T>.X -> T
 Silk.NET.Maths.Vector4D<T>.Y -> T
 Silk.NET.Maths.Vector4D<T>.Z -> T
-static readonly Silk.NET.Maths.Scalar<T>.DegreesPerRadian -> T
-static readonly Silk.NET.Maths.Scalar<T>.E -> T
-static readonly Silk.NET.Maths.Scalar<T>.Epsilon -> T
-static readonly Silk.NET.Maths.Scalar<T>.MaxValue -> T
-static readonly Silk.NET.Maths.Scalar<T>.MinusOne -> T
-static readonly Silk.NET.Maths.Scalar<T>.MinusTwo -> T
-static readonly Silk.NET.Maths.Scalar<T>.MinValue -> T
-static readonly Silk.NET.Maths.Scalar<T>.NaN -> T
-static readonly Silk.NET.Maths.Scalar<T>.NegativeInfinity -> T
-static readonly Silk.NET.Maths.Scalar<T>.One -> T
-static readonly Silk.NET.Maths.Scalar<T>.Pi -> T
-static readonly Silk.NET.Maths.Scalar<T>.PiOver2 -> T
-static readonly Silk.NET.Maths.Scalar<T>.PositiveInfinity -> T
-static readonly Silk.NET.Maths.Scalar<T>.RadiansPerDegree -> T
-static readonly Silk.NET.Maths.Scalar<T>.Tau -> T
-static readonly Silk.NET.Maths.Scalar<T>.Two -> T
-static readonly Silk.NET.Maths.Scalar<T>.Zero -> T
 static Silk.NET.Maths.Box2D<T>.operator !=(Silk.NET.Maths.Box2D<T> value1, Silk.NET.Maths.Box2D<T> value2) -> bool
 static Silk.NET.Maths.Box2D<T>.operator ==(Silk.NET.Maths.Box2D<T> value1, Silk.NET.Maths.Box2D<T> value2) -> bool
 static Silk.NET.Maths.Box3D<T>.operator !=(Silk.NET.Maths.Box3D<T> value1, Silk.NET.Maths.Box3D<T> value2) -> bool
@@ -1348,70 +1329,6 @@ static Silk.NET.Maths.Ray3D<T>.operator ==(Silk.NET.Maths.Ray3D<T> value1, Silk.
 static Silk.NET.Maths.Rectangle.FromLTRB<T>(T left, T top, T right, T bottom) -> Silk.NET.Maths.Rectangle<T>
 static Silk.NET.Maths.Rectangle<T>.operator !=(Silk.NET.Maths.Rectangle<T> value1, Silk.NET.Maths.Rectangle<T> value2) -> bool
 static Silk.NET.Maths.Rectangle<T>.operator ==(Silk.NET.Maths.Rectangle<T> value1, Silk.NET.Maths.Rectangle<T> value2) -> bool
-static Silk.NET.Maths.Scalar.Abs<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Acos<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Acosh<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Add<T>(T left, T right) -> T
-static Silk.NET.Maths.Scalar.And<T>(T left, T right) -> T
-static Silk.NET.Maths.Scalar.As<TFrom, TTo>(TFrom val) -> TTo
-static Silk.NET.Maths.Scalar.Asin<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Asinh<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Atan2<T>(T y, T x) -> T
-static Silk.NET.Maths.Scalar.Atan<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Atanh<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Cbrt<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Ceiling<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Cos<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Cosh<T>(T x) -> T
-static Silk.NET.Maths.Scalar.DegreesToRadians<T>(T degrees) -> T
-static Silk.NET.Maths.Scalar.Divide<T>(T left, T right) -> T
-static Silk.NET.Maths.Scalar.Equal<T>(T left, T right) -> bool
-static Silk.NET.Maths.Scalar.Exp<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Floor<T>(T x) -> T
-static Silk.NET.Maths.Scalar.GreaterThan<T>(T left, T right) -> bool
-static Silk.NET.Maths.Scalar.GreaterThanOrEqual<T>(T left, T right) -> bool
-static Silk.NET.Maths.Scalar.IEEERemainder<T>(T x, T y) -> T
-static Silk.NET.Maths.Scalar.IsFinite<T>(T f) -> bool
-static Silk.NET.Maths.Scalar.IsHardwareAccelerated.get -> bool
-static Silk.NET.Maths.Scalar.IsInfinity<T>(T f) -> bool
-static Silk.NET.Maths.Scalar.IsNaN<T>(T f) -> bool
-static Silk.NET.Maths.Scalar.IsNegative<T>(T f) -> bool
-static Silk.NET.Maths.Scalar.IsNegativeInfinity<T>(T f) -> bool
-static Silk.NET.Maths.Scalar.IsNormal<T>(T f) -> bool
-static Silk.NET.Maths.Scalar.IsPositiveInfinity<T>(T f) -> bool
-static Silk.NET.Maths.Scalar.IsSubnormal<T>(T f) -> bool
-static Silk.NET.Maths.Scalar.LessThan<T>(T left, T right) -> bool
-static Silk.NET.Maths.Scalar.LessThanOrEqual<T>(T left, T right) -> bool
-static Silk.NET.Maths.Scalar.Log10<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Log<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Log<T>(T x, T y) -> T
-static Silk.NET.Maths.Scalar.Max<T>(T x, T y) -> T
-static Silk.NET.Maths.Scalar.Min<T>(T x, T y) -> T
-static Silk.NET.Maths.Scalar.Multiply<T>(T left, T right) -> T
-static Silk.NET.Maths.Scalar.Negate<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Not<T>(T value) -> T
-static Silk.NET.Maths.Scalar.NotEqual<T>(T left, T right) -> bool
-static Silk.NET.Maths.Scalar.Or<T>(T left, T right) -> T
-static Silk.NET.Maths.Scalar.Pow<T>(T x, T y) -> T
-static Silk.NET.Maths.Scalar.RadiansToDegrees<T>(T radians) -> T
-static Silk.NET.Maths.Scalar.Reciprocal<T>(T x) -> T
-static Silk.NET.Maths.Scalar.RotateLeft<T>(T value, int offset) -> T
-static Silk.NET.Maths.Scalar.RotateRight<T>(T value, int offset) -> T
-static Silk.NET.Maths.Scalar.Round<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Round<T>(T x, int digits) -> T
-static Silk.NET.Maths.Scalar.Round<T>(T x, int digits, System.MidpointRounding mode) -> T
-static Silk.NET.Maths.Scalar.Round<T>(T x, System.MidpointRounding mode) -> T
-static Silk.NET.Maths.Scalar.ShiftLeft<T>(T value, int offset) -> T
-static Silk.NET.Maths.Scalar.ShiftRight<T>(T value, int offset) -> T
-static Silk.NET.Maths.Scalar.Sign<T>(T x) -> int
-static Silk.NET.Maths.Scalar.Sin<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Sinh<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Sqrt<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Subtract<T>(T left, T right) -> T
-static Silk.NET.Maths.Scalar.Tan<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Tanh<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Truncate<T>(T x) -> T
-static Silk.NET.Maths.Scalar.Xor<T>(T left, T right) -> T
 static Silk.NET.Maths.Sphere<T>.operator !=(Silk.NET.Maths.Sphere<T> value1, Silk.NET.Maths.Sphere<T> value2) -> bool
 static Silk.NET.Maths.Sphere<T>.operator ==(Silk.NET.Maths.Sphere<T> value1, Silk.NET.Maths.Sphere<T> value2) -> bool
 static Silk.NET.Maths.SystemNumericsExtensions.ToGeneric(this System.Numerics.Matrix3x2 value) -> Silk.NET.Maths.Matrix3X2<float>

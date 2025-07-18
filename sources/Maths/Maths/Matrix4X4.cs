@@ -110,32 +110,17 @@ namespace Silk.NET.Maths
             T i = Row3.X, j = Row3.Y, k = Row3.Z, l = Row3.W;
             T m = Row4.X, n = Row4.Y, o = Row4.Z, p = Row4.W;
 
-            T kp_lo = Scalar.Subtract(Scalar.Multiply(k, p), Scalar.Multiply(l, o));
-            T jp_ln = Scalar.Subtract(Scalar.Multiply(j, p), Scalar.Multiply(l, n));
-            T jo_kn = Scalar.Subtract(Scalar.Multiply(j, o), Scalar.Multiply(k, n));
-            T ip_lm = Scalar.Subtract(Scalar.Multiply(i, p), Scalar.Multiply(l, m));
-            T io_km = Scalar.Subtract(Scalar.Multiply(i, o), Scalar.Multiply(k, m));
-            T in_jm = Scalar.Subtract(Scalar.Multiply(i, n), Scalar.Multiply(j, m));
+            T kp_lo = (k * p) - (l * o);
+            T jp_ln = (j * p) - (l * n);
+            T jo_kn = (j * o) - (k * n);
+            T ip_lm = (i * p) - (l * m);
+            T io_km = (i * o) - (k * m);
+            T in_jm = (i * n) - (j * m);
 
-            return Scalar.Add(
-                Scalar.Subtract(
-                    Scalar.Multiply(a,
-                        Scalar.Add(
-                            Scalar.Subtract(Scalar.Multiply(f, kp_lo), Scalar.Multiply(g, jp_ln)),
-                            Scalar.Multiply(h, jo_kn))),
-                    Scalar.Multiply(b,
-                        Scalar.Add(
-                            Scalar.Subtract(Scalar.Multiply(e, kp_lo), Scalar.Multiply(g, ip_lm)),
-                            Scalar.Multiply(h, io_km)))),
-                Scalar.Subtract(
-                    Scalar.Multiply(c,
-                        Scalar.Add(
-                            Scalar.Subtract(Scalar.Multiply(e, jp_ln), Scalar.Multiply(f, ip_lm)),
-                            Scalar.Multiply(h, in_jm))),
-                    Scalar.Multiply(d,
-                        Scalar.Add(
-                            Scalar.Subtract(Scalar.Multiply(e, jo_kn), Scalar.Multiply(f, io_km)),
-                            Scalar.Multiply(g, in_jm)))));
+            return (a * ((f * kp_lo) - (g * jp_ln) + (h * jo_kn)))
+                 - (b * ((e * kp_lo) - (g * ip_lm) + (h * io_km)))
+                + ((c * ((e * jp_ln) - (f * ip_lm) + (h * in_jm)))
+                 - (d * ((e * jo_kn) - (f * io_km) + (g * in_jm))));
         }
     }
 }

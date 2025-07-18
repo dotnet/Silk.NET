@@ -22,6 +22,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [DataMember]
         public Vector3D<T> Min;
+
         /// <summary>
         /// The max.
         /// </summary>
@@ -81,7 +82,7 @@ namespace Silk.NET.Maths
         /// The center of this box.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3D<T> Center => (Min + Max) / Scalar<T>.Two;
+        public Vector3D<T> Center => (Min + Max) / T.CreateTruncating(2);
 
         /// <summary>
         /// The size of this box.
@@ -97,10 +98,8 @@ namespace Silk.NET.Maths
         /// <returns>True if this box contains the point; False otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector3D<T> point)
-            => Scalar.GreaterThanOrEqual(point.X, Min.X) && Scalar.GreaterThanOrEqual(point.Y, Min.Y)
-            && Scalar.GreaterThanOrEqual(point.Z, Min.Z)
-            && Scalar.LessThanOrEqual(point.X, Max.X) && Scalar.LessThanOrEqual(point.Y, Max.Y)
-            && Scalar.LessThanOrEqual(point.Z, Max.Z);
+            => (point.X >= Min.X) && (point.Y >= Min.Y) && (point.Z >= Min.Z)
+            && (point.X <= Max.X) && (point.Y <= Max.Y) && (point.Z <= Max.Z);
 
         /// <summary>
         /// Calculates whether this box contains another box
@@ -109,10 +108,8 @@ namespace Silk.NET.Maths
         /// <returns>True if this box contains the given box; False otherwise.</returns>
         /// <remarks>This does consider a box that touches the edge contained.</remarks>
         public bool Contains(Box3D<T> other)
-            => Scalar.GreaterThanOrEqual(other.Min.X, this.Min.X) && Scalar.GreaterThanOrEqual(other.Min.Y, this.Min.Y)
-            && Scalar.GreaterThanOrEqual(other.Min.Z, this.Min.Z)
-            && Scalar.LessThanOrEqual(other.Max.X, this.Max.X) && Scalar.LessThanOrEqual(other.Max.Y, this.Max.Y)
-            && Scalar.LessThanOrEqual(other.Max.Z, this.Max.Z);
+            => (other.Min.X >= this.Min.X) && (other.Min.Y >= this.Min.Y) && (other.Min.Z >= this.Min.Z)
+            && (other.Max.X <= this.Max.X) && (other.Max.Y <= this.Max.Y) && (other.Max.Z <= this.Max.Z);
 
         /// <summary>
         /// Calculates the distance to the nearest edge from the point.
@@ -121,10 +118,10 @@ namespace Silk.NET.Maths
         /// <returns>The distance.</returns>
         public T GetDistanceToNearestEdge(Vector3D<T> point)
         {
-            var dx = Scalar.Max(Scalar.Max(Scalar.Subtract(Min.X, point.X), Scalar<T>.Zero), Scalar.Subtract(point.X, Max.X));
-            var dy = Scalar.Max(Scalar.Max(Scalar.Subtract(Min.Y, point.Y), Scalar<T>.Zero), Scalar.Subtract(point.Y, Max.Y));
-            var dz = Scalar.Max(Scalar.Max(Scalar.Subtract(Min.Z, point.Z), Scalar<T>.Zero), Scalar.Subtract(point.Z, Max.Z));
-            return Scalar.Sqrt(Scalar.Add(Scalar.Add(Scalar.Multiply(dx, dx), Scalar.Multiply(dy, dy)), Scalar.Multiply(dz, dz)));
+            var dx = T.Max(T.Max(Min.X - point.X, T.Zero), point.X - Max.X);
+            var dy = T.Max(T.Max(Min.Y - point.Y, T.Zero), point.Y - Max.Y);
+            var dz = T.Max(T.Max(Min.Z - point.Z, T.Zero), point.Z - Max.Z);
+            return T.Sqrt((dx * dx) + (dy * dy) + (dz * dz));
         }
 
         /// <summary>
@@ -149,7 +146,7 @@ namespace Silk.NET.Maths
             var max = (scale * (Max - anchor)) + anchor;
             return new(min, max);
         }
-        
+
         /// <summary>
         /// Calculates a new box scaled by the given scale around the given anchor.
         /// </summary>
@@ -216,7 +213,7 @@ namespace Silk.NET.Maths
         {
             return !value1.Equals(value2);
         }
-        
+
         /// <summary>
         /// Returns this box casted to <typeparamref name="TOther"></typeparamref>
         /// </summary>

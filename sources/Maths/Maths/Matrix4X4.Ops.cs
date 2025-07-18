@@ -52,13 +52,13 @@ namespace Silk.NET.Maths
             Vector3D<T> zaxis = objectPosition - cameraPosition;
             var norm = zaxis.LengthSquared;
 
-            if (!Scalar.GreaterThanOrEqual(norm, Scalar.As<float, T>(BillboardEpsilon)))
+            if (!(norm >= T.CreateTruncating(BillboardEpsilon)))
             {
                 zaxis = -cameraForwardVector;
             }
             else
             {
-                zaxis = Vector3D.Multiply(zaxis, Scalar.Reciprocal(Scalar.Sqrt(norm)));
+                zaxis = Vector3D.Multiply(zaxis, T.One / T.Sqrt(norm));
             }
 
             Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
@@ -68,7 +68,7 @@ namespace Silk.NET.Maths
                 new(xaxis, T.Zero),
                 new(yaxis, T.Zero),
                 new(zaxis, T.Zero),
-                new(objectPosition, Scalar<T>.One));
+                new(objectPosition, T.One));
         }
 
         /// <summary>Creates a cylindrical billboard that rotates around a specified axis.</summary>
@@ -85,13 +85,13 @@ namespace Silk.NET.Maths
             Vector3D<T> faceDir = objectPosition - cameraPosition;
             T norm = faceDir.LengthSquared;
 
-            if (!Scalar.GreaterThanOrEqual(norm, Scalar.As<float, T>(BillboardEpsilon)))
+            if (!(norm >= T.CreateTruncating(BillboardEpsilon)))
             {
                 faceDir = -cameraForwardVector;
             }
             else
             {
-                faceDir = Vector3D.Multiply(faceDir, Scalar.Reciprocal(Scalar.Sqrt(norm)));
+                faceDir = Vector3D.Multiply(faceDir, T.One / T.Sqrt(norm));
             }
 
             Vector3D<T> yaxis = rotateAxis;
@@ -101,19 +101,19 @@ namespace Silk.NET.Maths
             // Treat the case when angle between faceDir and rotateAxis is too close to 0.
             T dot = Vector3D.Dot(rotateAxis, faceDir);
 
-            if (Scalar.GreaterThan(T.Abs(dot), Scalar.As<float, T>(BillboardMinAngle)))
+            if (T.Abs(dot) > T.CreateTruncating(BillboardMinAngle))
             {
                 zaxis = objectForwardVector;
 
                 // Make sure passed values are useful for compute.
                 dot = Vector3D.Dot(rotateAxis, zaxis);
 
-                if (Scalar.GreaterThan(T.Abs(dot), Scalar.As<float, T>(BillboardMinAngle)))
+                if (T.Abs(dot) > T.CreateTruncating(BillboardMinAngle))
                 {
                     zaxis =
-                        Scalar.GreaterThan(T.Abs(rotateAxis.Z), Scalar.As<float, T>(BillboardMinAngle))
-                            ? new Vector3D<T>(Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero)
-                            : new Vector3D<T>(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.MinusOne);
+                        T.Abs(rotateAxis.Z) > T.CreateTruncating(BillboardMinAngle)
+                            ? new Vector3D<T>(T.One, T.Zero, T.Zero)
+                            : new Vector3D<T>(T.Zero, T.Zero, -T.One);
                 }
 
                 xaxis = Vector3D.Normalize(Vector3D.Cross(rotateAxis, zaxis));
@@ -129,7 +129,7 @@ namespace Silk.NET.Maths
                 new(xaxis, T.Zero),
                 new(yaxis, T.Zero),
                 new(zaxis, T.Zero),
-                new(objectPosition, Scalar<T>.One));
+                new(objectPosition, T.One));
         }
 
         /// <summary>Creates a matrix that rotates around an arbitrary vector.</summary>
@@ -165,23 +165,23 @@ namespace Silk.NET.Maths
             //     [ zx-cosa*zx-sina*y zy-cosa*zy+sina*x   zz+cosa*(1-zz)  ]
             //
             T x = axis.X, y = axis.Y, z = axis.Z;
-            T sa = Scalar.Sin(angle), ca = Scalar.Cos(angle);
-            T xx = Scalar.Multiply(x, x), yy = Scalar.Multiply(y, y), zz = Scalar.Multiply(z, z);
-            T xy = Scalar.Multiply(x, y), xz = Scalar.Multiply(x, z), yz = Scalar.Multiply(y, z);
+            T sa = T.Sin(angle), ca = T.Cos(angle);
+            T xx = x * x, yy = y * y, zz = z * z;
+            T xy = x * y, xz = x * z, yz = y * z;
 
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            result.M11 = Scalar.Add(xx, Scalar.Multiply(ca, Scalar.Subtract(Scalar<T>.One, xx)));
-            result.M12 = Scalar.Add(Scalar.Subtract(xy, Scalar.Multiply(ca, xy)), Scalar.Multiply(sa, z));
-            result.M13 = Scalar.Subtract(Scalar.Subtract(xz, Scalar.Multiply(ca, xz)), Scalar.Multiply(sa, y));
+            result.M11 = xx + (ca * (T.One - xx));
+            result.M12 = xy - (ca * xy) + (sa * z);
+            result.M13 = xz - (ca * xz) - (sa * y);
 
-            result.M21 = Scalar.Subtract(Scalar.Subtract(xy, Scalar.Multiply(ca, xy)), Scalar.Multiply(sa, z));
-            result.M22 = Scalar.Add(yy, Scalar.Multiply(ca, Scalar.Subtract(Scalar<T>.One, yy)));
-            result.M23 = Scalar.Add(Scalar.Subtract(yz, Scalar.Multiply(ca, yz)), Scalar.Multiply(sa, x));
+            result.M21 = xy - (ca * xy) - (sa * z);
+            result.M22 = yy + (ca * (T.One - yy));
+            result.M23 = yz - (ca * yz) + (sa * x);
 
-            result.M31 = Scalar.Add(Scalar.Subtract(xz, Scalar.Multiply(ca, xz)), Scalar.Multiply(sa, y));
-            result.M32 = Scalar.Subtract(Scalar.Subtract(yz, Scalar.Multiply(ca, yz)), Scalar.Multiply(sa, x));
-            result.M33 = Scalar.Add(zz, Scalar.Multiply(ca, Scalar.Subtract(Scalar<T>.One, zz)));
+            result.M31 = xz - (ca * xz) + (sa * y);
+            result.M32 = yz - (ca * yz) - (sa * x);
+            result.M33 = zz + (ca * (T.One - zz));
 
             return result;
         }
@@ -194,28 +194,28 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            T xx = Scalar.Multiply(quaternion.X, quaternion.X);
-            T yy = Scalar.Multiply(quaternion.Y, quaternion.Y);
-            T zz = Scalar.Multiply(quaternion.Z, quaternion.Z);
+            T xx = quaternion.X * quaternion.X;
+            T yy = quaternion.Y * quaternion.Y;
+            T zz = quaternion.Z * quaternion.Z;
 
-            T xy = Scalar.Multiply(quaternion.X, quaternion.Y);
-            T wz = Scalar.Multiply(quaternion.Z, quaternion.W);
-            T xz = Scalar.Multiply(quaternion.Z, quaternion.X);
-            T wy = Scalar.Multiply(quaternion.Y, quaternion.W);
-            T yz = Scalar.Multiply(quaternion.Y, quaternion.Z);
-            T wx = Scalar.Multiply(quaternion.X, quaternion.W);
+            T xy = quaternion.X * quaternion.Y;
+            T wz = quaternion.Z * quaternion.W;
+            T xz = quaternion.Z * quaternion.X;
+            T wy = quaternion.Y * quaternion.W;
+            T yz = quaternion.Y * quaternion.Z;
+            T wx = quaternion.X * quaternion.W;
 
-            result.M11 = Scalar.Subtract(Scalar<T>.One, Scalar.Multiply(Scalar<T>.Two, Scalar.Add(yy, zz)));
-            result.M12 = Scalar.Multiply(Scalar<T>.Two, Scalar.Add(xy, wz));
-            result.M13 = Scalar.Multiply(Scalar<T>.Two, Scalar.Subtract(xz, wy));
+            result.M11 = T.One - (T.CreateTruncating(2) * (yy + zz));
+            result.M12 = T.CreateTruncating(2) * (xy + wz);
+            result.M13 = T.CreateTruncating(2) * (xz - wy);
 
-            result.M21 = Scalar.Multiply(Scalar<T>.Two, Scalar.Subtract(xy, wz));
-            result.M22 = Scalar.Subtract(Scalar<T>.One, Scalar.Multiply(Scalar<T>.Two, Scalar.Add(zz, xx)));
-            result.M23 = Scalar.Multiply(Scalar<T>.Two, Scalar.Add(yz, wx));
+            result.M21 = T.CreateTruncating(2) * (xy - wz);
+            result.M22 = T.One - (T.CreateTruncating(2) * (zz + xx));
+            result.M23 = T.CreateTruncating(2) * (yz + wx);
 
-            result.M31 = Scalar.Multiply(Scalar<T>.Two, Scalar.Add(xz, wy));
-            result.M32 = Scalar.Multiply(Scalar<T>.Two, Scalar.Subtract(yz, wx));
-            result.M33 = Scalar.Subtract(Scalar<T>.One, Scalar.Multiply(Scalar<T>.Two, Scalar.Add(yy, xx)));
+            result.M31 = T.CreateTruncating(2) * (xz + wy);
+            result.M32 = T.CreateTruncating(2) * (yz - wx);
+            result.M33 = T.One - (T.CreateTruncating(2) * (yy + xx));
 
             return result;
         }
@@ -259,9 +259,9 @@ namespace Silk.NET.Maths
             result.M32 = yaxis.Z;
             result.M33 = zaxis.Z;
 
-            result.M41 = Scalar.Negate(Vector3D.Dot(xaxis, cameraPosition));
-            result.M42 = Scalar.Negate(Vector3D.Dot(yaxis, cameraPosition));
-            result.M43 = Scalar.Negate(Vector3D.Dot(zaxis, cameraPosition));
+            result.M41 = -Vector3D.Dot(xaxis, cameraPosition);
+            result.M42 = -Vector3D.Dot(yaxis, cameraPosition);
+            result.M43 = -Vector3D.Dot(zaxis, cameraPosition);
 
             return result;
         }
@@ -277,10 +277,10 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            result.M11 = Scalar.Divide(Scalar<T>.Two, width);
-            result.M22 = Scalar.Divide(Scalar<T>.Two, height);
-            result.M33 = Scalar.Reciprocal(Scalar.Subtract(zNearPlane, zFarPlane));
-            result.M43 = Scalar.Divide(zNearPlane, Scalar.Subtract(zNearPlane, zFarPlane));
+            result.M11 = T.CreateTruncating(2) / width;
+            result.M22 = T.CreateTruncating(2) / height;
+            result.M33 = T.One / (zNearPlane - zFarPlane);
+            result.M43 = zNearPlane / (zNearPlane - zFarPlane);
 
             return result;
         }
@@ -298,15 +298,15 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            result.M11 = Scalar.Divide(Scalar<T>.Two, Scalar.Subtract(right, left));
+            result.M11 = T.CreateTruncating(2) / (right - left);
 
-            result.M22 = Scalar.Divide(Scalar<T>.Two, Scalar.Subtract(top, bottom));
+            result.M22 = T.CreateTruncating(2) / (top - bottom);
 
-            result.M33 = Scalar.Reciprocal(Scalar.Subtract(zNearPlane, zFarPlane));
+            result.M33 = T.One / (zNearPlane - zFarPlane);
 
-            result.M41 = Scalar.Divide(Scalar.Add(left, right), Scalar.Subtract(left, right));
-            result.M42 = Scalar.Divide(Scalar.Add(top, bottom), Scalar.Subtract(bottom, top));
-            result.M43 = Scalar.Divide(zNearPlane, Scalar.Subtract(zNearPlane, zFarPlane));
+            result.M41 = (left + right) / (left - right);
+            result.M42 = (top + bottom) / (bottom - top);
+            result.M43 = zNearPlane / (zNearPlane - zFarPlane);
 
             return result;
         }
@@ -320,29 +320,29 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreatePerspective<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance)
             where T : INumberBase<T>
         {
-            if (!Scalar.GreaterThan(nearPlaneDistance, Scalar<T>.Zero))
+            if (!(nearPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
-            if (!Scalar.GreaterThan(farPlaneDistance, Scalar<T>.Zero))
+            if (!(farPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
 
             Matrix4X4<T> result = default;
 
-            result.M11 = Scalar.Divide(Scalar.Multiply(Scalar<T>.Two, nearPlaneDistance), width);
-            result.M12 = result.M13 = result.M14 = Scalar<T>.Zero;
+            result.M11 = T.CreateTruncating(2) * nearPlaneDistance / width;
+            result.M12 = result.M13 = result.M14 = T.Zero;
 
-            result.M22 = Scalar.Divide(Scalar.Multiply(Scalar<T>.Two, nearPlaneDistance), height);
-            result.M21 = result.M23 = result.M24 = Scalar<T>.Zero;
+            result.M22 = T.CreateTruncating(2) * nearPlaneDistance / height;
+            result.M21 = result.M23 = result.M24 = T.Zero;
 
-            T negFarRange = Scalar.IsPositiveInfinity(farPlaneDistance)
-                ? Scalar<T>.MinusOne
-                : Scalar.Divide(farPlaneDistance, Scalar.Subtract(nearPlaneDistance, farPlaneDistance));
+            T negFarRange = T.IsPositiveInfinity(farPlaneDistance)
+                ? -T.One
+                : farPlaneDistance / (nearPlaneDistance - farPlaneDistance);
             result.M33 = negFarRange;
-            result.M31 = result.M32 = Scalar<T>.Zero;
-            result.M34 = Scalar<T>.MinusOne;
+            result.M31 = result.M32 = T.Zero;
+            result.M34 = -T.One;
 
-            result.M41 = result.M42 = result.M44 = Scalar<T>.Zero;
-            result.M43 = Scalar.Multiply(nearPlaneDistance, negFarRange);
+            result.M41 = result.M42 = result.M44 = T.Zero;
+            result.M43 = nearPlaneDistance * negFarRange;
 
             return result;
         }
@@ -356,33 +356,33 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreatePerspectiveFieldOfView<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance)
             where T : INumberBase<T>
         {
-            if (!Scalar.GreaterThan(fieldOfView, Scalar<T>.Zero) || Scalar.GreaterThanOrEqual(fieldOfView, Scalar<T>.Pi))
+            if (!(fieldOfView > T.Zero) || (fieldOfView >= T.Pi))
                 throw new ArgumentOutOfRangeException(nameof(fieldOfView));
 
-            if (!Scalar.GreaterThan(nearPlaneDistance, Scalar<T>.Zero))
+            if (!(nearPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
-            if (!Scalar.GreaterThan(farPlaneDistance, Scalar<T>.Zero))
+            if (!(farPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
 
-            T yScale = Scalar.Reciprocal(Scalar.Tan(Scalar.Divide(fieldOfView, Scalar<T>.Two)));
-            T xScale = Scalar.Divide(yScale, aspectRatio);
+            T yScale = T.One / T.Tan(fieldOfView / T.CreateTruncating(2));
+            T xScale = yScale / aspectRatio;
 
             Matrix4X4<T> result = default;
 
             result.M11 = xScale;
-            result.M12 = result.M13 = result.M14 = Scalar<T>.Zero;
+            result.M12 = result.M13 = result.M14 = T.Zero;
 
             result.M22 = yScale;
-            result.M21 = result.M23 = result.M24 = Scalar<T>.Zero;
+            result.M21 = result.M23 = result.M24 = T.Zero;
 
-            result.M31 = result.M32 = Scalar<T>.Zero;
-            T negFarRange = Scalar.IsPositiveInfinity(farPlaneDistance) ? Scalar<T>.MinusOne : Scalar.Divide(farPlaneDistance, Scalar.Subtract(nearPlaneDistance, farPlaneDistance));
+            result.M31 = result.M32 = T.Zero;
+            T negFarRange = T.IsPositiveInfinity(farPlaneDistance) ? -T.One : farPlaneDistance / (nearPlaneDistance - farPlaneDistance);
             result.M33 = negFarRange;
-            result.M34 = Scalar<T>.MinusOne;
+            result.M34 = -T.One;
 
-            result.M41 = result.M42 = result.M44 = Scalar<T>.Zero;
-            result.M43 = Scalar.Multiply(nearPlaneDistance, negFarRange);
+            result.M41 = result.M42 = result.M44 = T.Zero;
+            result.M43 = nearPlaneDistance * negFarRange;
 
             return result;
         }
@@ -398,28 +398,28 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreatePerspectiveOffCenter<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance)
             where T : INumberBase<T>
         {
-            if (!Scalar.GreaterThan(nearPlaneDistance, Scalar<T>.Zero))
+            if (!(nearPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
-            if (!Scalar.GreaterThan(farPlaneDistance, Scalar<T>.Zero))
+            if (!(farPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
 
             Matrix4X4<T> result = default;
 
-            result.M11 = Scalar.Divide(Scalar.Multiply(Scalar<T>.Two, nearPlaneDistance), Scalar.Subtract(right, left));
-            result.M12 = result.M13 = result.M14 = Scalar<T>.Zero;
+            result.M11 = T.CreateTruncating(2) * nearPlaneDistance / (right - left);
+            result.M12 = result.M13 = result.M14 = T.Zero;
 
-            result.M22 = Scalar.Divide(Scalar.Multiply(Scalar<T>.Two, nearPlaneDistance), Scalar.Subtract(top, bottom));
-            result.M21 = result.M23 = result.M24 = Scalar<T>.Zero;
+            result.M22 = T.CreateTruncating(2) * nearPlaneDistance / (top - bottom);
+            result.M21 = result.M23 = result.M24 = T.Zero;
 
-            result.M31 = Scalar.Divide(Scalar.Add(left, right), Scalar.Subtract(right, left));
-            result.M32 = Scalar.Divide(Scalar.Add(top, bottom), Scalar.Subtract(top, bottom));
-            T negFarRange = Scalar.IsPositiveInfinity(farPlaneDistance) ? Scalar<T>.MinusOne : Scalar.Divide(farPlaneDistance, Scalar.Subtract(nearPlaneDistance, farPlaneDistance));
+            result.M31 = (left + right) / (right - left);
+            result.M32 = (top + bottom) / (top - bottom);
+            T negFarRange = T.IsPositiveInfinity(farPlaneDistance) ? -T.One : farPlaneDistance / (nearPlaneDistance - farPlaneDistance);
             result.M33 = negFarRange;
-            result.M34 = Scalar<T>.MinusOne;
+            result.M34 = -T.One;
 
-            result.M43 = Scalar.Multiply(nearPlaneDistance, negFarRange);
-            result.M41 = result.M42 = result.M44 = Scalar<T>.Zero;
+            result.M43 = nearPlaneDistance * negFarRange;
+            result.M41 = result.M42 = result.M44 = T.Zero;
 
             return result;
         }
@@ -436,27 +436,27 @@ namespace Silk.NET.Maths
             T b = value.Normal.Y;
             T c = value.Normal.Z;
 
-            T fa = Scalar.Multiply(Scalar<T>.MinusTwo, a);
-            T fb = Scalar.Multiply(Scalar<T>.MinusTwo, b);
-            T fc = Scalar.Multiply(Scalar<T>.MinusTwo, c);
+            T fa = -T.CreateTruncating(2) * a;
+            T fb = -T.CreateTruncating(2) * b;
+            T fc = -T.CreateTruncating(2) * c;
 
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            result.M11 = Scalar.Add(Scalar.Multiply(fa, a), Scalar<T>.One);
-            result.M12 = Scalar.Multiply(fb, a);
-            result.M13 = Scalar.Multiply(fc, a);
+            result.M11 = (fa * a) + T.One;
+            result.M12 = fb * a;
+            result.M13 = fc * a;
 
-            result.M21 = Scalar.Multiply(fa, b);
-            result.M22 = Scalar.Add(Scalar.Multiply(fb, b), Scalar<T>.One);
-            result.M23 = Scalar.Multiply(fc, b);
+            result.M21 = fa * b;
+            result.M22 = (fb * b) + T.One;
+            result.M23 = fc * b;
 
-            result.M31 = Scalar.Multiply(fa, c);
-            result.M32 = Scalar.Multiply(fb, c);
-            result.M33 = Scalar.Add(Scalar.Multiply(fc, c), Scalar<T>.One);
+            result.M31 = fa * c;
+            result.M32 = fb * c;
+            result.M33 = (fc * c) + T.One;
 
-            result.M41 = Scalar.Multiply(fa, value.Distance);
-            result.M42 = Scalar.Multiply(fb, value.Distance);
-            result.M43 = Scalar.Multiply(fc, value.Distance);
+            result.M41 = fa * value.Distance;
+            result.M42 = fb * value.Distance;
+            result.M43 = fc * value.Distance;
 
             return result;
         }
@@ -469,8 +469,8 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            T c = Scalar.Cos(radians);
-            T s = Scalar.Sin(radians);
+            T c = T.Cos(radians);
+            T s = T.Sin(radians);
 
             // [  1  0  0  0 ]
             // [  0  c  s  0 ]
@@ -479,7 +479,7 @@ namespace Silk.NET.Maths
 
             result.M22 = c;
             result.M23 = s;
-            result.M32 = Scalar.Negate(s);
+            result.M32 = -s;
             result.M33 = c;
 
             return result;
@@ -494,11 +494,11 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            T c = Scalar.Cos(radians);
-            T s = Scalar.Sin(radians);
+            T c = T.Cos(radians);
+            T s = T.Sin(radians);
 
-            T y = Scalar.Add(Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, c)), Scalar.Multiply(centerPoint.Z, s));
-            T z = Scalar.Subtract(Scalar.Multiply(centerPoint.Z, Scalar.Subtract(Scalar<T>.One, c)), Scalar.Multiply(centerPoint.Y, s));
+            T y = (centerPoint.Y * (T.One - c)) + (centerPoint.Z * s);
+            T z = (centerPoint.Z * (T.One - c)) - (centerPoint.Y * s);
 
             // [  1  0  0  0 ]
             // [  0  c  s  0 ]
@@ -507,7 +507,7 @@ namespace Silk.NET.Maths
 
             result.M22 = c;
             result.M23 = s;
-            result.M32 = Scalar.Negate(s);
+            result.M32 = -s;
             result.M33 = c;
             result.M42 = y;
             result.M43 = z;
@@ -523,15 +523,15 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            T c = Scalar.Cos(radians);
-            T s = Scalar.Sin(radians);
+            T c = T.Cos(radians);
+            T s = T.Sin(radians);
 
             // [  c  0 -s  0 ]
             // [  0  1  0  0 ]
             // [  s  0  c  0 ]
             // [  0  0  0  1 ]
             result.M11 = c;
-            result.M13 = Scalar.Negate(s);
+            result.M13 = -s;
             result.M31 = s;
             result.M33 = c;
 
@@ -547,18 +547,18 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            T c = Scalar.Cos(radians);
-            T s = Scalar.Sin(radians);
+            T c = T.Cos(radians);
+            T s = T.Sin(radians);
 
-            T x = Scalar.Subtract(Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, c)), Scalar.Multiply(centerPoint.Z, s));
-            T z = Scalar.Add(Scalar.Multiply(centerPoint.Z, Scalar.Subtract(Scalar<T>.One, c)), Scalar.Multiply(centerPoint.X, s));
+            T x = (centerPoint.X * (T.One - c)) - (centerPoint.Z * s);
+            T z = (centerPoint.Z * (T.One - c)) + (centerPoint.X * s);
 
             // [  c  0 -s  0 ]
             // [  0  1  0  0 ]
             // [  s  0  c  0 ]
             // [  x  0  z  1 ]
             result.M11 = c;
-            result.M13 = Scalar.Negate(s);
+            result.M13 = -s;
             result.M31 = s;
             result.M33 = c;
             result.M41 = x;
@@ -575,8 +575,8 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            T c = Scalar.Cos(radians);
-            T s = Scalar.Sin(radians);
+            T c = T.Cos(radians);
+            T s = T.Sin(radians);
 
             // [  c  s  0  0 ]
             // [ -s  c  0  0 ]
@@ -584,7 +584,7 @@ namespace Silk.NET.Maths
             // [  0  0  0  1 ]
             result.M11 = c;
             result.M12 = s;
-            result.M21 = Scalar.Negate(s);
+            result.M21 = -s;
             result.M22 = c;
 
             return result;
@@ -599,11 +599,11 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            T c = Scalar.Cos(radians);
-            T s = Scalar.Sin(radians);
+            T c = T.Cos(radians);
+            T s = T.Sin(radians);
 
-            T x = Scalar.Add(Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, c)), Scalar.Multiply(centerPoint.Y, s));
-            T y = Scalar.Subtract(Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, c)), Scalar.Multiply(centerPoint.X, s));
+            T x = (centerPoint.X * (T.One - c)) + (centerPoint.Y * s);
+            T y = (centerPoint.Y * (T.One - c)) - (centerPoint.X * s);
 
             // [  c  s  0  0 ]
             // [ -s  c  0  0 ]
@@ -611,7 +611,7 @@ namespace Silk.NET.Maths
             // [  x  y  0  1 ]
             result.M11 = c;
             result.M12 = s;
-            result.M21 = Scalar.Negate(s);
+            result.M21 = -s;
             result.M22 = c;
             result.M41 = x;
             result.M42 = y;
@@ -645,9 +645,9 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, xScale));
-            T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, yScale));
-            T tz = Scalar.Multiply(centerPoint.Z, Scalar.Subtract(Scalar<T>.One, zScale));
+            T tx = centerPoint.X * (T.One - xScale);
+            T ty = centerPoint.Y * (T.One - yScale);
+            T tz = centerPoint.Z * (T.One - zScale);
 
             result.M11 = xScale;
             result.M22 = yScale;
@@ -680,9 +680,9 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, scales.X));
-            T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, scales.Y));
-            T tz = Scalar.Multiply(centerPoint.Z, Scalar.Subtract(Scalar<T>.One, scales.Z));
+            T tx = centerPoint.X * (T.One - scales.X);
+            T ty = centerPoint.Y * (T.One - scales.Y);
+            T tz = centerPoint.Z * (T.One - scales.Z);
 
             result.M11 = scales.X;
             result.M22 = scales.Y;
@@ -717,9 +717,9 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, scale));
-            T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, scale));
-            T tz = Scalar.Multiply(centerPoint.Z, Scalar.Subtract(Scalar<T>.One, scale));
+            T tx = centerPoint.X * (T.One - scale);
+            T ty = centerPoint.Y * (T.One - scale);
+            T tz = centerPoint.Z * (T.One - scale);
 
             result.M11 = scale;
             result.M22 = scale;
@@ -741,28 +741,28 @@ namespace Silk.NET.Maths
         {
             Plane<T> p = Plane.Normalize(plane);
 
-            T dot = Scalar.Add(Scalar.Add(Scalar.Multiply(p.Normal.X, lightDirection.X), Scalar.Multiply(p.Normal.Y, lightDirection.Y)), Scalar.Multiply(p.Normal.Z, lightDirection.Z));
-            T a = Scalar.Negate(p.Normal.X);
-            T b = Scalar.Negate(p.Normal.Y);
-            T c = Scalar.Negate(p.Normal.Z);
-            T d = Scalar.Negate(p.Distance);
+            T dot = (p.Normal.X * lightDirection.X) + (p.Normal.Y * lightDirection.Y) + (p.Normal.Z * lightDirection.Z);
+            T a = -p.Normal.X;
+            T b = -p.Normal.Y;
+            T c = -p.Normal.Z;
+            T d = -p.Distance;
 
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            result.M11 = Scalar.Add(Scalar.Multiply(a, lightDirection.X), dot);
-            result.M21 = Scalar.Multiply(b, lightDirection.X);
-            result.M31 = Scalar.Multiply(c, lightDirection.X);
-            result.M41 = Scalar.Multiply(d, lightDirection.X);
+            result.M11 = (a * lightDirection.X) + dot;
+            result.M21 = b * lightDirection.X;
+            result.M31 = c * lightDirection.X;
+            result.M41 = d * lightDirection.X;
 
-            result.M12 = Scalar.Multiply(a, lightDirection.Y);
-            result.M22 = Scalar.Add(Scalar.Multiply(b, lightDirection.Y), dot);
-            result.M32 = Scalar.Multiply(c, lightDirection.Y);
-            result.M42 = Scalar.Multiply(d, lightDirection.Y);
+            result.M12 = a * lightDirection.Y;
+            result.M22 = (b * lightDirection.Y) + dot;
+            result.M32 = c * lightDirection.Y;
+            result.M42 = d * lightDirection.Y;
 
-            result.M13 = Scalar.Multiply(a, lightDirection.Z);
-            result.M23 = Scalar.Multiply(b, lightDirection.Z);
-            result.M33 = Scalar.Add(Scalar.Multiply(c, lightDirection.Z), dot);
-            result.M43 = Scalar.Multiply(d, lightDirection.Z);
+            result.M13 = a * lightDirection.Z;
+            result.M23 = b * lightDirection.Z;
+            result.M33 = (c * lightDirection.Z) + dot;
+            result.M43 = d * lightDirection.Z;
 
             result.M44 = dot;
 
@@ -790,7 +790,7 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateTranslation<T>(T xPosition, T yPosition, T zPosition)
             where T : INumberBase<T>
         {
-            Matrix4X4<T> result = Matrix4X4<T>.Identity; ;
+            Matrix4X4<T> result = Matrix4X4<T>.Identity;
             result.M41 = xPosition;
             result.M42 = yPosition;
             result.M43 = zPosition;
@@ -835,7 +835,7 @@ namespace Silk.NET.Maths
         /// <param name="result">If successful, contains the inverted matrix.</param>
         /// <returns>True if the source matrix could be inverted; False otherwise.</returns>
         ///
-        [MethodImpl((MethodImplOptions) 768)]
+        [MethodImpl((MethodImplOptions)768)]
         public static unsafe bool Invert<T>(Matrix4X4<T> matrix, out Matrix4X4<T> result)
             where T : INumberBase<T>
         {
@@ -1115,67 +1115,67 @@ namespace Silk.NET.Maths
                 T i = matrix.M31, j = matrix.M32, k = matrix.M33, l = matrix.M34;
                 T m = matrix.M41, n = matrix.M42, o = matrix.M43, p = matrix.M44;
 
-                T kp_lo = Scalar.Subtract(Scalar.Multiply(k, p), Scalar.Multiply(l, o));
-                T jp_ln = Scalar.Subtract(Scalar.Multiply(j, p), Scalar.Multiply(l, n));
-                T jo_kn = Scalar.Subtract(Scalar.Multiply(j, o), Scalar.Multiply(k, n));
-                T ip_lm = Scalar.Subtract(Scalar.Multiply(i, p), Scalar.Multiply(l, m));
-                T io_km = Scalar.Subtract(Scalar.Multiply(i, o), Scalar.Multiply(k, m));
-                T in_jm = Scalar.Subtract(Scalar.Multiply(i, n), Scalar.Multiply(j, m));
+                T kp_lo = (k * p) - (l * o);
+                T jp_ln = (j * p) - (l * n);
+                T jo_kn = (j * o) - (k * n);
+                T ip_lm = (i * p) - (l * m);
+                T io_km = (i * o) - (k * m);
+                T in_jm = (i * n) - (j * m);
 
-                T a11 = Scalar.Add(Scalar.Subtract(Scalar.Multiply(f, kp_lo), Scalar.Multiply(g, jp_ln)), Scalar.Multiply(h, jo_kn));
-                T a12 = Scalar.Negate(Scalar.Add(Scalar.Subtract(Scalar.Multiply(e, kp_lo), Scalar.Multiply(g, ip_lm)), Scalar.Multiply(h, io_km)));
-                T a13 = Scalar.Add(Scalar.Subtract(Scalar.Multiply(e, jp_ln), Scalar.Multiply(f, ip_lm)), Scalar.Multiply(h, in_jm));
-                T a14 = Scalar.Negate(Scalar.Add(Scalar.Subtract(Scalar.Multiply(e, jo_kn), Scalar.Multiply(f, io_km)), Scalar.Multiply(g, in_jm)));
+                T a11 = (f * kp_lo) - (g * jp_ln) + (h * jo_kn);
+                T a12 = -((e * kp_lo) - (g * ip_lm) + (h * io_km));
+                T a13 = (e * jp_ln) - (f * ip_lm) + (h * in_jm);
+                T a14 = -((e * jo_kn) - (f * io_km) + (g * in_jm));
 
-                T det = Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(a, a11), Scalar.Multiply(b, a12)), Scalar.Multiply(c, a13)), Scalar.Multiply(d, a14));
+                T det = (a * a11) + (b * a12) + (c * a13) + (d * a14);
 
-                if (!Scalar.GreaterThanOrEqual(T.Abs(det), Scalar<T>.Epsilon))
+                if (!(T.Abs(det) >= T.Epsilon))
                 {
-                    result = new Matrix4X4<T>(Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN,
-                                           Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN,
-                                           Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN,
-                                           Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN);
+                    result = new Matrix4X4<T>(T.NaN, T.NaN, T.NaN, T.NaN,
+                                              T.NaN, T.NaN, T.NaN, T.NaN,
+                                              T.NaN, T.NaN, T.NaN, T.NaN,
+                                              T.NaN, T.NaN, T.NaN, T.NaN);
                     return false;
                 }
 
-                T invDet = Scalar.Reciprocal(det);
+                T invDet = T.One / det;
 
                 // TODO: Vectorize
                 result = default;
 
-                result.M11 = Scalar.Multiply(a11, invDet);
-                result.M21 = Scalar.Multiply(a12, invDet);
-                result.M31 = Scalar.Multiply(a13, invDet);
-                result.M41 = Scalar.Multiply(a14, invDet);
+                result.M11 = a11 * invDet;
+                result.M21 = a12 * invDet;
+                result.M31 = a13 * invDet;
+                result.M41 = a14 * invDet;
 
-                result.M12 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(b, kp_lo), Scalar.Multiply(c, jp_ln)), Scalar.Multiply(d, jo_kn)), invDet));
-                result.M22 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, kp_lo), Scalar.Multiply(c, ip_lm)), Scalar.Multiply(d, io_km)), invDet);
-                result.M32 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, jp_ln), Scalar.Multiply(b, ip_lm)), Scalar.Multiply(d, in_jm)), invDet));
-                result.M42 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, jo_kn), Scalar.Multiply(b, io_km)), Scalar.Multiply(c, in_jm)), invDet);
+                result.M12 = -(((b * kp_lo) - (c * jp_ln) + (d * jo_kn)) * invDet);
+                result.M22 = ((a * kp_lo) - (c * ip_lm) + (d * io_km)) * invDet;
+                result.M32 = -(((a * jp_ln) - (b * ip_lm) + (d * in_jm)) * invDet);
+                result.M42 = ((a * jo_kn) - (b * io_km) + (c * in_jm)) * invDet;
 
-                T gp_ho = Scalar.Subtract(Scalar.Multiply(g, p), Scalar.Multiply(h, o));
-                T fp_hn = Scalar.Subtract(Scalar.Multiply(f, p), Scalar.Multiply(h, n));
-                T fo_gn = Scalar.Subtract(Scalar.Multiply(f, o), Scalar.Multiply(g, n));
-                T ep_hm = Scalar.Subtract(Scalar.Multiply(e, p), Scalar.Multiply(h, m));
-                T eo_gm = Scalar.Subtract(Scalar.Multiply(e, o), Scalar.Multiply(g, m));
-                T en_fm = Scalar.Subtract(Scalar.Multiply(e, n), Scalar.Multiply(f, m));
+                T gp_ho = (g * p) - (h * o);
+                T fp_hn = (f * p) - (h * n);
+                T fo_gn = (f * o) - (g * n);
+                T ep_hm = (e * p) - (h * m);
+                T eo_gm = (e * o) - (g * m);
+                T en_fm = (e * n) - (f * m);
 
-                result.M13 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(b, gp_ho), Scalar.Multiply(c, fp_hn)), Scalar.Multiply(d, fo_gn)), invDet);
-                result.M23 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, gp_ho), Scalar.Multiply(c, ep_hm)), Scalar.Multiply(d, eo_gm)), invDet));
-                result.M33 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, fp_hn), Scalar.Multiply(b, ep_hm)), Scalar.Multiply(d, en_fm)), invDet);
-                result.M43 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, fo_gn), Scalar.Multiply(b, eo_gm)), Scalar.Multiply(c, en_fm)), invDet));
+                result.M13 = ((b * gp_ho) - (c * fp_hn) + (d * fo_gn)) * invDet;
+                result.M23 = -(((a * gp_ho) - (c * ep_hm) + (d * eo_gm)) * invDet);
+                result.M33 = ((a * fp_hn) - (b * ep_hm) + (d * en_fm)) * invDet;
+                result.M43 = -(((a * fo_gn) - (b * eo_gm) + (c * en_fm)) * invDet);
 
-                T gl_hk = Scalar.Subtract(Scalar.Multiply(g, l), Scalar.Multiply(h, k));
-                T fl_hj = Scalar.Subtract(Scalar.Multiply(f, l), Scalar.Multiply(h, j));
-                T fk_gj = Scalar.Subtract(Scalar.Multiply(f, k), Scalar.Multiply(g, j));
-                T el_hi = Scalar.Subtract(Scalar.Multiply(e, l), Scalar.Multiply(h, i));
-                T ek_gi = Scalar.Subtract(Scalar.Multiply(e, k), Scalar.Multiply(g, i));
-                T ej_fi = Scalar.Subtract(Scalar.Multiply(e, j), Scalar.Multiply(f, i));
+                T gl_hk = (g * l) - (h * k);
+                T fl_hj = (f * l) - (h * j);
+                T fk_gj = (f * k) - (g * j);
+                T el_hi = (e * l) - (h * i);
+                T ek_gi = (e * k) - (g * i);
+                T ej_fi = (e * j) - (f * i);
 
-                result.M14 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(b, gl_hk), Scalar.Multiply(c, fl_hj)), Scalar.Multiply(d, fk_gj)), invDet));
-                result.M24 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, gl_hk), Scalar.Multiply(c, el_hi)), Scalar.Multiply(d, ek_gi)), invDet);
-                result.M34 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, fl_hj), Scalar.Multiply(b, el_hi)), Scalar.Multiply(d, ej_fi)), invDet));
-                result.M44 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, fk_gj), Scalar.Multiply(b, ek_gi)), Scalar.Multiply(c, ej_fi)), invDet);
+                result.M14 = -(((b * gl_hk) - (c * fl_hj) + (d * fk_gj)) * invDet);
+                result.M24 = ((a * gl_hk) - (c * el_hi) + (d * ek_gi)) * invDet;
+                result.M34 = -(((a * fl_hj) - (b * el_hi) + (d * ej_fi)) * invDet);
+                result.M44 = ((a * fk_gj) - (b * ek_gi) + (c * ej_fi)) * invDet;
 
                 return true;
             }
@@ -1226,9 +1226,9 @@ namespace Silk.NET.Maths
                     CanonicalBasis<T> canonicalBasis = default;
                     Vector3D<T>* pCanonicalBasis = &canonicalBasis.Row0;
 
-                    canonicalBasis.Row0 = new Vector3D<T>(Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero);
-                    canonicalBasis.Row1 = new Vector3D<T>(Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero);
-                    canonicalBasis.Row2 = new Vector3D<T>(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
+                    canonicalBasis.Row0 = new Vector3D<T>(T.One, T.Zero, T.Zero);
+                    canonicalBasis.Row1 = new Vector3D<T>(T.Zero, T.One, T.Zero);
+                    canonicalBasis.Row2 = new Vector3D<T>(T.Zero, T.Zero, T.One);
 
                     translation = new Vector3D<T>(
                         matrix.M41,
@@ -1250,9 +1250,9 @@ namespace Silk.NET.Maths
                     uint a, b, c;
                     #region Ranking
                     T x = pfScales[0], y = pfScales[1], z = pfScales[2];
-                    if (!Scalar.GreaterThanOrEqual(x, y))
+                    if (!(x >= y))
                     {
-                        if (!Scalar.GreaterThanOrEqual(y, z))
+                        if (!(y >= z))
                         {
                             a = 2;
                             b = 1;
@@ -1262,7 +1262,7 @@ namespace Silk.NET.Maths
                         {
                             a = 1;
 
-                            if (!Scalar.GreaterThanOrEqual(x, z))
+                            if (!(x >= z))
                             {
                                 b = 2;
                                 c = 0;
@@ -1276,7 +1276,7 @@ namespace Silk.NET.Maths
                     }
                     else
                     {
-                        if (!Scalar.GreaterThanOrEqual(x, z))
+                        if (!(x >= z))
                         {
                             a = 2;
                             b = 0;
@@ -1286,7 +1286,7 @@ namespace Silk.NET.Maths
                         {
                             a = 0;
 
-                            if (!Scalar.GreaterThanOrEqual(y, z))
+                            if (!(y >= z))
                             {
                                 b = 2;
                                 c = 1;
@@ -1300,32 +1300,32 @@ namespace Silk.NET.Maths
                     }
                     #endregion
 
-                    if (!Scalar.GreaterThanOrEqual(pfScales[a], Scalar.As<float, T>(DecomposeEpsilon)))
+                    if (!(pfScales[a] >= T.CreateTruncating(DecomposeEpsilon)))
                     {
                         *(pVectorBasis[a]) = pCanonicalBasis[a];
                     }
 
                     *pVectorBasis[a] = Vector3D.Normalize(*pVectorBasis[a]);
 
-                    if (!Scalar.GreaterThanOrEqual(pfScales[b], Scalar.As<float, T>(DecomposeEpsilon)))
+                    if (!(pfScales[b] >= T.CreateTruncating(DecomposeEpsilon)))
                     {
                         uint cc;
                         T fAbsX, fAbsY, fAbsZ;
 
-                        fAbsX = Scalar.Abs(pVectorBasis[a]->X);
-                        fAbsY = Scalar.Abs(pVectorBasis[a]->Y);
-                        fAbsZ = Scalar.Abs(pVectorBasis[a]->Z);
+                        fAbsX = T.Abs(pVectorBasis[a]->X);
+                        fAbsY = T.Abs(pVectorBasis[a]->Y);
+                        fAbsZ = T.Abs(pVectorBasis[a]->Z);
 
                         #region Ranking
-                        if (!Scalar.GreaterThanOrEqual(fAbsX, fAbsY))
+                        if (!(fAbsX >= fAbsY))
                         {
-                            if (!Scalar.GreaterThanOrEqual(fAbsY, fAbsZ))
+                            if (!(fAbsY >= fAbsZ))
                             {
                                 cc = 0;
                             }
                             else
                             {
-                                if (!Scalar.GreaterThanOrEqual(fAbsX, fAbsZ))
+                                if (!(fAbsX >= fAbsZ))
                                 {
                                     cc = 0;
                                 }
@@ -1337,13 +1337,13 @@ namespace Silk.NET.Maths
                         }
                         else
                         {
-                            if (!Scalar.GreaterThanOrEqual(fAbsX, fAbsZ))
+                            if (!(fAbsX >= fAbsZ))
                             {
                                 cc = 1;
                             }
                             else
                             {
-                                if (!Scalar.GreaterThanOrEqual(fAbsY, fAbsZ))
+                                if (!(fAbsY >= fAbsZ))
                                 {
                                     cc = 1;
                                 }
@@ -1360,7 +1360,7 @@ namespace Silk.NET.Maths
 
                     *pVectorBasis[b] = Vector3D.Normalize(*pVectorBasis[b]);
 
-                    if (!Scalar.GreaterThanOrEqual(pfScales[c], Scalar.As<float, T>(DecomposeEpsilon)))
+                    if (!(pfScales[c] >= T.CreateTruncating(DecomposeEpsilon)))
                     {
                         *pVectorBasis[c] = Vector3D.Cross(*pVectorBasis[a], *pVectorBasis[b]);
                     }
@@ -1370,19 +1370,19 @@ namespace Silk.NET.Maths
                     det = matTemp.GetDeterminant();
 
                     // use Kramer's rule to check for handedness of coordinate system
-                    if (!Scalar.GreaterThanOrEqual(det, Scalar<T>.Zero))
+                    if (!(det >= T.Zero))
                     {
                         // switch coordinate system by negating the scale and inverting the basis vector on the x-axis
-                        pfScales[a] = Scalar.Negate(pfScales[a]);
+                        pfScales[a] = -pfScales[a];
                         *pVectorBasis[a] = -(*pVectorBasis[a]);
 
-                        det = Scalar.Negate(det);
+                        det = -det;
                     }
 
-                    det = Scalar.Subtract(det, Scalar<T>.One);
-                    det = Scalar.Multiply(det, det);
+                    det = det - T.One;
+                    det = det * det;
 
-                    if (!Scalar.GreaterThanOrEqual(Scalar.As<float, T>(DecomposeEpsilon), det))
+                    if (!(T.CreateTruncating(DecomposeEpsilon) >= det))
                     {
                         // Non-SRT matrix encountered
                         rotation = Legacy.Quaternion<T>.Identity;
@@ -1408,31 +1408,31 @@ namespace Silk.NET.Maths
             where T : ITrigonometricFunctions<T>
         {
             // Compute rotation matrix.
-            T x2 = Scalar.Add(rotation.X, rotation.X);
-            T y2 = Scalar.Add(rotation.Y, rotation.Y);
-            T z2 = Scalar.Add(rotation.Z, rotation.Z);
+            T x2 = rotation.X + rotation.X;
+            T y2 = rotation.Y + rotation.Y;
+            T z2 = rotation.Z + rotation.Z;
 
-            T wx2 = Scalar.Multiply(rotation.W, x2);
-            T wy2 = Scalar.Multiply(rotation.W, y2);
-            T wz2 = Scalar.Multiply(rotation.W, z2);
-            T xx2 = Scalar.Multiply(rotation.X, x2);
-            T xy2 = Scalar.Multiply(rotation.X, y2);
-            T xz2 = Scalar.Multiply(rotation.X, z2);
-            T yy2 = Scalar.Multiply(rotation.Y, y2);
-            T yz2 = Scalar.Multiply(rotation.Y, z2);
-            T zz2 = Scalar.Multiply(rotation.Z, z2);
+            T wx2 = rotation.W * x2;
+            T wy2 = rotation.W * y2;
+            T wz2 = rotation.W * z2;
+            T xx2 = rotation.X * x2;
+            T xy2 = rotation.X * y2;
+            T xz2 = rotation.X * z2;
+            T yy2 = rotation.Y * y2;
+            T yz2 = rotation.Y * z2;
+            T zz2 = rotation.Z * z2;
 
-            T q11 = Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, yy2), zz2);
-            T q21 = Scalar.Subtract(xy2, wz2);
-            T q31 = Scalar.Add(xz2, wy2);
+            T q11 = T.One - yy2 - zz2;
+            T q21 = xy2 - wz2;
+            T q31 = xz2 + wy2;
 
-            T q12 = Scalar.Add(xy2, wz2);
-            T q22 = Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, xx2), zz2);
-            T q32 = Scalar.Subtract(yz2, wx2);
+            T q12 = xy2 + wz2;
+            T q22 = T.One - xx2 - zz2;
+            T q32 = yz2 - wx2;
 
-            T q13 = Scalar.Subtract(xz2, wy2);
-            T q23 = Scalar.Add(yz2, wx2);
-            T q33 = Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, xx2), yy2);
+            T q13 = xz2 - wy2;
+            T q23 = yz2 + wx2;
+            T q33 = T.One - xx2 - yy2;
 
             var q1 = new Vector3D<T>(q11, q12, q13);
             var q2 = new Vector3D<T>(q21, q22, q23);

@@ -24,23 +24,23 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateRotation<T>(T radians)
             where T : INumberBase<T>
         {
-            radians = Scalar.IEEERemainder(radians, Scalar<T>.Tau);
+            radians = T.Ieee754Remainder(radians, T.Tau);
 
             T c, s;
 
-            if (Scalar.GreaterThan(radians, Scalar.As<float, T>(-RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(RotationEpsilon)))
+            if ((radians > T.CreateTruncating(-RotationEpsilon)) && !(radians >= T.CreateTruncating(RotationEpsilon)))
             {
                 // Exact case for zero rotation.
-                c = Scalar<T>.One;
-                s = Scalar<T>.Zero;
+                c = T.One;
+                s = T.Zero;
             }
-            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(
+            else if ((radians > T.CreateTruncating(
 #if MATHF
                 MathF.PI
 #else
                 ((float) Math.PI)
 #endif
-                / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(
+                / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(
 #if MATHF
                 MathF.PI
 #else
@@ -49,16 +49,16 @@ namespace Silk.NET.Maths
                 / 2 + RotationEpsilon)))
             {
                 // Exact case for 90 degree rotation.
-                c = Scalar<T>.Zero;
-                s = Scalar<T>.One;
+                c = T.Zero;
+                s = T.One;
             }
-            else if (!Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
+            else if (!(radians >= T.CreateTruncating(-
 #if MATHF
                 MathF.PI
 #else
                                                                                  ((float) Math.PI)
 #endif
-                                                                             + RotationEpsilon)) || Scalar.GreaterThan(radians, Scalar.As<float, T>(
+                                                                             + RotationEpsilon)) || (radians > T.CreateTruncating(
 #if MATHF
                 MathF.PI
 #else
@@ -67,16 +67,16 @@ namespace Silk.NET.Maths
                 - RotationEpsilon)))
             {
                 // Exact case for 180 degree rotation.
-                c = Scalar<T>.MinusOne;
-                s = Scalar<T>.Zero;
+                c = -T.One;
+                s = T.Zero;
             }
-            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(-
+            else if ((radians > T.CreateTruncating(-
 #if MATHF
                 MathF.PI
 #else
                     ((float) Math.PI)
 #endif
-                / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
+                / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(-
 #if MATHF
                 MathF.PI
 #else
@@ -85,14 +85,14 @@ namespace Silk.NET.Maths
                 / 2 + RotationEpsilon)))
             {
                 // Exact case for 270 degree rotation.
-                c = Scalar<T>.Zero;
-                s = Scalar<T>.MinusOne;
+                c = T.Zero;
+                s = -T.One;
             }
             else
             {
                 // Arbitrary rotation.
-                c = Scalar.Cos(radians);
-                s = Scalar.Sin(radians);
+                c = T.Cos(radians);
+                s = T.Sin(radians);
             }
 
             // [  c  s ]
@@ -102,7 +102,7 @@ namespace Silk.NET.Maths
 
             result.M11 = c;
             result.M12 = s;
-            result.M21 = Scalar.Negate(s);
+            result.M21 = -s;
             result.M22 = c;
 
             return result;
@@ -115,23 +115,23 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateRotation<T>(T radians, Vector2D<T> centerPoint)
             where T : INumberBase<T>
         {
-            radians = Scalar.IEEERemainder(radians, Scalar<T>.Tau);
+            radians = T.Ieee754Remainder(radians, T.Tau);
 
             T c, s;
 
-            if (Scalar.GreaterThan(radians, Scalar.As<float, T>(-RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(RotationEpsilon)))
+            if ((radians > T.CreateTruncating(-RotationEpsilon)) && !(radians >= T.CreateTruncating(RotationEpsilon)))
             {
                 // Exact case for zero rotation.
-                c = Scalar<T>.One;
-                s = Scalar<T>.Zero;
+                c = T.One;
+                s = T.Zero;
             }
-            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(
+            else if ((radians > T.CreateTruncating(
 #if MATHF
                 MathF.PI
 #else
                 ((float) Math.PI)
 #endif
-                / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(
+                / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(
 #if MATHF
                 MathF.PI
 #else
@@ -140,16 +140,16 @@ namespace Silk.NET.Maths
                 / 2 + RotationEpsilon)))
             {
                 // Exact case for 90 degree rotation.
-                c = Scalar<T>.Zero;
-                s = Scalar<T>.One;
+                c = T.Zero;
+                s = T.One;
             }
-            else if (!Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
+            else if (!(radians >= T.CreateTruncating(-
 #if MATHF
                 MathF.PI
 #else
                                                                                  ((float) Math.PI)
 #endif
-                                                                             + RotationEpsilon)) || Scalar.GreaterThan(radians, Scalar.As<float, T>(
+                                                                             + RotationEpsilon)) || (radians > T.CreateTruncating(
 #if MATHF
                 MathF.PI
 #else
@@ -158,16 +158,16 @@ namespace Silk.NET.Maths
                 - RotationEpsilon)))
             {
                 // Exact case for 180 degree rotation.
-                c = Scalar<T>.MinusOne;
-                s = Scalar<T>.Zero;
+                c = -T.One;
+                s = T.Zero;
             }
-            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(-
+            else if ((radians > T.CreateTruncating(-
 #if MATHF
                 MathF.PI
 #else
                     ((float) Math.PI)
 #endif
-                / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
+                / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(-
 #if MATHF
                 MathF.PI
 #else
@@ -176,25 +176,25 @@ namespace Silk.NET.Maths
                 / 2 + RotationEpsilon)))
             {
                 // Exact case for 270 degree rotation.
-                c = Scalar<T>.Zero;
-                s = Scalar<T>.MinusOne;
+                c = T.Zero;
+                s = -T.One;
             }
             else
             {
                 // Arbitrary rotation.
-                c = Scalar.Cos(radians);
-                s = Scalar.Sin(radians);
+                c = T.Cos(radians);
+                s = T.Sin(radians);
             }
 
-            T x = Scalar.Add(Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, c)), Scalar.Multiply(centerPoint.Y, s));
-            T y = Scalar.Subtract(Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, c)), Scalar.Multiply(centerPoint.X, s));
+            T x = (centerPoint.X * (T.One - c)) + (centerPoint.Y * s);
+            T y = (centerPoint.Y * (T.One - c)) - (centerPoint.X * s);
 
             // [  c  s ]
             // [ -s  c ]
             // [  x  y ]
             return new(
                 new(c, s),
-                new(Scalar.Negate(s), c),
+                new(-s, c),
                 new(x, y));
         }
 
@@ -237,8 +237,8 @@ namespace Silk.NET.Maths
         {
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
-            T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, xScale));
-            T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, yScale));
+            T tx = centerPoint.X * (T.One - xScale);
+            T ty = centerPoint.Y * (T.One - yScale);
 
             result.M11 = xScale;
             result.M22 = yScale;
@@ -257,8 +257,8 @@ namespace Silk.NET.Maths
         {
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
-            T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, scales.X));
-            T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, scales.Y));
+            T tx = centerPoint.X * (T.One - scales.X);
+            T ty = centerPoint.Y * (T.One - scales.Y);
 
             result.M11 = scales.X;
             result.M22 = scales.Y;
@@ -291,8 +291,8 @@ namespace Silk.NET.Maths
         {
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
-            T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, scale));
-            T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, scale));
+            T tx = centerPoint.X * (T.One - scale);
+            T ty = centerPoint.Y * (T.One - scale);
 
             result.M11 = scale;
             result.M22 = scale;
@@ -311,8 +311,8 @@ namespace Silk.NET.Maths
         {
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
-            T xTan = Scalar.Tan(radiansX);
-            T yTan = Scalar.Tan(radiansY);
+            T xTan = T.Tan(radiansX);
+            T yTan = T.Tan(radiansY);
 
             result.M12 = yTan;
             result.M21 = xTan;
@@ -330,11 +330,11 @@ namespace Silk.NET.Maths
         {
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
-            T xTan = Scalar.Tan(radiansX);
-            T yTan = Scalar.Tan(radiansY);
+            T xTan = T.Tan(radiansX);
+            T yTan = T.Tan(radiansY);
 
-            T tx = Scalar.Negate(Scalar.Multiply(centerPoint.Y, xTan));
-            T ty = Scalar.Negate(Scalar.Multiply(centerPoint.X, yTan));
+            T tx = -(centerPoint.Y * xTan);
+            T ty = -(centerPoint.X * yTan);
 
             result.M12 = yTan;
             result.M21 = xTan;
@@ -381,26 +381,26 @@ namespace Silk.NET.Maths
         public static bool Invert<T>(Matrix3X2<T> matrix, out Matrix3X2<T> result)
             where T : IFloatingPointIeee754<T>
         {
-            T det = Scalar.Subtract(Scalar.Multiply(matrix.M11, matrix.M22), Scalar.Multiply(matrix.M21, matrix.M12));
+            T det = (matrix.M11 * matrix.M22) - (matrix.M21 * matrix.M12);
 
             if (!(T.Abs(det) >= T.Epsilon))
             {
-                result = new(Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN);
+                result = new(T.NaN, T.NaN, T.NaN, T.NaN, T.NaN, T.NaN);
                 return false;
             }
 
-            T invDet = Scalar.Reciprocal(det);
+            T invDet = T.One / det;
 
             result = default;
 
-            result.M11 = Scalar.Multiply(matrix.M22, invDet);
-            result.M12 = Scalar.Negate(Scalar.Multiply(matrix.M12, invDet));
+            result.M11 = matrix.M22 * invDet;
+            result.M12 = -(matrix.M12 * invDet);
 
-            result.M21 = Scalar.Negate(Scalar.Multiply(matrix.M21, invDet));
-            result.M22 = Scalar.Multiply(matrix.M11, invDet);
+            result.M21 = -(matrix.M21 * invDet);
+            result.M22 = matrix.M11 * invDet;
 
-            result.M31 = Scalar.Multiply(Scalar.Subtract(Scalar.Multiply(matrix.M21, matrix.M32), Scalar.Multiply(matrix.M31, matrix.M22)), invDet);
-            result.M32 = Scalar.Multiply(Scalar.Subtract(Scalar.Multiply(matrix.M31, matrix.M12), Scalar.Multiply(matrix.M11, matrix.M32)), invDet);
+            result.M31 = ((matrix.M21 * matrix.M32) - (matrix.M31 * matrix.M22)) * invDet;
+            result.M32 = ((matrix.M31 * matrix.M12) - (matrix.M11 * matrix.M32)) * invDet;
 
             return true;
         }

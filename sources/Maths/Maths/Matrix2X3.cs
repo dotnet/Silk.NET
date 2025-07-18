@@ -16,8 +16,8 @@ namespace Silk.NET.Maths
     {
         private static readonly Matrix2X3<T> _identity = new
         (
-            Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero,
-            Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero
+            T.One, T.Zero, T.Zero,
+            T.Zero, T.One, T.Zero
         );
 
         /// <summary>Constructs a <see cref="Matrix2X3{T}"/> from the given <see cref="Matrix3X2{T}"/>.</summary>

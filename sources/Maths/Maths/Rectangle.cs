@@ -21,6 +21,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [DataMember]
         public Vector2D<T> Origin;
+
         /// <summary>
         /// The size.
         /// </summary>
@@ -88,7 +89,7 @@ namespace Silk.NET.Maths
         /// Half the size of this rectangle.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2D<T> HalfSize => Size / Scalar<T>.Two;
+        public Vector2D<T> HalfSize => Size / T.CreateTruncating(2);
 
         /// <summary>
         /// Calculates whether this rectangle contains a point.
@@ -99,8 +100,8 @@ namespace Silk.NET.Maths
         public bool Contains(Vector2D<T> point)
         {
             var max = Max;
-            return Scalar.GreaterThanOrEqual(point.X, Origin.X) && Scalar.GreaterThanOrEqual
-                (point.Y, Origin.Y) && Scalar.LessThanOrEqual(point.X, max.X) && Scalar.LessThanOrEqual(point.Y, max.Y);
+            return (point.X >= Origin.X) && (point.Y >= Origin.Y)
+                && (point.X <= max.X) && (point.Y <= max.Y);
         }
 
         /// <summary>
@@ -113,9 +114,8 @@ namespace Silk.NET.Maths
         {
             var tMax = this.Max;
             var oMax = other.Max;
-            return Scalar.GreaterThanOrEqual(other.Origin.X, this.Origin.X) && Scalar.GreaterThanOrEqual
-                (other.Origin.Y, this.Origin.Y) && Scalar.LessThanOrEqual(oMax.X, tMax.X) && Scalar.LessThanOrEqual
-                (oMax.Y, tMax.Y);
+            return (other.Origin.X >= this.Origin.X) && (other.Origin.Y >= this.Origin.Y)
+                && (oMax.X <= tMax.X) && (oMax.Y <= tMax.Y);
         }
 
         /// <summary>
@@ -126,9 +126,9 @@ namespace Silk.NET.Maths
         public T GetDistanceToNearestEdge(Vector2D<T> point)
         {
             var max = Max;
-            var dx = Scalar.Max(Scalar.Max(Scalar.Subtract(Origin.X, point.X), Scalar<T>.Zero), Scalar.Subtract(point.X, max.X));
-            var dy = Scalar.Max(Scalar.Max(Scalar.Subtract(Origin.Y, point.Y), Scalar<T>.Zero), Scalar.Subtract(point.Y, max.Y));
-            return Scalar.Sqrt(Scalar.Add(Scalar.Multiply(dx, dx), Scalar.Multiply(dy, dy)));
+            var dx = T.Max(T.Max(Origin.X - point.X, T.Zero), point.X - max.X);
+            var dy = T.Max(T.Max(Origin.Y - point.Y, T.Zero), point.Y - max.Y);
+            return T.Sqrt((dx * dx) + (dy * dy));
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Silk.NET.Maths
             var max = (scale * (Max - anchor)) + anchor;
             return new(min, max - min);
         }
-        
+
         /// <summary>
         /// Calculates a new rectangle scaled by the given scale around the given anchor.
         /// </summary>

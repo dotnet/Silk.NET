@@ -15,9 +15,9 @@ namespace Silk.NET.Maths
     public partial struct Matrix3X2<T>
     {
         private static readonly Matrix3X2<T> _identity = new(
-            Scalar<T>.One, Scalar<T>.Zero,
-            Scalar<T>.Zero, Scalar<T>.One,
-            Scalar<T>.Zero, Scalar<T>.Zero
+            T.One, T.Zero,
+            T.Zero, T.One,
+            T.Zero, T.Zero
         );
 
         /// <summary>Constructs a <see cref="Matrix3X2{T}"/> from the given Matrix4x3.</summary>
@@ -93,9 +93,7 @@ namespace Silk.NET.Maths
             //
             // Collapse out the constants and oh look, this is just a 2x2 determinant!
 
-            return Scalar.Subtract(
-                Scalar.Multiply(Row1.X, Row2.Y),
-                Scalar.Multiply(Row2.X, Row1.Y));
+            return (Row1.X * Row2.Y) - (Row2.X * Row1.Y);
         }
 
         /// <summary>
@@ -105,9 +103,9 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="System.Numerics"/> matrix</returns>
         public static explicit operator System.Numerics.Matrix3x2(Matrix3X2<T> from)
             => new(
-                Scalar.As<T, float>(from.M11), Scalar.As<T, float>(from.M12),
-                Scalar.As<T, float>(from.M21), Scalar.As<T, float>(from.M22),
-                Scalar.As<T, float>(from.M31), Scalar.As<T, float>(from.M32)
+                float.CreateTruncating(from.M11), float.CreateTruncating(from.M12),
+                float.CreateTruncating(from.M21), float.CreateTruncating(from.M22),
+                float.CreateTruncating(from.M31), float.CreateTruncating(from.M32)
             );
     }
 }

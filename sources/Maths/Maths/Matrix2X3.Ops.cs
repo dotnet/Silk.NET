@@ -26,13 +26,13 @@ namespace Silk.NET.Maths
             Vector3D<T> zaxis = objectPosition - cameraPosition;
             var norm = zaxis.LengthSquared;
 
-            if (!Scalar.GreaterThanOrEqual(norm, Scalar.As<float, T>(BillboardEpsilon)))
+            if (!(norm >= T.CreateTruncating(BillboardEpsilon)))
             {
                 zaxis = -cameraForwardVector;
             }
             else
             {
-                zaxis = Vector3D.Multiply(zaxis, Scalar.Reciprocal(Scalar.Sqrt(norm)));
+                zaxis = Vector3D.Multiply(zaxis, T.One / T.Sqrt(norm));
             }
 
             Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
@@ -74,19 +74,19 @@ namespace Silk.NET.Maths
             //     [ zx-cosa*zx-sina*y zy-cosa*zy+sina*x   zz+cosa*(1-zz)  ]
             //
             T x = axis.X, y = axis.Y, z = axis.Z;
-            T sa = Scalar.Sin(angle), ca = Scalar.Cos(angle);
-            T xx = Scalar.Multiply(x, x), yy = Scalar.Multiply(y, y), zz = Scalar.Multiply(z, z);
-            T xy = Scalar.Multiply(x, y), xz = Scalar.Multiply(x, z), yz = Scalar.Multiply(y, z);
+            T sa = T.Sin(angle), ca = T.Cos(angle);
+            T xx = x * x, yy = y * y, zz = z * z;
+            T xy = x * y, xz = x * z, yz = y * z;
 
             Matrix2X3<T> result = Matrix2X3<T>.Identity;
 
-            result.M11 = Scalar.Add(xx, Scalar.Multiply(ca, Scalar.Subtract(Scalar<T>.One, xx)));
-            result.M12 = Scalar.Add(Scalar.Subtract(xy, Scalar.Multiply(ca, xy)), Scalar.Multiply(sa, z));
-            result.M13 = Scalar.Subtract(Scalar.Subtract(xz, Scalar.Multiply(ca, xz)), Scalar.Multiply(sa, y));
+            result.M11 = xx + (ca * (T.One - xx));
+            result.M12 = xy - (ca * xy) + (sa * z);
+            result.M13 = xz - (ca * xz) - (sa * y);
 
-            result.M21 = Scalar.Subtract(Scalar.Subtract(xy, Scalar.Multiply(ca, xy)), Scalar.Multiply(sa, z));
-            result.M22 = Scalar.Add(yy, Scalar.Multiply(ca, Scalar.Subtract(Scalar<T>.One, yy)));
-            result.M23 = Scalar.Add(Scalar.Subtract(yz, Scalar.Multiply(ca, yz)), Scalar.Multiply(sa, x));
+            result.M21 = xy - (ca * xy) - (sa * z);
+            result.M22 = yy + (ca * (T.One - yy));
+            result.M23 = yz - (ca * yz) + (sa * x);
 
             return result;
         }
@@ -99,24 +99,24 @@ namespace Silk.NET.Maths
         {
             Matrix2X3<T> result = Matrix2X3<T>.Identity;
 
-            T xx = Scalar.Multiply(quaternion.X, quaternion.X);
-            T yy = Scalar.Multiply(quaternion.Y, quaternion.Y);
-            T zz = Scalar.Multiply(quaternion.Z, quaternion.Z);
+            T xx = quaternion.X * quaternion.X;
+            T yy = quaternion.Y * quaternion.Y;
+            T zz = quaternion.Z * quaternion.Z;
 
-            T xy = Scalar.Multiply(quaternion.X, quaternion.Y);
-            T wz = Scalar.Multiply(quaternion.Z, quaternion.W);
-            T xz = Scalar.Multiply(quaternion.Z, quaternion.X);
-            T wy = Scalar.Multiply(quaternion.Y, quaternion.W);
-            T yz = Scalar.Multiply(quaternion.Y, quaternion.Z);
-            T wx = Scalar.Multiply(quaternion.X, quaternion.W);
+            T xy = quaternion.X * quaternion.Y;
+            T wz = quaternion.Z * quaternion.W;
+            T xz = quaternion.Z * quaternion.X;
+            T wy = quaternion.Y * quaternion.W;
+            T yz = quaternion.Y * quaternion.Z;
+            T wx = quaternion.X * quaternion.W;
 
-            result.M11 = Scalar.Subtract(Scalar<T>.One, Scalar.Multiply(Scalar<T>.Two, Scalar.Add(yy, zz)));
-            result.M12 = Scalar.Multiply(Scalar<T>.Two, Scalar.Add(xy, wz));
-            result.M13 = Scalar.Multiply(Scalar<T>.Two, Scalar.Subtract(xz, wy));
+            result.M11 = T.One - (T.CreateTruncating(2) * (yy + zz));
+            result.M12 = T.CreateTruncating(2) * (xy + wz);
+            result.M13 = T.CreateTruncating(2) * (xz - wy);
 
-            result.M21 = Scalar.Multiply(Scalar<T>.Two, Scalar.Subtract(xy, wz));
-            result.M22 = Scalar.Subtract(Scalar<T>.One, Scalar.Multiply(Scalar<T>.Two, Scalar.Add(zz, xx)));
-            result.M23 = Scalar.Multiply(Scalar<T>.Two, Scalar.Add(yz, wx));
+            result.M21 = T.CreateTruncating(2) * (xy - wz);
+            result.M22 = T.One - (T.CreateTruncating(2) * (zz + xx));
+            result.M23 = T.CreateTruncating(2) * (yz + wx);
 
             return result;
         }
@@ -142,37 +142,37 @@ namespace Silk.NET.Maths
             where T : ITrigonometricFunctions<T>
         {
             // Compute rotation matrix.
-            T x2 = Scalar.Add(rotation.X, rotation.X);
-            T y2 = Scalar.Add(rotation.Y, rotation.Y);
-            T z2 = Scalar.Add(rotation.Z, rotation.Z);
+            T x2 = rotation.X + rotation.X;
+            T y2 = rotation.Y + rotation.Y;
+            T z2 = rotation.Z + rotation.Z;
 
-            T wx2 = Scalar.Multiply(rotation.W, x2);
-            T wy2 = Scalar.Multiply(rotation.W, y2);
-            T wz2 = Scalar.Multiply(rotation.W, z2);
-            T xx2 = Scalar.Multiply(rotation.X, x2);
-            T xy2 = Scalar.Multiply(rotation.X, y2);
-            T xz2 = Scalar.Multiply(rotation.X, z2);
-            T yy2 = Scalar.Multiply(rotation.Y, y2);
-            T yz2 = Scalar.Multiply(rotation.Y, z2);
-            T zz2 = Scalar.Multiply(rotation.Z, z2);
+            T wx2 = rotation.W * x2;
+            T wy2 = rotation.W * y2;
+            T wz2 = rotation.W * z2;
+            T xx2 = rotation.X * x2;
+            T xy2 = rotation.X * y2;
+            T xz2 = rotation.X * z2;
+            T yy2 = rotation.Y * y2;
+            T yz2 = rotation.Y * z2;
+            T zz2 = rotation.Z * z2;
 
-            T q11 = Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, yy2), zz2);
-            T q21 = Scalar.Subtract(xy2, wz2);
-            T q31 = Scalar.Add(xz2, wy2);
+            T q11 = T.One - yy2 - zz2;
+            T q21 = xy2 - wz2;
+            T q31 = xz2 + wy2;
 
-            T q12 = Scalar.Add(xy2, wz2);
-            T q22 = Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, xx2), zz2);
-            T q32 = Scalar.Subtract(yz2, wx2);
+            T q12 = xy2 + wz2;
+            T q22 = T.One - xx2 - zz2;
+            T q32 = yz2 - wx2;
 
-            T q13 = Scalar.Subtract(xz2, wy2);
-            T q23 = Scalar.Add(yz2, wx2);
-            T q33 = Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, xx2), yy2);
+            T q13 = xz2 - wy2;
+            T q23 = yz2 + wx2;
+            T q33 = T.One - xx2 - yy2;
 
             var q1 = new Vector3D<T>(q11, q12, q13);
             var q2 = new Vector3D<T>(q21, q22, q23);
             var q3 = new Vector3D<T>(q31, q32, q33);
 
-            return new(value.M11 * q1 + value.M12 * q2 + value.M13 * q3, value.M21 * q1 + value.M22 * q2 + value.M23 * q3);
+            return new((value.M11 * q1) + (value.M12 * q2) + (value.M13 * q3), (value.M21 * q1) + (value.M22 * q2) + (value.M23 * q3));
         }
     }
 }

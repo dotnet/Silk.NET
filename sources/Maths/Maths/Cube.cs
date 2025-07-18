@@ -22,6 +22,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [DataMember]
         public Vector3D<T> Origin;
+
         /// <summary>
         /// The size.
         /// </summary>
@@ -93,7 +94,7 @@ namespace Silk.NET.Maths
         /// Half the size of this cube.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3D<T> HalfSize => Size / Scalar<T>.Two;
+        public Vector3D<T> HalfSize => Size / T.CreateTruncating(2);
 
         /// <summary>
         /// Calculates whether this cube contains a point.
@@ -104,9 +105,8 @@ namespace Silk.NET.Maths
         public bool Contains(Vector3D<T> point)
         {
             var max = Max;
-            return Scalar.GreaterThanOrEqual(point.X, Origin.X) && Scalar.GreaterThanOrEqual
-                (point.Y, Origin.Y) && Scalar.GreaterThanOrEqual(point.Z, Origin.Z) && Scalar.LessThanOrEqual
-                (point.X, max.X) && Scalar.LessThanOrEqual(point.Y, max.Y) && Scalar.LessThanOrEqual(point.Z, max.Z);
+            return (point.X >= Origin.X) && (point.Y >= Origin.Y) && (point.Z >= Origin.Z)
+                && (point.X <= max.X) && (point.Y <= max.Y) && (point.Z <= max.Z);
         }
 
         /// <summary>
@@ -119,10 +119,8 @@ namespace Silk.NET.Maths
         {
             var tMax = this.Max;
             var oMax = other.Max;
-            return Scalar.GreaterThanOrEqual(other.Origin.X, this.Origin.X) && Scalar.GreaterThanOrEqual
-                (other.Origin.Y, this.Origin.Y) && Scalar.GreaterThanOrEqual
-                (other.Origin.Z, this.Origin.Z) && Scalar.LessThanOrEqual(oMax.X, tMax.X) && Scalar.LessThanOrEqual
-                (oMax.Y, tMax.Y) && Scalar.GreaterThanOrEqual(oMax.Y, tMax.Y);
+            return (other.Origin.X >= this.Origin.X) && (other.Origin.Y >= this.Origin.Y) && (other.Origin.Z >= this.Origin.Z)
+                && (oMax.X <= tMax.X) && (oMax.Y <= tMax.Y) && (oMax.Y <= tMax.Y);
         }
 
         /// <summary>
@@ -133,10 +131,10 @@ namespace Silk.NET.Maths
         public T GetDistanceToNearestEdge(Vector3D<T> point)
         {
             var max = Max;
-            var dx = Scalar.Max(Scalar.Max(Scalar.Subtract(Origin.X, point.X), Scalar<T>.Zero), Scalar.Subtract(point.X, max.X));
-            var dy = Scalar.Max(Scalar.Max(Scalar.Subtract(Origin.Y, point.Y), Scalar<T>.Zero), Scalar.Subtract(point.Y, max.Y));
-            var dz = Scalar.Max(Scalar.Max(Scalar.Subtract(Origin.Z, point.Z), Scalar<T>.Zero), Scalar.Subtract(point.Z, max.Z));
-            return Scalar.Sqrt(Scalar.Add(Scalar.Add(Scalar.Multiply(dx, dx), Scalar.Multiply(dy, dy)), Scalar.Multiply(dz, dz)));
+            var dx = T.Max(T.Max(Origin.X - point.X, T.Zero), point.X - max.X);
+            var dy = T.Max(T.Max(Origin.Y - point.Y, T.Zero), point.Y - max.Y);
+            var dz = T.Max(T.Max(Origin.Z - point.Z, T.Zero), point.Z - max.Z);
+            return T.Sqrt((dx * dx) + (dy * dy) + (dz * dz));
         }
 
         /// <summary>
@@ -161,7 +159,7 @@ namespace Silk.NET.Maths
             var max = (scale * (Max - anchor)) + anchor;
             return new(min, max - min);
         }
-        
+
         /// <summary>
         /// Calculates a new cube scaled by the given scale around the given anchor.
         /// </summary>

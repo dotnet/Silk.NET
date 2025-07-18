@@ -19,21 +19,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Compile Update="Scalar.As.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>Scalar.As.tt</DependentUpon>
-        </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Update="Scalar.As.tt">
-        <Generator>TextTemplatingFileGenerator</Generator>
-        <LastGenOutput>Scalar.As.cs</LastGenOutput>
-      </None>
-    </ItemGroup>
-
-    <ItemGroup>
       <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.*.txt" />
     </ItemGroup>
 
