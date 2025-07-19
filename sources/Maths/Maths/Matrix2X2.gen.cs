@@ -15,7 +15,7 @@ namespace Silk.NET.Maths
         IEquatable<Matrix2X2<T>>
         where T : INumberBase<T>
     {
-        /// <summary>The multiplicative identity matrix of size 2x2.</summary>
+        /// <summary>Gets the multiplicative identity matrix of size 2x2.</summary>
         public static Matrix2X2<T> Identity { get; } = new(
             new(T.MultiplicativeIdentity, T.Zero),
             new(T.Zero, T.MultiplicativeIdentity));
@@ -40,15 +40,11 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector2D<T> Column2 => new(Row1.Y, Row2.Y);
 
-        /// <summary>
-        /// Constructs a <see cref="Matrix2X2{T}"/> from the given rows.
-        /// </summary>
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given rows.</summary>
         public Matrix2X2(Vector2D<T> row1, Vector2D<T> row2) =>
             (Row1, Row2) = (row1, row2);
 
-        /// <summary>
-        /// Constructs a <see cref="Matrix2X2{T}"/> from the given components.
-        /// </summary>
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given components.</summary>
         public Matrix2X2(
             T m11, T m12,
             T m21, T m22)

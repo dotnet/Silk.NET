@@ -39,15 +39,11 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector2D<T> Column4 => new(Row1.W, Row2.W);
 
-        /// <summary>
-        /// Constructs a <see cref="Matrix2X4{T}"/> from the given rows.
-        /// </summary>
+        /// <summary>Constructs a <see cref="Matrix2X4{T}"/> from the given rows.</summary>
         public Matrix2X4(Vector4D<T> row1, Vector4D<T> row2) =>
             (Row1, Row2) = (row1, row2);
 
-        /// <summary>
-        /// Constructs a <see cref="Matrix2X4{T}"/> from the given components.
-        /// </summary>
+        /// <summary>Constructs a <see cref="Matrix2X4{T}"/> from the given components.</summary>
         public Matrix2X4(
             T m11, T m12, T m13, T m14,
             T m21, T m22, T m23, T m24)

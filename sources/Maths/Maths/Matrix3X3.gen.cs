@@ -15,7 +15,7 @@ namespace Silk.NET.Maths
         IEquatable<Matrix3X3<T>>
         where T : INumberBase<T>
     {
-        /// <summary>The multiplicative identity matrix of size 3x3.</summary>
+        /// <summary>Gets the multiplicative identity matrix of size 3x3.</summary>
         public static Matrix3X3<T> Identity { get; } = new(
             new(T.MultiplicativeIdentity, T.Zero, T.Zero),
             new(T.Zero, T.MultiplicativeIdentity, T.Zero),
@@ -49,15 +49,11 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector3D<T> Column3 => new(Row1.Z, Row2.Z, Row3.Z);
 
-        /// <summary>
-        /// Constructs a <see cref="Matrix3X3{T}"/> from the given rows.
-        /// </summary>
+        /// <summary>Constructs a <see cref="Matrix3X3{T}"/> from the given rows.</summary>
         public Matrix3X3(Vector3D<T> row1, Vector3D<T> row2, Vector3D<T> row3) =>
             (Row1, Row2, Row3) = (row1, row2, row3);
 
-        /// <summary>
-        /// Constructs a <see cref="Matrix3X3{T}"/> from the given components.
-        /// </summary>
+        /// <summary>Constructs a <see cref="Matrix3X3{T}"/> from the given components.</summary>
         public Matrix3X3(
             T m11, T m12, T m13,
             T m21, T m22, T m23,

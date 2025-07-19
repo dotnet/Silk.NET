@@ -35,15 +35,11 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector4D<T> Row5;
 
-        /// <summary>
-        /// Constructs a <see cref="Matrix5X4{T}"/> from the given rows.
-        /// </summary>
+        /// <summary>Constructs a <see cref="Matrix5X4{T}"/> from the given rows.</summary>
         public Matrix5X4(Vector4D<T> row1, Vector4D<T> row2, Vector4D<T> row3, Vector4D<T> row4, Vector4D<T> row5) =>
             (Row1, Row2, Row3, Row4, Row5) = (row1, row2, row3, row4, row5);
 
-        /// <summary>
-        /// Constructs a <see cref="Matrix5X4{T}"/> from the given components.
-        /// </summary>
+        /// <summary>Constructs a <see cref="Matrix5X4{T}"/> from the given components.</summary>
         public Matrix5X4(
             T m11, T m12, T m13, T m14,
             T m21, T m22, T m23, T m24,

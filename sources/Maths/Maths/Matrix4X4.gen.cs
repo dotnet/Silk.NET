@@ -15,7 +15,7 @@ namespace Silk.NET.Maths
         IEquatable<Matrix4X4<T>>
         where T : INumberBase<T>
     {
-        /// <summary>The multiplicative identity matrix of size 4x4.</summary>
+        /// <summary>Gets the multiplicative identity matrix of size 4x4.</summary>
         public static Matrix4X4<T> Identity { get; } = new(
             new(T.MultiplicativeIdentity, T.Zero, T.Zero, T.Zero),
             new(T.Zero, T.MultiplicativeIdentity, T.Zero, T.Zero),
@@ -58,15 +58,11 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector4D<T> Column4 => new(Row1.W, Row2.W, Row3.W, Row4.W);
 
-        /// <summary>
-        /// Constructs a <see cref="Matrix4X4{T}"/> from the given rows.
-        /// </summary>
+        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given rows.</summary>
         public Matrix4X4(Vector4D<T> row1, Vector4D<T> row2, Vector4D<T> row3, Vector4D<T> row4) =>
             (Row1, Row2, Row3, Row4) = (row1, row2, row3, row4);
 
-        /// <summary>
-        /// Constructs a <see cref="Matrix4X4{T}"/> from the given components.
-        /// </summary>
+        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given components.</summary>
         public Matrix4X4(
             T m11, T m12, T m13, T m14,
             T m21, T m22, T m23, T m24,
