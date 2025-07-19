@@ -894,6 +894,20 @@ namespace Silk.NET.Maths
             where TSelf : IFloatingPoint<TSelf> =>
             new(TSelf.Round(x.X), TSelf.Round(x.Y));
 
+        /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Round(TSelf, int)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="digits">A single value provided for <parameref name="digits"/>.</param>
+        public static Vector2D<TSelf> Round<TSelf>(this Vector2D<TSelf> x, int digits)
+            where TSelf : IFloatingPoint<TSelf> =>
+            new(TSelf.Round(x.X, digits), TSelf.Round(x.Y, digits));
+
+        /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Round(TSelf, MidpointRounding)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="mode">A single value provided for <parameref name="mode"/>.</param>
+        public static Vector2D<TSelf> Round<TSelf>(this Vector2D<TSelf> x, MidpointRounding mode)
+            where TSelf : IFloatingPoint<TSelf> =>
+            new(TSelf.Round(x.X, mode), TSelf.Round(x.Y, mode));
+
         /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Round(TSelf, int, MidpointRounding)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="digits">A single value provided for <parameref name="digits"/>.</param>
@@ -949,6 +963,22 @@ namespace Silk.NET.Maths
         public static Vector2D<TSelf> FusedMultiplyAdd<TSelf>(this Vector2D<TSelf> left, Vector2D<TSelf> right, Vector2D<TSelf> addend)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.FusedMultiplyAdd(left.X, right.X, addend.X), TSelf.FusedMultiplyAdd(left.Y, right.Y, addend.Y));
+
+        /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.FusedMultiplyAdd(TSelf, TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
+        /// <param name="right">A vector whose members will be provided for <parameref name="right"/>.</param>
+        /// <param name="addend">A single value provided for <parameref name="addend"/>.</param>
+        public static Vector2D<TSelf> FusedMultiplyAdd<TSelf>(this Vector2D<TSelf> left, Vector2D<TSelf> right, TSelf addend)
+            where TSelf : IFloatingPointIeee754<TSelf> =>
+            new(TSelf.FusedMultiplyAdd(left.X, right.X, addend), TSelf.FusedMultiplyAdd(left.Y, right.Y, addend));
+
+        /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.FusedMultiplyAdd(TSelf, TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
+        /// <param name="right">A single value provided for <parameref name="right"/>.</param>
+        /// <param name="addend">A vector whose members will be provided for <parameref name="addend"/>.</param>
+        public static Vector2D<TSelf> FusedMultiplyAdd<TSelf>(this Vector2D<TSelf> left, TSelf right, Vector2D<TSelf> addend)
+            where TSelf : IFloatingPointIeee754<TSelf> =>
+            new(TSelf.FusedMultiplyAdd(left.X, right, addend.X), TSelf.FusedMultiplyAdd(left.Y, right, addend.Y));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.FusedMultiplyAdd(TSelf, TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
@@ -1051,11 +1081,25 @@ namespace Silk.NET.Maths
             where TSelf : IRootFunctions<TSelf> =>
             new(TSelf.Hypot(x.X, y.X), TSelf.Hypot(x.Y, y.Y));
 
+        /// <summary>Applies <see cref="IRootFunctions{TSelf}.Hypot(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="y">A single value provided for <parameref name="y"/>.</param>
+        public static Vector2D<TSelf> Hypot<TSelf>(this Vector2D<TSelf> x, TSelf y)
+            where TSelf : IRootFunctions<TSelf> =>
+            new(TSelf.Hypot(x.X, y), TSelf.Hypot(x.Y, y));
+
         /// <summary>Applies <see cref="ILogarithmicFunctions{TSelf}.Log(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         public static Vector2D<TSelf> Log<TSelf>(this Vector2D<TSelf> x)
             where TSelf : ILogarithmicFunctions<TSelf> =>
             new(TSelf.Log(x.X), TSelf.Log(x.Y));
+
+        /// <summary>Applies <see cref="ILogarithmicFunctions{TSelf}.Log(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        /// <param name="newBase">A vector whose members will be provided for <parameref name="newBase"/>.</param>
+        public static Vector2D<TSelf> Log<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> newBase)
+            where TSelf : ILogarithmicFunctions<TSelf> =>
+            new(TSelf.Log(x.X, newBase.X), TSelf.Log(x.Y, newBase.Y));
 
         /// <summary>Applies <see cref="ILogarithmicFunctions{TSelf}.Log(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>

@@ -1388,8 +1388,11 @@ static Silk.NET.Maths.Vector2D.Exp<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x)
 static Silk.NET.Maths.Vector2D.ExpM1<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Floor<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> left, Silk.NET.Maths.Vector2D<TSelf> right, Silk.NET.Maths.Vector2D<TSelf> addend) -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> left, Silk.NET.Maths.Vector2D<TSelf> right, TSelf addend) -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> left, TSelf right, Silk.NET.Maths.Vector2D<TSelf> addend) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> left, TSelf right, TSelf addend) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Hypot<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, Silk.NET.Maths.Vector2D<TSelf> y) -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.Hypot<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, TSelf y) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Ieee754Remainder<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> left, Silk.NET.Maths.Vector2D<TSelf> right) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Ieee754Remainder<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> left, TSelf right) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.ILogB<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<int>
@@ -1401,6 +1404,7 @@ static Silk.NET.Maths.Vector2D.Log10P1<TSelf>(this Silk.NET.Maths.Vector2D<TSelf
 static Silk.NET.Maths.Vector2D.Log2<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Log2P1<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Log<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.Log<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, Silk.NET.Maths.Vector2D<TSelf> newBase) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Log<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, TSelf newBase) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.LogP1<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Max<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, Silk.NET.Maths.Vector2D<TSelf> y) -> Silk.NET.Maths.Vector2D<TSelf>
@@ -1428,7 +1432,9 @@ static Silk.NET.Maths.Vector2D.Reflect<T>(Silk.NET.Maths.Vector2D<T> vector, Sil
 static Silk.NET.Maths.Vector2D.RootN<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, int n) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.RootN<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, Silk.NET.Maths.Vector2D<int> n) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Round<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.Round<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, int digits) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Round<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, int digits, System.MidpointRounding mode) -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.Round<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, System.MidpointRounding mode) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.ScaleB<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, int n) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.ScaleB<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> x, Silk.NET.Maths.Vector2D<int> n) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Sign<TSelf>(this Silk.NET.Maths.Vector2D<TSelf> value) -> Silk.NET.Maths.Vector2D<int>
@@ -1535,8 +1541,11 @@ static Silk.NET.Maths.Vector3D.Exp<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x)
 static Silk.NET.Maths.Vector3D.ExpM1<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Floor<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> left, Silk.NET.Maths.Vector3D<TSelf> right, Silk.NET.Maths.Vector3D<TSelf> addend) -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> left, Silk.NET.Maths.Vector3D<TSelf> right, TSelf addend) -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> left, TSelf right, Silk.NET.Maths.Vector3D<TSelf> addend) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> left, TSelf right, TSelf addend) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Hypot<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, Silk.NET.Maths.Vector3D<TSelf> y) -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.Hypot<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, TSelf y) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Ieee754Remainder<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> left, Silk.NET.Maths.Vector3D<TSelf> right) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Ieee754Remainder<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> left, TSelf right) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.ILogB<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<int>
@@ -1548,6 +1557,7 @@ static Silk.NET.Maths.Vector3D.Log10P1<TSelf>(this Silk.NET.Maths.Vector3D<TSelf
 static Silk.NET.Maths.Vector3D.Log2<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Log2P1<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Log<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.Log<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, Silk.NET.Maths.Vector3D<TSelf> newBase) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Log<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, TSelf newBase) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.LogP1<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Max<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, Silk.NET.Maths.Vector3D<TSelf> y) -> Silk.NET.Maths.Vector3D<TSelf>
@@ -1575,7 +1585,9 @@ static Silk.NET.Maths.Vector3D.Reflect<T>(Silk.NET.Maths.Vector3D<T> vector, Sil
 static Silk.NET.Maths.Vector3D.RootN<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, int n) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.RootN<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, Silk.NET.Maths.Vector3D<int> n) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Round<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.Round<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, int digits) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Round<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, int digits, System.MidpointRounding mode) -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.Round<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, System.MidpointRounding mode) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.ScaleB<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, int n) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.ScaleB<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> x, Silk.NET.Maths.Vector3D<int> n) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Sign<TSelf>(this Silk.NET.Maths.Vector3D<TSelf> value) -> Silk.NET.Maths.Vector3D<int>
@@ -1682,8 +1694,11 @@ static Silk.NET.Maths.Vector4D.Exp<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x)
 static Silk.NET.Maths.Vector4D.ExpM1<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Floor<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> left, Silk.NET.Maths.Vector4D<TSelf> right, Silk.NET.Maths.Vector4D<TSelf> addend) -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> left, Silk.NET.Maths.Vector4D<TSelf> right, TSelf addend) -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> left, TSelf right, Silk.NET.Maths.Vector4D<TSelf> addend) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.FusedMultiplyAdd<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> left, TSelf right, TSelf addend) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Hypot<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, Silk.NET.Maths.Vector4D<TSelf> y) -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.Hypot<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, TSelf y) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Ieee754Remainder<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> left, Silk.NET.Maths.Vector4D<TSelf> right) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Ieee754Remainder<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> left, TSelf right) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.ILogB<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<int>
@@ -1695,6 +1710,7 @@ static Silk.NET.Maths.Vector4D.Log10P1<TSelf>(this Silk.NET.Maths.Vector4D<TSelf
 static Silk.NET.Maths.Vector4D.Log2<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Log2P1<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Log<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.Log<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, Silk.NET.Maths.Vector4D<TSelf> newBase) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Log<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, TSelf newBase) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.LogP1<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Max<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, Silk.NET.Maths.Vector4D<TSelf> y) -> Silk.NET.Maths.Vector4D<TSelf>
@@ -1722,7 +1738,9 @@ static Silk.NET.Maths.Vector4D.Reflect<T>(Silk.NET.Maths.Vector4D<T> vector, Sil
 static Silk.NET.Maths.Vector4D.RootN<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, int n) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.RootN<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, Silk.NET.Maths.Vector4D<int> n) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Round<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.Round<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, int digits) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Round<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, int digits, System.MidpointRounding mode) -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.Round<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, System.MidpointRounding mode) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.ScaleB<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, int n) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.ScaleB<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> x, Silk.NET.Maths.Vector4D<int> n) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Sign<TSelf>(this Silk.NET.Maths.Vector4D<TSelf> value) -> Silk.NET.Maths.Vector4D<int>
