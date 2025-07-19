@@ -5,7 +5,6 @@ using System.Numerics;
 
 namespace Silk.NET.Maths
 {
-    /// <summary>A structure representing a 2D integer vector.</summary>
     public partial struct Vector2D<T>
     {
         /// <summary>Explicitly casts a <see cref="Vector2"/> to a <see cref="Vector2D{T}"/>.</summary>

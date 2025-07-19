@@ -1,17 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Globalization;
-using System.Numerics;
-using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-
 namespace Silk.NET.Maths
 {
-    /// <summary>A structure encapsulating a 2x2 matrix.</summary>
-    [Serializable]
-    [DataContract]
     public partial struct Matrix2X2<T>
     {
         /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given <see cref="Matrix3X2{T}"/>.</summary>

@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 namespace Silk.NET.Maths
 {
     using System.Collections;
@@ -6,6 +9,7 @@ namespace Silk.NET.Maths
     using System.Runtime.InteropServices;
     using System.Text;
 
+    /// <summary>A structure encapsulating a 3D vector.</summary>
     public partial struct Vector3D<T> :
         IEquatable<Vector3D<T>>,
         IReadOnlyList<T>,

@@ -1,10 +1,16 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 namespace Silk.NET.Maths
 {
+    using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
-    using System.Runtime.CompilerServices;
     using System.Runtime.Serialization;
 
+    /// <summary>A structure encapsulating a 2x3 matrix.</summary>
+    [Serializable]
+    [DataContract]
     public partial struct Matrix2X3<T> :
         IEquatable<Matrix2X3<T>>
         where T : INumberBase<T>
