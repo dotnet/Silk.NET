@@ -467,6 +467,15 @@ namespace Silk.NET.Maths
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
         [MethodImpl((MethodImplOptions) 768)]
+        public static Matrix2X3<T> Multiply<T>(Matrix2X3<T> value1, Matrix3X3<T> value2)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => value1 * value2;
+
+        /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The product matrix.</returns>
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X2<T> Multiply<T>(Matrix3X3<T> value1, Matrix3X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;

@@ -209,6 +209,15 @@ namespace Silk.NET.Maths
             Row3 = new(value.M31, value.M32, value.M33);
         }
 
+        /// <summary>Constructs a <see cref="Matrix3X3{T}"/> from the given <see cref="Matrix3X3{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix3X3{T}"/>.</param>
+        public Matrix3X3(Matrix3X3<T> value)
+        {
+            Row1 = new(value.M11, value.M12, value.M13);
+            Row2 = new(value.M21, value.M22, value.M23);
+            Row3 = new(value.M31, value.M32, value.M33);
+        }
+
         /// <summary>Constructs a <see cref="Matrix3X3{T}"/> from the given <see cref="Matrix2X4{T}"/>.</summary>
         /// <param name="value">The source <see cref="Matrix2X4{T}"/>.</param>
         public Matrix3X3(Matrix2X4<T> value)
