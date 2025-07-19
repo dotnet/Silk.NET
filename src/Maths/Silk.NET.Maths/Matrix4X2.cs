@@ -57,7 +57,7 @@ namespace Silk.NET.Maths
         /// Column 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
-        public Vector4D<T> Column2 => new(Row1.Y, Row2.Y, Row3.X, Row4.X);
+        public Vector4D<T> Column2 => new(Row1.Y, Row2.Y, Row3.Y, Row4.Y);
 
         /// <summary>Value at row 1, column 1 of the matrix.</summary>
         [DataMember]
