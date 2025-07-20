@@ -17,9 +17,9 @@ namespace Silk.NET.Maths
     {
         /// <summary>Gets the multiplicative identity matrix of size 3x3.</summary>
         public static Matrix3X3<T> Identity { get; } = new(
-            new(T.MultiplicativeIdentity, T.Zero, T.Zero),
-            new(T.Zero, T.MultiplicativeIdentity, T.Zero),
-            new(T.Zero, T.Zero, T.MultiplicativeIdentity));
+            new(T.One, T.Zero, T.Zero),
+            new(T.Zero, T.One, T.Zero),
+            new(T.Zero, T.Zero, T.One));
 
         /// <summary>Returns whether the matrix is the identity matrix.</summary>
         [IgnoreDataMember]

@@ -6,6 +6,7 @@ namespace Silk.NET.Maths
     using System.Collections;
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
+    using System.Runtime.CompilerServices;
     using System.Runtime.InteropServices;
     using System.Text;
 
@@ -22,19 +23,39 @@ namespace Silk.NET.Maths
         where T : INumberBase<T>
     {
         /// <summary>Gets a vector whose 3 elements are equal to one.</summary>
-        public static Vector3D<T> One => new(T.One);
+        public static Vector3D<T> One
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => new(T.One);
+        }
 
         /// <summary>Returns a vector whose 3 elements are equal to zero.</summary>
-        public static Vector3D<T> Zero => default;
+        public static Vector3D<T> Zero
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => new(T.Zero);
+        }
 
         /// <summary>Gets the vector (1, 0, 0).</summary>
-        public static Vector3D<T> UnitX => new(T.One, T.Zero, T.Zero);
+        public static Vector3D<T> UnitX
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => new(T.One, T.Zero, T.Zero);
+        }
 
         /// <summary>Gets the vector (0, 1, 0).</summary>
-        public static Vector3D<T> UnitY => new(T.Zero, T.One, T.Zero);
+        public static Vector3D<T> UnitY
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => new(T.Zero, T.One, T.Zero);
+        }
 
         /// <summary>Gets the vector (0, 0, 1).</summary>
-        public static Vector3D<T> UnitZ => new(T.Zero, T.Zero, T.One);
+        public static Vector3D<T> UnitZ
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => new(T.Zero, T.Zero, T.One);
+        }
 
         /// <summary>The X component of the vector.</summary>
         public T X;

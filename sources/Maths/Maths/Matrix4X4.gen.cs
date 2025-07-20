@@ -17,10 +17,10 @@ namespace Silk.NET.Maths
     {
         /// <summary>Gets the multiplicative identity matrix of size 4x4.</summary>
         public static Matrix4X4<T> Identity { get; } = new(
-            new(T.MultiplicativeIdentity, T.Zero, T.Zero, T.Zero),
-            new(T.Zero, T.MultiplicativeIdentity, T.Zero, T.Zero),
-            new(T.Zero, T.Zero, T.MultiplicativeIdentity, T.Zero),
-            new(T.Zero, T.Zero, T.Zero, T.MultiplicativeIdentity));
+            new(T.One, T.Zero, T.Zero, T.Zero),
+            new(T.Zero, T.One, T.Zero, T.Zero),
+            new(T.Zero, T.Zero, T.One, T.Zero),
+            new(T.Zero, T.Zero, T.Zero, T.One));
 
         /// <summary>Returns whether the matrix is the identity matrix.</summary>
         [IgnoreDataMember]
