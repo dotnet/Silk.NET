@@ -260,6 +260,30 @@ namespace Silk.NET.Maths
                 left.M21 * right.Row1 + left.M22 * right.Row2,
                 left.M31 * right.Row1 + left.M32 * right.Row2);
 
+        /// <summary>Converts a <see cref="Matrix3x2"/> to a <see cref="Matrix3X2{T}"/>.</summary>
+        public static explicit operator Matrix3X2<T>(Matrix3x2 from) =>
+            new(T.CreateTruncating(from.M11), T.CreateTruncating(from.M12),
+                T.CreateTruncating(from.M21), T.CreateTruncating(from.M22),
+                T.CreateTruncating(from.M31), T.CreateTruncating(from.M32));
+
+        /// <summary>Converts a <see cref="Matrix3x2"/> to a <see cref="Matrix3X2{T}"/>.</summary>
+        public static explicit operator checked Matrix3X2<T>(Matrix3x2 from) =>
+            new(T.CreateChecked(from.M11), T.CreateChecked(from.M12),
+                T.CreateChecked(from.M21), T.CreateChecked(from.M22),
+                T.CreateChecked(from.M31), T.CreateChecked(from.M32));
+
+        /// <summary>Converts a <see cref="Matrix3X2{T}"/> to <see cref="Matrix3x2"/>.</summary>
+        public static explicit operator Matrix3x2(Matrix3X2<T> from) =>
+            new(float.CreateTruncating(from.M11), float.CreateTruncating(from.M12),
+                float.CreateTruncating(from.M21), float.CreateTruncating(from.M22),
+                float.CreateTruncating(from.M31), float.CreateTruncating(from.M32));
+
+        /// <summary>Converts a <see cref="Matrix3X2{T}"/> to <see cref="Matrix3x2"/>.</summary>
+        public static explicit operator checked Matrix3x2(Matrix3X2<T> from) =>
+            new(float.CreateChecked(from.M11), float.CreateChecked(from.M12),
+                float.CreateChecked(from.M21), float.CreateChecked(from.M22),
+                float.CreateChecked(from.M31), float.CreateChecked(from.M32));
+
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
         /// </summary>

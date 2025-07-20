@@ -5,17 +5,6 @@ using System.Numerics;
 
 namespace Silk.NET.Maths
 {
-    public partial struct Vector2D<T>
-    {
-        /// <summary>Explicitly casts a <see cref="Vector2"/> to a <see cref="Vector2D{T}"/>.</summary>
-        public static explicit operator Vector2D<T>(Vector2 v) =>
-            new Vector2D<T>((T)Convert.ChangeType(v.X, typeof(T)), (T)Convert.ChangeType(v.Y, typeof(T)));
-
-        /// <summary>Explicitly casts a <see cref="Vector2D{T}"/> to <see cref="Vector2"/>.</summary>
-        public static explicit operator Vector2(Vector2D<T> v) =>
-            new Vector2(Convert.ToSingle(v.X), Convert.ToSingle(v.Y));
-    }
-
     public static partial class Vector2D
     {
         /// <summary> Computes the cross product of two vectors.</summary>

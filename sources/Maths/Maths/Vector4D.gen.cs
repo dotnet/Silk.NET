@@ -496,6 +496,22 @@ namespace Silk.NET.Maths
         public static Vector4D<T> operator /(Vector4D<T> vector, T scalar) =>
             new(vector.X / scalar, vector.Y / scalar, vector.Z / scalar, vector.W / scalar);
 
+        /// <summary>Converts a <see cref="Vector4"/> to a <see cref="Vector4D{T}"/>.</summary>
+        public static explicit operator Vector4D<T>(Vector4 from) =>
+            new(T.CreateTruncating(from.X), T.CreateTruncating(from.Y), T.CreateTruncating(from.Z), T.CreateTruncating(from.W));
+
+        /// <summary>Converts a <see cref="Vector4"/> to a <see cref="Vector4D{T}"/>.</summary>
+        public static explicit operator checked Vector4D<T>(Vector4 from) =>
+            new(T.CreateChecked(from.X), T.CreateChecked(from.Y), T.CreateChecked(from.Z), T.CreateChecked(from.W));
+
+        /// <summary>Converts a <see cref="Vector4D{T}"/> to <see cref="Vector4"/>.</summary>
+        public static explicit operator Vector4(Vector4D<T> from) =>
+            new(float.CreateTruncating(from.X), float.CreateTruncating(from.Y), float.CreateTruncating(from.Z), float.CreateTruncating(from.W));
+
+        /// <summary>Converts a <see cref="Vector4D{T}"/> to <see cref="Vector4"/>.</summary>
+        public static explicit operator checked Vector4(Vector4D<T> from) =>
+            new(float.CreateChecked(from.X), float.CreateChecked(from.Y), float.CreateChecked(from.Z), float.CreateChecked(from.W));
+
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
         /// </summary>

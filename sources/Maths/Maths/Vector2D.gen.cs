@@ -422,6 +422,22 @@ namespace Silk.NET.Maths
         public static Vector2D<T> operator /(Vector2D<T> vector, T scalar) =>
             new(vector.X / scalar, vector.Y / scalar);
 
+        /// <summary>Converts a <see cref="Vector2"/> to a <see cref="Vector2D{T}"/>.</summary>
+        public static explicit operator Vector2D<T>(Vector2 from) =>
+            new(T.CreateTruncating(from.X), T.CreateTruncating(from.Y));
+
+        /// <summary>Converts a <see cref="Vector2"/> to a <see cref="Vector2D{T}"/>.</summary>
+        public static explicit operator checked Vector2D<T>(Vector2 from) =>
+            new(T.CreateChecked(from.X), T.CreateChecked(from.Y));
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to <see cref="Vector2"/>.</summary>
+        public static explicit operator Vector2(Vector2D<T> from) =>
+            new(float.CreateTruncating(from.X), float.CreateTruncating(from.Y));
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to <see cref="Vector2"/>.</summary>
+        public static explicit operator checked Vector2(Vector2D<T> from) =>
+            new(float.CreateChecked(from.X), float.CreateChecked(from.Y));
+
         /// <summary>
         /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
         /// </summary>

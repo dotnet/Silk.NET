@@ -375,6 +375,34 @@ namespace Silk.NET.Maths
                 left.M31 * right.Row1 + left.M32 * right.Row2 + left.M33 * right.Row3 + left.M34 * right.Row4,
                 left.M41 * right.Row1 + left.M42 * right.Row2 + left.M43 * right.Row3 + left.M44 * right.Row4);
 
+        /// <summary>Converts a <see cref="Matrix4x4"/> to a <see cref="Matrix4X4{T}"/>.</summary>
+        public static explicit operator Matrix4X4<T>(Matrix4x4 from) =>
+            new(T.CreateTruncating(from.M11), T.CreateTruncating(from.M12), T.CreateTruncating(from.M13), T.CreateTruncating(from.M14),
+                T.CreateTruncating(from.M21), T.CreateTruncating(from.M22), T.CreateTruncating(from.M23), T.CreateTruncating(from.M24),
+                T.CreateTruncating(from.M31), T.CreateTruncating(from.M32), T.CreateTruncating(from.M33), T.CreateTruncating(from.M34),
+                T.CreateTruncating(from.M41), T.CreateTruncating(from.M42), T.CreateTruncating(from.M43), T.CreateTruncating(from.M44));
+
+        /// <summary>Converts a <see cref="Matrix4x4"/> to a <see cref="Matrix4X4{T}"/>.</summary>
+        public static explicit operator checked Matrix4X4<T>(Matrix4x4 from) =>
+            new(T.CreateChecked(from.M11), T.CreateChecked(from.M12), T.CreateChecked(from.M13), T.CreateChecked(from.M14),
+                T.CreateChecked(from.M21), T.CreateChecked(from.M22), T.CreateChecked(from.M23), T.CreateChecked(from.M24),
+                T.CreateChecked(from.M31), T.CreateChecked(from.M32), T.CreateChecked(from.M33), T.CreateChecked(from.M34),
+                T.CreateChecked(from.M41), T.CreateChecked(from.M42), T.CreateChecked(from.M43), T.CreateChecked(from.M44));
+
+        /// <summary>Converts a <see cref="Matrix4X4{T}"/> to <see cref="Matrix4x4"/>.</summary>
+        public static explicit operator Matrix4x4(Matrix4X4<T> from) =>
+            new(float.CreateTruncating(from.M11), float.CreateTruncating(from.M12), float.CreateTruncating(from.M13), float.CreateTruncating(from.M14),
+                float.CreateTruncating(from.M21), float.CreateTruncating(from.M22), float.CreateTruncating(from.M23), float.CreateTruncating(from.M24),
+                float.CreateTruncating(from.M31), float.CreateTruncating(from.M32), float.CreateTruncating(from.M33), float.CreateTruncating(from.M34),
+                float.CreateTruncating(from.M41), float.CreateTruncating(from.M42), float.CreateTruncating(from.M43), float.CreateTruncating(from.M44));
+
+        /// <summary>Converts a <see cref="Matrix4X4{T}"/> to <see cref="Matrix4x4"/>.</summary>
+        public static explicit operator checked Matrix4x4(Matrix4X4<T> from) =>
+            new(float.CreateChecked(from.M11), float.CreateChecked(from.M12), float.CreateChecked(from.M13), float.CreateChecked(from.M14),
+                float.CreateChecked(from.M21), float.CreateChecked(from.M22), float.CreateChecked(from.M23), float.CreateChecked(from.M24),
+                float.CreateChecked(from.M31), float.CreateChecked(from.M32), float.CreateChecked(from.M33), float.CreateChecked(from.M34),
+                float.CreateChecked(from.M41), float.CreateChecked(from.M42), float.CreateChecked(from.M43), float.CreateChecked(from.M44));
+
         /// <summary>
         /// Converts a matrix of <typeparamref name="T"/> into one with an underlying type of <see cref="Half"/>.
         /// </summary>

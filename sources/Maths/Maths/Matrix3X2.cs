@@ -88,17 +88,5 @@ namespace Silk.NET.Maths
 
             return (Row1.X * Row2.Y) - (Row2.X * Row1.Y);
         }
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3X2{T}"/> into a <see cref="System.Numerics.Matrix3x2"/> one.
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="System.Numerics"/> matrix</returns>
-        public static explicit operator System.Numerics.Matrix3x2(Matrix3X2<T> from)
-            => new(
-                float.CreateTruncating(from.M11), float.CreateTruncating(from.M12),
-                float.CreateTruncating(from.M21), float.CreateTruncating(from.M22),
-                float.CreateTruncating(from.M31), float.CreateTruncating(from.M32)
-            );
     }
 }
