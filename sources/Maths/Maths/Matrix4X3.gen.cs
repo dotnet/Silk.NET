@@ -210,9 +210,9 @@ namespace Silk.NET.Maths
 
         /// <summary>Computes the transpose of the matrix.</summary>
         public Matrix3X4<T> Transpose() =>
-            new(new(M11, M21, M31, M41),
-                new(M12, M22, M32, M42),
-                new(M13, M23, M33, M43));
+            new(Column1,
+                Column2,
+                Column3);
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
         /// <param name="left">The first matrix to compare.</param>

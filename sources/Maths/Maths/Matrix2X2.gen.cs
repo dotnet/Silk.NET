@@ -157,8 +157,8 @@ namespace Silk.NET.Maths
 
         /// <summary>Computes the transpose of the matrix.</summary>
         public Matrix2X2<T> Transpose() =>
-            new(new(M11, M21),
-                new(M12, M22));
+            new(Column1,
+                Column2);
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
         /// <param name="left">The first matrix to compare.</param>
