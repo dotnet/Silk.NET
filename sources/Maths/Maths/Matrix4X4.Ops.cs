@@ -1208,7 +1208,7 @@ namespace Silk.NET.Maths
         /// <param name="translation">The translation component of the transformation matrix</param>
         /// <returns>True if the source matrix was successfully decomposed; False otherwise.</returns>
         public static bool Decompose<T>(Matrix4X4<T> matrix, out Vector3D<T> scale, out Quaternion<T> rotation, out Vector3D<T> translation)
-            where T : INumberBase<T>
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
             bool result = true;
 
@@ -1385,13 +1385,13 @@ namespace Silk.NET.Maths
                     if (!(T.CreateTruncating(DecomposeEpsilon) >= det))
                     {
                         // Non-SRT matrix encountered
-                        rotation = Legacy.Quaternion<T>.Identity;
+                        rotation = Quaternion<T>.Identity;
                         result = false;
                     }
                     else
                     {
                         // generate the quaternion from the matrix
-                        rotation = Legacy.Quaternion<T>.CreateFromRotationMatrix(matTemp);
+                        rotation = Quaternion<T>.CreateFromRotationMatrix(matTemp);
                     }
                 }
             }
