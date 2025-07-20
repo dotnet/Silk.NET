@@ -58,56 +58,6 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector4D<T> Column4 => new(Row1.W, Row2.W, Row3.W, Row4.W);
 
-        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given rows.</summary>
-        public Matrix4X4(Vector4D<T> row1, Vector4D<T> row2, Vector4D<T> row3, Vector4D<T> row4) =>
-            (Row1, Row2, Row3, Row4) = (row1, row2, row3, row4);
-
-        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given components.</summary>
-        public Matrix4X4(
-            T m11, T m12, T m13, T m14,
-            T m21, T m22, T m23, T m24,
-            T m31, T m32, T m33, T m34,
-            T m41, T m42, T m43, T m44)
-        {
-            Row1 = new(m11, m12, m13, m14);
-            Row2 = new(m21, m22, m23, m24);
-            Row3 = new(m31, m32, m33, m34);
-            Row4 = new(m41, m42, m43, m44);
-        }
-
-        /// <summary>
-        /// Indexer for the rows of this matrix.
-        /// </summary>
-        /// <param name="row">The row to select. Zero based.</param>
-        [UnscopedRef]
-        public ref Vector4D<T> this[int row]
-        {
-            get
-            {
-                switch (row)
-                {
-                    case 0:
-                        return ref Row1;
-                    case 1:
-                        return ref Row2;
-                    case 2:
-                        return ref Row3;
-                    case 3:
-                        return ref Row4;
-                }
-
-                throw new IndexOutOfRangeException();
-            }
-        }
-
-        /// <summary>
-        /// Indexer for the values in this matrix.
-        /// </summary>
-        /// <param name="row">The row to select. Zero based.</param>
-        /// <param name="column">The column to select. Zero based.</param>
-        [UnscopedRef]
-        public ref T this[int row, int column] => ref this[row][column];
-
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
         [DataMember]
         [UnscopedRef]
@@ -188,6 +138,55 @@ namespace Silk.NET.Maths
         [UnscopedRef]
         public ref T M44 => ref Row4.W;
 
+        /// <summary>
+        /// Indexer for the rows of this matrix.
+        /// </summary>
+        /// <param name="row">The row to select. Zero based.</param>
+        [UnscopedRef]
+        public ref Vector4D<T> this[int row]
+        {
+            get
+            {
+                switch (row)
+                {
+                    case 0:
+                        return ref Row1;
+                    case 1:
+                        return ref Row2;
+                    case 2:
+                        return ref Row3;
+                    case 3:
+                        return ref Row4;
+                }
+
+                throw new IndexOutOfRangeException();
+            }
+        }
+
+        /// <summary>
+        /// Indexer for the values in this matrix.
+        /// </summary>
+        /// <param name="row">The row to select. Zero based.</param>
+        /// <param name="column">The column to select. Zero based.</param>
+        [UnscopedRef]
+        public ref T this[int row, int column] => ref this[row][column];
+
+        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given rows.</summary>
+        public Matrix4X4(Vector4D<T> row1, Vector4D<T> row2, Vector4D<T> row3, Vector4D<T> row4) =>
+            (Row1, Row2, Row3, Row4) = (row1, row2, row3, row4);
+
+        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given components.</summary>
+        public Matrix4X4(
+            T m11, T m12, T m13, T m14,
+            T m21, T m22, T m23, T m24,
+            T m31, T m32, T m33, T m34,
+            T m41, T m42, T m43, T m44)
+        {
+            Row1 = new(m11, m12, m13, m14);
+            Row2 = new(m21, m22, m23, m24);
+            Row3 = new(m31, m32, m33, m34);
+            Row4 = new(m41, m42, m43, m44);
+        }
 
         /// <inheritdoc/>
         public override string ToString() =>

@@ -49,52 +49,6 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector3D<T> Column3 => new(Row1.Z, Row2.Z, Row3.Z);
 
-        /// <summary>Constructs a <see cref="Matrix3X3{T}"/> from the given rows.</summary>
-        public Matrix3X3(Vector3D<T> row1, Vector3D<T> row2, Vector3D<T> row3) =>
-            (Row1, Row2, Row3) = (row1, row2, row3);
-
-        /// <summary>Constructs a <see cref="Matrix3X3{T}"/> from the given components.</summary>
-        public Matrix3X3(
-            T m11, T m12, T m13,
-            T m21, T m22, T m23,
-            T m31, T m32, T m33)
-        {
-            Row1 = new(m11, m12, m13);
-            Row2 = new(m21, m22, m23);
-            Row3 = new(m31, m32, m33);
-        }
-
-        /// <summary>
-        /// Indexer for the rows of this matrix.
-        /// </summary>
-        /// <param name="row">The row to select. Zero based.</param>
-        [UnscopedRef]
-        public ref Vector3D<T> this[int row]
-        {
-            get
-            {
-                switch (row)
-                {
-                    case 0:
-                        return ref Row1;
-                    case 1:
-                        return ref Row2;
-                    case 2:
-                        return ref Row3;
-                }
-
-                throw new IndexOutOfRangeException();
-            }
-        }
-
-        /// <summary>
-        /// Indexer for the values in this matrix.
-        /// </summary>
-        /// <param name="row">The row to select. Zero based.</param>
-        /// <param name="column">The column to select. Zero based.</param>
-        [UnscopedRef]
-        public ref T this[int row, int column] => ref this[row][column];
-
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
         [DataMember]
         [UnscopedRef]
@@ -140,6 +94,51 @@ namespace Silk.NET.Maths
         [UnscopedRef]
         public ref T M33 => ref Row3.Z;
 
+        /// <summary>
+        /// Indexer for the rows of this matrix.
+        /// </summary>
+        /// <param name="row">The row to select. Zero based.</param>
+        [UnscopedRef]
+        public ref Vector3D<T> this[int row]
+        {
+            get
+            {
+                switch (row)
+                {
+                    case 0:
+                        return ref Row1;
+                    case 1:
+                        return ref Row2;
+                    case 2:
+                        return ref Row3;
+                }
+
+                throw new IndexOutOfRangeException();
+            }
+        }
+
+        /// <summary>
+        /// Indexer for the values in this matrix.
+        /// </summary>
+        /// <param name="row">The row to select. Zero based.</param>
+        /// <param name="column">The column to select. Zero based.</param>
+        [UnscopedRef]
+        public ref T this[int row, int column] => ref this[row][column];
+
+        /// <summary>Constructs a <see cref="Matrix3X3{T}"/> from the given rows.</summary>
+        public Matrix3X3(Vector3D<T> row1, Vector3D<T> row2, Vector3D<T> row3) =>
+            (Row1, Row2, Row3) = (row1, row2, row3);
+
+        /// <summary>Constructs a <see cref="Matrix3X3{T}"/> from the given components.</summary>
+        public Matrix3X3(
+            T m11, T m12, T m13,
+            T m21, T m22, T m23,
+            T m31, T m32, T m33)
+        {
+            Row1 = new(m11, m12, m13);
+            Row2 = new(m21, m22, m23);
+            Row3 = new(m31, m32, m33);
+        }
 
         /// <inheritdoc/>
         public override string ToString() =>

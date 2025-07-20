@@ -39,56 +39,6 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector4D<T> Column2 => new(Row1.Y, Row2.Y, Row3.Y, Row4.Y);
 
-        /// <summary>Constructs a <see cref="Matrix4X2{T}"/> from the given rows.</summary>
-        public Matrix4X2(Vector2D<T> row1, Vector2D<T> row2, Vector2D<T> row3, Vector2D<T> row4) =>
-            (Row1, Row2, Row3, Row4) = (row1, row2, row3, row4);
-
-        /// <summary>Constructs a <see cref="Matrix4X2{T}"/> from the given components.</summary>
-        public Matrix4X2(
-            T m11, T m12,
-            T m21, T m22,
-            T m31, T m32,
-            T m41, T m42)
-        {
-            Row1 = new(m11, m12);
-            Row2 = new(m21, m22);
-            Row3 = new(m31, m32);
-            Row4 = new(m41, m42);
-        }
-
-        /// <summary>
-        /// Indexer for the rows of this matrix.
-        /// </summary>
-        /// <param name="row">The row to select. Zero based.</param>
-        [UnscopedRef]
-        public ref Vector2D<T> this[int row]
-        {
-            get
-            {
-                switch (row)
-                {
-                    case 0:
-                        return ref Row1;
-                    case 1:
-                        return ref Row2;
-                    case 2:
-                        return ref Row3;
-                    case 3:
-                        return ref Row4;
-                }
-
-                throw new IndexOutOfRangeException();
-            }
-        }
-
-        /// <summary>
-        /// Indexer for the values in this matrix.
-        /// </summary>
-        /// <param name="row">The row to select. Zero based.</param>
-        /// <param name="column">The column to select. Zero based.</param>
-        [UnscopedRef]
-        public ref T this[int row, int column] => ref this[row][column];
-
         /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
         [DataMember]
         [UnscopedRef]
@@ -129,6 +79,55 @@ namespace Silk.NET.Maths
         [UnscopedRef]
         public ref T M42 => ref Row4.Y;
 
+        /// <summary>
+        /// Indexer for the rows of this matrix.
+        /// </summary>
+        /// <param name="row">The row to select. Zero based.</param>
+        [UnscopedRef]
+        public ref Vector2D<T> this[int row]
+        {
+            get
+            {
+                switch (row)
+                {
+                    case 0:
+                        return ref Row1;
+                    case 1:
+                        return ref Row2;
+                    case 2:
+                        return ref Row3;
+                    case 3:
+                        return ref Row4;
+                }
+
+                throw new IndexOutOfRangeException();
+            }
+        }
+
+        /// <summary>
+        /// Indexer for the values in this matrix.
+        /// </summary>
+        /// <param name="row">The row to select. Zero based.</param>
+        /// <param name="column">The column to select. Zero based.</param>
+        [UnscopedRef]
+        public ref T this[int row, int column] => ref this[row][column];
+
+        /// <summary>Constructs a <see cref="Matrix4X2{T}"/> from the given rows.</summary>
+        public Matrix4X2(Vector2D<T> row1, Vector2D<T> row2, Vector2D<T> row3, Vector2D<T> row4) =>
+            (Row1, Row2, Row3, Row4) = (row1, row2, row3, row4);
+
+        /// <summary>Constructs a <see cref="Matrix4X2{T}"/> from the given components.</summary>
+        public Matrix4X2(
+            T m11, T m12,
+            T m21, T m22,
+            T m31, T m32,
+            T m41, T m42)
+        {
+            Row1 = new(m11, m12);
+            Row2 = new(m21, m22);
+            Row3 = new(m31, m32);
+            Row4 = new(m41, m42);
+        }
 
         /// <inheritdoc/>
         public override string ToString() =>

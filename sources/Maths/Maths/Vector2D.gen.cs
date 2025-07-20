@@ -21,28 +21,6 @@ namespace Silk.NET.Maths
         IUtf8SpanParsable<Vector2D<T>>
         where T : INumberBase<T>
     {
-        /// <summary>The X component of the vector.</summary>
-        public T X;
-
-        /// <summary>The Y component of the vector.</summary>
-        public T Y;
-
-        /// <summary>Initializes all components of the vector to the same value.</summary>
-        public Vector2D(T value) => (X, Y) = (value, value);
-
-        /// <summary>Initializes the vector with individual component values.</summary>
-        public Vector2D(T x, T y) => (X, Y) = (x, y);
-
-        /// <summary>Initializes the vector from a span of 2 values.</summary>
-        public Vector2D(ReadOnlySpan<T> values)
-        {
-            if (values.Length != 2)
-                throw new ArgumentException("Input span must contain exactly 2 elements.", nameof(values));
-
-            X = values[0];
-            Y = values[1];
-        }
-
         /// <summary>Gets a vector whose 2 elements are equal to one.</summary>
         public static Vector2D<T> One => new(T.One);
 
@@ -55,6 +33,14 @@ namespace Silk.NET.Maths
         /// <summary>Gets the vector (0, 1).</summary>
         public static Vector2D<T> UnitY => new(T.Zero, T.One);
 
+        /// <summary>The X component of the vector.</summary>
+        public T X;
+
+        /// <summary>The Y component of the vector.</summary>
+        public T Y;
+
+        /// <summary>The number of elements in the vector.</summary>
+        public int Count => 2;
 
         /// <inheritdoc/>
         T IReadOnlyList<T>.this[int index] => this[index];
@@ -77,8 +63,21 @@ namespace Silk.NET.Maths
             }
         }
 
-        /// <summary>The number of elements in the vector.</summary>
-        public int Count => 2;
+        /// <summary>Initializes all components of the vector to the same value.</summary>
+        public Vector2D(T value) => (X, Y) = (value, value);
+
+        /// <summary>Initializes the vector with individual component values.</summary>
+        public Vector2D(T x, T y) => (X, Y) = (x, y);
+
+        /// <summary>Initializes the vector from a span of 2 values.</summary>
+        public Vector2D(ReadOnlySpan<T> values)
+        {
+            if (values.Length != 2)
+                throw new ArgumentException("Input span must contain exactly 2 elements.", nameof(values));
+
+            X = values[0];
+            Y = values[1];
+        }
 
         /// <inheritdoc/>
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

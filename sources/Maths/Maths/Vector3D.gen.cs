@@ -21,35 +21,6 @@ namespace Silk.NET.Maths
         IUtf8SpanParsable<Vector3D<T>>
         where T : INumberBase<T>
     {
-        /// <summary>The X component of the vector.</summary>
-        public T X;
-
-        /// <summary>The Y component of the vector.</summary>
-        public T Y;
-
-        /// <summary>The Z component of the vector.</summary>
-        public T Z;
-
-        /// <summary>Initializes all components of the vector to the same value.</summary>
-        public Vector3D(T value) => (X, Y, Z) = (value, value, value);
-
-        /// <summary>Initializes the vector with individual component values.</summary>
-        public Vector3D(T x, T y, T z) => (X, Y, Z) = (x, y, z);
-
-        /// <summary> Initializes the vector using a <see cref="Vector2D{T}"/> for the initial elements, and the specified component for the remainder. </summary>
-        public Vector3D(Vector2D<T> other, T z) => (X, Y, Z) = (other.X, other.Y, z);
-
-        /// <summary>Initializes the vector from a span of 3 values.</summary>
-        public Vector3D(ReadOnlySpan<T> values)
-        {
-            if (values.Length != 3)
-                throw new ArgumentException("Input span must contain exactly 3 elements.", nameof(values));
-
-            X = values[0];
-            Y = values[1];
-            Z = values[2];
-        }
-
         /// <summary>Gets a vector whose 3 elements are equal to one.</summary>
         public static Vector3D<T> One => new(T.One);
 
@@ -65,6 +36,17 @@ namespace Silk.NET.Maths
         /// <summary>Gets the vector (0, 0, 1).</summary>
         public static Vector3D<T> UnitZ => new(T.Zero, T.Zero, T.One);
 
+        /// <summary>The X component of the vector.</summary>
+        public T X;
+
+        /// <summary>The Y component of the vector.</summary>
+        public T Y;
+
+        /// <summary>The Z component of the vector.</summary>
+        public T Z;
+
+        /// <summary>The number of elements in the vector.</summary>
+        public int Count => 3;
 
         /// <inheritdoc/>
         T IReadOnlyList<T>.this[int index] => this[index];
@@ -89,8 +71,25 @@ namespace Silk.NET.Maths
             }
         }
 
-        /// <summary>The number of elements in the vector.</summary>
-        public int Count => 3;
+        /// <summary>Initializes all components of the vector to the same value.</summary>
+        public Vector3D(T value) => (X, Y, Z) = (value, value, value);
+
+        /// <summary>Initializes the vector with individual component values.</summary>
+        public Vector3D(T x, T y, T z) => (X, Y, Z) = (x, y, z);
+
+        /// <summary> Initializes the vector using a <see cref="Vector2D{T}"/> for the initial elements, and the specified component for the remainder. </summary>
+        public Vector3D(Vector2D<T> other, T z) => (X, Y, Z) = (other.X, other.Y, z);
+
+        /// <summary>Initializes the vector from a span of 3 values.</summary>
+        public Vector3D(ReadOnlySpan<T> values)
+        {
+            if (values.Length != 3)
+                throw new ArgumentException("Input span must contain exactly 3 elements.", nameof(values));
+
+            X = values[0];
+            Y = values[1];
+            Z = values[2];
+        }
 
         /// <inheritdoc/>
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

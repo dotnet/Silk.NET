@@ -21,42 +21,6 @@ namespace Silk.NET.Maths
         IUtf8SpanParsable<Vector4D<T>>
         where T : INumberBase<T>
     {
-        /// <summary>The X component of the vector.</summary>
-        public T X;
-
-        /// <summary>The Y component of the vector.</summary>
-        public T Y;
-
-        /// <summary>The Z component of the vector.</summary>
-        public T Z;
-
-        /// <summary>The W component of the vector.</summary>
-        public T W;
-
-        /// <summary>Initializes all components of the vector to the same value.</summary>
-        public Vector4D(T value) => (X, Y, Z, W) = (value, value, value, value);
-
-        /// <summary>Initializes the vector with individual component values.</summary>
-        public Vector4D(T x, T y, T z, T w) => (X, Y, Z, W) = (x, y, z, w);
-
-        /// <summary> Initializes the vector using a <see cref="Vector2D{T}"/> for the initial elements, and the specified components for the remainder. </summary>
-        public Vector4D(Vector2D<T> other, T z, T w) => (X, Y, Z, W) = (other.X, other.Y, z, w);
-
-        /// <summary> Initializes the vector using a <see cref="Vector3D{T}"/> for the initial elements, and the specified component for the remainder. </summary>
-        public Vector4D(Vector3D<T> other, T w) => (X, Y, Z, W) = (other.X, other.Y, other.Z, w);
-
-        /// <summary>Initializes the vector from a span of 4 values.</summary>
-        public Vector4D(ReadOnlySpan<T> values)
-        {
-            if (values.Length != 4)
-                throw new ArgumentException("Input span must contain exactly 4 elements.", nameof(values));
-
-            X = values[0];
-            Y = values[1];
-            Z = values[2];
-            W = values[3];
-        }
-
         /// <summary>Gets a vector whose 4 elements are equal to one.</summary>
         public static Vector4D<T> One => new(T.One);
 
@@ -75,6 +39,20 @@ namespace Silk.NET.Maths
         /// <summary>Gets the vector (0, 0, 0, 1).</summary>
         public static Vector4D<T> UnitW => new(T.Zero, T.Zero, T.Zero, T.One);
 
+        /// <summary>The X component of the vector.</summary>
+        public T X;
+
+        /// <summary>The Y component of the vector.</summary>
+        public T Y;
+
+        /// <summary>The Z component of the vector.</summary>
+        public T Z;
+
+        /// <summary>The W component of the vector.</summary>
+        public T W;
+
+        /// <summary>The number of elements in the vector.</summary>
+        public int Count => 4;
 
         /// <inheritdoc/>
         T IReadOnlyList<T>.this[int index] => this[index];
@@ -101,8 +79,29 @@ namespace Silk.NET.Maths
             }
         }
 
-        /// <summary>The number of elements in the vector.</summary>
-        public int Count => 4;
+        /// <summary>Initializes all components of the vector to the same value.</summary>
+        public Vector4D(T value) => (X, Y, Z, W) = (value, value, value, value);
+
+        /// <summary>Initializes the vector with individual component values.</summary>
+        public Vector4D(T x, T y, T z, T w) => (X, Y, Z, W) = (x, y, z, w);
+
+        /// <summary> Initializes the vector using a <see cref="Vector2D{T}"/> for the initial elements, and the specified components for the remainder. </summary>
+        public Vector4D(Vector2D<T> other, T z, T w) => (X, Y, Z, W) = (other.X, other.Y, z, w);
+
+        /// <summary> Initializes the vector using a <see cref="Vector3D{T}"/> for the initial elements, and the specified component for the remainder. </summary>
+        public Vector4D(Vector3D<T> other, T w) => (X, Y, Z, W) = (other.X, other.Y, other.Z, w);
+
+        /// <summary>Initializes the vector from a span of 4 values.</summary>
+        public Vector4D(ReadOnlySpan<T> values)
+        {
+            if (values.Length != 4)
+                throw new ArgumentException("Input span must contain exactly 4 elements.", nameof(values));
+
+            X = values[0];
+            Y = values[1];
+            Z = values[2];
+            W = values[3];
+        }
 
         /// <inheritdoc/>
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

@@ -40,18 +40,25 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector2D<T> Column2 => new(Row1.Y, Row2.Y);
 
-        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given rows.</summary>
-        public Matrix2X2(Vector2D<T> row1, Vector2D<T> row2) =>
-            (Row1, Row2) = (row1, row2);
+        /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
+        [DataMember]
+        [UnscopedRef]
+        public ref T M11 => ref Row1.X;
 
-        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given components.</summary>
-        public Matrix2X2(
-            T m11, T m12,
-            T m21, T m22)
-        {
-            Row1 = new(m11, m12);
-            Row2 = new(m21, m22);
-        }
+        /// <summary>Gets the element in the 1st row and 2nd column of the matrix.</summary>
+        [DataMember]
+        [UnscopedRef]
+        public ref T M12 => ref Row1.Y;
+
+        /// <summary>Gets the element in the 2nd row and 1st column of the matrix.</summary>
+        [DataMember]
+        [UnscopedRef]
+        public ref T M21 => ref Row2.X;
+
+        /// <summary>Gets the element in the 2nd row and 2nd column of the matrix.</summary>
+        [DataMember]
+        [UnscopedRef]
+        public ref T M22 => ref Row2.Y;
 
         /// <summary>
         /// Indexer for the rows of this matrix.
@@ -82,26 +89,18 @@ namespace Silk.NET.Maths
         [UnscopedRef]
         public ref T this[int row, int column] => ref this[row][column];
 
-        /// <summary>Gets the element in the 1st row and 1st column of the matrix.</summary>
-        [DataMember]
-        [UnscopedRef]
-        public ref T M11 => ref Row1.X;
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given rows.</summary>
+        public Matrix2X2(Vector2D<T> row1, Vector2D<T> row2) =>
+            (Row1, Row2) = (row1, row2);
 
-        /// <summary>Gets the element in the 1st row and 2nd column of the matrix.</summary>
-        [DataMember]
-        [UnscopedRef]
-        public ref T M12 => ref Row1.Y;
-
-        /// <summary>Gets the element in the 2nd row and 1st column of the matrix.</summary>
-        [DataMember]
-        [UnscopedRef]
-        public ref T M21 => ref Row2.X;
-
-        /// <summary>Gets the element in the 2nd row and 2nd column of the matrix.</summary>
-        [DataMember]
-        [UnscopedRef]
-        public ref T M22 => ref Row2.Y;
-
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given components.</summary>
+        public Matrix2X2(
+            T m11, T m12,
+            T m21, T m22)
+        {
+            Row1 = new(m11, m12);
+            Row2 = new(m21, m22);
+        }
 
         /// <inheritdoc/>
         public override string ToString() =>
