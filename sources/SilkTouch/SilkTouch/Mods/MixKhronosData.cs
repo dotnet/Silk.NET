@@ -2035,22 +2035,18 @@ public partial class MixKhronosData(
             // ClangSharp does not know how to handle FlagBits and Flags types
             // Because of this ClangSharp outputs Flags types as uints or ulongs
             // We have to look at the NativeTypeName in order to determine the correct type
-            var nativeName = attributes.GetNativeTypeName()?.Replace("FlagBits", "Flags");
+            var nativeName = attributes.GetNativeElementTypeName(out var pointerDimension)?.Replace("FlagBits", "Flags");
             if (nativeName == null || !nativeName.Contains("Flags"))
             {
                 return false;
             }
 
-            var nativeNameParts = nativeName.Split(' ');
-            var typeName = nativeName.StartsWith("const ") ? nativeNameParts[1] : nativeNameParts[0];
-            var pointerDimension = nativeName.Count(c => c == '*');
-
-            if (!phase1.AllKnownEnums.Contains(typeName))
+            if (!phase1.AllKnownEnums.Contains(nativeName))
             {
                 return false;
             }
 
-            managedName = typeName + new string('*', pointerDimension);
+            managedName = nativeName + new string('*', pointerDimension);
 
             return true;
         }
