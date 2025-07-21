@@ -121,7 +121,7 @@ namespace Silk.NET.Maths
             return Scalar.GreaterThanOrEqual(other.Origin.X, this.Origin.X) && Scalar.GreaterThanOrEqual
                 (other.Origin.Y, this.Origin.Y) && Scalar.GreaterThanOrEqual
                 (other.Origin.Z, this.Origin.Z) && Scalar.LessThanOrEqual(oMax.X, tMax.X) && Scalar.LessThanOrEqual
-                (oMax.Y, tMax.Y) && Scalar.GreaterThanOrEqual(oMax.Y, tMax.Y);
+                (oMax.Y, tMax.Y) && Scalar.LessThanOrEqual(oMax.Y, tMax.Y);
         }
 
         /// <summary>
