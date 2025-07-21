@@ -510,7 +510,7 @@ public static class ModUtils
     }
 
     /// <summary>
-    /// Determines (naively) whether the given attribute syntax represents a <see cref="DllImportAttribute"/>.
+    /// Determines (naively) whether the given attribute syntax represents the specified attribute.
     /// </summary>
     /// <param name="node">The attribute syntax.</param>
     /// <param name="fullNameWithoutSuffix">
