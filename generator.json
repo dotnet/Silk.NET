@@ -178,6 +178,7 @@
         "TransformProperties",
         "TransformEnums",
         "AddVTables"
+        "TransformVulkan",
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
