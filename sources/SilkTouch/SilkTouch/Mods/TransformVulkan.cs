@@ -43,10 +43,12 @@ public class TransformVulkan : IMod
         private const string MethodClassName = "Vk";
 
         private const string InstanceTypeName = "InstanceHandle";
+        private const string InstanceNativeTypeName = "VkInstance";
         private const string InstanceFieldName = "_currentInstance";
         private const string InstancePropertyName = "CurrentInstance";
 
         private const string DeviceTypeName = "DeviceHandle";
+        private const string DeviceNativeTypeName = "VkDevice";
         private const string DeviceFieldName = "_currentDevice";
         private const string DevicePropertyName = "CurrentDevice";
 
@@ -93,25 +95,25 @@ public class TransformVulkan : IMod
         {
             if (member is not MethodDeclarationSyntax method)
             {
-                // yield return member;
+                yield return member;
                 yield break;
             }
 
             if (!method.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _) || entryPoint == null)
             {
-                // yield return member;
+                yield return member;
                 yield break;
             }
 
             if (!method.Modifiers.Any(modifier => modifier.IsKind(SyntaxKind.ExternKeyword)))
             {
-                // yield return member;
+                yield return member;
                 yield break;
             }
 
             if (entryPoint != VkCreateInstanceNativeName && entryPoint != VkCreateDeviceNativeName)
             {
-                // yield return member;
+                yield return member;
                 yield break;
             }
 
@@ -126,6 +128,12 @@ public class TransformVulkan : IMod
                     ..member.Modifiers.Where(modifier =>
                         !SyntaxFacts.IsAccessibilityModifier(modifier.Kind()))
                 ]);
+
+            var handlePropertyName = entryPoint == VkCreateInstanceNativeName ? InstancePropertyName : DevicePropertyName;
+            var handleNativeTypeName = entryPoint == VkCreateInstanceNativeName ? InstanceNativeTypeName : DeviceNativeTypeName;
+            var handleParameterName = method.ParameterList.Parameters
+                .FirstOrDefault(parameter => parameter.AttributeLists.GetNativeElementTypeName(out _) == handleNativeTypeName)?.Identifier.ValueText
+                ?? throw new InvalidOperationException($"Failed to determine the parameter that contains the created handle type: {handleNativeTypeName}");
 
             // Add a new public method that stores the VkInstance or VkDevice
             var resultName = "result";
@@ -142,9 +150,17 @@ public class TransformVulkan : IMod
                 .WithModifiers([
                     ..member.Modifiers.Where(modifier => !modifier.IsKind(SyntaxKind.ExternKeyword))
                 ])
+                .WithSemicolonToken(Token(SyntaxKind.None))
                 .WithBody(
                     Block(
-                        LocalDeclarationStatement(VariableDeclaration(IdentifierName(VkResultName))),
+                        LocalDeclarationStatement(
+                            VariableDeclaration(IdentifierName(VkResultName))
+                                .AddVariables(
+                                    VariableDeclarator(resultName)
+                                        .WithInitializer(
+                                            EqualsValueClause(
+                                                InvocationExpression(IdentifierName(privateMethodName))
+                                                    .WithArgumentList(ArgumentList([..method.ParameterList.Parameters.Select(parameter => Argument(IdentifierName(parameter.Identifier.ValueText)))])))))),
                         IfStatement(
                             BinaryExpression(
                                 SyntaxKind.EqualsExpression,
@@ -159,67 +175,12 @@ public class TransformVulkan : IMod
                                 ExpressionStatement(
                                     AssignmentExpression(
                                         SyntaxKind.SimpleAssignmentExpression,
-                                        IdentifierName(DevicePropertyName),
-                                        IdentifierName(DevicePropertyName))))
+                                        IdentifierName(handlePropertyName),
+                                        PrefixUnaryExpression(
+                                            SyntaxKind.PointerIndirectionExpression,
+                                            IdentifierName(handleParameterName)))))
                         ),
                         ReturnStatement(IdentifierName(resultName))));
-            //     List(new StatementSyntax[]
-            //             {
-            //                 // var result = CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
-            //                 LocalDeclarationStatement(
-            //                     VariableDeclaration(
-            //                         IdentifierName("var")
-            //                     ).WithVariables(
-            //                         SingletonSeparatedList(
-            //                             VariableDeclarator(
-            //                                 Identifier("result")
-            //                             ).WithInitializer(
-            //                                 EqualsValueClause(
-            //                                     InvocationExpression(
-            //                                         IdentifierName("CreateDeviceInternal")
-            //                                     ).WithArgumentList(
-            //                                         ArgumentList(SeparatedList<ArgumentSyntax>(new SyntaxNodeOrToken[]
-            //                                         {
-            //                                             Argument(IdentifierName("physicalDevice")),
-            //                                             Token(SyntaxKind.CommaToken),
-            //                                             Argument(IdentifierName("pCreateInfo")),
-            //                                             Token(SyntaxKind.CommaToken),
-            //                                             Argument(IdentifierName("pAllocator")),
-            //                                             Token(SyntaxKind.CommaToken),
-            //                                             Argument(IdentifierName("pDevice"))
-            //                                         }))
-            //                                     )
-            //                                 )
-            //                             )
-            //                         )
-            //                     )
-            //                 ),
-            //                 // if (result != 0) { CurrentDevice = *pDevice; }
-            //                 IfStatement(
-            //                     BinaryExpression(
-            //                         SyntaxKind.NotEqualsExpression,
-            //                         IdentifierName("result"),
-            //                         LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(0))
-            //                     ),
-            //                     Block(
-            //                         SingletonList<StatementSyntax>(
-            //                             ExpressionStatement(
-            //                                 AssignmentExpression(
-            //                                     SyntaxKind.SimpleAssignmentExpression,
-            //                                     IdentifierName("CurrentDevice"),
-            //                                     PrefixUnaryExpression(
-            //                                         SyntaxKind.PointerIndirectionExpression,
-            //                                         IdentifierName("pDevice")
-            //                                     )
-            //                                 )
-            //                             )
-            //                         )
-            //                     )
-            //                 ),
-            //                 // return result;
-            //                 ReturnStatement(IdentifierName("result"))
-            //             })
-            // ));
         }
 
         /// <summary>
