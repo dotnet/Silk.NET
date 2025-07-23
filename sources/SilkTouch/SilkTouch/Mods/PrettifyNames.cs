@@ -316,7 +316,8 @@ public class PrettifyNames(
                     );
             }),
             logger,
-            ct
+            ct,
+            includeCandidateLocations: true
         );
 
         logger.LogDebug(

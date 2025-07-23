@@ -497,7 +497,7 @@ public static partial class NameUtils
         var testProjId = ctx.TestProject?.Id;
         foreach (
             var (syntaxTree, renameLocations) in candidateLocations
-                .GroupBy(x => x.SourceTree)
+                .GroupBy(x => x?.SourceTree ?? default)
                 .Select(x => (x.Key, x.OrderByDescending(y => y.SourceSpan)))
         )
         {

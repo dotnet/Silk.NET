@@ -66,7 +66,9 @@
         ],
         "InjectedRemappedNames": {
           "BOOL": "MaybeBool<int>",
-          "HANDLE": "Handle"
+          "HANDLE": "Handle",
+          "HSTRING": "HString",
+          "HRESULT": "HResult"
         },
         "InjectedGeneratorOptions": [
           "--config",

@@ -4,6 +4,7 @@
 using System.CommandLine;
 using System.Diagnostics;
 using System.Reflection;
+using System.Xml.Linq;
 using ClangSharp;
 using ClangSharp.Interop;
 using Microsoft.CodeAnalysis;
@@ -20,7 +21,6 @@ using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Sources;
 using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using static Silk.NET.SilkTouch.Utility.KeyedStringTree;
 
 namespace Silk.NET.SilkTouch.Mods
 {
@@ -263,19 +263,18 @@ namespace Silk.NET.SilkTouch.Mods
 
         class TypeDiscoverer : CSharpSyntaxWalker
         {
-            private Dictionary<string, List<(string, bool, string)>> _interfaceParenting =
-                new Dictionary<string, List<(string, bool, string)>>();
+            private Dictionary<string, List<(string, SimpleNameSyntax[],  bool, NameSyntax)>> _interfaceParenting = [];
 
             /// <summary>
             /// The list of known COM interface types
             /// (name of type, is it a struct?, InheritanceTree)
             /// </summary>
-            public Dictionary<string, (bool, KeyedStringTree?)> FoundCOMTypes = [];
+            public Dictionary<string, (bool, KeyedStringTree<QualifiedNameSyntax>?)> FoundCOMTypes = [];
 
             private readonly Dictionary<string, string> _baseTypes;
             private ILogger<TransformCOM> _logger;
 
-            private List<string> _ObjectNames = [];
+            private List<SimpleNameSyntax> _ObjectNames = [];
 
             public TypeDiscoverer(
                 Dictionary<string, string> BaseTypes,
@@ -284,21 +283,28 @@ namespace Silk.NET.SilkTouch.Mods
             {
                 _logger = logger;
                 _baseTypes = BaseTypes;
-                InheritanceTrees = new KeyedStringTree[_baseTypes.Count];
+                InheritanceTrees = new KeyedStringTree<QualifiedNameSyntax>[_baseTypes.Count];
 
                 int i = 0;
                 foreach (var baseType in BaseTypes)
                 {
-                    InheritanceTrees[i] = new(baseType.Key, baseType.Value);
+                    string[] splitName = baseType.Value.Split('.');
+                    QualifiedNameSyntax name = QualifiedName(IdentifierName(splitName[0]), IdentifierName(splitName[1]));
+                    for (int j = 2; j < splitName.Length; j++)
+                    {
+                        name = QualifiedName(name, IdentifierName(splitName[j]));
+                    }
+
+                    InheritanceTrees[i] = new(baseType.Key, name);
                     i++;
                 }
             }
 
-            public KeyedStringTree[] InheritanceTrees;
+            public KeyedStringTree<QualifiedNameSyntax>[] InheritanceTrees;
 
             public override void VisitStructDeclaration(StructDeclarationSyntax node)
             {
-                _ObjectNames.Add(node.Identifier.Text);
+                _ObjectNames.Add(IdentifierName(node.Identifier.Text));
                 base.VisitStructDeclaration(node);
                 _ObjectNames.RemoveAt(_ObjectNames.Count - 1);
 
@@ -326,12 +332,7 @@ namespace Silk.NET.SilkTouch.Mods
                     return;
                 }
 
-                var typeName = $"{node.Identifier}";
-
-                if (_ObjectNames.Count > 0)
-                    typeName = $"{string.Join('.', _ObjectNames)}.{typeName}";
-
-                CheckBases((typeName, true, node.NamespaceFromSyntaxNode()), bases);
+                COMTypeCheck(node.Identifier.Text, bases, node.NamespaceFromSyntaxNode());
             }
 
             public override void VisitInterfaceDeclaration(InterfaceDeclarationSyntax node)
@@ -345,12 +346,29 @@ namespace Silk.NET.SilkTouch.Mods
                     return;
                 }
 
-                var typeName = $"{node.Identifier}";
+                COMTypeCheck(node.Identifier.Text, bases, node.NamespaceFromSyntaxNode());
+            }
+
+            public void COMTypeCheck(string typeName, BaseListSyntax bases, string typeNamespace)
+            {
+                var types = new SimpleNameSyntax[_ObjectNames.Count + 1];
+                _ObjectNames.CopyTo(types, 0);
+                types[types.Length - 1] = IdentifierName(typeName);
 
                 if (_ObjectNames.Count > 0)
                     typeName = $"{string.Join('.', _ObjectNames)}.{typeName}";
 
-                CheckBases((typeName, false, node.NamespaceFromSyntaxNode()), bases);
+                var namespaces = typeNamespace.Split('.');
+                NameSyntax qualifiedNamespace = IdentifierName(namespaces[0]);
+                if (namespaces.Length > 1)
+                {
+                    for (int i = 1; i < namespaces.Length; i++)
+                    {
+                        qualifiedNamespace = QualifiedName(qualifiedNamespace, IdentifierName(namespaces[i]));
+                    }
+                }
+
+                CheckBases((typeName, types, false, qualifiedNamespace), bases);
             }
 
             public void AddInitialType(string typeName, string _namespace, string? parentName)
@@ -360,12 +378,12 @@ namespace Silk.NET.SilkTouch.Mods
                     FoundCOMTypes.Add(typeName, (true, null));
                     return;
                 }
-                KeyedStringTree? tree = null;
+                KeyedStringTree<QualifiedNameSyntax>? tree = null;
 
                 foreach (var inheritanceTree in InheritanceTrees)
                 {
                     if (
-                        inheritanceTree.TryAddNode(parentName, typeName, $"{_namespace}.{typeName}")
+                        inheritanceTree.TryAddNode(parentName, typeName.ToString(), QualifiedName(IdentifierName(_namespace), IdentifierName(typeName)))
                     )
                     {
                         tree = inheritanceTree;
@@ -373,19 +391,30 @@ namespace Silk.NET.SilkTouch.Mods
                     }
                 }
 
+                string[] namespaces = _namespace.Split('.');
+                NameSyntax qualifiedNamespace = IdentifierName(namespaces[0]);
+                if (namespaces.Length > 1)
+                {
+                    for (int i = 1; i < namespaces.Length; i++)
+                    {
+                        qualifiedNamespace = QualifiedName(qualifiedNamespace, IdentifierName(namespaces[i]));
+                    }
+                }
+
+                var types = typeName.Split('.').Select(type => (SimpleNameSyntax)IdentifierName(type)).ToArray();
                 if (tree is not null)
                 {
-                    COMTypeValidated(typeName, (false, tree), parentName, _namespace);
+                    COMTypeValidated(typeName, types, (false, tree), parentName, qualifiedNamespace);
                     return;
                 }
 
                 if (!_interfaceParenting.ContainsKey(parentName))
                     _interfaceParenting.Add(parentName, new());
 
-                _interfaceParenting[parentName].Add((typeName, false, _namespace));
+                _interfaceParenting[parentName].Add((typeName, types, false, qualifiedNamespace));
             }
 
-            private void CheckBases((string, bool, string) typeName, BaseListSyntax bases)
+            private void CheckBases((string, SimpleNameSyntax[], bool, NameSyntax) typeName, BaseListSyntax bases)
             {
                 foreach (BaseTypeSyntax baseType in bases.Types)
                 {
@@ -399,9 +428,10 @@ namespace Silk.NET.SilkTouch.Mods
                         {
                             COMTypeValidated(
                                 typeName.Item1,
-                                (typeName.Item2, InheritanceTrees[i]),
+                                typeName.Item2,
+                                (typeName.Item3, InheritanceTrees[i]),
                                 BaseType.Key,
-                                typeName.Item3
+                                typeName.Item4
                             );
                             found = true;
                             break;
@@ -415,9 +445,10 @@ namespace Silk.NET.SilkTouch.Mods
                     {
                         COMTypeValidated(
                             typeName.Item1,
-                            (typeName.Item2, val.Item2),
+                            typeName.Item2,
+                            (typeName.Item3, InheritanceTrees[i]),
                             type,
-                            typeName.Item3
+                            typeName.Item4
                         );
                         break;
                     }
@@ -435,9 +466,10 @@ namespace Silk.NET.SilkTouch.Mods
 
             private void COMTypeValidated(
                 string typeName,
-                (bool, KeyedStringTree?) value,
+                SimpleNameSyntax[] types,
+                (bool, KeyedStringTree<QualifiedNameSyntax>?) value,
                 string parentName,
-                string _namespace
+                NameSyntax _namespace
             )
             {
                 if (FoundCOMTypes.ContainsKey(typeName))
@@ -447,8 +479,13 @@ namespace Silk.NET.SilkTouch.Mods
 
                 FoundCOMTypes.Add(typeName, value);
 
+                QualifiedNameSyntax fullTypeName = QualifiedName(_namespace, types[0]);
+
+                for (int i = 1; i < types.Length; i++)
+                    fullTypeName = QualifiedName(fullTypeName, types[i]);
+
                 if (
-                    !value.Item2?.TryAddNode(parentName, typeName, $"{_namespace}.{typeName}")
+                    !value.Item2?.TryAddNode(parentName, typeName, fullTypeName)
                     ?? true
                 )
                 {
@@ -461,24 +498,25 @@ namespace Silk.NET.SilkTouch.Mods
                 if (
                     !_interfaceParenting.TryGetValue(
                         typeName,
-                        out List<(string, bool, string)>? children
+                        out List<(string, SimpleNameSyntax[], bool, NameSyntax)>? children
                     )
                 )
                     return;
 
-                foreach ((string, bool, string) childName in children)
+                foreach ((string, SimpleNameSyntax[], bool, NameSyntax) childName in children)
                 {
                     COMTypeValidated(
                         childName.Item1,
-                        (childName.Item2, value.Item2),
+                        childName.Item2,
+                        (childName.Item3, value.Item2),
                         typeName,
-                        childName.Item3
+                        childName.Item4
                     );
                 }
             }
         }
 
-        class Rewriter(Dictionary<string, (bool, KeyedStringTree?)> ComTypes) : CSharpSyntaxRewriter
+        class Rewriter(Dictionary<string, (bool, KeyedStringTree<QualifiedNameSyntax>?)> ComTypes) : CSharpSyntaxRewriter
         {
             bool isInCom = false;
             bool disposeFound = false;
@@ -492,7 +530,7 @@ namespace Silk.NET.SilkTouch.Mods
                 if (
                     ComTypes.TryGetValue(name, out var Value)
                     && Value.Item2 is not null
-                    && Value.Item2.FindNode(name, out KeyedStringTree.Node? treeNode)
+                    && Value.Item2.FindNode(name, out KeyedStringTree<QualifiedNameSyntax>.Node? treeNode)
                     && treeNode.Parent is not null
                 )
                 {
@@ -733,7 +771,7 @@ namespace Silk.NET.SilkTouch.Mods
 
                     if (treeNode.Parent is not null)
                     {
-                        node = generateUpcasts(node, name, treeNode.Parent);
+                        node = generateUpcasts(node, IdentifierName(name), treeNode.Parent);
                     }
 
                     disposeFound = parentDispose;
@@ -825,11 +863,11 @@ namespace Silk.NET.SilkTouch.Mods
 
             private StructDeclarationSyntax generateUpcasts(
                 StructDeclarationSyntax node,
-                string className,
-                KeyedStringTree.Node treeNode
+                NameSyntax className,
+                KeyedStringTree<QualifiedNameSyntax>.Node treeNode
             )
             {
-                string castName = InterfaceNameToStructName(treeNode.Value);
+                NameSyntax castName = InterfaceNameToStructName(treeNode.Value);
 
                 node = node.AddMembers(GenerateCastDefinition(className, castName, false));
                 node = node.AddMembers(GenerateCastDefinition(castName, className));
@@ -842,14 +880,14 @@ namespace Silk.NET.SilkTouch.Mods
                 return node;
             }
 
-            private string InterfaceNameToStructName(string interfaceName) =>
-                interfaceName.EndsWith(".Interface")
-                    ? interfaceName.Remove(interfaceName.Length - 10)
+            private NameSyntax InterfaceNameToStructName(QualifiedNameSyntax interfaceName) =>
+                interfaceName.Right.ToString() == "Interface"
+                    ? interfaceName.Left
                     : interfaceName;
 
             private ConversionOperatorDeclarationSyntax GenerateCastDefinition(
-                string className,
-                string castName,
+                NameSyntax className,
+                NameSyntax castName,
                 bool implicitCast = true
             )
             {
@@ -857,7 +895,7 @@ namespace Silk.NET.SilkTouch.Mods
                         Token(
                             implicitCast ? SyntaxKind.ImplicitKeyword : SyntaxKind.ExplicitKeyword
                         ),
-                        ParseTypeName(className)
+                        className
                     )
                     .WithModifiers(
                         TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
@@ -865,19 +903,19 @@ namespace Silk.NET.SilkTouch.Mods
                     .WithParameterList(
                         ParameterList(
                             SingletonSeparatedList(
-                                Parameter(Identifier("value")).WithType(ParseTypeName(castName))
+                                Parameter(Identifier("value")).WithType(castName)
                             )
                         )
                     )
                     .WithExpressionBody(
                         ArrowExpressionClause(
-                            ObjectCreationExpression(IdentifierName(className))
+                            ObjectCreationExpression(className)
                                 .WithArgumentList(
                                     ArgumentList(
                                         SingletonSeparatedList(
                                             Argument(
                                                 CastExpression(
-                                                    ParseTypeName($"Ptr<{className}.Native>"),
+                                                    GenericName(Identifier("Ptr"), TypeArgumentList(SingletonSeparatedList<TypeSyntax>(QualifiedName(className, IdentifierName("Native"))))),
                                                     MemberAccessExpression(
                                                         SyntaxKind.SimpleMemberAccessExpression,
                                                         IdentifierName("value"),
@@ -931,9 +969,7 @@ namespace Silk.NET.SilkTouch.Mods
                                                                     {
                                                                         XmlCrefAttribute(
                                                                             NameMemberCref(
-                                                                                IdentifierName(
-                                                                                    castName
-                                                                                )
+                                                                                castName
                                                                             )
                                                                         ),
                                                                     }
@@ -947,9 +983,7 @@ namespace Silk.NET.SilkTouch.Mods
                                                                     {
                                                                         XmlCrefAttribute(
                                                                             NameMemberCref(
-                                                                                IdentifierName(
-                                                                                    className
-                                                                                )
+                                                                                className
                                                                             )
                                                                         ),
                                                                     }
@@ -1013,9 +1047,7 @@ namespace Silk.NET.SilkTouch.Mods
                                                                     {
                                                                         XmlCrefAttribute(
                                                                             NameMemberCref(
-                                                                                IdentifierName(
-                                                                                    castName
-                                                                                )
+                                                                                castName
                                                                             )
                                                                         ),
                                                                     }

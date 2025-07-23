@@ -20,7 +20,6 @@ using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using static Silk.NET.SilkTouch.Utility.KeyedStringTree;
 
 namespace Silk.NET.SilkTouch.Mods
 {
@@ -149,7 +148,12 @@ namespace Silk.NET.SilkTouch.Mods
                     ? compilation.GetSemanticModel(syntaxTree!)
                     : await doc.GetSemanticModelAsync();
 
-                doc = doc.WithSyntaxRoot(updater.Visit(root).NormalizeWhitespace());
+                doc = doc.WithSyntaxRoot(root = (updater.Visit(root).NormalizeWhitespace()));
+
+                if (doc.FilePath?.ToLower().Contains("idxgifactory.gen.cs") ?? false)
+                {
+                    File.WriteAllText($"IDXGIFactory.TransformInterface.UsageUpdater.cs", root.ToFullString());
+                }
 
                 proj = doc.Project;
 
@@ -176,7 +180,12 @@ namespace Silk.NET.SilkTouch.Mods
                     continue;
                 }
 
-                doc = doc.WithSyntaxRoot(rewriter.Visit(root).NormalizeWhitespace());
+                doc = doc.WithSyntaxRoot(root = rewriter.Visit(root).NormalizeWhitespace());
+
+                if (doc.FilePath?.ToLower().Contains("idxgifactory.gen.cs") ?? false)
+                {
+                    File.WriteAllText($"IDXGIFactory.TransformInterface.Rewriter.cs", root.ToFullString());
+                }
 
                 proj = doc.Project;
 
@@ -437,7 +446,7 @@ namespace Silk.NET.SilkTouch.Mods
                         return BinaryExpression(
                             node.Kind(),
                             node.Left,
-                            IdentifierName($"{node.Right.ToString()}.lpVtbl")
+                            MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, node.Right, IdentifierName("lpVtbl"))
                         );
                     }
                 }
@@ -448,7 +457,7 @@ namespace Silk.NET.SilkTouch.Mods
                     {
                         return BinaryExpression(
                             node.Kind(),
-                            IdentifierName($"{node.Left.ToString()}.lpVtbl"),
+                            MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, node.Left, IdentifierName("lpVtbl")),
                             node.Right
                         );
                     }
@@ -476,7 +485,7 @@ namespace Silk.NET.SilkTouch.Mods
 
                 if (pointerDepth == 0)
                 {
-                    return node.WithType(ParseTypeName($"{variableType}.Native"));
+                    return node.WithType(QualifiedName(IdentifierName($"{variableType}"), IdentifierName("Native")));
                 }
 
                 var name = GetTypeName(innerType.ToString() ?? string.Empty);
@@ -531,7 +540,7 @@ namespace Silk.NET.SilkTouch.Mods
                     {
                         pointerDepth = GetPointerDepth(orig.ReturnType, out innerType);
                         var returnType = shouldEditReturnType
-                            ? IdentifierName($"{innerType}.Native")
+                            ? QualifiedName(IdentifierName($"{innerType}"), IdentifierName("Native"))
                             : orig.ReturnType;
                         if (shouldEditReturnType)
                         {
@@ -793,7 +802,7 @@ namespace Silk.NET.SilkTouch.Mods
                 return
                     InterfaceTypes.ContainsKey(name)
                     && node.Ancestors().OfType<TypeSyntax>().Count() > 0
-                    ? IdentifierName($"{name}.Native")
+                    ? QualifiedName(IdentifierName(name), IdentifierName("Native"))
                     : base.VisitIdentifierName(node);
             }
 
@@ -868,7 +877,7 @@ namespace Silk.NET.SilkTouch.Mods
                         node.RemoveNodes(interfaceNodes ?? [], SyntaxRemoveOptions.KeepNoTrivia)
                         ?? node;
 
-                    var nativeName = $"{name}.Native";
+                    var nativeName = QualifiedName(IdentifierName(name), IdentifierName("Native"));
 
                     var parentNode = StructDeclaration(
                             node.AttributeLists,
@@ -1059,7 +1068,7 @@ namespace Silk.NET.SilkTouch.Mods
                                         SyntaxKind.SimpleAssignmentExpression,
                                         IdentifierName("lpVtbl"),
                                         CastExpression(
-                                            PointerType(ParseTypeName(nativeName)),
+                                            PointerType(nativeName),
                                             IdentifierName("vtbl")
                                         )
                                     )
@@ -1193,7 +1202,7 @@ namespace Silk.NET.SilkTouch.Mods
                                 ParameterList(
                                     SingletonSeparatedList(
                                         Parameter(Identifier("vtbl"))
-                                            .WithType(ParseTypeName($"Ptr<{nativeName}>"))
+                                            .WithType(GenericName(Identifier("Ptr"), TypeArgumentList(SingletonSeparatedList<TypeSyntax>(nativeName))))
                                     )
                                 )
                             )
@@ -1333,8 +1342,8 @@ namespace Silk.NET.SilkTouch.Mods
                     parentNode = generateCasts(
                         parentNode,
                         name,
-                        PointerType(ParseTypeName(nativeName)),
-                        nativeName,
+                        PointerType(nativeName),
+                        nativeName.ToString(),
                         CastExpression(ParseTypeName("Ptr<Native>"), IdentifierName("value")),
                         false,
                         true

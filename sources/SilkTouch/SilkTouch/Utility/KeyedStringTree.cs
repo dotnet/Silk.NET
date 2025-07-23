@@ -8,16 +8,16 @@ namespace Silk.NET.SilkTouch.Utility
     /// <summary>
     /// Easily combinable and searchable tree structure
     /// </summary>
-    public class KeyedStringTree
+    public class KeyedStringTree<TValue>
     {
         ReaderWriterLockSlim _concurrencyLock = new();
 
         /// <summary>
-        /// ctor for <see cref="KeyedStringTree"/>
+        /// ctor for <see cref="KeyedStringTree{TValue}"/>
         /// </summary>
         /// <param name="rootKey"></param>
         /// <param name="rootValue"></param>
-        public KeyedStringTree(string rootKey, string rootValue)
+        public KeyedStringTree(string rootKey, TValue rootValue)
         {
             RootNode = new(rootKey, rootValue);
         }
@@ -78,7 +78,7 @@ namespace Silk.NET.SilkTouch.Utility
         /// </summary>
         /// <param name="other"></param>
         /// <returns>Whether combination was successful</returns>
-        public bool TryConsume(KeyedStringTree other)
+        public bool TryConsume(KeyedStringTree<TValue> other)
         {
             _concurrencyLock.EnterWriteLock();
             if (!_FindNode(other.RootNode.Key, out Node? node))
@@ -99,7 +99,7 @@ namespace Silk.NET.SilkTouch.Utility
         /// <param name="newNodeKey">key of the new child node</param>
         /// <param name="newNodeValue">value of the new child node</param>
         /// <returns>if the parent node was found in the tree</returns>
-        public bool TryAddNode(string parentKey, string newNodeKey, string newNodeValue)
+        public bool TryAddNode(string parentKey, string newNodeKey, TValue newNodeValue)
         {
             _concurrencyLock.EnterWriteLock();
             if (!_FindNode(parentKey, out Node? node))
@@ -132,11 +132,11 @@ namespace Silk.NET.SilkTouch.Utility
         }
 
         /// <summary>
-        /// Node from a <see cref="KeyedStringTree" />
+        /// Node from a <see cref="KeyedStringTree{TValue}" />
         /// </summary>
         public class Node
         {
-            internal Node(string key, string value, Node? parent = null)
+            internal Node(string key, TValue value, Node? parent = null)
             {
                 Key = key;
                 Value = value;
@@ -151,7 +151,7 @@ namespace Silk.NET.SilkTouch.Utility
             /// <summary>
             /// Value at this node
             /// </summary>
-            public string Value;
+            public TValue Value;
 
             /// <summary>
             /// All children for this node

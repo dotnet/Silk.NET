@@ -66,14 +66,13 @@ public class RemapTypes(
 
         List<Location> retrievedLocations = [];
 
-        foreach (var diagnostic in diagnostics)
-        {
+        Parallel.ForEach(diagnostics, diagnostic => {
             if (diagnostic.Id == "CS0246" && !retrievedLocations.Contains(diagnostic.Location))
             {
                 retrievedLocations.Add(diagnostic.Location);
             }
-            progressService.SetProgress(index++ / total);
-        }
+            progressService.SetProgress(Interlocked.Increment(ref index) / total);
+        });
 
         progressService.SetTask("Remapping Errored Types");
         await NameUtils.RemapAllAsync(ctx, cfg.Mappings!, retrievedLocations, logger);
