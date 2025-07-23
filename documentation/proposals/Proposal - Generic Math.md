@@ -10,8 +10,8 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 
 # Current Status
 - [x] Proposed
-- [x] Discussed with API Review Board (ARB)
-- [x] Approved
+- [ ] Discussed with API Review Board (ARB)
+- [ ] Approved
 - [ ] Implemented
 
 # Design Decisions
@@ -20,6 +20,10 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 - Text herein marked **INFORMATIVE** does not form a normative part of this proposal, and is for background only.
 - Within this proposal, the key words **must**, **required**, **shall**, **should**, **recommended**, **may**, **could**, and **optional** are to be interpreted as described in [RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels](https://www.ietf.org/rfc/rfc2119.txt). The additional key word **optionally** is an alternate form of **optional**, for use where grammatically appropriate. These key words are highlighted in the proposal for clarity.
 - If any of the APIs contained herein are later deemed mathematically invalid in the context of their exposing primitive (e.g. a specific operation being inappropriate for a specific sized matrix), the Silk.NET team reserves the right to remove them at their own accord.
+- Any extension method defined here must be provided in a non-generic class with the same name as the generic type it operates on.
+  - For example, the `Dot` extension method for `Vector3D<T>` would be have the following signature:
+    `Vector3D.Dot<T>(this Vector3D<T> left, Vector3D<T> right)`
+  - The method will be invokeable as `a.Dot(b)` as well as `Vector3D.Dot(a, b)`
 
 # Vector Types
 
@@ -60,12 +64,14 @@ For each vector struct, the following requirements **must** fulfill the followin
 - An implicit conversion from a value tuple of the same size.
 - Define static CreateChecked, CreateSaturating, and CreateTruncating which converts other vector types to this type
   - Try variants of these methods should also be defined which out the resulting vector and return a bool representing success or failure of the operation.
-- Define Transform functions which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
-  - A Static implementation of these functions **must** be available
+- Define Transform extension methods which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
 - Define `VectorND<T> * MatrixNXM` operators where N is the same for both Vector and Matrix, but M is any number
   - These operators should function like Transform, but without needed assumptions
-- Define TransformNormal functions which take a Matrix of higher dimensionality assuming 0 in for all missing components (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
-  - A Static implementation of these functions **must** be available
+- Define TransformNormal extension methods which take a Matrix of higher dimensionality assuming 0 in for all missing components (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
+- For types implementing IBinaryNumber<T>
+    - `BitwiseAnd`, `BitwiseOr`, and `BitwiseXor` extension methods defined between two vectors which returns a vector which has had these operators applied on a component-wise basis.
+    - `BitwiseAnd`, `BitwiseOr`, and `BitwiseXor` extension methods operators defined between a vectors and a scalar value that matches the generic type which returns a vector which has had these operators applied on a component-wise basis with the scalar.
+    - `BitwiseNot` extension method defined which negates the bits of the vector components. (BitwiseComplement?)
 - A Normalize extension method which divides all components by the length of the vector, when `T` implements `IRootFunctions<T>`
 - A Reflect extension method which takes a normal vector and reflects the vector over the normal
 - The following static Vector properties which have the given value for all components
@@ -97,10 +103,10 @@ For each vector struct, the following requirements **must** fulfill the followin
   - INumberBase<>.MaxMagnitudeNumber, (Memberwise, Memberwise)
   - INumberBase<>.MinMagnitude, (Memberwise, Memberwise)
   - INumberBase<>.MinMagnitudeNumber, (Memberwise, Memberwise)
-  - ~~INumberBase<>.MultiplyAddEstimate, (Memberwise, Memberwise, Memberwise)~~
-    - DOTNET>=9
-  - ~~INumberBase<>.MultiplyAddEstimate, (Memberwise, Scalar, Scalar)~~
-    - DOTNET>=9
+  - INumberBase<>.MultiplyAddEstimate, (Memberwise, Memberwise, Memberwise)
+  - INumberBase<>.MultiplyAddEstimate, (Memberwise, Memberwise, Scalar)
+  - INumberBase<>.MultiplyAddEstimate, (Memberwise, Scalar, Memberwise)
+  - INumberBase<>.MultiplyAddEstimate, (Memberwise, Scalar, Scalar)
   - ~~IBinaryNumber<>.Log2, (Memberwise)~~
     - CONFLICT with ILogarithmicFunctions
   - IBinaryInteger<>.DivRem, (Memberwise)
