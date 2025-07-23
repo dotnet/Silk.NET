@@ -8449,7 +8449,7 @@ public unsafe partial interface IVk
             MinVersion = "1.0"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDevice")]
-        static abstract Result CreateDeviceInternal(
+        static abstract Result CreateDevice(
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeTypeName("const VkDeviceCreateInfo *")] DeviceCreateInfo* pCreateInfo,
             [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -8934,7 +8934,7 @@ public unsafe partial interface IVk
             MinVersion = "1.0"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCreateInstance")]
-        static abstract Result CreateInstanceInternal(
+        static abstract Result CreateInstance(
             [NativeTypeName("const VkInstanceCreateInfo *")] InstanceCreateInfo* pCreateInfo,
             [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
             [NativeTypeName("VkInstance *")] InstanceHandle* pInstance
@@ -26670,7 +26670,7 @@ public unsafe partial interface IVk
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDevice")]
-    Result CreateDeviceInternal(
+    Result CreateDevice(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkDeviceCreateInfo *")] DeviceCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -27061,7 +27061,7 @@ public unsafe partial interface IVk
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateInstance")]
-    Result CreateInstanceInternal(
+    Result CreateInstance(
         [NativeTypeName("const VkInstanceCreateInfo *")] InstanceCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
         [NativeTypeName("VkInstance *")] InstanceHandle* pInstance

@@ -177,8 +177,8 @@
         "TransformFunctions",
         "TransformProperties",
         "TransformEnums",
-        "TransformVulkan",
-        "AddVTables"
+        "AddVTables",
+        "TransformVulkan"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -209,11 +209,8 @@
       "AddVTables": {
         "VTables": [
           {
-            "Kind": "DllImport",
+            "Kind": "ThisThread",
             "IsDefault": true
-          },
-          {
-            "Kind": "StaticWrapper"
           }
         ]
       },

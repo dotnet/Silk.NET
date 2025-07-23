@@ -10,6 +10,24 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 public class TransformVulkan : IMod
 {
+    private const string MethodClassName = "Vk";
+
+    private const string InstanceTypeName = "InstanceHandle";
+    private const string InstanceNativeTypeName = "VkInstance";
+    private const string InstanceFieldName = "_currentInstance";
+    private const string InstancePropertyName = "CurrentInstance";
+
+    private const string DeviceTypeName = "DeviceHandle";
+    private const string DeviceNativeTypeName = "VkDevice";
+    private const string DeviceFieldName = "_currentDevice";
+    private const string DevicePropertyName = "CurrentDevice";
+
+    private const string VkCreateInstanceNativeName = "vkCreateInstance";
+    private const string VkCreateDeviceNativeName = "vkCreateDevice";
+
+    private const string VkResultName = "Result";
+    private const string VkResultSuccessName = "Success";
+
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
@@ -38,25 +56,47 @@ public class TransformVulkan : IMod
         ctx.SourceProject = proj;
     }
 
+    /// <summary>
+    /// Used by <see cref="Rewriter"/> to identify methods that call
+    /// the native function pointer through the vtable slots field.
+    /// </summary>
+    private class SlotsMethodIdentifier : CSharpSyntaxWalker
+    {
+        public bool IsSlotsMethod { get; private set; }
+
+        private bool isInInvocationExpression = false;
+
+        public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
+        {
+            IsSlotsMethod = false;
+            base.VisitMethodDeclaration(node);
+        }
+
+        public override void VisitInvocationExpression(InvocationExpressionSyntax node)
+        {
+            isInInvocationExpression = true;
+            base.VisitInvocationExpression(node);
+        }
+
+        public override void VisitFunctionPointerType(FunctionPointerTypeSyntax node)
+        {
+            if (isInInvocationExpression)
+            {
+                IsSlotsMethod = true;
+            }
+        }
+    }
+
+    /// <summary>
+    /// This does the following:
+    /// 1. Add the instance/device members.
+    /// 2. Rewrite the vkCreateInstance and vkCreateDevice methods to set those members.
+    /// </summary>
     private class Rewriter : CSharpSyntaxRewriter
     {
-        private const string MethodClassName = "Vk";
+        private readonly SlotsMethodIdentifier slotsMethodIdentifier = new();
 
-        private const string InstanceTypeName = "InstanceHandle";
-        private const string InstanceNativeTypeName = "VkInstance";
-        private const string InstanceFieldName = "_currentInstance";
-        private const string InstancePropertyName = "CurrentInstance";
-
-        private const string DeviceTypeName = "DeviceHandle";
-        private const string DeviceNativeTypeName = "VkDevice";
-        private const string DeviceFieldName = "_currentDevice";
-        private const string DevicePropertyName = "CurrentDevice";
-
-        private const string VkCreateInstanceNativeName = "vkCreateInstance";
-        private const string VkCreateDeviceNativeName = "vkCreateDevice";
-
-        private const string VkResultName = "Result";
-        private const string VkResultSuccessName = "Success";
+        private bool hasOutputInstanceDeviceMembers;
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
@@ -65,28 +105,39 @@ public class TransformVulkan : IMod
                 return base.VisitClassDeclaration(node);
             }
 
-            var instanceField = FieldDeclaration(
-                VariableDeclaration(NullableType(IdentifierName(InstanceTypeName)))
-                    .AddVariables(VariableDeclarator(InstanceFieldName))
-            ).AddModifiers(Token(SyntaxKind.PrivateKeyword));
-
-
-            var deviceField = FieldDeclaration(
-                VariableDeclaration(NullableType(IdentifierName(DeviceTypeName)))
-                    .AddVariables(VariableDeclarator(DeviceFieldName))
-            ).AddModifiers(Token(SyntaxKind.PrivateKeyword));
-
-            var instanceProperty = CreateProperty(InstanceTypeName, InstancePropertyName, InstanceFieldName);
-
-            var deviceProperty = CreateProperty(DeviceTypeName, DevicePropertyName, DeviceFieldName);
-
+            // Rewrite members
             node = node.WithMembers([
-                instanceField,
-                deviceField,
-                instanceProperty,
-                deviceProperty,
                 ..node.Members.SelectMany(RewriteMember)
             ]);
+
+            // Output instance/device members if needed
+            if (!hasOutputInstanceDeviceMembers)
+            {
+                var instanceField = FieldDeclaration(
+                    VariableDeclaration(NullableType(IdentifierName(InstanceTypeName)))
+                        .AddVariables(VariableDeclarator(InstanceFieldName))
+                ).AddModifiers(Token(SyntaxKind.PrivateKeyword));
+
+
+                var deviceField = FieldDeclaration(
+                    VariableDeclaration(NullableType(IdentifierName(DeviceTypeName)))
+                        .AddVariables(VariableDeclarator(DeviceFieldName))
+                ).AddModifiers(Token(SyntaxKind.PrivateKeyword));
+
+                var instanceProperty = CreateProperty(InstanceTypeName, InstancePropertyName, InstanceFieldName);
+
+                var deviceProperty = CreateProperty(DeviceTypeName, DevicePropertyName, DeviceFieldName);
+
+                node = node.WithMembers([
+                    instanceField,
+                    deviceField,
+                    instanceProperty,
+                    deviceProperty,
+                    ..node.Members
+                ]);
+            }
+
+            hasOutputInstanceDeviceMembers = true;
 
             return base.VisitClassDeclaration(node);
         }
@@ -105,13 +156,14 @@ public class TransformVulkan : IMod
                 yield break;
             }
 
-            if (!method.Modifiers.Any(modifier => modifier.IsKind(SyntaxKind.ExternKeyword)))
+            if (entryPoint != VkCreateInstanceNativeName && entryPoint != VkCreateDeviceNativeName)
             {
                 yield return member;
                 yield break;
             }
 
-            if (entryPoint != VkCreateInstanceNativeName && entryPoint != VkCreateDeviceNativeName)
+            slotsMethodIdentifier.Visit(member);
+            if (!slotsMethodIdentifier.IsSlotsMethod)
             {
                 yield return member;
                 yield break;
@@ -122,9 +174,9 @@ public class TransformVulkan : IMod
 
             // Output the original method, but private
             yield return method
+                .WithExplicitInterfaceSpecifier(null)
                 .WithIdentifier(Identifier(privateMethodName))
                 .WithModifiers([
-                    Token(SyntaxKind.PrivateKeyword),
                     ..member.Modifiers.Where(modifier =>
                         !SyntaxFacts.IsAccessibilityModifier(modifier.Kind()))
                 ]);
