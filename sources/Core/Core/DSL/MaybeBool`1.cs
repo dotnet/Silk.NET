@@ -54,4 +54,36 @@ public readonly record struct MaybeBool<T>(T Value)
     /// <returns>The boolean value.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static implicit operator bool(MaybeBool<T> value) => !value.Value.Equals(default);
+
+    /// <summary>
+    /// compares boolean value and int
+    /// </summary>
+    /// <param name="lh">left hand value</param>
+    /// <param name="rh">right hand value</param>
+    /// <returns></returns>
+    public static bool operator ==(MaybeBool<T> lh, T rh) => lh.Value.Equals(rh);
+
+    /// <summary>
+    /// Compares boolean value and int
+    /// </summary>
+    /// <param name="lh">left hand value</param>
+    /// <param name="rh">right hand value</param>
+    /// <returns></returns>
+    public static bool operator !=(MaybeBool<T> lh, T rh) => !lh.Value.Equals(rh);
+
+    /// <summary>
+    /// compares boolean value and int
+    /// </summary>
+    /// <param name="lh">left hand value</param>
+    /// <param name="rh">right hand value</param>
+    /// <returns></returns>
+    public static bool operator ==(T lh, MaybeBool<T> rh) => lh.Equals(rh.Value);
+
+    /// <summary>
+    /// Compares boolean value and int
+    /// </summary>
+    /// <param name="lh">left hand value</param>
+    /// <param name="rh">right hand value</param>
+    /// <returns></returns>
+    public static bool operator !=(T lh, MaybeBool<T> rh) => !lh.Equals(rh.Value);
 }

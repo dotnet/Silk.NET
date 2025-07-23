@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Bakery;
 using Silk.NET.SilkTouch.Mods.Transformation;
@@ -115,6 +116,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IFunctionTransformer, BoolTransformer>();
         services.AddSingleton<IFunctionTransformer, ArrayParameterTransformer>();
         services.TryAddSingleton<IInputResolver, UriBasedInputResolver>();
+        services.AddSingleton<IProgressService, ProgressService>();
         if (OperatingSystem.IsWindows())
         {
             services.AddSingleton<IStdIncludeResolver, WindowsStdIncludeResolver>();
