@@ -107,8 +107,7 @@ For each vector struct, the following requirements **must** fulfill the followin
   - INumberBase<>.MultiplyAddEstimate, (Memberwise, Memberwise, Scalar)
   - INumberBase<>.MultiplyAddEstimate, (Memberwise, Scalar, Memberwise)
   - INumberBase<>.MultiplyAddEstimate, (Memberwise, Scalar, Scalar)
-  - ~~IBinaryNumber<>.Log2, (Memberwise)~~
-    - CONFLICT with ILogarithmicFunctions
+  - IBinaryNumber<>.Log2, (Memberwise)
   - IBinaryInteger<>.DivRem, (Memberwise)
     - Returns tuple of 2 Vectors (Vector Quotient, Vector Remainder)
   - IBinaryInteger<>.PopCount, (Memberwise)
@@ -153,7 +152,8 @@ For each vector struct, the following requirements **must** fulfill the followin
   - ILogarithmicFunctions<>.Log, (Memberwise, Memberwise)
   - ILogarithmicFunctions<>.Log, (Memberwise, Scalar)
   - ILogarithmicFunctions<>.LogP1, (Memberwise)
-  - ILogarithmicFunctions<>.Log2, (Memberwise)
+  - ~~ILogarithmicFunctions<>.Log2, (Memberwise)~~
+    - Provided via `IBinaryNumber<>`, which is present on all builtin types that implement `ILogarithmicFunctions<>`
   - ILogarithmicFunctions<>.Log2P1, (Memberwise)
   - ILogarithmicFunctions<>.Log10, (Memberwise)
   - ILogarithmicFunctions<>.Log10P1, (Memberwise)
