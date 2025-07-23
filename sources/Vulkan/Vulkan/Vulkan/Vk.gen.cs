@@ -61653,7 +61653,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result CreateDeviceInternal(
+    private Result CreateDeviceInternal(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeTypeName("const VkDeviceCreateInfo *")] DeviceCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
@@ -62945,7 +62945,7 @@ public unsafe partial class Vk : IVk, IVk.Static
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateInstance")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Result CreateInstanceInternal(
+    private Result CreateInstanceInternal(
         [NativeTypeName("const VkInstanceCreateInfo *")] InstanceCreateInfo* pCreateInfo,
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator,
         [NativeTypeName("VkInstance *")] InstanceHandle* pInstance

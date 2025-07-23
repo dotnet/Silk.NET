@@ -177,6 +177,7 @@ public class TransformVulkan : IMod
                 .WithExplicitInterfaceSpecifier(null)
                 .WithIdentifier(Identifier(privateMethodName))
                 .WithModifiers([
+                    Token(SyntaxKind.PrivateKeyword),
                     ..member.Modifiers.Where(modifier =>
                         !SyntaxFacts.IsAccessibilityModifier(modifier.Kind()))
                 ]);
