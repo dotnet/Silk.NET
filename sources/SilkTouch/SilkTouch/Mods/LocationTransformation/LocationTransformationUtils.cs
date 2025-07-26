@@ -4,6 +4,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Immutable;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Logging;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -21,9 +22,9 @@ public static class LocationTransformationUtils
     /// </summary>
     public static async Task ModifyAllReferencesAsync(
         IModContext ctx,
-        ILogger logger,
         IEnumerable<ISymbol> symbols,
         IEnumerable<LocationTransformer> transformers,
+        ILogger? logger = null,
         CancellationToken ct = default)
     {
         // Convert to lists
@@ -31,13 +32,12 @@ public static class LocationTransformationUtils
         var symbolList = symbols.ToList();
         var transformersList = transformers.ToList();
 
-        var project = ctx.SourceProject;
-        if (project == null)
+        if (ctx.SourceProject == null)
         {
             return;
         }
 
-        var compilation = await project.GetCompilationAsync(ct);
+        var compilation = await ctx.SourceProject.GetCompilationAsync(ct);
         if (compilation == null)
         {
             return;
@@ -57,12 +57,12 @@ public static class LocationTransformationUtils
 
         // Find all locations where the symbols are referenced
         // TODO this needs parallelisation config & be sensitive to the environment (future src generator form factor?)
-        var documents = project.Documents.ToImmutableHashSet();
+        ImmutableHashSet<Document> documents = [..ctx.SourceProject.Documents, ..ctx.TestProject?.Documents ?? []];
         await Parallel.ForEachAsync(
             symbolList,
             ct,
             async (symbol, _) => {
-                var references = await SymbolFinder.FindReferencesAsync(symbol, project.Solution, documents, ct);
+                var references = await SymbolFinder.FindReferencesAsync(symbol, ctx.SourceProject.Solution, documents, ct);
                 foreach (var reference in references)
                 {
                     foreach (var location in reference.Locations)
@@ -76,6 +76,7 @@ public static class LocationTransformationUtils
         );
 
         // Group the locations by source tree. This will be used to prevent accidentally overwriting changes.
+        var solution = ctx.SourceProject.Solution;
         var locationsBySourcetree = locations.GroupBy(l => l.Location.SourceTree);
         foreach (var group in locationsBySourcetree)
         {
@@ -85,7 +86,7 @@ public static class LocationTransformationUtils
                 continue;
             }
 
-            var document = project.GetDocument(syntaxTree);
+            var document = solution.GetDocument(syntaxTree);
             if (document == null)
             {
                 continue;
@@ -123,11 +124,11 @@ public static class LocationTransformationUtils
                 }
             }
 
-            // Commit the changes to the project
+            // Commit the changes to the solution
             var newDocument = document.WithSyntaxRoot(syntaxRoot.NormalizeWhitespace());
-            project = newDocument.Project;
+            solution = newDocument.Project.Solution;
         }
 
-        ctx.SourceProject = project;
+        ctx.SourceProject = solution.GetProject(ctx.SourceProject.Id);
     }
 }

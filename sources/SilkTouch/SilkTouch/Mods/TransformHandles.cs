@@ -101,10 +101,10 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         // 1. Add -Handle suffix
         // 2. Reduce pointer dimensions
         ctx.SourceProject = project;
-        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, logger, handleTypes, [
+        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, handleTypes, [
             new IdentifierRenamingTransformer(handleTypes.Select(t => ((ISymbol)t, $"{t.Name}Handle"))),
             new PointerDimensionReductionTransformer()
-        ], ct);
+        ], logger, ct);
         project = ctx.SourceProject;
 
         // Use document IDs from earlier

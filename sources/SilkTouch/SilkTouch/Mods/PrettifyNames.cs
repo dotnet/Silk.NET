@@ -275,7 +275,6 @@ public class PrettifyNames(
             );
         await NameUtils.RenameAllAsync(
             ctx,
-            logger,
             types.SelectMany(x =>
             {
                 var nonFunctionConflicts = x
@@ -315,6 +314,7 @@ public class PrettifyNames(
                         ]
                     );
             }),
+            logger,
             ct
         );
         logger.LogDebug(
