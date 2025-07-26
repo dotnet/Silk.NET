@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan;
@@ -35,9 +36,14 @@ public partial class Vk
 
         public unsafe void* LoadFunction(string functionName, string libraryNameHint)
         {
-            if (functionName.EndsWith("ProcAddr"))
+            if (functionName == "vkGetDeviceProcAddr")
             {
-                return null;
+                return (delegate* unmanaged<DeviceHandle, sbyte*, void*>)&GetDeviceProcAddr;
+            }
+
+            if (functionName == "vkGetInstanceProcAddr")
+            {
+                return (delegate* unmanaged<InstanceHandle, sbyte*, void*>)&GetInstanceProcAddr;
             }
 
             void* ptr = Ivk.GetDeviceProcAddr(Vk.CurrentDevice.GetValueOrDefault(), functionName);
@@ -48,6 +54,18 @@ public partial class Vk
 
             ptr = Ivk.GetInstanceProcAddr(Vk.CurrentInstance.GetValueOrDefault(), functionName);
             return ptr;
+        }
+
+        [UnmanagedCallersOnly]
+        private static unsafe void* GetDeviceProcAddr(DeviceHandle device, sbyte* pName)
+        {
+            return DllImport.GetDeviceProcAddr(device, pName);
+        }
+
+        [UnmanagedCallersOnly]
+        private static unsafe void* GetInstanceProcAddr(InstanceHandle instance, sbyte* pName)
+        {
+            return DllImport.GetInstanceProcAddr(instance, pName);
         }
 
         public void Dispose() {}
