@@ -12,6 +12,11 @@ namespace Silk.NET.Vulkan;
 
 partial class Vk(INativeContext nativeContext) : IDisposable
 {
+    public partial class DllImport
+    {
+        static DllImport() => LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
+    }
+
     public partial class ThisThread : IVk.Static
     {
         public static ThreadLocal<IVk> Underlying { get; } = new();

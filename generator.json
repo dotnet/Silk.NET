@@ -209,6 +209,9 @@
       "AddVTables": {
         "VTables": [
           {
+            "Kind": "DllImport"
+          },
+          {
             "Kind": "ThisThread",
             "IsDefault": true
           }
