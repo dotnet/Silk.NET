@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 
 public unsafe delegate MaybeBool<uint> PFNVkDebugUtilsMessengerCallbackEXTDelegate(
     DebugUtilsMessageSeverityFlagsEXT arg0,
-    uint arg1,
+    DebugUtilsMessageTypeFlagsEXT arg1,
     DebugUtilsMessengerCallbackDataEXT* arg2,
     void* arg3
 );

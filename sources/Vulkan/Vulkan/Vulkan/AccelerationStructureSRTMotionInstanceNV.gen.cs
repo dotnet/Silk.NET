@@ -88,7 +88,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public uint flags
+    public GeometryInstanceFlagsKHR flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield2 >> 24) & 0xFFu; }

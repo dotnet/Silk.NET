@@ -102,7 +102,7 @@ public partial struct AccelerationStructureInstanceKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public uint flags
+    public GeometryInstanceFlagsKHR flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield2 >> 24) & 0xFFu; }

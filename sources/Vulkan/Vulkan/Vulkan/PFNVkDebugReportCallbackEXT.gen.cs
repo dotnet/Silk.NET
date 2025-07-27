@@ -13,7 +13,7 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
 {
     private readonly void* Pointer;
     public delegate* unmanaged<
-        uint,
+        DebugReportFlagsEXT,
         DebugReportObjectTypeEXT,
         ulong,
         nuint,
@@ -23,7 +23,7 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
         void*,
         MaybeBool<uint>> Handle =>
         (delegate* unmanaged<
-            uint,
+            DebugReportFlagsEXT,
             DebugReportObjectTypeEXT,
             ulong,
             nuint,
@@ -35,7 +35,7 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
 
     public PFNVkDebugReportCallbackEXT(
         delegate* unmanaged<
-            uint,
+            DebugReportFlagsEXT,
             DebugReportObjectTypeEXT,
             ulong,
             nuint,
@@ -53,7 +53,7 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
 
     public static implicit operator PFNVkDebugReportCallbackEXT(
         delegate* unmanaged<
-            uint,
+            DebugReportFlagsEXT,
             DebugReportObjectTypeEXT,
             ulong,
             nuint,
@@ -65,7 +65,7 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
     ) => new(pfn);
 
     public static implicit operator delegate* unmanaged<
-        uint,
+        DebugReportFlagsEXT,
         DebugReportObjectTypeEXT,
         ulong,
         nuint,
@@ -75,7 +75,7 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
         void*,
         MaybeBool<uint>>(PFNVkDebugReportCallbackEXT pfn) =>
         (delegate* unmanaged<
-            uint,
+            DebugReportFlagsEXT,
             DebugReportObjectTypeEXT,
             ulong,
             nuint,

@@ -53,7 +53,7 @@ public unsafe partial struct AccelerationStructureInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public uint Flags;
+    public BuildAccelerationStructureFlagsKHR Flags;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

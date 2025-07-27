@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using ClangSharp;
 using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -23,6 +24,7 @@ using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using Type = System.Type;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -37,6 +39,7 @@ public partial class MixKhronosData(
     IOptionsSnapshot<MixKhronosData.Configuration> cfg
 )
     : IMod,
+        IResponseFileMod,
         INameTrimmer,
         IFunctionTransformer,
         IApiMetadataProvider<SymbolConstraints>,
@@ -133,6 +136,14 @@ public partial class MixKhronosData(
         /// these are easily solvable breakages.
         /// </remarks>
         public HashSet<string> DeprecatedAliases = [];
+
+        /// <summary>
+        /// Additional type remappings to pass to ClangSharp.
+        /// </summary>
+        /// <remarks>
+        /// This was added for Vulkan Flags/FlagBits remappings.
+        /// </remarks>
+        public Dictionary<string, string> AdditionalTypeRemappings = [];
     }
 
     /// <summary>
@@ -311,6 +322,28 @@ public partial class MixKhronosData(
 
             job.TypeMap.TryAdd(type, baseType);
         }
+
+        // Add mappings from Flags storage types to FlagBits enums types
+        // We want Flags as the output, but in order to generate everything correctly,
+        // we need to first map Flags to FlagBits, then rename FlagBits back to Flags (this is done in the rewriters).
+        // Without this, ClangSharp will output the Flags types as the integral storage type instead of the enum
+        foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
+        {
+            var typedef = typeElement.Element("type")?.Value;
+            if (typedef != "VkFlags" && typedef != "VkFlags64")
+            {
+                continue;
+            }
+
+            var mapFrom = typeElement.Element("name")?.Value;
+            var mapTo = typeElement.Attribute("requires")?.Value;
+            if (mapFrom == null || mapTo == null)
+            {
+                continue;
+            }
+
+            job.AdditionalTypeRemappings[mapFrom] = mapTo;
+        }
     }
 
     /// <inheritdoc />
@@ -354,6 +387,57 @@ public partial class MixKhronosData(
         }
 
         ctx.SourceProject = proj;
+    }
+
+    /// <inheritdoc />
+    public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+    {
+        var job = Jobs[key];
+
+        var tmp = Path.GetTempFileName();
+        rsps = rsps.Select(rsp =>
+        {
+            File.WriteAllText(tmp, rsp.GeneratorConfiguration.HeaderText);
+            return rsp with
+            {
+                GeneratorConfiguration = new PInvokeGeneratorConfiguration(
+                    rsp.GeneratorConfiguration.Language,
+                    rsp.GeneratorConfiguration.LanguageStandard,
+                    rsp.GeneratorConfiguration.DefaultNamespace,
+                    rsp.GeneratorConfiguration.OutputLocation,
+                    tmp,
+                    rsp.GeneratorConfiguration.OutputMode,
+                    rsp.GeneratorConfiguration.ReconstructOptions()
+                )
+                {
+                    DefaultClass = rsp.GeneratorConfiguration.DefaultClass,
+                    ExcludedNames = rsp.GeneratorConfiguration.ExcludedNames,
+                    IncludedNames = rsp.GeneratorConfiguration.IncludedNames,
+                    LibraryPath = rsp.GeneratorConfiguration.LibraryPath,
+                    MethodPrefixToStrip = rsp.GeneratorConfiguration.MethodPrefixToStrip,
+                    NativeTypeNamesToStrip = rsp.GeneratorConfiguration.NativeTypeNamesToStrip,
+                    RemappedNames = rsp.GeneratorConfiguration.RemappedNames.Concat(job.AdditionalTypeRemappings).ToDictionary(),
+                    TraversalNames = rsp.GeneratorConfiguration.TraversalNames,
+                    TestOutputLocation = rsp.GeneratorConfiguration.TestOutputLocation,
+                    WithAccessSpecifiers = rsp.GeneratorConfiguration.WithAccessSpecifiers,
+                    WithAttributes = rsp.GeneratorConfiguration.WithAttributes,
+                    WithCallConvs = rsp.GeneratorConfiguration.WithCallConvs,
+                    WithClasses = rsp.GeneratorConfiguration.WithClasses,
+                    WithGuids = rsp.GeneratorConfiguration.WithGuids,
+                    WithLibraryPaths = rsp.GeneratorConfiguration.WithLibraryPaths,
+                    WithManualImports = rsp.GeneratorConfiguration.WithManualImports,
+                    WithNamespaces = rsp.GeneratorConfiguration.WithNamespaces,
+                    WithSetLastErrors = rsp.GeneratorConfiguration.WithSetLastErrors,
+                    WithSuppressGCTransitions = rsp.GeneratorConfiguration.WithSuppressGCTransitions,
+                    WithTransparentStructs = rsp.GeneratorConfiguration.WithTransparentStructs,
+                    WithTypes = rsp.GeneratorConfiguration.WithTypes,
+                    WithUsings = rsp.GeneratorConfiguration.WithUsings,
+                    WithPackings = rsp.GeneratorConfiguration.WithPackings,
+                }
+            };
+        }).ToList();
+
+        return Task.FromResult(rsps);
     }
 
     internal record EnumGroup(
@@ -1286,10 +1370,10 @@ public partial class MixKhronosData(
                     !names.ContainsKey(newOriginal)
                     && (
                         job.Configuration.UseExtensionVendorTrimmings
-                            == ExtensionVendorTrimmingMode.All
+                            == MixKhronosData.ExtensionVendorTrimmingMode.All
                         || (
                             job.Configuration.UseExtensionVendorTrimmings
-                                == ExtensionVendorTrimmingMode.KhronosOnly
+                                == MixKhronosData.ExtensionVendorTrimmingMode.KhronosOnly
                             && vendor is "KHR" or "ARB"
                         )
                         || (
@@ -1571,7 +1655,7 @@ public partial class MixKhronosData(
         TypeSyntax? GetTypeTransformation(
             string symbolName,
             string paramName,
-            JobData job,
+            MixKhronosData.JobData job,
             TypeSyntax type,
             int pass,
             ref bool anyNonTrivialParams
@@ -1720,7 +1804,7 @@ public partial class MixKhronosData(
     /// This rewriter is split into two phases because NamespaceFromSyntaxNode breaks due to
     /// the FieldDeclarationSyntax being modified.
     /// </remarks>
-    private class RewriterPhase1(JobData job, ILogger logger) : CSharpSyntaxRewriter
+    private class RewriterPhase1(MixKhronosData.JobData job, ILogger logger) : CSharpSyntaxRewriter
     {
         /// <summary>
         /// Tracks enum groups that already exist in the project, prior to the generation of missing enums.
@@ -1729,7 +1813,7 @@ public partial class MixKhronosData(
 
         /// <summary>
         /// Tracks enums that exist in the project.
-        /// Note that this includes any enum, including enums not present in <see cref="JobData.Groups"/>.
+        /// Note that this includes any enum, including enums not present in <see cref="MixKhronosData.JobData.Groups"/>.
         /// </summary>
         public HashSet<string> AllKnownEnums { get; } = [];
 
@@ -1998,7 +2082,6 @@ public partial class MixKhronosData(
             }
 
             return base.VisitFieldDeclaration(node);
-
         }
 
         public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
@@ -2019,7 +2102,6 @@ public partial class MixKhronosData(
             }
 
             return base.VisitParameter(node);
-
         }
 
         /// <summary>
@@ -2053,7 +2135,7 @@ public partial class MixKhronosData(
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]
-    internal void ReadGroups(XDocument doc, JobData data, HashSet<string> vendors)
+    internal void ReadGroups(XDocument doc, MixKhronosData.JobData data, HashSet<string> vendors)
     {
         // Designed to be compatible with OpenGL, EGL, WGL, GLX, and OpenCL.
         // This will work for Vulkan as well, but for Vulkan the enums are actually "typedef enum"s in the headers and

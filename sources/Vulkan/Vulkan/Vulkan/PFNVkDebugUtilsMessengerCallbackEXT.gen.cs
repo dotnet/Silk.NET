@@ -14,13 +14,13 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
     private readonly void* Pointer;
     public delegate* unmanaged<
         DebugUtilsMessageSeverityFlagsEXT,
-        uint,
+        DebugUtilsMessageTypeFlagsEXT,
         DebugUtilsMessengerCallbackDataEXT*,
         void*,
         MaybeBool<uint>> Handle =>
         (delegate* unmanaged<
             DebugUtilsMessageSeverityFlagsEXT,
-            uint,
+            DebugUtilsMessageTypeFlagsEXT,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
             MaybeBool<uint>>)Pointer;
@@ -28,7 +28,7 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
     public PFNVkDebugUtilsMessengerCallbackEXT(
         delegate* unmanaged<
             DebugUtilsMessageSeverityFlagsEXT,
-            uint,
+            DebugUtilsMessageTypeFlagsEXT,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
             MaybeBool<uint>> ptr
@@ -42,7 +42,7 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
     public static implicit operator PFNVkDebugUtilsMessengerCallbackEXT(
         delegate* unmanaged<
             DebugUtilsMessageSeverityFlagsEXT,
-            uint,
+            DebugUtilsMessageTypeFlagsEXT,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
             MaybeBool<uint>> pfn
@@ -50,13 +50,13 @@ public readonly unsafe struct PFNVkDebugUtilsMessengerCallbackEXT : IDisposable
 
     public static implicit operator delegate* unmanaged<
         DebugUtilsMessageSeverityFlagsEXT,
-        uint,
+        DebugUtilsMessageTypeFlagsEXT,
         DebugUtilsMessengerCallbackDataEXT*,
         void*,
         MaybeBool<uint>>(PFNVkDebugUtilsMessengerCallbackEXT pfn) =>
         (delegate* unmanaged<
             DebugUtilsMessageSeverityFlagsEXT,
-            uint,
+            DebugUtilsMessageTypeFlagsEXT,
             DebugUtilsMessengerCallbackDataEXT*,
             void*,
             MaybeBool<uint>>)
