@@ -212,6 +212,9 @@
             "Kind": "DllImport"
           },
           {
+            "Kind": "StaticWrapper"
+          },
+          {
             "Kind": "ThisThread",
             "IsDefault": true
           }
