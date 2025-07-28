@@ -91,9 +91,9 @@ public partial struct AccelerationStructureMatrixMotionInstanceNV
     public GeometryInstanceFlagsKHR flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        readonly get { return (Bitfield2 >> 24) & 0xFFu; }
+        readonly get { return (GeometryInstanceFlagsKHR)((Bitfield2 >> 24) & 0xFFu); }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set { Bitfield2 = (Bitfield2 & ~(0xFFu << 24)) | ((value & 0xFFu) << 24); }
+        set { Bitfield2 = (Bitfield2 & ~(0xFFu << 24)) | (((uint)(value) & 0xFFu) << 24); }
     }
 
     [NativeTypeName("uint64_t")]
