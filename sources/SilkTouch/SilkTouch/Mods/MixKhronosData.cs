@@ -1374,10 +1374,10 @@ public partial class MixKhronosData(
                     !names.ContainsKey(newOriginal)
                     && (
                         job.Configuration.UseExtensionVendorTrimmings
-                            == MixKhronosData.ExtensionVendorTrimmingMode.All
+                            == ExtensionVendorTrimmingMode.All
                         || (
                             job.Configuration.UseExtensionVendorTrimmings
-                                == MixKhronosData.ExtensionVendorTrimmingMode.KhronosOnly
+                                == ExtensionVendorTrimmingMode.KhronosOnly
                             && vendor is "KHR" or "ARB"
                         )
                         || (
@@ -1659,7 +1659,7 @@ public partial class MixKhronosData(
         TypeSyntax? GetTypeTransformation(
             string symbolName,
             string paramName,
-            MixKhronosData.JobData job,
+            JobData job,
             TypeSyntax type,
             int pass,
             ref bool anyNonTrivialParams
@@ -1808,7 +1808,7 @@ public partial class MixKhronosData(
     /// This rewriter is split into two phases because NamespaceFromSyntaxNode breaks due to
     /// the FieldDeclarationSyntax being modified.
     /// </remarks>
-    private class RewriterPhase1(MixKhronosData.JobData job, ILogger logger) : CSharpSyntaxRewriter
+    private class RewriterPhase1(JobData job, ILogger logger) : CSharpSyntaxRewriter
     {
         /// <summary>
         /// Tracks enum groups that already exist in the project, prior to the generation of missing enums.
@@ -2139,7 +2139,7 @@ public partial class MixKhronosData(
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]
-    internal void ReadGroups(XDocument doc, MixKhronosData.JobData data, HashSet<string> vendors)
+    internal void ReadGroups(XDocument doc, JobData data, HashSet<string> vendors)
     {
         // Designed to be compatible with OpenGL, EGL, WGL, GLX, and OpenCL.
         // This will work for Vulkan as well, but for Vulkan the enums are actually "typedef enum"s in the headers and
