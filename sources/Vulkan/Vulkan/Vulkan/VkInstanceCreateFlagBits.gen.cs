@@ -9,10 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum InstanceCreateFlags : uint
+public enum InstanceCreateFlags
 {
     None = 0,
 

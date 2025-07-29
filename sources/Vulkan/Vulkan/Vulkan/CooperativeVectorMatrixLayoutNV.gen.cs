@@ -9,9 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum CooperativeVectorMatrixLayoutNV : uint
+public enum CooperativeVectorMatrixLayoutNV
 {
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
     RowMajorNV = 0,

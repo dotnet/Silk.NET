@@ -9,9 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoAV1MatrixCoefficients : uint
+public enum StdVideoAV1MatrixCoefficients
 {
     [SupportedApiProfile("vulkan")]
     Identity = 0,

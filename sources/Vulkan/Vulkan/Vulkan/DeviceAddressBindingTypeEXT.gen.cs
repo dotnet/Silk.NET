@@ -9,9 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DeviceAddressBindingTypeEXT : uint
+public enum DeviceAddressBindingTypeEXT
 {
     [SupportedApiProfile(
         "vulkan",

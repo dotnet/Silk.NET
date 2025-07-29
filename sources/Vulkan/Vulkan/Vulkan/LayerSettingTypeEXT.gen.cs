@@ -8,9 +8,8 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum LayerSettingTypeEXT : uint
+public enum LayerSettingTypeEXT
 {
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     Bool32EXT = 0,

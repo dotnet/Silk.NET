@@ -8,9 +8,8 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DisplayEventTypeEXT : uint
+public enum DisplayEventTypeEXT
 {
     [SupportedApiProfile(
         "vulkan",

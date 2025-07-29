@@ -9,10 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum BuildMicromapFlagsEXT : uint
+public enum BuildMicromapFlagsEXT
 {
     None = 0,
 

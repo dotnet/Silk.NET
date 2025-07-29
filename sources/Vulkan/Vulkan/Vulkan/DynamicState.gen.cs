@@ -9,9 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DynamicState : uint
+public enum DynamicState
 {
     [SupportedApiProfile(
         "vulkan",

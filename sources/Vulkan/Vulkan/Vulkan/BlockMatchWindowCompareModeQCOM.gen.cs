@@ -9,9 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum BlockMatchWindowCompareModeQCOM : uint
+public enum BlockMatchWindowCompareModeQCOM
 {
     [SupportedApiProfile(
         "vulkan",

@@ -9,10 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum VideoDecodeCapabilityFlagsKHR : uint
+public enum VideoDecodeCapabilityFlagsKHR
 {
     None = 0,
 

@@ -9,9 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ShaderCodeTypeEXT : uint
+public enum ShaderCodeTypeEXT
 {
     [SupportedApiProfile(
         "vulkan",

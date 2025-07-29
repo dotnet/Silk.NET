@@ -9,9 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoH264WeightedBipredIdc : uint
+public enum StdVideoH264WeightedBipredIdc
 {
     [SupportedApiProfile("vulkan")]
     Default = 0,

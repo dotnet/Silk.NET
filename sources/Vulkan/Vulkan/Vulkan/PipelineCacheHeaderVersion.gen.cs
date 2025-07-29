@@ -9,9 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PipelineCacheHeaderVersion : uint
+public enum PipelineCacheHeaderVersion
 {
     [SupportedApiProfile(
         "vulkan",

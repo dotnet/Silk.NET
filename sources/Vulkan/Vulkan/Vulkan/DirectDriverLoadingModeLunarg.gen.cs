@@ -9,9 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DirectDriverLoadingModeLunarg : uint
+public enum DirectDriverLoadingModeLunarg
 {
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     ExclusiveLunarg = 0,

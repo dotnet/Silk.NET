@@ -9,9 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoAV1Profile : uint
+public enum StdVideoAV1Profile
 {
     [SupportedApiProfile("vulkan")]
     Main = 0,

@@ -9,10 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum SurfaceTransformFlagsKHR : uint
+public enum SurfaceTransformFlagsKHR
 {
     None = 0,
 

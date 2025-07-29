@@ -8,10 +8,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum CommandPoolCreateFlags : uint
+public enum CommandPoolCreateFlags
 {
     None = 0,
 
