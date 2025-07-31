@@ -1,11 +1,23 @@
 ﻿using System;
 using System.Buffers;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Humanizer;
+using Microsoft.Build.Evaluation;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Editing;
+using Microsoft.CodeAnalysis.FindSymbols;
+using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Mods.LocationTransformation;
+using Project = Microsoft.CodeAnalysis.Project;
 
 namespace Silk.NET.SilkTouch.Naming;
 
@@ -59,6 +71,12 @@ public static partial class NameUtils
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
+
+        if (ret.Length == 0)
+        {
+            throw new InvalidOperationException($"Failed to prettify string: {str}");
+        }
+
         var retSpan = ret.AsSpan();
         if (!allowAllCaps && retSpan.IndexOfAny(NotUppercase) == -1)
         {
@@ -73,7 +91,7 @@ public static partial class NameUtils
     /// Finds a common prefix in a set of names with respect to the word boundaries
     /// </summary>
     /// <param name="names">Set of names, snake_case</param>
-    /// <param name="allowFullMatch">Allows result to be a a full match with one of the names</param>
+    /// <param name="allowFullMatch">Allows result to be a full match with one of the names</param>
     /// <param name="allowLeadingDigits">Allows remainder tokens to start with a digit</param>
     /// <param name="naive">
     /// Just match the start of the strings, don't bother checking for obvious name separation gaps.
@@ -86,6 +104,11 @@ public static partial class NameUtils
         bool naive = false
     )
     {
+        if (names.Count == 0)
+        {
+            return "";
+        }
+
         if (allowFullMatch && names.Count == 1)
         {
             return names.First();
@@ -127,6 +150,11 @@ public static partial class NameUtils
         bool naive = false
     )
     {
+        if (names.Count == 0)
+        {
+            return "";
+        }
+
         var pos = 0;
         var foundPrefix = "";
         var minLen = names.Min(x => x.Length);
@@ -290,5 +318,46 @@ public static partial class NameUtils
         // https://chat.openai.com/share/8d3f2ec4-7eec-4dbd-a01e-a8d73e885964
         [GeneratedRegex(@"(?<=\D)(?=\d)|(?<=\d)(?=\D)|\W+")]
         private static partial Regex Words();
+    }
+
+    private static Location? IdentifierLocation(SyntaxNode? node) =>
+        node switch
+        {
+            BaseTypeDeclarationSyntax bt => bt.Identifier.GetLocation(),
+            DelegateDeclarationSyntax d => d.Identifier.GetLocation(),
+            EnumMemberDeclarationSyntax em => em.Identifier.GetLocation(),
+            EventDeclarationSyntax e => e.Identifier.GetLocation(),
+            MethodDeclarationSyntax m => m.Identifier.GetLocation(),
+            PropertyDeclarationSyntax p => p.Identifier.GetLocation(),
+            VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
+            ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
+            DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
+            _ => null,
+        };
+
+    /// <summary>
+    /// Rename all symbols with the given new names
+    /// </summary>
+    /// <param name="ctx">Mod context to use</param>
+    /// <param name="toRename">list of symbols to rename with new names</param>
+    /// <param name="ct">cancellation token</param>
+    /// <param name="logger">logger</param>
+    /// <param name="includeDeclarations">whether to replace any declaration references or not</param>
+    /// <param name="includeCandidateLocations">should candidate references or implicit references be included</param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentException"></exception>
+    public static async Task RenameAllAsync(
+        IModContext ctx,
+        IEnumerable<(ISymbol Symbol, string NewName)> toRename,
+        ILogger? logger = null,
+        CancellationToken ct = default,
+        bool includeDeclarations = true,
+        bool includeCandidateLocations = false
+    )
+    {
+        var toRenameList = toRename.ToList();
+        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, toRenameList.Select(t => t.Symbol), [
+            new IdentifierRenamingTransformer(toRenameList, includeDeclarations, includeCandidateLocations)
+        ], logger, ct);
     }
 }

@@ -13,3 +13,9 @@
 [submodule "eng/submodules/silk.net-2.x"]
 	path = eng/submodules/silk.net-2.x
 	url = https://github.com/dotnet/Silk.NET
+[submodule "eng/submodules/vulkan"]
+	path = eng/submodules/vulkan
+	url = https://github.com/KhronosGroup/Vulkan-Docs.git
+[submodule "eng/submodules/vulkan-headers"]
+	path = eng/submodules/vulkan-headers
+	url = https://github.com/KhronosGroup/Vulkan-Headers.git
