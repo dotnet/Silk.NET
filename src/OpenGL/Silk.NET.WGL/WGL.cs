@@ -41,20 +41,20 @@ namespace Silk.NET.WGL
         
         public override bool IsExtensionPresent(string extension) => IsExtensionPresent(extension, GetCurrentDC());
         
-        private ConcurrentDictionary<nint, HashSet<string>> _extensions;
+        private readonly ConcurrentDictionary<nint, HashSet<string>> _extensions = new();
         
         [NativeApi(EntryPoint = "wglGetExtensionsStringARB")]
         private partial string GetExtensionsString(nint hdc);
 
-        private static HashSet<string>? _empty;
+        private static readonly HashSet<string> _empty = new();
         private bool _hasGetExtensionsString;
         
         public bool IsExtensionPresent(string extension, nint hdc) => _extensions.GetOrAdd
             (
                 hdc, hdc => !(_hasGetExtensionsString =
                     _hasGetExtensionsString || GetProcAddress("wglGetExtensionsStringARB") != 0)
-                    ? _empty ??= new HashSet<string>()
-                    : new HashSet<string>(GetExtensionsString(hdc).Split(' ')) 
+                    ? _empty
+                    : new HashSet<string>(GetExtensionsString(hdc).Split(' '))
             )
             .Contains(extension.StartsWith("WGL_") ? extension : $"WGL_{extension}");
     }
