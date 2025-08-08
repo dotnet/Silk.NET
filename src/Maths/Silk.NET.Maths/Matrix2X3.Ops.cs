@@ -216,7 +216,7 @@ namespace Silk.NET.Maths
         public static unsafe Matrix2X3<T> Lerp<T>(Matrix2X3<T> matrix1, Matrix2X3<T> matrix2, T amount)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            return new(Vector3D.Lerp(matrix1.Row1, matrix2.Row2, amount), Vector3D.Lerp(matrix1.Row2, matrix2.Row2, amount));
+            return new(Vector3D.Lerp(matrix1.Row1, matrix2.Row1, amount), Vector3D.Lerp(matrix1.Row2, matrix2.Row2, amount));
         }
 
         /// <summary>Transforms the given matrix by applying the given Quaternion rotation.</summary>

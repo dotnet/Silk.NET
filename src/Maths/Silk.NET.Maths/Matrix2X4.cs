@@ -156,7 +156,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Constructs a <see cref="Matrix2X4{T}"/> from the given rows
+        /// Constructs a <see cref="Matrix2X4{T}"/> from the given rows.
         /// </summary>
         public Matrix2X4(Vector4D<T> row1, Vector4D<T> row2)
         {
@@ -179,8 +179,8 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22, default, default);
         }
 
-        /// <summary>Constructs a <see cref="Matrix2X4{T}"/> from the given Matrix4x3.</summary>
-        /// <param name="value">The source Matrix4x3.</param>
+        /// <summary>Constructs a <see cref="Matrix2X4{T}"/> from the given <see cref="Matrix4X3{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix4X3{T}"/>.</param>
         public Matrix2X4(Matrix4X3<T> value)
         {
             Row1 = new(value.M11, value.M12, value.M13, default);
@@ -203,7 +203,7 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22, value.M23, default);
         }
 
-        /// <summary>Constructs a Matrix2x4 from the given <see cref="Matrix4X2{T}"/>.</summary>
+        /// <summary>Constructs a <see cref="Matrix2X4{T}"/> from the given <see cref="Matrix4X2{T}"/>.</summary>
         /// <param name="value">The source <see cref="Matrix4X2{T}"/>.</param>
         public Matrix2X4(Matrix4X2<T> value)
         {

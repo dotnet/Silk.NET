@@ -45,13 +45,11 @@ namespace Silk.NET.Maths
         [IgnoreDataMember]
         public Vector3D<T> Column1 => new(Row1.X, Row2.X, Row3.X);
 
-
         /// <summary>
         /// Column 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Column2 => new(Row1.Y, Row2.Y, Row3.Y);
-
 
         /// <summary>
         /// Column 3 of the matrix.
