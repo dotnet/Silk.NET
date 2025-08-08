@@ -48,7 +48,7 @@ Before we can do anything, we need to get our brand new generators up and runnin
 - The Overloader works as a minimum viable product. It doesn't necessarily implement all overloads specified yet.
 - Windowing and Input are implemented for desktop platforms, and have received initial testing.
 - No development on Maths for this preview.
-- Support for .NET 10
+- Exclusive support for the latest .NET LTS
 
 3.0 Preview 1 is not a production-ready preview and is very experimental.
 
