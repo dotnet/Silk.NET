@@ -20,7 +20,7 @@ Follow the development [here.](https://github.com/dotnet/Silk.NET/issues/209)
 ## Goals of 3.0
 
 The key tenets of 3.0 are **portability**, **maintainability**, **usability**, and **performance**. To this end, the following objectives have been identified:
-- Use .NET 10
+- Use the latest .NET LTS at time of release 
     - (tenet: portability) 
 - Allow Silk.NET's rich abstractions to be integrated into other frameworks rather than being completely standalone.
     - WPF, WinForms, MAUI, Avalonia (tenet: usability) 
