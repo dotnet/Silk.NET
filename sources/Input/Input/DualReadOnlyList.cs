@@ -6,24 +6,29 @@ namespace Silk.NET.Input;
 /// Represents a list that has exactly two elements.
 /// </summary>
 /// <typeparam name="T">The element type.</typeparam>
-public readonly struct DualReadOnlyList<T>(T left, T right) : IReadOnlyList<T>
+public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
 {
     /// <summary>
-    /// Creates a copy of the given list.
+    /// Represents a list that has exactly two elements.
     /// </summary>
-    /// <param name="other">The list.</param>
-    public DualReadOnlyList(DualReadOnlyList<T> other)
-        : this(other.Left, other.Right) { }
+    /// <typeparam name="T">The element type.</typeparam>
+
+    public DualReadOnlyList(Func<T> left, Func<T> right)
+    {
+        _left = left;
+        _right = right;
+    }
 
     /// <summary>
     /// The first/leftmost element.
     /// </summary>
-    public readonly T Left = left;
+    public T Left => _left();
 
     /// <summary>
     /// The second/rightmost element.
     /// </summary>
-    public readonly T Right = right;
+    public T Right => _right();
+
 
     /// <inheritdoc />
     public IEnumerator<T> GetEnumerator()
@@ -45,4 +50,9 @@ public readonly struct DualReadOnlyList<T>(T left, T right) : IReadOnlyList<T>
             1 => Right,
             _ => throw new IndexOutOfRangeException(),
         };
+
+
+
+    private readonly Func<T> _left;
+    private readonly Func<T> _right;
 }

@@ -13,9 +13,9 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
     private protected readonly JoystickType JoystickType;
 
     private readonly JoystickState _joystickState;
-    private readonly GamepadState? _gamepadState;
     private readonly GamepadHandle? _gamepadHandle;
-    public readonly bool HasGamepadImplementation;
+    public readonly bool HasGamepadMapping;
+    public GamepadState GamepadState { get; }
 
     public sealed override string Name => NativeBackend.GetJoystickNameForID(SdlDeviceId).ReadToString();
 
@@ -40,20 +40,21 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
         JoystickType = NativeBackend.GetJoystickType(joystickHandle);
 
 
-        var gamepadMapping = NativeBackend.GetGamepadBindings(sdlDeviceId);
+        /*var gamepadMapping = NativeBackend.GetGamepadBindings(sdlDeviceId);
         if (gamepadMapping.Native != null)
         {
             NativeBackend.Free(gamepadMapping.Native);
-        }
+        }*/
 
 
-        int bindingsCount = 0;
+        var bindingsCount = 0;
         var gamepadHandle = *(GamepadHandle*)&joystickHandle; //NativeBackend.OpenGamepad(sdlDeviceId);
         var mappings = NativeBackend.GetGamepadBindings(gamepadHandle, &bindingsCount);
 
         if (bindingsCount != 0)
         {
-            HasGamepadImplementation = true;
+            HasGamepadMapping = true;
+            _gamepadHandle = gamepadHandle;
             for (int i = 0; i < bindingsCount; i++)
             {
                 var binding = mappings[i];
@@ -81,11 +82,8 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
                 switch (binding->OutputType)
                 {
                     case GamepadBindingType.Axis:
-                        break;
                     case GamepadBindingType.Button:
-                        break;
-                    default:
-                        // todo : throw? this should not be possible according to sdl
+                        _outputBindings.Add(*binding);
                         break;
                 }
 
@@ -96,7 +94,7 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
                         while (_hatBindings.Count <= id.Value)
                             _hatBindings.Add(null);
 
-                        _hatBindings[id.Value] ??= new List<GamepadBinding>();
+                        _hatBindings[id.Value] ??= [];
                         _hatBindings[id.Value]!.Add(*binding);
                     }
                     else
@@ -118,18 +116,6 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
             }
         }
 
-        if (_bindings.Count > 0)
-        {
-            _gamepadButtonState = new bool[(int)GamepadButton.Count];
-            _gamepadAxisState = new float[(int)GamepadAxis.Count];
-        }
-        else
-        {
-            _gamepadState = null;
-            _gamepadButtonState = [];
-            _gamepadAxisState = [];
-        }
-
         // init current joystick state
         var buttonCount = NativeBackend.GetNumJoystickButtons(joystickHandle);
         for (var i = 0; i < buttonCount; i++)
@@ -139,7 +125,6 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
         }
 
         var axisCount = NativeBackend.GetNumJoystickAxes(joystickHandle);
-        _rawAxisState = new float[axisCount];
         for (int i = 0; i < axisCount; i++)
         {
             var joystickInput = NativeBackend.GetJoystickAxis(_joystickHandle, i);
@@ -159,8 +144,11 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
             UpdateHat(i, hatInput);
         }
 
-        _joystickState = new JoystickState(_rawAxisState, _rawButtonState, _rawHatState);
-        _gamepadState = new GamepadState()
+        _rawAxisState = new float[EnumInfo<JoystickAxis>.UniqueValues.Count + axisCount];
+        _rawButtonState = new (EnumInfo<JoystickButton>.UniqueValues.Count + buttonCount);
+
+        _joystickState = new JoystickState(_rawAxisState, _rawButtonState, _hatStateVectors);
+        GamepadState = new GamepadState(_rawButtonState, _rawAxisState);
     }
 
     [Flags]
@@ -189,7 +177,7 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
         var down = (hatState & HatState.Down) == HatState.Down;
         var y = (float)(*(byte*)&up - *(byte*)&down);
 
-        _rawHatState[hatIdx] = new Vector2(x, y);
+        _hatStateVectors[hatIdx] = new Vector2(x, y);
         if (_hatBindings.Count <= hatIdx)
         {
             return;
@@ -243,17 +231,87 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
                 UpdateGamepadAxis(output->Axis.Axis, joystickInput, output->Axis.AxisMin, output->Axis.AxisMax );
                 break;
             case GamepadBindingType.Button:
-                UpdateGamepadButton(output->Button, joystickInput > 0); // todo : threshold
+                UpdateGamepadButton(output->Button, joystickInput > _joystickDigitalThreshold); // todo : threshold smartlier
                 break;
         }
     }
 
     private void UpdateGamepadAxis(GamepadAxis axis, int value, int min, int max)
     {
-        _gamepadAxisState[(int)axis] = (float)(value + min) / (max - min);
+        var mappedValue = (float)(value + min) / (max - min);
+        var positive = mappedValue > 0;
+        switch (axis)
+        {
+            case GamepadAxis.Invalid:
+                return;
+            case GamepadAxis.Leftx:
+            {
+                _rawAxisState[JoystickAxis.LeftX.Index()] = mappedValue;
+
+                var split = SplitValue(mappedValue);
+                _rawAxisState[JoystickAxis.MinusLeftX.Index()] = split.minus;
+                _rawAxisState[JoystickAxis.PlusLeftX.Index()] = split.plus;
+                break;
+            }
+            case GamepadAxis.Lefty:
+            {
+                _rawAxisState[JoystickAxis.LeftY.Index()] = mappedValue;
+
+                var split = SplitValue(mappedValue);
+                _rawAxisState[JoystickAxis.MinusLeftY.Index()] = split.minus;
+                _rawAxisState[JoystickAxis.PlusLeftY.Index()] = split.plus;
+                break;
+            }
+            case GamepadAxis.Rightx:
+            {
+                _rawAxisState[JoystickAxis.RightX.Index()] = mappedValue;
+
+                var split = SplitValue(mappedValue);
+                _rawAxisState[JoystickAxis.MinusRightX.Index()] = split.minus;
+                _rawAxisState[JoystickAxis.PlusRightX.Index()] = split.plus;
+                break;
+            }
+            case GamepadAxis.Righty:
+            {
+                _rawAxisState[JoystickAxis.RightY.Index()] = mappedValue;
+
+                var split = SplitValue(mappedValue);
+                _rawAxisState[JoystickAxis.MinusRightY.Index()] = split.minus;
+                _rawAxisState[JoystickAxis.PlusRightY.Index()] = split.plus;
+                break;
+            }
+            case GamepadAxis.LeftTrigger:
+            {
+                _rawAxisState[JoystickAxis.LeftTrigger.Index()] = mappedValue;
+                break;
+            }
+            case GamepadAxis.RightTrigger:
+            {
+                _rawAxisState[JoystickAxis.RightTrigger.Index()] = mappedValue;
+                break;
+            }
+            default:
+                throw new ArgumentOutOfRangeException(nameof(axis), axis, null);
+        }
     }
 
-    private void UpdateGamepadButton(GamepadButton button, bool value) => _gamepadButtonState[(int)button] = value;
+    private static (float minus, float plus) SplitValue(float mappedValue)
+    {
+        mappedValue = (float)((mappedValue - 0.5d) * 2d);
+        return mappedValue > 0 ? (0, mappedValue) : (mappedValue, 0);
+    }
+
+    private void UpdateGamepadButton(GamepadButton button, bool value)
+    {
+        var asJoystickButton = AsJoystickButton(button);
+        var idx = EnumInfo<JoystickButton>.ValueIndexOfUnnamed(asJoystickButton);
+        if (idx < 0)
+        {
+            throw new Exception("Received an invalid SDL button??");
+        }
+
+        _rawButtonState[idx] = new Button<JoystickButton>(asJoystickButton, value, value ? 1 : 0);
+    }
 
     public void UpdateButton(int buttonIdx, byte rawValue)
     {
@@ -265,7 +323,7 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
             return;
         }
 
-        Debug.Assert(binding.InputType == GamepadBindingType.Button);
+        Debug.Assert(binding.InputType == GamepadBindingType.Button && binding.Input.Button == buttonIdx);
         var bindingType = binding.OutputType;
         var output = &binding.Output;
         switch (bindingType)
@@ -282,9 +340,6 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
 
             case GamepadBindingType.Button:
                 UpdateGamepadButton(output->Button, down);
-                break;
-            default:
-                // todo: throw? - this should not be possible
                 break;
         }
     }
@@ -303,13 +358,11 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
 
     private readonly List<Button<JoystickButton>> _rawButtonState = [];
     private readonly float[] _rawAxisState;
-    private readonly Vector2[] _rawHatState = [];
-    private readonly bool[] _gamepadButtonState;
-    private readonly float[] _gamepadAxisState;
+    private readonly Vector2[] _hatStateVectors = [];
 
     private const float _buttonPressureMultiplier = 1 / 255f;
 
-    private static JoystickButton AsGamepadButton(GamepadButton buttonIndex) =>
+    private static JoystickButton AsJoystickButton(GamepadButton buttonIndex) =>
         buttonIndex switch {
             GamepadButton.South => JoystickButton.ButtonDown,
             GamepadButton.East => JoystickButton.ButtonRight,
@@ -342,8 +395,6 @@ internal unsafe class SdlJoystick : SdlDevice, IJoystick, IGamepad
     private const int AxisShift = 8;
 
     private const short _joystickDigitalThreshold = short.MaxValue / 8;
-
-    private readonly record struct SDLGamepadState(List<Button<JoystickButton>> Buttons, List<float> Axes);
 
     ButtonReadOnlyList<JoystickButton> IButtonDevice<JoystickButton>.State => _joystickState.Buttons;
 }

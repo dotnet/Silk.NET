@@ -153,12 +153,62 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// Values with the same numerical value will return the same index
     /// </summary>
     /// <param name="value"></param>
-    /// <returns>The index of the sorted enum numerical value</returns>
+    /// <returns>The index of the sorted enum numerical value, or -1 if not a named enum member.</returns>
     /// <exception cref="InvalidOperationException"></exception>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static int ValueIndexOf(T value) => _numericallyDistinctValues.TryGetValue(value, out var index) ? index : -1;
+    public static int ValueIndexOf(T value) => _numericallyDistinctValues.GetValueOrDefault(value, -1);
 
-    private static unsafe T[] OrderedValues<TNumber>(bool byNumericValue)
+    /// <summary>
+    /// Gets the ordered index of the unnamed enum value provided. This index is calculated by:
+    /// (the number of named members in this enum type) + (the raw value of the number)
+    ///
+    /// Negative values or values that are above the lowest enum value will return -1, as they cannot be used for indexing
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
+    public static int ValueIndexOfUnnamed(T value)
+    {
+        if(_numericallyDistinctValues.TryGetValue(value, out var index))
+        {
+            return index;
+        }
+
+        var rawValue = ValueOf<T, int>(value);
+
+        // todo - don't rely on joystickButton's unknown - find the MinValue
+        if (rawValue <= 0 || rawValue >= ValueOf<ulong, int>(_allEnumValuesRaw[0]))
+        {
+            return -1;
+        }
+
+        return  _all.Length + rawValue;
+    }
+
+    private static unsafe TNumber ValueOf<TValue, TNumber>(TValue value) where TNumber : unmanaged where TValue : unmanaged
+
+    {
+        if (sizeof(T) == sizeof(TNumber))
+        {
+            return Unsafe.Read<TNumber>(&value);
+        }
+
+        var minSize = Math.Min(sizeof(TNumber), sizeof(T));
+
+        var originalValuePtr = (byte*)&value;
+
+        var valuePtr = &originalValuePtr[Math.Abs(minSize - sizeof(T))]; // does this assume little-endianness?
+        var numberPtr = stackalloc byte[sizeof(TNumber)];
+
+        // ensure block is initialized (as it isnt guaranteed?) so any missing bytes of the output will stay 0
+        // if type TNumber is a larger size than type T
+        Unsafe.InitBlock(numberPtr, 0, (uint)sizeof(TNumber));
+
+        var copyToPtr = &numberPtr[Math.Abs(minSize - sizeof(TNumber))];
+        Buffer.MemoryCopy(valuePtr, copyToPtr, sizeof(TNumber), minSize);
+        return *(TNumber*)numberPtr;
+    }
+
+    private static T[] OrderedValues<TNumber>(bool byNumericValue)
         where TNumber : unmanaged, IComparable<TNumber>
     {
         // numerically distinct numbers
@@ -166,20 +216,18 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
         if (byNumericValue)
         {
-            allValues = allValues.DistinctBy(x => *(TNumber*)&x).ToArray();
+            allValues = allValues.DistinctBy(ValueOf<T, TNumber>).ToArray();
         }
 
         // sort by increasing order
         Array.Sort(allValues, (a, b) => {
-            var aNumber = *(TNumber*)&a;
-            var bNumber = *(TNumber*)&b;
+            var aNumber = ValueOf<T, TNumber>(a);
+            var bNumber = ValueOf<T, TNumber>(b);
             return aNumber.CompareTo(bNumber);
         });
 
         return allValues;
     }
-
-    public static int ToUnknownIndex<TOther>(TOther value)
 
     public static unsafe bool HasValue(int value) => _allEnumValuesRaw.Contains(*(uint*)&value);
 }

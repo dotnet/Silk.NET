@@ -21,4 +21,18 @@ public class JoystickState
     /// Gets the state of the joystick hats as vectors between <c>-1.0</c> and <c>1.0</c>.
     /// </summary>
     public InputReadOnlyList<Vector2> Hats { get; }
+
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="axes"></param>
+    /// <param name="buttons"></param>
+    /// <param name="hats"></param>
+    public JoystickState(IReadOnlyList<float> axes, IReadOnlyList<Button<JoystickButton>> buttons, IReadOnlyList<Vector2> hats)
+    {
+        Axes = new InputReadOnlyList<float>(axes);
+        Buttons = new ButtonReadOnlyList<JoystickButton>(buttons);
+        Hats = new InputReadOnlyList<Vector2>(hats);
+
+    }
 }
