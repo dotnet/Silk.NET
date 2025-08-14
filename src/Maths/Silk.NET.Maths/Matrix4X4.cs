@@ -234,7 +234,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Constructs a <see cref="Matrix4X4{T}"/> from the given rows
+        /// Constructs a <see cref="Matrix4X4{T}"/> from the given rows.
         /// </summary>
         public Matrix4X4(Vector4D<T> row1, Vector4D<T> row2, Vector4D<T> row3, Vector4D<T> row4)
         {

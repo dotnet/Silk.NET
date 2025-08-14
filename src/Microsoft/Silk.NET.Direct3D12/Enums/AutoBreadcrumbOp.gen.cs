@@ -147,6 +147,18 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"Resolveencoderoutputmetadata\"")]
         [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_RESOLVEENCODEROUTPUTMETADATA")]
         AutoBreadcrumbOpResolveencoderoutputmetadata = 0x2C,
+        [Obsolete("Deprecated in favour of \"Barrier\"")]
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_BARRIER")]
+        AutoBreadcrumbOpBarrier = 0x2D,
+        [Obsolete("Deprecated in favour of \"BeginCommandList\"")]
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_BEGIN_COMMAND_LIST")]
+        AutoBreadcrumbOpBeginCommandList = 0x2E,
+        [Obsolete("Deprecated in favour of \"Dispatchgraph\"")]
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_DISPATCHGRAPH")]
+        AutoBreadcrumbOpDispatchgraph = 0x2F,
+        [Obsolete("Deprecated in favour of \"Setprogram\"")]
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_SETPROGRAM")]
+        AutoBreadcrumbOpSetprogram = 0x30,
         [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_SETMARKER")]
         Setmarker = 0x0,
         [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_BEGINEVENT")]
@@ -237,5 +249,13 @@ namespace Silk.NET.Direct3D12
         Encodeframe = 0x2B,
         [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_RESOLVEENCODEROUTPUTMETADATA")]
         Resolveencoderoutputmetadata = 0x2C,
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_BARRIER")]
+        Barrier = 0x2D,
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_BEGIN_COMMAND_LIST")]
+        BeginCommandList = 0x2E,
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_DISPATCHGRAPH")]
+        Dispatchgraph = 0x2F,
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_SETPROGRAM")]
+        Setprogram = 0x30,
     }
 }

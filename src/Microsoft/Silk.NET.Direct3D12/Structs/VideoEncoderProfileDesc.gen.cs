@@ -24,7 +24,8 @@ namespace Silk.NET.Direct3D12
             uint? dataSize = null,
             VideoEncoderProfileDescUnion? anonymous = null,
             VideoEncoderProfileH264* pH264Profile = null,
-            VideoEncoderProfileHevc* pHEVCProfile = null
+            VideoEncoderProfileHevc* pHEVCProfile = null,
+            VideoEncoderAV1Profile* pAV1Profile = null
         ) : this()
         {
             if (dataSize is not null)
@@ -46,6 +47,11 @@ namespace Silk.NET.Direct3D12
             {
                 PHEVCProfile = pHEVCProfile;
             }
+
+            if (pAV1Profile is not null)
+            {
+                PAV1Profile = pAV1Profile;
+            }
         }
 
 
@@ -55,7 +61,7 @@ namespace Silk.NET.Direct3D12
         public uint DataSize;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12video_L6324_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12video_L6974_C5")]
         [NativeName("Name", "anonymous1")]
         public VideoEncoderProfileDescUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
@@ -83,6 +89,20 @@ namespace Silk.NET.Direct3D12
         {
             get => Anonymous.PHEVCProfile;
             set => Anonymous.PHEVCProfile = value;
+        }
+#endif
+
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref VideoEncoderAV1Profile* PAV1Profile
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].PAV1Profile;
+        }
+#else
+        public VideoEncoderAV1Profile* PAV1Profile
+        {
+            get => Anonymous.PAV1Profile;
+            set => Anonymous.PAV1Profile = value;
         }
 #endif
 

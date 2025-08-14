@@ -631,6 +631,22 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         ConcurrentAtomicAccess = 0x8,
         [NativeName("Name", "CL_UNIFIED_SHARED_MEMORY_CONCURRENT_ATOMIC_ACCESS_INTEL")]
         UnifiedSharedMemoryConcurrentAtomicAccessIntel = 0x8,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
+        All = 0xFF,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
+        ContextDiagnosticsLevelAllIntel = 0xFF,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
+        Good = 0x1,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
+        ContextDiagnosticsLevelGoodIntel = 0x1,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL")]
+        Bad = 0x2,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL")]
+        ContextDiagnosticsLevelBadIntel = 0x2,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
+        Neutral = 0x4,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
+        ContextDiagnosticsLevelNeutralIntel = 0x4,
         [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_DX9_INTEL")]
         PreferredDevicesForDX9 = 0x4024,
         [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_DX9_INTEL")]
@@ -809,22 +825,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         ShowDiagnosticsIntel = 0x4106,
         [NativeName("Name", "CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
         ContextShowDiagnosticsIntel = 0x4106,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
-        DiagnosticsLevelAllIntel = 0xFF,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
-        ContextDiagnosticsLevelAllIntel = 0xFF,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
-        DiagnosticsLevelGoodIntel = 0x1,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
-        ContextDiagnosticsLevelGoodIntel = 0x1,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL")]
-        DiagnosticsLevelBadIntel = 0x2,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL")]
-        ContextDiagnosticsLevelBadIntel = 0x2,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
-        DiagnosticsLevelNeutralIntel = 0x4,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
-        ContextDiagnosticsLevelNeutralIntel = 0x4,
         [NativeName("Name", "CL_DEVICE_ME_VERSION_INTEL")]
         MEVersionIntel = 0x407E,
         [NativeName("Name", "CL_DEVICE_ME_VERSION_INTEL")]

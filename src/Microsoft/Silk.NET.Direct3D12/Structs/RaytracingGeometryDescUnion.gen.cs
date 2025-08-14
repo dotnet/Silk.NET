@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L13356_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L14661_C5")]
     public unsafe partial struct RaytracingGeometryDescUnion
     {
         public RaytracingGeometryDescUnion

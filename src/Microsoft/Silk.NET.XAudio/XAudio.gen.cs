@@ -294,17 +294,17 @@ namespace Silk.NET.XAudio
         public const int LogStreaming = unchecked((int) 0x1000);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1273, Column 16 in xaudio2.h")]
+        [NativeName("Src", "Line 1270, Column 16 in xaudio2.h")]
         [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateWithVersionInfo(IXAudio2** ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1273, Column 16 in xaudio2.h")]
+        [NativeName("Src", "Line 1270, Column 16 in xaudio2.h")]
         [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateWithVersionInfo(ref IXAudio2* ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1273, Column 16 in xaudio2.h")]
+        [NativeName("Src", "Line 1270, Column 16 in xaudio2.h")]
         public unsafe int CreateWithVersionInfo<TI0>(ref ComPtr<TI0> ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion) where TI0 : unmanaged, IComVtbl<IXAudio2>, IComVtbl<TI0>
         {
             // ComPtrOverloader

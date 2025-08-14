@@ -109,6 +109,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"NoneKhr\"")]
         [NativeName("Name", "VK_ACCESS_NONE_KHR")]
         AccessNoneKhr = 0,
+        [Obsolete("Deprecated in favour of \"CommandPreprocessReadBitExt\"")]
+        [NativeName("Name", "VK_ACCESS_COMMAND_PREPROCESS_READ_BIT_EXT")]
+        AccessCommandPreprocessReadBitExt = 131072,
+        [Obsolete("Deprecated in favour of \"CommandPreprocessWriteBitExt\"")]
+        [NativeName("Name", "VK_ACCESS_COMMAND_PREPROCESS_WRITE_BIT_EXT")]
+        AccessCommandPreprocessWriteBitExt = 262144,
         [Obsolete("Deprecated in favour of \"None\"")]
         [NativeName("Name", "VK_ACCESS_NONE")]
         AccessNone = 0,
@@ -176,6 +182,10 @@ namespace Silk.NET.Vulkan
         CommandPreprocessWriteBitNV = 262144,
         [NativeName("Name", "VK_ACCESS_NONE_KHR")]
         NoneKhr = 0,
+        [NativeName("Name", "VK_ACCESS_COMMAND_PREPROCESS_READ_BIT_EXT")]
+        CommandPreprocessReadBitExt = 131072,
+        [NativeName("Name", "VK_ACCESS_COMMAND_PREPROCESS_WRITE_BIT_EXT")]
+        CommandPreprocessWriteBitExt = 262144,
         [NativeName("Name", "VK_ACCESS_NONE")]
         None = 0,
     }

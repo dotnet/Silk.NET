@@ -33,6 +33,7 @@ namespace Silk.NET.Core.Loader
         /// - <see cref="MainModuleDirectoryResolver" />
         /// - <see cref="RuntimesFolderResolver" />
         /// - <see cref="NativePackageResolver" />
+        /// - <see cref="SilkDirectoryResolver"/>
         /// </summary>
         public DefaultPathResolver() => Resolvers = new()
         {
@@ -42,7 +43,8 @@ namespace Silk.NET.Core.Loader
             BaseDirectoryResolver,
             MainModuleDirectoryResolver,
             RuntimesFolderResolver,
-            NativePackageResolver
+            NativePackageResolver,
+            SilkDirectoryResolver
         };
 
         /// <summary>
@@ -91,6 +93,44 @@ namespace Silk.NET.Core.Loader
             catch
             {
                 // System.Diagnostics.Process is not supported on the WASI-SDK
+            }
+
+            return Enumerable.Empty<string>();
+        };
+
+        /// <summary>
+        /// A resolver that returns a path to a file in Silk.NET's <see cref="Assembly.Location"/> and/or
+        /// <see cref="Assembly.CodeBase"/> directory with the given name.
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> SilkDirectoryResolver = name =>
+        {
+            try
+            {
+                var asmLocation = typeof(DefaultPathResolver).Assembly.Location;
+                // check that name doesn't have a directory name, we only want raw filenames so that the Path.Combine
+                // doesn't blow up.
+                if (!string.IsNullOrWhiteSpace(Path.GetDirectoryName(name)) && !string.IsNullOrWhiteSpace(asmLocation) && File.Exists(asmLocation))
+                {
+                    asmLocation = Path.GetDirectoryName(asmLocation);
+                    if (asmLocation is not null)
+                    {
+                        return Enumerable.Repeat(Path.Combine(asmLocation, name), 1);
+                    }
+                }
+
+                asmLocation = typeof(DefaultPathResolver).Assembly.CodeBase;
+                if (!string.IsNullOrWhiteSpace(Path.GetDirectoryName(name)) && !string.IsNullOrWhiteSpace(asmLocation) && File.Exists(asmLocation))
+                {
+                    asmLocation = Path.GetDirectoryName(asmLocation);
+                    if (asmLocation is not null)
+                    {
+                        return Enumerable.Repeat(Path.Combine(asmLocation, name), 1);
+                    }
+                }
+            }
+            catch
+            {
+                // not supported on the WASI-SDK
             }
 
             return Enumerable.Empty<string>();
@@ -330,7 +370,7 @@ namespace Silk.NET.Core.Loader
         private static readonly string[] _linuxRiDs =
         {
             "alpine", "android", "arch", "centos", "debian", "exherbo", "fedora", "freebsd", "gentoo", "linux",
-            "opensuse", "rhel", "sles", "tizen"
+            "opensuse", "rhel", "sles", "tizen", "pop"
         };
 
         private static string? GuessFallbackRid(string actualRuntimeIdentifier)

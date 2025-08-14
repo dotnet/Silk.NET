@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
+    [Flags]
     [NativeName("Name", "tagPOINTERINACTIVE")]
     public enum PointerInactive : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"Activateonentry\"")]
         [NativeName("Name", "POINTERINACTIVE_ACTIVATEONENTRY")]
         PointerinactiveActivateonentry = 0x1,

@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
+    [Flags]
     [NativeName("Name", "D3D11_RLDO_FLAGS")]
     public enum RldoFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"Summary\"")]
         [NativeName("Name", "D3D11_RLDO_SUMMARY")]
         RldoSummary = 0x1,

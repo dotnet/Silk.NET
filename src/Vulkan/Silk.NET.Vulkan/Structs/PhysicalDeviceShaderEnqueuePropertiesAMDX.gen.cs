@@ -27,7 +27,8 @@ namespace Silk.NET.Vulkan
             uint? maxExecutionGraphShaderOutputNodes = null,
             uint? maxExecutionGraphShaderPayloadSize = null,
             uint? maxExecutionGraphShaderPayloadCount = null,
-            uint? executionGraphDispatchAddressAlignment = null
+            uint? executionGraphDispatchAddressAlignment = null,
+            uint? maxExecutionGraphWorkgroups = null
         ) : this()
         {
             if (sType is not null)
@@ -63,6 +64,11 @@ namespace Silk.NET.Vulkan
             if (executionGraphDispatchAddressAlignment is not null)
             {
                 ExecutionGraphDispatchAddressAlignment = executionGraphDispatchAddressAlignment.Value;
+            }
+
+            if (maxExecutionGraphWorkgroups is not null)
+            {
+                MaxExecutionGraphWorkgroups = maxExecutionGraphWorkgroups.Value;
             }
         }
 
@@ -101,6 +107,16 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "executionGraphDispatchAddressAlignment")]
         public uint ExecutionGraphDispatchAddressAlignment;
+        /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxExecutionGraphWorkgroupCount")]
+        public fixed uint MaxExecutionGraphWorkgroupCount[3];
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxExecutionGraphWorkgroups")]
+        public uint MaxExecutionGraphWorkgroups;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

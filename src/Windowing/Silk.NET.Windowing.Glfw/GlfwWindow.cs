@@ -38,7 +38,7 @@ namespace Silk.NET.Windowing.Glfw
         private string _localTitleCache; // glfw doesn't let us get the window title.
         private GlfwContext? _glContext;
         private string _windowClass;
-        private bool _inDoEvents;
+        private bool _inRefresh;
 
         /// <summary>
         /// The action passed to <see cref="Run"/>.
@@ -633,23 +633,15 @@ namespace Silk.NET.Windowing.Glfw
 
         public override void DoEvents()
         {
-            if (!_inDoEvents)
+            if (!_inRefresh)
             {
-                try
+                if (IsEventDriven)
                 {
-                    _inDoEvents = true;
-                    if (IsEventDriven)
-                    {
-                        _glfw.WaitEvents();
-                    }
-                    else
-                    {
-                        _glfw.PollEvents();
-                    }
+                    _glfw.WaitEvents();
                 }
-                finally
+                else
                 {
-                    _inDoEvents = false;
+                    _glfw.PollEvents();
                 }
             }
         }
@@ -709,7 +701,23 @@ namespace Silk.NET.Windowing.Glfw
                 FramebufferResize?.Invoke(new(width, height));
             };
 
-            _onRefresh = (window) => _onFrame?.Invoke();
+            _onRefresh = (window) =>
+            {
+                if (_inRefresh)
+                {
+                    return;
+                }
+
+                try
+                {
+                    _inRefresh = true;
+                    _onFrame?.Invoke();
+                }
+                finally
+                {
+                    _inRefresh = false;
+                }
+            };
 
             _onClosing = window => Closing?.Invoke();
 

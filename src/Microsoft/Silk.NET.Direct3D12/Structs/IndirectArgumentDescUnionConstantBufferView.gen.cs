@@ -16,7 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
-    [NativeName("Name", "__AnonymousRecord_d3d12_L4160_C9")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L4539_C9")]
     public unsafe partial struct IndirectArgumentDescUnionConstantBufferView
     {
         public IndirectArgumentDescUnionConstantBufferView

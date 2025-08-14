@@ -24,7 +24,8 @@ namespace Silk.NET.Direct3D12
             uint? dataSize = null,
             VideoEncoderCodecPictureControlSupportUnion? anonymous = null,
             VideoEncoderCodecPictureControlSupportH264* pH264Support = null,
-            VideoEncoderCodecPictureControlSupportHevc* pHEVCSupport = null
+            VideoEncoderCodecPictureControlSupportHevc* pHEVCSupport = null,
+            VideoEncoderCodecAV1PictureControlSupport* pAV1Support = null
         ) : this()
         {
             if (dataSize is not null)
@@ -46,6 +47,11 @@ namespace Silk.NET.Direct3D12
             {
                 PHEVCSupport = pHEVCSupport;
             }
+
+            if (pAV1Support is not null)
+            {
+                PAV1Support = pAV1Support;
+            }
         }
 
 
@@ -55,7 +61,7 @@ namespace Silk.NET.Direct3D12
         public uint DataSize;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12video_L6650_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12video_L7359_C5")]
         [NativeName("Name", "anonymous1")]
         public VideoEncoderCodecPictureControlSupportUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
@@ -83,6 +89,20 @@ namespace Silk.NET.Direct3D12
         {
             get => Anonymous.PHEVCSupport;
             set => Anonymous.PHEVCSupport = value;
+        }
+#endif
+
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref VideoEncoderCodecAV1PictureControlSupport* PAV1Support
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].PAV1Support;
+        }
+#else
+        public VideoEncoderCodecAV1PictureControlSupport* PAV1Support
+        {
+            get => Anonymous.PAV1Support;
+            set => Anonymous.PAV1Support = value;
         }
 #endif
 

@@ -12,6 +12,9 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVendorId")]
     public enum VendorId : int
     {
+        [Obsolete("Deprecated in favour of \"Khronos\"")]
+        [NativeName("Name", "VK_VENDOR_ID_KHRONOS")]
+        VendorIDKhronos = 65536,
         [Obsolete("Deprecated in favour of \"Viv\"")]
         [NativeName("Name", "VK_VENDOR_ID_VIV")]
         VendorIDViv = 65537,
@@ -33,6 +36,8 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"Mobileye\"")]
         [NativeName("Name", "VK_VENDOR_ID_MOBILEYE")]
         VendorIDMobileye = 65543,
+        [NativeName("Name", "VK_VENDOR_ID_KHRONOS")]
+        Khronos = 65536,
         [NativeName("Name", "VK_VENDOR_ID_VIV")]
         Viv = 65537,
         [NativeName("Name", "VK_VENDOR_ID_VSI")]

@@ -17,7 +17,7 @@ namespace Silk.NET.SDL
     public static class SdlOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 443, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 446, Column 31 in SDL_stdinc.h")]
         public static unsafe void* Realloc<T0>(this Sdl thisApi, Span<T0> mem, nuint size) where T0 : unmanaged
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 444, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 447, Column 30 in SDL_stdinc.h")]
         public static unsafe void Free<T0>(this Sdl thisApi, Span<T0> mem) where T0 : unmanaged
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -41,7 +41,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -49,7 +49,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -57,7 +57,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -65,7 +65,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -73,7 +73,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -81,7 +81,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -89,7 +89,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -97,7 +97,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -105,7 +105,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -113,7 +113,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -121,7 +121,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -129,7 +129,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -137,7 +137,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -145,7 +145,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 456, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -153,7 +153,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -161,7 +161,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -169,7 +169,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -177,7 +177,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -185,7 +185,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -193,7 +193,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -201,7 +201,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -209,7 +209,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -217,7 +217,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -225,7 +225,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -233,7 +233,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -241,7 +241,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -249,7 +249,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -257,7 +257,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -265,7 +265,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 466, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -273,7 +273,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 488, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 491, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Getenv(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name)
         {
             // SpanOverloader
@@ -281,7 +281,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 489, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 492, Column 29 in SDL_stdinc.h")]
         public static unsafe int Setenv(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> value, int overwrite)
         {
             // SpanOverloader
@@ -289,7 +289,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 489, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 492, Column 29 in SDL_stdinc.h")]
         public static unsafe int Setenv(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value, int overwrite)
         {
             // SpanOverloader
@@ -297,7 +297,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 489, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 492, Column 29 in SDL_stdinc.h")]
         public static unsafe int Setenv(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> value, int overwrite)
         {
             // SpanOverloader
@@ -305,7 +305,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 489, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 492, Column 29 in SDL_stdinc.h")]
         public static unsafe int Setenv(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, int overwrite)
         {
             // SpanOverloader
@@ -313,7 +313,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 489, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 492, Column 29 in SDL_stdinc.h")]
         public static unsafe int Setenv(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> value, int overwrite)
         {
             // SpanOverloader
@@ -321,7 +321,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 491, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 494, Column 30 in SDL_stdinc.h")]
         public static unsafe void Qsort<T0>(this Sdl thisApi, Span<T0> @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged
         {
             // SpanOverloader
@@ -329,7 +329,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 492, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 495, Column 32 in SDL_stdinc.h")]
         public static unsafe void* Bsearch<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged
         {
             // SpanOverloader
@@ -337,7 +337,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 492, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 495, Column 32 in SDL_stdinc.h")]
         public static unsafe void* Bsearch<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged
         {
             // SpanOverloader
@@ -345,7 +345,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 492, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 495, Column 32 in SDL_stdinc.h")]
         public static unsafe void* Bsearch<T0, T1>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
@@ -353,7 +353,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 516, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 519, Column 32 in SDL_stdinc.h")]
         public static unsafe ushort Crc16<T0>(this Sdl thisApi, ushort crc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, nuint len) where T0 : unmanaged
         {
             // SpanOverloader
@@ -361,7 +361,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 517, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 520, Column 32 in SDL_stdinc.h")]
         public static unsafe uint Crc32<T0>(this Sdl thisApi, uint crc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, nuint len) where T0 : unmanaged
         {
             // SpanOverloader
@@ -369,7 +369,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 519, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 522, Column 31 in SDL_stdinc.h")]
         public static unsafe void* Memset<T0>(this Sdl thisApi, Span<T0> dst, int c, nuint len) where T0 : unmanaged
         {
             // SpanOverloader
@@ -377,7 +377,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 559, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 562, Column 31 in SDL_stdinc.h")]
         public static unsafe void* Memcpy<T0>(this Sdl thisApi, void* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src, nuint len) where T0 : unmanaged
         {
             // SpanOverloader
@@ -385,7 +385,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 559, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 562, Column 31 in SDL_stdinc.h")]
         public static unsafe void* Memcpy<T0>(this Sdl thisApi, Span<T0> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src, nuint len) where T0 : unmanaged
         {
             // SpanOverloader
@@ -393,7 +393,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 559, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 562, Column 31 in SDL_stdinc.h")]
         public static unsafe void* Memcpy<T0, T1>(this Sdl thisApi, Span<T0> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> src, nuint len) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
@@ -401,7 +401,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 561, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 564, Column 31 in SDL_stdinc.h")]
         public static unsafe void* Memmove<T0>(this Sdl thisApi, void* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src, nuint len) where T0 : unmanaged
         {
             // SpanOverloader
@@ -409,7 +409,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 561, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 564, Column 31 in SDL_stdinc.h")]
         public static unsafe void* Memmove<T0>(this Sdl thisApi, Span<T0> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src, nuint len) where T0 : unmanaged
         {
             // SpanOverloader
@@ -417,7 +417,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 561, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 564, Column 31 in SDL_stdinc.h")]
         public static unsafe void* Memmove<T0, T1>(this Sdl thisApi, Span<T0> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> src, nuint len) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
@@ -425,7 +425,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 562, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 565, Column 29 in SDL_stdinc.h")]
         public static unsafe int Memcmp<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> s2, nuint len) where T0 : unmanaged
         {
             // SpanOverloader
@@ -433,7 +433,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 562, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 565, Column 29 in SDL_stdinc.h")]
         public static unsafe int Memcmp<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* s2, nuint len) where T0 : unmanaged
         {
             // SpanOverloader
@@ -441,7 +441,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 562, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 565, Column 29 in SDL_stdinc.h")]
         public static unsafe int Memcmp<T0, T1>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> s2, nuint len) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
@@ -449,7 +449,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 564, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 567, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Wcslen(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wstr)
         {
             // SpanOverloader
@@ -457,7 +457,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 565, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 568, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Wcslcpy(this Sdl thisApi, char* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> src, nuint maxlen)
         {
             // SpanOverloader
@@ -465,7 +465,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 565, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 568, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Wcslcpy(this Sdl thisApi, Span<char> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* src, nuint maxlen)
         {
             // SpanOverloader
@@ -473,7 +473,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 565, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 568, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Wcslcpy(this Sdl thisApi, Span<char> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> src, nuint maxlen)
         {
             // SpanOverloader
@@ -481,7 +481,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 565, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 568, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Wcslcpy(this Sdl thisApi, Span<char> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen)
         {
             // SpanOverloader
@@ -489,7 +489,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 565, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 568, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Wcslcpy(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> src, nuint maxlen)
         {
             // SpanOverloader
@@ -497,7 +497,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 566, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 569, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Wcslcat(this Sdl thisApi, char* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> src, nuint maxlen)
         {
             // SpanOverloader
@@ -505,7 +505,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 566, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 569, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Wcslcat(this Sdl thisApi, Span<char> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* src, nuint maxlen)
         {
             // SpanOverloader
@@ -513,7 +513,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 566, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 569, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Wcslcat(this Sdl thisApi, Span<char> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> src, nuint maxlen)
         {
             // SpanOverloader
@@ -521,7 +521,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 566, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 569, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Wcslcat(this Sdl thisApi, Span<char> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen)
         {
             // SpanOverloader
@@ -529,7 +529,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 566, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 569, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Wcslcat(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> src, nuint maxlen)
         {
             // SpanOverloader
@@ -537,7 +537,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 567, Column 34 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 570, Column 34 in SDL_stdinc.h")]
         public static unsafe char* Wcsdup(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wstr)
         {
             // SpanOverloader
@@ -545,7 +545,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 568, Column 34 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 571, Column 34 in SDL_stdinc.h")]
         public static unsafe char* Wcsstr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> needle)
         {
             // SpanOverloader
@@ -553,7 +553,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 568, Column 34 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 571, Column 34 in SDL_stdinc.h")]
         public static unsafe char* Wcsstr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* needle)
         {
             // SpanOverloader
@@ -561,7 +561,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 568, Column 34 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 571, Column 34 in SDL_stdinc.h")]
         public static unsafe char* Wcsstr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> needle)
         {
             // SpanOverloader
@@ -569,7 +569,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 568, Column 34 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 571, Column 34 in SDL_stdinc.h")]
         public static unsafe char* Wcsstr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle)
         {
             // SpanOverloader
@@ -577,7 +577,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 568, Column 34 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 571, Column 34 in SDL_stdinc.h")]
         public static unsafe char* Wcsstr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> needle)
         {
             // SpanOverloader
@@ -585,7 +585,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 570, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 573, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcscmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2)
         {
             // SpanOverloader
@@ -593,7 +593,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 570, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 573, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcscmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2)
         {
             // SpanOverloader
@@ -601,7 +601,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 570, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 573, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcscmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2)
         {
             // SpanOverloader
@@ -609,7 +609,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 570, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 573, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcscmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2)
         {
             // SpanOverloader
@@ -617,7 +617,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 570, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 573, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcscmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2)
         {
             // SpanOverloader
@@ -625,7 +625,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 571, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 574, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcsncmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2, nuint maxlen)
         {
             // SpanOverloader
@@ -633,7 +633,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 571, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 574, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcsncmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2, nuint maxlen)
         {
             // SpanOverloader
@@ -641,7 +641,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 571, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 574, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcsncmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2, nuint maxlen)
         {
             // SpanOverloader
@@ -649,7 +649,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 571, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 574, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcsncmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen)
         {
             // SpanOverloader
@@ -657,7 +657,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 571, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 574, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcsncmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2, nuint maxlen)
         {
             // SpanOverloader
@@ -665,7 +665,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 572, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 575, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcscasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2)
         {
             // SpanOverloader
@@ -673,7 +673,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 572, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 575, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcscasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2)
         {
             // SpanOverloader
@@ -681,7 +681,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 572, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 575, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcscasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2)
         {
             // SpanOverloader
@@ -689,7 +689,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 572, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 575, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcscasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2)
         {
             // SpanOverloader
@@ -697,7 +697,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 572, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 575, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcscasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2)
         {
             // SpanOverloader
@@ -705,7 +705,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 573, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 576, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcsncasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2, nuint len)
         {
             // SpanOverloader
@@ -713,7 +713,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 573, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 576, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcsncasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2, nuint len)
         {
             // SpanOverloader
@@ -721,7 +721,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 573, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 576, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcsncasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2, nuint len)
         {
             // SpanOverloader
@@ -729,7 +729,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 573, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 576, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcsncasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len)
         {
             // SpanOverloader
@@ -737,7 +737,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 573, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 576, Column 29 in SDL_stdinc.h")]
         public static unsafe int Wcsncasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> str2, nuint len)
         {
             // SpanOverloader
@@ -745,7 +745,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 575, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 578, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Strlen(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str)
         {
             // SpanOverloader
@@ -753,7 +753,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 576, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 579, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Strlcpy(this Sdl thisApi, byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> src, nuint maxlen)
         {
             // SpanOverloader
@@ -761,7 +761,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 576, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 579, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Strlcpy(this Sdl thisApi, Span<byte> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* src, nuint maxlen)
         {
             // SpanOverloader
@@ -769,7 +769,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 576, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 579, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Strlcpy(this Sdl thisApi, Span<byte> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> src, nuint maxlen)
         {
             // SpanOverloader
@@ -777,7 +777,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 576, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 579, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Strlcpy(this Sdl thisApi, Span<byte> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen)
         {
             // SpanOverloader
@@ -785,7 +785,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 576, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 579, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Strlcpy(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> src, nuint maxlen)
         {
             // SpanOverloader
@@ -793,7 +793,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 577, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 580, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Utf8strlcpy(this Sdl thisApi, byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> src, nuint dst_bytes)
         {
             // SpanOverloader
@@ -801,7 +801,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 577, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 580, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Utf8strlcpy(this Sdl thisApi, Span<byte> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* src, nuint dst_bytes)
         {
             // SpanOverloader
@@ -809,7 +809,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 577, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 580, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Utf8strlcpy(this Sdl thisApi, Span<byte> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> src, nuint dst_bytes)
         {
             // SpanOverloader
@@ -817,7 +817,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 577, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 580, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Utf8strlcpy(this Sdl thisApi, Span<byte> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint dst_bytes)
         {
             // SpanOverloader
@@ -825,7 +825,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 577, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 580, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Utf8strlcpy(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> src, nuint dst_bytes)
         {
             // SpanOverloader
@@ -833,7 +833,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 578, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 581, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Strlcat(this Sdl thisApi, byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> src, nuint maxlen)
         {
             // SpanOverloader
@@ -841,7 +841,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 578, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 581, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Strlcat(this Sdl thisApi, Span<byte> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* src, nuint maxlen)
         {
             // SpanOverloader
@@ -849,7 +849,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 578, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 581, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Strlcat(this Sdl thisApi, Span<byte> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> src, nuint maxlen)
         {
             // SpanOverloader
@@ -857,7 +857,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 578, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 581, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Strlcat(this Sdl thisApi, Span<byte> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen)
         {
             // SpanOverloader
@@ -865,7 +865,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 578, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 581, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Strlcat(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> src, nuint maxlen)
         {
             // SpanOverloader
@@ -873,7 +873,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 582, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strdup(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str)
         {
             // SpanOverloader
@@ -881,7 +881,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 583, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strrev(this Sdl thisApi, Span<byte> str)
         {
             // SpanOverloader
@@ -889,7 +889,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 584, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strupr(this Sdl thisApi, Span<byte> str)
         {
             // SpanOverloader
@@ -897,7 +897,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 582, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 585, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strlwr(this Sdl thisApi, Span<byte> str)
         {
             // SpanOverloader
@@ -905,7 +905,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 583, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 586, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strchr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, int c)
         {
             // SpanOverloader
@@ -913,7 +913,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 584, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 587, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strrchr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, int c)
         {
             // SpanOverloader
@@ -921,7 +921,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 585, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 588, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strstr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> needle)
         {
             // SpanOverloader
@@ -929,7 +929,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 585, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 588, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strstr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* needle)
         {
             // SpanOverloader
@@ -937,7 +937,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 585, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 588, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strstr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> needle)
         {
             // SpanOverloader
@@ -945,7 +945,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 585, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 588, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strstr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle)
         {
             // SpanOverloader
@@ -953,7 +953,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 585, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 588, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strstr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> needle)
         {
             // SpanOverloader
@@ -961,7 +961,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 586, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 589, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> needle)
         {
             // SpanOverloader
@@ -969,7 +969,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 586, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 589, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* needle)
         {
             // SpanOverloader
@@ -977,7 +977,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 586, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 589, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> needle)
         {
             // SpanOverloader
@@ -985,7 +985,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 586, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 589, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle)
         {
             // SpanOverloader
@@ -993,7 +993,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 586, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 589, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> needle)
         {
             // SpanOverloader
@@ -1001,7 +1001,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 587, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 590, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strtokr(this Sdl thisApi, byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> s2, byte** saveptr)
         {
             // SpanOverloader
@@ -1009,7 +1009,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 587, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 590, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strtokr(this Sdl thisApi, byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> s2, ref byte* saveptr)
         {
             // SpanOverloader
@@ -1017,7 +1017,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 587, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 590, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strtokr(this Sdl thisApi, Span<byte> s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* s2, byte** saveptr)
         {
             // SpanOverloader
@@ -1025,7 +1025,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 587, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 590, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strtokr(this Sdl thisApi, Span<byte> s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* s2, ref byte* saveptr)
         {
             // SpanOverloader
@@ -1033,7 +1033,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 587, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 590, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strtokr(this Sdl thisApi, Span<byte> s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> s2, byte** saveptr)
         {
             // SpanOverloader
@@ -1041,7 +1041,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 587, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 590, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strtokr(this Sdl thisApi, Span<byte> s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> s2, ref byte* saveptr)
         {
             // SpanOverloader
@@ -1049,7 +1049,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 587, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 590, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strtokr(this Sdl thisApi, Span<byte> s1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, byte** saveptr)
         {
             // SpanOverloader
@@ -1057,7 +1057,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 587, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 590, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strtokr(this Sdl thisApi, Span<byte> s1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, ref byte* saveptr)
         {
             // SpanOverloader
@@ -1065,7 +1065,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 587, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 590, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strtokr(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> s2, byte** saveptr)
         {
             // SpanOverloader
@@ -1073,7 +1073,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 587, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 590, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Strtokr(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> s2, ref byte* saveptr)
         {
             // SpanOverloader
@@ -1081,7 +1081,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 588, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 591, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Utf8strlen(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str)
         {
             // SpanOverloader
@@ -1089,7 +1089,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 589, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 592, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Utf8strnlen(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, nuint bytes)
         {
             // SpanOverloader
@@ -1097,7 +1097,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 591, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 594, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Itoa(this Sdl thisApi, int value, Span<byte> str, int radix)
         {
             // SpanOverloader
@@ -1105,7 +1105,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 592, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 595, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Uitoa(this Sdl thisApi, uint value, Span<byte> str, int radix)
         {
             // SpanOverloader
@@ -1113,7 +1113,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 593, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 596, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Ltoa(this Sdl thisApi, int value, Span<byte> str, int radix)
         {
             // SpanOverloader
@@ -1121,7 +1121,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 594, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 597, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Ultoa(this Sdl thisApi, uint value, Span<byte> str, int radix)
         {
             // SpanOverloader
@@ -1129,7 +1129,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 595, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 598, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Lltoa(this Sdl thisApi, long value, Span<byte> str, int radix)
         {
             // SpanOverloader
@@ -1137,7 +1137,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 596, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 599, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* Ulltoa(this Sdl thisApi, ulong value, Span<byte> str, int radix)
         {
             // SpanOverloader
@@ -1145,7 +1145,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 598, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 601, Column 29 in SDL_stdinc.h")]
         public static unsafe int Atoi(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str)
         {
             // SpanOverloader
@@ -1153,7 +1153,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 599, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 602, Column 32 in SDL_stdinc.h")]
         public static unsafe double Atof(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str)
         {
             // SpanOverloader
@@ -1161,7 +1161,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 600, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 603, Column 30 in SDL_stdinc.h")]
         public static unsafe int Strtol(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, byte** endp, int @base)
         {
             // SpanOverloader
@@ -1169,7 +1169,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 600, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 603, Column 30 in SDL_stdinc.h")]
         public static unsafe int Strtol(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, ref byte* endp, int @base)
         {
             // SpanOverloader
@@ -1177,7 +1177,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 601, Column 39 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 604, Column 39 in SDL_stdinc.h")]
         public static unsafe uint Strtoul(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, byte** endp, int @base)
         {
             // SpanOverloader
@@ -1185,7 +1185,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 601, Column 39 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 604, Column 39 in SDL_stdinc.h")]
         public static unsafe uint Strtoul(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, ref byte* endp, int @base)
         {
             // SpanOverloader
@@ -1193,7 +1193,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 602, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 605, Column 32 in SDL_stdinc.h")]
         public static unsafe long Strtoll(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, byte** endp, int @base)
         {
             // SpanOverloader
@@ -1201,7 +1201,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 602, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 605, Column 32 in SDL_stdinc.h")]
         public static unsafe long Strtoll(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, ref byte* endp, int @base)
         {
             // SpanOverloader
@@ -1209,7 +1209,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 603, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 606, Column 32 in SDL_stdinc.h")]
         public static unsafe ulong Strtoull(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, byte** endp, int @base)
         {
             // SpanOverloader
@@ -1217,7 +1217,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 603, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 606, Column 32 in SDL_stdinc.h")]
         public static unsafe ulong Strtoull(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, ref byte* endp, int @base)
         {
             // SpanOverloader
@@ -1225,7 +1225,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 604, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 607, Column 32 in SDL_stdinc.h")]
         public static unsafe double Strtod(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, byte** endp)
         {
             // SpanOverloader
@@ -1233,7 +1233,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 604, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 607, Column 32 in SDL_stdinc.h")]
         public static unsafe double Strtod(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, ref byte* endp)
         {
             // SpanOverloader
@@ -1241,7 +1241,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strcmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2)
         {
             // SpanOverloader
@@ -1249,7 +1249,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strcmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2)
         {
             // SpanOverloader
@@ -1257,7 +1257,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strcmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2)
         {
             // SpanOverloader
@@ -1265,7 +1265,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strcmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2)
         {
             // SpanOverloader
@@ -1273,7 +1273,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strcmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2)
         {
             // SpanOverloader
@@ -1281,7 +1281,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 607, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strncmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2, nuint maxlen)
         {
             // SpanOverloader
@@ -1289,7 +1289,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 607, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strncmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2, nuint maxlen)
         {
             // SpanOverloader
@@ -1297,7 +1297,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 607, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strncmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2, nuint maxlen)
         {
             // SpanOverloader
@@ -1305,7 +1305,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 607, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strncmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen)
         {
             // SpanOverloader
@@ -1313,7 +1313,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 607, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strncmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2, nuint maxlen)
         {
             // SpanOverloader
@@ -1321,7 +1321,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 611, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strcasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2)
         {
             // SpanOverloader
@@ -1329,7 +1329,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 611, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strcasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2)
         {
             // SpanOverloader
@@ -1337,7 +1337,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 611, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strcasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2)
         {
             // SpanOverloader
@@ -1345,7 +1345,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 611, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strcasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2)
         {
             // SpanOverloader
@@ -1353,7 +1353,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 611, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strcasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2)
         {
             // SpanOverloader
@@ -1361,7 +1361,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strncasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2, nuint len)
         {
             // SpanOverloader
@@ -1369,7 +1369,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strncasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2, nuint len)
         {
             // SpanOverloader
@@ -1377,7 +1377,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strncasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2, nuint len)
         {
             // SpanOverloader
@@ -1385,7 +1385,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strncasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len)
         {
             // SpanOverloader
@@ -1393,7 +1393,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
         public static unsafe int Strncasecmp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str2, nuint len)
         {
             // SpanOverloader
@@ -1401,7 +1401,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 611, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
         public static unsafe int Sscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt)
         {
             // SpanOverloader
@@ -1409,7 +1409,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 611, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
         public static unsafe int Sscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt)
         {
             // SpanOverloader
@@ -1417,7 +1417,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 611, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
         public static unsafe int Sscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt)
         {
             // SpanOverloader
@@ -1425,7 +1425,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 611, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
         public static unsafe int Sscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt)
         {
             // SpanOverloader
@@ -1433,7 +1433,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 611, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
         public static unsafe int Sscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt)
         {
             // SpanOverloader
@@ -1441,7 +1441,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1449,7 +1449,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, byte* ap)
         {
             // SpanOverloader
@@ -1457,7 +1457,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1465,7 +1465,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1473,7 +1473,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1481,7 +1481,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, byte* ap)
         {
             // SpanOverloader
@@ -1489,7 +1489,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1497,7 +1497,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1505,7 +1505,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, byte* ap)
         {
             // SpanOverloader
@@ -1513,7 +1513,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1521,7 +1521,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1529,7 +1529,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap)
         {
             // SpanOverloader
@@ -1537,7 +1537,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1545,7 +1545,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1553,7 +1553,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1561,7 +1561,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, byte* ap)
         {
             // SpanOverloader
@@ -1569,7 +1569,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1577,7 +1577,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1585,7 +1585,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsscanf(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1593,7 +1593,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 613, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
         public static unsafe int Snprintf(this Sdl thisApi, byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt)
         {
             // SpanOverloader
@@ -1601,7 +1601,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 613, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
         public static unsafe int Snprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt)
         {
             // SpanOverloader
@@ -1609,7 +1609,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 613, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
         public static unsafe int Snprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt)
         {
             // SpanOverloader
@@ -1617,7 +1617,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 613, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
         public static unsafe int Snprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt)
         {
             // SpanOverloader
@@ -1625,7 +1625,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 613, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
         public static unsafe int Snprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt)
         {
             // SpanOverloader
@@ -1633,7 +1633,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1641,7 +1641,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, byte* ap)
         {
             // SpanOverloader
@@ -1649,7 +1649,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1657,7 +1657,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1665,7 +1665,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1673,7 +1673,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, byte* ap)
         {
             // SpanOverloader
@@ -1681,7 +1681,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1689,7 +1689,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1697,7 +1697,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, byte* ap)
         {
             // SpanOverloader
@@ -1705,7 +1705,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1713,7 +1713,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1721,7 +1721,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap)
         {
             // SpanOverloader
@@ -1729,7 +1729,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1737,7 +1737,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1745,7 +1745,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1753,7 +1753,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, byte* ap)
         {
             // SpanOverloader
@@ -1761,7 +1761,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1769,7 +1769,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1777,7 +1777,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 614, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 617, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vsnprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1785,7 +1785,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 618, Column 29 in SDL_stdinc.h")]
         public static unsafe int Asprintf(this Sdl thisApi, byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt)
         {
             // SpanOverloader
@@ -1793,7 +1793,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 615, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 618, Column 29 in SDL_stdinc.h")]
         public static unsafe int Asprintf(this Sdl thisApi, ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt)
         {
             // SpanOverloader
@@ -1801,7 +1801,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 619, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vasprintf(this Sdl thisApi, byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1809,7 +1809,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 619, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vasprintf(this Sdl thisApi, byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, byte* ap)
         {
             // SpanOverloader
@@ -1817,7 +1817,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 619, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vasprintf(this Sdl thisApi, byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1825,7 +1825,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 619, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vasprintf(this Sdl thisApi, byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1833,7 +1833,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 619, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vasprintf(this Sdl thisApi, byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1841,7 +1841,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 619, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vasprintf(this Sdl thisApi, ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1849,7 +1849,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 619, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vasprintf(this Sdl thisApi, ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, byte* ap)
         {
             // SpanOverloader
@@ -1857,7 +1857,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 619, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vasprintf(this Sdl thisApi, ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1865,7 +1865,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 619, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vasprintf(this Sdl thisApi, ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
@@ -1873,7 +1873,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 616, Column 29 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 619, Column 29 in SDL_stdinc.h")]
         public static unsafe int Vasprintf(this Sdl thisApi, ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
@@ -1881,7 +1881,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 689, Column 37 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 692, Column 37 in SDL_stdinc.h")]
         public static unsafe Icon* IconvOpen(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode)
         {
             // SpanOverloader
@@ -1889,7 +1889,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 689, Column 37 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 692, Column 37 in SDL_stdinc.h")]
         public static unsafe Icon* IconvOpen(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode)
         {
             // SpanOverloader
@@ -1897,7 +1897,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 689, Column 37 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 692, Column 37 in SDL_stdinc.h")]
         public static unsafe Icon* IconvOpen(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode)
         {
             // SpanOverloader
@@ -1905,7 +1905,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 689, Column 37 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 692, Column 37 in SDL_stdinc.h")]
         public static unsafe Icon* IconvOpen(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode)
         {
             // SpanOverloader
@@ -1913,7 +1913,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 689, Column 37 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 692, Column 37 in SDL_stdinc.h")]
         public static unsafe Icon* IconvOpen(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode)
         {
             // SpanOverloader
@@ -1921,7 +1921,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** inbuf, nuint* inbytesleft, byte** outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
@@ -1929,7 +1929,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** inbuf, nuint* inbytesleft, ref byte* outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
@@ -1937,7 +1937,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** inbuf, Span<nuint> inbytesleft, byte** outbuf, nuint* outbytesleft)
         {
             // SpanOverloader
@@ -1945,7 +1945,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** inbuf, Span<nuint> inbytesleft, byte** outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
@@ -1953,7 +1953,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** inbuf, Span<nuint> inbytesleft, ref byte* outbuf, nuint* outbytesleft)
         {
             // SpanOverloader
@@ -1961,7 +1961,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** inbuf, Span<nuint> inbytesleft, ref byte* outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
@@ -1969,7 +1969,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, nuint* inbytesleft, byte** outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
@@ -1977,7 +1977,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, nuint* inbytesleft, ref byte* outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
@@ -1985,7 +1985,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, Span<nuint> inbytesleft, byte** outbuf, nuint* outbytesleft)
         {
             // SpanOverloader
@@ -1993,7 +1993,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, Span<nuint> inbytesleft, byte** outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
@@ -2001,7 +2001,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, Span<nuint> inbytesleft, ref byte* outbuf, nuint* outbytesleft)
         {
             // SpanOverloader
@@ -2009,7 +2009,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
         public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, Span<nuint> inbytesleft, ref byte* outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
@@ -2017,7 +2017,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2025,7 +2025,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2033,7 +2033,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2041,7 +2041,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2049,7 +2049,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2057,7 +2057,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2065,7 +2065,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2073,7 +2073,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2081,7 +2081,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2089,7 +2089,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2097,7 +2097,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2105,7 +2105,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2113,7 +2113,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2121,7 +2121,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2129,7 +2129,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2137,7 +2137,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2145,7 +2145,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2153,7 +2153,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -2161,7 +2161,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 702, Column 31 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 705, Column 31 in SDL_stdinc.h")]
         public static unsafe byte* IconvString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
@@ -8286,7 +8286,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 848, Column 34 in SDL_joystick.h")]
+        [NativeName("Src", "Line 853, Column 34 in SDL_joystick.h")]
         public static unsafe SdlBool JoystickGetAxisInitialState(this Sdl thisApi, Joystick* joystick, int axis, Span<short> state)
         {
             // SpanOverloader
@@ -8294,7 +8294,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 911, Column 29 in SDL_joystick.h")]
+        [NativeName("Src", "Line 916, Column 29 in SDL_joystick.h")]
         public static unsafe int JoystickGetBall(this Sdl thisApi, Joystick* joystick, int ball, int* dx, Span<int> dy)
         {
             // SpanOverloader
@@ -8302,7 +8302,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 911, Column 29 in SDL_joystick.h")]
+        [NativeName("Src", "Line 916, Column 29 in SDL_joystick.h")]
         public static unsafe int JoystickGetBall(this Sdl thisApi, Joystick* joystick, int ball, Span<int> dx, int* dy)
         {
             // SpanOverloader
@@ -8310,7 +8310,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 911, Column 29 in SDL_joystick.h")]
+        [NativeName("Src", "Line 916, Column 29 in SDL_joystick.h")]
         public static unsafe int JoystickGetBall(this Sdl thisApi, Joystick* joystick, int ball, Span<int> dx, Span<int> dy)
         {
             // SpanOverloader
@@ -8318,7 +8318,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1037, Column 29 in SDL_joystick.h")]
+        [NativeName("Src", "Line 1042, Column 29 in SDL_joystick.h")]
         public static unsafe int JoystickSendEffect<T0>(this Sdl thisApi, Joystick* joystick, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, int size) where T0 : unmanaged
         {
             // SpanOverloader
@@ -8878,7 +8878,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2730, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2743, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> value, HintPriority priority)
         {
             // SpanOverloader
@@ -8886,7 +8886,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2730, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2743, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value, HintPriority priority)
         {
             // SpanOverloader
@@ -8894,7 +8894,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2730, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2743, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> value, HintPriority priority)
         {
             // SpanOverloader
@@ -8902,7 +8902,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2730, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2743, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, HintPriority priority)
         {
             // SpanOverloader
@@ -8910,7 +8910,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2730, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2743, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> value, HintPriority priority)
         {
             // SpanOverloader
@@ -8918,7 +8918,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2750, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2763, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool SetHint(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> value)
         {
             // SpanOverloader
@@ -8926,7 +8926,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2750, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2763, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool SetHint(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value)
         {
             // SpanOverloader
@@ -8934,7 +8934,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2750, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2763, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool SetHint(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> value)
         {
             // SpanOverloader
@@ -8942,7 +8942,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2750, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2763, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool SetHint(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
         {
             // SpanOverloader
@@ -8950,7 +8950,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2750, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2763, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool SetHint(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> value)
         {
             // SpanOverloader
@@ -8958,7 +8958,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2768, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2781, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool ResetHint(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name)
         {
             // SpanOverloader
@@ -8966,7 +8966,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2796, Column 38 in SDL_hints.h")]
+        [NativeName("Src", "Line 2809, Column 38 in SDL_hints.h")]
         public static unsafe byte* GetHint(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name)
         {
             // SpanOverloader
@@ -8974,7 +8974,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2811, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2824, Column 34 in SDL_hints.h")]
         public static unsafe SdlBool GetHintBoolean(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, SdlBool default_value)
         {
             // SpanOverloader
@@ -8982,7 +8982,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2835, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2848, Column 30 in SDL_hints.h")]
         public static unsafe void AddHintCallback<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -8990,7 +8990,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2835, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2848, Column 30 in SDL_hints.h")]
         public static unsafe void AddHintCallback(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, PfnHintCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -8998,7 +8998,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2835, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2848, Column 30 in SDL_hints.h")]
         public static unsafe void AddHintCallback<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -9006,7 +9006,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2835, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2848, Column 30 in SDL_hints.h")]
         public static unsafe void AddHintCallback<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -9014,7 +9014,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2851, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2864, Column 30 in SDL_hints.h")]
         public static unsafe void DelHintCallback<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -9022,7 +9022,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2851, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2864, Column 30 in SDL_hints.h")]
         public static unsafe void DelHintCallback(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, PfnHintCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -9030,7 +9030,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2851, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2864, Column 30 in SDL_hints.h")]
         public static unsafe void DelHintCallback<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -9038,7 +9038,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2851, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2864, Column 30 in SDL_hints.h")]
         public static unsafe void DelHintCallback<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader

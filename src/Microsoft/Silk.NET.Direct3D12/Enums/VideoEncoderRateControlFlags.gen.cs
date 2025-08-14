@@ -34,6 +34,12 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"EnableVbvSizes\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_VBV_SIZES")]
         VideoEncoderRateControlFlagEnableVbvSizes = 0x20,
+        [Obsolete("Deprecated in favour of \"EnableExtension1Support\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_EXTENSION1_SUPPORT")]
+        VideoEncoderRateControlFlagEnableExtension1Support = 0x40,
+        [Obsolete("Deprecated in favour of \"EnableQualityVSSpeed\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_QUALITY_VS_SPEED")]
+        VideoEncoderRateControlFlagEnableQualityVSSpeed = 0x80,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_DELTA_QP")]
@@ -48,5 +54,9 @@ namespace Silk.NET.Direct3D12
         EnableMaxFrameSize = 0x10,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_VBV_SIZES")]
         EnableVbvSizes = 0x20,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_EXTENSION1_SUPPORT")]
+        EnableExtension1Support = 0x40,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_QUALITY_VS_SPEED")]
+        EnableQualityVSSpeed = 0x80,
     }
 }

@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
+    [Flags]
     [NativeName("Name", "DXGI_OUTDUPL_POINTER_SHAPE_TYPE")]
     public enum OutduplPointerShapeType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"Monochrome\"")]
         [NativeName("Name", "DXGI_OUTDUPL_POINTER_SHAPE_TYPE_MONOCHROME")]
         OutduplPointerShapeTypeMonochrome = 0x1,

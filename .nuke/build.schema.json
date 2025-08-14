@@ -30,6 +30,10 @@
           "type": "boolean",
           "description": "If specified, ignores any generated solution present and builds the entire project"
         },
+        "AndroidHomeValue": {
+          "type": "string",
+          "description": "Android home. Will be determined from dotnet if not provided"
+        },
         "Configuration": {
           "type": "string",
           "description": "Configuration to build - Default is 'Debug' (local) or 'Release' (server)"
@@ -66,6 +70,10 @@
             "VisualStudio",
             "VSCode"
           ]
+        },
+        "MatrixArg": {
+          "type": "string",
+          "description": "Matrix job argument e.g. a RID for native builds"
         },
         "MsbuildProperties": {
           "type": "array",
@@ -132,9 +140,20 @@
             "type": "string"
           }
         },
+        "PullBaseSite": {
+          "type": "boolean",
+          "description": "When enabled, pulls the latest changes for local clone of the 3.0 branch to build the website. Automatically true if the local clone doesn't exist yet"
+        },
         "Root": {
           "type": "string",
           "description": "Root directory during build execution"
+        },
+        "SiteBuildArgs": {
+          "type": "array",
+          "description": "Arguments for website generation on the 3.0 branch",
+          "items": {
+            "type": "string"
+          }
         },
         "Skip": {
           "type": "array",
@@ -142,6 +161,7 @@
           "items": {
             "type": "string",
             "enum": [
+              "Angle",
               "Assimp",
               "BuildLibSilkDroid",
               "Clean",
@@ -172,6 +192,7 @@
               "ValidateSolution",
               "Vkd3d",
               "VulkanLoader",
+              "Website",
               "Wgpu"
             ]
           }
@@ -186,6 +207,7 @@
           "items": {
             "type": "string",
             "enum": [
+              "Angle",
               "Assimp",
               "BuildLibSilkDroid",
               "Clean",
@@ -216,6 +238,7 @@
               "ValidateSolution",
               "Vkd3d",
               "VulkanLoader",
+              "Website",
               "Wgpu"
             ]
           }

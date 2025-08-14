@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
+    [Flags]
     [NativeName("Name", "tagLOCKTYPE")]
     public enum LockType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"Write\"")]
         [NativeName("Name", "LOCK_WRITE")]
         LockWrite = 0x1,

@@ -24,10 +24,10 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetRenderingInputAttachmentIndices(this KhrDynamicRenderingLocalRead thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingInputAttachmentIndexInfoKHR> pLocationInfo)
+        public static unsafe void CmdSetRenderingInputAttachmentIndices(this KhrDynamicRenderingLocalRead thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingInputAttachmentIndexInfoKHR> pInputAttachmentIndexInfo)
         {
             // SpanOverloader
-            thisApi.CmdSetRenderingInputAttachmentIndices(commandBuffer, in pLocationInfo.GetPinnableReference());
+            thisApi.CmdSetRenderingInputAttachmentIndices(commandBuffer, in pInputAttachmentIndexInfo.GetPinnableReference());
         }
 
     }

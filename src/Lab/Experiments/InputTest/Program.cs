@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
-using Silk.NET.GLFW;
 using Silk.NET.Input;
 using Silk.NET.Windowing;
 using MouseButton = Silk.NET.Input.MouseButton;

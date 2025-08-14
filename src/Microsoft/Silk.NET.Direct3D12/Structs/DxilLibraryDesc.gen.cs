@@ -53,8 +53,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "NumExports")]
         public uint NumExports;
 
-        [NativeName("Type", "D3D12_EXPORT_DESC *")]
-        [NativeName("Type.Name", "D3D12_EXPORT_DESC *")]
+        [NativeName("Type", "const D3D12_EXPORT_DESC *")]
+        [NativeName("Type.Name", "const D3D12_EXPORT_DESC *")]
         [NativeName("Name", "pExports")]
         public ExportDesc* PExports;
     }

@@ -16,6 +16,10 @@ namespace Silk.NET.SPIRV
         RowMajorKhr = 0x0,
         [NativeName("Name", "SpvCooperativeMatrixLayoutColumnMajorKHR")]
         ColumnMajorKhr = 0x1,
+        [NativeName("Name", "SpvCooperativeMatrixLayoutRowBlockedInterleavedARM")]
+        RowBlockedInterleavedArm = 0x106A,
+        [NativeName("Name", "SpvCooperativeMatrixLayoutColumnBlockedInterleavedARM")]
+        ColumnBlockedInterleavedArm = 0x106B,
         [NativeName("Name", "SpvCooperativeMatrixLayoutMax")]
         Max = 0x7FFFFFFF,
     }

@@ -101,7 +101,7 @@ namespace Silk.NET.Direct3D12
         public DsvFlags Flags;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3499_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3847_C5")]
         [NativeName("Name", "anonymous1")]
         public DepthStencilViewDescUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

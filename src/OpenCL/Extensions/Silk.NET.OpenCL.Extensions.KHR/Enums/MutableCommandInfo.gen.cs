@@ -18,8 +18,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         CommandCommandBuffer = 0x12A1,
         [NativeName("Name", "CL_MUTABLE_COMMAND_COMMAND_TYPE_KHR")]
         CommandCommandType = 0x12AD,
-        [NativeName("Name", "CL_MUTABLE_DISPATCH_PROPERTIES_ARRAY_KHR")]
-        DispatchPropertiesArray = 0x12A2,
+        [NativeName("Name", "CL_MUTABLE_COMMAND_PROPERTIES_ARRAY_KHR")]
+        CommandPropertiesArray = 0x12A2,
         [NativeName("Name", "CL_MUTABLE_DISPATCH_KERNEL_KHR")]
         DispatchKernel = 0x12A3,
         [NativeName("Name", "CL_MUTABLE_DISPATCH_DIMENSIONS_KHR")]

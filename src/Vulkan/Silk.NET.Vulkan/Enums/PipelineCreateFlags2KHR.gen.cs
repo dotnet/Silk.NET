@@ -24,6 +24,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DerivativeBitKhr\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_2_DERIVATIVE_BIT_KHR")]
         PipelineCreate2DerivativeBitKhr = 4,
+        [Obsolete("Deprecated in favour of \"ExecutionGraphBitAmdx\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_2_EXECUTION_GRAPH_BIT_AMDX")]
+        PipelineCreate2ExecutionGraphBitAmdx = 4294967296,
+        [Obsolete("Deprecated in favour of \"EnableLegacyDitheringBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_2_ENABLE_LEGACY_DITHERING_BIT_EXT")]
+        PipelineCreate2EnableLegacyDitheringBitExt = 17179869184,
         [Obsolete("Deprecated in favour of \"ViewIndexFromDeviceIndexBitKhr\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_2_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
         PipelineCreate2ViewIndexFromDeviceIndexBitKhr = 8,
@@ -108,12 +114,22 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DescriptorBufferBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_2_DESCRIPTOR_BUFFER_BIT_EXT")]
         PipelineCreate2DescriptorBufferBitExt = 536870912,
+        [Obsolete("Deprecated in favour of \"CaptureDataBitKhr\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_2_CAPTURE_DATA_BIT_KHR")]
+        PipelineCreate2CaptureDataBitKhr = 2147483648,
+        [Obsolete("Deprecated in favour of \"IndirectBindableBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_2_INDIRECT_BINDABLE_BIT_EXT")]
+        PipelineCreate2IndirectBindableBitExt = 274877906944,
         [NativeName("Name", "VK_PIPELINE_CREATE_2_DISABLE_OPTIMIZATION_BIT_KHR")]
         DisableOptimizationBitKhr = 1,
         [NativeName("Name", "VK_PIPELINE_CREATE_2_ALLOW_DERIVATIVES_BIT_KHR")]
         AllowDerivativesBitKhr = 2,
         [NativeName("Name", "VK_PIPELINE_CREATE_2_DERIVATIVE_BIT_KHR")]
         DerivativeBitKhr = 4,
+        [NativeName("Name", "VK_PIPELINE_CREATE_2_EXECUTION_GRAPH_BIT_AMDX")]
+        ExecutionGraphBitAmdx = 4294967296,
+        [NativeName("Name", "VK_PIPELINE_CREATE_2_ENABLE_LEGACY_DITHERING_BIT_EXT")]
+        EnableLegacyDitheringBitExt = 17179869184,
         [NativeName("Name", "VK_PIPELINE_CREATE_2_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
         ViewIndexFromDeviceIndexBitKhr = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_2_DISPATCH_BASE_BIT_KHR")]
@@ -170,5 +186,9 @@ namespace Silk.NET.Vulkan
         RayTracingDisplacementMicromapBitNV = 268435456,
         [NativeName("Name", "VK_PIPELINE_CREATE_2_DESCRIPTOR_BUFFER_BIT_EXT")]
         DescriptorBufferBitExt = 536870912,
+        [NativeName("Name", "VK_PIPELINE_CREATE_2_CAPTURE_DATA_BIT_KHR")]
+        CaptureDataBitKhr = 2147483648,
+        [NativeName("Name", "VK_PIPELINE_CREATE_2_INDIRECT_BINDABLE_BIT_EXT")]
+        IndirectBindableBitExt = 274877906944,
     }
 }

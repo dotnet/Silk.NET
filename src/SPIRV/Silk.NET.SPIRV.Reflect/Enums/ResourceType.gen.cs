@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SPIRV.Reflect
 {
+    [Flags]
     [NativeName("Name", "SpvReflectResourceType")]
     public enum ResourceType : int
     {

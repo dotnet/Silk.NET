@@ -17,7 +17,7 @@ namespace Silk.NET.Direct3D.Compilers
     public static class DXCOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance(this DXC thisApi, Guid* rclsid, Span<Guid> riid, void** ppv)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance(this DXC thisApi, Guid* rclsid, Span<Guid> riid, ref void* ppv)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance(this DXC thisApi, Span<Guid> rclsid, Guid* riid, void** ppv)
         {
             // SpanOverloader
@@ -41,7 +41,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance(this DXC thisApi, Span<Guid> rclsid, Guid* riid, ref void* ppv)
         {
             // SpanOverloader
@@ -49,7 +49,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance(this DXC thisApi, Span<Guid> rclsid, Span<Guid> riid, void** ppv)
         {
             // SpanOverloader
@@ -57,7 +57,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 79, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance(this DXC thisApi, Span<Guid> rclsid, Span<Guid> riid, ref void* ppv)
         {
             // SpanOverloader
@@ -65,7 +65,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, IMalloc* pMalloc, Guid* rclsid, Span<Guid> riid, void** ppv)
         {
             // SpanOverloader
@@ -73,7 +73,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, IMalloc* pMalloc, Guid* rclsid, Span<Guid> riid, ref void* ppv)
         {
             // SpanOverloader
@@ -81,7 +81,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, IMalloc* pMalloc, Span<Guid> rclsid, Guid* riid, void** ppv)
         {
             // SpanOverloader
@@ -89,7 +89,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, IMalloc* pMalloc, Span<Guid> rclsid, Guid* riid, ref void* ppv)
         {
             // SpanOverloader
@@ -97,7 +97,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, IMalloc* pMalloc, Span<Guid> rclsid, Span<Guid> riid, void** ppv)
         {
             // SpanOverloader
@@ -105,7 +105,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, IMalloc* pMalloc, Span<Guid> rclsid, Span<Guid> riid, ref void* ppv)
         {
             // SpanOverloader
@@ -113,7 +113,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, Span<IMalloc> pMalloc, Guid* rclsid, Guid* riid, void** ppv)
         {
             // SpanOverloader
@@ -121,7 +121,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, Span<IMalloc> pMalloc, Guid* rclsid, Guid* riid, ref void* ppv)
         {
             // SpanOverloader
@@ -129,7 +129,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, Span<IMalloc> pMalloc, Guid* rclsid, Span<Guid> riid, void** ppv)
         {
             // SpanOverloader
@@ -137,7 +137,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, Span<IMalloc> pMalloc, Guid* rclsid, Span<Guid> riid, ref void* ppv)
         {
             // SpanOverloader
@@ -145,7 +145,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, Span<IMalloc> pMalloc, Span<Guid> rclsid, Guid* riid, void** ppv)
         {
             // SpanOverloader
@@ -153,7 +153,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, Span<IMalloc> pMalloc, Span<Guid> rclsid, Guid* riid, ref void* ppv)
         {
             // SpanOverloader
@@ -161,7 +161,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, Span<IMalloc> pMalloc, Span<Guid> rclsid, Span<Guid> riid, void** ppv)
         {
             // SpanOverloader
@@ -169,7 +169,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in dxcapi.h")]
+        [NativeName("Src", "Line 89, Column 34 in dxcapi.h")]
         public static unsafe int CreateInstance2(this DXC thisApi, Span<IMalloc> pMalloc, Span<Guid> rclsid, Span<Guid> riid, ref void* ppv)
         {
             // SpanOverloader
