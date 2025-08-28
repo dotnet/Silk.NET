@@ -27,7 +27,7 @@ public class GamepadState
     /// </remarks>
     /// <exception cref="ArgumentException"></exception>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public GamepadState(IReadOnlyList<Button<JoystickButton>> buttons, float[] axisStates)
+    public GamepadState(IReadOnlyList<Button<JoystickButton>> buttons, IReadOnlyList<float> axisStates)
     {
         _axisStates = axisStates;
         Buttons = new ButtonReadOnlyList<JoystickButton>(buttons);
@@ -55,5 +55,5 @@ public class GamepadState
     public DualReadOnlyList<float> Triggers { get; internal set; }
 
     // ReSharper disable PrivateFieldCanBeConvertedToLocalVariable <- keeps closures consistent
-    private readonly float[] _axisStates;
+    private readonly IReadOnlyList<float> _axisStates;
 }

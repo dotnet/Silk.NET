@@ -222,7 +222,8 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
         _previousTimestamp = timestamp;
 
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
-        switch ((EventType)arg1.Common.Type)
+        var evt = (EventType)arg1.Common.Type;
+        switch (evt)
         {
             //  Device changed events -------------------------------------------------
             case EventType.KeymapChanged:
@@ -239,7 +240,6 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                 RemoveDevice(arg1.Kdevice.Which);
                 break;
             }
-
 
             case EventType.MouseAdded:
                 break;
@@ -294,7 +294,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             case EventType.JoystickButtonDown:
             case EventType.JoystickButtonUp:
                 var joystick = GetOrCreateDevice<SdlJoystick>(arg1.Jbutton.Which);
-                joystick.AddButtonEvent(arg1.Jbutton);
+                joystick.AddButtonEvent(arg1.Jbutton.Button, arg1.Jbutton.Down);
                 break;
             case EventType.JoystickBatteryUpdated:
                 break;
@@ -308,7 +308,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             case EventType.GamepadButtonDown:
             case EventType.GamepadButtonUp:
                 var gamepad = GetOrCreateDevice<SdlGamepad>(arg1.Gbutton.Which);
-                gamepad.AddButtonEvent(arg1.Gbutton);
+                gamepad.AddButtonEvent(arg1.Gbutton.Button, arg1.Gbutton.Down);
                 break;
             case EventType.GamepadTouchpadDown:
                 break;
@@ -402,25 +402,23 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
             case EventType.ClipboardUpdate:
                 break;
         }
+    }
 
-        return;
-
-        T GetOrCreateDevice<T>(uint id) where T : SdlDevice, ISdlDevice<T>
+    internal T GetOrCreateDevice<T>(uint id) where T : SdlDevice, ISdlDevice<T>
+    {
+        // If we already have a device with this ID, return it.
+        for (var i = 0; i < _devices.Count; i++)
         {
-            // If we already have a device with this ID, return it.
-            for (var i = 0; i < _devices.Count; i++)
+            if (_devices[i] is T typedDevice && typedDevice.SdlDeviceId == id)
             {
-                if (_devices[i] is T typedDevice && typedDevice.SdlDeviceId == id)
-                {
-                    return typedDevice;
-                }
+                return typedDevice;
             }
-
-            var device = T.CreateDevice(this, id);
-            _devices.Add(device);
-            Console.WriteLine($"Gamepad added: (sdl ID: {id})");
-            return device;
         }
+
+        var device = T.CreateDevice(id, this);
+        _devices.Add(device);
+        Console.WriteLine($"Gamepad added: (sdl ID: {id})");
+        return device;
     }
 
     internal bool RemoveDevice(uint id)

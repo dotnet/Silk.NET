@@ -11,7 +11,7 @@ public enum JoystickButton // todo : should we include XInput, PSX, and Nintendo
     /// <remarks>This is defined as such a large number such that unknown buttons can still be a JoystickButton,
     /// and we can define up to <see cref="ushort.MaxValue"/> predefined unique joystick buttons.
     /// </remarks>
-    Unknown = int.MaxValue - ushort.MaxValue,
+    Unknown = JoystickAxis.Unknown,
 
     /// <summary>
     /// The down-most button of the primary button cluster.

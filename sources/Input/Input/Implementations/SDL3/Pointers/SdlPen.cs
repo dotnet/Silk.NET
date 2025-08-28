@@ -5,7 +5,7 @@ namespace Silk.NET.Input.SDL3.Pointers;
 
 internal class SdlPen : SdlBoundedPointerDevice, ISdlDevice<SdlPen>
 {
-    public static SdlPen CreateDevice(SdlInputBackend backend, uint sdlDeviceId)
+    public static SdlPen CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
     {
         throw new NotImplementedException();
     }

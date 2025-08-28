@@ -5,7 +5,7 @@ namespace Silk.NET.Input;
 
 internal enum JoystickAxis
 {
-    Unknown = JoystickButton.Unknown,
+    Unknown = int.MaxValue - ushort.MaxValue,
     MinusLeftX, PlusLeftX, MinusLeftY, PlusRightY,
     MinusRightX, PlusRightX, MinusRightY, PlusLeftY,
     LeftX, LeftY, RightX, RightY,

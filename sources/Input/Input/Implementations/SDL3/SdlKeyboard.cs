@@ -20,7 +20,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
         State = new KeyboardState(_keyStates, () => false, () => false);// todo : how do i get the num lock/capslock?
     }
 
-    public static SdlKeyboard CreateDevice(SdlInputBackend backend, uint sdlDeviceId) => throw new NotImplementedException();
+    public static SdlKeyboard CreateDevice(uint sdlDeviceId, SdlInputBackend backend) => throw new NotImplementedException();
 
     public KeyboardState State { get; }
     protected override void Release() {} // empty?

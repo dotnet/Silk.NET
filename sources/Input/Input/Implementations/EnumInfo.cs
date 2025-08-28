@@ -160,7 +160,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
     /// <summary>
     /// Gets the ordered index of the unnamed enum value provided. This index is calculated by:
-    /// (the number of named members in this enum type) + (the raw value of the number)
+    /// (the number of named members in this enum type) + (the raw value of the number if unnamed)
     ///
     /// Negative values or values that are above the lowest enum value will return -1, as they cannot be used for indexing
     /// </summary>

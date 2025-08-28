@@ -5,7 +5,7 @@ namespace Silk.NET.Input.SDL3.Pointers;
 
 internal class SdlTouchScreen : SdlDevice, ISdlDevice<SdlTouchScreen>, IPointerDevice
 {
-    public static SdlTouchScreen CreateDevice(SdlInputBackend backend, uint sdlDeviceId) => throw new NotImplementedException();
+    public static SdlTouchScreen CreateDevice(uint sdlDeviceId, SdlInputBackend backend) => throw new NotImplementedException();
 
     public bool Equals(IInputDevice? other) => throw new NotImplementedException();
 

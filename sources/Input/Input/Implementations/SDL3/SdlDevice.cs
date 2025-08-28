@@ -68,5 +68,5 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
 /// <typeparam name="T"></typeparam>
 internal interface ISdlDevice<out T> : IInputDevice where T : SdlDevice
 {
-    public static abstract T CreateDevice(SdlInputBackend backend, uint sdlDeviceId);
+    public static abstract T CreateDevice(uint sdlDeviceId, SdlInputBackend backend);
 }
