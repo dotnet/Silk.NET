@@ -15,13 +15,27 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     public SdlJoystick Joystick { get; }
 
-    private SdlGamepad(SdlJoystick joystick) : base(joystick.SdlDeviceId, joystick.Backend)
+
+    // todo - do we want this to be an actual unique device? or should it have the same "unique id" as the joystick?
+    private SdlGamepad(SdlJoystick joystick, nint uniqueId) : base(joystick.Backend, uniqueId, joystick.SdlDeviceId)
     {
         Joystick = joystick;
 
-        var bindingsCount = 0;
         var joystickHandle = joystick.JoystickHandle;
         var gamepadHandle = *(GamepadHandle*)&joystickHandle; //NativeBackend.OpenGamepad(sdlDeviceId);
+        _gamepadHandle = gamepadHandle;
+        Remap(gamepadHandle);
+
+        GamepadState = new GamepadState(joystick.RawButtonState, joystick.RawAxisState);
+        Joystick.AddDeviceMapping(this);
+    }
+
+    private void Remap(GamepadHandle gamepadHandle)
+    {
+        _bindings.Clear();
+        _outputBindings.Clear();
+        _hatBindings.Clear();
+        var bindingsCount = 0;
         var mappings = NativeBackend.GetGamepadBindings(gamepadHandle, &bindingsCount);
 
         if (bindingsCount == 0)
@@ -35,12 +49,16 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
                     NativeBackend.Free(error.Native);
                 }
             }
+            else
+            {
+                NativeBackend.Free(mappings);
+            }
 
-            throw new Exception("No gamepad mappings found.");
+            Console.Error.WriteLine("No gamepad mappings found.");
+            return;
         }
 
-        _gamepadHandle = gamepadHandle;
-        for (int i = 0; i < bindingsCount; i++)
+        for (var i = 0; i < bindingsCount; i++)
         {
             var binding = mappings[i];
 
@@ -64,17 +82,17 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
                     break;
             }
 
+            if (id == null)
+            {
+                continue;
+            }
+
             switch (binding->OutputType)
             {
                 case GamepadBindingType.Axis:
                 case GamepadBindingType.Button:
                     _outputBindings.Add(*binding);
                     break;
-            }
-
-            if (id == null)
-            {
-                continue;
             }
 
             if (binding->InputType == GamepadBindingType.Hat)
@@ -94,9 +112,11 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         }
 
         NativeBackend.Free(mappings);
-        GamepadState = new GamepadState(joystick.RawButtonState, joystick.RawAxisState);
-        Joystick.AddDeviceMapping(this);
     }
+
+    public void Remap() => Remap(_gamepadHandle);
+
+    public override uint RefreshIdFromBackend() => NativeBackend.GetGamepadID(_gamepadHandle);
 
     public override string Name => Joystick.Name;
 
@@ -113,25 +133,31 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     GamepadState IGamepad.State => GamepadState;
     private GamepadState GamepadState { get; }
 
-    #endregion
-
-
-    #region Rumble
-
     public IReadOnlyList<IMotor> VibrationMotors => _rumbler ??= SdlRumble.Create<GamepadHandle>(_gamepadHandle.Handle, NativeBackend, 2);
     private SdlRumble? _rumbler;
 
 
     #endregion
 
-    public static SdlGamepad CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
+    public static SdlGamepad? CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
     {
-        var joystick = backend.GetOrCreateDevice<SdlJoystick>(sdlDeviceId);
-        return new SdlGamepad(joystick);
+        if (!backend.TryGetOrCreateDevice<SdlJoystick>(sdlDeviceId, out var joystick))
+        {
+            return null;
+        }
+
+        var joystickUniqueId = joystick.Id;
+        // manipulate the joystick id to make a unique gamepad id
+        var uniqueId = joystickUniqueId;
+        var guid = backend.Sdl.GetGamepadGuidForID(sdlDeviceId);
+        const ulong gamepadType = (ulong)JoystickType.Gamepad;
+        const ulong mod = gamepadType << 24;
+
+        // todo
+        throw new NotImplementedException();
+
+        return new SdlGamepad(joystick, uniqueId: uniqueId);
     }
-
-    ~SdlGamepad() => Release();
-
 
     private void UpdateGamepadAxis(GamepadAxis axis, int value, int min, int max)
     {
@@ -193,7 +219,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     #region ISdlJoystick
 
-    public void UpdateButton(int buttonIdx, bool down)
+    public void UpdateFromJoyButton(int buttonIdx, bool down)
     {
         if (!_bindings.TryGetValue(buttonIdx << _buttonShift, out var binding))
         {
@@ -220,9 +246,13 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         }
     }
 
-    public void AddButtonEvent(byte sdlButtonId, byte sdlButtonDown) => UpdateButton(sdlButtonId, sdlButtonDown > 0);
+    public void AddButtonEvent(byte sdlButtonId, byte sdlButtonDown) =>
+        UpdateButtonBinding((GamepadButton)sdlButtonId, sdlButtonDown > 0);
 
-    public void UpdateAxis(int axis, short joystickInput)
+    public void AddAxisEvent(byte evtAxis, short evtValue) =>
+        UpdateGamepadAxis((GamepadAxis)evtAxis, evtValue, Sdl.JoystickAxisMin, Sdl.JoystickAxisMax);
+
+    public void UpdateFromJoyAxis(int axis, short joystickInput)
     {
         if (!_bindings.TryGetValue(axis << _axisShift, out var binding))
         {
@@ -245,7 +275,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         }
     }
 
-    public void UpdateHat(int hatIdx, SdlJoystick.HatState hatState)
+    public void UpdateFromJoyHat(int hatIdx, SdlJoystick.HatState hatState)
     {
         if (_hatBindings.Count <= hatIdx)
         {
@@ -312,6 +342,10 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             };
     }
 
+    private readonly Dictionary<int, GamepadBinding> _bindings = new();
+    private readonly List<List<GamepadBinding>?> _hatBindings = [];
+    private readonly List<GamepadBinding> _outputBindings = [];
+
 
     // SDL indexes the 3 of these separately, but it is more convenient
     // for us to index buttons/hats/axes as a single list.
@@ -319,7 +353,4 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     // we can safely use an integer key with a bit shift like this.
     private const int _buttonShift = 0;
     private const int _axisShift = 8;
-    private readonly Dictionary<int, GamepadBinding> _bindings = new();
-    private readonly List<List<GamepadBinding>?> _hatBindings = [];
-    private readonly List<GamepadBinding> _outputBindings = [];
 }

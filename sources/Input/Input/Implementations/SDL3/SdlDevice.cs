@@ -17,8 +17,14 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
         && other is SdlBoundedPointerDevice dev
         && dev.NativeBackend == NativeBackend;
 
-    public nint Id => Backend.AsSilkId(SdlDeviceId);
-    public uint SdlDeviceId { get; }
+    public nint Id { get; }
+
+    public uint SdlDeviceId => _sdlDeviceId ??= RefreshIdFromBackend();
+
+    private uint? _sdlDeviceId;
+
+    public abstract uint RefreshIdFromBackend();
+
     public SdlInputBackend Backend { get; }
 
     /// <summary>
@@ -37,10 +43,11 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
     }*/
 
 
-    protected SdlDevice(uint sdlDeviceId, SdlInputBackend backend)
+    protected SdlDevice(SdlInputBackend backend, nint uniqueId, uint sdlDeviceId)
     {
         Backend = backend;
-        SdlDeviceId = sdlDeviceId;
+        Id = uniqueId;
+        _sdlDeviceId = sdlDeviceId;
     }
 
     protected abstract void Release();
@@ -68,5 +75,10 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
 /// <typeparam name="T"></typeparam>
 internal interface ISdlDevice<out T> : IInputDevice where T : SdlDevice
 {
-    public static abstract T CreateDevice(uint sdlDeviceId, SdlInputBackend backend);
+    public static abstract T? CreateDevice(uint sdlDeviceId, SdlInputBackend backend);
+
+}
+
+internal static class SdlDeviceFactory
+{
 }

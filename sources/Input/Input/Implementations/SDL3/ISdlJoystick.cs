@@ -19,19 +19,19 @@ internal interface ISdlJoystick
     /// </summary>
     /// <param name="axis">Input axis (which axis)</param>
     /// <param name="joystickInput">Input axis value</param>
-    public void UpdateAxis(int axis, short joystickInput);
+    public void UpdateFromJoyAxis(int axis, short joystickInput);
 
     /// <summary>
     /// Raw joystick hat input events are forwarded here
     /// </summary>
     /// <param name="hatIdx">Input hat (which hat)</param>
     /// <param name="hatState">Input hat value</param>
-    public void UpdateHat(int hatIdx, SdlJoystick.HatState hatState);
+    public void UpdateFromJoyHat(int hatIdx, SdlJoystick.HatState hatState);
 
     /// <summary>
     /// Raw joystick button input events are forwarded here
     /// </summary>
     /// <param name="buttonIdx">Input button (which button)</param>
     /// <param name="down">Button state</param>
-    public void UpdateButton(int buttonIdx, bool down);
+    public void UpdateFromJoyButton(int buttonIdx, bool down);
 }

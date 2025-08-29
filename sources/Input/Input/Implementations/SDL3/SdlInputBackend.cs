@@ -215,113 +215,137 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
         return 1;
     }
 
-    private void ProcessEvent(ref Event arg1, IInputHandler handler)
+    private void ProcessEvent(ref Event evt, IInputHandler handler)
     {
-        var timestamp = GetTimestamp(ref arg1);
+        var timestamp = GetTimestamp(ref evt);
         Debug.Assert(timestamp >= _previousTimestamp, "Events out of order");
         _previousTimestamp = timestamp;
 
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
-        var evt = (EventType)arg1.Common.Type;
-        switch (evt)
+        var type = (EventType)evt.Common.Type;
+
+        switch (type)
         {
-            //  Device changed events -------------------------------------------------
-            case EventType.KeymapChanged:
-                break;
-            case EventType.KeyboardAdded:
-            {
-                var id = arg1.Kdevice.Which;
-                Debug.Assert(_devices.All(x => x.Id != AsSilkId(id)));
-                _ = GetOrCreateDevice<SdlKeyboard>(id);
-                break;
-            }
-            case EventType.KeyboardRemoved:
-            {
-                RemoveDevice(arg1.Kdevice.Which);
-                break;
-            }
-
-            case EventType.MouseAdded:
-                break;
-            case EventType.MouseRemoved:
-                RemoveDevice(arg1.Mdevice.Which);
-                break;
-
-            case EventType.GamepadAdded:
-            {
-                var id = arg1.Gdevice.Which;
-                Debug.Assert(_devices.All(x => x.Id != AsSilkId(id)));
-                _ = GetOrCreateDevice<SdlGamepad>(id);
-                break;
-            }
             case EventType.GamepadRemoved:
-            {
-                RemoveDevice(arg1.Gdevice.Which);
-                break;
-            }
-            case EventType.GamepadRemapped:
-                break;
-
-            case EventType.JoystickAdded:
-                RemoveDevice(arg1.Jdevice.Which);
-                break;
+                RemoveDevice<SdlGamepad>(_devices, evt.Gdevice.Which);
+                return;
             case EventType.JoystickRemoved:
-                break;
+                RemoveDevice<SdlJoystick>(_devices, evt.Jdevice.Which);
+                return;
+            case EventType.KeyboardRemoved:
+                RemoveDevice<SdlKeyboard>(_devices, evt.Kdevice.Which);
+                return;
+            case EventType.MouseRemoved:
+                RemoveDevice<SdlSharedMouse>(_devices, evt.Mdevice.Which);
+                RemoveDevice<SdlUnboundedMouse>(_devices, evt.Mdevice.Which);
+                return;
+            case >= EventType.KeyDown and <= EventType.TextEditingCandidates:
+            {
+                if (!TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, out var keyboard))
+                {
+                    return;
+                }
 
+                if (type == EventType.KeyboardAdded)
+                {
+                    return;
+                }
+
+                switch (type)
+                {
+                    case EventType.KeyDown:
+                    case EventType.KeyUp:
+                        keyboard.AddKeyEvent(evt.Key);
+                        break;
+                    case EventType.TextEditing:
+                        break;
+                    case EventType.TextInput:
+                        break;
+                    case EventType.TextEditingCandidates:
+                        break;
+                }
+
+                break;
+            }
+            case >= EventType.GamepadAxisMotion and <= EventType.GamepadSteamHandleUpdated:
+            {
+                if (!TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, out var gamepad))
+                {
+                    return;
+                }
+
+                if (type is EventType.GamepadAdded)
+                {
+                    return;
+                }
+
+                switch (type)
+                {
+                    case EventType.GamepadAxisMotion:
+                        gamepad.AddAxisEvent(evt.Gaxis.Axis, evt.Gaxis.Value);
+                        break;
+                    case EventType.GamepadButtonDown:
+                    case EventType.GamepadButtonUp:
+                        gamepad.AddButtonEvent(evt.Gbutton.Button, evt.Gbutton.Down);
+                        break;
+                    case EventType.GamepadRemapped:
+                        gamepad.Remap();
+                        break;
+                    case EventType.GamepadTouchpadDown:
+                        break;
+                    case EventType.GamepadTouchpadMotion:
+                        break;
+                    case EventType.GamepadTouchpadUp:
+                        break;
+                    case EventType.GamepadSensorUpdate:
+                        break;
+                    case EventType.GamepadUpdateComplete:
+                        break;
+                    case EventType.GamepadSteamHandleUpdated:
+                        break;
+                }
+
+                break;
+            }
+            case >= EventType.JoystickAxisMotion and <= EventType.JoystickUpdateComplete:
+            {
+                if (!TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, out var joystick))
+                {
+                    return;
+                }
+
+                if (type is EventType.JoystickAdded)
+                {
+                    // already done
+                    return;
+                }
+
+                switch (type)
+                {
+                    case EventType.JoystickAxisMotion:
+                        joystick.AddAxisEvent(evt.Jaxis.Axis, evt.Jaxis.Value);
+                        break;
+                    case EventType.JoystickBallMotion:
+                        break;
+                    case EventType.JoystickHatMotion:
+                        joystick.AddHatEvent(evt.Jhat.Hat, evt.Jhat.Value);
+                        break;
+                    case EventType.JoystickButtonDown:
+                    case EventType.JoystickButtonUp:
+                        joystick.AddButtonEvent(evt.Jbutton.Button, evt.Jbutton.Down);
+                        break;
+                    case EventType.JoystickBatteryUpdated:
+                        break;
+                    case EventType.JoystickUpdateComplete:
+                        break;
+                }
+                break;
+            }
+        }
+
+        switch (type)
+        {
             //  Input events ----------------------------------------------------------
-
-            // keyboard
-            case EventType.KeyDown:
-            {
-                var keyboard = GetOrCreateDevice<SdlKeyboard>(arg1.Key.Which);
-                keyboard.AddKeyEvent(EventType.KeyDown, arg1.Key);
-                break;
-            }
-            case EventType.KeyUp:
-            {
-                var keyboard = GetOrCreateDevice<SdlKeyboard>(arg1.Key.Which);
-                keyboard.AddKeyEvent(EventType.KeyUp, arg1.Key);
-                break;
-            }
-
-            // Joystick
-            case EventType.JoystickAxisMotion:
-                break;
-            case EventType.JoystickBallMotion:
-                break;
-            case EventType.JoystickHatMotion:
-                break;
-            case EventType.JoystickButtonDown:
-            case EventType.JoystickButtonUp:
-                var joystick = GetOrCreateDevice<SdlJoystick>(arg1.Jbutton.Which);
-                joystick.AddButtonEvent(arg1.Jbutton.Button, arg1.Jbutton.Down);
-                break;
-            case EventType.JoystickBatteryUpdated:
-                break;
-            case EventType.JoystickUpdateComplete:
-                break;
-
-
-            // Gamepad inputs
-            case EventType.GamepadAxisMotion:
-                break;
-            case EventType.GamepadButtonDown:
-            case EventType.GamepadButtonUp:
-                var gamepad = GetOrCreateDevice<SdlGamepad>(arg1.Gbutton.Which);
-                gamepad.AddButtonEvent(arg1.Gbutton.Button, arg1.Gbutton.Down);
-                break;
-            case EventType.GamepadTouchpadDown:
-                break;
-            case EventType.GamepadTouchpadMotion:
-                break;
-            case EventType.GamepadTouchpadUp:
-                break;
-            case EventType.GamepadSensorUpdate:
-                break;
-            case EventType.GamepadUpdateComplete:
-                break;
-            case EventType.GamepadSteamHandleUpdated:
-                break;
 
             // sensor? for what?
             case EventType.SensorUpdate:
@@ -404,52 +428,67 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
         }
     }
 
-    internal T GetOrCreateDevice<T>(uint id) where T : SdlDevice, ISdlDevice<T>
+    internal bool TryGetOrCreateDevice<T>(uint id, [NotNullWhen(true)] out T? device) where T : SdlDevice, ISdlDevice<T>
     {
         // If we already have a device with this ID, return it.
         for (var i = 0; i < _devices.Count; i++)
         {
             if (_devices[i] is T typedDevice && typedDevice.SdlDeviceId == id)
             {
-                return typedDevice;
+                device = typedDevice;
+                return true;
             }
         }
 
-        var device = T.CreateDevice(id, this);
+        try
+        {
+            device = T.CreateDevice(id, this);
+        }
+        catch (Exception e)
+        {
+            Console.Error.WriteLine($"Failed to create device {nameof(T)} with id '{id}': {e}");
+            device = null;
+            return false;
+        }
+
+        if (device is null)
+        {
+            Console.Error.WriteLine($"Failed to create device {nameof(T)} with id '{id}'");
+            return false;
+        }
+
+
         _devices.Add(device);
         Console.WriteLine($"Gamepad added: (sdl ID: {id})");
-        return device;
-    }
-
-    internal bool RemoveDevice(uint id)
-    {
-        var silkId = AsSilkId(id);
-        var deviceIdx = _devices.FindIndex(x => x.Id == silkId);
-
-        if (deviceIdx == -1)
-            return false; // we never used this device to begin with, so just ignore its removal
-
-        var device = _devices[deviceIdx];
-        device.Dispose();
-        _devices.RemoveAt(deviceIdx);
         return true;
     }
 
-    /// <summary>
-    /// Turns an sdl device id into a universally unique Silk.NET input id.
-    /// </summary>
-    /// <param name="which"></param>
-    /// <returns></returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public nint AsSilkId(uint which) => Id + Unsafe.As<uint, nint>(ref which) + 1;
+    private static bool RemoveDevice<T>(List<SdlDevice> devices, uint id)
+    {
+        var deviceIdx = devices.FindIndex(x => x is T && x.SdlDeviceId == id);
 
-    /// <summary>
-    /// Reverts the process of <see cref="AsSilkId(uint)"/> to get the original SDL id.
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns></returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public uint AsSdlId(nint id) => (uint)(id - Id - 1);
+        if (deviceIdx == -1)
+        {
+            // we never used this device to begin with, so just ignore its removal
+            return false;
+        }
+
+        var device = devices[deviceIdx];
+        device.Dispose();
+        devices.RemoveAt(deviceIdx);
+
+        // device IDs may have changed when a device was removed, so we need to refresh them
+        RefreshDeviceIds(devices);
+        return true;
+    }
+
+    private static void RefreshDeviceIds(List<SdlDevice> devices)
+    {
+        for (var i = 0; i < devices.Count; i++)
+        {
+            devices[i].RefreshIdFromBackend();
+        }
+    }
 
     private ulong _previousTimestamp = ulong.MinValue;
 

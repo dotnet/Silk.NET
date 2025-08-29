@@ -10,7 +10,7 @@ namespace Silk.NET.Input.SDL3.Pointers;
 /// </summary>
 internal abstract class SdlBoundedPointerDevice : SdlDevice, IPointerDevice
 {
-    protected SdlBoundedPointerDevice(uint sdlDeviceId, SdlInputBackend backend, IReadOnlyList<IPointerTarget> targets, InputMarshal.ListOwner<TargetPoint> boundedPoints) : base(sdlDeviceId, backend)
+    protected SdlBoundedPointerDevice(SdlInputBackend backend, IReadOnlyList<IPointerTarget> targets, InputMarshal.ListOwner<TargetPoint> boundedPoints) : base(backend)
     {
         Targets = targets;
         BoundedPoints = boundedPoints;

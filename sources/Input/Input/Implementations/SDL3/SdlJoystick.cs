@@ -11,11 +11,12 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     public JoystickState State { get; }
     internal readonly JoystickType JoystickType;
     internal JoystickHandle JoystickHandle { get; }
-    public static SdlJoystick CreateDevice(uint sdlDeviceId, SdlInputBackend backend) => new(sdlDeviceId, backend);
-
+    public static SdlJoystick CreateDevice(uint sdlDeviceId, SdlInputBackend backend) => new(sdlDeviceId, uniqueId, backend);
     public override string Name => NativeBackend.GetJoystickNameForID(SdlDeviceId).ReadToString();
+    public override uint RefreshIdFromBackend() => NativeBackend.GetJoystickID(JoystickHandle);
 
-    private SdlJoystick(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
+
+    private SdlJoystick(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
     {
         var joystickHandle = NativeBackend.OpenJoystick(sdlDeviceId);
 
@@ -102,7 +103,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
         foreach(var device in _devices)
         {
-            device.UpdateHat(hatIdx, hatState);
+            device.UpdateFromJoyHat(hatIdx, hatState);
         }
     }
 
@@ -111,7 +112,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
         _rawAxisState[axis] = (float)(joystickInput + short.MaxValue) / ushort.MaxValue;
         foreach (var device in _devices)
         {
-            device.UpdateAxis(axis, joystickInput);
+            device.UpdateFromJoyAxis(axis, joystickInput);
         }
     }
 
@@ -121,7 +122,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
         _rawButtonState[sdlButtonId] = new Button<JoystickButton>((JoystickButton)sdlButtonId, down, down ? 1 : 0);
         foreach (var device in _devices)
         {
-            device.UpdateButton(sdlButtonId, down);
+            device.UpdateFromJoyButton(sdlButtonId, down);
         }
     }
 

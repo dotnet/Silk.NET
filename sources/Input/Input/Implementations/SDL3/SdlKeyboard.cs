@@ -9,9 +9,10 @@ namespace Silk.NET.Input.SDL3;
 internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 {
     private readonly List<Button<KeyName>> _keyStates;
-    public unsafe SdlKeyboard(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
+    public unsafe SdlKeyboard(uint sdlDeviceId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
     {
         _keyStates = new List<Button<KeyName>>((int)Scancode.ScancodeCount);
+        _sdlDeviceId = sdlDeviceId;
         for (var i = 0; i < 512; i++)
         {
             _keyStates.Add(new Button<KeyName>((KeyName)i, false, 0f));
@@ -25,6 +26,9 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
     public KeyboardState State { get; }
     protected override void Release() {} // empty?
 
+    private readonly uint _sdlDeviceId;
+    public override uint RefreshIdFromBackend() => _sdlDeviceId;
+
     public override string Name => NativeBackend.GetKeyboardNameForID(SdlDeviceId).ReadToString();
     public string? ClipboardText
     {
@@ -35,7 +39,8 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 
             return Sdl.Instance.GetClipboardText().ReadToString();
         }
-        set => throw new NotImplementedException("Setting clipboard text is not implemented in SDL3 backend.");
+        set => Sdl.Instance.SetClipboardText(value);
+        //throw new NotImplementedException("Setting clipboard text is not implemented in SDL3 backend.");
     }
 
     public bool TryGetKeyName(KeyName key, [NotNullWhen(true)] out string? name) =>
@@ -46,7 +51,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 
     public string? EndInput() => throw new NotImplementedException();
 
-    public void AddKeyEvent(EventType type, KeyboardEvent key)
+    public void AddKeyEvent(KeyboardEvent key)
     {
         const float fraction = 1f / 255f;
         _keyStates[(int)key.Key] = new Button<KeyName>((KeyName)key.Key, key.Down != 0, key.Down * fraction);
