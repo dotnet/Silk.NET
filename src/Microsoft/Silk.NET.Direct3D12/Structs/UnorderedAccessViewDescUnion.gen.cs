@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L3346_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L3692_C5")]
     public unsafe partial struct UnorderedAccessViewDescUnion
     {
         public UnorderedAccessViewDescUnion
@@ -27,6 +27,8 @@ namespace Silk.NET.Direct3D12
             Tex1DArrayUav? texture1DArray = null,
             Tex2DUav? texture2D = null,
             Tex2DArrayUav? texture2DArray = null,
+            Tex2DmsUav? texture2DMS = null,
+            Tex2DmsArrayUav? texture2DMSArray = null,
             Tex3DUav? texture3D = null
         ) : this()
         {
@@ -53,6 +55,16 @@ namespace Silk.NET.Direct3D12
             if (texture2DArray is not null)
             {
                 Texture2DArray = texture2DArray.Value;
+            }
+
+            if (texture2DMS is not null)
+            {
+                Texture2DMS = texture2DMS.Value;
+            }
+
+            if (texture2DMSArray is not null)
+            {
+                Texture2DMSArray = texture2DMSArray.Value;
             }
 
             if (texture3D is not null)
@@ -91,6 +103,18 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_TEX2D_ARRAY_UAV")]
         [NativeName("Name", "Texture2DArray")]
         public Tex2DArrayUav Texture2DArray;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D12_TEX2DMS_UAV")]
+        [NativeName("Type.Name", "D3D12_TEX2DMS_UAV")]
+        [NativeName("Name", "Texture2DMS")]
+        public Tex2DmsUav Texture2DMS;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D12_TEX2DMS_ARRAY_UAV")]
+        [NativeName("Type.Name", "D3D12_TEX2DMS_ARRAY_UAV")]
+        [NativeName("Name", "Texture2DMSArray")]
+        public Tex2DmsArrayUav Texture2DMSArray;
 
         [FieldOffset(0)]
         [NativeName("Type", "D3D12_TEX3D_UAV")]

@@ -29,19 +29,19 @@ namespace Silk.NET.Maths
         public Vector3D<T> Row1;
 
         /// <summary>
-        /// Row 1 of the matrix.
+        /// Row 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Row2;
 
         /// <summary>
-        /// Row 1 of the matrix.
+        /// Row 3 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Row3;
 
         /// <summary>
-        /// Row 1 of the matrix.
+        /// Row 4 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Row4;

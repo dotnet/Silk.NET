@@ -51,6 +51,9 @@ namespace Silk.NET.Direct3D11
         [Obsolete("Deprecated in favour of \"MultiplaneOverlay\"")]
         [NativeName("Name", "D3D11_FORMAT_SUPPORT2_MULTIPLANE_OVERLAY")]
         FormatSupport2MultiplaneOverlay = 0x4000,
+        [Obsolete("Deprecated in favour of \"Displayable\"")]
+        [NativeName("Name", "D3D11_FORMAT_SUPPORT2_DISPLAYABLE")]
+        FormatSupport2Displayable = 0x10000,
         [NativeName("Name", "D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_ADD")]
         UavAtomicAdd = 0x1,
         [NativeName("Name", "D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_BITWISE_OPS")]
@@ -75,5 +78,7 @@ namespace Silk.NET.Direct3D11
         Shareable = 0x400,
         [NativeName("Name", "D3D11_FORMAT_SUPPORT2_MULTIPLANE_OVERLAY")]
         MultiplaneOverlay = 0x4000,
+        [NativeName("Name", "D3D11_FORMAT_SUPPORT2_DISPLAYABLE")]
+        Displayable = 0x10000,
     }
 }

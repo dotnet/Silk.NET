@@ -178,6 +178,13 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetDepthClampRange(this ExtShaderObject thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DepthClampModeEXT depthClampMode, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DepthClampRangeEXT> pDepthClampRange)
+        {
+            // SpanOverloader
+            thisApi.CmdSetDepthClampRange(commandBuffer, depthClampMode, in pDepthClampRange.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdSetSampleMask(this ExtShaderObject thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] SampleCountFlags samples, [Count(Computed = "latexmath:[\\lceil{\\mathit{samples} \\over 32}\\rceil]"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSampleMask)
         {
             // SpanOverloader

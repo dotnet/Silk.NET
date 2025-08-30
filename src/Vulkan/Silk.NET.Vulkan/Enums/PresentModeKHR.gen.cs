@@ -30,6 +30,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"SharedContinuousRefreshKhr\"")]
         [NativeName("Name", "VK_PRESENT_MODE_SHARED_CONTINUOUS_REFRESH_KHR")]
         PresentModeSharedContinuousRefreshKhr = 1000111001,
+        [Obsolete("Deprecated in favour of \"FifoLatestReadyExt\"")]
+        [NativeName("Name", "VK_PRESENT_MODE_FIFO_LATEST_READY_EXT")]
+        PresentModeFifoLatestReadyExt = 1000361000,
         [NativeName("Name", "VK_PRESENT_MODE_IMMEDIATE_KHR")]
         ImmediateKhr = 0,
         [NativeName("Name", "VK_PRESENT_MODE_MAILBOX_KHR")]
@@ -42,5 +45,7 @@ namespace Silk.NET.Vulkan
         SharedDemandRefreshKhr = 1000111000,
         [NativeName("Name", "VK_PRESENT_MODE_SHARED_CONTINUOUS_REFRESH_KHR")]
         SharedContinuousRefreshKhr = 1000111001,
+        [NativeName("Name", "VK_PRESENT_MODE_FIFO_LATEST_READY_EXT")]
+        FifoLatestReadyExt = 1000361000,
     }
 }

@@ -294,7 +294,7 @@ The binding class **shall** implement the static subinterface (i.e. to proxy cal
 - Will explode the repo a lot, but will also improve compile times because everything's already there and no need to generate at compile time
 - ClangSharp is used by win32metadata (official c#, rust bindings) and generally accurate for parsing header files
     - very correct, battle tested, more reliable than BuildTools 2.0
-- Just use ReadOnlySpan<char> (implicit conversion from string)
+- Just use ReadOnlySpan\<char\> (implicit conversion from string)
     - does our userbase know this?
 - Too many overloads could cause confusion/lack of visibility
     - promote "best practice"
@@ -347,11 +347,11 @@ The binding class **shall** implement the static subinterface (i.e. to proxy cal
 [Video](https://www.youtube.com/live/yXNDZDE3AHE?feature=shared&t=3326)
 
 - We discussed a particular problematic case where RegisterClassEx returns an atom which is later reinterpreted to be a pointer - a debugger will explode when inspecting this pointer as it is not necessarily 
-- Where ReadOnlySpan<char> represents a string and we don't just want to pass the ref as-is (i.e. we want to add the null terminator like we do for string).
+- Where ReadOnlySpan\<char\> represents a string and we don't just want to pass the ref as-is (i.e. we want to add the null terminator like we do for string).
 - Generally we think that providing a tool that works 90% of the time is fine, the unsafe overloads are always there, but we'd worry about users making incorrect assumptions and we can probably do implicit behaviour for that final 10%.
 - Require that users manually encoding strings add that null terminator and document this. Our implicit ones do the right thing.
 - Don't allow ref types to throw an error when being handed something that isn't a valid pointer.
 - Approved provided that we:
     - make unsafe available
-    - special case ROSpan<char> as above
+    - special case ROSpan\<char\> as above
 - Future discussions need to be had on Vulkan implementation intricacies (getProcAddr) and also the addition of "complex" overloads.

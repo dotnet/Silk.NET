@@ -30,11 +30,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetRenderingInputAttachmentIndicesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetRenderingInputAttachmentIndices([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingInputAttachmentIndexInfoKHR* pLocationInfo);
+        public unsafe partial void CmdSetRenderingInputAttachmentIndices([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingInputAttachmentIndexInfoKHR* pInputAttachmentIndexInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetRenderingInputAttachmentIndicesKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetRenderingInputAttachmentIndices([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingInputAttachmentIndexInfoKHR pLocationInfo);
+        public partial void CmdSetRenderingInputAttachmentIndices([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingInputAttachmentIndexInfoKHR pInputAttachmentIndexInfo);
 
         public KhrDynamicRenderingLocalRead(INativeContext ctx)
             : base(ctx)

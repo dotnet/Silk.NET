@@ -839,6 +839,7 @@ static Silk.NET.Maths.Matrix3X2.Invert<T>(Silk.NET.Maths.Matrix3X2<T> matrix, ou
 static Silk.NET.Maths.Matrix3X2.Lerp<T>(Silk.NET.Maths.Matrix3X2<T> matrix1, Silk.NET.Maths.Matrix3X2<T> matrix2, T amount) -> Silk.NET.Maths.Matrix3X2<T>
 static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix2X3<T> value1, Silk.NET.Maths.Matrix3X2<T> value2) -> Silk.NET.Maths.Matrix2X2<T>
 static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix2X3<T> value1, Silk.NET.Maths.Matrix3X3<T> value2) -> Silk.NET.Maths.Matrix2X3<T>
+static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix3X3<T> value1, Silk.NET.Maths.Matrix3X2<T> value2) -> Silk.NET.Maths.Matrix3X2<T>
 static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix3X2<T> value1, Silk.NET.Maths.Matrix2X2<T> value2) -> Silk.NET.Maths.Matrix3X2<T>
 static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix3X2<T> value1, Silk.NET.Maths.Matrix2X3<T> value2) -> Silk.NET.Maths.Matrix3X3<T>
 static Silk.NET.Maths.Matrix3X2.Multiply<T>(Silk.NET.Maths.Matrix3X2<T> value1, T value2) -> Silk.NET.Maths.Matrix3X2<T>

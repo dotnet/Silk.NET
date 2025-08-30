@@ -63,6 +63,7 @@ namespace Silk.NET.BuildTools.Baking
             CheckForDuplicates(profile);
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
             EnumPostProcessor.Process(profile, task);
+            StructPostProcessor.Process(profile, task);
             Console.WriteLine($"Created profile \"{name}\".");
             return profile;
         }

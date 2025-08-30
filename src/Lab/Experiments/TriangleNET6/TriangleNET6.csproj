@@ -8,7 +8,9 @@
         <LangVersion>preview</LangVersion>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0-android'">android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
-        <TrimMode>full</TrimMode>
+        <TrimMode Condition="'$(TargetFramework)' != 'net6.0-android'">full</TrimMode>
+        <LinkMode Condition="'$(TargetFramework)' != 'net6.0-android'">Full</LinkMode>
+        <PublishTrimmed Condition="'$(TargetFramework)' != 'net6.0-android'">true</PublishTrimmed>
     </PropertyGroup>
 
     <ItemGroup>
@@ -38,13 +40,26 @@
         <_Silk_NativePackages_SDL_StaticPath Condition="'$(RuntimeIdentifier)' == 'tvos-arm64'">$(MSBuildThisFileDirectory)..\..\..\Native\Silk.NET.SDL.Native\runtimes\tvos\native\libSDL2.a</_Silk_NativePackages_SDL_StaticPath>
     </PropertyGroup>
     <ItemGroup>
+        <!-- Copied from Ultz.Native.SDL.targets -->
         <NativeReference Include="$(_Silk_NativePackages_SDL_StaticPath)" Condition="'$(_Silk_NativePackages_SDL_StaticPath)' != ''">
             <Kind>Static</Kind>
             <Forceload>True</Forceload>
             <IsCxx>True</IsCxx>
             <SmartLink>False</SmartLink>
-            <LinkerFlags>-framework AudioToolbox -framework AVFoundation -framework CoreAudio -framework CoreBluetooth -framework CoreFoundation -framework CoreGraphics -framework CoreHaptics -framework CoreMotion -framework CoreVideo -framework GameController -framework IOKit -framework Metal -framework OpenGLES -framework QuartzCore -framework UIKit</LinkerFlags>
+            <LinkerFlags>-framework AudioToolbox -framework AVFoundation -framework CoreAudio -framework CoreBluetooth -framework CoreFoundation -framework CoreGraphics -framework CoreHaptics -framework CoreMotion -framework CoreVideo -framework GameController -framework IOKit -framework Metal -framework OpenGLES -framework QuartzCore -framework UIKit -framework AVFAudio -framework Foundation</LinkerFlags>
         </NativeReference>
+    </ItemGroup>
+    <!-- Copied from generated targets file -->
+    <PropertyGroup>
+        <_Silk_NET_SDL_ExternalPInvokes>@(SilkExternalPInvoke)</_Silk_NET_SDL_ExternalPInvokes>
+        <_Silk_NET_SDL_InternalPInvokes>@(SilkInternalPInvoke)</_Silk_NET_SDL_InternalPInvokes>
+        <_Silk_NET_SDL_Opts>@(RuntimeHostConfigurationOption)</_Silk_NET_SDL_Opts>
+    </PropertyGroup>
+    <ItemGroup>
+        <RuntimeHostConfigurationOption Condition="(!$([System.String]::Copy('$(_Silk_NET_SDL_ExternalPInvokes)').Contains('Silk.NET.SDL.Sdl')) and !$([System.String]::Copy('$(_Silk_NET_SDL_Opts)').Contains('SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_1'))) and (('$(SilkEnableStaticLinking)' == 'true') or $([System.String]::Copy('$(_Silk_NET_SDL_InternalPInvokes)').ToLower().Contains('Silk.NET.SDL.Sdl')) or $(TargetFramework.Contains('android')))" Include="SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_1" Value="true" Trim="true" />
+        <RuntimeHostConfigurationOption Condition="(!$([System.String]::Copy('$(_Silk_NET_SDL_ExternalPInvokes)').Contains('Silk.NET.SDL.Sdl')) and !$([System.String]::Copy('$(_Silk_NET_SDL_Opts)').Contains('SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_0'))) and (('$(SilkEnableStaticLinking)' == 'true') or $([System.String]::Copy('$(_Silk_NET_SDL_InternalPInvokes)').ToLower().Contains('Silk.NET.SDL.Sdl')) or $(TargetFramework.Contains('ios')) or $(TargetFramework.Contains('mac')) or $(TargetFramework.Contains('tvos')))" Include="SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_0" Value="true" Trim="true" />
+        <RuntimeHostConfigurationOption Condition="(!$([System.String]::Copy('$(_Silk_NET_SDL_Opts)').Contains('SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_1'))) and (!(('$(SilkEnableStaticLinking)' == 'true') or $([System.String]::Copy('$(_Silk_NET_SDL_InternalPInvokes)').ToLower().Contains('Silk.NET.SDL.Sdl')) or $(TargetFramework.Contains('android'))))" Include="SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_1" Value="false" Trim="true" />
+        <RuntimeHostConfigurationOption Condition="(!$([System.String]::Copy('$(_Silk_NET_SDL_Opts)').Contains('SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_0'))) and (!(('$(SilkEnableStaticLinking)' == 'true') or $([System.String]::Copy('$(_Silk_NET_SDL_InternalPInvokes)').ToLower().Contains('Silk.NET.SDL.Sdl')) or $(TargetFramework.Contains('ios')) or $(TargetFramework.Contains('mac')) or $(TargetFramework.Contains('tvos'))))" Include="SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_0" Value="false" Trim="true" />
     </ItemGroup>
     </Target>
 </Project>

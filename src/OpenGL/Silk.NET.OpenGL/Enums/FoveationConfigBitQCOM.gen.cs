@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGL
 {
+    [Flags]
     [NativeName("Name", "FoveationConfigBitQCOM")]
     public enum FoveationConfigBitQCOM : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"EnableBitQCom\"")]
         [NativeName("Name", "GL_FOVEATION_ENABLE_BIT_QCOM")]
         FoveationEnableBitQCom = 0x1,

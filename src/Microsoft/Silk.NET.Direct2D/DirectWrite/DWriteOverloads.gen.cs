@@ -17,7 +17,7 @@ namespace Silk.NET.DirectWrite
     public static class DWriteOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
+        [NativeName("Src", "Line 5123, Column 32 in DWrite.h")]
         public static unsafe int DWriteCreateFactory(this DWrite thisApi, FactoryType factoryType, Span<Guid> iid, Silk.NET.Core.Native.IUnknown** factory)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 5119, Column 32 in DWrite.h")]
+        [NativeName("Src", "Line 5123, Column 32 in DWrite.h")]
         public static unsafe int DWriteCreateFactory(this DWrite thisApi, FactoryType factoryType, Span<Guid> iid, ref Silk.NET.Core.Native.IUnknown* factory)
         {
             // SpanOverloader

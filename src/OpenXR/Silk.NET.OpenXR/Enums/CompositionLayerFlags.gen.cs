@@ -24,11 +24,16 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"UnpremultipliedAlphaBit\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_UNPREMULTIPLIED_ALPHA_BIT")]
         CompositionLayerUnpremultipliedAlphaBit = 4,
+        [Obsolete("Deprecated in favour of \"InvertedAlphaBitExt\"")]
+        [NativeName("Name", "XR_COMPOSITION_LAYER_INVERTED_ALPHA_BIT_EXT")]
+        CompositionLayerInvertedAlphaBitExt = 8,
         [NativeName("Name", "XR_COMPOSITION_LAYER_CORRECT_CHROMATIC_ABERRATION_BIT")]
         CorrectChromaticAberrationBit = 1,
         [NativeName("Name", "XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT")]
         BlendTextureSourceAlphaBit = 2,
         [NativeName("Name", "XR_COMPOSITION_LAYER_UNPREMULTIPLIED_ALPHA_BIT")]
         UnpremultipliedAlphaBit = 4,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_INVERTED_ALPHA_BIT_EXT")]
+        InvertedAlphaBitExt = 8,
     }
 }

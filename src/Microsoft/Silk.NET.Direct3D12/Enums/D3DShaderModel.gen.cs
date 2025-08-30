@@ -12,6 +12,9 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D_SHADER_MODEL")]
     public enum D3DShaderModel : int
     {
+        [Obsolete("Deprecated in favour of \"ShaderModelNone\"")]
+        [NativeName("Name", "D3D_SHADER_MODEL_NONE")]
+        D3DShaderModelNone = 0x0,
         [Obsolete("Deprecated in favour of \"ShaderModel51\"")]
         [NativeName("Name", "D3D_SHADER_MODEL_5_1")]
         D3DShaderModel51 = 0x51,
@@ -39,9 +42,17 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"ShaderModel67\"")]
         [NativeName("Name", "D3D_SHADER_MODEL_6_7")]
         D3DShaderModel67 = 0x67,
+        [Obsolete("Deprecated in favour of \"ShaderModel68\"")]
+        [NativeName("Name", "D3D_SHADER_MODEL_6_8")]
+        D3DShaderModel68 = 0x68,
+        [Obsolete("Deprecated in favour of \"ShaderModel69\"")]
+        [NativeName("Name", "D3D_SHADER_MODEL_6_9")]
+        D3DShaderModel69 = 0x69,
         [Obsolete("Deprecated in favour of \"HighestShaderModel\"")]
         [NativeName("Name", "D3D_HIGHEST_SHADER_MODEL")]
-        D3DHighestShaderModel = 0x67,
+        D3DHighestShaderModel = 0x69,
+        [NativeName("Name", "D3D_SHADER_MODEL_NONE")]
+        ShaderModelNone = 0x0,
         [NativeName("Name", "D3D_SHADER_MODEL_5_1")]
         ShaderModel51 = 0x51,
         [NativeName("Name", "D3D_SHADER_MODEL_6_0")]
@@ -60,7 +71,11 @@ namespace Silk.NET.Direct3D12
         ShaderModel66 = 0x66,
         [NativeName("Name", "D3D_SHADER_MODEL_6_7")]
         ShaderModel67 = 0x67,
+        [NativeName("Name", "D3D_SHADER_MODEL_6_8")]
+        ShaderModel68 = 0x68,
+        [NativeName("Name", "D3D_SHADER_MODEL_6_9")]
+        ShaderModel69 = 0x69,
         [NativeName("Name", "D3D_HIGHEST_SHADER_MODEL")]
-        HighestShaderModel = 0x67,
+        HighestShaderModel = 0x69,
     }
 }

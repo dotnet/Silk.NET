@@ -1,15 +1,21 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Threading;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 using Silk.NET.Windowing.Internals;
+#if __IOS__
+using Silk.NET.Windowing.Sdl.iOS;
+#endif
 
 // We can't import System because System has a type called nint on iOS and Mac Catalyst.
 // As such, throughout this file System is fully qualified.
@@ -262,6 +268,34 @@ namespace Silk.NET.Windowing.Sdl
 
             Sdl.ThrowError();
         }
+
+#if __IOS__
+        private static bool _isRunning;
+        public override void Run(Action onFrame)
+        {
+            if (_isRunning)
+            {
+                throw new NotSupportedException("A view is already running in this mobile application.");
+            }
+
+            if (!SilkMobile.IsRunning)
+            {
+                throw new InvalidOperationException
+                (
+                    "The view could not be created as the underlying mobile application is not running. On iOS, " +
+                    "please wrap your main function in a call to SilkMobile.RunApp to ensure that application " +
+                    "lifecycles can be managed properly."
+                );
+            }
+            
+            // This is not correct, we should be using SDL_iPhoneSetAnimationCallback and then letting
+            // SDL_UIKitRunApp take care of the lifetime, but this would be a breaking change as Run in 2.X is expected
+            // to only exit when the view does. We'll fix this properly in 3.0.
+            _isRunning = true;
+            base.Run(onFrame);
+            _isRunning = false;
+        }
+#endif
 
         protected override void CoreReset()
         {

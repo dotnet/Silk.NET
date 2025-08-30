@@ -64,6 +64,21 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"ShadingRateSource\"")]
         [NativeName("Name", "D3D12_RESOURCE_STATE_SHADING_RATE_SOURCE")]
         ResourceStateShadingRateSource = 0x1000000,
+        [Obsolete("Deprecated in favour of \"ReservedInternal8000\"")]
+        [NativeName("Name", "D3D12_RESOURCE_STATE_RESERVED_INTERNAL_8000")]
+        ResourceStateReservedInternal8000 = 0x8000,
+        [Obsolete("Deprecated in favour of \"ReservedInternal4000\"")]
+        [NativeName("Name", "D3D12_RESOURCE_STATE_RESERVED_INTERNAL_4000")]
+        ResourceStateReservedInternal4000 = 0x4000,
+        [Obsolete("Deprecated in favour of \"ReservedInternal100000\"")]
+        [NativeName("Name", "D3D12_RESOURCE_STATE_RESERVED_INTERNAL_100000")]
+        ResourceStateReservedInternal100000 = 0x100000,
+        [Obsolete("Deprecated in favour of \"ReservedInternal40000000\"")]
+        [NativeName("Name", "D3D12_RESOURCE_STATE_RESERVED_INTERNAL_40000000")]
+        ResourceStateReservedInternal40000000 = 0x40000000,
+        [Obsolete("Deprecated in favour of \"ReservedInternal80000000\"")]
+        [NativeName("Name", "D3D12_RESOURCE_STATE_RESERVED_INTERNAL_80000000")]
+        ResourceStateReservedInternal80000000 = unchecked((int) 0xFFFFFFFF80000000),
         [Obsolete("Deprecated in favour of \"GenericRead\"")]
         [NativeName("Name", "D3D12_RESOURCE_STATE_GENERIC_READ")]
         ResourceStateGenericRead = 0xAC3,
@@ -128,6 +143,16 @@ namespace Silk.NET.Direct3D12
         RaytracingAccelerationStructure = 0x400000,
         [NativeName("Name", "D3D12_RESOURCE_STATE_SHADING_RATE_SOURCE")]
         ShadingRateSource = 0x1000000,
+        [NativeName("Name", "D3D12_RESOURCE_STATE_RESERVED_INTERNAL_8000")]
+        ReservedInternal8000 = 0x8000,
+        [NativeName("Name", "D3D12_RESOURCE_STATE_RESERVED_INTERNAL_4000")]
+        ReservedInternal4000 = 0x4000,
+        [NativeName("Name", "D3D12_RESOURCE_STATE_RESERVED_INTERNAL_100000")]
+        ReservedInternal100000 = 0x100000,
+        [NativeName("Name", "D3D12_RESOURCE_STATE_RESERVED_INTERNAL_40000000")]
+        ReservedInternal40000000 = 0x40000000,
+        [NativeName("Name", "D3D12_RESOURCE_STATE_RESERVED_INTERNAL_80000000")]
+        ReservedInternal80000000 = unchecked((int) 0xFFFFFFFF80000000),
         [NativeName("Name", "D3D12_RESOURCE_STATE_GENERIC_READ")]
         GenericRead = 0xAC3,
         [NativeName("Name", "D3D12_RESOURCE_STATE_ALL_SHADER_RESOURCE")]

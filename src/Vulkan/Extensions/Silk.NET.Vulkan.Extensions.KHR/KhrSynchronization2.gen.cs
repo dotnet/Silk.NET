@@ -57,30 +57,8 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Event pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DependencyInfo pDependencyInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWriteBufferMarker2AMD", Convention = CallingConvention.Winapi)]
-        public partial void CmdWriteBufferMarker2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags2 stage, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] uint marker);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWriteTimestamp2KHR", Convention = CallingConvention.Winapi)]
         public partial void CmdWriteTimestamp2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags2 stage, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint query);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetQueueCheckpointData2NV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CheckpointData2NV* pCheckpointData);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointData2NV);")]
-        [NativeApi(EntryPoint = "vkGetQueueCheckpointData2NV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CheckpointData2NV pCheckpointData);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetQueueCheckpointData2NV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CheckpointData2NV* pCheckpointData);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointData2NV);")]
-        [NativeApi(EntryPoint = "vkGetQueueCheckpointData2NV", Convention = CallingConvention.Winapi)]
-        public partial void GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CheckpointData2NV pCheckpointData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueueSubmit2KHR", Convention = CallingConvention.Winapi)]
@@ -116,24 +94,6 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         {
             // ImplicitCountSpanOverloader
             return QueueSubmit2(queue, (uint) pSubmits.Length, in pSubmits.GetPinnableReference(), fence);
-        }
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointData2NV);")]
-        public unsafe CheckpointData2NV GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount)
-        {
-            // NonKhrReturnTypeOverloader
-            GetQueueCheckpointData2(queue, pCheckpointDataCount, out CheckpointData2NV silkRet);
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointData2NV);")]
-        public unsafe CheckpointData2NV GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount)
-        {
-            // NonKhrReturnTypeOverloader
-            GetQueueCheckpointData2(queue, ref pCheckpointDataCount, out CheckpointData2NV silkRet);
-            return silkRet;
         }
 
         public KhrSynchronization2(INativeContext ctx)

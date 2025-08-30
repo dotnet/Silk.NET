@@ -66,7 +66,7 @@ namespace Silk.NET.Direct3D12
         public RaytracingGeometryFlags Flags;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L13356_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L14661_C5")]
         [NativeName("Name", "anonymous1")]
         public RaytracingGeometryDescUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
