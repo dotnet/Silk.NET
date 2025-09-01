@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Text;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
@@ -11,7 +13,40 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     public JoystickState State { get; }
     internal readonly JoystickType JoystickType;
     internal JoystickHandle JoystickHandle { get; }
-    public static SdlJoystick CreateDevice(uint sdlDeviceId, SdlInputBackend backend) => new(sdlDeviceId, uniqueId, backend);
+
+    public static SdlJoystick CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
+    {
+        nint uniqueId = 0;
+
+        var guid = backend.Sdl.GetJoystickGuidForID(sdlDeviceId);
+        if (backend.AttemptUniqueId(new ReadOnlySpan<byte>(&guid, 16), ref uniqueId))
+        {
+            return new SdlJoystick(sdlDeviceId, uniqueId, backend);
+        }
+
+        var pathPtr = backend.Sdl.GetJoystickPathForID(sdlDeviceId);
+        if (backend.AttemptUniqueId(pathPtr, ref uniqueId))
+        {
+            return new SdlJoystick(sdlDeviceId, uniqueId, backend);
+        }
+
+        var name = backend.Sdl.GetJoystickNameForID(sdlDeviceId);
+        if (backend.AttemptUniqueId(name, ref uniqueId))
+        {
+            return new SdlJoystick(sdlDeviceId, uniqueId, backend);
+        }
+
+        var type = backend.Sdl.GetJoystickTypeForID(sdlDeviceId);
+        if (backend.AttemptUniqueId(type, ref uniqueId))
+        {
+            return new SdlJoystick(sdlDeviceId, uniqueId, backend);
+        }
+
+        uniqueId = backend.FallbackUniqueId(sdlDeviceId, uniqueId);
+        return new SdlJoystick(sdlDeviceId, uniqueId, backend);
+    }
+
+
     public override string Name => NativeBackend.GetJoystickNameForID(SdlDeviceId).ReadToString();
     public override uint RefreshIdFromBackend() => NativeBackend.GetJoystickID(JoystickHandle);
 
@@ -147,5 +182,60 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
     ButtonReadOnlyList<JoystickButton> IButtonDevice<JoystickButton>.State => State.Buttons;
 
+}
+
+internal static unsafe class BackendExtensions
+{
+    public static IntPtr FallbackUniqueId(this SdlInputBackend backend, uint sdlDeviceId, nint uniqueId)
+    {
+        Console.Error.WriteLine("Failed to create a deterministically unique identifier for joystick");
+        return uniqueId ^ ((nint)sdlDeviceId | ((nint)sdlDeviceId << 16));
+    }
+
+    public static bool AttemptUniqueId(this SdlInputBackend sdlInputBackend, Ptr<sbyte> ptr, ref nint uniqueId1)
+    {
+        if (ptr.Native == null)
+            return false;
+
+        var name = ptr.ReadToString();
+        var bytes = Encoding.Default.GetBytes(name);
+        return AttemptUniqueId(sdlInputBackend, bytes, ref uniqueId1);
+    }
+
+    public static bool AttemptUniqueId<T>(this SdlInputBackend sdlInputBackend, T ptr, ref nint uniqueId1)
+        where T : unmanaged
+    {
+        return AttemptUniqueId(sdlInputBackend, new ReadOnlySpan<byte>(&ptr, sizeof(T)), ref uniqueId1);
+    }
+
+    public static bool AttemptUniqueId(this SdlInputBackend sdlInputBackend, ReadOnlySpan<byte> bytes, ref nint uniqueId1)
+    {
+        uniqueId1 = Modify(uniqueId1, bytes);
+        return sdlInputBackend.DeviceRegistry.Add(uniqueId1);
+        static nint Modify(nint original, ReadOnlySpan<byte> withBytes)
+        {
+            if (sizeof(nint) == 4)
+            {
+                var hash = new HashCode();
+                foreach(var b in withBytes)
+                {
+                    hash.Add(b);
+                }
+
+                var hashCode = hash.ToHashCode();
+                return original ^ *(nint*)(&hashCode);
+            }
+
+            var hash64Bytes = (byte*)&original;
+
+            for (int i = 0; i < withBytes.Length; i += 8)
+            {
+                hash64Bytes[i % 8] ^= withBytes[i];
+            }
+
+            return *(nint*)hash64Bytes;
+        }
+
+    }
 }
 

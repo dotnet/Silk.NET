@@ -18,7 +18,4 @@ internal class SdlPen : SdlBoundedPointerDevice, ISdlDevice<SdlPen>
     {
     }
 
-    public override uint SdlDeviceId => NativeBackend.guid;
-
-    protected override Guid SdlDeviceGuid => throw new NotImplementedException();
 }

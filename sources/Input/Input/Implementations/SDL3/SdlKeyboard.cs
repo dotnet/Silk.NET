@@ -9,7 +9,7 @@ namespace Silk.NET.Input.SDL3;
 internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 {
     private readonly List<Button<KeyName>> _keyStates;
-    public unsafe SdlKeyboard(uint sdlDeviceId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
+    public unsafe SdlKeyboard(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
     {
         _keyStates = new List<Button<KeyName>>((int)Scancode.ScancodeCount);
         _sdlDeviceId = sdlDeviceId;
@@ -21,7 +21,18 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
         State = new KeyboardState(_keyStates, () => false, () => false);// todo : how do i get the num lock/capslock?
     }
 
-    public static SdlKeyboard CreateDevice(uint sdlDeviceId, SdlInputBackend backend) => throw new NotImplementedException();
+    public static SdlKeyboard CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
+    {
+        var namePtr = backend.Sdl.GetKeyboardNameForID(sdlDeviceId);
+        nint uniqueId = 0;
+        if (backend.AttemptUniqueId(namePtr, ref uniqueId))
+        {
+            return new SdlKeyboard(sdlDeviceId, uniqueId, backend);
+        }
+
+        uniqueId = backend.FallbackUniqueId(sdlDeviceId, uniqueId);
+        return new SdlKeyboard(sdlDeviceId, uniqueId, backend);
+    }
 
     public KeyboardState State { get; }
     protected override void Release() {} // empty?

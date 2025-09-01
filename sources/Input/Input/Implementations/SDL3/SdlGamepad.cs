@@ -3,6 +3,7 @@
 
 using System.Diagnostics;
 using Silk.NET.SDL;
+using Guid = System.Guid;
 
 namespace Silk.NET.Input.SDL3;
 
@@ -147,16 +148,21 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         }
 
         var joystickUniqueId = joystick.Id;
-        // manipulate the joystick id to make a unique gamepad id
-        var uniqueId = joystickUniqueId;
+        var gpn = backend.Sdl.GetRealGamepadTypeForID(sdlDeviceId);
+
+        if (backend.AttemptUniqueId(gpn, ref joystickUniqueId))
+        {
+            return new SdlGamepad(joystick, uniqueId: joystickUniqueId);
+        }
+
         var guid = backend.Sdl.GetGamepadGuidForID(sdlDeviceId);
-        const ulong gamepadType = (ulong)JoystickType.Gamepad;
-        const ulong mod = gamepadType << 24;
+        if (backend.AttemptUniqueId(guid, ref joystickUniqueId))
+        {
+            return new SdlGamepad(joystick, uniqueId: joystickUniqueId);
+        }
 
-        // todo
-        throw new NotImplementedException();
-
-        return new SdlGamepad(joystick, uniqueId: uniqueId);
+        joystickUniqueId = backend.FallbackUniqueId(sdlDeviceId, joystickUniqueId);
+        return new SdlGamepad(joystick, uniqueId: joystickUniqueId);
     }
 
     private void UpdateGamepadAxis(GamepadAxis axis, int value, int min, int max)

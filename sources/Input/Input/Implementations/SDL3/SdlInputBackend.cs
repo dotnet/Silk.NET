@@ -159,6 +159,8 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
         set => throw new NotImplementedException();
     }
 
+    public HashSet<nint> DeviceRegistry { get; } = [];
+
     // This is complicated, as the input proposal mandates that nothing happens until Update is called (so the events
     // can be received on the given actor) but to also track logical events that happen between calls (i.e. from a
     // timestamp perspective). Compound this with the fact that the user might do something silly like make multiple
