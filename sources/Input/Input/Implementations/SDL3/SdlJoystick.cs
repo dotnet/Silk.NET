@@ -2,12 +2,11 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
-using System.Runtime.CompilerServices;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDevice<SdlJoystick>
+internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDevice<SdlJoystick>, IOrderedDevice
 {
     public JoystickState State { get; }
     internal readonly JoystickType JoystickType;
@@ -47,12 +46,15 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
 
     public override string Name => NativeBackend.GetJoystickNameForID(SdlDeviceId).ReadToString();
-    public override uint RefreshIdFromBackend() => NativeBackend.GetJoystickID(JoystickHandle);
+
+    public override uint SdlDeviceId => _sdlDeviceId;
+
 
 
     private SdlJoystick(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
     {
         var joystickHandle = NativeBackend.OpenJoystick(sdlDeviceId);
+        _sdlDeviceId = sdlDeviceId;
 
         if (joystickHandle.Handle == null)
         {
@@ -170,6 +172,9 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
 
     protected override void Release() => NativeBackend.CloseJoystick(JoystickHandle);
+
+    public void RefreshSdlId() => _sdlDeviceId = NativeBackend.GetJoystickID(JoystickHandle);
+    private uint _sdlDeviceId;
 
     // State
     private readonly Button<JoystickButton>[] _rawButtonState;

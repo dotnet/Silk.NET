@@ -3,7 +3,6 @@
 
 using System.Diagnostics;
 using Silk.NET.SDL;
-using Guid = System.Guid;
 
 namespace Silk.NET.Input.SDL3;
 
@@ -117,7 +116,10 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     public void Remap() => Remap(_gamepadHandle);
 
-    public override uint RefreshIdFromBackend() => NativeBackend.GetGamepadID(_gamepadHandle);
+    public override uint SdlDeviceId => _sdlDeviceId;
+    private uint _sdlDeviceId;
+
+    public void RefreshSdlId() => _sdlDeviceId = NativeBackend.GetGamepadID(_gamepadHandle);
 
     public override string Name => Joystick.Name;
 

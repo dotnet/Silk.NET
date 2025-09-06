@@ -39,8 +39,6 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
     public KeyboardState State { get; }
     protected override void Release() {} // empty?
 
-    private readonly uint _sdlDeviceId;
-    public override uint RefreshIdFromBackend() => _sdlDeviceId;
 
     public override string Name => NativeBackend.GetKeyboardNameForID(SdlDeviceId).ReadToString();
     public string? ClipboardText

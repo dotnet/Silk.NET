@@ -11,7 +11,7 @@ namespace Silk.NET.Input.SDL3;
 /// Currently, only Gamepad is explicitly supported, however this interface leaves room
 /// for extensions such as those seen in <see cref="JoystickType"/>.
 /// </summary>
-internal interface ISdlJoystick
+internal interface ISdlJoystick : IOrderedDevice
 {
     public SdlJoystick Joystick { get; }
     /// <summary>

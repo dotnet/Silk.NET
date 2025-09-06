@@ -19,11 +19,7 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
 
     public nint Id { get; }
 
-    public uint SdlDeviceId => _sdlDeviceId ??= RefreshIdFromBackend();
-
-    private uint? _sdlDeviceId;
-
-    public abstract uint RefreshIdFromBackend();
+    public virtual uint SdlDeviceId { get; }
 
     public SdlInputBackend Backend { get; }
 
@@ -33,21 +29,12 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
     protected ISdl NativeBackend => Backend.Sdl;
 
     public abstract string Name { get; }
-    /*{
-        {
-            var namePtr = _sdlNameFunc(SdlDeviceId);
-            ref var casted = ref Unsafe.As<sbyte,byte>(ref namePtr[0]);
-            var marshalled = SilkMarshal.NativeToString(ref casted);
-            return marshalled ?? "Unknown Sdl Keyboard";
-        }
-    }*/
-
 
     protected SdlDevice(SdlInputBackend backend, nint uniqueId, uint sdlDeviceId)
     {
         Backend = backend;
         Id = uniqueId;
-        _sdlDeviceId = sdlDeviceId;
+        SdlDeviceId = sdlDeviceId;
     }
 
     protected abstract void Release();
@@ -57,6 +44,15 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
         ObjectDisposedException.ThrowIf(_isDisposed, GetType());
         _isDisposed = true;
         Release();
+        #if DEBUG
+        if (!Backend.DeviceRegistry.Remove(Id))
+        {
+            Console.Error.WriteLine($"Failed to remove device {Id} from registry");
+        }
+        #else
+        Backend.DeviceRegistry.Remove(Id);
+        #endif
+
         GC.SuppressFinalize(this);
     }
 
