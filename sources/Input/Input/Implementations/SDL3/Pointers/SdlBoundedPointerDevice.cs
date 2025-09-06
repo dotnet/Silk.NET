@@ -18,7 +18,7 @@ internal abstract class SdlBoundedPointerDevice : SdlDevice, IPointerDevice
 
     public abstract PointerState State { get; }
 
-    public override string Name => NativeBackend.GetMouseNameForID(SdlDeviceId).ReadToString();
+    //public override string Name => NativeBackend.GetMouseNameForID(SdlDeviceId).ReadToString();
 
     [field: MaybeNull]
     public virtual IReadOnlyList<IPointerTarget> Targets =>

@@ -54,17 +54,26 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
         //throw new NotImplementedException("Setting clipboard text is not implemented in SDL3 backend.");
     }
 
-    public bool TryGetKeyName(KeyName key, [NotNullWhen(true)] out string? name) =>
-        throw new NotImplementedException();
+    public bool TryGetKeyName(KeyName key, [NotNullWhen(true)] out string? name)
+    {
+        var namePtr = NativeBackend.GetKeyName((uint)key);
+        name = namePtr.ReadToString();
+        return !string.IsNullOrWhiteSpace(name);
+    }
 
     // todo - there should be a backend-independent way to do this text input handling via KeyboardState?
     public void BeginInput() => throw new NotImplementedException();
 
     public string? EndInput() => throw new NotImplementedException();
 
-    public void AddKeyEvent(KeyboardEvent key)
+    public void AddKeyEvent(in KeyboardEvent key)
     {
         const float fraction = 1f / 255f;
-        _keyStates[(int)key.Key] = new Button<KeyName>((KeyName)key.Key, key.Down != 0, key.Down * fraction);
+        _keyStates[(int)key.Key] = new Button<KeyName>(GetKeyName(key.Which), key.Down != 0, key.Down * fraction);
+    }
+
+    private static KeyName GetKeyName(uint key)
+    {
+        return (KeyName)key;
     }
 }

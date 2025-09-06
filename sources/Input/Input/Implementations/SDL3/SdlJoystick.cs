@@ -3,7 +3,6 @@
 
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using System.Text;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
@@ -183,59 +182,3 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     ButtonReadOnlyList<JoystickButton> IButtonDevice<JoystickButton>.State => State.Buttons;
 
 }
-
-internal static unsafe class BackendExtensions
-{
-    public static IntPtr FallbackUniqueId(this SdlInputBackend backend, uint sdlDeviceId, nint uniqueId)
-    {
-        Console.Error.WriteLine("Failed to create a deterministically unique identifier for joystick");
-        return uniqueId ^ ((nint)sdlDeviceId | ((nint)sdlDeviceId << 16));
-    }
-
-    public static bool AttemptUniqueId(this SdlInputBackend sdlInputBackend, Ptr<sbyte> ptr, ref nint uniqueId1)
-    {
-        if (ptr.Native == null)
-            return false;
-
-        var name = ptr.ReadToString();
-        var bytes = Encoding.Default.GetBytes(name);
-        return AttemptUniqueId(sdlInputBackend, bytes, ref uniqueId1);
-    }
-
-    public static bool AttemptUniqueId<T>(this SdlInputBackend sdlInputBackend, T ptr, ref nint uniqueId1)
-        where T : unmanaged
-    {
-        return AttemptUniqueId(sdlInputBackend, new ReadOnlySpan<byte>(&ptr, sizeof(T)), ref uniqueId1);
-    }
-
-    public static bool AttemptUniqueId(this SdlInputBackend sdlInputBackend, ReadOnlySpan<byte> bytes, ref nint uniqueId1)
-    {
-        uniqueId1 = Modify(uniqueId1, bytes);
-        return sdlInputBackend.DeviceRegistry.Add(uniqueId1);
-        static nint Modify(nint original, ReadOnlySpan<byte> withBytes)
-        {
-            if (sizeof(nint) == 4)
-            {
-                var hash = new HashCode();
-                foreach(var b in withBytes)
-                {
-                    hash.Add(b);
-                }
-
-                var hashCode = hash.ToHashCode();
-                return original ^ *(nint*)(&hashCode);
-            }
-
-            var hash64Bytes = (byte*)&original;
-
-            for (int i = 0; i < withBytes.Length; i += 8)
-            {
-                hash64Bytes[i % 8] ^= withBytes[i];
-            }
-
-            return *(nint*)hash64Bytes;
-        }
-
-    }
-}
-

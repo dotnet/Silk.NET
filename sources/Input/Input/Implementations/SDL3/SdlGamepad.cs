@@ -155,6 +155,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             return new SdlGamepad(joystick, uniqueId: joystickUniqueId);
         }
 
+        // manipulate the joystick id to make a unique gamepad id
         var guid = backend.Sdl.GetGamepadGuidForID(sdlDeviceId);
         if (backend.AttemptUniqueId(guid, ref joystickUniqueId))
         {
