@@ -65,9 +65,9 @@ public class KeyboardState
     /// <param name="keys">The collection of keys that are modified at runtime to give the current keyboard its state</param>
     /// <param name="capsLockActive">Return true if caps lock is currently active, irrespective of pressed status</param>
     /// <param name="numLockActive">Return true if num lock is currently active, irrespective of pressed status</param>
-    public KeyboardState(List<Button<KeyName>> keys, Func<bool> capsLockActive, Func<bool> numLockActive)
+    public KeyboardState(IReadOnlyList<Button<KeyName>> keys, Func<bool> capsLockActive, Func<bool> numLockActive)
     {
-        Keys = new(keys);
+        Keys = new ButtonReadOnlyList<KeyName>(keys);
         _capsLockActive = capsLockActive;
         _numLockActive = numLockActive;
     }

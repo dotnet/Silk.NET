@@ -186,6 +186,14 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
         {
             ProcessEvent(ref evt, handler);
         }
+
+        foreach (var device in _devices)
+        {
+            if (device is SdlKeyboard keyboard)
+            {
+                keyboard.UpdateModState();
+            }
+        }
     }
 
     private enum QueuedEventType : byte

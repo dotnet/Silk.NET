@@ -2,25 +2,18 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
+internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 {
-    private readonly List<Button<KeyName>> _keyStates;
-    public unsafe SdlKeyboard(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
+    public KeyboardState State { get; }
+    public override string Name => NativeBackend.GetKeyboardNameForID(SdlDeviceId).ReadToString();
+    public string? ClipboardText
     {
-        _keyStates = new List<Button<KeyName>>((int)Scancode.ScancodeCount);
-        _sdlDeviceId = sdlDeviceId;
-        for (var i = 0; i < 512; i++)
-        {
-            _keyStates.Add(new Button<KeyName>((KeyName)i, false, 0f));
-        }
-
-        State = new KeyboardState(_keyStates, () => false, () => false);// todo : how do i get the num lock/capslock?
-        _modState = NativeBackend.GetModState();
+        get => NativeBackend.HasClipboardText() ? NativeBackend.GetClipboardText().ReadToString() : null;
+        set => NativeBackend.SetClipboardText(value);
     }
 
     public static SdlKeyboard CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
@@ -36,22 +29,31 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
         return new SdlKeyboard(sdlDeviceId, uniqueId, backend);
     }
 
-    public KeyboardState State { get; }
-    protected override void Release() {} // empty?
-
-
-    public override string Name => NativeBackend.GetKeyboardNameForID(SdlDeviceId).ReadToString();
-    public string? ClipboardText
+    private SdlKeyboard(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
     {
-        get
+        Span<Button<KeyName>> keyStates = stackalloc Button<KeyName>[(int)KeyName.EndCall + 1];
+        int keyCount = 0;
+        for (var i = 0; i < 512; i++)
         {
-            if(Sdl.Instance.HasClipboardText() == 0)
-                return null;
-
-            return Sdl.Instance.GetClipboardText().ReadToString();
+            var keyName = (KeyName)i;
+            if (Enum.IsDefined(keyName))
+            {
+                keyStates[keyCount++] = new Button<KeyName>((KeyName)i, false, 0f);
+            }
         }
-        set => Sdl.Instance.SetClipboardText(value);
-        //throw new NotImplementedException("Setting clipboard text is not implemented in SDL3 backend.");
+
+        _keyStates = keyStates[..keyCount].ToArray();
+        _modState = NativeBackend.GetModState();
+
+        State = new KeyboardState(
+            keys: _keyStates,
+            capsLockActive: () => (_modState & Sdl.KmodCaps) == Sdl.KmodCaps,
+            numLockActive: () => (_modState & Sdl.KmodNum) == Sdl.KmodNum);
+    }
+
+
+    protected override void Release()
+    {
     }
 
     public bool TryGetKeyName(KeyName key, [NotNullWhen(true)] out string? name)
@@ -65,114 +67,50 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 
 
     // todo - there should be a backend-independent way to do this text input handling via KeyboardState?
-    public void BeginInput() => throw new NotImplementedException();
-
-    public string? EndInput() => throw new NotImplementedException();
-
-    public void UpdateModState()
+    public void BeginInput()
     {
-        // this mod state is purely used for sdl-related calls - otherwise, we handle the modifier states with our
-        // standard key handling logic
-        _modState = NativeBackend.GetModState();
+        _textIsRecording = true;
+        _textRecorder ??= new TextRecorder();
     }
+
+    public string? EndInput()
+    {
+        _textIsRecording = false;
+        return _textRecorder?.ConsumeInput();
+    }
+
+    /// <summary>
+    /// Updates the internal modifier state.
+    /// </summary>
+    /// <remarks>
+    /// This should be called every frame the keyboard is updated in <see cref="SdlInputBackend"/>.
+    /// This mod state is purely used for sdl-related calls and modifiers that are independent of key state (e.g. numlock, caps lock)
+    /// - otherwise, we handle the modifier states with our standard key handling logic
+    /// </remarks>
+    public void UpdateModState() => _modState = NativeBackend.GetModState();
 
     public void AddKeyEvent(in KeyboardEvent key)
     {
         const float fraction = 1f / 255f;
         var keyName = ScancodeToKeyName(key.Scancode); // SdlToKeyName(key.Which);
-        _keyStates[(int)key.Key] = new Button<KeyName>(keyName, key.Down != 0, key.Down * fraction);
+
+        if (Enum.IsDefined(keyName))
+        {
+            var index = EnumInfo<KeyName>.ValueIndexOf(keyName);
+            _keyStates[index] = new Button<KeyName>(keyName, key.Down != 0, key.Down * fraction);
+
+            if (_textIsRecording)
+            {
+                _textRecorder!.AddKeyStroke(keyName, key.Down != 0);
+            }
+        }
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static KeyName ScancodeToKeyName(uint scancode) => (KeyName)scancode;
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static KeyName ScancodeToKeyName(Scancode scancode) => ScancodeToKeyName((uint)scancode);
-
-    public static unsafe KeyName SdlToKeyName(uint key, ISdl sdl, ushort? modState = null)
-    {
-        modState ??= sdl.GetModState();
-        var modStateVal = modState.Value;
-        return (KeyName)sdl.GetScancodeFromKey(key, &modStateVal);
-    }
-
-    /// <summary>
-    /// Maps an SDL key id to a <see cref="KeyName"/> without a reference to an SDL backend instance.
-    /// </summary>
-    /// <param name="key">The sdl key id</param>
-    /// <returns>The associated key name</returns>
-    public static KeyName SdlToKeyName(uint key) =>
-        // * indicates a shifted key
-        key switch {
-            Sdl.KApplication =>KeyName.Application,
-
-            >= Sdl.K1 and <= Sdl.K9 => (KeyName)(key - _numKeyDiff),
-            >= Sdl.Ka and <= Sdl.Kz => (KeyName)(key - _letterKeyDiff),
-            >= Sdl.KCapslock and <= Sdl.KKpEqualsas400 => (KeyName)(key - _systemAndKeypadDiff),
-            >= Sdl.KCancel and <= Sdl.KRgui => (KeyName)(key - _systemAndKeypadDiff),
-            >= Sdl.KMode and <= Sdl.KAcBookmarks=> (KeyName)(key - _systemAndKeypadDiff),
-            >= Sdl.KSoftleft and <= Sdl.KEndcall => (KeyName)(key - _systemNonHidKeyDiff),
-
-            Sdl.KDelete => KeyName.Delete,
-            Sdl.KUnknown => KeyName.Unknown,
-            Sdl.KReturn => KeyName.Return,
-            Sdl.KEscape => KeyName.Escape,
-            Sdl.KBackspace => KeyName.Backspace,
-            Sdl.KTab => KeyName.Tab,
-            Sdl.KSpace => KeyName.Space,
-            Sdl.KExclaim => KeyName.Number1, // *
-            Sdl.KDblapostrophe => KeyName.Apostrophe, // *
-            Sdl.KHash => KeyName.Number3, // *
-            Sdl.KDollar => KeyName.Number4, // *
-            Sdl.KPercent => KeyName.Number5, // *
-            Sdl.KAmpersand => KeyName.KeypadAmpersand,
-            Sdl.KApostrophe => KeyName.Apostrophe,
-            Sdl.KLeftparen => KeyName.KeypadLeftParenthesis,
-            Sdl.KRightparen => KeyName.KeypadRightParenthesis,
-            Sdl.KAsterisk => KeyName.KeypadAmpersand,
-            Sdl.KPlus => KeyName.Equals, // *
-            Sdl.KComma => KeyName.Comma,
-            Sdl.KMinus => KeyName.Minus,
-            Sdl.KPeriod => KeyName.Period,
-            Sdl.KSlash => KeyName.Slash,
-            Sdl.K0 => KeyName.Number0,
-            Sdl.KColon => KeyName.Semicolon, // *
-            Sdl.KSemicolon => KeyName.Semicolon,
-            Sdl.KLess => KeyName.Comma, // *
-            Sdl.KEquals => KeyName.Equals,
-            Sdl.KGreater => KeyName.Period, // *
-            Sdl.KQuestion => KeyName.Slash, // *
-            Sdl.KAt => KeyName.Number2, // *
-            Sdl.KLeftbracket => KeyName.LeftBracket,
-            Sdl.KBackslash => KeyName.Backslash,
-            Sdl.KRightbracket => KeyName.RightBracket,
-            Sdl.KCaret => KeyName.Number6, // *
-            Sdl.KUnderscore => KeyName.Minus, // *
-            Sdl.KGrave => KeyName.Grave,
-            Sdl.KLeftbrace => KeyName.LeftBracket, // *
-            Sdl.KPipe => KeyName.Backslash, // *
-            Sdl.KRightbrace => KeyName.RightBracket, // *
-            Sdl.KTilde => KeyName.Grave, // *
-            _ => (KeyName)key
-        };
-
-    /// <summary>
-    /// The reverse operation of <see cref="SdlToKeyName"/>,
-    /// </summary>
-    /// <param name="key">The name of the key you would like to get an Sdl key id for</param>
-    /// <param name="sdl">Sdl backend instance</param>
-    /// <param name="asKeyEvent">Will this key be used in a key event?</param>
-    /// <param name="modState">The current modifier key state</param>
-    /// <returns>The sdl key id</returns>
-    public static uint KeyNameToSdl(KeyName key, ISdl sdl, bool asKeyEvent, ushort? modState = null)
-    {
-        modState ??= sdl.GetModState();
-        var scanCode = (uint)key;
-        var asKeyEventByte = asKeyEvent ? (byte)1 : (byte)0;
-        return sdl.GetKeyFromScancode((Scancode)scanCode, modState.Value, asKeyEventByte);
-    }
-
+    private TextRecorder? _textRecorder;
+    private bool _textIsRecording;
     private ushort _modState;
+    private readonly Button<KeyName>[] _keyStates;
     private const uint _letterKeyDiff = Sdl.Ka - (uint)KeyName.A;
     private const uint _numKeyDiff = Sdl.K1 - (uint)KeyName.Number1;
     private const uint _systemAndKeypadDiff = Sdl.KPrintscreen - (uint)KeyName.PrintScreen;
