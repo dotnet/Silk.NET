@@ -72,15 +72,23 @@ public class TextRecorder
         return result;
     }
 
-    public void GetCurrentBuffer(Span<char> buffer)
+    public int GetCurrentBuffer(Span<char> buffer)
     {
         var maxCount = Math.Min(buffer.Length, _sb.Length);
         _sb.CopyTo(0, buffer, maxCount);
+        return maxCount;
     }
 
-    public void GetSelectedRegion(Span<char> buffer)
+    public int GetSelectedRegion(Span<char> buffer)
     {
+        var maxCount = Math.Min(buffer.Length, _cursorEnd - _cursorStart);
+        if (maxCount == 0)
+        {
+            return 0;
+        }
 
+        _sb.CopyTo(_cursorStart, buffer, maxCount);
+        return maxCount;
     }
 
     public int Count => _sb.Length;
