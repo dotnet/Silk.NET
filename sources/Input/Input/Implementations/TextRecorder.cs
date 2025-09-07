@@ -68,8 +68,21 @@ public class TextRecorder
     public string? ConsumeInput()
     {
         var result = _sb.ToString();
-        _sb.Clear();
+        Clear();
         return result;
+    }
+
+    public void Clear()
+    {
+        _sb.Clear();
+        _cursorStart = 0;
+        _cursorEnd = 0;
+    }
+
+    public void SetCursorPosition(int position, int? endPosition = null)
+    {
+        _cursorStart = position;
+        _cursorEnd = endPosition ?? position;
     }
 
     public int GetCurrentBuffer(Span<char> buffer)
@@ -129,4 +142,11 @@ public static class KeyNameExtensions
             or KeyName.KeypadClearEntry
             or KeyName.ClearAgain;
 
+    /// <summary>
+    /// Returns true if the modifiers signify that the next character should be capitalized.
+    /// </summary>
+    public static bool ShouldCapitalize(this KeyModifiers modifiers) =>
+        ((modifiers & KeyModifiers.CapsLock) == KeyModifiers.CapsLock) ^
+        ((modifiers & KeyModifiers.ShiftLeft) == KeyModifiers.ShiftLeft
+         || (modifiers & KeyModifiers.ShiftRight) == KeyModifiers.ShiftRight);
 }
