@@ -108,6 +108,8 @@ public class TextRecorder
 
     private int _cursorStart, _cursorEnd;
     private readonly StringBuilder _sb = new();
+
+    public void AddString(in TextInputEvent text) => _sb.Append(text);
 }
 
 /// <summary>

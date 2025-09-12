@@ -69,13 +69,42 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
     // todo - there should be a backend-independent way to do this text input handling via KeyboardState?
     public void BeginInput()
     {
-        _textIsRecording = true;
-        _textRecorder ??= new TextRecorder();
+        var sdlWindow = Backend.FocusedWindow;
+        if (sdlWindow != null && NativeBackend.StartTextInput(sdlWindow.Value))
+        {
+            BeginRecordingSdl(sdlWindow.Value);
+        }
+        else
+        {
+            _textIsRecording = TextRecorderState.Recording;
+        }
     }
 
-    public string? EndInput()
+    private void BeginRecordingSdl(WindowHandle sdlWindow)
     {
-        _textIsRecording = false;
+        _textIsRecording = TextRecorderState.RecordingSdl;
+        _textEntryWindow = sdlWindow;
+    }
+
+    public unsafe string? EndInput()
+    {
+        switch (_textIsRecording)
+        {
+            case TextRecorderState.None:
+                return null;
+            case TextRecorderState.Recording:
+                _textIsRecording = TextRecorderState.None;
+                break;
+            case TextRecorderState.RecordingSdl:
+                _textIsRecording = TextRecorderState.None;
+                var sdlWindow = _textEntryWindow;
+                if (sdlWindow != null)
+                {
+                    NativeBackend.StopTextInput(sdlWindow.Value);
+                }
+                break;
+        }
+        _textIsRecording = TextRecorderState.None;
         return _textRecorder?.ConsumeInput();
     }
 
@@ -99,16 +128,59 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
             var index = EnumInfo<KeyName>.ValueIndexOf(keyName);
             _keyStates[index] = new Button<KeyName>(keyName, key.Down != 0, key.Down * fraction);
 
-            if (_textIsRecording)
+            if (_textIsRecording == TextRecorderState.Recording)
             {
-                _textRecorder!.AddKeyStroke(keyName, key.Down != 0);
+                _textRecorder ??= new TextRecorder();
+                _textRecorder!.AddKeyStroke(keyName, key.Down != 0, this);
             }
         }
     }
 
+    public unsafe void AddTextEditingEvent(in TextEditingEvent evt) => throw new NotImplementedException();
+    public unsafe void AddTextCandidatesEvent(in TextEditingCandidatesEvent evt) => throw new NotImplementedException();
 
+    public unsafe void AddTextInputEvent(in TextInputEvent evt)
+    {
+        if (_textEntryWindow == null)
+        {
+            Console.Out.WriteLine("Unexpected text input event");
+            var windowHandle = NativeBackend.GetWindowFromID(evt.WindowID);
+            if (windowHandle.Handle != null)
+            {
+                BeginRecordingSdl(windowHandle);
+            }
+
+            return;
+        }
+
+        if (evt.WindowID != NativeBackend.GetWindowID(_textEntryWindow.Value))
+        {
+            Console.Error.WriteLine("Received text input event for a different window than the " +
+                                    "one we're recording text for.");
+            return;
+        }
+
+        if (evt.Text == null)
+        {
+            return;
+        }
+
+        var str = new Ptr<sbyte>(evt.Text).ReadToString();
+
+        if (string.IsNullOrEmpty(str))
+        {
+            return;
+        }
+
+        _textRecorder ??= new TextRecorder();
+        _textRecorder.AddString(evt);
+    }
+
+
+    private WindowHandle? _textEntryWindow;
     private TextRecorder? _textRecorder;
-    private bool _textIsRecording;
+    private enum TextRecorderState {None, Recording, RecordingSdl}
+    private TextRecorderState _textIsRecording;
     private ushort _modState;
     private readonly Button<KeyName>[] _keyStates;
     private const uint _letterKeyDiff = Sdl.Ka - (uint)KeyName.A;

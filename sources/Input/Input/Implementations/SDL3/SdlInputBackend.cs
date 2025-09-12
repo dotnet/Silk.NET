@@ -21,6 +21,8 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
     private WindowHandle _focusedWindow;
     private ISdl _sdl;
 
+    public unsafe WindowHandle? FocusedWindow => _focusedWindow.Handle == null ? null : _focusedWindow;
+
     public unsafe SdlInputBackend(SdlPlatformInfo info)
     {
         ArgumentNullException.ThrowIfNull(info.Sdl);
