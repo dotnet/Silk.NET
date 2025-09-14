@@ -94,4 +94,18 @@ public static class KeyNameExtensions
     public static bool IsControl(this KeyModifiers mod) =>
         (mod & KeyModifiers.ControlLeft) == KeyModifiers.ControlLeft ||
         (mod & KeyModifiers.ControlRight) == KeyModifiers.ControlRight;
+
+    public static bool IsShift(this KeyName name) =>
+        name is KeyName.ShiftLeft or KeyName.ShiftRight;
+
+    public static bool IsShift(this KeyModifiers mod) =>
+        (mod & KeyModifiers.ShiftLeft) == KeyModifiers.ShiftLeft ||
+        (mod & KeyModifiers.ShiftRight) == KeyModifiers.ShiftRight;
+
+    public static bool IsAlt(this KeyName name) =>
+        name is KeyName.AltLeft or KeyName.AltRight;
+
+    public static bool IsAlt(this KeyModifiers mod) =>
+        (mod & KeyModifiers.AltLeft) == KeyModifiers.AltLeft ||
+        (mod & KeyModifiers.AltRight) == KeyModifiers.AltRight;
 }
