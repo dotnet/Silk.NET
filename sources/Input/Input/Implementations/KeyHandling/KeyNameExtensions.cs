@@ -3,7 +3,7 @@
 
 using System.Diagnostics;
 
-namespace Silk.NET.Input;
+namespace Silk.NET.Input.KeyHandling;
 
 /// <summary>
 /// A series of extension methods for making sense of <see cref="KeyName"/> values

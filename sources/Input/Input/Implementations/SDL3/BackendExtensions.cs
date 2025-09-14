@@ -2,12 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Text;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input.SDL3;
 
 internal static unsafe class BackendExtensions
 {
-    [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static IntPtr FallbackUniqueId(this SdlInputBackend _, uint sdlDeviceId, nint uniqueId)
     {
         Console.Error.WriteLine("Failed to create a deterministically unique identifier for joystick");
@@ -24,7 +25,7 @@ internal static unsafe class BackendExtensions
         return AttemptUniqueId(sdlInputBackend, bytes, ref uniqueId1);
     }
 
-    [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool AttemptUniqueId<T>(this SdlInputBackend sdlInputBackend, T ptr, ref nint uniqueId1)
         where T : unmanaged =>
         AttemptUniqueId(sdlInputBackend, new ReadOnlySpan<byte>(&ptr, sizeof(T)), ref uniqueId1);

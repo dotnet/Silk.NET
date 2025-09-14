@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Text;
 using Silk.NET.SDL;
 
-namespace Silk.NET.Input;
+namespace Silk.NET.Input.KeyHandling;
 
 /// <summary>
 /// A utility class for recording text input.
@@ -371,6 +371,10 @@ internal sealed class TextRecorder
         return maxCount;
     }
 
+    /// <summary>
+    /// Retrieves the current buffer contents and clears the buffer, resetting the cursor and selection positions.
+    /// </summary>
+    /// <returns></returns>
     public string ConsumeInput()
     {
         var result = _sb.ToString();
@@ -378,6 +382,9 @@ internal sealed class TextRecorder
         return result;
     }
 
+    /// <summary>
+    /// Clears the buffer and resets the cursor and selection positions.
+    /// </summary>
     public void Clear()
     {
         _sb.Clear();

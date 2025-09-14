@@ -3,11 +3,12 @@
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using Silk.NET.Input.KeyHandling;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
+internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 {
     public KeyboardState State { get; }
     public override string Name => NativeBackend.GetKeyboardNameForID(SdlDeviceId).ReadToString();
@@ -60,7 +61,7 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
     public bool TryGetKeyName(KeyName key, [NotNullWhen(true)] out string? name)
     {
         // todo: should 'asKeyEvent' be true?
-        var sdlKey = KeyNameToSdl(key, NativeBackend, true, _modState);
+        var sdlKey = SdlKeyConversions.KeyNameToSdl(key, NativeBackend, true, _modState);
         var namePtr = NativeBackend.GetKeyName(sdlKey);
         name = namePtr.ReadToString();
         return !string.IsNullOrWhiteSpace(name);
@@ -122,7 +123,7 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
     public void AddKeyEvent(in KeyboardEvent key)
     {
         const float fraction = 1f / 255f;
-        var keyName = ScancodeToKeyName(key.Scancode); // SdlToKeyName(key.Which);
+        var keyName = SdlKeyConversions.ScancodeToKeyName(key.Scancode); // SdlToKeyName(key.Which);
 
         if (Enum.IsDefined(keyName))
         {
@@ -212,7 +213,7 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
 
         var str = evt.Text == null ? "" : new Ptr<sbyte>(evt.Text).ReadToString();
 
-        _textRecorder ??= new TextRecorder();
+        _textRecorder ??= new TextRecorder(null);
         _textRecorder.InsertText(str);
     }
 
@@ -223,8 +224,4 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
     private TextRecorderState _textIsRecording;
     private ushort _modState;
     private readonly Button<KeyName>[] _keyStates;
-    private const uint _letterKeyDiff = Sdl.Ka - (uint)KeyName.A;
-    private const uint _numKeyDiff = Sdl.K1 - (uint)KeyName.Number1;
-    private const uint _systemAndKeypadDiff = Sdl.KPrintscreen - (uint)KeyName.PrintScreen;
-    private const uint _systemNonHidKeyDiff = Sdl.KSoftleft - (uint)KeyName.SoftLeft;
 }

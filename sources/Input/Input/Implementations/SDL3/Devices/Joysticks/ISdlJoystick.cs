@@ -3,7 +3,7 @@
 
 using Silk.NET.SDL;
 
-namespace Silk.NET.Input.SDL3;
+namespace Silk.NET.Input.SDL3.Joysticks;
 
 /// <summary>
 /// An interface for implementing different joystick types

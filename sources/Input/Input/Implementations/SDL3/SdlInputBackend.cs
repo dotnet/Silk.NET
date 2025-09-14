@@ -4,6 +4,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using Silk.NET.Input.SDL3.Joysticks;
 using Silk.NET.Input.SDL3.Pointers;
 using Silk.NET.Maths;
 using Silk.NET.SDL;

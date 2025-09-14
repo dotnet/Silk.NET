@@ -6,13 +6,13 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal partial class SdlKeyboard
+internal static class SdlKeyConversions
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static KeyName ScancodeToKeyName(uint scancode) => (KeyName)scancode;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static KeyName ScancodeToKeyName(Scancode scancode) => ScancodeToKeyName((uint)scancode);
+    public static KeyName ScancodeToKeyName(Scancode scancode) => ScancodeToKeyName((uint)scancode);
 
     public static unsafe KeyName SdlToKeyName(uint key, ISdl sdl, ushort? modState = null)
     {
@@ -82,7 +82,7 @@ internal partial class SdlKeyboard
         };
 
     /// <summary>
-    /// The reverse operation of <see cref="SdlToKeyName"/>,
+    /// Converts a <see cref="KeyName"/> to an SDL key id.
     /// </summary>
     /// <param name="key">The name of the key you would like to get an Sdl key id for</param>
     /// <param name="sdl">Sdl backend instance</param>
@@ -96,4 +96,9 @@ internal partial class SdlKeyboard
         var asKeyEventByte = asKeyEvent ? (byte)1 : (byte)0;
         return sdl.GetKeyFromScancode((Scancode)scanCode, modState.Value, asKeyEventByte);
     }
+
+    private const uint _letterKeyDiff = Sdl.Ka - (uint)KeyName.A;
+    private const uint _numKeyDiff = Sdl.K1 - (uint)KeyName.Number1;
+    private const uint _systemAndKeypadDiff = Sdl.KPrintscreen - (uint)KeyName.PrintScreen;
+    private const uint _systemNonHidKeyDiff = Sdl.KSoftleft - (uint)KeyName.SoftLeft;
 }

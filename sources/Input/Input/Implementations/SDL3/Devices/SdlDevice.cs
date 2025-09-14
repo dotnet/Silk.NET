@@ -64,17 +64,3 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
 
     private bool _isDisposed;
 }
-
-/// <summary>
-/// An interface defining a generic constructor for managed SDL devices.
-/// </summary>
-/// <typeparam name="T"></typeparam>
-internal interface ISdlDevice<out T> : IInputDevice where T : SdlDevice
-{
-    public static abstract T? CreateDevice(uint sdlDeviceId, SdlInputBackend backend);
-
-}
-
-internal static class SdlDeviceFactory
-{
-}

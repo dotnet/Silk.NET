@@ -4,7 +4,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
-namespace Silk.NET.Input;
+namespace Silk.NET.Input.KeyHandling;
 
 /// <summary>
 /// A simple interface for an implementation that converts keyboard input into characters for text entry
@@ -16,6 +16,7 @@ internal interface ICharacterConverter
 
 internal class DummyCharConverter : ICharacterConverter
 {
+    // todo - proper VK key support for various languages and layouts
     public bool TryConvert(KeyName key, KeyModifiers modifiers, [NotNullWhen(true)] out char? c)
     {
         if (!key.IsChar())

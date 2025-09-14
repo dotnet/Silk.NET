@@ -4,7 +4,7 @@
 using System.Diagnostics;
 using Silk.NET.SDL;
 
-namespace Silk.NET.Input.SDL3;
+namespace Silk.NET.Input.SDL3.Joysticks;
 
 /// <summary>
 /// provides the IGamepad implementation for a joystick
